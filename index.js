@@ -30,6 +30,7 @@ const redirect = require('metalsmith-redirect');
 
 const metatoc = require('./helpers/metatoc');
 const codeExample = require('./helpers/codeExample');
+const sectionOverride = require('./helpers/sectionOverride');
 const saveSrc = require('./helpers/save-src');
 const anchors = require('./helpers/anchors');
 const nodeStatic = require('node-static');
@@ -257,6 +258,17 @@ let metalsmith = Metalsmith(__dirname)
         let codeExampleData = codeExample.process(file, files[file]);  
         files[file].contents = codeExampleData['fileContent'];
         files[file]['has_code_example'] = codeExampleData['has_code_example'];
+      }
+    }
+    setImmediate(done);
+  })
+  .use((files, metalsmith, done) => {
+    for (let file in files) {
+      if (file.endsWith('.md')) {
+        let sectionsData = sectionOverride.process(file, files[file]);
+        files[file].contents = sectionsData['fileContent'];
+        files[file]['has_section'] = sectionsData['has_section'];
+        files[file]['sections'] = sectionsData['sections'];
       }
     }
     setImmediate(done);

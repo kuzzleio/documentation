@@ -9,10 +9,7 @@
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="/assets/js/languageSelector.js"></script>
-
+    
     <style>
         body,
         input {
@@ -25,9 +22,8 @@
             font-family: "Roboto Mono", "Courier New", Courier, monospace
         }
     </style>
-    
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -64,6 +60,10 @@
                             <select id="language-selector"></select>
                         {{/if}}
 
+                        {{#if has_section }}
+                            <input id="list-sections"type="hidden" value="{{sections}}">
+                        {{/if}}
+
                         {{{ contents }}}
                     </article>
                 </div>
@@ -73,7 +73,9 @@
         {{> footer }}
 
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/languageSelector.js"></script>
     <script src="/assets/js/libs/modernizr.js"></script>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/scrollto.js"></script>

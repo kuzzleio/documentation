@@ -12,12 +12,14 @@ var languageSelector = {
     var self = this;
     var languageParam = this.getLanguageParameter();
     this.setSelectorOptions();
+    $('.section').hide();
+    this.showSection(languageParam);
     $('code').hide();
     $('code.' + languageParam).show();
     $('#language-selector [value="' + languageParam + '"]').attr('selected', true);
 
     $('#language-selector').on('change', function () {
-      var language = $(this).val()
+      var language = $(this).val();
       self.setPreferedLanguage(language);
       window.location.replace(
         window.location.href.split('?')[0] + '?l=' + language
@@ -72,6 +74,19 @@ var languageSelector = {
     return (sessionStorage.getItem('prefered_language'))
       ? sessionStorage.getItem('prefered_language') 
       : false
+  },
+
+  showSection: function (language) {
+    var sections = $('#list-sections').val().split(',');
+    sections.forEach(function (element) {
+      console.log('#' + element + '.section.' + language);
+      if ($('#' + element + '.section.' + language).length > 0) {
+        $('#' + element + '.section.' + language).show();
+      } else {
+        $('#' + element + '.section.default').show();
+      }
+    });
+
   }
 
 }

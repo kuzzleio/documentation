@@ -8,10 +8,10 @@ order: 100
 
 # This is the first test
 
-Code example exctracted from files, it's posible to switch on your prefered language !
+Code example extracted from files, it's posible to switch on your prefered language !
 
 [code-example=test]
 
-blablabla
+Sometimes specifications can change, depends on the selected language
 
-[code-example=test]
+[section=test]
