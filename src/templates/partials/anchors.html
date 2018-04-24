@@ -1,13 +1,14 @@
-<nav class="md-nav md-nav--secondary">
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix="">
-        {{#each anchors}}
-        <li class="md-nav__item">
-            <a href="#{{this.id}}" title="{{this.text}}" class="md-nav__link" data-md-state="">
-                {{this.text}}
-            </a>
-        </li>
-        {{/each}}
-    </ul>
-
-</nav>
+{{#if (gt anchors.length 0)}}
+    <nav class="md-nav md-nav--secondary">
+        <label class="md-nav__title" for="toc">Table of contents</label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+            {{#each anchors}}
+            <li class="md-nav__item">
+                <a href="#{{this.id}}" title="{{this.text}}" class="md-nav__link" data-md-state="">
+                    {{this.text}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </nav>
+{{/if}}

@@ -5,6 +5,6 @@ $(document).ready(function () {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $(anchor).offset().top - 100
-        }, 1000);
+        }, 400);
     })    
 });

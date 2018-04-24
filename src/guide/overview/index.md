@@ -11,3 +11,7 @@ order: 100
 Code example exctracted from files, it's posible to switch on your prefered language !
 
 [code-example=test]
+
+blablabla
+
+[code-example=test]

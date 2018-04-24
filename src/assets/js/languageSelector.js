@@ -51,10 +51,13 @@ var languageSelector = {
     $('code').each(function() {
       if (typeof $(this).attr('class') != 'undefined') {
         var language = $(this).attr('class').split(' ')[1];
-        $('#language-selector').append($('<option>', {
-          value: language,
-          text: language
-        }));
+        var options = $('#language-selector option').map(function () { return $(this).val(); }).get();
+        if (options.indexOf(language) === -1) {
+          $('#language-selector').append($('<option>', {
+            value: language,
+            text: language
+          }));
+        }
       }
     });
   },
