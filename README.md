@@ -63,7 +63,7 @@ It's possible to add code example (for each languages supported for SDKs) in mar
 
 EX: `createDocument.js` / `createDocument.go` / `...`
 
-Now in markdown just add `[code-example=create-document]` where you want. When metalsmith will build, te code-example tag will be remplaced by the code in each code example files.
+Now in markdown just add `[code-example=createDocument]` where you want. When metalsmith will build, te code-example tag will be remplaced by the code in each code example files.
 
 ## Override markdown
 Because each languages supported for SDKs can have specifications, It's possible to override markdown.
@@ -72,3 +72,5 @@ Like code-example, create a subfolder `sections` and put markdown file in it.
 EX: `createDocument_js.md` / `createDocument_go.md` / `createDocument_default.md` / `...`
 
 Please note that '_language' is important for build process in metalsmith (so don't add another _ in filename.
+
+Now you can add this tag in your markdown to allow metalsmith to override parts of markdown : `[section=createDocument]`
