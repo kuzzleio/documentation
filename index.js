@@ -28,6 +28,7 @@ const jsPacker = require('metalsmith-js-packer');
 const cssPacker = require('metalsmith-css-packer');
 const redirect = require('metalsmith-redirect');
 
+
 const metatoc = require('./helpers/metatoc');
 const codeExample = require('./helpers/codeExample');
 const sectionOverride = require('./helpers/sectionOverride');
@@ -364,7 +365,7 @@ if (!options.dev.enabled) {
   metalsmith
     .use(cssPacker({
       siteRootPath: options.build.path,
-      inline: true,
+      inline: false,
       exclude: ['partials/**/*', 'layouts/**/*']
     }))
     .use(jsPacker({
