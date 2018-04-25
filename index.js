@@ -360,20 +360,20 @@ metalsmith
     }
   }));
 
-if (!options.dev.enabled) {
-  log(`CSS and JS packers enabled`);
-  metalsmith
-    .use(cssPacker({
-      siteRootPath: options.build.path,
-      inline: false,
-      exclude: ['partials/**/*', 'layouts/**/*']
-    }))
-    .use(jsPacker({
-      siteRootPath: options.build.path,
-      inline: false,
-      exclude: ['partials/**/*', 'layouts/**/*']
-    }))
-}
+// if (!options.dev.enabled) {
+//   log(`CSS and JS packers enabled`);
+//   metalsmith
+//     .use(cssPacker({
+//       siteRootPath: options.build.path,
+//       inline: false,
+//       exclude: ['partials/**/*', 'layouts/**/*']
+//     }))
+//     .use(jsPacker({
+//       siteRootPath: options.build.path,
+//       inline: false,
+//       exclude: ['partials/**/*', 'layouts/**/*']
+//     }))
+// }
 // metalsmith
   // .use(clickImage())
   // .use(logger());
