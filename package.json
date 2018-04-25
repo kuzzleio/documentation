@@ -53,6 +53,7 @@
         "metalsmith-sass": "^1.4.0",
         "metalsmith-serve": "0.0.7",
         "metalsmith-sitemap": "^1.2.0",
+        "metalsmith-uglify": "^2.2.0",
         "metalsmith-watch": "^1.0.3",
         "mime-types": "^2.1.14",
         "node-static": "^0.7.9",

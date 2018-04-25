@@ -79,7 +79,6 @@ var languageSelector = {
   showSection: function (language) {
     var sections = $('#list-sections').val().split(',');
     sections.forEach(function (element) {
-      console.log('#' + element + '.section.' + language);
       if ($('#' + element + '.section.' + language).length > 0) {
         $('#' + element + '.section.' + language).show();
       } else {
