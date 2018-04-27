@@ -2,14 +2,11 @@
 <html>
 <head>
     <title>doc v2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css">
     <link rel="stylesheet" href="/assets/stylesheets/main.css">
-
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
-    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-
-    
     <style>
         body,
         input {
@@ -53,9 +50,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- Content -->
                 <div class="md-content">
                     <article class="md-content__inner md-typeset">
-                        
                         {{#if has_code_example}}
                             <select id="language-selector"></select>
                         {{/if}}
@@ -71,14 +68,10 @@
         </main>
 
         {{> footer }}
-
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <script src="/assets/js/languageSelector.js"></script>
-    <script src="/assets/js/libs/modernizr.js"></script>
-    <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/scrollto.js"></script>
+    <script src="/assets/js/main.min.js"></script>
 </body>
 
 </html>

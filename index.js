@@ -24,9 +24,9 @@ const optipng = require('metalsmith-optipng');
 const sitemap = require('metalsmith-sitemap');
 const htmlMin = require('metalsmith-html-minifier');
 const algolia = require('metalsmith-algolia');
-const jsPacker = require('metalsmith-js-packer');
-const cssPacker = require('metalsmith-css-packer');
 const redirect = require('metalsmith-redirect');
+const uglifyjs = require("metalsmith-uglifyjs");
+const concat = require("metalsmith-concat");
 
 
 const metatoc = require('./helpers/metatoc');
@@ -315,6 +315,21 @@ metalsmith
   }))
   .use(markdown({
     renderer: newMDRenderer
+  }))
+  .use(concat({
+    files: 'assets/js/**/*.js',
+    output: 'assets/js/main.js'
+  }))
+  .use(uglifyjs({
+    src: ["**/*.js", "!**/*.min.js"],
+    deleteSources: true,
+    uglifyOptions: {
+      mangle: true,
+      compress: {
+        unused: false,
+        warnings: true
+      }
+    }
   }))
   .use((files, metalsmith, done) => {
     for (let file in files) {
