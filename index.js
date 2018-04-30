@@ -244,6 +244,10 @@ let metalsmith = Metalsmith(__dirname)
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
   .clean(true)
+  .ignore([
+    '**/**/sections/*',
+    '**/**/code-example/*'
+  ])
   .use(saveSrc())
   .use((files, metalsmith, done) => {
     setImmediate(done);
