@@ -29,7 +29,6 @@ const uglifyjs = require("metalsmith-uglifyjs");
 const concat = require("metalsmith-concat");
 
 
-const metatoc = require('./helpers/metatoc');
 const codeExample = require('./helpers/codeExample');
 const sectionOverride = require('./helpers/sectionOverride');
 const saveSrc = require('./helpers/save-src');
@@ -38,7 +37,6 @@ const nodeStatic = require('node-static');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const open = require('open');
-const fs = require('fs');
 const color = require('colors/safe');
 
 const versionsConfig = require('./versions.config.json');
@@ -338,7 +336,9 @@ metalsmith
   .use((files, metalsmith, done) => {
     for (let file in files) {
       if (file.endsWith('.html')) {
-        files[file]['anchors'] = anchors.process(file, files[file]);
+        let anchorsData = anchors.process(file, files[file]);
+        files[file].contents = anchorsData['fileContent'];
+        files[file]['anchors'] = anchorsData['anchors'];
       }
     }
     setImmediate(done);
@@ -368,8 +368,6 @@ metalsmith
     '/validation-reference/': '/validation-reference/schema/',
     '/kuzzle-events/': '/kuzzle-events/plugin-events/'
   }))
-  .use(metatoc())
-  // .use(languageTab())
   .use(layouts({
     directory: 'src/templates',
     engine: 'handlebars',
@@ -433,11 +431,10 @@ if (options.dev.enabled) {
     .use(
       watch({
         paths: {
-          "src/assets/stylesheets/**/*": "assets/stylesheets/**/*",
-          "src/**/*.md": "**/*.md",
-          "src/partials/**/*": "**/*.md",
-          "src/layouts/**/*": "**/*.md",
-          "src/assets/**/*.js": true
+          "src/assets/stylesheets/**/*": "**/*",
+          "src/assets/**/*.js": "**/*"
+          "src/**/*.md": "**/*",
+          "src/templates/**/*": "**/*",
         },
         livereload: true
       })

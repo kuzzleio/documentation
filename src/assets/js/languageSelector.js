@@ -85,7 +85,6 @@ var languageSelector = {
         $('#' + element + '.section.default').show();
       }
     });
-
   }
 
 }

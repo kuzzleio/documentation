@@ -5,12 +5,16 @@ module.exports = {
     let anchors = [];
     let $ = cheerio.load(data.contents.toString());
     $('h2').each((i, el) => {
-      const id = $(el).text().toLowerCase().replace(new RegExp(' ', 'g'), '-')
+      let id = $(el).text().replace(/&.*?/g, '').replace(/\s+/g, '-').replace(/[^\w\-]/g, '').replace(/[\-]+/g, '-').toLowerCase() 
       anchors.push({
         'text': $(el).text(),
-        'id': $(el).text().toLowerCase().replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '').replace(new RegExp(' ', 'g'), '-')
+        'id': id
       })
+      $(el).attr('id', id)
     });
-    return anchors;
+    return {
+      anchors: anchors,
+      fileContent: new Buffer($.html())
+    }
   }
 }

@@ -451,6 +451,11 @@ $md-toggle__search--checked:
     font-size: ms(-1);
     line-height: 3.6rem;
 
+    .algolia-logo {
+      position: relative;
+      top: 5px;
+    }
+
     // [tablet landscape +]: Increase left indent
     @include break-from-device(tablet landscape) {
       padding-left: 4.4rem;
