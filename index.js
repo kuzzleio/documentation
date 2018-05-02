@@ -432,7 +432,7 @@ if (options.dev.enabled) {
       watch({
         paths: {
           "src/assets/stylesheets/**/*": "**/*",
-          "src/assets/**/*.js": "**/*"
+          "src/assets/**/*.js": "**/*",
           "src/**/*.md": "**/*",
           "src/templates/**/*": "**/*",
         },
