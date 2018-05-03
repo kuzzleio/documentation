@@ -18,6 +18,7 @@
         "cheerio": "^0.22.0",
         "fs-sync": "^1.0.4",
         "handlebars": "^4.0.8",
+        "hoek": "^5.0.3",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
         "metalsmith-ancestry": "^1.2.1",
