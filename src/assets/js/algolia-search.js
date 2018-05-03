@@ -22,8 +22,16 @@ var algoliaSearch = {
         });
       })
       .on('focus', function(){
-        $('.md-search__icon').trigger('click')
-      });
+        console.log('focus');
+        $(this).toggleClass('active');
+        if($(this).hasClass('active')) {
+          $('.md-search__icon').trigger('click');
+        }
+      })
+      .on('focusout', function(){
+        $(this).val('');
+        $(this).toggleClass('active');
+      })
 
     $('button.md-search__icon').on('click', function(){
       $('.md-search-result__list').html('');
