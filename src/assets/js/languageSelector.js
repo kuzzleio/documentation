@@ -5,6 +5,11 @@ $(document).ready(function(){
 
 var languageSelector = {
 
+  LANGUAGES: [
+    'javascript',
+    'go'
+  ],
+
   init: function () {
     if ($('#language-selector').length == 0) {
       return
@@ -47,7 +52,7 @@ var languageSelector = {
         GET[aux[0]] = aux[1];
       }
     }
-    if (typeof GET['l'] != 'undefined') {
+    if (typeof GET['l'] != 'undefined' && this.LANGUAGES.indexOf(GET['l']) > -1) {
       return GET['l'];
     } else if (this.getPreferedLanguage()) {
       return this.getPreferedLanguage();
