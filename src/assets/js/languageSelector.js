@@ -95,7 +95,7 @@ var languageSelector = {
   getLanguageInUrl: function () {
     var language = false;
     this.LANGUAGES.forEach(function(el) {
-      if (document.location.indexOf('/' + el + '/') > -1){
+      if (document.location.toString().search('/' + el + '/') > -1){
         language = el;
       }
     })
