@@ -24,7 +24,9 @@ var languageSelector = {
     $('#language-selector [value="' + languageParam + '"]').attr('selected', true);
     $('#language-selector').select2({
       minimumResultsForSearch: -1,
-      theme: 'material'
+      theme: 'material',
+      templateResult: this.selectTemplate,
+      templateSelection: this.selectTemplate
     });
     $(".select2-selection__arrow")
       .addClass("material-icons")
@@ -97,6 +99,18 @@ var languageSelector = {
         $('#' + element + '.section.default').show();
       }
     });
+  },
+
+  selectTemplate: function(state) {
+    if (!state.id) {
+      return state.text;
+    }
+    var baseUrl = "/assets/images/logos";
+    var $state = $(
+      '<img width="32" height="32" src="' + baseUrl + '/' + state.element.value.toLowerCase() + '.png" class="language-logo" /> <span class="language-name">' + state.text + '</span>'
+    );
+    return $state;
   }
+
 
 }

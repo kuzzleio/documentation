@@ -1,7 +1,7 @@
 
 
 .select2-container--material {
-    width: 50% !important;
+    width: 62% !important;
     // border: 1px solid black
     
     ::placeholder {
@@ -53,7 +53,7 @@
         border-bottom: 1px solid $md-color-pink;
         border-radius: 0;
         outline: 0;
-        //height: 2.1rem;
+        height: 2.1rem;
         width: 100%;
         font-size: 1rem;
         box-shadow: none;
@@ -65,14 +65,26 @@
             padding-left: 0;
             font-size: 1.4rem;
         }
+
+        .language-logo {
+            position: relative;
+        }
+        .language-name {
+            position: relative;
+            top:-10px;
+            text-transform: capitalize;
+        }
     }
     
     .select2-selection--single {
+        height: 40px !important;
         .select2-selection__rendered {
             float: left;
         }
         
         .select2-selection__arrow {
+            position: relative;
+            top: 6px;
             float: right;
         }
     }
@@ -220,6 +232,17 @@
         &--below {
             //top: -50px;
         }
+
+        .language-logo {
+            position: relative;
+        }
+
+        .language-name {
+            position: relative;
+            top:-10px;
+            text-transform: capitalize;
+        }
+
     }
     
     

@@ -29,7 +29,11 @@ var algoliaSearch = {
       })
       .on('focusout', function () {
         $(this).val('');
-        $(this).toggleClass('active');
+        $(this).removeClass('active');
+      })
+      .on('keypress', function () {
+        $(this).addClass('active');
+        $('.md-search__icon').trigger('click');
       })
 
     $('button.md-search__icon').on('click', function () {
