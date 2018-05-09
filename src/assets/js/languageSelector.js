@@ -36,7 +36,7 @@ var languageSelector = {
       var language = $(this).val();
       self.setPreferedLanguage(language);
       window.location.replace(
-        window.location.href.split('?')[0] + '?l=' + language
+        window.location.href.split('?')[0] + '?language=' + language
       );
     })
   },
@@ -54,8 +54,8 @@ var languageSelector = {
         GET[aux[0]] = aux[1];
       }
     }
-    if (typeof GET['l'] != 'undefined' && this.LANGUAGES.indexOf(GET['l']) > -1) {
-      return GET['l'];
+    if (typeof GET['language'] != 'undefined' && this.LANGUAGES.indexOf(GET['language']) > -1) {
+      return GET['language'];
     } else if (this.getLanguageInUrl()) {
       return this.getLanguageInUrl();
     } else if (this.getPreferedLanguage()) {
