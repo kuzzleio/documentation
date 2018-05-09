@@ -6,7 +6,7 @@ phases:
       - npm install
   build:
     commands:
-      - node index.js --gzip
+      - npm run build
   post_build:
     commands:
       - aws s3 sync build/ s3://$AWS_S3_BUCKET/ --delete
