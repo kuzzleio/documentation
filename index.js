@@ -351,8 +351,8 @@ metalsmith
     relative: false
   }))
   .use(redirect({
-    '/': '/guide/overview',
-    '/guide': '/guide/overview',
+    '/': '/guide/getting-started',
+    '/guide': '/guide/getting-started',
     '/guide/getting-started': '/guide/getting-started/your-first-hello-world/',
     '/guide/kuzzle-backend-setup': '/guide/kuzzle-backend-setup/setup-sh',
     '/guide/kuzzle-backend-guide': '/guide/kuzzle-backend-guide/architecture-overview/',

@@ -20,12 +20,7 @@
 
 > bind a webserver on 8080 with livereload and watch enabled
 
-`node index.js --dev --watch`  
 `npm run dev`
-
-> bind a webserver on 80 with livereload, open a browser, turn on debug messages and check dead links
-
-`sudo DEBUG=* node index.js --dev --watch --open-browser --port 80 --ckeck-links`
 
 ---
 
@@ -41,12 +36,12 @@ Here is an overview of the files structure:
 
 Though there is no real limit to the directories depth, to keep the documentation homogeneous and readable, no additional subdirectories should be added.
 
-## Documentation sections
+## Documentation pages
 
-Sections are listed as subdirectories in `src/`.  
+Pages are listed as subdirectories in `src/`.  
 For instance: `src/guide/`.
 
-Each section directory must contain an `index.md` file, with the following headers:
+Each page directory must contain an `index.md` file, with the following headers:
 
 ```
 
@@ -63,14 +58,14 @@ It's possible to add code example (for each languages supported for SDKs) in mar
 
 EX: `createDocument.js` / `createDocument.go` / `...`
 
-Now in markdown just add `[code-example=createDocument]` where you want. When metalsmith will build, te code-example tag will be remplaced by the code in each code example files.
+Now in markdown just add `[code-example=createDocument]` where you want. When metalsmith will build, the code-example tag will be remplaced by the code in each code example files.
 
 ## Override markdown
 Because each languages supported for SDKs can have specifications, It's possible to override markdown.
-Like code-example, create a subfolder `sections` and put markdown file in it.
+Like code-example, create a subfolder `sections` and put markdown files in it.
 
 EX: `createDocument_js.md` / `createDocument_go.md` / `createDocument_default.md` / `...`
 
-Please note that '_language' is important for build process in metalsmith (so don't add another _ in filename.
+Please note that `_language` is important for build process in metalsmith (so please, don't add another `_` in filename).
 
 Now you can add this tag in your markdown to allow metalsmith to override parts of markdown : `[section=createDocument]`

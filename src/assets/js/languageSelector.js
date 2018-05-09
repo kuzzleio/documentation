@@ -56,6 +56,8 @@ var languageSelector = {
     }
     if (typeof GET['l'] != 'undefined' && this.LANGUAGES.indexOf(GET['l']) > -1) {
       return GET['l'];
+    } else if (this.getLanguageInUrl()) {
+      return this.getLanguageInUrl();
     } else if (this.getPreferedLanguage()) {
       return this.getPreferedLanguage();
     } else {
@@ -79,15 +81,25 @@ var languageSelector = {
   },
 
   setPreferedLanguage: function(language) {
-      if(language) {
-        sessionStorage.setItem('prefered_language', language)
-      }
+    if(language) {
+      sessionStorage.setItem('prefered_language', language)
+    }
   },
 
   getPreferedLanguage: function () {
     return (sessionStorage.getItem('prefered_language'))
       ? sessionStorage.getItem('prefered_language') 
       : false
+  },
+
+  getLanguageInUrl: function () {
+    var language = false;
+    this.LANGUAGES.forEach(function(el) {
+      if (document.location.indexOf('/' + el + '/') > -1){
+        language = el;
+      }
+    })
+    return language;
   },
 
   showSection: function (language) {
