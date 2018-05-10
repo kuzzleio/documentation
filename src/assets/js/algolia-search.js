@@ -21,25 +21,6 @@ var algoliaSearch = {
           self.setResults(content.hits);
         });
       })
-      .on('focus', function () {
-        $(this).toggleClass('active');
-        if ($(this).hasClass('active')) {
-          $('.md-search__icon').trigger('click');
-        }
-      })
-      .on('focusout', function () {
-        $(this).val('');
-        $(this).removeClass('active');
-      })
-
-    $('button.md-search__icon').on('click', function () {
-      $('.md-search-result__list').html('');
-    });
-
-    $('label.md-search__icon').on('click', function () {
-      $('.md-search__input').toggleClass('active');
-    });
-
   },
 
   setResults: function (hits) {
