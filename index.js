@@ -328,8 +328,7 @@ metalsmith
     uglifyOptions: {
       mangle: true,
       compress: {
-        unused: false,
-        warnings: true
+        unused: false
       }
     }
   }))
@@ -340,7 +339,7 @@ metalsmith
         files[file].contents = anchorsData['fileContent'];
         files[file]['anchors'] = anchorsData['anchors'];
       }
-    }
+    }<
     setImmediate(done);
   })
   .use(permalinks({
