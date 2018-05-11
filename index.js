@@ -339,7 +339,7 @@ metalsmith
         files[file].contents = anchorsData['fileContent'];
         files[file]['anchors'] = anchorsData['anchors'];
       }
-    }<
+    }
     setImmediate(done);
   })
   .use(permalinks({
