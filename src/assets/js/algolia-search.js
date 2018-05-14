@@ -5,26 +5,39 @@ $(document).ready(function () {
 var algoliaSearch = {
 
   init: function () {
-    var self = this
+    var self = this;
     var client = algoliasearch(algolia_projectId, algolia_publicKey);
     var index = client.initIndex('kuzzle-documentation');
+    var searchBar = $('.md-search__input');
+    var searchTrigger = $('#search');
+    var resultList = $('.md-search-result__list');
+    var resetButton = $('button.md-icon.md-search__icon');
 
-    $('.md-search__input')
-      .on('input', function () {
-        var query = $(this).val();
-        if (query.length < 3) {
-          $('.md-search-result__list').html('');
-          return;
-        }
-        index.search(query, function (err, content) {
-          if (err) { return; }
-          self.setResults(content.hits);
-        });
-      })
+    searchBar.on('input', function () {
+      var query = $(this).val();
+      if (query.length < 3) {
+        resultList.html('');
+        return;
+      }
+      index.search(query, function (err, content) {
+        if (err) { return; }
+        self.setResults(content.hits, resultList);
+      });
+    });
+    
+    searchTrigger.on('change', function () {
+      if ( !$(this).is(":checked") ) {
+        searchBar.val('');
+        resultList.html('');
+      }
+    });
+
+    resetButton.on('click', function() {
+      resultList.html('');
+    });
   },
 
-  setResults: function (hits) {
-    var container = $('.md-search-result__list');
+  setResults: function (hits, container) {
     var content = '';
     for (var k in hits) {
       var teaser = hits[k]._snippetResult.content.value
