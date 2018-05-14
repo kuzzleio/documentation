@@ -31,7 +31,7 @@ var languageSelector = {
     $(".select2-selection__arrow")
       .addClass("material-icons")
       .html("arrow_drop_down");
-
+ 
     $('#language-selector').on('change', function () {
       var language = $(this).val();
       self.setPreferedLanguage(language);

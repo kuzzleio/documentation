@@ -3,6 +3,7 @@ const fs = require('fs');
 const fsSync = require('fs-sync');
 const path = require('path');
 const marked = require('marked');
+const color = require('colors/safe');
 
 module.exports = {
 
@@ -18,6 +19,7 @@ module.exports = {
     const match = fileString.match(/(\[section=)[a-zA-Z0-9]+\]/g);
     var listSections = [];
     if (match) {
+      this.report(color.green.underline(filename.replace('/index.md', '').toUpperCase()))
       match.forEach(el => {
         let name = el.split('=')[1].slice(0, -1);
         let fullPath = path.join(__dirname, '../src/' + filename.split('/').slice(0, -1).join('/') + '/sections');
@@ -26,6 +28,7 @@ module.exports = {
         listSections.push(name);
 
         filenames.forEach(function (file) {
+          self.report(color.green('\t  => ') + file)
           if (file.split('.')[0].split('_')[0] === name) {
             let language = file.split('.')[0].split('_')[1];
             let fileContent = fsSync.read(fullPath + '/' + file);
@@ -41,6 +44,10 @@ module.exports = {
       sections: listSections.join(),
       fileContent: new Buffer(fileString)
     }
+  },
+
+  report(args) {
+    console.log(color.green('[override-sec]'), args);
   }
 
 }
