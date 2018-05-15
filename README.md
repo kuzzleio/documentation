@@ -54,13 +54,15 @@ description: <(optional) Text appearing under the section name in the section li
 ```
 
 ## Adding code example
-It's possible to add code example (for each languages supported for SDKs) in markdown, before doing that, you have to create a directory `code-example` in the section you are editing. In this directory put all your code example files.
+
+It's possible to add code example (for each languages supported for SDKs) in markdown, before doing that, you have to create a directory `code-example` at the same level of the page you are editing. In this directory put all your code example files.
 
 EX: `createDocument.js` / `createDocument.go` / `...`
 
 Now in markdown just add `[code-example=createDocument]` where you want. When metalsmith will build, the code-example tag will be remplaced by the code in each code example files.
 
 ## Override markdown
+
 Because each languages supported for SDKs can have specifications, It's possible to override markdown.
 Like code-example, create a subfolder `sections` and put markdown files in it.
 
