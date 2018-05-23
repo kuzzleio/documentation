@@ -324,8 +324,9 @@ metalsmith
   }))
   .use(uglifyjs({
     src: ["**/*.js", "!**/*.min.js"],
-    deleteSources: true,
+    deleteSources: false,
     uglifyOptions: {
+      files: ['assets/js/libs/jquery.min.js', 'assets/js/*.js'],
       mangle: true,
       compress: {
         unused: false
