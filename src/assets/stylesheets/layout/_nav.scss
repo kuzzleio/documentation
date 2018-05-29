@@ -90,6 +90,10 @@
     text-overflow: ellipsis;
     cursor: pointer;
     overflow: hidden;
+    
+    &[data-md-state="blur"] {
+      color: pink;
+    }
 
     // Icon
     &::after {
@@ -295,7 +299,7 @@
         position: relative;
         margin-top: 0;
         padding: 0.1rem 1.6rem;
-
+        
         // Rotate icon
         &::after {
           position: absolute;

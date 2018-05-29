@@ -435,6 +435,7 @@ if (options.dev.enabled) {
           "src/assets/**/*.js": "**/*",
           "src/**/*.md": "**/*",
           "src/templates/**/*": "**/*",
+          "helpers/**/*": "**/*",
         },
         livereload: true
       })
