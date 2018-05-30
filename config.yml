@@ -1,0 +1,10 @@
+code_example:
+  snippet_folder_name: code-example
+  section_folder_name: sections
+languages:
+  js:
+    fullname: javascript
+    ext: js
+  go:
+    fullname: go
+    ext: go

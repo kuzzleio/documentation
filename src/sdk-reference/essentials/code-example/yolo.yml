@@ -1,0 +1,7 @@
+name: Delete document
+description: It use delete document method with SDK
+hooks:
+  before: cleanUser.js
+  after: after.js
+template: general
+expect: document deleted
