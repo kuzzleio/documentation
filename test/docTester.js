@@ -1,49 +1,64 @@
 const read = require('read-yaml')
-const fs = require('fs-sync')
+const fsSync = require('fs-sync')
+const fs = require('fs')
 const path = require('path')
 const nexpect = require('nexpect')
 const color = require('colors/safe')
 const prettier = require('prettier')
+const getConfig = require('../helpers/getConfig')
 
 var docTester = {
   
   testScript: path.join(__dirname, '../src/sdk-reference/essentials/code-example/yolo.yml'),
-  LANGUAGES: [
-    'js'
-  ],
+  config: getConfig.get(),
   TEMPLATE_FOLDER: path.join(__dirname, './templates/'),
   SAVE_FOLDER: path.join(__dirname, './bin/failed/'),
   BIN_FOLDER: path.join(__dirname, './bin/'),
+  SNIPPETS_FOLDER_NAME: path.join(__dirname, './bin/'),
 
-  process: function () {
-    
-    let config = read.sync(this.testScript)
-    let testPath = path.join(__dirname, '../src/sdk-reference/essentials/code-example/yolo')
-    this.runOneTest(config, testPath, 'js')
+  process: function (language) {
+    let test = read.sync(this.testScript),
+      testPath = path.join(__dirname, '../src/sdk-reference/essentials/code-example/yolo')
+      
+    if (this.checkLanguageExist(language)) {
+      this.runOneTest(test, testPath, language)
+    } else {
+      console.log('Language specified in args doesn\'t exist in config')
+    }
   },
-
-  runOneTest: function (config, path, language) {
-    if (config.hooks.before) this.runBeforeScript(config.hooks.before)
+  
+  checkLanguageExist: function (language) {
+    return (this.config.languages[language] === undefined)
+      ? false 
+      : true
+  },
+  
+  getAllTests: function (language) {
+    
+  },
+  
+  runOneTest: function (test, path, language) {
+    if (test.hooks.before) this.runBeforeScript(test.hooks.before)
     let binFile = this.injectSnippet(
-      this.TEMPLATE_FOLDER + config.template + '.tpl.' + language,
-      path + '.' + language,
-      'js'
+      this.TEMPLATE_FOLDER + test.template + '.tpl.' + language,
+      path + '.' + this.config.languages[language].ext,
+      language
     )
     if (binFile) {
       let testSuccess = true
-      this.runExpect(binFile, config.expect)
+      this.runExpect(binFile, test.expect)
       .catch((err) => {
         testSuccess = false
-        this.saveOnFail(binFile, config.name, language)
-        this.reportNOk(config, err)
+        this.saveOnFail(binFile, test.name, language)
+        this.reportNOk(test, err)
       })
       .then(() => {
         if(testSuccess) {
-          this.reportOk(config)
+          this.reportOk(test)
         }
       })
     } else {
-      this.reportNOk(config, false)
+      this.reportNOk(test, false)
     }
   },
 
@@ -69,45 +84,45 @@ var docTester = {
 
   },
 
-  readConfig: function (filename) {
+  readConfigTest: function (filename) {
     return read.sync(filename)
   },
 
   injectSnippet: function (template, snippet, language) {
     //first check file exist
-    if (!fs.exists(template)) {
+    if (!fsSync.exists(template)) {
       return false
     }
-    if (!fs.exists(snippet)) {
+    if (!fsSync.exists(snippet)) {
       return false
     }
     //get file content
-    let snippetContent = fs.read(snippet)
-    let templateContent = fs.read(template)
+    let snippetContent = fsSync.read(snippet),
+      templateContent = fsSync.read(template)
     //replace snippet in template
     if (templateContent.match(/(\[snippet-code])/g)) {
-      let newContent = templateContent.replace(/(\[snippet-code])/g, snippetContent)
+      let newContent = templateContent.replace(/(\[snippet-code])/g, snippetContent),
+        binPath = this.BIN_FOLDER + 'bin.' + language
       newContent = prettier.format(newContent)
-      let binPath = this.BIN_FOLDER + 'bin.' + language
-      fs.write(binPath, newContent)
-      if (fs.exists(binPath)) {
+      fsSync.write(binPath, newContent)
+      if (fsSync.exists(binPath)) {
         return binPath
       }
     } 
     return false
   },
 
-  reportOk: function (config) {
+  reportOk: function (test) {
     console.log(
-      color.green("✔"), color.green(config.name + ': ' + config.description)
+      color.green("✔"), color.green(test.name + ': ' + test.description)
     )
   },
 
-  reportNOk: function (config, err) {
-    console.log(color.red("✗"), color.red(config.name + ': ' + config.description + ' '))
+  reportNOk: function (test, err) {
+    console.log(color.red("✗"), color.red(test.name + ': ' + test.description + ' '))
     if(err) {
       console.log(color.red('    ' + err.code))
-      console.log(color.red('    EXPECTED :') , config.expect)
+      console.log(color.red('    EXPECTED :') , test.expect)
       console.log(color.red('    GOT      :' ) , err.actual)
     }
   },
@@ -115,10 +130,14 @@ var docTester = {
   saveOnFail: function (binFile, testName, language) {
     testName = testName.replace(/ /g, '-').toLowerCase()
     let dest = this.SAVE_FOLDER + testName + '.' + language
-    fs.copy(binFile, this.SAVE_FOLDER + testName + '.' + language)
-  }
-
+    fsSync.copy(binFile, this.SAVE_FOLDER + testName + '.' + language)
+  },
 
 }
 
-docTester.process()
+if (process.argv.indexOf('-L') > -1) {
+  const language = process.argv[process.argv.indexOf('-L') + 1]
+  docTester.process(language)
+} else {
+  console.log('You have to define a language with -L args')
+}
