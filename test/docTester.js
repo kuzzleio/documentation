@@ -4,7 +4,8 @@ const fs = require('fs')
 const path = require('path')
 const nexpect = require('nexpect')
 const color = require('colors/safe')
-const prettier = require('prettier')
+const indentString = require('indent-string')
+const lineReader = require('line-reader')
 const getConfig = require('../helpers/getConfig')
 
 var docTester = {
@@ -98,18 +99,44 @@ var docTester = {
     }
     //get file content
     let snippetContent = fsSync.read(snippet),
-      templateContent = fsSync.read(template)
+      templateContent = fsSync.read(template),
+      indentation = this.getIndentation(template)
+    console.log(indentation)
     //replace snippet in template
     if (templateContent.match(/(\[snippet-code])/g)) {
-      let newContent = templateContent.replace(/(\[snippet-code])/g, snippetContent),
+      let 
+        newContent = templateContent.replace(/(\[snippet-code])/g, this.indentSnippet(snippetContent, indentation)),
         binPath = this.BIN_FOLDER + 'bin.' + language
-      newContent = prettier.format(newContent)
       fsSync.write(binPath, newContent)
       if (fsSync.exists(binPath)) {
         return binPath
       }
     } 
     return false
+  },
+  
+  indentSnippet: function(snippet, indentation) {
+    return indentString(snippet, 4);
+  },
+  
+  getIndentation: function(template) {
+    let indentCount = 0
+    lineReader.eachLine(template, function (line, last) {
+      if (line.match(/(\[snippet-code])/g)) {
+        return line.match(/^\s*/)[0].length
+        // indentCount = line.match(/^\s*/)[0].length
+      }
+    })
+    // return indentCount
+    // return new Promise((resolve, reject) => {
+    //   lineReader.eachLine(template, function (line) {
+    //     if (line.match(/(\[snippet-code])/g)) {
+    //       resolve(line.match(/^\s*/)[0].length)
+    //     }
+    //   }).then(function (err) {
+    //     if (err) reject(err)
+    //   })
+    // })
   },
 
   reportOk: function (test) {
