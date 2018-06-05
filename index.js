@@ -38,7 +38,8 @@ const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const open = require('open');
 const color = require('colors/safe');
-
+const config = require('./helpers/getConfig').get();
+const languages = require('./helpers/getConfig').getLanguages(config);
 const versionsConfig = require('./versions.config.json');
 
 const ok = color.green("✔")
@@ -237,7 +238,8 @@ let metalsmith = Metalsmith(__dirname)
     algolia_publicKey: options.algolia.publicKey,
     algolia_index: options.algolia.index,
     versions_config: versionsConfig,
-    is_dev: options.dev.enabled
+    is_dev: options.dev.enabled,
+    languages: languages.join()
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...

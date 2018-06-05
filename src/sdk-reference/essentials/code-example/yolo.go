@@ -1,3 +1,4 @@
+// @todo
 func main() {
     conn := websocket.NewWebSocket("localhost:7512", nil)
     k, _ := kuzzle.NewKuzzle(conn, nil)

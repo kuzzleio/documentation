@@ -4,4 +4,4 @@ hooks:
   before: cleanUser.js
   after: after.js
 template: general
-expect: document deleted
+expect: yeah

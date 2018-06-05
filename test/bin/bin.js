@@ -1,15 +1,17 @@
-const Kuzzle = require('kuzzle-sdk');
-let kuzzle = new Kuzzle('kuzzleHost');
+// const Kuzzle = require('kuzzle-sdk');
+// let kuzzle = new Kuzzle('kuzzleHost');
 
  
-  return kuzzle.connect()
-    .then(kuzzle => {
-            var document = kuzzle.collection('collection', 'index').document('id');
+//   return kuzzle.connect()
+//     .then(kuzzle => {
+//         [snipppet-code]   
+//         console.log("test ok")
+//     });
 
-    document.deletePromise().then(result => {
-        console.log('document successfully deleted');
-    });
+// var document = kuzzle.collection('collection', 'index').document('id');
 
-   
-        console.log("test ok")
-    });
+// document.deletePromise().then(result => {
+//     console.log('document successfully deleted');
+// });
+
+console.log('yeah')
