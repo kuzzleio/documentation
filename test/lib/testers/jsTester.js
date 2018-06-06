@@ -5,7 +5,7 @@ const nexpect = require('nexpect');
 module.exports = class JsTester extends Tester{
   constructor() {
     super();
-    let lintConfig = path.join(__dirname, '../../linter-config/eslint.json');
+    let lintConfig = path.join(__dirname, '../../linters/eslint.json');
     this.language = 'js';
     this.runCommand = 'node';
     this.lintCommand = `eslint -c ${lintConfig}`;
