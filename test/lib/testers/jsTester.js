@@ -14,7 +14,11 @@ module.exports = class JsTester extends Tester{
   
   /**
    * Override method because eslint 
-   * doesn't return value on success 
+   * return nothing on success
+   *  
+   * - if eslint success : wait() return error because nothing append and process exit : test passed
+   * - if eslint fail: we get something in stdOut, so wait() continue waiting, so no error : test failed
+   * (O.M.G.W.T.F)
    */
   lintExpect(binFile) {
     return new Promise((resolve, reject) => {
