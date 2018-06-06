@@ -37,7 +37,6 @@ class FileProcess {
       
       snippetContent = this.indentSnippet(snippetContent, indentationCount)
       
-       
       let
         newContent = templateContent.replace(/(\[snippet-code])/g, snippetContent),
         binPath = BIN_FOLDER + 'bin.' + language;
@@ -55,8 +54,6 @@ class FileProcess {
     let firstline = snippet.split('\n')[0];
     snippet = snippet.replace(firstline, '');
     return firstline + indentString(snippet,indentation);
-    // return indentString(snippet.trim(), indentation);
-    // return snippet.replace(/^\s+|\s+$/gm, '');
   }
   
   getIndentation (template) {

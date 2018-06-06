@@ -1,0 +1,7 @@
+name: foo
+description: it's FOOOOOO
+hooks:
+  before: cleanUser.js
+  after: after.js
+template: default
+expect: foo
