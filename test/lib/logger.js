@@ -14,5 +14,13 @@ module.exports = {
       console.log(color.red('    EXPECTED :'), test.expect)
       console.log(color.red('    GOT      :'), err.actual)
     }
+  },
+  
+  reportLintNOk: function (test, err) {
+    console.log(color.red("✗"), color.red(test.name + ': ' + test.description + ' '))
+    if (err) {
+      console.log(color.red('    ' + err.code))
+      console.log(color.red('    GOT      :'), err.actual)
+    }
   }  
 }
