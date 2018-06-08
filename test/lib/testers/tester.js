@@ -19,14 +19,12 @@ module.exports = class Tester {
         .catch((err) => {
           testSuccess = false;
           fileProcess.saveOnFail(binFile, test.name, this.language);
-          console.log('1')
           logger.reportLintNOk(test, err);
         })
         .then(() => {
           if (testSuccess) {
             this.runExpect(binFile, test.expect)
               .catch((err) => {
-                console.log('2')
                 testSuccess = false;
                 fileProcess.saveOnFail(binFile, test.name, this.language);
                 logger.reportNOk(test, err);
@@ -44,7 +42,6 @@ module.exports = class Tester {
   }
 
   runExpect(binFile, expected) {
-    console.log('toto')
     return new Promise((resolve, reject) => {
       nexpect.spawn(`${this.runCommand} ${binFile}`)
         .wait(expected)
@@ -60,7 +57,6 @@ module.exports = class Tester {
 
   lintExpect(binFile) {
     return new Promise((resolve, reject) => {
-      resolve();
       nexpect.spawn(`${this.lintCommand} ${binFile}`)
         .wait(this.expectedLintSuccess)
         .run((err) => {
@@ -76,7 +72,7 @@ module.exports = class Tester {
   runBeforeScript() {
 
   }
-
+  
   runAfterScript() {
 
   }

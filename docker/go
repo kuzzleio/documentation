@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates \
   && rm -rf /var/lib/apt/lists/*
   
-RUN mkdir /nodejs && curl http://nodejs.org/dist/v8.9.0/node-v8.9.0-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1
+RUN mkdir /nodejs && curl http://nodejs.org/dist/v8.9.0/node-v8.9.0-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1 
+RUN mkdir -p /go/src/github.com/kuzzleio/go-test
 
 ENV PATH $PATH:/nodejs/bin
 
@@ -53,6 +54,8 @@ RUN set -eux; \
 ENV GOPATH /go
 ENV GOBIN /go/bin
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
+
+RUN go get github.com/golang/lint/golint
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
