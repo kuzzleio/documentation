@@ -3,11 +3,11 @@ const nexpect = require('nexpect');
 const logger = require('../logger')
 
 module.exports = class Tester {
-  
+
   constructor () {
-    
+
   }
-  
+
   runOneTest(test, snippetPath) {
     if (test.hooks.before) this.runBeforeScript(test.hooks.before);
 
@@ -44,6 +44,7 @@ module.exports = class Tester {
   }
 
   runExpect(binFile, expected) {
+    console.log('toto')
     return new Promise((resolve, reject) => {
       nexpect.spawn(`${this.runCommand} ${binFile}`)
         .wait(expected)
@@ -56,7 +57,7 @@ module.exports = class Tester {
         })
     })
   }
-  
+
   lintExpect(binFile) {
     return new Promise((resolve, reject) => {
       resolve();

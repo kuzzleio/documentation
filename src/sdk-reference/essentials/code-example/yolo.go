@@ -1,1 +1,1 @@
-fmt.Print('yeah')
+fmt.Println("yeah")
