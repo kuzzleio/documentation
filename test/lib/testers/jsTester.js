@@ -29,7 +29,7 @@ module.exports = class JsTester extends Tester{
             resolve();
           } else {
             let err = {
-              code: 'ESLINT',
+              code: 'LINTER ERROR',
               actual: outpout.join()
             }
             reject(err);

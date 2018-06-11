@@ -16,7 +16,7 @@ module.exports = class GoTester extends Tester {
     return new Promise((resolve, reject) => {
       nexpect.spawn(this.runCommand)
         .wait(expected)
-        .run((err) => {
+        .run((err, outpout, exit) => {
           if (err) {
             reject(err);
           } else {
@@ -27,17 +27,15 @@ module.exports = class GoTester extends Tester {
   }
   
   lintExpect(binFile) {
-    console.log('lint')
     return new Promise((resolve, reject) => {
-      nexpect.spawn(this.lintCommand)
+      nexpect.spawn(this.lintCommand, { stream: 'stderr' })
         .wait('')
         .run((err, outpout, exit) => {
           if (err) {
             resolve();
           } else {
-            console.log(outpout)
             let err = {
-              code: 'ESLINT',
+              code: 'LINTER ERROR',
               actual: outpout.join()
             }
             reject(err);

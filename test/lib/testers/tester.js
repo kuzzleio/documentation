@@ -68,6 +68,10 @@ module.exports = class Tester {
         })
     })
   }
+  
+  checkTodo(binfile) {
+    
+  }
 
   runBeforeScript() {
 

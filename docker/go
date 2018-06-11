@@ -55,10 +55,10 @@ ENV GOPATH /go
 ENV GOBIN /go/bin
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
-RUN go get github.com/golang/lint/golint
+RUN go get github.com/golang/lint/golint && go get github.com/GeertJohan/fgt
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
 WORKDIR /app
 
-ENTRYPOINT ["sh", "docker/entrypoints/go.sh"]
+# ENTRYPOINT ["sh", "docker/entrypoints/go.sh"]
