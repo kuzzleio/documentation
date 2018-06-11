@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # - docker build -t go-tester -f /app/docker/go .
+      - sysctl -w vm.max_map_count=262144
+  build:
+    commands:
+      - docker run --rm --privileged -it --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)"/test/bin,target=/go/src/github.com/kuzzleio/go-test go-tester
+  post_build:
+    commands:
+      - if [[ "$CODEBUILD_BUILD_SUCCEEDING" == "0" ]]; then exit 1; fi;

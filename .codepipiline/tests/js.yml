@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - docker build -t js-tester -f /app/docker/js .
+      - sysctl -w vm.max_map_count=262144
+  build:
+    commands:
+      - docker run --rm --privileged -it --mount type=bind,source="$(pwd)",target=/app js-tester
+  post_build:
+    commands:
+      - if [[ "$CODEBUILD_BUILD_SUCCEEDING" == "0" ]]; then exit 1; fi;
