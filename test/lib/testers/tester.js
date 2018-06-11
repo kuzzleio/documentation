@@ -1,6 +1,7 @@
 const fileProcess = require('../fileProcess');
 const nexpect = require('nexpect');
-const logger = require('../logger')
+const fsSync = require('fs-sync');
+const logger = require('../logger');
 
 module.exports = class Tester {
 
@@ -13,7 +14,7 @@ module.exports = class Tester {
 
     let binFile = fileProcess.injectSnippet(test, snippetPath, this.language);
 
-    if (binFile) {
+    if (binFile && !this.isTodo(binFile) && !this.isWontdo(binFile)) {
       let testSuccess = true;
       this.lintExpect(binFile)
         .catch((err) => {
@@ -36,8 +37,6 @@ module.exports = class Tester {
               });
           }
         });
-    } else {
-      logger.reportNOk(test, false);
     }
   }
 
@@ -69,8 +68,16 @@ module.exports = class Tester {
     })
   }
   
-  checkTodo(binfile) {
-    
+  isTodo(binfile) {
+    let fileContent = fsSync.read(binfile);
+    if (fileContent.match(/(\@todo)/g)) return true;
+    return false;
+  }
+  
+  isWontdo(binfile) {
+    let fileContent = fsSync.read(binfile);
+    if (fileContent.match(/(\@wontdo)/g)) return true;
+    return false;
   }
 
   runBeforeScript() {
