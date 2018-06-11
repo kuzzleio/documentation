@@ -21,6 +21,7 @@ module.exports = class Tester {
           testSuccess = false;
           fileProcess.saveOnFail(binFile, test.name, this.language);
           logger.reportLintNOk(test, err);
+          process.exit(1);
         })
         .then(() => {
           if (testSuccess) {
@@ -29,6 +30,7 @@ module.exports = class Tester {
                 testSuccess = false;
                 fileProcess.saveOnFail(binFile, test.name, this.language);
                 logger.reportNOk(test, err);
+                process.exit(1);
               })
               .then(() => {
                 if (testSuccess) {
