@@ -8,6 +8,3 @@ phases:
   build:
     commands:
       - docker run --rm --privileged -it --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)"/test/bin,target=/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go
-  post_build:
-    commands:
-      - if [ "$CODEBUILD_BUILD_SUCCEEDING" == "0" ]; then exit 1; fi;
