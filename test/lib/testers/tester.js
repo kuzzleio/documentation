@@ -1,7 +1,9 @@
 const fileProcess = require('../fileProcess');
 const nexpect = require('nexpect');
 const fsSync = require('fs-sync');
+const fs = require('fs');
 const logger = require('../logger');
+const config = require('../../../helpers/getConfig').get();
 
 module.exports = class Tester {
 
@@ -11,34 +13,34 @@ module.exports = class Tester {
 
   runOneTest(test, snippetPath) {
     if (test.hooks.before) this.runBeforeScript(test.hooks.before);
+    if (!this.isTodo(snippetPath) && !this.isWontdo(snippetPath)) {
+      let binFile = fileProcess.injectSnippet(test, snippetPath, this.language);
 
-    let binFile = fileProcess.injectSnippet(test, snippetPath, this.language);
-
-    if (binFile && !this.isTodo(binFile) && !this.isWontdo(binFile)) {
-      let testSuccess = true;
-      this.lintExpect(binFile)
-        .catch((err) => {
-          testSuccess = false;
-          fileProcess.saveOnFail(binFile, test.name, this.language);
-          logger.reportLintNOk(test, err);
-          process.exit(1);
-        })
-        .then(() => {
-          if (testSuccess) {
-            this.runExpect(binFile, test.expect)
-              .catch((err) => {
-                testSuccess = false;
-                fileProcess.saveOnFail(binFile, test.name, this.language);
-                logger.reportNOk(test, err);
-                process.exit(1);
-              })
-              .then(() => {
-                if (testSuccess) {
-                  logger.reportOk(test);
-                }
-              });
-          }
-        });
+      if (binFile) {
+        let testSuccess = true;
+        this.lintExpect(binFile)
+          .catch((err) => {
+            testSuccess = false;
+            fileProcess.saveOnFail(binFile, test.name, this.language);
+            logger.reportLintNOk(test, err);
+          })
+          .then(() => {
+            if (testSuccess) {
+              this.runExpect(binFile, test.expect)
+                .catch((err) => {
+                  testSuccess = false;
+                  fileProcess.saveOnFail(binFile, test.name, this.language);
+                  logger.reportNOk(test, err);
+                })
+                .then(() => {
+                  if (testSuccess) {
+                    logger.reportOk(test);
+                  }
+                });
+            }
+          });
+        
+      }
     }
   }
 
@@ -46,12 +48,20 @@ module.exports = class Tester {
     return new Promise((resolve, reject) => {
       nexpect.spawn(`${this.runCommand} ${binFile}`)
         .wait(expected)
-        .run((err) => {
+        .run((err, outpout) => {
           if (err) {
             reject(err);
-          } else {
-            resolve();
+            return;
           }
+          if(outpout.includes(expected)) {
+            resolve();
+            return;
+          }
+          err = {
+            code: 'ERR_ASSERTION',
+            actual: outpout[0]
+          }
+          reject(err);
         })
     })
   }
@@ -70,14 +80,18 @@ module.exports = class Tester {
     })
   }
   
-  isTodo(binfile) {
-    let fileContent = fsSync.read(binfile);
+  isTodo(snippetPath) {
+    let 
+      snippet = snippetPath + '.' + config.languages[this.language].ext,
+      fileContent = fsSync.read(snippet);
     if (fileContent.match(/(\@todo)/g)) return true;
     return false;
   }
   
-  isWontdo(binfile) {
-    let fileContent = fsSync.read(binfile);
+  isWontdo(snippetPath) {
+    let
+      snippet = snippetPath + '.' + config.languages[this.language].ext,
+      fileContent = fsSync.read(snippet);
     if (fileContent.match(/(\@wontdo)/g)) return true;
     return false;
   }

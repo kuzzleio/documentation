@@ -7,14 +7,15 @@ module.exports = class GoTester extends Tester {
     super();
     let binPath = path.join(__dirname, '../../bin')
     this.language = 'go';
-    this.runCommand = 'go run /go/src/github.com/kuzzleio/go-test/bin.go';
-    this.lintCommand = `golint /go/src/github.com/kuzzleio/go-test/bin.go`;
+    this.runCommand = 'go run /go/src/github.com/kuzzleio/go-test/';
+    this.lintCommand = `golint /go/src/github.com/kuzzleio/go-test/`;
     this.indentation = 'space'; //tab or space
   }
 
   runExpect(binFile, expected) {
+    let fileName = binFile.split('/').pop();
     return new Promise((resolve, reject) => {
-      nexpect.spawn(this.runCommand)
+      nexpect.spawn(this.runCommand + fileName)
         .wait(expected)
         .run((err, outpout, exit) => {
           if (err) {
@@ -27,8 +28,9 @@ module.exports = class GoTester extends Tester {
   }
   
   lintExpect(binFile) {
+    let fileName = binFile.split('/').pop();
     return new Promise((resolve, reject) => {
-      nexpect.spawn(this.lintCommand, { stream: 'stderr' })
+      nexpect.spawn(this.lintCommand + fileName, { stream: 'stderr' })
         .wait('')
         .run((err, outpout, exit) => {
           if (err) {

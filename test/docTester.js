@@ -21,12 +21,13 @@ class DocTester {
   process() {
     let 
       testsPath = path.join(__dirname, '../src/sdk-reference/'),
-      tests = this.getAllTests(testsPath, 'yml');
+      tests = this.getAllTests(testsPath, 'yml'),
+      successAll = false;
     
     tests.forEach((file) => {
       let
         test = read.sync(file),
-        snippetPath = file.split('.yml')[0]
+        snippetPath = file.split('.yml')[0];
       
       this.tester.runOneTest(test, snippetPath);
     });

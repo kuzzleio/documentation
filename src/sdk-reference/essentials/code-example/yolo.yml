@@ -1,4 +1,4 @@
-name: Delete document
+name: yolo
 description: It use delete document method with SDK
 hooks:
   before: cleanUser.js

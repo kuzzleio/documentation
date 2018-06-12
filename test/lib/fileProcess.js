@@ -1,8 +1,8 @@
 const fsSync = require('fs-sync');
 const fs = require('fs');
 const path = require('path');
-const lineReader = require('line-reader');
 const indentString = require('indent-string');
+const sanitize = require("sanitize-filename");
 const config = require('../../helpers/getConfig').get();
 
 
@@ -31,7 +31,7 @@ class FileProcess {
       snippetContent = fsSync.read(snippet),
       templateContent = fsSync.read(template);
     
-      //replace snippet in template
+    //replace snippet in template
     if (templateContent.match(/(\[snippet-code])/g)) {
       let indentationCount = this.getIndentation(templateContent);
       
@@ -39,7 +39,7 @@ class FileProcess {
       
       let
         newContent = templateContent.replace(/(\[snippet-code])/g, snippetContent),
-        binPath = BIN_FOLDER + 'bin.' + language;
+        binPath = BIN_FOLDER + this.sanitizeFileName(test.name) + '.' + language;
         
       fsSync.write(binPath, newContent);
       
@@ -61,17 +61,24 @@ class FileProcess {
     return matches[0].match(/^\s*/)[0].length;
   }
   
-  isTodoAnnotation (snippet) {
-    if (snippet.match(/(\@todo)/g)) {
-      return true;
-    }
-    return false;
-  }
-  
   saveOnFail(binFile, testName, language) {
-    testName = testName.replace(/ /g, '-').toLowerCase();
+    testName = this.sanitizeFileName(testName)
     let dest = SAVE_FOLDER + testName + '.' + language;
     fsSync.copy(binFile, dest);
+  }
+  
+  removeBin(binFile) {
+    if(binFile) {
+      try {
+        fs.unlinkSync(binFile)
+      } catch (error) {
+        
+      }
+    }
+  }
+  
+  sanitizeFileName(fileName) {
+    return sanitize(fileName).replace(' ', '_').toLowerCase();
   }
   
 }

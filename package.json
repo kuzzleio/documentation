@@ -52,6 +52,7 @@
         "open": "0.0.5",
         "prettier": "^1.12.1",
         "read-yaml": "^1.1.0",
+        "sanitize-filename": "^1.6.1",
         "striptags": "^3.1.0",
         "uglify-js": "^3.1.2",
         "wordcount": "^1.1.1"
