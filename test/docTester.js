@@ -1,8 +1,6 @@
 const read = require('read-yaml');
 const path = require('path');
 const fs = require('fs');
-const fileProcess = require('./lib/fileProcess');
-const logger = require('./lib/logger');
 const config = require('../helpers/getConfig').get();
 
 class DocTester {
@@ -22,15 +20,41 @@ class DocTester {
     let 
       testsPath = path.join(__dirname, '../src/sdk-reference/'),
       tests = this.getAllTests(testsPath, 'yml'),
-      successAll = false;
+      count = 0,
+      allResults = [];
     
-    tests.forEach((file) => {
+    for(let i = 0; i < tests.length; ++i) {
+      // tests.forEach((file) => {
       let
+        file = tests[i],
         test = read.sync(file),
         snippetPath = file.split('.yml')[0];
       
-      this.tester.runOneTest(test, snippetPath);
-    });
+      this.tester.runOneTest(test, snippetPath)
+        .then(()=>{
+          allResults.push(true);
+          count++;
+          if (count == tests.length) {
+            if (allResults.includes(false)) {
+              process.exit(1);
+            } else {
+              process.exit(0);
+            }
+          }
+        })
+        .catch(()=>{
+          allResults.push(false);
+          count++;
+          if (count == tests.length) {
+            if (allResults.includes(false)) {
+              process.exit(1);
+            } else {
+              process.exit(0);
+            }
+          }
+        })
+    }
+    // console.log(successAll)
   }
   
   checkLanguageExist(language) {
@@ -71,7 +95,8 @@ if (process.argv.indexOf('-L') > -1) {
     language = process.argv[process.argv.indexOf('-L') + 1],
     docTester = new DocTester(language);
 
-  docTester.process(language);
+  let success = docTester.process(language);
+  
 } else {
   console.log('You have to define a language with -L args');
   process.exit(1);

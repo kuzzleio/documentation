@@ -12,36 +12,44 @@ module.exports = class Tester {
   }
 
   runOneTest(test, snippetPath) {
-    if (test.hooks.before) this.runBeforeScript(test.hooks.before);
-    if (!this.isTodo(snippetPath) && !this.isWontdo(snippetPath)) {
-      let binFile = fileProcess.injectSnippet(test, snippetPath, this.language);
+    return new Promise((resolve, reject) => {
+      if (test.hooks.before) this.runBeforeScript(test.hooks.before);
+      if (!this.isTodo(snippetPath) && !this.isWontdo(snippetPath)) {
+        let binFile = fileProcess.injectSnippet(test, snippetPath, this.language);
 
-      if (binFile) {
-        let testSuccess = true;
-        this.lintExpect(binFile)
-          .catch((err) => {
-            testSuccess = false;
-            fileProcess.saveOnFail(binFile, test.name, this.language);
-            logger.reportLintNOk(test, err);
-          })
-          .then(() => {
-            if (testSuccess) {
-              this.runExpect(binFile, test.expect)
-                .catch((err) => {
-                  testSuccess = false;
-                  fileProcess.saveOnFail(binFile, test.name, this.language);
-                  logger.reportNOk(test, err);
-                })
-                .then(() => {
-                  if (testSuccess) {
-                    logger.reportOk(test);
-                  }
-                });
-            }
-          });
-        
+        if (binFile) {
+          let testSuccess = true;
+          this.lintExpect(binFile)
+            .catch((err) => {
+              testSuccess = false;
+              fileProcess.saveOnFail(binFile, test.name, this.language);
+              logger.reportLintNOk(test, err);
+              reject();
+              return;
+            })
+            .then(() => {
+              if (testSuccess) {
+                this.runExpect(binFile, test.expect)
+                  .catch((err) => {
+                    testSuccess = false;
+                    fileProcess.saveOnFail(binFile, test.name, this.language);
+                    logger.reportNOk(test, err);
+                    reject();
+                    return;
+                  })
+                  .then(() => {
+                    if (testSuccess) {
+                      logger.reportOk(test);
+                      resolve();
+                      return;
+                    }
+                  });
+              }
+            });
+          
+        }
       }
-    }
+    });
   }
 
   runExpect(binFile, expected) {
