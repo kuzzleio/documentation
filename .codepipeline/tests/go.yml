@@ -7,4 +7,4 @@ phases:
       - sysctl -w vm.max_map_count=262144
   build:
     commands:
-      - docker run -a stdout -a stderr --rm --privileged -it --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)"/test/bin,target=/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go
+      - docker run -a stdout -a stderr --rm --privileged --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)"/test/bin,target=/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go

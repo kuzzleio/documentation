@@ -7,4 +7,4 @@ phases:
       - sysctl -w vm.max_map_count=262144
   build:
     commands:
-      - docker run --rm --privileged -it --mount type=bind,source="$(pwd)",target=/app kuzzleio/documentation-v2:js
+      - docker run -a stdout -a stderr --rm --privileged --mount type=bind,source="$(pwd)",target=/app kuzzleio/documentation-v2:js
