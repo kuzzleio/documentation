@@ -24,7 +24,6 @@ class DocTester {
       allResults = [];
     
     for(let i = 0; i < tests.length; ++i) {
-      // tests.forEach((file) => {
       let
         file = tests[i],
         test = read.sync(file),
@@ -34,27 +33,24 @@ class DocTester {
         .then(()=>{
           allResults.push(true);
           count++;
-          if (count == tests.length) {
-            if (allResults.includes(false)) {
-              process.exit(1);
-            } else {
-              process.exit(0);
-            }
-          }
+          this.handleTestsFinish(count, test.length, allResults);
         })
         .catch(()=>{
           allResults.push(false);
           count++;
-          if (count == tests.length) {
-            if (allResults.includes(false)) {
-              process.exit(1);
-            } else {
-              process.exit(0);
-            }
-          }
+          this.handleTestsFinish(count, test.length, allResults);
         })
     }
-    // console.log(successAll)
+  }
+  
+  handleTestsFinish(count, length, allResults) {
+    if (count == length) {
+      if (allResults.includes(false)) {
+        process.exit(1);
+      } else {
+        process.exit(0);
+      }
+    }
   }
   
   checkLanguageExist(language) {
