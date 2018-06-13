@@ -33,12 +33,12 @@ class DocTester {
         .then(()=>{
           allResults.push(true);
           count++;
-          this.handleTestsFinish(count, test.length, allResults);
+          this.handleTestsFinish(count, tests.length, allResults);
         })
         .catch(()=>{
           allResults.push(false);
           count++;
-          this.handleTestsFinish(count, test.length, allResults);
+          this.handleTestsFinish(count, tests.length, allResults);
         })
     }
   }
@@ -46,10 +46,8 @@ class DocTester {
   handleTestsFinish(count, length, allResults) {
     if (count == length) {
       if (allResults.includes(false)) {
-        console.log('tests failed');
         process.exit(1);
       } else {
-        console.log('tests success');
         process.exit(0);
       }
     }
