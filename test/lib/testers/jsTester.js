@@ -34,7 +34,7 @@ module.exports = class JsTester extends Tester{
             }
             reject(err);
           }
-        })
-    })
+        });
+    });
   }
 };

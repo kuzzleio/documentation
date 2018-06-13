@@ -70,8 +70,8 @@ module.exports = class Tester {
             actual: outpout[0]
           }
           reject(err);
-        })
-    })
+        });
+    });
   }
 
   lintExpect(binFile) {
@@ -84,8 +84,8 @@ module.exports = class Tester {
           } else {
             resolve();
           }
-        })
-    })
+        });
+    });
   }
   
   isTodo(snippetPath) {

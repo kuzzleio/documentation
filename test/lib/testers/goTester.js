@@ -17,14 +17,22 @@ module.exports = class GoTester extends Tester {
     return new Promise((resolve, reject) => {
       nexpect.spawn(this.runCommand + fileName)
         .wait(expected)
-        .run((err, outpout, exit) => {
+        .run((err, outpout) => {
           if (err) {
             reject(err);
-          } else {
-            resolve();
+            return;
           }
-        })
-    })
+          if (outpout.includes(expected)) {
+            resolve();
+            return;
+          }
+          err = {
+            code: 'ERR_ASSERTION',
+            actual: outpout[0]
+          }
+          reject(err);
+        });
+    });
   }
   
   lintExpect(binFile) {
@@ -42,8 +50,8 @@ module.exports = class GoTester extends Tester {
             }
             reject(err);
           }
-        })
-    })
+        });
+    });
   }
 
 };

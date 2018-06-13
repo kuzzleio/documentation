@@ -77,8 +77,6 @@ class DocTester {
     
     return result
   }
-  
-  
 
   readConfigTest(filename) {
     return read.sync(filename);
