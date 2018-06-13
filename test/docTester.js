@@ -45,10 +45,8 @@ class DocTester {
   handleTestsFinish(count, length, allResults) {
     if (count == length) {
       if (allResults.includes(false)) {
-        console.log('fail')
         process.exit(1);
       } else {
-        console.log('success')
         process.exit(0);
       }
     }
