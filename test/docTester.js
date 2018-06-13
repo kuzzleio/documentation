@@ -23,9 +23,8 @@ class DocTester {
       count = 0,
       allResults = [];
     
-    for (let i = 0; i < tests.length; ++i) {
+    tests.forEach((file) => {
       let
-        file = tests[i],
         test = read.sync(file),
         snippetPath = file.split('.yml')[0];
       
@@ -40,14 +39,16 @@ class DocTester {
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
         })
-    }
+    });
   }
   
   handleTestsFinish(count, length, allResults) {
     if (count == length) {
       if (allResults.includes(false)) {
+        console.log('fail')
         process.exit(1);
       } else {
+        console.log('success')
         process.exit(0);
       }
     }
