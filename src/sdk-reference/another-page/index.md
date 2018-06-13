@@ -1,9 +1,9 @@
 ---
 layout: full.html
 algolia: true
-title: Essentials
-description: Essentials
-order: 100
+title: Another page
+description: Another page
+order: 200
 ---
 
 # This is the first test

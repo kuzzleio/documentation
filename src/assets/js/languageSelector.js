@@ -6,22 +6,26 @@ var languageSelector = {
 
   init: function () {
     if ($('#language-selector').length == 0) {
-      return
+      return;
     }
+    
     var self = this;
     var languageParam = this.getLanguageParameter();
     this.setSelectorOptions();
+    
     $('.section').hide();
     this.showSection(languageParam);
     $('code').hide();
     $('code.' + languageParam).show();
     $('#language-selector [value="' + languageParam + '"]').attr('selected', true);
+    
     $('#language-selector').select2({
       minimumResultsForSearch: -1,
       theme: 'material',
       templateResult: this.selectTemplate,
       templateSelection: this.selectTemplate
     });
+    
     $(".select2-selection__arrow")
       .addClass("material-icons")
       .html("arrow_drop_down");
@@ -91,14 +95,17 @@ var languageSelector = {
   },
 
   showSection: function (language) {
-    var sections = $('#list-sections').val().split(',');
-    sections.forEach(function (element) {
-      if ($('#' + element + '.section.' + language).length > 0) {
-        $('#' + element + '.section.' + language).show();
-      } else {
-        $('#' + element + '.section.default').show();
-      }
-    });
+    if ($('#list-sections').length > 0) {
+      var sections = $('#list-sections').val().split(',');
+      sections.forEach(function (element) {
+        if ($('#' + element + '.section.' + language).length > 0) {
+          $('#' + element + '.section.' + language).show();
+        } else {
+          $('#' + element + '.section.default').show();
+        }
+      });  
+    }
+    
   },
 
   selectTemplate: function(state) {
