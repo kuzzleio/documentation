@@ -23,7 +23,7 @@ class DocTester {
       count = 0,
       allResults = [];
     
-    for(let i = 0; i < tests.length; ++i) {
+    for (let i = 0; i < tests.length; ++i) {
       let
         file = tests[i],
         test = read.sync(file),
@@ -63,6 +63,7 @@ class DocTester {
   
   getAllTests(base, ext, files, result) {
     let self = this; 
+    
     files = files || fs.readdirSync(base);
     result = result || [];
     
@@ -93,7 +94,7 @@ if (process.argv.indexOf('-L') > -1) {
     language = process.argv[process.argv.indexOf('-L') + 1],
     docTester = new DocTester(language);
 
-  let success = docTester.process(language);
+  docTester.process(language);
   
 } else {
   console.log('You have to define a language with -L args');
