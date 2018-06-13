@@ -1,0 +1,7 @@
+name: bar
+description: La pression, elle est au bar
+hooks:
+  before: cleanUser.js
+  after: after.js
+template: default
+expect: bar
