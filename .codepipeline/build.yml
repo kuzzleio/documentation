@@ -9,6 +9,6 @@ phases:
       - npm run build
 artifacts:
   files:
-    - 'build/*'
+    - '**/*'
     - '.codepipeline/*'
   base-directory: '${CODEBUILD_SRC_DIR}'
