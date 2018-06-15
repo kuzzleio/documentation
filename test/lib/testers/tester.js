@@ -55,12 +55,17 @@ module.exports = class Tester {
   runExpect(binFile, expected) {
     return new Promise((resolve, reject) => {
       nexpect.spawn(`${this.runCommand} ${binFile}`)
-        .wait(expected)
+        .wait(expected, () =>{
+          console.log('yooooo')
+          resolve();
+          return;
+        })
         .run((err, outpout) => {
           if (err) {
             reject(err);
             return;
           }
+          console.log(outpout)
           if(outpout.includes(expected)) {
             resolve();
             return;
