@@ -61,7 +61,9 @@ module.exports = class Tester {
           return;
         })
         .run((err, outpout) => {
-          if (err) {
+          if (err) {  
+            console.log('1')
+            console.log(outpout)
             reject(err);
             return;
           }
