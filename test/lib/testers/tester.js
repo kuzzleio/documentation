@@ -1,6 +1,5 @@
 const fileProcess = require('../fileProcess');
 const nexpect = require('nexpect');
-const fsSync = require('fs-sync');
 const fs = require('fs');
 const logger = require('../logger');
 const config = require('../../../helpers/getConfig').get();
@@ -48,6 +47,9 @@ module.exports = class Tester {
             });
           
         }
+        else {
+          console.log('yeah')
+        }
       }
     });
   }
@@ -94,7 +96,7 @@ module.exports = class Tester {
   isTodo(snippetPath) {
     let 
       snippet = snippetPath + '.' + config.languages[this.language].ext,
-      fileContent = fsSync.read(snippet);
+      fileContent = fs.readSync(snippet);
     if (fileContent.match(/(\@todo)/g)) return true;
     return false;
   }
@@ -102,7 +104,7 @@ module.exports = class Tester {
   isWontdo(snippetPath) {
     let
       snippet = snippetPath + '.' + config.languages[this.language].ext,
-      fileContent = fsSync.read(snippet);
+      fileContent = fs.readSync(snippet);
     if (fileContent.match(/(\@wontdo)/g)) return true;
     return false;
   }
