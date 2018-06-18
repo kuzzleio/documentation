@@ -35,7 +35,7 @@ class Logger {
       reportFile = path.join(__dirname, '../../reports/') + 'report.json',
       report = {};
     
-    if(fs.existsSync(reportFile)) {
+    if (fs.existsSync(reportFile)) {
       report = jsonfile.readFileSync(reportFile);
     }
     

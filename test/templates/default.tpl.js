@@ -1,4 +1,3 @@
-
 // load the Kuzzle SDK module
 const Kuzzle = require('kuzzle-sdk')
 
