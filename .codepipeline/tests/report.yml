@@ -6,4 +6,6 @@ phases:
       - sleep 5
   build:
     commands:
-      - echo "Report"
+      - echo $CODEBUILD_SOURCE_VERSION
+      - echo $CODEBUILD_SOURCE_REPO_URL
+      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
