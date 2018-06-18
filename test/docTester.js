@@ -27,7 +27,7 @@ class DocTester {
       let
         test = read.sync(file),
         snippetPath = file.split('.yml')[0];
-      
+        
       this.tester.runOneTest(test, snippetPath)
         .then(()=>{
           allResults.push(true);
@@ -35,6 +35,7 @@ class DocTester {
           this.handleTestsFinish(count, tests.length, allResults);
         })
         .catch((err)=>{
+          if (typeof err != 'undefined') console.log(err);
           allResults.push(false);
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
@@ -80,6 +81,17 @@ class DocTester {
 
   readConfigTest(filename) {
     return read.sync(filename);
+  }
+  
+
+  checkMissingSnippet(presentLanguages, fullPath) {
+    let exts = []
+    for (let k in config.languages) {
+      if (!presentLanguages.includes(config.languages[k].ext)) {
+        let page = fullPath.split('sdk-reference')[1].split(config.code_example.snippet_folder_name)[0]
+        console.log(color.red(`[MISSING CODE-EXAMPLE] Language ${config.languages[k].fullname} need sample code for ${page}`))
+      }
+    }
   }
 
 }

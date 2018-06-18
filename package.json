@@ -20,6 +20,7 @@
         "handlebars": "^4.0.8",
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
+        "jsonfile": "^4.0.0",
         "kuzzle-sdk": "^5.0.11",
         "line-reader": "^0.4.0",
         "metalsmith": "^2.3.0",

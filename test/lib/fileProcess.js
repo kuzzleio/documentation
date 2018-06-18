@@ -16,7 +16,7 @@ class FileProcess {
     let
       template = TEMPLATE_FOLDER + test.template + '.tpl.' + language,
       snippet = snippetPath + '.' + config.languages[language].ext;
-    
+      
     //first check file exist
     if (!fs.existsSync(template)) {
       return false;

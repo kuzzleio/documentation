@@ -7,16 +7,17 @@ const config = require('../../../helpers/getConfig').get();
 module.exports = class Tester {
 
   constructor () {
-
+    if (new.target === Tester) {
+      throw new TypeError("Cannot construct Tester instances directly");
+    }
   }
 
   runOneTest(test, snippetPath) {
     return new Promise((resolve, reject) => {
       if (test.hooks.before) this.runBeforeScript(test.hooks.before);
-      if (!this.isTodo(snippetPath) && !this.isWontdo(snippetPath)) {
-        let binFile = fileProcess.injectSnippet(test, snippetPath, this.language);
-
-        if (binFile) {
+      let binFile = fileProcess.injectSnippet(test, snippetPath, this.language);
+      if (binFile) {
+        if (!this.isTodo(snippetPath) && !this.isWontdo(snippetPath)) {
           let testSuccess = true;
           this.lintExpect(binFile)
             .catch((err) => {
@@ -45,8 +46,16 @@ module.exports = class Tester {
                   });
               }
             });
-          
         }
+      } else {
+        let err = {
+          code : 'MISSING_SNIPPET',
+          expect: test.expect,
+          actual: `Missing snippet file : ${snippetPath.split('src/')[1]}.${this.language}` 
+        };
+        logger.reportNOk(test, err);
+        reject();
+        return;
       }
     });
   }
@@ -94,7 +103,10 @@ module.exports = class Tester {
     let 
       snippet = snippetPath + '.' + config.languages[this.language].ext,
       fileContent = fs.readFileSync(snippet, 'utf8');
-    if (fileContent.match(/(\@todo)/g)) return true;
+    if (fileContent.match(/(\@todo)/g)) {
+      
+      return true;
+    }  
     return false;
   }
   
