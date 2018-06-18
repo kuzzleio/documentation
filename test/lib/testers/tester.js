@@ -1,6 +1,5 @@
 const fileProcess = require('../fileProcess');
 const nexpect = require('nexpect');
-const fsSync = require('fs-sync');
 const fs = require('fs');
 const logger = require('../logger');
 const config = require('../../../helpers/getConfig').get();
@@ -54,10 +53,13 @@ module.exports = class Tester {
 
   runExpect(binFile, expected) {
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.runCommand} ${binFile}`)
-        .wait(expected)
+      nexpect.spawn(`${this.runCommand} ${binFile}`, { stream: 'all' })
+        .wait(expected, () => {
+          resolve();
+          return;
+        })
         .run((err, outpout) => {
-          if (err) {
+          if (err) {  
             reject(err);
             return;
           }
@@ -91,7 +93,7 @@ module.exports = class Tester {
   isTodo(snippetPath) {
     let 
       snippet = snippetPath + '.' + config.languages[this.language].ext,
-      fileContent = fsSync.read(snippet);
+      fileContent = fs.readFileSync(snippet, 'utf8');
     if (fileContent.match(/(\@todo)/g)) return true;
     return false;
   }
@@ -99,7 +101,7 @@ module.exports = class Tester {
   isWontdo(snippetPath) {
     let
       snippet = snippetPath + '.' + config.languages[this.language].ext,
-      fileContent = fsSync.read(snippet);
+      fileContent = fs.readFileSync(snippet, 'utf8');
     if (fileContent.match(/(\@wontdo)/g)) return true;
     return false;
   }
