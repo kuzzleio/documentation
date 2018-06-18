@@ -27,8 +27,8 @@ class FileProcess {
     
     //get file content
     let
-      snippetContent = fs.readSync(snippet),
-      templateContent = fs.readSync(template);
+      snippetContent = fs.readFileSync(snippet, 'utf8'),
+      templateContent = fs.readFileSync(template, 'utf8');
     
     //replace snippet in template
     if (templateContent.match(/(\[snippet-code])/g)) {
@@ -40,7 +40,7 @@ class FileProcess {
         newContent = templateContent.replace(/(\[snippet-code])/g, snippetContent),
         binPath = BIN_FOLDER + this.sanitizeFileName(test.name) + '.' + language;
         
-      fs.writeSync(binPath, newContent);
+      fs.writeFileSync(binPath, newContent);
       
       if (fs.existsSync(binPath)) {
         return binPath;

@@ -47,9 +47,6 @@ module.exports = class Tester {
             });
           
         }
-        else {
-          console.log('yeah')
-        }
       }
     });
   }
@@ -96,7 +93,7 @@ module.exports = class Tester {
   isTodo(snippetPath) {
     let 
       snippet = snippetPath + '.' + config.languages[this.language].ext,
-      fileContent = fs.readSync(snippet);
+      fileContent = fs.readFileSync(snippet, 'utf8');
     if (fileContent.match(/(\@todo)/g)) return true;
     return false;
   }
@@ -104,7 +101,7 @@ module.exports = class Tester {
   isWontdo(snippetPath) {
     let
       snippet = snippetPath + '.' + config.languages[this.language].ext,
-      fileContent = fs.readSync(snippet);
+      fileContent = fs.readFileSync(snippet, 'utf8');
     if (fileContent.match(/(\@wontdo)/g)) return true;
     return false;
   }

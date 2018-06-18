@@ -34,7 +34,7 @@ class DocTester {
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
         })
-        .catch(()=>{
+        .catch((err)=>{
           allResults.push(false);
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
