@@ -1,4 +1,3 @@
-const fsSync = require('fs-sync');
 const fs = require('fs');
 const path = require('path');
 const indentString = require('indent-string');
@@ -19,17 +18,17 @@ class FileProcess {
       snippet = snippetPath + '.' + config.languages[language].ext;
     
     //first check file exist
-    if (!fsSync.exists(template)) {
+    if (!fs.existsSync(template)) {
       return false;
     }
-    if (!fsSync.exists(snippet)) {
+    if (!fs.existsSync(snippet)) {
       return false;
     }
     
     //get file content
     let
-      snippetContent = fsSync.read(snippet),
-      templateContent = fsSync.read(template);
+      snippetContent = fs.readSync(snippet),
+      templateContent = fs.readSync(template);
     
     //replace snippet in template
     if (templateContent.match(/(\[snippet-code])/g)) {
@@ -41,9 +40,9 @@ class FileProcess {
         newContent = templateContent.replace(/(\[snippet-code])/g, snippetContent),
         binPath = BIN_FOLDER + this.sanitizeFileName(test.name) + '.' + language;
         
-      fsSync.write(binPath, newContent);
+      fs.writeSync(binPath, newContent);
       
-      if (fsSync.exists(binPath)) {
+      if (fs.existsSync(binPath)) {
         return binPath;
       }
     }
@@ -64,7 +63,7 @@ class FileProcess {
   saveOnFail(binFile, testName, language) {
     testName = this.sanitizeFileName(testName)
     let dest = SAVE_FOLDER + testName + '.' + language;
-    fsSync.copy(binFile, dest);
+    fs.copyFileSync(binFile, dest);
   }
   
   removeBin(binFile) {
