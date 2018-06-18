@@ -4,5 +4,4 @@ set -e
 
 npm install
 npm i -g eslint eslint-plugin-import@latest eslint-plugin-node@latest eslint-plugin-promise@latest eslint-plugin-standard@latest
-touch /app/reports/report.json
 node test/docTester.js -L js

@@ -3,4 +3,4 @@
 /.vscode
 /test/bin/*.*
 /test/bin/failed/
-/reports/*
+/reports/*.json
