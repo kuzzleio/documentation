@@ -61,9 +61,11 @@ class FileProcess {
   }
   
   saveOnFail(binFile, testName, language) {
-    testName = this.sanitizeFileName(testName)
-    let dest = SAVE_FOLDER + testName + '.' + language;
-    fs.copyFileSync(binFile, dest);
+    //TODO
+    // testName = this.sanitizeFileName(testName)
+    // let dest = SAVE_FOLDER + testName + '.' + language;
+    // fs.copyFileSync(binFile, dest);
+    return true;
   }
   
   removeBin(binFile) {
