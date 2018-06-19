@@ -11,4 +11,4 @@ phases:
       - docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle --mount type=bind,source="$(pwd)",target=/app kuzzleio/documentation-v2:js
   post_build:
     commands:
-      - aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/js/ --recursive
+      - aws s3 sync reports/ s3://$AWS_S3_BUCKET/reports/js/

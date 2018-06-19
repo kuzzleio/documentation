@@ -47,7 +47,7 @@ module.exports = class Tester {
               }
             });
         } else {
-          reject();
+          resolve();
         }
       } else {
         let err = {
