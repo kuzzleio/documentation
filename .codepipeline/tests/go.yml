@@ -9,3 +9,7 @@ phases:
   build:
     commands:
       - docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)"/test/bin,target=/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go
+  post-build:
+    commands:
+      - aws s3 cp report/ s3://$AWS_S3_BUCKET/report/go/
+      - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
