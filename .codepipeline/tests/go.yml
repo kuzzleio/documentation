@@ -12,4 +12,3 @@ phases:
   post_build:
     commands:
       - aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/go/ --recursive
-      - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
