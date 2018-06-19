@@ -3,5 +3,5 @@ version: 0.1
 phases:
   build:
     commands:
-      - aws s3 cp build/ s3://$AWS_S3_BUCKET/ --recusive
+      - aws s3 cp build/ s3://$AWS_S3_BUCKET/ --recursive
       - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"

@@ -11,6 +11,6 @@ phases:
       - docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle --mount type=bind,source="$(pwd)",target=/app kuzzleio/documentation-v2:js
   post-build:
     commands:
-      - aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/js/
+      - aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/js/ --recursive
       - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
       
