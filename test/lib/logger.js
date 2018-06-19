@@ -33,15 +33,30 @@ class Logger {
   reportToJson(test, err) {
     let 
       reportFile = path.join(__dirname, '../../reports/') + 'report.json',
-      report = {};
+      report = {},
+      status;
     
+      
     if (fs.existsSync(reportFile)) {
       report = jsonfile.readFileSync(reportFile);
     }
+    switch (err.code) {
+      case undefined:
+        status = 'Success'
+        break;
+      case 'TODO':
+        status = 'Todo'
+        break;
+      case 'WONTDO':
+        status = 'Wontdo'
+        break;
+      default:
+        status = 'Fail'
+    } 
     
     report[test.name] = {
       test : test,
-      status: (err) ? 'fail' : 'success',
+      status: status,
       error: (err) ? {code: err.code, got: err.actual} : {}
     };
     

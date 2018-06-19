@@ -16,9 +16,14 @@
     .ag-theme-material .bg-success {
       background-color: lightgreen !important;
     }
-
     .ag-theme-material .bg-fail {
       background-color: lightcoral !important;
+    }
+    .ag-theme-material .bg-todo {
+      background-color: lightblue !important;
+    }
+    .ag-theme-material .bg-wontdo {
+      background-color: lightslategray !important;
     }
   </style>
   <h1>TESTS REPORT</h1>
@@ -31,19 +36,33 @@
     function getTestCounts(dataArray) {
       var 
         fail = 0,
-        success = 0;
+        success = 0,
+        todo = 0,
+        wontdo = 0;
         
       dataArray.forEach(el => {
-        if (el.status == 'success')
-          ++success;
-        else 
-          ++fail;
+        
+        switch (el.status) {
+          case 'Success':
+            ++success;
+            break;
+          case 'Fail':
+            ++fail;
+            break;
+          case 'Todo':
+            ++todo;
+            break;
+          default:
+            ++wontdo;
+        } 
       });
-      
+        
       return {
         total: dataArray.length,
         fail: fail,
-        success: success
+        todo: todo,
+        success: success,
+        wontdo: wontdo
       };
     }
     
@@ -74,7 +93,8 @@
         { headerName: "NAME", field: "name" },
         { headerName: "DESCRIPTION", field: "description" },
         { headerName: "STATUS", field: "status" },
-        { headerName: "MESSAGE", field: "message" }
+        { headerName: "EXPECTED", field: "expected" },
+        { headerName: "GOT", field: "got" }
       ];
 
       var rowData = [];
@@ -83,7 +103,8 @@
           name: el.test.name,
           description: el.test.description,
           status: el.status,
-          message: (Object.keys(el.error).length !== 0) ? el.error.code + ' : ' + el.error.got : '',
+          expected: el.test.expect,
+          got: (Object.keys(el.error).length !== 0) ? el.error.code + ' : ' + el.error.got : el.test.expect,
         })
       });
 
@@ -94,13 +115,25 @@
         gridAutoHeight: true,
         rowClassRules: {
           'bg-success': function (params) {
-            if (params.data.status == 'success') {
+            if (params.data.status == 'Success') {
               return true;
             }
             return false;
           },
           'bg-fail': function (params) {
-            if (params.data.status == 'fail') {
+            if (params.data.status == 'Fail') {
+              return true;
+            }
+            return false;
+          },
+          'bg-todo': function (params) {
+            if (params.data.status == 'Todo') {
+              return true;
+            }
+            return false;
+          },
+          'bg-wontdo': function (params) {
+            if (params.data.status == 'Wontdo') {
               return true;
             }
             return false;
@@ -121,21 +154,19 @@
       var ctx = document.getElementById("pie-chart").getContext("2d");
       
       new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
-          labels: ["Success", "Fail"],
+          labels: ["Success", "Fail", 'Todo', 'Wontdo'],
           datasets: [{
             label: "Tests status",
-            backgroundColor: ["#90EE90", "#F08080"],
-            data: [testCount.success, testCount.fail]
+            backgroundColor: ["#90EE90", "#F08080", "#ADD8E6", "#778899"],
+            data: [testCount.success, testCount.fail, testCount.todo, testCount.wontdo]
           }]
         },
         options: {
           responsive: false
         }
       });
-      
-
     });
   </script>
 </body>

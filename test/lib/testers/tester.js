@@ -17,7 +17,7 @@ module.exports = class Tester {
       if (test.hooks.before) this.runBeforeScript(test.hooks.before);
       let binFile = fileProcess.injectSnippet(test, snippetPath, this.language);
       if (binFile) {
-        if (!this.isTodo(snippetPath) && !this.isWontdo(snippetPath)) {
+        if (!this.isTodo(snippetPath, test) && !this.isWontdo(snippetPath, test)) {
           let testSuccess = true;
           this.lintExpect(binFile)
             .catch((err) => {
@@ -46,6 +46,8 @@ module.exports = class Tester {
                   });
               }
             });
+        } else {
+          reject();
         }
       } else {
         let err = {
@@ -99,22 +101,36 @@ module.exports = class Tester {
     });
   }
   
-  isTodo(snippetPath) {
+  isTodo(snippetPath, test) {
     let 
       snippet = snippetPath + '.' + config.languages[this.language].ext,
       fileContent = fs.readFileSync(snippet, 'utf8');
-    if (fileContent.match(/(\@todo)/g)) {
       
+    if (fileContent.match(/(\@todo)/g)) {
+      let err = {
+        code: 'TODO',
+        expect: test.expect,
+        actual: `${snippetPath.split('src/')[1]}.${this.language}`
+      };
+      logger.reportToJson(test, err);
       return true;
     }  
     return false;
   }
   
-  isWontdo(snippetPath) {
+  isWontdo(snippetPath, test) {
     let
       snippet = snippetPath + '.' + config.languages[this.language].ext,
       fileContent = fs.readFileSync(snippet, 'utf8');
-    if (fileContent.match(/(\@wontdo)/g)) return true;
+    if (fileContent.match(/(\@wontdo)/g)){
+      let err = {
+        code: 'WONTDO',
+        expect: test.expect,
+        actual: `${snippetPath.split('src/')[1]}.${this.language}`
+      };
+      logger.reportToJson(test, err);
+      return true;
+    } 
     return false;
   }
 
