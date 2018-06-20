@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 set -e
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" ] ; then
@@ -11,7 +10,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ] ; then
   echo $TRAVIS_PULL_REQUEST
   echo $COMMENT
 
-  curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST \
+  curl -v -H "Authorization: token ${GITHUB_TOKEN}" -X POST \
   -d "{\"body\": \"$COMMENT\"}" \
   "https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/comments"
 fi

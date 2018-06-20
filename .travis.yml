@@ -27,5 +27,4 @@ script:
   - docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)"/test/bin,target=/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go
   - docker rm $(docker container list -q -a) --force
   - aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/go/$TRAVIS_COMMIT/ --recursive --exclude "*.gitkeep"
-after_script:
   - sh .travis/comment_pr.sh
