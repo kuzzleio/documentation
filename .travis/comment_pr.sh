@@ -3,12 +3,6 @@ set -e
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" ] ; then
   COMMENT="#TEST REPORT\n GO:https://docs-v2.kuzzle.io/reports/go/${TRAVIS_COMMIT}\n JS:https://docs-v2.kuzzle.io/reports/js/${TRAVIS_COMMIT}\n"
-  
-  echo $TRAVIS_COMMIT
-  echo $GITHUB_TOKEN
-  echo $TRAVIS_REPO_SLUG
-  echo $TRAVIS_PULL_REQUEST
-  echo $COMMENT
 
   curl -H "Authorization: token ${GITHUB_TOKEN}" -X POST \
   -d "{\"body\": \"$COMMENT\"}" \
