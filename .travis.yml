@@ -4,24 +4,23 @@ services:
 env:
   global:
   - AWS_S3_BUCKET=docs-v2.kuzzle.io
-  # AWS_KEY_ID
-  - secure: zwXr8fn/I7q02EtmAODptRvG54oRe2vwHiuD7Qpf2IcdvygLWycxlD3Eb7EFJXd8CgYTH4kKAwgOr2CT33wJy4wv/7So6BpOjT/XxNw2yFrO2Awcd4WS98OQQFwBnYGCx/vj/CtcmPn/x75a0kelK6kCeH+550H8wC89tXJ2teC+W7lAXgoIaY2F3hWD2KBdyWazuhQM6iuz/Y/e5Oxrc1y+Sx6AxgNPoNVajp5fStnpzidRHd/WInQFufCdovnR8Mzy+vYN9qqom5/O5nwgJjfmn3+klQyQ8SlDWziuyyIWkdUh28CjAKr2ajrh3bYSFKjziLvLy55Bhlj2eyGwDkOwtuWkeqH7L91yM2lA7s2x0WASPNkIJqQEFJsgQY3qZssyIRUye139kN4usUpoaSUHInRVoCRcW7d9r6Tp1Hm5CbwC4skqcAKFUD4l26sct2wCuRVOCIZ2HlhfIvj49jzfdUtEgChE9Bz7u+SItSKUlejjPzi6Tp5cv1zATyZej1W9UuAuySKvmGAY04fUSrElnIuc75Phv5viK9VUuOCMdoqAk2dEYtaNPW8WR7q/NDTjnC9qH74O+/rf54p3pZiki4E3gXLVYtoCQqxit+AKKS3DX58NoxcbfK2kHOhWtrLqx44LqoZkVtEZpxjDhqAQVG0NUpiUBa/qwgT25Sc=
-  # AWS_SECRET_KEY
-  - secure: VS3tHA7ERsBsPnvjrJjlgPFaRNCw7XrVH/X5cXn9UClKaNeKp12TLLl8hDZjQWS4egC/f0VRM/bH1c8lZqejV9i+3SxRvprgzG5Jn/aQd94IK6Ve2dpMZ9CgmoYxsMwFh+ARs9YdzVwqh+ZA8uIgYR5Xn6iEukMf9kn15Uq+foMbratt8HSdHlnTequBWVG6z+ZG31A2mvXHoZVJh8Zx6exZXVeuftO5oepfL9rgP1asutzuwX6Ht1/bXhfXWepH4Dw4seUVRebUiKw93ywzw2fSF+E68Gj2Nnx6CA7948o+OxUOc6det09T/Tg9tuT0ZJZv9IrbgjuoLcXRK2ZUm2IjGDw8fZeIJ+9MBDeTtgn8bcEzCxQhef6uHsfW8FMYaAew1yPd7WTcqbcldjE+8jnFMKRW1puk1iZGpm+IEGLl928PlKeN0x4yi8qT+ZV2ozipdH5zr8l3sZIYQ3J0dQsD3BgwRTMUSfBCkpE5zNhCeQf0XJCpry6ZngVYrkt9K5dWZiG6uYEnndXb/q5/otpJUSM4qqNAw3elyncH1LScNbyMtMTXBoKfDIlG4u2Vt6+9iTHihQPwJWm6rKe5QP2naXfI/0yLhpXLQhoDuobC77aRiKcwfbtwBiLzVwqCe3clZdmvOLJ4PfnwQ8NbtHR4VOo1kKEjjK8cn233A1Q=
+  - secure: GuhfUqzzdDMWQwoj2MNFhJnfK5P4Re7H6gs4mHu5ejuhWpGPcfzpPW2dGxBxOl1uqNAeKyDFUXQM0sEs/DgfkgL5vjoqQi8rRAFe9h27MXx/Ffol9xyy6t8j+LJt9kAGHdlZD6FUqdc08rRycHpjBBgTNLN+wlMsc8VuBNB92Wv+P+plihXvMgoLEMiG7Jc7IsrNuVEM4NURzb5so5P609prodldHzBK5kF4Bp813Jf7nPSkyCf22ykVsC/cFsQczRqpHVfwwdtQ3QSD2tHhUc4HMJozvc1TffLGerXSkBRFtsF0eouzaore+Lzd8foDlsYfSuaI1k+XFRLX5fOA5Gz5dHtfJDepbJQvLiXHwfuXzFdXaIau1u0HGe8r5Xcn1cdPBAqri7PA20rV0WSaQJLH7OnSRKrTfhwMJP2ERGpfa4ny0i3dv/I8q5Mxl0Uk8/QseaAoJgl1XHypD4NhXV0Ii2VefQJ0W2rrYYNlF43gv9Y+Ighh5OPLRQ/Ibsu/vPD+LYLNTFpLo50C57JJCEYKW32VxEde/Dcf6P26oWisp4dF2ce+bo8JNJ7bil+3NXYJ+LD8oBzOnDJAqArgIpcH5VLdYwGdhsAVZ/zoTtNNWlvVq1zO3rNc7IDdN3fp9vbSHvxl0DeMW6ezlvMVWt3qloBjveR9AcLQ32iN9XU=
+  - secure: Y3InvekavO9IetSjt04ap1NCI0sjRxlro+JHu59D0jeo1uTXHMnIRC8OUTYuDAEnGR1BQXRkOwZTwAsHY91il9RT4dLwhSx/6eYCP7ACFv7uXm2D+n/ERhbQDijW9UAAiIUGnlfk7YjcxBHmCOI5W6wjlQtHEc6L+1PUs3BCeiUiQKnmA6/uvSKtmcO7ftPh60DeMhg8oymTd+fxGa58/ytZm2e2EeiaEzEPq6cp6S7fqP8qKN1dNqp8pPKJxHfJhQZCNM9ivmCFVWGiXnP24I3f72f38a4Vc0aJDY/x7nU0L7Fr9EbsFLm2VySowr5tQWjgbP5nfsxN02KDqlR3ZeqJSrZkNmQQ8IoKxM+y1Lr2EkOi3+JWej4k2DlEfnyklot/55SnQvzmZqyxK4hT+5SWjxFGwWAxImOAVGYYwOBuhuGDQp51gn/60UjmaaF0tFGNPsWfDwKyIzH0mgX/J80SYU95kKaumh3bTxyAeI43VUEdTq+jllnXoYaugCxBY4zpIyujKSoRH3trHYFwyPIe6Ojl3ZvKh58JhkHYE5K0P0wJQaXtr4Ad6+V/o2d864DuCk2CojyEz/eKdcRJIbLug5Cven1iavLzaydF/H9PQmX7CuerB6n2rSOZu9JNBKX2DbJL19WeRl3J2SWxZg7K+Dnt3xT58NhAYYfnPPE=
 before_install:
-  - docker pull kuzzleio/documentation-v2:js
-  - docker pull kuzzleio/documentation-v2:go
-  - sysctl -w vm.max_map_count=262144
+- docker pull kuzzleio/documentation-v2:js
+- docker pull kuzzleio/documentation-v2:go
+- sysctl -w vm.max_map_count=262144
 install:
-  - pip install awscli --upgrade --user
+- pip install awscli --upgrade --user
 script:
-  # JS
-  - sh .travis/start_kuzzle.sh
-  - docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle --mount type=bind,source="$(pwd)",target=/app kuzzleio/documentation-v2:js
-  - docker rm -f codepipeline_elasticsearch_1 codepipeline_redis_1 kuzzle
-  - aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/js/$TRAVIS_COMMIT/ --recursive
-  # GO
-  - sh .travis/start_kuzzle.sh
-  - docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)"/test/bin,target=/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go
-  - docker rm -f codepipeline_elasticsearch_1 codepipeline_redis_1 kuzzle
-  - aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/go/$TRAVIS_COMMIT/ --recursive
+- sh .travis/start_kuzzle.sh
+- docker run -a stdout -a stderr --rm --privileged --network codepipeline_default
+  --link kuzzle --mount type=bind,source="$(pwd)",target=/app kuzzleio/documentation-v2:js
+- docker rm $(docker container list -q -a) --force
+- aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/js/$TRAVIS_COMMIT/ --recursive
+- sh .travis/start_kuzzle.sh
+- docker run -a stdout -a stderr --rm --privileged --network codepipeline_default
+  --link kuzzle --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)"/test/bin,target=/go/src/github.com/kuzzleio/go-test
+  kuzzleio/documentation-v2:go
+- docker rm $(docker container list -q -a) --force
+- aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/go/$TRAVIS_COMMIT/ --recursive
