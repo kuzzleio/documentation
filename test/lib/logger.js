@@ -56,8 +56,10 @@ class Logger {
     
     report[test.name] = {
       test : test,
+      datetime: new Date().toLocaleString(),
       status: status,
-      error: (err) ? {code: err.code, got: err.actual} : {}
+      error: (err) ? {code: err.code, got: err.actual} : {},
+      file: (err && typeof err.file != 'undefined' ) ? err.file : ''
     };
     
     jsonfile.writeFileSync(reportFile, report);

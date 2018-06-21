@@ -23,6 +23,7 @@ module.exports = class Tester {
             .catch((err) => {
               testSuccess = false;
               fileProcess.saveOnFail(binFile, test.name, this.language);
+              err.file = snippetPath.split('src/')[1];
               logger.reportLintNOk(test, err);
               reject();
               return;
@@ -32,6 +33,7 @@ module.exports = class Tester {
                 this.runExpect(binFile, test.expect)
                   .catch((err) => {
                     testSuccess = false;
+                    err.file = snippetPath.split('src/')[1];
                     fileProcess.saveOnFail(binFile, test.name, this.language);
                     logger.reportNOk(test, err);
                     reject();
@@ -53,7 +55,7 @@ module.exports = class Tester {
         let err = {
           code : 'MISSING_SNIPPET',
           expect: test.expect,
-          actual: `Missing snippet file : ${snippetPath.split('src/')[1]}.${this.language}` 
+          actual: `Missing snippet file : ${snippetPath.split('src/')[1]}.${this.language}`
         };
         logger.reportNOk(test, err);
         reject();
@@ -110,7 +112,8 @@ module.exports = class Tester {
       let err = {
         code: 'TODO',
         expect: test.expect,
-        actual: `${snippetPath.split('src/')[1]}.${this.language}`
+        actual: '',
+        file: snippetPath.split('src/')[1]
       };
       logger.reportToJson(test, err);
       return true;
@@ -126,7 +129,8 @@ module.exports = class Tester {
       let err = {
         code: 'WONTDO',
         expect: test.expect,
-        actual: `${snippetPath.split('src/')[1]}.${this.language}`
+        actual: '',
+        file: snippetPath.split('src/')[1]
       };
       logger.reportToJson(test, err);
       return true;

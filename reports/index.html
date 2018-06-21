@@ -10,8 +10,12 @@
 
 <body>
   <style>
+    
     h1{
       font: 600 42px "Roboto", sans-serif;
+    }
+    p{
+      font: 400 14px "Roboto", sans-serif;
     }
     .ag-theme-material .bg-success {
       background-color: lightgreen !important;
@@ -26,12 +30,27 @@
       background-color: lightslategray !important;
     }
   </style>
-  <h1>TESTS REPORT</h1>
+  
+  <h1>TESTS REPORT : <span id="language"></span></h1>
+  <p>
+    Test launch : <span id="datetime"></span>
+  </p>
+  
   <canvas id="pie-chart" width="250" height="250"></canvas>
   <br>
   <div id="myGrid" style="width:auto;" class="ag-theme-material"></div>
 
   <script type="text/javascript" charset="utf-8">
+    
+    function setLanguage() {
+      var languageContainer = document.getElementById("language");
+      languageContainer.innerHTML = window.location.pathname.split('/')[2]
+    }
+    
+    function setDatetime(datetime) {
+      var datetimeContainer = document.getElementById("datetime");
+      datetimeContainer.innerHTML = datetime;
+    }
     
     function getTestCounts(dataArray) {
       var 
@@ -94,7 +113,8 @@
         { headerName: "DESCRIPTION", field: "description" },
         { headerName: "STATUS", field: "status" },
         { headerName: "EXPECTED", field: "expected" },
-        { headerName: "GOT", field: "got" }
+        { headerName: "GOT", field: "got" },
+        { headerName: "FILE", field: "file" }
       ];
 
       var rowData = [];
@@ -105,6 +125,7 @@
           status: el.status,
           expected: el.test.expect,
           got: (Object.keys(el.error).length !== 0) ? el.error.code + ' : ' + el.error.got : el.test.expect,
+          file: el.file
         })
       });
 
@@ -167,7 +188,13 @@
           responsive: false
         }
       });
+      
+      setLanguage();
+      setDatetime(dataArr[0].datetime)
     });
+    
+    
+    
   </script>
 </body>
 
