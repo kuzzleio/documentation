@@ -2,5 +2,5 @@
 /node_modules
 /.vscode
 /test/bin/*.*
-/test/bin/failed/
+/test/bin/failed/*.*
 /reports/*.json
