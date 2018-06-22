@@ -77,13 +77,15 @@ module.exports = class Tester {
             actual: result
           }
           reject(err);
+          return;
         })
         .run((err, outpout) => {
-          if (err) {  
+          if (err) {
             reject(err);
             return;
           }
           if(outpout.includes(expected)) {
+            console.log('expected')
             resolve();
             return;
           }
