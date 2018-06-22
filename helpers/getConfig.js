@@ -14,5 +14,10 @@ module.exports = {
       languages.push(config.languages[k].fullname);
     }
     return languages;
+  },
+  
+  getSdk(language) {
+    config = this.get();
+    console.log(`${config.languages[language].sdk_url}#${config.languages[language].sdk_branch}`);
   }
 }

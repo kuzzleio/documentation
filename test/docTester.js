@@ -24,6 +24,7 @@ class DocTester {
       allResults = [];
     
     tests.forEach((file) => {
+      
       let
         test = read.sync(file),
         snippetPath = file.split('.yml')[0];

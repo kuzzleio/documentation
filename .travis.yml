@@ -1,6 +1,6 @@
 sudo: required
 services:
-- docker
+  - docker
 env:
   global:
   - AWS_S3_BUCKET=docs-v2.kuzzle.io

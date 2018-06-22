@@ -67,9 +67,16 @@ module.exports = class Tester {
   runExpect(binFile, expected) {
     return new Promise((resolve, reject) => {
       nexpect.spawn(`${this.runCommand} ${binFile}`, { stream: 'all' })
-        .wait(expected, () => {
-          resolve();
-          return;
+        .wait(expected, result => {
+          if (result == expected) {
+            resolve();
+            return;
+          }
+          let err = {
+            code: 'ERR_ASSERTION',
+            actual: result
+          }
+          reject(err);
         })
         .run((err, outpout) => {
           if (err) {  
@@ -85,6 +92,7 @@ module.exports = class Tester {
             actual: outpout[0]
           }
           reject(err);
+          return;
         });
     });
   }
