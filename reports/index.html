@@ -10,7 +10,6 @@
 
 <body>
   <style>
-    
     h1{
       font: 600 42px "Roboto", sans-serif;
     }
@@ -33,7 +32,7 @@
   
   <h1>TESTS REPORT : <span id="language"></span></h1>
   <p>
-    Test launch : <span id="datetime"></span>
+    <span id="number"></span> tests launched at <span id="datetime"></span>
   </p>
   
   <canvas id="pie-chart" width="250" height="250"></canvas>
@@ -50,6 +49,11 @@
     function setDatetime(datetime) {
       var datetimeContainer = document.getElementById("datetime");
       datetimeContainer.innerHTML = datetime;
+    }
+    
+    function setNumber(dataArr) {
+      var numberContainer = document.getElementById("number");
+      numberContainer.innerHTML = dataArr.length;
     }
     
     function getTestCounts(dataArray) {
@@ -190,7 +194,8 @@
       });
       
       setLanguage();
-      setDatetime(dataArr[0].datetime)
+      setDatetime(dataArr[0].datetime);
+      setNumber(dataArr);
     });
     
     

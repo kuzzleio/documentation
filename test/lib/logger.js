@@ -21,15 +21,6 @@ class Logger {
     }
   }
   
-  reportLintNOk(test, err) {
-    this.reportToJson(test, err);
-    console.log(color.red("✗"), color.red(test.name + ': ' + test.description + ' '))
-    if (err) {
-      console.log(color.red('    ' + err.code))
-      console.log(color.red('    GOT      :'), err.actual)
-    }
-  }
-  
   reportToJson(test, err) {
     let 
       reportFile = path.join(__dirname, '../../reports/') + 'report.json',
