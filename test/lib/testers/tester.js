@@ -11,49 +11,21 @@ module.exports = class Tester {
       throw new TypeError("Cannot construct Tester instances directly");
     }
   }
-
+  
   runOneTest(test, snippetPath) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       if (test.hooks.before) this.runBeforeScript(test.hooks.before);
+      
+      if (this.isTodo(snippetPath, test) || this.isWontdo(snippetPath, test)) {
+        resolve();
+        return;
+      }
+      
       let binFile = fileProcess.injectSnippet(test, snippetPath, this.language);
-      if (binFile) {
-        if (!this.isTodo(snippetPath, test) && !this.isWontdo(snippetPath, test)) {
-          let testSuccess = true;
-          this.lintExpect(binFile)
-            .catch((err) => {
-              testSuccess = false;
-              fileProcess.saveOnFail(binFile, test.name, this.language);
-              err.file = snippetPath.split('src/')[1];
-              logger.reportLintNOk(test, err);
-              reject();
-              return;
-            })
-            .then(() => {
-              if (testSuccess) {
-                this.runExpect(binFile, test.expect)
-                  .catch((err) => {
-                    testSuccess = false;
-                    err.file = snippetPath.split('src/')[1];
-                    fileProcess.saveOnFail(binFile, test.name, this.language);
-                    logger.reportNOk(test, err);
-                    reject();
-                    return;
-                  })
-                  .then(() => {
-                    if (testSuccess) {
-                      logger.reportOk(test);
-                      resolve();
-                      return;
-                    }
-                  });
-              }
-            });
-        } else {
-          resolve();
-        }
-      } else {
+      
+      if (!binFile) {
         let err = {
-          code : 'MISSING_SNIPPET',
+          code: 'MISSING_SNIPPET',
           expect: test.expect,
           actual: `Missing snippet file : ${snippetPath.split('src/')[1]}.${this.language}`
         };
@@ -61,6 +33,21 @@ module.exports = class Tester {
         reject();
         return;
       }
+      
+      try {
+        await this.lintExpect(binFile);
+        await this.runExpect(binFile, test.expect);
+      } catch (err) {
+        fileProcess.saveOnFail(binFile, test.name, this.language);
+        err.file = snippetPath.split('src/')[1];
+        logger.reportNOk(test, err);
+        reject();
+        return;
+      }
+      
+      logger.reportOk(test);
+      resolve();
+      return;
     });
   }
 
@@ -85,7 +72,6 @@ module.exports = class Tester {
             return;
           }
           if(outpout.includes(expected)) {
-            console.log('expected')
             resolve();
             return;
           }

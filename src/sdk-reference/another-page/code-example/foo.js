@@ -1,2 +1,1 @@
-//@todo
 console.log('foo')
