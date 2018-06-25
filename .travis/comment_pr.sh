@@ -8,4 +8,4 @@ chmod +x ./kuttlefish
 echo "1"
 chmod +rw ./comment.html
 echo "2"
-./kuttlefish -f ./comment.html -id $TRAVIS_PULL_REQUEST -r $TRAVIS_REPO_SLUG -token $GH_TOKEN -t 0
+./kuttlefish -f comment.html -id $TRAVIS_PULL_REQUEST -r $TRAVIS_REPO_SLUG -token $GH_TOKEN -t 0
