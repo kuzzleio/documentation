@@ -3,4 +3,9 @@
 set -e
 
 npm install
+go get golang.org/x/tools/cmd/goimports
+git clone -b 1.x https://github.com/kuzzleio/sdk-go.git 
+mv sdk-go /go/src/github.com/kuzzleio/sdk-go
+cd /go/src/github.com/kuzzleio/sdk-go && go get ./...
+cd /app
 node test/docTester.js -L go
