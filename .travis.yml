@@ -12,7 +12,6 @@ before_install:
   - docker pull kuzzleio/documentation-v2:js
   - docker pull kuzzleio/documentation-v2:go
   - sysctl -w vm.max_map_count=262144
-  - wget https://github.com/alexandrebouthinon/kuttlefish/releases/download/v1/kuttlefish
 addons:
   apt:
     packages:
