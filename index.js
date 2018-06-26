@@ -29,17 +29,17 @@ const uglifyjs = require("metalsmith-uglifyjs");
 const concat = require("metalsmith-concat");
 
 
-const codeExample = require('./helpers/codeExample');
-const sectionOverride = require('./helpers/sectionOverride');
-const saveSrc = require('./helpers/save-src');
-const anchors = require('./helpers/anchors');
+const codeExample = require('./plugins/codeExample');
+const sectionOverride = require('./plugins/sectionOverride');
+const saveSrc = require('./plugins/save-src');
+const anchors = require('./plugins/anchors');
 const nodeStatic = require('node-static');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const open = require('open');
 const color = require('colors/safe');
-const config = require('./helpers/getConfig').get();
-const languages = require('./helpers/getConfig').getLanguages(config);
+const config = require('./getConfig').get();
+const languages = require('./getConfig').getLanguages(config);
 const versionsConfig = require('./versions.config.json');
 
 const ok = color.green("✔")

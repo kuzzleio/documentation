@@ -23,7 +23,7 @@ class Logger {
   
   reportToJson(test, err) {
     let 
-      reportFile = path.join(__dirname, '../../reports/') + 'report.json',
+      reportFile = path.join(__dirname, '../../../reports/') + 'report.json',
       report = {},
       status;
     

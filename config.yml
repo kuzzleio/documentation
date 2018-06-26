@@ -10,5 +10,5 @@ languages:
   go:
     fullname: go
     ext: go
-    sdk_url:
-    sdk_branch:
+    sdk_url: https://github.com/kuzzleio/sdk-go.git
+    sdk_branch: 1.x

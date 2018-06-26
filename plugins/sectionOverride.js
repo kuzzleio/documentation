@@ -4,7 +4,7 @@ const fsSync = require('fs-sync');
 const path = require('path');
 const marked = require('marked');
 const color = require('colors/safe');
-const config = require('./getConfig').get();
+const config = require('../getConfig').get();
 
 module.exports = {
 

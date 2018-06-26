@@ -3,5 +3,5 @@
 set -e
 
 npm install
-npm i $(node -e "require('./helpers/getConfig').getSdk('js');")
-node test/docTester.js -L js
+npm i $(node -e "require('./getConfig').getSdk('js');")
+node test/main.js -L js

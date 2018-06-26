@@ -2,13 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const indentString = require('indent-string');
 const sanitize = require("sanitize-filename");
-const config = require('../../helpers/getConfig').get();
+const config = require('../../../getConfig').get();
 
 
 const 
-  TEMPLATE_FOLDER = path.join(__dirname, '../templates/'),
-  SAVE_FOLDER = path.join(__dirname, '../bin/failed/'),
-  BIN_FOLDER = path.join(__dirname, '../bin/')
+  TEMPLATE_FOLDER = path.join(__dirname, '../../templates/'),
+  SAVE_FOLDER = path.join(__dirname, '../../bin/failed/'),
+  BIN_FOLDER = path.join(__dirname, '../../bin/')
   
 class FileProcess {
   

@@ -1,41 +1,41 @@
 const read = require('read-yaml');
 const path = require('path');
 const fs = require('fs');
-const config = require('../helpers/getConfig').get();
+const config = require('../../getConfig').get();
 
-class DocTester {
-  
+module.exports = class TestManager {
+
   constructor(language) {
     if (this.checkLanguageExist(language)) {
-      let Tester = require(`./lib/testers/${language}Tester`);
-      this.tester = new Tester(language);  
+      let Tester = require(`./testers/${language}Tester`);
+      this.tester = new Tester(language);
       this.language = language;
     } else {
       console.log('Language specified in args doesn\'t exist in config');
       process.exit(1);
     }
   }
-  
+
   process() {
-    let 
-      testsPath = path.join(__dirname, '../src/sdk-reference/'),
+    let
+      testsPath = path.join(__dirname, '../../src/sdk-reference/'),
       tests = this.getAllTests(testsPath, 'yml'),
       count = 0,
       allResults = [];
-    
+
     tests.forEach((file) => {
-      
+
       let
         test = read.sync(file),
         snippetPath = file.split('.yml')[0];
-        
+
       this.tester.runOneTest(test, snippetPath)
-        .then(()=>{
+        .then(() => {
           allResults.push(true);
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
         })
-        .catch((err)=>{
+        .catch((err) => {
           if (typeof err != 'undefined') console.log(err);
           allResults.push(false);
           count++;
@@ -43,7 +43,7 @@ class DocTester {
         })
     });
   }
-  
+
   handleTestsFinish(count, length, allResults) {
     if (count == length) {
       if (allResults.includes(false)) {
@@ -53,19 +53,19 @@ class DocTester {
       }
     }
   }
-  
+
   checkLanguageExist(language) {
     return (config.languages[language] === undefined)
-      ? false 
+      ? false
       : true
   }
-  
+
   getAllTests(base, ext, files, result) {
-    let self = this; 
-    
+    let self = this;
+
     files = files || fs.readdirSync(base);
     result = result || [];
-    
+
     files.forEach((file) => {
       var newbase = path.join(base, file);
       if (fs.statSync(newbase).isDirectory()) {
@@ -76,35 +76,12 @@ class DocTester {
         }
       }
     });
-    
+
     return result
   }
 
   readConfigTest(filename) {
     return read.sync(filename);
   }
-  
 
-  checkMissingSnippet(presentLanguages, fullPath) {
-    let exts = []
-    for (let k in config.languages) {
-      if (!presentLanguages.includes(config.languages[k].ext)) {
-        let page = fullPath.split('sdk-reference')[1].split(config.code_example.snippet_folder_name)[0]
-        console.log(color.red(`[MISSING CODE-EXAMPLE] Language ${config.languages[k].fullname} need sample code for ${page}`))
-      }
-    }
-  }
-
-}
-
-if (process.argv.indexOf('-L') > -1) {
-  const 
-    language = process.argv[process.argv.indexOf('-L') + 1],
-    docTester = new DocTester(language);
-
-  docTester.process(language);
-  
-} else {
-  console.log('You have to define a language with -L args');
-  process.exit(1);
 }

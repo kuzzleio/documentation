@@ -57,6 +57,7 @@ ENV GOBIN /go/bin
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN go get github.com/golang/lint/golint && go get github.com/GeertJohan/fgt
+RUN go get golang.org/x/tools/cmd/goimports
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 

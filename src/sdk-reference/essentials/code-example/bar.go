@@ -1,2 +1,1 @@
-//@todo
 fmt.Println("bar")

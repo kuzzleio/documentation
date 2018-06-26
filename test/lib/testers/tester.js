@@ -1,8 +1,8 @@
-const fileProcess = require('../fileProcess');
+const fileProcess = require('../helpers/file');
 const nexpect = require('nexpect');
 const fs = require('fs');
-const logger = require('../logger');
-const config = require('../../../helpers/getConfig').get();
+const logger = require('../helpers/logger');
+const config = require('../../../getConfig').get();
 
 module.exports = class Tester {
 
