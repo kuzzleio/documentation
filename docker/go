@@ -62,4 +62,4 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
 WORKDIR /app
 
-# ENTRYPOINT ["sh", "docker/entrypoints/go.sh"]
+ENTRYPOINT ["sh", "docker/entrypoints/go.sh"]

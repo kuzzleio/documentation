@@ -6,18 +6,15 @@ const childProcess = require('child_process');
 module.exports = class GoTester extends Tester {
   constructor() {
     super();
-    let binPath = path.join(__dirname, '../../bin')
     this.language = 'go';
-    this.goPath = '/go/src/github.com/kuzzleio/go-test/'
-    this.runCommand = 'go run /go/src/github.com/kuzzleio/go-test/';
-    this.lintCommand = `golint /go/src/github.com/kuzzleio/go-test/`;
-    this.indentation = 'space'; //tab or space
+    this.goProjectPath = '/go/src/github.com/kuzzleio/go-test/';
+    this.runCommand = `go run ${this.goProjectPath}`;
+    this.lintCommand = `golint ${this.goProjectPath}`;
   }
 
   runExpect(binFile, expected) {
     let fileName = binFile.split('/').pop();
-    childProcess.execSync(`goimports -w ${this.goPath}${fileName}`);
-    // console.log(`goimports ${this.goPath}${fileName} > ${this.goPath}${fileName}`);
+    childProcess.execSync(`goimports -w ${this.goProjectPath}${fileName}`);
     return new Promise((resolve, reject) => {
       nexpect.spawn(this.runCommand + fileName)
         .wait(expected, result => {
