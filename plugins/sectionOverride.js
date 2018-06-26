@@ -1,9 +1,7 @@
 
 const fs = require('fs');
-const fsSync = require('fs-sync');
 const path = require('path');
 const marked = require('marked');
-const color = require('colors/safe');
 const config = require('../getConfig').get();
 
 module.exports = {
@@ -31,7 +29,7 @@ module.exports = {
         filenames.forEach(function (file) {
           if (file.split('.')[0].split('_')[0] === name) {
             let language = file.split('.')[0].split('_')[1];
-            let fileContent = fsSync.read(fullPath + '/' + file);
+            let fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8');
 
             section += '<div id="' + name + '" class="section ' + languages[language].fullname + '">\n' + marked(fileContent) + '\n </div>';
           }

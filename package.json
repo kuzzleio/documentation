@@ -16,12 +16,10 @@
     "license": "Apache-2.0",
     "dependencies": {
         "cheerio": "^0.22.0",
-        "fs-sync": "^1.0.4",
         "handlebars": "^4.0.8",
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
-        "line-reader": "^0.4.0",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
         "metalsmith-ancestry": "^1.2.1",
@@ -50,12 +48,9 @@
         "nexpect": "^0.5.0",
         "node-static": "^0.7.9",
         "open": "0.0.5",
-        "prettier": "^1.12.1",
         "read-yaml": "^1.1.0",
         "sanitize-filename": "^1.6.1",
-        "shelljs": "^0.8.2",
         "striptags": "^3.1.0",
-        "uglify-js": "^3.1.2",
         "wordcount": "^1.1.1"
     }
 }

@@ -1,6 +1,7 @@
 const fileProcess = require('../helpers/file');
 const nexpect = require('nexpect');
 const fs = require('fs');
+const childProcess = require('child_process');
 const logger = require('../helpers/logger');
 const config = require('../../../getConfig').get();
 
@@ -14,9 +15,10 @@ module.exports = class Tester {
   
   runOneTest(test, snippetPath) {
     return new Promise(async (resolve, reject) => {
-      if (test.hooks.before) this.runBeforeScript(test.hooks.before);
+      if (test.hooks.before) this.runBeforeCommand(test.hooks.before);
       
       if (this.isTodo(snippetPath, test) || this.isWontdo(snippetPath, test)) {
+        if (test.hooks.after) this.runAfterCommand(test.hooks.after);
         resolve();
         return;
       }
@@ -41,11 +43,13 @@ module.exports = class Tester {
         fileProcess.saveOnFail(binFile, test.name, this.language);
         err.file = snippetPath.split('src/')[1];
         logger.reportNOk(test, err);
+        if (test.hooks.after) this.runAfterCommand(test.hooks.after);
         reject();
         return;
       }
       
       logger.reportOk(test);
+      if (test.hooks.after) this.runAfterCommand(test.hooks.after);
       resolve();
       return;
     });
@@ -134,11 +138,11 @@ module.exports = class Tester {
     return false;
   }
 
-  runBeforeScript() {
-
+  runBeforeCommand(command) {
+    childProcess.execSync(command)
   }
   
-  runAfterScript() {
+  runAfterCommand() {
 
   }
 };
