@@ -1,1 +1,1 @@
-fmt.Println("fooo")
+fmt.Println("foo")
