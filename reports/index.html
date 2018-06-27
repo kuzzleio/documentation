@@ -4,8 +4,10 @@
 <head>
   <script src="https://unpkg.com/ag-grid/dist/ag-grid.min.noStyle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script> -->
   <link rel="stylesheet" href="https://unpkg.com/ag-grid/dist/styles/ag-grid.css">
   <link rel="stylesheet" href="https://unpkg.com/ag-grid/dist/styles/ag-theme-material.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.js"> -->
 </head>
 
 <body>
@@ -89,6 +91,19 @@
       };
     }
     
+    function getFile() {
+      var txt = '';
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
+          txt = xmlhttp.responseText;
+          console.log(txt)
+        }
+      };
+      xmlhttp.open("GET", "./reports/foo.go", true);
+      xmlhttp.send();
+    }
+    
     function getJSON(url, callback) {
       var xhr = new XMLHttpRequest();
       xhr.open("GET", url, true);
@@ -96,7 +111,12 @@
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
             var res = xhr.responseText;
-            callback(JSON.parse(res));
+            try {
+              callback(JSON.parse(res));
+            }
+            catch (e) {
+              callback(res);
+            }
           } else {
             console.error(xhr.statusText);
           }
@@ -196,9 +216,11 @@
       setLanguage();
       setDatetime(dataArr[0].datetime);
       setNumber(dataArr);
+      
+      getJSON('failed/foo.go', function(file){
+        
+      });
     });
-    
-    
     
   </script>
 </body>

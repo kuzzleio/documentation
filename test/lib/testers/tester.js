@@ -43,7 +43,7 @@ module.exports = class Tester {
         fileHelper.saveOnFail(binFile, test.name, this.language);
         fileHelper.removeBin(binFile);
         
-        err.file = snippetPath.split('src/')[1];
+        err.file = snippetPath.split('src/')[1] + '.' + config.languages[this.language].ext;
         logger.reportNOk(test, err);
         
         if (test.hooks.after) this.runHookCommand(test.hooks.after);
@@ -118,7 +118,7 @@ module.exports = class Tester {
         code: 'TODO',
         expect: test.expect,
         actual: '',
-        file: snippetPath.split('src/')[1]
+        file: snippet
       };
       logger.reportToJson(test, err);
       return true;
@@ -135,7 +135,7 @@ module.exports = class Tester {
         code: 'WONTDO',
         expect: test.expect,
         actual: '',
-        file: snippetPath.split('src/')[1]
+        file: snippet
       };
       logger.reportToJson(test, err);
       return true;
