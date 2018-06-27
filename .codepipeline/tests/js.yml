@@ -12,3 +12,4 @@ phases:
   post_build:
     commands:
       - aws s3 sync reports/ s3://$AWS_S3_BUCKET/reports/js/release/
+      - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
