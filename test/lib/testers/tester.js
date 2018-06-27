@@ -1,4 +1,4 @@
-const fileProcess = require('../helpers/file');
+const fileHelper = require('../helpers/file');
 const nexpect = require('nexpect');
 const fs = require('fs');
 const childProcess = require('child_process');
@@ -15,15 +15,15 @@ module.exports = class Tester {
   
   runOneTest(test, snippetPath) {
     return new Promise(async (resolve, reject) => {
-      if (test.hooks.before) this.runBeforeCommand(test.hooks.before);
+      if (test.hooks.before) this.runHookCommand(test.hooks.before);
       
       if (this.isTodo(snippetPath, test) || this.isWontdo(snippetPath, test)) {
-        if (test.hooks.after) this.runAfterCommand(test.hooks.after);
+        if (test.hooks.after) this.runHookCommand(test.hooks.after);
         resolve();
         return;
       }
       
-      let binFile = fileProcess.injectSnippet(test, snippetPath, this.language);
+      let binFile = fileHelper.injectSnippet(test, snippetPath, this.language);
       
       if (!binFile) {
         let err = {
@@ -40,16 +40,21 @@ module.exports = class Tester {
         await this.lintExpect(binFile);
         await this.runExpect(binFile, test.expect);
       } catch (err) {
-        fileProcess.saveOnFail(binFile, test.name, this.language);
+        fileHelper.saveOnFail(binFile, test.name, this.language);
+        fileHelper.removeBin(binFile);
+        
         err.file = snippetPath.split('src/')[1];
         logger.reportNOk(test, err);
-        if (test.hooks.after) this.runAfterCommand(test.hooks.after);
+        
+        if (test.hooks.after) this.runHookCommand(test.hooks.after);
+        
         reject();
         return;
       }
       
       logger.reportOk(test);
-      if (test.hooks.after) this.runAfterCommand(test.hooks.after);
+      if (test.hooks.after) this.runHookCommand(test.hooks.after);
+      fileHelper.removeBin(binFile);
       resolve();
       return;
     });
@@ -138,11 +143,8 @@ module.exports = class Tester {
     return false;
   }
 
-  runBeforeCommand(command) {
+  runHookCommand(command) {
     childProcess.execSync(command)
   }
   
-  runAfterCommand() {
-
-  }
 };

@@ -8,7 +8,6 @@ module.exports = {
 
   process(filename, data) {
     let 
-      self = this,
       languages = config.languages,
       fileString = data.contents.toString(),
       match = fileString.match(/(\[section=)[a-zA-Z0-9]+\]/g),

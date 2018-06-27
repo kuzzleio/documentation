@@ -1,6 +1,7 @@
 const read = require('read-yaml');
 const path = require('path');
 const fs = require('fs');
+const file = require('fs');
 const config = require('../../getConfig').get();
 
 module.exports = class TestManager {

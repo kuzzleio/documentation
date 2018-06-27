@@ -7,7 +7,7 @@ const config = require('../../../getConfig').get();
 
 const 
   TEMPLATE_FOLDER = path.join(__dirname, '../../templates/'),
-  SAVE_FOLDER = path.join(__dirname, '../../bin/failed/'),
+  SAVE_FOLDER = path.join(__dirname, '../../../reports/failed/'),
   BIN_FOLDER = path.join(__dirname, '../../bin/')
   
 class FileProcess {
@@ -18,10 +18,7 @@ class FileProcess {
       snippet = snippetPath + '.' + config.languages[language].ext;
       
     //first check file exist
-    if (!fs.existsSync(template)) {
-      return false;
-    }
-    if (!fs.existsSync(snippet)) {
+    if (!fs.existsSync(template) || !fs.existsSync(snippet)) {
       return false;
     }
     
@@ -61,21 +58,16 @@ class FileProcess {
   }
   
   saveOnFail(binFile, testName, language) {
-    //TODO
-    // testName = this.sanitizeFileName(testName)
-    // let dest = SAVE_FOLDER + testName + '.' + language;
-    // fs.copyFileSync(binFile, dest);
+    testName = this.sanitizeFileName(testName)
+    let dest = SAVE_FOLDER + testName + '.' + language;
+    fs.copyFileSync(binFile, dest);
     return true;
   }
   
   removeBin(binFile) {
-    if(binFile) {
-      try {
-        fs.unlinkSync(binFile)
-      } catch (error) {
-        
-      }
-    }
+    fs.unlink(binFile, (err) => {
+      if (err) throw err;
+    });
   }
   
   sanitizeFileName(fileName) {
