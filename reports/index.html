@@ -2,15 +2,21 @@
 <html>
 
 <head>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   <script src="https://unpkg.com/ag-grid/dist/ag-grid.min.noStyle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/ag-grid/dist/styles/ag-grid.css">
   <link rel="stylesheet" href="https://unpkg.com/ag-grid/dist/styles/ag-theme-material.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.js"> -->
+  <link rel="stylesheet" href="prism.css">
 </head>
 
 <body>
+  <script src="prism.js"></script>
   <style>
     h1{
       font: 600 42px "Roboto", sans-serif;
@@ -30,6 +36,13 @@
     .ag-theme-material .bg-wontdo {
       background-color: lightslategray !important;
     }
+    .modal {
+      max-width: 800px;
+      background-color: #2d2d2d;
+    }
+    .jquery-modal{
+      background-color: rgba(0,0,0,0.4);
+    }
   </style>
   
   <h1>TESTS REPORT : <span id="language"></span></h1>
@@ -40,9 +53,12 @@
   <canvas id="pie-chart" width="250" height="250"></canvas>
   <br>
   <div id="myGrid" style="width:auto;" class="ag-theme-material"></div>
-
-  <script type="text/javascript" charset="utf-8">
+  <div id="ex1" class="modal">
     
+    <a href="#" rel="modal:close">Close</a>
+  </div>
+  <script type="text/javascript" charset="utf-8">
+    // hljs.initHighlightingOnLoad();
     function setLanguage() {
       var languageContainer = document.getElementById("language");
       languageContainer.innerHTML = window.location.pathname.split('/')[2]
@@ -66,7 +82,6 @@
         wontdo = 0;
         
       dataArray.forEach(el => {
-        
         switch (el.status) {
           case 'Success':
             ++success;
@@ -92,19 +107,10 @@
     }
     
     function getFile() {
-      var txt = '';
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
-          txt = xmlhttp.responseText;
-          console.log(txt)
-        }
-      };
-      xmlhttp.open("GET", "./reports/foo.go", true);
-      xmlhttp.send();
+      console.log('getFile');
     }
     
-    function getJSON(url, callback) {
+    function getData(url, callback) {
       var xhr = new XMLHttpRequest();
       xhr.open("GET", url, true);
       xhr.onload = function (e) {
@@ -129,7 +135,7 @@
       xhr.send(null);
     }
     
-    getJSON('report.json', function (report) {
+    getData('report.json', function (report) {
       var dataArr = Object.values(report)
 
       var columnDefs = [
@@ -138,7 +144,7 @@
         { headerName: "STATUS", field: "status" },
         { headerName: "EXPECTED", field: "expected" },
         { headerName: "GOT", field: "got" },
-        { headerName: "FILE", field: "file" }
+        { headerName: "FILE", field: "file", cellRenderer: function(params){return '<a class="file-Link" href="' + params.value.split('/').pop() +'">' + params.value + '</a>'} }
       ];
 
       var rowData = [];
@@ -217,10 +223,21 @@
       setDatetime(dataArr[0].datetime);
       setNumber(dataArr);
       
-      getJSON('failed/foo.go', function(file){
-        
-      });
     });
+    $(document).on('click', 'a', function (e) {
+      e.preventDefault();
+      var file = $(this).attr('href');
+      getData('failed/' + file, function(fileContent){
+        var 
+          converter = new showdown.Converter(),
+          html = converter.makeHtml('```' + file.split('.')[1] +'\n' + fileContent + '\n```');
+          
+        $('.modal').html(html)
+        $('.modal').modal()
+        $('.modal pre').addClass('line-numbers')
+        Prism.highlightAll();
+      })  
+    })
     
   </script>
 </body>
