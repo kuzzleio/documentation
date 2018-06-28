@@ -58,7 +58,6 @@
     <a href="#" rel="modal:close">Close</a>
   </div>
   <script type="text/javascript" charset="utf-8">
-    // hljs.initHighlightingOnLoad();
     function setLanguage() {
       var languageContainer = document.getElementById("language");
       languageContainer.innerHTML = window.location.pathname.split('/')[2]
@@ -104,10 +103,6 @@
         success: success,
         wontdo: wontdo
       };
-    }
-    
-    function getFile() {
-      console.log('getFile');
     }
     
     function getData(url, callback) {
@@ -224,6 +219,8 @@
       setNumber(dataArr);
       
     });
+    
+    // SEE FILE MARKDOWN
     $(document).on('click', 'a', function (e) {
       e.preventDefault();
       var file = $(this).attr('href');
