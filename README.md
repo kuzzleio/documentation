@@ -93,9 +93,45 @@ languages:
     sdk_branch: 1.x
 ```
 
+## Writting tests
+
+To write tests for code-example, you have to put an YAML file in front of snippets file with the same name of the snippet you want to test
+
+```yaml
+name: Create document
+description: Create a document in collection
+hooks:
+  before:
+  after:
+template: default
+expect: document created successfully
+```
+
+Templates are located in `test/templates` and you have to put the `[snippet-code]` tag to automatically inject snippet in the template when tests are lauched.
+
+exemple of default template in JS :
+
+```javascript
+// load the Kuzzle SDK module
+const Kuzzle = require('kuzzle-sdk')
+
+// instantiate a Kuzzle client, this will automatically connect to the Kuzzle server
+const kuzzle = new Kuzzle('kuzzle', { defaultIndex: 'playground', autoReconnect: false })
+
+// add a listener to detect any connection problems
+kuzzle.on('networkError', function (error) {
+  console.error('Network Error:' + error);
+})
+// the snippet will be injected here
+[snippet-code]
+```
+
+You can add your proper template, just respect the naming rule : `tempalte_name.tpl.ext`
+
+
 ## Testing code-example
 
 Every time a pull request is made, a build is launch with Travis and a comment is added to the PR with the URLs of the tests reports (by language).
 
-It's possible to play test locally by running at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified and generate a reports served locally to http://localhost:3001/reports 
+It's possible to play test locally by running at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports . 
 
