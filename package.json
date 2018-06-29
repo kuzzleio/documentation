@@ -16,6 +16,7 @@
     "license": "Apache-2.0",
     "dependencies": {
         "cheerio": "^0.22.0",
+        "express": "^4.16.3",
         "handlebars": "^4.0.8",
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",

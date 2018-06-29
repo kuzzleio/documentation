@@ -68,6 +68,34 @@ Like code-example, create a subfolder `sections` and put markdown files in it.
 
 EX: `createDocument_js.md` / `createDocument_go.md` / `createDocument_default.md` / `...`
 
-Please note that `_language` is important for build process in metalsmith (so please, don't add another `_` in filename).
+Please note that `_language` is important for build process in metalsmith.
 
 Now you can add this tag in your markdown to allow metalsmith to override parts of markdown : `[section=createDocument]`
+
+## Configuration file
+
+`config.yml` at the root of the project :
+
+```yaml
+code_example:
+  snippet_folder_name: code-example
+  section_folder_name: sections
+languages:
+  js:
+    fullname: javascript
+    ext: js
+    sdk_url: https://github.com/kuzzleio/sdk-javascript.git
+    sdk_branch: master
+  go:
+    fullname: go
+    ext: go
+    sdk_url: https://github.com/kuzzleio/sdk-go.git
+    sdk_branch: 1.x
+```
+
+## Testing code-example
+
+Every time a pull request is made, a build is launch with Travis and a comment is added to the PR with the URL of the tests reports (by language).
+
+It's possible to play test locally by runing at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified and generate a reports.
+

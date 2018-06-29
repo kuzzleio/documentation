@@ -4,15 +4,16 @@ const path = require('path');
 const fs = require('fs');
 
 class Logger {
-  reportOk(test) {
-    this.reportToJson(test, false);
+  
+  reportOk(test, language) {
+    this.reportToJson(test, false, language);
     console.log(
       color.green("✔"), color.green(test.name + ': ' + test.description)
     )
   }
 
-  reportNOk(test, err) {
-    this.reportToJson(test, err);
+  reportNOk(test, err, language) {
+    this.reportToJson(test, err, language);
     console.log(color.red("✗"), color.red(test.name + ': ' + test.description + ' '))
     if (err) {
       console.log(color.red('    ' + err.code))
@@ -21,7 +22,7 @@ class Logger {
     }
   }
   
-  reportToJson(test, err) {
+  reportToJson(test, err, language) {
     let 
       reportFile = path.join(__dirname, '../../../reports/') + 'report.json',
       report = {},
@@ -46,7 +47,8 @@ class Logger {
     } 
     
     report[test.name] = {
-      test : test,
+      test: test,
+      language: language,
       datetime: new Date().toLocaleString(),
       status: status,
       error: (err) ? {code: err.code, got: err.actual} : {},

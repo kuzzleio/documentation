@@ -58,9 +58,9 @@
     <a href="#" rel="modal:close">Close</a>
   </div>
   <script type="text/javascript" charset="utf-8">
-    function setLanguage() {
+    function setLanguage(language) {
       var languageContainer = document.getElementById("language");
-      languageContainer.innerHTML = window.location.pathname.split('/')[2]
+      languageContainer.innerHTML = language
     }
     
     function setDatetime(datetime) {
@@ -214,7 +214,7 @@
         }
       });
       
-      setLanguage();
+      setLanguage(dataArr[0].language);
       setDatetime(dataArr[0].datetime);
       setNumber(dataArr);
       

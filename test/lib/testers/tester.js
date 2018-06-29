@@ -31,7 +31,7 @@ module.exports = class Tester {
           expect: test.expect,
           actual: `Missing snippet file : ${snippetPath.split('src/')[1]}.${this.language}`
         };
-        logger.reportNOk(test, err);
+        logger.reportNOk(test, err, this.language);
         reject();
         return;
       }
@@ -44,7 +44,7 @@ module.exports = class Tester {
         fileHelper.removeBin(binFile);
         
         err.file = snippetPath.split('src/')[1] + '.' + config.languages[this.language].ext;
-        logger.reportNOk(test, err);
+        logger.reportNOk(test, err, this.language);
         
         if (test.hooks.after) this.runHookCommand(test.hooks.after);
         
@@ -52,7 +52,7 @@ module.exports = class Tester {
         return;
       }
       
-      logger.reportOk(test);
+      logger.reportOk(test, this.language);
       if (test.hooks.after) this.runHookCommand(test.hooks.after);
       fileHelper.removeBin(binFile);
       resolve();
@@ -120,7 +120,7 @@ module.exports = class Tester {
         actual: '',
         file: snippet
       };
-      logger.reportToJson(test, err);
+      logger.reportToJson(test, err, this.language);
       return true;
     }  
     return false;
@@ -137,7 +137,7 @@ module.exports = class Tester {
         actual: '',
         file: snippet
       };
-      logger.reportToJson(test, err);
+      logger.reportToJson(test, err, this.language);
       return true;
     } 
     return false;
