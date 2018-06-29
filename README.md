@@ -95,7 +95,7 @@ languages:
 
 ## Testing code-example
 
-Every time a pull request is made, a build is launch with Travis and a comment is added to the PR with the URL of the tests reports (by language).
+Every time a pull request is made, a build is launch with Travis and a comment is added to the PR with the URLs of the tests reports (by language).
 
-It's possible to play test locally by runing at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified and generate a reports.
+It's possible to play test locally by running at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified and generate a reports served locally to http://localhost:3001/reports 
 
