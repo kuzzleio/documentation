@@ -54,13 +54,10 @@ var languageSelector = {
     }
     if (typeof GET['language'] != 'undefined' && languages.indexOf(GET['language']) > -1) {
       return GET['language'];
-    } else if (this.getLanguageInUrl()) {
-      return this.getLanguageInUrl();
     } else if (this.getPreferedLanguage()) {
       return this.getPreferedLanguage();
-    } else {
-      return 'javascript'
     }
+    return 'javascript';
   },
 
   setSelectorOptions: function() {
