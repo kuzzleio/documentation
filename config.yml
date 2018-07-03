@@ -12,3 +12,13 @@ languages:
     ext: go
     sdk_url: https://github.com/kuzzleio/sdk-go.git
     sdk_branch: 1.x
+  cpp:
+    fullname: C++
+    ext: cpp
+    sdk_url: https://github.com/kuzzleio/sdk-go.git
+    sdk_branch: 1.x
+  java:
+    fullname: Java
+    ext: java
+    sdk_url: https://github.com/kuzzleio/sdk-go.git
+    sdk_branch: 1.x
