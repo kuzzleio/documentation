@@ -18,7 +18,7 @@
 
 `node index.js --build-host http://docs.kuzzle.io --build-path /v/edge --build-compress`
 
-> bind a webserver on 8080 with livereload and watch enabled
+> bind a webserver on 3000 with livereload and watch enabled
 
 `npm run dev`
 
@@ -133,5 +133,4 @@ You can add your proper template, just respect the naming rule : `tempalte_name.
 
 Every time a pull request is made, a build is launch with Travis and a comment is added to the PR with the URLs of the tests reports (by language).
 
-It's possible to play test locally by running at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports . 
-
+It's possible to play test locally by running at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .

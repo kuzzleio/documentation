@@ -1,0 +1,7 @@
+name: create
+description: create a new index
+hooks:
+  before:
+  after:
+template: default
+expect: index created

@@ -1,0 +1,7 @@
+name: delete
+description: delete an index
+hooks:
+  before:
+  after:
+template: default
+expect: index deleted

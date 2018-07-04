@@ -6,7 +6,14 @@ const Kuzzle = require('kuzzle-sdk')
 const kuzzle = new Kuzzle('kuzzle', { defaultIndex: 'playground', autoReconnect: false })
 
 // add a listener to detect any connection problems
-kuzzle.on('networkError', function (error) {
+kuzzle.on('networkError', error => {
   console.error('Network Error:' + error);
 })
-[snippet-code]
+
+kuzzle.connect()
+  .then(() => {
+    return [snippet-code]
+  })
+  .then(() => {
+    kuzzle.disconnect();
+  });
