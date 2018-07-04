@@ -1,4 +1,4 @@
-response, err := kuzzle.index.Create("nyc-open-data")
+err := kuzzle.Index.Create("nyc-open-data", nil)
 
 if err != nil {
   fmt.Println(err)

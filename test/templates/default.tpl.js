@@ -2,8 +2,8 @@
 // load the Kuzzle SDK module
 const Kuzzle = require('kuzzle-sdk')
 
-// instantiate a Kuzzle client, this will automatically connect to the Kuzzle server
-const kuzzle = new Kuzzle('kuzzle', { defaultIndex: 'playground', autoReconnect: false })
+// instantiate a Kuzzle client
+const kuzzle = new Kuzzle('kuzzle', { autoReconnect: false })
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {

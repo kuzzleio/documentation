@@ -3,6 +3,7 @@
 set -e
 
 npm install
+echo $(node -e "require('./getConfig').getSdk('go');")
 git clone $(node -e "require('./getConfig').getSdk('go');")
 mv sdk-go /go/src/github.com/kuzzleio/sdk-go
 cd /go/src/github.com/kuzzleio/sdk-go && go get ./...
