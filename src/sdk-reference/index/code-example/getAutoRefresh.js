@@ -1,8 +1,8 @@
 kuzzle
   .index
-  .delete('nyc-open-data')
+  .getAutoRefresh('nyc-open-data')
   .then(result => {
-    console.log('index deleted')
+    console.log(`autorefresh is ${result}`)
   })
   .catch(error => {
     console.error(error.message)

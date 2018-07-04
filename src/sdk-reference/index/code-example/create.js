@@ -1,4 +1,3 @@
-// Create a new index named 'nyc-open-data'
 kuzzle
   .index
   .create('nyc-open-data')

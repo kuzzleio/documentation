@@ -6,9 +6,13 @@ description: Create
 order: 200
 ---
 
-# create(name, [options])
+# Create
 
 Create a new empty data index.
+
+## Usage
+
+> create(name, [options])
 
 [code-example=create]
 
@@ -22,7 +26,7 @@ Query options.
 
 ---
 
-## Callback Response
+## Response
 
 Returns an object with the index creation status.
 

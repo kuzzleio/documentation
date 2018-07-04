@@ -6,7 +6,7 @@ languages:
     fullname: javascript
     ext: js
     sdk_url: https://github.com/kuzzleio/sdk-javascript.git
-    sdk_branch: master
+    sdk_branch: 6.x
   go:
     fullname: go
     ext: go

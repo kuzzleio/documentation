@@ -3,12 +3,16 @@ layout: full.html
 algolia: true
 title: Delete
 description: Delete
-order: 200
+order: 300
 ---
 
-# delete(name, [options])
+# Delete
 
 Deletes an entire data index from Kuzzle.
+
+## Usage
+
+> delete(name, [options])
 
 [code-example=delete]
 
@@ -22,9 +26,9 @@ Query options.
 
 ---
 
-## Callback Response
+## Response
 
-Returns an object with the index creation status.
+Returns an object with the index deletion status.
 
 | Name | Type | Description
 |------|------|-------------

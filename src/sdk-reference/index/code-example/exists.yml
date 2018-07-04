@@ -1,0 +1,7 @@
+name: exists
+description: test if an index exists
+hooks:
+  before:
+  after:
+template: default
+expect: index exists

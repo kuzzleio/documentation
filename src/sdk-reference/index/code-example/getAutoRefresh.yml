@@ -1,0 +1,7 @@
+name: getAutoRefresh
+description: Return autorefresh status for index
+hooks:
+  before:
+  after:
+template: default
+expect: autorefresh is false

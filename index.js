@@ -260,7 +260,7 @@ let metalsmith = Metalsmith(__dirname)
   .use((files, metalsmith, done) => {
     for (let file in files) {
       if (file.endsWith('.md')) {
-        let codeExampleData = codeExample.process(file, files[file]);  
+        let codeExampleData = codeExample.process(file, files[file]);
         files[file].contents = codeExampleData['fileContent'];
         files[file]['has_code_example'] = codeExampleData['has_code_example'];
       }
@@ -438,6 +438,8 @@ if (options.dev.enabled) {
           "src/**/*.md": "**/*",
           "src/templates/**/*": "**/*",
           "helpers/**/*": "**/*",
+          '**/**/sections/*': '**/*',
+          '**/**/code-example/*': '**/*'
         },
         livereload: true
       })

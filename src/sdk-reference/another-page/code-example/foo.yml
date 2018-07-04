@@ -1,7 +1,0 @@
-name: foo
-description: it's FOOOOOO
-hooks:
-  before:
-  after:
-template: default
-expect: foo
