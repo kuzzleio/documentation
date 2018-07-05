@@ -1,18 +1,18 @@
 ---
 layout: full.html
 algolia: true
-title: create
-description: Create an index
-order: 200
+title: list
+description: List the indexes
+order: 600
 ---
 
-# create(name, [options])
+# list([options])
 
-Create a new empty data index.
+Return the complete list of data indexes handled by Kuzzle.
 
 ## Usage
 
-[code-example=create]
+[code-example=list]
 
 ## Options
 
@@ -26,4 +26,4 @@ Query options.
 
 ## Response
 
-[section=createResponse]
+[section=listResponse]

@@ -1,7 +1,7 @@
 kuzzle
   .index
   .create('nyc-open-data')
-  .then(result => {
+  .then(response => {
     console.log('index created')
   })
   .catch(error => {

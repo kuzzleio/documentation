@@ -1,18 +1,16 @@
 ---
 layout: full.html
 algolia: true
-title: Delete
-description: Delete
+title: delete
+description: Delete an index
 order: 300
 ---
 
-# Delete
+# delete(name, [options])
 
 Deletes an entire data index from Kuzzle.
 
 ## Usage
-
-> delete(name, [options])
 
 [code-example=delete]
 
@@ -28,8 +26,4 @@ Query options.
 
 ## Response
 
-Returns an object with the index deletion status.
-
-| Name | Type | Description
-|------|------|-------------
-| acknowledged | boolean | indicates whether the index was successfully deleted in the Elastic cluster
+[section=deleteResponse]

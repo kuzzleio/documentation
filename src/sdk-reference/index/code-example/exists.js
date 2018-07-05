@@ -1,8 +1,8 @@
 kuzzle
   .index
   .exists('nyc-open-data')
-  .then(result => {
-    if (result === true) {
+  .then(exists => {
+    if (exists === true) {
       console.log('index exists')
     } else {
       console.log('index does not exist')

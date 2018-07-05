@@ -1,12 +1,12 @@
 ---
 layout: full.html
 algolia: true
-title: GetAutoRefresh
-description: GetAutoRefresh
+title: getAutoRefresh
+description: Return the status of autorefresh flag
 order: 500
 ---
 
-# GetAutoRefresh
+# getAutoRefresh([options])
 
 The getAutoRefresh action returns the current autorefresh status for the index.
 
@@ -21,8 +21,6 @@ we recommend that you avoid using it in production or at least carefully monitor
 </div>
 
 ## Usage
-
-> getAutoRefresh(name, [options])
 
 [code-example=getAutoRefresh]
 

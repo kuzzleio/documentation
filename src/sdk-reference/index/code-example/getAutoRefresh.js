@@ -1,8 +1,8 @@
 kuzzle
   .index
   .getAutoRefresh('nyc-open-data')
-  .then(result => {
-    console.log(`autorefresh is ${result}`)
+  .then(status => {
+    console.log(`autorefresh is ${status}`)
   })
   .catch(error => {
     console.error(error.message)

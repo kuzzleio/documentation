@@ -1,8 +1,8 @@
 ---
 layout: full.html
 algolia: true
-title: Exists
-description: Exists
+title: exists
+description: Check for index existence
 order: 400
 ---
 
@@ -10,7 +10,6 @@ order: 400
 
 Checks if the given index exists in Kuzzle.
 
-` toUZZZZZZZZZUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUt`
 ## Usage
 
 > exists(name, [options])

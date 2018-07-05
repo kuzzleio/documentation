@@ -1,9 +1,8 @@
-
 // load the Kuzzle SDK module
-const Kuzzle = require('kuzzle-sdk')
+const Kuzzle = require('kuzzle-sdk').Kuzzle;
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle('kuzzle', { autoReconnect: false })
+const kuzzle = new Kuzzle('websocket', { host: 'kuzzle', autoReconnect: false });
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {

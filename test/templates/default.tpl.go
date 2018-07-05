@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 
 	"github.com/kuzzleio/sdk-go/connection/websocket"
@@ -12,5 +11,5 @@ func main() {
 	c := websocket.NewWebSocket("kuzzle", nil)
 	kuzzle, _ := kuzzle.NewKuzzle(c, nil)
 
-  [snippet-code]
+	[snippet-code]
 }
