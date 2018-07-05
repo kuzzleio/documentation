@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	c := websocket.NewWebSocket("localhost", nil)
+	c := websocket.NewWebSocket("kuzzle", nil)
 	kuzzle, _ := kuzzle.NewKuzzle(c, nil)
 
   [snippet-code]

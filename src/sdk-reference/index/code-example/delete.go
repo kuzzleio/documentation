@@ -1,4 +1,4 @@
-response, err := kuzzle.index.Delete("nyc-open-data")
+err := kuzzle.Index.Delete("nyc-open-data", nil)
 
 if err != nil {
   fmt.Println(err)
