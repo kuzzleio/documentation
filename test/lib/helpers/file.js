@@ -8,7 +8,8 @@ const config = require('../../../getConfig').get();
 const 
   TEMPLATE_FOLDER = path.join(__dirname, '../../templates/'),
   SAVE_FOLDER = path.join(__dirname, '../../../reports/failed/'),
-  BIN_FOLDER = path.join(__dirname, '../../bin/')
+  BIN_FOLDER = path.join(__dirname, '../../bin/'),
+  GENERIQUE_JAVA_CLASSNAME = 'CodeExampleGeneriqueClass';
   
 class FileProcess {
   
@@ -35,8 +36,15 @@ class FileProcess {
       
       let
         newContent = templateContent.replace(/(\[snippet-code])/g, snippetContent),
-        binPath = BIN_FOLDER + this.sanitizeFileName(test.name) + '.' + language;
-        
+        fileName = this.sanitizeFileName(test.name),
+        binPath = BIN_FOLDER + fileName + '.' + language;
+      
+      // JAVA hack, because filename has to be the same of the class name
+      // We replace the template generique class name by the name of the test
+      if (language === 'java') {
+        newContent = this.overrideClassName(newContent, fileName);
+      }
+      
       fs.writeFileSync(binPath, newContent);
       
       if (fs.existsSync(binPath)) {
@@ -72,6 +80,10 @@ class FileProcess {
   
   sanitizeFileName(fileName) {
     return sanitize(fileName).replace(' ', '_').toLowerCase();
+  }
+  
+  overrideClassName(content, name) {
+    return content.replace(GENERIQUE_JAVA_CLASSNAME, name);
   }
   
 }

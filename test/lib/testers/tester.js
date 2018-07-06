@@ -24,7 +24,6 @@ module.exports = class Tester {
       }
       
       let binFile = fileHelper.injectSnippet(test, snippetPath, this.language);
-      
       if (!binFile) {
         let err = {
           code: 'MISSING_SNIPPET',
@@ -41,7 +40,8 @@ module.exports = class Tester {
         await this.runExpect(binFile, test.expect);
       } catch (err) {
         fileHelper.saveOnFail(binFile, test.name, this.language);
-        fileHelper.removeBin(binFile);
+        // fileHelper.removeBin(binFile);
+        
         
         err.file = snippetPath.split('src/')[1] + '.' + config.languages[this.language].ext;
         logger.reportNOk(test, err, this.language);
@@ -54,7 +54,7 @@ module.exports = class Tester {
       
       logger.reportOk(test, this.language);
       if (test.hooks.after) this.runHookCommand(test.hooks.after);
-      fileHelper.removeBin(binFile);
+      // fileHelper.removeBin(binFile);
       resolve();
       return;
     });
