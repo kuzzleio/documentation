@@ -6,7 +6,7 @@ description: Create an index
 order: 200
 ---
 
-# create(name, [options])
+# create(index, [options])
 
 Create a new empty data index.
 

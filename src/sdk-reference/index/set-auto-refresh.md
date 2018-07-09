@@ -6,7 +6,7 @@ description: Set the autorefresh flag
 order: 1000
 ---
 
-# setAutoRefresh([options])
+# setAutoRefresh(index, autorefresh, [options])
 
 
 The setAutoRefresh action allow to set the autorefresh flag for the index.

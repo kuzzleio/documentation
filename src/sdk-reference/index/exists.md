@@ -6,13 +6,11 @@ description: Check for index existence
 order: 300
 ---
 
-# Exists
+# exists(index, [options])
 
 Checks if the given index exists in Kuzzle.
 
 ## Usage
-
-> exists(name, [options])
 
 [code-example=exists]
 

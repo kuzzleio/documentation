@@ -1,4 +1,4 @@
-err := kuzzle.Index.SetAutoRefresh("nyc-open-data", true)
+err := kuzzle.Index.SetAutoRefresh("nyc-open-data", true, nil)
 
 if err != nil {
   fmt.Println(err)

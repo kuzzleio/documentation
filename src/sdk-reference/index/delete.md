@@ -6,7 +6,7 @@ description: Delete an index
 order: 500
 ---
 
-# delete(name, [options])
+# delete(index, [options])
 
 Deletes an entire data index from Kuzzle.
 
