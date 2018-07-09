@@ -364,7 +364,7 @@ metalsmith
     '/guide/kuzzle-admin-console': '/guide/kuzzle-admin-console/getting-started/',
     '/api-documentation/': '/api-documentation/connecting-to-kuzzle/',
     '/sdk-reference': 'essentials/',
-    '/sdk-reference/index': 'create/',
+    '/sdk-reference/index/': 'create/',
     '/plugins-reference/': 'plugins-features/',
     '/elasticsearch-cookbook/': '/elasticsearch-cookbook/installation/',
     '/kuzzle-dsl/': '/kuzzle-dsl/essential/koncorde/',
