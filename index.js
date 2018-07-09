@@ -49,7 +49,7 @@ function log(args) {
   console.log(color.magenta('[kuzzle-docs]'), args);
 }
 
-let options = {
+const options = {
   dev: {
     enabled: false,
     port: 8080,
@@ -117,7 +117,7 @@ if (options.dev.enabled) {
   log(`Starting ${color.bold('production')} build...`);
 }
 
-for (let config of versionsConfig) {
+for (const config of versionsConfig) {
   if (config.version_path === options.build.path) {
     log(`Using version ${color.bold(config.version_label)}`);
 
@@ -128,11 +128,11 @@ for (let config of versionsConfig) {
 }
 
 options.algolia.fnFileParser = (file, data) => {
-  let objects = [];
-  let $ = cheerio.load(data.contents.toString(), {
+  const objects = [];
+  const $ = cheerio.load(data.contents.toString(), {
     normalizeWhitespace: true
   });
-  let content = $('.main-content');
+  const content = $('.main-content');
 
   // remove useless content
   $('.hljs', content).remove();
@@ -227,7 +227,7 @@ handlebars.registerHelper({
 
 // Build site with metalsmith.
 
-let metalsmith = Metalsmith(__dirname)
+const metalsmith = Metalsmith(__dirname)
   .metadata({
     site_title: 'Kuzzle documentation',
     site_url: options.build.host,
@@ -258,9 +258,9 @@ let metalsmith = Metalsmith(__dirname)
     });
   })
   .use((files, metalsmith, done) => {
-    for (let file in files) {
+    for (const file in files) {
       if (file.endsWith('.md')) {
-        let codeExampleData = codeExample.process(file, files[file]);
+        const codeExampleData = codeExample.process(file, files[file]);
         files[file].contents = codeExampleData['fileContent'];
         files[file]['has_code_example'] = codeExampleData['has_code_example'];
       }
@@ -268,9 +268,9 @@ let metalsmith = Metalsmith(__dirname)
     setImmediate(done);
   })
   .use((files, metalsmith, done) => {
-    for (let file in files) {
+    for (const file in files) {
       if (file.endsWith('.md')) {
-        let sectionsData = sectionOverride.process(file, files[file]);
+        const sectionsData = sectionOverride.process(file, files[file]);
         files[file].contents = sectionsData['fileContent'];
         files[file]['has_section'] = sectionsData['has_section'];
         files[file]['sections'] = sectionsData['sections'];
@@ -326,7 +326,7 @@ metalsmith
   }))
   .use(uglifyjs({
     src: ["**/*.js", "!**/*.min.js"],
-    deleteSources: false,
+    deconsteSources: false,
     uglifyOptions: {
       files: ['assets/js/libs/jquery.min.js', 'assets/js/*.js'],
       mangle: true,
@@ -336,9 +336,9 @@ metalsmith
     }
   }))
   .use((files, metalsmith, done) => {
-    for (let file in files) {
+    for (const file in files) {
       if (file.endsWith('.html')) {
-        let anchorsData = anchors.process(file, files[file]);
+        const anchorsData = anchors.process(file, files[file]);
         files[file].contents = anchorsData['fileContent'];
         files[file]['anchors'] = anchorsData['anchors'];
       }
@@ -363,7 +363,7 @@ metalsmith
     '/guide/kuzzle-for-mobile': '/guide/kuzzle-for-mobile/getting-started/',
     '/guide/kuzzle-admin-console': '/guide/kuzzle-admin-console/getting-started/',
     '/api-documentation/': '/api-documentation/connecting-to-kuzzle/',
-    '/sdk-reference/': 'essentials/',
+    '/sdk-reference': 'essentials/',
     '/sdk-reference/index': 'create/',
     '/plugins-reference/': 'plugins-features/',
     '/elasticsearch-cookbook/': '/elasticsearch-cookbook/installation/',
