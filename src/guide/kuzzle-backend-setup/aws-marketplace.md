@@ -5,3 +5,67 @@ title: AWS Marketplace
 description: AWS Marketplace
 order: 1200
 ---
+
+# AWS Marketplace
+> ⚠️ To follow this tutorial, you need a __valid AWS account__.
+
+_In this guide, you'll learn where and how to use our AWS Marketplace AMI. It's a
+ good way to test Kuzzle in a cloud environment. In addtion, we recommend you to
+ use our [Kuzzle Admin Console](http://console.kuzzle.io), the most comfy
+ way to play with Kuzzle._
+
+## Get the AMI
+
+Our AMI is stored on AWS Marketplace. It's setup with:
+  * Ubuntu (__16.04__)
+  * Kuzzle (__latest__) with MQTT protocol support.
+  * Elasticsearch (__v5.4.1__).
+  * Redis (__v3.2.12__).
+
+Go to the marketplace and type __kuzzle__ in the search form.
+You should see one result:
+
+  ![Search result image]()
+
+Choose your Amazon EC2 instance type (the minimal requirement is a __t2-medium__).
+
+Recover the public IP or the hostname provided by AWS before continue.
+Check if Kuzzle is up and running by simply performing the following HTTP request::
+
+```sh
+$ curl http://yourInstanceIpOrHostname:7512/_now\?pretty
+{
+  "requestId": "9abc8b22-d033-4579-a2b8-35b694839ee1",
+  "status": 200,
+  "error": null,
+  "controller": "server",
+  "action": "now",
+  "collection": null,
+  "index": null,
+  "volatile": null,
+  "result": {
+    "now": 1531127663204
+  }
+}
+```
+
+You should see the current UNIX formatted timestamp.
+If not, wait a few minutes and retry the request.
+
+## Connect and create first user
+
+Open the [Kuzzle Admin Console](http://console.kuzzle.io) and fill the form with the address of your Kuzzle instance.
+Kuzzle will then ask you to create your first user (we recommend to reset the rights for the anonymous user).
+At this point, you'll be able to log-in.
+
+![Demo Admin Console First Connection](/assets/images/gifs/demo_aws_console.gif)
+
+
+## Where do we go from here?
+
+Now that you've Kuzzle up and running, dive even deeper to learn how to leverage its full capabilities:
+
+* take a look at the [SDK Reference](/sdk-reference)
+* learn how to use [Koncorde](/kuzzle-dsl/essential/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+* follow our guide to learn how to [implement basic authentication](/guide/essentials/user-authentication/#local-strategy).
+* follow our guide to learn how to [implement manage users and setup fine-grained access control](/guide/essentials/security).
