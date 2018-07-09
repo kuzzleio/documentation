@@ -3,7 +3,7 @@ layout: full.html
 algolia: true
 title: list
 description: List the indexes
-order: 600
+order: 400
 ---
 
 # list([options])

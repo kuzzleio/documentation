@@ -3,7 +3,7 @@ layout: full.html
 algolia: true
 title: exists
 description: Check for index existence
-order: 400
+order: 300
 ---
 
 # Exists

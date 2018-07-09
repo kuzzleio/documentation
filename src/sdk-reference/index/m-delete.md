@@ -3,7 +3,7 @@ layout: full.html
 algolia: true
 title: mDelete
 description: Delete multiple indexes
-order: 700
+order: 600
 ---
 
 # mDelete(indexes, [options])

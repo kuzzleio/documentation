@@ -3,7 +3,7 @@ layout: full.html
 algolia: true
 title: refresh
 description: Force Elasticsearch search index update
-order: 800
+order: 700
 ---
 
 # refresh(index, [options])

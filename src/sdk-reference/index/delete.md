@@ -3,7 +3,7 @@ layout: full.html
 algolia: true
 title: delete
 description: Delete an index
-order: 300
+order: 500
 ---
 
 # delete(name, [options])
