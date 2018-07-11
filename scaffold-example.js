@@ -4,7 +4,7 @@ const path = process.argv[2];
 
 if (! path || path === '') {
   console.log('You must provide a path for the code example');
-  console.log('> node scaffold-example.js <path> <example name>');
+  console.log(`> node ${process.argv[1]} <path> <example name>`);
   process.exit(1);
 }
 
@@ -17,7 +17,7 @@ const exampleName = process.argv[3];
 
 if (! exampleName || exampleName === '') {
   console.log('You must provide an example name for the code example');
-  console.log('> node scaffold-example.js <path> <example name>');
+  console.log(`> node ${process.argv[1]} <path> <example name>`);
   process.exit(1);
 }
 
@@ -41,8 +41,4 @@ template: default
 expect: something
 `;
 
-fs.writeFile(`${path}/${exampleName}.yml`, yamlContent, error => {
-  if (error) {
-    console.log(`Error for yml config: ${error.message}`);
-  }
-});
+fs.writeFileSync(`${path}/${exampleName}.yml`, yamlContent)

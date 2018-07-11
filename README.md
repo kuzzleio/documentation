@@ -132,7 +132,7 @@ kuzzle.connect()
   });
 ```
 
-You can add your proper template, just respect the naming rule : `template_name.tpl.ext`
+You can add your own template, just respect the naming rule : `template_name.tpl.ext`
 
 
 ## Testing code-example

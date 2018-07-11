@@ -2,7 +2,7 @@
 layout: full.html
 algolia: true
 title: getAutoRefresh
-description: Return the status of autorefresh flag
+description: Returnsthe status of autorefresh flag
 order: 900
 ---
 

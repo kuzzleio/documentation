@@ -8,7 +8,7 @@ order: 400
 
 # list([options])
 
-Return the complete list of data indexes handled by Kuzzle.
+Returnsthe complete list of data indexes handled by Kuzzle.
 
 ## Usage
 

@@ -2,7 +2,7 @@
 layout: full.html
 algolia: true
 title: delete
-description: Delete an index
+description: Deletes an index
 order: 500
 ---
 

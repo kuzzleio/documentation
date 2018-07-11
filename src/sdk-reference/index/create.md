@@ -8,7 +8,7 @@ order: 200
 
 # create(index, [options])
 
-Create a new empty data index.
+Creates a new empty data index.
 
 ## Usage
 
