@@ -8,7 +8,7 @@ order: 200
 
 # create(index, [options])
 
-Create a new empty data index.
+Creates a new empty data index.
 
 ## Usage
 
@@ -18,9 +18,9 @@ Create a new empty data index.
 
 Query options.
 
-| Option | Type | Description | Default
-|--------|------|-------------|---------
-| queuable | boolean | Make this request queuable or not  | true
+| Option   | Type    | Description                       | Default |
+| -------- | ------- | --------------------------------- | ------- |
+| queuable | boolean | Make this request queuable or not | true    |
 
 ---
 

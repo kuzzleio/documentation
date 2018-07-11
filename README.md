@@ -28,11 +28,10 @@
 
 Here is an overview of the files structure:
 
-* `src/`: documentation entry point
-* `src/<section>/` (for instance: `src/guide/`, entry point of the Guide documentation section)
-* `src/<section>/<subsection>/` (for instance: `src/guide/essentials/`)
-* `src/<section>/<subsection>/<article>.md` (for instance: `src/guide/essentials/installing-kuzzle.md`)
-
+- `src/`: documentation entry point
+- `src/<section>/` (for instance: `src/guide/`, entry point of the Guide documentation section)
+- `src/<section>/<subsection>/` (for instance: `src/guide/essentials/`)
+- `src/<section>/<subsection>/<article>.md` (for instance: `src/guide/essentials/installing-kuzzle.md`)
 
 Though there is no real limit to the directories depth, to keep the documentation homogeneous and readable, no additional subdirectories should be added.
 
@@ -44,7 +43,6 @@ For instance: `src/guide/`.
 Each page directory must contain an `index.md` file, with the following headers:
 
 ```
-
 ---
 layout: category-childrens.html
 title: <Name used in the section list>
@@ -113,27 +111,30 @@ exemple of default template in JS :
 
 ```javascript
 // load the Kuzzle SDK module
-const Kuzzle = require('kuzzle-sdk').Kuzzle;
+const { Kuzzle } = require('kuzzle-sdk');
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle('websocket', { host: 'kuzzle', autoReconnect: false });
+const kuzzle = new Kuzzle('websocket', {
+  host: 'kuzzle',
+  autoReconnect: false
+});
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
   console.error('Network Error:' + error);
-})
+});
 
-kuzzle.connect()
+kuzzle
+  .connect()
   .then(() => {
-    return [snippet-code]
+    return [snippet - code];
   })
   .then(() => {
     kuzzle.disconnect();
   });
 ```
 
-You can add your proper template, just respect the naming rule : `template_name.tpl.ext`
-
+You can add your own template, just respect the naming rule : `template_name.tpl.ext`
 
 ## Testing code-example
 

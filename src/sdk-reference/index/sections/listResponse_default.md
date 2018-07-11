@@ -1,1 +1,1 @@
-Return an array of string containing indexes names.
+Returns an array of string containing indexes names.

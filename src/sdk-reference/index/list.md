@@ -8,7 +8,7 @@ order: 400
 
 # list([options])
 
-Return the complete list of data indexes handled by Kuzzle.
+Returnsthe complete list of data indexes handled by Kuzzle.
 
 ## Usage
 
@@ -18,9 +18,9 @@ Return the complete list of data indexes handled by Kuzzle.
 
 Query options.
 
-| Option | Type | Description | Default
-|--------|------|-------------|---------
-| queuable | boolean | Make this request queuable or not  | true
+| Option   | Type    | Description                       | Default |
+| -------- | ------- | --------------------------------- | ------- |
+| queuable | boolean | Make this request queuable or not | true    |
 
 ---
 

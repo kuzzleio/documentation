@@ -1,1 +1,1 @@
-Return an error or nil if the request succeed.
+Returns an error or nil if the request succeed.

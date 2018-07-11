@@ -2,13 +2,13 @@
 layout: full.html
 algolia: true
 title: mDelete
-description: Delete multiple indexes
+description: Deletes multiple indexes
 order: 600
 ---
 
 # mDelete(indexes, [options])
 
-Delete multiple indexes at once.
+Deletes multiple indexes at once.
 
 ## Usage
 
@@ -18,9 +18,9 @@ Delete multiple indexes at once.
 
 Query options.
 
-| Option | Type | Description | Default
-|--------|------|-------------|---------
-| queuable | boolean | Make this request queuable or not  | true
+| Option   | Type    | Description                       | Default |
+| -------- | ------- | --------------------------------- | ------- |
+| queuable | boolean | Make this request queuable or not | true    |
 
 ---
 

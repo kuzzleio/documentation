@@ -2,7 +2,7 @@
 layout: full.html
 algolia: true
 title: delete
-description: Delete an index
+description: Deletes an index
 order: 500
 ---
 
@@ -18,9 +18,9 @@ Deletes an entire data index from Kuzzle.
 
 Query options.
 
-| Option | Type | Description | Default
-|--------|------|-------------|---------
-| queuable | boolean | Make this request queuable or not  | true
+| Option   | Type    | Description                       | Default |
+| -------- | ------- | --------------------------------- | ------- |
+| queuable | boolean | Make this request queuable or not | true    |
 
 ---
 
