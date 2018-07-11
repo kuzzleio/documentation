@@ -10,8 +10,5 @@ order: 100
 
 Code example extracted from files, it's posible to switch on your prefered language !
 
-[code-example=bar]
 
 Sometimes specifications can change, depends on the selected language
-
-[section=test]

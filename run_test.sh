@@ -17,7 +17,7 @@ while getopts ":l:" opt; do
         node test/lib/helpers/reports.js
       else
         echo "Invalid language"
-        exit 1  
+        exit 1
       fi
       ;;
     \?)
