@@ -8,7 +8,7 @@ order: 200
 
 # import(data, [options])
 
-The bulk import allows to save a list of documents into a specific collection (belonging to a specific index). If a subset of the documents fails to save, a PartialError is triggered. The `data` argument passed to the method must specify the set of documents to import and must satisfy the [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/docs-bulk.html).
+The bulk import allows to save a list of documents into a specific collection (belonging to a specific index). If a subset of the documents fails to save, a PartialError is triggered. The `data` argument passed to the method must specify the set of documents to import and must satisfy the [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html).
 
 ### The Elasticsearch Bulk API in brief
 
@@ -32,7 +32,7 @@ Note that the action object always has an attribute whose key specifies the acti
 
 Possible actions are `create`, `index`, `update`, `delete`.
 
-Learn more at https://www.elastic.co/guide/en/elasticsearch/reference/5.5/docs-bulk.html
+Learn more at https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html
 
 ## Usage
 
