@@ -40,12 +40,7 @@ Learn more at https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-b
 
 ## Options
 
-Query options.
-
-| Option    | Type   | Description                                         | Default |
-| --------- | ------ | --------------------------------------------------- | ------- |
-| `data`    | Object | The list of documents to be added to the collection | {}      |
-| `options` | Object | The options passed to the controller                | {}      |
+[section=importOptions]
 
 ---
 
