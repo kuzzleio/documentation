@@ -1,13 +1,16 @@
-
+const program = require('commander');
 const TestManager = require('./lib/testManager');
 
-if (process.argv.indexOf('-L') > -1) {
-  const
-    language = process.argv[process.argv.indexOf('-L') + 1],
-    testManager = new TestManager(language);
+program
+  .version(require('../package.json').version)
+  .option('-L, --language <language>', '[Mandatory] The language to test. Available languages are js, go')
+  .option('-O, --only <test_path>', 'The path of a single test to execute, relative to src/sdk-reference')
+  .parse(process.argv);
 
-  testManager.process(language);
-} else {
-  console.log('You have to define a language with -L args');
-  process.exit(1);
+if (!program.language) {
+  console.error('Missing --language argument.')
+  program.help();
 }
+
+testManager = new TestManager(program.language);
+testManager.process(program.only);
