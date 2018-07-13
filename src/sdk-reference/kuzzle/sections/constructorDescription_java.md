@@ -2,14 +2,13 @@
 
 | Argument | Type | Description | Required |
 |--------|------|-------------|------------ |
-| `protocol` | Connection | The protocol used by the SDK instance  | yes |
+| `host` | String | The target Kuzzle host  | yes |
 | `options` | Options | Kuzzle connection configuration | yes |
 
-### protocol
+### host
 
-The protocol used to connect to the Kuzzle instance.  
-So far the only protocol available is `websocket`.  
-You have to instanciate and pass it to the constructor.   
+The Kuzzle host to connect to.  
+Can be a hostname or an IP address.
 
 ### options
 
@@ -29,26 +28,13 @@ You have to instanciate and pass it to the constructor.
 ## Getter & Setter
 
 The properties can be writable.  
-For example the property `autoQueue` you can read it with `AutoQueue()` and write it with `SetAutoQueue()`
+For example the property `volatile` you can read it with `getVolatile()` and write it with `setVolatile()`
 
 | Property name | Type | Description | Availability |
 |---------------|------|-------------|:---------:|
-| `autoQueue` | boolean | Automatically queue all requests during offline mode | Get/Set |
-| `autoReconnect` | boolean | Automatically reconnect after a connection loss | Get |
-| `autoReplay` | boolean | Automatically replay queued requests on a `reconnected` event |  Get/Set |
-| `autoResubscribe` | boolean | Automatically renew all subscriptions on a `reconnected` event | Get/Set |
-| `host` | string | Target Kuzzle host | Get |
-| `port` | int | Target Kuzzle port | Get |
-| `jwt` | string | Token used in requests for authentication. | Get/Set |
-| `offlineQueue` | QueryObject | Contains the queued requests during offline mode | Get |
-| `offlineQueueLoader` | OfflineQueueLoader | Called before dequeuing requests after exiting offline mode, to add items at the beginning of the offline queue | Get/Set |
-| `queueFilter` | QueueFilter | Called during offline mode. Takes a request object as arguments and returns a boolean, indicating if a request can be queued | Get/Set |
-| `queueMaxSize` | int | Number of maximum requests kept during offline mode | Get/Set |
-| `queueTTL` | Duration | Time a queued request is kept during offline mode, in milliseconds | Get/Set |
-| `replayInterval` | Duration | Delay between each replayed requests | Get/Set |
-| `reconnectionDelay` | Duration | Number of milliseconds between reconnection attempts | Get |
-| `sslConnection` | boolean | Connect to Kuzzle using SSL | Get |
-| `volatile` | VolatileData | Common volatile data, will be sent to all future requests | Get/Set |
+| `autoReplay` | boolean | Automatically replay queued requests on a `reconnected` event | Set |
+| `jwt` | string | Token used in requests for authentication. | Get |
+| `volatile` | string (json) | Common volatile data, will be sent to all future requests | Get/Set |
 
 
 **Notes:**
