@@ -14,7 +14,7 @@ func main() {
 	err := kuzzle.Index.SetAutoRefresh("nyc-open-data", true, nil)
 
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	} else {
 		fmt.Println("autorefresh flag is set to true")
 	}

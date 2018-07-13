@@ -8,5 +8,5 @@ try {
 
   std::cout << "Successfully deleted " << deleted.size() << " indexes" << std::endl;
 } catch (KuzzleException e) {
-  std::cout << e.getMessage() << std::endl;
+  std::cerr << e.getMessage() << std::endl;
 }

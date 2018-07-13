@@ -3,5 +3,5 @@ try{
 
   System.out.println("Internal index successfully refreshed");
 } catch (KuzzleException e) {
-    System.out.println(e.getMessage());
+    System.err.println(e.getMessage());
 }

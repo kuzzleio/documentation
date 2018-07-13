@@ -1,7 +1,7 @@
 status, err := kuzzle.Index.GetAutoRefresh("nyc-open-data", nil)
 
 if err != nil {
-  fmt.Println(err)
+  log.Fatal(err)
 } else if status == true {
   fmt.Println("autorefresh is true")
 } else {
