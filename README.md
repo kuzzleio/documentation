@@ -18,7 +18,7 @@
 
 `node index.js --build-host http://docs.kuzzle.io --build-path /v/edge --build-compress`
 
-> bind a webserver on 8080 with livereload and watch enabled
+> bind a webserver on 3000 with livereload and watch enabled
 
 `npm run dev`
 
@@ -28,11 +28,10 @@
 
 Here is an overview of the files structure:
 
-* `src/`: documentation entry point
-* `src/<section>/` (for instance: `src/guide/`, entry point of the Guide documentation section)
-* `src/<section>/<subsection>/` (for instance: `src/guide/essentials/`)
-* `src/<section>/<subsection>/<article>.md` (for instance: `src/guide/essentials/installing-kuzzle.md`)
-
+- `src/`: documentation entry point
+- `src/<section>/` (for instance: `src/guide/`, entry point of the Guide documentation section)
+- `src/<section>/<subsection>/` (for instance: `src/guide/essentials/`)
+- `src/<section>/<subsection>/<article>.md` (for instance: `src/guide/essentials/installing-kuzzle.md`)
 
 Though there is no real limit to the directories depth, to keep the documentation homogeneous and readable, no additional subdirectories should be added.
 
@@ -44,7 +43,6 @@ For instance: `src/guide/`.
 Each page directory must contain an `index.md` file, with the following headers:
 
 ```
-
 ---
 layout: category-childrens.html
 title: <Name used in the section list>
@@ -113,25 +111,33 @@ exemple of default template in JS :
 
 ```javascript
 // load the Kuzzle SDK module
-const Kuzzle = require('kuzzle-sdk')
+const { Kuzzle } = require('kuzzle-sdk');
 
-// instantiate a Kuzzle client, this will automatically connect to the Kuzzle server
-const kuzzle = new Kuzzle('kuzzle', { defaultIndex: 'playground', autoReconnect: false })
+// instantiate a Kuzzle client
+const kuzzle = new Kuzzle('websocket', {
+  host: 'kuzzle',
+  autoReconnect: false
+});
 
 // add a listener to detect any connection problems
-kuzzle.on('networkError', function (error) {
+kuzzle.on('networkError', error => {
   console.error('Network Error:' + error);
-})
-// the snippet will be injected here
-[snippet-code]
+});
+
+kuzzle
+  .connect()
+  .then(() => {
+    return [snippet-code];
+  })
+  .then(() => {
+    kuzzle.disconnect();
+  });
 ```
 
-You can add your proper template, just respect the naming rule : `tempalte_name.tpl.ext`
-
+You can add your own template, just respect the naming rule : `template_name.tpl.ext`
 
 ## Testing code-example
 
 Every time a pull request is made, a build is launch with Travis and a comment is added to the PR with the URLs of the tests reports (by language).
 
-It's possible to play test locally by running at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports . 
-
+It's possible to play test locally by running at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .
