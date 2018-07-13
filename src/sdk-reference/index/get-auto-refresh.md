@@ -2,7 +2,7 @@
 layout: full.html
 algolia: true
 title: getAutoRefresh
-description: Returnsthe status of autorefresh flag
+description: Returns the status of autorefresh flag
 order: 900
 ---
 
@@ -28,9 +28,9 @@ we recommend that you avoid using it in production or at least carefully monitor
 
 Query options.
 
-| Option | Type | Description | Default
-|--------|------|-------------|---------
-| queuable | boolean | Make this request queuable or not  | true
+| Option   | Type    | Description                       | Default |
+| -------- | ------- | --------------------------------- | ------- |
+| queuable | boolean | Make this request queuable or not | true    |
 
 ---
 

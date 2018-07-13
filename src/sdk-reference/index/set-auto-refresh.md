@@ -8,7 +8,6 @@ order: 1000
 
 # setAutoRefresh(index, autorefresh, [options])
 
-
 The setAutoRefresh action allows to set the autorefresh flag for the index.
 
 Each index has an autorefresh flag.  
@@ -29,9 +28,9 @@ we recommend that you avoid using it in production or at least carefully monitor
 
 Query options.
 
-| Option | Type | Description | Default
-|--------|------|-------------|---------
-| queuable | boolean | Make this request queuable or not  | true
+| Option   | Type    | Description                       | Default |
+| -------- | ------- | --------------------------------- | ------- |
+| queuable | boolean | Make this request queuable or not | true    |
 
 ---
 
