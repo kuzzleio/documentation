@@ -86,7 +86,7 @@ module.exports = class Tester {
           }
           err = {
             code: 'ERR_ASSERTION',
-            actual: outpout[0]
+            actual: outpout
           }
           reject(err);
           return;
@@ -96,7 +96,7 @@ module.exports = class Tester {
 
   lintExpect(binFile) {
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.lintCommand} ${binFile}`)
+      nexpect.spawn(`${this.lintCommand} ${binFile}`, { stream: 'all' })
         .wait(this.expectedLintSuccess)
         .run((err) => {
           if (err) {

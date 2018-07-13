@@ -1,3 +1,3 @@
 ### This is a JAVASCRIPT section 
 
-JS specifications here
+[code-example=bar]

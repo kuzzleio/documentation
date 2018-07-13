@@ -260,16 +260,6 @@ let metalsmith = Metalsmith(__dirname)
   .use((files, metalsmith, done) => {
     for (let file in files) {
       if (file.endsWith('.md')) {
-        let codeExampleData = codeExample.process(file, files[file]);  
-        files[file].contents = codeExampleData['fileContent'];
-        files[file]['has_code_example'] = codeExampleData['has_code_example'];
-      }
-    }
-    setImmediate(done);
-  })
-  .use((files, metalsmith, done) => {
-    for (let file in files) {
-      if (file.endsWith('.md')) {
         let sectionsData = sectionOverride.process(file, files[file]);
         files[file].contents = sectionsData['fileContent'];
         files[file]['has_section'] = sectionsData['has_section'];
@@ -277,7 +267,18 @@ let metalsmith = Metalsmith(__dirname)
       }
     }
     setImmediate(done);
+  })
+  .use((files, metalsmith, done) => {
+    for (let file in files) {
+      if (file.endsWith('.md')) {
+        let codeExampleData = codeExample.process(file, files[file]);  
+        files[file].contents = codeExampleData['fileContent'];
+        files[file]['has_code_example'] = codeExampleData['has_code_example'];
+      }
+    }
+    setImmediate(done);
   });
+  
 
 metalsmith
   .use(links())

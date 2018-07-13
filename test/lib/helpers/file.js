@@ -65,9 +65,9 @@ class FileProcess {
   }
   
   removeBin(binFile) {
-    fs.unlink(binFile, (err) => {
-      if (err) throw err;
-    });
+    // fs.unlink(binFile, (err) => {
+    //   if (err) throw err;
+    // });
   }
   
   sanitizeFileName(fileName) {
