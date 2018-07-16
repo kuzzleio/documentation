@@ -18,7 +18,7 @@ module.exports = class JavaTester extends Tester {
             resolve();
             return;
           }
-          let err = {
+          const err = {
             code: 'ERR_ASSERTION',
             actual: result
           }
@@ -53,7 +53,7 @@ module.exports = class JavaTester extends Tester {
           if (err) {
             resolve();
           } else {
-            let err = {
+            const err = {
               code: 'LINTER_ERROR',
               actual: outpout.join()
             }

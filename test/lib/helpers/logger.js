@@ -13,6 +13,7 @@ class Logger {
   }
 
   reportNOk(test, err, language) {
+    console.log('LANGUAGE :', language)
     this.reportToJson(test, err, language);
     console.log(color.red("✗"), color.red(test.name + ': ' + test.description + ' '))
     if (err) {
