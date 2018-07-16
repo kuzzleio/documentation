@@ -9,4 +9,4 @@ mv sdk-go /go/src/github.com/kuzzleio/sdk-go
 cd /go/src/github.com/kuzzleio/sdk-go && go get ./...
 cd -
 echo "Run tests"
-node test/main.js -L go
+node test/main.js -L go $@

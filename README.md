@@ -28,11 +28,10 @@
 
 Here is an overview of the files structure:
 
-* `src/`: documentation entry point
-* `src/<section>/` (for instance: `src/guide/`, entry point of the Guide documentation section)
-* `src/<section>/<subsection>/` (for instance: `src/guide/essentials/`)
-* `src/<section>/<subsection>/<article>.md` (for instance: `src/guide/essentials/installing-kuzzle.md`)
-
+- `src/`: documentation entry point
+- `src/<section>/` (for instance: `src/guide/`, entry point of the Guide documentation section)
+- `src/<section>/<subsection>/` (for instance: `src/guide/essentials/`)
+- `src/<section>/<subsection>/<article>.md` (for instance: `src/guide/essentials/installing-kuzzle.md`)
 
 Though there is no real limit to the directories depth, to keep the documentation homogeneous and readable, no additional subdirectories should be added.
 
@@ -44,7 +43,6 @@ For instance: `src/guide/`.
 Each page directory must contain an `index.md` file, with the following headers:
 
 ```
-
 ---
 layout: category-childrens.html
 title: <Name used in the section list>
@@ -93,7 +91,7 @@ languages:
     sdk_branch: 1.x
 ```
 
-## Writting tests
+## Writing tests
 
 To write tests for code-example, you have to put an YAML file in front of snippets file with the same name of the snippet you want to test
 
@@ -113,19 +111,23 @@ exemple of default template in JS :
 
 ```javascript
 // load the Kuzzle SDK module
-const { Kuzzle } = require('kuzzle-sdk');
+const { Kuzzle } = require("kuzzle-sdk");
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle('websocket', { host: 'kuzzle', autoReconnect: false });
+const kuzzle = new Kuzzle("websocket", {
+  host: "kuzzle",
+  autoReconnect: false
+});
 
 // add a listener to detect any connection problems
-kuzzle.on('networkError', error => {
-  console.error('Network Error:' + error);
-})
+kuzzle.on("networkError", error => {
+  console.error("Network Error:" + error);
+});
 
-kuzzle.connect()
+kuzzle
+  .connect()
   .then(() => {
-    return [snippet-code]
+    return [snippet - code];
   })
   .then(() => {
     kuzzle.disconnect();
@@ -134,9 +136,34 @@ kuzzle.connect()
 
 You can add your own template, just respect the naming rule : `template_name.tpl.ext`
 
+## Testing the code-examples locally
 
-## Testing code-example
+It's possible to play test locally by running at the root of the project
 
-Every time a pull request is made, a build is launch with Travis and a comment is added to the PR with the URLs of the tests reports (by language).
+```bash
+   sh run_test.sh -l <language>
+```
 
-It's possible to play test locally by running at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .
+Where `<language>` specifies the language to test (currently available languages are `js` and `go`). This will launch a Kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .
+
+There are more available options. Using `-n` will prevent the script to launch the Kuzzle stack:
+
+```bash
+   sh run_test.sh -l <language> -n
+```
+
+This is handy if you launch many times the tests and keep the stack running on the background.
+
+You can also specify a single test to be run using the `-o` option:
+
+```bash
+   sh run_test.sh -l <language> -o <path>
+```
+
+Where `<path>` specifies the path to the `.yml` test description, relative to `$PWD/src/sdk-reference`.
+
+The following example launches a single test in Javascript using the running Kuzzle stack:
+
+```bash
+   sh run_test.sh -n -l js -o index/code-example/delete.yml
+```
