@@ -12,7 +12,7 @@ When writing or deleting security and internal documents (users, roles, profiles
 
 The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-reference/index/refresh), on the internal index, making the documents available to search immediately.
 
-<div class="alert">
+<div class="alert alert-infos">
 A refresh operation comes with some performance costs.
 
 From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-refresh.html):
