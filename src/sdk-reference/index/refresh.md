@@ -10,7 +10,7 @@ order: 700
 
 When writing or deleting documents in Kuzzle, the update needs to be indexed before being available in search results.
 
-<div class="alert alert-infos">
+<div class="alert alert-info">
 A refresh operation comes with some performance costs.
 
 From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-refresh.html):

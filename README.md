@@ -53,7 +53,7 @@ description: <(optional) Text appearing under the section name in the section li
 
 To add alert box just put in your markdown :
 ``` html
-  <div class="alert alert-infos">
+  <div class="alert alert-info">
     lorem ipsum
   </div>
 ```
