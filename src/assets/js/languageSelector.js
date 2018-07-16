@@ -17,8 +17,9 @@ var languageSelector = {
     this.showSection(languageParam);
     
     $('code').each(function(){
-      if (typeof $(this).attr('class') != 'undefined' && $(this).attr('class') != "hljs") {
-        $(this).hide();
+      var current = $(this)
+      if (typeof current.attr('class') !== 'undefined' && current.attr('class') !== 'hljs') {
+        current.hide();
       }
     });
     
