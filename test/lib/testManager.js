@@ -24,11 +24,11 @@ module.exports = class TestManager {
       tests = this.getAllTests(testsPath, 'yml'),
       count = 0,
       allResults = [];
-
+    
     Bluebird.mapSeries(tests, file => {
       let
         test = read.sync(file),
-        snippetPath = file.split('.yml')[0];
+        snippetPath = file.split('.test.yml')[0];
 
       return this.tester.runOneTest(test, snippetPath)
         .then(() => {
@@ -61,7 +61,7 @@ module.exports = class TestManager {
 
   getAllTests(base, ext, files, result) {
     let self = this;
-
+    const suffix = '.test'
     files = files || fs.readdirSync(base);
     result = result || [];
 
@@ -70,12 +70,12 @@ module.exports = class TestManager {
       if (fs.statSync(newbase).isDirectory()) {
         result = self.getAllTests(newbase, ext, fs.readdirSync(newbase), result);
       } else {
-        if (file.substr(-1 * (ext.length + 1)) == '.' + ext) {
+        if (file.substr(-1 * (ext.length + 6)) == `${suffix}.${ext}`) {
           result.push(newbase);
         }
       }
     });
-
+    
     return result
   }
 
