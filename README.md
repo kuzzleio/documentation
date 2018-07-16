@@ -51,6 +51,16 @@ description: <(optional) Text appearing under the section name in the section li
 ---
 ```
 
+To add alert box just put in your markdown :
+``` html
+  <div class="alert alert-infos">
+    lorem ipsum
+  </div>
+```
+
+supported classes are : `alert-infos`, `alert-success`, `alert-warning`
+
+
 ## Adding code example
 
 It's possible to add code example (for each languages supported for SDKs) in markdown, before doing that, you have to create a directory `code-example` at the same level of the page you are editing. In this directory put all your code example files.
