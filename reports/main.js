@@ -80,7 +80,7 @@ getData('report.json', function (report) {
     { headerName: "EXPECTED", field: "expected" },
     // { headerName: "GOT", field: "got" },
     { headerName: "GOT", field: "got", cellRenderer: function(params){return (!params.value.isError) ? params.value.text : '<a class="error-link" href="#" data-content="' + params.value.text +'">' + params.value.text.substr(0, 70) + '...</a>'} },
-    { headerName: "FILE", field: "file", cellRenderer: function(params){return '<a class="file-link" href="' + params.value.split('/').pop() +'">' + params.value + '</a>'} }
+    { headerName: "FILE", field: "file", cellRenderer: function(params){return '<a class="file-link" href="#" data-file="' + params.value.split('/').pop() +'">' + params.value + '</a>'} }
   ];
 
   var rowData = [];
@@ -167,8 +167,8 @@ getData('report.json', function (report) {
 
 // SEE FILE MARKDOWN
 $(document).on('click', 'a.file-link', function (e) {
-  // e.preventDefault();
-  var file = $(this).attr('href');
+  e.preventDefault();
+  var file = $(this).data('file');
   getData('failed/' + file, function(fileContent){
     var 
       converter = new showdown.Converter(),
@@ -178,14 +178,21 @@ $(document).on('click', 'a.file-link', function (e) {
     $('.modal').modal()
     $('.modal pre').addClass('line-numbers')
     Prism.highlightAll();
+    return false;
   });  
 });
 
 // SEE ERROR MARKDOWN
 $(document).on('click', 'a.error-link', function (e) {
-  // e.preventDefault();
-  var error = $(this).data('content').replace(/,/g, '<br>'); 
+  e.preventDefault();
+  var error = $(this).data('content').replace(/,/g, '<br>');
     
-  $('.modal-error').html(error)
-  $('.modal-error').modal()
+  $('.modal').html(error)
+  $('.modal').addClass('modal-error')
+  $('.modal').modal();
+  return false;
+});
+
+$(document).on($.modal.BEFORE_CLOSE, function(event, modal) {
+  $('.modal').removeClass('modal-error');
 });
