@@ -15,12 +15,7 @@ var languageSelector = {
     
     $('.section').hide();
     this.showSection(languageParam);
-    
-    $('code').each(function(){
-      if (typeof $(this).attr('class') != 'undefined' && $(this).attr('class') != "hljs") {
-        $(this).hide();
-      }
-    });
+    $('code').hide();
     
     $('code.' + languageParam).show();
     $('#language-selector [value="' + languageParam + '"]').attr('selected', true);
