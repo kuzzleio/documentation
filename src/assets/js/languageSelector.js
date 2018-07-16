@@ -9,15 +9,17 @@ var languageSelector = {
       return;
     }
     
-    var self = this;
-    var languageParam = this.getLanguageParameter();
+    const 
+      self = this,
+      languageParam = this.getLanguageParameter();
+      
     this.setSelectorOptions();
     
     $('.section').hide();
     this.showSection(languageParam);
     
     $('code').each(function(){
-      var current = $(this)
+      const current = $(this)
       if (typeof current.attr('class') !== 'undefined' && current.attr('class') !== 'hljs') {
         current.hide();
       }
