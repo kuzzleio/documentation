@@ -18,9 +18,9 @@ Creates a new empty data index.
 
 Query options.
 
-| Option | Type | Description | Default
-|--------|------|-------------|---------
-| queuable | boolean | Make this request queuable or not  | true
+| Option   | Type    | Description                       | Default |
+| -------- | ------- | --------------------------------- | ------- |
+| queuable | boolean | Make this request queuable or not | true    |
 
 ---
 
