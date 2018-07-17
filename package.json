@@ -15,13 +15,14 @@
     "author": "The Kuzzle Team <support@kuzzle.io>",
     "license": "Apache-2.0",
     "dependencies": {
+        "bluebird": "^3.5.1",
         "cheerio": "^0.22.0",
         "express": "^4.16.3",
         "handlebars": "^4.0.8",
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
-        "kuzzle-sdk": "git+https://github.com/kuzzleio/sdk-javascript.git#master",
+        "kuzzle-sdk": "git+https://github.com/kuzzleio/sdk-javascript.git#6.x",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
         "metalsmith-ancestry": "^1.2.1",
@@ -54,5 +55,6 @@
         "sanitize-filename": "^1.6.1",
         "striptags": "^3.1.0",
         "wordcount": "^1.1.1"
-    }
+    },
+    "devDependencies": {}
 }

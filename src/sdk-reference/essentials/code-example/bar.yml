@@ -1,7 +1,0 @@
-name: bar
-description: La pression, elle est au bar
-hooks:
-  before:
-  after:
-template: default
-expect: bar

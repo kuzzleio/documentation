@@ -3,13 +3,14 @@ const path = require('path');
 const fs = require('fs');
 const file = require('fs');
 const config = require('../../getConfig').get();
+const Bluebird = require('bluebird');
 
 module.exports = class TestManager {
 
   constructor(language) {
     if (this.checkLanguageExist(language)) {
-      let Tester = require(`./testers/${language}Tester`);
-      this.tester = new Tester(language);
+      const Tester = require(`./testers/${language}Tester`);
+      this.tester = new Tester();
       this.language = language;
     } else {
       console.log('Language specified in args doesn\'t exist in config');
@@ -24,13 +25,12 @@ module.exports = class TestManager {
       count = 0,
       allResults = [];
 
-    tests.forEach((file) => {
-
+    Bluebird.mapSeries(tests, file => {
       let
         test = read.sync(file),
         snippetPath = file.split('.yml')[0];
 
-      this.tester.runOneTest(test, snippetPath)
+      return this.tester.runOneTest(test, snippetPath)
         .then(() => {
           allResults.push(true);
           count++;
@@ -42,7 +42,7 @@ module.exports = class TestManager {
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
         })
-    });
+    })
   }
 
   handleTestsFinish(count, length, allResults) {
@@ -56,9 +56,7 @@ module.exports = class TestManager {
   }
 
   checkLanguageExist(language) {
-    return (config.languages[language] === undefined)
-      ? false
-      : true
+    return ! (config.languages[language] === undefined);
   }
 
   getAllTests(base, ext, files, result) {

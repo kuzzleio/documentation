@@ -9,13 +9,22 @@ var languageSelector = {
       return;
     }
     
-    var self = this;
-    var languageParam = this.getLanguageParameter();
+    const 
+      self = this,
+      languageParam = this.getLanguageParameter();
+      
     this.setSelectorOptions();
     
     $('.section').hide();
     this.showSection(languageParam);
-    $('code').hide();
+    
+    $('code').each(function(){
+      const current = $(this)
+      if (typeof current.attr('class') !== 'undefined' && current.attr('class') !== 'hljs') {
+        current.hide();
+      }
+    });
+    
     $('code.' + languageParam).show();
     $('#language-selector [value="' + languageParam + '"]').attr('selected', true);
     
