@@ -6,7 +6,9 @@ description: Create an index
 order: 200
 ---
 
-# create(index, [options])
+# create
+
+[section=createSignature]
 
 Creates a new empty data index.
 
@@ -14,16 +16,14 @@ Creates a new empty data index.
 
 [code-example=create]
 
-## Options
+## Arguments
 
-Query options.
-
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| queuable | boolean | Make this request queuable or not | true    |
+[section=createArgOptions]
 
 ---
 
-## Response
+## Return
 
 [section=createResponse]
+
+[section=createExceptions]
