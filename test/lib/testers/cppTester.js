@@ -10,7 +10,7 @@ module.exports = class CppTester extends Tester {
     this.language = 'cpp';
     this.compileCommand = 'g++ -Isdk-cpp/ -Lsdk-cpp/ -lkuzzlesdk-cpp -lpthread';
     this.runCommand = '';
-    this.lintCommand = 'cpplint --filter=-legal/copyright';
+    this.lintCommand = 'cpplint --filter=-legal/copyright,-whitespace/line_length';
     this.executablePath = '';
   }
 
@@ -19,8 +19,10 @@ module.exports = class CppTester extends Tester {
     this.executablePath = generatedFilePath.split('.')[0];
 
     childProcess.execSync(`${this.compileCommand} -o ${this.executablePath} ${generatedFilePath}`);
+
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.executablePath}`, { stream: 'all' })
+      nexpect
+        .spawn(`${this.executablePath}`, { stream: 'stdout' })
         .wait(expected, result => {
           if (result === expected) {
             resolve();
@@ -53,12 +55,18 @@ module.exports = class CppTester extends Tester {
   }
 
   lintExpect(generatedFilePath) {
-    const expected = `Done processing ${generatedFilePath}`
+    const expected = `Done processing ${generatedFilePath}`;
+
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.lintCommand} ${generatedFilePath}`, { stream: 'all' })
+      nexpect
+        .spawn(`${this.lintCommand} ${generatedFilePath}`, { stream: 'all' })
         .wait(expected)
-        .run((err, outpout, exit) => {
+        .run((err, output, exit) => {
           if (err) {
+            const err = {
+              code: 'LINTER_ERROR',
+              actual: output.join('\n')
+            };
             reject(err);
           } else {
             resolve();
@@ -68,7 +76,7 @@ module.exports = class CppTester extends Tester {
   }
 
   clean(generatedFilePath) {
-    fileHelper.remove(generatedFilePath)
-    fileHelper.remove(this.executablePath)
+//    fileHelper.remove(generatedFilePath);
+    fileHelper.remove(this.executablePath);
   }
 };

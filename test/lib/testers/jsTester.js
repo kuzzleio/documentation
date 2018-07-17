@@ -10,19 +10,20 @@ module.exports = class JsTester extends Tester{
     this.runCommand = 'node';
     this.lintCommand = `eslint -c ${lintConfig}`;
   }
-  
+
   lintExpect(binFile) {
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.lintCommand} ${binFile}`)
+      nexpect
+        .spawn(`${this.lintCommand} ${binFile}`, { stream: 'stderr' })
         .wait('')
-        .run((err, outpout, exit) => {
+        .run((err, output, exit) => {
           if (err) {
             resolve();
           } else {
-            let err = {
+            const err = {
               code: 'LINTER_ERROR',
-              actual: outpout.join()
-            }
+              actual: output.join('\n')
+            };
             reject(err);
           }
         });

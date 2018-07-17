@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#include <vector> // required by auth.hpp
+#include <vector>
+
 #include "auth.hpp"
 #include "collection.hpp"
 #include "document.hpp"
@@ -8,8 +9,7 @@
 #include "realtime.hpp"
 #include "kuzzle.hpp"
 
-int main()
-{
+int main() {
   std::string hostname = "kuzzle";
 
   options kuzzle_options = KUZZLE_OPTIONS_DEFAULT;
@@ -18,8 +18,7 @@ int main()
   kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(hostname, &kuzzle_options);
 
   char* error = kuzzle->connect();
-  if (error != nullptr)
-  {
+  if (error != nullptr) {
     std::cerr << "Unable to connect to " << hostname << ":7512\n" << error << std::endl;
     return 1;
   }
