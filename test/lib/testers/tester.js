@@ -20,9 +20,8 @@ module.exports = class Tester {
         return;
       }
 
-      const binFile = fileHelper.injectSnippet(test, snippetPath, this.language);
-
-      if (! binFile) {
+      const generatedFilePath = fileHelper.injectSnippet(test, snippetPath, this.language);
+      if (! generatedFilePath) {
         const err = {
           code: 'MISSING_SNIPPET',
           expect: test.expect,
@@ -37,31 +36,31 @@ module.exports = class Tester {
         if (test.hooks.before)
           this.runHookCommand(test.hooks.before)
 
-        await this.lintExpect(binFile);
-        await this.runExpect(binFile, test.expect);
+        await this.lintExpect(generatedFilePath);
+        await this.runExpect(generatedFilePath, test.expect);
 
         logger.reportOk(test, this.language);
 
+        // Remove the generated files only if test succeed
+        this.clean(generatedFilePath);
         resolve();
       } catch (err) {
-        fileHelper.saveOnFail(binFile, test.name, this.language);
+        fileHelper.saveOnFail(generatedFilePath, test.name, this.language);
 
         err.file = `${snippetPath.split('src/')[1]}.${config.languages[this.language].ext}`;
         logger.reportNOk(test, err, this.language);
 
         reject();
       } finally {
-        fileHelper.removeBin(binFile);
-
         if (test.hooks.after)
           this.runHookCommand(test.hooks.after);
       }
     });
   }
 
-  runExpect(binFile, expected) {
+  runExpect(generatedFilePath, expected) {
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.runCommand} ${binFile}`, { stream: 'all' })
+      nexpect.spawn(`${this.runCommand} ${generatedFilePath}`, { stream: 'all' })
         .wait(expected, result => {
           if (result == expected) {
             resolve();
@@ -93,9 +92,9 @@ module.exports = class Tester {
     });
   }
 
-  lintExpect(binFile) {
+  lintExpect(generatedFilePath) {
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.lintCommand} ${binFile}`, { stream: 'all' })
+      nexpect.spawn(`${this.lintCommand} ${generatedFilePath}`, { stream: 'all' })
         .wait(this.expectedLintSuccess)
         .run((err) => {
           if (err) {
@@ -144,6 +143,10 @@ module.exports = class Tester {
 
   runHookCommand(command) {
     childProcess.execSync(command, { stderr: 'ignore', stdio: 'ignore' })
+  }
+
+  clean(generatedFilePath) {
+    fileHelper.remove(generatedFilePath);
   }
 
 };

@@ -1,5 +1,5 @@
 try {
     kuzzle.getIndex().delete("nyc-open-data");
-} catch (KuzzleException e) {
+} catch (kuzzleio::KuzzleException e) {
     System.out.println(e.getMessage());
 }

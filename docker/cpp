@@ -13,11 +13,11 @@ RUN apt-get update && apt-get install -y \
   curl && \
   apt-get clean && \
   pip3 install cpplint
-  
-RUN mkdir /nodejs && curl http://nodejs.org/dist/v8.9.0/node-v8.9.0-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1 
+
+RUN mkdir /nodejs && curl http://nodejs.org/dist/v8.9.0/node-v8.9.0-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1
 
 ENV PATH $PATH:/nodejs/bin
 
 WORKDIR /app
 
-# ENTRYPOINT ["sh", "docker/entrypoints/cpp.sh"]
+ENTRYPOINT ["sh", "docker/entrypoints/cpp.sh"]

@@ -1,3 +1,4 @@
+const fileHelper = require('../helpers/file');
 const Tester = require('./tester');
 const path = require('path');
 const nexpect = require('nexpect');
@@ -7,18 +8,21 @@ module.exports = class CppTester extends Tester {
   constructor() {
     super();
     this.language = 'cpp';
-    this.runCommand = 'g++';
-    this.lintCommand = 'cpplint --filter=-legal/copyright' ;
+    this.compileCommand = 'g++ -Isdk-cpp/ -Lsdk-cpp/ -lkuzzlesdk-cpp -lpthread';
+    this.runCommand = '';
+    this.lintCommand = 'cpplint --filter=-legal/copyright';
+    this.executablePath = '';
   }
 
-  runExpect(binFile, expected) {
-    const fullPath = binFile.split('.')[0];
-    // console.log(`${this.runCommand} -o ${fullPath} ${binFile} && ${fullPath}`)
-    childProcess.execSync(`${this.runCommand} -o ${fullPath} ${binFile}`);
+  runExpect(generatedFilePath, expected) {
+    process.env.LD_LIBRARY_PATH = './sdk-cpp';
+    this.executablePath = generatedFilePath.split('.')[0];
+
+    childProcess.execSync(`${this.compileCommand} -o ${this.executablePath} ${generatedFilePath}`);
     return new Promise((resolve, reject) => {
-      nexpect.spawn(fullPath, { stream: 'all' })
+      nexpect.spawn(`${this.executablePath}`, { stream: 'all' })
         .wait(expected, result => {
-          if (result == expected) {
+          if (result === expected) {
             resolve();
             return;
           }
@@ -47,11 +51,11 @@ module.exports = class CppTester extends Tester {
         });
     });
   }
-  
-  lintExpect(binFile) {
-    const expected = `Done processing ${binFile}`
+
+  lintExpect(generatedFilePath) {
+    const expected = `Done processing ${generatedFilePath}`
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.lintCommand} ${binFile}`, { stream: 'all' })
+      nexpect.spawn(`${this.lintCommand} ${generatedFilePath}`, { stream: 'all' })
         .wait(expected)
         .run((err, outpout, exit) => {
           if (err) {
@@ -61,5 +65,10 @@ module.exports = class CppTester extends Tester {
           }
         });
     });
+  }
+
+  clean(generatedFilePath) {
+    fileHelper.remove(generatedFilePath)
+    fileHelper.remove(this.executablePath)
   }
 };

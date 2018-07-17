@@ -7,6 +7,6 @@ try {
   std::vector<std::string> deleted = kuzzle->index->mDelete(indexes);
 
   std::cout << "Successfully deleted " << deleted.size() << " indexes" << std::endl;
-} catch (KuzzleException e) {
+} catch (kuzzleio::KuzzleException e) {
   std::cout << e.getMessage() << std::endl;
 }

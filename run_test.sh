@@ -35,12 +35,15 @@ fi
 
 ENTRYPOINT="docker/entrypoints/$LANGUAGE.js "
 
-case $LANGUAGE in 
+case $LANGUAGE in
   js)
     docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle --mount type=bind,source="$(pwd)",target=/app kuzzleio/documentation-v2:js $TEST_ONLY
   ;;
   go)
     docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)"/test/bin,target=/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go $TEST_ONLY
+  ;;
+  cpp)
+    docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle --mount type=bind,source="$(pwd)",target=/app kuzzleio/documentation-v2:cpp $TEST_ONLY
   ;;
   *)
     echo "$LANGUAGE is not a valid language"
