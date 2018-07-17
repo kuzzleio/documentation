@@ -1,7 +1,0 @@
-name: import
-description: Bulk imports three documents into Kuzzle
-hooks:
-  before: curl -X POST kuzzle:7512/nyc-open-data/_create; curl -X PUT kuzzle:7512/nyc-open-data/bulkimport
-  after: curl -X DELETE kuzzle:7512/nyc-open-data
-template: default
-expect: Successfully imported 3 documents

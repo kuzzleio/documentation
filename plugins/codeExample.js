@@ -22,7 +22,9 @@ module.exports = {
           filenames = fs.readdirSync(fullPath);
         
         filenames.forEach(function (file) {
-          if (file.split('.')[0] === name && file.split('.')[1] != 'yml' ) {
+          
+          
+          if (file.split('.')[0] === name && file.substr(-8) != 'test.yml' ) {
             presentLanguages.push(file.split('.')[1]);
             let fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8');
             

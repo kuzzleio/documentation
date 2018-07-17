@@ -30,6 +30,7 @@
         "metalsmith-changed": "^3.1.1",
         "metalsmith-concat": "^6.0.0",
         "metalsmith-debug": "^1.1.0",
+        "metalsmith-filter": "^1.0.2",
         "metalsmith-gzip": "^1.1.0",
         "metalsmith-hbt-md": "^1.0.1",
         "metalsmith-html-minifier": "^2.2.0",
