@@ -18,12 +18,18 @@ module.exports = class TestManager {
     }
   }
 
-  process() {
+  process(onlyOnePath) {
     let
       testsPath = path.join(__dirname, '../../src/sdk-reference/'),
-      tests = this.getAllTests(testsPath, 'yml'),
+      tests,
       count = 0,
       allResults = [];
+
+    if (onlyOnePath) {
+      tests = this.getAllTests(testsPath, 'yml', [onlyOnePath]);
+    } else {
+      tests = this.getAllTests(testsPath, 'yml');
+    }
 
     Bluebird.mapSeries(tests, file => {
       let
