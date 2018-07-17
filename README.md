@@ -127,7 +127,7 @@ kuzzle.on('networkError', error => {
 kuzzle
   .connect()
   .then(() => {
-    return [snippet - code];
+    return [snippet-code];
   })
   .then(() => {
     kuzzle.disconnect();
@@ -154,10 +154,10 @@ There are more available options. Using `-n` will prevent the script to launch t
 
 This is handy if you launch many times the tests and keep the stack running on the background.
 
-You can also specify a single test to be run using the `-o` option:
+You can also specify a single test to be run using the `-f` option:
 
 ```bash
-   sh run_test.sh -l <language> -o <path>
+   sh run_test.sh -l <language> -f <path>
 ```
 
 Where `<path>` specifies the path to the `.yml` test description, relative to `$PWD/src/sdk-reference`.
@@ -165,5 +165,5 @@ Where `<path>` specifies the path to the `.yml` test description, relative to `$
 The following example launches a single test in Javascript using the running Kuzzle stack:
 
 ```bash
-   sh run_test.sh -n -l js -o index/code-example/delete.yml
+   sh run_test.sh -n -l js -f index/code-example/delete.yml
 ```

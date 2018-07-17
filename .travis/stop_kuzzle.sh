@@ -1,1 +1,1 @@
-docker-compose -f .codepipeline/docker-compose.yml rm -f
+docker-compose -f .codepipeline/docker-compose.yml down

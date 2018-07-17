@@ -2,7 +2,7 @@
 
 START_KUZZLE=1
 
-while getopts ":l:no:" opt; do
+while getopts ":l:nf:" opt; do
   case $opt in
     l)
       if [ "$OPTARG" = "" ]; then
@@ -14,12 +14,12 @@ while getopts ":l:no:" opt; do
     n)
       START_KUZZLE=0
     ;;
-    o)
+    f)
       if [ "$OPTARG" = "" ]; then
         echo "Option -$opt requires an argument" >&2
         exit 1
       fi
-      TEST_ONLY="-O $OPTARG"
+      TEST_ONLY="-f $OPTARG"
     ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -59,4 +59,5 @@ show_help() {
   echo "Possible options are"
   echo " -l <language>  [MANDATORY] specifies the language to test (valid languages are js and go)"
   echo " -n             Prevent to start the Kuzzle stack (useful if you keep it running yourself to run many tests)"
+  echo " -f <test-file> Allows to run just one test by specifying the .yml test descriptor. Its path must be relative to src/sdk-reference"
 }
