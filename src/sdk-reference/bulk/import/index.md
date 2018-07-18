@@ -1,5 +1,5 @@
 ---
-layout: full.html
+layout: sdk.html
 algolia: true
 title: import
 description: Performs a bulk import on a collection

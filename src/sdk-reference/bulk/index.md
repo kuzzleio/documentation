@@ -1,5 +1,5 @@
 ---
-layout: full.html
+layout: sdk.html
 title: Bulk
 description: Bulk Controller
 order: 200

@@ -21,33 +21,31 @@
     </div>
     <!-- Render item list -->
     <ul class="md-nav__list" data-md-scrollfix>
-        {{#each ancestry.siblings as |section|}}
-            <li class="md-nav__item">
-                <a class="md-nav__link"  href="{{ ../site_base_path }}{{ path }}">{{ title }}</a>
-            </li>
-            {{#if (eq section.path ../ancestry.firstMember.path)}}
-                {{#if (gt ../ancestry.members.length 1)}}
-                    <ul class="md-nav__list sub-menu">
-                        {{#each ../ancestry.members as |page|}}
-                            {{#if (or section.show-subheader (ne @key 0))}}
-                              {{#if (or (eq page.path ../../path) (eq page.path section.path))}}
-                                  <li class="md-nav__item active">
-                                      <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link--active">
-                                          {{firstDefinedOf subheader-title title}}
-                                      </a>
-                                  </li>
-                              {{else}}
-                                  <li class="md-nav__item">
-                                      <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link">
-                                          {{firstDefinedOf subheader-title title}}
-                                      </a>
-                                  </li>
-                              {{/if}}
-                            {{/if}} 
-                        {{/each}}
-                    </ul>
+      {{#each ancestry.parent.ancestry.siblings as |parent|}}
+        <li class="md-nav__item">
+            <a class="md-nav__link"  href="{{ ../site_base_path }}{{ parent.path }}">{{ parent.title }}</a>
+        </li>
+          <ul class="md-nav__list sub-menu">
+            {{#each parent.ancestry.children as |children|}}
+              {{#if (eq ../../ancestry.parent.path parent.path)}}
+                {{#if children.title}}
+                  {{#if (eq ../../path children.path)}}
+                    <li class="md-nav__item active">
+                        <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link--active">
+                            {{firstDefinedOf subheader-title title}}
+                        </a>
+                    </li>
+                  {{else}}
+                    <li class="md-nav__item">
+                        <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link">
+                            {{firstDefinedOf subheader-title title}}
+                        </a>
+                    </li>
+                  {{/if}}
                 {{/if}}
-            {{/if}}
-        {{/each}}
+              {{/if}}
+            {{/each}}
+          </ul>
+      {{/each}}
     </ul>
 </nav>
