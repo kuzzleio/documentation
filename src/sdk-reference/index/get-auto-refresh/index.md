@@ -1,14 +1,14 @@
 ---
-layout: full.html
+layout: sdk.html
 algolia: true
-title: setAutoRefresh
-description: Set the autorefresh flag
-order: 1000
+title: getAutoRefresh
+description: Returns the status of autorefresh flag
+order: 900
 ---
 
-# setAutoRefresh(index, autorefresh, [options])
+# getAutoRefresh([options])
 
-The setAutoRefresh action allows to set the autorefresh flag for the index.
+The getAutoRefresh action returns the current autorefresh status for the index.
 
 Each index has an autorefresh flag.  
 When set to true, each write request trigger a [refresh](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-refresh.html) action on Elasticsearch.  
@@ -22,7 +22,7 @@ we recommend that you avoid using it in production or at least carefully monitor
 
 ## Usage
 
-[code-example=setAutoRefresh]
+[code-example=getAutoRefresh]
 
 ## Options
 
@@ -36,4 +36,4 @@ Query options.
 
 ## Response
 
-[section=setAutoRefreshResponse]
+Returns a boolean that indicate status of the autorefresh flag.

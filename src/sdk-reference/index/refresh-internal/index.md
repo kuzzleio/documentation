@@ -1,5 +1,5 @@
 ---
-layout: full.html
+layout: sdk.html
 algolia: true
 title: refreshInternal
 description: Force refresh of Kuzzle internal index

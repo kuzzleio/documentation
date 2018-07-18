@@ -1,18 +1,18 @@
 ---
-layout: full.html
+layout: sdk.html
 algolia: true
-title: list
-description: List the indexes
-order: 400
+title: mDelete
+description: Deletes multiple indexes
+order: 600
 ---
 
-# list([options])
+# mDelete(indexes, [options])
 
-Returnsthe complete list of data indexes handled by Kuzzle.
+Deletes multiple indexes at once.
 
 ## Usage
 
-[code-example=list]
+[code-example=mDelete]
 
 ## Options
 
@@ -26,4 +26,4 @@ Query options.
 
 ## Response
 
-[section=listResponse]
+[section=mDeleteResponse]

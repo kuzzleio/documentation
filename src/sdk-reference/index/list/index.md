@@ -1,18 +1,18 @@
 ---
-layout: full.html
+layout: sdk.html
 algolia: true
-title: delete
-description: Deletes an index
-order: 500
+title: list
+description: List the indexes
+order: 400
 ---
 
-# delete(index, [options])
+# list([options])
 
-Deletes an entire data index from Kuzzle.
+Returnsthe complete list of data indexes handled by Kuzzle.
 
 ## Usage
 
-[code-example=delete]
+[code-example=list]
 
 ## Options
 
@@ -26,4 +26,4 @@ Query options.
 
 ## Response
 
-[section=deleteResponse]
+[section=listResponse]

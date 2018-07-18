@@ -30,8 +30,9 @@ const concat = require("metalsmith-concat");
 const filter = require('metalsmith-filter');
 
 
-const codeExample = require('./plugins/codeExample');
-const sectionOverride = require('./plugins/sectionOverride');
+const snippetManager = require('./plugins/snippetManager');
+const sectionManager = require('./plugins/sectionManager');
+const pageManager = require('./plugins/pageManager');
 const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
 const nodeStatic = require('node-static');
@@ -265,7 +266,7 @@ const metalsmith = Metalsmith(__dirname)
   .use((files, metalsmith, done) => {
     for (const file in files) {
       if (file.endsWith('index.md')) {
-        const sectionsData = sectionOverride.process(file, files[file]);
+        const sectionsData = sectionManager.process(file, files[file]);
         files[file].contents = sectionsData['fileContent'];
         files[file]['has_section'] = sectionsData['has_section'];
         files[file]['sections'] = sectionsData['sections'];
@@ -276,8 +277,7 @@ const metalsmith = Metalsmith(__dirname)
   .use((files, metalsmith, done) => {
     for (const file in files) {
       if (file.endsWith('index.md')) {
-        const codeExampleData = codeExample.process(file, files[file]);
-        console.log(codeExampleData)
+        const codeExampleData = snippetManager.process(file, files[file]);
         files[file].contents = codeExampleData['fileContent'];
         files[file]['has_code_example'] = codeExampleData['has_code_example'];
       }

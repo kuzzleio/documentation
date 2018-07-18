@@ -1,5 +1,5 @@
 ---
-layout: full.html
+layout: sdk.html
 algolia: true
 title: refresh
 description: Force Elasticsearch search index update
