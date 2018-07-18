@@ -1,6 +1,8 @@
 
 const fs = require('fs');
 const path = require('path');
+const marked = require('marked');
+const markdownIt = require('markdown-it');
 const color = require('colors/safe');
 const config = require('../getConfig').get();
 
@@ -11,7 +13,8 @@ module.exports = {
       self = this,
       fileString = data.contents.toString(),
       match = fileString.match(/(\[code-example=)[a-zA-Z0-9]+\]/g),
-      presentLanguages = [];
+      presentLanguages = [],
+      md = new markdownIt();
       
     if(match) {
       match.forEach(el => {
@@ -34,13 +37,14 @@ module.exports = {
             } else if (fileContent.match(/(\@wontdo)/g)) {
               code += '``` ' + config.languages[file.split('.')[1]].fullname + '\n Not availlable \n```\n';
             } else {
-              code += '``` ' + config.languages[file.split('.')[1]].fullname + '\n ' + fileContent + '\n```\n';
+              code += '``` ' + config.languages[file.split('.')[1]].fullname + '\n' + fileContent + '\n```\n';
             }
           }
           
-        })
+        });
+        let markdown = md.render(code);
         this.checkMissingLanguages(presentLanguages, fullPath)
-        fileString = fileString.replace(el, code);
+        fileString = fileString.replace(el, markdown);
       });
     }
     return {

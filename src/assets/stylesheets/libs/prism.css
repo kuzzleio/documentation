@@ -6,6 +6,10 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
+pre[class*="language-"] {
+  display: none;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #ccc;
@@ -174,7 +178,7 @@ pre[data-line] {
 
 pre[class*="language-"].line-numbers {
 	position: relative;
-	padding-left: 0;
+	padding-left: 3.8em;
 	counter-reset: linenumber;
 }
 

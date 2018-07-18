@@ -18,14 +18,12 @@ var languageSelector = {
     $('.section').hide();
     this.showSection(languageParam);
     
-    $('code').each(function(){
-      const current = $(this)
-      if (typeof current.attr('class') !== 'undefined' && current.attr('class') !== 'hljs') {
-        current.hide();
-      }
-    });
+    $('pre.language-' + languageParam).show();
     
-    $('code.' + languageParam).show();
+    $('.md-nav--secondary .md-nav__item').hide();
+    $('.md-nav--secondary .md-nav__item.default').show();
+    $('.md-nav--secondary .md-nav__item.' + languageParam).show();
+    
     $('#language-selector [value="' + languageParam + '"]').attr('selected', true);
     
     $('#language-selector').select2({

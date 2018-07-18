@@ -32,7 +32,6 @@ const filter = require('metalsmith-filter');
 
 const snippetManager = require('./plugins/snippetManager');
 const sectionManager = require('./plugins/sectionManager');
-const pageManager = require('./plugins/pageManager');
 const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
 const nodeStatic = require('node-static');

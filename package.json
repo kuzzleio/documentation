@@ -23,6 +23,7 @@
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
         "kuzzle-sdk": "git+https://github.com/kuzzleio/sdk-javascript.git#6.x",
+        "markdown-it": "^8.4.2",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
         "metalsmith-ancestry": "^1.2.1",

@@ -13,12 +13,12 @@ languages:
     sdk_url: https://github.com/kuzzleio/sdk-go.git
     sdk_branch: 1.x
   cpp:
-    fullname: Cpp
+    fullname: cpp
     ext: cpp
     sdk_url: https://github.com/kuzzleio/sdk-go.git
     sdk_branch: 1.x
   java:
-    fullname: Java
+    fullname: java
     ext: java
     sdk_url: https://github.com/kuzzleio/sdk-go.git
     sdk_branch: 1.x

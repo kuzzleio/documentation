@@ -91,10 +91,6 @@
     cursor: pointer;
     overflow: hidden;
     
-    &[data-md-state="blur"] {
-      color: pink;
-    }
-
     // Icon
     &::after {
       @extend %md-icon;
