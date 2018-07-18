@@ -7,15 +7,16 @@ const childProcess = require('child_process');
 module.exports = class CppTester extends Tester {
   constructor() {
     super();
+    this.sdkPath = 'test/bin/sdk-cpp';
     this.language = 'cpp';
-    this.compileCommand = 'g++ -Isdk-cpp/ -Lsdk-cpp/ -lkuzzlesdk-cpp -lpthread';
+    this.compileCommand = `g++ -I${this.sdkPath}/include -L${this.sdkPath}/lib -lkuzzlesdk -lpthread`;
     this.runCommand = '';
     this.lintCommand = 'cpplint --filter=-legal/copyright,-whitespace/line_length';
     this.executablePath = '';
   }
 
   runExpect(generatedFilePath, expected) {
-    process.env.LD_LIBRARY_PATH = './sdk-cpp';
+    process.env.LD_LIBRARY_PATH = `./${this.sdkPath}/lib`;
     this.executablePath = generatedFilePath.split('.')[0];
 
     childProcess.execSync(`${this.compileCommand} -o ${this.executablePath} ${generatedFilePath}`);
@@ -76,7 +77,7 @@ module.exports = class CppTester extends Tester {
   }
 
   clean(generatedFilePath) {
-//    fileHelper.remove(generatedFilePath);
+    fileHelper.remove(generatedFilePath);
     fileHelper.remove(this.executablePath);
   }
 };
