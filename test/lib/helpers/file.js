@@ -13,7 +13,7 @@ const
 class FileProcess {
 
   injectSnippet (test, snippetPath, language) {
-    let
+    const
       template = TEMPLATE_FOLDER + test.template + '.tpl.' + language,
       snippet = snippetPath + '.' + config.languages[language].ext;
 
@@ -29,12 +29,12 @@ class FileProcess {
 
     //replace snippet in template
     if (templateContent.match(/(\[snippet-code])/g)) {
-      let indentationCount = this.getIndentation(templateContent);
+      const indentationCount = this.getIndentation(templateContent);
 
-      snippetContent = this.indentSnippet(snippetContent, indentationCount)
+      const indentedSnippet = this.indentSnippet(snippetContent, indentationCount);
 
-      let
-        newContent = templateContent.replace(/(\[snippet-code])/g, snippetContent),
+      const
+        newContent = templateContent.replace(/(\[snippet-code])/g, indentedSnippet),
         binPath = BIN_FOLDER + this.sanitizeFileName(test.name) + '.' + language;
 
       fs.writeFileSync(binPath, newContent);
@@ -47,20 +47,23 @@ class FileProcess {
   }
 
   indentSnippet (snippet, indentation) {
-    let firstline = snippet.split('\n')[0];
+    const firstline = snippet.split('\n')[0];
     snippet = snippet.replace(firstline, '');
-    return firstline + indentString(snippet,indentation);
+
+    return firstline + indentString(snippet, indentation);
   }
 
   getIndentation (template) {
-    let matches = template.match(/^.*snippet-code.*$/gm);
+    const matches = template.match(/^.*snippet-code.*$/gm);
+
     return matches[0].match(/^\s*/)[0].length;
   }
 
   saveOnFail(binFile, testName, language) {
     testName = this.sanitizeFileName(testName)
-    let dest = SAVE_FOLDER + testName + '.' + language;
+    const dest = SAVE_FOLDER + testName + '.' + language;
     fs.copyFileSync(binFile, dest);
+    
     return true;
   }
 
