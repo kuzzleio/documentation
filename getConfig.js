@@ -9,7 +9,7 @@ module.exports = {
   },
 
   getLanguages(config) {
-    return config.languages.map(language => language.fullname);
+    return Object.keys(config.languages).map(language => language.fullname);
   },
 
   getSdk(language) {
