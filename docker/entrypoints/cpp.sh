@@ -1,5 +1,5 @@
 #!/bin/bash
-#docker run --rm --privileged -it --mount type=bind,source="$(pwd)",target=/app kuzzleio/documentation-v2:cpp
+#docker run --rm --privileged -it -v "$(pwd)":/app kuzzleio/documentation-v2:cpp
 set -e
 
 echo "Download C++ SDK"
