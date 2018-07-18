@@ -7,6 +7,6 @@ try{
   StringVector deleted = kuzzle.getIndex().mDelete(indexes);
 
   System.out.println(String.format("Successfully delete %d indexes", deleted.size()));
-} catch (kuzzleio::KuzzleException e) {
-    System.out.println(e.getMessage());
+} catch (KuzzleException e) {
+    System.err.println(e.getMessage());
 }
