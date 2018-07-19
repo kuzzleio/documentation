@@ -26,7 +26,7 @@ module.exports = {
         
         filenames.forEach(function (file) {
           
-          if (file.split('.')[0] === name && file.substr(-8) != 'test.yml' ) {
+          if (file.split('.')[0] === name && file.substr(-8) !== 'test.yml' ) {
             presentLanguages.push(file.split('.')[1]);
             let fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8');
             
@@ -42,7 +42,7 @@ module.exports = {
           }
           
         });
-        let markdown = md.render(code);
+        const markdown = md.render(code);
         this.checkMissingLanguages(presentLanguages, fullPath)
         fileString = fileString.replace(el, markdown);
       });
