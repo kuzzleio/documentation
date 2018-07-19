@@ -8,5 +8,5 @@ try{
 
   System.out.println(String.format("Successfully delete %d indexes", deleted.size()));
 } catch (KuzzleException e) {
-    System.out.println(e.getMessage());
+    System.err.println(e.getMessage());
 }
