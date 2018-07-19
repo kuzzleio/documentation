@@ -8,7 +8,8 @@ const config = require('../../../getConfig').get();
 const
   TEMPLATE_FOLDER = path.join(__dirname, '../../templates/'),
   SAVE_FOLDER = path.join(__dirname, '../../../reports/failed/'),
-  BIN_FOLDER = path.join(__dirname, '../../bin/')
+  BIN_FOLDER = path.join(__dirname, '../../bin/'),
+  GENERIQUE_JAVA_CLASSNAME = 'CodeExampleGenericClass';
 
 class FileProcess {
 
@@ -27,23 +28,30 @@ class FileProcess {
       snippetContent = fs.readFileSync(snippet, 'utf8'),
       templateContent = fs.readFileSync(template, 'utf8');
 
-    //replace snippet in template
-    if (templateContent.match(/(\[snippet-code])/g)) {
-      const indentationCount = this.getIndentation(templateContent);
-
-      const indentedSnippet = this.indentSnippet(snippetContent, indentationCount);
-
-      const
-        newContent = templateContent.replace(/(\[snippet-code])/g, indentedSnippet),
-        binPath = BIN_FOLDER + this.sanitizeFileName(test.name) + '.' + language;
-
-      fs.writeFileSync(binPath, newContent);
-
-      if (fs.existsSync(binPath)) {
-        return binPath;
-      }
+    if (! templateContent.match(/(\[snippet-code])/g)) {
+      return false;
     }
-    return false;
+
+    //replace snippet in template
+    const indentationCount = this.getIndentation(templateContent);
+    const indentedSnippet = this.indentSnippet(snippetContent, indentationCount);
+
+    const
+      newContent = templateContent.replace(/(\[snippet-code])/g, indentedSnippet),
+      fileName = this.sanitizeFileName(test.name),
+      binPath = BIN_FOLDER + fileName + '.' + language;
+
+    // JAVA hack, because filename has to be the same of the class name
+    // We replace the template generique class name by the name of the test
+    if (language === 'java') {
+      fs.writeFileSync(binPath, this.overrideClassName(newContent, fileName));
+    } else {
+      fs.writeFileSync(binPath, newContent);
+    }
+
+    if (fs.existsSync(binPath)) {
+      return binPath;
+    }
   }
 
   indentSnippet (snippet, indentation) {
@@ -63,7 +71,7 @@ class FileProcess {
     testName = this.sanitizeFileName(testName)
     const dest = SAVE_FOLDER + testName + '.' + language;
     fs.copyFileSync(binFile, dest);
-    
+
     return true;
   }
 
@@ -73,6 +81,10 @@ class FileProcess {
 
   sanitizeFileName(fileName) {
     return sanitize(fileName).replace(' ', '_').toLowerCase();
+  }
+
+  overrideClassName(content, name) {
+    return content.replace(GENERIQUE_JAVA_CLASSNAME, name);
   }
 
 }

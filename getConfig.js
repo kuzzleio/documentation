@@ -22,6 +22,9 @@ module.exports = {
       case 'go':
         console.log(`${config.languages[language].sdk_url} -b ${config.languages[language].sdk_branch}`);
         break;
+      case 'java':
+        console.log(`${config.languages[language].sdk_url} -b ${config.languages[language].sdk_branch}`);
+        break;
       default:
         break;
     }
