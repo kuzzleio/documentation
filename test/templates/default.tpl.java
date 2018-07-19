@@ -1,6 +1,6 @@
 import io.kuzzle.sdk.*;
 
-public class CodeExampleGeneriqueClass {
+public class CodeExampleGenericClass {
     private static Kuzzle kuzzle;
 
     public static void main(String[] args) {
