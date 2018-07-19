@@ -1,6 +1,6 @@
-`create(std::string index, kuzzleio::query_options options) : nullptr`
-
-[section=description]
+``` java
+create(std::string index, kuzzleio::query_options options) : nullptr
+```
 
 ## Usage
 

@@ -6,6 +6,6 @@ description: Create an index
 order: 200
 ---
 
-# create
+# Create
 
-[section=page]
+[section=create]

@@ -1,6 +1,6 @@
-`create(string index, object options = null) : object`
-
-[section=description]
+``` javascript
+create(index, options = null) : object
+```
 
 ## Usage
 
