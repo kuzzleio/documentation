@@ -2,14 +2,14 @@ $(document).ready(function(){
   languageSelector.init();
 });
 
-const languageSelector = {
+var languageSelector = {
 
   init: function () {
     if ($('#language-selector').length == 0) {
       return;
     }
 
-    const
+    var
       self = this,
       languageParam = this.getLanguageParameter();
 
@@ -19,7 +19,7 @@ const languageSelector = {
     this.showSection(languageParam);
 
     $('code').each(function(){
-      const current = $(this);
+      var current = $(this);
 
       if (typeof current.attr('class') !== 'undefined' && current.attr('class') !== 'hljs') {
         current.hide();
@@ -41,7 +41,7 @@ const languageSelector = {
       .html("arrow_drop_down");
 
     $('#language-selector').on('change', function () {
-      const language = $(this).val();
+      var language = $(this).val();
       self.setPreferedLanguage(language);
       window.location.replace(
         window.location.href.split('?')[0] + '?language=' + language
@@ -50,15 +50,15 @@ const languageSelector = {
   },
 
   getLanguageParameter: function () {
-    const GET = {};
+    var GET = {};
     if (document.location.toString().indexOf('?') !== -1) {
-      const query = document.location
+      var query = document.location
         .toString()
         .replace(/^.*?\?/, '')
         .replace(/#.*$/, '')
         .split('&');
-      for (const i = 0, l = query.length; i < l; i++) {
-        const aux = decodeURIComponent(query[i]).split('=');
+      for (var i = 0, l = query.length; i < l; i++) {
+        var aux = decodeURIComponent(query[i]).split('=');
         GET[aux[0]] = aux[1];
       }
     }
@@ -92,7 +92,7 @@ const languageSelector = {
   },
 
   getLanguageInUrl: function () {
-    const language = false;
+    var language = false;
     languages.split(',').forEach(function(el) {
       if (document.location.toString().search('/' + el + '/') > -1){
         language = el;
@@ -103,7 +103,7 @@ const languageSelector = {
 
   showSection: function (language) {
     if ($('#list-sections').length > 0) {
-      const sections = $('#list-sections').val().split(',');
+      var sections = $('#list-sections').val().split(',');
       sections.forEach(function (element) {
         if ($('#' + element + '.section.' + language).length > 0) {
           $('#' + element + '.section.' + language).show();
@@ -119,8 +119,8 @@ const languageSelector = {
     if (!state.id) {
       return state.text;
     }
-    const baseUrl = "/assets/images/logos";
-    const $state = $(
+    var baseUrl = "/assets/images/logos";
+    var $state = $(
       '<img width="32" height="32" src="' + baseUrl + '/' + state.element.value.toLowerCase() + '.png" class="language-logo" /> <span class="language-name">' + state.text + '</span>'
     );
     return $state;
