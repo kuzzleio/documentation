@@ -10,15 +10,16 @@ module.exports = {
   
   process(filename, data) {
     let fileString = data.contents.toString();
-      
-    if (match = fileString.match(/(\[section=)[a-zA-Z0-9]+\]/g)) {
+    const match = fileString.match(/(\[section=)[a-zA-Z0-9]+\]/g);
+    
+    if (match) {
       fileString = this.injectSection(match, filename, fileString);
     }
     
     return {
-      has_section: (match) ? true : false,
-      sections: [...this.listSections].join(),
-      fileContent: new Buffer(fileString)
+      has_section: match,
+      sections: this.listSections.join(),
+      fileContent: Buffer.from(fileString)
     };
   },
   
@@ -28,14 +29,12 @@ module.exports = {
       const  
         name = el.split('=')[1].slice(0, -1),
         fullPath = path.join(__dirname, `../src/${filename.split('/').slice(0, -1).join('/')}`),
-        filenames = fs.readdirSync(fullPath);
+        filenames = fs.readdirSync(fullPath),
+        languages = config.languages;
       
-      let
-        languages = config.languages,
-        section = '';
+      let section = '';
         
       languages['default'] = {fullname:'default'};
-      
       
       filenames.forEach(function (file) {
         if (file.split('.')[0] === name) {
@@ -52,8 +51,10 @@ module.exports = {
       
     });
     
-    if (match = fileString.match(/(\[section=)[a-zA-Z0-9]+\]/g)) {
-      fileString = this.injectSection(match, filename, fileString)
+    const reMatch = fileString.match(/(\[section=)[a-zA-Z0-9]+\]/g); 
+    
+    if (reMatch) {
+      fileString = this.injectSection(reMatch, filename, fileString)
     }
     
     return fileString;
