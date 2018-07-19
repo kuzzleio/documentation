@@ -51,6 +51,16 @@ description: <(optional) Text appearing under the section name in the section li
 ---
 ```
 
+To add alert box just put in your markdown :
+``` html
+  <div class="alert alert-info">
+    lorem ipsum
+  </div>
+```
+
+supported classes are : `alert-infos`, `alert-success`, `alert-warning`
+
+
 ## Adding code example
 
 It's possible to add code example (for each languages supported for SDKs) in markdown, before doing that, you have to create a directory `code-example` at the same level of the page you are editing. In this directory put all your code example files.
@@ -91,7 +101,7 @@ languages:
     sdk_branch: 1.x
 ```
 
-## Writting tests
+## Writing tests
 
 To write tests for code-example, you have to put an YAML file in front of snippets file with the same name of the snippet you want to test
 
@@ -136,8 +146,34 @@ kuzzle
 
 You can add your own template, just respect the naming rule : `template_name.tpl.ext`
 
-## Testing code-example
+## Testing the code-examples locally
 
-Every time a pull request is made, a build is launch with Travis and a comment is added to the PR with the URLs of the tests reports (by language).
+It's possible to play test locally by running at the root of the project
 
-It's possible to play test locally by running at the root of the project `$ sh run_test.sh -l the_language_you_want` (js, go, ...). this will launch a kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .
+```bash
+   sh run_test.sh -l <language>
+```
+
+Where `<language>` specifies the language to test (currently available languages are `js` and `go`). This will launch a Kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .
+
+There are more available options. Using `-n` will prevent the script to launch the Kuzzle stack:
+
+```bash
+   sh run_test.sh -l <language> -n
+```
+
+This is handy if you launch many times the tests and keep the stack running on the background.
+
+You can also specify a single test to be run using the `-f` option:
+
+```bash
+   sh run_test.sh -l <language> -f <path>
+```
+
+Where `<path>` specifies the path to the `.yml` test description, relative to `$PWD/src/sdk-reference`.
+
+The following example launches a single test in Javascript using the running Kuzzle stack:
+
+```bash
+   sh run_test.sh -n -l js -f index/code-example/delete.yml
+```
