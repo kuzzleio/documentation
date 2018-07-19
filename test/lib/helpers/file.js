@@ -14,7 +14,7 @@ const
 class FileProcess {
 
   injectSnippet (test, snippetPath, language) {
-    let
+    const
       template = TEMPLATE_FOLDER + test.template + '.tpl.' + language,
       snippet = snippetPath + '.' + config.languages[language].ext;
 
@@ -28,54 +28,55 @@ class FileProcess {
       snippetContent = fs.readFileSync(snippet, 'utf8'),
       templateContent = fs.readFileSync(template, 'utf8');
 
-    //replace snippet in template
-    if (templateContent.match(/(\[snippet-code])/g)) {
-      let indentationCount = this.getIndentation(templateContent);
-
-      snippetContent = this.indentSnippet(snippetContent, indentationCount)
-
-      let
-        newContent = templateContent.replace(/(\[snippet-code])/g, snippetContent),
-        fileName = this.sanitizeFileName(test.name),
-        binPath = BIN_FOLDER + fileName + '.' + language;
-
-      // JAVA hack, because filename has to be the same of the class name
-      // We replace the template generique class name by the name of the test
-      if (language === 'java') {
-        newContent = this.overrideClassName(newContent, fileName);
-      }
-
-      fs.writeFileSync(binPath, newContent);
-
-      if (fs.existsSync(binPath)) {
-        return binPath;
-      }
+    if (! templateContent.match(/(\[snippet-code])/g)) {
+      return false;
     }
-    return false;
+
+    //replace snippet in template
+    const indentationCount = this.getIndentation(templateContent);
+    const indentedSnippet = this.indentSnippet(snippetContent, indentationCount);
+
+    const
+      newContent = templateContent.replace(/(\[snippet-code])/g, indentedSnippet),
+      fileName = this.sanitizeFileName(test.name),
+      binPath = BIN_FOLDER + fileName + '.' + language;
+
+    // JAVA hack, because filename has to be the same of the class name
+    // We replace the template generique class name by the name of the test
+    if (language === 'java') {
+      fs.writeFileSync(binPath, this.overrideClassName(newContent, fileName));
+    } else {
+      fs.writeFileSync(binPath, newContent);
+    }
+
+    if (fs.existsSync(binPath)) {
+      return binPath;
+    }
   }
 
   indentSnippet (snippet, indentation) {
-    let firstline = snippet.split('\n')[0];
+    const firstline = snippet.split('\n')[0];
     snippet = snippet.replace(firstline, '');
-    return firstline + indentString(snippet,indentation);
+
+    return firstline + indentString(snippet, indentation);
   }
 
   getIndentation (template) {
-    let matches = template.match(/^.*snippet-code.*$/gm);
+    const matches = template.match(/^.*snippet-code.*$/gm);
+
     return matches[0].match(/^\s*/)[0].length;
   }
 
   saveOnFail(binFile, testName, language) {
     testName = this.sanitizeFileName(testName)
-    let dest = SAVE_FOLDER + testName + '.' + language;
+    const dest = SAVE_FOLDER + testName + '.' + language;
     fs.copyFileSync(binFile, dest);
+
     return true;
   }
 
-  removeBin(binFile) {
-    fs.unlink(binFile, (err) => {
-      if (err) throw err;
-    });
+  remove(path) {
+    fs.unlinkSync(path);
   }
 
   sanitizeFileName(fileName) {

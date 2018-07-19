@@ -43,7 +43,7 @@ module.exports = class TestManager {
           this.handleTestsFinish(count, tests.length, allResults);
         })
         .catch((err) => {
-          if (typeof err != 'undefined') console.log(err);
+          if (typeof err !== 'undefined') console.log(err);
           allResults.push(false);
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
@@ -52,7 +52,7 @@ module.exports = class TestManager {
   }
 
   handleTestsFinish(count, length, allResults) {
-    if (count == length) {
+    if (count === length) {
       if (allResults.includes(false)) {
         process.exit(1);
       } else {

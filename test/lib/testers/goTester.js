@@ -12,17 +12,20 @@ module.exports = class GoTester extends Tester {
     this.lintCommand = `golint ${this.goProjectPath}`;
   }
 
-  runExpect(binFile, expected) {
-    let fileName = binFile.split('/').pop();
+  runExpect(generatedFilePath, expected) {
+    const fileName = generatedFilePath.split('/').pop();
+
     childProcess.execSync(`goimports -w ${this.goProjectPath}${fileName}`);
+
     return new Promise((resolve, reject) => {
-      nexpect.spawn(this.runCommand + fileName)
+      nexpect
+        .spawn(this.runCommand + fileName)
         .wait(expected, result => {
           if (result == expected) {
             resolve();
             return;
           }
-          let err = {
+          const err = {
             code: 'ERR_ASSERTION',
             actual: result
           }
@@ -47,19 +50,21 @@ module.exports = class GoTester extends Tester {
         });
     });
   }
-  
-  lintExpect(binFile) {
-    let fileName = binFile.split('/').pop();
+
+  lintExpect(generatedFilePath) {
+    const fileName = generatedFilePath.split('/').pop();
+
     return new Promise((resolve, reject) => {
-      nexpect.spawn(this.lintCommand + fileName, { stream: 'stderr' })
+      nexpect
+        .spawn(this.lintCommand + fileName, { stream: 'stderr' })
         .wait('')
-        .run((err, outpout, exit) => {
+        .run((err, output, exit) => {
           if (err) {
             resolve();
           } else {
-            let err = {
+            const err = {
               code: 'LINTER ERROR',
-              actual: outpout.join()
+              actual: output.join('\n')
             }
             reject(err);
           }

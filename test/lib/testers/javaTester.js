@@ -12,7 +12,7 @@ module.exports = class JavaTester extends Tester {
   }
 
   runExpect (generatedFilePath, expected) {
-    const generatedFilename = path.basename(generatedFilePath, '.html');
+    const generatedFilename = path.basename(generatedFilePath, '.java');
 
     return new Promise((resolve, reject) => {
       nexpect
