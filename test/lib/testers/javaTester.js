@@ -1,5 +1,7 @@
-const Tester = require('./tester');
-const nexpect = require('nexpect');
+const
+  Tester = require('./tester'),
+  path = require('path'),
+  nexpect = require('nexpect');
 
 module.exports = class JavaTester extends Tester {
   constructor() {
@@ -8,16 +10,19 @@ module.exports = class JavaTester extends Tester {
     this.runCommand = 'java -cp ./test/bin/sdk-java.jar:./test/bin';
     this.lintCommand = 'javac -cp test/bin/sdk-java.jar test/bin/';
   }
-  
-  runExpect(binFile, expected) {
-    binFile = binFile.split('/').pop().split('.')[0];
+
+  runExpect (generatedFilePath, expected) {
+    const generatedFilename = path.basename(generatedFilePath, '.html');
+
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.runCommand} ${binFile}`, { stream: 'all' })
+      nexpect
+        .spawn(`${this.runCommand} ${generatedFilename}`, { stream: 'all' })
         .wait(expected, result => {
-          if (result == expected) {
+          if (result === expected) {
             resolve();
             return;
           }
+
           const err = {
             code: 'ERR_ASSERTION',
             actual: result
@@ -25,40 +30,46 @@ module.exports = class JavaTester extends Tester {
           reject(err);
           return;
         })
-        .run((err, outpout) => {
+        .run((err, output) => {
           if (err) {
             reject(err);
             return;
           }
-          if (outpout.includes(expected)) {
+
+          if (output.includes(expected)) {
             resolve();
             return;
           }
-          err = {
+
+          const error = {
             code: 'ERR_ASSERTION',
-            actual: outpout[0]
+            actual: output[0]
           }
-          reject(err);
+          reject(error);
           return;
         });
     });
   }
 
-  lintExpect(binFile) {
-    binFile = binFile.split('/').pop();
+  lintExpect (generatedFilePath) {
+    const generatedFilename = path.basename(generatedFilePath);
+
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.lintCommand}${binFile}`, { stream: 'all' })
+      nexpect
+        .spawn(`${this.lintCommand}${generatedFilename}`, { stream: 'all' })
         .wait('')
-        .run((err, outpout, exit) => {
+        .run((err, output, exit) => {
           if (err) {
             resolve();
-          } else {
-            const err = {
-              code: 'LINTER_ERROR',
-              actual: outpout.join()
-            }
-            reject(err);
+            return;
           }
+
+          const error = {
+            code: 'LINTER_ERROR',
+            actual: output.join("\n")
+          }
+
+          reject(error);
         });
     });
   }
