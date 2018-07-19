@@ -1,6 +1,7 @@
 const
   Tester = require('./tester'),
   path = require('path'),
+  fileHelper = require('../helpers/file'),
   nexpect = require('nexpect');
 
 module.exports = class JavaTester extends Tester {
@@ -26,7 +27,7 @@ module.exports = class JavaTester extends Tester {
           const err = {
             code: 'ERR_ASSERTION',
             actual: result
-          }
+          };
           reject(err);
           return;
         })
@@ -44,7 +45,7 @@ module.exports = class JavaTester extends Tester {
           const error = {
             code: 'ERR_ASSERTION',
             actual: output[0]
-          }
+          };
           reject(error);
           return;
         });
@@ -67,10 +68,15 @@ module.exports = class JavaTester extends Tester {
           const error = {
             code: 'LINTER_ERROR',
             actual: output.join("\n")
-          }
+          };
 
           reject(error);
         });
     });
+  }
+
+  clean(generatedFilePath) {
+    fileHelper.remove(generatedFilePath);
+    fileHelper.remove(generatedFilePath.replace('.java', '.class'));
   }
 };
