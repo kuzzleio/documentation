@@ -8,7 +8,7 @@ phases:
       - bash .codepipeline/start_kuzzle.sh
   build:
     commands:
-      - docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -"$(pwd)":/app kuzzleio/documentation-v2:java
+      - docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:java
   post_build:
     commands:
       - aws s3 sync reports/ s3://$AWS_S3_BUCKET/reports/java/release/
