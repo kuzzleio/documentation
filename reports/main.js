@@ -114,7 +114,7 @@ getData('report.json', function (report) {
         return params.data.status === 'Todo';
       },
       'bg-wontdo': function (params) {
-        return params.data.status == 'Wontdo';
+        return params.data.status === 'Wontdo';
       },
     }
   };
