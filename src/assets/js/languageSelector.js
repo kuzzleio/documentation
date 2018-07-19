@@ -8,33 +8,34 @@ var languageSelector = {
     if ($('#language-selector').length == 0) {
       return;
     }
-    
-    const 
+
+    var
       self = this,
       languageParam = this.getLanguageParameter();
-      
+
     this.setSelectorOptions();
-    
+
     $('.section').hide();
     this.showSection(languageParam);
-    
+
     $('code').each(function(){
-      const current = $(this)
+      var current = $(this);
+
       if (typeof current.attr('class') !== 'undefined' && current.attr('class') !== 'hljs') {
         current.hide();
       }
     });
-    
+
     $('code.' + languageParam).show();
     $('#language-selector [value="' + languageParam + '"]').attr('selected', true);
-    
+
     $('#language-selector').select2({
       minimumResultsForSearch: -1,
       theme: 'material',
       templateResult: this.selectTemplate,
       templateSelection: this.selectTemplate
     });
-    
+
     $(".select2-selection__arrow")
       .addClass("material-icons")
       .html("arrow_drop_down");
@@ -86,7 +87,7 @@ var languageSelector = {
 
   getPreferedLanguage: function () {
     return (sessionStorage.getItem('prefered_language'))
-      ? sessionStorage.getItem('prefered_language') 
+      ? sessionStorage.getItem('prefered_language')
       : false
   },
 
@@ -109,9 +110,9 @@ var languageSelector = {
         } else {
           $('#' + element + '.section.default').show();
         }
-      });  
+      });
     }
-    
+
   },
 
   selectTemplate: function(state) {
