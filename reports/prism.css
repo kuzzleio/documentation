@@ -174,7 +174,7 @@ pre[data-line] {
 
 pre[class*="language-"].line-numbers {
 	position: relative;
-	padding-left: 3.8em;
+	padding-left: 0;
 	counter-reset: linenumber;
 }
 

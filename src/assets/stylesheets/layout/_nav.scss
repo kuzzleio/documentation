@@ -84,17 +84,13 @@
 
   // Link inside item
   &__link {
-    display: block;
+    display: inline;
     // margin-top: 0.625em;
     transition: color 0.125s;
     text-overflow: ellipsis;
     cursor: pointer;
     overflow: hidden;
     
-    &[data-md-state="blur"] {
-      color: pink;
-    }
-
     // Icon
     &::after {
       @extend %md-icon;

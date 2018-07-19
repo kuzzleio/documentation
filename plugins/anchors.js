@@ -2,16 +2,30 @@ const cheerio = require('cheerio');
 
 module.exports = {
   process(filename, data) {
-    let anchors = [];
-    let $ = cheerio.load(data.contents.toString());
+    
+    const 
+      anchors = [],
+      ids = new Set(),
+      $ = cheerio.load(data.contents.toString());
+      
     $('h2').each((i, el) => {
-      let id = $(el).text().replace(/&.*?/g, '').replace(/\s+/g, '-').replace(/[^\w\-]/g, '').replace(/[\-]+/g, '-').toLowerCase();
-      anchors.push({
-        'text': $(el).text(),
-        'id': id
-      });
+      const 
+        section = $(el).parent('.section'),
+        language = (section.length > 0) ? section.attr('class').split(' ')[1] : 'default',
+        id = `${$(el).text().replace(/&.*?/g, '').replace(/\s+/g, '-').replace(/[^\w\-]/g, '').replace(/[\-]+/g, '-').toLowerCase()}-${language}`;
+      
+      if (! ids.has(id)) {
+        anchors.push({
+          text: $(el).text(),
+          id,
+          language
+        });
+        ids.add(id);
+      }
+      
       $(el).attr('id', id);
     });
+    
     return {
       anchors: anchors,
       fileContent: new Buffer($.html())

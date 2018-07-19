@@ -142,12 +142,12 @@ kbd {
   // Code blocks
   code,
   pre {
+    font-family: "Roboto Mono", "Courier New", Courier, monospace;
     background-color: $md-code-background;
     color: $md-code-color;
     font-size: 85%;
     direction: ltr;
     color: white;
-
     // Wrap text and hide scollbars
     @media print {
       white-space: pre-wrap;
@@ -199,9 +199,11 @@ kbd {
   // Unformatted code blocks
   pre {
     position: relative;
-    margin: 1em 0;
+    margin: 0;
+    padding: 0;
     border-radius: 0.2rem;
     line-height: 1.4;
+    background-color: white;
     -webkit-overflow-scrolling: touch;
     color: white;
 
@@ -216,11 +218,13 @@ kbd {
       display: block;
       margin: 0;
       padding: 1.05rem 1.2rem;
-      background-color: transparent;
+      padding-bottom: 5px;
+      background-color: $md-code-background;
       font-size: inherit;
       box-shadow: none;
       box-decoration-break: none;
       overflow: auto;
+      line-height: 1.6;
 
       // [mobile -]: Increase padding to match text
       @include break-to-device(mobile) {
