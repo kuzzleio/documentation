@@ -1,6 +1,5 @@
 FROM amd64/debian:stretch-slim
 
-
 RUN apt-get update -y && apt-get install --no-install-recommends -y -q \
   curl \
   build-essential \

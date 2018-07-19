@@ -18,13 +18,19 @@ module.exports = class TestManager {
     }
   }
 
-  process() {
+  process(onlyOnePath) {
     let
       testsPath = path.join(__dirname, '../../src/sdk-reference/'),
-      tests = this.getAllTests(testsPath, 'yml'),
+      tests,
       count = 0,
       allResults = [];
-    
+
+    if (onlyOnePath) {
+      tests = this.getAllTests(testsPath, 'yml', [onlyOnePath]);
+    } else {
+      tests = this.getAllTests(testsPath, 'yml');
+    }
+
     Bluebird.mapSeries(tests, file => {
       let
         test = read.sync(file),
@@ -37,7 +43,7 @@ module.exports = class TestManager {
           this.handleTestsFinish(count, tests.length, allResults);
         })
         .catch((err) => {
-          if (typeof err != 'undefined') console.log(err);
+          if (typeof err !== 'undefined') console.log(err);
           allResults.push(false);
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
@@ -46,7 +52,7 @@ module.exports = class TestManager {
   }
 
   handleTestsFinish(count, length, allResults) {
-    if (count == length) {
+    if (count === length) {
       if (allResults.includes(false)) {
         process.exit(1);
       } else {
