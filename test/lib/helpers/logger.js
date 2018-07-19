@@ -8,14 +8,14 @@ class Logger {
   reportOk(test, language) {
     this.reportToJson(test, false, language);
     console.log(
-      color.green("✔"), color.green(test.name + ': ' + test.description)
+      color.green('✔'), color.green(`${test.name} : ${test.description}`)
     )
   }
 
   reportNOk(test, err, language) {
-    console.log('LANGUAGE :', language)
+    console.log('LANGUAGE :', language);
     this.reportToJson(test, err, language);
-    console.log(color.red("✗"), color.red(test.name + ': ' + test.description + ' '))
+    console.log(color.red('✗'), color.red(`${test.name} : ${test.description}`))
     if (err) {
       console.log(color.red('    ' + err.code))
       console.log(color.red('    EXPECTED :'), test.expect)

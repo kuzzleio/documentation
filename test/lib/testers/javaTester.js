@@ -67,7 +67,7 @@ module.exports = class JavaTester extends Tester {
 
           const error = {
             code: 'LINTER_ERROR',
-            actual: output.join("\n")
+            actual: output.join('\n')
           };
 
           reject(error);

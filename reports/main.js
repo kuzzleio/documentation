@@ -1,15 +1,15 @@
 function setLanguage(language) {
-  var languageContainer = document.getElementById("language");
+  var languageContainer = document.getElementById('language');
   languageContainer.innerHTML = language
 }
 
 function setDatetime(datetime) {
-  var datetimeContainer = document.getElementById("datetime");
+  var datetimeContainer = document.getElementById('datetime');
   datetimeContainer.innerHTML = datetime;
 }
 
 function setNumber(dataArr) {
-  var numberContainer = document.getElementById("number");
+  var numberContainer = document.getElementById('number');
   numberContainer.innerHTML = dataArr.length;
 }
 
@@ -78,7 +78,6 @@ getData('report.json', function (report) {
     { headerName: "DESCRIPTION", field: "description" },
     { headerName: "STATUS", field: "status" },
     { headerName: "EXPECTED", field: "expected" },
-    // { headerName: "GOT", field: "got" },
     { headerName: "GOT", field: "got", cellRenderer: function(params){return (!params.value.isError) ? params.value.text : '<a class="error-link" href="#" data-content="' + params.value.text +'">' + params.value.text.substr(0, 70) + '...</a>'} },
     { headerName: "FILE", field: "file", cellRenderer: function(params){return '<a class="file-link" href="#" data-file="' + params.value.split('/').pop() +'">' + params.value + '</a>'} }
   ];
@@ -86,7 +85,7 @@ getData('report.json', function (report) {
   var rowData = [];
   dataArr.forEach(function (el) {
     var gotColData = {
-      isError: (el.status === 'Fail') ? true : false,
+      isError: el.status === 'Fail',
       text: (Object.keys(el.error).length !== 0) ? el.error.code + ' : ' + el.error.got : el.test.expect 
     };
     rowData.push({
@@ -106,28 +105,16 @@ getData('report.json', function (report) {
     gridAutoHeight: true,
     rowClassRules: {
       'bg-success': function (params) {
-        if (params.data.status == 'Success') {
-          return true;
-        }
-        return false;
+        return params.data.status === 'Success';
       },
       'bg-fail': function (params) {
-        if (params.data.status == 'Fail') {
-          return true;
-        }
-        return false;
+        return params.data.status === 'Fail';
       },
       'bg-todo': function (params) {
-        if (params.data.status == 'Todo') {
-          return true;
-        }
-        return false;
+        return params.data.status === 'Todo';
       },
       'bg-wontdo': function (params) {
-        if (params.data.status == 'Wontdo') {
-          return true;
-        }
-        return false;
+        return params.data.status == 'Wontdo';
       },
     }
   };
@@ -174,8 +161,8 @@ $(document).on('click', 'a.file-link', function (e) {
       converter = new showdown.Converter(),
       html = converter.makeHtml('```' + file.split('.')[1] +'\n' + fileContent + '\n```');
       
-    $('.modal').html(html)
-    $('.modal').modal()
+    $('.modal').html(html);
+    $('.modal').modal();
     $('.modal pre').addClass('line-numbers')
     Prism.highlightAll();
     return false;
@@ -187,8 +174,8 @@ $(document).on('click', 'a.error-link', function (e) {
   e.preventDefault();
   var error = $(this).data('content').replace(/,/g, '<br>');
     
-  $('.modal').html(error)
-  $('.modal').addClass('modal-error')
+  $('.modal').html(error);
+  $('.modal').addClass('modal-error');
   $('.modal').modal();
   return false;
 });
