@@ -1,8 +1,9 @@
-const Tester = require('./tester');
-const path = require('path');
-const nexpect = require('nexpect');
+const
+  Tester = require('./tester'),
+  path = require('path'),
+  nexpect = require('nexpect');
 
-module.exports = class JsTester extends Tester{
+module.exports = class JsTester extends Tester {
   constructor() {
     super();
     let lintConfig = path.join(__dirname, '../../linters/eslint.json');
@@ -16,16 +17,17 @@ module.exports = class JsTester extends Tester{
       nexpect
         .spawn(`${this.lintCommand} ${binFile}`, { stream: 'stderr' })
         .wait('')
-        .run((err, output, exit) => {
-          if (err) {
+        .run((error, output) => {
+          if (error) {
             resolve();
-          } else {
-            const err = {
-              code: 'LINTER_ERROR',
-              actual: output.join('\n')
-            };
-            reject(err);
+            return;
           }
+
+          const err = {
+            code: 'LINTER_ERROR',
+            actual: output.join('\n')
+          };
+          reject(err);
         });
     });
   }

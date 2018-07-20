@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const indentString = require('indent-string');
-const sanitize = require("sanitize-filename");
+const sanitize = require('sanitize-filename');
 const config = require('../../../getConfig').get();
 
 
@@ -68,15 +68,15 @@ class FileProcess {
   }
 
   saveOnFail(binFile, testName, language) {
-    testName = this.sanitizeFileName(testName)
+    testName = this.sanitizeFileName(testName);
     const dest = SAVE_FOLDER + testName + '.' + language;
     fs.copyFileSync(binFile, dest);
 
     return true;
   }
 
-  remove(path) {
-    fs.unlinkSync(path);
+  remove(filePath) {
+    fs.unlinkSync(filePath);
   }
 
   sanitizeFileName(fileName) {

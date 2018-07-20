@@ -15,7 +15,7 @@ kuzzle.on('networkError', error => {
 kuzzle
   .connect()
   .then(() => {
-    return [snippet-code]
+    return [snippet-code];
   })
   .then(() => {
     kuzzle.disconnect();

@@ -6,8 +6,8 @@
     "scripts": {
         "build": "node index.js --gzip",
         "dev": "node index.js --dev --watch",
-        "lint": "eslint --max-warnings=0 ./test",
-        "snippets-testing": "sh test/run-all-snippets-tests.sh",
+        "lint": "eslint --max-warnings=0 ./test/lib",
+        "snippets-testing": "sh run-all-snippets-tests.sh",
         "test": "npm run --silent lint && npm run snippets-testing"
     },
     "repository": {
@@ -24,6 +24,7 @@
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
+        "kuzzle-sdk": "git+https://github.com/kuzzleio/sdk-javascript.git#6.x",
         "markdown-it": "^8.4.2",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",

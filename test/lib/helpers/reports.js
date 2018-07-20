@@ -1,14 +1,17 @@
-const express = require('express');
-const path = require('path');
-const app = express();
+const
+  express = require('express'),
+  path = require('path'),
+  app = express();
 
-const reportsFolder = path.join(__dirname, '../../../reports/')
+/* eslint-disable no-console */
+
+const reportsFolder = path.join(__dirname, '../../../reports/');
 
 app.use(express.static(reportsFolder));
 
-app.get('/reports', function (req, res) {
-  res.sendFile(reportsFolder + 'index.html');
-})
+app.get('/reports', (req, res) => {
+  res.sendFile(`${reportsFolder}index.html`);
+});
 
 app.listen(3001);
 
