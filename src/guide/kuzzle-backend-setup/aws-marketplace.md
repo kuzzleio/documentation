@@ -7,12 +7,11 @@ order: 1200
 ---
 
 # AWS Marketplace
-> ⚠️ To follow this tutorial, you need a __valid AWS account__.
+<div class="alert alert-info">
+To follow this tutorial, you need a __valid AWS account__.
+</div>
 
-_In this guide, you'll learn where and how to use our AWS Marketplace AMI. It's a
- good way to test Kuzzle in a cloud environment. In addtion, we recommend you to
- use our [Kuzzle Admin Console](http://console.kuzzle.io), the most comfy
- way to play with Kuzzle._
+_In this guide, you'll learn where and how to use our AWS Marketplace AMI. It's a good way to test Kuzzle in a cloud environment. In addtion, we recommend you to use our [Kuzzle Admin Console](http://console.kuzzle.io), the most comfy way to play with Kuzzle._
 
 ## Get the AMI
 
@@ -23,39 +22,35 @@ Our AMI is stored on AWS Marketplace. It's setup with:
   * Redis (__v3.2.12__).
 
 Go to the marketplace and type __kuzzle__ in the search form.
-You should see one result:
-
-  ![Search result image]()
-
 Choose your Amazon EC2 instance type (the minimal requirement is a __t2-medium__).
-
 Recover the public IP or the hostname provided by AWS before continue.
 Check if Kuzzle is up and running by simply performing the following HTTP request::
 
 ```sh
-$ curl http://yourInstanceIpOrHostname:7512/_now\?pretty
+$ curl http://yourInstanceIpOrHostname:7512/_serverInfo\?pretty
 {
-  "requestId": "9abc8b22-d033-4579-a2b8-35b694839ee1",
+  "requestId": "9b07a095-7143-49a5-9079-a34e937fdf3e",
   "status": 200,
   "error": null,
   "controller": "server",
-  "action": "now",
+  "action": "info",
   "collection": null,
   "index": null,
   "volatile": null,
   "result": {
-    "now": 1531127663204
+    # Some stuff
   }
 }
 ```
 
-You should see the current UNIX formatted timestamp.
+You should see some informations about your Kuzzle Server.
 If not, wait a few minutes and retry the request.
 
-## Connect and create first user
+## Connect with default credentials
 
-Open the [Kuzzle Admin Console](http://console.kuzzle.io) and fill the form with the address of your Kuzzle instance.
-Kuzzle will then ask you to create your first user (we recommend to reset the rights for the anonymous user).
+Open the [Kuzzle Admin Console](http://console.kuzzle.io) and fill the form with the address of your Kuzzle instance. There is a default admin user with __ec2-user__ as username.
+Associated password is your unique instance ID. You can get it from the EC2 AWS Console, it looks like this __i-xxxxxxxxxxxxxxxxx__. Don't worry, you can modify it or create an other
+admin user.
 At this point, you'll be able to log-in.
 
 ![Demo Admin Console First Connection](/assets/images/gifs/demo_aws_console.gif)
