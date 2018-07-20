@@ -1,5 +1,5 @@
 ---
-layout: full.html
+layout: sdk.html
 title: Index
 description: Index Controller
 order: 100

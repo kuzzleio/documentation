@@ -32,9 +32,9 @@ module.exports = class TestManager {
     }
 
     Bluebird.mapSeries(tests, file => {
-      let
+      const
         test = read.sync(file),
-        snippetPath = file.split('.yml')[0];
+        snippetPath = file.split('.test.yml')[0];
 
       return this.tester.runOneTest(test, snippetPath)
         .then(() => {
@@ -66,22 +66,21 @@ module.exports = class TestManager {
   }
 
   getAllTests(base, ext, files, result) {
-    let self = this;
-
+    const suffix = '.test'
     files = files || fs.readdirSync(base);
     result = result || [];
 
     files.forEach((file) => {
       var newbase = path.join(base, file);
       if (fs.statSync(newbase).isDirectory()) {
-        result = self.getAllTests(newbase, ext, fs.readdirSync(newbase), result);
+        result = this.getAllTests(newbase, ext, fs.readdirSync(newbase), result);
       } else {
-        if (file.substr(-1 * (ext.length + 1)) == '.' + ext) {
+        if (file.substr(-1 * (ext.length + 6)) === `${suffix}.${ext}`) {
           result.push(newbase);
         }
       }
     });
-
+    
     return result
   }
 

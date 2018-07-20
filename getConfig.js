@@ -9,7 +9,7 @@ module.exports = {
   },
 
   getLanguages(config) {
-    return Object.keys(config.languages).map(language => language.fullname);
+    return Object.values(config.languages).map(language => language.fullname);
   },
 
   getSdk(language) {
@@ -20,6 +20,9 @@ module.exports = {
         console.log(`${config.languages[language].sdk_url}#${config.languages[language].sdk_branch}`);
         break;
       case 'go':
+        console.log(`${config.languages[language].sdk_url} -b ${config.languages[language].sdk_branch}`);
+        break;
+      case 'java':
         console.log(`${config.languages[language].sdk_url} -b ${config.languages[language].sdk_branch}`);
         break;
       default:

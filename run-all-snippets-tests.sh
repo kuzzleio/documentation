@@ -4,7 +4,7 @@ set -e
 
 sh .travis/start_kuzzle.sh
 
-for language in js go cpp; do
+for language in js go cpp java; do
 
   echo ""
   echo "#######################################################################"

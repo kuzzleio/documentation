@@ -1,6 +1,6 @@
 {
     "name": "kuzzleio-documentation",
-    "version": "1.2.2",
+    "version": "0.0.0",
     "description": "Kuzzle Documentation",
     "main": "index.js",
     "scripts": {
@@ -12,7 +12,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/kuzzleio/documentation.git"
+        "url": "git://github.com/kuzzleio/documentation-v2.git"
     },
     "author": "The Kuzzle Team <support@kuzzle.io>",
     "license": "Apache-2.0",
@@ -24,6 +24,7 @@
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
+        "markdown-it": "^8.4.2",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
         "metalsmith-ancestry": "^1.2.1",
@@ -31,6 +32,7 @@
         "metalsmith-changed": "^3.1.1",
         "metalsmith-concat": "^6.0.0",
         "metalsmith-debug": "^1.1.0",
+        "metalsmith-filter": "^1.0.2",
         "metalsmith-gzip": "^1.1.0",
         "metalsmith-hbt-md": "^1.0.1",
         "metalsmith-html-minifier": "^2.2.0",

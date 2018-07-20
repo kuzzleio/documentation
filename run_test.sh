@@ -49,6 +49,9 @@ case $LANGUAGE in
   cpp)
     docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:cpp $TEST_ONLY
   ;;
+  java)
+    docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:java $TEST_ONLY
+  ;;
   *)
     echo "$LANGUAGE is not a valid language"
     show_help
