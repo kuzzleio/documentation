@@ -20,6 +20,7 @@
         "bluebird": "^3.5.1",
         "cheerio": "^0.22.0",
         "eslint-scope": "^4.0.0",
+        "eslint-visitor-keys": "^1.0.0",
         "express": "^4.16.3",
         "handlebars": "^4.0.8",
         "hoek": "^5.0.3",
