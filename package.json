@@ -6,7 +6,9 @@
     "scripts": {
         "build": "node index.js --gzip",
         "dev": "node index.js --dev --watch",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "lint": "eslint --max-warnings=0 ./test",
+        "snippets-testing": "sh test/run-all-snippets-tests.sh",
+        "test": "npm run --silent lint && npm run snippets-testing"
     },
     "repository": {
         "type": "git",
@@ -22,7 +24,6 @@
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
-        "kuzzle-sdk": "git+https://github.com/kuzzleio/sdk-javascript.git#6.x",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
         "metalsmith-ancestry": "^1.2.1",
@@ -56,5 +57,7 @@
         "striptags": "^3.1.0",
         "wordcount": "^1.1.1"
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "eslint": "^5.1.0"
+    }
 }
