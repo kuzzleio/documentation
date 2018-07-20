@@ -224,7 +224,7 @@ kbd {
       box-shadow: none;
       box-decoration-break: none;
       overflow: auto;
-      line-height: 1.6;
+      line-height: 1.4;
 
       // [mobile -]: Increase padding to match text
       @include break-to-device(mobile) {
