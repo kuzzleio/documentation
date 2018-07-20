@@ -1,7 +1,7 @@
-const Tester = require('./tester');
-const path = require('path');
-const nexpect = require('nexpect');
-const childProcess = require('child_process');
+const
+  Tester = require('./tester'),
+  nexpect = require('nexpect'),
+  childProcess = require('child_process');
 
 module.exports = class GoTester extends Tester {
   constructor() {
@@ -21,30 +21,32 @@ module.exports = class GoTester extends Tester {
       nexpect
         .spawn(this.runCommand + fileName)
         .wait(expected, result => {
-          if (result == expected) {
+          if (result === expected) {
             resolve();
             return;
           }
+
           const err = {
             code: 'ERR_ASSERTION',
             actual: result
-          }
+          };
           reject(err);
-          return;
         })
-        .run((err, outpout) => {
-          if (err) {
-            reject(err);
+        .run((error, output) => {
+          if (error) {
+            reject(error);
             return;
           }
-          if (outpout.includes(expected)) {
+
+          if (output.includes(expected)) {
             resolve();
             return;
           }
-          err = {
+
+          const err = {
             code: 'ERR_ASSERTION',
-            actual: outpout[0]
-          }
+            actual: output[0]
+          };
           reject(err);
           return;
         });
@@ -58,16 +60,17 @@ module.exports = class GoTester extends Tester {
       nexpect
         .spawn(this.lintCommand + fileName, { stream: 'stderr' })
         .wait('')
-        .run((err, output, exit) => {
-          if (err) {
+        .run((error, output) => {
+          if (error) {
             resolve();
-          } else {
-            const err = {
-              code: 'LINTER ERROR',
-              actual: output.join('\n')
-            }
-            reject(err);
+            return;
           }
+
+          const err = {
+            code: 'LINTER ERROR',
+            actual: output.join('\n')
+          };
+          reject(err);
         });
     });
   }

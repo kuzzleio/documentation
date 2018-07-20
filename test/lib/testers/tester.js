@@ -1,15 +1,16 @@
-const fileHelper = require('../helpers/file');
-const nexpect = require('nexpect');
-const fs = require('fs');
-const childProcess = require('child_process');
-const logger = require('../helpers/logger');
-const config = require('../../../getConfig').get();
+const
+  fileHelper = require('../helpers/file'),
+  nexpect = require('nexpect'),
+  fs = require('fs'),
+  childProcess = require('child_process'),
+  logger = require('../helpers/logger'),
+  config = require('../../../getConfig').get();
 
 module.exports = class Tester {
 
   constructor () {
     if (new.target === Tester) {
-      throw new TypeError("Cannot construct Tester instances directly");
+      throw new TypeError('Cannot construct Tester instances directly');
     }
   }
 
@@ -33,8 +34,9 @@ module.exports = class Tester {
       }
 
       try {
-        if (test.hooks.before)
-          this.runHookCommand(test.hooks.before)
+        if (test.hooks.before) {
+          this.runHookCommand(test.hooks.before);
+        }
 
         await this.lintExpect(generatedFilePath);
         await this.runExpect(generatedFilePath, test.expect);
@@ -44,74 +46,81 @@ module.exports = class Tester {
         // Remove the generated files only if test succeed
         this.clean(generatedFilePath);
         resolve();
-      } catch (err) {
+      }
+      catch (err) {
         fileHelper.saveOnFail(generatedFilePath, test.name, this.language);
 
         err.file = `${snippetPath.split('src/')[1]}.${config.languages[this.language].ext}`;
         logger.reportNOk(test, err, this.language);
 
         reject();
-      } finally {
-        if (test.hooks.after)
+      }
+      finally {
+        if (test.hooks.after) {
           this.runHookCommand(test.hooks.after);
+        }
       }
     });
   }
 
   runExpect(generatedFilePath, expected) {
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.runCommand} ${generatedFilePath}`, { stream: 'all' })
+      nexpect
+        .spawn(`${this.runCommand} ${generatedFilePath}`, { stream: 'all' })
         .wait(expected, result => {
-          if (result == expected) {
+          if (result === expected) {
             resolve();
             return;
           }
+
           const err = {
             code: 'ERR_ASSERTION',
             actual: result
-          }
+          };
           reject(err);
-          return;
         })
-        .run((err, outpout) => {
-          if (err) {
-            reject(err);
+        .run((error, output) => {
+          if (error) {
+            reject(error);
             return;
           }
-          if(outpout.includes(expected)) {
+
+          if(output.includes(expected)) {
             resolve();
             return;
           }
-          err = {
+
+          const err = {
             code: 'ERR_ASSERTION',
-            actual: outpout
-          }
+            actual: output
+          };
           reject(err);
-          return;
         });
     });
   }
 
   lintExpect(generatedFilePath) {
     return new Promise((resolve, reject) => {
-      nexpect.spawn(`${this.lintCommand} ${generatedFilePath}`, { stream: 'all' })
+      nexpect
+        .spawn(`${this.lintCommand} ${generatedFilePath}`, { stream: 'all' })
         .wait(this.expectedLintSuccess)
-        .run((err) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve();
+        .run((error) => {
+          if (error) {
+            reject(error);
+            return;
           }
+
+          resolve();
         });
     });
   }
 
   isTodo(snippetPath, test) {
     const
-      snippet = snippetPath + '.' + config.languages[this.language].ext,
+      snippet = `${snippetPath}.${config.languages[this.language].ext}`,
       fileContent = fs.readFileSync(snippet, 'utf8');
 
-    if (fileContent.match(/(\@todo)/g)) {
+    if (fileContent.match(/(@todo)/g)) {
       const err = {
         code: 'TODO',
         expect: test.expect,
@@ -121,14 +130,16 @@ module.exports = class Tester {
       logger.reportToJson(test, err, this.language);
       return true;
     }
+
     return false;
   }
 
   isWontdo(snippetPath, test) {
     const
-      snippet = snippetPath + '.' + config.languages[this.language].ext,
+      snippet = `${snippetPath}.${config.languages[this.language].ext}`,
       fileContent = fs.readFileSync(snippet, 'utf8');
-    if (fileContent.match(/(\@wontdo)/g)){
+
+    if (fileContent.match(/(@wontdo)/g)) {
       const err = {
         code: 'WONTDO',
         expect: test.expect,
@@ -138,11 +149,12 @@ module.exports = class Tester {
       logger.reportToJson(test, err, this.language);
       return true;
     }
+
     return false;
   }
 
   runHookCommand(command) {
-    childProcess.execSync(command, { stderr: 'ignore', stdio: 'ignore' })
+    childProcess.execSync(command, { stderr: 'ignore', stdio: 'ignore' });
   }
 
   clean(generatedFilePath) {
