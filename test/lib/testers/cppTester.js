@@ -1,8 +1,8 @@
-const fileHelper = require('../helpers/file');
-const Tester = require('./tester');
-const path = require('path');
-const nexpect = require('nexpect');
-const childProcess = require('child_process');
+const
+  fileHelper = require('../helpers/file'),
+  Tester = require('./tester'),
+  nexpect = require('nexpect'),
+  childProcess = require('child_process');
 
 module.exports = class CppTester extends Tester {
   constructor() {
@@ -29,28 +29,29 @@ module.exports = class CppTester extends Tester {
             resolve();
             return;
           }
-          let err = {
+
+          const err = {
             code: 'ERR_ASSERTION',
             actual: result
-          }
+          };
           reject(err);
-          return;
         })
-        .run((err, outpout) => {
-          if (err) {
-            reject(err);
+        .run((error, output) => {
+          if (error) {
+            reject(error);
             return;
           }
-          if (outpout.includes(expected)) {
+
+          if (output.includes(expected)) {
             resolve();
             return;
           }
-          err = {
+
+          const err = {
             code: 'ERR_ASSERTION',
-            actual: outpout
-          }
+            actual: output
+          };
           reject(err);
-          return;
         });
     });
   }
@@ -62,16 +63,17 @@ module.exports = class CppTester extends Tester {
       nexpect
         .spawn(`${this.lintCommand} ${generatedFilePath}`, { stream: 'all' })
         .wait(expected)
-        .run((err, output, exit) => {
-          if (err) {
-            const err = {
-              code: 'LINTER_ERROR',
-              actual: output.join('\n')
-            };
-            reject(err);
-          } else {
+        .run((error, output) => {
+          if (! error) {
             resolve();
+            return;
           }
+
+          const err = {
+            code: 'LINTER_ERROR',
+            actual: output.join('\n')
+          };
+          reject(err);
         });
     });
   }
