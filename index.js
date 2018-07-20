@@ -15,7 +15,6 @@ const ancestry = require('metalsmith-ancestry');
 const links = require('metalsmith-relative-links');
 const hbtmd = require('metalsmith-hbt-md');
 const sass = require('metalsmith-sass');
-const autoprefix = require('metalsmith-autoprefixer');
 const linkcheck = require('metalsmith-linkcheck');
 const hljs = require('metalsmith-metallic');
 const inlineSVG = require('metalsmith-inline-svg');
@@ -27,8 +26,6 @@ const algolia = require('metalsmith-algolia');
 const redirect = require('metalsmith-redirect');
 const uglifyjs = require("metalsmith-uglifyjs");
 const concat = require("metalsmith-concat");
-const filter = require('metalsmith-filter');
-
 
 const snippetManager = require('./plugins/snippetManager');
 const sectionManager = require('./plugins/sectionManager');
@@ -251,7 +248,8 @@ const metalsmith = Metalsmith(__dirname)
     '**/**/page.js.md',
     '**/**/page.go.md',
     '**/**/page.cpp.md',
-    '**/**/page.java.md'
+    '**/**/page.java.md',
+    '**/templates/*'
   ])
   .use(saveSrc())
   .use((files, metalsmith, done) => {
