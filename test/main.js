@@ -8,7 +8,7 @@ program
   .parse(process.argv);
 
 if (!program.language) {
-  console.error('Missing --language argument.')
+  console.error('Missing --language argument.');
   program.help();
 }
 

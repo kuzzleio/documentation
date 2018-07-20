@@ -1,8 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const indentString = require('indent-string');
-const sanitize = require("sanitize-filename");
-const config = require('../../../getConfig').get();
+const
+  fs = require('fs'),
+  path = require('path'),
+  indentString = require('indent-string'),
+  sanitize = require('sanitize-filename'),
+  config = require('../../../getConfig').get();
 
 
 const
@@ -15,8 +16,8 @@ class FileProcess {
 
   injectSnippet (test, snippetPath, language) {
     const
-      template = TEMPLATE_FOLDER + test.template + '.tpl.' + language,
-      snippet = snippetPath + '.' + config.languages[language].ext;
+      template = `${TEMPLATE_FOLDER}${test.template}.tpl.${language}`,
+      snippet = `${snippetPath}.${config.languages[language].ext}`;
 
     //first check file exist
     if (!fs.existsSync(template) || !fs.existsSync(snippet)) {
@@ -39,7 +40,7 @@ class FileProcess {
     const
       newContent = templateContent.replace(/(\[snippet-code])/g, indentedSnippet),
       fileName = this.sanitizeFileName(test.name),
-      binPath = BIN_FOLDER + fileName + '.' + language;
+      binPath = `${BIN_FOLDER}${fileName}.${language}`;
 
     // JAVA hack, because filename has to be the same of the class name
     // We replace the template generique class name by the name of the test
@@ -68,15 +69,15 @@ class FileProcess {
   }
 
   saveOnFail(binFile, testName, language) {
-    testName = this.sanitizeFileName(testName)
-    const dest = SAVE_FOLDER + testName + '.' + language;
+    testName = this.sanitizeFileName(testName);
+    const dest = `${SAVE_FOLDER}${testName}.${language}`;
     fs.copyFileSync(binFile, dest);
 
     return true;
   }
 
-  remove(path) {
-    fs.unlinkSync(path);
+  remove(filePath) {
+    fs.unlinkSync(filePath);
   }
 
   sanitizeFileName(fileName) {

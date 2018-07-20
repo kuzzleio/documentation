@@ -27,6 +27,7 @@ install:
   - pip install awscli --upgrade --user
 
 script:
-  - sh .travis/run_tests.sh
+  - npm install
+  - npm run test
   - sh .travis/comment_pr.sh
   - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"

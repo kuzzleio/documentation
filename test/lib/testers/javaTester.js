@@ -29,11 +29,10 @@ module.exports = class JavaTester extends Tester {
             actual: result
           };
           reject(err);
-          return;
         })
-        .run((err, output) => {
-          if (err) {
-            reject(err);
+        .run((error, output) => {
+          if (error) {
+            reject(error);
             return;
           }
 
@@ -42,12 +41,11 @@ module.exports = class JavaTester extends Tester {
             return;
           }
 
-          const error = {
+          const err = {
             code: 'ERR_ASSERTION',
             actual: output[0]
           };
-          reject(error);
-          return;
+          reject(err);
         });
     });
   }
@@ -59,18 +57,17 @@ module.exports = class JavaTester extends Tester {
       nexpect
         .spawn(`${this.lintCommand}${generatedFilename}`, { stream: 'all' })
         .wait('')
-        .run((err, output, exit) => {
-          if (err) {
+        .run((error, output) => {
+          if (error) {
             resolve();
             return;
           }
 
-          const error = {
+          const err = {
             code: 'LINTER_ERROR',
             actual: output.join('\n')
           };
-
-          reject(error);
+          reject(err);
         });
     });
   }

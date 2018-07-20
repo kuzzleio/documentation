@@ -1,21 +1,22 @@
-const read = require('read-yaml');
-const path = require('path');
-const fs = require('fs');
-const file = require('fs');
-const config = require('../../getConfig').get();
-const Bluebird = require('bluebird');
+const
+  read = require('read-yaml'),
+  path = require('path'),
+  fs = require('fs'),
+  config = require('../../getConfig').get(),
+  Bluebird = require('bluebird');
 
 module.exports = class TestManager {
 
   constructor(language) {
-    if (this.checkLanguageExist(language)) {
-      const Tester = require(`./testers/${language}Tester`);
-      this.tester = new Tester();
-      this.language = language;
-    } else {
+    if (! this.checkLanguageExist(language)) {
+      // eslint-disable-next-line no-console
       console.log('Language specified in args doesn\'t exist in config');
       process.exit(1);
     }
+
+    const Tester = require(`./testers/${language}Tester`);
+    this.tester = new Tester();
+    this.language = language;
   }
 
   process(onlyOnePath) {
@@ -42,13 +43,17 @@ module.exports = class TestManager {
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
         })
-        .catch((err) => {
-          if (typeof err !== 'undefined') console.log(err);
+        .catch(err => {
+          if (typeof err !== 'undefined') {
+            // eslint-disable-next-line no-console
+            console.log(err);
+          }
+
           allResults.push(false);
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
-        })
-    })
+        });
+    });
   }
 
   handleTestsFinish(count, length, allResults) {
@@ -66,7 +71,7 @@ module.exports = class TestManager {
   }
 
   getAllTests(base, ext, files, result) {
-    const suffix = '.test'
+    const suffix = '.test';
     files = files || fs.readdirSync(base);
     result = result || [];
 
@@ -74,18 +79,16 @@ module.exports = class TestManager {
       var newbase = path.join(base, file);
       if (fs.statSync(newbase).isDirectory()) {
         result = this.getAllTests(newbase, ext, fs.readdirSync(newbase), result);
-      } else {
-        if (file.substr(-1 * (ext.length + 6)) === `${suffix}.${ext}`) {
-          result.push(newbase);
-        }
+      } else if (file.substr(-1 * (ext.length + 6)) === `${suffix}.${ext}`) {
+        result.push(newbase);
       }
     });
-    
-    return result
+
+    return result;
   }
 
   readConfigTest(filename) {
     return read.sync(filename);
   }
 
-}
+};
