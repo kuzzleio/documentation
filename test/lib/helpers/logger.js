@@ -10,9 +10,7 @@ class Logger {
 
   reportOk(test, language) {
     this.reportToJson(test, false, language);
-    console.log(
-      color.green('✔'), color.green(`${test.name}: ${test.description}`)
-    );
+    console.log(color.green('✔'), color.green(`${test.name}: ${test.description}`));
   }
 
   reportNOk(test, err, language) {
@@ -27,11 +25,10 @@ class Logger {
   }
 
   reportToJson(test, err, language) {
+    const reportFile = path.join(__dirname, '../../../reports/') + 'report.json';
     let
-      reportFile = path.join(__dirname, '../../../reports/') + 'report.json',
       report = {},
       status;
-
 
     if (fs.existsSync(reportFile)) {
       report = jsonfile.readFileSync(reportFile);
@@ -48,6 +45,7 @@ class Logger {
         break;
       default:
         status = 'Fail';
+        break;
     }
 
     report[test.name] = {
