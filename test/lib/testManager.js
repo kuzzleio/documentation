@@ -1,34 +1,41 @@
-const read = require('read-yaml');
-const path = require('path');
-const fs = require('fs');
-const file = require('fs');
-const config = require('../../getConfig').get();
-const Bluebird = require('bluebird');
+const
+  read = require('read-yaml'),
+  path = require('path'),
+  fs = require('fs'),
+  config = require('../../getConfig').get(),
+  Bluebird = require('bluebird');
 
 module.exports = class TestManager {
 
   constructor(language) {
-    if (this.checkLanguageExist(language)) {
-      const Tester = require(`./testers/${language}Tester`);
-      this.tester = new Tester();
-      this.language = language;
-    } else {
+    if (! this.checkLanguageExist(language)) {
+      // eslint-disable-next-line no-console
       console.log('Language specified in args doesn\'t exist in config');
       process.exit(1);
     }
+
+    const Tester = require(`./testers/${language}Tester`);
+    this.tester = new Tester();
+    this.language = language;
   }
 
-  process() {
+  process(onlyOnePath) {
     let
       testsPath = path.join(__dirname, '../../src/sdk-reference/'),
-      tests = this.getAllTests(testsPath, 'yml'),
+      tests,
       count = 0,
       allResults = [];
 
+    if (onlyOnePath) {
+      tests = this.getAllTests(testsPath, 'yml', [onlyOnePath]);
+    } else {
+      tests = this.getAllTests(testsPath, 'yml');
+    }
+
     Bluebird.mapSeries(tests, file => {
-      let
+      const
         test = read.sync(file),
-        snippetPath = file.split('.yml')[0];
+        snippetPath = file.split('.test.yml')[0];
 
       return this.tester.runOneTest(test, snippetPath)
         .then(() => {
@@ -36,17 +43,21 @@ module.exports = class TestManager {
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
         })
-        .catch((err) => {
-          if (typeof err != 'undefined') console.log(err);
+        .catch(err => {
+          if (typeof err !== 'undefined') {
+            // eslint-disable-next-line no-console
+            console.log(err);
+          }
+
           allResults.push(false);
           count++;
           this.handleTestsFinish(count, tests.length, allResults);
-        })
-    })
+        });
+    });
   }
 
   handleTestsFinish(count, length, allResults) {
-    if (count == length) {
+    if (count === length) {
       if (allResults.includes(false)) {
         process.exit(1);
       } else {
@@ -60,27 +71,24 @@ module.exports = class TestManager {
   }
 
   getAllTests(base, ext, files, result) {
-    let self = this;
-
+    const suffix = '.test';
     files = files || fs.readdirSync(base);
     result = result || [];
 
     files.forEach((file) => {
       var newbase = path.join(base, file);
       if (fs.statSync(newbase).isDirectory()) {
-        result = self.getAllTests(newbase, ext, fs.readdirSync(newbase), result);
-      } else {
-        if (file.substr(-1 * (ext.length + 1)) == '.' + ext) {
-          result.push(newbase);
-        }
+        result = this.getAllTests(newbase, ext, fs.readdirSync(newbase), result);
+      } else if (file.substr(-1 * (ext.length + 6)) === `${suffix}.${ext}`) {
+        result.push(newbase);
       }
     });
 
-    return result
+    return result;
   }
 
   readConfigTest(filename) {
     return read.sync(filename);
   }
 
-}
+};

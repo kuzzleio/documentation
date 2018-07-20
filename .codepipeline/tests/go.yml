@@ -8,7 +8,7 @@ phases:
       - bash .codepipeline/start_kuzzle.sh
   build:
     commands:
-      - docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)"/test/bin,target=/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go
+      - docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app -v "$(pwd)"/test/bin:/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go
   post_build:
     commands:
       - aws s3 sync reports/ s3://$AWS_S3_BUCKET/reports/go/release/

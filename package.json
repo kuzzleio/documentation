@@ -1,16 +1,18 @@
 {
     "name": "kuzzleio-documentation",
-    "version": "1.2.2",
+    "version": "0.0.0",
     "description": "Kuzzle Documentation",
     "main": "index.js",
     "scripts": {
         "build": "node index.js --gzip",
         "dev": "node index.js --dev --watch",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "lint": "eslint --max-warnings=0 ./test/lib",
+        "snippets-testing": "sh run-all-snippets-tests.sh",
+        "test": "npm run --silent lint && npm run snippets-testing"
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/kuzzleio/documentation.git"
+        "url": "git://github.com/kuzzleio/documentation-v2.git"
     },
     "author": "The Kuzzle Team <support@kuzzle.io>",
     "license": "Apache-2.0",
@@ -23,6 +25,7 @@
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
         "kuzzle-sdk": "git+https://github.com/kuzzleio/sdk-javascript.git#6.x",
+        "markdown-it": "^8.4.2",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
         "metalsmith-ancestry": "^1.2.1",
@@ -30,6 +33,7 @@
         "metalsmith-changed": "^3.1.1",
         "metalsmith-concat": "^6.0.0",
         "metalsmith-debug": "^1.1.0",
+        "metalsmith-filter": "^1.0.2",
         "metalsmith-gzip": "^1.1.0",
         "metalsmith-hbt-md": "^1.0.1",
         "metalsmith-html-minifier": "^2.2.0",
@@ -56,5 +60,7 @@
         "striptags": "^3.1.0",
         "wordcount": "^1.1.1"
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "eslint": "^5.1.0"
+    }
 }

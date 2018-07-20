@@ -27,10 +27,11 @@ const algolia = require('metalsmith-algolia');
 const redirect = require('metalsmith-redirect');
 const uglifyjs = require("metalsmith-uglifyjs");
 const concat = require("metalsmith-concat");
+const filter = require('metalsmith-filter');
 
 
-const codeExample = require('./plugins/codeExample');
-const sectionOverride = require('./plugins/sectionOverride');
+const snippetManager = require('./plugins/snippetManager');
+const sectionManager = require('./plugins/sectionManager');
 const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
 const nodeStatic = require('node-static');
@@ -246,7 +247,11 @@ const metalsmith = Metalsmith(__dirname)
   .clean(true)
   .ignore([
     '**/**/sections/*',
-    '**/**/code-example/*'
+    '**/**/snippets/*',
+    '**/**/page.js.md',
+    '**/**/page.go.md',
+    '**/**/page.cpp.md',
+    '**/**/page.java.md'
   ])
   .use(saveSrc())
   .use((files, metalsmith, done) => {
@@ -259,25 +264,27 @@ const metalsmith = Metalsmith(__dirname)
   })
   .use((files, metalsmith, done) => {
     for (const file in files) {
-      if (file.endsWith('.md')) {
-        const codeExampleData = codeExample.process(file, files[file]);
-        files[file].contents = codeExampleData['fileContent'];
-        files[file]['has_code_example'] = codeExampleData['has_code_example'];
-      }
-    }
-    setImmediate(done);
-  })
-  .use((files, metalsmith, done) => {
-    for (const file in files) {
-      if (file.endsWith('.md')) {
-        const sectionsData = sectionOverride.process(file, files[file]);
+      if (file.endsWith('index.md')) {
+        const sectionsData = sectionManager.process(file, files[file]);
         files[file].contents = sectionsData['fileContent'];
         files[file]['has_section'] = sectionsData['has_section'];
         files[file]['sections'] = sectionsData['sections'];
       }
     }
     setImmediate(done);
+  })
+  .use((files, metalsmith, done) => {
+    for (const file in files) {
+      if (file.endsWith('index.md')) {
+        const codeExampleData = snippetManager.process(file, files[file]);
+        files[file].contents = codeExampleData['fileContent'];
+        files[file]['has_code_example'] = codeExampleData['has_code_example'];
+      }
+    }
+    setImmediate(done);
   });
+
+
 
 metalsmith
   .use(links())
@@ -366,6 +373,7 @@ metalsmith
     '/sdk-reference': '/sdk-reference/essentials/',
     '/sdk-reference/index': '/sdk-reference/index/create/',
     '/sdk-reference/kuzzle': '/sdk-reference/kuzzle/constructor/',
+    '/sdk-reference/bulk': '/sdk-reference/bulk/import/',
     '/plugins-reference/': 'plugins-features/',
     '/elasticsearch-cookbook/': '/elasticsearch-cookbook/installation/',
     '/kuzzle-dsl/': '/kuzzle-dsl/essential/koncorde/',

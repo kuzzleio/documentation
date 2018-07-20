@@ -30,19 +30,19 @@
                     <ul class="md-nav__list sub-menu">
                         {{#each ../ancestry.members as |page|}}
                             {{#if (or section.show-subheader (ne @key 0))}}
-                            {{#if (or (eq page.path ../../path) (eq page.path section.path))}}
-                                <li class="md-nav__item active">
-                                    <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link--active">
-                                        {{firstDefinedOf subheader-title title}}
-                                    </a>
-                                </li>
-                            {{else}}
-                                <li class="md-nav__item">
-                                    <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link">
-                                        {{firstDefinedOf subheader-title title}}
-                                    </a>
-                                </li>
-                            {{/if}}
+                              {{#if (or (eq page.path ../../path) (eq page.path section.path))}}
+                                  <li class="md-nav__item active">
+                                      <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link--active">
+                                          {{firstDefinedOf subheader-title title}}
+                                      </a>
+                                  </li>
+                              {{else}}
+                                  <li class="md-nav__item">
+                                      <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link">
+                                          {{firstDefinedOf subheader-title title}}
+                                      </a>
+                                  </li>
+                              {{/if}}
                             {{/if}} 
                         {{/each}}
                     </ul>

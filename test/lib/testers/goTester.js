@@ -1,7 +1,7 @@
-const Tester = require('./tester');
-const path = require('path');
-const nexpect = require('nexpect');
-const childProcess = require('child_process');
+const
+  Tester = require('./tester'),
+  nexpect = require('nexpect'),
+  childProcess = require('child_process');
 
 module.exports = class GoTester extends Tester {
   constructor() {
@@ -12,57 +12,65 @@ module.exports = class GoTester extends Tester {
     this.lintCommand = `golint ${this.goProjectPath}`;
   }
 
-  runExpect(binFile, expected) {
-    let fileName = binFile.split('/').pop();
+  runExpect(generatedFilePath, expected) {
+    const fileName = generatedFilePath.split('/').pop();
+
     childProcess.execSync(`goimports -w ${this.goProjectPath}${fileName}`);
+
     return new Promise((resolve, reject) => {
-      nexpect.spawn(this.runCommand + fileName)
+      nexpect
+        .spawn(this.runCommand + fileName)
         .wait(expected, result => {
-          if (result == expected) {
+          if (result === expected) {
             resolve();
             return;
           }
-          let err = {
+
+          const err = {
             code: 'ERR_ASSERTION',
             actual: result
-          }
+          };
           reject(err);
-          return;
         })
-        .run((err, outpout) => {
-          if (err) {
-            reject(err);
+        .run((error, output) => {
+          if (error) {
+            reject(error);
             return;
           }
-          if (outpout.includes(expected)) {
+
+          if (output.includes(expected)) {
             resolve();
             return;
           }
-          err = {
+
+          const err = {
             code: 'ERR_ASSERTION',
-            actual: outpout[0]
-          }
+            actual: output[0]
+          };
           reject(err);
           return;
         });
     });
   }
-  
-  lintExpect(binFile) {
-    let fileName = binFile.split('/').pop();
+
+  lintExpect(generatedFilePath) {
+    const fileName = generatedFilePath.split('/').pop();
+
     return new Promise((resolve, reject) => {
-      nexpect.spawn(this.lintCommand + fileName, { stream: 'stderr' })
+      nexpect
+        .spawn(this.lintCommand + fileName, { stream: 'stderr' })
         .wait('')
-        .run((err, outpout, exit) => {
-          if (err) {
+        .run((error, output) => {
+          if (error) {
             resolve();
-          } else {
-            let err = {
-              code: 'LINTER ERROR',
-              actual: outpout.join()
-            }
-            reject(err);
+            return;
           }
+
+          const err = {
+            code: 'LINTER ERROR',
+            actual: output.join('\n')
+          };
+          reject(err);
         });
     });
   }
