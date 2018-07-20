@@ -6,7 +6,7 @@
     "scripts": {
         "build": "node index.js --gzip",
         "dev": "node index.js --dev --watch",
-        "lint": "eslint --max-warnings=0 ./test/lib",
+        "lint": "./node_modules/.bin/eslint --max-warnings=0 ./test/lib",
         "snippets-testing": "sh run-all-snippets-tests.sh",
         "test": "npm run --silent lint && npm run snippets-testing"
     },
