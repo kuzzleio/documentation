@@ -1,7 +1,7 @@
 # Import
 
 ```javascript
-import(data, options)
+import(bulkData, options = {})  ⇒ object
 ```
 
 The bulk import allows to save a list of documents into a specific collection (belonging to a specific index). If a subset of the documents fails to save, a PartialError is triggered. The `data` argument passed to the method must specify the set of documents to import and must satisfy the [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html).
@@ -13,12 +13,12 @@ This API takes a JSON array containing a list of JSON objects working in pairs. 
 ```javascript
 [
     // The action object
-    { create: { _id: 'id', _index: 'index', _type: 'collection'}}
+    { create: { _id: 'id', _index: 'index', _type: 'collection'}},
     // The document object
-    { myField: 'myValue', myOtherField: 'myOtherValue' }
+    { myField: 'myValue', myOtherField: 'myOtherValue' },
 
     // Another action object
-    { create: { _id: 'another-id', _index: 'index', _type: 'collection'}}
+    { create: { _id: 'another-id', _index: 'index', _type: 'collection'}},
     // Another document object
     { myField: 'anotherValue', myOtherField: 'yetAnotherValue' }
 ]
@@ -39,7 +39,7 @@ Learn more at https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-b
 
 | Option    | Type   | Description                                         | Default |
 | --------- | ------ | --------------------------------------------------- | ------- |
-| data      | Object | The list of documents to be added to the collection | {}      |
+| bulkData  | Array  | The list of documents to be added to the collection | []      |
 | options   | Object | The options passed to the controller                | {}      |
 
 
