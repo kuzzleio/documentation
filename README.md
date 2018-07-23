@@ -180,7 +180,7 @@ The following example launches a single test in Javascript using the running Kuz
 
 ## Scaffolding tool
 
-Creating the files needed to document SDK actions can be a daunting task.  
+Creating the files needed to document SDK actions can be a boring task.  
 A scaffolding tool automatically creates all the files needed to document a sdk action.  
 
 ```bash
