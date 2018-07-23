@@ -92,13 +92,13 @@ const renderSnippetTemplates = (snippetTemplate, snippetName, variables) => {
       `${snippetName}.${extension}`
     );
 
-    console.log(path.join(snippetsPath, template))
     ejs.renderFile(path.join(snippetsPath, template), locals, {}, (error, output) => {
       if (error) {
         console.error(error);
         return;
       }
-      fs.writeFileSync(destinationFile, output)
+
+      fs.writeFileSync(destinationFile, output);
     });
   }
 }
