@@ -1,5 +1,5 @@
 ``` javascript
-create(index, options = null) : object
+create(index, options = null) ⇒ object
 ```
 
 ## Usage

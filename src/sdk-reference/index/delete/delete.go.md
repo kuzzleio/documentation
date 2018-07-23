@@ -1,10 +1,10 @@
-``` go
-Create(index string, options types.QueryOptions) error
+```go
+Delete(index string, options types.QueryOptions) error
 ```
 
 ## Usage
 
-[code-example=create]
+[code-example=delete]
 
 ## Arguments
 
@@ -14,9 +14,7 @@ A `string` representing the index name.
 
 ### options
 
-A structure `queryOptions` containing query options.
-
-[code-example=options]
+Query options.
 
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
@@ -24,6 +22,6 @@ A structure `queryOptions` containing query options.
 
 ---
 
-## Return
+## Response
 
-Return an error or `nil` if index successfully created.
+Returns an error or nil if the request succeed.

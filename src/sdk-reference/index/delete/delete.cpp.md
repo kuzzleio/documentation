@@ -1,10 +1,10 @@
 ``` cpp
-public void create(std::string index, query_options *options)
+public void delete_(std::string index, query_options *options)
 ```
 
 ## Usage
 
-[code-example=create]
+[code-example=delete]
 
 ## Arguments
 
@@ -16,7 +16,6 @@ A `std::string` representing the index name.
 
 A pointer to a `query_options` containing query options.
 
-[code-example=options]
 
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |

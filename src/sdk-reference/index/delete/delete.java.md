@@ -1,16 +1,18 @@
 ``` java
-public void create(String index)
+void delete(String index)
 ```
 
 ## Usage
 
-[code-example=create]
+[code-example=delete]
 
 ## Arguments
 
 ### index
 
 A `String` representing the index name.
+
+---
 
 ## Return
 
