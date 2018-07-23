@@ -1,16 +1,28 @@
+```go
+NewKuzzle(c connection.Connection, o types.Options) (*Kuzzle, error)
+```
+
+## Usage
+
+In a first step, you have to create a new `connection.Connection` and pass it to the constructor.  
+By now the only connection type available is `websocket.Websocket`.
+
+[code-example=constructor]
+
 ## Arguments
 
 | Argument | Type | Description | Required |
 |--------|------|-------------|------------ |
-| `host` | std::string | The target Kuzzle host  | yes |
-| `options` | kuzzleio::options* | Kuzzle connection configuration | yes |
+| `protocol` | connection.Connection | The connection used by the SDK instance  | yes |
+| `options` | types.Options | Kuzzle connection configuration | yes |
 
-### host
+### c
 
-The Kuzzle host to connect to.  
-Can be a hostname or an IP address.
+The protocol used to connect to the Kuzzle instance.  
+So far the only protocol available is `websocket`.  
+You have to instanciate and pass it to the constructor.   
 
-### options
+### o
 
 | Option | Type | Description | Default | Required |
 |---------------|---------|----------------------------------------|---------|---------|
@@ -28,13 +40,26 @@ Can be a hostname or an IP address.
 ## Getter & Setter
 
 The properties can be writable.  
-For example the property `volatile` you can read it with `getVolatile()` and write it with `setVolatile()`
+For example the property `autoQueue` you can read it with `AutoQueue()` and write it with `SetAutoQueue()`
 
 | Property name | Type | Description | Availability |
 |---------------|------|-------------|:---------:|
-| `autoReplay` | boolean | Automatically replay queued requests on a `reconnected` event | Set |
-| `jwt` | string | Token used in requests for authentication. | Get |
-| `volatile` | string (json) | Common volatile data, will be sent to all future requests | Get/Set |
+| `autoQueue` | boolean | Automatically queue all requests during offline mode | Get/Set |
+| `autoReconnect` | boolean | Automatically reconnect after a connection loss | Get |
+| `autoReplay` | boolean | Automatically replay queued requests on a `reconnected` event |  Get/Set |
+| `autoResubscribe` | boolean | Automatically renew all subscriptions on a `reconnected` event | Get/Set |
+| `host` | string | Target Kuzzle host | Get |
+| `port` | int | Target Kuzzle port | Get |
+| `jwt` | string | Token used in requests for authentication. | Get/Set |
+| `offlineQueue` | QueryObject | Contains the queued requests during offline mode | Get |
+| `offlineQueueLoader` | OfflineQueueLoader | Called before dequeuing requests after exiting offline mode, to add items at the beginning of the offline queue | Get/Set |
+| `queueFilter` | QueueFilter | Called during offline mode. Takes a request object as arguments and returns a boolean, indicating if a request can be queued | Get/Set |
+| `queueMaxSize` | int | Number of maximum requests kept during offline mode | Get/Set |
+| `queueTTL` | Duration | Time a queued request is kept during offline mode, in milliseconds | Get/Set |
+| `replayInterval` | Duration | Delay between each replayed requests | Get/Set |
+| `reconnectionDelay` | Duration | Number of milliseconds between reconnection attempts | Get |
+| `sslConnection` | boolean | Connect to Kuzzle using SSL | Get |
+| `volatile` | VolatileData | Common volatile data, will be sent to all future requests | Get/Set |
 
 
 **Notes:**
@@ -46,3 +71,10 @@ For example the property `volatile` you can read it with `getVolatile()` and wri
 * if `queueMaxSize` is set to `0`, an unlimited number of requests is kept until the buffer is flushed
 * the `offlineQueueLoader` must be set with a function, taking no argument, and returning an array of objects containing a `query` member with a Kuzzle query to be replayed, and an optional `cb` member with the corresponding callback to invoke with the query result
 * updates to `autoReconnect`, `reconnectionDelay` and `sslConnection` properties will only take effect on next `connect` call
+
+---
+
+## Return
+
+A `Kuzzle` struct and an `error` struct.  
+The `error` struct is nil if everything was ok.  

@@ -50,9 +50,11 @@ class FileProcess {
       fs.writeFileSync(binPath, newContent);
     }
 
-    if (fs.existsSync(binPath)) {
-      return binPath;
+    if (! fs.existsSync(binPath)) {
+      return false;
     }
+
+    return binPath;
   }
 
   indentSnippet (snippet, indentation) {

@@ -1,3 +1,12 @@
+```javascript
+Kuzzle(string protocol, options = {}) ⇒ Kuzzle
+Kuzzle(Protocol protocol, options = {}) ⇒ Kuzzle
+```
+
+## Usage
+
+[code-example=constructor]
+
 ## Arguments
 
 | Argument | Type | Description | Required |
@@ -10,7 +19,7 @@
 The protocol used to connect to the Kuzzle instance.  
 It can be:
   - a string for embedded protocols : `http`, `websocket` or `socketio`
-  - a Custom Protocol object
+  - a custom Protocol object
 
 ### options
 
@@ -61,3 +70,9 @@ It can be:
 * if `queueMaxSize` is set to `0`, an unlimited number of requests is kept until the buffer is flushed
 * the `offlineQueueLoader` must be set with a function, taking no argument, and returning an array of objects containing a `query` member with a Kuzzle query to be replayed, and an optional `cb` member with the corresponding callback to invoke with the query result
 * updates to `autoReconnect`, `reconnectionDelay` and `sslConnection` properties will only take effect on next `connect` call
+
+---
+
+## Return
+
+A `Kuzzle` instance.

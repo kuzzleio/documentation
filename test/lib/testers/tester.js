@@ -26,7 +26,7 @@ module.exports = class Tester {
         const err = {
           code: 'MISSING_SNIPPET',
           expect: test.expect,
-          actual: `Missing snippet file : ${snippetPath.split('src/')[1]}.${this.language}`
+          actual: `Missing snippet or template file: ${snippetPath.split('src/')[1]}.${this.language}`
         };
         logger.reportNOk(test, err, this.language);
         reject();

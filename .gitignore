@@ -4,3 +4,4 @@
 /test/bin/*
 /reports/*.json
 /reports/failed/*.*
+libs/

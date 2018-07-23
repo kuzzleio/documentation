@@ -15,5 +15,3 @@
 ---
 
 ## Return
-
-## Exceptions
