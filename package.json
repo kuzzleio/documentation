@@ -8,6 +8,7 @@
         "dev": "node index.js --dev --watch",
         "lint": "eslint --max-warnings=0 ./test/lib",
         "snippets-testing": "sh run-all-snippets-tests.sh",
+        "scaffold": "node scaffolding/index.js",
         "test": "npm run --silent lint && npm run snippets-testing"
     },
     "repository": {
@@ -24,7 +25,6 @@
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
-        "lodash": "^4.17.10",
         "markdown-it": "^8.4.2",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
@@ -63,6 +63,7 @@
     "devDependencies": {
         "eslint": "^5.1.0",
         "commander": "^2.16.0",
+        "lodash": "^4.17.10",
         "ejs": "^2.6.1"
     }
 }
