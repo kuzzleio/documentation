@@ -1,5 +1,5 @@
 ``` cpp
-create(std::string index, kuzzleio::query_options options) : nullptr
+public void create(std::string index, kuzzleio::query_options options)
 ```
 
 ## Usage
