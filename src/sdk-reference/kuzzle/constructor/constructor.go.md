@@ -1,5 +1,5 @@
 ```go
-NewKuzzle(c connection.Connection, o types.Options) (*Kuzzle, error)
+NewKuzzle(conn connection.Connection, opts types.Options) (*Kuzzle, error)
 ```
 
 ## Usage
@@ -13,16 +13,16 @@ By now the only connection type available is `websocket.Websocket`.
 
 | Argument | Type | Description | Required |
 |--------|------|-------------|------------ |
-| `protocol` | connection.Connection | The connection used by the SDK instance  | yes |
-| `options` | types.Options | Kuzzle connection configuration | yes |
+| `conn` | connection.Connection | The connection used by the SDK instance  | yes |
+| `opts` | types.Options | Kuzzle connection configuration | yes |
 
-### c
+### conn
 
 The protocol used to connect to the Kuzzle instance.  
 So far the only protocol available is `websocket`.  
 You have to instanciate and pass it to the constructor.   
 
-### o
+### opts
 
 | Option | Type | Description | Default | Required |
 |---------------|---------|----------------------------------------|---------|---------|
