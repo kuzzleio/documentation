@@ -24,7 +24,7 @@
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
-        "kuzzle-sdk": "git+https://github.com/kuzzleio/sdk-javascript.git#6.x",
+        "lodash": "^4.17.10",
         "markdown-it": "^8.4.2",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
@@ -61,6 +61,8 @@
         "wordcount": "^1.1.1"
     },
     "devDependencies": {
-        "eslint": "^5.1.0"
+        "eslint": "^5.1.0",
+        "commander": "^2.16.0",
+        "ejs": "^2.6.1"
     }
 }
