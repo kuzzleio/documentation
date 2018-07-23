@@ -47,23 +47,23 @@ const renderMarkdownTemplates = (variables) => {
   const locals = Object.assign({}, { _ }, variables);
 
   for (const template of templates) {
-    const [filename, language] = template.replace('.md', '').split('.');
-    const extension = language ? `.${language}.md` : '.md';
-
-    const destinationFile = path
-      .join(
-        documentationPath,
-        _.kebabCase(variables.controller),
-        _.kebabCase(variables.action),
-        _.kebabCase(filename.replace('action', _.kebabCase(variables.action)))
-      )
-      .concat(extension);
+    const destinationFile = path.join(
+      documentationPath,
+      _.kebabCase(variables.controller),
+      _.kebabCase(variables.action),
+      template.replace('action', _.kebabCase(variables.action))
+    );
 
     if (! fs.existsSync(path.dirname(destinationFile))) {
       fs.mkdirSync(path.dirname(destinationFile));
     }
 
     ejs.renderFile(path.join(templatesPath, template), locals, {}, (error, output) => {
+      if (error) {
+        console.error(error);
+        return;
+      }
+
       fs.writeFileSync(destinationFile, output);
     });
   }
