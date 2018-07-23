@@ -20,7 +20,6 @@
  */
 
 const
-  fs = require('fs'),
   program = require('commander');
 
 program

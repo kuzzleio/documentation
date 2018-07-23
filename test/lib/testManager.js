@@ -10,7 +10,7 @@ module.exports = class TestManager {
   constructor(language) {
     if (! this.checkLanguageExist(language)) {
       // eslint-disable-next-line no-console
-      console.log('Language specified in args doesn\'t exist in config');
+      console.error('Language specified in args doesn\'t exist in config');
       process.exit(1);
     }
 
@@ -46,7 +46,7 @@ module.exports = class TestManager {
         .catch(err => {
           if (typeof err !== 'undefined') {
             // eslint-disable-next-line no-console
-            console.log(err);
+            console.error(err);
           }
 
           allResults.push(false);

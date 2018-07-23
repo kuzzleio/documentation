@@ -27,13 +27,15 @@ const
 
 function commandFullScaffold (options) {
   if (! options.controller) {
-    console.log('You must provide a controller name');
-    return;
+    // eslint-disable-next-line no-console    
+    console.error('You must provide a controller name');
+    process.exit(1);
   }
 
   if (! options.action) {
-    console.log('You must provide an action name');
-    return;
+    // eslint-disable-next-line no-console
+    console.error('You must provide an action name');
+    process.exit(1);
   }
 
   const variables = {

@@ -60,6 +60,7 @@ const renderMarkdownTemplates = (variables) => {
 
     ejs.renderFile(path.join(templatesPath, template), locals, {}, (error, output) => {
       if (error) {
+        // eslint-disable-next-line no-console
         console.error(error);
         return;
       }
@@ -67,7 +68,7 @@ const renderMarkdownTemplates = (variables) => {
       fs.writeFileSync(destinationFile, output);
     });
   }
-}
+};
 
 const renderSnippetTemplates = (snippetTemplate, snippetName, variables) => {
   const snippetsPath = path.join(templatesPath, snippetTemplate);
@@ -94,6 +95,7 @@ const renderSnippetTemplates = (snippetTemplate, snippetName, variables) => {
 
     ejs.renderFile(path.join(snippetsPath, template), locals, {}, (error, output) => {
       if (error) {
+        // eslint-disable-next-line no-console
         console.error(error);
         return;
       }
@@ -101,9 +103,9 @@ const renderSnippetTemplates = (snippetTemplate, snippetName, variables) => {
       fs.writeFileSync(destinationFile, output);
     });
   }
-}
+};
 
 module.exports = {
   renderMarkdownTemplates,
   renderSnippetTemplates
-}
+};

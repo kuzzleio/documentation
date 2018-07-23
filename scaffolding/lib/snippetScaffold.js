@@ -26,23 +26,27 @@ const
 
 function commandSnippetScaffold (options) {
   if (! options.controller) {
-    console.log('You must provide a controller name.');
-    return;
+    // eslint-disable-next-line no-console
+    console.error('You must provide a controller name.');
+    process.exit(1);
   }
 
   if (! options.action) {
-    console.log('You must provide an action name.');
-    return;
+    // eslint-disable-next-line no-console
+    console.error('You must provide an action name.');
+    process.exit(1);
   }
 
   if (! options.snippet) {
-    console.log('You must provide a snippet name.');
-    return;
+    // eslint-disable-next-line no-console
+    console.error('You must provide a snippet name.');
+    process.exit(1);
   }
 
   if (options.action === options.snippet) {
-    console.log('You are overriding usage snippet.')
-    return;
+    // eslint-disable-next-line no-console
+    console.error('You are overriding usage snippet.');
+    process.exit(1);
   }
 
   const variables = {
