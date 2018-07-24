@@ -1,4 +1,4 @@
-kuzzleio::options options = {0};
+options options = {0};
 options.auto_resubscribe = false;
 
 try {

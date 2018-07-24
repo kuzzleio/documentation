@@ -26,6 +26,8 @@ Can be a hostname or an IP address.
 | `autoReconnect` | boolean | Automatically reconnect after a connection loss | `true` | no |
 | `autoReplay` | boolean | Automatically replay queued requests on a `reconnected` event | `false` | no |
 | `autoResubscribe` | boolean | Automatically renew all subscriptions on a `reconnected` event | `true` | no |
+| `connect` | Mode | Connection mode, can be either `AUTO` or `MANUAL` | `AUTO` | no |
+| `offlineMode` | Mode | Offline mode configuration | `MANUAL` | no |
 | `queueTTL` | int | Time a queued request is kept during offline mode, in milliseconds | `120000` | no |
 | `queueMaxSize` | int | Number of maximum requests kept during offline mode | `500` | no |
 | `replayInterval` | Duration | Delay between each replayed requests, in milliseconds | `10` | no |
@@ -41,8 +43,8 @@ For example the property `volatile` you can read it with `getVolatile()` and wri
 | Property name | Type | Description | Availability |
 |---------------|------|-------------|:---------:|
 | `autoReplay` | boolean | Automatically replay queued requests on a `reconnected` event | Set |
-| `jwt` | string | Token used in requests for authentication. | Get |
-| `volatile` | string (json) | Common volatile data, will be sent to all future requests | Get/Set |
+| `jwt` | String | Token used in requests for authentication. | Get |
+| `volatile` | String (json) | Common volatile data, will be sent to all future requests | Get/Set |
 
 
 **Notes:**
