@@ -26,7 +26,6 @@ Can be a hostname or an IP address.
 | `autoReconnect` | boolean | Automatically reconnect after a connection loss | `true` | no |
 | `autoReplay` | boolean | Automatically replay queued requests on a `reconnected` event | `false` | no |
 | `autoResubscribe` | boolean | Automatically renew all subscriptions on a `reconnected` event | `true` | no |
-| `connect` | Mode | Connection mode, can be either `AUTO` or `MANUAL` | `AUTO` | no |
 | `offlineMode` | Mode | Offline mode configuration | `MANUAL` | no |
 | `queueTTL` | int | Time a queued request is kept during offline mode, in milliseconds | `120000` | no |
 | `queueMaxSize` | int | Number of maximum requests kept during offline mode | `500` | no |

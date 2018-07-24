@@ -47,7 +47,7 @@ class FileProcess {
       const err = {
         code: 'MISSING_TAG',
         expect: test.expect,
-        actual: 'Missing tag [snippet-code=]'
+        actual: 'Missing tag [snippet-code]'
       };
       return err;
     }

@@ -1,4 +1,4 @@
 Options options = new Options();
-options.setAuto_resubscribe(false);
+options.setAutoResubscribe(false);
 
 Kuzzle kuzzle = new Kuzzle("kuzzle", options);

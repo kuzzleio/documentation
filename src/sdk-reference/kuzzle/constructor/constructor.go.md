@@ -32,7 +32,6 @@ You can use standard getter/setter to use these properties.
 | `autoReconnect` | boolean | Automatically reconnect after a connection loss | `true` | no |
 | `autoReplay` | boolean | Automatically replay queued requests on a `reconnected` event | `false` | no |
 | `autoResubscribe` | boolean | Automatically renew all subscriptions on a `reconnected` event | `true` | no |
-| `connect` | int | Connection mode, can be either `types.Auto` or `types.Manual` | `types.Auto` | no |
 | `offlineMode` | int | Offline mode configuration | `types.Manual` | no |
 | `queueTTL` | int | Time a queued request is kept during offline mode, in milliseconds | `120000` | no |
 | `queueMaxSize` | int | Number of maximum requests kept during offline mode | `500` | no |
