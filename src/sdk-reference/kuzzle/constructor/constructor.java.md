@@ -1,10 +1,6 @@
 ```java
-public Kuzzle Kuzzle(String host, Options options)
+Kuzzle(String host, Options options = null)
 ```
-
-## Usage
-
-[code-example=constructor]
 
 ## Arguments
 
@@ -56,12 +52,10 @@ For example the property `volatile` you can read it with `getVolatile()` and wri
 * the `offlineQueueLoader` must be set with a function, taking no argument, and returning an array of objects containing a `query` member with a Kuzzle query to be replayed, and an optional `cb` member with the corresponding callback to invoke with the query result
 * updates to `autoReconnect`, `reconnectionDelay` and `sslConnection` properties will only take effect on next `connect` call
 
----
-
 ## Return
 
 A `Kuzzle` instance.
 
-## Exceptions
+## Usage
 
-Nothing.
+[code-example=constructor]

@@ -1,10 +1,6 @@
 ```java
-public KuzzleEventEmitter addListener(Event event, EventListener listener)
+KuzzleEventEmitter addListener(Event event, EventListener listener)
 ```
-
-## Usage
-
-[code-example=add-listener]
 
 ## Arguments
 
@@ -34,8 +30,10 @@ Event.ERROR
 
 An instance of an `EventListener`.  
 
----
-
 ## Return
 
-The `Kuzzle` instance.
+The same `Kuzzle` instance.
+
+## Usage
+
+[code-example=add-listener]

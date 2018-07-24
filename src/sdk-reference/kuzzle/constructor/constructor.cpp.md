@@ -1,10 +1,6 @@
 ```cpp
-public Kuzzle Kuzzle(std::string host, options options)
+Kuzzle(std::string host, options *options = nullptr)
 ```
-
-## Usage
-
-[code-example=constructor]
 
 ## Arguments
 
@@ -44,8 +40,10 @@ For example the property `volatile` you can read it with `getVolatile()` and wri
 | `jwt` | std::string | Token used in requests for authentication. | Get |
 | `volatile` | std::string (json) | Common volatile data, will be sent to all future requests | Get/Set |
 
----
-
 ## Return
 
-## Exceptions
+A `Kuzzle` instance.
+
+## Usage
+
+[code-example=constructor]

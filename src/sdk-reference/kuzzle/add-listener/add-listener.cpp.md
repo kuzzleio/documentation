@@ -1,10 +1,6 @@
 ```cpp
-public kuzzleio::KuzzleEventEmitter* Kuzzle::addListener(Event event, kuzzleio::EventListener* listener)
+kuzzleio::KuzzleEventEmitter* addListener(Event event, kuzzleio::EventListener* listener)
 ```
-
-## Usage
-
-[code-example=add-listener]
 
 ## Arguments
 
@@ -43,8 +39,10 @@ class MyListener : public kuzzleio::EventListener {
 };
 ```
 
----
-
 ## Return
 
 The `Kuzzle` instance.
+
+## Usage
+
+[code-example=add-listener]

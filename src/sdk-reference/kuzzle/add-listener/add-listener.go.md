@@ -2,10 +2,6 @@
 AddListener(event int, channel chan<- interface{})
 ```
 
-## Usage
-
-[code-example=add-listener]
-
 ## Arguments
 
 | Argument | Type | Description | Required |
@@ -35,8 +31,10 @@ event.Done
 
 The channel will receive an interface with the event data each time the registered event is triggered.
 
----
-
 ## Return
 
 Nothing.
+
+## Usage
+
+[code-example=add-listener]

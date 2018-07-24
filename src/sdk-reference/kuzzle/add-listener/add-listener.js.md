@@ -1,10 +1,11 @@
 ```javascript
-addListener(string event, function callback) ⇒ this
+/**
+ * @param {string} event
+ * @param {function} callback
+ * @returns {Kuzzle} this
+ */
+addListener(event, callback)
 ```
-
-## Usage
-
-[code-example=add-listener]
 
 ## Arguments
 
@@ -13,8 +14,10 @@ addListener(string event, function callback) ⇒ this
 | `event` | string | One of the event described in the `Event Handling` section of this documentation  | yes |
 | `callback` | function | The function to call each time one of the registered event is triggered | yes |
 
----
-
 ## Return
 
-The `Kuzzle` instance.
+The same `Kuzzle` instance.
+
+## Usage
+
+[code-example=add-listener]

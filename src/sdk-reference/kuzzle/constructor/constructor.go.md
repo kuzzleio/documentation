@@ -2,13 +2,6 @@
 NewKuzzle(conn connection.Connection, opts types.Options) (*Kuzzle, error)
 ```
 
-## Usage
-
-In a first step, you have to create a new `connection.Connection` and pass it to the constructor.  
-By now the only connection type available is `websocket.Websocket`.
-
-[code-example=constructor]
-
 ## Arguments
 
 | Argument | Type | Description | Required |
@@ -75,9 +68,14 @@ For example the property `autoQueue` you can read it with `AutoQueue()` and writ
 * the `offlineQueueLoader` must be set with a function, taking no argument, and returning an array of objects containing a `query` member with a Kuzzle query to be replayed, and an optional `cb` member with the corresponding callback to invoke with the query result
 * updates to `autoReconnect`, `reconnectionDelay` and `sslConnection` properties will only take effect on next `connect` call
 
----
-
 ## Return
 
 A `Kuzzle` struct and an `error` struct.  
 The `error` struct is nil if everything was ok.  
+
+## Usage
+
+In a first step, you have to create a new `connection.Connection` and pass it to the constructor.  
+By now the only connection type available is `websocket.Websocket`.
+
+[code-example=constructor]

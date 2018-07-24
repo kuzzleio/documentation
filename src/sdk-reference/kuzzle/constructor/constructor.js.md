@@ -1,11 +1,11 @@
 ```javascript
-Kuzzle(string protocol, options = {}) ⇒ Kuzzle
-Kuzzle(Protocol protocol, options = {}) ⇒ Kuzzle
+/**
+ * @param {string|Protocol} protocol
+ * @param {object} [options]
+ * @returns {Kuzzle}
+ */
+Kuzzle(protocol, options = {})
 ```
-
-## Usage
-
-[code-example=constructor]
 
 ## Arguments
 
@@ -72,8 +72,10 @@ It can be:
 * the `offlineQueueLoader` must be set with a function, taking no argument, and returning an array of objects containing a `query` member with a Kuzzle query to be replayed, and an optional `cb` member with the corresponding callback to invoke with the query result
 * updates to `autoReconnect`, `reconnectionDelay` and `sslConnection` properties will only take effect on next `connect` call
 
----
-
 ## Return
 
-A `Kuzzle` instance.
+The same `Kuzzle` instance.
+
+## Usage
+
+[code-example=constructor]
