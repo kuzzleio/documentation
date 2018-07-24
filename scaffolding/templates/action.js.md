@@ -1,10 +1,12 @@
 ```javascript
-<%= action %>() ⇒
+/**
+ *
+ * @param {}
+ * @param {}
+ * @returns {}
+ */
+<%= action %>()
 ```
-
-## Usage
-
-[code-example=<%= _.kebabCase(action) %>]
 
 ## Arguments
 
@@ -12,6 +14,8 @@
 
 ### arg2
 
----
-
 ## Return
+
+## Usage
+
+[code-example=<%= _.kebabCase(action) %>]
