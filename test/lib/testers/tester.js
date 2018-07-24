@@ -22,12 +22,9 @@ module.exports = class Tester {
       }
 
       const generatedFilePath = fileHelper.injectSnippet(test, snippetPath, this.language);
-      if (! generatedFilePath) {
-        const err = {
-          code: 'MISSING_SNIPPET',
-          expect: test.expect,
-          actual: `Missing snippet or template file: ${snippetPath.split('src/')[1]}.${this.language}`
-        };
+      if (typeof generatedFilePath !== 'string') {
+        const err = generatedFilePath;
+        
         logger.reportNOk(test, err, this.language);
         reject();
         return;

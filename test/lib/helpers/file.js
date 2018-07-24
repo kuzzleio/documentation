@@ -20,8 +20,22 @@ class FileProcess {
       snippet = `${snippetPath}.${config.languages[language].ext}`;
 
     //first check file exist
-    if (!fs.existsSync(template) || !fs.existsSync(snippet)) {
-      return false;
+    if (!fs.existsSync(template)) {
+      const err = {
+        code: 'MISSING_TEMPLATE',
+        expect: test.expect,
+        actual: `Missing template file: ${template}`
+      };
+      return err;
+    }
+
+    if (!fs.existsSync(snippet)) {
+      const err = {
+        code: 'MISSING_SNIPPET',
+        expect: test.expect,
+        actual: `Missing snippet file: ${snippet}`
+      };
+      return err;
     }
 
     //get file content
@@ -30,7 +44,12 @@ class FileProcess {
       templateContent = fs.readFileSync(template, 'utf8');
 
     if (! templateContent.match(/(\[snippet-code])/g)) {
-      return false;
+      const err = {
+        code: 'MISSING_TAG',
+        expect: test.expect,
+        actual: 'Missing tag [snippet-code=]'
+      };
+      return err;
     }
 
     //replace snippet in template
@@ -51,7 +70,12 @@ class FileProcess {
     }
 
     if (! fs.existsSync(binPath)) {
-      return false;
+      const err = {
+        code: 'MISSING_GENERATED_FILE',
+        expect: test.expect,
+        actual: `Missing generated file: ${binPath}`
+      };
+      return err;
     }
 
     return binPath;
