@@ -24,7 +24,7 @@ module.exports = {
           code = '',
           filenames = fs.readdirSync(fullPath);
         
-        filenames.forEach(function (file) {
+        filenames.forEach(file => {
           
           if (file.split('.')[0] === name && file.substr(-8) !== 'test.yml' ) {
             presentLanguages.push(file.split('.')[1]);

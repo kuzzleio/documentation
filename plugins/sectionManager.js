@@ -36,7 +36,7 @@ module.exports = {
         
       languages['default'] = {fullname:'default'};
       
-      filenames.forEach(function (file) {
+      filenames.forEach(file => {
         if (file.split('.')[0] === name) {
           const 
             language = file.split('.')[1],

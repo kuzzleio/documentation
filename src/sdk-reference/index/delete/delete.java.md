@@ -1,5 +1,7 @@
+## Signature
+
 ``` java
-void delete(String index)
+public void delete(String index)
 ```
 
 ## Usage

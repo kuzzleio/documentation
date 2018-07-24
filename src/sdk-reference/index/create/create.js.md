@@ -1,3 +1,5 @@
+## Signature
+
 ``` javascript
 create(index, options = null) ⇒ object
 ```

@@ -1,17 +1,25 @@
+## Signature
+
+``` java
+public boolean exists(String index)
+```
+
 ## Usage
 
 [code-example=exists]
 
-## Options
+## Arguments
 
-Query options.
+### index
 
-| Option | Type | Description | Default
-|--------|------|-------------|---------
-| queuable | boolean | Make this request queuable or not  | true
+A `String` representing the index name.
 
 ---
 
-## Response
+## Return
 
 Returns a boolean that indicate whether the index exists or not.
+
+## Exceptions
+
+Throw a KuzzleException

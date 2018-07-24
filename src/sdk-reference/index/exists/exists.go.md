@@ -1,17 +1,29 @@
+## Signature
+
+```go
+Exists(index string, options types.QueryOptions) (bool, error)
+```
+
 ## Usage
 
 [code-example=exists]
 
-## Options
+## Arguments
+
+### index
+
+A `string` representing the index name.
+
+### options
 
 Query options.
 
-| Option | Type | Description | Default
-|--------|------|-------------|---------
-| queuable | boolean | Make this request queuable or not  | true
+| Option   | Type    | Description                       | Default |
+| -------- | ------- | --------------------------------- | ------- |
+| queuable | boolean | Make this request queuable or not | true    |
 
 ---
 
-## Response
+## Return
 
-Returns a boolean that indicate whether the index exists or not.
+Returns a boolean that indicate whether the index exists, or an error

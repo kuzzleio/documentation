@@ -1,3 +1,5 @@
+## Signature
+
 ``` javascript
 delete(index, options = null) ⇒ object
 ```
@@ -22,7 +24,7 @@ Query options.
 
 ---
 
-## Response
+## Return
 
 Returns an object with the index deletion status.
 

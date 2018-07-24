@@ -1,3 +1,5 @@
+## Signature
+
 ```go
 Delete(index string, options types.QueryOptions) error
 ```
@@ -22,6 +24,6 @@ Query options.
 
 ---
 
-## Response
+## Return
 
 Returns an error or nil if the request succeed.

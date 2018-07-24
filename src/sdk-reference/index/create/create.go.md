@@ -1,3 +1,5 @@
+## Signature
+
 ``` go
 Create(index string, options types.QueryOptions) error
 ```

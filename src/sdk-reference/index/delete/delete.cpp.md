@@ -1,3 +1,5 @@
+## Signature
+
 ``` cpp
 public void delete_(std::string index, query_options *options)
 ```

@@ -6,7 +6,7 @@ description: Returns the status of autorefresh flag
 order: 900
 ---
 
-# getAutoRefresh([options])
+# GetAutoRefresh
 
 The getAutoRefresh action returns the current autorefresh status for the index.
 
@@ -15,25 +15,14 @@ When set to true, each write request trigger a [refresh](https://www.elastic.co/
 Without a refresh after a write request, the documents could not be immediately visible in search.
 
 <div class="alert alert-info">
-A refresh operation comes with some performance costs.  
-While forcing the autoRefresh can be convenient on a development or test environment,  
-we recommend that you avoid using it in production or at least carefully monitor its implications before using it.
+  A refresh operation comes with some performance costs.  
+  While forcing the autoRefresh can be convenient on a development or test environment,  
+  we recommend that you avoid using it in production or at least carefully monitor its implications before using it.
 </div>
+
 
 ## Usage
 
 [code-example=getAutoRefresh]
 
-## Options
-
-Query options.
-
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| queuable | boolean | Make this request queuable or not | true    |
-
----
-
-## Response
-
-Returns a boolean that indicate status of the autorefresh flag.
+[section=getAutoRefresh]
