@@ -1,3 +1,3 @@
 # Import
 
-**This method is not implemented in the this SDK.**
+**This method is not implemented in this SDK.**

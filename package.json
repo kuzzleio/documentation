@@ -20,13 +20,12 @@
     "dependencies": {
         "bluebird": "^3.5.1",
         "cheerio": "^0.22.0",
-        "eslint-scope": "^4.0.0",
-        "eslint-visitor-keys": "^1.0.0",
         "express": "^4.16.3",
         "handlebars": "^4.0.8",
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
+        "kuzzle-sdk": "git+https://github.com/kuzzleio/sdk-javascript.git#6.x",
         "markdown-it": "^8.4.2",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
@@ -62,6 +61,8 @@
     },
     "devDependencies": {
         "eslint": "^5.1.0",
+        "eslint-scope": "^4.0.0",
+        "eslint-visitor-keys": "^1.0.0",
         "commander": "^2.16.0",
         "lodash": "^4.17.10",
         "ejs": "^2.6.1"
