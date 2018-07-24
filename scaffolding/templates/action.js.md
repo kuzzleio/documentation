@@ -1,6 +1,5 @@
 ```javascript
 /**
- *
  * @param {}
  * @param {}
  * @returns {}
