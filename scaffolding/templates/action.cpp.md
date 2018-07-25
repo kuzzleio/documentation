@@ -1,10 +1,6 @@
 ```cpp
-public void <%= action %>()
+void <%= action %>()
 ```
-
-## Usage
-
-[code-example=<%= _.kebabCase(action) %>]
 
 ## Arguments
 
@@ -12,8 +8,10 @@ public void <%= action %>()
 
 ### arg2
 
----
-
 ## Return
 
 ## Exceptions
+
+## Usage
+
+[code-example=<%= _.kebabCase(action) %>]
