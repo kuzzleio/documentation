@@ -113,7 +113,7 @@ kbd {
 
   // Links
   a {
-    color: $md-color-primary;
+    color: $md-color-pink;
     word-break: break-word;
 
     // Also enable color transition on pseudo elements
@@ -145,7 +145,7 @@ kbd {
     font-family: "Roboto Mono", "Courier New", Courier, monospace;
     background-color: $md-code-background;
     color: $md-code-color;
-    font-size: 85%;
+    font-size: 89%;
     direction: ltr;
     color: white;
     // Wrap text and hide scollbars
@@ -404,7 +404,7 @@ kbd {
     display: inline-block;
     max-width: 100%;
     border-radius: 0.2rem;
-    font-size: ms(-1);
+    font-size: 1.54rem;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 

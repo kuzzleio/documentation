@@ -21,7 +21,6 @@ This API takes a JSON array containing a list of JSON objects working in pairs. 
     { create: { _id: 'id', _index: 'index', _type: 'collection'}},
     // The document object
     { myField: 'myValue', myOtherField: 'myOtherValue' },
-
     // Another action object
     { create: { _id: 'another-id', _index: 'index', _type: 'collection'}},
     // Another document object
