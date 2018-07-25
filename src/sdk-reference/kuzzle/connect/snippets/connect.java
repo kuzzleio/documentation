@@ -1,7 +1,7 @@
 String error = kuzzle.connect();
 
-if (error) {
-  System.err.println(error);
-} else {
+if (error == null) {
   System.out.println("Successfully connected");
+} else {
+  System.err.println(error);
 }

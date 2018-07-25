@@ -1,12 +1,12 @@
 ---
 layout: sdk.html
 algolia: true
-title: constructor
+title: Constructor
 description: Create a new Kuzzle object connected to the backend
-order: 200
+order: 150
 ---
 
-# constructor
+# Constructor
 
 This is the main entry point to communicate with Kuzzle.  
 Each instance represent a connection to Kuzzle with specific options.

@@ -3,7 +3,7 @@ layout: sdk.html
 algolia: true
 title: addListener
 description: Add a listener to an event
-order: 300
+order: 200
 ---
 
 # addListener
