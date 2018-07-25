@@ -90,7 +90,7 @@ const renderSnippetTemplates = (snippetTemplate, snippetName, variables) => {
     const extension = template.split('.').slice(1).join('.');
     const destinationFile = path.join(
       destinationPath,
-      `${snippetName}.${extension}`
+      `${_.kebabCase(snippetName)}.${extension}`
     );
 
     ejs.renderFile(path.join(snippetsPath, template), locals, {}, (error, output) => {
