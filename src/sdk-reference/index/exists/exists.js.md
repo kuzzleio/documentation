@@ -1,7 +1,7 @@
 ## Signature
 
 ``` javascript
-exists(index, options = null) ⇒ boolean
+exists(string index, object options = null) ⇒ boolean
 ```
 
 ## Usage

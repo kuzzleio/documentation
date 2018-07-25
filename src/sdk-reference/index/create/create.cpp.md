@@ -1,6 +1,6 @@
 ## Signature
 
-``` cpp
+```cpp
 public void create(std::string index, query_options *options)
 ```
 
