@@ -370,6 +370,7 @@ metalsmith
     '/sdk-reference/index': '/sdk-reference/index/create/',
     '/sdk-reference/kuzzle': '/sdk-reference/kuzzle/constructor/',
     '/sdk-reference/bulk': '/sdk-reference/bulk/import/',
+    '/sdk-reference/auth': '/sdk-reference/auth/get-current-user/',
     '/plugins-reference/': 'plugins-features/',
     '/elasticsearch-cookbook/': '/elasticsearch-cookbook/installation/',
     '/kuzzle-dsl/': '/kuzzle-dsl/essential/koncorde/',
