@@ -162,10 +162,11 @@ kbd {
     padding: 0.0625em * $correct 0;
     border-radius: 0.2rem;
     box-shadow:
-      +0.25em * $correct 0 0 $md-code-background,
-      -0.25em * $correct 0 0 $md-code-background;
+      +0.25em * $correct 0 0 $md-code-background-inline,
+      -0.25em * $correct 0 0 $md-code-background-inline;
     word-break: break-word;
     box-decoration-break: clone;
+    background-color: $md-code-background-inline;
 
     // Remove box-shadows for print
     @media print {
