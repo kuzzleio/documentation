@@ -3,5 +3,5 @@ description: Starts the requests queuing
 hooks:
   before:
   after:
-template: default
+template: standalone
 expect: Success

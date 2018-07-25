@@ -15,6 +15,14 @@ const
 class FileProcess {
 
   injectSnippet (test, snippetPath, language) {
+    if (! test) {
+      const err = {
+        code: 'MISSING_TEST_DESCRIPTION',
+        actual: 'Missing or empty test.yml file'
+      };
+      return err;
+    }
+
     const
       template = `${TEMPLATE_FOLDER}${test.template}.tpl.${language}`,
       snippet = `${snippetPath}.${config.languages[language].ext}`;
@@ -23,7 +31,7 @@ class FileProcess {
     if (!fs.existsSync(template)) {
       const err = {
         code: 'MISSING_TEMPLATE',
-        expect: test.expect,
+        expect: '',
         actual: `Missing template file: ${template}`
       };
       return err;
@@ -32,7 +40,7 @@ class FileProcess {
     if (!fs.existsSync(snippet)) {
       const err = {
         code: 'MISSING_SNIPPET',
-        expect: test.expect,
+        expect: '',
         actual: `Missing snippet file: ${snippet}`
       };
       return err;
@@ -46,7 +54,7 @@ class FileProcess {
     if (! templateContent.match(/(\[snippet-code])/g)) {
       const err = {
         code: 'MISSING_TAG',
-        expect: test.expect,
+        expect: '',
         actual: 'Missing tag [snippet-code]'
       };
       return err;

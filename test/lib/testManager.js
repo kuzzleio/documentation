@@ -71,6 +71,10 @@ module.exports = class TestManager {
   }
 
   getAllTests(base, ext, files, result) {
+    if (base.indexOf('scaffolding') !== -1) {
+      return [];
+    }
+
     const suffix = '.test';
     files = files || fs.readdirSync(base);
     result = result || [];

@@ -3,5 +3,5 @@ description: Play the requests queued
 hooks:
   before:
   after:
-template: default
+template: standalone
 expect: Success

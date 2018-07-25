@@ -1,7 +1,7 @@
-opts := types.NewOptions()
-opts.SetPort(7512)
-conn := websocket.NewWebSocket("kuzzle", opts)
+copts := types.NewOptions()
+copts.SetPort(7512)
+conn := websocket.NewWebSocket("kuzzle", copts)
 
-opts := types.NewOptions()
-opts.SetAutoResubscribe(false)
-k, _ := kuzzle.NewKuzzle(conn, opts)
+kopts := types.NewOptions()
+kopts.SetAutoResubscribe(false)
+k, _ := kuzzle.NewKuzzle(conn, kopts)
