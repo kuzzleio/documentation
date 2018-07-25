@@ -113,7 +113,7 @@ kbd {
 
   // Links
   a {
-    color: $md-color-primary;
+    color: $md-color-pink;
     word-break: break-word;
 
     // Also enable color transition on pseudo elements
@@ -145,7 +145,7 @@ kbd {
     font-family: "Roboto Mono", "Courier New", Courier, monospace;
     background-color: $md-code-background;
     color: $md-code-color;
-    font-size: 85%;
+    font-size: 1.45rem;
     direction: ltr;
     color: white;
     // Wrap text and hide scollbars
@@ -162,10 +162,11 @@ kbd {
     padding: 0.0625em * $correct 0;
     border-radius: 0.2rem;
     box-shadow:
-      +0.25em * $correct 0 0 $md-code-background,
-      -0.25em * $correct 0 0 $md-code-background;
+      +0.25em * $correct 0 0 $md-code-background-inline,
+      -0.25em * $correct 0 0 $md-code-background-inline;
     word-break: break-word;
     box-decoration-break: clone;
+    background-color: $md-code-background-inline;
 
     // Remove box-shadows for print
     @media print {
@@ -404,7 +405,7 @@ kbd {
     display: inline-block;
     max-width: 100%;
     border-radius: 0.2rem;
-    font-size: ms(-1);
+    font-size: 1.54rem;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 

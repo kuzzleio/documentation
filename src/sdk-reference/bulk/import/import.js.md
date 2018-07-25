@@ -1,7 +1,12 @@
 # Import
 
 ```javascript
-import(bulkData, options = {})  ⇒ object
+/**
+* @param {Array} bulkData
+* @param {Object} options
+* @returns {Promise.<Object>}
+*/
+import(bulkData, options = {})
 ```
 
 The bulk import allows to save a list of documents into a specific collection (belonging to a specific index). If a subset of the documents fails to save, a [PartialError](https://docs.kuzzle.io/api-documentation/errors#partialerror) is triggered. The `data` argument passed to the method must specify the set of documents to import and must satisfy the [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html).
@@ -16,7 +21,6 @@ This API takes a JSON array containing a list of JSON objects working in pairs. 
     { create: { _id: 'id', _index: 'index', _type: 'collection'}},
     // The document object
     { myField: 'myValue', myOtherField: 'myOtherValue' },
-
     // Another action object
     { create: { _id: 'another-id', _index: 'index', _type: 'collection'}},
     // Another document object
@@ -28,21 +32,17 @@ Note that the action object always has an attribute whose key specifies the acti
 
 Possible actions are `create`, `index`, `update`, `delete`.
 
-Learn more at https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html
-
-## Usage
-
-[code-example=import]
+Learn more at [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html)
 
 ## Arguments
 
-### bulkData
+| Arguments     | Type        | Description |
+|---------------|-------------|----------------------------------------|
+| ``bulkData``  | Array       | The list of documents to be added to the collection |
+| ``options``   | JSON Object | An object containing query options. |
 
-An `Array` containing the list of documents to be added to the collection
 
 ### options
-
-An object containing query options.
 
 | Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
@@ -50,6 +50,14 @@ An object containing query options.
 
 ---
 
-## Response
+## Resolve
 
-On success, the response object is the one directly sent by Elasticsearch for the bulk request. Learn more at https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html
+On resolve, the response object is the one directly sent by Elasticsearch for the bulk request.
+
+## Reject
+
+Reject with a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/errors).
+
+## Usage
+
+[code-example=import]

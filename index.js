@@ -259,28 +259,8 @@ const metalsmith = Metalsmith(__dirname)
         files[path].order = Number.MAX_SAFE_INTEGER
       }
     });
-  })
-  .use((files, metalsmith, done) => {
-    for (const file in files) {
-      if (file.endsWith('index.md')) {
-        const sectionsData = sectionManager.process(file, files[file]);
-        files[file].contents = sectionsData['fileContent'];
-        files[file]['has_section'] = sectionsData['has_section'];
-        files[file]['sections'] = sectionsData['sections'];
-      }
-    }
-    setImmediate(done);
-  })
-  .use((files, metalsmith, done) => {
-    for (const file in files) {
-      if (file.endsWith('index.md')) {
-        const codeExampleData = snippetManager.process(file, files[file]);
-        files[file].contents = codeExampleData['fileContent'];
-        files[file]['has_code_example'] = codeExampleData['has_code_example'];
-      }
-    }
-    setImmediate(done);
   });
+  
   
 
 
@@ -325,6 +305,30 @@ metalsmith
   .use(markdown({
     renderer: newMDRenderer
   }))
+  .use((files, metalsmith, done) => {
+    for (const file in files) {
+      if (file.endsWith('index.html')) {
+        if(file == 'sdk-reference/bulk/import/index.html') {
+          
+        }
+        const sectionsData = sectionManager.process(file, files[file], handlebars);
+        files[file].contents = sectionsData['fileContent'];
+        files[file]['has_section'] = sectionsData['has_section'];
+        files[file]['sections'] = sectionsData['sections'];
+      }
+    }
+    setImmediate(done);
+  })
+  .use((files, metalsmith, done) => {
+    for (const file in files) {
+      if (file.endsWith('index.html')) {
+        const codeExampleData = snippetManager.process(file, files[file]);
+        files[file].contents = codeExampleData['fileContent'];
+        files[file]['has_code_example'] = codeExampleData['has_code_example'];
+      }
+    }
+    setImmediate(done);
+  })
   .use(concat({
     files: 'assets/js/**/*.js',
     output: 'assets/js/main.js'
@@ -446,7 +450,7 @@ if (options.dev.enabled) {
           "src/templates/**/*": "**/*",
           "helpers/**/*": "**/*",
           '**/**/sections/*': '**/*',
-          '**/**/code-example/*': '**/*'
+          '**/**/snippets/*': '**/*'
         },
         livereload: true
       })
