@@ -1,7 +1,0 @@
-name: {{action}}
-description:
-hooks:
-  before:
-  after:
-template: options
-expect: {{success_message}}
