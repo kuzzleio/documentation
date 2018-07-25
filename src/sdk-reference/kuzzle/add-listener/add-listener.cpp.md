@@ -41,7 +41,7 @@ class MyListener : public kuzzleio::EventListener {
 
 ## Return
 
-The `Kuzzle` instance.
+The same `Kuzzle` instance.
 
 ## Usage
 
