@@ -13,7 +13,9 @@
 
 ### arg2
 
-## Return
+## Resolve
+
+## Reject
 
 ## Usage
 
