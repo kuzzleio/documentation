@@ -1,5 +1,5 @@
-name: playQueue
-description: Play the requests queued
+name: startQueuing
+description: Starts the requests queuing
 hooks:
   before:
   after:

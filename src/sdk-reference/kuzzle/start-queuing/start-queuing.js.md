@@ -2,7 +2,7 @@
 /**
 * @returns {Kuzzle} this
  */
-flushQueue()
+startQueuing()
 ```
 
 ## Return
@@ -11,4 +11,4 @@ The same `Kuzzle` instance.
 
 ## Usage
 
-[code-example=flush-queue]
+[code-example=start-queuing]
