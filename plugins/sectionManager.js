@@ -10,12 +10,12 @@ module.exports = {
 
   listSections: [],
 
-  process(filename, data) {
+  process(filename, data, handlebars) {
     let fileString = data.contents.toString();
     const match = fileString.match(SECTION_REGEX);
 
     if (match) {
-      fileString = this.injectSection(match, filename, fileString);
+      fileString = this.injectSection(match, filename, fileString, handlebars);
     }
 
     return {
@@ -25,7 +25,7 @@ module.exports = {
     };
   },
 
-  injectSection(match, filename, fileString) {
+  injectSection(match, filename, fileString, handlebars) {
 
     match.forEach(el => {
       const
@@ -43,9 +43,10 @@ module.exports = {
         if (file.split('.')[0] === name) {
           const
             language = file.split('.')[1],
-            fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8');
+            fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8'),
+            template = handlebars.compile(fileContent);
           
-          section += `<div id="${name}" class="section ${languages[language].fullname}">\n${md.render(fileContent)}\n </div>`;
+          section += `<div id="${name}" class="section ${languages[language].fullname}">\n${md.render(template())}\n </div>`;
         }
       });
 

@@ -4,7 +4,7 @@
 /**
 * @param {Array} bulkData
 * @param {Object} options
-* @returns {Object}
+* @returns {Promise.<Object>}
 */
 import(bulkData, options = {})
 ```
@@ -33,7 +33,7 @@ Note that the action object always has an attribute whose key specifies the acti
 
 Possible actions are `create`, `index`, `update`, `delete`.
 
-Learn more at https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html
+Learn more at [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html)
 
 ## Arguments
 
@@ -53,7 +53,7 @@ Learn more at https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-b
 
 ## Resolve
 
-On resolve, the response object is the one directly sent by Elasticsearch for the bulk request. Learn more at https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html
+On resolve, the response object is the one directly sent by Elasticsearch for the bulk request.
 
 ## Reject
 
