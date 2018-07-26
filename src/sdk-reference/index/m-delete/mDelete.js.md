@@ -2,10 +2,11 @@
 
 ``` javascript
 /**
+ * @param {array} indexes
  * @param {object} [options]
  * @returns {Promise.<Array>}
  */
-list(options = null)
+mDelete(indexes, options = null)
 ```
 
 ## Arguments

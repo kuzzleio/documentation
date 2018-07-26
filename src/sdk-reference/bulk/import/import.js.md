@@ -52,7 +52,7 @@ Additional query options
 
 | Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
-| queuable | boolean | Make this request queuable or not | true    |
+| `queuable` | boolean | Make this request queuable or not | `true`    |
 
 ---
 
