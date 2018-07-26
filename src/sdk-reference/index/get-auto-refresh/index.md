@@ -21,8 +21,6 @@ Without a refresh after a write request, the documents could not be immediately 
 </div>
 
 
-## Usage
 
-[code-example=getAutoRefresh]
 
 [section=getAutoRefresh]

@@ -308,9 +308,6 @@ metalsmith
   .use((files, metalsmith, done) => {
     for (const file in files) {
       if (file.endsWith('index.html')) {
-        if(file == 'sdk-reference/bulk/import/index.html') {
-          
-        }
         const sectionsData = sectionManager.process(file, files[file], handlebars);
         files[file].contents = sectionsData['fileContent'];
         files[file]['has_section'] = sectionsData['has_section'];

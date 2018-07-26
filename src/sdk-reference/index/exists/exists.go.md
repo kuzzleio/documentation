@@ -4,26 +4,25 @@
 Exists(index string, options types.QueryOptions) (bool, error)
 ```
 
-## Usage
-
-[code-example=exists]
-
 ## Arguments
 
-### index
+| Arguments     | Type        | Description |
+|---------------|-------------|----------------------------------------|
+| ``index``     | String      | Represent the index name |
+| ``options``   | QueryOptions | A structure containing query options. |
 
-A `string` representing the index name.
+### __Options__
 
-### options
-
-Query options.
+Query options details :
 
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
 | queuable | boolean | Make this request queuable or not | true    |
 
----
-
 ## Return
 
 Returns a boolean that indicate whether the index exists, or an error
+
+## Usage
+
+[code-example=exists]

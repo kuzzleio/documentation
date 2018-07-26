@@ -1,20 +1,24 @@
 ## Signature
 
 ``` java
-public void delete(String index)
+void delete(String index, QueryOptions options)
 ```
-
-## Usage
-
-[code-example=delete]
 
 ## Arguments
 
-### index
+| Arguments     | Type        | Description |
+|---------------|-------------|----------------------------------------|
+| ``index``     | String      | Represent the index name |
+| ``options``   | QueryOptions | The query options |
 
-A `String` representing the index name.
+### __Options__
 
----
+Query options details :
+
+| Option   | Type    | Description                       | Default |
+| -------- | ------- | --------------------------------- | ------- |
+| queuable | boolean | Make this request queuable or not | true    |
+
 
 ## Return
 
@@ -23,3 +27,7 @@ Returns nothing.
 ## Exceptions
 
 Throw a KuzzleException
+
+## Usage
+
+[code-example=delete]

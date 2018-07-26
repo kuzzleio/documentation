@@ -1,18 +1,23 @@
 ## Signature
 
 ``` java
-public void create(String index)
+void create(String index, QueryOptions options)
 ```
-
-## Usage
-
-[code-example=create]
 
 ## Arguments
 
-### index
+| Arguments     | Type        | Description |
+|---------------|-------------|----------------------------------------|
+| ``index``     | String      | Represent the index name |
+| ``options``   | QueryOptions | The query options |
 
-A `String` representing the index name.
+### __Options__
+
+Query options details :
+
+| Option   | Type    | Description                       | Default |
+| -------- | ------- | --------------------------------- | ------- |
+| queuable | boolean | Make this request queuable or not | true    |
 
 ## Return
 
@@ -21,3 +26,7 @@ Returns nothing.
 ## Exceptions
 
 Throw a KuzzleException
+
+## Usage
+
+[code-example=create]

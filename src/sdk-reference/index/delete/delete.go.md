@@ -4,26 +4,25 @@
 Delete(index string, options types.QueryOptions) error
 ```
 
-## Usage
-
-[code-example=delete]
-
 ## Arguments
 
-### index
+| Arguments     | Type        | Description |
+|---------------|-------------|----------------------------------------|
+| ``index``     | String      | Represent the index name |
+| ``options``   | QueryOptions | A structure containing query options. |
 
-A `string` representing the index name.
+### __Options__
 
-### options
-
-Query options.
+Query options details :
 
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
 | queuable | boolean | Make this request queuable or not | true    |
 
----
-
 ## Return
 
 Returns an error or nil if the request succeed.
+
+## Usage
+
+[code-example=delete]

@@ -1,14 +1,33 @@
+## Signature
 
-## Options
+``` javascript
+/**
+ * @param {string} index
+ * @param {object} [options]
+ * @returns {Promise.<Boolean>}
+ */
+getAutoRefresh(index, options = null)
+```
 
-Query options.
+## Arguments
 
-| Option   | Type    | Description                       | Default |
+| Arguments     | Type        | Description |
+|---------------|-------------|----------------------------------------|
+| ``index``     | String      | Represent the index name |
+| ``options``   | JSON Object | An object containing query options. |
+
+### __Options__
+
+Query options details :
+
+| Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
 | queuable | boolean | Make this request queuable or not | true    |
 
----
+## Resolve
 
-## Response
+On resolve, returns a boolean that indicate the status of the **autoRefresh** flag.
 
-Returns a boolean that indicate status of the autorefresh flag.
+## Usage
+
+[code-example=getAutoRefresh]

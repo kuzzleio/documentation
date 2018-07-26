@@ -4,28 +4,25 @@
 Create(index string, options types.QueryOptions) error
 ```
 
-## Usage
-
-[code-example=create]
-
 ## Arguments
 
-### index
+| Arguments     | Type        | Description |
+|---------------|-------------|----------------------------------------|
+| ``index``     | String      | Represent the index name |
+| ``options``   | QueryOptions | A structure containing query options. |
 
-A `string` representing the index name.
+### __Options__
 
-### options
-
-A structure `queryOptions` containing query options.
-
-[code-example=options]
+Query options details :
 
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
 | queuable | boolean | Make this request queuable or not | true    |
 
----
-
 ## Return
 
 Return an error or `nil` if index successfully created.
+
+## Usage
+
+[code-example=create]
