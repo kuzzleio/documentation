@@ -9,9 +9,9 @@
 
 ## Arguments
 
-| Arguments    | Type    | Description |
-|--------------|---------|-------------|
-| ``changeme`` | changme | changeme    |
+| Arguments    | Type    | Description | Required
+|--------------|---------|-------------|----------
+| ``changeme`` | changme | changeme    | yes
 
 ### __arg1__
 
