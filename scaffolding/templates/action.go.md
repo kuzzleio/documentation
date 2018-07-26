@@ -4,9 +4,13 @@
 
 ## Arguments
 
-### arg1
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``changeme`` | changme | changeme    |
 
-### arg2
+### __arg1__
+
+### __arg2__
 
 ## Return
 
