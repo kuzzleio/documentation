@@ -13,8 +13,8 @@ exists(index, options = null)
 
 | Arguments     | Type        | Description |
 |---------------|-------------|----------------------------------------|
-| ``index``     | String      | Represent the index name |
-| ``options``   | JSON Object | An object containing query options. |
+| ``index``     | String      | Index name |
+| ``options``   | Object | An object containing query options. |
 
 ### __Options__
 

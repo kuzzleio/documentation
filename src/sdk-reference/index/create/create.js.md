@@ -13,8 +13,8 @@ create(index, options = null)
 
 | Arguments     | Type        | Description              | Required 
 |---------------|-------------|--------------------------|-----------
-| ``index``     | String      | Represent the index name | yes
-| ``options``   | JSON Object | An object containing query options. | no
+| ``index``     | String      | Index name               | yes
+| ``options``   | Object      | An object containing query options. | no
 
 ### __Options__
 

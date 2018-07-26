@@ -1,7 +1,7 @@
 ## Signature
 
 ``` cpp
-bool exists(std::string index, query_options *options)
+bool exists(std::string index, query_options *options = null)
 ```
 
 ## Arguments

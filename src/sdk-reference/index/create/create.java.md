@@ -8,7 +8,7 @@ void create(String index, QueryOptions options)
 
 | Arguments     | Type        | Description              | Required
 |---------------|-------------|--------------------------|-----------
-| ``index``     | String      | Represent the index name | yes
+| ``index``     | String      | Index name | yes
 | ``options``   | QueryOptions | The query options       | no
 
 ### __Options__

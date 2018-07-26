@@ -1,7 +1,7 @@
 ## Signature
 
 ``` cpp
-bool getAutoRefresh(std::string index, query_options *options)
+bool getAutoRefresh(std::string index, query_options *options = null)
 ```
 
 ## Arguments

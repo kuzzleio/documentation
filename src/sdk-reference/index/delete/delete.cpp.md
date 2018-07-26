@@ -1,7 +1,7 @@
 ## Signature
 
 ``` cpp
-void delete_(std::string index, query_options *options)
+void delete_(std::string index, query_options *options = null)
 ```
 
 ## Arguments

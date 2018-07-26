@@ -11,10 +11,10 @@ getAutoRefresh(index, options = null)
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``index``     | String      | Represent the index name |
-| ``options``   | JSON Object | An object containing query options. |
+| Arguments     | Type        | Description                         | Required
+|---------------|-------------|-------------------------------------|----------
+| ``index``     | String      | Index name                          | yes
+| ``options``   | Object      | An object containing query options. | no
 
 ### __Options__
 

@@ -8,7 +8,7 @@ Create(index string, options types.QueryOptions) error
 
 | Arguments     | Type        | Description                            | Required
 |---------------|-------------|----------------------------------------|----------
-| ``index``     | String      | Represent the index name               | yes
+| ``index``     | String      | Index name               | yes
 | ``options``   | QueryOptions | A structure containing query options. | no
 
 ### __Options__
