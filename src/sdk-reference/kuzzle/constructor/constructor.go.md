@@ -1,5 +1,5 @@
 ```go
-NewKuzzle(conn connection.Connection, opts types.Options) (*Kuzzle, error)
+NewKuzzle(conn connection.Connection) (*Kuzzle, error)
 ```
 
 ## Arguments
@@ -7,14 +7,13 @@ NewKuzzle(conn connection.Connection, opts types.Options) (*Kuzzle, error)
 | Argument | Type | Description | Required |
 |--------|------|-------------|------------ |
 | `conn` | connection.Connection | The connection used by the SDK instance  | yes |
-| `opts` | types.Options | Kuzzle connection configuration | yes |
 
 ### __conn__
 
 A protocol is a structure implementing the connection.Connection interface.
 The available protocols are:
  - `websocket.Websocket`  
- 
+
 The protocol must be instantiated and passed to the constructor.
 It takes the following arguments:
 
@@ -23,9 +22,7 @@ It takes the following arguments:
 | `host` | string | Kuzzle hostname to connect to | yes |
 | `options` | types.Options | Kuzzle connection configuration | yes |
 
-
-### __opts__
-
+The `options` parameter of the protocol constructor has the following properties.  
 You can use standard getter/setter to use these properties.  
 
 | Option | Type | Description | Default | Required |
@@ -45,7 +42,7 @@ You can use standard getter/setter to use these properties.
 
 ## Getter & Setter
 
-The properties can be writable.  
+These properties of the Kuzzle struct can be writable.  
 For example, you can read the `volatile` property via `getVolatile()` and set it via `setVolatile()`.  
 
 | Property name | Type | Description | Availability |

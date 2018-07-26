@@ -1,7 +1,6 @@
 copts := types.NewOptions()
 copts.SetPort(7512)
+copts.SetAutoResubscribe(false)
 conn := websocket.NewWebSocket("kuzzle", copts)
 
-kopts := types.NewOptions()
-kopts.SetAutoResubscribe(false)
-k, _ := kuzzle.NewKuzzle(conn, kopts)
+k, _ := kuzzle.NewKuzzle(conn, nil)
