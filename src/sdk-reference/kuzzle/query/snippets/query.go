@@ -1,8 +1,11 @@
-request := types.KuzzleRequest{Controller: "document", Action: "create"}
-request.Index = "nyc-open-data"
-request.Collection = "yellow-taxi"
-request.Id = "my-custom-document-id"
-request.Body = json.RawMessage("{\"trip_distance\": 4.23, \"passenger_count\": 2}")
+request := types.KuzzleRequest{
+    Controller: "document",
+    Action:     "create",
+    Id:         "my-custom-document-id",
+    Index:      "nyc-open-data",
+    Collection: "yellow-taxi",
+    Body:       json.RawMessage("{\"trip_distance\": 4.23, \"passenger_count\": 2}"),
+}
 
 options := types.NewQueryOptions()
 options.SetRefresh("wait_for")

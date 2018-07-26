@@ -34,7 +34,7 @@ Can be a hostname or an IP address.
 ## Getter & Setter
 
 The properties can be writable.  
-For example the property `volatile` you can read it with `getVolatile()` and write it with `setVolatile()`
+For example, you can read the `volatile` property via `getVolatile()` and set it via `setVolatile()`.  
 
 | Property name | Type | Description | Availability |
 |---------------|------|-------------|:---------:|
@@ -46,7 +46,7 @@ For example the property `volatile` you can read it with `getVolatile()` and wri
 **Notes:**
 
 * multiple methods allow passing specific `volatile` data. These `volatile` data will be merged with the global Kuzzle `volatile` object when sending the request, with the request specific `volatile` taking priority over the global ones.
-* the `queueFilter` property is a function taking an QueryObject as an argument. This object is the request sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api-documentation/query-syntax) format
+* the `queueFilter` property is a function taking a `QueryObject` as an argument. This object is the request sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api-documentation/query-syntax) format
 * if `queueTTL` is set to `0`, requests are kept indefinitely
 * The offline buffer acts like a first-in first-out (FIFO) queue, meaning that if the `queueMaxSize` limit is reached, older requests are discarded to make room for new requests
 * if `queueMaxSize` is set to `0`, an unlimited number of requests is kept until the buffer is flushed
