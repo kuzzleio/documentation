@@ -18,7 +18,7 @@ delete(index, options = null)
 
 ### __Options__
 
-Query options details :
+Additional query options
 
 | Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
@@ -26,7 +26,7 @@ Query options details :
 
 ## Resolve
 
-On resolve, returns an object with the index deletion status.
+Resolves to an object containing the index deletion status.
 
 | Name | Type | Description
 |------|------|-------------

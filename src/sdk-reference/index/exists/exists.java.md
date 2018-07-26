@@ -8,12 +8,12 @@ boolean exists(String index, QueryOptions options)
 
 | Arguments     | Type        | Description |
 |---------------|-------------|----------------------------------------|
-| ``index``     | String      | Represent the index name |
+| ``index``     | String      | Index name |
 | ``options``   | QueryOptions | The query options |
 
 ### __Options__
 
-Query options details :
+Additional query options
 
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
@@ -27,7 +27,7 @@ Returns a boolean that indicate whether the index exists or not.
 
 ## Exceptions
 
-Throw a KuzzleException
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 

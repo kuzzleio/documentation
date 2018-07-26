@@ -8,12 +8,12 @@ Delete(index string, options types.QueryOptions) error
 
 | Arguments     | Type        | Description |
 |---------------|-------------|----------------------------------------|
-| ``index``     | String      | Represent the index name |
+| ``index``     | String      | Index name |
 | ``options``   | QueryOptions | A structure containing query options. |
 
 ### __Options__
 
-Query options details :
+Additional query options
 
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |

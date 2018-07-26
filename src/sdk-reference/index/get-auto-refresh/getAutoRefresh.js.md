@@ -18,7 +18,7 @@ getAutoRefresh(index, options = null)
 
 ### __Options__
 
-Query options details :
+Additional query options
 
 | Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
@@ -26,7 +26,7 @@ Query options details :
 
 ## Resolve
 
-On resolve, returns a boolean that indicate the status of the **autoRefresh** flag.
+Resolves to a boolean that indicate the status of the **autoRefresh** flag.
 
 ## Usage
 

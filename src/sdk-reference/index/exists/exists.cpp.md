@@ -8,12 +8,12 @@ bool exists(std::string index, query_options *options = null)
 
 | Arguments     | Type        | Description |
 |---------------|-------------|----------------------------------------|
-| ``index``     | std::string  | Represent the index name |
+| ``index``     | std::string  | Index name |
 | ``options``   | query_options | A pointer to a `query_options` containing query options|
 
 ### __Options__
 
-Query options details :
+Additional query options
 
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
@@ -26,7 +26,7 @@ Returns a boolean that indicate whether the index exists or not.
 
 ## Exceptions
 
-Throw a KuzzleException
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 

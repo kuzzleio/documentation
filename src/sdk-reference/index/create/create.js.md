@@ -18,7 +18,7 @@ create(index, options = null)
 
 ### __Options__
 
-Query options details :
+Additional query options
 
 | Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
@@ -26,7 +26,7 @@ Query options details :
 
 ## Resolve
 
-On resolve, returns an object with the index creation status.
+Resolves to an object containing the index creation status
 
 | Name | Type | Description
 |------|------|-------------

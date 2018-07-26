@@ -48,7 +48,7 @@ Learn more at [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticse
 
 ### Options
 
-Query options details :
+Additional query options
 
 | Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |

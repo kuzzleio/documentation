@@ -13,7 +13,7 @@ Create(index string, options types.QueryOptions) error
 
 ### __Options__
 
-Query options details :
+Additional query options
 
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |

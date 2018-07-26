@@ -18,7 +18,7 @@ exists(index, options = null)
 
 ### __Options__
 
-Query options details :
+Additional query options
 
 | Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
@@ -26,7 +26,7 @@ Query options details :
 
 ## Resolve
 
-On resolve, returns a boolean that indicate whether the index exists or not.
+Resolves to a boolean that indicate whether the index exists or not.
 
 ## Usage
 

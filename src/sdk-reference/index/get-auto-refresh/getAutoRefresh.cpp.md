@@ -8,12 +8,12 @@ bool getAutoRefresh(std::string index, query_options *options = null)
 
 | Arguments     | Type        | Description               | Required
 |---------------|-------------|---------------------------|----------
-| ``index``     | std::string  | Represent the index name | yes
+| ``index``     | std::string  | Index name | yes
 | ``options``   | query_options | A pointer to a `query_options` containing query options| no
 
 ### __Options__
 
-Query options details :
+Additional query options
 
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
@@ -26,7 +26,7 @@ Returns a boolean that indicate the status of the **autoRefresh** flag.
 
 ## Exceptions
 
-Throw a KuzzleException
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 
