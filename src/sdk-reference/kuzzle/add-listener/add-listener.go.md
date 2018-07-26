@@ -6,7 +6,7 @@ AddListener(event int, channel chan<- interface{})
 
 | Argument | Type | Description | Required |
 |--------|------|-------------|------------ |
-| `event` | int | One of the event described in the `Event Handling` section of this documentation  | yes |
+| `event` | int | One of the event described in the [Event Handling]({{ site_base_path }}sdk-reference/essentials/event-handling) section of this documentation  | yes |
 | `channel` | channel | A channel taking an interface | yes |
 
 ### __event__

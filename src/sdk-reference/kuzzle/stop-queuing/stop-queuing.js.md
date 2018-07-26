@@ -7,7 +7,7 @@ stopQueuing()
 
 ## Return
 
-The same `Kuzzle` instance.
+The Kuzzzle` instance.
 
 ## Usage
 

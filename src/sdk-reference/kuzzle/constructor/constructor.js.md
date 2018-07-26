@@ -16,7 +16,7 @@ Kuzzle(protocol, options = {})
 
 ### __protocol__
 
-The protocol used to connect to the Kuzzle instance.  
+The [protocol]({{ site_base_path }}sdk-reference/protocols/create-new-protocol) used to connect to the Kuzzle instance.  
 It can be:
   - a string for embedded protocols : `http`, `websocket` or `socketio`
   - a custom Protocol object
@@ -31,7 +31,7 @@ It can be:
 | `autoResubscribe` | boolean | Automatically renew all subscriptions on a `reconnected` event | `true` | no |
 | `eventTimeout` | integer | Time (in ms) during which a similar event is ignored | `200` | no |
 | `host` | string | Kuzzle network host | - | yes |
-| `port` | integer | Kuzzle network port | 7512 | no |
+| `port` | integer | Kuzzle network port | `7512` | no |
 | `offlineMode` | string | Offline mode configuration | `manual` | no |
 | `queueTTL` | integer | Time a queued request is kept during offline mode, in milliseconds | `120000` | no |
 | `queueMaxSize` | integer | Number of maximum requests kept during offline mode | `500` | no |
@@ -74,7 +74,7 @@ It can be:
 
 ## Return
 
-The same `Kuzzle` instance.
+The Kuzzzle` instance.
 
 ## Usage
 

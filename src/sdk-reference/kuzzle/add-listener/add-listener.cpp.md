@@ -6,7 +6,7 @@ kuzzleio::KuzzleEventEmitter* addListener(Event event, kuzzleio::EventListener* 
 
 | Argument | Type | Description | Required |
 |--------|------|-------------|------------ |
-| `event` | Event | An enum representing the listened event  | yes |
+| `event` | Event | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling)  | yes |
 | `listener` | kuzzleio::EventListener* | A pointer to an instance of an `EventListener` | yes |
 
 ### __event__
@@ -41,7 +41,7 @@ class MyListener : public kuzzleio::EventListener {
 
 ## Return
 
-The same `Kuzzle` instance.
+The Kuzzzle` instance.
 
 ## Usage
 

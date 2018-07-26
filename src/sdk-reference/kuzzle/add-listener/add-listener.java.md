@@ -6,7 +6,7 @@ KuzzleEventEmitter addListener(Event event, EventListener listener)
 
 | Argument | Type | Description | Required |
 |--------|------|-------------|------------ |
-| `event` | Event | An enum representing the event to listening to  | yes |
+| `event` | Event | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes |
 | `listener` | EventListener | An instance of an `EventListener` | yes |
 
 ### __event__
@@ -32,7 +32,7 @@ An instance of an `EventListener`.
 
 ## Return
 
-The same `Kuzzle` instance.
+The Kuzzzle` instance.
 
 ## Usage
 

@@ -6,11 +6,11 @@ NewKuzzle(conn connection.Connection) (*Kuzzle, error)
 
 | Argument | Type | Description | Required |
 |--------|------|-------------|------------ |
-| `conn` | connection.Connection | The connection used by the SDK instance  | yes |
+| `conn` | connection.Connection | The protocol used by the SDK instance  | yes |
 
 ### __conn__
 
-A protocol is a structure implementing the connection.Connection interface.
+A [protocol]({{ site_base_path }}sdk-reference/protocols/create-new-protocol) is a structure implementing the `connection.Connection` interface.
 The available protocols are:
  - `websocket.Websocket`  
 

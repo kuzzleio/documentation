@@ -4,7 +4,7 @@ kuzzleio::Kuzzle* startQueuing()
 
 ## Return
 
-The same `Kuzzle` instance.
+The Kuzzzle` instance.
 
 ## Usage
 
