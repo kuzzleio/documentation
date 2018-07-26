@@ -9,7 +9,7 @@ AddListener(event int, channel chan<- interface{})
 | `event` | int | One of the event described in the `Event Handling` section of this documentation  | yes |
 | `channel` | channel | A channel taking an interface | yes |
 
-### event
+### __event__
 
 You can register one of the following events:
 ```go
@@ -27,7 +27,7 @@ event.Error
 event.Done
 ```
 
-### channel
+### __channel__
 
 The channel will receive an interface with the event data each time the registered event is triggered.
 

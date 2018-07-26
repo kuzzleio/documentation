@@ -14,14 +14,14 @@ Kuzzle(protocol, options = {})
 | `protocol` | string or Protocol | The protocol used by the SDK instance  | yes |
 | `options` | object | Kuzzle connection configuration | yes |
 
-### protocol
+### __protocol__
 
 The protocol used to connect to the Kuzzle instance.  
 It can be:
   - a string for embedded protocols : `http`, `websocket` or `socketio`
   - a custom Protocol object
 
-### options
+### __options__
 
 | Option | Type | Description | Default | Required |
 |---------------|---------|----------------------------------------|---------|---------|

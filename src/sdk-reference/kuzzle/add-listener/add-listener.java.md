@@ -9,7 +9,7 @@ KuzzleEventEmitter addListener(Event event, EventListener listener)
 | `event` | Event | An enum representing the event to listening to  | yes |
 | `listener` | EventListener | An instance of an `EventListener` | yes |
 
-### event
+### __event__
 
 One of the following event:
 ```java
@@ -26,7 +26,7 @@ Event.JWT_EXPIRED
 Event.ERROR
 ```
 
-### listener
+### __listener__
 
 An instance of an `EventListener`.  
 

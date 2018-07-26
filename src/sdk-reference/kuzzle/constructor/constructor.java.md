@@ -9,12 +9,12 @@ Kuzzle(String host, Options options = null)
 | `host` | String | The target Kuzzle host  | yes |
 | `options` | Options | Kuzzle connection configuration | yes |
 
-### host
+### __host__
 
 The Kuzzle host to connect to.  
 Can be a hostname or an IP address.
 
-### options
+### __options__
 
 | Option | Type | Description | Default | Required |
 |---------------|---------|----------------------------------------|---------|---------|

@@ -9,12 +9,12 @@ Kuzzle(std::string host, options *options = nullptr)
 | `host` | std::string | The target Kuzzle host  | yes |
 | `options` | options* | Kuzzle connection configuration | yes |
 
-### hostname
+### __hostname__
 
 The Kuzzle host to connect to.  
 Can be a hostname or an IP address.
 
-### options
+### __options__
 
 | Option | Type | Description | Default | Required |
 |---------------|---------|----------------------------------------|---------|---------|

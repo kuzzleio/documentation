@@ -9,13 +9,13 @@ NewKuzzle(conn connection.Connection, opts types.Options) (*Kuzzle, error)
 | `conn` | connection.Connection | The connection used by the SDK instance  | yes |
 | `opts` | types.Options | Kuzzle connection configuration | yes |
 
-### conn
+### __conn__
 
 The protocol used to connect to the Kuzzle instance.  
 So far the only protocol available is `websocket`.  
 You have to instanciate and pass it to the constructor.   
 
-### opts
+### __opts__
 
 You can use standard getter/setter to use these properties.  
 

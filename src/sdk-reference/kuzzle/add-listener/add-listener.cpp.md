@@ -9,7 +9,7 @@ kuzzleio::KuzzleEventEmitter* addListener(Event event, kuzzleio::EventListener* 
 | `event` | Event | An enum representing the event to listening to  | yes |
 | `listener` | EventListener* | A pointer to an instance of an `EventListener` | yes |
 
-### event
+### __event__
 
 One of the following event:
 ```cpp
@@ -26,7 +26,7 @@ JWT_EXPIRED
 ERROR
 ```
 
-### listener
+### __listener__
 
 An instance of a class that inherits from `kuzzleio::EventListener`.  
 This class must implement the following method:
