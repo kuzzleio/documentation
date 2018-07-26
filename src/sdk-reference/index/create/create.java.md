@@ -6,10 +6,10 @@ void create(String index, QueryOptions options)
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``index``     | String      | Represent the index name |
-| ``options``   | QueryOptions | The query options |
+| Arguments     | Type        | Description              | Required
+|---------------|-------------|--------------------------|-----------
+| ``index``     | String      | Represent the index name | yes
+| ``options``   | QueryOptions | The query options       | no
 
 ### __Options__
 

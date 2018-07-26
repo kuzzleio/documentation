@@ -6,10 +6,10 @@ Create(index string, options types.QueryOptions) error
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``index``     | String      | Represent the index name |
-| ``options``   | QueryOptions | A structure containing query options. |
+| Arguments     | Type        | Description                            | Required
+|---------------|-------------|----------------------------------------|----------
+| ``index``     | String      | Represent the index name               | yes
+| ``options``   | QueryOptions | A structure containing query options. | no
 
 ### __Options__
 

@@ -14,8 +14,6 @@
 
 ## Return
 
-## Exceptions
-
 ## Usage
 
 [code-example=<%= _.kebabCase(action) %>]

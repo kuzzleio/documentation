@@ -6,10 +6,10 @@ void create(std::string index, query_options *options)
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``index``     | std::string  | Represent the index name |
-| ``options``   | query_options | A pointer to a `query_options` containing query options|
+| Arguments     | Type        | Description                            | Required
+|---------------|-------------|----------------------------------------|----------
+| ``index``     | std::string  | Represent the index name              | yes
+| ``options``   | query_options | A pointer to a `query_options` containing query options| no
 
 ### __Options__
 
