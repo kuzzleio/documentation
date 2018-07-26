@@ -1,7 +1,7 @@
 char* error = kuzzle->connect();
 
-if (error != nullptr) {
-  std::cerr << error << std::endl;
-} else {
+if (error == nullptr) {
   std::cout << "Successfully connected" << std::endl;
+} else {
+  std::cerr << error << std::endl;
 }

@@ -6,8 +6,8 @@ kuzzleio::KuzzleEventEmitter* addListener(Event event, kuzzleio::EventListener* 
 
 | Argument | Type | Description | Required |
 |--------|------|-------------|------------ |
-| `event` | Event | An enum representing the event to listening to  | yes |
-| `listener` | EventListener* | A pointer to an instance of an `EventListener` | yes |
+| `event` | Event | An enum representing the listened event  | yes |
+| `listener` | kuzzleio::EventListener* | A pointer to an instance of an `EventListener` | yes |
 
 ### __event__
 
@@ -33,8 +33,8 @@ This class must implement the following method:
 ```cpp
 class MyListener : public kuzzleio::EventListener {
   public:
-    void trigger(char *json_payload) const {
-      // Do something with the json_payload
+    void trigger(char* json_payload) const {
+      // Do something with the json payload
     }
 };
 ```

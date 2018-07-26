@@ -1,5 +1,6 @@
 ```java
-Kuzzle(String host, Options options = null)
+Kuzzle(String host)
+Kuzzle(String host, Options options)
 ```
 
 ## Arguments

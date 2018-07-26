@@ -13,7 +13,7 @@ NewKuzzle(conn connection.Connection, opts types.Options) (*Kuzzle, error)
 
 The protocol used to connect to the Kuzzle instance.  
 So far the only protocol available is `websocket`.  
-You have to instanciate and pass it to the constructor.   
+You have to instantiate and pass it to the constructor.   
 
 ### __opts__
 
@@ -26,6 +26,7 @@ You can use standard getter/setter to use these properties.
 | `autoReplay` | boolean | Automatically replay queued requests on a `reconnected` event | `false` | no |
 | `autoResubscribe` | boolean | Automatically renew all subscriptions on a `reconnected` event | `true` | no |
 | `offlineMode` | int | Offline mode configuration | `types.Manual` | no |
+| `port` | int | Target Kuzzle port | `7512` | no |
 | `queueTTL` | int | Time a queued request is kept during offline mode, in milliseconds | `120000` | no |
 | `queueMaxSize` | int | Number of maximum requests kept during offline mode | `500` | no |
 | `replayInterval` | Duration | Delay between each replayed requests, in milliseconds | `10` | no |
@@ -70,12 +71,12 @@ For example the property `autoQueue` you can read it with `AutoQueue()` and writ
 
 ## Return
 
-A `Kuzzle` struct and an `error` struct.  
+A `Kuzzle` struct and an [error struct]({{ site_base_path }}sdk-reference/essentials/error-handling).  
 The `error` struct is nil if everything was ok.  
 
 ## Usage
 
 In a first step, you have to create a new `connection.Connection` and pass it to the constructor.  
-By now the only connection type available is `websocket.Websocket`.
+By now the only connection available is `websocket.Websocket`.
 
 [code-example=constructor]

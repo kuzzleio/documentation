@@ -4,7 +4,7 @@ Disconnect() error
 
 ## Return
 
-Return `nil` or an error if the connection can't be closed.
+Return a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/error-handling) if the connection can't be closed.
 
 ## Usage
 

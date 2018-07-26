@@ -13,7 +13,7 @@ KuzzleResponse query(KuzzleRequest request, QueryOptions options)
 
 ### __request__
 
-A KuzzleRequest object containing the properties required for the Kuzzle API request.  
+A `KuzzleRequest` object containing the properties required for the Kuzzle API request.  
 Each property can be accessed with standard getter/setter.  
 The following properties are the most common.  
 
@@ -29,7 +29,7 @@ The following properties are the most common.
 
 ### __options__
 
-A QueryOptions object containing the additional options for this request.  
+A `QueryOptions` object containing the additional options for this request.  
 Each property can be accessed with standard getter/setter.  
 The following properties are the most common.  
 
@@ -39,7 +39,7 @@ The following properties are the most common.
 
 ## Return
 
-A KuzzleResponse object containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api-documentation).  
+A `KuzzleResponse` object containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api-documentation).  
 The following properties are the most common.  
 
 | Property | Type    | Description                       |

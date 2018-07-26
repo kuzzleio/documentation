@@ -1,11 +1,13 @@
 ```javascript
 /**
- * @param {}
- * @param {}
- * @returns {}
+ * @returns {Kuzzle} this
  */
 playQueue()
 ```
+
+## Return
+
+The same `Kuzzle` instance.
 
 ## Usage
 
