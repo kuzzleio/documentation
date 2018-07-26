@@ -16,7 +16,7 @@ Resolve without value if connection is made successfully.
 
 ## Reject
 
-Reject with a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/errors).
+Reject with a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 
