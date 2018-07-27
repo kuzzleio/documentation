@@ -22,7 +22,7 @@ Additional query options
 
 ## Return
 
-Returns a boolean that indicate the status of the **autoRefresh** flag.
+Returns a `boolean` that indicate the status of the **autoRefresh** flag.
 
 ## Exceptions
 

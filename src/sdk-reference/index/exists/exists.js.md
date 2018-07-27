@@ -11,10 +11,10 @@ exists(index, options = null)
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``index``     | String      | Index name |
-| ``options``   | Object | An object containing query options. |
+| Arguments     | Type        | Description              | Required 
+|---------------|-------------|--------------------------|-----------
+| ``index``     | String      | Index name               | yes
+| ``options``   | Object      | An object containing query options. | no
 
 ### __Options__
 
@@ -26,7 +26,7 @@ Additional query options
 
 ## Resolve
 
-Resolves to a boolean that indicate whether the index exists or not.
+Resolves to a `boolean` that indicate whether the index exists or not.
 
 ## Usage
 

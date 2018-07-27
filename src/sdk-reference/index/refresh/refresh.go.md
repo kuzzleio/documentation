@@ -1,7 +1,7 @@
 ## Signature
 
 ```go
-Delete(index string, options types.QueryOptions) error
+Refresh(index string, options types.QueryOptions) error
 ```
 
 ## Arguments
@@ -10,7 +10,6 @@ Delete(index string, options types.QueryOptions) error
 |---------------|-------------|----------------------------------------|----------
 | ``index``     | String      | Index name               | yes
 | ``options``   | QueryOptions | A structure containing query options. | no
-
 
 ### __Options__
 
@@ -22,8 +21,8 @@ Additional query options
 
 ## Return
 
-Returns an error or nil if the request succeed.
+Return an error or `nil` if index successfully refreshed.
 
 ## Usage
 
-[code-example=delete]
+[code-example=refresh]

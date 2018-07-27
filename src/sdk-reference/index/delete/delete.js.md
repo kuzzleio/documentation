@@ -11,10 +11,10 @@ delete(index, options = null)
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``index``     | String      | index name |
-| ``options``   | Object | An object containing query options. |
+| Arguments     | Type        | Description              | Required 
+|---------------|-------------|--------------------------|-----------
+| ``index``     | String      | Index name               | yes
+| ``options``   | Object      | An object containing query options. | no
 
 ### __Options__
 

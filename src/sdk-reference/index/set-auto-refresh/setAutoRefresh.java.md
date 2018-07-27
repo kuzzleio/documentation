@@ -1,7 +1,8 @@
 ## Signature
 
 ``` java
-boolean exists(String index, QueryOptions options)
+void setAutoRefresh(String index, boolean autoRefresh, QueryOptions options)
+void setAutoRefresh(String index, boolean autoRefresh)
 ```
 
 ## Arguments
@@ -9,6 +10,7 @@ boolean exists(String index, QueryOptions options)
 | Arguments     | Type         | Description              | Required
 |---------------|------------- |--------------------------|-----------
 | ``index``     | String       | Index name               | yes
+| ``autoRefresh`` | Boolean    | autoRefresh flag     | yes
 | ``options``   | QueryOptions | The query options       | no
 
 ### __Options__
@@ -19,16 +21,10 @@ Additional query options
 | -------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`    |
 
-
-
-## Return
-
-Returns a `boolean` that indicate whether the index exists or not.
-
 ## Exceptions
 
 Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 
-[code-example=exists]
+[code-example=setAutoRefresh]

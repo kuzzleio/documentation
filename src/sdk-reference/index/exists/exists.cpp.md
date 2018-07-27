@@ -6,10 +6,10 @@ bool exists(std::string index, query_options *options = null)
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``index``     | std::string  | Index name |
-| ``options``   | query_options | A pointer to a `query_options` containing query options|
+| Arguments     | Type        | Description                            | Required
+|---------------|-------------|----------------------------------------|----------
+| ``index``     | std::string  | Index name              | yes
+| ``options``   | query_options | A pointer to a `query_options` containing query options| no
 
 ### __Options__
 
@@ -22,7 +22,7 @@ Additional query options
 
 ## Return
 
-Returns a boolean that indicate whether the index exists or not.
+Returns a `boolean` that indicate whether the index exists or not.
 
 ## Exceptions
 

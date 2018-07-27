@@ -2,18 +2,18 @@
 
 ``` javascript
 /**
- * @param {array} indexes
+ * @param {string} index
  * @param {object} [options]
- * @returns {Promise.<Array>}
+ * @returns {Promise.<Object>}
  */
-mDelete(indexes, options = null)
+refreshInternal(index, options = null)
 ```
 
 ## Arguments
 
 | Arguments     | Type        | Description                         | Required
 |---------------|-------------|-------------------------------------|----------
-| ``indexes``   | Array      | An arrau of string containing indexes names | yes
+| ``index``   | string      | An object containing query options. | no
 | ``options``   | Object      | An object containing query options. | no
 
 ### __Options__
@@ -26,8 +26,12 @@ Additional query options
 
 ## Resolve
 
-Resolves to an `Array` of strings containing the list of indexes names present in Kuzzle
+Resolves to an object containing the refresh status.
+
+| Name | Type | Description
+|------|------|-------------
+| acknowledged | boolean | indicates whether the refresh on internal index was successful or not
 
 ## Usage
 
-[code-example=mDelete]
+[code-example=refreshInternal]

@@ -2,18 +2,17 @@
 
 ``` javascript
 /**
- * @param {array} indexes
+ * @param {string} index
  * @param {object} [options]
- * @returns {Promise.<Array>}
+ * @returns {Promise.<Object>}
  */
-mDelete(indexes, options = null)
+refresh(index, options = null)
 ```
 
 ## Arguments
 
 | Arguments     | Type        | Description                         | Required
 |---------------|-------------|-------------------------------------|----------
-| ``indexes``   | Array      | An arrau of string containing indexes names | yes
 | ``options``   | Object      | An object containing query options. | no
 
 ### __Options__
@@ -26,8 +25,12 @@ Additional query options
 
 ## Resolve
 
-Resolves to an `Array` of strings containing the list of indexes names present in Kuzzle
+Resolves to an object containing the refresh status on shards.
+
+| Name | Type | Description
+|------|------|-------------
+| _shards | object | Refresh status on shards, contain 3 properties : total, successful and failed
 
 ## Usage
 
-[code-example=mDelete]
+[code-example=refresh]

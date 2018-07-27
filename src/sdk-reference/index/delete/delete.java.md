@@ -7,10 +7,10 @@ void delete(String index)
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``index``     | String      | Index name |
-| ``options``   | QueryOptions | The query options |
+| Arguments     | Type         | Description              | Required
+|---------------|------------- |--------------------------|-----------
+| ``index``     | String       | Index name               | yes
+| ``options``   | QueryOptions | The query options       | no
 
 ### __Options__
 

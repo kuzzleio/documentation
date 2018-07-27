@@ -1,7 +1,8 @@
 ## Signature
 
 ``` java
-boolean exists(String index, QueryOptions options)
+void refresh(String index, QueryOptions options)
+void refresh(String index)
 ```
 
 ## Arguments
@@ -19,16 +20,10 @@ Additional query options
 | -------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`    |
 
-
-
-## Return
-
-Returns a `boolean` that indicate whether the index exists or not.
-
 ## Exceptions
 
 Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 
-[code-example=exists]
+[code-example=refresh]

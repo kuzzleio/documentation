@@ -6,10 +6,10 @@ GetAutoRefresh(index string, options types.QueryOptions) (bool, error)
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``index``     | String      | Index name |
-| ``options``   | QueryOptions | A structure containing query options. |
+| Arguments     | Type        | Description                            | Required
+|---------------|-------------|----------------------------------------|----------
+| ``index``     | String      | Index name               | yes
+| ``options``   | QueryOptions | A structure containing query options. | no
 
 ### __Options__
 
@@ -21,7 +21,7 @@ Additional query options
 
 ## Return
 
-Returns a boolean that indicate the status of the **autoRefresh** flag.
+Returns a `boolean` that indicate the status of the **autoRefresh** flag.
 
 ## Usage
 

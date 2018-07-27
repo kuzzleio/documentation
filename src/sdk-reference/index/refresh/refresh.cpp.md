@@ -1,15 +1,15 @@
 ## Signature
 
-``` java
-boolean exists(String index, QueryOptions options)
+``` cpp
+void refresh(std::string index, query_options *options = null)
 ```
 
 ## Arguments
 
-| Arguments     | Type         | Description              | Required
-|---------------|------------- |--------------------------|-----------
-| ``index``     | String       | Index name               | yes
-| ``options``   | QueryOptions | The query options       | no
+| Arguments     | Type        | Description               | Required
+|---------------|-------------|---------------------------|----------
+| ``index``     | std::string  | Index name | yes
+| ``options``   | query_options | A pointer to a `query_options` containing query options| no
 
 ### __Options__
 
@@ -19,16 +19,10 @@ Additional query options
 | -------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`    |
 
-
-
-## Return
-
-Returns a `boolean` that indicate whether the index exists or not.
-
 ## Exceptions
 
 Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 
-[code-example=exists]
+[code-example=refresh]
