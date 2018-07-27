@@ -74,7 +74,7 @@ It can be:
 
 ## Return
 
-The Kuzzzle` instance.
+The `Kuzzle` instance.
 
 ## Usage
 

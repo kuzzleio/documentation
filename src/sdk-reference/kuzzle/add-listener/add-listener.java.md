@@ -32,7 +32,7 @@ An instance of an `EventListener`.
 
 ## Return
 
-The Kuzzzle` instance.
+The `Kuzzle` instance.
 
 ## Usage
 

@@ -4,7 +4,7 @@ kuzzleio::Kuzzle* playQueue()
 
 ## Return
 
-The Kuzzzle` instance.
+The `Kuzzle` instance.
 
 ## Usage
 
