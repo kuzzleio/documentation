@@ -13,7 +13,7 @@ mDelete(indexes, options = null)
 
 | Arguments     | Type        | Description                         | Required
 |---------------|-------------|-------------------------------------|----------
-| ``indexes``   | Array      | An arrau of string containing indexes names | yes
+| ``indexes``   | Array      | An array of strings containing indexes names | yes
 | ``options``   | Object      | An object containing query options. | no
 
 ### __Options__
@@ -26,7 +26,7 @@ Additional query options
 
 ## Resolve
 
-Resolves to an `Array` of strings containing the list of indexes names present in Kuzzle
+Resolves to an `Array` of strings containing the list of indexes names successfully deleted.
 
 ## Usage
 

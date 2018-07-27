@@ -8,7 +8,7 @@ std::vector<std::string> mDelete(std::vector<std::string> indexes, query_options
 
 | Arguments     | Type        | Description               | Required
 |---------------|-------------|---------------------------|----------
-| ``indexes``   |std::vector<std::string> | containing list of indexes names| yes
+| ``indexes``   | `std::vector<std::string>` | containing list of indexes names| yes
 | ``options``   | query_options | A pointer to a `query_options` containing query options| no
 
 ### __Options__

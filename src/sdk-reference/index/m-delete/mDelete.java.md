@@ -1,14 +1,15 @@
 ## Signature
 
 ``` java
-StringVector mDelete()
-StringVector mDelete(QueryOptions options)
+StringVector mDelete(StringVector indexes, QueryOptions options)
+StringVector mDelete(StringVector indexes)
 ```
 
 ## Arguments
 
 | Arguments     | Type         | Description              | Required
 |---------------|------------- |--------------------------|-----------
+| ``indexes``   | StringVector | List of indexes names     | yes
 | ``options``   | QueryOptions | The query options       | no
 
 ### __Options__

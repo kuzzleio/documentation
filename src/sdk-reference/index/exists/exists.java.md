@@ -2,6 +2,7 @@
 
 ``` java
 boolean exists(String index, QueryOptions options)
+boolean exists(String index)
 ```
 
 ## Arguments

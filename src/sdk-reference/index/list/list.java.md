@@ -1,8 +1,8 @@
 ## Signature
 
 ``` java
-StringVector list()
 StringVector list(QueryOptions options)
+StringVector list()
 ```
 
 ## Arguments
