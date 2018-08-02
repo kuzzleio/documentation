@@ -1,16 +1,16 @@
 ```go
-NewKuzzle(conn connection.Connection) (*Kuzzle, error)
+NewKuzzle(protocol connection.Connection) (*Kuzzle, error)
 ```
 
 ## Arguments
 
 | Argument | Type | Description | Required |
 |--------|------|-------------|------------ |
-| `conn` | connection.Connection | The protocol used by the SDK instance  | yes |
+| `protocol` | connection.Connection | The protocol used by the SDK instance  | yes |
 
-### __conn__
+### __protocol__
 
-A [protocol]({{ site_base_path }}sdk-reference/protocols/create-new-protocol) is a structure implementing the `connection.Connection` interface.
+A [Protocol]({{ site_base_path }}sdk-reference/protocols/create-new-protocol) is a structure implementing the `connection.Connection` interface.
 The available protocols are:
  - `websocket.Websocket`  
 
