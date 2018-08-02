@@ -1,32 +1,38 @@
+## Signature
+
 ```javascript
-create(index, options = {}) ⇒ object
+/**
+ * @param {string} index
+ * @param {object} [options]
+ * @returns {Promise.<object>}
+ */
+create(index, options = null)
 ```
-
-## Usage
-
-[code-example=create]
 
 ## Arguments
 
-### index
+| Arguments     | Type        | Description              | Required
+|---------------|-------------|--------------------------|-----------
+| ``index``     | String      | Index name               | yes
+| ``options``   | Object      | An object containing query options. | no
 
-A `string` representing the index name.
+### __Options__
 
-### options
-
-An `object` containing query options.
+Additional query options
 
 | Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
-| queuable | boolean | Make this request queuable or not | true    |
+| `queuable` | boolean | Make this request queuable or not | `true`    |
 
----
+## Resolve
 
-## Return
-
-Returns an `object` with the index creation status.
+Resolves to an object containing the index creation status
 
 | Name | Type | Description
 |------|------|-------------
 | acknowledged | boolean | indicates whether the index was successfully created in the Elastic cluster
 | shards_acknowledged | boolean | indicates whether the requisite number of shard copies were started for each shard in the index before timing out
+
+## Usage
+
+[code-example=create]

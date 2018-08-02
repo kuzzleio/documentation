@@ -25,9 +25,9 @@ module.exports = {
           fullPath = path.join(__dirname, '../src/' + filename.split('/').slice(0, -1).join('/') + '/' + config.code_example.snippet_folder_name),
           code = '',
           filenames = fs.readdirSync(fullPath);
-
-        filenames.forEach(function (file) {
-
+        
+        filenames.forEach(file => {
+          
           if (file.split('.')[0] === name && file.substr(-8) !== 'test.yml' ) {
             presentLanguages.push(file.split('.')[1]);
             let fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8');

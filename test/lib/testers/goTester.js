@@ -58,7 +58,7 @@ module.exports = class GoTester extends Tester {
 
     return new Promise((resolve, reject) => {
       nexpect
-        .spawn(this.lintCommand + fileName, { stream: 'stderr' })
+        .spawn(this.lintCommand + fileName, { stream: 'all' })
         .wait('')
         .run((error, output) => {
           if (error) {

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 START_KUZZLE=1
 INTERACTIVE=0
 
@@ -58,6 +60,7 @@ case $LANGUAGE in
     exit 1
   ;;
 esac
+
 
 if [ $START_KUZZLE -eq 1 ]; then
   sh .travis/stop_kuzzle.sh

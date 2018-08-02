@@ -23,7 +23,7 @@ module.exports = class CppTester extends Tester {
 
     return new Promise((resolve, reject) => {
       nexpect
-        .spawn(`${this.executablePath}`, { stream: 'stdout' })
+        .spawn(`${this.executablePath}`, { stream: 'all' })
         .wait(expected, result => {
           if (result === expected) {
             resolve();

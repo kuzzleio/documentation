@@ -6,24 +6,10 @@ description: Deletes an index
 order: 500
 ---
 
-# delete(index, [options])
+# Delete
 
 Deletes an entire data index from Kuzzle.
 
-## Usage
+[section=delete]
 
-[code-example=delete]
 
-## Options
-
-Query options.
-
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| queuable | boolean | Make this request queuable or not | true    |
-
----
-
-## Response
-
-[section=deleteResponse]

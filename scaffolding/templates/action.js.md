@@ -9,13 +9,15 @@
 
 ## Arguments
 
-### arg1
+| Arguments    | Type    | Description | Required
+|--------------|---------|-------------|----------
+| ``changeme`` | changme | changeme    | yes
 
-### arg2
+### __arg1__
+
+### __arg2__
 
 ## Resolve
-
-## Reject
 
 ## Usage
 

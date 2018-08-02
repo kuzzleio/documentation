@@ -6,4 +6,6 @@ description: Performs a bulk import on a collection
 order: 200
 ---
 
+# Import
+
 [section=import]

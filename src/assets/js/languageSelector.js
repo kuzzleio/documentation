@@ -40,8 +40,9 @@ var languageSelector = {
     $('#language-selector').on('change', function () {
       var language = $(this).val();
       self.setPreferedLanguage(language);
+      
       window.location.replace(
-        window.location.href.split('?')[0] + '?language=' + language
+        window.location.origin + window.location.pathname + '?language=' + language
       );
     })
   },
