@@ -260,9 +260,6 @@ const metalsmith = Metalsmith(__dirname)
       }
     });
   });
-  
-  
-
 
 metalsmith
   .use(links())
@@ -309,7 +306,7 @@ metalsmith
     for (const file in files) {
       if (file.endsWith('index.html')) {
         if(file == 'sdk-reference/bulk/import/index.html') {
-          
+
         }
         const sectionsData = sectionManager.process(file, files[file], handlebars);
         files[file].contents = sectionsData['fileContent'];
@@ -374,6 +371,7 @@ metalsmith
     '/api-documentation/': '/api-documentation/connecting-to-kuzzle/',
     '/sdk-reference': '/sdk-reference/essentials/',
     '/sdk-reference/index': '/sdk-reference/index/create/',
+    '/sdk-reference/kuzzle': '/sdk-reference/kuzzle/constructor/',
     '/sdk-reference/bulk': '/sdk-reference/bulk/import/',
     '/plugins-reference/': 'plugins-features/',
     '/elasticsearch-cookbook/': '/elasticsearch-cookbook/installation/',

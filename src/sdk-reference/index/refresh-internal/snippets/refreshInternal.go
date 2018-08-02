@@ -1,7 +1,7 @@
 err := kuzzle.Index.RefreshInternal(nil)
 
 if err != nil {
-  fmt.Println(err)
+  log.Fatal(err)
 } else {
   fmt.Println("Internal index successfully refreshed")
 }

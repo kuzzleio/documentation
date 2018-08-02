@@ -1,0 +1,7 @@
+name: startQueuing
+description: Starts the requests queuing
+hooks:
+  before:
+  after:
+template: standalone
+expect: Success

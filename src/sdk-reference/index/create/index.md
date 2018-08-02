@@ -6,8 +6,9 @@ description: Create an index
 order: 200
 ---
 
-# Create
+# create
 
-Creates a new index in Kuzzle.
+Create a new index in Kuzzle
 
+## Signature
 [section=create]

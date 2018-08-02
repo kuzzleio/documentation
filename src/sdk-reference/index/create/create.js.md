@@ -1,5 +1,5 @@
-``` javascript
-create(index, options = null) : object
+```javascript
+create(index, options = {}) ⇒ object
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ A `string` representing the index name.
 
 ### options
 
-An object containing query options.
+An `object` containing query options.
 
 | Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
@@ -24,7 +24,7 @@ An object containing query options.
 
 ## Return
 
-Returns an object with the index creation status.
+Returns an `object` with the index creation status.
 
 | Name | Type | Description
 |------|------|-------------

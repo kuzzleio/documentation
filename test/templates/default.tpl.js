@@ -16,7 +16,4 @@ kuzzle
   .connect()
   .then(() => {
     return [snippet-code]
-  })
-  .then(() => {
-    kuzzle.disconnect();
   });

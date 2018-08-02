@@ -15,13 +15,35 @@ const
 class FileProcess {
 
   injectSnippet (test, snippetPath, language) {
+    if (! test) {
+      const err = {
+        code: 'MISSING_TEST_DESCRIPTION',
+        actual: 'Missing or empty test.yml file'
+      };
+      return err;
+    }
+
     const
       template = `${TEMPLATE_FOLDER}${test.template}.tpl.${language}`,
       snippet = `${snippetPath}.${config.languages[language].ext}`;
 
     //first check file exist
-    if (!fs.existsSync(template) || !fs.existsSync(snippet)) {
-      return false;
+    if (!fs.existsSync(template)) {
+      const err = {
+        code: 'MISSING_TEMPLATE',
+        expect: '',
+        actual: `Missing template file: ${template}`
+      };
+      return err;
+    }
+
+    if (!fs.existsSync(snippet)) {
+      const err = {
+        code: 'MISSING_SNIPPET',
+        expect: '',
+        actual: `Missing snippet file: ${snippet}`
+      };
+      return err;
     }
 
     //get file content
@@ -30,7 +52,12 @@ class FileProcess {
       templateContent = fs.readFileSync(template, 'utf8');
 
     if (! templateContent.match(/(\[snippet-code])/g)) {
-      return false;
+      const err = {
+        code: 'MISSING_TAG',
+        expect: '',
+        actual: 'Missing tag [snippet-code]'
+      };
+      return err;
     }
 
     //replace snippet in template
@@ -50,9 +77,16 @@ class FileProcess {
       fs.writeFileSync(binPath, newContent);
     }
 
-    if (fs.existsSync(binPath)) {
-      return binPath;
+    if (! fs.existsSync(binPath)) {
+      const err = {
+        code: 'MISSING_GENERATED_FILE',
+        expect: test.expect,
+        actual: `Missing generated file: ${binPath}`
+      };
+      return err;
     }
+
+    return binPath;
   }
 
   indentSnippet (snippet, indentation) {

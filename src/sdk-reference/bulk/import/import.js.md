@@ -56,7 +56,7 @@ On resolve, the response object is the one directly sent by Elasticsearch for th
 
 ## Reject
 
-Reject with a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/errors).
+Reject with a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 

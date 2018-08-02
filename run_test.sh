@@ -71,6 +71,6 @@ show_help() {
   echo "Possible options are"
   echo " -l <language>  [MANDATORY] specifies the language to test (valid languages are js and go)"
   echo " -n             Prevent to start the Kuzzle stack (useful if you keep it running yourself to run many tests)"
-  echo " -f <test-file> Allows to run just one test by specifying the .yml test descriptor. Its path must be relative to src/sdk-reference"
+  echo " -f <test-file> Allows to run just one test by specifying the .yml test descriptor"
   echo " -i             Launch a webserver after the tests to show a report"
 }
