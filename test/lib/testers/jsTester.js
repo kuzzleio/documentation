@@ -15,7 +15,7 @@ module.exports = class JsTester extends Tester {
   lintExpect(binFile) {
     return new Promise((resolve, reject) => {
       nexpect
-        .spawn(`${this.lintCommand} ${binFile}`, { stream: 'all' })
+        .spawn(`${this.lintCommand} ${binFile}`, { stream: 'stderr' })
         .wait('')
         .run((error, output) => {
           if (error) {
