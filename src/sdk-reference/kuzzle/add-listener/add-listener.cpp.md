@@ -1,5 +1,5 @@
 ```cpp
-kuzzleio::KuzzleEventEmitter* addListener(Event event, kuzzleio::EventListener* listener)
+kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::Event event, kuzzleio::EventListener* listener)
 ```
 
 ## Arguments

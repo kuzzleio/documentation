@@ -1,7 +1,7 @@
 ## Signature
 
 ``` cpp
-std::vector<std::string> list(query_options *options = null)
+std::vector<std::string> list(kuzzleio::query_options *options = null)
 ```
 
 ## Arguments

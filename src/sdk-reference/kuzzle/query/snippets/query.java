@@ -12,7 +12,7 @@ try {
 
   KuzzleResponse response = kuzzle.query(request, options);
 
-  if (response != null) {
+  if (response.getStatus() == 200) {
     System.out.println("Document created");
   }
 }

@@ -1,7 +1,7 @@
 ## Signature
 
 ``` cpp
-void refreshInternal(std::string index, query_options *options = null)
+void refreshInternal(std::string index, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
