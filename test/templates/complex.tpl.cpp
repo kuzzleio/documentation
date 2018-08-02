@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <vector>
 
 #include "auth.hpp"
@@ -12,7 +13,7 @@
 int main() {
   std::string hostname = "kuzzle";
 
-  options kuzzle_options = KUZZLE_OPTIONS_DEFAULT;
+  kuzzleio::options kuzzle_options = KUZZLE_OPTIONS_DEFAULT;
   kuzzle_options.connect = MANUAL;
 
   kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(hostname, &kuzzle_options);

@@ -8,6 +8,7 @@
 #include "index.hpp"
 #include "realtime.hpp"
 #include "kuzzle.hpp"
+#include "listeners.hpp"
 
 class MyListener : public kuzzleio::EventListener {
   public:
@@ -19,7 +20,7 @@ class MyListener : public kuzzleio::EventListener {
 int main() {
   std::string hostname = "kuzzle";
 
-  options kuzzle_options = KUZZLE_OPTIONS_DEFAULT;
+  kuzzleio::options kuzzle_options = KUZZLE_OPTIONS_DEFAULT;
 
   kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(hostname, &kuzzle_options);
 
