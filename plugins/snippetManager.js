@@ -6,7 +6,7 @@ const
   color = require('colors/safe'),
   config = require('../getConfig').get();
 
-const SNIPPET_REGEX = /(\[code-example=)[a-zA-Z0-9]+\]/g;
+const SNIPPET_REGEX = /(\[code-example=)[a-zA-Z0-9\-]+\]/g;
 
 module.exports = {
 

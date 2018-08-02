@@ -1,7 +1,7 @@
 ---
 layout: full.html
 algolia: true
-title: Kuzzle backend setup
-description: Kuzzle backend setup
+title: Kuzzle setup
+description: Kuzzle setup
 order: 500
 ---

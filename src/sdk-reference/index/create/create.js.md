@@ -11,7 +11,7 @@ create(index, options = null)
 
 ## Arguments
 
-| Arguments     | Type        | Description              | Required 
+| Arguments     | Type        | Description              | Required
 |---------------|-------------|--------------------------|-----------
 | ``index``     | String      | Index name               | yes
 | ``options``   | Object      | An object containing query options. | no

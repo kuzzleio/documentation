@@ -2,7 +2,7 @@
 layout: sdk.html
 title: Index
 description: Index Controller
-order: 100
+order: 200
 ---
 
 # Index Controller

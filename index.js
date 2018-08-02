@@ -260,9 +260,6 @@ const metalsmith = Metalsmith(__dirname)
       }
     });
   });
-  
-  
-
 
 metalsmith
   .use(links())
@@ -371,6 +368,7 @@ metalsmith
     '/api-documentation/': '/api-documentation/connecting-to-kuzzle/',
     '/sdk-reference': '/sdk-reference/essentials/',
     '/sdk-reference/index': '/sdk-reference/index/create/',
+    '/sdk-reference/kuzzle': '/sdk-reference/kuzzle/constructor/',
     '/sdk-reference/bulk': '/sdk-reference/bulk/import/',
     '/plugins-reference/': 'plugins-features/',
     '/elasticsearch-cookbook/': '/elasticsearch-cookbook/installation/',

@@ -4,7 +4,7 @@ const TestManager = require('./lib/testManager');
 program
   .version(require('../package.json').version)
   .option('-l, --language <language>', '[Mandatory] The language to test. Available languages are js, go')
-  .option('-f, --file <test_path>', 'The path of a single test to execute, relative to src/sdk-reference')
+  .option('-f, --file <test_path>', 'The path of a single test to execute')
   .parse(process.argv);
 
 if (!program.language) {
@@ -12,5 +12,5 @@ if (!program.language) {
   program.help();
 }
 
-testManager = new TestManager(program.language);
+const testManager = new TestManager(program.language);
 testManager.process(program.file);

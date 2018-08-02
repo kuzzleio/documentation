@@ -21,7 +21,7 @@ module.exports = class TestManager {
 
   process(onlyOnePath) {
     let
-      testsPath = path.join(__dirname, '../../src/sdk-reference/'),
+      testsPath = path.join(__dirname, '../../'),
       tests,
       count = 0,
       allResults = [];
@@ -71,12 +71,17 @@ module.exports = class TestManager {
   }
 
   getAllTests(base, ext, files, result) {
+    if (base.indexOf('scaffolding') !== -1) {
+      return [];
+    }
+
     const suffix = '.test';
     files = files || fs.readdirSync(base);
     result = result || [];
 
-    files.forEach((file) => {
-      var newbase = path.join(base, file);
+    files.forEach(file => {
+      const newbase = path.join(base, file);
+
       if (fs.statSync(newbase).isDirectory()) {
         result = this.getAllTests(newbase, ext, fs.readdirSync(newbase), result);
       } else if (file.substr(-1 * (ext.length + 6)) === `${suffix}.${ext}`) {
