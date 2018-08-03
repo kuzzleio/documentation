@@ -1,5 +1,3 @@
-## Signature
-
 ```javascript
 /**
  * @param {string} index

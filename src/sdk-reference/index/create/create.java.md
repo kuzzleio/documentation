@@ -1,5 +1,3 @@
-## Signature
-
 ``` java
 void create(String index, QueryOptions options)
 void create(String index)
@@ -24,7 +22,7 @@ Additional query options
 
 - one of the standard [Kuzzle exceptions]({{ site_base_path }}/sdk-reference/essentials/exceptions#standard)
 - `PreconditionException` if Kuzzle was not able to process the request due to an invalid state (eg: non-existing collection)
-- `SizeLimit` if the request size exceeds the limits defined by the [Kuzzle configuration]({{ site_base_path }}/guide/essentials/configuration)
+- `SizeLimitException` if the request size exceeds the limits defined by the [Kuzzle configuration]({{ site_base_path }}/guide/essentials/configuration)
 
 ## Usage
 
