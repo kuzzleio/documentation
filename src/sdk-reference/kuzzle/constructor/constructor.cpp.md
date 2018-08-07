@@ -1,5 +1,5 @@
 ```cpp
-Kuzzle(std::string host, options *options = nullptr)
+Kuzzle(std::string host, kuzzleio::options *options = nullptr)
 ```
 
 ## Arguments

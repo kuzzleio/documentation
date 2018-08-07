@@ -1,7 +1,7 @@
 ## Signature
 
 ``` cpp
-bool exists(std::string index, query_options *options = null)
+bool exists(std::string index, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments

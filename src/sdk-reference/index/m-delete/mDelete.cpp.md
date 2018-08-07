@@ -1,7 +1,7 @@
 ## Signature
 
 ``` cpp
-std::vector<std::string> mDelete(std::vector<std::string> indexes, query_options *options = null)
+std::vector<std::string> mDelete(std::vector<std::string> indexes, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments

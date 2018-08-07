@@ -1,7 +1,7 @@
 ## Signature
 
 ``` cpp
-void setAutoRefresh(std::string index, bool autoRefresh, query_options *options = null)
+void setAutoRefresh(std::string index, bool autoRefresh, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
