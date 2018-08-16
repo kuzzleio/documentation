@@ -27,6 +27,7 @@ const redirect = require('metalsmith-redirect');
 const uglifyjs = require("metalsmith-uglifyjs");
 const concat = require("metalsmith-concat");
 
+const include = require('./plugins/include');
 const snippetManager = require('./plugins/snippetManager');
 const sectionManager = require('./plugins/sectionManager');
 const saveSrc = require('./plugins/save-src');
@@ -302,17 +303,8 @@ metalsmith
   .use(markdown({
     renderer: newMDRenderer
   }))
-  .use((files, metalsmith, done) => {
-    for (const file in files) {
-      if (file.endsWith('index.html')) {
-        const sectionsData = sectionManager.process(file, files[file], handlebars);
-        files[file].contents = sectionsData['fileContent'];
-        files[file]['has_section'] = sectionsData['has_section'];
-        files[file]['sections'] = sectionsData['sections'];
-      }
-    }
-    setImmediate(done);
-  })
+  .use(include())
+  .use(sectionManager(handlebars))
   .use((files, metalsmith, done) => {
     for (const file in files) {
       if (file.endsWith('index.html')) {

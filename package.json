@@ -21,6 +21,7 @@
         "bluebird": "^3.5.1",
         "cheerio": "^0.22.0",
         "express": "^4.16.3",
+        "globby": "^8.0.1",
         "handlebars": "^4.0.8",
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
