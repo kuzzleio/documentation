@@ -19,7 +19,7 @@ module.exports = class GoTester extends Tester {
 
     return new Promise((resolve, reject) => {
       nexpect
-        .spawn(this.runCommand + fileName)
+        .spawn(this.runCommand + fileName, { stream:'all' })
         .wait(expected, result => {
           if (result === expected) {
             resolve();
