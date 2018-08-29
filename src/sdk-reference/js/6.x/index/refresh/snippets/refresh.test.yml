@@ -1,0 +1,7 @@
+name: refresh
+description: Force Elasticsearch search index update
+hooks:
+  before: curl -X POST kuzzle:7512/nyc-open-data/_create
+  after:
+template: default
+expect: 0 shards fail to refresh

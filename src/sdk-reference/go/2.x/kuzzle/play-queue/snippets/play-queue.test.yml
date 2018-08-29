@@ -1,0 +1,7 @@
+name: playQueue
+description: Play the requests queued
+hooks:
+  before:
+  after:
+template: standalone
+expect: Success

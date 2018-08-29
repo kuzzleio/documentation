@@ -1,0 +1,7 @@
+name: constructor
+description: Create a new Kuzzle instance connected to Kuzzle
+hooks:
+  before:
+  after:
+template: blank
+expect: Everything is ok

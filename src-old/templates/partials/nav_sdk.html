@@ -1,0 +1,51 @@
+<!-- Main navigation -->
+<nav class="md-nav md-nav--primary" data-md-level="0">
+    <label class="md-nav__title md-nav__title--site" for="drawer">
+        <span class="md-nav__button md-logo">
+            <img src="/assets/images/logo-min.png" width="48" height="48" />
+        </span>
+        <span style="padding-top: 19px;display: block;">
+            Kuzzle documentation
+        </span>
+    </label>
+    <div class="md-nav__source">
+        <a href="/guide" title="Guides" class="md-source" data-md-state="done" style="display:inline-block;">
+            <div class="md-source__repository">Guides</div>
+        </a>
+        <a href="/sdk-reference" title="SDKs" class="md-source" data-md-state="done" style="display:inline-block;">
+            <div class="md-source__repository">SDKs</div>
+        </a>
+        <a href="/api" title="API" class="md-source" data-md-state="done" style="display:inline-block;">
+            <div class="md-source__repository">API</div>
+        </a>
+    </div>
+    <!-- Render item list -->
+    <ul class="md-nav__list" data-md-scrollfix>
+      {{#each ancestry.parent.ancestry.siblings as |parent|}}
+        <li class="md-nav__item">
+            <a class="md-nav__link"  href="{{ ../site_base_path }}{{ parent.path }}">{{ parent.title }}</a>
+        </li>
+          <ul class="md-nav__list sub-menu">
+            {{#each parent.ancestry.children as |children|}}
+              {{#if (eq ../../ancestry.parent.path parent.path)}}
+                {{#if children.title}}
+                  {{#if (eq ../../path children.path)}}
+                    <li class="md-nav__item active">
+                        <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link--active">
+                            {{firstDefinedOf subheader-title title}}
+                        </a>
+                    </li>
+                  {{else}}
+                    <li class="md-nav__item">
+                        <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link">
+                            {{firstDefinedOf subheader-title title}}
+                        </a>
+                    </li>
+                  {{/if}}
+                {{/if}}
+              {{/if}}
+            {{/each}}
+          </ul>
+      {{/each}}
+    </ul>
+</nav>

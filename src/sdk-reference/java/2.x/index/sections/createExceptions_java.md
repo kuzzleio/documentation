@@ -1,0 +1,3 @@
+## Exceptions
+
+Throw a KuzzleException
