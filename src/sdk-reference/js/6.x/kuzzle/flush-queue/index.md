@@ -11,11 +11,12 @@ order: 200
 Empties the offline request queue without playing it.
 
 ## Signature
+
 ```javascript
 /**
-* @returns {Kuzzle} this
+ * @returns {Kuzzle} this
  */
-flushQueue()
+flushQueue();
 ```
 
 ## Return
@@ -25,4 +26,3 @@ The `Kuzzle` instance.
 ## Usage
 
 [code-example=flush-queue]
-

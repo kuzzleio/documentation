@@ -12,20 +12,22 @@ Adds a listener to an event.
 When an event is triggered, listeners are triggered in the order in which they were added.
 
 ## Signature
+
 ```cpp
 kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::Event event, kuzzleio::EventListener* listener)
 ```
 
 ## Arguments
 
-| Argument | Type | Description | Required |
-|--------|------|-------------|------------ |
-| `event` | Event | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling)  | yes |
-| `listener` | kuzzleio::EventListener* | A pointer to an instance of an `EventListener` | yes |
+| Argument   | Type                      | Description                                                                                            | Required |
+| ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------ | -------- |
+| `event`    | Event                     | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes      |
+| `listener` | kuzzleio::EventListener\* | A pointer to an instance of an `EventListener`                                                         | yes      |
 
-### __event__
+### **event**
 
 One of the following event:
+
 ```cpp
 CONNECTED
 DISCARDED
@@ -40,10 +42,11 @@ JWT_EXPIRED
 ERROR
 ```
 
-### __listener__
+### **listener**
 
 An instance of a class that inherits from `kuzzleio::EventListener`.  
 This class must implement the following method:
+
 ```cpp
 class MyListener : public kuzzleio::EventListener {
   public:
@@ -60,4 +63,3 @@ The `Kuzzle` instance.
 ## Usage
 
 [code-example=add-listener]
-

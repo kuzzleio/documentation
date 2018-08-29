@@ -12,29 +12,29 @@ Deletes multiple indexes at once.
 
 ## Signature
 
-``` javascript
+```javascript
 /**
  * @param {array} indexes
  * @param {object} [options]
  * @returns {Promise.<Array>}
  */
-mDelete(indexes, options = null)
+mDelete(indexes, (options = null));
 ```
 
 ## Arguments
 
-| Arguments     | Type        | Description                         | Required
-|---------------|-------------|-------------------------------------|----------
-| ``indexes``   | Array      | An array of strings containing indexes names | yes
-| ``options``   | Object      | An object containing query options. | no
+| Arguments | Type   | Description                                  | Required |
+| --------- | ------ | -------------------------------------------- | -------- |
+| `indexes` | Array  | An array of strings containing indexes names | yes      |
+| `options` | Object | An object containing query options.          | no       |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Property | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true` |
+| Property   | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Resolve
 

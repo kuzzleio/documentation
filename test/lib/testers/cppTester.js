@@ -1,5 +1,4 @@
-const
-  fileHelper = require('../helpers/file'),
+const fileHelper = require('../helpers/file'),
   Tester = require('./tester'),
   nexpect = require('nexpect'),
   childProcess = require('child_process');
@@ -9,9 +8,12 @@ module.exports = class CppTester extends Tester {
     super();
     this.sdkPath = 'test/bin/sdk-cpp';
     this.language = 'cpp';
-    this.compileCommand = `g++ -I${this.sdkPath}/include -L${this.sdkPath}/lib -lkuzzlesdk -lpthread`;
+    this.compileCommand = `g++ -I${this.sdkPath}/include -L${
+      this.sdkPath
+    }/lib -lkuzzlesdk -lpthread`;
     this.runCommand = '';
-    this.lintCommand = 'cpplint --filter=-legal/copyright,-whitespace/line_length';
+    this.lintCommand =
+      'cpplint --filter=-legal/copyright,-whitespace/line_length';
     this.executablePath = '';
   }
 
@@ -19,7 +21,9 @@ module.exports = class CppTester extends Tester {
     process.env.LD_LIBRARY_PATH = `./${this.sdkPath}/lib`;
     this.executablePath = generatedFilePath.split('.')[0];
 
-    childProcess.execSync(`${this.compileCommand} -o ${this.executablePath} ${generatedFilePath}`);
+    childProcess.execSync(
+      `${this.compileCommand} -o ${this.executablePath} ${generatedFilePath}`
+    );
 
     return new Promise((resolve, reject) => {
       nexpect
@@ -64,7 +68,7 @@ module.exports = class CppTester extends Tester {
         .spawn(`${this.lintCommand} ${generatedFilePath}`, { stream: 'all' })
         .wait(expected)
         .run((error, output) => {
-          if (! error) {
+          if (!error) {
             resolve();
             return;
           }

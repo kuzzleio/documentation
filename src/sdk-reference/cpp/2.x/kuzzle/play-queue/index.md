@@ -12,6 +12,7 @@ Play the requests queued during `offline` state.
 Works only if the SDK is not in a `offline` state, and if the `autoReplay` option is set to `false`.
 
 ## Signature
+
 ```cpp
 kuzzleio::Kuzzle* playQueue()
 ```
@@ -23,4 +24,3 @@ The `Kuzzle` instance.
 ## Usage
 
 [code-example=play-queue]
-

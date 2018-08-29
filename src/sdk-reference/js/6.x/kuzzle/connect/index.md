@@ -9,7 +9,7 @@ order: 200
 # connect
 
 Connects to Kuzzle using the `host` property provided in the constructor options.  
-Subsequent call have no effect if the SDK is already connected.  
+Subsequent call have no effect if the SDK is already connected.
 
 ## Signature
 
@@ -17,7 +17,7 @@ Subsequent call have no effect if the SDK is already connected.
 /**
  * @returns {Promise}
  */
-connect()
+connect();
 ```
 
 ## Resolve
@@ -31,4 +31,3 @@ Reject with a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/error-
 ## Usage
 
 [code-example=connect]
-

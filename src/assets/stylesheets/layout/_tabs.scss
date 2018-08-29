@@ -42,14 +42,12 @@
   &__link {
     display: block;
     margin-top: 1.6rem;
-    transition:
-      transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1),
-      opacity   0.25s;
+    transition: transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.25s;
     font-size: 1.5rem;
     opacity: 1;
 
     &:after {
-      content: "";
+      content: '';
       width: 0%;
       transition: width 0.3s;
       height: 1px;
@@ -63,7 +61,7 @@
       opacity: 1;
 
       &:after {
-        width: 100%
+        width: 100%;
       }
     }
 
@@ -76,24 +74,20 @@
   }
 
   // Fade-out tabs background upon scrolling
-  &[data-md-state="hidden"] {
+  &[data-md-state='hidden'] {
     pointer-events: none;
 
     // Hide tabs upon scrolling - disable transition to minimizes repaints whilte
     // scrolling down, while scrolling up seems to be okay
     .md-tabs__link {
       transform: translateY(50%);
-      transition:
-        color     0.25s,
-        transform 0s 0.4s,
-        opacity   0.1s;
+      transition: color 0.25s, transform 0s 0.4s, opacity 0.1s;
       opacity: 0;
     }
   }
 
   // [screen +]: Adjust main navigation styles
   @include break-from-device(screen) {
-
     // Hide 1st level nested items, as they are listed in the tabs by setting
     // font-size to zero, as we need to preserve bottom padding
     ~ .md-main .md-nav--primary > .md-nav__list > .md-nav__item--nested {
@@ -103,10 +97,8 @@
 
     // We're on the 2nd+ level
     &--active ~ .md-main {
-
       // Adjust 1st level styles
       .md-nav--primary {
-
         // Show title and remove spacing
         .md-nav__title {
           display: block;
@@ -149,7 +141,7 @@
       }
 
       // Always expand nested navigation on 2nd level
-      .md-nav[data-md-level="1"] {
+      .md-nav[data-md-level='1'] {
         max-height: initial;
         overflow: visible;
 

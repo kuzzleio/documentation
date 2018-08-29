@@ -15,7 +15,7 @@ kuzzle
   .query(request)
   .then(response => {
     if (response.created) {
-      console.log("Document created");
+      console.log('Document created');
     }
     console.log(response);
     /*
@@ -39,5 +39,5 @@ kuzzle
     */
   })
   .catch(error => {
-    console.error(error.message)
+    console.error(error.message);
   });

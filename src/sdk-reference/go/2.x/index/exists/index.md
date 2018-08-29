@@ -18,18 +18,18 @@ Exists(index string, options types.QueryOptions) (bool, error)
 
 ## Arguments
 
-| Arguments     | Type        | Description                            | Required
-|---------------|-------------|----------------------------------------|----------
-| ``index``     | String      | Index name               | yes
-| ``options``   | QueryOptions | A structure containing query options. | no
+| Arguments | Type         | Description                           | Required |
+| --------- | ------------ | ------------------------------------- | -------- |
+| `index`   | String       | Index name                            | yes      |
+| `options` | QueryOptions | A structure containing query options. | no       |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`    |
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
 

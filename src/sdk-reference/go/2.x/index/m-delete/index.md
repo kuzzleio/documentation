@@ -18,18 +18,18 @@ MDelete(indexes []string, options types.QueryOptions) ([]string, error)
 
 ## Arguments
 
-| Arguments     | Type        | Description                            | Required
-|---------------|-------------|----------------------------------------|----------
-| ``indexes``   | Array       | An array of strings containing indexes names. | yes
-| ``options``   | QueryOptions | A structure containing query options. | no
+| Arguments | Type         | Description                                   | Required |
+| --------- | ------------ | --------------------------------------------- | -------- |
+| `indexes` | Array        | An array of strings containing indexes names. | yes      |
+| `options` | QueryOptions | A structure containing query options.         | no       |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`    |
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
 

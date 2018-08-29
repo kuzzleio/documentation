@@ -1,5 +1,4 @@
-const
-  color = require('colors/safe'),
+const color = require('colors/safe'),
   jsonfile = require('jsonfile'),
   path = require('path'),
   fs = require('fs');
@@ -7,10 +6,12 @@ const
 /* eslint-disable no-console */
 
 class Logger {
-
   reportOk(test, language) {
     this.reportToJson(test, false, language);
-    console.log(color.green('✔'), color.green(`${test.name}: ${test.description}`));
+    console.log(
+      color.green('✔'),
+      color.green(`${test.name}: ${test.description}`)
+    );
   }
 
   reportNOk(test, err, language) {
@@ -25,9 +26,9 @@ class Logger {
   }
 
   reportToJson(test, err, language) {
-    const reportFile = path.join(__dirname, '../../../reports/') + 'report.json';
-    let
-      report = {},
+    const reportFile =
+      path.join(__dirname, '../../../reports/') + 'report.json';
+    let report = {},
       status;
 
     if (fs.existsSync(reportFile)) {
@@ -53,8 +54,8 @@ class Logger {
       language: language,
       datetime: new Date().toLocaleString(),
       status: status,
-      error: (err) ? {code: err.code, got: err.actual} : {},
-      file: (err && typeof err.file !== 'undefined') ? err.file : ''
+      error: err ? { code: err.code, got: err.actual } : {},
+      file: err && typeof err.file !== 'undefined' ? err.file : ''
     };
 
     jsonfile.writeFileSync(reportFile, report);

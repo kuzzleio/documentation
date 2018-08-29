@@ -12,25 +12,24 @@ Deletes multiple indexes at once.
 
 ## Signature
 
-``` cpp
+```cpp
 std::vector<std::string> mDelete(std::vector<std::string> indexes, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
 
-| Arguments     | Type        | Description               | Required
-|---------------|-------------|---------------------------|----------
-| ``indexes``   | `std::vector<std::string>` | containing list of indexes names| yes
-| ``options``   | query_options | A pointer to a `query_options` containing query options| no
+| Arguments | Type                       | Description                                             | Required |
+| --------- | -------------------------- | ------------------------------------------------------- | -------- |
+| `indexes` | `std::vector<std::string>` | containing list of indexes names                        | yes      |
+| `options` | query_options              | A pointer to a `query_options` containing query options | no       |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`    |
-
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
 

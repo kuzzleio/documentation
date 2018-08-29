@@ -11,6 +11,7 @@ order: 200
 Empties the offline request queue without playing it.
 
 ## Signature
+
 ```cpp
 kuzzleio::Kuzzle* flushQueue()
 ```
@@ -22,4 +23,3 @@ The `Kuzzle` instance.
 ## Usage
 
 [code-example=flush-queue]
-

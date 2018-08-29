@@ -1,1 +1,1 @@
-kuzzle.playQueue()
+kuzzle.playQueue();

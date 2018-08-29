@@ -1,7 +1,7 @@
 name: addListener
 description: Add a listener to an event
 hooks:
-  before:
-  after:
+  ? before
+  ? after
 template: standalone
 expect: Success

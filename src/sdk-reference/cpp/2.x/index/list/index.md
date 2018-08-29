@@ -12,24 +12,23 @@ Get the complete list of data indexes handled by Kuzzle.
 
 ## Signature
 
-``` cpp
+```cpp
 std::vector<std::string> list(kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
 
-| Arguments     | Type        | Description               | Required
-|---------------|-------------|---------------------------|----------
-| ``options``   | query_options | A pointer to a `query_options` containing query options| no
+| Arguments | Type          | Description                                             | Required |
+| --------- | ------------- | ------------------------------------------------------- | -------- |
+| `options` | query_options | A pointer to a `query_options` containing query options | no       |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`    |
-
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
 

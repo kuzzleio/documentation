@@ -18,17 +18,17 @@ List(options types.QueryOptions) ([]string, error)
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``options``   | QueryOptions | A structure containing query options. |
+| Arguments | Type         | Description                           |
+| --------- | ------------ | ------------------------------------- |
+| `options` | QueryOptions | A structure containing query options. |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`    |
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
 

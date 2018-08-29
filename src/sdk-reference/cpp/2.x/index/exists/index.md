@@ -12,25 +12,24 @@ Checks if the given index exists in Kuzzle.
 
 ## Signature
 
-``` cpp
+```cpp
 bool exists(std::string index, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
 
-| Arguments     | Type        | Description                            | Required
-|---------------|-------------|----------------------------------------|----------
-| ``index``     | std::string  | Index name              | yes
-| ``options``   | query_options | A pointer to a `query_options` containing query options| no
+| Arguments | Type          | Description                                             | Required |
+| --------- | ------------- | ------------------------------------------------------- | -------- |
+| `index`   | std::string   | Index name                                              | yes      |
+| `options` | query_options | A pointer to a `query_options` containing query options | no       |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`    |
-
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
 
@@ -43,4 +42,3 @@ Throws a `KuzzleException` if there is an error. See how to [handle error]({{ si
 ## Usage
 
 [code-example=exists]
-

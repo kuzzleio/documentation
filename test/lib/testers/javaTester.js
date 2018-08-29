@@ -1,5 +1,4 @@
-const
-  Tester = require('./tester'),
+const Tester = require('./tester'),
   path = require('path'),
   fileHelper = require('../helpers/file'),
   nexpect = require('nexpect');
@@ -12,7 +11,7 @@ module.exports = class JavaTester extends Tester {
     this.lintCommand = 'javac -cp test/bin/sdk-java.jar test/bin/';
   }
 
-  runExpect (generatedFilePath, expected) {
+  runExpect(generatedFilePath, expected) {
     const generatedFilename = path.basename(generatedFilePath, '.java');
 
     return new Promise((resolve, reject) => {
@@ -50,7 +49,7 @@ module.exports = class JavaTester extends Tester {
     });
   }
 
-  lintExpect (generatedFilePath) {
+  lintExpect(generatedFilePath) {
     const generatedFilename = path.basename(generatedFilePath);
 
     return new Promise((resolve, reject) => {

@@ -1,1 +1,1 @@
-kuzzle.startQueuing()
+kuzzle.startQueuing();

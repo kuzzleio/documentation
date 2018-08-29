@@ -12,25 +12,25 @@ Deletes multiple indexes at once.
 
 ## Signature
 
-``` java
+```java
 StringVector mDelete(StringVector indexes, QueryOptions options)
 StringVector mDelete(StringVector indexes)
 ```
 
 ## Arguments
 
-| Arguments     | Type         | Description              | Required
-|---------------|------------- |--------------------------|-----------
-| ``indexes``   | StringVector | List of indexes names     | yes
-| ``options``   | QueryOptions | The query options       | no
+| Arguments | Type         | Description           | Required |
+| --------- | ------------ | --------------------- | -------- |
+| `indexes` | StringVector | List of indexes names | yes      |
+| `options` | QueryOptions | The query options     | no       |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`    |
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
 

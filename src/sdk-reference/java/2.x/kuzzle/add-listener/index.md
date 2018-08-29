@@ -12,20 +12,22 @@ Adds a listener to an event.
 When an event is triggered, listeners are triggered in the order in which they were added.
 
 ## Signature
+
 ```java
 KuzzleEventEmitter addListener(Event event, EventListener listener)
 ```
 
 ## Arguments
 
-| Argument | Type | Description | Required |
-|--------|------|-------------|------------ |
-| `event` | Event | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes |
-| `listener` | EventListener | An instance of an `EventListener` | yes |
+| Argument   | Type          | Description                                                                                            | Required |
+| ---------- | ------------- | ------------------------------------------------------------------------------------------------------ | -------- |
+| `event`    | Event         | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes      |
+| `listener` | EventListener | An instance of an `EventListener`                                                                      | yes      |
 
-### __event__
+### **event**
 
 One of the following event:
+
 ```java
 Event.CONNECTED
 Event.DISCARDED
@@ -40,9 +42,9 @@ Event.JWT_EXPIRED
 Event.ERROR
 ```
 
-### __listener__
+### **listener**
 
-An instance of an `EventListener`.  
+An instance of an `EventListener`.
 
 ## Return
 
@@ -51,4 +53,3 @@ The `Kuzzle` instance.
 ## Usage
 
 [code-example=add-listener]
-

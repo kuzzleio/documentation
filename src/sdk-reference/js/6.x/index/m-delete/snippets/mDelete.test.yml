@@ -2,6 +2,6 @@ name: mDelete
 description: Delete multiple indexes
 hooks:
   before: curl -X POST kuzzle:7512/nyc-open-data/_create ; curl -X POST kuzzle:7512/mtp-open-data/_create
-  after:
+  ? after
 template: default
 expect: Successfully deleted 2 indexes

@@ -1,1 +1,1 @@
-kuzzle.flushQueue()
+kuzzle.flushQueue();

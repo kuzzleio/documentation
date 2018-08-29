@@ -12,24 +12,24 @@ Get the complete list of data indexes handled by Kuzzle.
 
 ## Signature
 
-``` java
+```java
 StringVector list(QueryOptions options)
 StringVector list()
 ```
 
 ## Arguments
 
-| Arguments     | Type        | Description |
-|---------------|-------------|----------------------------------------|
-| ``options``   | QueryOptions | The query options |
+| Arguments | Type         | Description       |
+| --------- | ------------ | ----------------- |
+| `options` | QueryOptions | The query options |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`    |
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
 

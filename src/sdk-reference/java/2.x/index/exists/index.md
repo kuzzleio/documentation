@@ -12,27 +12,25 @@ Checks if the given index exists in Kuzzle.
 
 ## Signature
 
-``` java
+```java
 boolean exists(String index, QueryOptions options)
 boolean exists(String index)
 ```
 
 ## Arguments
 
-| Arguments     | Type         | Description              | Required
-|---------------|------------- |--------------------------|-----------
-| ``index``     | String       | Index name               | yes
-| ``options``   | QueryOptions | The query options       | no
+| Arguments | Type         | Description       | Required |
+| --------- | ------------ | ----------------- | -------- |
+| `index`   | String       | Index name        | yes      |
+| `options` | QueryOptions | The query options | no       |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`    |
-
-
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
 
@@ -45,4 +43,3 @@ Throws a `KuzzleException` if there is an error. See how to [handle error]({{ si
 ## Usage
 
 [code-example=exists]
-

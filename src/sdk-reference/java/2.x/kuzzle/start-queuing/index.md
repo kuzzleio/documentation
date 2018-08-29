@@ -9,9 +9,10 @@ order: 200
 # startQueuing
 
 Starts the requests queuing.  
-Works only in `offline` state, and if the `autoQueue` option is set to false.  
+Works only in `offline` state, and if the `autoQueue` option is set to false.
 
 ## Signature
+
 ```java
 Kuzzle startQueuing()
 ```
@@ -23,4 +24,3 @@ The `Kuzzle` instance.
 ## Usage
 
 [code-example=start-queuing]
-

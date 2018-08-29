@@ -12,7 +12,7 @@ The setAutoRefresh action allows to set the autorefresh flag for the index.
 
 Each index has an autorefresh flag.  
 When set to true, each write request trigger a [refresh](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-refresh.html) action on Elasticsearch.  
-Without a refresh after a write request, the documents may not be immediately visible in search.  
+Without a refresh after a write request, the documents may not be immediately visible in search.
 
 <div class="alert alert-info">
 A refresh operation comes with some performance costs.  
@@ -22,40 +22,39 @@ we recommend that you avoid using it in production or at least carefully monitor
 
 ## Signature
 
-``` javascript
+```javascript
 /**
  * @param {string} index
  * @param {boolean} autoRefresh
  * @param {object} [options]
  * @returns {Promise.<Object>}
  */
-setAutoRefresh(index, autoRefresh, options = null)
+setAutoRefresh(index, autoRefresh, (options = null));
 ```
 
 ## Arguments
 
-| Arguments     | Type        | Description                         | Required
-|---------------|-------------|-------------------------------------|----------
-| ``index``     | String      | Index name | yes
-| ``autoRefresh``| Boolean    | autoRefresh flag | yes
-| ``options``   | Object      | An object containing query options | no
+| Arguments     | Type    | Description                        | Required |
+| ------------- | ------- | ---------------------------------- | -------- |
+| `index`       | String  | Index name                         | yes      |
+| `autoRefresh` | Boolean | autoRefresh flag                   | yes      |
+| `options`     | Object  | An object containing query options | no       |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Property | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true` |
+| Property   | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Resolve
 
 Resolve to an object containing the new value of autorefresh flag.
 
-| Name | Type | Description
-|------|------|-------------
-| response | boolean | new value for the autorefresh flag of the index
-
+| Name     | Type    | Description                                     |
+| -------- | ------- | ----------------------------------------------- |
+| response | boolean | new value for the autorefresh flag of the index |
 
 ## Usage
 

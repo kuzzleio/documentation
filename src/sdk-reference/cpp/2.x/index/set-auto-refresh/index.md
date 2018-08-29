@@ -12,7 +12,7 @@ The setAutoRefresh action allows to set the autorefresh flag for the index.
 
 Each index has an autorefresh flag.  
 When set to true, each write request trigger a [refresh](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-refresh.html) action on Elasticsearch.  
-Without a refresh after a write request, the documents may not be immediately visible in search.  
+Without a refresh after a write request, the documents may not be immediately visible in search.
 
 <div class="alert alert-info">
 A refresh operation comes with some performance costs.  
@@ -22,25 +22,25 @@ we recommend that you avoid using it in production or at least carefully monitor
 
 ## Signature
 
-``` cpp
+```cpp
 void setAutoRefresh(std::string index, bool autoRefresh, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
 
-| Arguments     | Type        | Description               | Required
-|---------------|-------------|---------------------------|----------
-| ``index``     | std::string  | Index name | yes
-| ``autoRefresh`` | Boolean  | autoRefresh flag | yes
-| ``options``   | query_options | A pointer to a `query_options` containing query options| no
+| Arguments     | Type          | Description                                             | Required |
+| ------------- | ------------- | ------------------------------------------------------- | -------- |
+| `index`       | std::string   | Index name                                              | yes      |
+| `autoRefresh` | Boolean       | autoRefresh flag                                        | yes      |
+| `options`     | query_options | A pointer to a `query_options` containing query options | no       |
 
-### __Options__
+### **Options**
 
 Additional query options
 
-| Option   | Type    | Description                       | Default |
-| -------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`    |
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Exceptions
 
@@ -49,4 +49,3 @@ Throws a `KuzzleException` if there is an error. See how to [handle error]({{ si
 ## Usage
 
 [code-example=setAutoRefresh]
-

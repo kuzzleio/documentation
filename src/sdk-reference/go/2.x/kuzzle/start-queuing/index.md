@@ -9,9 +9,10 @@ order: 200
 # startQueuing
 
 Starts the requests queuing.  
-Works only in `offline` state, and if the `autoQueue` option is set to false.  
+Works only in `offline` state, and if the `autoQueue` option is set to false.
 
 ## Signature
+
 ```go
 StartQueuing()
 ```
@@ -19,4 +20,3 @@ StartQueuing()
 ## Usage
 
 [code-example=start-queuing]
-

@@ -7,10 +7,12 @@ order: 200
 ---
 
 # stopQueuing
+
 Stops the requests queuing.  
-Works only in `offline` state, and if the `autoQueue` option is set to false.  
+Works only in `offline` state, and if the `autoQueue` option is set to false.
 
 ## Signature
+
 ```java
 Kuzzle stopQueuing()
 ```
@@ -22,4 +24,3 @@ The `Kuzzle` instance.
 ## Usage
 
 [code-example=stop-queuing]
-

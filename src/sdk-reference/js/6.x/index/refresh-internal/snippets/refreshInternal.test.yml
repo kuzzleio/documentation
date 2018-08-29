@@ -1,7 +1,7 @@
 name: refreshInternal
 description: Force refresh of Kuzzle internal index
 hooks:
-  before:
-  after:
+  ? before
+  ? after
 template: default
 expect: Internal index successfully refreshed

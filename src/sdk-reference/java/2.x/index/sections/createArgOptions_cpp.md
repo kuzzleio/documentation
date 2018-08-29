@@ -12,7 +12,6 @@ kuzzleio::query_options options = {0};
 options.queuable = false;
 </pre>
 
-
 | Option   | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
 | queuable | boolean | Make this request queuable or not | true    |

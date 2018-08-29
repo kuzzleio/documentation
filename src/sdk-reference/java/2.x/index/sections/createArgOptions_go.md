@@ -13,7 +13,6 @@ opts := types.NewQueryOptions()
 opts.setQueuable(false)
 </pre>
 
-
 | Property | Type    | Description                       | Default |
 | -------- | ------- | --------------------------------- | ------- |
 | queuable | boolean | Make this request queuable or not | true    |

@@ -4,13 +4,12 @@
 
 // Content container
 .md-content {
-
   // [tablet landscape +]: Add space for table of contents
   @include break-from-device(tablet landscape) {
     margin-right: 24.2rem;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       margin-right: initial;
       margin-left: 24.2rem;
     }
@@ -21,7 +20,7 @@
     margin-left: 24.2rem;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       margin-right: 24.2rem;
     }
   }
@@ -42,7 +41,7 @@
     &::before {
       display: block;
       height: 0.8rem;
-      content: "";
+      content: '';
     }
 
     // Hack: remove bottom spacing of last element, due to margin collapse

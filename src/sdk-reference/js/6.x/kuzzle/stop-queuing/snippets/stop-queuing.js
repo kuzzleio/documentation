@@ -1,1 +1,1 @@
-kuzzle.stopQueuing()
+kuzzle.stopQueuing();

@@ -1,5 +1,4 @@
-const
-  Tester = require('./tester'),
+const Tester = require('./tester'),
   nexpect = require('nexpect'),
   childProcess = require('child_process');
 
@@ -74,5 +73,4 @@ module.exports = class GoTester extends Tester {
         });
     });
   }
-
 };

@@ -1,5 +1,4 @@
-const
-  fileHelper = require('../helpers/file'),
+const fileHelper = require('../helpers/file'),
   nexpect = require('nexpect'),
   fs = require('fs'),
   childProcess = require('child_process'),
@@ -7,8 +6,7 @@ const
   config = require('../../../getConfig').get();
 
 module.exports = class Tester {
-
-  constructor () {
+  constructor() {
     if (new.target === Tester) {
       throw new TypeError('Cannot construct Tester instances directly');
     }
@@ -21,10 +19,14 @@ module.exports = class Tester {
         return;
       }
 
-      const generatedFilePath = fileHelper.injectSnippet(test, snippetPath, this.language);
+      const generatedFilePath = fileHelper.injectSnippet(
+        test,
+        snippetPath,
+        this.language
+      );
       if (typeof generatedFilePath !== 'string') {
         const err = generatedFilePath;
-        
+
         logger.reportNOk(test, err, this.language);
         reject();
         return;
@@ -43,16 +45,16 @@ module.exports = class Tester {
         // Remove the generated files only if test succeed
         this.clean(generatedFilePath);
         resolve();
-      }
-      catch (err) {
+      } catch (err) {
         fileHelper.saveOnFail(generatedFilePath, test.name, this.language);
 
-        err.file = `${snippetPath.split('src/')[1]}.${config.languages[this.language].ext}`;
+        err.file = `${snippetPath.split('src/')[1]}.${
+          config.languages[this.language].ext
+        }`;
         logger.reportNOk(test, err, this.language);
 
         reject();
-      }
-      finally {
+      } finally {
         if (test.hooks.after) {
           this.runHookCommand(test.hooks.after);
         }
@@ -82,7 +84,7 @@ module.exports = class Tester {
             return;
           }
 
-          if(output.includes(expected)) {
+          if (output.includes(expected)) {
             resolve();
             return;
           }
@@ -101,7 +103,7 @@ module.exports = class Tester {
       nexpect
         .spawn(`${this.lintCommand} ${generatedFilePath}`, { stream: 'all' })
         .wait(this.expectedLintSuccess)
-        .run((error) => {
+        .run(error => {
           if (error) {
             reject(error);
             return;
@@ -113,8 +115,7 @@ module.exports = class Tester {
   }
 
   isTodo(snippetPath, test) {
-    const
-      snippet = `${snippetPath}.${config.languages[this.language].ext}`,
+    const snippet = `${snippetPath}.${config.languages[this.language].ext}`,
       fileContent = fs.readFileSync(snippet, 'utf8');
 
     if (fileContent.match(/(@todo)/g)) {
@@ -132,8 +133,7 @@ module.exports = class Tester {
   }
 
   isWontdo(snippetPath, test) {
-    const
-      snippet = `${snippetPath}.${config.languages[this.language].ext}`,
+    const snippet = `${snippetPath}.${config.languages[this.language].ext}`,
       fileContent = fs.readFileSync(snippet, 'utf8');
 
     if (fileContent.match(/(@wontdo)/g)) {
@@ -157,5 +157,4 @@ module.exports = class Tester {
   clean(generatedFilePath) {
     fileHelper.remove(generatedFilePath);
   }
-
 };

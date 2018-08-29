@@ -1,21 +1,17 @@
-const
-  fs = require('fs'),
+const fs = require('fs'),
   path = require('path'),
   indentString = require('indent-string'),
   sanitize = require('sanitize-filename'),
   config = require('../../../getConfig').get();
 
-
-const
-  TEMPLATE_FOLDER = path.join(__dirname, '../../templates/'),
+const TEMPLATE_FOLDER = path.join(__dirname, '../../templates/'),
   SAVE_FOLDER = path.join(__dirname, '../../../reports/failed/'),
   BIN_FOLDER = path.join(__dirname, '../../bin/'),
   GENERIQUE_JAVA_CLASSNAME = 'CodeExampleGenericClass';
 
 class FileProcess {
-
-  injectSnippet (test, snippetPath, language) {
-    if (! test) {
+  injectSnippet(test, snippetPath, language) {
+    if (!test) {
       const err = {
         code: 'MISSING_TEST_DESCRIPTION',
         actual: 'Missing or empty test.yml file'
@@ -23,8 +19,7 @@ class FileProcess {
       return err;
     }
 
-    const
-      template = `${TEMPLATE_FOLDER}${test.template}.tpl.${language}`,
+    const template = `${TEMPLATE_FOLDER}${test.template}.tpl.${language}`,
       snippet = `${snippetPath}.${config.languages[language].ext}`;
 
     //first check file exist
@@ -47,11 +42,10 @@ class FileProcess {
     }
 
     //get file content
-    let
-      snippetContent = fs.readFileSync(snippet, 'utf8'),
+    let snippetContent = fs.readFileSync(snippet, 'utf8'),
       templateContent = fs.readFileSync(template, 'utf8');
 
-    if (! templateContent.match(/(\[snippet-code])/g)) {
+    if (!templateContent.match(/(\[snippet-code])/g)) {
       const err = {
         code: 'MISSING_TAG',
         expect: '',
@@ -62,10 +56,15 @@ class FileProcess {
 
     //replace snippet in template
     const indentationCount = this.getIndentation(templateContent);
-    const indentedSnippet = this.indentSnippet(snippetContent, indentationCount);
+    const indentedSnippet = this.indentSnippet(
+      snippetContent,
+      indentationCount
+    );
 
-    const
-      newContent = templateContent.replace(/(\[snippet-code])/g, indentedSnippet),
+    const newContent = templateContent.replace(
+        /(\[snippet-code])/g,
+        indentedSnippet
+      ),
       fileName = this.sanitizeFileName(test.name),
       binPath = `${BIN_FOLDER}${fileName}.${language}`;
 
@@ -77,7 +76,7 @@ class FileProcess {
       fs.writeFileSync(binPath, newContent);
     }
 
-    if (! fs.existsSync(binPath)) {
+    if (!fs.existsSync(binPath)) {
       const err = {
         code: 'MISSING_GENERATED_FILE',
         expect: test.expect,
@@ -89,14 +88,14 @@ class FileProcess {
     return binPath;
   }
 
-  indentSnippet (snippet, indentation) {
+  indentSnippet(snippet, indentation) {
     const firstline = snippet.split('\n')[0];
     snippet = snippet.replace(firstline, '');
 
     return firstline + indentString(snippet, indentation);
   }
 
-  getIndentation (template) {
+  getIndentation(template) {
     const matches = template.match(/^.*snippet-code.*$/gm);
 
     return matches[0].match(/^\s*/)[0].length;
@@ -115,13 +114,14 @@ class FileProcess {
   }
 
   sanitizeFileName(fileName) {
-    return sanitize(fileName).replace(' ', '_').toLowerCase();
+    return sanitize(fileName)
+      .replace(' ', '_')
+      .toLowerCase();
   }
 
   overrideClassName(content, name) {
     return content.replace(GENERIQUE_JAVA_CLASSNAME, name);
   }
-
 }
 
 module.exports = new FileProcess();

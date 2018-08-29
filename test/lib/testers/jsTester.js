@@ -1,5 +1,4 @@
-const
-  Tester = require('./tester'),
+const Tester = require('./tester'),
   path = require('path'),
   nexpect = require('nexpect');
 

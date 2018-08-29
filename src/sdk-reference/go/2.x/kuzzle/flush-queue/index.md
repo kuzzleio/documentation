@@ -11,6 +11,7 @@ order: 200
 Empties the offline request queue without playing it.
 
 ## Signature
+
 ```go
 FlushQueue()
 ```
@@ -18,4 +19,3 @@ FlushQueue()
 ## Usage
 
 [code-example=flush-queue]
-

@@ -3,7 +3,10 @@ const TestManager = require('./lib/testManager');
 
 program
   .version(require('../package.json').version)
-  .option('-l, --language <language>', '[Mandatory] The language to test. Available languages are js, go')
+  .option(
+    '-l, --language <language>',
+    '[Mandatory] The language to test. Available languages are js, go'
+  )
   .option('-f, --file <test_path>', 'The path of a single test to execute')
   .parse(process.argv);
 
