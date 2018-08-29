@@ -1,23 +1,21 @@
-const request = {
-  controller: 'document',
-  action: 'create',
-  index: 'nyc-open-data',
-  collection: 'yellow-taxi',
-  _id: 'my-custom-document-id',
-  refresh: 'wait_for', // Additional property allowed for this API action
-  body: {
-    trip_distance: 4.23,
-    passenger_count: 2
-  }
-};
-
 kuzzle
-  .query(request)
+  .query({
+    controller: 'document',
+    action: 'create',
+    index: 'nyc-open-data',
+    collection: 'yellow-taxi',
+    _id: 'my-custom-document-id',
+    refresh: 'wait_for', // Additional property allowed for this API action
+    body: {
+      trip_distance: 4.23,
+      passenger_count: 2
+    }
+  })
   .then(response => {
-    if (response.created) {
+    if (response.result.created) {
       console.log('Document created');
     }
-    console.log(response);
+    console.log(response.result);
     /*
     { _index: 'nyc-open-data',
       _type: 'yellow-taxi',

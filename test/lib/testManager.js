@@ -18,7 +18,7 @@ module.exports = class TestManager {
   }
 
   process(onlyOnePath) {
-    let testsPath = path.join(__dirname, '../../'),
+    let testsPath = path.join(__dirname, '../../src/'),
       tests,
       count = 0,
       allResults = [];
@@ -29,9 +29,15 @@ module.exports = class TestManager {
       tests = this.getAllTests(testsPath, 'yml');
     }
 
-    Bluebird.mapSeries(tests, file => {
-      const test = read.sync(file),
-        snippetPath = file.split('.test.yml')[0];
+    tests = tests.filter(testPath => {
+      return fs.existsSync(
+        `${testPath.split('.test.yml')[0]}.${this.language}`
+      );
+    });
+
+    Bluebird.mapSeries(tests, testPath => {
+      const test = read.sync(testPath),
+        snippetPath = testPath.split('.test.yml')[0];
 
       return this.tester
         .runOneTest(test, snippetPath)

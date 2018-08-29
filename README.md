@@ -52,14 +52,14 @@ description: <(optional) Text appearing under the section name in the section li
 ```
 
 To add alert box just put in your markdown :
-``` html
+
+```html
   <div class="alert alert-info">
     lorem ipsum
   </div>
 ```
 
 supported classes are : `alert-infos`, `alert-success`, `alert-warning`
-
 
 ## Adding code example
 
@@ -109,8 +109,8 @@ To write tests for code-example, you have to put an YAML file in front of snippe
 name: Create document
 description: Create a document in collection
 hooks:
-  before:
-  after:
+  ? before
+  ? after
 template: default
 expect: document created successfully
 ```
@@ -137,7 +137,7 @@ kuzzle.on('networkError', error => {
 kuzzle
   .connect()
   .then(() => {
-    return [snippet-code];
+    return [snippet - code];
   })
   .then(() => {
     kuzzle.disconnect();
@@ -176,47 +176,4 @@ The following example launches a single test in Javascript using the running Kuz
 
 ```bash
    sh run_test.sh -n -l js -f index/code-example/delete.yml
-```
-
-## Scaffolding tool
-
-Creating the files needed to document SDK actions can be a boring task.  
-A scaffolding tool automatically creates all the files needed to document a sdk action.  
-
-```bash
-$ npm run scaffold -- full -c index -a templateMeMaster
-```
-
-Will generate the following files:
-
-```
-$ tree src/sdk-reference/index/template-me-master
-├── index.md
-├── snippets
-│   ├── templateMeMaster.cpp
-│   ├── templateMeMaster.go
-│   ├── templateMeMaster.java
-│   ├── templateMeMaster.js
-│   └── templateMeMaster.test.yml
-├── template-me-master.cpp.md
-├── template-me-master.go.md
-├── template-me-master.java.md
-└── template-me-master.js.md
-```
-
-You can also generate only a set of snippets files for a controller action:
-
-```bash
-$ npm run scaffold -- snippet -c index -a templateMeMaster -s someFunction
-```
-
-Will generate the following files:
-
-```
-$ tree src/sdk-reference/index/template-me-master/snippets
-├── someFunction.cpp
-├── someFunction.go
-├── someFunction.java
-├── someFunction.js
-└── someFunction.test.yml
 ```
