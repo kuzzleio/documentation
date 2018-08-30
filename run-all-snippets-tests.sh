@@ -18,5 +18,6 @@ for language in js go cpp java; do
   fi
 
   curl -X POST localhost:7512/admin/_resetKuzzleData
+  curl -X POST localhost:7512/admin/_resetDatabase
 
 done

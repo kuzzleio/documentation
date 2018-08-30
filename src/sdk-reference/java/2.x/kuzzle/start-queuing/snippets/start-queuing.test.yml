@@ -3,5 +3,5 @@ description: Starts the requests queuing
 hooks:
   before:
   after:
-template: standalone
+template: without-connect
 expect: Success

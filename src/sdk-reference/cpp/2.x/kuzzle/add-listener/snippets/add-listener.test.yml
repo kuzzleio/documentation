@@ -3,5 +3,5 @@ description: Add a listener to an event
 hooks:
   before:
   after:
-template: standalone
+template: without-connect
 expect: Success

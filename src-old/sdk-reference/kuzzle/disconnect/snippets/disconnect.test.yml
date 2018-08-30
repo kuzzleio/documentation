@@ -3,5 +3,5 @@ description: Disconnect the SDK
 hooks:
   before:
   after:
-template: standalone
+template: without-connect
 expect: Success
