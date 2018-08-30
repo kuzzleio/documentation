@@ -109,8 +109,8 @@ To write tests for code-example, you have to put an YAML file in front of snippe
 name: Create document
 description: Create a document in collection
 hooks:
-  ? before
-  ? after
+  before:
+  after:
 template: default
 expect: document created successfully
 ```
@@ -129,15 +129,10 @@ const kuzzle = new Kuzzle('websocket', {
   autoReconnect: false
 });
 
-// add a listener to detect any connection problems
-kuzzle.on('networkError', error => {
-  console.error('Network Error:' + error);
-});
-
 kuzzle
   .connect()
   .then(() => {
-    return [snippet - code];
+    return [snippet-code];
   })
   .then(() => {
     kuzzle.disconnect();
@@ -154,7 +149,7 @@ It's possible to play test locally by running at the root of the project
    sh run_test.sh -l <language>
 ```
 
-Where `<language>` specifies the language to test (currently available languages are `js` and `go`). This will launch a Kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .
+Where `<language>` specifies the language to test (currently available languages are `js`, `go`, `cpp` and `java`). This will launch a Kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .
 
 There are more available options. Using `-n` will prevent the script to launch the Kuzzle stack:
 

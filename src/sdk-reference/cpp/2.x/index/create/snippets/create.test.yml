@@ -2,6 +2,6 @@ name: create
 description: create a new index
 hooks:
   before: curl -X DELETE kuzzle:7512/nyc-open-data
-  ? after
+  after:
 template: default
 expect: index created
