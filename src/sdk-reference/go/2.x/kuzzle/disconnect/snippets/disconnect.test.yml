@@ -4,4 +4,4 @@ hooks:
   before:
   after:
 template: default
-expect: Success
+expected: Success

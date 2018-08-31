@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+const
+  program = require('commander'),
+  TestManager = require('./lib/testManager');
+
+program
+  .version(require('../package.json').version)
+  .command('run <path>')
+  .action(async (path) => {
+    try {
+      const manager = new TestManager(path);
+
+      await manager.run();
+      process.exit(0);
+    } catch (e) {
+      console.error(e);
+      process.exit(1);
+    }
+  });
+
+program.parse(process.argv);

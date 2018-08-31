@@ -1,106 +1,90 @@
-const read = require('read-yaml'),
-  path = require('path'),
+const
   fs = require('fs'),
-  config = require('../../getConfig').get(),
-  Bluebird = require('bluebird');
+  path = require('path'),
+  Snippet = require('./snippet'),
+  TestResult = require('./helpers/testResult');
 
-module.exports = class TestManager {
-  constructor(language) {
-    if (!this.checkLanguageExist(language)) {
-      // eslint-disable-next-line no-console
-      console.error('Language specified in args does not exist in config');
-      process.exit(1);
+const supportedLanguages = ['js', 'cpp', 'go', 'java'];
+
+class TestManager {
+  constructor(basePath) {
+    if (basePath.indexOf('sdk-reference') === -1) {
+      throw new Error('Unable to find sdk-reference directory in basePath');
     }
 
-    const Tester = require(`./testers/${language}Tester`);
-    this.tester = new Tester();
+    const [language, version, rest] = (basePath.split('sdk-reference/')[1] || '').split('/');
+
+    if (! language) {
+      throw new Error('Unable to find language in basePath');
+    }
+
+    if (! version) {
+      throw new Error('Unable to find version in basePath');
+    }
+
+    if (!supportedLanguages.includes(language)) {
+      throw new Error(`Unsupported language '${language}'. Only ${supportedLanguages.join(', ')} are supported.`);
+    }
+
+    this.basePath = basePath;
     this.language = language;
+    this.version = version;
+
+    const Runner = require(`./runners/${language}Runner`);
+    this.languageRunner = new Runner();
   }
 
-  process(onlyOnePath) {
-    let testsPath = path.join(__dirname, '../../src/'),
-      tests,
-      count = 0,
-      allResults = [];
+  async run() {
+    const
+      results = [],
+      testFiles = this._getTestFiles(this.basePath);
 
-    if (onlyOnePath) {
-      tests = this.getAllTests(testsPath, 'yml', [onlyOnePath]);
-    } else {
-      tests = this.getAllTests(testsPath, 'yml');
-    }
+    for (const testFile of testFiles) {
 
-    tests = tests.filter(testPath => {
-      return fs.existsSync(
-        `${testPath.split('.test.yml')[0]}.${this.language}`
-      );
-    });
+      try {
+        const snippet = new Snippet(testFile, this.language);
 
-    Bluebird.mapSeries(tests, testPath => {
-      const test = read.sync(testPath),
-        snippetPath = testPath.split('.test.yml')[0];
+        await this.languageRunner.run(snippet);
 
-      return this.tester
-        .runOneTest(test, snippetPath)
-        .then(() => {
-          allResults.push(true);
-          count++;
-          this.handleTestsFinish(count, tests.length, allResults);
-        })
-        .catch(err => {
-          if (typeof err !== 'undefined') {
-            // eslint-disable-next-line no-console
-            console.error(err);
-          }
-
-          allResults.push(false);
-          count++;
-          this.handleTestsFinish(count, tests.length, allResults);
+        results.push({
+          code: 'SUCCESS',
+          file: snippet.snippetFile
         });
-    });
-  }
+      }
+      catch (e) {
+        if (! (e instanceof TestResult)) {
+          results.push(new TestResult({
+            code: 'ERROR',
+            actual: e
+          }));
+        }
 
-  handleTestsFinish(count, length, allResults) {
-    if (count === length) {
-      if (allResults.includes(false)) {
-        process.exit(1);
-      } else {
-        process.exit(0);
+        results.push(e);
       }
     }
-  }
-
-  checkLanguageExist(language) {
-    return !(config.languages[language] === undefined);
-  }
-
-  getAllTests(base, ext, files, result) {
-    if (base.indexOf('scaffolding') !== -1) {
-      return [];
+    console.log(results)
+    if (results.length > 0) {
+//      process.exit(1);
     }
+  }
 
-    const suffix = '.test';
-    files = files || fs.readdirSync(base);
-    result = result || [];
+  _getTestFiles(base) {
+    let result = [];
 
-    files.forEach(file => {
+    const files = fs.readdirSync(base);
+
+    for (const file of files) {
       const newbase = path.join(base, file);
 
       if (fs.statSync(newbase).isDirectory()) {
-        result = this.getAllTests(
-          newbase,
-          ext,
-          fs.readdirSync(newbase),
-          result
-        );
-      } else if (file.substr(-1 * (ext.length + 6)) === `${suffix}.${ext}`) {
+        result = result.concat(this._getTestFiles(newbase))
+      } else if (file.indexOf('.test.yml') > -1) {
         result.push(newbase);
       }
-    });
+    }
 
     return result;
   }
-
-  readConfigTest(filename) {
-    return read.sync(filename);
-  }
 };
+
+module.exports = TestManager;

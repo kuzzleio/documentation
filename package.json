@@ -8,6 +8,7 @@
     "dev": "node index.js --dev --watch",
     "lint": "eslint --max-warnings=0 ./test/lib",
     "snippets-testing": "sh run-all-snippets-tests.sh",
+    "unit-testing": "mocha ./test/test",
     "scaffold": "node scaffolding/index.js",
     "test": "npm run --silent lint && npm run snippets-testing"
   },
@@ -61,11 +62,16 @@
     "wordcount": "^1.1.1"
   },
   "devDependencies": {
+    "commander": "^2.16.0",
+    "ejs": "^2.6.1",
     "eslint": "^5.1.0",
     "eslint-scope": "^4.0.0",
     "eslint-visitor-keys": "^1.0.0",
-    "commander": "^2.16.0",
     "lodash": "^4.17.10",
-    "ejs": "^2.6.1"
+    "mocha": "^5.2.0",
+    "mock-require": "^3.0.2",
+    "should": "^13.2.3",
+    "should-sinon": "0.0.6",
+    "sinon": "^6.1.5"
   }
 }

@@ -4,4 +4,4 @@ hooks:
   before:
   after:
 template: default
-expect: Internal index successfully refreshed
+expected: Internal index successfully refreshed

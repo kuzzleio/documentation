@@ -2,6 +2,11 @@
 #docker run --rm --privileged -it -v "$(pwd)":/app kuzzleio/documentation-v2:cpp
 set -e
 
+if [ -z "$SDK_VERSION" ]; then
+  echo "SDK_VERSION not specified. Exiting"
+  exit 1
+fi
+
 echo "Download C++ SDK"
 rm -rf test/bin/sdk-cpp
 mkdir -p test/bin/sdk-cpp

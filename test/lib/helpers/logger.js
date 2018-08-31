@@ -1,4 +1,5 @@
-const color = require('colors/safe'),
+const
+  color = require('colors/safe'),
   jsonfile = require('jsonfile'),
   path = require('path'),
   fs = require('fs');
@@ -6,36 +7,41 @@ const color = require('colors/safe'),
 /* eslint-disable no-console */
 
 class Logger {
-  reportOk(test, language) {
-    this.reportToJson(test, false, language);
+  reportOk(snippet) {
+    this.reportToJson(snippet, { code: 'SUCCESS' });
+
     console.log(
       color.green('✔'),
-      color.green(`${test.name}: ${test.description}`)
+      color.green(`${snippet.name}: ${snippet.description}`)
     );
   }
 
-  reportNOk(test, err, language) {
-    console.log('LANGUAGE:', language);
-    this.reportToJson(test, err, language);
-    console.log(color.red('✗'), color.red(`${test.name}: ${test.description}`));
-    if (err) {
-      console.log(color.red('    ' + err.code));
-      console.log(color.red('    EXPECTED:'), test.expect);
-      console.log(color.red('    GOT     :'), err.actual);
+  reportKO(snippet, result) {
+    console.log(`LANGUAGE: ${snippet.language}`);
+
+    this.reportToJson(snippet, result);
+
+    console.log(color.red('✗'), color.red(`${snippet.name}: ${snippet.description}`));
+    if (result) {
+      console.log(color.red('    ' + result.code));
+      console.log(color.red('    EXPECTED:'), snippet.expected);
+      console.log(color.red('    GOT     :'), result.actual);
     }
   }
 
-  reportToJson(test, err, language) {
-    const reportFile =
-      path.join(__dirname, '../../../reports/') + 'report.json';
-    let report = {},
+  reportToJson(snippet, result) {
+    const reportFile = `${path.join(__dirname, '../../../reports/')}report.json`;
+
+    let
+      report = {},
       status;
 
     if (fs.existsSync(reportFile)) {
       report = jsonfile.readFileSync(reportFile);
     }
-    switch (err.code) {
-      case undefined:
+
+    switch (result.code) {
+      case 'SUCCESS':
         status = 'Success';
         break;
       case 'TODO':
@@ -49,17 +55,17 @@ class Logger {
         break;
     }
 
-    report[test.name] = {
-      test: test,
-      language: language,
+    report[snippet.name] = {
+      status,
+      language: snippet.language,
+      test: snippet.testDefinition,
       datetime: new Date().toLocaleString(),
-      status: status,
-      error: err ? { code: err.code, got: err.actual } : {},
-      file: err && typeof err.file !== 'undefined' ? err.file : ''
+      error: result.code !== 'SUCCESS' ? { code: result.code, got: result.actual } : {},
+      file: (typeof result.file !== 'undefined') ? result.file : ''
     };
 
     jsonfile.writeFileSync(reportFile, report);
   }
 }
 
-module.exports = new Logger();
+module.exports = Logger;

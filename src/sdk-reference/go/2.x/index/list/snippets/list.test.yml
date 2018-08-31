@@ -4,4 +4,4 @@ hooks:
   before: curl -X POST kuzzle:7512/admin/_resetDatabase && curl -X POST kuzzle:7512/nyc-open-data/_create
   after:
 template: default
-expect: Kuzzle contains 1 indexes
+expected: Kuzzle contains 1 indexes

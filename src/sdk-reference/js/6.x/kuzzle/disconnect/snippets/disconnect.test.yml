@@ -4,4 +4,4 @@ hooks:
   before:
   after:
 template: without-connect
-expect: Success
+expected: Success

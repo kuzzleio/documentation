@@ -1,10 +1,12 @@
-const Tester = require('./tester'),
+const
+  GenericRunner = require('./genericRunner'),
   path = require('path'),
   nexpect = require('nexpect');
 
-module.exports = class JsTester extends Tester {
+module.exports = class JsRunner extends GenericRunner {
   constructor() {
     super();
+    
     let lintConfig = path.join(__dirname, '../../linters/eslint.json');
     this.language = 'js';
     this.runCommand = 'node';
