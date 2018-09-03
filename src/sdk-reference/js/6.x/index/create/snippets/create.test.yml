@@ -4,4 +4,4 @@ hooks:
   before: curl -X DELETE kuzzle:7512/nyc-open-data
   after:
 template: default
-expected: index creatsed
+expected: index created

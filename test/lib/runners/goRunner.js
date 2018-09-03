@@ -21,8 +21,8 @@ module.exports = class GoRunner extends BaseRunner {
     return new Promise((resolve, reject) => {
       nexpect
         .spawn(this.runCommand + fileName)
-        .wait(expected, result => {
-          if (result === expected) {
+        .wait(snippet.expected, result => {
+          if (result === snippet.expected) {
             resolve();
             return;
           }
@@ -35,22 +35,19 @@ module.exports = class GoRunner extends BaseRunner {
         })
         .run((error, output) => {
           if (error) {
-            reject(error);
+            const res = {
+              code: 'ERR_ASSERTION',
+              actual: error.actual
+            };
+            reject(new TestResult(res));
+
             return;
           }
 
-          if (output.includes(expected)) {
+          if (output.includes(snippet.expected)) {
             resolve();
             return;
           }
-
-          const res = {
-            code: 'ERR_ASSERTION',
-            actual: output[0]
-          };
-          reject(new TestResult(res));
-
-          return;
         });
     });
   }

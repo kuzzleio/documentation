@@ -1,0 +1,19 @@
+const
+  execute = require('../helpers/execute');
+
+class GoSdk {
+  constructor(version) {
+    this.version = version;
+
+    this.repository = `https://github.com/kuzzleio/sdk-go`
+    this.sdkGoPath = '/go/src/github.com/kuzzleio/sdk-go';
+  }
+
+  async get() {
+    await execute('git', ['clone', '-b', this.version, this.repository]);
+    await execute('mv', ['sdk-go', this.sdkGoPath]);
+    await execute('go', ['get', './...'], { cwd: this.sdkGoPath });
+  }
+}
+
+module.exports = GoSdk;

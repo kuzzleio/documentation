@@ -82,13 +82,13 @@ class TestManager {
   }
 
   async downloadSdk() {
-    this.logger.log(`Download ${this.language.toUpperCase()} SDK version ${this.version}`);
+    this.logger.log(`Install ${this.language.toUpperCase()} SDK version ${this.version}`);
 
     try {
       await this.sdk.get();
-      this.logger.log('Download successfull', true);
+      this.logger.log('Installation successfull', true);
     } catch (e) {
-      this.logger.log(`Error when downloading SDK: ${e.message}`, false);
+      this.logger.log(`Error when installing the SDK: ${e.message}`, false);
 
       throw e;
     }
