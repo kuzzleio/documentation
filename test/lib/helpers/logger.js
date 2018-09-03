@@ -86,6 +86,7 @@ class Logger {
       console.log(red('        ' + result.code));
       console.log(red('        EXPECTED:'), snippet.expected);
       console.log(red('        GOT     :'), result.actual);
+      console.log(red('        FILE    :'), result.file);
     }
 
     this.addToReport(snippet, result);
