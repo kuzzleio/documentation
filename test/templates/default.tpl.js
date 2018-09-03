@@ -1,4 +1,5 @@
-const Bluebird = require('bluebird')
+const Bluebird = require('bluebird');
+
 // load the Kuzzle SDK module
 const { Kuzzle } = require('kuzzle-sdk');
 
@@ -19,6 +20,6 @@ Bluebird.resolve(
     .then(() => {
       return [snippet-code]
     })
-  )
+)
   .catch(() => 'nothing')
   .finally(() => kuzzle.disconnect());

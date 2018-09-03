@@ -9,11 +9,6 @@ const
   TestResult = require('../helpers/testResult');
 
 module.exports = class BaseRunner {
-  constructor() {
-    if (new.target === BaseRunner) {
-      throw new TypeError('Cannot construct BaseRunner instances directly');
-    }
-  }
 
   async run(snippet) {
     snippet.checkIfTodo();
@@ -72,11 +67,11 @@ module.exports = class BaseRunner {
             return;
           }
 
-          const result = {
+          const res = {
             code: 'ERR_ASSERTION',
             actual: output
           };
-          reject(new TestResult(result));
+          reject(new TestResult(res));
         });
       })
   }

@@ -1,7 +1,8 @@
 const
   BaseRunner = require('./baseRunner'),
   nexpect = require('nexpect'),
-  childProcess = require('child_process');
+  childProcess = require('child_process'),
+  TestResult = require('../helpers/testResult');
 
 module.exports = class GoRunner extends BaseRunner {
   constructor() {
@@ -12,8 +13,8 @@ module.exports = class GoRunner extends BaseRunner {
     this.lintCommand = `golint ${this.goProjectPath}`;
   }
 
-  runExpect(generatedFilePath, expected) {
-    const fileName = generatedFilePath.split('/').pop();
+  runExpect(snippet) {
+    const fileName = snippet.renderedSnippetPath.split('/').pop();
 
     childProcess.execSync(`goimports -w ${this.goProjectPath}${fileName}`);
 
@@ -26,11 +27,11 @@ module.exports = class GoRunner extends BaseRunner {
             return;
           }
 
-          const err = {
+          const res = {
             code: 'ERR_ASSERTION',
             actual: result
           };
-          reject(err);
+          reject(new TestResult(res));
         })
         .run((error, output) => {
           if (error) {
@@ -43,18 +44,19 @@ module.exports = class GoRunner extends BaseRunner {
             return;
           }
 
-          const err = {
+          const res = {
             code: 'ERR_ASSERTION',
             actual: output[0]
           };
-          reject(err);
+          reject(new TestResult(res));
+
           return;
         });
     });
   }
 
-  lintExpect(generatedFilePath) {
-    const fileName = generatedFilePath.split('/').pop();
+  lintExpect(snippet) {
+    const fileName = snippet.renderedSnippetPath.split('/').pop();
 
     return new Promise((resolve, reject) => {
       nexpect
@@ -66,11 +68,11 @@ module.exports = class GoRunner extends BaseRunner {
             return;
           }
 
-          const err = {
+          const res = {
             code: 'LINTER ERROR',
             actual: output.join('\n')
           };
-          reject(err);
+          reject(new TestResult(res));
         });
     });
   }
