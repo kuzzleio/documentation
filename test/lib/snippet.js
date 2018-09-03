@@ -54,6 +54,8 @@ class Snippet {
     }
 
     this.snippetContent = fs.readFileSync(this.snippetFile, 'utf8');
+
+    return this;
   }
 
   /**

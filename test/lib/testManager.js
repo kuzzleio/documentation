@@ -58,7 +58,6 @@ class TestManager {
       }
       catch (e) {
         if (! (e instanceof TestResult)) {
-          console.log(e)
           results.push(new TestResult({
             code: 'ERROR',
             actual: e

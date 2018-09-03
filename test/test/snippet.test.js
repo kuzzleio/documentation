@@ -68,9 +68,11 @@ describe('Snippet', () => {
     mockrequire.stopAll();
   });
 
-  describe('#constructor', () => {
+  describe('#build', () => {
     it('initialize snippet attributes', () => {
       snippet = new Snippet(testFile, language);
+
+      snippet.build();
 
       should(snippet.snippetFile).endWith('create.js');
       should(snippet.templateFile).endWith('default.tpl.js');
@@ -81,25 +83,28 @@ describe('Snippet', () => {
 
     it('throw an error if test definition is empty', () => {
       readYamlStub.sync.returns('');
+      snippet = new Snippet(testFile, language);
 
       should(() => {
-        snippet = new Snippet(testFile, language);
+        snippet.build();
       }).throw(TestResult);
     });
 
     it('throw an error if templateFile does not exists', () => {
       fsStub.existsSync.returns('');
+      snippet = new Snippet(testFile, language);
 
       should(() => {
-        snippet = new Snippet(testFile, language);
+        snippet.build();
       }).throw(TestResult);
     });
 
     it('throw an error if snippetFile does not exists', () => {
       fsStub.existsSync.returns('');
+      snippet = new Snippet(testFile, language);
 
       should(() => {
-        snippet = new Snippet(testFile, language);
+        snippet.build();
       }).throw(TestResult);
     });
   });
@@ -107,7 +112,7 @@ describe('Snippet', () => {
   describe('#checkIfTodo', () => {
     it('throw if the test is marked as @todo', () => {
       fsStub.readFileSync.onCall(0).returns('//@todo');
-      snippet = new Snippet(testFile, language);
+      snippet = new Snippet(testFile, language).build();
 
       should(() => {
         snippet.checkIfTodo();
@@ -118,7 +123,7 @@ describe('Snippet', () => {
   describe('#checkIfWontDo', () => {
     it('throw if the test is marked as @wontdo', () => {
       fsStub.readFileSync.onCall(0).returns('//@wontdo');
-      snippet = new Snippet(testFile, language);
+      snippet = new Snippet(testFile, language).build();
 
       should(() => {
         snippet.checkIfWontDo();
@@ -128,7 +133,7 @@ describe('Snippet', () => {
 
   describe('#render', () => {
     it('should render the snippet inside the template', () => {
-      snippet = new Snippet(testFile, language);
+      snippet = new Snippet(testFile, language).build();
       const renderedSnippet =
       `
       The template is here
@@ -151,7 +156,7 @@ describe('Snippet', () => {
       fsStub.readFileSync.onCall(1).returns(templateContent);
       language = 'java';
 
-      snippet = new Snippet(testFile, language);
+      snippet = new Snippet(testFile, language).build();
       const renderedSnippet =
       `
         class create {
@@ -166,7 +171,7 @@ describe('Snippet', () => {
 
     it('throw an error if template content does not include the snippet tag', () => {
       fsStub.readFileSync.onCall(1).returns('I am a template');
-      snippet = new Snippet(testFile, language);
+      snippet = new Snippet(testFile, language).build();
 
       should(() => {
         snippet.render();
@@ -175,7 +180,7 @@ describe('Snippet', () => {
 
     it('throw an error if the rendered snippet file is not created', () => {
       fsStub.existsSync.onCall(2).returns(false);
-      snippet = new Snippet(testFile, language);
+      snippet = new Snippet(testFile, language).build();
 
       should(() => {
         snippet.render();
