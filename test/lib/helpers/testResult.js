@@ -1,6 +1,8 @@
 class TestResult {
   constructor(info) {
-    this.info = info;
+    for (const [key, value] of Object.entries(info)) {
+      this[key] = value;
+    }
   }
 }
 

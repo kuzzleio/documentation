@@ -1,8 +1,9 @@
-const Tester = require('./tester'),
+const
+  BaseRunner = require('./baseRunner'),
   nexpect = require('nexpect'),
   childProcess = require('child_process');
 
-module.exports = class GoTester extends Tester {
+module.exports = class GoRunner extends BaseRunner {
   constructor() {
     super();
     this.language = 'go';

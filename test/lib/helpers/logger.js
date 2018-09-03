@@ -1,5 +1,10 @@
 const
-  color = require('colors/safe'),
+  {
+    green,
+    red,
+    blue,
+    yellow
+  } = require('colors/safe'),
   jsonfile = require('jsonfile'),
   path = require('path'),
   fs = require('fs');
@@ -7,38 +12,32 @@ const
 /* eslint-disable no-console */
 
 class Logger {
-  reportOk(snippet) {
-    this.reportToJson(snippet, { code: 'SUCCESS' });
+  constructor() {
+    this.reportFile = `${path.join(__dirname, '../../../reports/')}report.json`;
 
-    console.log(
-      color.green('✔'),
-      color.green(`${snippet.name}: ${snippet.description}`)
-    );
-  }
+    this.report = {};
 
-  reportKO(snippet, result) {
-    console.log(`LANGUAGE: ${snippet.language}`);
-
-    this.reportToJson(snippet, result);
-
-    console.log(color.red('✗'), color.red(`${snippet.name}: ${snippet.description}`));
-    if (result) {
-      console.log(color.red('    ' + result.code));
-      console.log(color.red('    EXPECTED:'), snippet.expected);
-      console.log(color.red('    GOT     :'), result.actual);
+    if (fs.existsSync(this.reportFile)) {
+      try {
+        this.report = jsonfile.readFileSync(this.reportFile);
+      } catch (e) {
+        if (! (e instanceof SyntaxError)) {
+          throw e;
+        }
+      }
     }
   }
 
-  reportToJson(snippet, result) {
-    const reportFile = `${path.join(__dirname, '../../../reports/')}report.json`;
-
-    let
-      report = {},
-      status;
-
-    if (fs.existsSync(reportFile)) {
-      report = jsonfile.readFileSync(reportFile);
+  addToReport(snippet, result) {
+    // Do not display this warning locally because we often run the tests multiple time
+    if (this.report[snippet.name] && process.env['TRAVIS']) {
+      console.log(
+        yellow('/!\\'),
+        ` Duplicate snippet name: ${snippet.name}`
+      );
     }
+
+    let status;
 
     switch (result.code) {
       case 'SUCCESS':
@@ -55,7 +54,7 @@ class Logger {
         break;
     }
 
-    report[snippet.name] = {
+    this.report[snippet.name] = {
       status,
       language: snippet.language,
       test: snippet.testDefinition,
@@ -63,8 +62,31 @@ class Logger {
       error: result.code !== 'SUCCESS' ? { code: result.code, got: result.actual } : {},
       file: (typeof result.file !== 'undefined') ? result.file : ''
     };
+  }
 
-    jsonfile.writeFileSync(reportFile, report);
+  writeReport() {
+    jsonfile.writeFileSync(this.reportFile, this.report);
+  }
+
+  reportResult(snippet, result) {
+    if (result.code === 'SUCCESS') {
+      console.log(
+        blue(`[${snippet.language}] `),
+        green('✔'),
+        green(`${snippet.name}: ${snippet.description}`)
+      );
+    } else {
+      console.log(
+        blue(`[${snippet.language}] `),
+        red('✗'),
+        red(`${snippet.name}: ${snippet.description}`)
+      );
+      console.log(red('        ' + result.code));
+      console.log(red('        EXPECTED:'), snippet.expected);
+      console.log(red('        GOT     :'), result.actual);
+    }
+
+    this.addToReport(snippet, result);
   }
 }
 

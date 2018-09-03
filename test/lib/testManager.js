@@ -2,6 +2,7 @@ const
   fs = require('fs'),
   path = require('path'),
   Snippet = require('./snippet'),
+  Logger = require('./helpers/logger'),
   TestResult = require('./helpers/testResult');
 
 const supportedLanguages = ['js', 'cpp', 'go', 'java'];
@@ -32,6 +33,8 @@ class TestManager {
 
     const Runner = require(`./runners/${language}Runner`);
     this.languageRunner = new Runner();
+
+    this.logger = new Logger();
   }
 
   async run() {
@@ -41,8 +44,10 @@ class TestManager {
 
     for (const testFile of testFiles) {
 
+      const snippet = new Snippet(testFile, this.language);
+
       try {
-        const snippet = new Snippet(testFile, this.language);
+        snippet.build();
 
         await this.languageRunner.run(snippet);
 
@@ -53,18 +58,23 @@ class TestManager {
       }
       catch (e) {
         if (! (e instanceof TestResult)) {
+          console.log(e)
           results.push(new TestResult({
             code: 'ERROR',
             actual: e
           }));
+        } else {
+          results.push(e);
         }
-
-        results.push(e);
+      } finally {
+        this.logger.reportResult(snippet, results[results.length - 1]);
       }
     }
-    console.log(results)
-    if (results.length > 0) {
-//      process.exit(1);
+
+    this.logger.writeReport();
+
+    if (results.filter(result => result.code !== 'SUCCESS').length > 0) {
+      process.exit(1);
     }
   }
 

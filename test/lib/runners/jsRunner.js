@@ -1,9 +1,9 @@
 const
-  GenericRunner = require('./genericRunner'),
+  BaseRunner = require('./baseRunner'),
   path = require('path'),
   nexpect = require('nexpect');
 
-module.exports = class JsRunner extends GenericRunner {
+module.exports = class JsRunner extends BaseRunner {
   constructor() {
     super();
     

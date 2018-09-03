@@ -17,8 +17,10 @@ class Snippet {
   constructor(testFile, language) {
     this.testFile = testFile;
     this.language = language;
+  }
 
-    this.testDefinition = readYaml.sync(testFile);
+  build() {
+    this.testDefinition = readYaml.sync(this.testFile);
     if (Object.keys(this.testDefinition).length === 0) {
       const result = {
         code: 'MISSING_TEST_DESCRIPTION',
@@ -41,7 +43,7 @@ class Snippet {
       throw new TestResult(result);
     }
 
-    this.snippetFile = testFile.replace('.test.yml', `.${this.language}`);
+    this.snippetFile = this.testFile.replace('.test.yml', `.${this.language}`);
     if (! fs.existsSync(this.snippetFile)) {
       const result = {
         code: 'MISSING_SNIPPET',

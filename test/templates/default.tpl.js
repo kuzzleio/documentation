@@ -10,7 +10,7 @@ const kuzzle = new Kuzzle('websocket', {
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
-  console.error('Network Error:' + error);
+  console.error(`Network Error: ${error}`);
 });
 
 Bluebird.resolve(
@@ -20,4 +20,5 @@ Bluebird.resolve(
       return [snippet-code]
     })
   )
+  .catch(() => 'nothing')
   .finally(() => kuzzle.disconnect());

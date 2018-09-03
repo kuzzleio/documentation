@@ -6,16 +6,13 @@ const
   indentString = require('indent-string'),
   sanitize = require('sanitize-filename'),
   childProcess = require('child_process'),
-  Logger = require('../helpers/logger'),
-  TestError = require('../helpers/testResult');
+  TestResult = require('../helpers/testResult');
 
-module.exports = class GenericRunner {
+module.exports = class BaseRunner {
   constructor() {
-    if (new.target === GenericRunner) {
-      throw new TypeError('Cannot construct GenericRunner instances directly');
+    if (new.target === BaseRunner) {
+      throw new TypeError('Cannot construct BaseRunner instances directly');
     }
-
-    this.logger = new Logger();
   }
 
   async run(snippet) {
@@ -29,10 +26,8 @@ module.exports = class GenericRunner {
         this.runHookCommand(snippet.hooks.before);
       }
 
-      await this.lintExpect(snippet.renderedSnippetPath);
-      await this.runExpect(snippet.renderedSnippetPath, snippet.expected);
-
-      this.logger.reportOk(snippet);
+      await this.lintExpect(snippet);
+      await this.runExpect(snippet);
 
       // Remove the generated files only if test succeed
       snippet.clean();
@@ -41,7 +36,8 @@ module.exports = class GenericRunner {
       snippet.saveRendered();
 
       e.file = snippet.snippetFile.split('src/')[1];
-      this.logger.reportKO(snippet, e);
+
+      throw e;
     } finally {
       if (snippet.hooks.after) {
         this.runHookCommand(snippet.hooks.after);
@@ -49,21 +45,21 @@ module.exports = class GenericRunner {
     }
   }
 
-  async runExpect(generatedFilePath, expected) {
+  async runExpect(snippet) {
     return new Promise((resolve, reject) => {
       nexpect
-        .spawn(`${this.runCommand} ${generatedFilePath}`, { stream: 'all' })
-        .wait(expected, result => {
-          if (result === expected) {
+        .spawn(`${this.runCommand} ${snippet.renderedSnippetPath}`, { stream: 'all' })
+        .wait(snippet.expected, result => {
+          if (result === snippet.expected) {
             resolve()
             return;
           }
 
-          const err = {
+          const res = {
             code: 'ERR_ASSERTION',
             actual: result
           };
-          reject(err);
+          reject(new TestResult(res));
         })
         .run((error, output) => {
           if (error) {
@@ -71,28 +67,32 @@ module.exports = class GenericRunner {
             return;
           }
 
-          if (output.includes(expected)) {
+          if (output.includes(snippet.expected)) {
             resolve()
             return;
           }
 
-          const err = {
+          const result = {
             code: 'ERR_ASSERTION',
             actual: output
           };
-          reject(err);
+          reject(new TestResult(result));
         });
       })
   }
 
-  lintExpect(generatedFilePath) {
+  lintExpect(snippet) {
     return new Promise((resolve, reject) => {
       nexpect
-        .spawn(`${this.lintCommand} ${generatedFilePath}`, { stream: 'all' })
+        .spawn(`${this.lintCommand} ${snippet.renderedSnippetPath}`, { stream: 'all' })
         .wait(this.expectedLintSuccess)
         .run(error => {
           if (error) {
-            reject(error);
+            const result = {
+              code: 'ERR_ASSERTION',
+              actual: error
+            };
+            reject(new TestResult(result));
             return;
           }
 
@@ -102,6 +102,15 @@ module.exports = class GenericRunner {
   }
 
   runHookCommand(command) {
-    childProcess.execSync(command, { stderr: 'ignore', stdio: 'ignore' });
+    try {
+      childProcess.execSync(command, { stderr: 'ignore', stdio: 'ignore' });
+    } catch (e) {
+      const result = {
+        code: 'HOOK_FAILED',
+        actual: e.message
+      };
+
+      throw new TestResult(result);
+    }
   }
 };
