@@ -5,7 +5,15 @@ set -e
 START_KUZZLE=1
 INTERACTIVE=0
 
-while getopts ":l:nf:i" opt; do
+show_help() {
+  echo "Possible options are"
+  echo " -l <language>  [MANDATORY] specifies the language to test (valid languages are js, go, cpp and java)"
+  echo " -p <test-path> [MANDATORY] specifies the tests directory"
+  echo " -n             Prevent to start the Kuzzle stack (useful if you keep it running yourself to run many tests)"
+  echo " -i             Launch a webserver after the tests to show a report"
+}
+
+while getopts ":l:np:i" opt; do
   case $opt in
     l)
       if [ "$OPTARG" = "" ]; then
@@ -17,12 +25,12 @@ while getopts ":l:nf:i" opt; do
     n)
       START_KUZZLE=0
     ;;
-    f)
+    p)
       if [ "$OPTARG" = "" ]; then
         echo "Option -$opt requires an argument" >&2
         exit 1
       fi
-      TEST_ONLY="-f $OPTARG"
+      TESTS_PATH=$OPTARG
     ;;
     i)
       INTERACTIVE=1
@@ -35,6 +43,11 @@ while getopts ":l:nf:i" opt; do
   esac
 done
 
+if [ -z $TESTS_PATH ]; then
+  echo "You must specify the tests path with -p"
+  exit 1
+fi
+
 if [ $START_KUZZLE -eq 1 ]; then
   sh .travis/start_kuzzle.sh
 fi
@@ -43,16 +56,16 @@ ENTRYPOINT="docker/entrypoints/$LANGUAGE.js "
 
 case $LANGUAGE in
   js)
-    docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:js $TEST_ONLY
+    docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:js $TESTS_PATH
   ;;
   go)
-    docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app -v "$(pwd)"/test/bin:/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go $TEST_ONLY
+    docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app -v "$(pwd)"/test/bin:/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go $TESTS_PATH
   ;;
   cpp)
-    docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:cpp $TEST_ONLY
+    docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:cpp $TESTS_PATH
   ;;
   java)
-    docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:java $TEST_ONLY
+    docker run -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:java $TESTS_PATH
   ;;
   *)
     echo "$LANGUAGE is not a valid language"
@@ -69,11 +82,3 @@ fi
 if [ $INTERACTIVE -eq 1 ]; then
   node test/lib/helpers/reports.js
 fi
-
-show_help() {
-  echo "Possible options are"
-  echo " -l <language>  [MANDATORY] specifies the language to test (valid languages are js and go)"
-  echo " -n             Prevent to start the Kuzzle stack (useful if you keep it running yourself to run many tests)"
-  echo " -f <test-file> Allows to run just one test by specifying the .yml test descriptor"
-  echo " -i             Launch a webserver after the tests to show a report"
-}

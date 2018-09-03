@@ -12,7 +12,9 @@ const
 /* eslint-disable no-console */
 
 class Logger {
-  constructor() {
+  constructor(language) {
+    this.language = language;
+
     this.reportFile = `${path.join(__dirname, '../../../reports/')}report.json`;
 
     this.report = {};
@@ -87,6 +89,16 @@ class Logger {
     }
 
     this.addToReport(snippet, result);
+  }
+
+  log(message, status) {
+    const statusMessage = status === true ? green('✔') : (status === false ? red('✗') : '');
+
+    console.log(
+      blue(`[${this.language}] `),
+      message,
+      statusMessage
+    )
   }
 }
 

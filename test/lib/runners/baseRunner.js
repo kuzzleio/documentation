@@ -58,7 +58,12 @@ module.exports = class BaseRunner {
         })
         .run((error, output) => {
           if (error) {
-            reject(error);
+            const res = {
+              code: 'ERR_ASSERTION',
+              actual: error.actual
+            };
+            reject(new TestResult(res));
+
             return;
           }
 
@@ -66,12 +71,6 @@ module.exports = class BaseRunner {
             resolve()
             return;
           }
-
-          const res = {
-            code: 'ERR_ASSERTION',
-            actual: output
-          };
-          reject(new TestResult(res));
         });
       })
   }

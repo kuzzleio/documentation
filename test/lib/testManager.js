@@ -34,7 +34,10 @@ class TestManager {
     const Runner = require(`./runners/${language}Runner`);
     this.languageRunner = new Runner();
 
-    this.logger = new Logger();
+    this.logger = new Logger(this.language);
+
+    const Sdk = require(`./sdk/${this.language}Sdk`);
+    this.sdk = new Sdk(this.version);
   }
 
   async run() {
@@ -42,8 +45,9 @@ class TestManager {
       results = [],
       testFiles = this._getTestFiles(this.basePath);
 
-    for (const testFile of testFiles) {
+    this.logger.log(`${testFiles.length} tests found\n`);
 
+    for (const testFile of testFiles) {
       const snippet = new Snippet(testFile, this.language);
 
       try {
@@ -74,6 +78,19 @@ class TestManager {
 
     if (results.filter(result => result.code !== 'SUCCESS').length > 0) {
       process.exit(1);
+    }
+  }
+
+  async downloadSdk() {
+    this.logger.log(`Download ${this.language.toUpperCase()} SDK version ${this.version}`);
+
+    try {
+      await this.sdk.get();
+      this.logger.log('Download successfull', true);
+    } catch (e) {
+      this.logger.log(`Error when downloading SDK: ${e.message}`, false);
+
+      throw e;
     }
   }
 

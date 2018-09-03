@@ -11,7 +11,10 @@ program
     try {
       const manager = new TestManager(path);
 
+      await manager.downloadSdk();
+
       await manager.run();
+
       process.exit(0);
     } catch (e) {
       console.error(e);
