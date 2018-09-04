@@ -32,7 +32,7 @@ class Logger {
 
   addToReport(snippet, result) {
     // Do not display this warning locally because we often run the tests multiple time
-    if (this.report[snippet.name] && process.env['TRAVIS']) {
+    if (this.report[snippet.name] && process.env.TRAVIS) {
       console.log(
         yellow('/!\\'),
         ` Duplicate snippet name: ${snippet.name}`
@@ -94,13 +94,22 @@ class Logger {
   }
 
   log(message, status) {
-    const statusMessage = status === true ? green('✔') : (status === false ? red('✗') : '');
+    const statusMessage = (() => {
+      switch (status) {
+        case true:
+          return green('✔');
+        case false:
+          return red('✗');
+        default:
+          return '';
+      }
+    })();
 
     console.log(
       blue(`[${this.language}] `),
       message,
       statusMessage
-    )
+    );
   }
 }
 

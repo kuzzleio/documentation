@@ -18,7 +18,7 @@ Bluebird.resolve(
   kuzzle
     .connect()
     .then(() => {
-      return [snippet-code]
+      return [snippet-code];
     })
 )
   .catch(() => 'nothing')

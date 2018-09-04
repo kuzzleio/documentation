@@ -17,5 +17,5 @@ class MyCustomProtocol extends KuzzleAbstractNetwork {
   }
 }
 
-[snippet-code]
+[snippet-code];
 console.log('Everything is ok');

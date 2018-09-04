@@ -121,7 +121,7 @@ describe('Snippet', () => {
 
       snippet.render();
 
-      should(fsStub.writeFileSync.getCall(0).args[1]).be.eql(renderedSnippet)
+      should(fsStub.writeFileSync.getCall(0).args[1]).be.eql(renderedSnippet);
     });
 
     it('should replace the generic class name with a java snippet', () => {
@@ -144,7 +144,7 @@ describe('Snippet', () => {
 
       snippet.render();
 
-      should(fsStub.writeFileSync.getCall(0).args[1]).be.eql(renderedSnippet)
+      should(fsStub.writeFileSync.getCall(0).args[1]).be.eql(renderedSnippet);
     });
 
     it('throw an error if template content does not include the snippet tag', () => {

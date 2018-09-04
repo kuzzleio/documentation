@@ -35,7 +35,7 @@ describe('BaseRunner', () => {
 
       await runner.run(snippetMock);
 
-      should(snippetMock.render.calledAfter(snippetMock.checkIfWontDo)).be.eql(true);
+      should(snippetMock.render).be.calledOnce;
       should(runner.lint.calledAfter(snippetMock.render)).be.eql(true);
       should(runner.runExpect.calledAfter(runner.lint)).be.eql(true);
       should(snippetMock.clean.calledAfter(runner.runExpect)).be.eql(true);
@@ -43,7 +43,7 @@ describe('BaseRunner', () => {
   });
 
   it('should save rendered snippet and throw exception on error', async () => {
-    runner.lintExpect = sinon.spy();
+    runner.lint = sinon.spy();
     runner.runExpect = sinon.stub().throws(new Error('runExpect error'));
 
     try {

@@ -15,7 +15,7 @@ async function execute(command, args, options = {}) {
   }
 
   if (status !== 0) {
-    const message = output.join("\n");
+    const message = output.join('\n');
 
     throw new Error(message);
   }
@@ -28,7 +28,7 @@ function getVersionPath(language, version) {
   const supportedLanguages = getSupportedLanguages(sdkVersions);
 
   if (! supportedLanguages.includes(language)) {
-    throw new Error(`Unknown language ${language}. Supported languages: ${supportedLanguages.join(',')}`);
+    throw new Error(`Unknown language ${language}. Supported languages: ${supportedLanguages.join(', ')}`);
   }
 
   const sdkVersionType = sdkVersions[language][version];

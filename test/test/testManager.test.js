@@ -22,24 +22,24 @@ describe('TestManager', () => {
 
     it('throw an error if sdk-reference is not found in basePath', () => {
       should(() => {
-        testManager = new TestManager('src/guide/essentials/')
+        testManager = new TestManager('src/guide/essentials/');
       }).throw('Unable to find sdk-reference directory in basePath');
     });
 
     it('throw an error if language or version are not found in basePath', () => {
       should(() => {
-        testManager = new TestManager('src/sdk-reference/')
+        testManager = new TestManager('src/sdk-reference/');
       }).throw('Unable to find language in basePath');
 
       should(() => {
-        testManager = new TestManager('src/sdk-reference/js')
+        testManager = new TestManager('src/sdk-reference/js');
       }).throw('Unable to find version in basePath');
     });
 
     it('throw an error if language is unsupported', () => {
       should(() => {
-        testManager = new TestManager('src/sdk-reference/ruby/5')
-      }).throw('Unsupported language \'ruby\'. Only js, cpp, go, java are supported.');
+        testManager = new TestManager('src/sdk-reference/ruby/5');
+      }).throw('Unknown language ruby. Supported languages: js, cpp, java, go, php, android');
     });
   });
 

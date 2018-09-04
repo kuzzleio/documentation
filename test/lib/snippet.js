@@ -33,7 +33,7 @@ class Snippet {
       this[attribute] = value;
     }
 
-    this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.language}`
+    this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.language}`;
     if (! fs.existsSync(this.templateFile)) {
       const result = {
         code: 'MISSING_TEMPLATE',
@@ -63,7 +63,7 @@ class Snippet {
    *
    */
   render() {
-    this.templateContent = fs.readFileSync(this.templateFile, 'utf8')
+    this.templateContent = fs.readFileSync(this.templateFile, 'utf8');
     if (this.templateContent.indexOf('[snippet-code]') === -1) {
       const result = {
         code: 'MISSING_TAG',

@@ -9,8 +9,6 @@ const
   } = require('./helpers/sdk'),
   TestResult = require('./helpers/testResult');
 
-const supportedLanguages = ['js', 'cpp', 'go', 'java'];
-
 class TestManager {
   constructor(basePath) {
     if (basePath.indexOf('sdk-reference') === -1) {
@@ -29,7 +27,7 @@ class TestManager {
 
     const supportedLanguages = getSupportedLanguages();
     if (! supportedLanguages.includes(language)) {
-      throw new Error(`Unknown language ${language}. Supported languages: ${supportedLanguages.join(',')}`);
+      throw new Error(`Unknown language ${language}. Supported languages: ${supportedLanguages.join(', ')}`);
     }
 
     this.basePath = basePath;
@@ -108,7 +106,7 @@ class TestManager {
       const newbase = path.join(base, file);
 
       if (fs.statSync(newbase).isDirectory()) {
-        result = result.concat(this._getTestFiles(newbase))
+        result = result.concat(this._getTestFiles(newbase));
       } else if (file.indexOf('.test.yml') > -1) {
         result.push(newbase);
       }
@@ -116,6 +114,6 @@ class TestManager {
 
     return result;
   }
-};
+}
 
 module.exports = TestManager;

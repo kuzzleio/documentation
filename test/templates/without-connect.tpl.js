@@ -7,6 +7,6 @@ const kuzzle = new Kuzzle('websocket', {
   autoReconnect: false
 });
 
-[snippet-code]
+[snippet-code];
 
 console.log('Success');

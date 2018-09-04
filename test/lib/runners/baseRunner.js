@@ -1,5 +1,4 @@
 const
-  fileHelper = require('../helpers/file'),
   nexpect = require('nexpect'),
   fs = require('fs'),
   path = require('path'),
@@ -49,7 +48,7 @@ module.exports = class BaseRunner {
         .spawn(this.nexpectCommand, { stream: 'all' })
         .wait(snippet.expected, result => {
           if (result === snippet.expected) {
-            resolve()
+            resolve();
             return;
           }
 
@@ -71,11 +70,11 @@ module.exports = class BaseRunner {
           }
 
           if (output.includes(snippet.expected)) {
-            resolve()
+            resolve();
             return;
           }
         });
-      })
+    });
   }
 
   async lint(snippet, lintOptions) {

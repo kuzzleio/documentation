@@ -6,4 +6,4 @@ class TestResult {
   }
 }
 
-module.exports = TestResult
+module.exports = TestResult;
