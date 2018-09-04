@@ -14,8 +14,6 @@ describe('BaseRunner', () => {
     BaseRunner = require('../lib/runners/baseRunner');
 
     snippetMock = {
-      checkIfTodo: sinon.stub(),
-      checkIfWontDo: sinon.spy(),
       render: sinon.spy(),
       clean: sinon.spy(),
       saveRendered: sinon.spy(),
@@ -32,16 +30,14 @@ describe('BaseRunner', () => {
 
   describe('#run', () => {
     it('execute each step to test and lint a snippet', async () => {
-      runner.lintExpect = sinon.spy();
+      runner.lint = sinon.spy();
       runner.runExpect = sinon.spy();
 
       await runner.run(snippetMock);
 
-      should(snippetMock.checkIfTodo).be.calledOnce;
-      should(snippetMock.checkIfWontDo.calledAfter(snippetMock.checkIfTodo)).be.eql(true);
       should(snippetMock.render.calledAfter(snippetMock.checkIfWontDo)).be.eql(true);
-      should(runner.lintExpect.calledAfter(snippetMock.render)).be.eql(true);
-      should(runner.runExpect.calledAfter(runner.lintExpect)).be.eql(true);
+      should(runner.lint.calledAfter(snippetMock.render)).be.eql(true);
+      should(runner.runExpect.calledAfter(runner.lint)).be.eql(true);
       should(snippetMock.clean.calledAfter(runner.runExpect)).be.eql(true);
     });
   });

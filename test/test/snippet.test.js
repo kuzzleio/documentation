@@ -109,28 +109,6 @@ describe('Snippet', () => {
     });
   });
 
-  describe('#checkIfTodo', () => {
-    it('throw if the test is marked as @todo', () => {
-      fsStub.readFileSync.onCall(0).returns('//@todo');
-      snippet = new Snippet(testFile, language).build();
-
-      should(() => {
-        snippet.checkIfTodo();
-      }).throw(TestResult);
-    });
-  });
-
-  describe('#checkIfWontDo', () => {
-    it('throw if the test is marked as @wontdo', () => {
-      fsStub.readFileSync.onCall(0).returns('//@wontdo');
-      snippet = new Snippet(testFile, language).build();
-
-      should(() => {
-        snippet.checkIfWontDo();
-      }).throw(TestResult);
-    });
-  });
-
   describe('#render', () => {
     it('should render the snippet inside the template', () => {
       snippet = new Snippet(testFile, language).build();

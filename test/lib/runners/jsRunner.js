@@ -2,7 +2,7 @@ const
   BaseRunner = require('./baseRunner'),
   path = require('path'),
   nexpect = require('nexpect'),
-  execute = require('../helpers/execute'),
+  { execute } = require('../helpers/sdk'),
   TestResult = require('../helpers/testResult');
 
 module.exports = class JsRunner extends BaseRunner {
@@ -10,21 +10,17 @@ module.exports = class JsRunner extends BaseRunner {
     super();
 
     this.lintConfig = path.join(__dirname, '../../linters/eslint.json');
-    this.language = 'js';
-    this.runCommand = 'node';
     this.lintCommand = `./node_modules/.bin/eslint`;
+    this.lintOptions = ['-c', this.lintConfig];
   }
 
-  async lintExpect(snippet) {
-    try {
-      await execute(this.lintCommand, ['-c', this.lintConfig, snippet.renderedSnippetPath]);
-    } catch (e) {
-      const result = {
-        code: 'ERR_LINTER',
-        actual: e.message
-      };
+  async runExpect(snippet) {
+    this.nexpectCommand = `node ${snippet.renderedSnippetPath}`;
 
-      throw new TestResult(result);
-    }
+    await super.runExpect(snippet);
+  }
+
+  async lint(snippet) {
+    await super.lint(snippet, this.lintOptions.concat(snippet.renderedSnippetPath));
   }
 };

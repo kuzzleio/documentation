@@ -1,11 +1,14 @@
 const
-  execute = require('../helpers/execute');
+  {
+    execute,
+    getVersionPath
+  } = require('../helpers/sdk');
 
 class GoSdk {
   constructor(version) {
     this.version = version;
 
-    this.repository = `https://github.com/kuzzleio/sdk-go`
+    this.repository = 'https://github.com/kuzzleio/sdk-go';
     this.sdkGoPath = '/go/src/github.com/kuzzleio/sdk-go';
   }
 

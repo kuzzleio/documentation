@@ -6,14 +6,17 @@ const
   indentString = require('indent-string'),
   sanitize = require('sanitize-filename'),
   childProcess = require('child_process'),
+  { execute } = require('../helpers/sdk'),
   TestResult = require('../helpers/testResult');
 
 module.exports = class BaseRunner {
+  constructor() {
+    this.nexpectCommand = '';
+    this.lintCommand = '';
+    this.lintOptions = [];
+  }
 
   async run(snippet) {
-    snippet.checkIfTodo();
-    snippet.checkIfWontDo();
-
     snippet.render();
 
     try {
@@ -21,7 +24,7 @@ module.exports = class BaseRunner {
         this.runHookCommand(snippet.hooks.before);
       }
 
-      await this.lintExpect(snippet);
+      await this.lint(snippet);
       await this.runExpect(snippet);
 
       // Remove the generated files only if test succeed
@@ -43,7 +46,7 @@ module.exports = class BaseRunner {
   async runExpect(snippet) {
     return new Promise((resolve, reject) => {
       nexpect
-        .spawn(`${this.runCommand} ${snippet.renderedSnippetPath}`, { stream: 'all' })
+        .spawn(this.nexpectCommand, { stream: 'all' })
         .wait(snippet.expected, result => {
           if (result === snippet.expected) {
             resolve()
@@ -75,24 +78,17 @@ module.exports = class BaseRunner {
       })
   }
 
-  lintExpect(snippet) {
-    return new Promise((resolve, reject) => {
-      nexpect
-        .spawn(`${this.lintCommand} ${snippet.renderedSnippetPath}`, { stream: 'all' })
-        .wait(this.expectedLintSuccess)
-        .run(error => {
-          if (error) {
-            const result = {
-              code: 'ERR_ASSERTION',
-              actual: error
-            };
-            reject(new TestResult(result));
-            return;
-          }
+  async lint(snippet, lintOptions) {
+    try {
+      await execute(this.lintCommand, lintOptions);
+    } catch (e) {
+      const result = {
+        code: 'ERR_LINTER',
+        actual: e.message
+      };
 
-          resolve();
-        });
-    });
+      throw new TestResult(result);
+    }
   }
 
   runHookCommand(command) {

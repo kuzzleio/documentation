@@ -45,12 +45,6 @@ class Logger {
       case 'SUCCESS':
         status = 'Success';
         break;
-      case 'TODO':
-        status = 'Todo';
-        break;
-      case 'WONTDO':
-        status = 'Wontdo';
-        break;
       default:
         status = 'Fail';
         break;
@@ -71,24 +65,29 @@ class Logger {
   }
 
   reportResult(snippet, result) {
-    if (result.code === 'SUCCESS') {
-      console.log(
-        blue(`[${snippet.language}] `),
-        green('✔'),
-        green(`${snippet.name}: ${snippet.description}`)
-      );
-    } else {
-      console.log(
-        blue(`[${snippet.language}] `),
-        red('✗'),
-        red(`${snippet.name}: ${snippet.description}`)
-      );
-      console.log(red('        CODE      :'), result.code);
-      if (result.code === 'ERR_ASSERTION') {
-        console.log(red('        EXPECTED:'), snippet.expected);
-      }
-      console.log(red('        GOT     :'), result.actual);
-      console.log(red('        FILE    :'), result.file);
+    switch (result.code) {
+      case 'SUCCESS':
+        console.log(
+          blue(`[${snippet.language}] `),
+          green('✔'),
+          green(`${snippet.name}: ${snippet.description}`)
+        );
+        break;
+      default:
+        console.log(
+          blue(`[${snippet.language}] `),
+          red('✗'),
+          red(`${snippet.name}: ${snippet.description}`)
+        );
+        console.log(red('        CODE    :'), result.code);
+        console.log(red('        FILE    :'), result.file);
+        if (result.code === 'ERR_ASSERTION') {
+          console.log(red('        EXPECTED:'), snippet.expected);
+          console.log(red('        GOT     :'), result.actual);
+        } else {
+          console.log(red('        ERROR   :'), result.actual);
+        }
+        break;
     }
 
     this.addToReport(snippet, result);

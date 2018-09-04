@@ -3,6 +3,10 @@ const
   path = require('path'),
   Snippet = require('./snippet'),
   Logger = require('./helpers/logger'),
+  {
+    getSupportedLanguages,
+    getVersionPath
+  } = require('./helpers/sdk'),
   TestResult = require('./helpers/testResult');
 
 const supportedLanguages = ['js', 'cpp', 'go', 'java'];
@@ -23,8 +27,9 @@ class TestManager {
       throw new Error('Unable to find version in basePath');
     }
 
-    if (!supportedLanguages.includes(language)) {
-      throw new Error(`Unsupported language '${language}'. Only ${supportedLanguages.join(', ')} are supported.`);
+    const supportedLanguages = getSupportedLanguages();
+    if (! supportedLanguages.includes(language)) {
+      throw new Error(`Unknown language ${language}. Supported languages: ${supportedLanguages.join(',')}`);
     }
 
     this.basePath = basePath;
@@ -82,7 +87,7 @@ class TestManager {
   }
 
   async downloadSdk() {
-    this.logger.log(`Install ${this.language.toUpperCase()} SDK version ${this.version}`);
+    this.logger.log(`Install ${this.language.toUpperCase()} SDK version ${getVersionPath(this.language, this.version)}`);
 
     try {
       await this.sdk.get();

@@ -1,0 +1,20 @@
+js:
+  5: latest
+  6: unstable
+
+cpp:
+  1: unstable
+
+java:
+  1: unstable
+
+go:
+  1: unstable
+
+php:
+  3: stable
+  4: latest
+
+android:
+  1: latest
+  2: unstable

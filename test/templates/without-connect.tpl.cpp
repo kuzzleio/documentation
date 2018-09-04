@@ -11,9 +11,9 @@
 #include "listeners.hpp"
 
 class MyListener : public kuzzleio::EventListener {
-  public:
-    void trigger(char *payload) const {
-      std::cout << payload << std::endl;
+ public:
+    void trigger(const std::string& jsonResponse) {
+      std::cout << jsonResponse << std::endl;
     }
 };
 

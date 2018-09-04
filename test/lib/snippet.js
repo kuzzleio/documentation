@@ -98,32 +98,6 @@ class Snippet {
     }
   }
 
-  checkIfTodo() {
-    if (this.snippetContent.indexOf('@todo') === -1) {
-      return;
-    }
-
-    const result = {
-      code: 'TODO',
-      file: this.snippetFile
-    };
-
-    throw new TestResult(result);
-  }
-
-  checkIfWontDo() {
-    if (this.snippetContent.indexOf('@wontdo') === -1) {
-      return;
-    }
-
-    const result = {
-      code: 'WONTDO',
-      file: this.snippetFile
-    };
-
-    throw new TestResult(result)
-  }
-
   saveRendered() {
     const dest = `${SAVE_FAIL_DIR}${this.name}.${this.language}`;
     fs.copyFileSync(this.snippetFile, dest);
