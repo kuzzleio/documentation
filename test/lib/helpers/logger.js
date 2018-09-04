@@ -83,8 +83,10 @@ class Logger {
         red('✗'),
         red(`${snippet.name}: ${snippet.description}`)
       );
-      console.log(red('        ' + result.code));
-      console.log(red('        EXPECTED:'), snippet.expected);
+      console.log(red('        CODE      :'), result.code);
+      if (result.code === 'ERR_ASSERTION') {
+        console.log(red('        EXPECTED:'), snippet.expected);
+      }
       console.log(red('        GOT     :'), result.actual);
       console.log(red('        FILE    :'), result.file);
     }

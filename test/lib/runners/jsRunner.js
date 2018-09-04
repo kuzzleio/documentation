@@ -2,7 +2,7 @@ const
   BaseRunner = require('./baseRunner'),
   path = require('path'),
   nexpect = require('nexpect'),
-  { spawnSync } = require('child_process');
+  execute = require('../helpers/execute'),
   TestResult = require('../helpers/testResult');
 
 module.exports = class JsRunner extends BaseRunner {
@@ -16,12 +16,12 @@ module.exports = class JsRunner extends BaseRunner {
   }
 
   async lintExpect(snippet) {
-    const { status, stdout } = spawnSync(this.lintCommand, ['-c', this.lintConfig, snippet.renderedSnippetPath]);
-
-    if (status !== 0) {
+    try {
+      await execute(this.lintCommand, ['-c', this.lintConfig, snippet.renderedSnippetPath]);
+    } catch (e) {
       const result = {
         code: 'ERR_LINTER',
-        actual: stdout.toString()
+        actual: e.message
       };
 
       throw new TestResult(result);

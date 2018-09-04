@@ -1,8 +1,10 @@
 const
   { spawnSync } = require('child_process');
 
-async function execute(command, args, options) {
-  const { status, output, error } = spawnSync(command, args, {encoding: 'utf8', ...options});
+async function execute(command, args, options = {}) {
+  options.encoding = 'utf8';
+
+  const { status, output, error } = spawnSync(command, args, options);
 
   if (error) {
     throw error;
@@ -13,6 +15,8 @@ async function execute(command, args, options) {
 
     throw new Error(message);
   }
+
+  return status;
 }
 
 module.exports = execute;
