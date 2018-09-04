@@ -6,6 +6,6 @@ npm install --unsafe-perm
 
 chmod 777 node_modules
 
-./test/snippet-testing run $@
+/app/test/snippet-testing run $@
 
-chmod 777 ./test/bin/*
+chmod 777 /app/test/bin/*

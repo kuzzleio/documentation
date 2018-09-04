@@ -7,5 +7,4 @@ public class CodeExampleGenericClass {
       kuzzle = new Kuzzle("kuzzle");
       [snippet-code]
     }
-
 }

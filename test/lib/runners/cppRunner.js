@@ -9,7 +9,6 @@ module.exports = class CppRunner extends BaseRunner {
   constructor() {
     super();
     this.sdkPath = 'test/bin/sdk-cpp';
-    this.language = 'cpp';
     this.compileOptions = ['-std=c++11', `-I${this.sdkPath}/include`, `-L${this.sdkPath}/lib`, '-lkuzzlesdk', '-lpthread'];
     this.lintCommand = 'cpplint';
     this.lintOptions = ['--filter=-legal/copyright,-whitespace/line_length']
