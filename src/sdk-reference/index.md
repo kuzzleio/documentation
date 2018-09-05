@@ -1,9 +1,7 @@
 ---
 title: SDKs
 order: 1
-layout: full.html
+layout: languagesPage.html
+nosidebar: true
 ---
 
-# This is the first test
-
-Code example exctracted from files, it's posible to switch on your prefered language !
