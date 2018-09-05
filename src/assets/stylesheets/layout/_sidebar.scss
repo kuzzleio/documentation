@@ -150,3 +150,9 @@ $md-toggle__drawer--checked:
     }
   }
 }
+
+.nosidebar {
+  .md-sidebar {
+    display: none;
+  }
+}

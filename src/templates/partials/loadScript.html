@@ -1,0 +1,11 @@
+<script type="text/javascript" data-packer="exclude">
+  var site_url = 'https://docs.kuzzle.io/'
+  var site_base_path = '/'
+  var algolia_projectId = '{{ algolia_projectId }}'
+  var algolia_publicKey = '{{ algolia_publicKey }}'
+  var languages = '{{ languages }}'
+</script>
+<script src="/assets/js/main.min.js"></script>
+{{#if (eq is_dev true) }}
+  <script src="http://localhost:35729/livereload.js"></script>
+{{/if}}
