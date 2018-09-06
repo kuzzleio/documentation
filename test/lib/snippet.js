@@ -32,6 +32,7 @@ class Snippet {
     for (const [attribute, value] of Object.entries(this.testDefinition)) {
       this[attribute] = value;
     }
+    this.name = this.name.replace('#', '');
 
     this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.language}`;
     if (! fs.existsSync(this.templateFile)) {
