@@ -84,7 +84,7 @@ class TestManager {
   }
 
   async downloadSdk() {
-    this.logger.log(`Install ${this.language.toUpperCase()} SDK version ${getVersionPath(this.language, this.version)}`);
+    this.logger.log(`Install ${this.language.toUpperCase()} SDK version ${this.version} from ${getVersionPath(this.language, this.version)}`);
 
     try {
       await this.sdk.get();
