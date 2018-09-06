@@ -23,6 +23,6 @@ int main() {
   }
 
   [snippet-code]
-
+  std::cout << "Success" << std::endl;
   return 0;
 }
