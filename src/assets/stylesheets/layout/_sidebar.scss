@@ -16,6 +16,7 @@ $md-toggle__drawer--checked:
   width: 24.2rem;
   padding: 2.4rem 0;
   overflow: hidden;
+  
 
   // Hide for print
   @media print {
@@ -43,7 +44,7 @@ $md-toggle__drawer--checked:
         transform  0.25s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.25s;
       background-color: $md-color-white;
-      z-index: 3;
+      z-index: 11;
 
       // Adjust for RTL languages
       [dir="rtl"] & {
@@ -152,7 +153,29 @@ $md-toggle__drawer--checked:
 }
 
 .nosidebar {
-  .md-sidebar {
+  @include break-from-device(screen) {
+    .md-sidebar {
+      display: none;
+    }
+  }  
+}
+
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0,0,0,0.54);
+  opacity: 1;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  
+  &.hidden{
     display: none;
   }
+}
+
+.noscroll{
+  overflow: hidden;
 }
