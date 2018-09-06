@@ -14,7 +14,7 @@ for sdk_path in $sdk_paths; do
   echo "                Test $sdk_path snippets"
   echo "#######################################################################"
 
-  bash run-snippet-tests.sh -n $sdk_path
+  bash run-snippet-tests.sh -n -p $sdk_path
 
   curl -X POST localhost:7512/admin/_resetKuzzleData
   curl -X POST localhost:7512/admin/_resetDatabase
