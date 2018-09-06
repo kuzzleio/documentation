@@ -1,76 +1,36 @@
 const
   BaseRunner = require('./baseRunner'),
   nexpect = require('nexpect'),
-  childProcess = require('child_process'),
+  { execute } = require('../helpers/utils'),
   TestResult = require('../helpers/testResult');
 
 module.exports = class GoRunner extends BaseRunner {
   constructor() {
     super();
-    this.language = 'go';
     this.goProjectPath = '/go/src/github.com/kuzzleio/go-test/';
-    this.runCommand = `go run ${this.goProjectPath}`;
-    this.lintCommand = `golint ${this.goProjectPath}`;
+    this.lintCommand = 'golint';
   }
 
-  runExpect(snippet) {
+  async runExpect(snippet) {
     const fileName = snippet.renderedSnippetPath.split('/').pop();
+    this.nexpectCommand = `go run ${this.goProjectPath}${fileName}`;
 
-    childProcess.execSync(`goimports -w ${this.goProjectPath}${fileName}`);
+    try {
+      await execute('goimports', ['-w', `${this.goProjectPath}${fileName}`]);
+    } catch (e) {
+      const res = {
+        code: 'COMPILATION_FAIL',
+        actual: e.message
+      };
+      throw new TestResult(res);
+    }
 
-    return new Promise((resolve, reject) => {
-      nexpect
-        .spawn(this.runCommand + fileName)
-        .wait(snippet.expected, result => {
-          if (result === snippet.expected) {
-            resolve();
-            return;
-          }
-
-          const res = {
-            code: 'ERR_ASSERTION',
-            actual: result
-          };
-          reject(new TestResult(res));
-        })
-        .run((error, output) => {
-          if (error) {
-            const res = {
-              code: 'ERR_ASSERTION',
-              actual: error.actual
-            };
-            reject(new TestResult(res));
-
-            return;
-          }
-
-          if (output.includes(snippet.expected)) {
-            resolve();
-            return;
-          }
-        });
-    });
+    await super.runExpect(snippet);
   }
 
-  lintExpect(snippet) {
+  async lint(snippet) {
     const fileName = snippet.renderedSnippetPath.split('/').pop();
 
-    return new Promise((resolve, reject) => {
-      nexpect
-        .spawn(this.lintCommand + fileName, { stream: 'all' })
-        .wait('')
-        .run((error, output) => {
-          if (error) {
-            resolve();
-            return;
-          }
-
-          const res = {
-            code: 'LINTER ERROR',
-            actual: output.join('\n')
-          };
-          reject(new TestResult(res));
-        });
-    });
+    await super.lint(snippet, [this.goProjectPath + fileName]);
   }
 };

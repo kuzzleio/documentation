@@ -76,7 +76,6 @@ class TestManager {
         this.logger.reportResult(snippet, results[results.length - 1]);
       }
     }
-
     this.logger.writeReport();
 
     if (results.filter(result => result.code !== 'SUCCESS').length > 0) {
