@@ -1,26 +1,22 @@
-# This file contain the list of supported sdk and versions.
-# It also specify where to find the SDK version:
-#   - latest: master branch
-#   - unstable: x-dev branch (used when SDK version is not released yet)
-#   - stable: x-stable branch
+# This file contain the list of supported sdk and versions info to download them.
 
 js:
-  5: latest
-  6: unstable
+  5: master
+  6: 6-dev
 
 cpp:
-  1: unstable
+  1: 1-dev
 
 java:
-  1: unstable
+  1: 1-dev
 
 go:
-  1: unstable
+  1: 1-dev
 
 php:
-  3: stable
-  4: latest
+  3: 3-stable
+  4: 4-stable
 
 android:
-  1: latest
-  2: unstable
+  1: 1-stable
+  2: 2-dev

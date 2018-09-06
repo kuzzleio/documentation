@@ -31,25 +31,12 @@ function getVersionPath(language, version) {
     throw new Error(`Unknown language ${language}. Supported languages: ${supportedLanguages.join(', ')}`);
   }
 
-  const sdkVersionType = sdkVersions[language][version];
-  if (! sdkVersionType) {
+  const sdkVersionPath = sdkVersions[language][version];
+  if (! sdkVersionPath) {
     throw new Error(`Unknown version ${version} for ${language} SDK.`);
   }
 
-  const versionPath = (() => {
-    switch (sdkVersionType) {
-      case 'latest':
-        return 'latest';
-      case 'stable':
-        return `${version}-stable`;
-      case 'unstable':
-        return `${version}-dev`;
-      default:
-        throw new Error(`Unknown version type '${sdkVersionType}' for ${language}#${version}`);
-    }
-  })();
-
-  return versionPath;
+  return sdkVersionPath;
 }
 
 function getSupportedLanguages(sdkVersions = null) {
