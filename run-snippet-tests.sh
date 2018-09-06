@@ -77,8 +77,6 @@ extract_language $TESTS_PATH
 
 echo "Detected SDK: $LANGUAGE version $SDK_VERSION"
 
-ENTRYPOINT="docker/entrypoints/$LANGUAGE.js "
-
 case $LANGUAGE in
   js)
     docker run -t --name runner_js -a stdout -a stderr --rm --privileged --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:js $TESTS_PATH

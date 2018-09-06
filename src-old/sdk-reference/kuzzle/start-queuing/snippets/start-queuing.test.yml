@@ -1,7 +1,0 @@
-name: startQueuing
-description: Starts the requests queuing
-hooks:
-  before:
-  after:
-template: without-connect
-expected: Success

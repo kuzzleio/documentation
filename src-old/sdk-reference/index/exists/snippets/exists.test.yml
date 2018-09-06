@@ -1,7 +1,0 @@
-name: exists
-description: test if an index exists
-hooks:
-  before: curl -X POST kuzzle:7512/nyc-open-data/_create
-  after:
-template: default
-expected: index exists
