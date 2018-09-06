@@ -25,7 +25,6 @@
         "hoek": "^5.0.3",
         "indent-string": "^3.2.0",
         "jsonfile": "^4.0.0",
-        "kuzzle-sdk": "git+https://github.com/kuzzleio/sdk-javascript.git#6-dev",
         "markdown-it": "^8.4.2",
         "metalsmith": "^2.3.0",
         "metalsmith-algolia": "^0.1.0",
