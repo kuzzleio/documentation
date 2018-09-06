@@ -2,7 +2,7 @@ const
   {
     execute,
     getVersionPath
-  } = require('../helpers/sdk');
+  } = require('../helpers/utils');
 
 class JsSdk {
   constructor(version) {

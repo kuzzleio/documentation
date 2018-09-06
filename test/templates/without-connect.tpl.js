@@ -8,5 +8,4 @@ const kuzzle = new Kuzzle('websocket', {
 });
 
 [snippet-code]
-
 console.log('Success');

@@ -1,3 +1,9 @@
+# This file contain the list of supported sdk and versions.
+# It also specify where to find the SDK version:
+#   - latest: master branch
+#   - unstable: x-dev branch (used when SDK version is not released yet)
+#   - stable: x-stable branch
+
 js:
   5: latest
   6: unstable

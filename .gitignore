@@ -1,7 +1,7 @@
 /build
 /node_modules
 /.vscode
-/reports/*.json
 test/bin/*
+/reports/*.json
 /reports/failed/*.*
 libs/

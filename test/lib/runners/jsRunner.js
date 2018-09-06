@@ -2,7 +2,7 @@ const
   BaseRunner = require('./baseRunner'),
   path = require('path'),
   nexpect = require('nexpect'),
-  { execute } = require('../helpers/sdk'),
+  { execute } = require('../helpers/utils'),
   TestResult = require('../helpers/testResult');
 
 module.exports = class JsRunner extends BaseRunner {

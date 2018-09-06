@@ -5,7 +5,7 @@ const
   indentString = require('indent-string'),
   sanitize = require('sanitize-filename'),
   childProcess = require('child_process'),
-  { execute } = require('../helpers/sdk'),
+  { execute } = require('../helpers/utils'),
   TestResult = require('../helpers/testResult');
 
 module.exports = class BaseRunner {

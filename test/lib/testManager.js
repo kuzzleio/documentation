@@ -6,7 +6,7 @@ const
   {
     getSupportedLanguages,
     getVersionPath
-  } = require('./helpers/sdk'),
+  } = require('./helpers/utils'),
   TestResult = require('./helpers/testResult');
 
 class TestManager {

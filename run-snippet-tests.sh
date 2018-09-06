@@ -2,26 +2,47 @@
 
 set -e
 
+function extract_language() {
+  path=$1
+  previous_part=""
+  parts=$(echo $path | tr "/" "\n")
+
+  for part in $parts
+  do
+    if [[ $previous_part = "sdk-reference" ]]; then
+      LANGUAGE=$part
+    fi
+
+    if [[ $LANGUAGE = $previous_part ]]; then
+      SDK_VERSION=$part
+    fi
+
+    previous_part=$part
+  done
+
+  if [ -z $LANGUAGE ]; then
+    echo "Can not find the sdk language in path '$path'"
+    exit 1
+  fi
+
+  if [ -z $SDK_VERSION ]; then
+    echo "Can not find the sdk version in path '$path'"
+    exit 1
+  fi
+}
+
 START_KUZZLE=1
 INTERACTIVE=0
 
 show_help() {
   echo "Possible options are"
-  echo " -l <language>  [MANDATORY] specifies the language to test (valid languages are js, go, cpp and java)"
   echo " -p <test-path> [MANDATORY] specifies the tests directory"
   echo " -n             Prevent to start the Kuzzle stack (useful if you keep it running yourself to run many tests)"
   echo " -i             Launch a webserver after the tests to show a report"
 }
 
-while getopts ":l:np:i" opt; do
+while getopts ":np:i" opt; do
   case $opt in
-    l)
-      if [ "$OPTARG" = "" ]; then
-        echo "Option -$opt requires an argument" >&2
-        exit 1
-      fi
-      LANGUAGE=$OPTARG
-    ;;
     n)
       START_KUZZLE=0
     ;;
@@ -52,6 +73,10 @@ if [ $START_KUZZLE -eq 1 ]; then
   sh .travis/start_kuzzle.sh
 fi
 
+extract_language $TESTS_PATH
+
+echo "Detected SDK: $LANGUAGE version $SDK_VERSION"
+
 ENTRYPOINT="docker/entrypoints/$LANGUAGE.js "
 
 case $LANGUAGE in
@@ -74,6 +99,9 @@ case $LANGUAGE in
   ;;
 esac
 
+if [ ! -z "$TRAVIS" ]; then
+  aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/$LANGUAGE/$TRAVIS_PULL_REQUEST/ --recursive --exclude "*.gitkeep"
+fi
 
 if [ $START_KUZZLE -eq 1 ]; then
   sh .travis/stop_kuzzle.sh
