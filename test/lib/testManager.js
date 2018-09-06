@@ -41,16 +41,17 @@ class TestManager {
 
     const Sdk = require(`./sdk/${this.language}Sdk`);
     this.sdk = new Sdk(this.version);
+
+    this.testFiles = this._getTestFiles(this.basePath);
   }
 
   async run() {
     const
-      results = [],
-      testFiles = this._getTestFiles(this.basePath);
+      results = [];
 
-    this.logger.log(`${testFiles.length} tests found\n`);
+    this.logger.log(`${this.testFiles.length} tests found\n`);
 
-    for (const testFile of testFiles) {
+    for (const testFile of this.testFiles) {
       const snippet = new Snippet(testFile, this.language);
 
       try {
@@ -84,6 +85,10 @@ class TestManager {
   }
 
   async downloadSdk() {
+    if (this.testFiles.length === 0) {
+      return;
+    }
+    
     this.logger.log(`Install ${this.language.toUpperCase()} SDK version ${this.version} from ${getVersionPath(this.language, this.version)}`);
 
     try {
