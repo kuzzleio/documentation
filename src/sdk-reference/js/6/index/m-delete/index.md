@@ -42,4 +42,4 @@ Resolves to an `Array` of strings containing the list of indexes names successfu
 
 ## Usage
 
-[code-example=mDelete]
+[snippet=mDelete]

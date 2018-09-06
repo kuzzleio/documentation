@@ -6,7 +6,7 @@ const
   color = require('colors/safe'),
   config = require('../getConfig').get();
 
-const SNIPPET_REGEX = /(\[code-example=)[a-zA-Z0-9\-]+\]/g;
+const SNIPPET_REGEX = /(\[snippet=)[a-zA-Z0-9\-]+\]/g;
 
 module.exports = {
 
@@ -52,7 +52,7 @@ module.exports = {
     for (let k in config.languages) {
       if (!presentLanguages.includes(config.languages[k].ext)) {
         let page = fullPath.split('sdk-reference')[1].split(config.code_example.snippet_folder_name)[0]
-        console.log(color.red(`[MISSING CODE-EXAMPLE] Language ${config.languages[k].fullname} need sample code for ${page}`))
+        console.log(color.red(`[MISSING snippet] Language ${config.languages[k].fullname} need sample code for ${page}`))
       }
     }
   },

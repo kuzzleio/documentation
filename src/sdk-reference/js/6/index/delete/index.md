@@ -46,4 +46,4 @@ Resolves to an object containing the index deletion status.
 
 ## Usage
 
-[code-example=delete]
+[snippet=delete]

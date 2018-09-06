@@ -23,4 +23,4 @@ A `char*` with the error message or `nullptr` if connection is made successfully
 
 ## Usage
 
-[code-example=connect]
+[snippet=connect]

@@ -36,4 +36,4 @@ Returns an `Array` of strings containing the list of indexes names present in Ku
 
 ## Usage
 
-[code-example=list]
+[snippet=list]

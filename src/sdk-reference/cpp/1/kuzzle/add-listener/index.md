@@ -62,4 +62,4 @@ The `Kuzzle` instance.
 
 ## Usage
 
-[code-example=add-listener]
+[snippet=add-listener]

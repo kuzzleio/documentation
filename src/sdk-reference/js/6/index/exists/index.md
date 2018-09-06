@@ -42,4 +42,4 @@ Resolves to a `boolean` that indicate whether the index exists or not.
 
 ## Usage
 
-[code-example=exists]
+[snippet=exists]

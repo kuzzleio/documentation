@@ -19,4 +19,4 @@ StopQueuing()
 
 ## Usage
 
-[code-example=stop-queuing]
+[snippet=stop-queuing]

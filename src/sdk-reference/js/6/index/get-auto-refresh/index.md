@@ -52,4 +52,4 @@ Resolves to a `boolean` that indicate the status of the **autoRefresh** flag.
 
 ## Usage
 
-[code-example=getAutoRefresh]
+[snippet=getAutoRefresh]

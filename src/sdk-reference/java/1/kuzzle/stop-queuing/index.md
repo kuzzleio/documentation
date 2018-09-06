@@ -23,4 +23,4 @@ The `Kuzzle` instance.
 
 ## Usage
 
-[code-example=stop-queuing]
+[snippet=stop-queuing]

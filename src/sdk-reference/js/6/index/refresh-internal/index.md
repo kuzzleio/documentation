@@ -55,4 +55,4 @@ Resolves to an object containing the refresh status.
 
 ## Usage
 
-[code-example=refreshInternal]
+[snippet=refreshInternal]

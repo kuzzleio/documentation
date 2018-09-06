@@ -45,4 +45,4 @@ Return an error or `nil` if index successfully refreshed.
 
 ## Usage
 
-[code-example=refresh]
+[snippet=refresh]

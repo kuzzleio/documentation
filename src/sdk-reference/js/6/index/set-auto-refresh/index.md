@@ -58,4 +58,4 @@ Resolve to an object containing the new value of autorefresh flag.
 
 ## Usage
 
-[code-example=setAutoRefresh]
+[snippet=setAutoRefresh]

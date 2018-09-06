@@ -37,4 +37,4 @@ Returns an `Array` of strings containing the list of indexes names deleted or an
 
 ## Usage
 
-[code-example=mDelete]
+[snippet=mDelete]

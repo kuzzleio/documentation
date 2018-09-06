@@ -7,7 +7,7 @@
     "build": "node index.js --gzip",
     "dev": "node index.js --dev --watch",
     "lint": "eslint --max-warnings=0 ./test/lib",
-    "snippets-testing": "sh run-all-snippets-tests.sh",
+    "snippets-testing": "bash run-all-snippet-tests.sh",
     "unit-testing": "mocha ./test/test",
     "scaffold": "node scaffolding/index.js",
     "test": "npm run --silent lint && npm run snippets-testing"

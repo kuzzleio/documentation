@@ -37,4 +37,4 @@ Returns a `boolean` that indicate whether the index exists, or an error
 
 ## Usage
 
-[code-example=exists]
+[snippet=exists]

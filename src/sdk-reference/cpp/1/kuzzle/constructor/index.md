@@ -71,4 +71,4 @@ A `Kuzzle` instance.
 
 ## Usage
 
-[code-example=constructor]
+[snippet=constructor]

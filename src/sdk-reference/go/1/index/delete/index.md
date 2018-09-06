@@ -37,4 +37,4 @@ Returns an error or `nil` if the request succeed.
 
 ## Usage
 
-[code-example=delete]
+[snippet=delete]

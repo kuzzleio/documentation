@@ -37,4 +37,4 @@ Return an error or `nil` if index successfully created.
 
 ## Usage
 
-[code-example=create]
+[snippet=create]

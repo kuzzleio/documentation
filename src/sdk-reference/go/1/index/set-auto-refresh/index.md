@@ -48,4 +48,4 @@ Return an error or `nil`.
 
 ## Usage
 
-[code-example=setAutoRefresh]
+[snippet=setAutoRefresh]

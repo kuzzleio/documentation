@@ -33,6 +33,10 @@ Here is an overview of the files structure:
 - `src/<section>/<subsection>/` (for instance: `src/guide/essentials/`)
 - `src/<section>/<subsection>/<article>.md` (for instance: `src/guide/essentials/installing-kuzzle.md`)
 
+For the SDKs:
+
+- `src/sdk-reference/<language>/<version>/<controller>/<action>`
+
 Though there is no real limit to the directories depth, to keep the documentation homogeneous and readable, no additional subdirectories should be added.
 
 ## Documentation pages
@@ -63,16 +67,16 @@ supported classes are : `alert-infos`, `alert-success`, `alert-warning`
 
 ## Adding code example
 
-It's possible to add code example (for each languages supported for SDKs) in markdown, before doing that, you have to create a directory `code-example` at the same level of the page you are editing. In this directory put all your code example files.
+It's possible to add code example (for each languages supported for SDKs) in markdown, before doing that, you have to create a directory `snippets` at the same level of the page you are editing. In this directory put all your code example files.
 
 EX: `createDocument.js` / `createDocument.go` / `...`
 
-Now in markdown just add `[code-example=createDocument]` where you want. When metalsmith will build, the code-example tag will be remplaced by the code in each code example files.
+Now in markdown just add `[snippet=createDocument]` where you want. When metalsmith will build, the snippet tag will be remplaced by the code in each code example files.
 
 ## Override markdown
 
 Because each languages supported for SDKs can have specifications, It's possible to override markdown.
-Like code-example, create a subfolder `sections` and put markdown files in it.
+Like snippet, create a subfolder `sections` and put markdown files in it.
 
 EX: `createDocument_js.md` / `createDocument_go.md` / `createDocument_default.md` / `...`
 
@@ -86,7 +90,7 @@ Now you can add this tag in your markdown to allow metalsmith to override parts 
 
 ```yaml
 code_example:
-  snippet_folder_name: code-example
+  snippet_folder_name: snippet
   section_folder_name: sections
 languages:
   js:
@@ -103,7 +107,7 @@ languages:
 
 ## Writing tests
 
-To write tests for code-example, you have to put an YAML file in front of snippets file with the same name of the snippet you want to test
+To write tests for snippet, you have to put an YAML file in front of snippets file with the same name of the snippet you want to test
 
 ```yaml
 name: Create document
@@ -141,12 +145,12 @@ kuzzle
 
 You can add your own template, just respect the naming rule : `template_name.tpl.ext`
 
-## Testing the code-examples locally
+## Testing the snippets locally
 
 It's possible to play test locally by running at the root of the project
 
 ```bash
-   sh run_test.sh -l <language>
+   bash run-snippet-tests.sh -l <language>
 ```
 
 Where `<language>` specifies the language to test (currently available languages are `js`, `go`, `cpp` and `java`). This will launch a Kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .
@@ -154,7 +158,7 @@ Where `<language>` specifies the language to test (currently available languages
 There are more available options. Using `-n` will prevent the script to launch the Kuzzle stack:
 
 ```bash
-   sh run_test.sh -l <language> -n
+   bash run-snippet-tests.sh -l <language> -n
 ```
 
 This is handy if you launch many times the tests and keep the stack running on the background.
@@ -162,7 +166,7 @@ This is handy if you launch many times the tests and keep the stack running on t
 You can also specify a single test to be run using the `-f` option:
 
 ```bash
-   sh run_test.sh -l <language> -f <path>
+   bash run-snippet-tests.sh -l <language> -f <path>
 ```
 
 Where `<path>` specifies the path to the `.yml` test description, relative to `$PWD/src/sdk-reference`.
@@ -170,5 +174,5 @@ Where `<path>` specifies the path to the `.yml` test description, relative to `$
 The following example launches a single test in Javascript using the running Kuzzle stack:
 
 ```bash
-   sh run_test.sh -n -l js -f index/code-example/delete.yml
+   bash run-snippet-tests.sh -n -l js -f index/snippet/delete.yml
 ```

@@ -30,4 +30,4 @@ Reject with a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/error-
 
 ## Usage
 
-[code-example=connect]
+[snippet=connect]

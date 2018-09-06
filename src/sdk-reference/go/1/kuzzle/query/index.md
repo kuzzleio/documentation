@@ -60,4 +60,4 @@ This channel will receive a [KuzzleResponse](https://github.com/kuzzleio/sdk-go/
 
 ## Usage
 
-[code-example=query]
+[snippet=query]

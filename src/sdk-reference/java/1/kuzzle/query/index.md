@@ -72,4 +72,4 @@ Throws a `KuzzleException` if there is an error. See how to [handle error]({{ si
 
 ## Usage
 
-[code-example=query]
+[snippet=query]

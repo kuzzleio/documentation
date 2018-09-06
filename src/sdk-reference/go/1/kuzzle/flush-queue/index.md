@@ -18,4 +18,4 @@ FlushQueue()
 
 ## Usage
 
-[code-example=flush-queue]
+[snippet=flush-queue]

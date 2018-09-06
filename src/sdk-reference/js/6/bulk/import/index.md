@@ -71,4 +71,4 @@ On resolve, the response object is the one directly sent by Elasticsearch for th
 
 ## Usage
 
-[code-example=import]
+[snippet=import]

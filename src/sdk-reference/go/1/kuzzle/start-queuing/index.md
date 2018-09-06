@@ -19,4 +19,4 @@ StartQueuing()
 
 ## Usage
 
-[code-example=start-queuing]
+[snippet=start-queuing]

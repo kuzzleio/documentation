@@ -25,4 +25,4 @@ The `Kuzzle` instance.
 
 ## Usage
 
-[code-example=flush-queue]
+[snippet=flush-queue]

@@ -40,4 +40,4 @@ Resolves to an `Array` of strings containing the list of indexes names present i
 
 ## Usage
 
-[code-example=list]
+[snippet=list]

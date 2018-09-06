@@ -53,4 +53,4 @@ Resolves to an object containing the refresh status on shards.
 
 ## Usage
 
-[code-example=refresh]
+[snippet=refresh]

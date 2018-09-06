@@ -23,4 +23,4 @@ Return a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/error-handl
 
 ## Usage
 
-[code-example=connect]
+[snippet=connect]

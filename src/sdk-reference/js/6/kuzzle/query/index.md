@@ -61,4 +61,4 @@ Resolve to the raw Kuzzle API response. See the [API Documentation]({{ site_base
 
 ## Usage
 
-[code-example=query]
+[snippet=query]

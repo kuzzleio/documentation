@@ -26,4 +26,4 @@ The `Kuzzle` instance.
 
 ## Usage
 
-[code-example=play-queue]
+[snippet=play-queue]

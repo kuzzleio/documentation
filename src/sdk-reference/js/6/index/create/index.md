@@ -47,4 +47,4 @@ Resolves to an object containing the index creation status
 
 ## Usage
 
-[code-example=create]
+[snippet=create]

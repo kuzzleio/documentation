@@ -23,4 +23,4 @@ A `String` with the error message or `null` if connection is made successfully.
 
 ## Usage
 
-[code-example=connect]
+[snippet=connect]

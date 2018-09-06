@@ -20,4 +20,4 @@ void disconnect()
 
 ## Usage
 
-[code-example=disconnect]
+[snippet=disconnect]

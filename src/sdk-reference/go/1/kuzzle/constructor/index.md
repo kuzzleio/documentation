@@ -100,4 +100,4 @@ The `error` struct is nil if everything was ok.
 In a first step, you have to create a new `connection.Connection` and pass it to the constructor.  
 By now the only connection available is `websocket.Websocket`.
 
-[code-example=constructor]
+[snippet=constructor]
