@@ -1,7 +1,8 @@
-name: list
+---
+name: index#list
 description: list indexes handled by Kuzzle
 hooks:
   before: curl -X POST kuzzle:7512/admin/_resetDatabase && curl -X POST kuzzle:7512/nyc-open-data/_create
-  after:
+  after: 
 template: default
 expected: Kuzzle contains 1 indexes

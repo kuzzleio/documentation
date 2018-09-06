@@ -1,7 +1,8 @@
-name: playQueue
+---
+name: kuzzle#playQueue
 description: Play the requests queued
 hooks:
-  before:
-  after:
+  before: 
+  after: 
 template: without-connect
 expected: Success

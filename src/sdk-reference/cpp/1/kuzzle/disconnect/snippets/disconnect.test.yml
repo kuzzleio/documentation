@@ -1,7 +1,8 @@
-name: disconnect
+---
+name: kuzzle#disconnect
 description: Disconnect the SDK
 hooks:
-  before:
-  after:
+  before: 
+  after: 
 template: without-connect
 expected: Success
