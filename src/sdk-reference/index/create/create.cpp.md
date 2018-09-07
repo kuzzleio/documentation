@@ -1,5 +1,3 @@
-## Signature
-
 ```cpp
 void create(std::string index, kuzzleio::query_options *options = null)
 ```
@@ -21,7 +19,9 @@ Additional query options
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+ - one of the standard [Kuzzle exceptions]({{ site_base_path }}/sdk-reference/essentials/exceptions#standard)
+ - `PreconditionException` if Kuzzle was not able to process the request due to an invalid state (eg: non-existing collection)
+ - `SizeLimitException` if the request size exceeds the limits defined by the [Kuzzle configuration]({{ site_base_path }}/guide/essentials/configuration)
 
 ## Usage
 
