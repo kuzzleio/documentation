@@ -10,5 +10,4 @@ order: 200
 
 Create a new index in Kuzzle
 
-## Signature
 [section=create]
