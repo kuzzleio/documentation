@@ -1,99 +1,123 @@
 const
-  read = require('read-yaml'),
-  path = require('path'),
   fs = require('fs'),
-  config = require('../../getConfig').get(),
-  Bluebird = require('bluebird');
+  path = require('path'),
+  Snippet = require('./snippet'),
+  Logger = require('./helpers/logger'),
+  {
+    getSupportedLanguages,
+    getVersionPath
+  } = require('./helpers/utils'),
+  TestResult = require('./helpers/testResult');
 
-module.exports = class TestManager {
-
-  constructor(language) {
-    if (! this.checkLanguageExist(language)) {
-      // eslint-disable-next-line no-console
-      console.error('Language specified in args doesn\'t exist in config');
-      process.exit(1);
+class TestManager {
+  constructor(basePath) {
+    if (basePath.indexOf('sdk-reference') === -1) {
+      throw new Error('Unable to find sdk-reference directory in basePath');
     }
 
-    const Tester = require(`./testers/${language}Tester`);
-    this.tester = new Tester();
+    const [language, version, rest] = (basePath.split('sdk-reference/')[1] || '').split('/');
+
+    if (! language) {
+      throw new Error('Unable to find language in basePath');
+    }
+
+    if (! version) {
+      throw new Error('Unable to find version in basePath');
+    }
+
+    const supportedLanguages = getSupportedLanguages();
+    if (! supportedLanguages.includes(language)) {
+      throw new Error(`Unknown language ${language}. Supported languages: ${supportedLanguages.join(', ')}`);
+    }
+
+    this.basePath = basePath;
     this.language = language;
+    this.version = version;
+
+    const Runner = require(`./runners/${language}Runner`);
+    this.languageRunner = new Runner();
+
+    this.logger = new Logger(this.language);
+
+    const Sdk = require(`./sdk/${this.language}Sdk`);
+    this.sdk = new Sdk(this.version);
+
+    this.testFiles = this._getTestFiles(this.basePath);
   }
 
-  process(onlyOnePath) {
-    let
-      testsPath = path.join(__dirname, '../../'),
-      tests,
-      count = 0,
-      allResults = [];
+  async run() {
+    const
+      results = [];
 
-    if (onlyOnePath) {
-      tests = this.getAllTests(testsPath, 'yml', [onlyOnePath]);
-    } else {
-      tests = this.getAllTests(testsPath, 'yml');
-    }
+    this.logger.log(`${this.testFiles.length} tests found\n`);
 
-    Bluebird.mapSeries(tests, file => {
-      const
-        test = read.sync(file),
-        snippetPath = file.split('.test.yml')[0];
+    for (const testFile of this.testFiles) {
+      const snippet = new Snippet(testFile, this.language);
 
-      return this.tester.runOneTest(test, snippetPath)
-        .then(() => {
-          allResults.push(true);
-          count++;
-          this.handleTestsFinish(count, tests.length, allResults);
-        })
-        .catch(err => {
-          if (typeof err !== 'undefined') {
-            // eslint-disable-next-line no-console
-            console.error(err);
-          }
+      try {
+        snippet.build();
 
-          allResults.push(false);
-          count++;
-          this.handleTestsFinish(count, tests.length, allResults);
+        await this.languageRunner.run(snippet);
+
+        results.push({
+          code: 'SUCCESS',
+          file: snippet.snippetFile
         });
-    });
-  }
-
-  handleTestsFinish(count, length, allResults) {
-    if (count === length) {
-      if (allResults.includes(false)) {
-        process.exit(1);
-      } else {
-        process.exit(0);
+      }
+      catch (e) {
+        if (! (e instanceof TestResult)) {
+          results.push(new TestResult({
+            code: 'ERROR',
+            actual: e
+          }));
+        } else {
+          results.push(e);
+        }
+      } finally {
+        this.logger.reportResult(snippet, results[results.length - 1]);
       }
     }
-  }
+    this.logger.writeReport();
 
-  checkLanguageExist(language) {
-    return ! (config.languages[language] === undefined);
-  }
-
-  getAllTests(base, ext, files, result) {
-    if (base.indexOf('scaffolding') !== -1) {
-      return [];
+    if (results.filter(result => result.code !== 'SUCCESS').length > 0) {
+      process.exit(1);
     }
+  }
 
-    const suffix = '.test';
-    files = files || fs.readdirSync(base);
-    result = result || [];
+  async downloadSdk() {
+    if (this.testFiles.length === 0) {
+      return;
+    }
+    
+    this.logger.log(`Install ${this.language.toUpperCase()} SDK version ${this.version} from ${getVersionPath(this.language, this.version)}`);
 
-    files.forEach(file => {
+    try {
+      await this.sdk.get();
+      this.logger.log('Installation successfull', true);
+    } catch (e) {
+      this.logger.log(`Error when installing the SDK: ${e.message}`, false);
+
+      throw e;
+    }
+  }
+
+  _getTestFiles(base) {
+    let result = [];
+
+    const files = fs.readdirSync(base);
+
+    for (const file of files) {
       const newbase = path.join(base, file);
 
       if (fs.statSync(newbase).isDirectory()) {
-        result = this.getAllTests(newbase, ext, fs.readdirSync(newbase), result);
-      } else if (file.substr(-1 * (ext.length + 6)) === `${suffix}.${ext}`) {
+        result = result.concat(this._getTestFiles(newbase));
+      } else if (file.indexOf('.test.yml') > -1) {
         result.push(newbase);
       }
-    });
+    }
 
     return result;
   }
+}
 
-  readConfigTest(filename) {
-    return read.sync(filename);
-  }
-
-};
+module.exports = TestManager;

@@ -1,7 +1,0 @@
-name: flushQueue
-description: Empties the offline request queue
-hooks:
-  before:
-  after:
-template: standalone
-expect: Success

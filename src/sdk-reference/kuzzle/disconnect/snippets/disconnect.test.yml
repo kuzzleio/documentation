@@ -1,7 +1,0 @@
-name: disconnect
-description: Disconnect the SDK
-hooks:
-  before:
-  after:
-template: standalone
-expect: Success

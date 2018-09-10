@@ -14,12 +14,10 @@ function setNumber(dataArr) {
 }
 
 function getTestCounts(dataArray) {
-  var 
+  var
     fail = 0,
-    success = 0,
-    todo = 0,
-    wontdo = 0;
-    
+    success = 0;
+
   dataArray.forEach(el => {
     switch (el.status) {
       case 'Success':
@@ -28,20 +26,15 @@ function getTestCounts(dataArray) {
       case 'Fail':
         ++fail;
         break;
-      case 'Todo':
-        ++todo;
-        break;
       default:
-        ++wontdo;
-    } 
+        throw new Error(`Unknown status ${el.status}`);
+    }
   });
-    
+
   return {
     total: dataArray.length,
     fail: fail,
-    todo: todo,
-    success: success,
-    wontdo: wontdo
+    success: success
   };
 }
 
@@ -86,7 +79,7 @@ getData('report.json', function (report) {
   dataArr.forEach(function (el) {
     var gotColData = {
       isError: el.status === 'Fail',
-      text: (Object.keys(el.error).length !== 0) ? el.error.code + ' : ' + el.error.got : el.test.expect 
+      text: (Object.keys(el.error).length !== 0) ? el.error.code + ' : ' + el.error.got : el.test.expect
     };
     rowData.push({
       name: el.test.name,
@@ -109,13 +102,7 @@ getData('report.json', function (report) {
       },
       'bg-fail': function (params) {
         return params.data.status === 'Fail';
-      },
-      'bg-todo': function (params) {
-        return params.data.status === 'Todo';
-      },
-      'bg-wontdo': function (params) {
-        return params.data.status === 'Wontdo';
-      },
+      }
     }
   };
 
@@ -126,30 +113,30 @@ getData('report.json', function (report) {
     allColumnIds.push(column.colId);
   });
   gridOptions.columnApi.autoSizeColumns(allColumnIds);
-  
+
   // CHARTS
   var testCount = getTestCounts(dataArr);
   var ctx = document.getElementById("pie-chart").getContext("2d");
-  
+
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ["Success", "Fail", 'Todo', 'Wontdo'],
+      labels: ['Success', 'Fail'],
       datasets: [{
-        label: "Tests status",
-        backgroundColor: ["#90EE90", "#F08080", "#ADD8E6", "#778899"],
-        data: [testCount.success, testCount.fail, testCount.todo, testCount.wontdo]
+        label: 'Tests status',
+        backgroundColor: ['#90EE90', '#F08080', '#ADD8E6', '#778899'],
+        data: [testCount.success, testCount.fail]
       }]
     },
     options: {
       responsive: false
     }
   });
-  
+
   setLanguage(dataArr[0].language);
   setDatetime(dataArr[0].datetime);
   setNumber(dataArr);
-  
+
 });
 
 // SEE FILE MARKDOWN
@@ -157,23 +144,23 @@ $(document).on('click', 'a.file-link', function (e) {
   e.preventDefault();
   var file = $(this).data('file');
   getData('failed/' + file, function(fileContent){
-    var 
+    var
       converter = new showdown.Converter(),
       html = converter.makeHtml('```' + file.split('.')[1] +'\n' + fileContent + '\n```');
-      
+
     $('.modal').html(html);
     $('.modal').modal();
     $('.modal pre').addClass('line-numbers')
     Prism.highlightAll();
     return false;
-  });  
+  });
 });
 
 // SEE ERROR MARKDOWN
 $(document).on('click', 'a.error-link', function (e) {
   e.preventDefault();
   var error = $(this).data('content').replace(/,/g, '<br>');
-    
+
   $('.modal').html(error);
   $('.modal').addClass('modal-error');
   $('.modal').modal();

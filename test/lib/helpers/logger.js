@@ -1,5 +1,10 @@
 const
-  color = require('colors/safe'),
+  {
+    green,
+    red,
+    blue,
+    yellow
+  } = require('colors/safe'),
   jsonfile = require('jsonfile'),
   path = require('path'),
   fs = require('fs');
@@ -7,58 +12,105 @@ const
 /* eslint-disable no-console */
 
 class Logger {
+  constructor(language) {
+    this.language = language;
 
-  reportOk(test, language) {
-    this.reportToJson(test, false, language);
-    console.log(color.green('✔'), color.green(`${test.name}: ${test.description}`));
-  }
+    this.reportFile = `${path.join(__dirname, '../../../reports/')}report.json`;
 
-  reportNOk(test, err, language) {
-    console.log('LANGUAGE:', language);
-    this.reportToJson(test, err, language);
-    console.log(color.red('✗'), color.red(`${test.name}: ${test.description}`));
-    if (err) {
-      console.log(color.red('    ' + err.code));
-      console.log(color.red('    EXPECTED:'), test.expect);
-      console.log(color.red('    GOT     :'), err.actual);
+    this.report = {};
+
+    if (fs.existsSync(this.reportFile)) {
+      try {
+        this.report = jsonfile.readFileSync(this.reportFile);
+      } catch (e) {
+        if (! (e instanceof SyntaxError)) {
+          throw e;
+        }
+      }
     }
   }
 
-  reportToJson(test, err, language) {
-    const reportFile = path.join(__dirname, '../../../reports/') + 'report.json';
-    let
-      report = {},
-      status;
-
-    if (fs.existsSync(reportFile)) {
-      report = jsonfile.readFileSync(reportFile);
+  addToReport(snippet, result) {
+    // Do not display this warning locally because we often run the tests multiple time
+    if (this.report[snippet.name] && process.env.TRAVIS) {
+      console.log(
+        yellow('/!\\'),
+        ` Duplicate snippet name: ${snippet.name}`
+      );
     }
-    switch (err.code) {
-      case undefined:
+
+    let status;
+
+    switch (result.code) {
+      case 'SUCCESS':
         status = 'Success';
-        break;
-      case 'TODO':
-        status = 'Todo';
-        break;
-      case 'WONTDO':
-        status = 'Wontdo';
         break;
       default:
         status = 'Fail';
         break;
     }
 
-    report[test.name] = {
-      test: test,
-      language: language,
+    this.report[snippet.name] = {
+      status,
+      language: snippet.language,
+      test: snippet.testDefinition,
       datetime: new Date().toLocaleString(),
-      status: status,
-      error: (err) ? {code: err.code, got: err.actual} : {},
-      file: (err && typeof err.file !== 'undefined') ? err.file : ''
+      error: result.code !== 'SUCCESS' ? { code: result.code, got: result.actual } : {},
+      file: (typeof result.file !== 'undefined') ? result.file : ''
     };
+  }
 
-    jsonfile.writeFileSync(reportFile, report);
+  writeReport() {
+    jsonfile.writeFileSync(this.reportFile, this.report);
+  }
+
+  reportResult(snippet, result) {
+    switch (result.code) {
+      case 'SUCCESS':
+        console.log(
+          blue(`[${snippet.language}] `),
+          green('✔'),
+          green(`${snippet.name}: ${snippet.description}`)
+        );
+        break;
+      default:
+        console.log(
+          blue(`[${snippet.language}] `),
+          red('✗'),
+          red(`${snippet.name}: ${snippet.description}`)
+        );
+        console.log(red('        CODE    :'), result.code);
+        console.log(red('        FILE    :'), result.file);
+        if (result.code === 'ERR_ASSERTION') {
+          console.log(red('        EXPECTED:'), snippet.expected);
+          console.log(red('        GOT     :'), result.actual);
+        } else {
+          console.log(red('        ERROR   :'), result.actual);
+        }
+        break;
+    }
+
+    this.addToReport(snippet, result);
+  }
+
+  log(message, status) {
+    const statusMessage = (() => {
+      switch (status) {
+        case true:
+          return green('✔');
+        case false:
+          return red('✗');
+        default:
+          return '';
+      }
+    })();
+
+    console.log(
+      blue(`[${this.language}] `),
+      message,
+      statusMessage
+    );
   }
 }
 
-module.exports = new Logger();
+module.exports = Logger;

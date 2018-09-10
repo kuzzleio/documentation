@@ -4,7 +4,6 @@
 
 // Scoped in typesetted content to match specificity of regular content
 .md-typeset {
-
   // Details extension
   details {
     @extend .admonition;
@@ -32,14 +31,13 @@
       padding-right: 4rem;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         padding-left: 4rem;
       }
     }
 
     // Manually hide and show, if browser doesn't support details
     .no-details &:not([open]) {
-
       // Hide all nested tags ...
       > * {
         display: none;
@@ -75,10 +73,10 @@
       right: 1.2rem;
       color: $md-color-black--lighter;
       font-size: 2rem;
-      content: "\E313"; // keyboard_arrow_down
+      content: '\E313'; // keyboard_arrow_down
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         right: initial;
         left: 1.2rem;
       }

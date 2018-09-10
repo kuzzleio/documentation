@@ -4,20 +4,16 @@
 
 // Scoped in typesetted content to match specificity of regular content
 .md-typeset {
-
   // Permalinks extension
   .headerlink {
     display: inline-block;
     margin-left: 1rem;
     transform: translate(0, 0.5rem);
-    transition:
-      transform 0.25s  0.25s,
-      color     0.25s,
-      opacity   0.125s 0.25s;
+    transition: transform 0.25s 0.25s, color 0.25s, opacity 0.125s 0.25s;
     opacity: 0;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       margin-right: 1rem;
       margin-left: initial;
     }
@@ -34,22 +30,24 @@
   }
 
   // Correct anchor offset for link blurring
-  @each $level, $delta in (
-    h1: 0.9rem,
-    h2: 0.8rem,
-    h3: 0.9rem,
-    h4: 0.9rem,
-    h5: 1.1rem,
-    h6: 1.1rem
-  ) {
+  @each $level,
+    $delta
+      in (
+        h1: 0.9rem,
+        h2: 0.8rem,
+        h3: 0.9rem,
+        h4: 0.9rem,
+        h5: 1.1rem,
+        h6: 1.1rem
+      )
+  {
     #{$level}[id] {
-
       // Un-targeted anchor
       &::before {
         display: block;
         margin-top: -$delta;
         padding-top: $delta;
-        content: "";
+        content: '';
       }
 
       // Targeted anchor (48px from header, 12px from sidebar offset)
@@ -59,7 +57,7 @@
       }
 
       // Make permalink visible on hover
-      &:hover  .headerlink,
+      &:hover .headerlink,
       &:target .headerlink,
       & .headerlink:focus {
         transform: translate(0, 0);
@@ -67,7 +65,7 @@
       }
 
       // Active or targeted permalink
-      &:hover  .headerlink:hover,
+      &:hover .headerlink:hover,
       &:target .headerlink,
       & .headerlink:focus {
         color: $md-color-accent;

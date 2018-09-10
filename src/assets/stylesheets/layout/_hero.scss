@@ -14,9 +14,7 @@
   &__inner {
     margin-top: 2rem;
     padding: 1.6rem 1.6rem 0.8rem;
-    transition:
-      transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1),
-      opacity   0.25s;
+    transition: transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.25s;
     transition-delay: 0.1s;
 
     // [tablet -]: Compensate for missing tabs
@@ -26,12 +24,10 @@
     }
 
     // Fade-out tabs background upon scrolling
-    [data-md-state="hidden"] & {
+    [data-md-state='hidden'] & {
       pointer-events: none;
       transform: translateY(1.25rem);
-      transition:
-        transform 0s   0.4s,
-        opacity   0.1s 0s;
+      transition: transform 0s 0.4s, opacity 0.1s 0s;
       opacity: 0;
     }
 

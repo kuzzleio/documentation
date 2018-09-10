@@ -32,4 +32,6 @@ script:
   - npm install
   - npm run test
   - sh .travis/comment_pr.sh
+
+after_success:
   - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
