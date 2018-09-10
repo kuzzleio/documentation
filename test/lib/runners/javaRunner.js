@@ -1,7 +1,6 @@
 const
   fs = require('fs'),
   path = require('path'),
-  nexpect = require('nexpect'),
   BaseRunner = require('./baseRunner');
 
 module.exports = class JavaTester extends BaseRunner {

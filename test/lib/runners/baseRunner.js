@@ -1,9 +1,5 @@
 const
   nexpect = require('nexpect'),
-  fs = require('fs'),
-  path = require('path'),
-  indentString = require('indent-string'),
-  sanitize = require('sanitize-filename'),
   childProcess = require('child_process'),
   { execute } = require('../helpers/utils'),
   TestResult = require('../helpers/testResult');

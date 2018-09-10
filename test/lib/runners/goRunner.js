@@ -1,6 +1,5 @@
 const
   BaseRunner = require('./baseRunner'),
-  nexpect = require('nexpect'),
   { execute } = require('../helpers/utils'),
   TestResult = require('../helpers/testResult');
 

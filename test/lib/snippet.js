@@ -4,7 +4,6 @@ const
   readYaml = require('read-yaml'),
   indentString = require('indent-string'),
   sanitize = require('sanitize-filename'),
-  childProcess = require('child_process'),
   TestResult = require('./helpers/testResult');
 
 const
