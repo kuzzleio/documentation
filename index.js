@@ -366,7 +366,7 @@ metalsmith
     '/guide/kuzzle-for-mobile': '/guide/kuzzle-for-mobile/getting-started/',
     '/guide/kuzzle-admin-console': '/guide/kuzzle-admin-console/getting-started/',
     '/api-documentation/': '/api-documentation/connecting-to-kuzzle/',
-    '/sdk-reference': '/sdk-reference/essentials/',
+    // '/sdk-reference': '/sdk-reference/essentials/',
     '/sdk-reference/index': '/sdk-reference/index/create/',
     '/sdk-reference/kuzzle': '/sdk-reference/kuzzle/constructor/',
     '/sdk-reference/bulk': '/sdk-reference/bulk/import/',

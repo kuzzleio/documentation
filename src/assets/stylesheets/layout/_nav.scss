@@ -136,9 +136,9 @@
   }
 
   // Repository containing source
-  &__source {
-    display: none;
-  }
+  // &__source {
+  //   display: none;
+  // }
 
   // [tablet -]: Layered navigation
   @include break-to-device(tablet) {
@@ -170,7 +170,7 @@
       // inside the drawer is always styled accordingly
       html & .md-nav__title {
         position: relative;
-        height: 11rem;
+        height: 14rem;
         padding: 6rem 1.6rem 0.4rem;
         background-color: $md-color-black--lightest;
         color: $md-color-black--light;
@@ -434,13 +434,6 @@
       padding-left: 4.8rem;
     }
 
-    // Repository containing source
-    &__source {
-      display: block;
-      padding: 0 0.4rem;
-      background-color: mix($md-color-primary, $md-color-black, 75%);
-      color: $md-color-white;
-    }
   }
 
   // [screen +]: Tree-like navigation
