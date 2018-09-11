@@ -3,7 +3,9 @@
   var site_base_path = '/'
   var algolia_projectId = '{{ algolia_projectId }}'
   var algolia_publicKey = '{{ algolia_publicKey }}'
-  var languages = '{{ languages }}'
+  var sdk_versions = '{{ sdk_versions }}'
+  sdk_versions = JSON.parse(sdk_versions.replace(/&quot;/g, '\"'));
+
 </script>
 
 <script src="/assets/libs/jquery.min.js"></script>
@@ -15,3 +17,4 @@
 {{#if (eq is_dev true) }}
   <script src="http://localhost:35729/livereload.js"></script>
 {{/if}}
+

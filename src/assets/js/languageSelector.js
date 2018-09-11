@@ -2,14 +2,16 @@ $(document).ready(function() {
   languageSelector.init();
 });
 
+var excludedSDK = ["android", "php"];
+
 var languageSelector = {
   init: function() {
     if ($('#language-selector').length == 0) {
       return;
     }
 
-    var self = this,
-      languageParam = this.getLanguageParameter();
+    var self = this;
+    var languageParam = document.location.pathname.split('/')[2];
 
     this.setSelectorOptions();
 
@@ -40,72 +42,45 @@ var languageSelector = {
 
     $('#language-selector').on('change', function() {
       var language = $(this).val();
-      self.setPreferedLanguage(language);
-
-      window.location.replace(
-        window.location.origin +
-          window.location.pathname +
-          '?language=' +
-          language
-      );
+      window.location.assign(self.getLatestVersionURL(language));
     });
   },
 
-  getLanguageParameter: function() {
-    var GET = {};
-    if (document.location.toString().indexOf('?') !== -1) {
-      var query = document.location
-        .toString()
-        .replace(/^.*?\?/, '')
-        .replace(/#.*$/, '')
-        .split('&');
-      for (var i = 0, l = query.length; i < l; i++) {
-        var aux = decodeURIComponent(query[i]).split('=');
-        GET[aux[0]] = aux[1];
+  getLatestVersionURL: function(language) {
+    if (language == "javascript") {
+      language = "js";
+    }
+
+    var baseUrl = window.location.protocol + '//' + window.location.host;
+
+    var latestVersion = '';
+    console.log(sdk_versions);
+    Object.keys(sdk_versions[language]).forEach(function(key) {
+      if (sdk_versions[language][key] == "master") {
+        latestVersion = key;
       }
-    }
-    if (
-      typeof GET['language'] != 'undefined' &&
-      languages.indexOf(GET['language']) > -1
-    ) {
-      return GET['language'];
-    } else if (this.getPreferedLanguage()) {
-      return this.getPreferedLanguage();
-    }
-    return 'javascript';
+    });
+
+    var customPathname = '/sdk-reference/' + language + '/' + latestVersion + '/essentials';
+    var url = baseUrl + customPathname;
+
+    return url;
   },
 
   setSelectorOptions: function() {
-    languages.split(',').forEach(function(el) {
-      $('#language-selector').append(
-        $('<option>', {
-          value: el,
-          text: el
-        })
-      );
-    });
-  },
-
-  setPreferedLanguage: function(language) {
-    if (language) {
-      sessionStorage.setItem('prefered_language', language);
-    }
-  },
-
-  getPreferedLanguage: function() {
-    return sessionStorage.getItem('prefered_language')
-      ? sessionStorage.getItem('prefered_language')
-      : false;
-  },
-
-  getLanguageInUrl: function() {
-    var language = false;
-    languages.split(',').forEach(function(el) {
-      if (document.location.toString().search('/' + el + '/') > -1) {
-        language = el;
+    Object.keys(sdk_versions).forEach(function(key) {
+      if (excludedSDK.indexOf(key) == -1) {
+        if (key == "js") {
+          key = "javascript";
+        }
+        $('#language-selector').append(
+          $('<option>', {
+            value: key,
+            text: key
+          })
+        );
       }
     });
-    return language;
   },
 
   showSection: function(language) {

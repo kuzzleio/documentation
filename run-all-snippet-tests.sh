@@ -19,8 +19,8 @@ for sdk_path in $sdk_paths; do
     error=1
   fi
 
-  curl -X POST localhost:7512/admin/_resetKuzzleData
-  curl -X POST localhost:7512/admin/_resetDatabase
+  curl -s -o /dev/null -X POST localhost:7512/admin/_resetKuzzleData
+  curl -s -o /dev/null -X POST localhost:7512/admin/_resetDatabase
 
 done
 
