@@ -176,3 +176,18 @@ The following example launches a single test in Javascript using the running Kuz
 ```bash
    bash run-snippet-tests.sh -n -l js -f index/snippet/delete.yml
 ```
+
+## Scaffolding tool
+
+You can use the scaffolding tool to create the files needed when you want to document a new controller action.  
+
+This tool take the path of your new action as an argument an create the following files:
+  - `<language>/<version>/<controller>/<action>/index.md`: File describing your action with the right subsections according to the language
+  - `<language>/<version>/<controller>/<action>/snippets/<action>.test.yml`: The configuration file explaining the snippet
+  - `<language>/<version>/<controller>/<action>/snippets/<action>.<language>`: The snippet demonstrating the action
+
+Example:
+```bash
+# Create the files to document the action 'list' of the controller 'document' for the SDK JS 6
+./scaffolding/scaffold generate src/sdk-reference/js/6/collection/list
+```
