@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+const
+  program = require('commander');
+
+program
+  .command('generate <path>')
+  .description('generate a full scaffold for a controller action')
+  .action(require('./lib/scaffoldAction.js'));
+
+program.parse(process.argv);
