@@ -2,7 +2,7 @@
 layout: sdk.html
 algolia: true
 title: <%= _.kebabCase(action) %>
-description: 
+description:
 order: 200
 ---
 
