@@ -30,4 +30,4 @@ void <%= action %>()
 
 ## Usage
 
-[code-example=<%= _.kebabCase(action) %>]
+[snippet=<%= _.kebabCase(action) %>]

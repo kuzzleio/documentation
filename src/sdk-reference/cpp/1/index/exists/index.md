@@ -13,14 +13,14 @@ Checks if the given index exists in Kuzzle.
 ## Signature
 
 ```cpp
-bool exists(std::string index, kuzzleio::query_options *options = null)
+bool exists(const std::string& index, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`   | std::string   | Index name                                              | yes      |
+| `index`   | const std::string&   | Index name                                              | yes      |
 | `options` | query_options | A pointer to a `query_options` containing query options | no       |
 
 ### **Options**

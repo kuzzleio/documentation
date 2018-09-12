@@ -33,8 +33,8 @@ create(index, collection, mapping = {}, options = {});
 |--------------|---------|-------------|----------
 | ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
-| ``mapping`` | Object | Collection data mapping    | yes  |
-| ``options`` | Object | An object containing query options    | yes  |
+| ``mapping`` | Object | Collection data mapping    | no  |
+| ``options`` | Object | An object containing query options    | no  |
 
 ### **mapping**
 
@@ -70,4 +70,4 @@ Resolves if the collection is successfully created.
 
 ## Usage
 
-[code-example=create]
+[snippet=create]

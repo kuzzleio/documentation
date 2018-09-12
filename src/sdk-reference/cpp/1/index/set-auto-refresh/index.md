@@ -23,14 +23,14 @@ we recommend that you avoid using it in production or at least carefully monitor
 ## Signature
 
 ```cpp
-void setAutoRefresh(std::string index, bool autoRefresh, kuzzleio::query_options *options = null)
+void setAutoRefresh(const std::string& index, bool autoRefresh, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
 
 | Arguments     | Type          | Description                                             | Required |
 | ------------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`       | std::string   | Index name                                              | yes      |
+| `index`       | const std::string&   | Index name                                              | yes      |
 | `autoRefresh` | Boolean       | autoRefresh flag                                        | yes      |
 | `options`     | query_options | A pointer to a `query_options` containing query options | no       |
 
