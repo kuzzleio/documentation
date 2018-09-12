@@ -2,7 +2,7 @@
 layout: sdk.html
 algolia: true
 title: create
-description:
+description: Create a new collection
 order: 200
 ---
 

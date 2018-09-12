@@ -16,18 +16,18 @@ This method will only update the mapping if the collection already exists.
 
 ## Signature
 
-```cpp
-void create(const std::string& index, const std::string& collection, const std::string* body=nullptr, query_options *options=nullptr)
+```go
+Create(index string, collection string, body json.RawMessage, options types.QueryOptions) error
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
-| ``collection`` | const std::string& | Collection name    | yes  |
-| ``mapping`` | const std::string* | Collection data mapping in JSON format  | no  |
-| ``options`` | query_options* |  A pointer to a `query_options` containing query options  | no  |
+| ``index`` | String | Index name    | yes  |
+| ``collection`` | String | Collection name    | yes  |
+| ``mapping`` | json.RawMessage | Collection data mapping in JSON format  | no  |
+| `options` | QueryOptions | A structure containing query options. | no       |
 
 ### **mapping**
 
@@ -57,9 +57,9 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Exceptions
+## Return
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Return an error or `nil` if collection successfully created.
 
 ## Usage
 
