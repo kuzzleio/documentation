@@ -1,3 +1,11 @@
+---
+layout: sdk.html
+algolia: true
+title: <%= _.kebabCase(action) %>
+description:
+order: 200
+---
+
 # <%= _.kebabCase(action) %>
 
 ## Signature
