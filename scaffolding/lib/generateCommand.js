@@ -21,6 +21,8 @@ async function generateCommand (actionPath) {
     await renderMarkdownTemplate(sdkInfos, actionPath);
     await renderSnippetTemplate(sdkInfos, actionPath);
     await renderSnippetConfigTemplate(sdkInfos, actionPath)
+
+    showSignatures(sdkInfos);
   } catch (error) {
     console.error(error);
     process.exit(1);
