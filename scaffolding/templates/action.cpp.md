@@ -1,3 +1,7 @@
+# <%= _.kebabCase(action) %>
+
+## Signature
+
 ```cpp
 void <%= action %>()
 ```

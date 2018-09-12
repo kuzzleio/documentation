@@ -1,3 +1,7 @@
+# <%= _.kebabCase(action) %>
+
+## Signature
+
 ```java
 void <%= action %>()
 ```

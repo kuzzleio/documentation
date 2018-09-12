@@ -1,3 +1,7 @@
+# <%= _.kebabCase(action) %>
+
+## Signature
+
 ```go
 <%= _.upperFirst(_.camelCase(action)) %>() error
 ```
