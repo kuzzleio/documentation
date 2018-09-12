@@ -28,6 +28,8 @@ void <%= action %>()
 
 ## Exceptions
 
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+
 ## Usage
 
 [snippet=<%= _.kebabCase(action) %>]
