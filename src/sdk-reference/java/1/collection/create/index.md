@@ -17,9 +17,9 @@ This method will only update the mapping if the collection already exists.
 ## Signature
 
 ```java
-void create(String index, String collection)
-void create(String index, String collection, String mapping)
-void create(String index, String collection, String mapping, QueryOptions options)
+void create(String index, String collection) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, PreconditionException
+void create(String index, String collection, String mapping) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, PreconditionException;
+void create(String index, String collection, String mapping, QueryOptions options) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, PreconditionException;
 ```
 
 ## Arguments
