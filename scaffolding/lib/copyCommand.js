@@ -9,7 +9,6 @@ const
     showSignatures
   } = require('./utils'),
   _ = require('lodash'),
-  { exec } = require('child_process'),
   path = require('path');
 
 const longDescriptionRegexp = {
