@@ -2,6 +2,7 @@ const
   fs = require('fs'),
   ejs = require('ejs'),
   _ = require('lodash'),
+  { exec } = require('child_process'),
   path = require('path');
 
 function mkdirp (fullPath) {
