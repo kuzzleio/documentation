@@ -5,7 +5,8 @@ const
   TestResult = require('../helpers/testResult');
 
 module.exports = class BaseRunner {
-  constructor() {
+  constructor(sdk) {
+    this.sdk = sdk;
     this.nexpectCommand = '';
     this.lintCommand = '';
     this.lintOptions = [];

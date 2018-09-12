@@ -4,8 +4,8 @@ const
   TestResult = require('../helpers/testResult');
 
 module.exports = class GoRunner extends BaseRunner {
-  constructor() {
-    super();
+  constructor(sdk) {
+    super(sdk);
     this.goProjectPath = '/go/src/github.com/kuzzleio/go-test/';
     this.lintCommand = 'golint';
   }

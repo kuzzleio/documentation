@@ -147,34 +147,26 @@ You can add your own template, just respect the naming rule : `template_name.tpl
 
 ## Testing the snippets locally
 
-It's possible to play test locally by running at the root of the project
+You can test the snippets locally by using the script `run-snippet-tests.sh`.  
+This script take the path of the snippets you want to test as argument and it will look recursively for snippets.  
+You must at least provide a sdk language and version in the provided path.  
+
+First, you have to run a Kuzzle stack with the following script: `bash .travis/start_kuzzle.sh`
+
+Then you can run snippets for any language:
 
 ```bash
-   bash run-snippet-tests.sh -l <language>
+# Execute all snippets under the repertory 'src/sdk-reference/js/6'
+bash run-snippet-tests.sh -n -p src/sdk-reference/js/6
+# Execute all snippets for the controller index in SDK CPP 1
+bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 ```
 
-Where `<language>` specifies the language to test (currently available languages are `js`, `go`, `cpp` and `java`). This will launch a Kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .
-
-There are more available options. Using `-n` will prevent the script to launch the Kuzzle stack:
-
+If you want to avoid the download of the SDK each time you run a snippet, you can use the following variable:
 ```bash
-   bash run-snippet-tests.sh -l <language> -n
-```
-
-This is handy if you launch many times the tests and keep the stack running on the background.
-
-You can also specify a single test to be run using the `-f` option:
-
-```bash
-   bash run-snippet-tests.sh -l <language> -f <path>
-```
-
-Where `<path>` specifies the path to the `.yml` test description, relative to `$PWD/src/sdk-reference`.
-
-The following example launches a single test in Javascript using the running Kuzzle stack:
-
-```bash
-   bash run-snippet-tests.sh -n -l js -f index/snippet/delete.yml
+export DEV_MODE=true
+# The following command will download the cpp SDK only if does not already exists
+bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 ```
 
 ## Scaffolding tool
