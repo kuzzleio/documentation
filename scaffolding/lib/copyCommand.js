@@ -11,48 +11,49 @@ const
   _ = require('lodash'),
   path = require('path');
 
-const longDescriptionRegexp = {
-  start: '\# create\n',
-  end: '\#\# Signature\n'
-};
-
-const shortDescriptionRegexp = {
-  start: 'description:',
-  end: '\norder'
-};
-
-const argsTableRegexp = {
-  start: '\#\# Arguments\n',
-  end: '\n\#\#\#'
-};
-
-const argsDescriptionRegexp = {
-  start: '\#\#\#',
-  end: '\n\#\# R',
-  includeStart: true
-};
-
-const hookAfterRegexp = {
-  start: 'after:',
-  end: '\ntemplate'
-};
-
-const hookBeforeRegexp = {
-  start: 'before:',
-  end: '\n  after'
-};
-
-const snippetTemplateRegexp = {
-  start: 'template:',
-  end: '\nexpected'
-};
-
-const snippetExpectedRegexp = {
-  start: 'expected:',
-  end: '\n'
-};
 
 function injectTemplates(sdkInfos, src, dest) {
+  const longDescriptionRegexp = {
+    start: `\# ${_.camelCase(sdkInfos.action)}\n`,
+    end: '\#\# Signature\n'
+  };
+
+  const shortDescriptionRegexp = {
+    start: 'description:',
+    end: '\norder'
+  };
+
+  const argsTableRegexp = {
+    start: '\#\# Arguments\n',
+    end: '\n\#\#\#'
+  };
+
+  const argsDescriptionRegexp = {
+    start: '\#\#\#',
+    end: '\n\#\# R',
+    includeStart: true
+  };
+
+  const hookAfterRegexp = {
+    start: 'after:',
+    end: '\ntemplate'
+  };
+
+  const hookBeforeRegexp = {
+    start: 'before:',
+    end: '\n  after'
+  };
+
+  const snippetTemplateRegexp = {
+    start: 'template:',
+    end: '\nexpected'
+  };
+
+  const snippetExpectedRegexp = {
+    start: 'expected:',
+    end: '\n'
+  };
+
   const
     srcIndexFile = `${src}/index.md`,
     srcTestConfigFile =`${src}/snippets/${sdkInfos.action}.test.yml`,

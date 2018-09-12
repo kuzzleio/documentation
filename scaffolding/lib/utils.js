@@ -133,7 +133,7 @@ function extractFromFile(file, regexpInfo) {
 
   const result = content.match(regexp);
 
-  if (result.length === 0) {
+  if ((result || []).length === 0) {
     throw new Error(`No match found in ${file} for ${regexp}`)
   }
 
