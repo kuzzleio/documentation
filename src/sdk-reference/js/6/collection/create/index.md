@@ -24,7 +24,7 @@ This method will only update the mapping if the collection already exists.
  * @param {object} [options]
  * @returns {Promise.<object>}
  */
-create(index, collection, mapping = {}, options = {});
+create(index, collection, mapping = {}, options = {})
 ```
 
 ## Arguments
