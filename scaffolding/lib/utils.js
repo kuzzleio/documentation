@@ -39,7 +39,62 @@ const templatesPath = path.join(
   'templates'
 );
 
+async function renderTemplate(source, destination, variables) {
+  if (fs.existsSync(destination)) {
+    throw new Error(`${destination} already exists.`)
+  }
+
+  const
+    locals = Object.assign({}, { _ }, variables);
+
+  mkdirp(path.dirname(destination));
+
+  return new Promise((resolve, reject) => {
+    ejs.renderFile(source, locals, {}, (error, output) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+
+      fs.writeFileSync(destination, output);
+      resolve();
+    });
+  });
+}
+
 /* EXPORTED FUNCTIONS =====================================================   */
+
+function showSignatures({ language, action, controller }) {
+  console.log('Function signature:\n');
+  const display = (error, stdout, stderr) => {
+    if (error) {
+      throw error;
+    }
+    console.log(stdout);
+    console.error(stderr);
+  };
+
+  switch (language) {
+    case 'js':
+      exec(`cat node_modules/kuzzle-sdk/src/controllers/${controller}.js | grep '${action} ('`, display);
+      break;
+
+    case 'cpp':
+      exec(`cat test/bin/sdk-cpp/include/${controller}.hpp | grep ${action}`, display);
+      break;
+
+    case 'java':
+      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-java.jar io.kuzzle.sdk.${_.upperFirst(controller)} | grep ${action}`, display);
+      break;
+
+    case 'go':
+      exec(`cat ~/go/src/github.com/kuzzleio/sdk-go/${controller}/${_.camelCase(action)}.go | grep ${_.upperFirst(action)}`, display);
+      break;
+
+  }
+
+  console.log('\n');
+}
 
 function renderMarkdownTemplate(variables, actionPath) {
   const
@@ -125,35 +180,12 @@ function explodeSdkPath(fullPath) {
   return { language, version, controller, action };
 }
 
-async function renderTemplate(source, destination, variables) {
-  // if (fs.existsSync(destination)) {
-  //   throw new Error(`${destination} already exists.`)
-  // }
-
-  const
-    locals = Object.assign({}, { _ }, variables);
-
-  mkdirp(path.dirname(destination));
-
-  return new Promise((resolve, reject) => {
-    ejs.renderFile(source, locals, {}, (error, output) => {
-      if (error) {
-        reject(error);
-        return;
-      }
-
-      fs.writeFileSync(destination, output);
-      resolve();
-    });
-  });
-}
-
 module.exports = {
-  renderTemplate,
   renderMarkdownTemplate,
   renderSnippetTemplate,
   renderSnippetConfigTemplate,
   explodeSdkPath,
   extractFromFile,
-  injectInFile
+  injectInFile,
+  showSignatures
 };
