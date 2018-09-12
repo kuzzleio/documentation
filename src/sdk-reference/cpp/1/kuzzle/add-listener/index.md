@@ -10,7 +10,7 @@ order: 200
 
 Adds a listener to an event.  
 When an event is triggered, listeners are triggered in the order in which they were added.  
-Theses listener will receive a `const std::string` as only argument. This string is a JSON payload representing the event.
+Theses listener will receive a `const std::string` as argument. This string is a JSON payload representing the event.
 
 ## Signature
 
@@ -46,7 +46,7 @@ ERROR
 ### **listener**
 
 A c++11 lambda which take a `const std::string`
-Internally `EventListener` is a typedef on `const std::function<void(const std::string)>`.
+`EventListener` is defined as `const std::function<void(const std::string)>`.
 
 ## Return
 
