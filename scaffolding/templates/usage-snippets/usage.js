@@ -2,8 +2,8 @@ kuzzle
   .<%= controller %>
   .<%= action %>()
   .then(() => {
-    console.log('Success')
+    console.log('Success');
   })
   .catch(error => {
-    console.error(error.message)
+    console.error(error.message);
   });

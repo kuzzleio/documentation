@@ -1,4 +1,4 @@
-name: <%= action %>
+name: <%= controller %>#<%= action %>
 description:
 hooks:
   before:
