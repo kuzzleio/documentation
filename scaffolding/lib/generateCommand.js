@@ -3,7 +3,8 @@ const
     explodeSdkPath,
     renderSnippetTemplate,
     renderMarkdownTemplate,
-    renderSnippetConfigTemplate
+    renderSnippetConfigTemplate,
+    showSignatures
   } = require('./utils'),
   _ = require('lodash'),
   path = require('path');
