@@ -8,6 +8,7 @@ const
     injectInFile
   } = require('./utils'),
   _ = require('lodash'),
+  { exec } = require('child_process'),
   path = require('path');
 
 const longDescriptionRegexp = {
@@ -77,6 +78,38 @@ function injectTemplates(sdkInfos, src, dest) {
   injectInFile(destTestConfigFile, snippetExpectedRegexp, snippetExpected);
 }
 
+function showSignatures({ language, action, controller }) {
+  console.log('Function signature:\n');
+  const display = (error, stdout, stderr) => {
+    if (error) {
+      throw error;
+    }
+    console.log(stdout);
+    console.error(stderr);
+  };
+
+  switch (language) {
+    case 'js':
+      exec(`cat node_modules/kuzzle-sdk/src/controllers/${controller}.js | grep '${action} ('`, display);
+      break;
+
+    case 'cpp':
+      exec(`cat test/bin/sdk-cpp/include/${controller}.hpp | grep ${action}`, display);
+      break;
+
+    case 'java':
+      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-java.jar io.kuzzle.sdk.${_.upperFirst(controller)} | grep ${action}`, display);
+      break;
+
+    case 'go':
+      exec(`cat ~/go/src/github.com/kuzzleio/sdk-go/${controller}/${_.camelCase(action)}.go | grep ${_.upperFirst(action)}`, display);
+      break;
+
+  }
+
+  console.log('\n');
+}
+
 async function copyCommand (src, dest) {
   if (! src) {
     // eslint-disable-next-line no-console
@@ -98,6 +131,8 @@ async function copyCommand (src, dest) {
     await renderSnippetConfigTemplate(sdkInfos, dest)
 
     injectTemplates(sdkInfos, src, dest);
+
+    showSignatures(sdkInfos);
   } catch(error) {
     console.error(error);
     process.exit(1);

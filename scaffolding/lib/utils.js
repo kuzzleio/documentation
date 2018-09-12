@@ -126,9 +126,9 @@ function explodeSdkPath(fullPath) {
 }
 
 async function renderTemplate(source, destination, variables) {
-  if (fs.existsSync(destination)) {
-    throw new Error(`${destination} already exists.`)
-  }
+  // if (fs.existsSync(destination)) {
+  //   throw new Error(`${destination} already exists.`)
+  // }
 
   const
     locals = Object.assign({}, { _ }, variables);
