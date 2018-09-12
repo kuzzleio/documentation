@@ -171,6 +171,8 @@ bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 
 ## Scaffolding tool
 
+###  Generate whole new action
+
 You can use the scaffolding tool to create the files needed when you want to document a new controller action.  
 
 This tool take the path of your new action as an argument an create the following files:
@@ -182,4 +184,15 @@ Example:
 ```bash
 # Create the files to document the action 'list' of the controller 'document' for the SDK JS 6
 ./scaffolding/scaffold generate src/sdk-reference/js/6/collection/list
+```
+
+### Copy an existing action from another SDK
+
+You can also copy an action from another SDK to save some time.  
+This command allow you to extract some informations from an existing action in another SDK and generate the correct files for another SDK.  
+
+Example:
+```bash
+# Copy informations from SDK JS 6 to SDK CPP 1
+./scaffolding/scaffold copy src/sdk-reference/js/6/collection/list src/sdk-reference/cpp/1/collection/list
 ```
