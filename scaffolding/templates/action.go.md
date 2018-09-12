@@ -28,4 +28,4 @@ order: 200
 
 ## Usage
 
-[code-example=<%= _.kebabCase(action) %>]
+[snippet=<%= _.kebabCase(action) %>]
