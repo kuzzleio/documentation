@@ -1,19 +1,17 @@
-kuzzle
-  .collection
-  .create('nyc-open-data', 'yellow-taxi', {
-    properties: {
-      license: { type: 'keyword' },
-      driver: {
-        properties: {
-          name: { type: 'keyword' },
-          curriculum: { type: 'text' }
-        }
+const mapping = {
+  properties: {
+    license: { type: 'keyword' },
+    driver: {
+      properties: {
+        name: { type: 'keyword' },
+        curriculum: { type: 'text' }
       }
     }
-  })
-  .then(() => {
-    console.log('Success');
-  })
-  .catch(error => {
-    console.error(error.message);
-  });
+  }
+};
+try {
+  await kuzzle.collection.create('nyc-open-data', 'yellow-taxi', mapping);
+  console.log('Success');
+} catch (error) {
+  console.error(error.message);
+}
