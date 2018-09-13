@@ -4,7 +4,8 @@ const
     renderSnippetTemplate,
     renderMarkdownTemplate,
     renderSnippetConfigTemplate,
-    showSignatures
+    showSignatures,
+    showDescription
   } = require('./utils'),
   _ = require('lodash'),
   path = require('path');
@@ -23,7 +24,8 @@ async function generateCommand (actionPath) {
     await renderSnippetTemplate(sdkInfos, actionPath);
     await renderSnippetConfigTemplate(sdkInfos, actionPath)
 
-    showSignatures(sdkInfos);
+    showDescription(sdkInfos);
+    showSignatures(sdkInfos);    
   } catch (error) {
     console.error(error);
     process.exit(1);
