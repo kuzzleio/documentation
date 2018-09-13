@@ -1,7 +1,7 @@
-EventListener listener = [](const std::string payload) {
+kuzzleio::EventListener listener = [](const std::string payload) {
   std::cout << payload << std::endl;
 };
-EventListener other_listener = [](const std::string payload) {
+kuzzleio::EventListener other_listener = [](const std::string payload) {
   std::cerr << payload << std::endl;
 };
 
