@@ -70,13 +70,14 @@ function showSignatures({ language, action, controller }) {
   const display = (error, stdout, stderr) => {
     if (error) {
       console.log(error.message);
+      console.error(stderr);
     }
     console.log(stdout);
   };
 
   switch (language) {
     case 'js':
-      exec(`cat find node_modules/kuzzle-sdk/src/controllers -name "*.js" | grep ${controller} | xargs cat | grep '${_.camelCase(action)} ('`, display);
+      exec(`find node_modules/kuzzle-sdk/src/controllers -name "*.js" | grep ${controller} | xargs cat | grep '${_.camelCase(action)} ('`, display);
       break;
 
     case 'cpp':
