@@ -34,7 +34,7 @@ Additional query options
 
 ## Return
 
-Return a json representation of the specifications and an error or `nil` is something was wrong.
+Return a json representation of the specifications and an error is something was wrong.
 
 ## Usage
 

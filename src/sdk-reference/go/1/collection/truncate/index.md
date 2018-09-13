@@ -1,19 +1,20 @@
 ---
 layout: sdk.html
 algolia: true
-title: getMapping
-description: Return collection mapping
+title: truncate
+description: Remove all documents from collection
 order: 200
 ---
 
-# getMapping
+# truncate
 
-Returns the mapping for the given `collection`.
+Remove all documents from a collection while keeping the associated mapping.  
+It is faster than deleting all documents from a collection.
 
 ## Signature
 
 ```go
-GetMapping(index string, collection string, options types.QueryOptions) (json.RawMessage, error)
+Truncate(index string, collection string, options types.QueryOptions) error
 ```
 
 ## Arguments
@@ -34,8 +35,8 @@ Additional query options
 
 ## Return
 
-Return a json representation of the mapping and an error is something was wrong.
+Return an error is something was wrong.
 
 ## Usage
 
-[snippet=get-mapping]
+[snippet=truncate]
