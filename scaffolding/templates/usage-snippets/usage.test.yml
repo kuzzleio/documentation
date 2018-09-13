@@ -1,4 +1,4 @@
-name: <%= controller %>#<%= action %>
+name: <%= _.upperFirst(_.camelCase(controller)) %>#<%= _.camelCase(action) %>
 description:
 hooks:
   before:
