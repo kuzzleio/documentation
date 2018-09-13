@@ -40,10 +40,18 @@ const templatesPath = path.join(
   'templates'
 );
 
-async function renderTemplate(source, destination, variables) {
-  if (fs.existsSync(destination)) {
-    throw new Error(`${destination} already exists.`)
+const display = (error, stdout, stderr) => {
+  if (error) {
+    console.log(error.message);
+    console.error(stderr);
   }
+  console.log(stdout);
+};
+
+async function renderTemplate(source, destination, variables) {
+  // if (fs.existsSync(destination)) {
+  //   throw new Error(`${destination} already exists.`)
+  // }
 
   const
     locals = Object.assign({}, { _ }, variables);
@@ -65,15 +73,34 @@ async function renderTemplate(source, destination, variables) {
 
 /* EXPORTED FUNCTIONS =====================================================   */
 
+function showDescription({ action, controller }) {
+  console.log('API Description:\n');
+
+  if (! fs.existsSync('../documentation/package.json')) {
+    console.error('Unable to show API description because documentation-v1 is not at \'../documentation\'.');
+    return;
+  }
+
+  const actionFile = `../documentation/src/api-documentation/controller-${_.kebabCase(controller)}/${_.kebabCase(action)}.md`;
+  if (! fs.existsSync(actionFile)) {
+    console.error(`Can not find corresponding action file ${actionFile}`);
+    return;
+  }
+
+  const
+    content = fs.readFileSync(actionFile, 'utf8'),
+    regexp = new RegExp(/```javascript\n[\s\S]+```([\s\S]*)/),
+    result = content.match(regexp);
+    
+  if ((result || []).length > 0) {
+    console.log(result[1]);
+  } else {
+    console.log('Can not extract action description :(');
+  }
+}
+
 function showSignatures({ language, action, controller }) {
   console.log('Function signature:\n');
-  const display = (error, stdout, stderr) => {
-    if (error) {
-      console.log(error.message);
-      console.error(stderr);
-    }
-    console.log(stdout);
-  };
 
   switch (language) {
     case 'js':
@@ -192,5 +219,6 @@ module.exports = {
   explodeSdkPath,
   extractFromFile,
   injectInFile,
-  showSignatures
+  showSignatures,
+  showDescription
 };
