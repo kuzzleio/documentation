@@ -121,23 +121,27 @@ function renderSnippetConfigTemplate(variables, actionPath) {
   return renderTemplate(snippetTemplate, destinationFile, variables);
 };
 
-function extractFromFile(file, regexpInfo) {
+function extractFromFile(file, regexpInfo, regexpInfoFallback) {
   const content = fs.readFileSync(file, 'utf8')
-  let regexp;
+  let
+    regexp,
+    result;
 
-  if (regexpInfo.includeStart) {
-    regexp = new RegExp(`(${regexpInfo.start}[\\s\\S]*)${regexpInfo.end}`);
-  } else {
-    regexp = new RegExp(`${regexpInfo.start}([\\s\\S]*)${regexpInfo.end}`);
+  for (regInfo of [regexpInfo, regexpInfoFallback]) {
+    if (regexpInfo.includeStart) {
+      regexp = new RegExp(`(${regInfo.start}[\\s\\S]*)${regInfo.end}`);
+    } else {
+      regexp = new RegExp(`${regInfo.start}([\\s\\S]*)${regInfo.end}`);
+    }
+
+    result = content.match(regexp);
+
+    if ((result || []).length > 0) {
+      return result[1];
+    }
   }
 
-  const result = content.match(regexp);
-
-  if ((result || []).length === 0) {
-    throw new Error(`No match found in ${file} for ${regexp}`)
-  }
-
-  return result[1];
+  throw new Error(`No match found in ${file} for ${regexp}`)
 }
 
 function injectInFile(file, regexpInfo, injectedContent) {

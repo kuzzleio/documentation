@@ -30,7 +30,14 @@ function injectTemplates(sdkInfos, src, dest) {
 
   const argsDescriptionRegexp = {
     start: '\#\#\#',
-    end: '\n\#\# R',
+    end: '\n\#\# R', // match '### Return' or '### Resolve'
+    includeStart: true
+  };
+
+  // when there is no 'Return' or 'Resolve' section
+  const argsDescriptionRegexp2 = {
+    start: '\#\#\#',
+    end: '\n\#\# Usage',
     includeStart: true
   };
 
@@ -62,7 +69,7 @@ function injectTemplates(sdkInfos, src, dest) {
     longDescription = extractFromFile(srcIndexFile, longDescriptionRegexp),
     shortDescription = extractFromFile(srcIndexFile, shortDescriptionRegexp),
     argsTable = extractFromFile(srcIndexFile, argsTableRegexp),
-    argsDescription = extractFromFile(srcIndexFile, argsDescriptionRegexp),
+    argsDescription = extractFromFile(srcIndexFile, argsDescriptionRegexp, argsDescriptionRegexp2),
     hookAfter = extractFromFile(srcTestConfigFile, hookAfterRegexp),
     hookBefore = extractFromFile(srcTestConfigFile, hookBeforeRegexp),
     snippetTemplate = extractFromFile(srcTestConfigFile, snippetTemplateRegexp),
