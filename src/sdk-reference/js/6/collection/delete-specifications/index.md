@@ -12,25 +12,35 @@ Delete the validation specifications associated with the collection.
 
 ## Signature
 
-```cpp
-void deleteSpecifications(const std::string& index, const std::string& collection, kuzzleio::query_options *options=nullptr)
+```javascript
+/**
+ * @param {string} index
+ * @param {string} collection
+ * @param {object} [options]
+ * @returns {Promise.<boolean>}
+ */
+deleteSpecifications(index, collection, options = {})
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
-| ``collection`` | const std::string& | Collection name    | yes  |
-| ``options`` | kuzzleio::query_options | Query options    | no  |
+| ``index`` | String | Index name    | yes  |
+| ``collection`` | String | Collection name    | yes  |
+| ``options`` | Object | Query options    | no  |
 
-### **options**
+###### **options**
 
 Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
+
+## Resolve
+
+True if success
 
 ## Usage
 

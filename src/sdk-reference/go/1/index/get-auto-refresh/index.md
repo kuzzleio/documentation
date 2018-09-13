@@ -31,7 +31,7 @@ GetAutoRefresh(index string, options types.QueryOptions) (bool, error)
 | Arguments | Type         | Description                           | Required |
 | --------- | ------------ | ------------------------------------- | -------- |
 | `index`   | String       | Index name                            | yes      |
-| `options` | QueryOptions | A structure containing query options. | no       |
+| `options` | QueryOptions | Query options. | no       |
 
 ### **Options**
 

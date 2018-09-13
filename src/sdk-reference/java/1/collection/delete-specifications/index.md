@@ -12,25 +12,28 @@ Delete the validation specifications associated with the collection.
 
 ## Signature
 
-```cpp
-void deleteSpecifications(const std::string& index, const std::string& collection, kuzzleio::query_options *options=nullptr)
+```java
+  public void deleteSpecifications(String index, String collection) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException;
+  public void deleteSpecifications(String index, String collection, QueryOptions queryOptions) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException;
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
-| ``collection`` | const std::string& | Collection name    | yes  |
-| ``options`` | kuzzleio::query_options | Query options    | no  |
+| ``index`` | String | Index name    | yes  |
+| ``collection`` | String | Collection name    | yes  |
+| ``options`` | QueryOptions | Query options    | no  |
 
-### **options**
+###### **options**
 
 Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
+
+## Return
 
 ## Usage
 

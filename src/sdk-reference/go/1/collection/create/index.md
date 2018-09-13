@@ -27,7 +27,7 @@ Create(index string, collection string, body json.RawMessage, options types.Quer
 | ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
 | ``mapping`` | json.RawMessage | Collection data mapping in JSON format  | no  |
-| `options` | QueryOptions | A structure containing query options. | no       |
+| `options` | QueryOptions | Query options. | no       |
 
 ### **mapping**
 

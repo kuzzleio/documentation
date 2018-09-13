@@ -20,7 +20,7 @@ List(options types.QueryOptions) ([]string, error)
 
 | Arguments | Type         | Description                           |
 | --------- | ------------ | ------------------------------------- |
-| `options` | QueryOptions | A structure containing query options. |
+| `options` | QueryOptions | Query options. |
 
 ### **Options**
 

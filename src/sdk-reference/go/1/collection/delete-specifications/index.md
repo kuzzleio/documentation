@@ -12,25 +12,27 @@ Delete the validation specifications associated with the collection.
 
 ## Signature
 
-```cpp
-void deleteSpecifications(const std::string& index, const std::string& collection, kuzzleio::query_options *options=nullptr)
+```go
+DeleteSpecifications(index string, collection string, options types.QueryOptions) error
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
-| ``collection`` | const std::string& | Collection name    | yes  |
-| ``options`` | kuzzleio::query_options | Query options    | no  |
+| ``index`` | string | Index name    | yes  |
+| ``collection`` | string | Collection name    | yes  |
+| ``options`` | types.QueryOptions | Query options    | no  |
 
-### **options**
+###### **options**
 
 Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
+
+## Return
 
 ## Usage
 
