@@ -1,19 +1,19 @@
 ---
 layout: sdk.html
 algolia: true
-title: deleteSpecifications
-description: Delete validation specifications for a collection
+title: getMapping
+description: Return collection mapping
 order: 200
 ---
 
-# deleteSpecifications
+# getMapping
 
-Delete the validation specifications associated with the collection.  
+Returns the mapping for the given `collection`.
 
 ## Signature
 
 ```go
-DeleteSpecifications(index string, collection string, options types.QueryOptions) error
+GetMapping(index string, collection string, options types.QueryOptions) (json.RawMessage, error)
 ```
 
 ## Arguments
@@ -34,8 +34,8 @@ Additional query options
 
 ## Return
 
-Return an error or `nil` if collection successfully created.
+Return a json representation of the mapping and an error or `nil` is something was wrong.
 
 ## Usage
 
-[snippet=delete-specifications]
+[snippet=get-mapping]
