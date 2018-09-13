@@ -8,14 +8,6 @@
 #include "index.hpp"
 #include "realtime.hpp"
 #include "kuzzle.hpp"
-#include "listeners.hpp"
-
-class MyListener : public kuzzleio::EventListener {
- public:
-    void trigger(const std::string& jsonResponse) {
-      std::cout << jsonResponse << std::endl;
-    }
-};
 
 int main() {
   std::string hostname = "kuzzle";

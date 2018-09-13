@@ -24,7 +24,7 @@
     "accessor-pairs": "error",
     "arrow-spacing": ["error", { "before": true, "after": true }],
     "block-spacing": ["error", "always"],
-    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "brace-style": "off",
     "camelcase": ["error", { "properties": "never" }],
     "comma-dangle": [
       "error",
