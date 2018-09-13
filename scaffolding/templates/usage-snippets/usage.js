@@ -1,5 +1,5 @@
 try {
-  await kuzzle.<%= controller %>.<%= action %>()
+  await kuzzle.<%= _.camelCase(controller) %>.<%= _.camelCase(action) %>()
   console.log('Success');
 } catch (error) {
   console.error(error.message);

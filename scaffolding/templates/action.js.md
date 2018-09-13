@@ -1,12 +1,12 @@
 ---
 layout: sdk.html
 algolia: true
-title: <%= _.kebabCase(action) %>
+title: <%= _.camelCase(action) %>
 description:
 order: 200
 ---
 
-# <%= _.kebabCase(action) %>
+# <%= _.camelCase(action) %>
 
 ## Signature
 
@@ -16,7 +16,7 @@ order: 200
  * @param {}
  * @returns {}
  */
-<%= action %>()
+<%= _.camelCase(action) %>()
 ```
 
 ## Arguments
