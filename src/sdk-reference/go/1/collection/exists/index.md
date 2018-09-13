@@ -24,7 +24,7 @@ Exists(index string, collection string, options types.QueryOptions) (bool, error
 | ``collection`` | string | Collection name    | yes  |
 | ``options`` | types.QueryOptions | An object containing query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

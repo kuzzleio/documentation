@@ -25,7 +25,7 @@ public boolean exists(String index, String collection, QueryOptions options) thr
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | QueryOptions | An object containing query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

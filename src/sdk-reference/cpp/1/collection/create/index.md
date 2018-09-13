@@ -17,7 +17,7 @@ This method will only update the mapping if the collection already exists.
 ## Signature
 
 ```cpp
-void create(const std::string& index, const std::string& collection, const std::string* body=nullptr, query_options *options=nullptr)
+void create(const std::string& index, const std::string& collection, const std::string* body=nullptr, kuzzleio::query_options *options=nullptr)
 ```
 
 ## Arguments
@@ -27,7 +27,7 @@ void create(const std::string& index, const std::string& collection, const std::
 | ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | ``mapping`` | const std::string* | Collection data mapping in JSON format  | no  |
-| ``options`` | query_options* |  A pointer to a `query_options` containing query options  | no  |
+| ``options`` | kuzzleio::query_options* |  A pointer to a `query_options` containing query options  | no  |
 
 ### **mapping**
 
