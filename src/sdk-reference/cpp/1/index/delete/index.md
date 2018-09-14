@@ -13,15 +13,15 @@ Deletes an entire data index from Kuzzle.
 ## Signature
 
 ```cpp
-void delete_(std::string index, kuzzleio::query_options *options = null)
+void delete_(const std::string& index, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`   | std::string   | Index name                                              | yes      |
-| `options` | query_options | A pointer to a `query_options` containing query options | no       |
+| `index`   | const std::string&   | Index name                                              | yes      |
+| `options` | kuzzleio::query_options | A pointer to a `query_options` containing query options | no       |
 
 ### **Options**
 

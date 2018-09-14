@@ -21,7 +21,7 @@ Create(index string, options types.QueryOptions) error
 | Arguments | Type         | Description                           | Required |
 | --------- | ------------ | ------------------------------------- | -------- |
 | `index`   | String       | Index name                            | yes      |
-| `options` | QueryOptions | A structure containing query options. | no       |
+| `options` | QueryOptions | Query options. | no       |
 
 ### **Options**
 

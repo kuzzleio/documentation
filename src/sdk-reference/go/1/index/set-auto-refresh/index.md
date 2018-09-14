@@ -32,7 +32,7 @@ SetAutoRefresh(index string, autoRefresh bool, options types.QueryOptions) error
 | ------------- | ------------ | ------------------------------------- | -------- |
 | `index`       | String       | Index name                            | yes      |
 | `autoRefresh` | Boolean      | autoRefresh flag                      | yes      |
-| `options`     | QueryOptions | A structure containing query options. | no       |
+| `options`     | QueryOptions | Query options. | no       |
 
 ### **Options**
 

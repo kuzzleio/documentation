@@ -4,11 +4,11 @@ const
   BaseRunner = require('./baseRunner');
 
 module.exports = class JavaTester extends BaseRunner {
-  constructor() {
-    super();
-    this.runCommand = 'java -cp ./test/bin/kuzzlesdk-java.jar:./test/bin';
+  constructor(sdk) {
+    super(sdk);
+    this.runCommand = `java -cp ./${this.sdk.sdkDir}/kuzzlesdk-java.jar:./test/bin`;
     this.lintCommand = 'javac';
-    this.lintOptions = ['-cp', 'test/bin/kuzzlesdk-java.jar'];
+    this.lintOptions = ['-cp', `${this.sdk.sdkDir}/kuzzlesdk-java.jar`];
   }
 
   async runExpect(snippet) {

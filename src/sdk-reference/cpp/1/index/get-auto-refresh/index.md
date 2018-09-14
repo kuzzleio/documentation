@@ -23,15 +23,15 @@ Without a refresh after a write request, the documents may not be immediately vi
 ## Signature
 
 ```cpp
-bool getAutoRefresh(std::string index, kuzzleio::query_options *options = null)
+bool getAutoRefresh(const std::string& index, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`   | std::string   | Index name                                              | yes      |
-| `options` | query_options | A pointer to a `query_options` containing query options | no       |
+| `index`   | const std::string&   | Index name                                              | yes      |
+| `options` | kuzzleio::query_options | A pointer to a `query_options` containing query options | no       |
 
 ### **Options**
 

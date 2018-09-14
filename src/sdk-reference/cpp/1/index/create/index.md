@@ -15,15 +15,15 @@ Create a new index in Kuzzle
 ## Signature
 
 ```cpp
-void create(std::string index, kuzzleio::query_options *options = null)
+void create(const std::string& index, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`   | std::string   | Index name                                              | yes      |
-| `options` | query_options | A pointer to a `query_options` containing query options | no       |
+| `index`   | const std::string&   | Index name                                              | yes      |
+| `options` | kuzzleio::query_options | A pointer to a `query_options` containing query options | no       |
 
 ### **Options**
 

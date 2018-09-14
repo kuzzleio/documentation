@@ -2,20 +2,26 @@ const
   {
     execute,
     getVersionPath
-  } = require('../helpers/utils');
+  } = require('../helpers/utils'),
+  fs = require('fs');
 
 class GoSdk {
   constructor(version) {
     this.version = version;
 
     this.repository = 'https://github.com/kuzzleio/sdk-go';
-    this.sdkGoPath = '/go/src/github.com/kuzzleio/sdk-go';
+    this.sdkDir = '/go/src/github.com/kuzzleio/sdk-go';
   }
 
   async get() {
     await execute('git', ['clone', '-b', getVersionPath('go', this.version), this.repository]);
-    await execute('mv', ['sdk-go', this.sdkGoPath]);
-    await execute('go', ['get', './...'], { cwd: this.sdkGoPath });
+    await execute('mv', ['sdk-go', this.sdkDir]);
+    await execute('go', ['get', './...'], { cwd: this.sdkDir });
+  }
+
+  exists() {
+    // Can't check if sdk go exist because we can't download it in test/bin, thanks to the GO_PATH
+    return false;
   }
 }
 
