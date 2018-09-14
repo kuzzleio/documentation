@@ -48,10 +48,22 @@ const display = (error, stdout, stderr) => {
   console.log(stdout);
 };
 
+const displayJava = (error, stdout, stderr) => {
+  if (error) {
+    console.log(error.message);
+    console.error(stderr);
+  }
+  const garbage = [/java.lang./g, /io.kuzzle.sdk./g];
+  for (const term of garbage) {
+    stdout = stdout.replace(term, '');
+  }
+  console.log(stdout);
+};
+
 async function renderTemplate(source, destination, variables) {
-  // if (fs.existsSync(destination)) {
-  //   throw new Error(`${destination} already exists.`)
-  // }
+  if (fs.existsSync(destination)) {
+    throw new Error(`${destination} already exists.`)
+  }
 
   const
     locals = Object.assign({}, { _ }, variables);
@@ -91,7 +103,7 @@ function showDescription({ action, controller }) {
     content = fs.readFileSync(actionFile, 'utf8'),
     regexp = new RegExp(/```javascript\n[\s\S]+```([\s\S]*)/),
     result = content.match(regexp);
-    
+
   if ((result || []).length > 0) {
     console.log(result[1]);
   } else {
@@ -112,7 +124,7 @@ function showSignatures({ language, action, controller }) {
       break;
 
     case 'java':
-      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-java.jar io.kuzzle.sdk.${_.upperFirst(_.camelCase(controller))} | grep ${_.camelCase(action)}`, display);
+      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-java.jar io.kuzzle.sdk.${_.upperFirst(_.camelCase(controller))} | grep ${_.camelCase(action)}`, displayJava);
       break;
 
     case 'go':
@@ -154,8 +166,12 @@ function extractFromFile(file, regexpInfo, regexpInfoFallback) {
     regexp,
     result;
 
-  for (regInfo of [regexpInfo, regexpInfoFallback]) {
-    if (regexpInfo.includeStart) {
+  for (const regInfo of [regexpInfo, regexpInfoFallback]) {
+    if (! regInfo) {
+      continue;
+    }
+
+    if (regInfo.includeStart) {
       regexp = new RegExp(`(${regInfo.start}[\\s\\S]*)${regInfo.end}`);
     } else {
       regexp = new RegExp(`${regInfo.start}([\\s\\S]*)${regInfo.end}`);
