@@ -2,7 +2,7 @@ const
   {
     execute,
     getVersionPath
-  } = require('../helpers/utils')
+  } = require('../helpers/utils'),
   fs = require('fs');
 
 class JsSdk {
@@ -10,7 +10,7 @@ class JsSdk {
     this.version = version;
 
     this.npmPackage = `https://github.com/kuzzleio/sdk-javascript#${getVersionPath('js', this.version)}`;
-    this.sdkDir = 'node_modules/kuzzle-sdk'
+    this.sdkDir = 'node_modules/kuzzle-sdk';
   }
 
   async get() {

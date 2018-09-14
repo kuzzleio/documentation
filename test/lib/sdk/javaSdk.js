@@ -15,7 +15,7 @@ class CppSdk {
   }
 
   async get() {
-    await execute('mkdir', ['-p', this.sdkDir])
+    await execute('mkdir', ['-p', this.sdkDir]);
     await execute('rm', ['-rf', this.sdkJavaJar], { cwd: this.sdkDir });
     await execute('curl', ['-o', this.sdkJavaJar, this.sdkJavaBucket], { cwd: this.sdkDir });
   }
