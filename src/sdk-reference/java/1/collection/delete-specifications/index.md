@@ -25,7 +25,7 @@ Delete the validation specifications associated with the collection.
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | QueryOptions | Query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

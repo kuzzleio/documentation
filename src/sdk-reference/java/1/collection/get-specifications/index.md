@@ -25,7 +25,7 @@ Returns the validation specifications associated to the collection.
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | QueryOptions | Query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

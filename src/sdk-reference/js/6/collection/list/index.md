@@ -30,7 +30,7 @@ list(index, options = {})
 | ``index`` | String | Index name    | yes  |
 | ``options`` | Object | Query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

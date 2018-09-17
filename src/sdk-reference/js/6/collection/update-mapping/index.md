@@ -34,7 +34,7 @@ updateMapping(index, collection, body, options = {})
 | ``mapping`` | Object | Collection data mapping    | yes  |
 | ``options`` | Object | An object containing query options    | no  |
 
-###### **mapping**
+### **mapping**
 
 An string containing the JSON representation of the collection data mapping.  
 

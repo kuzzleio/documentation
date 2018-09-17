@@ -27,7 +27,7 @@ UpdateMapping(index string, collection string, mapping json.RawMessage, options 
 | ``mapping`` | json.RawMessage | Collection data mapping in JSON format  | yes  |
 | `options` | QueryOptions | Query options. | no       |
 
-###### **mapping**
+### **mapping**
 
 An string containing the JSON representation of the collection data mapping.  
 

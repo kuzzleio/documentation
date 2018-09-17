@@ -30,7 +30,7 @@ deleteSpecifications(index, collection, options = {})
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | Object | Query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

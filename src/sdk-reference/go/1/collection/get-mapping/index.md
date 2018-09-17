@@ -24,7 +24,7 @@ GetMapping(index string, collection string, options types.QueryOptions) (json.Ra
 | ``collection`` | string | Collection name    | yes  |
 | ``options`` | types.QueryOptions | Query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

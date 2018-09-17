@@ -25,7 +25,7 @@ Returns the mapping for the given `collection`.
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | QueryOptions | Query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

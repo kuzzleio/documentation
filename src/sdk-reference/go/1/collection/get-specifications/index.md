@@ -24,7 +24,7 @@ GetSpecifications(index string, collection string, options types.QueryOptions) (
 | ``collection`` | string | Collection name    | yes  |
 | ``options`` | types.QueryOptions | Query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

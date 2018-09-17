@@ -25,7 +25,7 @@ Truncate(index string, collection string, options types.QueryOptions) error
 | ``collection`` | string | Collection name    | yes  |
 | ``options`` | types.QueryOptions | Query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

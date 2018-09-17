@@ -25,7 +25,7 @@ List(index string, options types.QueryOptions) (json.RawMessage, error)
 | ``index`` | string | Index name    | yes  |
 | ``options`` | types.QueryOptions | An object containing query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

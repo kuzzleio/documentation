@@ -26,7 +26,7 @@ public void truncate(String index, String collection, QueryOptions) throws BadRe
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | QueryOptions | Query options    | no  |
 
-###### **options**
+### **options**
 
 Additional query options
 

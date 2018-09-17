@@ -28,7 +28,7 @@ public void updateMapping(String index, String collection, String mapping, Query
 | ``mapping`` | String | Collection data mapping in JSON format  | yes  |
 | `options` | QueryOptions | The query options | no       |
 
-###### **mapping**
+### **mapping**
 
 An string containing the JSON representation of the collection data mapping.  
 
