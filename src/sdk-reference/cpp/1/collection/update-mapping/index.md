@@ -1,23 +1,21 @@
 ---
 layout: sdk.html
 algolia: true
-title: create
-description: Create a new collection
+title: updateMapping
+description: Update the collection mapping
 order: 200
 ---
 
-# create
+# updateMapping
 
-Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.  
-You can also provide an optional data mapping that allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).  
-
-This method will only update the mapping if the collection already exists.
+Update the collection mapping.  
+Mapping allow you to exploit the full capabilities of our
+persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
 
 ## Signature
 
 ```cpp
-void create(const std::string& index, const std::string& collection, const std::string* mapping=nullptr, kuzzleio::query_options *options=nullptr)
+void updateMapping(const std::string& index, const std::string& collection, const std::string& mapping, kuzzleio::query_options *options=nullptr)
 ```
 
 ## Arguments
@@ -26,7 +24,7 @@ void create(const std::string& index, const std::string& collection, const std::
 |--------------|---------|-------------|----------
 | ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
-| ``mapping`` | const std::string* | Collection data mapping in JSON format  | no  |
+| ``mapping`` | const std::string* | Collection data mapping in JSON format  | yes  |
 | ``options`` | kuzzleio::query_options* |  A pointer to a `query_options` containing query options  | no  |
 
 ### **mapping**
@@ -57,10 +55,6 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Exceptions
-
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
-
 ## Usage
 
-[snippet=create]
+[snippet=update-mapping]

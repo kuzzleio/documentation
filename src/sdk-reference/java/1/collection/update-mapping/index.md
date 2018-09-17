@@ -1,0 +1,61 @@
+---
+layout: sdk.html
+algolia: true
+title: updateMapping
+description: Update the collection mapping
+order: 200
+---
+
+# updateMapping
+
+Update the collection mapping.  
+Mapping allow you to exploit the full capabilities of our
+persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
+
+## Signature
+
+```java
+public void updateMapping(String index, String collection, String mapping) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException;
+public void updateMapping(String index, String collection, String mapping, QueryOptions options) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException;
+```
+
+## Arguments
+
+| Arguments    | Type    | Description | Required
+|--------------|---------|-------------|----------
+| ``index`` | String | Index name    | yes  |
+| ``collection`` | String | Collection name    | yes  |
+| ``mapping`` | String | Collection data mapping in JSON format  | yes  |
+| `options` | QueryOptions | The query options | no       |
+
+###### **mapping**
+
+An string containing the JSON representation of the collection data mapping.  
+
+The mapping must have a root field `properties` that contain the mapping definition:
+```json
+{
+  "properties": {
+    "field1": { "type": "text" },
+    "field2": {
+      "properties": {
+        "nestedField": { "type": "keyword"}
+      }
+    }
+  }
+}
+```
+
+You can see the full list of Elasticsearch mapping types [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html).
+
+### **options**
+
+Additional query options
+
+| Property   | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
+
+## Usage
+
+[snippet=update-mapping]

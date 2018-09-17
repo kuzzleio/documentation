@@ -1,23 +1,28 @@
 ---
 layout: sdk.html
 algolia: true
-title: create
-description: Create a new collection
+title: updateMapping
+description: Update the collection mapping
 order: 200
 ---
 
-# create
+# updateMapping
 
-Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.  
-You can also provide an optional data mapping that allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).  
-
-This method will only update the mapping if the collection already exists.
+Update the collection mapping.  
+Mapping allow you to exploit the full capabilities of our
+persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
 
 ## Signature
 
-```go
-Create(index string, collection string, mapping json.RawMessage, options types.QueryOptions) error
+```javascript
+/**
+* @param {string} index
+* @param {string} collection
+* @param {object} mapping
+* @param {object} [options]
+* @returns {Promise.<>}
+ */
+updateMapping(index, collection, body, options = {})
 ```
 
 ## Arguments
@@ -26,10 +31,10 @@ Create(index string, collection string, mapping json.RawMessage, options types.Q
 |--------------|---------|-------------|----------
 | ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
-| ``mapping`` | json.RawMessage | Collection data mapping in JSON format  | no  |
-| `options` | QueryOptions | Query options. | no       |
+| ``mapping`` | Object | Collection data mapping    | yes  |
+| ``options`` | Object | An object containing query options    | no  |
 
-### **mapping**
+###### **mapping**
 
 An string containing the JSON representation of the collection data mapping.  
 
@@ -57,10 +62,10 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Return
+## Resolve
 
-Return an error or `nil` if collection successfully created.
+Resolve if the collection is successfully updated.
 
 ## Usage
 
-[snippet=create]
+[snippet=update-mapping]
