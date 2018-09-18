@@ -34,7 +34,7 @@ updateSpecifications(index, collection, specifications, options = {})
 | ``specifications`` | Object | Specifications to update  | yes  |
 | ``options`` | Object | Query options    | no  |
 
-###### **specifications**
+### **specifications**
 
 An object representing the specifications.  
 

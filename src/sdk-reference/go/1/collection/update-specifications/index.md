@@ -27,7 +27,7 @@ UpdateSpecifications(index string, collection string, specifications json.RawMes
 | ``specifications`` | json.RawMessage | Specifications in JSON format  | yes  |
 | `options` | QueryOptions | Query options. | no       |
 
-###### **specifications**
+### **specifications**
 
 A JSON representation of the specifications.  
 

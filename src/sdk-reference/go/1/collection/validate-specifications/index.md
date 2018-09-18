@@ -21,7 +21,7 @@ ValidateSpecifications(body json.RawMessage, options types.QueryOptions) (bool, 
 | `specifications` | json.RawMessage | Collection data mapping in JSON format  | yes  |
 | `options` | QueryOptions | Query options. | no       |
 
-###### **specifications**
+### **specifications**
 
 A JSON representation of the specifications.  
 

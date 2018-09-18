@@ -28,7 +28,7 @@ public String updateSpecifications(String index, String collection, String speci
 | ``specifications`` | String | Specifications in JSON format  | yes  |
 | `options` | QueryOptions | The query options | no       |
 
-###### **specifications**
+### **specifications**
 
 A JSON representation of the specifications.  
 
