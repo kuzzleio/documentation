@@ -6,8 +6,8 @@ const
   TestResult = require('../helpers/testResult');
 
 module.exports = class JsRunner extends BaseRunner {
-  constructor() {
-    super();
+  constructor(sdk) {
+    super(sdk);
 
     this.lintConfig = path.join(__dirname, '../../linters/eslint.json');
     this.lintCommand = './node_modules/.bin/eslint';
