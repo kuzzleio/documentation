@@ -1,5 +1,6 @@
 const
   fs = require('fs'),
+  _ = require('lodash'),
   path = require('path'),
   readYaml = require('read-yaml'),
   indentString = require('indent-string'),
@@ -55,6 +56,11 @@ class Snippet {
 
     this.snippetContent = fs.readFileSync(this.snippetFile, 'utf8');
 
+    // Delete the automatic newline character added by IDE at the end of file
+    if (this.snippetContent[this.snippetContent.length - 1] === '\n') {
+      this.snippetContent = this.snippetContent.slice(0, -1);
+    }
+
     return this;
   }
 
@@ -105,6 +111,21 @@ class Snippet {
 
   clean() {
     fs.unlinkSync(this.renderedSnippetPath);
+  }
+
+  getLocalCommand() {
+    const name = this.name.toLowerCase();
+
+    switch (this.language) {
+      case 'go':
+        return `cp test/bin/${name}.go $GOPATH && cd $GOPATH && go run ${name}.go && cd -`;
+      case 'cpp':
+        return `LD_LIBRARY_PATH=./test/bin/sdk-cpp/lib ./test/bin/${name}`;
+      case 'java':
+        return `java -cp ./test/bin/kuzzlesdk-java.jar::./test/bin ${name}`;
+      case 'js':
+        return `node test/bin/${name}.js`;
+    }
   }
 
   _getIndentedSnippet() {

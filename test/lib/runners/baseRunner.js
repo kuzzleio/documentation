@@ -55,7 +55,7 @@ module.exports = class BaseRunner {
           };
           reject(new TestResult(res));
         })
-        .run((error, output) => {
+        .run((error, output, cerr) => {
           if (error) {
             const res = {
               code: 'ERR_ASSERTION',
