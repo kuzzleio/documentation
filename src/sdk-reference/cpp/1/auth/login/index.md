@@ -40,6 +40,10 @@ Check the appropriate [authentication plugin]({{ site_base_path }}plugins-refere
 
 The **login** action returns an encrypted JSON Web Token, that must then be sent in the [requests headers]({{ site_base_path }}api-documentation/query-syntax/authorization-token/).
 
+## Exceptions
+
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+
 ## Usage
 
 [snippet=login]
