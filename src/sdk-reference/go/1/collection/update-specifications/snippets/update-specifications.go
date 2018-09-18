@@ -3,6 +3,6 @@ response, err := kuzzle.Collection.UpdateSpecifications("nyc-open-data", "yellow
 
 if err != nil {
   log.Fatal(err)
-} else {
+} else if response != nil {
   fmt.Println("Success")
 }
