@@ -22,7 +22,7 @@ std::string getMapping(const std::string& index, const std::string& collection, 
 |--------------|---------|-------------|----------
 | ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
-| ``options`` | kuzzleio::query_options | Query options    | no  |
+| ``options`` | kuzzleio::query_options* | Query options    | no  |
 
 ### **options**
 

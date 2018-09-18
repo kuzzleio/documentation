@@ -23,7 +23,7 @@ std::string list(const std::string& index, kuzzleio::query_options *options=null
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
 | ``index`` | const std::string& | Index name    | yes  |
-| ``options`` | kuzzleio::query_options | Query options    | no  |
+| ``options`` | kuzzleio::query_options* | Query options    | no  |
 
 ### **options**
 

@@ -1,26 +1,30 @@
 ---
 layout: sdk.html
 algolia: true
-title: validateSpecifications
-description: Validate specifications format
+title: updateSpecifications
+description: Update the validation specifications
 order: 200
 ---
 
-# validateSpecifications
+# updateSpecifications
 
-The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.  
+The updateSpecifications method allows you to create or update the validation specifications for one or more index/collection pairs.
+
+When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
 ## Signature
 
 ```cpp
-bool validateSpecifications(const std::string& specifications, query_options *options=nullptr)
+std::string updateSpecifications(const std::string& index, const std::string& collection, const std::string& specifications, kuzzleio::query_options *options=nullptr)
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| `specifications` | const std::string& | Specification to validate in JSON format | yes
+| ``index`` | const std::string& | Index name    | yes  |
+| ``collection`` | const std::string& | Collection name    | yes  |
+| `specifications` | const std::string& | Specification in JSON format | yes
 | ``options`` | kuzzleio::query_options* | Query options    | no  |
 
 ### **specifications**
@@ -52,8 +56,8 @@ Additional query options
 
 ## Return
 
-A boolean indicating whether the specifications are correct or not.
+Return a string containing a JSON representation of the specifications
 
 ## Usage
 
-[snippet=validate-specifications]
+[snippet=update-specifications]

@@ -30,7 +30,7 @@ validateSpecifications(specifications, options = {})
 | ``specifications`` | Object | Specifications to validate  | yes  |
 | ``options`` | Object | An object containing query options    | no  |
 
-###### **specifications**
+### **specifications**
 
 An object representing the specifications.  
 

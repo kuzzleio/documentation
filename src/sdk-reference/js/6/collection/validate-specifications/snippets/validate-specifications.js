@@ -24,7 +24,7 @@ try {
   }
   */
   if (result.valid === false) {
-    console.log('Success');
+    console.log(result.description);
   }
 } catch (error) {
   console.error(error.message);

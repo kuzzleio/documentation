@@ -32,7 +32,7 @@ void setAutoRefresh(const std::string& index, bool autoRefresh, kuzzleio::query_
 | ------------- | ------------- | ------------------------------------------------------- | -------- |
 | `index`       | const std::string&   | Index name                                              | yes      |
 | `autoRefresh` | Boolean       | autoRefresh flag                                        | yes      |
-| `options`     | kuzzleio::query_options | A pointer to a `query_options` containing query options | no       |
+| `options`     | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
 
 ### **Options**
 
