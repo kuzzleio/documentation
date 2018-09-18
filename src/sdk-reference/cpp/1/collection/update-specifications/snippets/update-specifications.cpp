@@ -1,5 +1,5 @@
 try {
-  std::string specifications = "{ \"nyc-open-data\": { \"yellow-taxi\": { \"strict\": true, \"fields\": { \"license\": { \"mandatory\": true, \"type\": \"string\" } } } } }";
+  std::string specifications = "{ \"nyc-open-data\": { \"yellow-taxi\": { \"strict\": false, \"fields\": { \"license\": { \"mandatory\": true, \"type\": \"string\" } } } } }";
 
   std::string response = kuzzle->collection->updateSpecifications("nyc-open-data", "yellow-taxi", specifications);
 

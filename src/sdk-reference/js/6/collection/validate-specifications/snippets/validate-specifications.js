@@ -2,7 +2,7 @@ try {
   const specifications = {
     'nyc-open-data': {
       'yellow-taxi': {
-        strict: true,
+        strict: false,
         fields: {
           license: {
             mandatory: true,

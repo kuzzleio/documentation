@@ -1,4 +1,4 @@
-specifications := json.RawMessage(`{ "nyc-open-data": { "yellow-taxi": { "strict": true, "fields": { "license": { "mandatory": true, "type": "string" } } } } }`)
+specifications := json.RawMessage(`{ "nyc-open-data": { "yellow-taxi": { "strict": false, "fields": { "license": { "mandatory": true, "type": "string" } } } } }`)
 response, err := kuzzle.Collection.UpdateSpecifications("nyc-open-data", "yellow-taxi", specifications, nil)
 
 if err != nil {

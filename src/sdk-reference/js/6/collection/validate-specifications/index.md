@@ -34,7 +34,7 @@ validateSpecifications(specifications, options = {})
 
 An object representing the specifications.  
 
-The object must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
+This object must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
 
 ```js
 {
