@@ -1,5 +1,6 @@
 const
   fs = require('fs'),
+  _ = require('lodash'),
   path = require('path'),
   readYaml = require('read-yaml'),
   indentString = require('indent-string'),
@@ -105,6 +106,21 @@ class Snippet {
 
   clean() {
     fs.unlinkSync(this.renderedSnippetPath);
+  }
+
+  getLocalCommand() {
+    const name = this.name.toLowerCase();
+
+    switch (this.language) {
+      case 'go':
+        return `cp test/bin/${name}.go $GOPATH && cd $GOPATH && go run ${name}.go && cd -`;
+      case 'cpp':
+        return `LD_LIBRARY_PATH=./test/bin/sdk-cpp/lib ./test/bin/${name}`;
+      case 'java':
+        return `java -cp ./test/bin/kuzzlesdk-java.jar::./test/bin ${name}`;
+      case 'js':
+        return `node test/bin/${name}.js`;
+    }
   }
 
   _getIndentedSnippet() {
