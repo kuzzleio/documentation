@@ -145,9 +145,7 @@ function renderSnippetConfigTemplate(variables, actionPath) {
 
 function extractFromFile(file, regexpInfo, regexpInfoFallback) {
   const content = fs.readFileSync(file, 'utf8')
-  let
-    regexp,
-    result;
+  let regexp;
 
   for (const regInfo of [regexpInfo, regexpInfoFallback]) {
     if (! regInfo) {
@@ -160,7 +158,7 @@ function extractFromFile(file, regexpInfo, regexpInfoFallback) {
       regexp = new RegExp(`${regInfo.start}([\\s\\S]*)${regInfo.end}`);
     }
 
-    result = content.match(regexp) || [];
+    const result = content.match(regexp) || [];
 
     if (result.length > 0) {
       return result[1];

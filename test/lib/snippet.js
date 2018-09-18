@@ -56,6 +56,11 @@ class Snippet {
 
     this.snippetContent = fs.readFileSync(this.snippetFile, 'utf8');
 
+    // Delete the automatic newline character added by IDE at the end of file
+    if (this.snippetContent[this.snippetContent.length - 1] === '\n') {
+      this.snippetContent = this.snippetContent.slice(0, -1);
+    }
+
     return this;
   }
 
