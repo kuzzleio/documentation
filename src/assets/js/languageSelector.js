@@ -6,7 +6,7 @@ var excludedSDK = ["android", "php"];
 
 var languageSelector = {
   init: function() {
-    if ($('#language-selector').length == 0) {
+    if ($('#language-selector').length === 0) {
       return;
     }
 
@@ -47,22 +47,23 @@ var languageSelector = {
       baseUrl = window.location.protocol + '//' + window.location.host,
       latestVersion = '';
 
-    Object.keys(sdk_versions[language]).forEach(function(key) {
-      if (sdk_versions[language][key] === "master") {
+    Object.keys(sdkVersions[language]).forEach(function(key) {
+      if (sdkVersions[language][key] === "master") {
         latestVersion = key;
       }
     });
 
     var
-      customPathname = '/sdk-reference/' + language + '/' + latestVersion + '/essentials',
+      customPathname = "/sdk-reference/" + language + "/" + latestVersion + "/essentials",
       url = baseUrl + customPathname;
 
     return url;
   },
 
   setSelectorOptions: function() {
-    Object.keys(sdk_versions).forEach(function(key) {
-      if (!excludedSDK.includes(key)) {
+    Object.keys(sdkVersions)
+      .filter(function(v) { return !excludedSDK.includes(v); })
+      .forEach(function(key) {
         if (key === "js") {
           key = "javascript";
         }
@@ -72,8 +73,7 @@ var languageSelector = {
             text: key
           })
         );
-      }
-    });
+      });
   },
 
   selectTemplate: function(state) {

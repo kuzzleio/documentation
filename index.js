@@ -38,7 +38,7 @@ const watch = require('metalsmith-watch');
 const open = require('open');
 const color = require('colors/safe');
 const versionsConfig = require('./versions.config.json');
-const sdk_versions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
+const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
 
 const ok = color.green("✔")
 const nok = color.red("✗")
@@ -236,7 +236,7 @@ const metalsmith = Metalsmith(__dirname)
     algolia_index: options.algolia.index,
     versions_config: versionsConfig,
     is_dev: options.dev.enabled,
-    sdk_versions: sdk_versions
+    sdkVersions: sdkVersions
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
