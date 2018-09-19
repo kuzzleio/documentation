@@ -24,9 +24,8 @@ const sitemap = require('metalsmith-sitemap');
 const htmlMin = require('metalsmith-html-minifier');
 const algolia = require('metalsmith-algolia');
 const redirect = require('metalsmith-redirect');
-const uglifyjs = require("metalsmith-uglifyjs");
 const concat = require("metalsmith-concat");
-
+const uglify = require('metalsmith-uglify');
 const snippetManager = require('./plugins/snippetManager');
 const sectionManager = require('./plugins/sectionManager');
 const saveSrc = require('./plugins/save-src');
@@ -332,16 +331,12 @@ metalsmith
     files: 'assets/js/**/*.js',
     output: 'assets/js/main.js'
   }))
-  .use(uglifyjs({
-    src: ["**/*.js", "!**/*.min.js"],
-    deleteSources: false,
-    uglifyOptions: {
-      files: ['assets/js/libs/jquery.min.js', 'assets/js/*.js'],
-      mangle: true,
-      compress: {
-        unused: false
-      }
-    }
+  .use(uglify({
+    concat: {
+      file: 'bundle.min.js',
+      root: 'assets/js'
+    },
+    removeOriginal: true
   }))
   .use((files, metalsmith, done) => {
     for (const file in files) {

@@ -34,13 +34,13 @@ class TestManager {
     this.language = language;
     this.version = version;
 
-    const Runner = require(`./runners/${language}Runner`);
-    this.languageRunner = new Runner();
-
-    this.logger = new Logger(this.language);
-
     const Sdk = require(`./sdk/${this.language}Sdk`);
     this.sdk = new Sdk(this.version);
+
+    const Runner = require(`./runners/${language}Runner`);
+    this.languageRunner = new Runner(this.sdk);
+
+    this.logger = new Logger(this.language);
 
     this.testFiles = this._getTestFiles(this.basePath);
   }
@@ -88,7 +88,12 @@ class TestManager {
     if (this.testFiles.length === 0) {
       return;
     }
-    
+
+    if (process.env.DEV_MODE && this.sdk.exists()) {
+      this.logger.log('DEV_MODE is true, sdk already exists, skipping download');
+      return;
+    }
+
     this.logger.log(`Install ${this.language.toUpperCase()} SDK version ${this.version} from ${getVersionPath(this.language, this.version)}`);
 
     try {
