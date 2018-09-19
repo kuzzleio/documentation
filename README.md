@@ -147,32 +147,52 @@ You can add your own template, just respect the naming rule : `template_name.tpl
 
 ## Testing the snippets locally
 
-It's possible to play test locally by running at the root of the project
+You can test the snippets locally by using the script `run-snippet-tests.sh`.  
+This script looks recursively for snipppets to test, using the path provided as an argument.    
+You must at least have a sdk language and version in the provided path: `src/sdk-reference/<language>/<version>/path/to/snippets`
+
+First, you have to run a Kuzzle stack with the following script: `bash .travis/start_kuzzle.sh`
+
+Then you can run snippets for any language:
 
 ```bash
-   bash run-snippet-tests.sh -l <language>
+# Execute all snippets under the repertory 'src/sdk-reference/js/6'
+bash run-snippet-tests.sh -n -p src/sdk-reference/js/6
+# Execute all snippets for the controller index in SDK CPP 1
+bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 ```
 
-Where `<language>` specifies the language to test (currently available languages are `js`, `go`, `cpp` and `java`). This will launch a Kuzzle stack, and play all the tests for the language specified in an appropriate container and generate a report served locally to http://localhost:3001/reports .
-
-There are more available options. Using `-n` will prevent the script to launch the Kuzzle stack:
-
+If you want to avoid downloading the SDK each time you run a snippet, you can use the following variable:
 ```bash
-   bash run-snippet-tests.sh -l <language> -n
+export DEV_MODE=true
+# The following command will download the cpp SDK only if it does not already exist
+bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 ```
 
-This is handy if you launch many times the tests and keep the stack running on the background.
+## Scaffolding tool
 
-You can also specify a single test to be run using the `-f` option:
+### Create a new controller action documentation
 
+You can use the scaffolding tool to create the files needed to document a new controller action.  
+
+This tool takes the path of your new action as an argument and creates the following files:
+  - `<language>/<version>/<controller>/<action>/index.md`: controller action documenation
+  - `<language>/<version>/<controller>/<action>/snippets/<action>.test.yml`: configuration file for the snippet
+  - `<language>/<version>/<controller>/<action>/snippets/<action>.<language>`: snippet file
+
+Example:
 ```bash
-   bash run-snippet-tests.sh -l <language> -f <path>
+# Create the files documenting the action 'list' of the controller 'document' for the SDK JS 6
+./scaffolding/scaffold generate src/sdk-reference/js/6/collection/list
 ```
 
-Where `<path>` specifies the path to the `.yml` test description, relative to `$PWD/src/sdk-reference`.
+### Copy an existing action from another SDK
 
-The following example launches a single test in Javascript using the running Kuzzle stack:
+You can also copy an action from another SDK to save some time.  
+This command allows you to extract some information from an existing action in another SDK and generates the correct files for another SDK.  
 
+Example:
 ```bash
-   bash run-snippet-tests.sh -n -l js -f index/snippet/delete.yml
+# Copy informations from SDK JS 6 to SDK CPP 1
+./scaffolding/scaffold copy src/sdk-reference/js/6/collection/list src/sdk-reference/cpp/1/collection/list
 ```

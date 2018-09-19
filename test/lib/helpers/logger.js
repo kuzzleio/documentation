@@ -87,6 +87,14 @@ class Logger {
         } else {
           console.log(red('        ERROR   :'), result.actual);
         }
+        console.log(
+          blue(`[${snippet.language}] `),
+          'You can run the snippet locally with the following command:'
+        );
+        console.log(
+          blue(`[${snippet.language}] `),
+          snippet.getLocalCommand()
+        );
         break;
     }
 

@@ -2,7 +2,9 @@
 
 set -e
 
-npm install --unsafe-perm
+if [ -z "$DEV_MODE" ]; then
+  npm install --unsafe-perm
+fi
 
 chmod 777 node_modules
 

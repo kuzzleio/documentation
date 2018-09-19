@@ -5,7 +5,8 @@ const
   TestResult = require('../helpers/testResult');
 
 module.exports = class BaseRunner {
-  constructor() {
+  constructor(sdk) {
+    this.sdk = sdk;
     this.nexpectCommand = '';
     this.lintCommand = '';
     this.lintOptions = [];
@@ -54,7 +55,7 @@ module.exports = class BaseRunner {
           };
           reject(new TestResult(res));
         })
-        .run((error, output) => {
+        .run((error, output, cerr) => {
           if (error) {
             const res = {
               code: 'ERR_ASSERTION',

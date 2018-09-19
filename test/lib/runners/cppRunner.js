@@ -5,17 +5,16 @@ const
   TestResult = require('../helpers/testResult');
 
 module.exports = class CppRunner extends BaseRunner {
-  constructor() {
-    super();
-    this.sdkPath = 'test/bin/sdk-cpp';
-    this.compileOptions = ['-std=c++11', `-I${this.sdkPath}/include`, `-L${this.sdkPath}/lib`, '-lkuzzlesdk', '-lpthread'];
+  constructor(sdk) {
+    super(sdk);
+    this.compileOptions = ['-std=c++11', `-I${this.sdk.sdkDir}/include`, `-L${this.sdk.sdkDir}/lib`, '-lkuzzlesdk', '-lpthread'];
     this.lintCommand = 'cpplint';
     this.lintOptions = ['--filter=-legal/copyright,-whitespace/line_length'];
     this.executablePath = '';
   }
 
   async runExpect(snippet) {
-    process.env.LD_LIBRARY_PATH = `./${this.sdkPath}/lib`;
+    process.env.LD_LIBRARY_PATH = `./${this.sdk.sdkDir}/lib`;
     this.nexpectCommand = snippet.renderedSnippetPath.split('.')[0];
 
     try {
