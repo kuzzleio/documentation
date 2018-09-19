@@ -47,6 +47,11 @@ function log(args) {
   console.log(color.magenta('[kuzzle-docs]'), args);
 }
 
+const redirectList = {
+  //Now redirections for menus are set automatically
+  //If you need others, add it here
+}
+
 const options = {
   dev: {
     enabled: false,
@@ -354,28 +359,24 @@ metalsmith
     // since this plugin overwrites the processed files with their
     // old version.
     relative: false
-  }))
-  .use(redirect({
-    '/': '/guide/getting-started',
-    '/guide': '/guide/getting-started',
-    '/guide/getting-started': '/guide/getting-started/your-first-hello-world/',
-    '/guide/kuzzle-backend-setup': '/guide/kuzzle-backend-setup/setup-sh',
-    '/guide/kuzzle-backend-guide': '/guide/kuzzle-backend-guide/architecture-overview/',
-    '/guide/kuzzle-for-iot': '/guide/kuzzle-for-iot/getting-started/',
-    '/guide/kuzzle-for-web': '/guide/kuzzle-for-web/getting-started/',
-    '/guide/kuzzle-for-mobile': '/guide/kuzzle-for-mobile/getting-started/',
-    '/guide/kuzzle-admin-console': '/guide/kuzzle-admin-console/getting-started/',
-    '/api-documentation/': '/api-documentation/connecting-to-kuzzle/',
-    // '/sdk-reference': '/sdk-reference/essentials/',
-    '/sdk-reference/index': '/sdk-reference/index/create/',
-    '/sdk-reference/kuzzle': '/sdk-reference/kuzzle/constructor/',
-    '/sdk-reference/bulk': '/sdk-reference/bulk/import/',
-    '/plugins-reference/': 'plugins-features/',
-    '/elasticsearch-cookbook/': '/elasticsearch-cookbook/installation/',
-    '/kuzzle-dsl/': '/kuzzle-dsl/essential/koncorde/',
-    '/validation-reference/': '/validation-reference/schema/',
-    '/kuzzle-events/': '/kuzzle-events/plugin-events/'
-  }))
+  }));
+
+metalsmith
+  .use((files, metalsmith, done) => {
+    for (const file in files) {
+      const currentFile = files[file]; 
+      if (currentFile.ancestry && currentFile.ancestry.children) {
+        const 
+          orderedPages = currentFile.ancestry.children.sort((a,b) => { return a.order - b.order}),
+          href = '/' + currentFile.src.split('/').slice(0,-1).join('/'),
+          redirect = '/' + orderedPages[0].src.split('/').slice(0,-1).join('/');
+        
+        redirectList[href] = redirect;
+      }
+    }
+    setImmediate(done);
+  })
+  .use(redirect(redirectList))
   .use(layouts({
     directory: 'src/templates',
     engine: 'handlebars',
