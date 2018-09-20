@@ -32,8 +32,8 @@ Additional query options
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-| `from` | long | Start of returned list | `0` |
-| `size` | long | Size of returned list | `all` |
+| `from` | long | Offset of the first result | `0` |
+| `size` | long | Maximum number of returned results | `10` |
 
 ## Return
 

@@ -20,9 +20,9 @@ void <%= _.camelCase(action) %>()
 |--------------|---------|-------------|----------
 | ``changeme`` | changme | changeme    | yes
 
-### __arg1__
+### **arg1**
 
-### __arg2__
+### **arg2**
 
 ## Return
 
