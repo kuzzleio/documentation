@@ -1,6 +1,5 @@
 try {
   std::string jwt = kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
-  std::cout << jwt << std::endl;
 
   std::cout << "Success" << std::endl;
 } catch (kuzzleio::KuzzleException e) {

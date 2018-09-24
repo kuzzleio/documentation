@@ -21,11 +21,11 @@ std::string login(const std::string& strategy, const std::string& credentials);
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``strategy`` | string | the name of the strategy to use    | yes
-| ``credentials`` | string | the json credentials | yes
-| ``expiresIn`` | int | expiration time in milliseconds | no
+| Arguments     | Type    | Description | Required
+|---------------|---------|----------------------------------|----------
+| `strategy`    | string  | the name of the strategy to use  | yes
+| `credentials` | string  | the json credentials             | yes
+| `expiresIn`   | int     | expiration time in milliseconds  | no
 
 #### ***strategy***
 
