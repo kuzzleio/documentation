@@ -358,12 +358,11 @@ metalsmith
 
 metalsmith
   .use((files, metalsmith, done) => {
-    for (const file in files) {
-      const currentFile = files[file]; 
-      if (currentFile.ancestry && currentFile.ancestry.children) {
+    for (const file of Object.values(files)) {
+      if (file.ancestry && file.ancestry.children) {
         const 
-          orderedPages = currentFile.ancestry.children.sort((a,b) => a.order - b.order),
-          href = '/' + currentFile.src.split('/').slice(0,-1).join('/'),
+          orderedPages = file.ancestry.children.sort((a,b) => a.order - b.order),
+          href = '/' + file.src.split('/').slice(0,-1).join('/'),
           redirect = '/' + orderedPages[0].src.split('/').slice(0,-1).join('/');
         
         redirectList[href] = redirect;
