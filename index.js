@@ -362,7 +362,7 @@ metalsmith
       const currentFile = files[file]; 
       if (currentFile.ancestry && currentFile.ancestry.children) {
         const 
-          orderedPages = currentFile.ancestry.children.sort((a,b) => { return a.order - b.order}),
+          orderedPages = currentFile.ancestry.children.sort((a,b) => a.order - b.order),
           href = '/' + currentFile.src.split('/').slice(0,-1).join('/'),
           redirect = '/' + orderedPages[0].src.split('/').slice(0,-1).join('/');
         
