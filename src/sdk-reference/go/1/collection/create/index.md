@@ -24,8 +24,8 @@ Create(index string, collection string, mapping json.RawMessage, options types.Q
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
+| ``index`` | string | Index name    | yes  |
+| ``collection`` | string | Collection name    | yes  |
 | ``mapping`` | json.RawMessage | Collection data mapping in JSON format  | no  |
 | `options` | QueryOptions | Query options. | no       |
 
@@ -55,7 +55,7 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | bool | Make this request queuable or not | `true`  |
 
 ## Return
 

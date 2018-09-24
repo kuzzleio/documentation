@@ -46,11 +46,11 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | bool | Make this request queuable or not | `true`  |
 
 ## Return
 
-A boolean indicating whether the specifications are correct or not.
+A bool indicating whether the specifications are correct or not.
 
 ## Usage
 

@@ -22,8 +22,8 @@ UpdateSpecifications(index string, collection string, specifications json.RawMes
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
+| ``index`` | string | Index name    | yes  |
+| ``collection`` | string | Collection name    | yes  |
 | ``specifications`` | json.RawMessage | Specifications in JSON format  | yes  |
 | `options` | QueryOptions | Query options. | no       |
 
@@ -52,7 +52,7 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | bool | Make this request queuable or not | `true`  |
 
 ## Return
 

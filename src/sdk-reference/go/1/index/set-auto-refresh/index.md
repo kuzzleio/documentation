@@ -30,7 +30,7 @@ SetAutoRefresh(index string, autoRefresh bool, options types.QueryOptions) error
 
 | Arguments     | Type         | Description                           | Required |
 | ------------- | ------------ | ------------------------------------- | -------- |
-| `index`       | String       | Index name                            | yes      |
+| `index`       | string       | Index name                            | yes      |
 | `autoRefresh` | Boolean      | autoRefresh flag                      | yes      |
 | `options`     | QueryOptions | Query options. | no       |
 
@@ -40,7 +40,7 @@ Additional query options
 
 | Option     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | bool | Make this request queuable or not | `true`  |
 
 ## Return
 
