@@ -20,7 +20,7 @@ TokenValidity checkToken(String);
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``token`` | string | the token    | yes
+| ``token`` | java.lang.String | the token    | yes
 
 ## Return
 
@@ -28,8 +28,8 @@ A TokenValidity object which has:
 
 | Name                | Type    | Description                                                                                                      
 | ------------------- | ------- | -----------------------------------
-| valid               | Boolean | Tell if the token is valid or not
-| state               | String  | Explain why the token is invalid
+| valid               | boolean | Tell if the token is valid or not
+| state               | java.lang.String  | Explain why the token is invalid
 | expires_at          | int     | Tells when the token expires
 
 ## Exceptions

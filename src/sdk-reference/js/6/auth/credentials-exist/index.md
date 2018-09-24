@@ -1,0 +1,45 @@
+---
+layout: sdk.html
+algolia: true
+title: credentialsExist
+description: Check that the current user has credentials for the specified strategy
+order: 200
+---
+
+# credentialsExist
+
+## Signature
+
+```javascript
+/**
+ * Check the existence of the specified <strategy>'s credentials for the current user.
+ *
+ * @param strategy
+ * @param options
+ * @returns {Promise|*|PromiseLike<T>|Promise<T>}
+ */
+```
+
+## Arguments
+
+| Arguments    | Type    | Description | Required
+|--------------|---------|-------------|----------
+| `local` | string | Strategy to use    | yes
+| `options` | JSON Object | A structure containing query options. | no       |
+
+### **Options**
+
+Additional query options
+
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
+
+
+## Resolve
+
+A boolean.
+
+## Usage
+
+[snippet=credentials-exist]

@@ -21,8 +21,8 @@ String login(String strategy, String credentials);
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``strategy`` | string | the name of the strategy to use    | yes
-| ``credentials`` | string | the json credentials | yes
+| ``strategy`` | java.lang.String | the name of the strategy to use    | yes
+| ``credentials`` | java.lang.String | the json credentials | yes
 | ``expiresIn`` | int | expiration time in milliseconds | no
 
 #### ***strategy***

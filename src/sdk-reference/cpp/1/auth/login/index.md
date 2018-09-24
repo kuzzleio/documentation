@@ -23,8 +23,8 @@ std::string login(const std::string& strategy, const std::string& credentials);
 
 | Arguments     | Type    | Description | Required
 |---------------|---------|----------------------------------|----------
-| `strategy`    | string  | the name of the strategy to use  | yes
-| `credentials` | string  | the json credentials             | yes
+| `strategy`    | const std::string&  | the name of the strategy to use  | yes
+| `credentials` | const std::string&  | the json credentials             | yes
 | `expiresIn`   | int     | expiration time in milliseconds  | no
 
 #### ***strategy***
