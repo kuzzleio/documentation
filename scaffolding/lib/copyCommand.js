@@ -61,6 +61,7 @@ function injectTemplates(sdkInfos, src, dest) {
     end: '\n'
   };
 
+  // We extract the needed informations from files with regexp
   const
     srcIndexFile = `${src}/index.md`,
     srcTestConfigFile =`${src}/snippets/${sdkInfos.action}.test.yml`,
@@ -75,12 +76,15 @@ function injectTemplates(sdkInfos, src, dest) {
     snippetTemplate = extractFromFile(srcTestConfigFile, snippetTemplateRegexp),
     snippetExpected = extractFromFile(srcTestConfigFile, snippetExpectedRegexp);
 
+  // Then we inject them in the new files
   injectInFile(destIndexFile, longDescriptionRegexp, longDescription);
   injectInFile(destIndexFile, shortDescriptionRegexp, shortDescription);
   injectInFile(destIndexFile, argsTableRegexp, argsTable);
   injectInFile(destIndexFile, argsDescriptionRegexp, argsDescription);
   injectInFile(destTestConfigFile, hookAfterRegexp, hookAfter);
   injectInFile(destTestConfigFile, hookBeforeRegexp, hookBefore);
+  // original shortDescriptionRegexp is meant to extract short description from index.md
+  // but we use the short description in the action.test.yml test config file
   injectInFile(destTestConfigFile, { start: shortDescriptionRegexp.start, end: '\nhooks' }, shortDescription);
   injectInFile(destTestConfigFile, snippetTemplateRegexp, snippetTemplate);
   injectInFile(destTestConfigFile, snippetExpectedRegexp, snippetExpected);

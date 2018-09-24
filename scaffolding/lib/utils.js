@@ -5,6 +5,13 @@ const
   { exec } = require('child_process'),
   path = require('path');
 
+
+const TEMPLATES_PATH = path.join(
+  path.dirname(require.main.filename),
+  'templates'
+);
+
+
 function mkdirp (fullPath) {
   const parts = fullPath.split(path.sep);
 
@@ -17,30 +24,7 @@ function mkdirp (fullPath) {
   }
 }
 
-function get(store, key) {
-  if (store && store[key]) {
-    return store[key];
-  }
-
-  return '';
-}
-
-const documentationPath = path.join(
-  path
-    .dirname(require.main.filename)
-    .split(path.sep)
-    .slice(0, -1)
-    .join(path.sep),
-  'src',
-  'sdk-reference'
-);
-
-const templatesPath = path.join(
-  path.dirname(require.main.filename),
-  'templates'
-);
-
-const display = (error, stdout, stderr) => {
+function display(error, stdout, stderr) {
   if (error) {
     console.log(error.message);
     console.error(stderr);
@@ -48,14 +32,14 @@ const display = (error, stdout, stderr) => {
   console.log(stdout);
 };
 
-const displayJava = (error, stdout, stderr) => {
+function displayJava(error, stdout, stderr) {
   if (error) {
     console.log(error.message);
     console.error(stderr);
   }
-  const garbage = [/java.lang./g, /io.kuzzle.sdk./g];
-  for (const term of garbage) {
-    stdout = stdout.replace(term, '');
+
+  for (const garbage of [/java.lang./g, /io.kuzzle.sdk./g]) {
+    stdout = stdout.replace(garbage, '');
   }
   console.log(stdout);
 };
@@ -65,8 +49,7 @@ async function renderTemplate(source, destination, variables) {
     throw new Error(`${destination} already exists.`)
   }
 
-  const
-    locals = Object.assign({}, { _ }, variables);
+  const locals = Object.assign({}, { _ }, variables);
 
   mkdirp(path.dirname(destination));
 
@@ -102,9 +85,9 @@ function showDescription({ action, controller }) {
   const
     content = fs.readFileSync(actionFile, 'utf8'),
     regexp = new RegExp(/```javascript\n[\s\S]+```([\s\S]*)/),
-    result = content.match(regexp);
+    result = content.match(regexp) || [];
 
-  if ((result || []).length > 0) {
+  if (result.length > 0) {
     console.log(result[1]);
   } else {
     console.log('Can not extract action description :(');
@@ -138,7 +121,7 @@ function showSignatures({ language, action, controller }) {
 
 function renderMarkdownTemplate(variables, actionPath) {
   const
-    actionTemplate = path.join(templatesPath, `action.${variables.language}.md`),
+    actionTemplate = path.join(TEMPLATES_PATH, `action.${variables.language}.md`),
     destinationFile = path.join(actionPath, 'index.md');
 
   return renderTemplate(actionTemplate, destinationFile, variables);
@@ -146,7 +129,7 @@ function renderMarkdownTemplate(variables, actionPath) {
 
 function renderSnippetTemplate(variables, actionPath) {
   const
-    snippetTemplate = path.join(templatesPath, 'usage-snippets',`usage.${variables.language}`),
+    snippetTemplate = path.join(TEMPLATES_PATH, 'usage-snippets',`usage.${variables.language}`),
     destinationFile = path.join(actionPath, 'snippets', `${_.kebabCase(variables.action)}.${variables.language}`);
 
   return renderTemplate(snippetTemplate, destinationFile, variables);
@@ -154,7 +137,7 @@ function renderSnippetTemplate(variables, actionPath) {
 
 function renderSnippetConfigTemplate(variables, actionPath) {
   const
-    snippetTemplate = path.join(templatesPath, 'usage-snippets','usage.test.yml'),
+    snippetTemplate = path.join(TEMPLATES_PATH, 'usage-snippets','usage.test.yml'),
     destinationFile = path.join(actionPath, 'snippets', `${_.kebabCase(variables.action)}.test.yml`);
 
   return renderTemplate(snippetTemplate, destinationFile, variables);
@@ -162,9 +145,7 @@ function renderSnippetConfigTemplate(variables, actionPath) {
 
 function extractFromFile(file, regexpInfo, regexpInfoFallback) {
   const content = fs.readFileSync(file, 'utf8')
-  let
-    regexp,
-    result;
+  let regexp;
 
   for (const regInfo of [regexpInfo, regexpInfoFallback]) {
     if (! regInfo) {
@@ -177,9 +158,9 @@ function extractFromFile(file, regexpInfo, regexpInfoFallback) {
       regexp = new RegExp(`${regInfo.start}([\\s\\S]*)${regInfo.end}`);
     }
 
-    result = content.match(regexp);
+    const result = content.match(regexp) || [];
 
-    if ((result || []).length > 0) {
+    if (result.length > 0) {
       return result[1];
     }
   }

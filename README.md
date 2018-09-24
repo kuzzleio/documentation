@@ -148,8 +148,8 @@ You can add your own template, just respect the naming rule : `template_name.tpl
 ## Testing the snippets locally
 
 You can test the snippets locally by using the script `run-snippet-tests.sh`.  
-This script take the path of the snippets you want to test as argument and it will look recursively for snippets.  
-You must at least provide a sdk language and version in the provided path.  
+This script looks recursively for snipppets to test, using the path provided as an argument.    
+You must at least have a sdk language and version in the provided path: `src/sdk-reference/<language>/<version>/path/to/snippets`
 
 First, you have to run a Kuzzle stack with the following script: `bash .travis/start_kuzzle.sh`
 
@@ -162,34 +162,34 @@ bash run-snippet-tests.sh -n -p src/sdk-reference/js/6
 bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 ```
 
-If you want to avoid the download of the SDK each time you run a snippet, you can use the following variable:
+If you want to avoid downloading the SDK each time you run a snippet, you can use the following variable:
 ```bash
 export DEV_MODE=true
-# The following command will download the cpp SDK only if does not already exists
+# The following command will download the cpp SDK only if it does not already exist
 bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 ```
 
 ## Scaffolding tool
 
-###  Generate whole new action
+### Create a new controller action documentation
 
-You can use the scaffolding tool to create the files needed when you want to document a new controller action.  
+You can use the scaffolding tool to create the files needed to document a new controller action.  
 
-This tool take the path of your new action as an argument an create the following files:
-  - `<language>/<version>/<controller>/<action>/index.md`: File describing your action with the right subsections according to the language
-  - `<language>/<version>/<controller>/<action>/snippets/<action>.test.yml`: The configuration file explaining the snippet
-  - `<language>/<version>/<controller>/<action>/snippets/<action>.<language>`: The snippet demonstrating the action
+This tool takes the path of your new action as an argument and creates the following files:
+  - `<language>/<version>/<controller>/<action>/index.md`: controller action documenation
+  - `<language>/<version>/<controller>/<action>/snippets/<action>.test.yml`: configuration file for the snippet
+  - `<language>/<version>/<controller>/<action>/snippets/<action>.<language>`: snippet file
 
 Example:
 ```bash
-# Create the files to document the action 'list' of the controller 'document' for the SDK JS 6
+# Create the files documenting the action 'list' of the controller 'document' for the SDK JS 6
 ./scaffolding/scaffold generate src/sdk-reference/js/6/collection/list
 ```
 
 ### Copy an existing action from another SDK
 
 You can also copy an action from another SDK to save some time.  
-This command allow you to extract some informations from an existing action in another SDK and generate the correct files for another SDK.  
+This command allows you to extract some information from an existing action in another SDK and generates the correct files for another SDK.  
 
 Example:
 ```bash

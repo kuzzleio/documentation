@@ -24,9 +24,8 @@ const sitemap = require('metalsmith-sitemap');
 const htmlMin = require('metalsmith-html-minifier');
 const algolia = require('metalsmith-algolia');
 const redirect = require('metalsmith-redirect');
-const uglifyjs = require("metalsmith-uglifyjs");
 const concat = require("metalsmith-concat");
-
+const uglify = require('metalsmith-uglify');
 const snippetManager = require('./plugins/snippetManager');
 const sectionManager = require('./plugins/sectionManager');
 const saveSrc = require('./plugins/save-src');
@@ -45,6 +44,11 @@ const nok = color.red("✗")
 
 function log(args) {
   console.log(color.magenta('[kuzzle-docs]'), args);
+}
+
+const redirectList = {
+  //Now redirections for menus are set automatically
+  //If you need others, add it here
 }
 
 const options = {
@@ -327,16 +331,12 @@ metalsmith
     files: 'assets/js/**/*.js',
     output: 'assets/js/main.js'
   }))
-  .use(uglifyjs({
-    src: ["**/*.js", "!**/*.min.js"],
-    deleteSources: false,
-    uglifyOptions: {
-      files: ['assets/js/libs/jquery.min.js', 'assets/js/*.js'],
-      mangle: true,
-      compress: {
-        unused: false
-      }
-    }
+  .use(uglify({
+    concat: {
+      file: 'bundle.min.js',
+      root: 'assets/js'
+    },
+    removeOriginal: true
   }))
   .use((files, metalsmith, done) => {
     for (const file in files) {
@@ -354,28 +354,23 @@ metalsmith
     // since this plugin overwrites the processed files with their
     // old version.
     relative: false
-  }))
-  .use(redirect({
-    '/': '/guide/getting-started',
-    '/guide': '/guide/getting-started',
-    '/guide/getting-started': '/guide/getting-started/your-first-hello-world/',
-    '/guide/kuzzle-backend-setup': '/guide/kuzzle-backend-setup/setup-sh',
-    '/guide/kuzzle-backend-guide': '/guide/kuzzle-backend-guide/architecture-overview/',
-    '/guide/kuzzle-for-iot': '/guide/kuzzle-for-iot/getting-started/',
-    '/guide/kuzzle-for-web': '/guide/kuzzle-for-web/getting-started/',
-    '/guide/kuzzle-for-mobile': '/guide/kuzzle-for-mobile/getting-started/',
-    '/guide/kuzzle-admin-console': '/guide/kuzzle-admin-console/getting-started/',
-    '/api-documentation/': '/api-documentation/connecting-to-kuzzle/',
-    // '/sdk-reference': '/sdk-reference/essentials/',
-    '/sdk-reference/index': '/sdk-reference/index/create/',
-    '/sdk-reference/kuzzle': '/sdk-reference/kuzzle/constructor/',
-    '/sdk-reference/bulk': '/sdk-reference/bulk/import/',
-    '/plugins-reference/': 'plugins-features/',
-    '/elasticsearch-cookbook/': '/elasticsearch-cookbook/installation/',
-    '/kuzzle-dsl/': '/kuzzle-dsl/essential/koncorde/',
-    '/validation-reference/': '/validation-reference/schema/',
-    '/kuzzle-events/': '/kuzzle-events/plugin-events/'
-  }))
+  }));
+
+metalsmith
+  .use((files, metalsmith, done) => {
+    for (const file of Object.values(files)) {
+      if (file.ancestry && file.ancestry.children) {
+        const 
+          orderedPages = file.ancestry.children.sort((a,b) => a.order - b.order),
+          href = '/' + file.src.split('/').slice(0,-1).join('/'),
+          redirect = '/' + orderedPages[0].src.split('/').slice(0,-1).join('/');
+        
+        redirectList[href] = redirect;
+      }
+    }
+    setImmediate(done);
+  })
+  .use(redirect(redirectList))
   .use(layouts({
     directory: 'src/templates',
     engine: 'handlebars',

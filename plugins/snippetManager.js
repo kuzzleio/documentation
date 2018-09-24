@@ -37,7 +37,6 @@ module.exports = {
 
         });
         const markdown = md.render(code);
-        this.checkMissingLanguages(presentLanguages, fullPath)
         fileString = fileString.replace(el, markdown);
       });
     }
@@ -45,16 +44,6 @@ module.exports = {
       has_code_example : (match) ? true : false,
       fileContent: new Buffer(fileString)
     };
-  },
-
-  checkMissingLanguages (presentLanguages, fullPath) {
-    let exts = []
-    for (let k in config.languages) {
-      if (!presentLanguages.includes(config.languages[k].ext)) {
-        let page = fullPath.split('sdk-reference')[1].split(config.code_example.snippet_folder_name)[0]
-        console.log(color.red(`[MISSING snippet] Language ${config.languages[k].fullname} need sample code for ${page}`))
-      }
-    }
   },
 
   report (args) {
