@@ -13,16 +13,16 @@ The validateSpecifications method checks if a validation specification is well f
 ## Signature
 
 ```java
-public boolean validateSpecifications(String specifications) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException;
-public boolean validateSpecifications(String specifications, QueryOptions options) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException;
+public boolean validateSpecifications(String specifications) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+public boolean validateSpecifications(String specifications, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| `specifications` | String | Specification to validate in JSON format | yes  |
-| `options` | QueryOptions | The query options | no       |
+| `specifications` | java.lang.String | Specification to validate in JSON format | yes  |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
 
 ### **specifications**
 
@@ -54,6 +54,10 @@ Additional query options
 ## Return
 
 A boolean indicating whether the specifications are correct or not.
+
+## Exceptions
+
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 
