@@ -211,3 +211,15 @@ hr {
 @page {
   margin: 25mm;
 }
+
+
+// ----------------------------------------------------------------------------
+// Rules: show element only on mobile
+// ----------------------------------------------------------------------------
+
+.mobile-only {
+  display: none;
+  @include break-to-device(tablet) {
+    display: block;
+  }
+}

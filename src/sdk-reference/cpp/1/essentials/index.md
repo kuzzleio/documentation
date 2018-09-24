@@ -1,5 +1,5 @@
 ---
-layout: full.html
+layout: sdk.html
 algolia: true
 title: Essentials
 description: Essentials

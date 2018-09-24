@@ -1,5 +1,5 @@
 ---
-layout: full.html
+layout: sdk.html
 title: Kuzzle
 description: Kuzzle object
 order: 100
