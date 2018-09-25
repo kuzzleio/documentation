@@ -20,7 +20,7 @@ public boolean credentialsExist(String) throws BadRequestException, ForbiddenExc
 | Arguments  | Type             | Description                                             | Required |
 | ---------- | ---------------- | ------------------------------------------------------- | -------- |
 | `strategy` | java.lang.String      | Strategy to use                                         | yes      |
-| `options` | io.kuzzle.sdk.QueryOptions | A structure containing query options. | no       |
+| `options` | io.kuzzle.sdk.QueryOptions | An object containing query options. | no       |
 
 ### **Options**
 
@@ -30,6 +30,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Return
 

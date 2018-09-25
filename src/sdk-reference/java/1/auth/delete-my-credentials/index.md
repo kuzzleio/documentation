@@ -12,16 +12,17 @@ Delete the current user's credentials for the specified `<strategy>`. If the cre
 
 ## Signature
 
-```cpp
-void deleteMyCredentials(const std::string& strategy, query_options *options=nullptr);
+```java
+public void deleteMyCredentials(String, QueryOptions) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException, PartialException, PreconditionException, UnauthorizedException;
+public void deleteMyCredentials(String) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException, PartialException, PreconditionException, UnauthorizedException;
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| `strategy` | const std::string& | the strategy to use    | yes
-| `options`  | query_options\*    | A pointer to a `query_options` containing query options | no       |
+| `strategy` | java.lang.String | the strategy to use    | yes
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options. | no       |
 
 
 ### **Options**

@@ -21,7 +21,7 @@ Check that the current user has credentials for the specified strategy.
 | Arguments  | Type             | Description                                             | Required |
 | ---------- | ---------------- | ------------------------------------------------------- | -------- |
 | `strategy` | std::string      | Strategy to use                                         | yes      |
-| `options`  | query_options    | A pointer to a `query_options` containing query options | no       |
+| `options`  | query_options\*    | A pointer to a `query_options` containing query options | no       |
 
 ### **Options**
 

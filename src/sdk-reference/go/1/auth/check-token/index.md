@@ -1,12 +1,12 @@
 ---
 layout: sdk.html
 algolia: true
-title: checkToken
+title: CheckToken
 description: Checks a JWT Token's validity.
 order: 200
 ---
 
-# checkToken
+# CheckToken
 
 Checks a JWT Token's validity.
 

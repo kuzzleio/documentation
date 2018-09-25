@@ -17,6 +17,7 @@ order: 200
  * @param strategy
  * @param options
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
+ * credentialsExist (strategy, options = {});
  */
 ```
 

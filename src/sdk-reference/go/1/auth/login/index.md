@@ -1,12 +1,12 @@
 ---
 layout: sdk.html
 algolia: true
-title: login
+title: Login
 description: Authenticate a user
 order: 200
 ---
 
-# login
+# Login
 
 Authenticates a user.
 
