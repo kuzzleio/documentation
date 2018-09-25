@@ -1,10 +1,22 @@
+---
+layout: sdk.html
+algolia: true
+title: <%= _.camelCase(action) %>
+description:
+order: 200
+---
+
+# <%= _.camelCase(action) %>
+
+## Signature
+
 ```javascript
 /**
  * @param {}
  * @param {}
  * @returns {}
  */
-<%= action %>()
+<%= _.camelCase(action) %>()
 ```
 
 ## Arguments
@@ -21,4 +33,4 @@
 
 ## Usage
 
-[code-example=<%= _.kebabCase(action) %>]
+[snippet=<%= _.kebabCase(action) %>]

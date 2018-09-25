@@ -52,11 +52,11 @@ ENV JAVA_HOME=/usr/lib/jvm/java-8-oracle
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" "$GOPATH/src/github.com/kuzzleio/sdk-go" && \
   chmod -R 655 "$GOPATH"
 
-  
-RUN mkdir /nodejs && curl http://nodejs.org/dist/v8.9.0/node-v8.9.0-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1 
+
+RUN mkdir /nodejs && curl http://nodejs.org/dist/v8.9.0/node-v8.9.0-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1
 
 ENV PATH $PATH:/nodejs/bin
 
 WORKDIR /app
 
-ENTRYPOINT ["sh", "docker/entrypoints/java.sh"]
+ENTRYPOINT ["sh", "docker/entrypoint.sh"]

@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates \
   git \
   && rm -rf /var/lib/apt/lists/*
-  
-RUN mkdir /nodejs && curl http://nodejs.org/dist/v8.9.0/node-v8.9.0-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1 
+
+RUN mkdir /nodejs && curl http://nodejs.org/dist/v8.9.0/node-v8.9.0-linux-x64.tar.gz | tar xvzf - -C /nodejs --strip-components=1
 RUN mkdir -p /go/src/github.com/kuzzleio/go-test
 
 ENV PATH $PATH:/nodejs/bin
@@ -63,4 +63,4 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
 WORKDIR /app
 
-ENTRYPOINT ["sh", "docker/entrypoints/go.sh"]
+ENTRYPOINT ["sh", "docker/entrypoint.sh"]

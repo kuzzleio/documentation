@@ -3,8 +3,7 @@
 // ----------------------------------------------------------------------------
 
 // Active (toggled) drawer
-$md-toggle__drawer--checked:
-  "[data-md-toggle=\"drawer\"]:checked ~ .md-container";
+$md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container';
 
 // ----------------------------------------------------------------------------
 // Rules
@@ -16,6 +15,7 @@ $md-toggle__drawer--checked:
   width: 24.2rem;
   padding: 2.4rem 0;
   overflow: hidden;
+  
 
   // Hide for print
   @media print {
@@ -23,14 +23,13 @@ $md-toggle__drawer--checked:
   }
 
   // Lock sidebar to container height (account for fixed header)
-  &[data-md-state="lock"] {
+  &[data-md-state='lock'] {
     position: fixed;
     top: 4.8rem;
   }
 
   // [tablet -]: Convert navigation to drawer
   @include break-to-device(tablet) {
-
     // Render primary sidebar as a slideout container
     &--primary {
       position: fixed;
@@ -39,14 +38,12 @@ $md-toggle__drawer--checked:
       width: 24.2rem;
       height: 100%;
       transform: translateX(0);
-      transition:
-        transform  0.25s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.25s;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s;
       background-color: $md-color-white;
-      z-index: 3;
+      z-index: 11;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         right: -24.2rem;
         left: initial;
       }
@@ -63,7 +60,7 @@ $md-toggle__drawer--checked:
         transform: translateX(24.2rem);
 
         // Adjust for RTL languages
-        [dir="rtl"] & {
+        [dir='rtl'] & {
           transform: translateX(-24.2rem);
         }
 
@@ -91,7 +88,7 @@ $md-toggle__drawer--checked:
       transform: translate(-100%, 0);
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         margin-right: 100%;
         margin-left: initial;
         transform: translate(100%, 0);
@@ -103,7 +100,7 @@ $md-toggle__drawer--checked:
       margin-left: 122rem;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         margin-right: 122rem;
         margin-left: initial;
       }
@@ -121,7 +118,6 @@ $md-toggle__drawer--checked:
 
     // [tablet -]: Adjust margins
     @include break-to-device(tablet) {
-
       // Stretch scrollwrap for primary sidebar
       .md-sidebar--primary & {
         position: absolute;
@@ -149,4 +145,32 @@ $md-toggle__drawer--checked:
       }
     }
   }
+}
+
+.nosidebar {
+  @include break-from-device(screen) {
+    .md-sidebar {
+      display: none;
+    }
+  }  
+}
+
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0,0,0,0.54);
+  opacity: 1;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  
+  &.hidden{
+    display: none;
+  }
+}
+
+.noscroll{
+  overflow: hidden;
 }

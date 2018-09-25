@@ -13,7 +13,6 @@ int main() {
   std::string hostname = "kuzzle";
 
   kuzzleio::options kuzzle_options = KUZZLE_OPTIONS_DEFAULT;
-  kuzzle_options.connect = MANUAL;
 
   kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(hostname, &kuzzle_options);
 
@@ -24,6 +23,6 @@ int main() {
   }
 
   [snippet-code]
-
+  std::cout << "Success" << std::endl;
   return 0;
 }

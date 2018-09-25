@@ -12,8 +12,8 @@ body {
 body,
 input {
   color: $md-color-black;
-  font-feature-settings: "kern", "liga";
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-feature-settings: 'kern', 'liga';
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 // Proportionally spaced fonts
@@ -21,8 +21,8 @@ pre,
 code,
 kbd {
   color: $md-color-black;
-  font-feature-settings: "kern";
-  font-family: "Courier New", Courier, monospace;
+  font-feature-settings: 'kern';
+  font-family: 'Courier New', Courier, monospace;
 }
 
 // ----------------------------------------------------------------------------
@@ -130,11 +130,10 @@ kbd {
 
     // Add URLs for print
     @media print {
-
       // Show link URL
       &::after {
         color: $md-color-black--light;
-        content: " [" attr(href) "]";
+        content: ' [' attr(href) ']';
       }
     }
   }
@@ -142,7 +141,7 @@ kbd {
   // Code blocks
   code,
   pre {
-    font-family: "Roboto Mono", "Courier New", Courier, monospace;
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
     background-color: $md-code-background;
     color: $md-code-color;
     font-size: 1.45rem;
@@ -161,8 +160,7 @@ kbd {
     margin: 0 0.25em * $correct;
     padding: 0.0625em * $correct 0;
     border-radius: 0.2rem;
-    box-shadow:
-      +0.25em * $correct 0 0 $md-code-background-inline,
+    box-shadow: +0.25em * $correct 0 0 $md-code-background-inline,
       -0.25em * $correct 0 0 $md-code-background-inline;
     box-decoration-break: clone;
     background-color: $md-code-background-inline;
@@ -270,8 +268,7 @@ kbd {
     padding: 0.0625em 0;
     border-radius: 0.2rem;
     background-color: transparentize($clr-yellow-500, 0.5);
-    box-shadow:
-      +0.25em 0 0 transparentize($clr-yellow-500, 0.5),
+    box-shadow: +0.25em 0 0 transparentize($clr-yellow-500, 0.5),
       -0.25em 0 0 transparentize($clr-yellow-500, 0.5);
     word-break: break-word;
     box-decoration-break: clone;
@@ -295,7 +292,7 @@ kbd {
     margin-left: 0.0625em * 1 / 0.8;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       margin-right: 0.0625em * 1 / 0.8;
       margin-left: initial;
     }
@@ -308,7 +305,7 @@ kbd {
     color: $md-color-black--light;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       padding-right: 1.2rem;
       padding-left: initial;
       border-right: 0.4rem solid $md-color-black--lighter;
@@ -328,7 +325,7 @@ kbd {
     padding: 0;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       margin-right: 0.625em;
       margin-left: initial;
     }
@@ -349,7 +346,7 @@ kbd {
       margin-left: 1.25em;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         margin-right: 1.25em;
         margin-left: initial;
       }
@@ -371,7 +368,7 @@ kbd {
         margin: 0.5em 0 0.5em 0.625em;
 
         // Adjust for RTL languages
-        [dir="rtl"] & {
+        [dir='rtl'] & {
           margin-right: 0.625em;
           margin-left: initial;
         }
@@ -384,7 +381,7 @@ kbd {
     margin: 1em 0 1em 1.875em;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       margin-right: 1.875em;
       margin-left: initial;
     }
@@ -415,7 +412,7 @@ kbd {
     & + * {
       margin-top: 1.5em;
     }
-    
+
     tr {
       th:nth-child(3n) {
         width: 100%;
@@ -427,7 +424,7 @@ kbd {
       text-align: left;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         text-align: right;
       }
     }

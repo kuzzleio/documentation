@@ -4,7 +4,6 @@
 
 // Application footer
 .md-footer {
-
   // Hide for print
   @media print {
     display: none;
@@ -44,13 +43,12 @@
       float: left;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         float: right;
       }
 
       // Title
       .md-footer-nav__title {
-
         // [mobile -]: Hide title for previous page
         @include break-to-device(mobile) {
           display: none;
@@ -65,7 +63,7 @@
       text-align: right;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         float: left;
         text-align: left;
       }
@@ -134,7 +132,7 @@
     float: left;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       float: right;
     }
   }
@@ -156,7 +154,7 @@
     float: right;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       float: left;
     }
   }

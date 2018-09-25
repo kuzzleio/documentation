@@ -1,3 +1,15 @@
+---
+layout: sdk.html
+algolia: true
+title: <%= _.camelCase(action) %>
+description:
+order: 200
+---
+
+# <%= _.camelCase(action) %>
+
+## Signature
+
 ```go
 <%= _.upperFirst(_.camelCase(action)) %>() error
 ```
@@ -16,4 +28,4 @@
 
 ## Usage
 
-[code-example=<%= _.kebabCase(action) %>]
+[snippet=<%= _.kebabCase(action) %>]

@@ -1,0 +1,8 @@
+---
+name: kuzzle#stopQueuing
+description: Stops the requests queuing
+hooks:
+  before: 
+  after: 
+template: without-connect
+expected: Success

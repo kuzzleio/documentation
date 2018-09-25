@@ -20,4 +20,4 @@ ENV PATH $PATH:/nodejs/bin
 
 WORKDIR /app
 
-ENTRYPOINT ["sh", "docker/entrypoints/cpp.sh"]
+ENTRYPOINT ["sh", "docker/entrypoint.sh"]

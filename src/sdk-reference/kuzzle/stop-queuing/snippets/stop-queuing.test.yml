@@ -1,7 +1,0 @@
-name: stopQueuing
-description: Stops the requests queuing
-hooks:
-  before:
-  after:
-template: standalone
-expect: Success

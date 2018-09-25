@@ -3,8 +3,7 @@
 // ----------------------------------------------------------------------------
 
 // Active (toggled) search
-$md-toggle__search--checked:
-  "[data-md-toggle=\"search\"]:checked ~ .md-header";
+$md-toggle__search--checked: '[data-md-toggle="search"]:checked ~ .md-header';
 
 // ----------------------------------------------------------------------------
 // Rules
@@ -12,7 +11,6 @@ $md-toggle__search--checked:
 
 // Search container
 .md-search {
-
   // Hide search, if JavaScript is not available.
   .no-js & {
     display: none;
@@ -36,32 +34,27 @@ $md-toggle__search--checked:
       width: 3.6rem;
       height: 3.6rem;
       transform-origin: center;
-      transition:
-        transform 0.3s 0.1s,
-        opacity   0.2s 0.2s;
+      transition: transform 0.3s 0.1s, opacity 0.2s 0.2s;
       border-radius: 2rem;
       background-color: $md-color-white;
       overflow: hidden;
       pointer-events: none;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         right: 0.4rem;
         left: initial;
       }
 
       // Expanded overlay
       #{$md-toggle__search--checked} & {
-        transition:
-          transform 0.4s,
-          opacity   0.1s;
+        transition: transform 0.4s, opacity 0.1s;
         opacity: 1;
       }
     }
 
     // Set scale factors
     #{$md-toggle__search--checked} & {
-
       // [mobile portrait -]: Scale up 45 times
       @include break-to-device(mobile portrait) {
         transform: scale(45);
@@ -85,15 +78,12 @@ $md-toggle__search--checked:
       left: 0;
       width: 0;
       height: 0;
-      transition:
-        width   0s 0.25s,
-        height  0s 0.25s,
-        opacity 0.25s;
+      transition: width 0s 0.25s, height 0s 0.25s, opacity 0.25s;
       background-color: $md-color-black--light;
       cursor: pointer;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         right: 0;
         left: initial;
       }
@@ -102,10 +92,7 @@ $md-toggle__search--checked:
       #{$md-toggle__search--checked} & {
         width: 100%;
         height: 100%;
-        transition:
-          width   0s,
-          height  0s,
-          opacity 0.25s;
+        transition: width 0s, height 0s, opacity 0.25s;
         opacity: 1;
       }
     }
@@ -113,7 +100,6 @@ $md-toggle__search--checked:
 
   // Search modal wrapper
   &__inner {
-
     // [tablet portrait -]: Put search modal off-canvas by default
     @include break-to-device(tablet portrait) {
       position: fixed;
@@ -122,11 +108,8 @@ $md-toggle__search--checked:
       width: 100%;
       height: 100%;
       transform: translateX(5%);
-      transition:
-        right     0s    0.3s,
-        left      0s    0.3s,
-        transform 0.15s 0.15s cubic-bezier(0.4, 0, 0.2, 1),
-        opacity   0.15s 0.15s;
+      transition: right 0s 0.3s, left 0s 0.3s,
+        transform 0.15s 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s 0.15s;
       opacity: 0;
       z-index: 2;
 
@@ -134,22 +117,20 @@ $md-toggle__search--checked:
       #{$md-toggle__search--checked} & {
         left: 0;
         transform: translateX(0);
-        transition:
-          right     0s    0s,
-          left      0s    0s,
+        transition: right 0s 0s, left 0s 0s,
           transform 0.15s 0.15s cubic-bezier(0.1, 0.7, 0.1, 1),
-          opacity   0.15s 0.15s;
+          opacity 0.15s 0.15s;
         opacity: 1;
 
         // Adjust for RTL languages
-        [dir="rtl"] & {
+        [dir='rtl'] & {
           right: 0;
           left: initial;
         }
       }
 
       // Adjust for RTL languages
-      html [dir="rtl"] & {
+      html [dir='rtl'] & {
         right: 100%;
         left: initial;
         transform: translateX(-5%);
@@ -165,14 +146,13 @@ $md-toggle__search--checked:
       transition: width 0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         float: left;
       }
     }
 
     // Set maximum width
     #{$md-toggle__search--checked} & {
-
       // [tablet landscape]: Do not overlay title
       @include break-at-device(tablet landscape) {
         width: 46.8rem;
@@ -203,7 +183,7 @@ $md-toggle__search--checked:
     z-index: 2;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       padding: 0 7.2rem 0 4.4rem;
     }
 
@@ -235,16 +215,15 @@ $md-toggle__search--checked:
       width: 100%;
       height: 3.6rem;
       padding-left: 4.4rem;
-      transition:
-        background-color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1),
-        color            0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
+      transition: background-color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1),
+        color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
       border-radius: 0.2rem;
       background-color: $md-color-black--lighter;
       color: inherit;
       font-size: ms(0);
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         padding-right: 4.4rem;
       }
 
@@ -282,9 +261,7 @@ $md-toggle__search--checked:
   // Icons
   &__icon {
     position: absolute;
-    transition:
-      color   0.25s cubic-bezier(0.1, 0.7, 0.1, 1),
-      opacity 0.25s;
+    transition: color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.25s;
     font-size: $md-icon-size;
     cursor: pointer;
     z-index: 2;
@@ -295,12 +272,12 @@ $md-toggle__search--checked:
     }
 
     // Search icon
-    &[for="search"] {
+    &[for='search'] {
       top: 0.6rem;
       left: 1rem;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         right: 1rem;
         left: initial;
       }
@@ -308,7 +285,7 @@ $md-toggle__search--checked:
       // Set search icon on pseudo class, so it can be overridden for mobile
       // and tablet when the search is rendered in an overlay
       &::before {
-        content: "\E8B6"; // search
+        content: '\E8B6'; // search
       }
 
       // [tablet portrait -]: Full-screen search bar
@@ -317,29 +294,27 @@ $md-toggle__search--checked:
         left: 1.6rem;
 
         // Show back arrow instead of search icon
-        &[for="search"]::before {
-          content: "\E5C4"; // arrow_back
+        &[for='search']::before {
+          content: '\E5C4'; // arrow_back
 
           // Adjust for RTL languages
-          [dir="rtl"] & {
-            content: "\E5C8"; // arrow_forward
+          [dir='rtl'] & {
+            content: '\E5C8'; // arrow_forward
           }
         }
       }
     }
 
     // Reset button
-    &[type="reset"] {
+    &[type='reset'] {
       top: 0;
       right: 1rem;
       transform: scale(0.125);
-      transition:
-        transform 0.15s cubic-bezier(0.1, 0.7, 0.1, 1),
-        opacity   0.15s;
+      transition: transform 0.15s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.15s;
       opacity: 0;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         right: initial;
         left: 1rem;
       }
@@ -461,7 +436,7 @@ $md-toggle__search--checked:
       padding-left: 4.4rem;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         padding-right: 4.4rem;
         padding-left: initial;
       }
@@ -489,7 +464,7 @@ $md-toggle__search--checked:
     overflow: hidden;
 
     // Active or hovered link
-    &[data-md-state="active"],
+    &[data-md-state='active'],
     &:hover {
       background-color: transparentize($md-color-accent, 0.9);
 
@@ -516,7 +491,7 @@ $md-toggle__search--checked:
       padding-left: 4.4rem;
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
+      [dir='rtl'] & {
         padding-right: 4.4rem;
         padding-left: 1.6rem;
       }
@@ -524,7 +499,6 @@ $md-toggle__search--checked:
 
     // Document
     &--document {
-
       // Icon
       &::before {
         @extend %md-icon, %md-icon__button;
@@ -534,10 +508,10 @@ $md-toggle__search--checked:
         margin: 0.2rem;
         transition: opacity 0.25s;
         color: $md-color-black--light;
-        content: "\E880"; // find_in_page
+        content: '\E880'; // find_in_page
 
         // Adjust for RTL languages
-        [dir="rtl"] & {
+        [dir='rtl'] & {
           right: 0;
           left: initial;
         }

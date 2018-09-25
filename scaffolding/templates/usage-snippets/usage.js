@@ -1,9 +1,6 @@
-kuzzle
-  .<%= controller %>
-  .<%= action %>()
-  .then(() => {
-    console.log('Success')
-  })
-  .catch(error => {
-    console.error(error.message)
-  });
+try {
+  await kuzzle.<%= _.camelCase(controller) %>.<%= _.camelCase(action) %>();
+  console.log('Success');
+} catch (error) {
+  console.error(error.message);
+}

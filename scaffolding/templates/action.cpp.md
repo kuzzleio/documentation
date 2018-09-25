@@ -1,5 +1,17 @@
+---
+layout: sdk.html
+algolia: true
+title: <%= _.camelCase(action) %>
+description:
+order: 200
+---
+
+# <%= _.camelCase(action) %>
+
+## Signature
+
 ```cpp
-void <%= action %>()
+void <%= _.camelCase(action) %>()
 ```
 
 ## Arguments
@@ -14,8 +26,6 @@ void <%= action %>()
 
 ## Return
 
-## Exceptions
-
 ## Usage
 
-[code-example=<%= _.kebabCase(action) %>]
+[snippet=<%= _.kebabCase(action) %>]

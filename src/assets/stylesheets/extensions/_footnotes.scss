@@ -4,9 +4,8 @@
 
 // Scoped in typesetted content to match specificity of regular content
 .md-typeset {
-
   // All footnote references
-  [id^="fnref:"] {
+  [id^='fnref:'] {
     display: inline-block;
 
     // Targeted anchor
@@ -18,13 +17,12 @@
   }
 
   // All footnote back references
-  [id^="fn:"] {
-
+  [id^='fn:'] {
     // Add spacing to anchor for offset
     &::before {
       display: none;
       height: 0;
-      content: "";
+      content: '';
     }
 
     // Targeted anchor
@@ -61,14 +59,14 @@
       }
 
       // Make back references visible on hover
-      &:hover  .footnote-backref,
+      &:hover .footnote-backref,
       &:target .footnote-backref {
         transform: translateX(0);
         opacity: 1;
       }
 
       // Active or targeted back reference
-      &:hover  .footnote-backref:hover,
+      &:hover .footnote-backref:hover,
       &:target .footnote-backref {
         color: $md-color-accent;
       }
@@ -86,7 +84,7 @@
       margin: 0 0.2em;
       border-left: 0.1rem solid $md-color-black--lighter;
       font-size: 1.25em;
-      content: "";
+      content: '';
       vertical-align: -0.5rem;
     }
   }
@@ -97,10 +95,7 @@
 
     display: inline-block;
     transform: translateX(0.5rem);
-    transition:
-      transform 0.25s  0.125s,
-      color     0.25s,
-      opacity   0.125s 0.125s;
+    transition: transform 0.25s 0.125s, color 0.25s, opacity 0.125s 0.125s;
     color: $md-color-black--lighter;
     // Hack: remove Unicode arrow for icon
     font-size: 0;
@@ -108,7 +103,7 @@
     vertical-align: text-bottom;
 
     // Adjust for RTL languages
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       transform: translateX(-0.5rem);
     }
 
@@ -116,11 +111,11 @@
     &::before {
       display: inline-block;
       font-size: 1.6rem;
-      content: "\E31B"; // keyboard_return
+      content: '\E31B'; // keyboard_return
 
       // Adjust for RTL languages
-      [dir="rtl"] & {
-        transform: scaleX(-1)
+      [dir='rtl'] & {
+        transform: scaleX(-1);
       }
     }
   }

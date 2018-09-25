@@ -3,8 +3,7 @@
 // ----------------------------------------------------------------------------
 
 // Active (toggled) drawer
-$md-toggle__drawer--checked:
-  "[data-md-toggle=\"drawer\"]:checked ~";
+$md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~';
 
 // ----------------------------------------------------------------------------
 // Rules: base grid and containers
@@ -39,9 +38,8 @@ body {
 
   // [tablet portrait -]: Lock body to disable scroll bubbling
   @include break-to-device(tablet portrait) {
-
     // Lock body to viewport height (e.g. in search mode)
-    &[data-md-state="lock"] {
+    &[data-md-state='lock'] {
       overflow: hidden;
 
       // Hide container on iOS, or the body will not be locked correctly
@@ -119,25 +117,18 @@ hr {
   top: 0;
   width: 0;
   height: 0;
-  transition:
-    width   0s 0.25s,
-    height  0s 0.25s,
-    opacity 0.25s;
+  transition: width 0s 0.25s, height 0s 0.25s, opacity 0.25s;
   background-color: $md-color-black--light;
   opacity: 0;
   z-index: 3;
 
   // [tablet -]: Trigger overlay
   @include break-to-device(tablet) {
-
     // Expanded drawer
     #{$md-toggle__drawer--checked} & {
       width: 100%;
       height: 100%;
-      transition:
-        width   0s,
-        height  0s,
-        opacity 0.25s;
+      transition: width 0s, height 0s, opacity 0.25s;
       opacity: 1;
     }
   }
@@ -205,9 +196,8 @@ hr {
     height: auto;
     clip: auto;
     transform: translateX(0);
-    transition:
-      transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity   0.175s 0.075s;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.175s 0.075s;
     opacity: 1;
     z-index: 10;
   }
@@ -220,4 +210,16 @@ hr {
 // Add margins to page
 @page {
   margin: 25mm;
+}
+
+
+// ----------------------------------------------------------------------------
+// Rules: show element only on mobile
+// ----------------------------------------------------------------------------
+
+.mobile-only {
+  display: none;
+  @include break-to-device(tablet) {
+    display: block;
+  }
 }
