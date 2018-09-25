@@ -51,7 +51,7 @@ The following properties are the most common.
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `Queuable` | boolean | Make this request queuable or not | true    |
+| `Queuable` | bool | Make this request queuable or not | true    |
 
 ### **responseChannel**
 

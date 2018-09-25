@@ -13,15 +13,15 @@ Get the complete list of data indexes handled by Kuzzle.
 ## Signature
 
 ```java
-StringVector list(QueryOptions options)
-StringVector list()
+io.kuzzle.sdk.StringVector list() throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+io.kuzzle.sdk.StringVector list(io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
 ```
 
 ## Arguments
 
 | Arguments | Type         | Description       |
 | --------- | ------------ | ----------------- |
-| `options` | QueryOptions | The query options |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options |
 
 ### **Options**
 
@@ -33,11 +33,11 @@ Additional query options
 
 ## Return
 
-Returns an `StringVector` containing the list of indexes names present in Kuzzle (more details about [StringVector]({{ site_base_path }}sdk-reference/essentials/stringvector))
+Returns an `io.kuzzle.sdk.StringVector` containing the list of indexes names present in Kuzzle (more details about [StringVector]({{ site_base_path }}sdk-reference/essentials/string-vector))
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 

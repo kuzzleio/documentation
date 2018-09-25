@@ -32,18 +32,6 @@ function display(error, stdout, stderr) {
   console.log(stdout);
 };
 
-function displayJava(error, stdout, stderr) {
-  if (error) {
-    console.log(error.message);
-    console.error(stderr);
-  }
-
-  for (const garbage of [/java.lang./g, /io.kuzzle.sdk./g]) {
-    stdout = stdout.replace(garbage, '');
-  }
-  console.log(stdout);
-};
-
 async function renderTemplate(source, destination, variables) {
   if (fs.existsSync(destination)) {
     throw new Error(`${destination} already exists.`)
@@ -107,7 +95,7 @@ function showSignatures({ language, action, controller }) {
       break;
 
     case 'java':
-      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-java.jar io.kuzzle.sdk.${_.upperFirst(_.camelCase(controller))} | grep ${_.camelCase(action)}`, displayJava);
+      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-java.jar io.kuzzle.sdk.${_.upperFirst(_.camelCase(controller))} | grep ${_.camelCase(action)}`, display);
       break;
 
     case 'go':

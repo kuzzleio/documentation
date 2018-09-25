@@ -21,15 +21,15 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 ## Signature
 
 ```cpp
-void refresh(std::string index, kuzzleio::query_options *options = null)
+void refresh(const std::string& index, kuzzleio::query_options *options = null)
 ```
 
 ## Arguments
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`   | std::string   | Index name                                              | yes      |
-| `options` | query_options | A pointer to a `query_options` containing query options | no       |
+| `index`   | const std::string&   | Index name                                              | yes      |
+| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
 
 ### **Options**
 
