@@ -3,6 +3,8 @@ const handlebars = require('handlebars');
 const cheerio = require('cheerio');
 const stripTags = require('striptags');
 const wordCount = require('wordcount');
+const ymlRead = require('read-yaml');
+const path = require('path');
 
 const markdown = require('metalsmith-markdown');
 const marked = require('marked');
@@ -36,9 +38,8 @@ const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const open = require('open');
 const color = require('colors/safe');
-const config = require('./getConfig').get();
-const languages = require('./getConfig').getLanguages(config);
 const versionsConfig = require('./versions.config.json');
+const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
 
 const ok = color.green("✔")
 const nok = color.red("✗")
@@ -229,7 +230,6 @@ handlebars.registerHelper({
 })
 
 // Build site with metalsmith.
-
 const metalsmith = Metalsmith(__dirname)
   .metadata({
     site_title: 'Kuzzle documentation',
@@ -242,7 +242,7 @@ const metalsmith = Metalsmith(__dirname)
     algolia_index: options.algolia.index,
     versions_config: versionsConfig,
     is_dev: options.dev.enabled,
-    languages: languages.join()
+    sdkVersions: sdkVersions
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
