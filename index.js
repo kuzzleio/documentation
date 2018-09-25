@@ -30,6 +30,7 @@ const color = require('colors/safe');
 const config = require('./getConfig').get();
 const languages = require('./getConfig').getLanguages(config);
 const versionsConfig = require('./versions.config.json');
+const argv = require('yargs').argv;
 const manageArgs = require('./helpers/manageArgs');
 
 // We override the default Markdown table renderer because
@@ -45,7 +46,7 @@ const ok = color.green('✔');
 const nok = color.red('✗');
 
 let options = require('./metalsmithOptions.js');
-options = manageArgs(process.argv, options);
+options = manageArgs(argv, options);
 
 function log(args) {
   console.log(color.magenta('[kuzzle-docs]'), args);

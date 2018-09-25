@@ -1,34 +1,36 @@
 const manageArgs = (args, options) => {
-  if (args.indexOf('--dev') > -1) {
+  console.log(args);
+  
+  if (args.dev) {
     options.dev.enabled = true;
   }
   
-  if (args.indexOf('--open-browser') > -1) {
+  if (args.openBrowser) {
     options.dev.openBrowser = true;
   }
   
-  if (args.indexOf('--port') > -1) {
-    options.dev.port = parseInt(args[args.indexOf('--port') + 1]);
+  if (args.port) {
+    options.dev.port = args.port;
   }
   
-  if (args.indexOf('--watch') > -1) {
+  if (args.watch) {
     options.dev.watch = true;
   }
   
-  if (args.indexOf('--build-compress') > -1) {
+  if (args.buildCompress) {
     options.build.compress = true;
   }
   
-  if (args.indexOf('--build-path') > -1) {
-    options.build.path = args[args.indexOf('--build-path') + 1];
+  if (args.buildPath) {
+    options.build.path = args.buildPath;
   }
   
-  if (args.indexOf('--build-host') > -1) {
-    options.build.host = args[args.indexOf('--build-host') + 1];
+  if (args.buildHost) {
+    options.build.host = args.buildHost
   }
   
-  if (args.indexOf('--algolia-private-key') > -1) {
-    options.algolia.privateKey = args[args.indexOf('--algolia-private-key') + 1];
+  if (args.algoliaPrivateKey) {
+    options.algolia.privateKey = args.algoliaPrivateKey;
   }
   
   return options;

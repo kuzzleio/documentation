@@ -52,7 +52,8 @@
     "nexpect": "^0.5.0",
     "prettier": "^1.14.2",
     "read-yaml": "^1.1.0",
-    "sanitize-filename": "^1.6.1"
+    "sanitize-filename": "^1.6.1",
+    "yargs": "^12.0.2"
   },
   "devDependencies": {
     "commander": "^2.16.0",

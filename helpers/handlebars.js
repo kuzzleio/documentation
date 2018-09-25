@@ -1,39 +1,21 @@
 const handelbarsHelpers = {
-  not: (v) => {
-    return !v;
-  },
+  not: v => !v,
+
+  eq: (v1, v2) => v1 === v2,
+
+  ne: (v1, v2) => v1 !== v2,
   
-  eq: (v1, v2) => {
-    return v1 === v2;
-  },
+  lt: (v1, v2) => v1 < v2,
   
-  ne: (v1, v2) => {
-    return v1 !== v2;
-  },
+  gt: (v1, v2) => v1 > v2,
   
-  lt: (v1, v2) => {
-    return v1 < v2;
-  },
+  lte: (v1, v2) => v1 <= v2,
   
-  gt: (v1, v2) => {
-    return v1 > v2;
-  },
+  gte: (v1, v2) => v1 >= v2,
   
-  lte: (v1, v2) => {
-    return v1 <= v2;
-  },
+  and: (v1, v2) => v1 && v2,
   
-  gte: (v1, v2) => {
-    return v1 >= v2;
-  },
-  
-  and: (v1, v2) => {
-    return v1 && v2;
-  },
-  
-  or: (v1, v2) => {
-    return v1 || v2;
-  },
+  or: (v1, v2) => v1 || v2,
   
   startwith: (str, substr) => {
     if (!str) {
@@ -42,15 +24,12 @@ const handelbarsHelpers = {
     return str.startsWith(substr);
   },
   
-  mstartwith: () => {
-    var args = Array.prototype.slice.call(arguments);
-    var str = args.shift();
+  mstartwith: (str, ...args) => {
     if (!str) {
       return false;
     }
-    return args.reduce((found, currentStr) => {
-      return found || str.startsWith(currentStr);
-    }, false);
+
+    return args.some(arg => str.startsWith(arg));
   },
   
   endswith: (str, substr) => {
