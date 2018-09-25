@@ -3,6 +3,8 @@ const handlebars = require('handlebars');
 const cheerio = require('cheerio');
 const stripTags = require('striptags');
 const wordCount = require('wordcount');
+const ymlRead = require('read-yaml');
+const path = require('path');
 
 const markdown = require('metalsmith-markdown');
 const marked = require('marked');
@@ -24,8 +26,9 @@ const sitemap = require('metalsmith-sitemap');
 const htmlMin = require('metalsmith-html-minifier');
 const algolia = require('metalsmith-algolia');
 const redirect = require('metalsmith-redirect');
-const concat = require("metalsmith-concat");
+const concat = require('metalsmith-concat');
 const uglify = require('metalsmith-uglify');
+const include = require('./plugins/include');
 const snippetManager = require('./plugins/snippetManager');
 const sectionManager = require('./plugins/sectionManager');
 const saveSrc = require('./plugins/save-src');
@@ -35,15 +38,19 @@ const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const open = require('open');
 const color = require('colors/safe');
-const config = require('./getConfig').get();
-const languages = require('./getConfig').getLanguages(config);
 const versionsConfig = require('./versions.config.json');
+const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
 
 const ok = color.green("✔")
 const nok = color.red("✗")
 
 function log(args) {
   console.log(color.magenta('[kuzzle-docs]'), args);
+}
+
+const redirectList = {
+  //Now redirections for menus are set automatically
+  //If you need others, add it here
 }
 
 const options = {
@@ -223,7 +230,6 @@ handlebars.registerHelper({
 })
 
 // Build site with metalsmith.
-
 const metalsmith = Metalsmith(__dirname)
   .metadata({
     site_title: 'Kuzzle documentation',
@@ -236,7 +242,7 @@ const metalsmith = Metalsmith(__dirname)
     algolia_index: options.algolia.index,
     versions_config: versionsConfig,
     is_dev: options.dev.enabled,
-    languages: languages.join()
+    sdkVersions: sdkVersions
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
@@ -301,17 +307,8 @@ metalsmith
   .use(markdown({
     renderer: newMDRenderer
   }))
-  .use((files, metalsmith, done) => {
-    for (const file in files) {
-      if (file.endsWith('index.html')) {
-        const sectionsData = sectionManager.process(file, files[file], handlebars);
-        files[file].contents = sectionsData['fileContent'];
-        files[file]['has_section'] = sectionsData['has_section'];
-        files[file]['sections'] = sectionsData['sections'];
-      }
-    }
-    setImmediate(done);
-  })
+  .use(include())
+  .use(sectionManager(handlebars))
   .use((files, metalsmith, done) => {
     for (const file in files) {
       if (file.endsWith('index.html')) {
@@ -349,28 +346,23 @@ metalsmith
     // since this plugin overwrites the processed files with their
     // old version.
     relative: false
-  }))
-  .use(redirect({
-    '/': '/guide/getting-started',
-    '/guide': '/guide/getting-started',
-    '/guide/getting-started': '/guide/getting-started/your-first-hello-world/',
-    '/guide/kuzzle-backend-setup': '/guide/kuzzle-backend-setup/setup-sh',
-    '/guide/kuzzle-backend-guide': '/guide/kuzzle-backend-guide/architecture-overview/',
-    '/guide/kuzzle-for-iot': '/guide/kuzzle-for-iot/getting-started/',
-    '/guide/kuzzle-for-web': '/guide/kuzzle-for-web/getting-started/',
-    '/guide/kuzzle-for-mobile': '/guide/kuzzle-for-mobile/getting-started/',
-    '/guide/kuzzle-admin-console': '/guide/kuzzle-admin-console/getting-started/',
-    '/api-documentation/': '/api-documentation/connecting-to-kuzzle/',
-    // '/sdk-reference': '/sdk-reference/essentials/',
-    '/sdk-reference/index': '/sdk-reference/index/create/',
-    '/sdk-reference/kuzzle': '/sdk-reference/kuzzle/constructor/',
-    '/sdk-reference/bulk': '/sdk-reference/bulk/import/',
-    '/plugins-reference/': 'plugins-features/',
-    '/elasticsearch-cookbook/': '/elasticsearch-cookbook/installation/',
-    '/kuzzle-dsl/': '/kuzzle-dsl/essential/koncorde/',
-    '/validation-reference/': '/validation-reference/schema/',
-    '/kuzzle-events/': '/kuzzle-events/plugin-events/'
-  }))
+  }));
+
+metalsmith
+  .use((files, metalsmith, done) => {
+    for (const file of Object.values(files)) {
+      if (file.ancestry && file.ancestry.children) {
+        const
+          orderedPages = file.ancestry.children.sort((a,b) => a.order - b.order),
+          href = '/' + file.src.split('/').slice(0,-1).join('/'),
+          redirect = '/' + orderedPages[0].src.split('/').slice(0,-1).join('/');
+
+        redirectList[href] = redirect;
+      }
+    }
+    setImmediate(done);
+  })
+  .use(redirect(redirectList))
   .use(layouts({
     directory: 'src/templates',
     engine: 'handlebars',

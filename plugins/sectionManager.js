@@ -1,67 +1,54 @@
 const
-  fs = require('fs'),
   path = require('path'),
-  markdownIt = require('markdown-it'),
+  globby = require('globby').sync,
   config = require('../getConfig').get();
 
-const SECTION_REGEX = /(\[section=)[a-zA-Z0-9\-]+\]/g;
+const SECTION_REGEX = /\[section=([a-zA-Z0-9\-]+)\]/g;
 
-module.exports = {
+module.exports = function plugin () {
+  const process = function process (file, files) {
+    const content = files[file].contents.toString();
 
-  listSections: [],
+    let has_section = false;
+    let sections = [];
 
-  process(filename, data, handlebars) {
-    let fileString = data.contents.toString();
-    const match = fileString.match(SECTION_REGEX);
+    const out = content.replace(SECTION_REGEX, (match, name) => {
+      let replacement = '';
 
-    if (match) {
-      fileString = this.injectSection(match, filename, fileString, handlebars);
-    }
+      for (const fn of globby(path.join(__dirname, `../src/${path.dirname(file)}/${name}*`))) {
+        has_section = true;
+        sections.push(name);
 
-    return {
-      has_section: match,
-      sections: this.listSections.join(),
-      fileContent: Buffer.from(fileString)
-    };
-  },
+        const lng = fn.replace(/^.*\.([^.]+)\.[^.]+$/, '$1');
+        const key = `${path.dirname(file)}/${path.basename(fn).replace(/\.[^.]+$/, '')}.html`;
 
-  injectSection(match, filename, fileString, handlebars) {
+        replacement += `<div id="${name}" class="section ${config.languages[lng].fullname}">
+              ${files[key].contents.toString()}
+          </div>`;
+      }
 
-    match.forEach(el => {
-      const
-        name = el.split('=')[1].slice(0, -1),
-        fullPath = path.join(__dirname, `../src/${filename.split('/').slice(0, -1).join('/')}`),
-        filenames = fs.readdirSync(fullPath),
-        languages = config.languages,
-        md = new markdownIt();
-      
-      let section = '';
-        
-      languages.default = {fullname:'default'};
-      
-      filenames.forEach(file => {
-        if (file.split('.')[0] === name) {
-          const
-            language = file.split('.')[1],
-            fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8'),
-            template = handlebars.compile(fileContent);
-          
-          section += `<div id="${name}" class="section ${languages[language].fullname}">\n${md.render(template())}\n </div>`;
-        }
-      });
-
-      fileString = fileString.replace(el, section);
-      this.listSections.push(name);
-
+      return replacement;
     });
 
-    const reMatch = fileString.match(SECTION_REGEX);
+    return {
+      has_section,
+      sections,
+      contents: Buffer.from(out)
+    };
+  };
 
-    if (reMatch) {
-      fileString = this.injectSection(reMatch, filename, fileString);
+  return (files, metalsmith, done) => {
+    for (const file of Object.keys(files)) {
+      if (file.endsWith('index.html')) {
+        const processed = process(file, files);
+
+        files[file].contents = processed.contents;
+        files[file].has_section = processed.has_section;
+        files[file].sections = processed.sections.join(',');
+      }
     }
 
-    return fileString;
-  }
+    setImmediate(done);
+  };
+};
 
-}; 
