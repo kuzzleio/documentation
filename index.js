@@ -1,7 +1,8 @@
 const Metalsmith = require('metalsmith');
 const handlebars = require('handlebars');
 const cheerio = require('cheerio');
-
+const ymlRead = require('read-yaml');
+const path = require('path');
 const markdown = require('metalsmith-markdown');
 const marked = require('marked');
 const layouts = require('metalsmith-layouts');
@@ -27,10 +28,9 @@ const anchors = require('./plugins/anchors');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
-const config = require('./getConfig').get();
-const languages = require('./getConfig').getLanguages(config);
 const versionsConfig = require('./versions.config.json');
 const manageArgs = require('./helpers/manageArgs');
+const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
 
 // We override the default Markdown table renderer because
 // we want tables to be wrapped into divs (for responsivity reasons).
@@ -108,7 +108,7 @@ const metalsmith = Metalsmith(__dirname)
     algolia_index: options.algolia.index,
     versions_config: versionsConfig,
     is_dev: options.dev.enabled,
-    languages: languages.join()
+    sdkVersions: sdkVersions
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
