@@ -22,10 +22,10 @@ async function generateCommand (actionPath) {
 
     await renderMarkdownTemplate(sdkInfos, actionPath);
     await renderSnippetTemplate(sdkInfos, actionPath);
-    await renderSnippetConfigTemplate(sdkInfos, actionPath)
+    await renderSnippetConfigTemplate(sdkInfos, actionPath);
 
     showDescription(sdkInfos);
-    showSignatures(sdkInfos);    
+    showSignatures(sdkInfos);
   } catch (error) {
     console.error(error);
     process.exit(1);
