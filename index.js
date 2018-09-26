@@ -28,7 +28,7 @@ const anchors = require('./plugins/anchors');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
-const versionsConfig = require('./versions.config.json');
+const versionsConfig = require('./config/versions');
 const argv = require('yargs').argv;
 const manageArgs = require('./helpers/manageArgs');
 const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
@@ -45,7 +45,7 @@ newMDRenderer.table = (header, body) => {
 const ok = color.green('✔');
 const nok = color.red('✗');
 
-let options = require('./metalsmithOptions.js');
+let options = require('./config/metalsmith');
 options = manageArgs(argv, options);
 
 function log(args) {
@@ -122,7 +122,7 @@ const metalsmith = _metalsmith(__dirname)
     '**/**/page.cpp.md',
     '**/**/page.java.md',
     '**/templates/*'
-  ])
+  ].concat(options.exclude || []))
   .use(saveSrc())
   .use((files, ms, done) => {
     setImmediate(done);
