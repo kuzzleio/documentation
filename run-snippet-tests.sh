@@ -70,7 +70,7 @@ if [ -z $TESTS_PATH ]; then
 fi
 
 if [ $START_KUZZLE -eq 1 ]; then
-  sh .travis/start_kuzzle.sh
+  sh .ci/start_kuzzle.sh
 fi
 
 extract_language $TESTS_PATH
@@ -79,16 +79,16 @@ echo "Detected SDK: $LANGUAGE version $SDK_VERSION"
 
 case $LANGUAGE in
   js)
-    docker run -t --name runner_js -a stdout -a stderr --rm --privileged -e DEV_MODE="$DEV_MODE" --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:js $TESTS_PATH
+    docker run -it --name runner_js --rm -e DEV_MODE="$DEV_MODE" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:js $TESTS_PATH
   ;;
   go)
-    docker run -t --name runner_go -a stdout -a stderr --rm --privileged -e DEV_MODE="$DEV_MODE" --network codepipeline_default --link kuzzle -v "$(pwd)":/app -v "$(pwd)"/test/bin:/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go $TESTS_PATH
+    docker run -it --name runner_go --rm -e DEV_MODE="$DEV_MODE" --network ci_default --link kuzzle -v "$(pwd)":/app -v "$(pwd)"/test/bin:/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go $TESTS_PATH
   ;;
   cpp)
-    docker run -t --name runner_cpp -a stdout -a stderr --rm --privileged -e DEV_MODE="$DEV_MODE" --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:cpp $TESTS_PATH
+    docker run -it --name runner_cpp --rm -e DEV_MODE="$DEV_MODE" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:cpp $TESTS_PATH
   ;;
   java)
-    docker run -t --name runner_java -a stdout -a stderr --rm --privileged -e DEV_MODE="$DEV_MODE" --network codepipeline_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:java $TESTS_PATH
+    docker run -it --name runner_java --rm -e DEV_MODE="$DEV_MODE" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:java $TESTS_PATH
   ;;
   *)
     echo "$LANGUAGE is not a valid language"
@@ -98,11 +98,11 @@ case $LANGUAGE in
 esac
 
 if [ ! -z "$TRAVIS" ]; then
-  aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/$LANGUAGE/$TRAVIS_PULL_REQUEST/ --recursive --exclude "*.gitkeep"
+  aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/$TRAVIS_PULL_REQUEST/$LANGUAGE/$SDK_VERSION/ --recursive --exclude "*.gitkeep"
 fi
 
 if [ $START_KUZZLE -eq 1 ]; then
-  sh .travis/stop_kuzzle.sh
+  sh .ci/stop_kuzzle.sh
 fi
 
 if [ $INTERACTIVE -eq 1 ]; then

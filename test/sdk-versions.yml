@@ -11,7 +11,7 @@ java:
   1: 1-dev
 
 go:
-  1: 1-dev
+  1: master
 
 php:
   3: 3-stable
