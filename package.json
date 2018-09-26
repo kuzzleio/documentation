@@ -49,6 +49,7 @@
     "metalsmith-sitemap": "^1.2.0",
     "metalsmith-uglify": "^2.3.0",
     "metalsmith-watch": "^1.0.3",
+    "minimatch": "^3.0.4",
     "nexpect": "^0.5.0",
     "prettier": "^1.14.2",
     "read-yaml": "^1.1.0",
