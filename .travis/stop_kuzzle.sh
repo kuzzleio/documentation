@@ -1,1 +1,0 @@
-docker-compose -f .codepipeline/docker-compose.yml down
