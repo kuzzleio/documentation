@@ -1,17 +1,21 @@
 ---
 layout: sdk.html
 algolia: true
-title: <%= _.camelCase(action) %>
+title: count
 description:
 order: 200
 ---
 
-# <%= _.camelCase(action) %>
+# count
+
+Given some filters, gets the number of matching documents from Kuzzle.
+
+Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/query-dsl.html) syntax.
 
 ## Signature
 
 ```cpp
-void <%= _.camelCase(action) %>()
+int count(const std::string& index, const std::string& collection, const std::string& body, kuzzleio::query_options *options)
 ```
 
 ## Arguments
@@ -20,9 +24,8 @@ void <%= _.camelCase(action) %>()
 | --- | --- | --- | --- |
 | `index` | std::string | Index name | yes |
 | `collection` | std::string | Collection name | yes |
-| `id` | std::string | The document id | yes |
-| `body` | std::string | A JSON string containing the body of the document | yes |
-| `options` | query_options | A pointer to a `query_options` containing query options | no |
+| `body` | std::string | A JSON string containing the query to match | yes |
+| `options` | query_options | A pointer to a `query_options` | no |
 
 ### Options
 
@@ -31,9 +34,11 @@ Additional query options
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| `includeTrash` | boolean | If set to `true`, includes the documents from the trash | `false`  |
 
 ## Return
+
+Returns the number of matched documents.
 
 ## Exceptions
 
@@ -41,4 +46,4 @@ Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ s
 
 ## Usage
 
-[snippet=<%= _.kebabCase(action) %>]
+[snippet=count]
