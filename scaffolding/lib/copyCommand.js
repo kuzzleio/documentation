@@ -11,7 +11,7 @@ const
   _ = require('lodash'),
   path = require('path');
 
-
+/* eslint-disable no-useless-escape */
 function injectTemplates(sdkInfos, src, dest) {
   const longDescriptionRegexp = {
     start: `\# ${_.camelCase(sdkInfos.action)}\n`,
@@ -60,6 +60,7 @@ function injectTemplates(sdkInfos, src, dest) {
     start: 'expected:',
     end: '\n'
   };
+  /* eslint-enable no-useless-escape */
 
   // We extract the needed informations from files with regexp
   const
@@ -108,7 +109,7 @@ async function copyCommand (src, dest) {
 
     await renderMarkdownTemplate(sdkInfos, dest);
     await renderSnippetTemplate(sdkInfos, dest);
-    await renderSnippetConfigTemplate(sdkInfos, dest)
+    await renderSnippetConfigTemplate(sdkInfos, dest);
 
     injectTemplates(sdkInfos, src, dest);
 
