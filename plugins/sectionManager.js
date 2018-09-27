@@ -3,7 +3,7 @@ const
   globby = require('globby').sync,
   config = require('../getConfig').get();
 
-const SECTION_REGEX = /\[section=([a-zA-Z0-9\-]+)\]/g;
+const SECTION_REGEX = /\[section=([a-zA-Z0-9-]+)\]/g;
 
 module.exports = function plugin () {
   const process = function process (file, files) {

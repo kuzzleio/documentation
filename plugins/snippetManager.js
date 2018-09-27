@@ -2,11 +2,11 @@ const
   fs = require('fs'),
   path = require('path'),
   marked = require('marked'),
-  markdownIt = require('markdown-it'),
+  MarkdownIt = require('markdown-it'),
   color = require('colors/safe'),
   config = require('../getConfig').get();
 
-const SNIPPET_REGEX = /(\[snippet=)[a-zA-Z0-9\-]+\]/g;
+const SNIPPET_REGEX = /(\[snippet=)[a-zA-Z0-9-]+\]/g;
 
 module.exports = {
 
@@ -16,7 +16,7 @@ module.exports = {
       fileString = data.contents.toString(),
       match = fileString.match(SNIPPET_REGEX),
       presentLanguages = [],
-      md = new markdownIt();
+      md = new MarkdownIt();
 
     if(match) {
       match.forEach(el => {
@@ -28,7 +28,7 @@ module.exports = {
 
         filenames.forEach(file => {
 
-          if (file.split('.')[0] === name && file.substr(-8) !== 'test.yml' ) {
+          if (file.split('.')[0] === name && file.substr(-8) !== 'test.yml') {
             presentLanguages.push(file.split('.')[1]);
             let fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8');
 
@@ -49,4 +49,4 @@ module.exports = {
   report (args) {
     console.log(color.yellow('[TO-DO] =>'), args);
   }
-}
+};

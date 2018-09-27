@@ -26,6 +26,7 @@ const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
 const minimatch = require('minimatch');
+const discoverPartials = require('metalsmith-discover-partials');
 
 // custom plugins
 const snippetManager = require('./plugins/snippetManager');
@@ -169,7 +170,6 @@ else {
     }));
 }
 
-
 metalsmith
   .use(hljs())
   .use(hbtmd(handlebars, {
@@ -230,13 +230,12 @@ metalsmith
     setImmediate(done);
   })
   .use(metalsmithRedirect(redirectList))
+  .use(discoverPartials({
+    directory: 'src/templates/partials',
+    pattern: /\.html$/
+  }))
   .use(layouts({
-    directory: 'src/templates',
-    engine: 'handlebars',
-    partials: 'src/templates/partials',
-    exposeConsolidate(r) {
-      r.handlebars = handlebars;
-    }
+    directory: 'src/templates'
   }));
 
 if (options.algolia.privateKey) {
@@ -251,7 +250,6 @@ if (options.algolia.privateKey) {
       fileParser: options.algolia.fnFileParser
     }));
 }
-
 
 if (options.build.compress) {
   log('Compression enabled (build may take a while)');

@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: full.html
+layout: full.html.hbs
 ---
 
 # Introduction
