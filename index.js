@@ -63,7 +63,7 @@ const ignored = [
 ];
 
 if (!options.dev.enabled) {
-  ignored.push(...options.exclude);
+  ignored.push(...options.exclude.map(e => `**/${e}/**`));
 }
 
 function log(args) {
