@@ -60,7 +60,7 @@ module.exports = {
     const config = options.data.root;
 
     if (config.is_dev && config.exclude.some(e => minimatch(data.src, `**/${e}/**`))) {
-      title = `<p style='color:red'>(!) ${title}</p>`;
+      title = `<div style='color:red'>(!) ${title}</div>`;
     }
 
     return new SafeString(title);
