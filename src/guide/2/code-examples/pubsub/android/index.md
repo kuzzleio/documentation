@@ -8,13 +8,13 @@ title: Android
 
 Let's create a new Android project. 
 
-![create android project]({{ site_base_path }}assets/images/code-examples/androidstudio_project_pubsub.png)
+![create android project](androidstudio_project_pubsub.png)
 
 
 There's no need to add an Activity because we will only be using the project to perform a test.
 
 
-![create android project]({{ site_base_path }}assets/images/code-examples/androidstudio_project_noactivity.png)
+![create android project](androidstudio_project_noactivity.png)
 
 
 Once the project is created we can add the Kuzzle Android SDK. Add this line to your `build.gradle` file:

@@ -5,7 +5,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
         {{#each ancestry.parent.ancestry.siblings as |section|}}
             <li class="md-nav__item">
-                <a class="md-nav__link"  href="{{ ../site_base_path }}{{ path }}">{{{ section.title }}}</a>
+                <a class="md-nav__link"  href="{{ ../site_base_path }}{{ path }}">{{ displayTitle section }}</a>
             </li>
             {{#if (eq ../ancestry.parent.ancestry.firstMember.path section.path)}}
               <ul class="md-nav__list sub-menu">
@@ -13,13 +13,13 @@
                     {{#if (or (eq page.path ../../path) (eq page.path section.path))}}
                       <li class="md-nav__item active">
                           <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link--active">
-                              {{{firstDefinedOf subheader-title title}}}
+                              {{ displayTitle this }}
                           </a>
                       </li>
                     {{else}}
                       <li class="md-nav__item">
-                          <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{ title }}" class="md-nav__link">
-                              {{{firstDefinedOf subheader-title title}}}
+                          <a href="{{firstDefinedOf ../../site_base_path ../site_base_path}}{{ path }}" title="{{{ title }}}" class="md-nav__link">
+                              {{ displayTitle this}}
                           </a>
                       </li>
                     {{/if}}

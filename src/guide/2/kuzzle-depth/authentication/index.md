@@ -2,7 +2,6 @@
 layout: full.html.hbs
 algolia: true
 title: Authentication
-order: 100
 ---
 
 # Authentication
@@ -15,7 +14,7 @@ Kuzzle uses [Passport.js](http://Passportjs.org/) to support numerous authentica
 
 In the diagram below, we highlighted components of Kuzzle's server [architecture]({{ site_base_path }}guide/kuzzle-depth) that are used in the authentication process:
 
-![read_scenario_http_overview]({{ site_base_path }}assets/images/request-scenarios/auth/Authentication_Overview.png)
+![read_scenario_http_overview](Authentication_Overview.png)
 
 * The Auth Controller: to manage the authentication process.
 * The Passport Wrapper: to interface between Kuzzle and the Passport.js library.
@@ -36,7 +35,7 @@ The `kuid` is assigned when the user is first created and can be provided in the
 
 The Local Authentication Strategy, implemented in the [Passport Local Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local), authenticates a user by their username and password, which are stored in a local repository. The following diagram shows how the authentication request flows between the Client Application and Kuzzle's server components:
 
-![auth_scenario_details_local]({{ site_base_path }}assets/images/request-scenarios/auth/details-local.png)
+![auth_scenario_details_local](details-local.png)
 
 * The Client Application calls the `login` action of the *Auth Controller*:
 
@@ -94,7 +93,7 @@ For more details about OAuth2 protocol, click [here](https://www.digitalocean.co
 
 The following diagram outlines how an Oauth2 authentication request flows between the Client Application, the Authentication Provider (in this case GitHub), and Kuzzle's server components:
 
-![auth_scenario_details_oauth2]({{ site_base_path }}assets/images/request-scenarios/auth/details-oauth2.png)
+![auth_scenario_details_oauth2](details-oauth2.png)
 
 The authentication flow has two steps: first we request the Authentication Provider's URL used to authenticate the user on the third-party platform, then we perform the authentication.
 

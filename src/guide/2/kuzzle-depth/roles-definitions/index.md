@@ -2,7 +2,6 @@
 layout: full.html.hbs
 algolia: true
 title: Advanced Roles Definitions
-order: 200
 ---
 
 # Advanced Roles Definitions
