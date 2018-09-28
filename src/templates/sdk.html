@@ -23,9 +23,10 @@
                 <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
                     <div class="md-sidebar__scrollwrap">
                         <div class="md-sidebar__inner">
-                            {{#if has_code_example}}
-                                <select id="language-selector"></select>
-                            {{/if}}
+                            <div class="selector-container">
+                                <select id="language-selector" style="width:56%"></select>
+                                <select id="version-selector" style="width:22%"></select>  
+                            </div>
                             {{> anchors}}
                         </div>
                     </div>
