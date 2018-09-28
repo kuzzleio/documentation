@@ -181,9 +181,20 @@ metalsmith
   .use((files, ms, done) => {
     for (const file in files) {
       if (file.endsWith('index.html')) {
+        // Code Examples
         const codeExampleData = snippetManager.process(file, files[file]);
         files[file].contents = codeExampleData.fileContent;
         files[file].has_code_example = codeExampleData.has_code_example;
+
+        // Anchors
+        const anchorsData = anchors.process(file, files[file]);
+        files[file].contents = anchorsData.fileContent;
+        files[file].anchors = anchorsData.anchors;
+
+        // Excluded documentation
+        if (ms._metadata.is_dev && files[file].title && ms._metadata.exclude.some(e => minimatch(file, `**/${e}/**`))) {
+          files[file].title = `<p style='color:red'>(!) ${files[file].title}</p>`;
+        }
       }
     }
     setImmediate(done);
@@ -199,20 +210,6 @@ metalsmith
     },
     removeOriginal: true
   }))
-  .use((files, ms, done) => {
-    for (const file in files) {
-      if (file.endsWith('.html')) {
-        const anchorsData = anchors.process(file, files[file]);
-        files[file].contents = anchorsData.fileContent;
-        files[file].anchors = anchorsData.anchors;
-
-        if (ms._metadata.is_dev && files[file].title && ms._metadata.exclude.some(e => minimatch(file, `**/${e}/**`))) {
-          files[file].title = `(DEV only) ${files[file].title}`;
-        }
-      }
-    }
-    setImmediate(done);
-  })
   .use(permalinks({relative: false}));
 
 metalsmith

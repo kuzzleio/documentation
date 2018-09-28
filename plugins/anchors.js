@@ -7,7 +7,7 @@ module.exports = {
       ids = new Set(),
       $ = cheerio.load(data.contents.toString());
 
-    $('h2').each((i, el) => {
+    $('h1, h2').each((i, el) => {
       const
         section = $(el).parent('.section'),
         language = (section.length > 0) ? section.attr('class').split(' ')[1] : 'default',
