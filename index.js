@@ -25,7 +25,6 @@ const uglify = require('metalsmith-uglify');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
-const minimatch = require('minimatch');
 const discoverPartials = require('metalsmith-discover-partials');
 
 // custom plugins
@@ -205,10 +204,6 @@ metalsmith
         const anchorsData = anchors.process(file, files[file]);
         files[file].contents = anchorsData.fileContent;
         files[file].anchors = anchorsData.anchors;
-
-        if (ms._metadata.is_dev && files[file].title && ms._metadata.exclude.some(e => minimatch(file, `**/${e}/**`))) {
-          files[file].title = `(DEV only) ${files[file].title}`;
-        }
       }
     }
     setImmediate(done);

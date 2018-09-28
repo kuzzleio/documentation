@@ -1,4 +1,8 @@
-const handelbarsHelpers = {
+const
+  minimatch = require('minimatch'),
+  { SafeString } = require('handlebars');
+
+module.exports = {
   not: v => !v,
 
   eq: (v1, v2) => v1 === v2,
@@ -51,9 +55,19 @@ const handelbarsHelpers = {
     return d;
   },
 
+  displayTitle: (data, options) => {
+    let title = data.title;
+    const config = options.data.root;
+
+    if (config.is_dev && config.exclude.some(e => minimatch(data.src, `**/${e}/**`))) {
+      title = `<div style='color:red'>(!) ${title}</div>`;
+    }
+
+    return new SafeString(title);
+  },
+
   since: version => `<p class="since">Added in v${version}</p>`,
 
   deprecated: version => `<p class="deprecated">Deprecated since v${version}</p>`
 };
 
-module.exports = handelbarsHelpers;
