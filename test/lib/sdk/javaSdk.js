@@ -5,11 +5,11 @@ const
   } = require('../helpers/utils'),
   fs = require('fs');
 
-class CppSdk {
+class JavaSdk {
   constructor(version) {
     this.version = version;
-    this.versionPath = getVersionPath('cpp', this.version);
-    this.sdkJavaJar = 'kuzzlesdk-java.jar';
+    this.versionPath = getVersionPath('java', this.version);
+    this.sdkJavaJar = 'kuzzlesdk-amd64.jar';
     this.sdkDir = 'test/bin/sdk-java';
     this.sdkJavaBucket = `https://dl.kuzzle.io/sdk/java/${this.versionPath}/${this.sdkJavaJar}`;
   }
@@ -25,4 +25,4 @@ class CppSdk {
   }
 }
 
-module.exports = CppSdk;
+module.exports = JavaSdk;
