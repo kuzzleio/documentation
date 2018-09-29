@@ -1,17 +1,12 @@
 var languageSelector = {};
 
-languageSelector.el = document.querySelector('#language-selector');
 languageSelector.excludedSDK = ['android', 'php'];
 languageSelector.currentLanguage = document.location.pathname.split('/')[2];
 
-languageSelector.init = function () {
-  if (! this.el) {
-    return;
-  }
-  
-  this.setSelectorOptions();
+languageSelector.init = function (select) {
+  this.setSelectorOptions(select);
 
-  $(this.el).select2({
+  select.select2({
     minimumResultsForSearch: -1,
     theme: 'material',
     templateResult: this.setTemplate,
@@ -22,19 +17,19 @@ languageSelector.init = function () {
     .addClass('material-icons')
     .html('arrow_drop_down');
     
-  this.setCurrentLanguage();
-  this.onChange();
+  this.setCurrentLanguage(select);
+  this.onChange(select);
 };
 
-languageSelector.setCurrentLanguage = function () {
-  $(this.el)
+languageSelector.setCurrentLanguage = function (select) {
+  select
     .val(this.currentLanguage)
     .change();
 };
 
-languageSelector.onChange = function () {
+languageSelector.onChange = function (select) {
   var self = this;
-  $(this.el).on('change', function() {
+  select.on('change', function() {
     var language = $(this).val();
     window.location.assign(self.getLatestVersionURL(language));
   });
@@ -56,7 +51,7 @@ languageSelector.getLatestVersionURL = function (language) {
   return baseUrl + customPathname;
 };
 
-languageSelector.setSelectorOptions = function () {
+languageSelector.setSelectorOptions = function (select) {
   var self = this;
   Object.keys(sdkVersions)
     .filter(function(v) { return !self.excludedSDK.includes(v); })
@@ -65,7 +60,7 @@ languageSelector.setSelectorOptions = function () {
       if (key === 'js') {
         language = 'javascript';
       }
-      self.el.options[self.el.options.length] = new Option(language, key);
+      select.append($('<option>', {value:key, text:language}));
     });
 };
 
@@ -91,4 +86,6 @@ languageSelector.setTemplate = function (state) {
   return $state;
 };
 
-languageSelector.init();
+$('.language-selector').each(function() {
+  languageSelector.init($(this));
+});

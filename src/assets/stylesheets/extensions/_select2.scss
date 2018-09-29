@@ -330,7 +330,7 @@
   width: 255px;
 }
 
-#version-selector + .select2.select2-container {
+.version-selector + .select2.select2-container {
   display: block;
   margin-left: 40%;
   margin-top: -22px;
@@ -339,7 +339,7 @@
   }
 }
 
-#language-selector + .select2.select2-container {
+.language-selector + .select2.select2-container {
   left: 14px;
 }
 
