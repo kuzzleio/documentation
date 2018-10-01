@@ -17,8 +17,8 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 ## Signature
 
 ```java
-String create(String index, String collection, String id, String body, QueryOptions options) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException, PartialException, PreconditionException, UnauthorizedException;
-String create(String index, String collection, String id, String body) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException, PartialException, PreconditionException, UnauthorizedException;
+java.lang.String create(java.lang.String, java.lang.String, java.lang.String, java.lang.String, io.kuzzle.sdk.QueryOptions) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
+java.lang.String create(java.lang.String, java.lang.String, java.lang.String, java.lang.String) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
 ```
 
 ## Arguments
@@ -29,7 +29,7 @@ String create(String index, String collection, String id, String body) throws Ba
 | `collection` | String | Collection name | yes |
 | `id` | String | Optional document id. If set to a blank string, will use a auto-generated id | yes |
 | `body` | String | A JSON string containing the body of the document | yes |
-| `options` | Object | An object containing query options. | no |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options. | no |
 
 ### Options
 

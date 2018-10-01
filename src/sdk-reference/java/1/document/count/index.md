@@ -15,8 +15,8 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 ## Signature
 
 ```java
-void count(String index, String collection, String body, QueryOptions options)
-void count(String index, String collection, String body)
+int count(java.lang.String, java.lang.String, java.lang.String, io.kuzzle.sdk.QueryOptions) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
+int count(java.lang.String, java.lang.String, java.lang.String) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
 ```
 
 ## Arguments
@@ -26,7 +26,7 @@ void count(String index, String collection, String body)
 | `index` | String | Index name | yes |
 | `collection` | String | Collection name | yes |
 | `body` | String | A JSON string representing the query to match | yes |
-| `options` | Object | An object containing query options. | no |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options. | no |
 
 ###### **Options**
 
