@@ -1,23 +1,21 @@
 ---
 layout: sdk.html
 algolia: true
-title: delete
+title: deleteByQuery
 description:
 order: 200
 ---
 
-# delete_
+# deleteByQuery
 
-Given a document id, deletes the corresponding document from Kuzzle.
+Deletes all the documents from Kuzzle that match the given filter or query.
 
-Only documents in the persistent data storage layer can be deleted.
-
-The optional parameter refresh can be used with the value wait_for in order to wait for the document to be deleted (and to no longer be available in search).
+Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/query-dsl.html) syntax.
 
 ## Signature
 
 ```cpp
-std::string delete_(const std::string& index, const std::string& collection, const std::string& id, query_options *options=nullptr);
+std::vector<std::string> deleteByQuery(const std::string& index, const std::string& collection, const std::string& body, query_options *options=nullptr)
 ```
 
 ## Arguments
@@ -26,7 +24,7 @@ std::string delete_(const std::string& index, const std::string& collection, con
 | --- | --- | --- | --- |
 | `index` | std::string | Index name | yes |
 | `collection` | std::string | Collection name | yes |
-| `id` | std::string | The document id | yes |
+| `body` | std::string | A JSON string containing query to match | yes |
 | `options` | query_options | A pointer to a `query_options` containing query options | no |
 
 ### Options
@@ -36,11 +34,11 @@ Additional query options
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
 
 ## Return
 
-Returns the id of the deleted document.
+Returns the list of the deleted document ids.
 
 ## Exceptions
 
@@ -48,4 +46,4 @@ Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ s
 
 ## Usage
 
-[snippet=delete]
+[snippet=delete-by-query]
