@@ -1,12 +1,16 @@
 ---
 layout: sdk.html
 algolia: true
-title: deleteByQuery
+title: get
 description:
 order: 200
 ---
 
-# deleteByQuery
+# get
+
+Given a document id, retrieves the corresponding document from the database.
+
+Only documents in the persistent data storage layer can be retrieved.
 
 ## Signature
 
@@ -14,35 +18,31 @@ order: 200
 /**
  * @param {string} index
  * @param {string} collection
- * @param {string} body
  * @param {object} options
- * @returns {Promise.<Array>}
+ * @returns {Promise.<object>}
  */
-deleteByQuery(index, collection, body = {}, options = {})
+get (index, collection, _id, options = {})
 ```
 
 ## Arguments
 
 | Arguments | Type | Description | Required |
 | --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | String | Collection name | yes |
-| `body` | Object | The query to match | yes |
+| `index` | string | Index name | yes |
+| `collection` | string | Collection name | yes |
+| `id` | string | The document id | yes |
 | `options` | Object | An object containing query options. | no |
 
-### Options
+###### Options
 
 Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
 
 ## Resolve
 
-Resolves to an `Array` of strings containing the deleted document ids.
-
 ## Usage
 
-[snippet=delete-by-query]
+[snippet=get]
