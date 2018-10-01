@@ -8,7 +8,7 @@ cpp:
   1: master
 
 java:
-  1: 1-dev
+  1: master
 
 go:
   1: master
