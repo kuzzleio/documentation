@@ -3,7 +3,7 @@ response, err := kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id
 if err != nil {
   log.Fatal(err)
 } else {
-  fmt.Println(response)
+  fmt.Println(string(response))
   /*
   {
     "_index": "nyc-open-data",
