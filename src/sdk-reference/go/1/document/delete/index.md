@@ -8,7 +8,7 @@ order: 200
 
 # delete
 
-Given a `documentId`, deletes the corresponding document from Kuzzle.
+Given a document id, deletes the corresponding document from Kuzzle.
 
 Only documents in the persistent data storage layer can be deleted.
 

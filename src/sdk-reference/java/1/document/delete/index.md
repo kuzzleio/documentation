@@ -8,7 +8,7 @@ order: 200
 
 # delete
 
-Given a `documentId`, deletes the corresponding document from Kuzzle.
+Given a document id, deletes the corresponding document from Kuzzle.
 
 Only documents in the persistent data storage layer can be deleted.
 
@@ -17,8 +17,8 @@ The optional parameter refresh can be used with the value wait_for in order to w
 ## Signature
 
 ```java
-String delete(string index, string collection, string id, QueryOptions options)
-String delete(string index, string collection, string id)
+java.lang.String delete(java.lang.String, java.lang.String, java.lang.String, io.kuzzle.sdk.QueryOptions) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
+java.lang.String delete(java.lang.String, java.lang.String, java.lang.String) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
 ```
 
 ## Arguments
@@ -28,7 +28,7 @@ String delete(string index, string collection, string id)
 | `index` | String | Index name | yes |
 | `collection` | String | Collection name | yes |
 | `id` | String | The document id | yes |
-| `options` | QueryOptions | A pointer to a `query_options` containing query options | no |
+| `options` | io.kuzzle.sdk.QueryOptions |  The query options | no |
 
 ### Options
 

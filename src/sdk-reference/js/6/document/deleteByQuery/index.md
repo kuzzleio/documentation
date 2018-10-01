@@ -1,18 +1,12 @@
 ---
 layout: sdk.html
 algolia: true
-title: delete
+title: deleteByQuery
 description:
 order: 200
 ---
 
-# delete
-
-Given a document id, deletes the corresponding document from Kuzzle.
-
-Only documents in the persistent data storage layer can be deleted.
-
-The optional parameter refresh can be used with the value wait_for in order to wait for the document to be deleted (and to no longer be available in search).
+# deleteByQuery
 
 ## Signature
 
@@ -20,11 +14,11 @@ The optional parameter refresh can be used with the value wait_for in order to w
 /**
  * @param {string} index
  * @param {string} collection
- * @param {id} id
+ * @param {string} body
  * @param {object} options
- * @returns {Promise.<string>}
+ * @returns {}
  */
-delete(index, collection, id, (options = null))
+deleteByQuery(index, collection, body = {}, options = {})
 ```
 
 ## Arguments
@@ -33,7 +27,7 @@ delete(index, collection, id, (options = null))
 | --- | --- | --- | --- |
 | `index` | String | Index name | yes |
 | `collection` | String | Collection name | yes |
-| `id` | String | Optional document id | no |
+| `body` | Object | The query to match | yes |
 | `options` | Object | An object containing query options. | no |
 
 ### Options
@@ -47,8 +41,8 @@ Additional query options
 
 ## Resolve
 
-Resolves to the id of the deleted document.
+Resolves to an `Array` of strings containing the deleted document ids.
 
 ## Usage
 
-[snippet=delete]
+[snippet=delete-by-query]
