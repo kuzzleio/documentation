@@ -23,5 +23,6 @@
     "branch": ""
   },
   "exclude": [
+    "guide/2"
   ]
 }

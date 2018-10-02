@@ -1,7 +1,7 @@
 ---
 title: SDKs
 order: 1
-layout: full.html
+layout: full.html.hbs
 nosidebar: true
 ---
 
