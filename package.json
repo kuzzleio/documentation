@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node index.js --gzip",
     "dev": "node index.js --dev --watch",
-    "lint": "eslint --max-warnings=0 ./test/lib",
+    "lint": "eslint --max-warnings=0 *.js ./test/lib ./test/test ./helpers ./scaffolding/lib",
     "snippets-testing": "bash run-all-snippet-tests.sh",
     "unit-testing": "mocha ./test/test",
     "scaffold": "node scaffolding/index.js",
@@ -49,6 +49,7 @@
     "metalsmith-sitemap": "^1.2.0",
     "metalsmith-uglify": "^2.3.0",
     "metalsmith-watch": "^1.0.3",
+    "minimatch": "^3.0.4",
     "nexpect": "^0.5.0",
     "prettier": "^1.14.2",
     "read-yaml": "^1.1.0",

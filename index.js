@@ -1,4 +1,4 @@
-const Metalsmith = require('metalsmith');
+const _metalsmith = require('metalsmith');
 const handlebars = require('handlebars');
 const cheerio = require('cheerio');
 const ymlRead = require('read-yaml');
@@ -22,16 +22,23 @@ const algolia = require('metalsmith-algolia');
 const metalsmithRedirect = require('metalsmith-redirect');
 const concat = require('metalsmith-concat');
 const uglify = require('metalsmith-uglify');
-const snippetManager = require('./plugins/snippetManager');
-const saveSrc = require('./plugins/save-src');
-const anchors = require('./plugins/anchors');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
-const versionsConfig = require('./versions.config.json');
+
+// custom plugins
+const snippetManager = require('./plugins/snippetManager');
+const saveSrc = require('./plugins/save-src');
+const anchors = require('./plugins/anchors');
+
+// configuration
+const versionsConfig = require('./config/versions');
+const msDefaultOpts = require('./config/metalsmith');
+const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
+
+// arguments
 const argv = require('yargs').argv;
 const manageArgs = require('./helpers/manageArgs');
-const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
 
 // We override the default Markdown table renderer because
 // we want tables to be wrapped into divs (for responsivity reasons).
@@ -44,9 +51,20 @@ newMDRenderer.table = (header, body) => {
 
 const ok = color.green('✔');
 const nok = color.red('✗');
+const options = manageArgs(argv, msDefaultOpts);
+const ignored = [
+  '**/**/sections/*',
+  '**/**/snippets/*',
+  '**/**/page.js.md',
+  '**/**/page.go.md',
+  '**/**/page.cpp.md',
+  '**/**/page.java.md',
+  '**/templates/*'
+];
 
-let options = require('./metalsmithOptions.js');
-options = manageArgs(argv, options);
+if (!options.dev.enabled) {
+  ignored.push(...options.exclude.map(e => `**/${e}/**`));
+}
 
 function log(args) {
   console.log(color.magenta('[kuzzle-docs]'), args);
@@ -97,7 +115,7 @@ options.algolia.fnFileParser = (file, data) => {
 handlebars.registerHelper(require('./helpers/handlebars.js'));
 
 // Build site with metalsmith.
-const metalsmith = Metalsmith(__dirname)
+const metalsmith = _metalsmith(__dirname)
   .metadata({
     site_title: 'Kuzzle documentation',
     site_url: options.build.host,
@@ -109,28 +127,21 @@ const metalsmith = Metalsmith(__dirname)
     algolia_index: options.algolia.index,
     versions_config: versionsConfig,
     is_dev: options.dev.enabled,
-    sdkVersions: sdkVersions
+    sdkVersions: sdkVersions,
+    exclude: options.exclude
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
   .clean(true)
-  .ignore([
-    '**/**/sections/*',
-    '**/**/snippets/*',
-    '**/**/page.js.md',
-    '**/**/page.go.md',
-    '**/**/page.cpp.md',
-    '**/**/page.java.md',
-    '**/templates/*'
-  ])
+  .ignore(ignored)
   .use(saveSrc())
-  .use((files, metalsmith, done) => {
+  .use((files, ms, done) => {
     setImmediate(done);
-    Object.keys(files).forEach(path => {
-      if (path.endsWith('.md') && files[path].order === undefined) {
-        files[path].order = Number.MAX_SAFE_INTEGER;
+    for (const name of Object.keys(files)) {
+      if (name.endsWith('.md') && files[name].order === undefined) {
+        files[name].order = Number.MAX_SAFE_INTEGER;
       }
-    });
+    }
   });
 
 metalsmith
@@ -166,12 +177,12 @@ metalsmith
   .use(markdown({
     renderer: newMDRenderer
   }))
-  .use((files, metalsmith, done) => {
+  .use((files, ms, done) => {
     for (const file in files) {
       if (file.endsWith('index.html')) {
         const codeExampleData = snippetManager.process(file, files[file]);
-        files[file].contents = codeExampleData['fileContent'];
-        files[file]['has_code_example'] = codeExampleData['has_code_example'];
+        files[file].contents = codeExampleData.fileContent;
+        files[file].has_code_example = codeExampleData.has_code_example;
       }
     }
     setImmediate(done);
@@ -187,12 +198,12 @@ metalsmith
     },
     removeOriginal: true
   }))
-  .use((files, metalsmith, done) => {
+  .use((files, ms, done) => {
     for (const file in files) {
       if (file.endsWith('.html')) {
         const anchorsData = anchors.process(file, files[file]);
-        files[file].contents = anchorsData['fileContent'];
-        files[file]['anchors'] = anchorsData['anchors'];
+        files[file].contents = anchorsData.fileContent;
+        files[file].anchors = anchorsData.anchors;
       }
     }
     setImmediate(done);
@@ -200,14 +211,14 @@ metalsmith
   .use(permalinks({relative: false}));
 
 metalsmith
-  .use((files, metalsmith, done) => {
+  .use((files, ms, done) => {
     for (const file of Object.values(files)) {
       if (file.ancestry && file.ancestry.children) {
-        const 
+        const
           orderedPages = file.ancestry.children.sort((a,b) => a.order - b.order),
           href = '/' + file.src.split('/').slice(0,-1).join('/'),
           redirect = '/' + orderedPages[0].src.split('/').slice(0,-1).join('/');
-        
+
         redirectList[href] = redirect;
       }
     }
@@ -275,14 +286,14 @@ if (options.dev.enabled) {
         },
         livereload: true
       })
-    )
+    );
 }
 
 log(`Building site in '${options.build.path}'`);
 metalsmith.build((error, files) => {
   if (error) {
-    log(nok + color.yellow(' Ooops...'))
-    console.error(error)
+    log(nok + color.yellow(' Ooops...'));
+    console.error(error);
     return;
   }
   log(ok + ' Build finished');
