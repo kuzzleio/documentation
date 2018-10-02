@@ -95,7 +95,7 @@ function showSignatures({ language, action, controller }) {
       break;
 
     case 'java':
-      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-java.jar io.kuzzle.sdk.${_.upperFirst(_.camelCase(controller))} | grep ${_.camelCase(action)}`, display);
+      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-amd64.jar io.kuzzle.sdk.${_.upperFirst(_.camelCase(controller))} | grep ${_.camelCase(action)}`, display);
       break;
 
     case 'go':

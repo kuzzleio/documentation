@@ -21,7 +21,7 @@ func (a *Auth) DeleteMyCredentials(strategy string, options types.QueryOptions) 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
 | `strategy` | string | the strategy to use    | yes
-| `options`  | QueryOptions    | QueryOptions object containing query options | no       |
+| `options`  | QueryOptions    | QueryOptions object containing query options | yes       |
 
 
 ### **Options**
