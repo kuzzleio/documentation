@@ -22,16 +22,23 @@ const algolia = require('metalsmith-algolia');
 const metalsmithRedirect = require('metalsmith-redirect');
 const concat = require('metalsmith-concat');
 const uglify = require('metalsmith-uglify');
-const snippetManager = require('./plugins/snippetManager');
-const saveSrc = require('./plugins/save-src');
-const anchors = require('./plugins/anchors');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
-const versionsConfig = require('./versions.config.json');
+
+// custom plugins
+const snippetManager = require('./plugins/snippetManager');
+const saveSrc = require('./plugins/save-src');
+const anchors = require('./plugins/anchors');
+
+// configuration
+const versionsConfig = require('./config/versions');
+const msDefaultOpts = require('./config/metalsmith');
+const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
+
+// arguments
 const argv = require('yargs').argv;
 const manageArgs = require('./helpers/manageArgs');
-const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
 
 // We override the default Markdown table renderer because
 // we want tables to be wrapped into divs (for responsivity reasons).
@@ -44,9 +51,20 @@ newMDRenderer.table = (header, body) => {
 
 const ok = color.green('✔');
 const nok = color.red('✗');
+const options = manageArgs(argv, msDefaultOpts);
+const ignored = [
+  '**/**/sections/*',
+  '**/**/snippets/*',
+  '**/**/page.js.md',
+  '**/**/page.go.md',
+  '**/**/page.cpp.md',
+  '**/**/page.java.md',
+  '**/templates/*'
+];
 
-let options = require('./metalsmithOptions.js');
-options = manageArgs(argv, options);
+if (!options.dev.enabled) {
+  ignored.push(...options.exclude.map(e => `**/${e}/**`));
+}
 
 function log(args) {
   console.log(color.magenta('[kuzzle-docs]'), args);
@@ -109,20 +127,13 @@ const metalsmith = _metalsmith(__dirname)
     algolia_index: options.algolia.index,
     versions_config: versionsConfig,
     is_dev: options.dev.enabled,
-    sdkVersions: sdkVersions
+    sdkVersions: sdkVersions,
+    exclude: options.exclude
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
   .clean(true)
-  .ignore([
-    '**/**/sections/*',
-    '**/**/snippets/*',
-    '**/**/page.js.md',
-    '**/**/page.go.md',
-    '**/**/page.cpp.md',
-    '**/**/page.java.md',
-    '**/templates/*'
-  ])
+  .ignore(ignored)
   .use(saveSrc())
   .use((files, ms, done) => {
     setImmediate(done);
