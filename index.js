@@ -180,9 +180,15 @@ metalsmith
   .use((files, ms, done) => {
     for (const file in files) {
       if (file.endsWith('index.html')) {
+        // Code Examples
         const codeExampleData = snippetManager.process(file, files[file]);
         files[file].contents = codeExampleData.fileContent;
         files[file].has_code_example = codeExampleData.has_code_example;
+
+        // Anchors
+        const anchorsData = anchors.process(file, files[file]);
+        files[file].contents = anchorsData.fileContent;
+        files[file].anchors = anchorsData.anchors;
       }
     }
     setImmediate(done);
@@ -198,16 +204,6 @@ metalsmith
     },
     removeOriginal: true
   }))
-  .use((files, ms, done) => {
-    for (const file in files) {
-      if (file.endsWith('.html')) {
-        const anchorsData = anchors.process(file, files[file]);
-        files[file].contents = anchorsData.fileContent;
-        files[file].anchors = anchorsData.anchors;
-      }
-    }
-    setImmediate(done);
-  })
   .use(permalinks({relative: false}));
 
 metalsmith
