@@ -99,8 +99,8 @@ function showSignatures({ language, action, controller }) {
       break;
 
     case 'go':
-      exec(`cat ~/go/src/github.com/kuzzleio/sdk-go/${controller}/${_.camelCase(action)}.go | grep ${_.upperFirst(_.camelCase(action))}`, display);
-      exec(`cat ~/go/src/github.com/kuzzleio/sdk-go/${controller}/${_.snakeCase(action)}.go | grep ${_.upperFirst(_.camelCase(action))}`, display);
+      exec(`grep '${_.upperFirst(_.camelCase(action))}(' ${process.env.GOPATH}/src/github.com/kuzzleio/sdk-go/${controller}/${_.camelCase(action)}.go`, display);
+      exec(`grep '${_.upperFirst(_.camelCase(action))}(' ${process.env.GOPATH}/src/github.com/kuzzleio/sdk-go/${controller}/${_.snakeCase(action)}.go`, display);
       break;
   }
 
