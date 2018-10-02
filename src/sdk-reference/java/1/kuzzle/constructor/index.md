@@ -14,16 +14,16 @@ Each instance represent a connection to Kuzzle with specific options.
 ## Signature
 
 ```java
-Kuzzle(String host)
-Kuzzle(String host, Options options)
+Kuzzle(java.lang.String host)
+Kuzzle(java.lang.String host, io.kuzzle.sdk.Options options)
 ```
 
 ## Arguments
 
 | Argument  | Type    | Description                     | Required |
 | --------- | ------- | ------------------------------- | -------- |
-| `host`    | String  | The target Kuzzle host          | yes      |
-| `options` | Options | Kuzzle connection configuration | yes      |
+| `host`    | java.lang.String  | The target Kuzzle host          | yes      |
+| `options` | io.kuzzle.sdk.Options | Kuzzle connection configuration | yes      |
 
 ### **host**
 
@@ -54,8 +54,8 @@ For example, you can read the `volatile` property via `getVolatile()` and set it
 | Property name | Type          | Description                                                   | Availability |
 | ------------- | ------------- | ------------------------------------------------------------- | :----------: |
 | `autoReplay`  | boolean       | Automatically replay queued requests on a `reconnected` event |     Set      |
-| `jwt`         | String        | Token used in requests for authentication.                    |     Get      |
-| `volatile`    | String (json) | Common volatile data, will be sent to all future requests     |   Get/Set    |
+| `jwt`         | java.lang.String        | Token used in requests for authentication.                    |     Get      |
+| `volatile`    | java.lang.String | Common volatile data in JSON format, will be sent to all future requests     |   Get/Set    |
 
 **Notes:**
 
@@ -69,7 +69,7 @@ For example, you can read the `volatile` property via `getVolatile()` and set it
 
 ## Return
 
-A `Kuzzle` instance.
+A `io.kuzzle.sdk.Kuzzle` instance.
 
 ## Usage
 

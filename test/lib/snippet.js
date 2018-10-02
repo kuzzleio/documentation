@@ -118,11 +118,11 @@ class Snippet {
 
     switch (this.language) {
       case 'go':
-        return `cp test/bin/${name}.go $GOPATH && cd $GOPATH && go run ${name}.go && cd -`;
+        return `cp test/bin/${name}.go $GOPATH && cd $GOPATH && go run ${name}.go ; cd -`;
       case 'cpp':
         return `LD_LIBRARY_PATH=./test/bin/sdk-cpp/lib ./test/bin/${name}`;
       case 'java':
-        return `java -cp ./test/bin/kuzzlesdk-java.jar::./test/bin ${name}`;
+        return `java -cp ./test/bin/kuzzlesdk-amd64.jar::./test/bin ${name}`;
       case 'js':
         return `node test/bin/${name}.js`;
     }

@@ -25,9 +25,9 @@ order: 200
 |--------------|---------|-------------|----------
 | ``changeme`` | changme | changeme    | yes
 
-### __arg1__
+### **arg1**
 
-### __arg2__
+### **arg2**
 
 ## Resolve
 

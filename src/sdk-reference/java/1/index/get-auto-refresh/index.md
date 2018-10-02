@@ -23,16 +23,16 @@ Without a refresh after a write request, the documents may not be immediately vi
 ## Signature
 
 ```java
-boolean getAutoRefresh(String index, QueryOptions options)
-boolean getAutoRefresh(String index)
+boolean getAutoRefresh(java.lang.String index) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
+boolean getAutoRefresh(java.lang.String index, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
 ```
 
 ## Arguments
 
 | Arguments | Type         | Description       | Required |
 | --------- | ------------ | ----------------- | -------- |
-| `index`   | String       | Index name        | yes      |
-| `options` | QueryOptions | The query options | no       |
+| `index`   | java.lang.String       | Index name        | yes      |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
 
 ### **Options**
 
@@ -48,7 +48,7 @@ Returns a `boolean` that indicate the status of the **autoRefresh** flag.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 

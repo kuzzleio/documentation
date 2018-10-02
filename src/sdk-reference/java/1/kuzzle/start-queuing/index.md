@@ -14,12 +14,12 @@ Works only in `offline` state, and if the `autoQueue` option is set to false.
 ## Signature
 
 ```java
-Kuzzle startQueuing()
+io.kuzzle.sdk.Kuzzle startQueuing()
 ```
 
 ## Return
 
-The `Kuzzle` instance.
+The `io.kuzzle.sdk.Kuzzle` instance.
 
 ## Usage
 

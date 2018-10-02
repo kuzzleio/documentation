@@ -23,17 +23,17 @@ we recommend that you avoid using it in production or at least carefully monitor
 ## Signature
 
 ```java
-void setAutoRefresh(String index, boolean autoRefresh, QueryOptions options)
-void setAutoRefresh(String index, boolean autoRefresh)
+public void setAutoRefresh(java.lang.String index , boolean autoRefresh, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
+public void setAutoRefresh(java.lang.String index , boolean autoRefresh) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
 ```
 
 ## Arguments
 
 | Arguments     | Type         | Description       | Required |
 | ------------- | ------------ | ----------------- | -------- |
-| `index`       | String       | Index name        | yes      |
+| `index`       | java.lang.String       | Index name        | yes      |
 | `autoRefresh` | Boolean      | autoRefresh flag  | yes      |
-| `options`     | QueryOptions | The query options | no       |
+| `options`     | io.kuzzle.sdk.QueryOptions | The query options | no       |
 
 ### **Options**
 
@@ -45,7 +45,7 @@ Additional query options
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 
