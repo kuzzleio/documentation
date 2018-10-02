@@ -54,7 +54,7 @@ languageSelector.getLatestVersionURL = function (language) {
 languageSelector.setSelectorOptions = function (select) {
   var self = this;
   Object.keys(sdkVersions)
-    .filter(function(v) { return self.excludedSDK.indexOf(v) == -1; })
+    .filter(function(v) { return self.excludedSDK.indexOf(v) === -1; })
     .forEach(function(key) {
       var language = key;
       if (key === 'js') {
