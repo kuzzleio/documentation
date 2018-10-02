@@ -6,9 +6,9 @@ const
 module.exports = class JavaTester extends BaseRunner {
   constructor(sdk) {
     super(sdk);
-    this.runCommand = `java -cp ./${this.sdk.sdkDir}/kuzzlesdk-java.jar:./test/bin`;
+    this.runCommand = `java -cp ./${this.sdk.sdkDir}/kuzzlesdk-amd64.jar:./test/bin`;
     this.lintCommand = 'javac';
-    this.lintOptions = ['-cp', `${this.sdk.sdkDir}/kuzzlesdk-java.jar`];
+    this.lintOptions = ['-cp', `${this.sdk.sdkDir}/kuzzlesdk-amd64.jar`];
   }
 
   async runExpect(snippet) {
