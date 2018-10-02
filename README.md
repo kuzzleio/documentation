@@ -176,7 +176,7 @@ bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 You can use the scaffolding tool to create the files needed to document a new controller action.  
 
 This tool takes the path of your new action as an argument and creates the following files:
-  - `<language>/<version>/<controller>/<action>/index.md`: controller action documenation
+  - `<language>/<version>/<controller>/<action>/index.md`: controller action documentation
   - `<language>/<version>/<controller>/<action>/snippets/<action>.test.yml`: configuration file for the snippet
   - `<language>/<version>/<controller>/<action>/snippets/<action>.<language>`: snippet file
 

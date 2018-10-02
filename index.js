@@ -1,4 +1,4 @@
-const Metalsmith = require('metalsmith');
+const _metalsmith = require('metalsmith');
 const handlebars = require('handlebars');
 const cheerio = require('cheerio');
 const ymlRead = require('read-yaml');
@@ -97,7 +97,7 @@ options.algolia.fnFileParser = (file, data) => {
 handlebars.registerHelper(require('./helpers/handlebars.js'));
 
 // Build site with metalsmith.
-const metalsmith = Metalsmith(__dirname)
+const metalsmith = _metalsmith(__dirname)
   .metadata({
     site_title: 'Kuzzle documentation',
     site_url: options.build.host,
@@ -124,13 +124,13 @@ const metalsmith = Metalsmith(__dirname)
     '**/templates/*'
   ])
   .use(saveSrc())
-  .use((files, metalsmith, done) => {
+  .use((files, ms, done) => {
     setImmediate(done);
-    Object.keys(files).forEach(path => {
-      if (path.endsWith('.md') && files[path].order === undefined) {
-        files[path].order = Number.MAX_SAFE_INTEGER;
+    for (const name of Object.keys(files)) {
+      if (name.endsWith('.md') && files[name].order === undefined) {
+        files[name].order = Number.MAX_SAFE_INTEGER;
       }
-    });
+    }
   });
 
 metalsmith
@@ -166,12 +166,12 @@ metalsmith
   .use(markdown({
     renderer: newMDRenderer
   }))
-  .use((files, metalsmith, done) => {
+  .use((files, ms, done) => {
     for (const file in files) {
       if (file.endsWith('index.html')) {
         const codeExampleData = snippetManager.process(file, files[file]);
-        files[file].contents = codeExampleData['fileContent'];
-        files[file]['has_code_example'] = codeExampleData['has_code_example'];
+        files[file].contents = codeExampleData.fileContent;
+        files[file].has_code_example = codeExampleData.has_code_example;
       }
     }
     setImmediate(done);
@@ -187,12 +187,12 @@ metalsmith
     },
     removeOriginal: true
   }))
-  .use((files, metalsmith, done) => {
+  .use((files, ms, done) => {
     for (const file in files) {
       if (file.endsWith('.html')) {
         const anchorsData = anchors.process(file, files[file]);
-        files[file].contents = anchorsData['fileContent'];
-        files[file]['anchors'] = anchorsData['anchors'];
+        files[file].contents = anchorsData.fileContent;
+        files[file].anchors = anchorsData.anchors;
       }
     }
     setImmediate(done);
@@ -200,14 +200,14 @@ metalsmith
   .use(permalinks({relative: false}));
 
 metalsmith
-  .use((files, metalsmith, done) => {
+  .use((files, ms, done) => {
     for (const file of Object.values(files)) {
       if (file.ancestry && file.ancestry.children) {
-        const 
+        const
           orderedPages = file.ancestry.children.sort((a,b) => a.order - b.order),
           href = '/' + file.src.split('/').slice(0,-1).join('/'),
           redirect = '/' + orderedPages[0].src.split('/').slice(0,-1).join('/');
-        
+
         redirectList[href] = redirect;
       }
     }
@@ -275,14 +275,14 @@ if (options.dev.enabled) {
         },
         livereload: true
       })
-    )
+    );
 }
 
 log(`Building site in '${options.build.path}'`);
 metalsmith.build((error, files) => {
   if (error) {
-    log(nok + color.yellow(' Ooops...'))
-    console.error(error)
+    log(nok + color.yellow(' Ooops...'));
+    console.error(error);
     return;
   }
   log(ok + ' Build finished');

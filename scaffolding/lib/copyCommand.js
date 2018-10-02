@@ -14,8 +14,8 @@ const
 
 function injectTemplates(sdkInfos, src, dest) {
   const longDescriptionRegexp = {
-    start: `\# ${_.camelCase(sdkInfos.action)}\n`,
-    end: '\#\# Signature\n'
+    start: `# ${_.camelCase(sdkInfos.action)}\n`,
+    end: '## Signature\n'
   };
 
   const shortDescriptionRegexp = {
@@ -24,20 +24,20 @@ function injectTemplates(sdkInfos, src, dest) {
   };
 
   const argsTableRegexp = {
-    start: '\#\# Arguments\n',
-    end: '\n\#\#\#'
+    start: '## Arguments\n',
+    end: '\n###'
   };
 
   const argsDescriptionRegexp = {
-    start: '\#\#\#',
-    end: '\n\#\# R', // match '### Return' or '### Resolve'
+    start: '###',
+    end: '\n## R', // match '### Return' or '### Resolve'
     includeStart: true
   };
 
   // when there is no 'Return' or 'Resolve' section
   const argsDescriptionRegexp2 = {
-    start: '\#\#\#',
-    end: '\n\#\# Usage',
+    start: '###',
+    end: '\n## Usage',
     includeStart: true
   };
 
@@ -108,7 +108,7 @@ async function copyCommand (src, dest) {
 
     await renderMarkdownTemplate(sdkInfos, dest);
     await renderSnippetTemplate(sdkInfos, dest);
-    await renderSnippetConfigTemplate(sdkInfos, dest)
+    await renderSnippetConfigTemplate(sdkInfos, dest);
 
     injectTemplates(sdkInfos, src, dest);
 
