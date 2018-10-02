@@ -31,7 +31,7 @@ install:
 script:
   - npm install
   - npm run test
-  - sh .ci/comment_pr.sh
+    #  - sh .ci/comment_pr.sh
 
 deploy:
   provider: s3
