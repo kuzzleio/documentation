@@ -22,7 +22,7 @@ MGet(index string, collection string, ids []string, includeTrash bool, options t
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
+| Arguments | Type | Description
 | --- | --- | --- | --- |
 | `index` | string | Index name | yes |
 | `collection` | string | Collection name | yes |
