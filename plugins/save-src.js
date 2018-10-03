@@ -1,10 +1,11 @@
 module.exports = options => {
+  return (files, metalsmith, done) => {
+    setImmediate(done);
 
-    return (files, metalsmith, done) => {
-        setImmediate(done)
-
-        for (let file in files) {
-            files[file].src = file
-        }
+    for (const file in files) {
+      if (files.hasOwnProperty(file)) {
+        files[file].src = file;
+      }
     }
-}
+  };
+};

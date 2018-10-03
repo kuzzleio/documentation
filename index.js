@@ -25,6 +25,7 @@ const uglify = require('metalsmith-uglify');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
+const discoverPartials = require('metalsmith-discover-partials');
 
 // custom plugins
 const snippetManager = require('./plugins/snippetManager');
@@ -168,7 +169,6 @@ else {
     }));
 }
 
-
 metalsmith
   .use(hljs())
   .use(hbtmd(handlebars, {
@@ -180,9 +180,15 @@ metalsmith
   .use((files, ms, done) => {
     for (const file in files) {
       if (file.endsWith('index.html')) {
+        // Code Examples
         const codeExampleData = snippetManager.process(file, files[file]);
         files[file].contents = codeExampleData.fileContent;
         files[file].has_code_example = codeExampleData.has_code_example;
+
+        // Anchors
+        const anchorsData = anchors.process(file, files[file]);
+        files[file].contents = anchorsData.fileContent;
+        files[file].anchors = anchorsData.anchors;
       }
     }
     setImmediate(done);
@@ -198,16 +204,6 @@ metalsmith
     },
     removeOriginal: true
   }))
-  .use((files, ms, done) => {
-    for (const file in files) {
-      if (file.endsWith('.html')) {
-        const anchorsData = anchors.process(file, files[file]);
-        files[file].contents = anchorsData.fileContent;
-        files[file].anchors = anchorsData.anchors;
-      }
-    }
-    setImmediate(done);
-  })
   .use(permalinks({relative: false}));
 
 metalsmith
@@ -225,13 +221,12 @@ metalsmith
     setImmediate(done);
   })
   .use(metalsmithRedirect(redirectList))
+  .use(discoverPartials({
+    directory: 'src/templates/partials',
+    pattern: /\.html$/
+  }))
   .use(layouts({
-    directory: 'src/templates',
-    engine: 'handlebars',
-    partials: 'src/templates/partials',
-    exposeConsolidate(r) {
-      r.handlebars = handlebars;
-    }
+    directory: 'src/templates'
   }));
 
 if (options.algolia.privateKey) {
@@ -246,7 +241,6 @@ if (options.algolia.privateKey) {
       fileParser: options.algolia.fnFileParser
     }));
 }
-
 
 if (options.build.compress) {
   log('Compression enabled (build may take a while)');

@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: exists
 description: Check if collection exists
