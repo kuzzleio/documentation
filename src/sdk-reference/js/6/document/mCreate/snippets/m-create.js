@@ -1,5 +1,5 @@
 try {
-  const body = [ 
+  const body = [
     {
       _id: 'some-id',
       body: { 'capacity': 4 }
@@ -21,7 +21,7 @@ try {
     _shards: { total: 2, successful: 1, failed: 0 },
     created: true,
     status: 201,
-    _meta: 
+    _meta:
      { active: true,
        author: '-1',
        updater: null,
@@ -37,7 +37,7 @@ try {
     _shards: { total: 2, successful: 1, failed: 0 },
     created: true,
     status: 201,
-    _meta: 
+    _meta:
      { active: true,
        author: '-1',
        updater: null,
