@@ -152,6 +152,12 @@ $md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container'
     .md-sidebar {
       display: none;
     }
+  }
+  
+  @include break-from-device(mobile) {
+    .md-nav__list {
+      display: none;
+    }
   }  
 }
 
