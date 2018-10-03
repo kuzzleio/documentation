@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 title: Index
 description: Index Controller
 order: 200

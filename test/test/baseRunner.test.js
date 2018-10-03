@@ -35,7 +35,7 @@ describe('BaseRunner', () => {
 
       await runner.run(snippetMock);
 
-      should(snippetMock.render).be.calledOnce;
+      should(snippetMock.render).be.calledOnce();
       should(runner.lint.calledAfter(snippetMock.render)).be.eql(true);
       should(runner.runExpect.calledAfter(runner.lint)).be.eql(true);
       should(snippetMock.clean.calledAfter(runner.runExpect)).be.eql(true);
@@ -50,7 +50,7 @@ describe('BaseRunner', () => {
       await runner.run(snippetMock);
     } catch (e) {
       should(e).be.instanceOf(Error);
-      should(snippetMock.saveRendered).be.calledOnce;
+      should(snippetMock.saveRendered).be.calledOnce();
     }
   });
 });

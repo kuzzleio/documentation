@@ -10,11 +10,11 @@
 
 `node index.js --algolia-private-key <key>`
 
-> index documentation content to algolia matching version configured in versions.config.json
+> index documentation content to algolia matching version configured in config/versions.json
 
 `node index.js --build-path /v/edge --algolia-private-key <key>`
 
-> build the documentation in production mode matching version configured in versions.config.json
+> build the documentation in production mode matching version configured in config/versions.json
 
 `node index.js --build-host http://docs.kuzzle.io --build-path /v/edge --build-compress`
 
@@ -84,9 +84,11 @@ Please note that `_language` is important for build process in metalsmith.
 
 Now you can add this tag in your markdown to allow metalsmith to override parts of markdown : `[section=createDocument]`
 
-## Configuration file
+## Configuration files
 
-`config.yml` at the root of the project :
+### Snippet languages support
+
+Supported languages, and their description, are detailed in the `config.yml` file at the root of the project:
 
 ```yaml
 code_example:
@@ -105,9 +107,31 @@ languages:
     sdk_branch: 1.x
 ```
 
+### Metalsmith general configuration
+
+Metalsmith itself is configured using the `config/metalsmith.json` file.
+
+By default all directories under `src/` are consumed by metalsmith. The `exclude` configuration allows to skip some directories. This is especially useful when preparing future major versions.
+
+Example: preventing the JS SDK version 6 to be included in the documentation
+
+```json
+{
+  "exclude": [
+    "**/sdk-reference/js/6"
+  ]
+}
+```
+
+### API versions description
+
+See `config/versions.json`
+
 ## Writing tests
 
-To write tests for snippet, you have to put an YAML file in front of snippets file with the same name of the snippet you want to test
+To test snippets, you have to create a YAML configuration file, named after the snippet file to be tested.
+
+Example: a YAML file named `create.test.yml` used to test the `create.js` snippet file:
 
 ```yaml
 name: Create document
@@ -119,9 +143,9 @@ template: default
 expect: document created successfully
 ```
 
-Templates are located in `test/templates` and you have to put the `[snippet-code]` tag to automatically inject snippet in the template when tests are lauched.
+Templates are located in `test/templates` and you have to put the `[snippet-code]` tag to automatically inject snippet in the template when tests are launched.
 
-exemple of default template in JS :
+Example of a default template for the Javascript SDK:
 
 ```javascript
 // load the Kuzzle SDK module
@@ -148,8 +172,8 @@ You can add your own template, just respect the naming rule : `template_name.tpl
 ## Testing the snippets locally
 
 You can test the snippets locally by using the script `run-snippet-tests.sh`.  
-This script looks recursively for snipppets to test, using the path provided as an argument.    
-You must at least have a sdk language and version in the provided path: `src/sdk-reference/<language>/<version>/path/to/snippets`
+This script looks recursively for snippets to test, using the path provided as an argument.    
+You must at least have a sdk language and version in the provided path: `src/sdk-reference/<language>/<version>[/path/to/snippets]`
 
 First, you have to run a Kuzzle stack with the following script: `bash .travis/start_kuzzle.sh`
 
@@ -163,6 +187,7 @@ bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 ```
 
 If you want to avoid downloading the SDK each time you run a snippet, you can use the following variable:
+
 ```bash
 export DEV_MODE=true
 # The following command will download the cpp SDK only if it does not already exist
@@ -173,14 +198,16 @@ bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 
 ### Create a new controller action documentation
 
-You can use the scaffolding tool to create the files needed to document a new controller action.  
+You can use the scaffolding tool to initialize a new SDK controller action documentation, from its Kuzzle API counterpart.   
 
 This tool takes the path of your new action as an argument and creates the following files:
-  - `<language>/<version>/<controller>/<action>/index.md`: controller action documenation
+
+  - `<language>/<version>/<controller>/<action>/index.md`: controller action documentation
   - `<language>/<version>/<controller>/<action>/snippets/<action>.test.yml`: configuration file for the snippet
   - `<language>/<version>/<controller>/<action>/snippets/<action>.<language>`: snippet file
 
 Example:
+
 ```bash
 # Create the files documenting the action 'list' of the controller 'document' for the SDK JS 6
 ./scaffolding/scaffold generate src/sdk-reference/js/6/collection/list
@@ -188,8 +215,8 @@ Example:
 
 ### Copy an existing action from another SDK
 
-You can also copy an action from another SDK to save some time.  
-This command allows you to extract some information from an existing action in another SDK and generates the correct files for another SDK.  
+You can also copy an action from another SDK to save time.  
+This command extracts information from an existing action in another SDK and generates the correct files for another SDK.  
 
 Example:
 ```bash

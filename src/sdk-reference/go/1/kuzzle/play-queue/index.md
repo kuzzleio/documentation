@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: playQueue
 description: Play the offline request queue
