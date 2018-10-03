@@ -8,8 +8,7 @@ const
     injectInFile,
     showSignatures
   } = require('./utils'),
-  _ = require('lodash'),
-  path = require('path');
+  _ = require('lodash');
 
 
 function injectTemplates(sdkInfos, src, dest) {
@@ -64,9 +63,9 @@ function injectTemplates(sdkInfos, src, dest) {
   // We extract the needed informations from files with regexp
   const
     srcIndexFile = `${src}/index.md`,
-    srcTestConfigFile =`${src}/snippets/${sdkInfos.action}.test.yml`,
+    srcTestConfigFile =`${src}/snippets/${_.kebabCase(sdkInfos.action)}.test.yml`,
     destIndexFile = `${dest}/index.md`,
-    destTestConfigFile =`${dest}/snippets/${sdkInfos.action}.test.yml`,
+    destTestConfigFile =`${dest}/snippets/${_.kebabCase(sdkInfos.action)}.test.yml`,
     longDescription = extractFromFile(srcIndexFile, longDescriptionRegexp),
     shortDescription = extractFromFile(srcIndexFile, shortDescriptionRegexp),
     argsTable = extractFromFile(srcIndexFile, argsTableRegexp),
