@@ -33,6 +33,9 @@ script:
   - npm run test
     #  - sh .ci/comment_pr.sh
 
+before_deploy:
+  - npm run build
+
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
@@ -41,6 +44,8 @@ deploy:
   region: us-west-2
   skip_cleanup: true
   local-dir: build
+  on:
+    branch: master
 
 after_deploy:
   - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
