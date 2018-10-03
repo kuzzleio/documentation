@@ -27,7 +27,7 @@ Get(index string, collection string, _id string, options types.QueryOptions) (js
 | `id` | string | The document id | yes |
 | `options` | types.QueryOptions | The query options | no |
 
-###### Options
+### Options
 
 Additional query options
 
