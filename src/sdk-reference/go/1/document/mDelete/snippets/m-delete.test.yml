@@ -1,5 +1,5 @@
-name: document#mCreateOrReplace
-description: create or replace documents
+name: document#mDelete
+description: delete documents 
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data
@@ -7,5 +7,5 @@ hooks:
     curl -XPUT kuzzle:7512/nyc-open-data/yellow-taxi
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
-template: asyncdefault
-expected: Success
+template: default
+expected: Successfully deleted 2 documents
