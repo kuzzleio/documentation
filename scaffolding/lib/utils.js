@@ -165,10 +165,14 @@ function extractFromFile(file, regexpInfo, regexpInfoFallback) {
     }
   }
 
-  throw new Error(`No match found in ${file} for ${regexp}`)
+  return null;
 }
 
 function injectInFile(file, regexpInfo, injectedContent) {
+  if (! injectedContent) {
+    return;
+  }
+
   const
     content = fs.readFileSync(file, 'utf8'),
     regexp = new RegExp(`${regexpInfo.start}([\\s\\S]*)${regexpInfo.end}`),
