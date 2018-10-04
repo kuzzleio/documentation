@@ -20,13 +20,13 @@ CreateOrReplace(index string, collection string, _id string, body json.RawMessag
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `id` | string | The document id | yes |
-| `body` | json.RawMessage | A JSON string containing the body of the document | yes |
-| `options` | type.QueryOptions | A pointer to a `query_options` containing query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `id` | string | The document id |
+| `body` | json.RawMessage | A JSON string containing the body of the document |
+| `options` | type.QueryOptions | A pointer to a `query_options` containing query options |
 
 
 ### Options

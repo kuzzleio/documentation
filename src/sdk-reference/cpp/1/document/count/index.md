@@ -20,12 +20,12 @@ int count(const std::string& index, const std::string& collection, const std::st
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | std::string | Index name | yes |
-| `collection` | std::string | Collection name | yes |
-| `body` | std::string | A JSON string containing the query to match | yes |
-| `options` | query_options | A pointer to a `query_options` | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | std::string | Index name |
+| `collection` | std::string | Collection name |
+| `body` | std::string | A JSON string containing the query to match |
+| `options` | query_options | A pointer to a `query_options` |
 
 ### Options
 

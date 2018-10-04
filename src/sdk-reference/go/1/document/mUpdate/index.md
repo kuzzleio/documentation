@@ -27,7 +27,7 @@ MUpdate(index string, collection string, documents json.RawMessage, options type
 | --- | --- | --- |
 | `index` | string | Index name |
 | `collection` | string | Collection name |
-| `documents` | json.RawMessage | A JSON string containing the documents to update | 
+| `documents` | json.RawMessage | A JSON string containing the documents to update |
 | `options` | types.QueryOptions | The query options |
 
 ### Options

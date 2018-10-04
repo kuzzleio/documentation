@@ -20,12 +20,12 @@ Count(index string, collection string, body json.RawMessage, options types.Query
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | String | Collection name | yes |
-| `body` | Object | The query to match | yes |
-| `options` | QueryOptions | An structure containing query options. | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | String | Index name |
+| `collection` | String | Collection name |
+| `body` | Object | The query to match |
+| `options` | QueryOptions | An structure containing query options. |
 
 ### Options
 

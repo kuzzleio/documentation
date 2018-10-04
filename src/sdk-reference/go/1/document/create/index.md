@@ -22,13 +22,13 @@ Create(index string, collection string, id string, body json.RawMessage, options
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `id` | string | Optional document id. If set to a blank string, will use a auto-generated id | yes |
-| `body` | json.RawObject | The query to match | yes |
-| `options` | types.Queryoptions | An object containing query options. | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `id` | string | Optional document id. If set to a blank string, will use a auto-generated id |
+| `body` | json.RawObject | The query to match |
+| `options` | types.Queryoptions | An object containing query options. |
 
 ###### **Options**
 

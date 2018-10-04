@@ -26,12 +26,12 @@ get (index, collection, _id, options = {})
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `id` | string | The document id | yes |
-| `options` | Object | An object containing query options. | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `id` | string | The document id |
+| `options` | Object | An object containing query options. |
 
 ###### Options
 

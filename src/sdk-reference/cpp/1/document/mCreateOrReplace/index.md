@@ -20,12 +20,12 @@ std::string mCreateOrReplace(const std::string& index, const std::string& collec
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | std::string | Index name | yes |
-| `collection` | std::string | Collection name | yes |
-| `body` | std::string | A JSON string containing the documents to create | yes |
-| `options` | query_options | A pointer to a `query_options` containing query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | std::string | Index name |
+| `collection` | std::string | Collection name |
+| `body` | std::string | A JSON string containing the documents to create |
+| `options` | query_options | A pointer to a `query_options` containing query options |
 
 ### Options
 

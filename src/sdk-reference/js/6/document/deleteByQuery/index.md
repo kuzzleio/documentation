@@ -23,12 +23,12 @@ deleteByQuery(index, collection, body = {}, options = {})
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | String | Collection name | yes |
-| `body` | Object | The query to match | yes |
-| `options` | Object | An object containing query options. | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | String | Index name |
+| `collection` | String | Collection name |
+| `body` | Object | The query to match |
+| `options` | Object | An object containing query options. |
 
 ### Options
 

@@ -21,12 +21,12 @@ io.kuzzle.sdk.StringVector deleteByQuery(java.lang.String index, java.lang.Strin
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | String | Collection name | yes |
-| `body` | String | A JSON string containing query to match | yes |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | String | Index name |
+| `collection` | String | Collection name |
+| `body` | String | A JSON string containing query to match |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options |
 
 ### Options
 

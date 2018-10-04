@@ -21,7 +21,7 @@ MCreateOrReplace(index string, collection string, body json.RawMessage, options 
 ## Arguments
 
 | Arguments | Type | Description |
-| --- | --- | --- | 
+| --- | --- | --- |
 | `index` | string | Index name |
 | `collection` | string | Collection name |
 | `body` | string | A JSON string containing the documents to create |

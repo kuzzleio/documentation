@@ -24,12 +24,12 @@ io.kuzzle.sdk.StringVector mDelete(java.lang.String index, java.lang.String coll
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | String | Collection name | yes |
-| `ids` | io.kuzzle.sdk.StringVector | The ids of the documents to delete | yes |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | String | Index name |
+| `collection` | String | Collection name |
+| `ids` | io.kuzzle.sdk.StringVector | The ids of the documents to delete |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options |
 
 ### Options
 

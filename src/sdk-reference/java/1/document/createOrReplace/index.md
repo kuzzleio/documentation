@@ -21,13 +21,13 @@ java.lang.String createOrReplace(java.lang.String index, java.lang.String collec
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | String | Collection name | yes |
-| `id` | String | The document id | yes |
-| `body` | String | A JSON String containing the body of the document | yes |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | String | Index name |
+| `collection` | String | Collection name |
+| `id` | String | The document id |
+| `body` | String | A JSON String containing the body of the document |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options |
 
 ###### **Options**
 

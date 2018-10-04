@@ -24,12 +24,12 @@ java.lang.String mUpdate(java.lang.String index, java.lang.String collection, ja
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | String | Collection name | yes |
-| `documents` | String | A JSON string containing the documents to update | yes |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | String | Index name |
+| `collection` | String | Collection name |
+| `documents` | String | A JSON string containing the documents to update |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options |
 
 ### Options
 
