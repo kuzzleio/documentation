@@ -21,12 +21,12 @@ DeleteByQuery(index string, collection string, body string, options types.QueryO
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `body` | string | A JSON string containing query to match | yes |
-| `options` | types.QueryOptions | Query options | yes |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `body` | string | A JSON string containing query to match |
+| `options` | types.QueryOptions | Query options |
 
 ### Options
 

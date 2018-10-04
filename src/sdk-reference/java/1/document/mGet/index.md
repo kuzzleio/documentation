@@ -23,12 +23,12 @@ java.lang.String mGet(java.lang.String index, java.lang.String collection, io.ku
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | String | Collection name | yes |
-| `ids` | io.kuzzle.sdk.StringVector | The document ids | yes |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | String | Index name |
+| `collection` | String | Collection name |
+| `ids` | io.kuzzle.sdk.StringVector | The document ids |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options |
 
 ###### Options
 

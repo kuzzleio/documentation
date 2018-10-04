@@ -20,9 +20,9 @@ Get(index string, collection string, _id string, options types.QueryOptions) (js
 
 ## Arguments
 
-| Arguments | Type | Description | 
+| Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name | 
+| `index` | string | Index name |
 | `collection` | string | Collection name |
 | `id` | string | The document id |
 | `options` | types.QueryOptions | The query options |

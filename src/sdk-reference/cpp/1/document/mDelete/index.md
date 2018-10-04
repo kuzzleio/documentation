@@ -23,12 +23,12 @@ std::vector<std::string> mDelete(const std::string& index, const std::string& co
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | std::string | Index name | yes |
-| `collection` | std::string | Collection name | yes |
-| `ids` | std::vector<std::string> | The ids of the documents to delete | yes |
-| `options` | query_options | A pointer to a `query_options` containing query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | std::string | Index name |
+| `collection` | std::string | Collection name |
+| `ids` | std::vector<std::string> | The ids of the documents to delete |
+| `options` | query_options | A pointer to a `query_options` containing query options |
 
 ### Options
 

@@ -19,13 +19,13 @@ std::string replace(const std::string& index, const std::string& collection, con
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | std::string | Index name | yes |
-| `collection` | std::string | Collection name | yes |
-| `id` | std::string | The document id | yes |
-| `body` | std::string | A JSON string containing the body of the document | yes |
-| `options` | query_options | A pointer to a `query_options` containing query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | std::string | Index name |
+| `collection` | std::string | Collection name |
+| `id` | std::string | The document id |
+| `body` | std::string | A JSON string containing the body of the document |
+| `options` | query_options | A pointer to a `query_options` containing query options |
 
 ### Options
 

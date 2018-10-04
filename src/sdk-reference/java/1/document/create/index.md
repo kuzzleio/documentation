@@ -23,13 +23,13 @@ java.lang.String create(java.lang.String index, java.lang.String collection, jav
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | String | Collection name | yes |
-| `id` | String | Optional document id. If set to a blank string, will use a auto-generated id | yes |
-| `body` | String | A JSON string containing the body of the document | yes |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options. | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | String | Index name |
+| `collection` | String | Collection name |
+| `id` | String | Optional document id. If set to a blank string, will use a auto-generated id |
+| `body` | String | A JSON string containing the body of the document |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options. |
 
 ### Options
 

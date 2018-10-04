@@ -27,12 +27,12 @@ mCreateOrReplace (index, collection, documents, options = {})
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `body` | string | A JSON string containing the documents to create | yes |
-| `options` | Object | An object containing query options. | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `body` | string | A JSON string containing the documents to create |
+| `options` | Object | An object containing query options. |
 
 ### Options
 

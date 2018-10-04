@@ -20,12 +20,12 @@ std::string get(const std::string& index, const std::string& collection, const s
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | std::string | Index name | yes |
-| `collection` | std::string | Collection name | yes |
-| `id` | std::string | The document id | yes |
-| `options` | query_options | A pointer to a `query_options` containing query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | std::string | Index name |
+| `collection` | std::string | Collection name |
+| `id` | std::string | The document id |
+| `options` | query_options | A pointer to a `query_options` containing query options |
 
 ### Options
 

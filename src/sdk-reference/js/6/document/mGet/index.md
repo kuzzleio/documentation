@@ -29,12 +29,12 @@ mGet (index, collection, ids, options = {})
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `ids` | Array | The document ids | yes |
-| `options` | object | An object containing query options. | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `ids` | Array | The document ids |
+| `options` | object | An object containing query options. |
 
 ### Options
 

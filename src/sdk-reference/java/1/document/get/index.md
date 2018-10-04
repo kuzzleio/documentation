@@ -21,12 +21,12 @@ java.lang.String get(java.lang.String index, java.lang.String collection, java.l
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `id` | String | The document id | yes |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | String | Index name |
+| `collection` | string | Collection name |
+| `id` | String | The document id |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options |
 
 ###### Options
 

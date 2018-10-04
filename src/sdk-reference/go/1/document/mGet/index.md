@@ -22,12 +22,12 @@ MGet(index string, collection string, ids []string, includeTrash bool, options t
 
 ## Arguments
 
-| Arguments | Type | Description
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `ids` | []string | The document ids | yes |
-| `options` | types.QueryOptions | The query options | no |
+| Arguments | Type | Description|
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `ids` | []string | The document ids |
+| `options` | types.QueryOptions | The query options |
 
 ### Options
 

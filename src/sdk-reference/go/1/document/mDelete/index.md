@@ -23,12 +23,12 @@ MDelete(index string, collection string, ids []string, options types.QueryOption
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `ids` | []string | The ids of the documents to delete | yes |
-| `options` | types.QueryOptions | The query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `ids` | []string | The ids of the documents to delete |
+| `options` | types.QueryOptions | The query options |
 
 ###### Options
 

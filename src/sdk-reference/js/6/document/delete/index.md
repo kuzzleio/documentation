@@ -29,12 +29,12 @@ delete(index, collection, id, (options = null))
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | String | Index name | yes |
-| `collection` | String | Collection name | yes |
-| `id` | String | Optional document id | no |
-| `options` | Object | An object containing query options. | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | String | Index name |
+| `collection` | String | Collection name |
+| `id` | String | Optional document id |
+| `options` | Object | An object containing query options. |
 
 ### Options
 
