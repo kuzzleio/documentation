@@ -13,13 +13,15 @@ The validateSpecifications method checks if a validation specification is well f
 ## Signature
 
 ```cpp
-bool validateSpecifications(const std::string& specifications, query_options *options=nullptr)
+bool validateSpecifications(const std::string& index, const std::string& collection, const std::string& specifications, query_options *options=nullptr)
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
+| ``index`` | const std::string& | Index name    | yes  |
+| ``collection`` | const std::string& | Collection name    | yes  |
 | `specifications` | const std::string& | Specification to validate in JSON format | yes
 | ``options`` | kuzzleio::query_options* | Query options    | no  |
 
@@ -31,13 +33,9 @@ The JSON must follow the [Specification Structure]({{ site_base_path }}validatio
 
 ```json
 {
-  "myindex": {
-    "mycollection": {
-      "strict": "<true|false>",
-      "fields": {
-        // ... specification for each field
-      }
-    }
+  "strict": "<boolean>",
+  "fields": {
+    // ... specification for each field
   }
 }
 ```

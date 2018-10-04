@@ -13,11 +13,13 @@ The validateSpecifications method checks if a validation specification is well f
 ## Signature
 
 ```go
-ValidateSpecifications(body json.RawMessage, options types.QueryOptions) (bool, error)
+ValidateSpecifications(index string, collection string, body json.RawMessage, options types.QueryOptions) (bool, error)
 ```
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
+| ``index`` | string | Index name    | yes  |
+| ``collection`` | string | Collection name    | yes  |
 | `specifications` | json.RawMessage | Collection data mapping in JSON format  | yes  |
 | `options` | QueryOptions | Query options. | no       |
 
@@ -31,7 +33,7 @@ The JSON must follow the [Specification Structure]({{ site_base_path }}validatio
 {
   "myindex": {
     "mycollection": {
-      "strict": "<true|false>",
+      "strict": "<boolean>",
       "fields": {
         // ... specification for each field
       }

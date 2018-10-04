@@ -42,13 +42,9 @@ This object must follow the [Specification Structure]({{ site_base_path }}valida
 
 ```js
 {
-  myindex: {
-    mycollection: {
-      strict: <true|false>,
-      fields: {
-        // ... specification for each field
-      }
-    }
+  strict: <boolean>,
+  fields: {
+    // ... specification for each field
   }
 }
 ```
