@@ -21,7 +21,7 @@ func (a *Auth) GetMyCredentials(strategy string, options types.QueryOptions) (js
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
 | `strategy` | string | the strategy to use    | yes
-| `options`  | query_options*    | A pointer to a `query_options` containing query options | yes       |
+| `options`  | QueryOptions    | QueryOptions object containing query options | yes
 
 ### **Options**
 
@@ -29,11 +29,11 @@ Additional query options
 
 | Option     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `Queuable` | bool | Make this request queuable or not | `true`  |
 
 ## Return
 
-Returns a JSON with the credentials for the provided authentication strategy and an error or nil.
+Returns a string representing a JSON with the credentials for the provided authentication strategy and an error or nil.
 
 ## Usage
 

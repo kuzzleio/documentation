@@ -189,7 +189,7 @@ Example:
 ### Copy an existing action from another SDK
 
 You can also copy an action from another SDK to save some time.  
-This command allows you to extract some information from an existing action in another SDK and generates the correct files for another SDK.  
+This command allows you to extract some information from an existing action in another SDK and generates the correct files for another SDK.
 
 Example:
 ```bash

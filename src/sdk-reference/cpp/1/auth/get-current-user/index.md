@@ -27,6 +27,10 @@ A pointer to a kuzzle_user object containing:
 | `profile_ids` | char** | An array containing the profile ids |
 | `profile_ids_length` | size_t | The size of the profile_ids array |
 
+## Exceptions
+
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+
 ## Usage
 
 [snippet=get-current-user]

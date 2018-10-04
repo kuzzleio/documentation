@@ -29,7 +29,7 @@ Additional query options
 
 | Option     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `Queuable` | boolean | Make this request queuable or not | `true`  |
 
 
 ## Return
