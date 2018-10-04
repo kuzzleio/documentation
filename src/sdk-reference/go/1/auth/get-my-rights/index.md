@@ -43,6 +43,8 @@ A pointer to an array of UserRight object containing:
 | `Collection` | string | The collection on wich the rights are applied |
 | `Value` | string | The rights |
 
+and an error or `nil`
+
 ## Usage
 
 [snippet=get-my-rights]

@@ -22,7 +22,7 @@ Authenticates a user.
  * @param expiresIn
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  */
-login(srtategy, credentials, expiresIn)
+login(strategy, credentials, expiresIn)
 ```
 
 ## Arguments

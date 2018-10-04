@@ -24,7 +24,7 @@ getMyRights (options = {})
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options` | JSON Object | A structure containing query options.
+| `options` | JSON Object | A JSON Object containing the options
 
 ###### **Options**
 

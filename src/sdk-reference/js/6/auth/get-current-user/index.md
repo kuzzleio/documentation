@@ -20,6 +20,20 @@ Returns the profile object for the user linked to the `JSON Web Token`, provided
 getCurrentUser (options = {})
 ```
 
+## Arguments
+
+| Arguments    | Type    | Description
+|--------------|---------|-------------
+| `options` | JSON Object | A JSON Object containing the options
+
+### **Options**
+
+Additional query options
+
+| Option     | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
+
 ## Resolve
 
 The profile object for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.

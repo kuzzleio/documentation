@@ -23,10 +23,10 @@ order: 200
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `local` | string | Strategy to use    | yes
-| `options` | JSON Object | A structure containing query options. | no       |
+| Arguments    | Type    | Description
+|--------------|---------|-------------
+| `local` | string | Strategy to use
+| `options` | JSON Object | A JSON Object containing the options
 
 ### **Options**
 

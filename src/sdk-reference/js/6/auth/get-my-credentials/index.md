@@ -22,10 +22,10 @@ getMyCredentials(strategy, options = {})
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `strategy` | string | the strategy to use    | yes
-| `options` | JSON Object | A structure containing query options. | no
+| Arguments    | Type    | Description
+|--------------|---------|-------------
+| `strategy` | string | the strategy to use
+| `options` | JSON Object | A JSON Object containing the options
 
 
 ### **Options**
