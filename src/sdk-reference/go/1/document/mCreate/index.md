@@ -21,12 +21,12 @@ MCreate(index string, collection string, body json.RawMessage, options types.Que
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `body` | string | A JSON string containing the documents to create | yes |
-| `options` | types.QueryOptions | The query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `body` | string | A JSON string containing the documents to create |
+| `options` | types.QueryOptions | The query options |
 
 ### Options
 
@@ -34,8 +34,8 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| `Queuable` | boolean | Make this request queuable or not | `true`  |
+| `Refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
 
 ## Return
 

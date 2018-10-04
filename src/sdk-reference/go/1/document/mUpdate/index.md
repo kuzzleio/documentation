@@ -23,12 +23,12 @@ MUpdate(index string, collection string, documents json.RawMessage, options type
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `documents` | json.RawMessage | A JSON string containing the documents to update | yes |
-| `options` | types.QueryOptions | The query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `documents` | json.RawMessage | A JSON string containing the documents to update | 
+| `options` | types.QueryOptions | The query options |
 
 ### Options
 
@@ -36,9 +36,9 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
-| `retryOnConflict` | int | The number of times the database layer should retry in case of version conflict | 0 |
+| `Queuable` | boolean | Make this request queuable or not | `true`  |
+| `Refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| `RetryOnConflict` | int | The number of times the database layer should retry in case of version conflict | 0 |
 
 ## Return
 

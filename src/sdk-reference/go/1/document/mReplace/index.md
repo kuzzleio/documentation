@@ -20,12 +20,12 @@ MReplace(index string, collection string, documents json.RawMessage, options typ
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `documents` | json.RawMessage | A JSON string containing the documents to update | yes |
-| `options` | types.QueryOptions | The query options | no |
+| Arguments | Type | Description |
+| --- | --- | --- |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `documents` | json.RawMessage | A JSON string containing the documents to update |
+| `options` | types.QueryOptions | The query options |
 
 ### Options
 
@@ -33,8 +33,8 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| `Queuable` | boolean | Make this request queuable or not | `true`  |
+| `Refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
 
 ## Return
 

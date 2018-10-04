@@ -1,0 +1,7 @@
+err := kuzzle.Document.Replace()
+
+if err != nil {
+  log.Fatal(err)
+} else {
+  fmt.Println("Success")
+}
