@@ -32,7 +32,7 @@ Additional query options
 
 ## Return
 
-A pointer to a user_right object containing:
+A pointer to an array of UserRight object containing:
 
 
 | Option     | Type    | Description                       |
