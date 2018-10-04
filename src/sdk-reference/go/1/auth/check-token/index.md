@@ -20,17 +20,17 @@ func (a *Auth) CheckToken(token string) (*TokenValidity, error)
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``token`` | string | the token    | yes
+| `token` | string | the token    | yes
 
 ## Return
 
-A pointer to a token_validity struct which has:
+A TokenValidity struct which contains:
 
 | Name                | Type    | Description                                                                                                      
 | ------------------- | ------- | -----------------------------------
-| valid               | bool    | Tell if the token is valid or not
-| state               | string  | Explain why the token is invalid
-| expires_at          | int     | Tells when the token expires
+| Valid               | boolean    | Tell if the token is valid or not
+| State               | string  | Explain why the token is invalid
+| Expires_at          | int     | Tells when the token expires
 
 ## Usage
 
