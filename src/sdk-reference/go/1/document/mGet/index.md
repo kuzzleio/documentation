@@ -35,8 +35,8 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `includeTrash` | boolean | If set to `true`, includes the documents from the trash | `false`  |
+| `Queuable` | boolean | Make this request queuable or not | `true`  |
+| `IncludeTrash` | boolean | If set to `true`, includes the documents from the trash | `false`  |
 
 ## Return
 

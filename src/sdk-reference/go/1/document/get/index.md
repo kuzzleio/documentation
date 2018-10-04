@@ -20,12 +20,12 @@ Get(index string, collection string, _id string, options types.QueryOptions) (js
 
 ## Arguments
 
-| Arguments | Type | Description | Required |
-| --- | --- | --- | --- |
-| `index` | string | Index name | yes |
-| `collection` | string | Collection name | yes |
-| `id` | string | The document id | yes |
-| `options` | types.QueryOptions | The query options | no |
+| Arguments | Type | Description | 
+| --- | --- | --- |
+| `index` | string | Index name | 
+| `collection` | string | Collection name |
+| `id` | string | The document id |
+| `options` | types.QueryOptions | The query options |
 
 ### Options
 
@@ -33,7 +33,7 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `Queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
 

@@ -27,14 +27,14 @@ Count(index string, collection string, body json.RawMessage, options types.Query
 | `body` | Object | The query to match | yes |
 | `options` | QueryOptions | An structure containing query options. | no |
 
-###### **Options**
+### Options
 
 Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `includeTrash` | boolean | If set to `true`, includes the documents from the trash | `false`  |
+| `Queuable` | boolean | Make this request queuable or not | `true`  |
+| `IncludeTrash` | boolean | If set to `true`, includes the documents from the trash | `false`  |
 
 ## Return
 
