@@ -1,14 +1,14 @@
-kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id", "{}", nil);
-kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-other-id", "{}", nil);
+kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id", `{"capacity": 4}`, nil);
+kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-other-id", `{"capacity": 7}`, nil);
 
 response, err := kuzzle.Document.MReplace("nyc-open-data", "yellow-taxi", json.RawMessage(`[
   {
     "_id": "some-id",
-    "body": { "capacity": 4 }
+    "body": { "category": "sedan" }
   },
   {
     "_id": "some-other-id",
-    "body": { "capacity": 4 }
+    "body": { "category": "limousine" }
   }
 ]`), nil)
 
