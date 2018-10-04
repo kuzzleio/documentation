@@ -15,7 +15,7 @@ try {
 
   console.log(response);
   /*
-  { hits: 
+  { hits:
    [ { _id: 'some-id',
        _source: { _kuzzle_info: [Object], category: 'sedan' },
        _index: 'nyc-open-data',
@@ -25,7 +25,7 @@ try {
        _shards: { total: 2, successful: 1, failed: 0 },
        created: false,
        status: 200,
-       _meta: 
+       _meta:
         { active: true,
           author: '-1',
           updater: null,
@@ -41,7 +41,7 @@ try {
        _shards: { total: 2, successful: 1, failed: 0 },
        created: false,
        status: 200,
-       _meta: 
+       _meta:
         { active: true,
           author: '-1',
           updater: null,
