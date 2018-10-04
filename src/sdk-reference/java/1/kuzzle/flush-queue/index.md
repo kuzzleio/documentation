@@ -13,12 +13,12 @@ Empties the offline request queue without playing it.
 ## Signature
 
 ```java
-Kuzzle flushQueue()
+io.kuzzle.sdk.Kuzzle flushQueue()
 ```
 
 ## Return
 
-The `Kuzzle` instance.
+The `io.kuzzle.sdk.Kuzzle` instance.
 
 ## Usage
 

@@ -20,8 +20,8 @@ Exists(index string, options types.QueryOptions) (bool, error)
 
 | Arguments | Type         | Description                           | Required |
 | --------- | ------------ | ------------------------------------- | -------- |
-| `index`   | String       | Index name                            | yes      |
-| `options` | QueryOptions | A structure containing query options. | no       |
+| `index`   | string       | Index name                            | yes      |
+| `options` | QueryOptions | Query options. | no       |
 
 ### **Options**
 
@@ -29,11 +29,11 @@ Additional query options
 
 | Option     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | bool | Make this request queuable or not | `true`  |
 
 ## Return
 
-Returns a `boolean` that indicate whether the index exists, or an error
+Returns a `bool` that indicate whether the index exists, or an error
 
 ## Usage
 

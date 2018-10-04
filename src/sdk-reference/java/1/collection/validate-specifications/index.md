@@ -1,0 +1,64 @@
+---
+layout: sdk.html
+algolia: true
+title: validateSpecifications
+description: Validate specifications format
+order: 200
+---
+
+# validateSpecifications
+
+The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.  
+
+## Signature
+
+```java
+public boolean validateSpecifications(String specifications) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+public boolean validateSpecifications(String specifications, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+```
+
+## Arguments
+
+| Arguments    | Type    | Description | Required
+|--------------|---------|-------------|----------
+| `specifications` | java.lang.String | Specification to validate in JSON format | yes  |
+| `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
+
+### **specifications**
+
+A JSON representation of the specifications.  
+
+The JSON must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
+
+```json
+{
+  "myindex": {
+    "mycollection": {
+      "strict": "<true|false>",
+      "fields": {
+        // ... specification for each field
+      }
+    }
+  }
+}
+```
+
+### **options**
+
+Additional query options
+
+| Property   | Type    | Description                       | Default |
+| ---------- | ------- | --------------------------------- | ------- |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
+
+## Return
+
+A boolean indicating whether the specifications are correct or not.
+
+## Exceptions
+
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+
+## Usage
+
+[snippet=validate-specifications]

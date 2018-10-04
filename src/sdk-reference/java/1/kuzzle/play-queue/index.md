@@ -14,12 +14,12 @@ Works only if the SDK is not in a `offline` state, and if the `autoReplay` optio
 ## Signature
 
 ```java
-Kuzzle playQueue()
+io.kuzzle.sdk.Kuzzle playQueue()
 ```
 
 ## Return
 
-The `Kuzzle` instance.
+The `io.kuzzle.sdk.Kuzzle` instance.
 
 ## Usage
 
