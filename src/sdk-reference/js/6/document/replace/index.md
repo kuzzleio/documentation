@@ -1,17 +1,15 @@
 ---
-layout: sdk.html.hbs
+layout: sdk.html
 algolia: true
-title: mCreate
+title: replace
 description:
 order: 200
 ---
 
-# mCreate
+# replace
 
-Creates new documents in the persistent data storage.
-
-Returns a partial error (with status 206) if one or more documents fail to create.
-
+Replaces an existing document in the persistent data storage.
+Only documents in the persistent data storage layer can be replaced.
 
 ## Signature
 
@@ -19,11 +17,12 @@ Returns a partial error (with status 206) if one or more documents fail to creat
 /**
  * @param {string} index
  * @param {string} collection
+ * @param {string} _id
  * @param {object} body
  * @param {object} options
  * @returns {Promise.<object>}
  */
-mCreate (index, collection, documents, options = {})
+replace (index, collection, _id, body, options = {})
 ```
 
 ## Arguments
@@ -32,22 +31,21 @@ mCreate (index, collection, documents, options = {})
 | --- | --- | --- |
 | `index` | string | Index name |
 | `collection` | string | Collection name |
-| `body` | string | A JSON string containing the documents to create |
-| `options` | Object | An object containing query options. |
+| `id` | string | The document id |
+| `body` | string | A JSON string containing the body of the document |
+| `options` | object | An object containing query options. |
 
-### Options
+###### Options
 
 Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
 
 ## Resolve
 
-Resolves to an object containing the created documents.
-
 ## Usage
 
-[snippet=m-create]
+[snippet=replace]

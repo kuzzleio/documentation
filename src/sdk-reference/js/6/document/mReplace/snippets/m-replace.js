@@ -16,9 +16,9 @@ try {
   console.log(response);
   /*
   {  hits:
-     [ { _id: 'some-id',                                                                                                                                                               [2/39891]
-       _source:                                                                                                                                                                               
-        { _kuzzle_info:                                                                                                                                                                       
+     [ { _id: 'some-id',
+       _source:
+        { _kuzzle_info:
            { active: true,
              author: '-1',
              updater: null,
