@@ -4,10 +4,12 @@
     <!-- Render item list -->
     <ul class="md-nav__list" data-md-scrollfix>
       {{#each ancestry.parent.ancestry.siblings as |parent|}}
-        <li class="md-nav__item">
-            <a class="md-nav__link"  href="{{ ../site_base_path }}{{ parent.path }}">{{displayTitle parent}}</a>
-        </li>
-          <ul class="md-nav__list sub-menu">
+        {{#if parent.title}}
+          <li class="md-nav__item">
+              <a class="md-nav__link"  href="{{ ../site_base_path }}{{ parent.path }}">{{displayTitle parent}}</a>
+          </li>
+        {{/if}}
+          <ul class="md-nav__list sub-menu {{#if (not parent.title)}}no-section{{/if}}">
             {{#each parent.ancestry.children as |children|}}
               {{#if (eq ../../ancestry.parent.path parent.path)}}
                 {{#if children.title}}
