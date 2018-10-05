@@ -14,11 +14,13 @@ Updates the current user object in Kuzzle.
 
 ```javascript
 /**
+ * Update the current user in Kuzzle.
+ * 
  * @param {object} body - a plain javascript object representing the user's modification
  * @param {object} [options] - (optional) arguments
  * @returns {Kuzzle} this object
  */
-updateSelf (body, options = {})
+updateSelf (body, options = null)
 ```
 
 ## Arguments

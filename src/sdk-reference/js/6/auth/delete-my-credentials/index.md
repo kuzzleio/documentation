@@ -18,7 +18,7 @@ order: 200
  * @param options
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  */
-deleteMyCredentials (strategy, options = {});
+deleteMyCredentials (strategy, options = null);
 ```
 
 ## Arguments

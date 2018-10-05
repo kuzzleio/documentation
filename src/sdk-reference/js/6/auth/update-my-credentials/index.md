@@ -22,7 +22,7 @@ Update the current user's credentials for the specified `<strategy>`. The creden
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  * updateMyCredentials (strategy, credentials, options = {});
  */
-updateMyCredentials (strategy, credentials, options = {});
+updateMyCredentials (strategy, credentials, options = null);
 ```
 
 ## Arguments

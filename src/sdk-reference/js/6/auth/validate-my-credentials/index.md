@@ -21,7 +21,7 @@ Validate the current user's credentials for the specified `<strategy>`. The `res
  * @param options
  * @returns a boolean
  */
-validateMyCredentials (strategy, credentials, options = {})
+validateMyCredentials (strategy, credentials, options = null)
 ```
 
 ## Arguments

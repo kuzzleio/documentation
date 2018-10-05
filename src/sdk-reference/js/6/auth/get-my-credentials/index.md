@@ -14,10 +14,12 @@ Returns the current user's credential information for the specified `<strategy>`
 
 ```javascript
 /**
+ * Get credential information of the specified <strategy> for the current user.
+ * 
  * @param options
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  */
-getMyCredentials(strategy, options = {})
+getMyCredentials(strategy, options = null)
 ```
 
 ## Arguments

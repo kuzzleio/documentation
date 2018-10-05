@@ -14,10 +14,12 @@ Get all authentication strategies registered in Kuzzle.
 
 ```javascript
 /**
+ * Get the list of strategies of the current logged user.
+ * 
  * @param options
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  */
-getStrategies (options = {})
+getStrategies (options = null)
 ```
 
 ## Arguments
