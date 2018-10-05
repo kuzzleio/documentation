@@ -9,7 +9,7 @@
               <a class="md-nav__link"  href="{{ ../site_base_path }}{{ parent.path }}">{{displayTitle parent}}</a>
           </li>
         {{/if}}
-          <ul class="md-nav__list sub-menu {{#if (not parent.title)}}no-section{{/if}}">
+          <ul class="md-nav__list sub-menu {{#if (not parent.title)}}no-parent{{/if}}">
             {{#each parent.ancestry.children as |children|}}
               {{#if (eq ../../ancestry.parent.path parent.path)}}
                 {{#if children.title}}
