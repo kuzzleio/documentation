@@ -13,8 +13,13 @@ Delete the current user's credentials for the specified `<strategy>`. If the cre
 ## Signature
 
 ```java
-public void deleteMyCredentials(String, QueryOptions) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException, PartialException, PreconditionException, UnauthorizedException;
-public void deleteMyCredentials(String) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException, PartialException, PreconditionException, UnauthorizedException;
+public void deleteMyCredentials(
+  java.lang.String,
+  io.kuzzle.sdk.QueryOptions
+);
+public void deleteMyCredentials(
+  java.lang.String
+);
 ```
 
 ## Arguments

@@ -11,8 +11,13 @@ order: 200
 ## Signature
 
 ```java
-public boolean credentialsExist(String, QueryOptions) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException, PartialException, PreconditionException, UnauthorizedException;
-public boolean credentialsExist(String) throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException, PartialException, PreconditionException, UnauthorizedException;
+public boolean credentialsExist(
+  java.lang.String,
+  io.kuzzle.sdk.QueryOptions
+);
+public boolean credentialsExist(
+  java.lang.String
+);
 ```
 
 ## Arguments

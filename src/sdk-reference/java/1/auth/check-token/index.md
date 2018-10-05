@@ -13,7 +13,7 @@ Checks a JWT Token's validity.
 ## Signature
 
 ```java
-TokenValidity checkToken(String);
+TokenValidity checkToken(java.lang.String);
 ```
 
 ## Arguments

@@ -13,8 +13,15 @@ Authenticates a user.
 ## Signature
 
 ```java
-String login(String strategy, String credentials, int expiresIn);
-String login(String strategy, String credentials);
+String login(
+  java.lang.String,
+  java.lang.String,
+  int
+);
+String login(
+  java.lang.String,
+  java.lang.String
+);
 ```
 
 ## Arguments

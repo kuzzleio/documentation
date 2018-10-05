@@ -13,7 +13,7 @@ Returns the profile object for the user linked to the `JSON Web Token`, provided
 ## Signature
 
 ```java
-public User getCurrentUser() throws BadRequestException, ForbiddenException, GatewayTimeoutException, InternalException, ServiceUnavailableException, NotFoundException, PartialException, PreconditionException, UnauthorizedException;
+public User getCurrentUser();
 ```
 
 ## Return

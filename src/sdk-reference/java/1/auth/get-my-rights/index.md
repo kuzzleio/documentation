@@ -13,8 +13,10 @@ Returns the rights for the user linked to the `JSON Web Token`, provided in the 
 ## Signature
 
 ```java
-public io.kuzzle.sdk.UserRight[] getMyRights(io.kuzzle.sdk.QueryOptions) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
-public io.kuzzle.sdk.UserRight[] getMyRights() throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
+public io.kuzzle.sdk.UserRight[] getMyRights(
+  io.kuzzle.sdk.QueryOptions
+);
+public io.kuzzle.sdk.UserRight[] getMyRights();
 ```
 
 ## Arguments
