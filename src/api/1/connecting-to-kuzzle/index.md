@@ -17,7 +17,7 @@ A connection to Kuzzle can be made using different protocols. Currently Kuzzle s
 
 By default, Kuzzle can be reached via HTTP on port 7512. Thus, assuming the Kuzzle server is running locally, it can be reached at `http://localhost:7512/`.
 
-The default response for the root endpoint is the [ServerInfo]({{ site_base_path }}api/2/controller-server/info), which gives detailed information about the available HTTP API routes.
+The default response for the root endpoint is the [ServerInfo]({{ site_base_path }}api/1/controller-server/info), which gives detailed information about the available HTTP API routes.
 
 ### Example
 

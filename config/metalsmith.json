@@ -24,7 +24,6 @@
   },
   "exclude": [
     "guide/1",
-    "guide/2",
-    "api/2"
+    "guide/2"
   ]
 }
