@@ -8,14 +8,13 @@ const
     injectInFile,
     showSignatures
   } = require('./utils'),
-  _ = require('lodash'),
-  path = require('path');
+  _ = require('lodash');
 
 
 function injectTemplates(sdkInfos, src, dest) {
   const longDescriptionRegexp = {
-    start: `\# ${_.camelCase(sdkInfos.action)}\n`,
-    end: '\#\# Signature\n'
+    start: `# ${_.camelCase(sdkInfos.action)}\n`,
+    end: '## Signature\n'
   };
 
   const shortDescriptionRegexp = {
@@ -24,20 +23,20 @@ function injectTemplates(sdkInfos, src, dest) {
   };
 
   const argsTableRegexp = {
-    start: '\#\# Arguments\n',
-    end: '\n\#\#\#'
+    start: '## Arguments\n',
+    end: '\n###'
   };
 
   const argsDescriptionRegexp = {
-    start: '\#\#\#',
-    end: '\n\#\# R', // match '### Return' or '### Resolve'
+    start: '###',
+    end: '\n## R', // match '### Return' or '### Resolve'
     includeStart: true
   };
 
   // when there is no 'Return' or 'Resolve' section
   const argsDescriptionRegexp2 = {
-    start: '\#\#\#',
-    end: '\n\#\# Usage',
+    start: '###',
+    end: '\n## Usage',
     includeStart: true
   };
 
@@ -64,9 +63,9 @@ function injectTemplates(sdkInfos, src, dest) {
   // We extract the needed informations from files with regexp
   const
     srcIndexFile = `${src}/index.md`,
-    srcTestConfigFile =`${src}/snippets/${sdkInfos.action}.test.yml`,
+    srcTestConfigFile =`${src}/snippets/${_.kebabCase(sdkInfos.action)}.test.yml`,
     destIndexFile = `${dest}/index.md`,
-    destTestConfigFile =`${dest}/snippets/${sdkInfos.action}.test.yml`,
+    destTestConfigFile =`${dest}/snippets/${_.kebabCase(sdkInfos.action)}.test.yml`,
     longDescription = extractFromFile(srcIndexFile, longDescriptionRegexp),
     shortDescription = extractFromFile(srcIndexFile, shortDescriptionRegexp),
     argsTable = extractFromFile(srcIndexFile, argsTableRegexp),
@@ -108,7 +107,7 @@ async function copyCommand (src, dest) {
 
     await renderMarkdownTemplate(sdkInfos, dest);
     await renderSnippetTemplate(sdkInfos, dest);
-    await renderSnippetConfigTemplate(sdkInfos, dest)
+    await renderSnippetConfigTemplate(sdkInfos, dest);
 
     injectTemplates(sdkInfos, src, dest);
 

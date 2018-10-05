@@ -6,7 +6,7 @@
 
 <body>
     {{> header }}
-    <div class="md-container">
+    <div class="md-container {{#if nosidebar}} nosidebar {{/if}}">
         {{> tabs}}
         <!-- Main container -->
         <main class="md-main">
@@ -15,7 +15,7 @@
                 <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                     <div class="md-sidebar__scrollwrap">
                         <div class="md-sidebar__inner">
-                            {{> nav_sdk}}
+                            {{> nav}}
                         </div>
                     </div>
                 </div>
@@ -23,9 +23,6 @@
                 <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
                     <div class="md-sidebar__scrollwrap">
                         <div class="md-sidebar__inner">
-                            {{#if has_code_example}}
-                                <select id="language-selector"></select>
-                            {{/if}}
                             {{> anchors}}
                         </div>
                     </div>

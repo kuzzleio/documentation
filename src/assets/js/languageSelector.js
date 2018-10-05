@@ -1,96 +1,91 @@
-$(document).ready(function() {
-  languageSelector.init();
-});
+var languageSelector = {};
 
-var excludedSDK = ["android", "php"];
+languageSelector.excludedSDK = ['android', 'php'];
+languageSelector.currentLanguage = document.location.pathname.split('/')[2];
 
-var languageSelector = {
-  init: function() {
-    if ($('#language-selector').length === 0) {
-      return;
-    }
+languageSelector.init = function (select) {
+  this.setSelectorOptions(select);
 
-    var
-      self = this,
-      languageParam = document.location.pathname.split('/')[2];
+  select.select2({
+    minimumResultsForSearch: -1,
+    theme: 'material',
+    templateResult: this.setTemplate,
+    templateSelection: this.setTemplate
+  });
 
-    this.setSelectorOptions();
-
-    $('#language-selector [value="' + languageParam + '"]').attr(
-      'selected',
-      true
-    );
-
-    $('#language-selector').select2({
-      minimumResultsForSearch: -1,
-      theme: 'material',
-      templateResult: this.selectTemplate,
-      templateSelection: this.selectTemplate
-    });
-
-    $('.select2-selection__arrow')
-      .addClass('material-icons')
-      .html('arrow_drop_down');
-
-    $('#language-selector').on('change', function() {
-      var language = $(this).val();
-      window.location.assign(self.getLatestVersionURL(language));
-    });
-  },
-
-  getLatestVersionURL: function(language) {
-    if (language === "javascript") {
-      language = "js";
-    }
-
-    var
-      baseUrl = window.location.protocol + '//' + window.location.host,
-      latestVersion = '';
-
-    Object.keys(sdkVersions[language]).forEach(function(key) {
-      if (sdkVersions[language][key] === "master") {
-        latestVersion = key;
-      }
-    });
-
-    var
-      customPathname = "/sdk-reference/" + language + "/" + latestVersion + "/essentials",
-      url = baseUrl + customPathname;
-
-    return url;
-  },
-
-  setSelectorOptions: function() {
-    Object.keys(sdkVersions)
-      .filter(function(v) { return !excludedSDK.includes(v); })
-      .forEach(function(key) {
-        if (key === "js") {
-          key = "javascript";
-        }
-        $('#language-selector').append(
-          $('<option>', {
-            value: key,
-            text: key
-          })
-        );
-      });
-  },
-
-  selectTemplate: function(state) {
-    if (!state.id) {
-      return state.text;
-    }
-    var
-      baseUrl = '/assets/images/logos'
-      $state = $(
-      '<img width="22" height="22" src="' +
-        baseUrl +
-        '/' +
-        state.element.value.toLowerCase() +
-        '.svg" class="language-logo" /> <span class="language-name">' +
-        state.text +
-        '</span>'
-    );
-    return $state;
-  }
+  $('.select2-selection__arrow')
+    .addClass('material-icons')
+    .html('arrow_drop_down');
+    
+  this.setCurrentLanguage(select);
+  this.onChange(select);
 };
+
+languageSelector.setCurrentLanguage = function (select) {
+  select
+    .val(this.currentLanguage)
+    .change();
+};
+
+languageSelector.onChange = function (select) {
+  var self = this;
+  select.on('change', function() {
+    var language = $(this).val();
+    window.location.assign(self.getLatestVersionURL(language));
+  });
+};
+
+languageSelector.getLatestVersionURL = function (language) {
+  var
+    baseUrl = window.location.protocol + '//' + window.location.host,
+    latestVersion = '',
+    customPathname = '';
+  
+  if (language === 'javascript') {
+    language = 'js';
+  }
+  
+  latestVersion = Object.keys(sdkVersions[language]).sort().slice(-1)[0];
+  customPathname = '/sdk-reference/' + language + '/' + latestVersion + '/essentials';
+  
+  return baseUrl + customPathname;
+};
+
+languageSelector.setSelectorOptions = function (select) {
+  var self = this;
+  Object.keys(sdkVersions)
+    .filter(function(v) { return self.excludedSDK.indexOf(v) === -1; })
+    .forEach(function(key) {
+      var language = key;
+      if (key === 'js') {
+        language = 'javascript';
+      }
+      select.append($('<option>', {value:key, text:language}));
+    });
+};
+
+languageSelector.setTemplate = function (state) {
+  var
+    baseUrl = '/assets/images/logos',
+    $state;
+    
+  if (!state.id) {
+    return state.text;
+  }
+  
+  $state = $(
+    '<img width="22" height="22" src="' +
+    baseUrl +
+    '/' +
+    state.element.value.toLowerCase() +
+    '.svg" class="language-logo" /> <span class="language-name">' +
+    state.text +
+    '</span>'
+  );
+
+  return $state;
+};
+
+$('.language-selector').each(function() {
+  languageSelector.init($(this));
+});

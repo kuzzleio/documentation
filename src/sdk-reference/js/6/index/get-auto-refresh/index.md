@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: getAutoRefresh
 description: Returns the status of autorefresh flag

@@ -30,11 +30,11 @@ function display(error, stdout, stderr) {
     console.error(stderr);
   }
   console.log(stdout);
-};
+}
 
 async function renderTemplate(source, destination, variables) {
   if (fs.existsSync(destination)) {
-    throw new Error(`${destination} already exists.`)
+    throw new Error(`${destination} already exists.`);
   }
 
   const locals = Object.assign({}, { _ }, variables);
@@ -99,8 +99,8 @@ function showSignatures({ language, action, controller }) {
       break;
 
     case 'go':
-      exec(`cat ~/go/src/github.com/kuzzleio/sdk-go/${controller}/${_.camelCase(action)}.go | grep ${_.upperFirst(_.camelCase(action))}`, display);
-      exec(`cat ~/go/src/github.com/kuzzleio/sdk-go/${controller}/${_.snakeCase(action)}.go | grep ${_.upperFirst(_.camelCase(action))}`, display);
+      exec(`grep '${_.upperFirst(_.camelCase(action))}(' ${process.env.GOPATH}/src/github.com/kuzzleio/sdk-go/${controller}/${_.camelCase(action)}.go`, display);
+      exec(`grep '${_.upperFirst(_.camelCase(action))}(' ${process.env.GOPATH}/src/github.com/kuzzleio/sdk-go/${controller}/${_.snakeCase(action)}.go`, display);
       break;
   }
 
@@ -113,7 +113,7 @@ function renderMarkdownTemplate(variables, actionPath) {
     destinationFile = path.join(actionPath, 'index.md');
 
   return renderTemplate(actionTemplate, destinationFile, variables);
-};
+}
 
 function renderSnippetTemplate(variables, actionPath) {
   const
@@ -121,7 +121,7 @@ function renderSnippetTemplate(variables, actionPath) {
     destinationFile = path.join(actionPath, 'snippets', `${_.kebabCase(variables.action)}.${variables.language}`);
 
   return renderTemplate(snippetTemplate, destinationFile, variables);
-};
+}
 
 function renderSnippetConfigTemplate(variables, actionPath) {
   const
@@ -129,10 +129,10 @@ function renderSnippetConfigTemplate(variables, actionPath) {
     destinationFile = path.join(actionPath, 'snippets', `${_.kebabCase(variables.action)}.test.yml`);
 
   return renderTemplate(snippetTemplate, destinationFile, variables);
-};
+}
 
 function extractFromFile(file, regexpInfo, regexpInfoFallback) {
-  const content = fs.readFileSync(file, 'utf8')
+  const content = fs.readFileSync(file, 'utf8');
   let regexp;
 
   for (const regInfo of [regexpInfo, regexpInfoFallback]) {
@@ -153,7 +153,7 @@ function extractFromFile(file, regexpInfo, regexpInfoFallback) {
     }
   }
 
-  return null;
+  throw new Error(`No match found in ${file} for ${regexp}`);
 }
 
 function injectInFile(file, regexpInfo, injectedContent) {
