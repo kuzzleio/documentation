@@ -26,7 +26,7 @@ updateSelf (body, options = {})
 | Arguments    | Type    | Description
 |--------------|---------|-------------
 | `content` | JSON Object | the new credentials
-| `options`  | JSON Object | A JSON Object containing the optionsoptions
+| `options`  | JSON Object | A JSON Object containing the options
 
 
 ###### **Options**
