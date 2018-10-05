@@ -6,6 +6,10 @@ public class CodeExampleGenericClass {
     public static void main(String[] args) {
       kuzzle = new Kuzzle("kuzzle");
       kuzzle.connect();
-      [snippet-code]
+      try {
+        [snippet-code]
+      } catch (KuzzleException e) {
+        System.out.println("Success");
+      }
     }
 }
