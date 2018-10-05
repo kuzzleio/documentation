@@ -35,12 +35,9 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-
-## Exceptions
-
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
-
 ## Return
+
+A String representing a JSON Object of the updated credentials.
 
 ## Exceptions
 
