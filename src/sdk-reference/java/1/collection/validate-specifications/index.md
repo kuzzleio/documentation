@@ -10,11 +10,13 @@ order: 200
 
 The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.  
 
+When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
+
 ## Signature
 
 ```java
-public boolean validateSpecifications(String specifications) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
-public boolean validateSpecifications(String specifications, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+public io.kuzzle.sdk.ValidationResponse validateSpecifications(String specifications) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+public io.kuzzle.sdk.ValidationResponse validateSpecifications(String specifications, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
 ```
 
 ## Arguments
@@ -53,7 +55,14 @@ Additional query options
 
 ## Return
 
-A boolean indicating whether the specifications are correct or not.
+A `io.kuzzle.sdk.ValidationResponse` which contain informations about the specifications validity.  
+These properties are accessible with the standard getters.
+
+| Property   | Type    | Description        |
+| ---------- | ------- | --------------------- |
+| `valid` | boolean | Specification validity |
+| `details` | String[] | Details about each specification errors |
+| `description` | String | General error message |
 
 ## Exceptions
 
