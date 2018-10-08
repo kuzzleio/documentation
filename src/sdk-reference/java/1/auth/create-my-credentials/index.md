@@ -32,7 +32,7 @@ public java.lang.String createMyCredentials(
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

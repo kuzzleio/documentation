@@ -31,7 +31,7 @@ updateSelf (body, options = null)
 | `options`  | JSON Object | A JSON Object containing the options
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

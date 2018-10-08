@@ -25,7 +25,7 @@ func (a *Auth) ValidateMyCredentials(strategy string, credentials json.RawMessag
 | `options`  | QueryOptions | QueryOptions object containing query options
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

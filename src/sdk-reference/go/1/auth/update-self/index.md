@@ -24,7 +24,7 @@ func (a *Auth) UpdateSelf(data json.RawMessage, options types.QueryOptions) (*se
 | `options`  | QueryOptions | QueryOptions object containing query options
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

@@ -22,7 +22,7 @@ func (a *Auth) GetMyRights(options types.QueryOptions) ([]*types.UserRights, err
 |--------------|---------|-------------|----------
 | `options`  | QueryOptions    | QueryOptions object containing query options | yes
 
-###### **Options**
+### **Options**
 
 Additional query options
 

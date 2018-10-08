@@ -34,7 +34,7 @@ public java.lang.String updateMyCredentials(
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

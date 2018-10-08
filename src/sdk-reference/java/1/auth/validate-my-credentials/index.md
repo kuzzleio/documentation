@@ -33,7 +33,7 @@ public boolean validateMyCredentials(
 | `options`  | io.kuzzle.sdk.QueryOptions    | A pointer to a `query_options` containing query options
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

@@ -30,7 +30,7 @@ public io.kuzzle.sdk.User updateSelf(
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 
