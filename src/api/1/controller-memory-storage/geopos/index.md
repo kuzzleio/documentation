@@ -1,0 +1,66 @@
+---
+layout: full.html.hbs
+algolia: true
+title: geopos
+---
+
+# geopos
+
+{{{since "1.0.0"}}}
+
+Return the position (`[longitude, latitude]`) of the provided key's members (see [geoadd]({{ site_base_path }}api/1/controller-memory-storage/geoadd/)).  
+
+[[_Redis documentation_]](https://redis.io/commands/geopos)
+
+---
+
+## Query Syntax
+
+### HTTP
+
+```http
+URL: http://kuzzle:7512/ms/_geopos/<_id>?members=member1,member2,...
+Method: GET
+```
+
+### Other protocols
+
+```js
+{
+  "controller": "ms",
+  "action": "geopos",
+  "_id": "<key>",
+  "members": ["member1", "member2", "..."]
+}
+```
+
+---
+
+## Arguments
+
+* `_id`: key containing the geopoints to fetch
+* `members`: list of geopoint names to fetch
+
+---
+
+## Response
+
+
+Return the members positions (`[longitude, latitude]`), in the same order than the one provided in the query.
+
+```javascript
+{
+  "requestId": "<unique request identifier>",
+  "status": 200,
+  "error": null,
+  "controller": "ms",
+  "action": "geopos",
+  "collection": null,
+  "index": null,
+  "result": [
+    [3.9109057, 43.6073913],
+    [3.897105, 43.6002203],
+    [3.948711, 43.5764455]
+  ]
+}
+```
