@@ -21,7 +21,7 @@ The body contains the user data and must have the following properties:
 
 ```http
 URL: http://kuzzle:7512/users/<_id>/_create[?refresh=wait_for]
-Alternate URL: http://kuzzle:7512/users/_create[?refresh=wait_for]
+URL(2): http://kuzzle:7512/users/_create[?refresh=wait_for]
 Method: POST
 Body:
 ```

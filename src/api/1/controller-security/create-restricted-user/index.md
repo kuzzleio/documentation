@@ -22,7 +22,7 @@ This method allows users with limited rights to create other accounts, but block
 
 ```http
 URL: http://kuzzle:7512/users/<_id>/_createRestricted[?refresh=wait_for] 
-Alternate URL: http://kuzzle:7512/users/_createRestricted[?refresh=wait_for]
+URL(2): http://kuzzle:7512/users/_createRestricted[?refresh=wait_for]
 Method: POST
 Body:
 ```
