@@ -5,13 +5,13 @@ js:
   6: 6-dev
 
 cpp:
-  1: master
+  1: 1-dev
 
 java:
-  1: master
+  1: 1-dev
 
 go:
-  1: master
+  1: 1-dev
 
 php:
   3: 3-stable
