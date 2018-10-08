@@ -11,7 +11,7 @@ title: setAutoRefresh
 Change the `autoRefresh` configuration of an index.
 
 The `autoRefresh` flag, when set to true, tells Kuzzle to perform an immediate
-[`refresh`](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-refresh.html) request after each write request, instead of waiting the regular refreshes occuring every seconds.
+[`refresh`](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-refresh.html) request after each write request, instead of waiting the regular refreshes occuring every seconds.
 
 **Note:** refreshes come with performance costs. Set the `autoRefresh` flag to `true` only for indexes needing changes to be immediately available through searches, and only for slowly changing indexes.
 

@@ -8,7 +8,7 @@ title: refresh
 
 {{{since "1.0.0"}}}
 
-Force an immediate [reindexation]((https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-refresh.html) of the provided index.
+Force an immediate [reindexation](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-refresh.html) of the provided index.
 
 When writing or deleting documents in Kuzzle, the changes need to be indexed before being reflected in the search results.  
 By default, this operation can take up to 1 second.
