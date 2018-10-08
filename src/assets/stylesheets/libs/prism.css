@@ -6,10 +6,6 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
-pre[class*='language-'] {
-  display: none;
-}
-
 code[class*='language-'],
 pre[class*='language-'] {
   color: #ccc;
