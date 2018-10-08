@@ -20,7 +20,7 @@ Return an error if the document already exists.
 
 ```http
 URL: http://kuzzle:7512/<index>/<collection>/_create[?refresh=wait_for]
-Alternative URL: http://kuzzle:7512/<index>/<collection>/<documentId>/_create[?refresh=wait_for]
+URL(2): http://kuzzle:7512/<index>/<collection>/<documentId>/_create[?refresh=wait_for]
 Method: POST  
 Body:
 ```
