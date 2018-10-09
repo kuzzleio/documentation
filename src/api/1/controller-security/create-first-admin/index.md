@@ -68,8 +68,8 @@ Body:
 
 ### Optional:
 
-* `_id`: specify the administror [kuid]({{ site_base_path }}guide/1/essentials/user-authentication/#kuzzle-user-identifier-kuid), instead of generating a random identifier
-* `reset` (boolean): if true, restricted rights are applied to the `anonymous` and `default` roles (by default, these roles don't have restriction). 
+* `_id`: specify the administror [kuid]({{ site_base_path }}guide/1/essentials/user-authentication/#kuzzle-user-identifier-kuid), instead of letting Kuzzle generate a random identifier.
+* `reset` (boolean): if true, restricted rights are applied to the `anonymous` and `default` roles (by default, these roles don't have any restriction). 
 
 ---
 
@@ -82,7 +82,7 @@ Body:
 
 ## Response
 
-Return information about the newly created administratory:
+Return information about the newly created administrator:
 
 * `_id`: administrator kuid
 * `_source`: administrator user document, contains all properties set in the `content` body argument, but also the list of attributed `profileIds`. That list is initialized with the `admin` profile
