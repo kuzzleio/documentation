@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: updateSelf
 description: Updates the current user object in Kuzzle.
@@ -31,7 +31,7 @@ updateSelf (body, options = null)
 | `options`  | JSON Object | A JSON Object containing the options
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

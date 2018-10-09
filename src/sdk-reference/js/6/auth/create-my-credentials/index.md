@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: createMyCredentials
 description: Create the current user's credentials for the specified `<strategy>`.
@@ -33,7 +33,7 @@ createMyCredentials (strategy, credentials, options = null)
 | `options`  | JSON Object | A JSON Object containing the options
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: GetMyRights
 description: Returns the rights for the user linked to the `JSON Web Token`.
@@ -22,7 +22,7 @@ func (a *Auth) GetMyRights(options types.QueryOptions) ([]*types.UserRights, err
 |--------------|---------|-------------|----------
 | `options`  | QueryOptions    | QueryOptions object containing query options | yes
 
-###### **Options**
+### **Options**
 
 Additional query options
 

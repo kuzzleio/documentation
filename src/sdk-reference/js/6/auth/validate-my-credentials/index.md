@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: validateMyCredentials
 description: Validate the current user's credentials for the specified `<strategy>`.
@@ -33,7 +33,7 @@ validateMyCredentials (strategy, credentials, options = null)
 | `options`  | JSON Object | A JSON Object containing the options
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

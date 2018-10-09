@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: ValidateMyCredentials
 description: Validate the current user's credentials for the specified `<strategy>`.
@@ -25,7 +25,7 @@ func (a *Auth) ValidateMyCredentials(strategy string, credentials json.RawMessag
 | `options`  | QueryOptions | QueryOptions object containing query options
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

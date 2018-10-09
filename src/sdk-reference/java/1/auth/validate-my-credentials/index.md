@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: validateMyCredentials
 description: Validate the current user's credentials for the specified `<strategy>`.
@@ -33,7 +33,7 @@ public boolean validateMyCredentials(
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: GetStrategies
 description: Get all authentication strategies registered in Kuzzle.
@@ -22,7 +22,7 @@ func (a *Auth) GetStrategies(options types.QueryOptions) ([]string, error)
 |--------------|---------|-------------
 | `options`  | query_options*    | A pointer to a `query_options` containing query options
 
-###### **Options**
+### **Options**
 
 Additional query options
 

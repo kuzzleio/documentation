@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: getStrategies
 description: Get all authentication strategies registered in Kuzzle.
@@ -28,7 +28,7 @@ getStrategies (options = null)
 |--------------|---------|-------------
 | `options` | JSON Object | A JSON Object containing the options
 
-###### **Options**
+### **Options**
 
 Additional query options
 

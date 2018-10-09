@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: UpdateSelf
 description: Updates the current user object in Kuzzle.
@@ -24,7 +24,7 @@ func (a *Auth) UpdateSelf(data json.RawMessage, options types.QueryOptions) (*se
 | `options`  | QueryOptions | QueryOptions object containing query options
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 

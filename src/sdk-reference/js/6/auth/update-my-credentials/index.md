@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: updateMyCredentials
 description: Update the current user's credentials for the specified `<strategy>`.
@@ -34,7 +34,7 @@ updateMyCredentials (strategy, credentials, options = null);
 | `options`  | JSON Object | A JSON Object containing the options
 
 
-###### **Options**
+### **Options**
 
 Additional query options
 
