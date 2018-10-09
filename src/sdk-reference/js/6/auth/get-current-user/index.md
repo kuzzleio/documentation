@@ -32,15 +32,15 @@ getCurrentUser (options = null)
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Resolve
 
-The profile object for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
+A User object representing the current user logged with the SDK.
 
-| Option     | Type    | Description                       |
+| Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
 | `id` | string | The user ID |
 | `content` | JSON Object | The user content |

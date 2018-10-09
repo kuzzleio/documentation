@@ -27,7 +27,7 @@ std::string getMyCredentials(const std::string& strategy, query_options *options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | bool | Make this request queuable or not | `true`  |
 

@@ -26,7 +26,7 @@ func (a *Auth) GetMyRights(options types.QueryOptions) ([]*types.UserRights, err
 
 Additional query options
 
-| Option     | Type    | Description                       | Default
+| Property     | Type    | Description                       | Default
 | ---------- | ------- | --------------------------------- | -------
 | `Queuable` | bool | Make this request queuable or not | `true`
 
@@ -35,7 +35,7 @@ Additional query options
 A pointer to an array of UserRight object containing:
 
 
-| Option     | Type    | Description                       |
+| Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
 | `Controller` | string | The controller on wich the rights are applied |
 | `Action` | string | The action on wich the rights are applied |

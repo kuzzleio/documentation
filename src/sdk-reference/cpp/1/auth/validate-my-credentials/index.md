@@ -29,7 +29,7 @@ bool validateMyCredentials(const std::string& strategy, const std::string& crede
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 

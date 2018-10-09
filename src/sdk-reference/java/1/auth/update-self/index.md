@@ -14,11 +14,11 @@ Updates the current user object in Kuzzle.
 
 ```java
 public io.kuzzle.sdk.User updateSelf(
-  java.lang.String, 
+  String, 
   io.kuzzle.sdk.QueryOptions
 );
 public io.kuzzle.sdk.User updateSelf(
-  java.lang.String
+  String
 );
 ```
 
@@ -26,7 +26,7 @@ public io.kuzzle.sdk.User updateSelf(
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `content` | java.lang.String | the new credentials
+| `content` | String | the new credentials
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
 
 
@@ -34,7 +34,7 @@ public io.kuzzle.sdk.User updateSelf(
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 

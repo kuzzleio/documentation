@@ -13,27 +13,27 @@ Returns the current user's credential information for the specified `<strategy>`
 ## Signature
 
 ```java
-public java.lang.String getMyCredentials(
-  java.lang.String,
+public String getMyCredentials(
+  String,
   io.kuzzle.sdk.QueryOptions
 );
-public java.lang.String getMyCredentials(
-  java.lang.String
+public String getMyCredentials(
+  String
 );
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `strategy` | java.lang.String | the strategy to use    | yes
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options. | no       |
+| Arguments    | Type    | Description
+|--------------|---------|-------------
+| `strategy` | String | the strategy to use
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
 
 ### **Options**
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 

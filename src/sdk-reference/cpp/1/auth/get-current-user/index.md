@@ -20,7 +20,7 @@ kuzzle_user* getCurrentUser();
 
 A pointer to a kuzzle_user object containing:
 
-| Option     | Type    | Description                       |
+| Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
 | `id` | const char* | The user ID |
 | `content` | const char* | The user content |

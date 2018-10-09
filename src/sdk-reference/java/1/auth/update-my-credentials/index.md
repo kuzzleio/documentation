@@ -13,14 +13,14 @@ Update the current user's credentials for the specified `<strategy>`. The creden
 ## Signature
 
 ```java
-public java.lang.String updateMyCredentials(
-  java.lang.String,
-  java.lang.String,
+public String updateMyCredentials(
+  String,
+  String,
   io.kuzzle.sdk.QueryOptions
 );
-public java.lang.String updateMyCredentials(
-  java.lang.String,
-  java.lang.String
+public String updateMyCredentials(
+  String,
+  String
 );
 
 ```
@@ -29,8 +29,8 @@ public java.lang.String updateMyCredentials(
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | java.lang.String | the strategy to use
-| `credentials` | java.lang.String | the new credentials
+| `strategy` | String | the strategy to use
+| `credentials` | String | the new credentials
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
 
 
@@ -38,7 +38,7 @@ public java.lang.String updateMyCredentials(
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 

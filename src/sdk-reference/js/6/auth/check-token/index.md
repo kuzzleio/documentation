@@ -22,17 +22,13 @@ checkToken(token)
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``token`` | string | the token    | yes
+| Property    | Type    | Description
+|--------------|---------|-------------
+| ``token`` | string | the token
 
 ## Resolve
 
 An object representing the token validity status
-
-    bool valid;
-    const char *state;
-    unsigned long long expires_at;
 
 | Name                | Type    | Description                                                                                                      
 | ------------------- | ------- | -----------------------------------

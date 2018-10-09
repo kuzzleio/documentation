@@ -20,7 +20,7 @@ func (a *Auth) GetCurrentUser() (*security.User, error)
 
 A pointer to security.User object containing:
 
-| Option     | Type    | Description                       |
+| Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
 | `Id` | string | The user ID |
 | `Content` | map[string]interface{} | The user content |

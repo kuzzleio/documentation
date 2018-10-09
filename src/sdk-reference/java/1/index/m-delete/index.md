@@ -21,7 +21,7 @@ io.kuzzle.sdk.StringVector mDelete(io.kuzzle.sdk.StringVector indexes, io.kuzzle
 
 | Arguments | Type         | Description           | Required |
 | --------- | ------------ | --------------------- | -------- |
-| `indexes` | java.lang.StringVector | List of indexes names | yes      |
+| `indexes` | StringVector | List of indexes names | yes      |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options     | no       |
 
 ### **Options**

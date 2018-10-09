@@ -29,7 +29,7 @@ public io.kuzzle.sdk.UserRight[] getMyRights();
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
@@ -37,13 +37,13 @@ Additional query options
 
 An array of UserRight containing:
 
-| Option     | Type    | Description                      
+| Property     | Type    | Description                      
 | ---------- | ------- | ---------------------------------
-| `controller` | java.lang.String | The controller on wich the rights are applied |
-| `action` | java.lang.String | The action on wich the rights are applied |
-| `index` | java.lang.String | The index on wich the rights are applied |
-| `collection` | java.lang.String | The collection on wich the rights are applied |
-| `value` | java.lang.String | The rights |
+| `controller` | String | The controller on wich the rights are applied |
+| `action` | String | The action on wich the rights are applied |
+| `index` | String | The index on wich the rights are applied |
+| `collection` | String | The collection on wich the rights are applied |
+| `value` | String | The rights |
 
 ## Exceptions
 

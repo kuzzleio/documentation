@@ -13,15 +13,15 @@ Deletes an entire data index from Kuzzle.
 ## Signature
 
 ```java
-boolean exists(java.lang.String index) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
-boolean exists(java.lang.String index, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+boolean exists(String index) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+boolean exists(String index, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
 ```
 
 ## Arguments
 
 | Arguments | Type         | Description       | Required |
 | --------- | ------------ | ----------------- | -------- |
-| `index`   | java.lang.String       | Index name        | yes      |
+| `index`   | String       | Index name        | yes      |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
 
 ### **Options**

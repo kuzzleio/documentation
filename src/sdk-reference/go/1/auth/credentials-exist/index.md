@@ -27,7 +27,7 @@ func (a *Auth) CredentialsExist(strategy string, options types.QueryOptions) (bo
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `Queuable` | boolean | Make this request queuable or not | `true`  |
 

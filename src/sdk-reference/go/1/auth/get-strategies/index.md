@@ -26,7 +26,7 @@ func (a *Auth) GetStrategies(options types.QueryOptions) ([]string, error)
 
 Additional query options
 
-| Option     | Type    | Description                       | Default
+| Property     | Type    | Description                       | Default
 | ---------- | ------- | --------------------------------- | -------
 | `Queuable` | bool | Make this request queuable or not | `true`
 

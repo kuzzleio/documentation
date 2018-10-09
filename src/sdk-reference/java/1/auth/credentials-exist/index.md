@@ -12,26 +12,26 @@ order: 200
 
 ```java
 public boolean credentialsExist(
-  java.lang.String,
+  String,
   io.kuzzle.sdk.QueryOptions
 );
 public boolean credentialsExist(
-  java.lang.String
+  String
 );
 ```
 
 ## Arguments
 
-| Arguments  | Type             | Description                                             | Required |
-| ---------- | ---------------- | ------------------------------------------------------- | -------- |
-| `strategy` | java.lang.String      | Strategy to use                                         | yes      |
-| `options` | io.kuzzle.sdk.QueryOptions | An object containing query options. | no       |
+| Arguments  | Type             | Description
+| ---------- | ---------------- | ---------------------------------------------
+| `strategy` | String      | Strategy to use
+| `options` | io.kuzzle.sdk.QueryOptions | An object containing query options.
 
 ### **Options**
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 

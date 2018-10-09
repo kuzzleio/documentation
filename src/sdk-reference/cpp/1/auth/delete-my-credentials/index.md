@@ -28,7 +28,7 @@ void deleteMyCredentials(const std::string& strategy, query_options *options=nul
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 

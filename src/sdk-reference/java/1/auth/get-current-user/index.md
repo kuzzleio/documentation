@@ -20,11 +20,11 @@ public User getCurrentUser();
 
 A User object with setters and getters containing:
 
-| Option     | Type    | Description                       |
+| Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `id` | java.lang.String | The user ID |
-| `content` | java.lang.String | The user content |
-| `profileIds` | []string | An array containing the profile ids |
+| `id` | String | The user ID |
+| `content` | String | The user content |
+| `profileIds` | String[] | An array containing the profile ids |
 
 ## Usage
 

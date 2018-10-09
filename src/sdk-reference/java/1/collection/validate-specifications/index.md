@@ -21,7 +21,7 @@ public boolean validateSpecifications(String specifications, io.kuzzle.sdk.Query
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| `specifications` | java.lang.String | Specification to validate in JSON format | yes  |
+| `specifications` | String | Specification to validate in JSON format | yes  |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
 
 ### **specifications**

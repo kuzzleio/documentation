@@ -30,7 +30,7 @@ void refreshInternal(io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.Ba
 
 | Arguments | Type         | Description       | Required |
 | --------- | ------------ | ----------------- | -------- |
-| `index`   | java.lang.String       | Index name        | yes      |
+| `index`   | String       | Index name        | yes      |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
 
 ### **Options**

@@ -26,7 +26,7 @@ user_right* getMyRights(query_options *options=nullptr);
 
 Additional query options
 
-| Option     | Type    | Description                       | Default
+| Property     | Type    | Description                       | Default
 | ---------- | ------- | --------------------------------- | -------
 | `queuable` | bool | Make this request queuable or not | `true`
 
@@ -34,7 +34,7 @@ Additional query options
 
 A pointer to a user_right object containing:
 
-| Option     | Type    | Description                       |
+| Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
 | `controller` | const char* | The controller on wich the rights are applied |
 | `action` | const char* | The action on wich the rights are applied |

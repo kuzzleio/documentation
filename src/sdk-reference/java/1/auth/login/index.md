@@ -14,13 +14,13 @@ Authenticates a user.
 
 ```java
 String login(
-  java.lang.String,
-  java.lang.String,
+  String,
+  String,
   int
 );
 String login(
-  java.lang.String,
-  java.lang.String
+  String,
+  String
 );
 ```
 
@@ -28,8 +28,8 @@ String login(
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``strategy`` | java.lang.String | the name of the strategy to use    | yes
-| ``credentials`` | java.lang.String | the json credentials | yes
+| ``strategy`` | String | the name of the strategy to use    | yes
+| ``credentials`` | String | the json credentials | yes
 | ``expiresIn`` | int | expiration time in milliseconds | no
 
 #### ***strategy***

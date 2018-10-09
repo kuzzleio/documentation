@@ -13,24 +13,24 @@ Checks a JWT Token's validity.
 ## Signature
 
 ```java
-TokenValidity checkToken(java.lang.String);
+TokenValidity checkToken(String);
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``token`` | java.lang.String | the token    | yes
+| Arguments    | Type    | Description
+|--------------|---------|-------------
+| ``token`` | String | the token
 
 ## Return
 
 A TokenValidity object which has:
 
-| Name                | Type    | Description                                                                                                      
+| Name                | Type    | Description
 | ------------------- | ------- | -----------------------------------
 | valid               | boolean | Tell if the token is valid or not
-| state               | java.lang.String  | Explain why the token is invalid
-| expires_at          | int     | Tells when the token expires
+| state               | String  | Explain why the token is invalid
+| expires_at          | BigInteger     | Tells when the token expires
 
 ## Exceptions
 

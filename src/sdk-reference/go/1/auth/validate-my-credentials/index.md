@@ -29,7 +29,7 @@ func (a *Auth) ValidateMyCredentials(strategy string, credentials json.RawMessag
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `Queuable` | boolean | Make this request queuable or not | `true`  |
 

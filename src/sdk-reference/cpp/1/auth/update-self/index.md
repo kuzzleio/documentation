@@ -28,7 +28,7 @@ kuzzle_user* updateSelf(const std::string& content, query_options* options=nullp
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 

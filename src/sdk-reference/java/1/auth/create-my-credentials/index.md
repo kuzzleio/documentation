@@ -13,14 +13,14 @@ Create the current user's credentials for the specified `<strategy>`.
 ## Signature
 
 ```java
-public java.lang.String createMyCredentials(
-  java.lang.String,
-  java.lang.String, 
+public String createMyCredentials(
+  String,
+  String, 
   io.kuzzle.sdk.QueryOptions
 );
-public java.lang.String createMyCredentials(
-  java.lang.String,
-  java.lang.String
+public String createMyCredentials(
+  String,
+  String
 );
 ```
 
@@ -28,7 +28,7 @@ public java.lang.String createMyCredentials(
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `content` | java.lang.String | the new credentials
+| `content` | String | the new credentials
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
 
 
@@ -36,7 +36,7 @@ public java.lang.String createMyCredentials(
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 

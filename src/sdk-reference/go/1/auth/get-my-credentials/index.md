@@ -27,7 +27,7 @@ func (a *Auth) GetMyCredentials(strategy string, options types.QueryOptions) (js
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `Queuable` | bool | Make this request queuable or not | `true`  |
 

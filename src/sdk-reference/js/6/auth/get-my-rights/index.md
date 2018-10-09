@@ -32,7 +32,7 @@ getMyRights (options = null)
 
 Additional query options
 
-| Option     | Type    | Description                       | Default
+| Property     | Type    | Description                       | Default
 | ---------- | ------- | --------------------------------- | -------
 | `queuable` | bool | Make this request queuable or not | `true`
 
@@ -40,7 +40,7 @@ Additional query options
 
 An array of object containing:
 
-| Option     | Type    | Description                      
+| Property     | Type    | Description                      
 | ---------- | ------- | ---------------------------------
 | `controller` | string | The controller on wich the rights are applied |
 | `action` | string | The action on wich the rights are applied |

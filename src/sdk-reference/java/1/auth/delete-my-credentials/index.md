@@ -14,27 +14,27 @@ Delete the current user's credentials for the specified `<strategy>`. If the cre
 
 ```java
 public void deleteMyCredentials(
-  java.lang.String,
+  String,
   io.kuzzle.sdk.QueryOptions
 );
 public void deleteMyCredentials(
-  java.lang.String
+  String
 );
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `strategy` | java.lang.String | the strategy to use    | yes
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options. | no       |
+| Arguments    | Type    | Description
+|--------------|---------|-------------
+| `strategy` | String | the strategy to use
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
 
 
 ### **Options**
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 

@@ -26,7 +26,7 @@ std::vector<std::string> getStrategies(query_options *options=nullptr);
 
 Additional query options
 
-| Option     | Type    | Description                       | Default
+| Property     | Type    | Description                       | Default
 | ---------- | ------- | --------------------------------- | -------
 | `queuable` | bool | Make this request queuable or not | `true`
 
