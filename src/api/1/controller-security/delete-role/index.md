@@ -1,0 +1,64 @@
+---
+layout: full.html.hbs
+algolia: true
+title: deleteRole
+---
+
+
+# deleteRole
+
+{{{since "1.0.0"}}}
+
+Delete a security role.
+
+An error is returned if the role is still in use.
+
+---
+
+## Query Syntax
+
+### HTTP
+
+```http
+URL: http://kuzzle:7512/roles/<_id>[?refresh=wait_for]
+Method: DELETE
+```
+
+### Other protocols
+
+```js
+{
+  "controller": "security",
+  "action": "deleteRole",
+  "_id": "<roleId>"
+}
+```
+
+---
+
+## Arguments
+
+* `_id`: role identifier
+
+### Optional:
+
+* `refresh`: if set to `wait_for`, Kuzzle will not respond until the role deletion is indexed
+
+---
+
+## Response
+
+Return the deleted role identifier.
+
+```javascript
+{
+  "status": 200,                     
+  "error": null,                     
+  "result": {
+    "_id": "<roleId>"
+  }
+  "action": "deleteRole",
+  "controller": "security",
+  "requestId": "<unique request identifier>"
+}
+```

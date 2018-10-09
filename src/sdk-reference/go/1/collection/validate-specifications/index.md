@@ -10,10 +10,12 @@ order: 200
 
 The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.  
 
+When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
+
 ## Signature
 
 ```go
-ValidateSpecifications(index string, collection string, body json.RawMessage, options types.QueryOptions) (bool, error)
+ValidateSpecifications(index string, collection string, specifications json.RawMessage, options types.QueryOptions) (types.ValidationResponse, error)
 ```
 
 | Arguments    | Type    | Description | Required
@@ -52,7 +54,13 @@ Additional query options
 
 ## Return
 
-A bool indicating whether the specifications are correct or not.
+A `types.ValidationResponse` which contain informations about the specifications validity.  
+
+| Property   | Type    | Description        |
+| ---------- | ------- | --------------------- |
+| `Valid` | bool | Specification validity |
+| `Details` | []string | Details about each specification errors |
+| `Description` | string | General error message |
 
 ## Usage
 

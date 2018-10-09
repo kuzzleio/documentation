@@ -89,7 +89,7 @@ class TestManager {
       return;
     }
 
-    if (process.env.DEV_MODE && this.sdk.exists()) {
+    if (process.env.DEV_MODE === 'true' && this.sdk.exists()) {
       this.logger.log('DEV_MODE is true, sdk already exists, skipping download');
       return;
     }

@@ -10,10 +10,12 @@ order: 200
 
 The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.  
 
+When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
+
 ## Signature
 
 ```cpp
-bool validateSpecifications(const std::string& index, const std::string& collection, const std::string& specifications, query_options *options=nullptr)
+validation_response* validateSpecifications(const std::string& index, const std::string& collection, const std::string& specifications, query_options *options=nullptr)
 ```
 
 ## Arguments
@@ -50,7 +52,13 @@ Additional query options
 
 ## Return
 
-A boolean indicating whether the specifications are correct or not.
+A pointer to an allocated `validation_response` structure which contain informations about the specifications validity.  
+
+| Property   | Type    | Description        |
+| ---------- | ------- | --------------------- |
+| `valid` | bool | Specification validity |
+| `details` | const char * const * | Array of string with details about each specification errors |
+| `Description` | const char * | General error message |
 
 ## Usage
 
