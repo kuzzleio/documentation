@@ -1,0 +1,11 @@
+name: document#update
+description: update a document
+hooks:
+  before: |
+    curl -XDELETE kuzzle:7512/nyc-open-data
+    curl -XPOST kuzzle:7512/nyc-open-data/create
+    curl -PUT kuzzle:7512/nyc-open-data/yellow-taxi
+  after: |
+    curl -XDELETE kuzzle:7512/nyc-open-data
+template: default
+expected: Success

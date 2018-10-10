@@ -1,5 +1,5 @@
-kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id", "{}", nil);
-kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-other-id", "{}", nil);
+kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id", json.RawMessage("{}"), nil);
+kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-other-id", json.RawMessage("{}"), nil);
 
 response, err := kuzzle.Document.MReplace("nyc-open-data", "yellow-taxi", json.RawMessage(`[
   {
