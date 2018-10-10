@@ -15,14 +15,16 @@ When the validation specification is not formatted correctly, a detailed error m
 ## Signature
 
 ```java
-public io.kuzzle.sdk.ValidationResponse validateSpecifications(String specifications) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
-public io.kuzzle.sdk.ValidationResponse validateSpecifications(String specifications, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+io.kuzzle.sdk.ValidationResponse validateSpecifications((String index, String collection, String specifications) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+io.kuzzle.sdk.ValidationResponse validateSpecifications((String index, String collection, String specifications, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
+| ``index`` | java.lang.String | Index name    | yes  |
+| ``collection`` | java.lang.String | Collection name    | yes  |
 | `specifications` | java.lang.String | Specification to validate in JSON format | yes  |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
 
@@ -34,13 +36,9 @@ The JSON must follow the [Specification Structure]({{ site_base_path }}validatio
 
 ```json
 {
-  "myindex": {
-    "mycollection": {
-      "strict": "<true|false>",
-      "fields": {
-        // ... specification for each field
-      }
-    }
+  "strict": "<boolean>",
+  "fields": {
+    // ... specification for each field
   }
 }
 ```

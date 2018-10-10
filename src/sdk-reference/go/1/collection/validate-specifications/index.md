@@ -15,11 +15,13 @@ When the validation specification is not formatted correctly, a detailed error m
 ## Signature
 
 ```go
-ValidateSpecifications(specifications json.RawMessage, options types.QueryOptions) (types.ValidationResponse, error)
+ValidateSpecifications(index string, collection string, specifications json.RawMessage, options types.QueryOptions) (types.ValidationResponse, error)
 ```
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
+| ``index`` | string | Index name    | yes  |
+| ``collection`` | string | Collection name    | yes  |
 | `specifications` | json.RawMessage | Collection data mapping in JSON format  | yes  |
 | `options` | QueryOptions | Query options. | no       |
 
@@ -33,7 +35,7 @@ The JSON must follow the [Specification Structure]({{ site_base_path }}validatio
 {
   "myindex": {
     "mycollection": {
-      "strict": "<true|false>",
+      "strict": "<boolean>",
       "fields": {
         // ... specification for each field
       }

@@ -1,14 +1,10 @@
 try {
   const specifications = {
-    'nyc-open-data': {
-      'yellow-taxi': {
-        strict: false,
-        fields: {
-          license: {
-            mandatory: true,
-            type: 'string'
-          }
-        }
+    strict: false,
+    fields: {
+      license: {
+        mandatory: true,
+        type: 'string'
       }
     }
   };

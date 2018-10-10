@@ -16,17 +16,21 @@ When the validation specification is not formatted correctly, a detailed error m
 
 ```javascript
 /**
+ * @param {string} index
+ * @param {string} collection
  * @param {object} specifications
  * @param {object} [options]
  * @returns {Promise.<object>}
  */
-validateSpecifications(specifications, options = {})
+validateSpecifications(index, collection, specifications, options = {})
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
+| ``index`` | String | Index name    | yes  |
+| ``collection`` | String | Collection name    | yes  |
 | ``specifications`` | Object | Specifications to validate  | yes  |
 | ``options`` | Object | An object containing query options    | no  |
 
@@ -38,13 +42,9 @@ This object must follow the [Specification Structure]({{ site_base_path }}valida
 
 ```js
 {
-  myindex: {
-    mycollection: {
-      strict: <true|false>,
-      fields: {
-        // ... specification for each field
-      }
-    }
+  strict: <boolean>,
+  fields: {
+    // ... specification for each field
   }
 }
 ```

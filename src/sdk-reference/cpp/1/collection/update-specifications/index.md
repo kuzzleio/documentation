@@ -35,13 +35,9 @@ The JSON must follow the [Specification Structure]({{ site_base_path }}validatio
 
 ```json
 {
-  "myindex": {
-    "mycollection": {
-      "strict": "<true|false>",
-      "fields": {
-        // ... specification for each field
-      }
-    }
+  "strict": "<boolean>",
+  "fields": {
+    // ... specification for each field
   }
 }
 ```
