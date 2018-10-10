@@ -8,7 +8,7 @@ title: info
 
 {{{since "1.0.0"}}}
 
-Return information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
+Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
 ---
 
@@ -35,7 +35,7 @@ Method: GET
 
 ## Response
 
-Return a serverInfo object with the following properties:
+Returns a serverInfo object with the following properties:
 
 * `kuzzle`: kuzzle information about its API, active plugins, and system information
 * `services`: description and status of external services (e.g. Redis, Elasticsearch, ...)

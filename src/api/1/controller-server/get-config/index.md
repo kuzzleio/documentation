@@ -8,7 +8,7 @@ title: getConfig
 
 {{{since "1.0.0"}}}
 
-Return the current Kuzzle configuration.
+Returns the current Kuzzle configuration.
 
 This route should only be accessible to administrators, as it might return sensitive information about the backend.
 
@@ -36,7 +36,7 @@ Method: GET
 
 ## Response
 
-Return the complete Kuzzle configuration, in JSON format.
+Returns the complete Kuzzle configuration, in JSON format.
 
 ```javascript
 {

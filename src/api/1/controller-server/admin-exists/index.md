@@ -8,7 +8,7 @@ title: adminExists
 
 {{{since "1.0.0"}}}
 
-Check that an administrator account exists.
+Checks that an administrator account exists.
 
 ---
 
@@ -34,7 +34,7 @@ Method: GET
 
 ## Response
 
-Return an `exists` boolean telling whether an administrator account exists.
+Returns an `exists` boolean telling whether an administrator account exists.
 
 ```javascript
 {

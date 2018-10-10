@@ -8,7 +8,7 @@ title: getAllStats
 
 {{{since "1.0.0"}}}
 
-Get all stored internal statistic snapshots.
+Gets all stored internal statistic snapshots.
 
 ---
 
@@ -34,7 +34,7 @@ Method: GET
 
 ## Response
 
-Return a statistic objects with the following properties:
+Returns a statistic objects with the following properties:
 
 * `hits`: an array of statistic snapshots. By default, snapshots are made every 10 seconds and they are stored for 1 hour. Each snapshot is an object with the following properties:
   * `completedRequests`: completed requests, per network protocol

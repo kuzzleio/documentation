@@ -8,7 +8,7 @@ title: getStats
 
 {{{since "1.0.0"}}}
 
-Return statistics snapshots within a provided timestamp range.
+Returns statistics snapshots within a provided timestamp range.
 
 ---
 
@@ -36,7 +36,7 @@ Method: GET
 
 ## Response
 
-Return the found statistic snapshots in the following format:
+Returns the found statistic snapshots in the following format:
 
 * `hits`: array of statistic snapshots. By default, snapshots are made every 10 seconds and they are stored for 1 hour. Each snapshot is an object with the following properties:
   * `completedRequests`: completed requests, per network protocol

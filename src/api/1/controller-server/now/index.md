@@ -8,7 +8,7 @@ title: now
 
 {{{since "1.0.0"}}}
 
-Return the current server timestamp, in Epoch-millis format.
+Returns the current server timestamp, in Epoch-millis format.
 
 ---
 
@@ -34,7 +34,7 @@ Method: GET
 
 ## Response
 
-Return a `now` property containing the server timestamp, in Epoch-millis format.
+Returns a `now` property containing the server timestamp, in Epoch-millis format.
 
 ```javascript
 {

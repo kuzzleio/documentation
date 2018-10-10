@@ -8,7 +8,7 @@ title: getLastStats
 
 {{{since "1.0.0"}}}
 
-Return the most recent statistics snapshot.
+Returns the most recent statistics snapshot.
 
 ---
 
@@ -34,7 +34,7 @@ Method: GET
 
 ## Response
 
-Return the last statistic snapshot, with the following properties:
+Returns the last statistic snapshot, with the following properties:
 
 * `completedRequests`: completed requests, per network protocol
 * `connections`: number of active connections, per network protocol
