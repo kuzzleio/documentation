@@ -85,7 +85,7 @@ You should receive the following response:
 }
 ```
 
-**Note:**  we have just created a new collection without specifying any mappings. As a result, the database layer will automatically create a mapping that assigns a best guess data type to any new field it detects in input documents. Since these mappings cannot be changed once they are created, we strongly recommend that you [**create your own mappings**]({{ site_base_path }}guide/essentials/persisted/#mappings) as soon as the collection has been created. For the purpose of this tutorial, we will continue without defining our own mappings.
+**Note:**  we have just created a new collection without specifying any mappings. As a result, the database layer will automatically create a mapping that assigns a best guess data type to any new field it detects in input documents. Since these mappings cannot be changed once they are created, we strongly recommend that you [**create your own mappings**]({{ site_base_path }}guide/2/essentials/persisted/#mappings) as soon as the collection has been created. For the purpose of this tutorial, we will continue without defining our own mappings.
 
 ---
 
@@ -125,7 +125,7 @@ You should receive the following response:
 ```
 
 The `result` field in the response contains an array of `collections`, each with its own `name` and a `type`.  
-Note that the `mycollection`'s type is `stored`, which means it is a persistant store. The `type` allows us to distinguish between persistant store collections and temporary store collections, such as those used for [real-time messaging]({{ site_base_path }}guide/essentials/real-time).
+Note that the `mycollection`'s type is `stored`, which means it is a persistant store. The `type` allows us to distinguish between persistant store collections and temporary store collections, such as those used for [real-time messaging]({{ site_base_path }}guide/2/essentials/real-time).
 
 ---
 
@@ -191,7 +191,7 @@ You should receive the following response (with your own `_id` value):
 }
 ```
 
-Note that the document contains the auto-generated id `AVkDBl3YsT6qHI7MxLz0`. Take some time to examine the content of the [response]({{ site_base_path }}guide/essentials/request-and-response-format/#status-codes) message as it contains useful information, like the name of the controller, the action performed in the request, and of course the object we just created in the `source` field.
+Note that the document contains the auto-generated id `AVkDBl3YsT6qHI7MxLz0`. Take some time to examine the content of the [response]({{ site_base_path }}guide/2/essentials/request-and-response-format/#status-codes) message as it contains useful information, like the name of the controller, the action performed in the request, and of course the object we just created in the `source` field.
 
 
 
@@ -501,7 +501,7 @@ If you want to control how Kuzzle interprets your documents, we recommend that y
 
 Create a mapping by sending a `PUT` request to the `http://localhost:7512/<index name>/<collection name>/_mapping` and setting the mapping in the request body.
 
-Use [this](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/mapping.html) syntax when definng a mapping. For example, if we want to create a mapping that will define a field `birthday` as a `date` type, we would send the following JSON in the body:
+Use [this](https://www.elastic.co/guide/2/en/elasticsearch/reference/5.x/mapping.html) syntax when definng a mapping. For example, if we want to create a mapping that will define a field `birthday` as a `date` type, we would send the following JSON in the body:
 
 ```json
 {
@@ -547,5 +547,5 @@ Please note that the mappings of a collection cannot be updated once they are cr
 
 
 * Read our [Elasticsearch Cookbook]({{ site_base_path }}elasticsearch-cookbook) to learn more about how querying works in Kuzzle
-* Use [document metadata]({{ site_base_path }}guide/essentials/document-metadata) to find or recover documents
-* Keep track of data changes using [Real-time Notifications]({{ site_base_path }}guide/essentials/real-time)
+* Use [document metadata]({{ site_base_path }}guide/2/essentials/document-metadata) to find or recover documents
+* Keep track of data changes using [Real-time Notifications]({{ site_base_path }}guide/2/essentials/real-time)

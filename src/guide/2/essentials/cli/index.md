@@ -63,7 +63,7 @@ When Kuzzle runs for the first time, no users are defined and the anonymous user
 
 The `createFirstAdmin` command lets you create an administrator to manage security.
 
-<aside class="notice">NB: This command can only be run interactively</aside>
+<div class="alert alert-info">NB: This command can only be run interactively</div>
 
 This call the action [security#createFirstAdmin]({{ site_base_path }}api-documentation/controller-security/create-first-admin)
 
@@ -244,7 +244,7 @@ The input file must be a JSON file with the following structure:
 **Notes:**
 
 * The file can contain any number of index and collection configurations.
-* Field definitions follow the [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/mapping.html) mapping format.
+* Field definitions follow the [Elasticsearch](https://www.elastic.co/guide/2/en/elasticsearch/reference/5.5/mapping.html) mapping format.
 * If an index or collection does not exist, it will be created automatically.
 * Mappings are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
 * Mappings can be replayed across multiple Kuzzle start sequences, as long as they do not change in-between.

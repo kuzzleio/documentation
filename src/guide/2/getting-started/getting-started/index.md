@@ -21,13 +21,13 @@ bash -c "$(curl http://get.kuzzle.io/)"
 
 This command downloads and executes the installation script using root privileges. The script checks the system for a set of prerequisites and installs any necessary tools, like Docker or Docker Compose. When the installation is complete it will automatically run Kuzzle.
 
-<aside class="notice">
-There are also more [alternative ways](guide/essentials/installing-kuzzle/) to install Kuzzle.
-</aside>
+<div class="alert alert-info">
+There are <a href="{{site_base_path}}guide/2/essentials/installing-kuzzle">alternative ways</a> to install Kuzzle.
+</div>
 
 This command downloads, installs and runs Kuzzle.
 
-Use the --no-run option to prevent the script from running Kuzzle.
+Use the `--no-run` option to prevent the script from running Kuzzle.
 
 Once the installation process is complete, you will see the following message:
 
@@ -35,7 +35,7 @@ Once the installation process is complete, you will see the following message:
 # Kuzzle is now running
 ```
 
-Your Kuzzle is now running! To test it, you can explore the main HTTP API by clicking this <a href="http://localhost:7512?pretty=true">link</a> or by using cURL on the command line:
+Your Kuzzle is now running! To test it, you can explore the main HTTP API by clicking this [link](http://localhost:7512?pretty=true) or by using cURL on the command line:
 
 ```bash
 curl "http://localhost:7512/?pretty=true"
@@ -43,22 +43,23 @@ curl "http://localhost:7512/?pretty=true"
 
 If everything is working you should see a JSON document that contains a list of API endpoints.
 
-<aside class="success">
+<div class="alert alert-success">
 Congratulations! You have completed the Kuzzle installation, it will now accept requests on <code>localhost:7512</code>:
+
 <ul>
   <li>via <strong>HTTP</strong></li>
   <li>via <strong>Websocket</strong> clients (use our <a href="https://github.com/kuzzleio/sdk-javascript">Javascript SDK</a>)</li>
   <li>via <strong>Socket.io</strong></li>
 </ul>
-</aside>
+</div>
 
-<aside class="notice">
+<div class="alert alert-info">
 Having trouble?
 <ul>
   <li>Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.</li>
-  <li>Try one of <a href="{{ site_base_path }}guide/essentials/installing-kuzzle/">these</a> alternative installation methods.</li>
+  <li>Try one of <a href="{{ site_base_path }}guide/2/essentials/installing-kuzzle/">these</a> alternative installation methods.</li>
 </ul>
-</aside>
+</div>
 
 #### Helper scripts for systemd
 
@@ -73,13 +74,13 @@ If you want to run Kuzzle automatically at startup there are a few scripts in `$
 
 Now that Kuzzle is up and running, you can start playing around with it:
 
-* install <a href="{{ site_base_path }}guide/essentials/installing-console">Kuzzle Admin Console</a>, a handy way to manage data and security in your Kuzzle installation
+* install <a href="{{ site_base_path }}guide/2/essentials/installing-console">Kuzzle Admin Console</a>, a handy way to manage data and security in your Kuzzle installation
 * install a <a href="{{ site_base_path }}sdk-reference/">Kuzzle SDK</a> to power-up one of your projects:
- * <a href="https://github.com/kuzzleio/sdk-javascript">Javascript</a> (check the <a href="{{ site_base_path }}guide/getting-started/#fun-with-sdks">Fun with SDKs</a> section below),
+ * <a href="https://github.com/kuzzleio/sdk-javascript">Javascript</a> (check the <a href="{{ site_base_path }}guide/2/getting-started/#fun-with-sdks">Fun with SDKs</a> section below),
  * <a href="https://github.com/kuzzleio/sdk-php">PHP</a>,
  * <a href="https://github.com/kuzzleio/sdk-android">Android</a>;
 * explore the <a href="{{ site_base_path }}api-documentation">Kuzzle API</a> documentation
-* install Kuzzle <a href="{{ site_base_path }}guide/essentials/installing-kuzzle/#manual-installation">without Docker</a>
+* install Kuzzle <a href="{{ site_base_path }}guide/2/essentials/installing-kuzzle/#manual-installation">without Docker</a>
 
 ## Fun with SDKs
 
@@ -100,9 +101,9 @@ cd "kuzzle-playground"
 npm install kuzzle-sdk
 ```
 
-<aside class="notice">
+<div class="alert alert-info">
 If you are performing a clean install you might see some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
-</aside>
+</div>
 
 Then, create an `init.js` file and start by adding the code below. This will load the Kuzzle Javascript SDK:
 
@@ -185,13 +186,13 @@ Your console should output the following message:
 playground/mycollection ready
 ```
 
-<aside class="success">
+<div class="alert alert-success">
 Congratulations! You are now ready to say Hello to the World!
-</aside>
+</div>
 
-<aside class="notice">
+<div class="alert alert-info">
 Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</aside>
+</div>
 
 ### Create your first "Hello World" document
 
@@ -231,14 +232,14 @@ Run your file in Node.js
 node create.js
 ```
 
-<aside class="success">
-You have now successfully stored your first document into Kuzzle. Click <a href="{{ site_base_path }}guide/essentials/installing-console">here</a> to see how you can use the
+<div class="alert alert-success">
+You have now successfully stored your first document into Kuzzle. Click <a href="{{ site_base_path }}guide/2/essentials/installing-console">here</a> to see how you can use the
   <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
-</aside>
+</div>
 
-<aside class="notice">
+<div class="alert alert-info">
 Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</aside>
+</div>
 
 _You can find more resources about Kuzzle SDK in the [SDK Reference]({{ site_base_path }}sdk-reference)._
 
@@ -286,7 +287,7 @@ Now in another terminal, launch the `create.js` file that we created in the prev
 node create.js
 ```
 
-This will create a new document in Kuzzle which will trigger a [notification]({{ site_base_path }}guide/essentials/real-time) in the `subscribe.js` app. Check the `subscribe.js` terminal to make sure a new log appears every time a document is created using the `create.js` app:
+This will create a new document in Kuzzle which will trigger a [notification]({{ site_base_path }}guide/2/essentials/real-time) in the `subscribe.js` app. Check the `subscribe.js` terminal to make sure a new log appears every time a document is created using the `create.js` app:
 
 ```bash
 message received from kuzzle: { status: 200,
@@ -295,19 +296,19 @@ message received from kuzzle: { status: 200,
   ...}
 ```
 
-<aside class="success">
+<div class="alert alert-success">
 Congratulations! You have just choreographed your first pub/sub pattern!
-</aside>
+</div>
 
-<aside class="notice">
+<div class="alert alert-info">
 Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</aside>
+</div>
 
 ## Where do we go from here?
 
 Now that you're more familiar with Kuzzle, dive even deeper to learn how to leverage its full capabilities:
 
 * take a look at the <a href="{{ site_base_path }}sdk-reference">SDK Reference</a>
-* learn how to use <a href="{{ site_base_path }}kuzzle-dsl">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
-* follow our guide to learn how to implement <a href="{{ site_base_path }}guide/essentials/user-authentication/#local-strategy">basic authentication</a>
-* follow our guide to learn how to implement <a href="{{ site_base_path }}guide/essentials/security/">manage users and setup fine-grained access control</a>
+* learn how to use <a href="{{ site_base_path }}kuzzle-dsl/2">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
+* follow our guide to learn how to implement <a href="{{ site_base_path }}guide/2/essentials/user-authentication/#local-strategy">basic authentication</a>
+* follow our guide to learn how to implement <a href="{{ site_base_path }}guide/2/essentials/security/">manage users and setup fine-grained access control</a>

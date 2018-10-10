@@ -11,11 +11,11 @@ The Kuzzle Admin Console is a web application that lets you manage Kuzzle, inclu
 
 If you don't want to install Kuzzle Admin Console yourself you can use our <a href="http://kuzzle-backoffice.netlify.com/">publicly hosted</a>  Kuzzle Admin Console. Otherwise, grab the source code [here](https://github.com/kuzzleio/kuzzle-backoffice/releases) and install it on your own environment.
 
-In both cases the configuration is the same and you'll be able to select which <a href="{{ site_base_path }}guide/essentials/installing-console/#connect-to-kuzzle">Kuzzle</a> installation that you want to manage.
+In both cases the configuration is the same and you'll be able to select which <a href="{{ site_base_path }}guide/2/essentials/installing-console/#connect-to-kuzzle">Kuzzle</a> installation that you want to manage.
 
-<aside class="notice">
+<div class="alert alert-info">
 Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</aside>
+</div>
 
 ## Connect to Kuzzle
 
@@ -27,11 +27,11 @@ At any time, you can reconfigure Kuzzle Admin Console to connect to any Kuzzle i
 
 To create a connection to Kuzzle, provide its **name** (e.g. "Development" or "My First Kuzzle"), **address** (or hostname) and **port**. Optionally, select a **color** to identify the connection (e.g. red could be used to identify production environments).
 
-<aside class="success">Your Kuzzle Admin Console is now connected to Kuzzle.</aside>
+<div class="alert alert-success">Your Kuzzle Admin Console is now connected to Kuzzle.</div>
 
-<aside class="notice">
+<div class="alert alert-info">
 Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</aside>
+</div>
 
 ## Create an Admin Account
 
@@ -41,8 +41,8 @@ At this point Kuzzle is not secure and any `anonymous` user has full access. The
 
 Once the Admin Account credentials have been created, use them to login.
 
-<aside class="success">You can now manage Kuzzle via the Kuzzle Admin Console.</aside>
+<div class="alert alert-success">You can now manage Kuzzle via the Kuzzle Admin Console.</div>
 
-<aside class="notice">
+<div class="alert alert-info">
 Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</aside>
+</div>

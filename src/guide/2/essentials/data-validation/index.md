@@ -11,7 +11,7 @@ One common requirement when you are managing data is to perform **data validatio
 
 A common example is **email validation**. Let's say you have developed a registration page where you request a user's name and email and you want to ensure that the email they provide is valid.
 
-With Kuzzle, instead of programming the validation logic yourself, you can pick from a set of predefined [validation patterns]({{ site_base_path }}validation-reference). Validations are defined in a validation schema which determines what pattern is linked to what field, every time Kuzzle receives input data, it checks this validation schema and returns an error if a validation pattern fails. The validation schema can be configured in the `validation` field of the [configuration file]({{ site_base_path }}guide/essentials/configuration).
+With Kuzzle, instead of programming the validation logic yourself, you can pick from a set of predefined [validation patterns]({{ site_base_path }}validation-reference). Validations are defined in a validation schema which determines what pattern is linked to what field, every time Kuzzle receives input data, it checks this validation schema and returns an error if a validation pattern fails. The validation schema can be configured in the `validation` field of the [configuration file]({{ site_base_path }}guide/2/essentials/configuration).
 
 For a detailed look at data validation, please refer to our [Data Validation Reference]({{ site_base_path }}validation-reference).
 
@@ -93,11 +93,11 @@ Below is an example of how the `range` type option is used to ensure that the fi
 
 ## Advanced Validation
 
-If the basic validation functionality doesn't meet your requirements, you can take advantage of [Koncorde]({{ site_base_path }}kuzzle-dsl) to create complex validation specifications. 
+If the basic validation functionality doesn't meet your requirements, you can take advantage of [Koncorde]({{ site_base_path }}kuzzle-dsl/2) to create complex validation specifications. 
 
-<aside class="notice">
+<div class="alert alert-info">
 Koncorde is the same component used to create real-time subscriptions.
-</aside>
+</div>
 
 The idea is simple: use Koncorde to specify a filter that can be used to validate documents. For example, here we ensure that at least one of the fields `price` or `vatPrice` exists by placing a filter in the `validators` field of the validation schema:
 
@@ -151,5 +151,5 @@ The idea is simple: use Koncorde to specify a filter that can be used to validat
 }
 ```
 
-In the example above, we used both the `exists` operator and the `or` operator to build our validation rule. For more information take a look at our [Koncorde Reference]({{ site_base_path }}kuzzle-dsl/terms/exists).
+In the example above, we used both the `exists` operator and the `or` operator to build our validation rule. For more information take a look at our [Koncorde Reference]({{ site_base_path }}kuzzle-dsl/2/terms/exists).
 

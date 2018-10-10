@@ -6,9 +6,9 @@ title: Advanced Roles Definitions
 
 # Advanced Roles Definitions
 
-In the [Getting Started Guide]({{ site_base_path }}guide/essentials/security/#user-permissions), we discussed how to assign basic permissions to users through roles and profiles. We are now going to look at more complex and dynamic permissions.
+In the [Getting Started Guide]({{ site_base_path }}guide/2/essentials/security/#user-permissions), we discussed how to assign basic permissions to users through roles and profiles. We are now going to look at more complex and dynamic permissions.
 
-Kuzzle's permissions mechanism uses boolean expressions to determine if a user can perform a specific action. So far we have shown how to limit access by hard-coding a boolean value inside the permissions configuration; however, in some cases, you will want to perform a more complex evaluation. For example, in a collaborative TO-DO application, a user should not be allowed to update another user's list. We can address this by using either a [**Pipe Plugin**]({{ site_base_path }}plugins-reference/plugins-features/adding-pipes) or **Permission Closures**.
+Kuzzle's permissions mechanism uses boolean expressions to determine if a user can perform a specific action. So far we have shown how to limit access by hard-coding a boolean value inside the permissions configuration; however, in some cases, you will want to perform a more complex evaluation. For example, in a collaborative TO-DO application, a user should not be allowed to update another user's list. We can address this by using either a [**Pipe Plugin**]({{ site_base_path }}plugins-reference/2/plugins-features/adding-pipes) or **Permission Closures**.
 
 ---
 
@@ -45,8 +45,8 @@ let role = {
 
 In the definition above:
 
-- `test` is the body of [the permission function]({{ site_base_path }}guide/kuzzle-depth/roles-definitions/#the-permission-function)
-- `args` is the parameter given to [the fetch definition function]({{ site_base_path }}guide/kuzzle-depth/roles-definitions/#the-fetch-definition)
+- `test` is the body of [the permission function]({{ site_base_path }}guide/2/kuzzle-depth/roles-definitions/#the-permission-function)
+- `args` is the parameter given to [the fetch definition function]({{ site_base_path }}guide/2/kuzzle-depth/roles-definitions/#the-fetch-definition)
 
 ---
 
@@ -76,13 +76,13 @@ function ($request, $currentUserId, args) {
 There are a set of predefined variables which are automatically accessible in a Permission Function, these are:
 
 - `$request`: The complete [request](https://github.com/kuzzleio/kuzzle-common-objects#request) object being evaluated.
-- `$currentUserId`: The current user [`<kuid>`]({{ site_base_path }}guide/essentials/user-authentication/#kuzzle-user-identifier-kuid) (equivalent to `request.context.token.userId`).
+- `$currentUserId`: The current user [`<kuid>`]({{ site_base_path }}guide/2/essentials/user-authentication/#kuzzle-user-identifier-kuid) (equivalent to `request.context.token.userId`).
 
 ### Permission Function Args
 
 The main purpose of the "closure" behavior is to grant permissions based on the current state of the storage layer. This means that, in order to determine if an action can be granted, we will first need to fetch documents used in the permission function from the storage layer.
 
-Documents fetched from the storage layer are stored in the `args` object as defined by the [fetch definition]({{ site_base_path }}guide/kuzzle-depth/roles-definitions/#the-fetch-definition).
+Documents fetched from the storage layer are stored in the `args` object as defined by the [fetch definition]({{ site_base_path }}guide/2/kuzzle-depth/roles-definitions/#the-fetch-definition).
 
 Each `args` object will look like:
 
@@ -132,7 +132,7 @@ We define the Fetch Definition in a `args` object with the following structure:
 }
 ```
 
-You can define one or more variables inside the `args` object and, for each variable, define the action used to populate it. Each of these variables will then be available in the [permission function]({{ site_base_path }}guide/kuzzle-depth/roles-definitions/#the-permission-function), accessible in the `args` object as follows: `args.<variable>`.
+You can define one or more variables inside the `args` object and, for each variable, define the action used to populate it. Each of these variables will then be available in the [permission function]({{ site_base_path }}guide/2/kuzzle-depth/roles-definitions/#the-permission-function), accessible in the `args` object as follows: `args.<variable>`.
 
 ### Fetch Definition Actions
 
@@ -209,7 +209,7 @@ args.myDocuments = [
 
 #### SEARCH
 
-The `search` action type performs a search on the persistence layer and returns the resulting documents. It is a typical [document search]({{ site_base_path }}guide/essentials/persisted/#document-search). For example:
+The `search` action type performs a search on the persistence layer and returns the resulting documents. It is a typical [document search]({{ site_base_path }}guide/2/essentials/persisted/#document-search). For example:
 
 ```javascript
 {
