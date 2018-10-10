@@ -1,23 +1,27 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: create
+title: update
 description:
 order: 200
 ---
 
-# create
+# update
 
-Create a new document in Kuzzle
+Update a document in Kuzzle.
 
-Throws if a document with the same given id already exists in Kuzzle.
+Only documents in the persistent data storage layer can be updated.
 
-The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
+The optional parameter `refresh` can be used
+with the value `wait_for` in order to wait for the document indexation (indexed documents are available for `search`).
+
+Conflicts may occur if the same document gets updated multiple times within a short time on a database cluster. When this happens, Kuzzle answers with an error that clients have to handle.  
+You may set the `retryOnConflict` optional argument with a positive integer, asking Kuzzle to retry updating the document that number of times before rejecting the request with an error.
 
 ## Signature
 
 ```cpp
-std::string create(const std::string& index, const std::string& collection, const std::string& id, const std::string& body, query_options *options=nullptr);
+std::string update(const std::string& index, const std::string& collection, const std::string& id, const std::string& body, query_options *options=nullptr)
 ```
 
 ## Arguments
@@ -26,7 +30,7 @@ std::string create(const std::string& index, const std::string& collection, cons
 | --- | --- | --- |
 | `index` | std::string | Index name |
 | `collection` | std::string | Collection name |
-| `id` | std::string | Optional document id. If set to a blank string, will use a auto-generated id |
+| `id` | std::string | The document id |
 | `body` | std::string | A JSON string containing the body of the document |
 | `options` | query_options | A pointer to a `query_options` containing query options |
 
@@ -38,6 +42,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 | `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| `retryOnConflict` | int | The number of times the database layer should retry in case of version conflict | 0 |
 
 ## Return
 
@@ -56,4 +61,4 @@ Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ s
 
 ## Usage
 
-[snippet=create]
+[snippet=update]

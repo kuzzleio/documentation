@@ -18,4 +18,4 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: asyncdefault
-expected: Success
+expected: Successfully deleted 5 documents

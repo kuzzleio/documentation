@@ -4,12 +4,12 @@ try {
     'yellow-taxi',
     {
       query: {
-        match: {capacity: 7}
+        term: {capacity: 7}
       }
     }
   );
 
-  console.log('Success');
+  console.log(`Successfully deleted ${deleted.length} documents`);
 } catch (error) {
   console.error(error.message);
 }
