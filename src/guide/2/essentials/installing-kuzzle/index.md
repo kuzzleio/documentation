@@ -137,9 +137,9 @@ The following operating systems are actively supported (64-bit versions only):
 
 ### Prerequisites
 
-* [Elasticsearch](https://www.elastic.co/products/elasticsearch) version 5.x
+* [Elasticsearch](https://www.elastic.co/products/elasticsearch) version 6
 * [Redis](http://redis.io/) version 3.x
-* [Node.js](https://nodejs.org/en/download/package-manager/) version 6.x or higher.
+* [Node.js](https://nodejs.org/en/download/package-manager/) version 8 or higher
 * [NPM](https://www.npmjs.com/) version 3 or higher.
 * [Python](https://www.python.org/) version 2.7 preferred.
 * [GDB](https://www.gnu.org/software/gdb/) version 7.7 or higher.
