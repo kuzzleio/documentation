@@ -24,8 +24,8 @@ Errors are objects containing the following properties:
 
 You can find a detailed list of possible errors messages and statuses in the [documentation API]({{ site_base_path }}api/1/errors).
 
-#### Exemple with a promise chain
+#### Example with a promise chain
 [snippet=error-handling]
 
-#### Exemple with async/await
+#### Example with async/await
 [snippet=error-handling-async]
