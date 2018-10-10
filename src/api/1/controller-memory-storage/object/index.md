@@ -8,7 +8,7 @@ title: object
 
 {{{since "1.0.0"}}}
 
-Inspect the low-level properties of a key.
+Inspects the low-level properties of a key.
 
 [[_Redis documentation_]](https://redis.io/commands/object)
 

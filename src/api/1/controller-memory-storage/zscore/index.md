@@ -8,7 +8,7 @@ title: zscore
 
 {{{since "1.0.0"}}}
 
-Return the score of an element in a sorted set.
+Returns the score of an element in a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zscore)
 
@@ -45,7 +45,7 @@ Method: GET
 
 ## Response
 
-Return the member score.
+Returns the member score.
 
 ```javascript
 {

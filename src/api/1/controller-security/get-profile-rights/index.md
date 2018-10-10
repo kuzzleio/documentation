@@ -9,7 +9,7 @@ title: getProfileRights
 
 {{{since "1.0.0"}}}
 
-Get the detailed rights configured by a security profile.
+Gets the detailed rights configured by a security profile.
 
 ---
 
@@ -42,7 +42,7 @@ Method: GET
 
 ## Response
 
-Return a `hits` array of objects. Each object is a security right described by the security profile:
+Returns a `hits` array of objects. Each object is a security right described by the security profile:
 
 * `controller`: impacted Kuzzle controller
 * `action`: impacted controller action

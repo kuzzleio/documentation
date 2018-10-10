@@ -8,7 +8,7 @@ title: expireat
 
 {{{since "1.0.0"}}}
 
-Set an expiration timestamp on a key. After the timestamp has been reached, the key will automatically be deleted.
+Sets an expiration timestamp on a key. After the timestamp has been reached, the key will automatically be deleted.
 
 The `timestamp` parameter accepts an [Epoch time](https://en.wikipedia.org/wiki/Unix_time) value.
 
@@ -61,7 +61,7 @@ Body:
 
 ## Response
 
-Return either `0` (command failed), or `1` (command succeeded).
+Returns either `0` (command failed), or `1` (command succeeded).
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: hgetall
 
 {{{since "1.0.0"}}}
 
-Return all fields and values of a hash.
+Returns all fields and values of a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hgetall)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return the requested hash content as a `field: value` object.
+Returns the requested hash content as a `field: value` object.
 
 ```javascript
 {

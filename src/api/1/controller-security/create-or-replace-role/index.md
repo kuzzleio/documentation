@@ -8,7 +8,7 @@ title: createOrReplaceRole
 
 {{{since "1.0.0"}}}
 
-Create a new role or, if the provided role identifier already exists, replace it.
+Creates a new role or, if the provided role identifier already exists, replaces it.
 
 ---
 
@@ -73,7 +73,7 @@ Body:
 
 ## Response
 
-Return the role creation/replacement status:
+Returns the role creation/replacement status:
 
 * `_id`: created/replaced role identifier
 * `_source`: role definition

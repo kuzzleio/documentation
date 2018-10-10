@@ -8,7 +8,7 @@ title: ltrim
 
 {{{since "1.0.0"}}}
 
-Trim an existing list so that it will contain only the specified range of elements specified.
+Trims an existing list so that it will contain only the specified range of elements specified.
 
 [[_Redis documentation_]](https://redis.io/commands/ltrim)
 
@@ -64,7 +64,7 @@ The arguments `start` and `stop` can be negative. In that case, the index is cal
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

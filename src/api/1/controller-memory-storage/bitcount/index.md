@@ -8,7 +8,7 @@ title: bitcount
 
 {{{since "1.0.0"}}}
 
-Count the number of set bits (population counting) in a string.  
+Counts the number of set bits (population counting) in a string.  
 
 [[_Redis documentation_]](https://redis.io/commands/bitcount)
 
@@ -50,7 +50,7 @@ Method: GET
 
 ## Response
 
-Return the number of set bits.
+Returns the number of set bits.
 
 ```javascript
 {

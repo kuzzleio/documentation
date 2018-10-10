@@ -9,7 +9,7 @@ title: getCredentialsById
 
 {{{since "1.0.0"}}}
 
-Get credential information for the user identified by the strategy's unique user identifier `userId`.
+Gets credential information for the user identified by the strategy's unique user identifier `userId`.
 
 The returned `result` object will vary depending on the strategy (see the [getById plugin function]({{ site_base_path }}plugins-reference/1/plugins-features/adding-authentication-strategy/#the-getbyid-function)), and it can be empty.
 
@@ -48,7 +48,7 @@ Method: GET
 
 ## Response
 
-Return credentials information (depend on the authentication strategy).
+Returns credentials information (depend on the authentication strategy).
 
 ### Example with the "local" authentication strategy:
 

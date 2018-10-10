@@ -8,7 +8,7 @@ title: credentialsExist
 
 {{{since "1.0.0"}}}
 
-Check that the current authenticated user has credentials for the specified authentication strategy.
+Checks that the current authenticated user has credentials for the specified authentication strategy.
 
 ---
 

@@ -8,7 +8,7 @@ title: zcount
 
 {{{since "1.0.0"}}}
 
-Return the number of elements held by a sorted set with a score within the provided `min` and `max` values.
+Returns the number of elements held by a sorted set with a score within the provided `min` and `max` values.
 
 [[_Redis documentation_]](https://redis.io/commands/zcount)
 
@@ -49,7 +49,7 @@ By default, the provided min and max values are inclusive. This behavior can be 
 
 ## Response
 
-Return the number of elements within the specified range.
+Returns the number of elements within the specified range.
 
 ```javascript
 {

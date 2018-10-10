@@ -8,7 +8,7 @@ title: lrange
 
 {{{since "1.0.0"}}}
 
-Return the list elements between the `start` and `stop` positions.
+Returns the list elements between the `start` and `stop` positions.
 
 Offsets start at `0`, and the range is inclusive.
 
@@ -52,7 +52,7 @@ The arguments `start` and `stop` can be negative. In that case, the offset is ca
 
 ## Response
 
-Return an array of list elements.
+Returns an array of list elements.
 
 ```javascript
 {

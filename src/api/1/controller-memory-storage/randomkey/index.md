@@ -8,7 +8,7 @@ title: randomkey
 
 {{{since "1.0.0"}}}
 
-Return a key identifier from the memory storage, at random.
+Returns a key identifier from the memory storage, at random.
 
 [[_Redis documentation_]](https://redis.io/commands/randomkey)
 
@@ -36,7 +36,7 @@ Method: GET
 
 ## Response
 
-Return one of the database key, at random.
+Returns one of the database key, at random.
 
 ```javascript
 {

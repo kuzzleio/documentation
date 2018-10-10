@@ -8,7 +8,7 @@ title: updateRoleMapping
 
 {{{since "1.0.0"}}}
 
-Update the internal role storage mapping.
+Updates the internal role storage mapping.
 
 ---
 
@@ -54,7 +54,7 @@ Body:
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

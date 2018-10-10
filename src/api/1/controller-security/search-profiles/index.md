@@ -8,7 +8,7 @@ title: searchProfiles
 
 {{{since "1.0.0"}}}
 
-Search for security profiles, optionally returning only those linked to the provided list of security roles.
+Searches security profiles, optionally returning only those linked to the provided list of security roles.
 
 ---
 
@@ -72,7 +72,7 @@ Body:
 
 ## Response
 
-Return an object with the following properties:
+Returns an object with the following properties:
 
 * `hits`: array of object. Each object describes a found profile:
   * `_id`: profile identifier

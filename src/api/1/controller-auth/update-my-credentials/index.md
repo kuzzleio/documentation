@@ -8,7 +8,7 @@ title: updateMyCredentials
 
 {{{since "1.0.0"}}}
 
-Update the current user's credentials for the specified authentication strategy. 
+Updates the credentials of the currently logged in user.
 
 ---
 

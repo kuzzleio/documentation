@@ -8,7 +8,7 @@ title: deleteByQuery
 
 {{{since "1.0.0"}}}
 
-Delete documents matching the provided search query.
+Deletes documents matching the provided search query.
 
 ---
 
@@ -63,7 +63,7 @@ Body:
 
 ## Response
 
-Return a `hits` array containing the list of deleted document identifiers.
+Returns a `hits` array containing the list of deleted document identifiers.
 
 ```javascript
 {

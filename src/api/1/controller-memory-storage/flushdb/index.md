@@ -36,7 +36,7 @@ Method: POST
 
 ## Response
 
-Return `1`.
+Returns `1`.
 
 ```javascript
 {

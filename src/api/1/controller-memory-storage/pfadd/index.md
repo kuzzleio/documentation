@@ -8,7 +8,7 @@ title: pfadd
 
 {{{since "1.0.0"}}}
 
-Add elements to a [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data structure.
+Adds elements to a [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data structure.
 
 [[_Redis documentation_]](https://redis.io/commands/pfadd)
 
@@ -59,7 +59,7 @@ Body:
 
 ## Response
 
-Return either `0` (command failed), or `1` (command succeeded).
+Returns either `0` (command failed), or `1` (command succeeded).
 
 ```javascript
 {

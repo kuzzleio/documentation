@@ -8,7 +8,7 @@ title: getMyRights
 
 {{{since "1.0.0"}}}
 
-Returns the rights for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
+Returns the exhaustive list of granted or denied rights for the currently logged in user.
 
 ---
 
@@ -42,7 +42,7 @@ Headers: Authorization: "Bearer <authentication token>"
 
 ## Response
 
-The result contains a `hits` array, listing every rights for the current user.
+The result contains a `hits` array, listing the rights for the current user.
 
 Each right is an object with the following properties:
 

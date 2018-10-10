@@ -8,7 +8,7 @@ title: rpush
 
 {{{since "1.0.0"}}}
 
-Append values at the end of a list. 
+Appends values at the end of a list. 
 
 If the destination list does not exist, it is created holding an empty list before performing the operation.
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return the updated list length.
+Returns the updated list length.
 
 ```javascript
 {

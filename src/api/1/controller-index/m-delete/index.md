@@ -8,7 +8,7 @@ title: mDelete
 
 {{{since "1.0.0"}}}
 
-Delete multiple indexes.
+Deletes multiple indexes.
 
 ---
 
@@ -62,7 +62,7 @@ If no index is specified in the body, then all indexes that the current user is 
 
 ## Response
 
-Return an array of indexes that were actually deleted.
+Returns an array of indexes that were actually deleted.
 
 ```js
 {

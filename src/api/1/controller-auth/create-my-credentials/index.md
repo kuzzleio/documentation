@@ -8,7 +8,7 @@ title: createMyCredentials
 
 {{{since "1.0.0"}}}
 
-Create the current user's credentials for the specified authentication strategy.
+Creates new credentials for the current user.
 
 ---
 
@@ -52,7 +52,7 @@ Body:
 ## Arguments
 
 * `jwt`: valid authentication token (for the HTTP protocol, the token is to be passed to the `Authorization` header instead)
-* `strategy`: name of the authentication strategy to create
+* `strategy`: name of the authentication strategy to use
 
 ---
 

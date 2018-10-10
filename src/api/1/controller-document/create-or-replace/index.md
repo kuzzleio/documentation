@@ -8,7 +8,7 @@ title: createOrReplace
 
 {{{since "1.0.0"}}}
 
-Create a new document in the persistent data storage, or replace its content if it already exists.
+Creates a new document in the persistent data storage, or replaces its content if it already exists.
 
 ---
 
@@ -65,7 +65,7 @@ New document content.
 
 ## Response
 
-Return an object with the following properties:
+Returns an object with the following properties:
 
 * `_id`: created document unique identifier
 * `_source`: document content

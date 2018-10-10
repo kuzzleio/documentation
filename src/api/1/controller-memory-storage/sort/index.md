@@ -8,7 +8,7 @@ title: sort
 
 {{{since "1.0.0"}}}
 
-Sort and return elements contained in a list, a set of unique values or a sorted set.  
+Sorts and returns elements contained in a list, a set of unique values or a sorted set.  
 By default, sorting is numeric and elements are compared by their value, interpreted as double precision floating point number.
 
 [[_Redis documentation_]](https://redis.io/commands/sort)
@@ -80,7 +80,7 @@ Body:
 
 ## Response
 
-Return the sorted elements.
+Returns the sorted elements.
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: decr
 
 {{{since "1.0.0"}}}
 
-Decrement the number stored at `key` by 1. If the key does not exist, it is set to 0 before performing the operation.
+Decrements the number stored at `key` by 1. If the key does not exist, it is set to 0 before performing the operation.
 
 [[_Redis documentation_]](https://redis.io/commands/decr)
 
@@ -43,7 +43,7 @@ Method: POST
 
 ## Response
 
-Updated key value.
+Returns the updated key value.
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: rename
 
 {{{since "1.0.0"}}}
 
-Rename a key.
+Renames a key.
 
 If the new key name is already used, then it is overwritten.
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

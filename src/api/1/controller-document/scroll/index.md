@@ -8,10 +8,9 @@ title: scroll
 
 {{{since "1.0.0"}}}
 
-This method moves a result set cursor forward, created by a [`search` query]({{ site_base_path }}api/1/controller-document/search/) with the `scroll` argument provided.
+Moves a result set cursor forward, created by a [`search` query]({{ site_base_path }}api/1/controller-document/search/) with the `scroll` argument provided.
 
-The results that are returned from a `scroll` request reflect the state of the index at the time that the initial search request was made, like a snapshot in time. Subsequent changes
-to documents (index, update or delete) will only affect later search requests.
+Results returned by a `scroll` request reflect the state of the index at the time of the initial search request, like a fixed snapshot. Subsequent changes to documents do not affect the scroll results.
 
 ---
 
@@ -51,7 +50,7 @@ Method: GET
 
 ## Response
 
-Return a paginated search result set, with the following properties:
+Returns a paginated search result set, with the following properties:
 
 * `hits`: array of found documents. Each document has the following properties:
   * `_id`: document unique identifier

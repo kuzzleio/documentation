@@ -8,7 +8,7 @@ title: mDelete
 
 {{{since "1.0.0"}}}
 
-Delete multiple documents.
+Deletes multiple documents.
 
 ---
 
@@ -63,7 +63,7 @@ Body:
 
 ## Response
 
-Return an array with the list of successfully deleted document identifiers.
+Returns an array with the list of successfully deleted document identifiers.
 
 If one or more document deletions fail, the response status is set to `206`, and the `error` object contain a [partial error]({{ site_base_path }}api/1/errors/#partialerror) error.
 

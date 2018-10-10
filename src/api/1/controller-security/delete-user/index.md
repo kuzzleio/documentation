@@ -9,7 +9,7 @@ title: deleteUser
 
 {{{since "1.0.0"}}}
 
-Delete a user and all their associate credentials.
+Deletes a user and all their associate credentials.
 
 ---
 
@@ -46,7 +46,7 @@ Method: DELETE
 
 ## Response
 
-Return the deleted kuid.
+Returns the deleted kuid.
 
 
 ```javascript

@@ -8,7 +8,7 @@ title: lpop
 
 {{{since "1.0.0"}}}
 
-Remove and return the first element of a list.
+Removes and returns the first element of a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lpop)
 
@@ -43,7 +43,7 @@ Method: POST
 
 ## Response
 
-Return the removed value.
+Returns the removed value.
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: get
 
 {{{since "1.0.0"}}}
 
-Get a document.
+Gets a document.
 
 ---
 
@@ -50,7 +50,7 @@ Method: GET
 
 ## Response
 
-Return an object with the following properties:
+Returns an object with the following properties:
 
 * `_id`: document unique identifier
 * `_source`: document content
