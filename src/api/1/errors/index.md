@@ -109,7 +109,7 @@ Check controllers documentation.
 
 {{{since "1.0.0"}}}
 
-**status** 404
+**status**: 404
 
 A `NotFoundError` error is thrown if the requested resource could not be found (e.g. a document is requested with a non-existing id).
 
