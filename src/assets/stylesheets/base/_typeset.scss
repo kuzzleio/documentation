@@ -143,7 +143,6 @@ kbd {
   pre {
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
     background-color: $md-code-background;
-    color: $md-code-color;
     font-size: 1.45rem;
     direction: ltr;
     color: white;
@@ -152,19 +151,19 @@ kbd {
       white-space: pre-wrap;
     }
   }
-
+  
+  pre > code {
+    color: white
+  }
+  
   // Inline code blocks, correct relative ems for smaller font size
   code {
     $correct: 1 / 0.85;
-
+    padding: 3px;
     margin: 0 0.25em * $correct;
-    padding: 0.0625em * $correct 0;
     border-radius: 0.2rem;
-    box-shadow: +0.25em * $correct 0 0 $md-code-background-inline,
-      -0.25em * $correct 0 0 $md-code-background-inline;
-    box-decoration-break: clone;
     background-color: $md-code-background-inline;
-
+    color: black;
     // Remove box-shadows for print
     @media print {
       box-shadow: none;
