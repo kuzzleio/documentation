@@ -18,6 +18,20 @@ A `KuzzleException` contain two informations:
 
 The `status` is a readable property on the exception and the `message` can be accessed with `getMessage()` getter.
 
+Here is the full class definition:
+```c++
+struct KuzzleException : std::runtime_error {
+  int status;
+
+  KuzzleException(int status, const std::string& message);
+  KuzzleException(const std::string& message) : KuzzleException(500, message) {};
+  KuzzleException(const KuzzleException& ke) : status(ke.status), std::runtime_error(ke.getMessage()) {};
+
+  virtual ~KuzzleException() throw() {};
+  std::string getMessage() const;
+};
+```
+
 You can find a detailed list of possible errors messages and statuses in the [documentation API]({{ site_base_path }}api/1/errors).  
 Just replace *Error* by *Exception* to find the exception name. (e.g. `BadRequestError` becomes `BadRequestException`).
 
