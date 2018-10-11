@@ -1,19 +1,15 @@
 try {
   const specifications = {
-    'nyc-open-data': {
-      'yellow-taxi': {
-        strict: false,
-        fields: {
-          license: {
-            mandatory: true,
-            type: 'symbol' // symbol is not a recognized type
-          }
-        }
+    strict: false,
+    fields: {
+      license: {
+        mandatory: true,
+        type: 'symbol' // symbol is not a recognized type
       }
     }
   };
 
-  const result = await kuzzle.collection.validateSpecifications(specifications);
+  const result = await kuzzle.collection.validateSpecifications('nyc-open-data', 'yellow-taxi', specifications);
   /*
   {
     valid: false,

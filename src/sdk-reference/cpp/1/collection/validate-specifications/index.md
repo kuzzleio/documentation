@@ -10,16 +10,20 @@ order: 200
 
 The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.  
 
+When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
+
 ## Signature
 
 ```cpp
-bool validateSpecifications(const std::string& specifications, query_options *options=nullptr)
+validation_response* validateSpecifications(const std::string& index, const std::string& collection, const std::string& specifications, query_options *options=nullptr)
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
+| ``index`` | const std::string& | Index name    | yes  |
+| ``collection`` | const std::string& | Collection name    | yes  |
 | `specifications` | const std::string& | Specification to validate in JSON format | yes
 | ``options`` | kuzzleio::query_options* | Query options    | no  |
 
@@ -31,13 +35,9 @@ The JSON must follow the [Specification Structure]({{ site_base_path }}validatio
 
 ```json
 {
-  "myindex": {
-    "mycollection": {
-      "strict": "<true|false>",
-      "fields": {
-        // ... specification for each field
-      }
-    }
+  "strict": "<boolean>",
+  "fields": {
+    // ... specification for each field
   }
 }
 ```
@@ -52,7 +52,13 @@ Additional query options
 
 ## Return
 
-A boolean indicating whether the specifications are correct or not.
+A pointer to an allocated `validation_response` structure which contain informations about the specifications validity.  
+
+| Property   | Type    | Description        |
+| ---------- | ------- | --------------------- |
+| `valid` | bool | Specification validity |
+| `details` | const char * const * | Array of string with details about each specification errors |
+| `Description` | const char * | General error message |
 
 ## Usage
 

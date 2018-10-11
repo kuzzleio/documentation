@@ -41,7 +41,7 @@
     padding: 0;
     list-style: none;
 
-    .sub-menu {
+    .sub-menu:not(.no-parent) {
       padding-left: 16px;
     }
   }
