@@ -8,14 +8,13 @@ order: 100
 
 # Error Handling
 
-Each method returns at least one structure corresponding to a possible error.  
-When this structure is different from nil, it is because the method has failed.  
+All methods return an "error" struct, which holds a non-nil value if the call failed.
+Error structs are all of type `KuzzleError`.
 
-The returned structure is an `error` that can be casted to a `KuzzleError` and it contains 3 properties:
+The `KuzzleError` type implements the standard `error` interface, and adds the following properties to it:
 
 | Property   | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `Message` | string | Message describing the error |
 | `Status` | int | Status following [HTTP Standards](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) |
 | `Stack` | string | Error stacktrace (Only in development mode) |
 

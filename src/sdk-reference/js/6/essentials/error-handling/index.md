@@ -8,17 +8,13 @@ order: 100
 
 # Error Handling
 
-Each of the SDK methods is likely to fail and return an error.  
+All SDK methods return a promise, that can be rejected with a `KuzzleError` value in case of failure.
 
-When a method fails, the promise is rejected and the error must be handled:
-  - with the `.catch()` method of the promise chain
-  - within the `catch` block when used with async / await
+`KuzzleError` objects inherit the standard `Error` object, and add the following properties to it:
 
-Errors are objects containing the following properties:
 
 | Property   | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `message` | String | Message describing the error |
 | `status` | Number | Status following [HTTP Standards](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) |
 | `stack` | String | Error stacktrace (Only in development mode) |
 
