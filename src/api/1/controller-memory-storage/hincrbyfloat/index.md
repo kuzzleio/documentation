@@ -8,7 +8,7 @@ title: hincrbyfloat
 
 {{{since "1.0.0"}}}
 
-Increment the number stored in a hash field by the provided float value.
+Increments the number stored in a hash field by the provided float value.
 
 [[_Redis documentation_]](https://redis.io/commands/hincrbyfloat)
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return the updated value for the incremented hash field.
+Returns the updated value for the incremented hash field.
 
 ```javascript
 {

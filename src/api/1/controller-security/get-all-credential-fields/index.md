@@ -9,7 +9,7 @@ title: getAllCredentialFields
 
 {{{since "1.0.0"}}}
 
-Retrieve the list of fields accepted by authentication strategies.
+Retrieves the list of fields accepted by authentication strategies.
 
 ---
 
@@ -35,7 +35,7 @@ Method: GET
 
 ## Response
 
-Return an object with a property per authentication strategy, pointing to an array of accepted field names.
+Returns an object with a property per authentication strategy, pointing to an array of accepted field names.
 
 ```javascript
 {

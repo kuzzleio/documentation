@@ -9,7 +9,7 @@ title: lrem
 
 {{{since "1.0.0"}}}
 
-Remove the first occurences of an element from a list.
+Removes the first occurences of an element from a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lrem)
 
@@ -63,7 +63,7 @@ Body:
 
 ## Response
 
-Return the number of removed elements.
+Returns the number of removed elements.
 
 ```javascript
 {

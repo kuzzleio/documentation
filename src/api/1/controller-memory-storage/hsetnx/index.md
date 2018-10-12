@@ -8,7 +8,7 @@ title: hsetnx
 
 {{{since "1.0.0"}}}
 
-Set a field and its value in a hash, only if the field does not already exist.
+Sets a field and its value in a hash, only if the field does not already exist.
 
 [[_Redis documentation_]](https://redis.io/commands/hsetnx)
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return either `0` (command failed), or `1` (command succeeded).
+Returns either `0` (command failed), or `1` (command succeeded).
 
 ```javascript
 {

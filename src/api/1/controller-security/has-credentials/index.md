@@ -8,7 +8,7 @@ title: hasCredentials
 
 {{{since "1.0.0"}}}
 
-Check if a user has credentials registered for the specified authentication strategy.
+Checks if a user has credentials registered for the specified authentication strategy.
 
 ---
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return a boolean telling whether the user can log in using the provided authentication strategy.
+Returns a boolean telling whether the user can log in using the provided authentication strategy.
 
 ```javascript
 {

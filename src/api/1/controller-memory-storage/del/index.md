@@ -6,7 +6,7 @@ title: del
 
 {{{since "1.0.0"}}}
 
-Delete a list of keys.
+Deletes a list of keys.
 
 [[_Redis documentation_]](https://redis.io/commands/del)
 
@@ -50,7 +50,7 @@ Body:
 
 ## Response
 
-Return the number of deleted keys.
+Returns the number of deleted keys.
 
 ```javascript
 {

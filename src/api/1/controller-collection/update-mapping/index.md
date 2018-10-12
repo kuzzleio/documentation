@@ -8,7 +8,7 @@ title: updateMapping
 
 {{{since "1.0.0"}}}
 
-Update a data collection mapping.
+Updates a data collection mapping.
 
 ---
 

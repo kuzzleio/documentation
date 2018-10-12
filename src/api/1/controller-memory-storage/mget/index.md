@@ -8,7 +8,7 @@ title: mget
 
 {{{since "1.0.0"}}}
 
-Return the values of the provided keys.
+Returns the values of the provided keys.
 
 [[_Redis documentation_]](https://redis.io/commands/mget)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return the list of corresponding key values, in the same order than the one provided in the query.
+Returns the list of corresponding key values, in the same order than the one provided in the query.
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: createFirstAdmin
 
 {{{since "1.0.0"}}}
 
-Create a Kuzzle administrator account, only if none exist.
+Creates a Kuzzle administrator account, only if none exist.
 
 ---
 
@@ -82,7 +82,7 @@ Body:
 
 ## Response
 
-Return information about the newly created administrator:
+Returns information about the newly created administrator:
 
 * `_id`: administrator kuid
 * `_source`: administrator user document, contains all properties set in the `content` body argument, but also the list of attributed `profileIds`. That list is initialized with the `admin` profile

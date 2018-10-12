@@ -8,7 +8,7 @@ title: count
 
 {{{since "1.0.0"}}}
 
-Count documents in a data collection.
+Counts documents in a data collection.
 
 A query can be provided to alter the count result, otherwise return the total number of documents in the data collection.
 
@@ -72,7 +72,7 @@ Body:
 
 ## Response
 
-Return an object with the `count` property, an integer showing the number of documents matching the provided search query:
+Returns an object with the `count` property, an integer showing the number of documents matching the provided search query:
 
 ```js
 {

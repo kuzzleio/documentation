@@ -8,7 +8,7 @@ title: getCurrentUser
 
 {{{since "1.0.0"}}}
 
-Returns the profile object for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
+Returns information about the currently logged in user.
 
 ---
 
@@ -42,12 +42,13 @@ Headers: Authorization: "Bearer <authentication token>"
 
 ## Response
 
-Result contains the following properties:
+The result contains the following properties:
 
 * `_id`: current user's [kuid]({{site_base_path}}guide/1/essentials/user-authentication/#kuzzle-user-identifier-kuid)
-* `_source`: additional (and optional) user properties
-* `profile`: current user's [profile]({{site_base_path}}guide/1/essentials/security/#users-profiles-and-roles)
-* `strategies`: available authentication strategies
+* `_source`: user information
+  * `profileIds`: list of [profile]({{site_base_path}}guide/1/essentials/security/#users-profiles-and-roles) names associated to the user
+  * any other properties: additional (and optional) user information
+* `strategies`: available authentication strategies for that user
 
 ```js
 {
@@ -59,15 +60,10 @@ Result contains the following properties:
   "result": {
     "_id": "<kuid>",
     "_source": {
+      "profileIds": ["customProfile1", "customProfile2"],
       "name": {
         "first": "Steve",
         "last": "Wozniak"
-      },
-      "profile": {
-        "_id": "admin",
-        "roles": [
-          "admin"
-        ]
       }
     },
     "strategies": ["local"]

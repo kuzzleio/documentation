@@ -8,7 +8,7 @@ title: mUpdate
 
 {{{since "1.0.0"}}}
 
-Update multiple documents.
+Updates multiple documents.
 
 ---
 
@@ -92,7 +92,7 @@ Body:
 
 ## Response
 
-Return a `hits` array containing the list of updated documents.
+Returns a `hits` array containing the list of updated documents.
 
 Each document has the following properties:
 

@@ -8,7 +8,7 @@ title: sadd
 
 {{{since "1.0.0"}}}
 
-Add members to a set of unique values stored at `key`. 
+Adds members to a set of unique values stored at `key`. 
 
 If the destination set does not exist, it is created beforehand.
 
@@ -61,7 +61,7 @@ Body:
 
 ## Response
 
-Return the number of elements successfully added to the set.
+Returns the number of elements successfully added to the set.
 
 ```javascript
 {

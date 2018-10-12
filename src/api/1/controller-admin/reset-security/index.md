@@ -8,7 +8,8 @@ title: resetSecurity
 
 {{{since "1.4.0"}}}
 
-Asynchronously delete all users, profiles and roles and reset `anonymous`, `default` and `admin` profiles and roles to the default specified in Kuzzle's configuration files.
+Asynchronously deletes all users, profiles and roles.  
+Then resets `anonymous`, `default` and `admin` profiles and roles to default values, specified in Kuzzle configuration files.
 
 ---
 
@@ -35,7 +36,7 @@ Method: POST
 
 ## Response
 
-Return a confirmation that the command is being executed.
+Returns a confirmation that the command is being executed.
 
 ```js
 {

@@ -8,7 +8,7 @@ title: getAutoRefresh
 
 {{{since "1.0.0"}}}
 
-Return the current `autoRefresh` status for the given index.
+Returns the current `autoRefresh` status for the given index.
 
 The `autoRefresh` flag, when set to true, forces Kuzzle to perform a
 [`refresh`](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-refresh.html) request immediately after each change in the storage, causing documents to be immediately visible in a search.
@@ -44,7 +44,7 @@ Method: GET
 
 ## Response
 
-Return a boolean giving the current value of the `autoRefresh` flag.
+Returns a boolean giving the current value of the `autoRefresh` flag.
 
 ```js
 {

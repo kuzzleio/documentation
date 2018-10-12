@@ -8,7 +8,7 @@ title: zincrby
 
 {{{since "1.0.0"}}}
 
-Increment the score of a sorted set member by the provided value.
+Increments the score of a sorted set member by the provided value.
 
 [[_Redis documentation_]](https://redis.io/commands/zincrby)
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return the updated member's score value.
+Returns the updated member's score value.
 
 ```javascript
 {

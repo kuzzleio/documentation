@@ -8,8 +8,7 @@ title: deleteCredentials
 
 {{{since "1.0.0"}}}
 
-
-Delete user credentials for the specified authentication strategy.
+Deletes user credentials for the specified authentication strategy.
 
 ---
 
@@ -44,7 +43,7 @@ Method: DELETE
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

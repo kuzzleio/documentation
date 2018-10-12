@@ -8,7 +8,7 @@ title: resetCache
 
 {{{since "1.4.0"}}}
 
-Asynchronously clear Redis database used by Kuzzle.  
+Asynchronously clears the Redis database used by Kuzzle.  
 
 ---
 
@@ -41,7 +41,7 @@ Method: POST
 
 ## Response
 
-Return a confirmation that the command is being executed.
+Returns a confirmation that the command is being executed.
 
 ```js
 {

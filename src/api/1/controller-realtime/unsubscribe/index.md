@@ -9,7 +9,7 @@ title: unsubscribe
 
 {{{since "1.0.0"}}}
 
-Remove a subscription.
+Removes a subscription.
 
 ---
 
@@ -41,7 +41,7 @@ Due to the synchronous nature of the HTTP protocol, real-time messaging is not s
 
 ## Response
 
-Return the removed subscription identifier.
+Returns the removed subscription identifier.
 
 ```js
 {

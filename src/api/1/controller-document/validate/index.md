@@ -8,10 +8,7 @@ title: validate
 
 {{{since "1.0.0"}}}
 
-Validate data against existing validation rules. 
-
-Return a boolean telling whether a provided document matches validation rules or not.  
-If not, a list of errors is returned with the detail of violated rules.
+Validates data against existing validation rules. 
 
 Documents are always valid if no validation rules are defined on the provided index and collection.
 
@@ -68,7 +65,7 @@ Document content to validate.
 
 ## Response
 
-Return the document validation status, with the following properties:
+Returns the document validation status, with the following properties:
 
 * `errorMessages`: the exhaustive list of violated validation rules. Present only if `valid` is false
 * `valid`: a boolean telling whether the provided pass all validation rules

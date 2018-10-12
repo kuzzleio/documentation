@@ -57,7 +57,7 @@ By default, `min` and `max` are inclusive. Check the full Redis documentation fo
 
 ## Response
 
-By default, return the list of elements in the provided score range:
+By default, returns the list of elements in the provided score range:
 
 ```javascript
 {

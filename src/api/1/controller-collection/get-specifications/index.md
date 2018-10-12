@@ -44,11 +44,11 @@ Method: GET
 
 ## Response
 
-Return an object with the following properties:
+Returns a specifications object with the following properties:
 
 * `collection`: specified data collection
 * `index`: specified data index
-* `validation`: validation specifications
+* `validation`: specifications description
 
 ```js
 {

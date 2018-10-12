@@ -8,7 +8,7 @@ title: zremrangebylex
 
 {{{since "1.0.0"}}}
 
-Remove members within a provided range, from a sorted set where all elements have the same score, using lexicographical ordering. 
+Removes members within a provided range, from a sorted set where all elements have the same score, using lexicographical ordering. 
 
 [[_Redis documentation_]](https://redis.io/commands/zremrangebylex)
 
@@ -64,7 +64,7 @@ The `min` and `max` interval are inclusive. See the [Redis documentation](https:
 
 ## Response
 
-Return the number of removed members.
+Returns the number of removed members.
 
 ```javascript
 {

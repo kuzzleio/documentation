@@ -8,7 +8,7 @@ title: mCreateOrReplace
 
 {{{since "1.0.0"}}}
 
-Create or replace multiple documents.
+Creates or replaces multiple documents.
 
 ---
 
@@ -91,7 +91,7 @@ Body:
 
 ## Response
 
-Return a `hits` array, containing the list of created documents, in the same order than the one provided in the query.
+Returns a `hits` array, containing the list of created documents, in the same order than the one provided in the query.
 
 Each created document is an object with the following properties:
 

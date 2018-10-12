@@ -8,7 +8,7 @@ title: pexpire
 
 {{{since "1.0.0"}}}
 
-Set a timeout (in milliseconds) on a key. After the timeout has expired, the key will automatically be deleted.
+Sets a timeout (in milliseconds) on a key. After the timeout has expired, the key will automatically be deleted.
 
 [[_Redis documentation_]](https://redis.io/commands/pexpire)
 
@@ -58,7 +58,7 @@ Body:
 
 ## Response
 
-Return either `0` (command failed), or `1` (command succeeded).
+Returns either `0` (command failed), or `1` (command succeeded).
 
 ```javascript
 {

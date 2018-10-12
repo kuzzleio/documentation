@@ -8,7 +8,7 @@ title: srandmember
 
 {{{since "1.0.0"}}}
 
-Return one or more members of a set of unique values, at random.  
+Returns one or more members of a set of unique values, at random.  
 
 [[_Redis documentation_]](https://redis.io/commands/srandmember)
 
@@ -49,7 +49,7 @@ Method: GET
 
 ## Response
 
-If `count` is not set or equal to `1`, return the member as a string:
+If `count` is not set or equal to `1`, returns the member as a string:
 
 ```javascript
 {
@@ -57,7 +57,7 @@ If `count` is not set or equal to `1`, return the member as a string:
   "status": 200,
   "error": null,
   "controller": "ms",
-  "action": "spop",
+  "action": "srandmember",
   "collection": null,
   "index": null,
   "result": "<random member>"
@@ -72,7 +72,7 @@ If the absolute count value is greater than `1`, then an array of random members
   "status": 200,
   "error": null,
   "controller": "ms",
-  "action": "spop",
+  "action": "srandmember",
   "collection": null,
   "index": null,
   "result": [

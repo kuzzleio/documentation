@@ -8,7 +8,7 @@ title: zlexcount
 
 {{{since "1.0.0"}}}
 
-Count elements in a sorted set where all members have equal score, using lexicographical ordering. 
+Counts elements in a sorted set where all members have equal score, using lexicographical ordering. 
 
 [[_Redis documentation_]](https://redis.io/commands/zlexcount)
 
@@ -49,7 +49,7 @@ The `min` and `max` values are inclusive by default. To change this behavior, ch
 
 ## Response
 
-Return the number of elements in the sorted set included in the provided range.
+Returns the number of elements in the sorted set included in the provided range.
 
 ```javascript
 {

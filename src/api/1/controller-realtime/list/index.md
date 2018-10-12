@@ -8,7 +8,7 @@ title: list
 
 {{{since "1.0.0"}}}
 
-List subscriptions on all indexes and all collections.
+Lists subscriptions on all indexes and all collections.
 
 ---
 
@@ -35,7 +35,7 @@ Method: GET
 
 ## Response
 
-Return an object with the following structure:
+Returns an object with the following structure:
 
 ```js
 {

@@ -8,7 +8,7 @@ title: dbsize
 
 {{{since "1.0.0"}}}
 
-Return the number of keys in the application database.
+Returns the number of keys in the application database.
 
 [[_Redis documentation_]](https://redis.io/commands/dbsize)
 
@@ -36,7 +36,7 @@ Method: GET
 
 ## Response
 
-Return the number of found keys.
+Returns the number of found keys.
 
 ```javascript
 {

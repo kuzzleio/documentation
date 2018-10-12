@@ -8,7 +8,7 @@ title: mset
 
 {{{since "1.0.0"}}}
 
-Set the provided keys to their respective values. If a key does not exist, it is created. Otherwise, the key's value is overwritten.
+Sets the provided keys to their respective values. If a key does not exist, it is created. Otherwise, the key's value is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/mset)
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

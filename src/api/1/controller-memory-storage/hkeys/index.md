@@ -8,7 +8,7 @@ title: hkeys
 
 {{{since "1.0.0"}}}
 
-Return all field names contained in a hash.
+Returns all field names contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hkeys)
 
@@ -44,7 +44,7 @@ Method: GET
 
 ## Response
 
-Return an array of hash field names.
+Returns an array of hash field names.
 
 ```javascript
 {

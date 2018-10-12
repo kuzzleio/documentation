@@ -8,7 +8,7 @@ title: smove
 
 {{{since "1.0.0"}}}
 
-Move a member from a set of unique values to another.
+Moves a member from a set of unique values to another.
 
 [[_Redis documentation_]](https://redis.io/commands/smove)
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return either `0` (command failed), or `1` (command succeeded).
+Returns either `0` (command failed), or `1` (command succeeded).
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: exists
 
 {{{since "1.0.0"}}}
 
-Check if the given index exists in Kuzzle.
+Checks if the given index exists in Kuzzle.
 
 ---
 
@@ -41,7 +41,7 @@ Method: GET
 
 ## Response
 
-Return a boolean telling whether the requested index exists.
+Returns a boolean telling whether the requested index exists.
 
 ```js
 {

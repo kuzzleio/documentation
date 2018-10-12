@@ -8,7 +8,7 @@ title: replaceUser
 
 {{{since "1.0.0"}}}
 
-Replace a user with new configuration.
+Replaces a user with new configuration.
 
 ---
 
@@ -69,7 +69,7 @@ Body:
 
 ## Response
 
-Return the user replacement status:
+Returns the user replacement status:
 
 * `_id`: new user kuid
 * `_source`: new user content and attributed profiles

@@ -8,7 +8,7 @@ title: createRestrictedUser
 
 {{{since "1.0.0"}}}
 
-Create a new user in Kuzzle, with a preset list of security profiles.
+Creates a new user in Kuzzle, with a preset list of security profiles.
 
 The list of security profiles attributed to restricted users is fixed, and must be configured in the [Kuzzle configuration file]({{ site_base_path }}guide/1/essentials/configuration/).
 
@@ -84,7 +84,7 @@ Body:
 
 ## Response
 
-Return the restricted user creation status:
+Returns the restricted user creation status:
 
 * `_id`: new user kuid
 * `_source`: new user content and attributed profiles

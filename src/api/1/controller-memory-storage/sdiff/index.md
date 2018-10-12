@@ -8,7 +8,7 @@ title: sdiff
 
 {{{since "1.0.0"}}}
 
-Return the difference between a reference set, and a list of other sets.
+Returns the difference between a reference set and a list of other sets.
 
 [[_Redis documentation_]](https://redis.io/commands/sdiff)
 
@@ -46,7 +46,7 @@ Method: GET
 
 ## Response
 
-Return an array of differences.
+Returns an array of differences.
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: deleteSpecifications
 
 {{{since "1.0.0"}}}
 
-Delete validation specifications for a data collection.
+Deletes validation specifications for a data collection.
 
 The request succeeds even if no specification exist for that data collection.
 
@@ -47,7 +47,7 @@ Method: DELETE
 
 ## Response
 
-Return a confirmation that the specifications are deleted:
+Returns a confirmation that the specifications are deleted:
 
 ```js
 {

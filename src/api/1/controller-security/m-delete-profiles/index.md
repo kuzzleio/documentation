@@ -8,7 +8,7 @@ title: mDeleteProfiles
 
 {{{since "1.0.0"}}}
 
-Delete multiple security profiles.
+Deletes multiple security profiles.
 
 ---
 
@@ -58,7 +58,7 @@ Body:
 
 ## Response
 
-Return an array of successfully deleted profiles.
+Returns an array of successfully deleted profiles.
 
 ```javascript
 {
