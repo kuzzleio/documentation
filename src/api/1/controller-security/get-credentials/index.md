@@ -9,7 +9,7 @@ title: getCredentials
 
 {{{since "1.0.0"}}}
 
-Get a user's credential information for the specified authentication strategy.
+Gets a user's credential information for the specified authentication strategy.
 
 The returned content depends on the authentication strategy, but it should never include sensitive information.
 
@@ -46,7 +46,7 @@ Method: GET
 
 ## Response
 
-Return credentials information (depend on the authentication strategy).
+Returns credentials information (depend on the authentication strategy).
 
 ### Example with the "local" authentication strategy:
 

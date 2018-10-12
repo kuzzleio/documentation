@@ -84,7 +84,7 @@ The provided body must have the following structure:
 
 ## Response
 
-Return an object with the following properties:
+Returns an object with the following properties:
 
 * `valid`: a boolean telling whether the provided specifications are valid
 * `details`: the exhaustive list of rejections and their reasons. Only present if the document is invalid

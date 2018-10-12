@@ -8,7 +8,7 @@ title: create
 
 {{{since "1.0.0"}}}
 
-Create a new [index]({{ site_base_path }}guide/1/essentials/persisted) in Kuzzle.
+Creates a new [data index]({{ site_base_path }}guide/1/essentials/persisted) in Kuzzle.
 
 ---
 
@@ -41,7 +41,7 @@ Method: POST
 
 ## Response
 
-Return a confirmation that the index is being created:
+Returns a confirmation that the index is being created:
 
 ```js
 {

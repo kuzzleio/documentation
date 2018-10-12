@@ -8,7 +8,7 @@ title: getUserMapping
 
 {{{since "1.0.0"}}}
 
-Get the mapping of the internal users collection.
+Gets the mapping of the internal users collection.
 
 ---
 
@@ -34,7 +34,7 @@ Method: GET
 
 ## Response
 
-Return the internal profiles mapping, using [Elasticsearch mapping format](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
+Returns the internal profiles mapping, using [Elasticsearch mapping format](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
 
 ```javascript
 {

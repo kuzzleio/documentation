@@ -8,7 +8,7 @@ title: getrange
 
 {{{since "1.0.0"}}}
 
-Return a substring of a key's value.
+Returns a substring of a key's value.
 
 [[_Redis documentation_]](https://redis.io/commands/getrange)
 
@@ -49,7 +49,7 @@ The arguments `start` and `end` can be negative. In that case, the offset is cal
 
 ## Response
 
-The calculated substring.
+Returns the calculated substring.
 
 ```javascript
 {

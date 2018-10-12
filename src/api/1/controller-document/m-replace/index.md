@@ -8,7 +8,7 @@ title: mReplace
 
 {{{since "1.0.0"}}}
 
-Replace multiple documents.
+Replaces multiple documents.
 
 ---
 
@@ -42,7 +42,6 @@ Body:
 ```
 
 ### Other protocols
-
 
 ```js
 {
@@ -92,7 +91,7 @@ Body:
 
 ## Response
 
-Return a `hits` array containing the list of replaced documents.
+Returns a `hits` array containing the list of replaced documents.
 
 Each document has the following properties:
 

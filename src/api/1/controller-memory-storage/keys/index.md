@@ -9,7 +9,7 @@ title: keys
 
 {{{since "1.0.0"}}}
 
-Return all keys matching the provided pattern.
+Returns all keys matching the provided pattern.
 
 [[_Redis documentation_]](https://redis.io/commands/keys)
 
@@ -46,7 +46,7 @@ Method: GET
 
 ## Response
 
-Return the list of matching keys.
+Returns the list of matching keys.
 
 ```javascript
 {

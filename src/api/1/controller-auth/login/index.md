@@ -8,7 +8,7 @@ title: login
 
 {{{since "1.0.0"}}}
 
-Authenticate a user.
+Authenticates a user.
 
 ---
 

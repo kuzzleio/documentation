@@ -8,7 +8,7 @@ title: delete
 
 {{{since "1.0.0"}}}
 
-Delete a document.
+Deletes a document.
 
 ---
 
@@ -49,7 +49,7 @@ Method: DELETE
 
 ## Response
 
-Result contain the deleted document unique ID.
+Returns an `_id` property with the deleted document unique ID.
 
 ```javascript
 {

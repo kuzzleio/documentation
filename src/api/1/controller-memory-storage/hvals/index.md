@@ -8,7 +8,7 @@ title: hvals
 
 {{{since "1.0.0"}}}
 
-Return all values contained in a hash.
+Returns all values contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hvals)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return a list of hash values.
+Returns a list of hash values.
 
 ```javascript
 {

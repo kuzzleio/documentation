@@ -8,7 +8,7 @@ title: updateProfile
 
 {{{since "1.0.0"}}}
 
-Update a security profile definition.
+Updates a security profile definition.
 
 ---
 
@@ -99,7 +99,7 @@ Body:
 
 ## Response
 
-Return the updated profile identifier and version number.
+Returns the updated profile identifier and version number.
 
 ```javascript
 {

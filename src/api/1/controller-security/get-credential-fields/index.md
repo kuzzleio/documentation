@@ -9,7 +9,7 @@ title: getCredentialFields
 
 {{{since "1.0.0"}}}
 
-Retrieve the list of accepted field names by the specified authenticaiton strategy.
+Retrieves the list of accepted field names by the specified authenticaiton strategy.
 
 ---
 
@@ -42,7 +42,7 @@ Method: GET
 
 ## Response
 
-Return an array of accepted field names.
+Returns an array of accepted field names.
 
 ### Example with the "local" authentication strategy:
 

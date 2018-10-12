@@ -8,7 +8,7 @@ title: validateCredentials
 
 {{{since "1.0.0"}}}
 
-Check if the provided credentials are well-formed. Does not actually save credentials.
+Checks if the provided credentials are well-formed. Does not actually save credentials.
 
 ---
 
@@ -63,7 +63,7 @@ The properties that can be sent to validate credentials depend entirely of the a
 
 ## Response
 
-Return a boolean telling whether credentials are valid.
+Returns a boolean telling whether credentials are valid.
 
 ```javascript
 {

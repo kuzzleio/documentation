@@ -8,7 +8,7 @@ title: rpoplpush
 
 {{{since "1.0.0"}}}
 
-Remove the last element of a list, and push it back at the start of another list.
+Removes the last element of a list, and pushes it back at the start of another list.
 
 [[_Redis documentation_]](https://redis.io/commands/rpoplpush)
 
@@ -55,7 +55,7 @@ Body:
 
 ## Response
 
-Return the popped/pushed element.
+Returns the popped/pushed element.
 
 ```javascript
 {

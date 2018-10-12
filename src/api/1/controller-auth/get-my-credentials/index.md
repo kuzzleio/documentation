@@ -8,9 +8,9 @@ title: getMyCredentials
 
 {{{since "1.0.0"}}}
 
-Returns the current user's credential information for the specified `<strategy>`. 
+Returns credential information for the currently logged in user.
 
-The data returned will depend on the specified strategy, and they should not include any sensitive information.
+The data returned will depend on the specified authentication strategy, and they should not include any sensitive information.
 
 The result can be an empty object.
 
@@ -47,7 +47,6 @@ Headers: Authorization: "Bearer <authentication token>"
 ---
 
 ## Response
-
 
 The result content depends on the authentication strategy. 
 

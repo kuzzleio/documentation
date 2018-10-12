@@ -8,7 +8,7 @@ title: sinterstore
 
 {{{since "1.0.0"}}}
 
-Compute the intersection of the provided sets of unique values, and store the result in a destination key.
+Computes the intersection of the provided sets of unique values, and stores the result in a destination key.
 
 If the destination key already exists, it is overwritten.
 
@@ -57,7 +57,7 @@ Body:
 
 ## Response
 
-Return the number of values stored in the destination key.
+Returns the number of values stored in the destination key.
 
 ```javascript
 {

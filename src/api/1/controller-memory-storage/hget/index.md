@@ -8,7 +8,7 @@ title: hget
 
 {{{since "1.0.0"}}}
 
-Return the field's value of a hash.
+Returns the field's value of a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hget)
 
@@ -45,7 +45,7 @@ Method: GET
 
 ## Response
 
-Return the field's value.
+Returns the field's value.
 
 ```javascript
 {

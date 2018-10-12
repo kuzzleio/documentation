@@ -8,7 +8,7 @@ title: sinter
 
 {{{since "1.0.0"}}}
 
-Return the intersection of the provided sets of unique values.
+Returns the intersection of the provided sets of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sinter)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return an array of intersected values.
+Returns an array of intersected values.
 
 ```javascript
 {

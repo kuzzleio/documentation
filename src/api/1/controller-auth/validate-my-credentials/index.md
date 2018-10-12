@@ -8,11 +8,9 @@ title: validateMyCredentials
 
 {{{since "1.0.0"}}}
 
-Validate provided credentials against a specified authentication strategy. 
+Validates the provided credentials against a specified authentication strategy. 
 
-This route does not actually create or modify credentials. 
-
-The credentials to send will depend on the authentication plugin and authentication strategy.
+This route neither creates nor modifies credentials. 
 
 ---
 
@@ -68,7 +66,7 @@ Examples in this page are for the [`local` authentication plugin](https://github
 
 ## Response
 
-Return a boolean telling whether the provided credentials are valid:
+Returns a boolean telling whether the provided credentials are valid:
 
 ```js
 {

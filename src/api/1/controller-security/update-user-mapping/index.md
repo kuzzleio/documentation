@@ -8,7 +8,7 @@ title: updateUserMapping
 
 {{{since "1.0.0"}}}
 
-Update the internal user storage mapping.
+Updates the internal user storage mapping.
 
 
 ---
@@ -56,7 +56,7 @@ Body:
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

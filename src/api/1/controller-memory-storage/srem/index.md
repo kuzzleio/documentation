@@ -8,7 +8,7 @@ title: srem
 
 {{{since "1.0.0"}}}
 
-Remove members from a set of unique values.
+Removes members from a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/srem)
 
@@ -60,7 +60,7 @@ Body:
 
 ## Response
 
-Return the number of removed members.
+Returns the number of removed members.
 
 ```javascript
 {

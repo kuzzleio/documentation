@@ -8,7 +8,7 @@ title: sunion
 
 {{{since "1.0.0"}}}
 
-Return the union of sets of unique values.
+Returns the union of sets of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sunion)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return the result of the union between the provided sets.
+Returns the result of the union between the provided sets.
 
 ```javascript
 {

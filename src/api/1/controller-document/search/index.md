@@ -8,12 +8,12 @@ title: search
 
 {{{since "1.0.0"}}}
 
-Search documents.
+Searches documents.
 
 There is a limit to how many documents can be returned by a single search query.  
 That limit is by default set at 10000 documents, and you can't get over it even with the `from` and `size` pagination options.
 
-To handle larger result sets, you have to either create a cursor by using the `scroll` option, or, if you sort the results, the Elasticsearch's [search_after command](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-search-after.html).
+To handle larger result sets, you have to either create a cursor by providing a value to the `scroll` option or, if you sort the results, by using the Elasticsearch [search_after](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-search-after.html) command.
 
 ---
 
@@ -99,7 +99,7 @@ An empty body matches all documents in the queried collection.
 
 ## Response
 
-Return a paginated search result set, with the following properties:
+Returns a paginated search result set, with the following properties:
 
 * `aggregations`: provides aggregation information. Present only if an `aggregations` object has been provided in the search body
 * `hits`: array of found documents. Each document has the following properties:

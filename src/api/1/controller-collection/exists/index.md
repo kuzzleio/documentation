@@ -8,7 +8,7 @@ title: exists
 
 {{{since "1.0.0"}}}
 
-Check if a collection exists in Kuzzle.
+Checks whether a collection exists in Kuzzle.
 
 ---
 
@@ -44,7 +44,7 @@ Method: GET
 
 ## Response
 
-Return a boolean telling whether the provided data collection exists:
+Returns a boolean telling whether the provided data collection exists:
 
 ```js
 {

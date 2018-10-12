@@ -8,7 +8,7 @@ title: bitpos
 
 {{{since "1.0.0"}}}
 
-Return the position of the first bit set to 1 or 0 in a string, or in a substring.
+Returns the position of the first bit set to 1 or 0 in a string, or in a substring.
 
 [[_Redis documentation_]](https://redis.io/commands/bitpos)
 
@@ -53,7 +53,7 @@ Method: GET
 
 ## Response
 
-Return the position of the first bit found matching the searched value.
+Returns the position of the first bit found matching the searched value.
 
 ```javascript
 {

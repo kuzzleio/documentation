@@ -9,7 +9,7 @@ title: getProfile
 
 {{{since "1.0.0"}}}
 
-Get a security profile.
+Gets a security profile.
 
 ---
 
@@ -42,7 +42,7 @@ Method: GET
 
 ## Response
 
-Return the queried profile information:
+Returns the queried profile information:
 
 * `_id`: profile identifier
 * `_source`: profile content
