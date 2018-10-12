@@ -8,7 +8,7 @@ title: getUser
 
 {{{since "1.0.0"}}}
 
-Get a user.
+Gets a user.
 
 ---
 
@@ -41,7 +41,7 @@ Method: GET
 
 ## Response
 
-Return the user information:
+Returns the user information:
 
 * `_id`: user kuid
 * `_source`: user description

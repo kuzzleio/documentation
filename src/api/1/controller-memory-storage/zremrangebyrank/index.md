@@ -8,7 +8,7 @@ title: zremrangebyrank
 
 {{{since "1.0.0"}}}
 
-Remove members from a sorted set, with their position in the set within a provided index range.
+Removes members from a sorted set, with their position in the set within a provided index range.
 
 Positions are 0-based, meaning the first member of the set has a position of 0.
 
@@ -64,7 +64,7 @@ Body:
 
 ## Response
 
-Return the number of removed elements.
+Returns the number of removed elements.
 
 ```javascript
 {

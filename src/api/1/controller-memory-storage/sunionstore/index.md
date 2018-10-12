@@ -8,7 +8,7 @@ title: sunionstore
 
 {{{since "1.0.0"}}}
 
-Compute the union of multiple sets of unique values and store it in a new set.
+Computes the union of multiple sets of unique values and stores it in a new set.
 
 If the destination key already exists, it is overwritten.
 
@@ -57,7 +57,7 @@ Body:
 
 ## Response
 
-Return the number of members stored in the destination set.
+Returns the number of members stored in the destination set.
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: decrby
 
 {{{since "1.0.0"}}}
 
-Decrement the number stored at `key` by a provided integer value. If the key does not exist, it is set to 0 before performing the operation.
+Decrements the number stored at `key` by a provided integer value. If the key does not exist, it is set to 0 before performing the operation.
 
 [[_Redis documentation_]](https://redis.io/commands/decrby)
 
@@ -59,7 +59,7 @@ Body:
 
 ## Response
 
-Updated key value.
+Returns the updated key value.
 
 ```javascript
 {

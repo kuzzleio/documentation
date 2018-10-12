@@ -8,7 +8,7 @@ title: incr
 
 {{{since "1.0.0"}}}
 
-Increment the number stored at `key` by 1. If the key does not exist, it is set to 0 before performing the operation.
+Increments the number stored at `key` by 1. If the key does not exist, it is set to 0 before performing the operation.
 
 [[_Redis documentation_]](https://redis.io/commands/incr)
 
@@ -43,7 +43,7 @@ Method: POST
 
 ## Response
 
-Return the incremented key value.
+Returns the incremented key value.
 
 ```javascript
 {

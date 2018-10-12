@@ -8,7 +8,7 @@ title: mDeleteRoles
 
 {{{since "1.0.0"}}}
 
-Delete multiple security roles.
+Deletes multiple security roles.
 
 ---
 
@@ -58,7 +58,7 @@ Body:
 
 ## Response
 
-Return an array of successfully deleted roles.
+Returns an array of successfully deleted roles.
 
 ```javascript
 {

@@ -8,9 +8,9 @@ title: create
 
 {{{since "1.0.0"}}}
 
-Create a new document in the persistent data storage.
+Creates a new document in the persistent data storage.
 
-Return an error if the document already exists.
+Returns an error if the document already exists.
 
 ---
 
@@ -68,7 +68,7 @@ Document content to create.
 
 ## Response
 
-Return an object with the following properties:
+Returns an object with the following properties:
 
 * `_id`: created document unique identifier
 * `_source`: document content

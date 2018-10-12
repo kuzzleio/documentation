@@ -8,14 +8,11 @@ title: import
 
 {{{since "1.0.0"}}}
 
-A bulk import allows your application to perform multiple write operations in a single request.
+The `import` route is made to create, update or delete large amounts of documents as fast as possible.
 
-This is especially useful if you want to create a large number of documents. A bulk import request will execute faster than calls to [document:mCreate]({{ site_base_path }}api/1/controller-document/m-create)
+This route is faster than the `document:m*` routes family (e.g. [document:mCreate]({{ site_base_path }}api/1/controller-document/m-create)), but no real-time notifications will be generated, even if some of the documents in the import match subscription filters.
 
-Bulk imports do not emit document events in Kuzzle, meaning that you <strong>won't receive any real-time notfications</strong> on your document subcriptions
-even if some of the documents in the import match your subscription filters.
-
-If a subset of the documents fail to save, the client will receive a [PartialError]({{ site_base_path }}api/1/documentation/errors/#partialerror) error.
+If some documents actions fail, the client will receive a [PartialError]({{ site_base_path }}api/1/documentation/errors/#partialerror) error.
 
 ---
 
@@ -81,7 +78,7 @@ The body must contain a `bulkData` array, detailing the bulk operations to perfo
 
 ## Response
 
-Return a `hits` array containing the list of executed queries result, in the same order than in the query.
+Returns a `hits` array containing the list of executed queries result, in the same order than in the query.
 
 Each query result contains the following properties:
 

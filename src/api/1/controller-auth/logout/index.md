@@ -8,7 +8,7 @@ title: logout
 
 {{{since "1.0.0"}}}
 
-Revoke the provided authentication token.
+Revokes the provided authentication token.
 
 If there were any, real-time subscriptions are cancelled.
 
@@ -25,7 +25,6 @@ Headers: Authorization: "Bearer <authentication token>"
 ```
 
 ### Other protocols
-
 
 ```js
 {

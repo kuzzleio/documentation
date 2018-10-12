@@ -8,7 +8,7 @@ title: replace
 
 {{{since "1.0.0"}}}
 
-Replace the content of an existing document.
+Replaces the content of an existing document.
 
 ---
 
@@ -64,7 +64,7 @@ New document content.
 
 ## Response
 
-Return an object containing updated document information, with the following properties:
+Returns an object containing updated document information, with the following properties:
 
 * `_id`: document unique identifier
 * `_source`: new document content

@@ -56,7 +56,7 @@ The `min` and `max` values are inclusive by default. To change this behavior, ch
 
 ## Response
 
-Return an array of matched elements.
+Returns an array of matched elements.
 
 ```javascript
 {

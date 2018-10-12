@@ -8,7 +8,7 @@ title: list
 
 {{{since "1.0.0"}}}
 
-Return the complete list of data indexes.
+Returns the complete list of data indexes.
 
 ---
 
@@ -35,7 +35,7 @@ Method: GET
 
 ## Response
 
-Return a `indexes` array listing all existing index names.
+Returns a `indexes` array listing all existing index names.
 
 ```js
 {

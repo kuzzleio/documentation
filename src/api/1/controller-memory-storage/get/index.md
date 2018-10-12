@@ -8,7 +8,7 @@ title: get
 
 {{{since "1.0.0"}}}
 
-Return the value of a key, or `null` if the key doesn't exist.
+Gets the value of a key.
 
 [[_Redis documentation_]](https://redis.io/commands/get)
 
@@ -44,7 +44,7 @@ Method: GET
 
 ## Response
 
-Return the value stored at the provided key `key`.
+Returns the queried key's value. If the key doesn't exist, `get` returns `null`.
 
 ```javascript
 {

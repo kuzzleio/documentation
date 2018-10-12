@@ -8,7 +8,7 @@ title: touch
 
 {{{since "1.0.0"}}}
 
-Alter the last access time of one or multiple keys. A key is ignored if it does not exist.
+Alters the last access time of one or multiple keys. A key is ignored if it does not exist.
 
 [[_Redis documentation_]](https://redis.io/commands/touch)
 
@@ -52,7 +52,7 @@ Body:
 
 ## Response
 
-Return the number of altered keys.
+Returns the number of altered keys.
 
 ```javascript
 {

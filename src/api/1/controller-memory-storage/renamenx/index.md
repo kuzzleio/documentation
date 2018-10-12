@@ -8,10 +8,9 @@ title: renamenx
 
 {{{since "1.0.0"}}}
 
-Rename a key, only if the new name is not already used.
+Renames a key, only if the new name is not already used.
 
 [[_Redis documentation_]](https://redis.io/commands/renamenx)
-
 
 ---
 
@@ -44,7 +43,6 @@ Body:
 }
 ```
 
-
 ---
 
 ## Argument
@@ -61,7 +59,7 @@ Body:
 
 ## Response
 
-Return either `0` (command failed), or `1` (command succeeded).
+Returns either `0` (command failed), or `1` (command succeeded).
 
 ```javascript
 {

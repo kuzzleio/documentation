@@ -8,7 +8,7 @@ title: bitop
 
 {{{since "1.0.0"}}}
 
-Perform a bitwise operation between multiple keys (containing string values) and store the result in the destination key.
+Performs a bitwise operation between multiple keys (containing string values) and stores the result in the destination key.
 
 [[_Redis documentation_]](https://redis.io/commands/bitop)
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return the new destination key length, as an integer.
+Returns the new destination key length, as an integer.
 
 ```js
 {

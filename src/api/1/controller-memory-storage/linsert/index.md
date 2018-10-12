@@ -8,7 +8,7 @@ title: linsert
 
 {{{since "1.0.0"}}}
 
-Insert a value in a list, either before or after the reference pivot value.
+Inserts a value in a list, either before or after a pivot value.
 
 [[_Redis documentation_]](https://redis.io/commands/linsert)
 
@@ -65,7 +65,7 @@ Body:
 
 ## Response
 
-Return the updated length of the list.
+Returns the updated length of the list.
 
 ```javascript
 {

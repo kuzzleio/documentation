@@ -8,7 +8,7 @@ title: hstrlen
 
 {{{since "1.0.0"}}}
 
-Return the string length of a field's value in a hash.
+Returns the string length of a field's value in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hstrlen)
 
@@ -45,7 +45,7 @@ Method: GET
 
 ## Response
 
-Return the length of the requested hash field.
+Returns the length of the requested hash field.
 
 ```javascript
 {

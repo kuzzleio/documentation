@@ -9,7 +9,7 @@ title: deleteProfile
 
 {{{since "1.0.0"}}}
 
-Delete a security profile.
+Deletes a security profile.
 
 An error is returned if the profile is still in use.
 
@@ -48,7 +48,7 @@ Method: DELETE
 
 ## Response
 
-Return the deleted profile identifier.
+Returns the deleted profile identifier.
 
 ```javascript
 {

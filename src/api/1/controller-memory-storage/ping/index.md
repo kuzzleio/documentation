@@ -8,7 +8,7 @@ title: ping
 
 {{{since "1.0.0"}}}
 
-Ping the memory storage database.
+Pings the memory storage database.
 
 [[_Redis documentation_]](https://redis.io/commands/ping)
 
@@ -36,7 +36,7 @@ Method: GET
 
 ## Response
 
-Return a `"PONG"` response.
+Returns a `"PONG"` response.
 
 ```javascript
 {

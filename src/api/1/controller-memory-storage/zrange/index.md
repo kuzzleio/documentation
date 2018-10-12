@@ -8,7 +8,7 @@ title: zrange
 
 {{{since "1.0.0"}}}
 
-Return elements depending on their position in the sorted set.
+Returns elements depending on their position in the sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zrange)
 
@@ -53,7 +53,7 @@ Method: GET
 
 ## Response
 
-By default, return the list of elements in the provided index range:
+By default, returns the list of elements in the provided index range:
 
 ```javascript
 {

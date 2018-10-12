@@ -8,7 +8,7 @@ title: hmset
 
 {{{since "1.0.0"}}}
 
-Set multiple fields at once in a hash.
+Sets multiple fields at once in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hmset)
 
@@ -69,7 +69,7 @@ Body:
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: geoadd
 
 {{{since "1.0.0"}}}
 
-Add geospatial points to the specified key.
+Adds geospatial points to the specified key.
 
 [[_Redis documentation_]](https://redis.io/commands/geoadd)
 
@@ -84,7 +84,7 @@ Body:
 
 ## Response
 
-Return the number of points added to the key.
+Returns the number of points added to the key.
 
 ```javascript
 {

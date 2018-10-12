@@ -8,7 +8,9 @@ title: list
 
 {{{since "1.0.0"}}}
 
-Returns the complete list of realtime and stored data collections in requested index sorted by name in alphanumerical order.  
+Returns the list of data collections associated to a provided data index.
+
+The returned list is sorted in alphanumerical order.  
 
 ---
 
@@ -52,10 +54,10 @@ Method: GET
 
 ## Response
 
-Return a `collections` array, listing collections described as objects with the following properties:
+Returns an array of objects, each one of those describing a collection, using the following properties:
 
 * `name`: data collection name
-* `type`: either `stored` or `realtime`
+* `type`: data collection type (either `stored` or `realtime`)
 
 Example:
 
