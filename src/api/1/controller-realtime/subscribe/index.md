@@ -8,7 +8,7 @@ title: subscribe
 
 {{{since "1.0.0"}}}
 
-Subscribe by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [push notifications]({{site_base_path}}api/1/notifications), sent to you in real-time by Kuzzle.
+Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [push notifications]({{site_base_path}}api/1/notifications), sent to you in real-time by Kuzzle.
 
 ---
 
@@ -64,7 +64,7 @@ An empty filter subscribes to any change occuring on the selected data index-col
 
 ## Response
 
-Return an object detailing the new subscription properties:
+Returns an object detailing the new subscription properties:
 
 * `channel`: unique channel identifier. A channel acts as a subscription configuration ID, allowing multiple subscriptions to occur with the same filters, but different notification options.
 * `roomId`: unique subscription identifier. 

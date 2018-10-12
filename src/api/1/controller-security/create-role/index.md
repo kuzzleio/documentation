@@ -4,12 +4,11 @@ algolia: true
 title: createRole
 ---
 
-
 # createRole
 
 {{{since "1.0.0"}}}
 
-Create a new role.
+Creates a new role.
 
 ---
 
@@ -74,7 +73,7 @@ Body:
 
 ## Response
 
-Return the role creation/replacement status:
+Returns the role creation/replacement status:
 
 * `_id`: created/replaced role identifier
 * `_source`: role definition

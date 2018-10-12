@@ -8,7 +8,7 @@ title: hset
 
 {{{since "1.0.0"}}}
 
-Set a field and its value in a hash. 
+Sets a field and its value in a hash. 
 
 If the key does not exist, a new key holding a hash is created. 
 
@@ -66,7 +66,7 @@ Body:
 
 ## Response
 
-Return either `0` (command failed), or `1` (command succeeded).
+Returns either `0` (command failed), or `1` (command succeeded).
 
 ```javascript
 {

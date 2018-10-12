@@ -8,7 +8,7 @@ title: createCredentials
 
 {{{since "1.0.0"}}}
 
-Create authentication credentials for a user.
+Creates authentication credentials for a user.
 
 ---
 

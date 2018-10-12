@@ -8,7 +8,7 @@ title: type
 
 {{{since "1.0.0"}}}
 
-Return the type of the value held by a key.
+Returns the type of the value held by a key.
 
 [[_Redis documentation_]](https://redis.io/commands/type)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return one of the following: `hash`, `list`, `string`, `set`, `zset`.
+Returns one of the following: `hash`, `list`, `string`, `set`, `zset`.
 
 ```javascript
 {

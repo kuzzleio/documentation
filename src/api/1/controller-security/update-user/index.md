@@ -8,7 +8,7 @@ title: updateUser
 
 {{{since "1.0.0"}}}
 
-Update a user definition.
+Updates a user definition.
 
 ---
 
@@ -55,7 +55,7 @@ Body:
 
 ## Response
 
-Return the update user kuid and version number.
+Returns the update user kuid and version number.
 
 ```javascript
 {

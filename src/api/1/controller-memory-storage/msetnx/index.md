@@ -8,7 +8,7 @@ title: msetnx
 
 {{{since "1.0.0"}}}
 
-Set the provided keys to their respective values, only if they do not exist. If a key exists, then the whole operation is aborted and no key is set.
+Sets the provided keys to their respective values, only if they do not exist. If a key exists, then the whole operation is aborted and no key is set.
 
 [[_Redis documentation_]](https://redis.io/commands/msetnx)
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return either `0` (command failed), or `1` (command succeeded).
+Returns either `0` (command failed), or `1` (command succeeded).
 
 ```javascript
 {

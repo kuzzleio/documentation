@@ -9,7 +9,7 @@ title: hdel
 
 {{{since "1.0.0"}}}
 
-Remove fields from a hash.
+Removes fields from a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hdel)
 
@@ -61,7 +61,7 @@ Body:
 
 ## Response
 
-Return the number of removed fields.
+Returns the number of removed fields.
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: rpop
 
 {{{since "1.0.0"}}}
 
-Remove the last element of a list and returns it.
+Removes the last element of a list and returns it.
 
 [[_Redis documentation_]](https://redis.io/commands/rpop)
 
@@ -43,7 +43,7 @@ Method: POST
 
 ## Response
 
-Return the removed element.
+Returns the removed element.
 
 ```javascript
 {

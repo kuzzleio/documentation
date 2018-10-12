@@ -8,12 +8,9 @@ title: scrollSpecifications
 
 {{{since "1.0.0"}}}
 
-Move a result set cursor forward, created by the [`searchSpecifications` request]({{ site_base_path }}api/1/controller-collection/search-specifications/) when the `scroll` argument is provided.
+Moves a result set cursor forward, created by the [`searchSpecifications` request]({{ site_base_path }}api/1/controller-collection/search-specifications/) when the `scroll` argument is provided.
 
-The response may contain a *different* cursor identifier, pointing to the next page of the results.
-
-The results that are returned from a `scrollSpecifications` request reflect the state of the index at the time that the initial search request was made, like a snapshot in time.  
-Subsequent changes to documents (index, update or delete) will only affect later search requests.
+Results returned by a `scroll` request reflect the state of the index at the time of the initial search request, like a fixed snapshot. Subsequent changes to documents do not affect the scroll results.
 
 ---
 
@@ -54,7 +51,7 @@ Method: GET
 
 ## Response
 
-Return an object containing the following properties:
+Returns an object containing the following properties:
 
 * `hits`: an array of found documents. Each item is an object with the following properties:
   * `_id`: specification unique identifier

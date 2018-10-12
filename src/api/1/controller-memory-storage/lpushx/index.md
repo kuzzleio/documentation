@@ -8,7 +8,7 @@ title: lpushx
 
 {{{since "1.0.0"}}}
 
-Prepend the specified value to a list, only if the key already exists and if it holds a list.
+Prepends the specified value to a list, only if the key already exists and if it holds a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lpushx)
 
@@ -59,7 +59,7 @@ Body:
 
 ## Response
 
-Return the updated length of the list.
+Returns the updated length of the list.
 
 ```javascript
 {

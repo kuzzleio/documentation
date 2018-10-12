@@ -8,7 +8,7 @@ title: lset
 
 {{{since "1.0.0"}}}
 
-Set the list element at `index` with the provided value.
+Sets the list element at `index` with the provided value.
 
 [[_Redis documentation_]](https://redis.io/commands/lset)
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

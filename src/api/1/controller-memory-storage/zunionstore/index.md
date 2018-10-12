@@ -8,7 +8,7 @@ title: zunionstore
 
 {{{since "1.0.0"}}}
 
-Compute the union of the provided sorted sets, and stores the result in a new sorted set.
+Computes the union of the provided sorted sets, and stores the result in a new sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zunionstore)
 
@@ -68,7 +68,7 @@ Body:
 
 ## Response
 
-Return the number of members added to the destination sorted set.
+Returns the number of members added to the destination sorted set.
 
 ```javascript
 {

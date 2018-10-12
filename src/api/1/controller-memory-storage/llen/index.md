@@ -8,7 +8,7 @@ title: llen
 
 {{{since "1.0.0"}}}
 
-Return the length of a list.
+Returns the length of a list.
 
 [[_Redis documentation_]](https://redis.io/commands/llen)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return the length of the list.
+Returns the length of the list.
 
 ```javascript
 {

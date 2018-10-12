@@ -8,7 +8,7 @@ title: join
 
 {{{since "1.0.0"}}}
 
-Join a previously created subscription.
+Joins a previously created subscription.
 
 ---
 
@@ -50,7 +50,7 @@ Due to the synchronous nature of the HTTP protocol, real-time messaging is not s
 
 ## Response
 
-Return a `roomId` property containing the subscription identifier.
+Returns a `roomId` property containing the subscription identifier.
 
 ```js
 {

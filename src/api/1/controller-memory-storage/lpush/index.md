@@ -8,7 +8,7 @@ title: lpush
 
 {{{since "1.0.0"}}}
 
-Prepend the specified values to a list. 
+Prepends the specified values to a list. 
 
 If the key does not exist, it is created holding an empty list before performing the operation.
 
@@ -61,7 +61,7 @@ Body:
 
 ## Response
 
-Return the updated length of the list.
+Returns the updated length of the list.
 
 ```javascript
 {

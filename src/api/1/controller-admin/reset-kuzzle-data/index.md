@@ -8,12 +8,12 @@ title: resetKuzzleData
 
 {{{since "1.4.0"}}}
 
-Asynchronously start the following sequence in Kuzzle, in this order:
+Asynchronously starts the following sequence in Kuzzle, in this order:
 
-* Invalidate and delete all users along with their credentials
-* Delete all user-defined roles and profiles
-* Reset the default roles and profiles to their default values
-* Delete all document validation specifications
+* Invalidates and deletes all users along with their associated credentials
+* Deletes all user-defined roles and profiles
+* Resets the default roles and profiles to their default values
+* Deletes all document validation specifications
 
 This action has no impact on Plugin and Document storages.
 
@@ -41,7 +41,7 @@ Method: POST
 
 ## Response
 
-Return a confirmation that the command is being executed.
+Returns a confirmation that the command is being executed.
 
 ```js
 {

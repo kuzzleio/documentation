@@ -8,7 +8,7 @@ title: exists
 
 {{{since "1.0.0"}}}
 
-Check if the specified keys exist in the database.
+Checks if the specified keys exist in the database.
 
 [[_Redis documentation_]](https://redis.io/commands/exists)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return the number of existing keys.
+Returns the number of existing keys.
 
 ```javascript
 {

@@ -8,12 +8,12 @@ title: refreshInternal
 
 {{{since "1.0.0"}}}
 
-Force an immediate [reindexation](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-refresh.html) of Kuzzle internal storage.
+Forces an immediate [reindexation](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-refresh.html) of Kuzzle internal storage.
 
 When writing or deleting security documents in Kuzzle (users, profiles, roles, and so on), the changes need to be indexed before being reflected in the search results.  
 By default, this operation can take up to 1 second.
 
-**Note:** forcing immediate refreshes come with performance costs, and should only performed when absolutely necessary.
+**Note:** forcing immediate refreshes comes with performance costs, and should only performed when absolutely necessary.
 
 ---
 
@@ -39,7 +39,7 @@ Method: POST
 
 ## Response
 
-Return a confirmation that the index is being refreshed:
+Returns a confirmation that the index is being refreshed:
 
 ```js
 {

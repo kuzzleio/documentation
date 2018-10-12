@@ -44,7 +44,7 @@ Method: DELETE
 
 ## Response
 
-Return a confirmation that the collection is being emptied:
+Returns a confirmation that the collection is being emptied:
 
 ```javascript
 {

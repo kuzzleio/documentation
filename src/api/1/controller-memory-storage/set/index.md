@@ -8,7 +8,7 @@ title: set
 
 {{{since "1.0.0"}}}
 
-Create a key holding the provided value, or overwrite it if it already exists.
+Creates a key holding the provided value, or overwrites it if it already exists.
 
 [[_Redis documentation_]](https://redis.io/commands/set)
 
@@ -71,7 +71,7 @@ Body:
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

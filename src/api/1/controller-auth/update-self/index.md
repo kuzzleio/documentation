@@ -8,9 +8,9 @@ title: updateSelf
 
 {{{since "1.0.0"}}}
 
-Update the current user object in Kuzzle.
+Updates the currently logged in user information.
 
-The current user cannot update their security profile using this action. To change a user's security profile, use [security:updateUser]({{ site_base_path }}api/1/controller-security/update-user) instead.
+This route cannot update the list of associated security profiles. To change a user's security profiles, the route [security:updateUser]({{ site_base_path }}api/1/controller-security/update-user) must be used instead.
 
 ---
 
@@ -62,7 +62,7 @@ User properties that can be set or updated depend on the application hosted by K
 
 ## Response
 
-Return the following properties:
+Returns the following properties:
 
 * `_id`: current user's [kuid]({{site_base_path}}guide/1/essentials/user-authentication/#kuzzle-user-identifier-kuid)
 * `_source`: additional (and optional) user properties

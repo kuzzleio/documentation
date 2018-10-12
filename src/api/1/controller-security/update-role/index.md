@@ -8,7 +8,7 @@ title: updateRole
 
 {{{since "1.0.0"}}}
 
-Update a security role definition.
+Updates a security role definition.
 
 **Note:** partial updates are not supported for roles, this API route will replace the entire role content with the provided one.
 
@@ -75,7 +75,7 @@ Body:
 
 ## Response
 
-Return the updated role identifier and version number.
+Returns the updated role identifier and version number.
 
 ```javascript
 {

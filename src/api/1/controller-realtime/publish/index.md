@@ -8,7 +8,7 @@ title: publish
 
 {{{since "1.0.0"}}}
 
-Send a real-time message to Kuzzle. The message will be dispatched to all clients with subscriptions matching the message content.
+Sends a real-time message to Kuzzle. The message will be dispatched to all clients with subscriptions matching the message content.
 
 A `_kuzzle_info` object will be added to the message content, with the following properties:
 
@@ -66,7 +66,7 @@ Message content.
 
 ## Response
 
-Return the sent message.
+Returns the sent message.
 
 ```javascript
 {
