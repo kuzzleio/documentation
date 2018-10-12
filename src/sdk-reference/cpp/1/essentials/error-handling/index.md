@@ -8,29 +8,11 @@ order: 100
 
 # Error Handling
 
-Each of the SDK methods is likely to fail and throw an exception.  
+SDK methods handle failure by throwing exceptions inheriting the `KuzzleException` class, which in turn inherits the standard `std::runtime_error` class.
 
-Exceptions are subclasses of the `KuzzleException` class.  
-
-A `KuzzleException` contain two informations:
-  - `status` : Status code following [HTTP Standards](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-  - `message` : Message describing the error
-
-The `status` is a readable property on the exception and the `message` can be accessed with `getMessage()` getter.
-
-Here is the full class definition:
-```c++
-struct KuzzleException : std::runtime_error {
-  int status;
-
-  KuzzleException(int status, const std::string& message);
-  KuzzleException(const std::string& message) : KuzzleException(500, message) {};
-  KuzzleException(const KuzzleException& ke) : status(ke.status), std::runtime_error(ke.getMessage()) {};
-
-  virtual ~KuzzleException() throw() {};
-  std::string getMessage() const;
-};
-```
+Members:
+* `unsigned int status`: error code, following [HTTP Standards](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+* `const char * what() const;`: returns the error message
 
 You can find a detailed list of possible errors messages and statuses in the [documentation API]({{ site_base_path }}api/1/errors).  
 Just replace *Error* by *Exception* to find the exception name. (e.g. `BadRequestError` becomes `BadRequestException`).

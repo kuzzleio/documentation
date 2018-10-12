@@ -4,4 +4,4 @@ hooks:
   before: curl -X POST kuzzle:7512/nyc-open-data/_create
   after:
 template: default
-expected: Try with an other name!
+expected: Try with another name!
