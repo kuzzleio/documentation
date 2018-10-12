@@ -1,13 +1,13 @@
 ---
 layout: full.html.hbs
 algolia: true
-title: Push Notifications
+title: Real-time Notifications
 order: 500
 ---
 
-# Push Notifications
+# Real-time Notifications
 
-Clients can [subscribe]({{ site_base_path }}api/1/controller-realtime/subscribe) to documents, messages and events, in order to receive a push notification whenever a change occurs matching the subscription scope.
+Clients can [subscribe]({{ site_base_path }}api/1/controller-realtime/subscribe) to documents, messages and events, in order to receive a notification whenever a change occurs matching the subscription scope.
 
 ---
 
@@ -20,7 +20,7 @@ The following notifications are sent by Kuzzle whenever one of the following eve
 * A document has been updated or replaced
 * {{{deprecated "1.5.0"}}} A document is about to be created (creation not guaranteed)
 
-Push notifications are also sent when documents, previously in the subscription scope, are leaving it because of the following events:
+Real-time notifications are also sent when documents, previously in the subscription scope, are leaving it because of the following events:
 
 * document is deleted
 * document is updated/replaced and its new content do not match the subscription filters anymore
@@ -86,7 +86,7 @@ The `result` object is the notification content, and it has the following struct
 
 ## User events
 
-Notifications about users are pushed on the following events:
+User notifications about users are triggered by the following events:
 
 * A user subscribes to [the same room]({{ site_base_path }}kuzzle-dsl/1/roomid/)
 * A user leaves that room
@@ -141,7 +141,7 @@ The `result` object is the notification content, and it has the following struct
 
 ## Server events
 
-Server notifications are pushed on global events, and they are sent to all of a client's subscriptions at the same time.
+Server notifications are triggered by global events, and they are sent to all of a client's subscriptions at the same time.
 
 Currently, the only event generating a server notification is when an [authentication token]({{ site_base_path }}guide/1/essentials/user-authentication) has expired, closing the subscription.
 
