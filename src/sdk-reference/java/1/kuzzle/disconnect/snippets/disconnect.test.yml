@@ -4,5 +4,5 @@ description: Disconnect the SDK
 hooks:
   before:
   after:
-template: default
+template: blank
 expected: Success
