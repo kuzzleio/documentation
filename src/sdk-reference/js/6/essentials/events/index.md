@@ -17,17 +17,15 @@ These callbacks can be added and deleted respectively by the methods [addListene
 
 ## Emitted Events
 
-#### connected
+### *connected*
 
 Triggered when the SDK has successfully connected to Kuzzle.
 
-Callback arguments: none.
-
-#### discarded
+### *discarded*
 
 Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request too large, ...).
 
-Callback arguments:
+**Callback arguments:**
 
 `@param {Error} error`
 
@@ -37,17 +35,15 @@ Callback arguments:
 | `status` | Number | Error code |
 | `stack` | string | Stacktrace (development mode only) |
 
-#### disconnected
+### *disconnected*
 
 Triggered when the current session has been unexpectedly disconnected.
 
-Callback arguments: none.
-
-#### loginAttempt
+### *loginAttempt*
 
 Triggered when a login attempt completes, either with a success or a failure result.
 
-Callback arguments:
+**Callback arguments:**
 
 `@param {object} data`
 
@@ -56,12 +52,12 @@ Callback arguments:
 | `success` | boolean | Indicate if login attempt succeed |
 | `error` | string | Error message when login fail |
 
-#### networkError
+### *networkError*
 
 Triggered when the SDK has failed to connect to Kuzzle.  
 This event does not trigger the offline mode.  
 
-Callback arguments:
+**Callback arguments:**
 
 `@param {Error} error`
 
@@ -71,20 +67,20 @@ Callback arguments:
 | `status` | Number | Error code |
 | `stack` | string | Stacktrace (development mode only) |
 
-#### offlineQueuePop
+### *offlineQueuePop*
 
 Triggered whenever a request is removed from the offline queue.
 
-Callback arguments:
+**Callback arguments:**
 
 `@param {object} request`: the request removed from the queue
 
 
-#### offlineQueuePush
+### *offlineQueuePush*
 
 Triggered whenever a request is added to the offline queue.
 
-Callback arguments:
+**Callback arguments:**
 
 `@param {object} data`
 
@@ -92,11 +88,11 @@ Callback arguments:
 | ---------- | ------- | ----------------- |
 | `request` | object | The request added to the queue |    
 
-#### queryError
+### *queryError*
 
 Triggered whenever Kuzzle responds with an error
 
-Callback arguments:
+**Callback arguments:**
 
 `@param {object} data`
 
@@ -105,14 +101,10 @@ Callback arguments:
 | `request` | object | The request that causing an error |    
 | `error` | Error | The error details |    
 
-#### reconnected
+### *reconnected*
 
 Triggered when the current session has reconnected to Kuzzle after a disconnection, and only if ``autoReconnect`` is set to ``true``.
 
-Callback arguments: none.
-
-#### tokenExpired
+### *tokenExpired*
 
 Triggered when Kuzzle rejected a request because the authentication token expired.
-
-Callback arguments: none.
