@@ -8,7 +8,7 @@ title: searchRoles
 
 {{{since "1.0.0"}}}
 
-Search for security roles, optionally returning only those allowing access to the provided controllers.
+Searches security roles, optionally returning only those allowing access to the provided controllers.
 
 ---
 
@@ -56,7 +56,6 @@ Body:
 * `from`: the offset from the first result you want to fetch.  Usually used with the `size` argument
 * `size`: the maximum number of profiles returned in one response page
 
-
 ---
 
 ## Body properties
@@ -69,7 +68,7 @@ Body:
 
 ## Response
 
-Return an object with the following properties:
+Returns an object with the following properties:
 
 * `hits`: array of object. Each object describes a found role:
   * `_id`: role identifier

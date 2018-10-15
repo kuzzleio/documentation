@@ -9,7 +9,7 @@ title: expire
 
 {{{since "1.0.0"}}}
 
-Set a timeout (in seconds) on a key. After the timeout has expired, the key is automatically deleted.
+Sets a timeout (in seconds) on a key. After the timeout has expired, the key is automatically deleted.
 
 [[_Redis documentation_]](https://redis.io/commands/expire)
 
@@ -61,7 +61,7 @@ Body:
 
 ## Response
 
-Return either `0` (command failed), or `1` (command succeeded).
+Returns either `0` (command failed), or `1` (command succeeded).
 
 ```javascript
 {

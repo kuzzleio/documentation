@@ -8,9 +8,9 @@ title: resetDatabase
 
 {{{since "1.4.0"}}}
 
-Asynchronously delete indexes created by users. This does not include Kuzzle's internal index.
+Asynchronously deletes all indexes created by users. 
 
-This action has no impact on Kuzzle's internal index and Plugin indexes.
+Neither Kuzzle internal indexes nor Plugin indexes are deleted.
 
 ---
 
@@ -37,7 +37,7 @@ Method: POST
 
 ## Response
 
-Return a confirmation that the command is being executed.
+Returns a confirmation that the command is being executed.
 
 ```js
 {

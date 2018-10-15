@@ -8,7 +8,7 @@ title: hlen
 
 {{{since "1.0.0"}}}
 
-Return the number of fields contained in a hash.
+Returns the number of fields contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hlen)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-The number of fields stored in a hash.
+Returns the number of fields stored in a hash.
 
 ```javascript
 {

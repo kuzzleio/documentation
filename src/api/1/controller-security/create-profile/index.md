@@ -9,7 +9,7 @@ title: createProfile
 
 {{{since "1.0.0"}}}
 
-Create a new profile.
+Creates a new profile.
 
 ---
 
@@ -100,7 +100,7 @@ Body:
 
 ## Response
 
-Return an object with the new profile creation status:
+Returns an object with the new profile creation status:
 
 * `_id`: created profile identifier
 * `_source`: profile content

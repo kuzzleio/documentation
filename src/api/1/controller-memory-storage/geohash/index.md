@@ -8,7 +8,7 @@ title: geohash
 
 {{{since "1.0.0"}}}
 
-Convert a key's geopoints (see [geoadd]({{ site_base_path }}api/1/controller-memory-storage/geoadd/)) into [geohashes](https://en.wikipedia.org/wiki/Geohash).
+Converts a key's geopoints (see [geoadd]({{ site_base_path }}api/1/controller-memory-storage/geoadd/)) into [geohashes](https://en.wikipedia.org/wiki/Geohash).
 
 [[_Redis documentation_]](https://redis.io/commands/geohash)
 
@@ -45,7 +45,7 @@ Method: GET
 
 ## Response
 
-Return the converted geohashes, in the same order than the one provided in the query.
+Returns the converted geohashes, in the same order than the one provided in the query.
 
 ```javascript
 {

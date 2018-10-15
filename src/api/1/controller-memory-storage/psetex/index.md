@@ -8,7 +8,7 @@ title: psetex
 
 {{{since "1.0.0"}}}
 
-Set a key with the provided value, and an expiration delay expressed in milliseconds. If the key does not exist, it is created beforehand.
+Sets a key with the provided value, and an expiration delay expressed in milliseconds. If the key does not exist, it is created beforehand.
 
 [[_Redis documentation_]](https://redis.io/commands/psetex)
 
@@ -62,7 +62,7 @@ Body:
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

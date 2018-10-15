@@ -8,7 +8,7 @@ title: zscan
 
 {{{since "1.0.0"}}}
 
-Iterate incrementally over members contained in a sorted set, using a cursor.
+Iterates incrementally over members contained in a sorted set, using a cursor.
 
 An iteration starts when the cursor is set to 0.  
 To get the next page of results, simply re-send the request with the updated cursor position provided in the result set.  
@@ -59,7 +59,7 @@ Method: GET
 
 ## Response
 
-Return an array containing the following two elements:
+Returns an array containing the following two elements:
 
 * a new cursor position, to be used to get the next page of results (or `0` when at the end of the cursor)
 * an array of values alternating between sorted set elements and their associated score

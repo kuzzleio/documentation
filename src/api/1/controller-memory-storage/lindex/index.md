@@ -8,7 +8,7 @@ title: lindex
 
 {{{since "1.0.0"}}}
 
-Return the element at the provided index in a list.
+Returns the element at the provided index in a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lindex)
 
@@ -46,7 +46,7 @@ Method: GET
 
 ## Response
 
-Return the stored value at the provided list index.
+Returns the stored value at the provided list index.
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: mGetProfiles
 
 {{{since "1.0.0"}}}
 
-Get multiple security profiles.
+Gets multiple security profiles.
 
 ---
 
@@ -50,7 +50,7 @@ Body:
 
 ## Response
 
-Return a `hits` array of objects. Each object is a profile description, with the following properties:
+Returns a `hits` array of objects. Each object is a profile description, with the following properties:
 
 * `_id`: profile unique identifier
 * `_source`: profile description

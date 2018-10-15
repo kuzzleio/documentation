@@ -8,7 +8,7 @@ title: getset
 
 {{{since "1.0.0"}}}
 
-Set a new value for a key, and return its previously stored value.
+Sets a new value for a key, and returns its previously stored value.
 
 [[_Redis documentation_]](https://redis.io/commands/getset)
 
@@ -60,7 +60,7 @@ Body:
 
 ## Response
 
-Return the previously stored value.
+Returns the previously stored value.
 
 ```javascript
 {

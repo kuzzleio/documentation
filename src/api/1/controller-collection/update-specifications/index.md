@@ -83,7 +83,7 @@ The provided body must have the following structure:
 
 ## Response
 
-Result contain the updated specification:
+The returned result contains the updated specification:
 
 ```javascript
 {

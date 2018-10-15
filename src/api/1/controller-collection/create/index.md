@@ -90,7 +90,7 @@ Body:
 
 ## Response
 
-Return a confirmation that the collection is being created:
+Returns a confirmation that the collection is being created:
 
 ```javascript
 {

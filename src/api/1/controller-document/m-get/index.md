@@ -8,7 +8,7 @@ title: mGet
 
 {{{since "1.0.0"}}}
 
-Get multiple documents.
+Gets multiple documents.
 
 ---
 
@@ -64,7 +64,7 @@ Body:
 
 ## Response
 
-Return a `hits` array with the list of retrieved documents.
+Returns a `hits` array with the list of retrieved documents.
 
 Each document is an object with the following properties:
 

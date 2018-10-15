@@ -8,7 +8,7 @@ title: count
 
 {{{since "1.0.0"}}}
 
-Return the number of other connections sharing the same subscription.
+Returns the number of other connections sharing the same subscription.
 
 ---
 
@@ -40,7 +40,7 @@ Due to the synchronous nature of the HTTP protocol, real-time messaging is not s
 
 ## Response
 
-Return an object with the following properties:
+Returns an object with the following properties:
 
 * `count`: number of active connections using the same provided subscription
 * `roomId`: subscription identifier

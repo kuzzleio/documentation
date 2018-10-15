@@ -8,7 +8,7 @@ title: append
 
 {{{since "1.0.0"}}}
 
-Append a value to a key. If the key does not exist, it is created.
+Appends a value to a key. If the key does not exist, it is created.
 
 [[_Redis documentation_]](https://redis.io/commands/append)
 
@@ -59,7 +59,7 @@ Body:
 
 ## Response
 
-Return the updated value length.
+Returns the updated value length.
 
 ```js
 {

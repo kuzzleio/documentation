@@ -8,7 +8,7 @@ title: scard
 
 {{{since "1.0.0"}}}
 
-Return the number of members stored in a set of unique values.
+Returns the number of members stored in a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/scard)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return the set length.
+Returns the set length.
 
 ```javascript
 {

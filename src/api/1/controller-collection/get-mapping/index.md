@@ -8,7 +8,7 @@ title: getMapping
 
 {{{since "1.0.0"}}}
 
-Return the mapping for the given `collection`.
+Returns a data collection mapping.
 
 ---
 
@@ -44,7 +44,7 @@ Method: GET
 
 ## Response
 
-Return an object with the following structure:
+Returns a mapping object with the following structure:
 
 ```
 <index>
@@ -57,7 +57,7 @@ Return an object with the following structure:
                      |- mapping for field n
 ```
 
-Example:
+### Example:
 
 ```javascript
 {

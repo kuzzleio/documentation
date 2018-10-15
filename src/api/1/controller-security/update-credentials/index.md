@@ -8,7 +8,7 @@ title: updateCredentials
 
 {{{since "1.0.0"}}}
 
-Update a user credentials for the specified authentication strategy.
+Updates a user credentials for the specified authentication strategy.
 
 ---
 
@@ -61,7 +61,7 @@ The properties that can be sent to update a user credentials depend entirely of 
 
 ## Response
 
-Return the authentication strategy response.
+Returns the authentication strategy response.
 
 ### Example for the "local" authentication strategy:
 

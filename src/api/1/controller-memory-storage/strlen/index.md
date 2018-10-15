@@ -8,7 +8,7 @@ title: strlen
 
 {{{since "1.0.0"}}}
 
-Return the length of a value.
+Returns the length of a value.
 
 [[_Redis documentation_]](https://redis.io/commands/strlen)
 
@@ -43,7 +43,7 @@ Method: GET
 
 ## Response
 
-Return a string length.
+Returns a string length.
 
 ```javascript
 {

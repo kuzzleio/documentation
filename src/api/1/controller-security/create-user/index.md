@@ -4,12 +4,11 @@ algolia: true
 title: createUser
 ---
 
-
 # createUser
 
 {{{since "1.0.0"}}}
 
-Create a new user.
+Creates a new user.
 
 The body contains the user data and must have the following properties:
 
@@ -88,7 +87,7 @@ Body:
 
 ## Response
 
-Return the user creation status:
+Returns the user creation status:
 
 * `_id`: new user kuid
 * `_source`: new user content and attributed profiles

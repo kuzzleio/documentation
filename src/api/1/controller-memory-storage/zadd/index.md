@@ -8,13 +8,11 @@ title: zadd
 
 {{{since "1.0.0"}}}
 
-Add elements to a sorted set. 
+Adds elements to a sorted set. 
 
 If the key does not exist, it is created, holding an empty sorted set. 
 
 If the key already exists but does not hold a sorted set, an error is returned.
-
-Scores are expressed as floating point numbers.
 
 If a member to insert is already in the sorted set, its score is updated and the member is reinserted at the right position in the set.
 
@@ -71,7 +69,7 @@ Body:
 
 * `elements`: an array of objects. Each object describes a sorted set member, using the following properties:
   * `member`: member value
-  * `score`: member score
+  * `score`: member score (floating-point number)
 
 ### Optional:
 
@@ -84,7 +82,7 @@ Body:
 
 ## Response
 
-Return the number of added elements.
+Returns the number of added elements.
 
 ```javascript
 {
