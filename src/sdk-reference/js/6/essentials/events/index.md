@@ -15,13 +15,13 @@ Subscription to these events is possible by specifying callbacks that will be ex
 These callbacks can be added and deleted respectively by the methods [addListener]({{site_base_path }}sdk-reference/js/6/kuzzle/add-listener) and [removeListener]({{site_base_path }}sdk-reference/js/6/kuzzle/remove-listener).
 
 
-## Emitted Events
+# Emitted Events
 
-### *connected*
+## connected
 
 Triggered when the SDK has successfully connected to Kuzzle.
 
-### *discarded*
+## discarded
 
 Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request too large, ...).
 
@@ -35,11 +35,11 @@ Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request t
 | `status` | Number | Error code |
 | `stack` | string | Stacktrace (development mode only) |
 
-### *disconnected*
+## disconnected
 
 Triggered when the current session has been unexpectedly disconnected.
 
-### *loginAttempt*
+## loginAttempt
 
 Triggered when a login attempt completes, either with a success or a failure result.
 
@@ -52,7 +52,7 @@ Triggered when a login attempt completes, either with a success or a failure res
 | `success` | boolean | Indicate if login attempt succeed |
 | `error` | string | Error message when login fail |
 
-### *networkError*
+## networkError
 
 Triggered when the SDK has failed to connect to Kuzzle.  
 This event does not trigger the offline mode.  
@@ -67,7 +67,7 @@ This event does not trigger the offline mode.
 | `status` | Number | Error code |
 | `stack` | string | Stacktrace (development mode only) |
 
-### *offlineQueuePop*
+## offlineQueuePop
 
 Triggered whenever a request is removed from the offline queue.
 
@@ -76,7 +76,7 @@ Triggered whenever a request is removed from the offline queue.
 `@param {object} request`: the request removed from the queue
 
 
-### *offlineQueuePush*
+## offlineQueuePush
 
 Triggered whenever a request is added to the offline queue.
 
@@ -88,7 +88,7 @@ Triggered whenever a request is added to the offline queue.
 | ---------- | ------- | ----------------- |
 | `request` | object | The request added to the queue |    
 
-### *queryError*
+## queryError
 
 Triggered whenever Kuzzle responds with an error
 
@@ -101,10 +101,10 @@ Triggered whenever Kuzzle responds with an error
 | `request` | object | The request that causing an error |    
 | `error` | Error | The error details |    
 
-### *reconnected*
+## reconnected
 
 Triggered when the current session has reconnected to Kuzzle after a disconnection, and only if ``autoReconnect`` is set to ``true``.
 
-### *tokenExpired*
+## tokenExpired
 
 Triggered when Kuzzle rejected a request because the authentication token expired.
