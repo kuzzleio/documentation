@@ -14,12 +14,12 @@ Subsequent call have no effect if the SDK is already connected.
 ## Signature
 
 ```java
-java.lang.String connect()
+String connect()
 ```
 
 ## Return
 
-A `java.lang.String` with the error message or `null` if connection is made successfully.
+A `String` with the error message or `null` if connection is made successfully.
 
 ## Usage
 
