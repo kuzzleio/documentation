@@ -53,7 +53,7 @@ Method: GET
 
 ## Response
 
-By default, return the list of elements in the provided index range:
+By default, returns the list of elements in the provided index range:
 
 ```javascript
 {

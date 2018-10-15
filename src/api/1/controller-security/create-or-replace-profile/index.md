@@ -8,7 +8,7 @@ title: createOrReplaceProfile
 
 {{{since "1.0.0"}}}
 
-Create a new profile or, if the provided profile identifier already exists, replace it.
+Creates a new profile or, if the provided profile identifier already exists, replaces it.
 
 ---
 
@@ -99,7 +99,7 @@ Body:
 
 ## Response
 
-Return an object with the new profile modification status:
+Returns an object with the new profile modification status:
 
 * `_id`: created/replaced profile identifier
 * `_source`: profile content

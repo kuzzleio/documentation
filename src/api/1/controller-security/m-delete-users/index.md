@@ -8,7 +8,7 @@ title: mDeleteUsers
 
 {{{since "1.0.0"}}}
 
-Delete multiple users.
+Deletes multiple users.
 
 ---
 
@@ -58,7 +58,7 @@ Body:
 
 ## Response
 
-Return an array of successfully deleted users.
+Returns an array of successfully deleted users.
 
 ```javascript
 {

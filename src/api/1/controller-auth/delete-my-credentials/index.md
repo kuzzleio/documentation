@@ -8,9 +8,9 @@ title: deleteMyCredentials
 
 {{{since "1.0.0"}}}
 
-Delete the current user's credentials for the specified authentication strategy.
+Deletes credentials associated to the current user.
 
-If the credentials that generated the current JWT are removed, the user will remain logged in until he logs out or his session expires, after that they will no longer be able to log in with the deleted credentials.
+If the credentials that generated the current JWT are removed, the user will remain logged in until they log out or their session expire. After that, they will no longer be able to log in with the deleted credentials.
 
 ---
 
@@ -46,7 +46,7 @@ Headers: Authorization: "Bearer <authentication token>"
 
 ## Response
 
-Return a confirmation that the credentials are being deleted:
+Returns a confirmation that the credentials are being deleted:
 
 ```js
 {

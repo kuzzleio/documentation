@@ -8,7 +8,7 @@ title: rpushx
 
 {{{since "1.0.0"}}}
 
-Append a value at the end of a list, only if the destination key already exists, and if it holds a list.
+Appends a value at the end of a list, only if the destination key already exists, and if it holds a list.
 
 [[_Redis documentation_]](https://redis.io/commands/rpushx)
 
@@ -59,7 +59,7 @@ Body:
 
 ## Response
 
-Return the updated list length.
+Returns the updated list length.
 
 ```javascript
 {

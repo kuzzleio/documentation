@@ -8,7 +8,7 @@ title: setex
 
 {{{since "1.0.0"}}}
 
-Set a value and a time to live (in seconds) on a key. If the key already exists, it is overwritten.
+Sets a value and a time to live (in seconds) on a key. If the key already exists, it is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/setex)
 
@@ -63,7 +63,7 @@ Body:
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

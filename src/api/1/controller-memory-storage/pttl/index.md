@@ -8,7 +8,7 @@ title: pttl
 
 {{{since "1.0.0"}}}
 
-Return the remaining time to live of a key, in milliseconds.
+Returns the remaining time to live of a key, in milliseconds.
 
 [[_Redis documentation_]](https://redis.io/commands/pttl)
 
@@ -44,7 +44,7 @@ Method: GET
 
 ## Response
 
-Return the remaining TTL, in milliseconds.
+Returns the remaining TTL, in milliseconds.
 
 ```javascript
 {

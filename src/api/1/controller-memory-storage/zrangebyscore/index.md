@@ -8,7 +8,7 @@ title: zrangebyscore
 
 {{{since "1.0.0"}}}
 
-Return all sorted set elements with a score within a provided range.
+Returns all sorted set elements with a score within a provided range.
 
 The elements are considered to be ordered from low to high scores.
 
@@ -59,7 +59,7 @@ By default, `min` and `max` are inclusive. Check the full Redis documentation fo
 
 ## Response
 
-By default, return the list of elements in the provided score range:
+By default, returns the list of elements in the provided score range:
 
 ```javascript
 {

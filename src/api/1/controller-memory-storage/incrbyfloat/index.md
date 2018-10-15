@@ -8,7 +8,7 @@ title: incrbyfloat
 
 {{{since "1.0.0"}}}
 
-Increment the number stored at `key` by the provided float value. If the key does not exist, it is set to 0 before performing the operation.
+Increments the number stored at `key` by the provided float value. If the key does not exist, it is set to 0 before performing the operation.
 
 [[_Redis documentation_]](https://redis.io/commands/incrbyfloat)
 
@@ -59,7 +59,7 @@ Body:
 
 ## Response
 
-Return the incremented float value.
+Returns the incremented float value.
 
 ```javascript
 {

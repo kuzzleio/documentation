@@ -8,7 +8,7 @@ title: ttl
 
 {{{since "1.0.0"}}}
 
-Return the remaining time to live of a key, in seconds.
+Returns the remaining time to live of a key, in seconds.
 
 [[_Redis documentation_]](https://redis.io/commands/ttl)
 
@@ -44,7 +44,7 @@ Method: GET
 
 ## Response
 
-Return the remaining key TTL, in seconds, or a negative value if the key does not exist or if it is persistent.
+Returns the remaining key TTL, in seconds, or a negative value if the key does not exist or if it is persistent.
 
 ```javascript
 {

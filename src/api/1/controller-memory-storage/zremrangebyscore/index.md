@@ -8,7 +8,7 @@ title: zremrangebyscore
 
 {{{since "1.0.0"}}}
 
-Removs members from a sorted set, with a score between the provided interval.
+Removes members from a sorted set, with a score between the provided interval.
 
 [[_Redis documentation_]](https://redis.io/commands/zremrangebylex)
 
@@ -64,7 +64,7 @@ The `min` and `max` values are inclusive, but this behavior can be changed (see 
 
 ## Response
 
-Return the number of removed elements.
+Returns the number of removed elements.
 
 ```javascript
 {

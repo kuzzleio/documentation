@@ -8,7 +8,7 @@ title: spop
 
 {{{since "1.0.0"}}}
 
-Remove and return one or more elements at random from a set of unique values. If multiple elements are removed, the result set will be an array of removed elements, instead of a string.
+Removes and returns one or more elements at random from a set of unique values. If multiple elements are removed, the result set will be an array of removed elements, instead of a string.
 
 [[_Redis documentation_]](https://redis.io/commands/spop)
 
@@ -63,7 +63,7 @@ Body:
 
 ## Response
 
-If `count` is not set or equal to `1`, return the removed element as a string:
+If `count` is not set or equal to `1`, returns the removed element as a string:
 
 ```javascript
 {

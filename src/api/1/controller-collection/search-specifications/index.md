@@ -8,7 +8,7 @@ title: searchSpecifications
 
 {{{since "1.0.0"}}}
 
-Search collection specifications.
+Searches collection specifications.
 
 ---
 
@@ -75,7 +75,7 @@ Body:
 
 ## Response
 
-Return an object containing the following properties:
+Returns an object containing the following properties:
 
 * `hits`: an array of found documents. Each item is an object with the following properties:
   * `_id`: specification unique identifier

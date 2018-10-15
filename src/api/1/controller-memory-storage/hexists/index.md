@@ -8,7 +8,7 @@ title: hexists
 
 {{{since "1.0.0"}}}
 
-Check if a field exists in a hash.
+Checks if a field exists in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hexists)
 
@@ -45,7 +45,7 @@ Method: GET
 
 ## Response
 
-Return either `0` (the field does not exist), or `1` (the field exist).
+Returns either `0` (the field does not exist), or `1` (the field exist).
 
 ```javascript
 {

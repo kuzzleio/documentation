@@ -52,7 +52,7 @@ Body:
 
 ## Response
 
-The result contains the following properties:
+The returned result contains the following properties:
 
 * `valid`: a boolean telling whether the provided token is valid
 * `state`: the reason why a token is invalid. Present only if `valid` is false

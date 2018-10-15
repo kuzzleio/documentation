@@ -8,7 +8,7 @@ title: getRole
 
 {{{since "1.0.0"}}}
 
-Get a security role.
+Gets a security role.
 
 ---
 
@@ -41,7 +41,7 @@ Method: GET
 
 ## Response
 
-Return the queried role:
+Returns the queried role:
 
 * `_id`: role identifier
 * `_source`: role description

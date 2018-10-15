@@ -8,7 +8,7 @@ title: update
 
 {{{since "1.0.0"}}}
 
-Update a document content.
+Updates a document content.
 
 ---
 
@@ -66,7 +66,7 @@ Partial changes to apply to the document.
 
 ## Response
 
-Return information about the updated documents:
+Returns information about the updated documents:
 
 * `_id`: document unique identifier
 * `_version`: updated document version

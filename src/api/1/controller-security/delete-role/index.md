@@ -4,12 +4,11 @@ algolia: true
 title: deleteRole
 ---
 
-
 # deleteRole
 
 {{{since "1.0.0"}}}
 
-Delete a security role.
+Deletes a security role.
 
 An error is returned if the role is still in use.
 
@@ -48,7 +47,7 @@ Method: DELETE
 
 ## Response
 
-Return the deleted role identifier.
+Returns the deleted role identifier.
 
 ```javascript
 {

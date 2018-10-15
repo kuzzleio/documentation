@@ -8,7 +8,7 @@ title: updateProfileMapping
 
 {{{since "1.0.0"}}}
 
-Update the internal profile storage mapping.
+Updates the internal profile storage mapping.
 
 ---
 
@@ -54,7 +54,7 @@ Body:
 
 ## Response
 
-Return an acknowledgement.
+Returns an acknowledgement.
 
 ```javascript
 {

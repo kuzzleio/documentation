@@ -8,7 +8,7 @@ title: zrem
 
 {{{since "1.0.0"}}}
 
-Remove members from a sorted set.
+Removes members from a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zrem)
 
@@ -59,7 +59,7 @@ Body:
 
 ## Response
 
-Return the number of removed members.
+Returns the number of removed members.
 
 ```javascript
 {

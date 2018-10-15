@@ -8,7 +8,7 @@ title: zrangebylex
 
 {{{since "1.0.0"}}}
 
-Return elements within a provided interval, in a sorted set where all members have equal score, using lexicographical ordering. 
+Returns elements within a provided interval, in a sorted set where all members have equal score, using lexicographical ordering. 
 
 [[_Redis documentation_]](https://redis.io/commands/zrangebylex)
 
@@ -55,7 +55,7 @@ The `min` and `max` values are inclusive by default. To change this behavior, ch
 
 ## Response
 
-Return an array of matched elements.
+Returns an array of matched elements.
 
 ```javascript
 {

@@ -8,7 +8,7 @@ title: searchUsers
 
 {{{since "1.0.0"}}}
 
-Search users.
+Searches users.
 
 ---
 
@@ -102,7 +102,7 @@ If the body is left empty, the result will return all available users.
 
 ## Response
 
-Return an object with the following properties:
+Returns an object with the following properties:
 
 * `hits`: array of object. Each object describes a found user:
   * `_id`: user [kuid]({{site_base_path}}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier)

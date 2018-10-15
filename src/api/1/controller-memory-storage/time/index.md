@@ -8,7 +8,7 @@ title: time
 
 {{{since "1.0.0"}}}
 
-Return the current server time.
+Returns the current server time.
 
 [[_Redis documentation_]](https://redis.io/commands/time)
 
@@ -36,7 +36,7 @@ Method: GET
 
 ## Response
  
-Return the time as a two items array: 
+Returns the time as a two items array: 
 
 * a timestamp in [Epoch time](https://en.wikipedia.org/wiki/Unix_time) 
 * the number of microseconds already elapsed in the current second

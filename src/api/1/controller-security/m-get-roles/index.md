@@ -8,7 +8,7 @@ title: mGetRoles
 
 {{{since "1.0.0"}}}
 
-Get multiple security roles.
+Gets multiple security roles.
 
 ---
 
@@ -49,7 +49,7 @@ Body:
 
 ## Response
 
-Return a `hits` array of objects. Each object is a role description, with the following properties:
+Returns a `hits` array of objects. Each object is a role description, with the following properties:
 
 * `_id`: role unique identifier
 * `_source`: role description

@@ -10,7 +10,7 @@ title: validate
 
 This API route is deprecated and should not be used. Instead, use [document:validate]({{site_base_path}}api/1/controller-document/validate).
 
-Validate data against existing validation rules. 
+Validates data against existing validation rules. 
 
 Messages are always valid if no validation rules are defined on the provided index and collection.
 
@@ -63,7 +63,7 @@ Data content to validate against validation rules.
 
 ## Response
 
-Return an object with the following properties:
+Returns an object with the following properties:
 
 * `errorMessages`: the exhaustive list of violated validation rules. Present only if `valid` is false
 * `valid`: a boolean telling whether the provided pass all validation rules

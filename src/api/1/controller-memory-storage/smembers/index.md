@@ -8,7 +8,7 @@ title: smembers
 
 {{{since "1.0.0"}}}
 
-Return the members of a set of unique values.
+Returns the members of a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/smembers)
 
@@ -44,7 +44,7 @@ Method: GET
 
 ## Response
 
-Return the list of the set's members.
+Returns the list of the set's members.
 
 ```javascript
 {

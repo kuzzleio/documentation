@@ -8,7 +8,7 @@ title: persist
 
 {{{since "1.0.0"}}}
 
-Remove the expiration delay or timestamp from a key, making it persistent.
+Removes the expiration delay or timestamp from a key, making it persistent.
 
 [[_Redis documentation_]](https://redis.io/commands/persist)
 
@@ -43,7 +43,7 @@ Method: POST
 
 ## Response
 
-Return either `0` (command failed), or `1` (command succeeded).
+Returns either `0` (command failed), or `1` (command succeeded).
 
 ```javascript
 {

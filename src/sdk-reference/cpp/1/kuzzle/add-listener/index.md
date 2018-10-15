@@ -8,22 +8,22 @@ order: 200
 
 # addListener
 
-Adds a listener to an event.  
-When an event is triggered, listeners are triggered in the order in which they were added.  
+Adds a listener to an event.
+When an event is triggered, listeners are triggered in the order in which they were added.
 Theses listener will receive a `const std::string` as argument. This string is a JSON payload representing the event.
 
 ## Signature
 
 ```cpp
-kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::Event event, EventListener* listener)
+kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::Event event, kuzzleio::EventListener* listener)
 ```
 
 ## Arguments
 
 | Argument   | Type                      | Description                                                                                            | Required |
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------ | -------- |
-| `event`    | Event                     | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes      |
-| `listener` | EventListener\* | A pointer to a c++11 lambda                                           | yes      |
+| `event`    | kuzzleio::Event           | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes      |
+| `listener` | kuzzleio::EventListener\* | A pointer to a c++11 lambda                                           | yes      |
 
 ### **event**
 

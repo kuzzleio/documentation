@@ -8,7 +8,7 @@ title: hincrby
 
 {{{since "1.0.0"}}}
 
-Increment the number stored in a hash field by the provided integer value.
+Increments the number stored in a hash field by the provided integer value.
 
 [[_Redis documentation_]](https://redis.io/commands/hincrby)
 
@@ -63,7 +63,7 @@ Body:
 
 ## Response
 
-Return the updated value for the incremented hash field.
+Returns the updated value for the incremented hash field.
 
 ```javascript
 {

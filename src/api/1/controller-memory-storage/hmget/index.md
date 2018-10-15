@@ -8,7 +8,7 @@ title: hmget
 
 {{{since "1.0.0"}}}
 
-Return the values of the specified hash's fields.
+Returns the values of the specified hash's fields.
 
 [[_Redis documentation_]](https://redis.io/commands/hmget)
 
@@ -46,7 +46,7 @@ Method: GET
 
 ## Response
 
-Return the list of requested field values, in the same order than in the query.
+Returns the list of requested field values, in the same order than in the query.
 
 ```javascript
 {

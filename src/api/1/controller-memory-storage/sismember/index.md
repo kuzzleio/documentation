@@ -8,7 +8,7 @@ title: sismember
 
 {{{since "1.0.0"}}}
 
-Check if a value is a member of a set of unique values.
+Checks if a value is a member of a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sismember)
 
@@ -46,7 +46,7 @@ Method: GET
 
 ## Response
 
-Return either `1` (member belongs to the set), or `0`.
+Returns either `1` (member belongs to the set), or `0`.
 
 ```javascript
 {

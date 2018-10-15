@@ -8,7 +8,7 @@ title: getUserRights
 
 {{{since "1.0.0"}}}
 
-Get the detailed rights granted to a user.
+Gets the detailed rights granted to a user.
 
 ---
 
@@ -41,7 +41,7 @@ Method: GET
 
 ## Response
 
-Return a `hits` array of objects. Each object is a security right granted or denied to the user:
+Returns a `hits` array of objects. Each object is a security right granted or denied to the user:
 
 * `controller`: impacted Kuzzle controller
 * `action`: impacted controller action

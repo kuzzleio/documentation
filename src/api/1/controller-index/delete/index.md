@@ -8,7 +8,7 @@ title: delete
 
 {{{since "1.0.0"}}}
 
-Delete an [index]({{ site_base_path }}guide/1/essentials/persisted).
+Deletes an [index]({{ site_base_path }}guide/1/essentials/persisted).
 
 ---
 
@@ -42,7 +42,7 @@ Method: DELETE
 
 ## Response
 
-Return a confirmation that the index is being deleted:
+Returns a confirmation that the index is being deleted:
 
 ```js
 {
