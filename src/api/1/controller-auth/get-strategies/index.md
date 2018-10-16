@@ -8,7 +8,7 @@ title: getStrategies
 
 {{{since "1.0.0"}}}
 
-Gets the exhaustive list of authentication strategies registered in Kuzzle
+Gets the exhaustive list of registered authentication strategies.
 
 ---
 

@@ -8,7 +8,7 @@ title: import
 
 {{{since "1.0.0"}}}
 
-The `import` route is made to create, update or delete large amounts of documents as fast as possible.
+Create, update or delete large amounts of documents as fast as possible.
 
 This route is faster than the `document:m*` routes family (e.g. [document:mCreate]({{ site_base_path }}api/1/controller-document/m-create)), but no real-time notifications will be generated, even if some of the documents in the import match subscription filters.
 

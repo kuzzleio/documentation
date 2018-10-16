@@ -8,7 +8,7 @@ title: exists
 
 {{{since "1.0.0"}}}
 
-Checks whether a collection exists in Kuzzle.
+Checks whether a collection exists.
 
 ---
 

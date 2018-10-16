@@ -8,7 +8,7 @@ title: resetKuzzleData
 
 {{{since "1.4.0"}}}
 
-Asynchronously starts the following sequence in Kuzzle, in this order:
+Asynchronously starts the following sequence, in this order:
 
 * Invalidates and deletes all users along with their associated credentials
 * Deletes all user-defined roles and profiles
