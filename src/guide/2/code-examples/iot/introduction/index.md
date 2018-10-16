@@ -34,7 +34,7 @@ cd /home/kuzzle/protocols/available
 git clone https://github.com/kuzzleio/protocol-mqtt.git
 ```
 
-Now create the `enabled` folder, that will be used to store any protocol we wish to enable in our Kuzzle instance. We will use a symbolic link to enable protocols as per these [recommendations]({{ site_base_path }}guide/essentials/plugins/#installing-a-plugin").
+Now create the `enabled` folder, that will be used to store any protocol we wish to enable in our Kuzzle instance. We will use a symbolic link to enable protocols as per these [recommendations]({{ site_base_path }}guide/2/essentials/plugins/#installing-a-plugin").
 
 ```bash
 mkdir /home/kuzzle/protocols/enabled

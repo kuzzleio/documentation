@@ -23,7 +23,7 @@ Unix signal names:
  * `SIGPIPE`
 
  These signals are the result of a critical error and will force Kuzzle to shutdown.
- When one of the aforementioned Unix signals is detected, Kuzzle will first generate a [dump report]({{ site_base_path }}guide/essentials/cli#dump) and then shutdown.
+ When one of the aforementioned Unix signals is detected, Kuzzle will first generate a [dump report]({{ site_base_path }}guide/2/essentials/cli#dump) and then shutdown.
 
 ## Normal termination  
 
