@@ -17,43 +17,47 @@ You may set the `retryOnConflict` optional argument with a positive integer, ask
 
 ## Signature
 
-```cpp
-std::string update(const std::string& index, const std::string& collection, const std::string& id, const std::string& body, query_options *options=nullptr)
+```javascript
+/**
+ * @param {string} index
+ * @param {string} collection
+ * @param {string} _id
+ * @param {object} body
+ * @param {object} options 
+ * @returns {Promise.<object>}
+ */
+update (index, collection, id, body, options = {})
 ```
 
 ## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | std::string | Index name |
-| `collection` | std::string | Collection name |
-| `id` | std::string | The document id |
-| `body` | std::string | A JSON string containing the body of the document |
-| `options` | query_options | A pointer to a `query_options` containing query options |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `id` | string | The document id |
+| `body` | object | The partial content of the document to update |
+| `options` | object | An object containing query options. |
 
-### Options
+###### Options
 
 Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| `refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
 | `retryOnConflict` | int | The number of times the database layer should retry in case of version conflict | 0 |
 
-## Return
+## Resolve
 
-Returns a JSON string containing the document update result.
+Resolves to an object containing the the document update result.
 
 | Name | Type | Description
 | --- | --- | ---
 | _id | string | The id of the newly created document
 | _version | int | The version of the document in the persistent data storage
 | result | string | set to `updated` in case of success
-
-## Exceptions
-
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 

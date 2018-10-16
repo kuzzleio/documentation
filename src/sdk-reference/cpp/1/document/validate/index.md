@@ -1,20 +1,23 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: replace
+title: validate
 description:
 order: 200
 ---
 
-# replace
+# validate
 
-Replaces an existing document in the persistent data storage.
-Only documents in the persistent data storage layer can be replaced.
+Validates data against existing validation rules. 
+
+Note that if no validation specifications are set for the `<index>`/`<collection>`, the document will always be valid.
+
+This request does **not** store or publish the document.
 
 ## Signature
 
 ```cpp
-std::string replace(const std::string& index, const std::string& collection, const std::string& id, const std::string& body, query_options *options=nullptr)
+bool validate(const std::string& index, const std::string& collection, const std::string& body, query_options *options=nullptr)
 ```
 
 ## Arguments
@@ -23,7 +26,6 @@ std::string replace(const std::string& index, const std::string& collection, con
 | --- | --- | --- |
 | `index` | std::string | Index name |
 | `collection` | std::string | Collection name |
-| `id` | std::string | The document id |
 | `body` | std::string | A JSON string containing the body of the document |
 | `options` | query_options | A pointer to a `query_options` containing query options |
 
@@ -34,17 +36,10 @@ Additional query options
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
 
 ## Return
 
-Returns a JSON string containing the document update result.
-
-| Name | Type | Description
-| --- | --- | ---
-| _id | string | The id of the newly created document
-| _version | int | The version of the document in the persistent data storage
-| result | string | set to `updated` in case of success
+Returns a boolean value set to true if the document is valid and false otherwise.
 
 ## Exceptions
 
@@ -52,4 +47,4 @@ Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ s
 
 ## Usage
 
-[snippet=replace]
+[snippet=validate]

@@ -25,7 +25,7 @@ Replace(index string, collection string, _id string, body json.RawMessage, optio
 | `collection` | std::string | Collection name |
 | `id` | std::string | The document id |
 | `body` | std::string | A JSON string containing the body of the document |
-| `options` | query_options | A pointer to a `query_options` containing query options |
+| `options` | types.QueryOptions | The query options |
 
 ###### Options
 

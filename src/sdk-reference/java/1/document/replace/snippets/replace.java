@@ -3,7 +3,7 @@ try {
 
     String body = "{"
         + " \"capacity\": 4,"
-        + " \"category\": \"sedan\","
+        + " \"category\": \"suv\""
         + "}";
 
     String response = kuzzle.getDocument().replace("nyc-open-data", "yellow-taxi", "some-id", body);
