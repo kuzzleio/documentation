@@ -40,11 +40,13 @@ module.exports = class BaseRunner {
   }
 
   async runExpect(snippet) {
+    const expectedRegexp = new RegExp(snippet.expected);
+
     return new Promise((resolve, reject) => {
       nexpect
         .spawn(this.nexpectCommand, { stream: 'all' })
-        .wait(snippet.expected, result => {
-          if (result === snippet.expected) {
+        .wait(expectedRegexp, result => {
+          if (expectedRegexp.test(result)) {
             resolve();
             return;
           }
