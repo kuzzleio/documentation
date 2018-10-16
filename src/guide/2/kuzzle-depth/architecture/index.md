@@ -19,7 +19,7 @@ The diagram above depicts the various components that make up the server archite
 * **Funnel**: receives normalized requests and forwards it to the appropriate controller, sends results back to the *Entry Points*.
 * **Controllers**: receives data fom the *Funnel*, processes it, and returns a result to the *Funnel* (see [API reference]({{ site_base_path }}api-documentation)).
 * **Internal Components**: are internal modules used by controllers to process a request.
-* **Service Components**: are interfaces used by controllers to connect to external services (see [below]({{ site_base_path }}guide/kuzzle-depth/#services)).
+* **Service Components**: are interfaces used by controllers to connect to external services (see [below]({{ site_base_path }}guide/2/kuzzle-depth/#services)).
 
 ## Services
 

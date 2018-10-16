@@ -11,10 +11,10 @@ Our prepackaged multi-feature backend solution will meet basic project requireme
 
 For example, imagine you are developing a mobile application that accesses a **third-party payment platform**, such as Braintree, through this third-party's API. For **security** reasons, you will want to avoid accessing the third-party's API directly from the mobile device. Also, you will not want users to purchase more items than are currently in stock, so your backend will need to **monitor** what has been purchased. To achieve all this, you will want to develop a custom Plugin that lets Kuzzle communicate directly with the third-party payment platform.
 
-Kuzzle's **[Plugin Engine]({{ site_base_path }}plugins-reference)** is a powerful feature that ensures that Kuzzle meets any project requirement:
+Kuzzle's **[Plugin Engine]({{ site_base_path }}plugins-reference/2)** is a powerful feature that ensures that Kuzzle meets any project requirement:
 
 * select from a set of prebuilt plugins (such as the [OAuth2 Authentication Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth) or the [MQTT Protocol](https://github.com/kuzzleio/protocol-mqtt)).
-* [create your own plugin]({{ site_base_path }}plugins-reference/plugins-features) to meet your specific requirements.
+* [create your own plugin]({{ site_base_path }}plugins-reference/2/plugins-features) to meet your specific requirements.
 
 ---
 
@@ -22,26 +22,26 @@ Kuzzle's **[Plugin Engine]({{ site_base_path }}plugins-reference)** is a powerfu
 
 Plugins are used to extend Kuzzle's functionalities. They are loaded into Kuzzle during startup and share its execution thread. A plugin can add the following components:
 
-[Hooks]({{ site_base_path }}plugins-reference/plugins-features/adding-hooks): add an asynchronous listener that performs operations triggered by data events. When the event occurs, the data is sent to the listener and Kuzzle continues its process without waiting for the listener to complete.
+[Hooks]({{ site_base_path }}plugins-reference/2/plugins-features/adding-hooks): add an asynchronous listener that performs operations triggered by data events. When the event occurs, the data is sent to the listener and Kuzzle continues its process without waiting for the listener to complete.
 
   _Example - "Write a log to a third-party logging service every time a document is deleted"_. The [Logger Plugin](https://github.com/kuzzleio/kuzzle-plugin-logger) (shipped with Kuzzle) uses this feature to log all the data-related events.
 
-[Pipes]({{ site_base_path }}plugins-reference/plugins-features/adding-pipes): add a synchronous listener that performs operations triggered by data events. Multiple synchronous listeners can be chained sequentially. When the event occurs, the data is passed through the series of synchronous listeners, each modifying the input data and returning the result to the next listener. Kuzzle waits until the last listener completes and returns its data. If any  listener returns a standard error, it will interrupt the Kuzzle lifecycle, and the thrown error will be used as a response by Kuzzle.
+[Pipes]({{ site_base_path }}plugins-reference/2/plugins-features/adding-pipes): add a synchronous listener that performs operations triggered by data events. Multiple synchronous listeners can be chained sequentially. When the event occurs, the data is passed through the series of synchronous listeners, each modifying the input data and returning the result to the next listener. Kuzzle waits until the last listener completes and returns its data. If any  listener returns a standard error, it will interrupt the Kuzzle lifecycle, and the thrown error will be used as a response by Kuzzle.
 
   _Example - "Compare the ordered quantity with the available stock and return an error if the amount of ordered items exceeds the amount in stock"_.
 
-[Controllers & Routes]({{ site_base_path }}plugins-reference/plugins-features/adding-controllers): add a route to expose new entries in the API.
+[Controllers & Routes]({{ site_base_path }}plugins-reference/2/plugins-features/adding-controllers): add a route to expose new entries in the API.
 
   _Example - "Expose a `checkout` API endpoint that handles a third-party payment process"_.
 
-[Strategies]({{ site_base_path }}plugins-reference/plugins-features/adding-authentication-strategy): add an authentication strategy to identify and authenticate users.
+[Strategies]({{ site_base_path }}plugins-reference/2/plugins-features/adding-authentication-strategy): add an authentication strategy to identify and authenticate users.
 
   _Example - "Enable OAuth based authentication in Kuzzle"_
   Kuzzle Community Edition ships with the [Local Strategy Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local) and thanks to PassportJS, more than 300 authentication strategies are readily available.
 
 ## Protocols
 
-[Protocols]({{ site_base_path }}plugins-reference/plugins-reference/protocols) add extended networking capabilities to your Kuzzle installation. These are useful if you need to handle various transport protocols.
+[Protocols]({{ site_base_path }}plugins-reference/2/plugins-reference/protocols) add extended networking capabilities to your Kuzzle installation. These are useful if you need to handle various transport protocols.
 
 _Example - "Allow Kuzzle to interact with XMPP-oriented services"_
 Kuzzle Community Edition ships with the [MQTT Protocol](https://github.com/kuzzleio/protocol-mqtt).
@@ -50,9 +50,9 @@ Kuzzle Community Edition ships with the [MQTT Protocol](https://github.com/kuzzl
 
 ## Installing a Plugin
 
-<aside class="notice">
+<div class="alert alert-info">
 If you are running Kuzzle in a Docker container, you will need to access the running container's shell and then the Kuzzle installation folder inside the container.
-</aside>
+</div>
 
 To install a plugin, you need to make it accessible in the `plugins/enabled` folder of your Kuzzle installation.
 
@@ -177,13 +177,13 @@ ln -s ../available/protocol-mqtt .
 
 ## Managing Plugins
 
-To learn more about how to manage or configure plugins, please check our [Plugin Reference Documentation]({{ site_base_path }}plugins-reference/managing-plugins).
+To learn more about how to manage or configure plugins, please check our [Plugin Reference Documentation]({{ site_base_path }}plugins-reference/2/managing-plugins).
 
 ---
 
 ## Going Further
 
-To get more insight into how plugins work, please refer to the [Plugin Reference]({{ site_base_path }}plugins-reference).
+To get more insight into how plugins work, please refer to the [Plugin Reference]({{ site_base_path }}plugins-reference/2).
 
 Here is a list of official plugins:
 - [**kuzzle-plugin-auth-passport-local**](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local): authentication Plugin shipped with Kuzzle

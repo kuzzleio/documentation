@@ -23,15 +23,15 @@ we recommend that you avoid using it in production or at least carefully monitor
 ## Signature
 
 ```java
-public void setAutoRefresh(java.lang.String index , boolean autoRefresh, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
-public void setAutoRefresh(java.lang.String index , boolean autoRefresh) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
+public void setAutoRefresh(String index , boolean autoRefresh, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
+public void setAutoRefresh(String index , boolean autoRefresh) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
 ```
 
 ## Arguments
 
 | Arguments     | Type         | Description       | Required |
 | ------------- | ------------ | ----------------- | -------- |
-| `index`       | java.lang.String       | Index name        | yes      |
+| `index`       | String       | Index name        | yes      |
 | `autoRefresh` | Boolean      | autoRefresh flag  | yes      |
 | `options`     | io.kuzzle.sdk.QueryOptions | The query options | no       |
 

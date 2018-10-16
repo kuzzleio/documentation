@@ -36,13 +36,13 @@ The following properties are the most common.
 
 | Property     | Type   | Description                                                        | Required |
 | ------------ | ------ | ------------------------------------------------------------------ | -------- |
-| `controller` | java.lang.String | Controller name                                                    | yes      |
-| `action`     | java.lang.String | Action name                                                        | yes      |
-| `body`       | java.lang.String | JSON query body for this action                                    | no       |
-| `index`      | java.lang.String | Index name for this action                                         | no       |
-| `collection` | java.lang.String | Collection name for this action                                    | no       |
-| `id`         | java.lang.String | id for this action                                                 | no       |
-| `volatile`   | java.lang.String | JSON string representing additional informations to send to Kuzzle | no       |
+| `controller` | String | Controller name                                                    | yes      |
+| `action`     | String | Action name                                                        | yes      |
+| `body`       | String | JSON query body for this action                                    | no       |
+| `index`      | String | Index name for this action                                         | no       |
+| `collection` | String | Collection name for this action                                    | no       |
+| `id`         | String | id for this action                                                 | no       |
+| `volatile`   | String | JSON string representing additional informations to send to Kuzzle | no       |
 
 ### **options**
 
@@ -61,9 +61,9 @@ The following properties are the most common.
 
 | Property    | Type   | Description                         |
 | ----------- | ------ | ----------------------------------- |
-| `requestId` | java.lang.String | Request unique id                   |
-| `result`    | java.lang.String | Raw JSON result                     |
-| `error`     | java.lang.String | Error message                       |
+| `requestId` | String | Request unique id                   |
+| `result`    | String | Raw JSON result                     |
+| `error`     | String | Error message                       |
 | `status`    | int    | Request status (eg: 200, 403, etc.) |
 
 ## Exceptions

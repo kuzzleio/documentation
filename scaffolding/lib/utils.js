@@ -95,7 +95,7 @@ function showSignatures({ language, action, controller }) {
       break;
 
     case 'java':
-      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-java.jar io.kuzzle.sdk.${_.upperFirst(_.camelCase(controller))} | grep ${_.camelCase(action)}`, display);
+      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-amd64.jar io.kuzzle.sdk.${_.upperFirst(_.camelCase(controller))} | grep ${_.camelCase(action)}`, display);
       break;
 
     case 'go':
@@ -157,6 +157,10 @@ function extractFromFile(file, regexpInfo, regexpInfoFallback) {
 }
 
 function injectInFile(file, regexpInfo, injectedContent) {
+  if (! injectedContent) {
+    return;
+  }
+
   const
     content = fs.readFileSync(file, 'utf8'),
     regexp = new RegExp(`${regexpInfo.start}([\\s\\S]*)${regexpInfo.end}`),

@@ -13,14 +13,14 @@ Let's create a new project folder called `databaseSearch`:
 
 
 ```bash
-    mkdir databaseSearch
+mkdir databaseSearch
 ```
 
 Now in you `databaseSearch` folder initialize the Node.js App:
 
 
 ```bash
-    npm init
+npm init
 ```
 
 Give your project a name and set the version and any other details you want to configure.

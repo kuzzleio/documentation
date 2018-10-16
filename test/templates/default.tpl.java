@@ -7,6 +7,5 @@ public class CodeExampleGenericClass {
       kuzzle = new Kuzzle("kuzzle");
       kuzzle.connect();
       [snippet-code]
-      System.out.println("Success");
     }
 }

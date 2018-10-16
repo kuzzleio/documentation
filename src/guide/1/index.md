@@ -1,3 +1,4 @@
 ---
-order: 1
+layout: full.html.hbs
+title: Guide
 ---

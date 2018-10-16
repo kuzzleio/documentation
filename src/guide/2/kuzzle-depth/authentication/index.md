@@ -12,14 +12,14 @@ Kuzzle uses [Passport.js](http://Passportjs.org/) to support numerous authentica
 - SAML: for authentication using providers such as OneLogin and for supporting single sign-on.
 - Local: for authentication using a user's username and password managed in your own domain.
 
-In the diagram below, we highlighted components of Kuzzle's server [architecture]({{ site_base_path }}guide/kuzzle-depth) that are used in the authentication process:
+In the diagram below, we highlighted components of Kuzzle's server [architecture]({{ site_base_path }}guide/2/kuzzle-depth) that are used in the authentication process:
 
 ![read_scenario_http_overview](Authentication_Overview.png)
 
 * The Auth Controller: to manage the authentication process.
 * The Passport Wrapper: to interface between Kuzzle and the Passport.js library.
 * The User and Token [Repositories](https://github.com/kuzzleio/kuzzle/tree/master/lib/api/core/models/repositories): to store user data.
-* The Auth Strategy: to identify and validate a user's credential using a [dedicated plugin]({{ site_base_path }}plugins-reference/plugins-features/adding-authentication-strategy).
+* The Auth Strategy: to identify and validate a user's credential using a [dedicated plugin]({{ site_base_path }}plugins-reference/2/plugins-features/adding-authentication-strategy).
 
 ---
 
@@ -55,7 +55,7 @@ The Local Authentication Strategy, implemented in the [Passport Local Plugin](ht
 
 * The *Passport Wrapper* calls the `verify()` method in the *Local Authentication Plugin*.
 
-* The *Local Authentication Plugin* validates the credentials against the [local storage]({{ site_base_path }}plugins-reference/plugins-context/constructors/#repository) and returns the user's `kuid` if the credentials are valid.
+* The *Local Authentication Plugin* validates the credentials against the [local storage]({{ site_base_path }}plugins-reference/2/plugins-context/constructors/#repository) and returns the user's `kuid` if the credentials are valid.
 
 * The *Passport Wrapper* calls the *User Repository* to get the profile data for the user with the given `kuid`.
 
@@ -194,6 +194,6 @@ Location: http://<kuzzle>/_login/github?code=OAUTH2_CODE
 
 ## Additional Authentication Strategies
 
-Kuzzle can implement any strategy supported by Passport.js. For more information, please refer to the [Plugins Reference]({{ site_base_path }}plugins-reference/plugins-features/adding-authentication-strategy).
+Kuzzle can implement any strategy supported by Passport.js. For more information, please refer to the [Plugins Reference]({{ site_base_path }}plugins-reference/2/plugins-features/adding-authentication-strategy).
 
 ---
