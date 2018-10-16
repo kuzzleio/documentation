@@ -14,7 +14,7 @@ but we’re working on extending the support to many more.
 
 <br>
 <div class="Languages">
-  <a href="/sdk-reference/js/5/essentials/" class="Languages-item">
+  <a href="/sdk-reference/js/6/essentials/" class="Languages-item">
     <img src="/assets/images/logos/javascript.svg" alt="js logo" class="Languages-item-logo">
     <div class="Languages-item-name">Javascript</div>
   </a>
