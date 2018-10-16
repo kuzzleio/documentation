@@ -1,9 +1,9 @@
-kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id", `{"color": "yellow"}`)
+kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id", json.RawMessage(`{"color": "yellow"}`), nil)
 
-response, err := kuzzle.Document.Replace("nyc-open-data", "yellow-taxi", "some-id", `{
+response, err := kuzzle.Document.Replace("nyc-open-data", "yellow-taxi", "some-id", json.RawMessage(`{
   "capacity": 4,
   "category": "sedan"
-}`)
+}`), nil)
 
 if err != nil {
   log.Fatal(err)

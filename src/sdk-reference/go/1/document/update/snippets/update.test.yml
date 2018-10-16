@@ -1,5 +1,5 @@
-name: document#mReplace
-description: replace documents
+name: document#update
+description: update a document
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data
@@ -8,4 +8,4 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
-expected: '\[{"_id":"some-id"'
+expected: '{"_index":"nyc-open-data","_type":"yellow-taxi","_id":"some-id","_version":2,"result":"updated","'

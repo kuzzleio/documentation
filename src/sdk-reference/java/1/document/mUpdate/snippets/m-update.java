@@ -1,14 +1,14 @@
 try {
     kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", "{\"capacity\": 4}");
-    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-other-id", "{\"\capacity\": 7}");
+    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-other-id", "{\"capacity\": 7}");
 
     String body = "["
         + "{"
-        + "     \"id\": \"some-id\","
-        + "     \"body\": { \"category\": \"sedan\" }"
+        + "     \"_id\": \"some-id\","
+        + "     \"body\": { \"category\": \"suv\" }"
         + "},"
         + "{"
-        + "     \"id\": \"some-other-id\","
+        + "     \"_id\": \"some-other-id\","
         + "     \"body\": { \"category\": \"limousine\" }"
         + "}"
         + "]";
