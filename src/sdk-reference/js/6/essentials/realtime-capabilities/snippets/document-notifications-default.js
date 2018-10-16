@@ -1,4 +1,28 @@
 function callback (notification) {
+  /*
+  { status: 200,
+    requestId: '1850b835-d82d-4bce-abec-bf593a578763',
+    timestamp: 1539680191720,
+    volatile: { sdkVersion: '6.0.0-beta-2' },
+    index: 'nyc-open-data',
+    collection: 'yellow-taxi',
+    controller: 'document',
+    action: 'create',
+    scope: 'in',
+    result:
+     { _source:
+        { name: 'nina vkote',
+          age: 19,
+          _kuzzle_info:
+            { author: '-1',
+              createdAt: 1539680191720,
+              updatedAt: null,
+              updater: null,
+              active: true,
+              deletedAt: null } },
+       _id: 'AWZ8F0TpJD41ulNI_b-v' },
+    type: 'document' }
+  */
   if (notification.scope === 'in') {
     console.log(`${notification.result._source.name} enter the scope`);
   } else {
@@ -10,10 +34,10 @@ try {
   // Subscribe to notifications for documents containing a 'name' property
   const filters = { exists: 'name' };
 
-  const { roomId } = await kuzzle.realtime.subscribe('nyc-open-data', 'yellow-taxi', {}, callback);
-  console.log(roomId);
+  await kuzzle.realtime.subscribe('nyc-open-data', 'yellow-taxi', filters, callback);
 
-  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', null, { name: 'nina vkote' });
+  const document = { name: 'nina vkote', age: 19 };
+  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', null, document);
 } catch (error) {
   console.log(error.message);
 }
