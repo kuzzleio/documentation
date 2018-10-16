@@ -13,16 +13,16 @@ Check if a collection exists in Kuzzle.
 ## Signature
 
 ```java
-public boolean exists(java.lang.String index, java.lang.String collection) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
-public boolean exists(java.lang.String index, java.lang.String collection, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+public boolean exists(String index, String collection) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+public boolean exists(String index, String collection, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | java.lang.String | Index name    | yes  |
-| ``collection`` | java.lang.String | Collection name    | yes  |
+| ``index`` | String | Index name    | yes  |
+| ``collection`` | String | Collection name    | yes  |
 | ``options`` | io.kuzzle.sdk.QueryOptions | An object containing query options    | no  |
 
 ### **options**

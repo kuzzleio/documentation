@@ -23,15 +23,15 @@ Without a refresh after a write request, the documents may not be immediately vi
 ## Signature
 
 ```java
-boolean getAutoRefresh(java.lang.String index) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
-boolean getAutoRefresh(java.lang.String index, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
+boolean getAutoRefresh(String index) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
+boolean getAutoRefresh(String index, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
 ```
 
 ## Arguments
 
 | Arguments | Type         | Description       | Required |
 | --------- | ------------ | ----------------- | -------- |
-| `index`   | java.lang.String       | Index name        | yes      |
+| `index`   | String       | Index name        | yes      |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
 
 ### **Options**

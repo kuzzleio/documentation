@@ -13,16 +13,16 @@ Delete the validation specifications associated with the collection.
 ## Signature
 
 ```java
-  public void deleteSpecifications(java.lang.String index, java.lang.String collection) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
-  public void deleteSpecifications(java.lang.String index, java.lang.String collection, io.kuzzle.sdk.QueryOptions io.kuzzle.sdk.QueryOptions) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+  public void deleteSpecifications(String index, String collection) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
+  public void deleteSpecifications(String index, String collection, io.kuzzle.sdk.QueryOptions io.kuzzle.sdk.QueryOptions) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | java.lang.String | Index name    | yes  |
-| ``collection`` | java.lang.String | Collection name    | yes  |
+| ``index`` | String | Index name    | yes  |
+| ``collection`` | String | Collection name    | yes  |
 | ``options`` | io.kuzzle.sdk.QueryOptions | Query options    | no  |
 
 ### **options**

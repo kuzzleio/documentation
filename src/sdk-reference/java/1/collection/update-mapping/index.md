@@ -15,17 +15,17 @@ persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/e
 ## Signature
 
 ```java
-public void updateMapping(java.lang.String index, java.lang.String collection, java.lang.String mapping) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
-public void updateMapping(java.lang.String index, java.lang.String collection, java.lang.String mapping, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
+public void updateMapping(String index, String collection, String mapping) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
+public void updateMapping(String index, String collection, String mapping, io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.NotFoundException;
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | java.lang.String | Index name    | yes  |
-| ``collection`` | java.lang.String | Collection name    | yes  |
-| ``mapping`` | java.lang.String | Collection data mapping in JSON format  | yes  |
+| ``index`` | String | Index name    | yes  |
+| ``collection`` | String | Collection name    | yes  |
+| ``mapping`` | String | Collection data mapping in JSON format  | yes  |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
 
 ### **mapping**
