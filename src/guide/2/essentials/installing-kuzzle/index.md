@@ -7,47 +7,53 @@ order: 1
 
 # Installing Kuzzle
 
-In this section we'll demonstrate two ways to install Kuzzle: by using Docker and by installing it manually.
+In this section we'll describe different ways of installing Kuzzle.
 
-<aside class="notice">
-The easiest way to install Kuzzle is by using our <a href="{{ site_base_path }}guide/getting-started/#running-kuzzle">installation script</a>.
-</aside>
+---
 
-## Docker Installation
+## Automated script
 
-Before launching Kuzzle in Docker, ensure that your system meets the following requirements:
+The easiest way to install Kuzzle is by using our installation script:
+
+```bash
+bash -c "$(curl http://get.kuzzle.io)"
+```
+
+---
+
+## Docker
+
+Before launching Kuzzle using Docker containers, ensure that your system meets the following requirements:
 
 - **64-bit environment**
 - **Docker v1.10+**, see [instructions here](https://docs.docker.com/engine/installation/)
 - **Docker Compose v1.8+**, see [instructions here](https://docs.docker.com/compose/install/)
 
-Let's get started. First download the [docker-compose.yml](http://kuzzle.io/docker-compose.yml) file into a folder on your machine, here we create a `kuzzle-docker` folder: 
+To install docker, you need to download the docker-compose file:
 
-```bash
-mkdir kuzzle-docker
-cd kuzzle-docker
-wget http://kuzzle.io/docker-compose.yml
-```
 
-Before we run the compose file, you will need to increase the maximum amount of virtual memory in order to run Elasticsearch v5.x., which is part of the stack we are about to launch (click <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.x/vm-max-map-count.html">here</a> for more details). To increate the virtual memory run the following command on your machine:
+Before starting the docker stack, you need to increase the maximum amount of virtual memory in order to run Elasticsearch, which is part of our stack (see why <a href="https://www.elastic.co/guide/2/en/elasticsearch/reference/5.x/vm-max-map-count.html">here</a>):
 
 ```bash
 sudo sysctl -w vm.max_map_count=262144
 ```
 
-If you want to persist this change so that it is maintained after reboot you need to update your `/etc/sysctl.conf` file. To do so, run the following command:
+To make this configuration permanent, you need to update your `/etc/sysctl.conf` file:
 
 ```bash
 echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 ```
 
-Now, from the `kuzzle-docker` folder where you saved the docker-compose.yml file, run:
+Now, we can start the docker stack:
 
 ```bash
+mkdir kuzzle-docker
+cd kuzzle-docker
+wget http://kuzzle.io/docker-compose.yml
 docker-compose up
 ```
 
-If everything is working, your terminal should be logging startup messages from Kuzzle's various components. After a few seconds, you should see the following message:
+Your terminal should now be logging startup messages from the Kuzzle stack. After a few seconds, you should see the following message:
 
 ```bash
 # kuzzle_1         | [✔] Kuzzle server ready
@@ -56,45 +62,69 @@ If everything is working, your terminal should be logging startup messages from 
 Your Kuzzle is now up and running. For a quick test, you can explore the main HTTP API endpoint by clicking this link <a href="http://localhost:7512">http://localhost:7512</a> or by using cURL on the command line:
 
 ```bash
-curl "http://localhost:7512/?pretty"
-```
-
-You should see a list of available API routes.
-
-
-### Docker cheatsheet
-
-Below is a list of docker commands you can use to run and debug your Kuzzle installation.
-
-```bash
-# Update Kuzzle docker images:  
-docker-compose -f "<docker-compose-file.yml>" pull
-
-# Display Kuzzle logs:  
-docker exec -ti "<container name>" pm2 logs
-
-# Restart Kuzzle:
-docker exec -ti "<container name>" pm2 restart all
-
-# Stop Kuzzle:
-docker exec -ti "<container name>" pm2 stop all
-
-# Start Kuzzle:
-docker exec -ti "<container name>" pm2 start all
-
-# Access Kuzzle CLI:
-docker exec -ti "<container name>" bin/kuzzle -h
+curl "http://localhost:7512?pretty"
 ```
 
 ---
 
-## Manual Installation
+## AWS Marketplace
+
+<div class="alert alert-info">
+To create a new Kuzzle stack on Amazon, you need a valid AWS account.
+</div>
+
+In this guide, you'll learn where to find our AWS Marketplace AMI and how to use it. It's a good way to test Kuzzle in a cloud environment. In addition, we recommend that you use our [Kuzzle Admin Console](http://console.kuzzle.io), the easiest way to play with Kuzzle.
+
+### Get the AMI
+
+Our AMI is stored on AWS Marketplace. It's set up with:
+
+- Ubuntu (**16.04**)
+- Kuzzle (**latest**) with MQTT protocol support.
+- Elasticsearch (**v5.4.1**).
+- Redis (**v3.2.12**).
+
+Go to the marketplace and type **kuzzle** in the search form.  
+Choose your Amazon EC2 instance type (the minimal requirement is a **t2-medium**).  
+Recover the public IP or the hostname provided by AWS before you proceed.  
+Check that Kuzzle is up and running with following HTTP request:
+
+```sh
+$ curl 'http://yourInstanceIpOrHostname:7512?pretty'
+{
+  "requestId": "9b07a095-7143-49a5-9079-a34e937fdf3e",
+  "status": 200,
+  "error": null,
+  "controller": "server",
+  "action": "info",
+  "collection": null,
+  "index": null,
+  "volatile": null,
+  "result": {
+    # Exhaustive Kuzzle information
+  }
+}
+```
+
+You should see information about your Kuzzle Server.  
+If not, wait a few minutes and retry the request.
+
+### Connect with default credentials
+
+Open the [Kuzzle Admin Console](http://console.kuzzle.io) and fill the form with the address of your Kuzzle instance. There is a default admin user with **ec2-user** as username.
+Associated password is your unique instance ID. You can get it from the EC2 AWS Console, it looks like this: **i-xxxxxxxxxxxxxxxxx**.
+
+![Demo Admin Console First Connection](/assets/images/gifs/demo_aws_console.gif)
+
+---
+
+### Manual Installation
 
 In this section we will perform a manual installation of Kuzzle on a Linux distribution. We choose Linux because all Kuzzle components work natively on it.
 
-<aside class="notice">
-  By default, Kuzzle expects all the components to be running on localhost but you can <a href="{{ site_base_path }}guide/essentials/configuration">configure</a> it to change this behavior.
-</aside>
+<div class="alert alert-info">
+By default, Kuzzle expects all the components to be running on localhost but you can <a href="{{ site_base_path }}guide/2/essentials/configuration">change</a> this behavior.
+</div>
 
 We will run Kuzzle using [pm2](http://pm2.keymetrics.io/), a process management tool used to monitor Node.js applications.
 
@@ -102,22 +132,22 @@ We will run Kuzzle using [pm2](http://pm2.keymetrics.io/), a process management 
 
 The following operating systems are actively supported (64-bit versions only):
 
-* Ubuntu: 14.04 and 16.04
-* Debian: 7 and 8
+* Ubuntu: 14.04+
+* Debian: 7+
 
 ### Prerequisites
 
-* [Elasticsearch](https://www.elastic.co/products/elasticsearch) version 5.x
+* [Elasticsearch](https://www.elastic.co/products/elasticsearch) version 6
 * [Redis](http://redis.io/) version 3.x
-* [Node.js](https://nodejs.org/en/download/package-manager/) version 6.x or higher.
+* [Node.js](https://nodejs.org/en/download/package-manager/) version 8 or higher
 * [NPM](https://www.npmjs.com/) version 3 or higher.
 * [Python](https://www.python.org/) version 2.7 preferred.
 * [GDB](https://www.gnu.org/software/gdb/) version 7.7 or higher.
 * a C++11 compatible compiler.
 
-<aside class="notice">
+<div class="alert alert-info">
  The last three prerequisites can be fulfilled on Debian-based systems by installing packages : `build-essential`, `gdb` and `python`.
-</aside>
+</div>
 
 ---
 
@@ -166,7 +196,7 @@ done
 
 Kuzzle uses Elasticsearch and Redis as a persistent and key-value store, respectively. If you are running these components on the same machine as your Kuzzle installation then no additional configuration is needed. If; however, you are running them on another host, you will need to create or update the `.kuzzlerc` file in your installation folder.
 
-Please refer to the [configuration section]({{ site_base_path }}guide/essentials/configuration) for more details.
+Please refer to the [configuration section]({{ site_base_path }}guide/2/essentials/configuration) for more details.
 
 ### Setup PM2
 
@@ -241,9 +271,9 @@ pm2 "<start|stop|restart>" kuzzlebackend
 ~/kuzzle/bin/kuzzle -h
 ```
 
-<aside class="success">
-Now that Kuzzlee is up and running you can [install]({{ site_base_path }}guide/essentials/installing-console) the <strong>Kuzzle Admin Console</strong>.
-</aside>
+<div class="alert alert-success">
+Now that Kuzzlee is up and running you can [install]({{ site_base_path }}guide/2/essentials/installing-console) the <strong>Kuzzle Admin Console</strong>.
+</div>
 
 ### Troubleshooting
 
@@ -294,7 +324,7 @@ Elasticsearch WARNING: 2018-01-12T13:36:34Z
   No living connections
 ```
 
-If you see the following message and your Elasticsearch installation uses a security layer, configure the Elasticsearch client options in the `.kuzzlerc` file. For more information click <a href="{{ site_base_path }}guide/essentials/configuration">here</a>.
+If you see the following message and your Elasticsearch installation uses a security layer, configure the Elasticsearch client options in the `.kuzzlerc` file. For more information click <a href="{{ site_base_path }}guide/2/essentials/configuration">here</a>.
 
 ```
 [ℹ] Starting Kuzzle server
@@ -335,3 +365,14 @@ PM2        |     at onErrorNT (internal/child_process.js:376:16)
 PM2        |     at _combinedTickCallback (internal/process/next_tick.js:80:11)
 PM2        |     at process._tickDomainCallback (internal/process/next_tick.js:128:9)
 ```
+
+---
+
+## Where do we go from here?
+
+Once your Kuzzle instance is up and running, dive even deeper to learn how to leverage its full capabilities:
+
+- take a look at the [SDK Reference]({{site_base_path}}sdk-reference)
+- learn how to use [Koncorde]({{ site_base_path }}kuzzle-dsl/2/essential/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+- follow our guide to learn how to [implement basic authentication]({{site_base_path}}guide/2/essentials/user-authentication/#local-strategy).
+- follow our guide to learn how to [implement manage users and setup fine-grained access control]({{site_base_path}}guide/2/essentials/security).

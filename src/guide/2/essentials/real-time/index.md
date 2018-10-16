@@ -53,9 +53,9 @@ But, how does this work in Kuzzle? **How do we select the data that we want to s
 
 Let's dive into the implementation of the Collaborative TO-DO list application.
 
-<aside class="notice">
+<div class="alert alert-info">
 All the following examples are written in Javascript, therefore using the Javascript Kuzzle SDK. If this is not your usual development language, take a look at the different flavors of the `subscribe` method in the <a href="{{ site_base_path }}sdk-reference/collection/subscribe">SDK Reference</a>).
-</aside>
+</div>
 
 ---
 
@@ -121,15 +121,15 @@ The Notification bears some useful information about what just happened:
 
 We won't analyze the other attributes for the moment. Take a look at the [Notifications section of the API Reference]({{ site_base_path }}api-documentation/notifications) for a comprehensive list of available notification properties.
 
-This subscription is very handy and will notify Tom about the events 1, 2 and 3 of the list above (the `controller`, `action` and `result` will vary depending on the case). But what about the event number 4? How does Tom subscribe to items that only contain the word `URGENT` in their `label` field? Looks like a job for [Koncorde]({{ site_base_path }}kuzzle-dsl/).
+This subscription is very handy and will notify Tom about the events 1, 2 and 3 of the list above (the `controller`, `action` and `result` will vary depending on the case). But what about the event number 4? How does Tom subscribe to items that only contain the word `URGENT` in their `label` field? Looks like a job for [Koncorde]({{ site_base_path }}kuzzle-dsl/2/).
 
 ---
 
 ### Subscription with filters
 
-Kuzzle ships with a powerful filtering tool named [Koncorde]({{ site_base_path }}kuzzle-dsl/). It enables you to perform fine-grained selections on the documents you want to subscribe to.
+Kuzzle ships with a powerful filtering tool named [Koncorde]({{ site_base_path }}kuzzle-dsl/2/). It enables you to perform fine-grained selections on the documents you want to subscribe to.
 
-In our case, we want to select all the documents that contain the `URGENT` word in the `label` field. The best pick for this case is the [regexp]({{ site_base_path }}kuzzle-dsl/terms/regexp) filter.
+In our case, we want to select all the documents that contain the `URGENT` word in the `label` field. The best pick for this case is the [regexp]({{ site_base_path }}kuzzle-dsl/2/terms/regexp) filter.
 
 
 ```javascript
@@ -147,7 +147,7 @@ kuzzle
   })
 ```
 
-This way, Tom will be notified about urgent TO-DO items. Take a look at the [Koncorde Reference]({{ site_base_path }}kuzzle-dsl/) for a comprehensive list of available filters.
+This way, Tom will be notified about urgent TO-DO items. Take a look at the [Koncorde Reference]({{ site_base_path }}kuzzle-dsl/2/) for a comprehensive list of available filters.
 
 There are a few things that deserve to be noticed here:
 

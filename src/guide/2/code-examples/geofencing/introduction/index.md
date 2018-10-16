@@ -15,7 +15,7 @@ In this code example we will show you how geofencing works with Kuzzle.
 
 ## Configure Kuzzle
 
-First let's make sure Kuzzle is running and create the index and collection we will use to store documents. Follow these [instructions]({{ site_base_path }}guide/getting-started/#running-kuzzle").
+First let's make sure Kuzzle is running and create the index and collection we will use to store documents. Follow these [instructions]({{ site_base_path }}guide/2/getting-started/#running-kuzzle").
 
 
 ## Create Your App
