@@ -1,0 +1,81 @@
+---
+layout: full.html.hbs
+algolia: true
+title: Query Syntax
+description: Kuzzle query format
+order: 200
+---
+
+# Query Syntax
+
+Except for HTTP, Kuzzle expects the exact same query format for all communication protocols.
+
+---
+
+## HTTP
+
+HTTP queries are split into the four HTTP usual parts: URL, verb, headers and body.
+
+Every API routes documentation has a dedicated HTTP section, explaining how to use that route using the HTTP protocol.
+
+Additionally to the specific HTTP documentation, the following list of HTTP headers can be added to any and all HTTP requests:
+
+* `Accept-Encoding`: compression algorithm(s) usable by Kuzzle to encode the query response. Accepted encodings, in order of preference: `gzip`, `deflate`, `identity`. 
+* `Authorization` (expected value: `Bearer <token>`): user's authentification token, obtained through the [login]({{ site_base_path }}api/1/controller-aut/login) method
+* `Content-Encoding`: compression algorithm(s) used to encode the body sent to Kuzzle. Accepted encodings: `deflate`, `gzip`, `identity`
+
+---
+
+## Other protocols
+
+<div class="alert alert-info">Kuzzle's extensible protocol system allows communication in virtually any format. This documentation section describes the format that must be used to pass queries to Kuzzle itself, either directly by users (for instance, our <code>MQTT</code> protocol), or indirectly, translated by the custom protocol layer.</div>
+
+Queries made to Kuzzle must be encoded using JSON, and have the following format:
+
+```javascript
+{
+  // required by all queries
+  "controller": "<controller>",
+  "action": "<action>",
+
+  // optional, can be added to all queries
+  "requestId": "<unique request identifier>",
+  "jwt": "<token>",
+
+  // commonly found parameters
+  "index": "<index>",
+  "collection": "<collection>",
+  "body": {
+    // query content
+  },
+  "_id": "<unique ID>"
+}
+```
+
+### Required parameters:
+
+The following 2 parameters are required by all API requests, as these are directly used by Kuzzle to redirect the query to the correct API action:
+
+* `controller`: accessed Kuzzle API controller 
+* `action`: API controller action to be executed
+
+Depending on the API route executed, other parameters may be required. Those are detailed in the corresponding API sections.
+
+### Commonly found parameters:
+
+There are 2 parameters that can be provided to all queries, independently to the API route executed:
+
+* `jwt`: user's authentification token, obtained through the [login]({{ site_base_path }}api/1/controller-aut/login) method
+* `requestId`: user-defined request identifier. Kuzzle does not guarantee that responses are sent back in the same order than queries are made; use that field to link responses to their corresponding query
+
+Apart from these two, a few other parameters are very commonly found in API queries:
+
+* `_id`: unique identifier (e.g. document ID, user kuid, memory storage key, ...)
+* `body`: query content (e.g. document content, message content, mappings, ...)
+* `collection`: data collection
+* `index`: data index
+
+### Other parameters
+
+Kuzzle does not enforce a fixed list of parameters. Rather, API actions freely design the parameters list they need, and Kuzzle internal structures reflect that freedom.  
+This principle is especially useful, as it allows plugins to set their own list of required and optional parameters, without constraint.
