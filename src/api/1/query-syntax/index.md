@@ -16,13 +16,22 @@ Except for HTTP, Kuzzle expects the exact same query format for all communicatio
 
 HTTP queries are split into the four HTTP usual parts: URL, verb, headers and body.
 
-Every API routes documentation has a dedicated HTTP section, explaining how to use that route using the HTTP protocol.
+Every API routes documentation has a dedicated HTTP section, explaining how to use that route using the HTTP protocol. 
 
-Additionally to the specific HTTP documentation, the following list of HTTP headers can be added to any and all HTTP requests:
+### Optional headers
+
+The following list of HTTP headers can be added to any and all HTTP requests:
 
 * `Accept-Encoding`: compression algorithm(s) usable by Kuzzle to encode the query response. Accepted encodings, in order of preference: `gzip`, `deflate`, `identity`. 
 * `Authorization` (expected value: `Bearer <token>`): user's authentification token, obtained through the [login]({{ site_base_path }}api/1/controller-aut/login) method
 * `Content-Encoding`: compression algorithm(s) used to encode the body sent to Kuzzle. Accepted encodings: `deflate`, `gzip`, `identity`
+
+### Body encoding
+
+Body contents can be sent in the following formats:
+
+* `application/json`: raw JSON
+* `multipart/form-data`: HTML forms; both key-value pairs and files can be sent that way. There is currently no native API route supporting file contents in queries, but plugins can freely use that feature
 
 ---
 
