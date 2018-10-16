@@ -33,6 +33,13 @@ Body contents can be sent in the following formats:
 * `application/json`: raw JSON
 * `multipart/form-data`: HTML forms; both key-value pairs and files can be sent that way. There is currently no native API route supporting file contents in queries, but plugins can freely use that feature
 
+If a HTML form is sent that way, the resulting body content will be translated into a JSON object, with as many keys as the provided form fields.  
+If the form field holds a file, then the corresponding JSON key will refer to an object instead of a mere value, with the following properties:
+  * `filename`: file's name
+  * `encoding`: file encoding
+  * `mimetype`: MIME type
+  * `file`: file content, encoded in base64
+
 ---
 
 ## Other protocols
