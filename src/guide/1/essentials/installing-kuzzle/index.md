@@ -26,13 +26,14 @@ bash -c "$(curl http://get.kuzzle.io)"
 Before launching Kuzzle using Docker containers, ensure that your system meets the following requirements:
 
 - **64-bit environment**
+- **At least 1.4GB of memory**
 - **Docker v1.10+**, see [instructions here](https://docs.docker.com/engine/installation/)
 - **Docker Compose v1.8+**, see [instructions here](https://docs.docker.com/compose/install/)
 
 To install docker, you need to download the docker-compose file:
 
 
-Before starting the docker stack, you need to increase the maximum amount of virtual memory in order to run Elasticsearch, which is part of our stack (see why <a href="https://www.elastic.co/guide/1/en/elasticsearch/reference/5.x/vm-max-map-count.html">here</a>):
+Before starting the docker stack, you need to increase the maximum amount of virtual memory in order to run Elasticsearch, which is part of our stack (see why <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.6/_maximum_map_count_check.html">here</a>):
 
 ```bash
 sudo sysctl -w vm.max_map_count=262144
@@ -350,7 +351,10 @@ If you see the following message make sure that you have installed Redis and tha
     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
 ```
 
-If you see the following message when your run `pm2 logs` then make sure your `pm2.conf.yml` file was created correctly. If you need to make to the file, delete the current version from pm2 first `pm2 delete kuzzlebackend` and then follow the instructions above to recreate it.
+If you see the following message when running `pm2 logs`, then make sure that your `pm2.conf.yml` file was created correctly.  
+To recreate that file:
+* delete the current version from pm2: `pm2 delete kuzzlebackend`
+* follow the instructions above to recreate it
 
 ```
 PM2        |     at onErrorNT (internal/child_process.js:376:16)
