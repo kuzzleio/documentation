@@ -11,7 +11,7 @@ The [Realtime.Subscribe]({{ site_base_path }}sdk-reference/go/1/realtime/subscri
 
 # Document notifications & messages
 
-These notifications represents [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
+These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
