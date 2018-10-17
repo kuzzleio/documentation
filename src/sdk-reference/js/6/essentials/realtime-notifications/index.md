@@ -60,7 +60,7 @@ The `result` object is the notification content, and it has the following struct
 
 # Server notifications
 
-These notifications represents [server events]({{ site_base_path }}api/1/notifications/#server-events-default).
+These notifications represent [server events]({{ site_base_path }}api/1/notifications/#server-events-default).
 
 | Property | Type | Value |
 |--------------------|------|------------------|
