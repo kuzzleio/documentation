@@ -12,7 +12,7 @@ That listener is fed with a `io.kuzzle.sdk.NotificationResult` object, whose con
 
 Properties can be accessed with usual getters and setters.
 
-# Document notifications & messages
+## Document & messages
 
 These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
 
