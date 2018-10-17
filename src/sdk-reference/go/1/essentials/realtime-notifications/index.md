@@ -34,7 +34,7 @@ The `Result` property has the following structure for document notifications & m
 | `id` | string | Document unique ID<br/>`null` if the notification is from a real-time message|
 | `content` | json.RawMessage | A JSON String message or full document content. Not present if the event is about a document deletion |
 
-# User notifications
+## User
 
 These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
 
