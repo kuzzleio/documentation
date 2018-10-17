@@ -58,7 +58,7 @@ The `result` object is the notification content, and it has the following struct
 |--------------------|------|------------------|
 | `count` | Number |  Updated users count sharing that same subscription |
 
-# Server notifications
+## Server 
 
 These notifications represent [server events]({{ site_base_path }}api/1/notifications/#server-events-default).
 
