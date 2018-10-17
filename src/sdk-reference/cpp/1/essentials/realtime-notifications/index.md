@@ -35,7 +35,7 @@ The `result` argument points to the following structure for document notificatio
 | `id` | const char* | Document unique ID<br/>`null` if the notification is from a real-time message|
 | `content` | const char* | A JSON String message or full document content. Not present if the event is about a document deletion |
 
-# User notifications
+## User 
 
 These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
 
