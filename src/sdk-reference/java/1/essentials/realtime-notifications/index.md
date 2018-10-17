@@ -30,7 +30,7 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | `nType` | String | `document`: the notification type |
 | `volatile` | String | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
-The `io.kuzzle.sdk.NotificationContent` has the following structure for document notifications & messages:
+The `result` object has the following properties for document notifications & messages:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
