@@ -39,7 +39,7 @@ The `result` object has the following properties for document notifications & me
 
 # User notifications
 
-These notifications represents [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
+These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
