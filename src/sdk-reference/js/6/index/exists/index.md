@@ -18,7 +18,7 @@ Checks if the given index exists in Kuzzle.
  * @param {object} [options]
  * @returns {Promise.<Boolean>}
  */
-exists(index, (options = null));
+exists(index, options = null);
 ```
 
 ## Arguments

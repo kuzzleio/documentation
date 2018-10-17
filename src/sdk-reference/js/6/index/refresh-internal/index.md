@@ -27,7 +27,7 @@ The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-refe
  * @param {object} [options]
  * @returns {Promise.<Object>}
  */
-refreshInternal(index, (options = null));
+refreshInternal(index, options = null);
 ```
 
 ## Arguments

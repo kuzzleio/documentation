@@ -26,7 +26,7 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
  * @param {object} [options]
  * @returns {Promise.<Object>}
  */
-refresh(index, (options = null));
+refresh(index, options = null);
 ```
 
 ## Arguments

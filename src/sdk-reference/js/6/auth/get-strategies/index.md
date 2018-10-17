@@ -19,7 +19,7 @@ Get all authentication strategies registered in Kuzzle.
  * @param options
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  */
-getStrategies (options = null)
+getStrategies options = null
 ```
 
 ## Arguments

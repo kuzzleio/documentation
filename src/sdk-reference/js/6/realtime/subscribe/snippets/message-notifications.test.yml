@@ -1,0 +1,7 @@
+name: realtime#subscribe-messages
+description: Subscribe to message notifications
+hooks:
+  before:
+  after:
+template: async-wait-timeout
+expected: Receive message notification

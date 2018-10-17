@@ -19,7 +19,7 @@ Returns the rights for the user linked to the `JSON Web Token`, provided in the 
  * @param options
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  */
-getMyRights (options = null)
+getMyRights options = null
 ```
 
 ## Arguments
