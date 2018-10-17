@@ -80,7 +80,7 @@ Depending on the API route executed, other parameters may be required. Those are
 
 ### Commonly found parameters:
 
-There are 2 parameters that can be provided to all queries, independently to the API route executed:
+There are 3 parameters that can be provided to all queries, independently to the API route executed:
 
 * `jwt`: user's authentification token, obtained through the [login]({{ site_base_path }}api/1/controller-aut/login) method
 * `requestId`: user-defined request identifier. Kuzzle does not guarantee that responses are sent back in the same order than queries are made; use that field to link responses to their  query of origin
