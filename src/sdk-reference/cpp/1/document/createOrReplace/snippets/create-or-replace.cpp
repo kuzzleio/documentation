@@ -1,6 +1,8 @@
 try {
   std::string response;
-  response = kuzzle->document->createOrReplace("nyc-open-data", "yellow-taxi", "some-id", "{\"licence\": \"valid\"}");
+  response = kuzzle->document->createOrReplace("nyc-open-data", "yellow-taxi", "some-id", R"({
+    "license": "valid"
+  })");
 
   std::cout << "Document " << response << "Created" << std::endl;
   /*
