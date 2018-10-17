@@ -27,7 +27,7 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | `Type` | string | `document`: the notification type |
 | `Volatile` | json.RawMessage | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
-The `types.NotificationResult` has the following structure for document notifications & messages:
+The `Result` property has the following structure for document notifications & messages:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
