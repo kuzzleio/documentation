@@ -34,7 +34,7 @@ The `result` object is the notification content, and it has the following struct
 | `_id` | String | Document unique ID<br/>`null` if the notification is from a real-time message|
 | `_source` | object | The message or full document content. Not present if the event is about a document deletion |
 
-# User notifications
+## User 
 
 These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
 
