@@ -53,7 +53,7 @@ These notifications represent [user events]({{ site_base_path }}api/1/notificati
 | `user` | const char* | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
 | `volatiles` | const char* | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
-The `kuzzleio::notification_content` has the following structure for user events:
+The `result` argument points to the following structure for user events:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
