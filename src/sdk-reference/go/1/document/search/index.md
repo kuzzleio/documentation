@@ -48,10 +48,10 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `from` | integer | Offset of the first document to fetch | `false` |
-| `size` | integer | Maximum number of documents to retrieve per page  | `false` |
-| `scroll` | std::string | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) | `false` |
+| `Queuable` | boolean | Make this request queuable or not | `true`  |
+| `From` | integer | Offset of the first document to fetch | `false` |
+| `Size` | integer | Maximum number of documents to retrieve per page  | `false` |
+| `Scroll` | std::string | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) | `false` |
 
 ## Return
 

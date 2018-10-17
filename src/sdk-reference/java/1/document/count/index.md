@@ -28,7 +28,7 @@ int count(java.lang.String index, java.lang.String collection, java.lang.String 
 | `body` | String | A JSON string representing the query to match |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options. |
 
-###### **Options**
+### Options
 
 Additional query options
 
@@ -38,6 +38,8 @@ Additional query options
 | `includeTrash` | boolean | If set to `true`, includes the documents from the trash | `false`  |
 
 ## Return
+
+Returns the number of documents matching the given query.
 
 ## Exceptions
 

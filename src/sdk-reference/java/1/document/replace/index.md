@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 algolia: true
 title: replace
 description:
@@ -28,7 +28,7 @@ java.lang.String replace(java.lang.String index, java.lang.String collection, ja
 | `body` | String | A JSON string containing the body of the document |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options |
 
-###### Options
+### Options
 
 Additional query options
 
@@ -38,6 +38,8 @@ Additional query options
 | `refresh` | String | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
 
 ## Return
+
+Returns a JSON string containing the updated document.
 
 ## Exceptions
 

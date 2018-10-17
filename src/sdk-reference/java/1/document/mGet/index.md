@@ -30,7 +30,7 @@ java.lang.String mGet(java.lang.String index, java.lang.String collection, io.ku
 | `ids` | io.kuzzle.sdk.StringVector | The document ids |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options |
 
-###### Options
+### Options
 
 Additional query options
 

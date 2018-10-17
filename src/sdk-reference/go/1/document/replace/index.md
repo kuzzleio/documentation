@@ -38,6 +38,8 @@ Additional query options
 
 ## Return
 
+Returns a JSON string containing the replaced document.
+
 ## Usage
 
 [snippet=replace]
