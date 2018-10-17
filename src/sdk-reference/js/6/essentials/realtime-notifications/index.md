@@ -36,7 +36,7 @@ The `result` object is the notification content, and it has the following struct
 
 # User notifications
 
-These notifications represents [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
+These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
