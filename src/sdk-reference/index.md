@@ -5,9 +5,9 @@ layout: full.html.hbs
 nosidebar: true
 ---
 
-# SDKs Reference</h1>
+# SDKs Reference
 
-### **In what language do you want to use the Kuzzle SDK?**
+### **Select the language you want to use the Kuzzle SDK?**
 
 Below you’ll find the ones we currently support,
 but we’re working on extending the support to many more.
@@ -29,5 +29,40 @@ but we’re working on extending the support to many more.
   <a href="/sdk-reference/java/1/essentials/" class="Languages-item">
     <img src="/assets/images/logos/java.svg" alt="java logo" class="Languages-item-logo">
     <div class="Languages-item-name">Java</div>
+  </a>
+  <a href="https://github.com/kuzzleio/sdk-ruby" class="Languages-item">
+    <div class="ribbon"><span>BETA</span></div>
+    <img src="/assets/images/logos/ruby.svg" alt="ruby logo" class="Languages-item-logo">
+    <div class="Languages-item-name">Ruby</div>
+  </a>
+  <a href="https://github.com/kuzzleio/sdk-android" class="Languages-item">
+    <div class="ribbon"><span>BETA</span></div>
+    <img src="/assets/images/logos/android.svg" alt="android logo" class="Languages-item-logo">
+    <div class="Languages-item-name">Android</div>
+  </a>
+  <a href="https://github.com/kuzzleio/sdk-python2" class="Languages-item">
+    <div class="ribbon"><span>BETA</span></div>
+    <img src="/assets/images/logos/python.svg" alt="python logo" class="Languages-item-logo">
+    <div class="Languages-item-name">Python 2</div>
+  </a>
+  <a href="https://github.com/kuzzleio/sdk-python3" class="Languages-item">
+    <div class="ribbon"><span>BETA</span></div>
+    <img src="/assets/images/logos/python.svg" alt="python logo" class="Languages-item-logo">
+    <div class="Languages-item-name">Python 3</div>
+  </a>
+  <a href="https://github.com/kuzzleio/sdk-lua" class="Languages-item">
+    <div class="ribbon"><span>BETA</span></div>
+    <img src="/assets/images/logos/lua.svg" alt="lua logo" class="Languages-item-logo">
+    <div class="Languages-item-name">LUA</div>
+  </a>
+  <a href="https://github.com/kuzzleio/sdk-php" class="Languages-item">
+    <div class="ribbon"><span>BETA</span></div>
+    <img src="/assets/images/logos/php.svg" alt="php logo" class="Languages-item-logo">
+    <div class="Languages-item-name">PHP</div>
+  </a>
+  <a href="https://github.com/kuzzleio/sdk-csharp" class="Languages-item">
+    <div class="ribbon"><span>BETA</span></div>
+    <img src="/assets/images/logos/csharp.svg" alt="csharp logo" class="Languages-item-logo">
+    <div class="Languages-item-name">C#</div>
   </a>
 </div>
