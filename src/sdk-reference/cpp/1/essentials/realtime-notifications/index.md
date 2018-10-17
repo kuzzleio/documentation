@@ -10,7 +10,7 @@ order: 100
 The [Realtime.subscribe]({{ site_base_path }}sdk-reference/cpp/1/realtime/subscribe) method takes a callback of type `kuzzleio::NotificationListener`.  
 That callback is called with a `kuzzleio::notification_result*` argument, pointing to an object whose content depends on the type of notification received.
 
-# Document notifications & messages
+## Document & messages
 
 These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
 
