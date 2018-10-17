@@ -9,7 +9,7 @@ order: 100
 
 The [realtime.subscribe]({{ site_base_path }}sdk-reference/js/6/realtime/subscribe) method takes a callback argument, called with a notification object, whose properties depends on the type of notification received.
 
-# Document notifications & messages
+## Document & messages
 
 These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
 
