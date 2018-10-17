@@ -28,7 +28,7 @@ java.lang.String get(java.lang.String index, java.lang.String collection, java.l
 | `id` | String | The document id |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options |
 
-###### Options
+### Options
 
 Additional query options
 

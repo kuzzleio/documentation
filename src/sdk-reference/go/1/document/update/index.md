@@ -37,9 +37,9 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
-| `retryOnConflict` | int | The number of times the database layer should retry in case of version conflict | 0 |
+| `Queuable` | boolean | Make this request queuable or not | `true`  |
+| `Refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| `RetryOnConflict` | int | The number of times the database layer should retry in case of version conflict | 0 |
 
 ## Return
 

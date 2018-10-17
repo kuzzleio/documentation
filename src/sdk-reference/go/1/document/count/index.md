@@ -24,7 +24,7 @@ Count(index string, collection string, body json.RawMessage, options types.Query
 | --- | --- | --- |
 | `index` | String | Index name |
 | `collection` | String | Collection name |
-| `body` | Object | The query to match |
+| `body` | json.RawMessage | A JSON string containing the query to match |
 | `options` | QueryOptions | An structure containing query options. |
 
 ### Options
@@ -37,6 +37,8 @@ Additional query options
 | `IncludeTrash` | boolean | If set to `true`, includes the documents from the trash | `false`  |
 
 ## Return
+
+Returns the number of documents matching the given query.
 
 ## Usage
 

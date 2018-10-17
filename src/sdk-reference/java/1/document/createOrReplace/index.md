@@ -36,9 +36,11 @@ Additional query options
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | String | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| `refresh` | String | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | |
 
 ## Return
+
+Returns a JSON string containing the updated/created document.
 
 ## Exceptions
 
