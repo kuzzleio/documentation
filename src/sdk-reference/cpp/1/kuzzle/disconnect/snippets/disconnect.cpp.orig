@@ -1,0 +1,6 @@
+kuzzle->disconnect();
+<<<<<<< HEAD
+std::cout << "Success" << std::endl;
+=======
+std::cout << "Success" << std::endl;
+>>>>>>> document count, create, createOrReplace & delete

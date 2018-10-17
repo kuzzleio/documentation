@@ -29,18 +29,25 @@ This cursor can then be moved forward using the `next` method of the returned `s
 
 ## Signature
 
-```cpp
-search_result* search(const std::string& index, const std::string& collection, const std::string& body, query_options *options=nullptr)
+```javascript
+/**
+ * @param {string} index
+ * @param {string} collection
+ * @param {object} body
+ * @param {object} options
+ * @returns {Promise.<object>}
+ */
+search (index, collection, body = {}, options = {})
 ```
 
 ## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | std::string | Index name |
-| `collection` | std::string | Collection name |
-| `body` | std::string | A JSON string containing the search query |
-| `options` | query_options | A pointer to a `query_options` containing query options |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `body` | string | A JSON string containing the search query |
+| `options` | object | An object containing query options. |
 
 ### Options
 
@@ -53,31 +60,28 @@ Additional query options
 | `size` | integer | Maximum number of documents to retrieve per page  | `false` |
 | `scroll` | std::string | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) | `false` |
 
-## Return
+## Resolve
 
-Returns a `search_result` struct
+Resolves to a `SearchResult` object
+
 
 ### Properties
 
 | Name | Type | Description |
 | --- | --- | --- |
-| documents | char* | A JSON string containing the retrieved documents |
-| fetched | unsigned | The number of fetched documents |
-| total | unsigned | The total number of documents matching the query |
-| aggregations | char* | A JSON string containing the computed aggregations |
-| collection | char* | The collection on which the search was performed |
-| filters | char* | The original query |
-| options | query_options* | The original query options |
+| documents | object | The retrieved documents |
+| fetched | int | The number of fetched documents |
+| total | int | The total number of documents matching the query |
+| aggregations | object | The computed aggregations |
+| collection | string | The collection on which the search was performed |
+| filters | object | The original query |
+| options | object | The original query options |
 
 ### Functions
 
 | Name | Type | Description |
 | --- | --- | --- |
 | next | `search_result` | Returns a new page of `size` next documents |
-
-## Exceptions
-
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/essentials/error-handling).
 
 ## Usage
 
