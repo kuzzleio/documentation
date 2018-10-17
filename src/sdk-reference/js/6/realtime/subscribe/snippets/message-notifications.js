@@ -9,6 +9,7 @@ function callback (notification) {
     collection: 'in-database',
     controller: 'realtime',
     action: 'publish',
+    protocol: 'websocket',
     scope: 'in',
     state: 'done',
     result:
@@ -23,7 +24,8 @@ function callback (notification) {
              active: true,
              deletedAt: null } },
       _id: null },
-    type: 'document' }
+    type: 'document',
+    room: '24bbb5c44c343167eaf6a023dca8629e-7a90af8c8bdaac1b' }
   */
   console.log('Receive message notification');
 }

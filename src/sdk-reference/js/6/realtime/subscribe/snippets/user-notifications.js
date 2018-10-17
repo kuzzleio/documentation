@@ -9,13 +9,13 @@ function callback (notification) {
       collection: 'yellow-taxi',
       controller: 'realtime',
       action: 'subscribe',
+      protocol: 'websocket',
       user: 'in',
       result: { count: 2 },
-      type: 'user' }
+      type: 'user',
+      room: '14b675feccf5ac320456ef0dbdf6c1fa-0bab84b784bbf372' }
     */
     console.log(`Currently ${notification.result.count} users in the room`);
-  } else {
-    console.log('Document notification');
   }
 }
 

@@ -53,6 +53,14 @@ Additional subscription options.
 
 ## Resolve
 
+Resolve to an object containing the following properties:
+
+| Property   | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `roomId` | String | The room ID |
+| `channel` | String | The channel ID | 
+
+
 ## Usage
 
 *Simple subscription to document notifications*
@@ -66,3 +74,7 @@ Additional subscription options.
 *Subscription to message notifications*
 
 [snippet=message-notifications]
+
+*Subscription to user notifications*
+
+[snippet=user-notifications]

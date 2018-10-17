@@ -1,4 +1,5 @@
 function callback (notification) {
+  console.log(notification);
   /*
   { status: 200,
     requestId: '1850b835-d82d-4bce-abec-bf593a578763',
@@ -8,6 +9,7 @@ function callback (notification) {
     collection: 'yellow-taxi',
     controller: 'document',
     action: 'create',
+    protocol: 'websocket',
     scope: 'in',
     result:
      { _source:
@@ -21,7 +23,8 @@ function callback (notification) {
               active: true,
               deletedAt: null } },
        _id: 'AWZ8F0TpJD41ulNI_b-v' },
-    type: 'document' }
+    type: 'document',
+    room: '14b675feccf5ac320456ef0dbdf6c1fa-7a90af8c8bdaac1b' }
   */
   if (notification.scope === 'in') {
     console.log(`${notification.result._source.name} enter the scope`);
