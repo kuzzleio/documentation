@@ -16,31 +16,31 @@ An empty body matches all documents in the collection.
 
 Optional arguments:
 
-* `size` controls the maximum number of documents returned in the response. Cannot exceed 10000.
+* `size` controls the maximum number of documents returned in the response. Cannot exceed 10000;
 * `from` is usually used with the `size` argument, and defines the offset from the first result you want to fetch
 * `scroll` allows to fetch large result sets, and it must be set with a [time duration](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units). If set, a forward-only cursor will be created (and automatically destroyed at the end of the set duration).
-This cursor can then be moved forward using the `next` method of the returned `search_result` struct.
+This cursor can then be moved forward using the `next` method of the returned `SearchResult` struct.
 
 <div class="alert alert-info">
   <p>
-  When processing a large number of documents (i.e. more than 1000), it is advised to paginate the results using <code>search_result.next</code> rather than increasing the size parameter.
+  When processing a large number of documents (i.e. more than 1000), it is advised to paginate the results using <code>SearchResult.next</code> rather than increasing the size parameter.
   </p>
 </div>
 
 ## Signature
 
-```cpp
-search_result* search(const std::string& index, const std::string& collection, const std::string& body, query_options *options=nullptr)
+```go
+Search(index string, collection string, body json.RawMessage, options types.QueryOptions) (*types.SearchResult, error)
 ```
 
 ## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | std::string | Index name |
-| `collection` | std::string | Collection name |
-| `body` | std::string | A JSON string containing the search query |
-| `options` | query_options | A pointer to a `query_options` containing query options |
+| `index` | string | Index name |
+| `collection` | string | Collection name |
+| `body` | json.RawMessage | A JSON string containing the search query |
+| `options` | types.QueryOptions | The query options |
 
 ### Options
 
@@ -55,29 +55,25 @@ Additional query options
 
 ## Return
 
-Returns a `search_result` struct
+Returns a `SearchResult` struct
 
 ### Properties
 
 | Name | Type | Description |
 | --- | --- | --- |
-| documents | char* | A JSON string containing the retrieved documents |
-| fetched | unsigned | The number of fetched documents |
-| total | unsigned | The total number of documents matching the query |
-| aggregations | char* | A JSON string containing the computed aggregations |
-| collection | char* | The collection on which the search was performed |
-| filters | char* | The original query |
-| options | query_options* | The original query options |
+| Documents | string | A JSON string containing the retrieved documents |
+| Fetched | int | The number of fetched documents |
+| Total | int | The total number of documents matching the query |
+| Aggregations | string | A JSON string containing the computed aggregations |
+| Collection | string | The collection on which the search was performed |
+| Filters | string | The original query |
+| Options | types.QueryOptions | The original query options |
 
 ### Functions
 
 | Name | Type | Description |
 | --- | --- | --- |
-| next | `search_result` | Returns a new page of `size` next documents |
-
-## Exceptions
-
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/essentials/error-handling).
+| Next | `SearchResult` | Returns a new page of `size` next documents |
 
 ## Usage
 
