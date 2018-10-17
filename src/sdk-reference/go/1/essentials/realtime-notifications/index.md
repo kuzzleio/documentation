@@ -36,7 +36,7 @@ The `Result` property has the following structure for document notifications & m
 
 # User notifications
 
-These notifications represents [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
+These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
