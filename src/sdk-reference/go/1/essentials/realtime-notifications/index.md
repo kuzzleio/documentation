@@ -52,7 +52,7 @@ These notifications represent [user events]({{ site_base_path }}api/1/notificati
 | `User` | string | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
 | `Volatile` | json.RawMessage | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
-The `types.NotificationResult` has the following structure for user events:
+The `Result` property has the following structure for user events:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
