@@ -34,7 +34,7 @@ Additional query options
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | |
 
 ## Return
 
