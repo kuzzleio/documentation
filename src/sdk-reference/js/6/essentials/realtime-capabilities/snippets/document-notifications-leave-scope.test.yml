@@ -1,7 +1,0 @@
-name: essentials#documentNotificationsLeaveScope
-description: Subscribe to document leaving the scope
-hooks:
-  before: curl -X POST kuzzle:7512/nyc-open-data/_create ; curl -X PUT kuzzle:7512/nyc-open-data/yellow-taxi/
-  after:
-template: async-wait-timeout
-expected: Document moved out from the scope

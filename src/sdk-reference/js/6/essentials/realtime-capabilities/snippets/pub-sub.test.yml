@@ -1,7 +1,0 @@
-name: essentials#pubSub
-description: Pub / Sub realtime system
-hooks:
-  before:
-  after:
-template: async-wait-timeout
-expected: Receive pub / sub message
