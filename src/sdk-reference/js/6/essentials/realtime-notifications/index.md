@@ -7,7 +7,7 @@ order: 100
 ---
 # Notifications
 
-The [realtime.subscribe]({{ site_base_path }}sdk-reference/js/6/realtime/subscribe) method takes a callback that will be called with a notification object depending on the type of notification you have subscribed to.
+The [realtime.subscribe]({{ site_base_path }}sdk-reference/js/6/realtime/subscribe) method takes a callback argument, called with a notification object, whose properties depends on the type of notification received.
 
 # Document notifications & messages
 
