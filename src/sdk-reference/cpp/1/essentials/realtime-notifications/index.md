@@ -12,7 +12,7 @@ That callback is called with a `kuzzleio::notification_result*` argument, pointi
 
 # Document notifications & messages
 
-These notifications represents [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
+These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
