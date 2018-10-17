@@ -37,7 +37,7 @@ A document notification contains the following fields:
 | `controller` | string | API controller  |
 | `index` | string | Data index |
 | `protocol` | string | Network protocol used to modify the document |
-| `result` | object | Notification content | 
+| `result` | object | Notification content |
 | `room` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
 | `scope` | string | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
 | `state` | string | {{{deprecated "1.5.0"}}}<br/>`done`: the change has been applied<br/>`pending`: the change is about to happen | `pending`, `done` |
@@ -51,7 +51,7 @@ The `result` object is the notification content, and it has the following struct
 |--------------------|------|------------------|
 | `_id` | string | Document unique ID<br/>`null` if the notification is from a real-time message|
 | `_meta` | object | {{{deprecated "1.3.0"}}}<br/>Document metadata information (creation time, last update time, and so on). Can be null. |
-| `_source` | object | The message or full document content. Not present if the event is about a doument deletion |
+| `_source` | object | The message or full document content. Not present if the event is about a document deletion |
 
 
 ### Example
@@ -102,7 +102,7 @@ These notifications are sent only if the `users` argument is set to any other va
 | `controller` | string | API controller  |
 | `index` | string | Data index |
 | `protocol` | string | Network protocol used by the entering/leaving user |
-| `result` | object | Notification content | 
+| `result` | object | Notification content |
 | `room` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
 |`timestamp` | number | Timestamp of the event, in Epoch-millis format |
 | `type` | string | `user`: the notification type |
@@ -149,10 +149,10 @@ Other events may be added in the future.
 
 ### Format
 
-| Notification field | Type | Value |
+| Property | Type | Value |
 |--------------------|------|------------------|
 | `message` | string | Server message explaining why this notification has been triggered |
-| `type` | string | `TokenExpired`: notification type | 
+| `type` | string | `TokenExpired`: notification type |
 
 ### Example
 
