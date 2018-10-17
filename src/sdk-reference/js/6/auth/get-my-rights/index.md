@@ -15,11 +15,11 @@ Returns the rights for the user linked to the `JSON Web Token`, provided in the 
 ```javascript
 /**
  * Gets the rights array of the currently logged user.
- * 
+ *
  * @param options
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  */
-getMyRights options = null
+getMyRights(options = null)
 ```
 
 ## Arguments
