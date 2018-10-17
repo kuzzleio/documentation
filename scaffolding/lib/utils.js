@@ -59,12 +59,8 @@ async function renderTemplate(source, destination, variables) {
 function showDescription({ action, controller }) {
   console.log('API Description:\n');
 
-  if (! fs.existsSync('../documentation/package.json')) {
-    console.error('Unable to show API description because documentation-v1 is not at \'../documentation\'.');
-    return;
-  }
 
-  const actionFile = `../documentation/src/api-documentation/controller-${_.kebabCase(controller)}/${_.kebabCase(action)}.md`;
+  const actionFile = `./src/api/1/controller-${_.kebabCase(controller)}/${_.kebabCase(action)}/index.md`;
   if (! fs.existsSync(actionFile)) {
     console.error(`Can not find corresponding action file ${actionFile}`);
     return;
@@ -72,7 +68,7 @@ function showDescription({ action, controller }) {
 
   const
     content = fs.readFileSync(actionFile, 'utf8'),
-    regexp = new RegExp(/```javascript\n[\s\S]+```([\s\S]*)/),
+    regexp = new RegExp(/---\n([\s\S]+)## Query Syntax/),
     result = content.match(regexp) || [];
 
   if (result.length > 0) {
