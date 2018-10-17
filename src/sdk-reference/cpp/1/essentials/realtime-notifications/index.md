@@ -28,7 +28,7 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | `n_type` | const char* | `document`: the notification type |
 | `volatiles` | const char* | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
-The `kuzzleio::notification_content` has the following structure for document notifications & messages:
+The `result` argument points to the following structure for document notifications & messages:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
