@@ -9,7 +9,7 @@ order: 100
 
 The [Realtime.Subscribe]({{ site_base_path }}sdk-reference/go/1/realtime/subscribe) method takes a channel for `types.KuzzleNotification` objects, whose content depend on the type of notification received.  
 
-# Document notifications & messages
+## Document & messages
 
 These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
 
