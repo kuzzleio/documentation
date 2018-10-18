@@ -45,6 +45,7 @@ Additional subscription options.
 | ---------- | ------- | --------------------------------- | ------- |
 | `scope` | const char* | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` | `all`  |
 | `users` | const char* | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` | `none` |
+| `subscribe_to_self` | bool | Subscribe to notifications fired by our own queries | `true`|
 | `volatile` | const char* | JSON string representing subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) | `null` |
 
 ## Return

@@ -29,7 +29,7 @@ function callback (notification) {
   if (notification.scope === 'in') {
     console.log(`${notification.result._source.name} enter the scope`);
   } else {
-    console.log(`${notification.result._source.name} moved from the scope`);
+    console.log(`${notification.result._source.name} leave the scope`);
   }
 }
 
