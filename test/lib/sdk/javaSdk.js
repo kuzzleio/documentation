@@ -11,7 +11,7 @@ class JavaSdk {
     this.versionPath = getVersionPath('java', this.version);
     this.sdkJavaJar = 'kuzzlesdk-java-experimental-amd64.jar';
     this.sdkDir = 'test/bin/sdk-java';
-    this.sdkJavaBucket = `https://dl.kuzzle.io/sdk/java/${this.versionPath}/${this.sdkJavaJar}`;
+    this.sdkJavaBucket = `https://dl.kuzzle.io/releases/sdk/java/${this.versionPath}/${this.sdkJavaJar}`;
   }
 
   async get() {

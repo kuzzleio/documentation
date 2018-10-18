@@ -11,7 +11,7 @@ class CppSdk {
     this.versionPath = getVersionPath('cpp', this.version);
     this.sdkCppArchive = 'kuzzlesdk-cpp-experimental-amd64.tar.gz';
     this.sdkDir = 'test/bin/sdk-cpp';
-    this.sdkCppBucket = `https://dl.kuzzle.io/sdk/cpp/${this.versionPath}/${this.sdkCppArchive}`;
+    this.sdkCppBucket = `https://dl.kuzzle.io/releases/sdk/cpp/${this.versionPath}/${this.sdkCppArchive}`;
   }
 
   async get() {
