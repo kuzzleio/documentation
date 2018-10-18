@@ -7,8 +7,8 @@ order: 100
 ---
 # Notifications
 
-The [Realtime.subscribe]({{ site_base_path }}sdk-reference/cpp/1/realtime/subscribe) method takes a callback of type `kuzzleio::NotificationListener`.  
-That callback is called with a `kuzzleio::notification_result*` argument, pointing to an object whose content depends on the type of notification received.
+The [realtime.subscribe]({{ site_base_path }}sdk-reference/cpp/1/realtime/subscribe) method takes a listener of type `kuzzleio::NotificationListener`.  
+That listener is called with a `const kuzzleio::notification_result*` argument, pointing to an object whose content depends on the type of notification received.
 
 ## Document & messages
 
@@ -35,7 +35,7 @@ The `result` argument points to the following structure for document notificatio
 | `id` | const char* | Document unique ID<br/>`null` if the notification is from a real-time message|
 | `content` | const char* | A JSON String message or full document content. Not present if the event is about a document deletion |
 
-## User 
+## User
 
 These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
 

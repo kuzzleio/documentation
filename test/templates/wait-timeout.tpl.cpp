@@ -1,3 +1,5 @@
+#include <unistd.h>
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -22,10 +24,7 @@ int main() {
     return 1;
   }
 
-  try {
-    [snippet-code]
-  } catch (kuzzleio::KuzzleException &e) {
-    std::cout << "Success" << std::endl;
-  }
+  [snippet-code]
+
   return 0;
 }
