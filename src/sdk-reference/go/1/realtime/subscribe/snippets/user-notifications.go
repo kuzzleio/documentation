@@ -2,21 +2,17 @@
 exitPrgm := make(chan bool)
 
 // Subscribe to notifications for documents containing a 'name' property
-filters := json.RawMessage(`{ "range": { "age": { "lte": 20 } } }`)
+filters := json.RawMessage(`{ "exists": "name" }`)
 
 // Start an async listener
 listener := make(chan types.KuzzleNotification)
 go func() {
-  count := 0
+  notification := <-listener
 
-  for count < 2 {
-    notification := <-listener
-
-    if notification.Type == "user" {
-      fmt.Printf("Currently %d users in the room\n", notification.Result.Count)
-    }
-
-    count += 1
+  if notification.Type == "user" {
+    fmt.Printf("Volatile data: %s\n", notification.Volatile)
+    // Volatile data: {"sdkVersion":"1.0.0","username":"nina vkote"}
+    fmt.Printf("Currently %d users in the room\n", notification.Result.Count)
   }
 
   exitPrgm <- true
@@ -25,16 +21,27 @@ go func() {
 options := types.NewRoomOptions()
 options.SetUsers(types.USERS_ALL)
 
-_, err := kuzzle.Realtime.Subscribe("nyc-open-data", "yellow-taxi", json.RawMessage(`{}`), listener, options)
+_, err := kuzzle.Realtime.Subscribe("nyc-open-data", "yellow-taxi", filters, listener, options)
 
 if err != nil {
   log.Fatal(err)
 }
 
-opfions := types.NewRoomOptions()
-options.SetUsers(types.USERS_ALL)
-options.SetVolatile(json.RawMessage(`{ "username": "nina vkote" }`))
+// instantiate a second kuzzle client because
+// the same sdk instance does not receive his own notifications
+f := websocket.NewWebSocket("kuzzle", nil)
+fuzzle, _ := kuzzlepkg.NewKuzzle(f, nil)
 
-_, err := kuzzle.Realtime.Subscribe("nyc-open-data", "yellow-taxi", json.RawMessage(`{}`), listener, opfions)
+connectErr = fuzzle.Connect()
+if connectErr != nil {
+  log.Fatal(connectErr)
+  os.Exit(1)
+}
+
+// Subscribe to the same room with the second client
+opfions := types.NewRoomOptions()
+opfions.SetVolatile(json.RawMessage(`{ "username": "nina vkote" }`))
+
+fuzzle.Realtime.Subscribe("nyc-open-data", "yellow-taxi", filters, make(chan types.KuzzleNotification), opfions)
 
 <-exitPrgm

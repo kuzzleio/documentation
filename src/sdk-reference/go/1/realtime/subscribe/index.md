@@ -13,7 +13,13 @@ Subscribes by providing a set of filters: messages, document changes and, option
 ## Signature
 
 ```go
-func (r *Realtime) Subscribe(index string, collection string, filters json.RawMessage, cb chan<- types.KuzzleNotification, options types.RoomOptions) (*types.SubscribeResult, error)
+func (r *Realtime) Subscribe(
+  index string,
+  collection string,
+  filters json.RawMessage,
+  listener chan<- types.KuzzleNotification,
+  options types.RoomOptions
+) (*types.SubscribeResult, error)
 ```
 
 ## Arguments
@@ -60,3 +66,11 @@ Return an error if something was wrong or a `types.SubscribeResult` containing t
 *Subscription to document notifications with scope option*
 
 [snippet=document-notifications-leave-scope]
+
+*Subscription to message notifications*
+
+[snippet=message-notifications]
+
+*Subscription to user notifications*
+
+[snippet=user-notifications]

@@ -7,13 +7,13 @@ import (
 	"time"
 
 	"github.com/kuzzleio/sdk-go/protocol/websocket"
-	"github.com/kuzzleio/sdk-go/kuzzle"
+	kuzzlepkg "github.com/kuzzleio/sdk-go/kuzzle"
 	"github.com/kuzzleio/sdk-go/types"
 )
 
 func main() {
 	c := websocket.NewWebSocket("kuzzle", nil)
-	kuzzle, _ := kuzzle.NewKuzzle(c, nil)
+	kuzzle, _ := kuzzlepkg.NewKuzzle(c, nil)
 
 	connectErr := kuzzle.Connect()
 	if connectErr != nil {
