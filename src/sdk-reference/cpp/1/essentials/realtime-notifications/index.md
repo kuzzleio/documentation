@@ -12,7 +12,7 @@ That listener is called with a `const kuzzleio::notification_result*` argument, 
 
 ## Document & messages
 
-These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
+These `kuzzleio::notification_result` represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
@@ -28,7 +28,7 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | `n_type` | const char* | `document`: the notification type |
 | `volatiles` | const char* | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
-The `result` argument points to the following structure for document notifications & messages:
+The `kuzzleio::notification_content` struct has the following properties for document notifications & messages:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
@@ -37,7 +37,7 @@ The `result` argument points to the following structure for document notificatio
 
 ## User
 
-These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
+These `kuzzleio::notification_result` represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
@@ -53,7 +53,7 @@ These notifications represent [user events]({{ site_base_path }}api/1/notificati
 | `user` | const char* | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
 | `volatiles` | const char* | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
-The `result` argument points to the following structure for user events:
+The `kuzzleio::notification_content` struct has the following properties for document notifications & messages:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|

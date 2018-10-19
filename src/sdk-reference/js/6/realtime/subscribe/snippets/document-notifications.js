@@ -27,9 +27,9 @@ function callback (notification) {
     room: '14b675feccf5ac320456ef0dbdf6c1fa-7a90af8c8bdaac1b' }
   */
   if (notification.scope === 'in') {
-    console.log(`${notification.result._source.name} enter the scope`);
+    console.log(`Document ${notification.result._source.name} enter the scope`);
   } else {
-    console.log(`${notification.result._source.name} leave the scope`);
+    console.log(`Document ${notification.result._source.name} leave the scope`);
   }
 }
 
