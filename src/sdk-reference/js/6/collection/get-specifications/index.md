@@ -19,7 +19,7 @@ Returns the validation specifications associated to the collection.
 * @param {object} [options]
 * @returns {Promise.<object>}
  */
-getSpecifications(index, collection, options = {})
+getSpecifications(index, collection, options = null)
 ```
 
 ## Arguments

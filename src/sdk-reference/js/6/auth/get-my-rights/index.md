@@ -14,10 +14,8 @@ Returns the rights for the user linked to the `JSON Web Token`, provided in the 
 
 ```javascript
 /**
- * Gets the rights array of the currently logged user.
- * 
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
+ * @param {object} [options]
+ * @returns {Promise<object>}
  */
 getMyRights (options = null)
 ```
@@ -26,15 +24,15 @@ getMyRights (options = null)
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options` | JSON Object | A JSON Object containing the options
+| `options` | object | Query options
 
-### **Options**
+### **options**
 
 Additional query options
 
 | Property     | Type    | Description                       | Default
 | ---------- | ------- | --------------------------------- | -------
-| `queuable` | bool | Make this request queuable or not | `true`
+| `queuable` | boolean | Make this request queuable or not | `true`
 
 ## Resolve
 
@@ -42,11 +40,11 @@ An array of object containing:
 
 | Property     | Type    | Description                      
 | ---------- | ------- | ---------------------------------
-| `controller` | string | The controller on wich the rights are applied |
-| `action` | string | The action on wich the rights are applied |
-| `index` | string | The index on wich the rights are applied |
-| `collection` | string | The collection on wich the rights are applied |
-| `value` | string | The rights |
+| `controller` | string | Controller on wich the rights are applied |
+| `action` | string | Action on wich the rights are applied |
+| `index` | string | Index on wich the rights are applied |
+| `collection` | string | Collection on wich the rights are applied |
+| `value` | string | Rights: `allowed` or `restricted` |
 
 ## Usage
 

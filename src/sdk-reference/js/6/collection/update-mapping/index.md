@@ -22,7 +22,7 @@ persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/e
 * @param {object} [options]
 * @returns {Promise.<>}
  */
-updateMapping(index, collection, mapping, options = {})
+updateMapping(index, collection, mapping, options = null)
 ```
 
 ## Arguments

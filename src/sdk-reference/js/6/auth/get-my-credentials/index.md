@@ -8,16 +8,17 @@ order: 200
 
 # getMyCredentials
 
-Returns the current user's credential information for the specified `<strategy>`. The data returned will depend on the specified strategy. The result can be an empty object.
+Returns the current user's credential information for the specified `<strategy>`.  
+The data returned will depend on the specified strategy. The result can be an empty object.
 
 ## Signature
 
 ```javascript
 /**
  * Get credential information of the specified <strategy> for the current user.
- * 
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
+ *
+ * @param {object} [options]
+ * @returns {Promise<object>}
  */
 getMyCredentials(strategy, options = null)
 ```
@@ -26,11 +27,11 @@ getMyCredentials(strategy, options = null)
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | the strategy to use
-| `options` | JSON Object | A JSON Object containing the options
+| `strategy` | string | Strategy to use
+| `options` | object | Query options
 
 
-### **Options**
+### **options**
 
 Additional query options
 
@@ -41,7 +42,8 @@ Additional query options
 
 ## Resolve
 
-A JSON with the credentials for the provided authentication strategy and an error or nil.
+An object representing the credentials for the provided authentication strategy.  
+The content depends on the authentication strategy.  
 
 ## Usage
 

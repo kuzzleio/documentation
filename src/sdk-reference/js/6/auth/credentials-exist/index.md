@@ -8,15 +8,15 @@ order: 200
 
 # credentialsExist
 
+Checks that the current authenticated user has credentials for the specified authentication `<strategy>`.
+
 ## Signature
 
 ```javascript
 /**
- * Check the existence of the specified <strategy>'s credentials for the current user.
- *
- * @param strategy
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
+ * @param {string} strategy
+ * @param {object} [options]
+ * @returns {Promise<object>}
  */
 credentialsExist (strategy, options = null);
 ```
@@ -26,9 +26,9 @@ credentialsExist (strategy, options = null);
 | Arguments    | Type    | Description
 |--------------|---------|-------------
 | `local` | string | Strategy to use
-| `options` | JSON Object | A JSON Object containing the options
+| `options` | object | Query options
 
-### **Options**
+### **options**
 
 Additional query options
 
@@ -39,7 +39,7 @@ Additional query options
 
 ## Resolve
 
-A boolean.
+A boolean indicating whether the credentials exists or not.
 
 ## Usage
 

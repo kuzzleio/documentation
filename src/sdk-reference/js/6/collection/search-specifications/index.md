@@ -18,7 +18,7 @@ Allows to search in the persistence layer for collection specifications.
  * @param {object} [options]
  * @returns {Promise.<SpecificationsSearchResult>}
  */
-searchSpecifications(body = {}, options = {})
+searchSpecifications(body = {}, options = null)
 ```
 
 ## Arguments

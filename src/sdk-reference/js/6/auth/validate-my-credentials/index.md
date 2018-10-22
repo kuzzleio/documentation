@@ -8,17 +8,16 @@ order: 200
 
 # validateMyCredentials
 
-Validate the current user's credentials for the specified `<strategy>`. The `result` field is `true` if the provided credentials are valid; otherwise an error is triggered. This route does not actually create or modify the user credentials. The credentials to send will depend on the authentication plugin and authentication strategy.
+Validate the current user's credentials for the specified `<strategy>`. The `result` field is `true` if the provided credentials are valid; otherwise an error is triggered.  
+This route does not actually create or modify the user credentials. The credentials to send will depend on the authentication plugin and authentication strategy.
 
 ## Signature
 
 ```javascript
 /**
- * Validate credentials of the specified <strategy> for the current user.
- *
- * @param strategy
- * @param credentials
- * @param options
+ * @param {string} strategy
+ * @param {object} credentials
+ * @param {object} [options]
  * @returns a boolean
  */
 validateMyCredentials (strategy, credentials, options = null)
@@ -30,16 +29,16 @@ validateMyCredentials (strategy, credentials, options = null)
 |--------------|---------|-------------
 | `strategy` | string | the strategy to use
 | `credentials` | string | the new credentials
-| `options`  | JSON Object | A JSON Object containing the options
+| `options`  | object | Query options
 
 
-### **Options**
+### **options**
 
 Additional query options
 
 | Property     | Type    | Description                    | Default |
 | ---------- | ------- | ------------------------------ | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 
 ## Return

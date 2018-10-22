@@ -19,7 +19,7 @@ Delete the validation specifications associated with the collection.
  * @param {object} [options]
  * @returns {Promise.<boolean>}
  */
-deleteSpecifications(index, collection, options = {})
+deleteSpecifications(index, collection, options = null)
 ```
 
 ## Arguments

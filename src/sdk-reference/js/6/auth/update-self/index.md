@@ -14,35 +14,46 @@ Updates the current user object in Kuzzle.
 
 ```javascript
 /**
- * Update the current user in Kuzzle.
- * 
- * @param {object} body - a plain javascript object representing the user's modification
- * @param {object} [options] - (optional) arguments
- * @returns {Kuzzle} this object
+ * @param {object} user
+ * @param {object} [options]
+ * @returns {Promise<User>}
  */
-updateSelf (body, options = null)
+updateSelf (user, options = null)
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `content` | JSON Object | the new credentials
-| `options`  | JSON Object | A JSON Object containing the options
+| `content` | object | the new credentials
+| `options`  | object | Query options
 
 
-### **Options**
+### **options**
 
 Additional query options
 
 | Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 
 ## Resolve
 
-A User object.
+A User object representing the current user logged with the SDK.
+
+| Property     | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `id` | string | The user ID |
+| `content` | object | The User content |
+
+The User content contain the following properties:
+
+| Property     | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `profileIds` | array<string> | An array containing the profile ids |
+| `_kuzzle_info` | object | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
+| `any` | any | Any other property savec with the user |
 
 ## Usage
 

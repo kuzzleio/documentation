@@ -22,7 +22,7 @@ This is a low-level method, exposed to allow advanced SDK users to bypass high-l
  * @param {object} [options]
  * @returns {Promise.<object>}
  */
-query(request, (options = {}));
+query(request, (options = null));
 ```
 
 ## Arguments

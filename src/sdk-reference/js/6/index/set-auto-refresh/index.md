@@ -40,7 +40,7 @@ setAutoRefresh(index, autoRefresh, (options = null));
 | `autoRefresh` | Boolean | autoRefresh flag                   | yes      |
 | `options`     | Object  | An object containing query options | no       |
 
-### **Options**
+### **options**
 
 Additional query options
 

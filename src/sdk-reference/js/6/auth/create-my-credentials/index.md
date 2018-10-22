@@ -14,12 +14,10 @@ Create the current user's credentials for the specified `<strategy>`.
 
 ```javascript
 /**
- * Create credentials of the specified <strategy> for the current user.
- *
- * @param credentials
- * @param strategy
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
+ * @param {string} credentials
+ * @param {object} strategy
+ * @param {object} [options]
+ * @returns {Promise<object>}
  */
 createMyCredentials (strategy, credentials, options = null)
 ```
@@ -28,23 +26,24 @@ createMyCredentials (strategy, credentials, options = null)
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | the strategy to use
-| `credentials` | JSON Object | the new credentials
-| `options`  | JSON Object | A JSON Object containing the options
+| `strategy` | string | Strategy to use
+| `credentials` | object | New credentials
+| `options`  | object | Query options
 
 
-### **Options**
+### **options**
 
 Additional query options
 
 | Property     | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | boolean| Make this request queuable or not | `true`  |
 
 
 ## Resolve
 
-A JSON Object representing the new credentials.
+A object representing the new credentials.  
+The content depends on the authentication strategy.  
 
 ## Usage
 

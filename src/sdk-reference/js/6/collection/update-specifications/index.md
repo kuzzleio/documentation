@@ -22,7 +22,7 @@ When the validation specification is not formatted correctly, a detailed error m
 * @param {object} [options]
 * @returns {Promise.<object>}
  */
-updateSpecifications(index, collection, specifications, options = {})
+updateSpecifications(index, collection, specifications, options = null)
 ```
 
 ## Arguments

@@ -20,7 +20,7 @@ It is faster than deleting all documents from a collection.
 * @param {object} [options]
 * @returns {Promise.<object>}
  */
-truncate(index, collection, options = {})
+truncate(index, collection, options = null)
 ```
 
 ## Arguments

@@ -8,14 +8,16 @@ order: 200
 
 # checkToken
 
+Checks a `<token>` validity.
+
+This API route does not require the caller to be logged in.
+
 ## Signature
 
 ```javascript
 /**
- * Checks whether a given jwt token still represents a valid session in Kuzzle.
- *
- * @param  {string}   token     The jwt token to check
- * @return {Promise|*|PromiseLike<T>|Promise<T>}
+ * @param  {string} token
+ * @return {Promise<object>}
  */
 checkToken(token)
 ```
@@ -24,15 +26,15 @@ checkToken(token)
 
 | Property    | Type    | Description
 |--------------|---------|-------------
-| ``token`` | string | the token
+| ``token`` | string | JWT token
 
 ## Resolve
 
 An object representing the token validity status
 
-| Name                | Type    | Description                                                                                                      
+| Name                | Type    | Description                        
 | ------------------- | ------- | -----------------------------------
-| valid               | bool    | Tell if the token is valid or not
+| valid               | boolean | Tell if the token is valid or not
 | state               | string  | Explain why the token is invalid
 | expires_at          | number  | Tells when the token expires
 

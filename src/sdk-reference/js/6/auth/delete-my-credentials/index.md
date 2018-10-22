@@ -8,15 +8,17 @@ order: 200
 
 # deleteMyCredentials
 
+Deletes credentials for a specific `<strategy>` associated to the current user.
+
+If the credentials that generated the current JWT are removed, the user will remain logged in until they log out or their session expire. After that, they will no longer be able to log in with the deleted credentials.
+
 ## Signature
 
 ```javascript
 /**
- * Delete credentials of the specified <strategy> for the current user.
- *
- * @param strategy
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
+ * @param {string} strategy
+ * @param {object} [options]
+ * @returns {Promise<object>}
  */
 deleteMyCredentials (strategy, options = null);
 ```
@@ -26,9 +28,9 @@ deleteMyCredentials (strategy, options = null);
 | Arguments    | Type    | Description
 |--------------|---------|-------------
 | `strategy` | string | Strategy to use
-| `options` | JSON Object | A JSON Object containing the options
+| `options` | object | Query options
 
-### **Options**
+### **options**
 
 Additional query options
 
@@ -38,7 +40,7 @@ Additional query options
 
 ## Resolve
 
-A boolean
+A boolean indicating if the credentials are being deleted.
 
 ## Usage
 

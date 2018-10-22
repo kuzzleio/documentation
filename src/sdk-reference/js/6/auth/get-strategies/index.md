@@ -14,10 +14,8 @@ Get all authentication strategies registered in Kuzzle.
 
 ```javascript
 /**
- * Get the list of strategies of the current logged user.
- * 
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
+ * @param {object} [options]
+ * @returns {Promise<object>}
  */
 getStrategies (options = null)
 ```
@@ -26,19 +24,19 @@ getStrategies (options = null)
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options` | JSON Object | A JSON Object containing the options
+| `options` | object | Query options
 
-### **Options**
+### **options**
 
 Additional query options
 
 | Property     | Type    | Description                       | Default
 | ---------- | ------- | --------------------------------- | -------
-| `queuable` | bool | Make this request queuable or not | `true`
+| `queuable` | boolean | Make this request queuable or not | `true`
 
 ## Resolve
 
-An array of string.
+An array of available strategies name.
 
 ## Usage
 

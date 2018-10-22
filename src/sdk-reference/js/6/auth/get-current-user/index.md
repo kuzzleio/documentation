@@ -15,9 +15,9 @@ Returns the profile object for the user linked to the `JSON Web Token`, provided
 ```javascript
 /**
  * Fetches the current user
- * 
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
+ *
+ * @param {object} [options]
+ * @returns {Promise<User>}
  */
 getCurrentUser (options = null)
 ```
@@ -26,9 +26,9 @@ getCurrentUser (options = null)
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options` | JSON Object | A JSON Object containing the options
+| `options` | object | Query options
 
-### **Options**
+### **options**
 
 Additional query options
 
@@ -42,9 +42,16 @@ A User object representing the current user logged with the SDK.
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `id` | string | The user ID |
-| `content` | JSON Object | The user content |
-| `profileIds` | JSON Array | An array containing the profile ids |
+| `id` | string | User ID |
+| `content` | User | User content |
+
+The User content contain the following properties:
+
+| Property     | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `profileIds` | array<string> | An array containing the profile ids |
+| `_kuzzle_info` | object | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
+| `any` | any | Any other property savec with the user |
 
 
 ## Usage

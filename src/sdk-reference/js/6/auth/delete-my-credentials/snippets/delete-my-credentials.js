@@ -1,6 +1,10 @@
+const credentials = { username: 'foo', password: 'bar' };
+
 try {
-  const jwt = await kuzzle.auth.login('local', {username: 'foo', password: 'bar'});
+  await kuzzle.auth.login('local', credentials);
+
   await kuzzle.auth.deleteMyCredentials('local');
+
   console.log('Success');
 } catch (error) {
   console.error(error.message);

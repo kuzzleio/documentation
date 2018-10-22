@@ -20,7 +20,7 @@ The `from` and `size` arguments allow pagination. They are returned in the respo
 * @param {object} [options]
 * @returns {Promise.<object>}
  */
-list(index, options = {})
+list(index, options = null)
 ```
 
 ## Arguments

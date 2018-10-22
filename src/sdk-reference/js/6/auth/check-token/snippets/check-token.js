@@ -1,10 +1,14 @@
+const credentials = { username: 'foo', password: 'bar' };
+
 try {
-  const jwt = await kuzzle.auth.login('local', {username: 'foo', password: 'bar'});
-  const res = await kuzzle.auth.checkToken(jwt);
-  if (res.valid) {
+  const jwt = await kuzzle.auth.login('local', credentials);
+  
+  const result = await kuzzle.auth.checkToken(jwt);
+
+  if (result.valid) {
     console.log('Success');
   } else {
-    console.err(res.state);
+    console.error(result.state);
   }
 } catch (error) {
   console.error(error.message);

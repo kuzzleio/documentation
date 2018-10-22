@@ -1,3 +1,7 @@
-await kuzzle.auth.login('local', {username: 'foo', password: 'bar'});
-await kuzzle.auth.createMyCredentials('other', {username: 'foo', password: 'bar'});
+const credentials = { username: 'foo', password: 'bar' };
+
+await kuzzle.auth.login('local', credentials);
+
+await kuzzle.auth.createMyCredentials('other', credentials);
+
 console.log('Success');

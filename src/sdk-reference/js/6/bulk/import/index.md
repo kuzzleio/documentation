@@ -18,7 +18,7 @@ Performs a bulk import on a collection
 * @param {Object} [options]
 * @returns {Promise.<Object>}
 */
-import(bulkData, options = {})
+import(bulkData, options = null)
 ```
 
 ## Description
@@ -27,7 +27,7 @@ The bulk import allows to save a list of documents into a specific collection (b
 
 ### The Elasticsearch Bulk API in brief
 
-This API takes a JSON array containing a list of JSON objects working in pairs. In each pair, the first object specifies the action to perform (the most common is `create`) and the second specifies the document itself, like in the example below:
+This API takes a JSON array containing a list of objects working in pairs. In each pair, the first object specifies the action to perform (the most common is `create`) and the second specifies the document itself, like in the example below:
 
 ```javascript
 [
@@ -53,7 +53,7 @@ Learn more at [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticse
 | Arguments  | Type        | Description                                         |
 | ---------- | ----------- | --------------------------------------------------- |
 | `bulkData` | Array       | The list of documents to be added to the collection |
-| `options`  | JSON Object | An object containing query options.                 |
+| `options`  | object | An object containing query options.                 |
 
 ### Options
 

@@ -19,7 +19,7 @@ Check if a collection exists in Kuzzle.
  * @param {object} [options]
  * @returns {Promise.<boolean>}
  */
-exists(index, collection, options = {})
+exists(index, collection, options = null)
 ```
 
 ## Arguments

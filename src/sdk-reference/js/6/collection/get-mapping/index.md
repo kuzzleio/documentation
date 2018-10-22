@@ -19,7 +19,7 @@ Returns the mapping for the given `collection`.
  * @param {object} [options]
  * @returns {Promise.<object>}
  */
-getMapping(index, collection, options = {})
+getMapping(index, collection, options = null)
 ```
 
 ## Arguments

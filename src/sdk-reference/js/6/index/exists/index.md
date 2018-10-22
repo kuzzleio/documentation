@@ -28,7 +28,7 @@ exists(index, (options = null));
 | `index`   | String | Index name                          | yes      |
 | `options` | Object | An object containing query options. | no       |
 
-### **Options**
+### **options**
 
 Additional query options
 
