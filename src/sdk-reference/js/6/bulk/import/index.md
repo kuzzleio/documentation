@@ -8,26 +8,34 @@ order: 200
 
 # Import
 
-Performs a bulk import on a collection
+Create, update or delete large amounts of documents as fast as possible.
+
+This route is faster than the `document:m*` routes family (e.g. [document:mCreate]({{ site_base_path }}sdk-reference/js/6/document/m-create)), but no real-time notifications will be generated, even if some of the documents in the import match subscription filters.
+
+If some documents actions fail, the client will receive a [PartialError]({{ site_base_path }}api/1/documentation/errors/#partialerror) error.
 
 ## Signature
 
 ```javascript
 /**
-* @param {Array} bulkData
-* @param {Object} [options]
-* @returns {Promise.<Object>}
-*/
-import(bulkData, options = null)
+ * @param {array<object>} bulkData
+ * @param {object} [options]
+ * @returns {Promise<array<object>>}
+ */
+import (bulkData, options = null)
 ```
 
-## Description
+## Arguments
 
-The bulk import allows to save a list of documents into a specific collection (belonging to a specific index). If a subset of the documents fails to save, a [PartialError](https://docs.kuzzle.io/api-documentation/errors#partialerror) is triggered. The `data` argument passed to the method must specify the set of documents to import and must satisfy the [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html).
+| Arguments  | Type        | Description                                         |
+| ---------- | ----------- | --------------------------------------------------- |
+| `bulkData` | array<object> | List of documents to be added to the collection |
+| `options`  | object | Query options         |
 
-### The Elasticsearch Bulk API in brief
+### **bulkData**
 
-This API takes a JSON array containing a list of objects working in pairs. In each pair, the first object specifies the action to perform (the most common is `create`) and the second specifies the document itself, like in the example below:
+This API takes a JSON array containing a list of objects working in pairs.  
+In each pair, the first object specifies the action to perform (the most common is `create`) and the second specifies the document itself, like in the example below:
 
 ```javascript
 [
@@ -46,16 +54,9 @@ Note that the action object always has an attribute whose key specifies the acti
 
 Possible actions are `create`, `index`, `update`, `delete`.
 
-Learn more at [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html)
+Learn more at [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-bulk.html)
 
-## Arguments
-
-| Arguments  | Type        | Description                                         |
-| ---------- | ----------- | --------------------------------------------------- |
-| `bulkData` | Array       | The list of documents to be added to the collection |
-| `options`  | object | An object containing query options.                 |
-
-### Options
+### **options**
 
 Additional query options
 
@@ -67,7 +68,17 @@ Additional query options
 
 ## Resolve
 
-On resolve, the response object is the one directly sent by Elasticsearch for the bulk request.
+An array containing objects indicating the import status for each document.  
+Each object has the following structure:
+
+```javascript
+{
+  "<action>": {
+    _id: "another-id",
+    status: 200
+  }
+}
+```
 
 ## Usage
 
