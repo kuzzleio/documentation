@@ -26,9 +26,9 @@ exists(index, collection, options = null)
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
-| ``options`` | Object | An object containing query options    | no  |
+| ``index`` | string | Index name    | yes  |
+| ``collection`` | string | Collection name    | yes  |
+| ``options`` | object | Query options    | no  |
 
 ### **options**
 

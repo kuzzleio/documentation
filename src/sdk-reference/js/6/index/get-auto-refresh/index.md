@@ -35,8 +35,8 @@ getAutoRefresh(index, (options = null));
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
-| `index`   | String | Index name                          | yes      |
-| `options` | Object | An object containing query options. | no       |
+| `index`   | string | Index name                          | yes      |
+| `options` | object | Query options. | no       |
 
 ### **options**
 

@@ -15,8 +15,8 @@ All SDK methods return a promise, that can be rejected with a `KuzzleError` valu
 
 | Property   | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `status` | Number | Status following [HTTP Standards](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) |
-| `stack` | String | Error stacktrace (Only in development mode) |
+| `status` | number | Status following [HTTP Standards](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) |
+| `stack` | string | Error stacktrace (Only in development mode) |
 
 You can find a detailed list of possible errors messages and statuses in the [documentation API]({{ site_base_path }}api/1/errors).
 

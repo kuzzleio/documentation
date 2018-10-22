@@ -29,10 +29,10 @@ updateMapping(index, collection, mapping, options = null)
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
-| ``mapping`` | Object | Collection data mapping    | yes  |
-| ``options`` | Object | An object containing query options    | no  |
+| ``index`` | string | Index name    | yes  |
+| ``collection`` | string | Collection name    | yes  |
+| ``mapping`` | object | Collection data mapping    | yes  |
+| ``options`` | object | Query options    | no  |
 
 ### **mapping**
 

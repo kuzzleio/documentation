@@ -25,8 +25,8 @@ searchSpecifications(body = {}, options = null)
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``body`` | Object | An object containing the search query    | no  |
-| ``options`` | Object | An object containing query options    | no  |
+| ``body`` | object | An object containing the search query    | no  |
+| ``options`` | object | Query options    | no  |
 
 
 ### **body**
@@ -51,9 +51,9 @@ const body = {
 | Arguments    | Type    | Description | Default |
 |--------------|---------|-------------|---------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-| ``from`` | Number | Offset of the first document    | `0`  |
-| ``size`` | Number | Maximum number of documents returned    | `10` |
-| ``scroll`` | Number | Maximum duration for scroll session    | undefined |
+| ``from`` | number | Offset of the first document    | `0`  |
+| ``size`` | number | Maximum number of documents returned    | `10` |
+| ``scroll`` | number | Maximum duration for scroll session    | undefined |
 
 * `size` controls the maximum number of documents returned in the response
 * `from` is usually used with the `size` argument, and defines the offset from the first result you want to fetch

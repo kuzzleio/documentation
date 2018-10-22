@@ -26,7 +26,7 @@ mDelete(indexes, (options = null));
 | Arguments | Type   | Description                                  | Required |
 | --------- | ------ | -------------------------------------------- | -------- |
 | `indexes` | Array  | An array of strings containing indexes names | yes      |
-| `options` | Object | An object containing query options.          | no       |
+| `options` | object | Query options.          | no       |
 
 ### **options**
 

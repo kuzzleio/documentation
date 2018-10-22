@@ -42,7 +42,7 @@ Additional query options
 
 ## Resolve
 
-A object representing the new credentials.  
+An object representing the new credentials.  
 The content depends on the authentication strategy.  
 
 ## Usage

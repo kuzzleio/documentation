@@ -29,10 +29,10 @@ validateSpecifications(index, collection, specifications, options = null)
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
-| ``specifications`` | Object | Specifications to validate  | yes  |
-| ``options`` | Object | An object containing query options    | no  |
+| ``index`` | string | Index name    | yes  |
+| ``collection`` | string | Collection name    | yes  |
+| ``specifications`` | object | Specifications to validate  | yes  |
+| ``options`` | object | Query options    | no  |
 
 ### **specifications**
 
@@ -66,7 +66,7 @@ It contains the following properties:
 |--------------|---------|-------------|
 | ``valid`` | Boolean | Specifications validity   |
 | ``details`` | Array.<String> | Specifications errors    |
-| ``description`` | String | Global description of errors    |
+| ``description`` | string | Global description of errors    |
 
 ## Usage
 

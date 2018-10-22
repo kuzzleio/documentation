@@ -38,7 +38,7 @@ setAutoRefresh(index, autoRefresh, (options = null));
 | ------------- | ------- | ---------------------------------- | -------- |
 | `index`       | String  | Index name                         | yes      |
 | `autoRefresh` | Boolean | autoRefresh flag                   | yes      |
-| `options`     | Object  | An object containing query options | no       |
+| `options`     | Object  | Query options | no       |
 
 ### **options**
 

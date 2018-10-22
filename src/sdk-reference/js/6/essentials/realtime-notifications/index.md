@@ -15,23 +15,23 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `action` | String | API controller's action  |
-| `collection` | String | Data collection |
-| `controller` | String | API controller  |
-| `index` | String | Data index |
-| `protocol` | String | Network protocol used to modify the document |
+| `action` | string | API controller's action  |
+| `collection` | string | Data collection |
+| `controller` | string | API controller  |
+| `index` | string | Data index |
+| `protocol` | string | Network protocol used to modify the document |
 | `result` | object | Notification content |
-| `room` | String | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
-| `scope` | String | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
-|`timestamp` | Number | Timestamp of the event, in Epoch-millis format |
-| `type` | String | `document`: the notification type |
+| `room` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
+| `scope` | string | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
+|`timestamp` | number | Timestamp of the event, in Epoch-millis format |
+| `type` | string | `document`: the notification type |
 | `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
 The `result` object is the notification content, and it has the following structure:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `_id` | String | Document unique ID<br/>`null` if the notification is from a real-time message|
+| `_id` | string | Document unique ID<br/>`null` if the notification is from a real-time message|
 | `_source` | object | The message or full document content. Not present if the event is about a document deletion |
 
 ## User 
@@ -40,23 +40,23 @@ These notifications represent [user events]({{ site_base_path }}api/1/notificati
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `action` | String | API controller's action  |
-| `collection` | String | Data collection |
-| `controller` | String | API controller  |
-| `index` | String | Data index |
-| `protocol` | String | Network protocol used by the entering/leaving user |
+| `action` | string | API controller's action  |
+| `collection` | string | Data collection |
+| `controller` | string | API controller  |
+| `index` | string | Data index |
+| `protocol` | string | Network protocol used by the entering/leaving user |
 | `result` | object | Notification content |
-| `room` | String | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
-|`timestamp` | Number | Timestamp of the event, in Epoch-millis format |
-| `type` | String | `user`: the notification type |
-| `user` | String | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
+| `room` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
+|`timestamp` | number | Timestamp of the event, in Epoch-millis format |
+| `type` | string | `user`: the notification type |
+| `user` | string | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
 | `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
 The `result` object is the notification content, and it has the following structure:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `count` | Number |  Updated users count sharing that same subscription |
+| `count` | number |  Updated users count sharing that same subscription |
 
 ## Server 
 
@@ -64,5 +64,5 @@ These notifications represent [server events]({{ site_base_path }}api/1/notifica
 
 | Property | Type | Value |
 |--------------------|------|------------------|
-| `message` | String | Server message explaining why this notification has been triggered |
-| `type` | String | `TokenExpired`: notification type |
+| `message` | string | Server message explaining why this notification has been triggered |
+| `type` | string | `TokenExpired`: notification type |

@@ -27,8 +27,8 @@ list(index, options = null)
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``options`` | Object | Query options    | no  |
+| ``index`` | string | Index name    | yes  |
+| ``options`` | object | Query options    | no  |
 
 ### **options**
 

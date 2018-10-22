@@ -24,7 +24,7 @@ list((options = null));
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
-| `options` | Object | An object containing query options. | no       |
+| `options` | object | Query options. | no       |
 
 ### **options**
 

@@ -33,7 +33,7 @@ Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request t
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
 | `message` | string | Error description |
-| `status` | Number | Error code |
+| `status` | number | Error code |
 | `stack` | string | Stacktrace (development mode only) |
 
 ## disconnected
@@ -65,7 +65,7 @@ This event does not trigger the offline mode.
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
 | `message` | string | Error description |
-| `status` | Number | Error code |
+| `status` | number | Error code |
 | `stack` | string | Stacktrace (development mode only) |
 
 ## offlineQueuePop

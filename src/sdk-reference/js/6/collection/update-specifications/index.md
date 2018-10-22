@@ -29,10 +29,10 @@ updateSpecifications(index, collection, specifications, options = null)
 
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
-| ``specifications`` | Object | Specifications to update  | yes  |
-| ``options`` | Object | Query options    | no  |
+| ``index`` | string | Index name    | yes  |
+| ``collection`` | string | Collection name    | yes  |
+| ``specifications`` | object | Specifications to update  | yes  |
+| ``options`` | object | Query options    | no  |
 
 ### **specifications**
 

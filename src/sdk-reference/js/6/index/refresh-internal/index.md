@@ -34,8 +34,8 @@ refreshInternal(index, (options = null));
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
-| `index`   | string | An object containing query options. | no       |
-| `options` | Object | An object containing query options. | no       |
+| `index`   | string | Query options. | no       |
+| `options` | object | Query options. | no       |
 
 ### **options**
 
