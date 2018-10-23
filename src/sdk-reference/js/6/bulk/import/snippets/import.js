@@ -21,6 +21,7 @@ try {
         _id: "3",
         status: 200 } ]
   */
+  
   console.log(`Successfully imported ${items.length} documents`);
 } catch (error) {
   console.error(error.message);

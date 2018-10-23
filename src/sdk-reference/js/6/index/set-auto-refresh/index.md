@@ -34,7 +34,7 @@ setAutoRefresh(index, autoRefresh, (options = null));
 
 ## Arguments
 
-| Arguments     | Type    | Description                        | Required |
+| Arguments     | Type    | Description                        | |
 | ------------- | ------- | ---------------------------------- | -------- |
 | `index`       | String  | Index name                         | yes      |
 | `autoRefresh` | Boolean | autoRefresh flag                   | yes      |

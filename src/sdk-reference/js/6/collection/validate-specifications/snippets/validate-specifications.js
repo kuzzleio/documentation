@@ -11,14 +11,15 @@ try {
 
   const result = await kuzzle.collection.validateSpecifications('nyc-open-data', 'yellow-taxi', specifications);
   /*
-  {
-    valid: false,
-    details: [
-      'In nyc-open-data.yellow-taxi.license: symbol is not a recognized type.'
-    ],
-    description: 'Some errors with provided specifications.'
-  }
+    {
+      valid: false,
+      details: [
+        'In nyc-open-data.yellow-taxi.license: symbol is not a recognized type.'
+      ],
+      description: 'Some errors with provided specifications.'
+    }
   */
+
   if (result.valid === false) {
     console.log(result.description);
   }

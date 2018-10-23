@@ -16,22 +16,22 @@ Allows to search in the persistence layer for collection specifications.
 /**
  * @param {object} [body]
  * @param {object} [options]
- * @returns {Promise.<SpecificationsSearchResult>}
+ * @returns {Promise<SpecificationsSearchResult>}
  */
-searchSpecifications(body = {}, options = null)
+searchSpecifications (body = {}, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``body`` | object | An object containing the search query    | no  |
-| ``options`` | object | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``body`` | object | An object containing the search query    |
+| ``options`` | object | Query options    |
 
 
 ### **body**
 
-The body is a set of filters using [Elasticsearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/search-request-body.html) to match the documents you are looking for.  
+The body is a set of filters using [Elasticsearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-body.html) to match the documents you are looking for.  
 The filters must be inside the `query` property of the body.
 
 Example:
@@ -57,7 +57,7 @@ const body = {
 
 * `size` controls the maximum number of documents returned in the response
 * `from` is usually used with the `size` argument, and defines the offset from the first result you want to fetch
-* `scroll` is used to fetch large result sets, and it must be set with a [time duration](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/common-options.html#time-units). If set, a forward-only cursor will be created (and automatically destroyed at the end of the set duration), and its identifier will be returned in the `scrollId` property, along with the first page of the results.
+* `scroll` is used to fetch large result sets, and it must be set with a [time duration](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units). If set, a forward-only cursor will be created (and automatically destroyed at the end of the set duration), and its identifier will be returned in the `scrollId` property, along with the first page of the results.
 
 ## Resolve
 

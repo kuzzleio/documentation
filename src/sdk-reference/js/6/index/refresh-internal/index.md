@@ -32,7 +32,7 @@ refreshInternal(index, (options = null));
 
 ## Arguments
 
-| Arguments | Type   | Description                         | Required |
+| Arguments | Type   | Description                         | |
 | --------- | ------ | ----------------------------------- | -------- |
 | `index`   | string | Query options. | no       |
 | `options` | object | Query options. | no       |

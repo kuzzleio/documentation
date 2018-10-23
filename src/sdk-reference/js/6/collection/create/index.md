@@ -8,11 +8,12 @@ order: 200
 
 # create
 
-Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.  
-You can also provide an optional data mapping that allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).  
+Creates a new [`<collection>`]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `<index>`.
 
-This method will only update the mapping if the collection already exists.
+You can also provide an optional data mapping that allow you to exploit the full capabilities of our
+persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).  
+
+This method will only update the mapping if the `<collection>` already exists.
 
 ## Signature
 
@@ -22,19 +23,19 @@ This method will only update the mapping if the collection already exists.
  * @param {string} collection
  * @param {object} [mapping]
  * @param {object} [options]
- * @returns {Promise.<object>}
+ * @returns {Promise<>}
  */
-create(index, collection, mapping = {}, options = null)
+create (index, collection, mapping = null, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``mapping`` | object | Collection data mapping    | no  |
-| ``options`` | object | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | string | Index name    |
+| ``collection`` | string | Collection name    |
+| ``mapping`` | object | Collection data mapping    |
+| ``options`` | object | Query options    |
 
 ### **mapping**
 
@@ -54,7 +55,7 @@ const mapping = {
 };
 ```
 
-You can see the full list of Elasticsearch mapping types [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html).
+You can see the full list of Elasticsearch mapping types [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
 
 ### **options**
 

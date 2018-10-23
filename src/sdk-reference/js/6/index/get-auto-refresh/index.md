@@ -33,7 +33,7 @@ getAutoRefresh(index, (options = null));
 
 ## Arguments
 
-| Arguments | Type   | Description                         | Required |
+| Arguments | Type   | Description                         | |
 | --------- | ------ | ----------------------------------- | -------- |
 | `index`   | string | Index name                          | yes      |
 | `options` | object | Query options. | no       |

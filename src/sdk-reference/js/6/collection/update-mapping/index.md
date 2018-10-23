@@ -8,9 +8,9 @@ order: 200
 
 # updateMapping
 
-Update the collection mapping.  
-Mapping allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
+Update the `<collection>` mapping.  
+
+Mapping allow you to exploit the full capabilities of our persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
 
 ## Signature
 
@@ -20,39 +20,39 @@ persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/e
 * @param {string} collection
 * @param {object} mapping
 * @param {object} [options]
-* @returns {Promise.<>}
+* @returns {Promise<>}
  */
-updateMapping(index, collection, mapping, options = null)
+updateMapping (index, collection, mapping, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``mapping`` | object | Collection data mapping    | yes  |
-| ``options`` | object | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | string | Index name    |
+| ``collection`` | string | Collection name    |
+| ``mapping`` | object | Collection data mapping    |
+| ``options`` | object | Query options    |
 
 ### **mapping**
 
-An string containing the JSON representation of the collection data mapping.  
+An object representing the collection data mapping.  
 
-The mapping must have a root field `properties` that contain the mapping definition:
-```json
-{
-  "properties": {
-    "field1": { "type": "text" },
-    "field2": {
-      "properties": {
-        "nestedField": { "type": "keyword"}
+This object must have a root field `properties` that contain the mapping definition:
+```javascript
+const mapping = {
+  properties: {
+    field1: { type: "text" },
+    field2: {
+      properties: {
+        nestedField: { type: "keyword" }
       }
     }
   }
-}
+};
 ```
 
-You can see the full list of Elasticsearch mapping types [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html).
+You can see the full list of Elasticsearch mapping types [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
 
 ### **options**
 

@@ -6,6 +6,7 @@ const mapping = {
 
 try {
   await kuzzle.collection.updateMapping('nyc-open-data', 'yellow-taxi', mapping);
+
   console.log('Success');
 } catch (error) {
   console.error(error.message);

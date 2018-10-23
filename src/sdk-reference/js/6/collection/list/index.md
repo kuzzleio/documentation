@@ -8,8 +8,9 @@ order: 200
 
 # list
 
-Returns the complete list of realtime and stored data collections in requested index sorted by name in alphanumerical order.  
-The `from` and `size` arguments allow pagination. They are returned in the response if provided.
+Returns the complete list of realtime and stored data collections in requested `<index>` sorted by name in alphanumerical order.  
+
+The `from` and `size` arguments in `<options>` allows pagination. They are returned in the response if provided.
 
 
 ## Signature
@@ -18,17 +19,17 @@ The `from` and `size` arguments allow pagination. They are returned in the respo
 /**
 * @param {string} index
 * @param {object} [options]
-* @returns {Promise.<object>}
+* @returns {Promise<object>}
  */
-list(index, options = null)
+list (index, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``options`` | object | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | string | Index name    |
+| ``options`` | object | Query options    |
 
 ### **options**
 
@@ -42,7 +43,21 @@ Additional query options
 
 ## Resolve
 
-Resolve to an object containing the collection list.
+Resolve to an object containing the following properties:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| ``type`` | string | Types of returned collections </br>(`all`, `realtime` or `stored`)   |
+| ``collections`` | array&lt;object&gt; | List of collections  |
+| `from` | int | Offset of the first result |
+| `size` | int | Maximum number of returned results |
+
+Each object in the `collections` array contain the following properties:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| ``name`` | string | Collection name |
+| ``type`` | string | Collection type (`realtime` or `stored`) |
 
 ## Usage
 

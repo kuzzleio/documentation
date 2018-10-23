@@ -16,32 +16,33 @@ try {
   const searchResult = await kuzzle.collection.searchSpecifications(body, options);
   console.log(searchResult.response);
   /*
-  {
-    "total": 1,
-    "max_score": 1,
-    "hits": [
-      {
-        "_index": "%kuzzle",
-        "_type": "validations",
-        "_id": "nyc-open-data#yellow-taxi",
-        "_score": 1,
-        "_source": {
-          "validation": {
-            "strict": false,
-            "fields": {
-              "license": {
-                "type": "string"
+    {
+      "total": 1,
+      "max_score": 1,
+      "hits": [
+        {
+          "_index": "%kuzzle",
+          "_type": "validations",
+          "_id": "nyc-open-data#yellow-taxi",
+          "_score": 1,
+          "_source": {
+            "validation": {
+              "strict": false,
+              "fields": {
+                "license": {
+                  "type": "string"
+                }
               }
-            }
-          },
-          "index": "nyc-open-data",
-          "collection": "yellow-taxi"
+            },
+            "index": "nyc-open-data",
+            "collection": "yellow-taxi"
+          }
         }
-      }
-    ],
-    "scrollId": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAAACSFlgtZTJFYjNiU1FxQzhSNUFpNlZHZGcAAAAAAAAAkxZYLWUyRWIzYlNRcUM4UjVBaTZWR2RnAAAAAAAAAJQWWC1lMkViM2JTUXFDOFI1QWk2VkdkZwAAAAAAAACVFlgtZTJFYjNiU1FxQzhSNUFpNlZHZGcAAAAAAAAAlhZYLWUyRWIzYlNRcUM4UjVBaTZWR2Rn"
-  }
+      ],
+      "scrollId": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAAACSFlgtZTJFYjNiU1FxQzhSNUFpNlZHZGcAAAAAAAAAkxZYLWUyRWIzYlNRcUM4UjVBaTZWR2RnAAAAAAAAAJQWWC1lMkViM2JTUXFDOFI1QWk2VkdkZwAAAAAAAACVFlgtZTJFYjNiU1FxQzhSNUFpNlZHZGcAAAAAAAAAlhZYLWUyRWIzYlNRcUM4UjVBaTZWR2Rn"
+    }
   */
+
   if (searchResult.response.hits[0]._source.validation.fields.license.type === 'string') {
     console.log('Success');
   }

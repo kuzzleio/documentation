@@ -22,7 +22,7 @@ list((options = null));
 
 ## Arguments
 
-| Arguments | Type   | Description                         | Required |
+| Arguments | Type   | Description                         | |
 | --------- | ------ | ----------------------------------- | -------- |
 | `options` | object | Query options. | no       |
 

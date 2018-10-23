@@ -24,7 +24,7 @@ Kuzzle(protocol, (options = null));
 
 ## Arguments
 
-| Argument   | Type               | Description                           | Required |
+| Argument   | Type               | Description                           | |
 | ---------- | ------------------ | ------------------------------------- | -------- |
 | `protocol` | string or Protocol | The protocol used by the SDK instance | yes      |
 | `options`  | object             | Kuzzle connection configuration       | yes      |
@@ -39,7 +39,7 @@ It can be:
 
 ### **options**
 
-| Option              | Type    | Description                                                        | Default  | Required |
+| Option              | Type    | Description                                                        | Default  | |
 | ------------------- | ------- | ------------------------------------------------------------------ | -------- | -------- |
 | `autoQueue`         | boolean | Automatically queue all requests during offline mode               | `false`  | no       |
 | `autoReconnect`     | boolean | Automatically reconnect after a connection loss                    | `true`   | no       |

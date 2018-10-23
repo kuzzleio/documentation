@@ -27,7 +27,7 @@ query(request, (options = null));
 
 ## Arguments
 
-| Argument  | Type   | Description            | Required |
+| Argument  | Type   | Description            | |
 | --------- | ------ | ---------------------- | -------- |
 | `request` | object | API request options    | yes      |
 | `options` | object | Optional query options | no       |
@@ -37,7 +37,7 @@ query(request, (options = null));
 All properties necessary for the Kuzzle API can be added in the request object.  
 The following properties are the most common.
 
-| Property     | Type   | Description                               | Required |
+| Property     | Type   | Description                               | |
 | ------------ | ------ | ----------------------------------------- | -------- |
 | `controller` | string | Controller name                           | yes      |
 | `action`     | string | Action name                               | yes      |

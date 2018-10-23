@@ -20,19 +20,19 @@ When the validation specification is not formatted correctly, a detailed error m
  * @param {string} collection
  * @param {object} specifications
  * @param {object} [options]
- * @returns {Promise.<object>}
+ * @returns {Promise<object>}
  */
-validateSpecifications(index, collection, specifications, options = null)
+validateSpecifications (index, collection, specifications, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``specifications`` | object | Specifications to validate  | yes  |
-| ``options`` | object | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | string | Index name    |
+| ``collection`` | string | Collection name    |
+| ``specifications`` | object | Specifications to validate  |
+| ``options`` | object | Query options    |
 
 ### **specifications**
 
@@ -64,8 +64,8 @@ It contains the following properties:
 
 | Property    | Type    | Description |
 |--------------|---------|-------------|
-| ``valid`` | Boolean | Specifications validity   |
-| ``details`` | Array.<String> | Specifications errors    |
+| ``valid`` | boolean | Specifications validity   |
+| ``details`` | array&lt;string&gt; | Specifications errors    |
 | ``description`` | string | Global description of errors    |
 
 ## Usage

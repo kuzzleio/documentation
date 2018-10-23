@@ -8,7 +8,7 @@ order: 200
 
 # getSpecifications
 
-Returns the validation specifications associated to the collection.
+Returns the validation specifications associated to the `<collection>`.
 
 ## Signature
 
@@ -17,18 +17,18 @@ Returns the validation specifications associated to the collection.
 * @param {string} index
 * @param {string} collection
 * @param {object} [options]
-* @returns {Promise.<object>}
+* @returns {Promise<object>}
  */
-getSpecifications(index, collection, options = null)
+getSpecifications (index, collection, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
+| Arguments    | Type    | Description |
 |--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``options`` | object | Query options    | no  |
+| ``index`` | string | Index name    |
+| ``collection`` | string | Collection name    |
+| ``options`` | object | Query options    |
 
 ### **options**
 

@@ -8,7 +8,7 @@ order: 200
 
 # deleteSpecifications
 
-Delete the validation specifications associated with the collection.  
+Delete the validation specifications associated with the `<collection>`.  
 
 ## Signature
 
@@ -17,18 +17,18 @@ Delete the validation specifications associated with the collection.
  * @param {string} index
  * @param {string} collection
  * @param {object} [options]
- * @returns {Promise.<boolean>}
+ * @returns {Promise<boolean>}
  */
-deleteSpecifications(index, collection, options = null)
+deleteSpecifications (index, collection, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``options`` | object | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | string | Index name    |
+| ``collection`` | string | Collection name    |
+| ``options`` | object | Query options    |
 
 ### **options**
 
@@ -40,7 +40,7 @@ Additional query options
 
 ## Resolve
 
-True if success
+True if success.
 
 ## Usage
 

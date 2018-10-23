@@ -8,7 +8,7 @@ order: 200
 
 # getMapping
 
-Returns the mapping for the given `collection`.
+Returns the mapping for the given `<collection>`.
 
 ## Signature
 
@@ -19,16 +19,16 @@ Returns the mapping for the given `collection`.
  * @param {object} [options]
  * @returns {Promise.<object>}
  */
-getMapping(index, collection, options = null)
+getMapping (index, collection, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``options`` | object | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | string | Index name    |
+| ``collection`` | string | Collection name    |
+| ``options`` | object | Query options    |
 
 ### **options**
 

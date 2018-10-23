@@ -8,7 +8,8 @@ order: 200
 
 # truncate
 
-Remove all documents from a collection while keeping the associated mapping.  
+Remove all documents from a `<collection>` while keeping the associated mapping.  
+
 It is faster than deleting all documents from a collection.
 
 ## Signature
@@ -18,18 +19,18 @@ It is faster than deleting all documents from a collection.
 * @param {string} index
 * @param {string} collection
 * @param {object} [options]
-* @returns {Promise.<object>}
+* @returns {Promise<>}
  */
-truncate(index, collection, options = null)
+truncate (index, collection, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``options`` | object | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | string | Index name    |
+| ``collection`` | string | Collection name    |
+| ``options`` | object | Query options    |
 
 ### **options**
 
@@ -41,7 +42,7 @@ Additional query options
 
 ## Resolve
 
-Resolve is collection is successfully truncated.
+Resolve if the collection is successfully truncated.
 
 ## Usage
 

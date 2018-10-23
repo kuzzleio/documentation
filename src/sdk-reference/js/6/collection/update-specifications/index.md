@@ -8,7 +8,7 @@ order: 200
 
 # updateSpecifications
 
-The updateSpecifications method allows you to create or update the validation specifications for one or more index/collection pairs.
+The updateSpecifications method allows you to create or update the validation specifications for a `<collection>`.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
@@ -20,19 +20,19 @@ When the validation specification is not formatted correctly, a detailed error m
 * @param {string} collection
 * @param {object} specifications
 * @param {object} [options]
-* @returns {Promise.<object>}
+* @returns {Promise<object>}
  */
 updateSpecifications(index, collection, specifications, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
+| Arguments    | Type    | Description |
 |--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``specifications`` | object | Specifications to update  | yes  |
-| ``options`` | object | Query options    | no  |
+| ``index`` | string | Index name    |
+| ``collection`` | string | Collection name    |
+| ``specifications`` | object | Specifications to update  |
+| ``options`` | object | Query options    |
 
 ### **specifications**
 

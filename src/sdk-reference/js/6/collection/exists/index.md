@@ -8,7 +8,7 @@ order: 200
 
 # exists
 
-Check if a collection exists in Kuzzle.
+Check if a `<collection>` exists in Kuzzle.
 
 ## Signature
 
@@ -17,18 +17,18 @@ Check if a collection exists in Kuzzle.
  * @param {string} index
  * @param {string} collection
  * @param {object} [options]
- * @returns {Promise.<boolean>}
+ * @returns {Promise<boolean>}
  */
-exists(index, collection, options = null)
+exists (index, collection, options = null)
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``options`` | object | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | string | Index name    |
+| ``collection`` | string | Collection name    |
+| ``options`` | object | Query options    |
 
 ### **options**
 
@@ -40,7 +40,7 @@ Additional query options
 
 ## Resolve
 
-Resolve to a boolean indicating if the collection exists
+Resolve to a boolean indicating if the collection exists.
 
 ## Usage
 
