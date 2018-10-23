@@ -10,6 +10,7 @@ try {
   };
 
   const result = await kuzzle.collection.validateSpecifications('nyc-open-data', 'yellow-taxi', specifications);
+  console.log(result);
   /*
     {
       valid: false,
