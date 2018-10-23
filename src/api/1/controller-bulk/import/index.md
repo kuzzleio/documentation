@@ -78,7 +78,7 @@ The body must contain a `bulkData` array, detailing the bulk operations to perfo
 
 ## Response
 
-Returns a `hits` array containing the list of executed queries result, in the same order than in the query.
+Returns a `items` array containing the list of executed queries result, in the same order than in the query.
 
 Each query result contains the following properties:
 
@@ -95,7 +95,7 @@ Each query result contains the following properties:
   "action": "import",
   "requestId": "<unique request identifier>",
   "result": {
-    "hits": [
+    "items": [
       {
         "create": {
           "_id": "<documentId>",
@@ -118,4 +118,3 @@ Each query result contains the following properties:
   }
 }
 ```
-
