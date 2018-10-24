@@ -107,7 +107,7 @@ The request status is also updated to the error status.
 
 If a `KuzzleError` object is provided, the request's status attribute is set to the error one.
 
-Otherwise, the provided error is embedded into a [InternalError](https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#errorsinternalerror) object, and the request status is set to 500.
+Otherwise, the provided error is embedded into a [InternalError]({{ site_base_path }}plugins/1/errors/internalerror) object, and the request status is set to 500.
 
 ---
 

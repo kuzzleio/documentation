@@ -27,7 +27,7 @@ In a cluster environment, the new strategy is automatically added to all server 
 `add(name, properties)`
 
 * `name`: {string} name of the new authentication strategy
-* `properties`: {object} strategy properties (see [managing credentials](essentials/strategies/#managing-credentials-default))
+* `properties`: {object} strategy properties (see [managing credentials]({{ site_base_path }}plugins/1/essentials/strategies/#managing-credentials-default))
 
 **Note:** strategy classes must previously be declared in the [authenticators]({{ site_base_path }}plugins/1/essentials/strategies/#registering-authentication-strategies-default) property
 

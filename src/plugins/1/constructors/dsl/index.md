@@ -130,7 +130,7 @@ The `remove` function returns a promise, resolved once the filter has been compl
 
 {{{since "1.1.0"}}}
 
-Stores filters, normalized with the [normalize]({{ site_base_path }}plugins/1/plugins-context/constructors/#normalize)) function.
+Stores filters, normalized with the [normalize](#normalize-default)) function.
 
 ### Arguments
 

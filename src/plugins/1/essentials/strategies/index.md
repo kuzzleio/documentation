@@ -47,13 +47,13 @@ Instead, Kuzzle:
 There are two ways of interfacing credentials management:
 
 * statically, by exposing a `strategies` object
-* dynamically, by using the dedicated [strategy accessors]({{ site_base_path }}plugins/1/plugins-context/accessors/#strategies)
+* dynamically, by using the dedicated [strategy accessors]({{ site_base_path }}plugins/1/accessors/strategies)
 
 Whether strategies are added statically or dynamically, the same object structure is expected:
 
 * `config`: an object containing the strategy configuration
   * `authenticator`: One of the exposed [authenticators]({{ site_base_path }}plugins/1/essentials/strategies/#registering-authentication-strategies-default) name
-  * `constructor`: {{{deprecated "1.4.0"}}} (use the `authenticator` property instead) The constructor of the Passport.js strategy. Does not support [dynamic strategy registration]({{ site_base_path }}plugins/1/plugins-context/accessors/#strategies)
+  * `constructor`: {{{deprecated "1.4.0"}}} (use the `authenticator` property instead) The constructor of the Passport.js strategy. Does not support [dynamic strategy registration]({{ site_base_path }}plugins/1/accessors/strategies)
 * `methods`: an object containing the list of exposed methods
   * `create`: the name of the exposed [`create` function]({{ site_base_path }}plugins/1/essentials/strategies/#create-default)
   * `delete`: the name of the exposed [`delete` function]({{ site_base_path }}plugins/1/essentials/strategies/#delete-default)
@@ -84,16 +84,16 @@ The `create` function adds credentials to a user.
 
 For security reasons, plugins are entirely responsible of how credentials are managed, storage included: Kuzzle does not read, modify, or store credentials.
 
-If needed, Kuzzle exposes a secure and isolated storage space for each plugin. It can be accessed using the [Repository]({{ site_base_path }}plugins/1/plugins-context/constructors/#repository) constructor.
+If needed, Kuzzle exposes a secure and isolated storage space for each plugin. It can be accessed using the [Repository]({{ site_base_path }}plugins/1/constructors/repository) constructor.
 
 ### Arguments
 
 `create (request, credentials, kuid, strategy)`
 
-* `request`: the [Request]({{ site_base_path }}plugins/1/plugins-context/constructors/#request) object asking for credentials creation
-* `credentials`: new credentials to create, already validated by this strategy's [validate](#validate) function
-* `kuid`: user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
-* `strategy`: authentication strategy used by these credentials
+* `request`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} API request asking for the credentials creation
+* `credentials`: {object} new credentials to create, already validated by this strategy's [validate](#validate) function
+* `kuid`: {string} user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
+* `strategy`: {string} authentication strategy used by these credentials
 
 ### Returned value
 
@@ -111,9 +111,9 @@ The `delete` function deletes a user's credentials.
 
 `delete (request, kuid, strategy)`
 
-* `request`: the [Request]({{ site_base_path }}plugins/1/plugins-context/constructors/#request) object asking for credentials deletion
-* `kuid`: user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
-* `strategy`: authentication strategy name
+* `request`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} API request  asking for the credentials deletion
+* `kuid`: {string} user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
+* `strategy`: {string} authentication strategy name
 
 ### Returned value
 
@@ -129,9 +129,9 @@ The `exists` function checks whether a user is known to the authentication strat
 
 `exists (request, kuid, strategy)`
 
-* `request`: the [Request]({{ site_base_path }}plugins/1/plugins-context/constructors/#request) object representing the `exists` API call
-* `kuid`: user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
-* `strategy`: authentication strategy name
+* `request`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} source API request
+* `kuid`: {string} user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
+* `strategy`: {string} authentication strategy name
 
 ### Returned value
 
@@ -147,10 +147,10 @@ The `update` function updates a user's credentials.
 
 `update (request, credentials, kuid, strategy)`
 
-* `request`: the [Request]({{ site_base_path }}plugins/1/plugins-context/constructors/#request) object asking for credentials update
-* `credentials`: updated credentials, already validated by this strategy's [validate](#validate) function
-* `kuid`: user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
-* `strategy`: authentication strategy name
+* `request`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} source API request
+* `credentials`: {object} updated credentials, already validated by this strategy's [validate](#validate) function
+* `kuid`: {string} user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
+* `strategy`: {string} authentication strategy name
 
 ### Returned value
 
@@ -168,10 +168,11 @@ The `validate` function verifies that credentials are well-formed.
 
 `validate (request, credentials, kuid, strategy, isUpdate)`
 
-* `request`: the [Request]({{ site_base_path }}plugins/1/plugins-context/constructors/#request) object triggering a credentials verification
-* `kuid`: user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
-* `strategy`: authentication strategy name
-* `isUpdate`: a boolean telling whether the request is an update to credentials (if `true`, credentials may be purposedly incomplete)
+* `request`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} source API request
+* `credentials`: {object} credentials to be validate
+* `kuid`: {string} user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
+* `strategy`: {string} authentication strategy name
+* `isUpdate`: {boolean} tells whether the request is a credentials update. In the case of an update, the `credentials` object may only contain changes to be applied, instead of a complete credentials description 
 
 ### Returned value
 
@@ -190,14 +191,11 @@ For instance, a `local` authentication strategy requires that the `verify` funct
 
 `verify(payload, ...)`
 
-* `payload`: login request made to passport
+* `payload`: {object} login request made to passport. This object has the following attributes:
+  * `original`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} the source API login request
+  * `query`: {object} direct link to `original.input.args`, containing the optional request arguments
+  * `body`: {object} direct link to `original.input.body`, containing the request body content
 * `...`: additional arguments depending on the authentication strategy
-
-The `payload` argument is a simple JSON object that contains the following attributes:
-
-* `original`: the [Request]({{ site_base_path }}plugins/1/plugins-context/constructors/#request) object representing the login request
-* `query`: direct link to `original.input.args`, containing the optional request arguments
-* `body`: direct link to `original.input.body`, containing the request body content
 
 ### Returned value
 
@@ -218,7 +216,7 @@ The `afterRegister` function is called when the Passport.js strategy is instanti
 
 `afterRegister (strategyInstance)`
 
-* `strategyInstance`: the Passport.js strategy instance
+* `strategyInstance`: {object} the Passport.js strategy instance
 
 ---
 
@@ -234,9 +232,9 @@ If this function is not implemented, an empty object is returned by Kuzzle inste
 
 `getById (request, id, strategy)`
 
-* `request`: the [Request]({{ site_base_path }}plugins/1/plugins-context/constructors/#request) object asking for credentials information
-* `id`: strategy's user identifier 
-* `strategy`: authentication strategy name
+* `request`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} the API request asking for credentials information
+* `id`: {string} strategy's user identifier 
+* `strategy`: {string} authentication strategy name
 
 ### Returned value
 
@@ -256,9 +254,9 @@ If this function is not implemented, an empty object is returned by Kuzzle inste
 
 `getInfo (request, kuid, strategy)`
 
-* `request`: the [Request]({{ site_base_path }}plugins/1/plugins-context/constructors/#request) object asking for credentials information
-* `kuid`: user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
-* `strategy`: authentication strategy name
+* `request`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} the API request asking for credentials information
+* `kuid`: {string} user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)
+* `strategy`: {string} authentication strategy name
 
 ### Returned value
 

@@ -23,7 +23,7 @@ Executes a Kuzzle's [API action]({{ site_base_path }}api/1/).
 
 ## Return
 
-The `execute` function resolves to an updated Request object, with its [response part]({{ site_base_path }}plugins/1/plugins-context/constructors/request) set.
+The `execute` function resolves to an updated Request object, with its [response part]({{ site_base_path }}plugins/1/constructors/request) set.
 
 How the response is returned depends whether a callback argument is provided:
 
