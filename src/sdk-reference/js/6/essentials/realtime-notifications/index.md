@@ -24,7 +24,7 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | `room` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
 | `scope` | string | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
 |`timestamp` | number | Timestamp of the event, in Epoch-millis format |
-| `type` | string | `document`: the notification type |
+| `type` | string | `document`: Notification type |
 | `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
 The `result` object is the notification content, and it has the following structure:
@@ -32,9 +32,9 @@ The `result` object is the notification content, and it has the following struct
 | Property | Type |Description       |
 |--------------------|------|------------------|
 | `_id` | string | Document unique ID<br/>`null` if the notification is from a real-time message|
-| `_source` | object | The message or full document content. Not present if the event is about a document deletion |
+| `_source` | object | Message or full document content. Not present if the event is about a document deletion |
 
-## User 
+## User
 
 These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
 
@@ -48,7 +48,7 @@ These notifications represent [user events]({{ site_base_path }}api/1/notificati
 | `result` | object | Notification content |
 | `room` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
 |`timestamp` | number | Timestamp of the event, in Epoch-millis format |
-| `type` | string | `user`: the notification type |
+| `type` | string | `user`: Notification type |
 | `user` | string | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
 | `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
@@ -58,7 +58,7 @@ The `result` object is the notification content, and it has the following struct
 |--------------------|------|------------------|
 | `count` | number |  Updated users count sharing that same subscription |
 
-## Server 
+## Server
 
 These notifications represent [server events]({{ site_base_path }}api/1/notifications/#server-events-default).
 
