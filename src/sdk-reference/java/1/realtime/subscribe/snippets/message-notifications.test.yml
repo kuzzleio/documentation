@@ -1,4 +1,4 @@
-name: realtime#subscribe-messages
+name: realtime#subscribemessages
 description: Subscribe to message notifications
 hooks:
   before:
