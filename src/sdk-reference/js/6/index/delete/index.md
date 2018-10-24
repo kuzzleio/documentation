@@ -8,7 +8,7 @@ order: 500
 
 # Delete
 
-Deletes an entire data index from Kuzzle.
+Deletes an entire data `<index>` from Kuzzle.
 
 ## Signature
 
@@ -16,17 +16,17 @@ Deletes an entire data index from Kuzzle.
 /**
  * @param {string} index
  * @param {object} [options]
- * @returns {Promise.<object>}
+ * @returns {Promise<object>}
  */
-delete (index, (options = null));
+delete (index, options = null)
 ```
 
 ## Arguments
 
-| Arguments | Type   | Description                         | |
-| --------- | ------ | ----------------------------------- | -------- |
-| `index`   | string | Index name                          | yes      |
-| `options` | object | Query options. | no       |
+| Arguments | Type   | Description      |
+| --------- | ------ | ---------------- |
+| `index`   | string | Index name       |
+| `options` | object | Query options |
 
 ### **options**
 
@@ -42,7 +42,7 @@ Resolves to an object containing the index deletion status.
 
 | Name         | Type    | Description                                                                 |
 | ------------ | ------- | --------------------------------------------------------------------------- |
-| acknowledged | boolean | indicates whether the index was successfully deleted in the Elastic cluster |
+| acknowledged | boolean | Indicates whether the index was successfully deleted in the Elastic cluster |
 
 ## Usage
 

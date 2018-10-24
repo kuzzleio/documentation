@@ -8,7 +8,7 @@ order: 300
 
 # Exists
 
-Checks if the given index exists in Kuzzle.
+Checks if the given `<index>` exists in Kuzzle.
 
 ## Signature
 
@@ -16,17 +16,17 @@ Checks if the given index exists in Kuzzle.
 /**
  * @param {string} index
  * @param {object} [options]
- * @returns {Promise.<Boolean>}
+ * @returns {Promise<boolean>}
  */
-exists(index, (options = null));
+exists (index, options = null);
 ```
 
 ## Arguments
 
-| Arguments | Type   | Description                         | |
-| --------- | ------ | ----------------------------------- | -------- |
-| `index`   | string | Index name                          | yes      |
-| `options` | object | Query options. | no       |
+| Arguments | Type   | Description    |
+| --------- | ------ | ---------------|
+| `index`   | string | Index name     |
+| `options` | object | Query options  |
 
 ### **options**
 

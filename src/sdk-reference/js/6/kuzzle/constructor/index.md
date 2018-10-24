@@ -19,7 +19,7 @@ Each instance represent a connection to Kuzzle with specific options.
  * @param {object} [options]
  * @returns {Kuzzle}
  */
-Kuzzle(protocol, (options = null));
+Kuzzle(protocol, options = null);
 ```
 
 ## Arguments

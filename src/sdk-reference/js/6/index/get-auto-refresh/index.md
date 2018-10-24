@@ -28,7 +28,7 @@ Without a refresh after a write request, the documents may not be immediately vi
  * @param {object} [options]
  * @returns {Promise.<Boolean>}
  */
-getAutoRefresh(index, (options = null));
+getAutoRefresh(index, options = null);
 ```
 
 ## Arguments

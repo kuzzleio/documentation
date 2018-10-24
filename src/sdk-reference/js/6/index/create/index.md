@@ -8,7 +8,7 @@ order: 200
 
 # create
 
-Create a new index in Kuzzle
+Create a new `<index>` in Kuzzle.
 
 ## Signature
 
@@ -16,17 +16,17 @@ Create a new index in Kuzzle
 /**
  * @param {string} index
  * @param {object} [options]
- * @returns {Promise.<object>}
+ * @returns {Promise<object>}
  */
-create(index, (options = null));
+create (index, options = null)
 ```
 
 ## Arguments
 
-| Arguments | Type   | Description                         | |
-| --------- | ------ | ----------------------------------- | -------- |
-| `index`   | string | Index name                          | yes      |
-| `options` | object | Query options. | no       |
+| Arguments | Type   | Description      |
+| --------- | ------ | ----------------- |
+| `index`   | string | Index name        |
+| `options` | object | Query options |
 
 ### **options**
 
@@ -42,8 +42,8 @@ Resolves to an object containing the index creation status
 
 | Name                | Type    | Description                                                                                                       |
 | ------------------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| acknowledged        | boolean | indicates whether the index was successfully created in the Elastic cluster                                       |
-| shards_acknowledged | boolean | indicates whether the requisite number of shard copies were started for each shard in the index before timing out |
+| acknowledged        | boolean | Indicates whether the index was successfully created in the Elastic cluster                                       |
+| shards_acknowledged | boolean | Indicates whether the requisite number of shard copies were started for each shard in the index before timing out |
 
 ## Usage
 

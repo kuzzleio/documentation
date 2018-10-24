@@ -1,12 +1,11 @@
-kuzzle.index
-  .exists('nyc-open-data')
-  .then(exists => {
-    if (exists === true) {
-      console.log('index exists');
-    } else {
-      console.log('index does not exist');
-    }
-  })
-  .catch(error => {
-    console.error(error.message);
-  });
+try {
+  const exists = kuzzle.index.exists('nyc-open-data');
+
+  if (exists === true) {
+    console.log('Index exists');
+  } else {
+    console.log('Index does not exists');
+  }
+} catch (error) {
+  console.error(error.message);
+}

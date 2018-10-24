@@ -29,7 +29,7 @@ we recommend that you avoid using it in production or at least carefully monitor
  * @param {object} [options]
  * @returns {Promise.<Object>}
  */
-setAutoRefresh(index, autoRefresh, (options = null));
+setAutoRefresh(index, autoRefresh, options = null);
 ```
 
 ## Arguments
