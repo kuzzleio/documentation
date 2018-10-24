@@ -52,7 +52,7 @@ private void subscribe() throws JSONException {
 }
 ```
 
-We will perform a subscription request that tells Kuzzle that the App wants to be notified anytime a document is created that contains the *message* field. We define this subscription filter in a JSONObject as follows, for more information about filters click [here](http://docs.kuzzle.io/kuzzle-dsl/):
+We will perform a subscription request that tells Kuzzle that the App wants to be notified anytime a document is created that contains the *message* field. We define this subscription filter in a JSONObject as follows, for more information about filters click [here]({{ site_base_path }}kuzzle-dsl/):
 
 ```Java
 private void subscribe() throws JSONException {
