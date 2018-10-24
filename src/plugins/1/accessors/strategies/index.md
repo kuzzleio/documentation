@@ -4,7 +4,7 @@ algolia: true
 title: strategies
 ---
 
-# `strategies`
+# strategies
 
 Dynamically adds or removes [authentication strategies]({{ site_base_path }}plugins/1/essentials/strategies).
 

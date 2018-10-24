@@ -16,8 +16,8 @@ Executes a Kuzzle's [API action]({{ site_base_path }}api/1/).
 
 `execute(request, [callback])`
 
-* `request`: a [Request]({{ site_base_path }}plugins/1/constructors/request) instance, representing an API query
-* `callback` (optional): callback function to call with the API execution result.<br/>If not provided, `execute` returns a promise instead.
+* `request`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} the API query to execute
+* `callback`: {optional, function} callback to call with the API execution result.<br/>If not provided, `execute` returns a promise instead.
 
 ---
 

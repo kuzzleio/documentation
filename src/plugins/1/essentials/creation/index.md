@@ -10,14 +10,14 @@ order: 0
 
 Kuzzle can be customized and extended using plugins.
 
-This chapter explains how to install and configure a plugin. The other chapters in this section explain in great details the four plugin interfaces exposed by Kuzzle:
+This chapter explains how to install and configure a plugin. The other chapters in this section cover the four plugin interfaces exposed by Kuzzle:
 
 * [Hooks](../hooks)
 * [Pipes](../pipes)
 * [Controllers](../controllers)
 * [Strategies](../strategies)
 
-A single plugin can use as many of those interfaces as necessary.
+A single plugin can implement as many of those interfaces as necessary.
 
 ---
 
@@ -50,7 +50,7 @@ The following properties can be defined in this `manifest.json` file:
 * `name` (**required**): plugin unique identifier. Names can only contain lowercase letters, numbers, hyphens and underscores. 
 * `kuzzleVersion`: a non-empty string describing a [semver range](https://www.npmjs.com/package/semver#ranges), limiting the range of Kuzzle versions supported by this plugin. If not set, a warning is displayed on the console, and Kuzzle assumes that the plugin is only compatible with Kuzzle v1.x
 
-{{{deprecated "1.5.0"}}} Kuzzle still allows plugins to be loaded without a `manifest.json` file, for backward compatibility reasons, falling back to the [package.json](https://docs.npmjs.com/files/package.json#name) file to retrieve the plugin's name. This will change in next major releases of Kuzzle.
+{{{deprecated "1.5.0"}}} Kuzzle still allows plugins to be loaded without a <code>manifest.json</code> file, for backward compatibility reasons, falling back to the <a href=https://docs.npmjs.com/files/package.json#name>package.json</a> file to retrieve the plugin's name. This will change in next major releases of Kuzzle.
 
 ---
 
@@ -64,10 +64,8 @@ The `init` method is called once during startup, and it is used to initialize th
 
 `init (config, context)`
 
-Where:
-
-* `config` (object): contains the custom plugin configuration (see the [configuration](#configuration-default) chapter)
-* `context` (object): the [plugin context]({{ site_base_path }}plugins/1/plugins-context)
+* `config`: {object} contains the custom plugin configuration (see the [configuration](#configuration-default) chapter)
+* `context`: {object} the plugin context, exposing various accessors, constructors, and various helpers. The other sections of this documentation detail the interfaces made available by this object
 
 ### Return
 

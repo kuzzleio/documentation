@@ -10,7 +10,7 @@ title: Request
 
 Object representation of a Kuzzle [API call]({{ site_base_path }}api/1/query-syntax).
 
-That object is continuously updated to reflect the current state of the request, during its entirely lifecycle.
+That object is continuously updated to reflect the current state of the request, during its entire lifecycle.
 
 For more information about this object, refer to its [technical documentation](https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#request).
 
