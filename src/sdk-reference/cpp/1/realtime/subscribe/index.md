@@ -39,7 +39,8 @@ The listener will receive a [const kuzzleio::notification_result*]({{site_base_p
 
 ### **options**
 
-Additional subscription options.
+Additional subscription options.  
+It's recommended to initialize this structure with the macro `KUZZLE_ROOM_OPTIONS_DEFAULT` to have the default values.
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |

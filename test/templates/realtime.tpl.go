@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"time"
+	"encoding/json"
 
 	"github.com/kuzzleio/sdk-go/protocol/websocket"
 	kuzzlepkg "github.com/kuzzleio/sdk-go/kuzzle"
