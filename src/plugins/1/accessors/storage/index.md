@@ -35,7 +35,7 @@ The `bootstrap` function returns a promise, resolving once the storage is initia
 ### Example
 
 ```js
-context.accessors.storage.bootstrap({
+const mappings = {
   collection1: {
     properties: {
       someField: {
@@ -48,7 +48,13 @@ context.accessors.storage.bootstrap({
       // ...
     }
   }
-});
+};
+
+try {
+  await context.accessors.storage.bootstrap(mappings);
+} catch(error) {
+  // "error" is a KuzzleError object
+}
 ```
 
 ---
@@ -71,16 +77,22 @@ Can be called any number of times as long as the mapping is not modified.
 
 ### Return
 
-The `createCollection` function returns a promise, resolving to an acknowledgement.
+The `createCollection` function returns a promise.
 
 ### Example
 
 ```js
-context.accessors.storage.createCollection('collection1', {
+const mapping = {
   properties: {
     someField: {
       type: 'keyword'
     }
   }
-});
+};
+
+try {
+  await context.accessors.storage.createCollection('collection1', mapping);
+} catch (error) {
+  // "error" is a KuzzleError object
+}
 ```

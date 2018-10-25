@@ -44,7 +44,7 @@ The promise is rejected if:
 ### Example
 
 ```js
-context.accessors.strategies.add('someStrategy', {
+const strategy = {
   config: {
     authenticator: 'StrategyConstructorName',
     authenticateOptions: {
@@ -59,7 +59,13 @@ context.accessors.strategies.add('someStrategy', {
     validate: 'validate',
     verify: 'verify'
   }
-});
+};
+
+try {
+  await context.accessors.strategies.add('someStrategy', strategy);
+} catch(error) {
+  // "error" is a KuzzleError object
+}
 ```
 
 ---
@@ -91,5 +97,9 @@ This promise is rejected if the strategy to remove does not exist, or if it is o
 ### Example
 
 ```js
-context.accessors.strategies.remove('someStrategy');
+try {
+  context.accessors.strategies.remove('someStrategy');
+} catch(error) {
+  // "error" is a KuzzleError object
+}
 ```

@@ -44,28 +44,33 @@ The `create` function returns a promise, resolving to the document creation resu
 ### Example
 
 ```js
-repository.create({_id: '<a unique id>', 
+const content = {
+  _id: '<unique id>',
   someField: 'some content',
   anotherField: 'another content'
-})
-  .then(result => {
-    /*
-     * Outputs:
-     * { _index: '%<plugin name>',
-     *   _type: '<data collection>',
-     *   _id: '<a unique id>',
-     *   _version: 1,
-     *   result: 'created',
-     *   _shards: { total: 2, successful: 1, failed: 0 },
-     *   created: true,
-     *   _source: { 
-     *     someField: 'some content', 
-     *     anotherField: 'another content' 
-     *   } 
-     * }
-     */
-    console.dir(result, {depth: null});
-  });
+};
+
+try {
+  const result = await repository.create(content);
+  /*
+   * Outputs:
+   * { _index: '%<plugin name>',
+   *   _type: '<data collection>',
+   *   _id: '<a unique id>',
+   *   _version: 1,
+   *   result: 'created',
+   *   _shards: { total: 2, successful: 1, failed: 0 },
+   *   created: true,
+   *   _source: { 
+   *     someField: 'some content', 
+   *     anotherField: 'another content' 
+   *   } 
+   * }
+   */
+  console.dir(result, {depth: null});
+} catch (error) {
+  // "error" is a KuzzleError object
+}
 ```
 
 ---
@@ -91,28 +96,33 @@ The `createOrReplace` function returns a promise, resolving to the document crea
 ### Example
 
 ```js
-repository.createOrReplace({_id: '<a unique id>', 
+const content = {
+  _id: '<unique id>',
   someField: 'some content',
   anotherField: 'another content'
-})
-  .then(result => {
-    /*
-     * Outputs:
-     * { _index: '%<plugin name>',
-     *   _type: '<data collection>',
-     *   _id: '<a unique id>',
-     *   _version: 3,
-     *   result: 'created',
-     *   _shards: { total: 2, successful: 1, failed: 0 },
-     *   created: false,
-     *   _source: { 
-     *     someField: 'some content', 
-     *     anotherField: 'another content'
-     *   } 
-     * }
-     */
-    console.dir(result, {depth: null});
-  });
+};
+
+try {
+  const result = await repository.createOrReplace(content);
+  /*
+   * Outputs:
+   * { _index: '%<plugin name>',
+   *   _type: '<data collection>',
+   *   _id: '<a unique id>',
+   *   _version: 3,
+   *   result: 'created',
+   *   _shards: { total: 2, successful: 1, failed: 0 },
+   *   created: false,
+   *   _source: { 
+   *     someField: 'some content', 
+   *     anotherField: 'another content'
+   *   } 
+   * }
+   */
+  console.dir(result, {depth: null});
+} catch(error) {
+  // "error" is a KuzzleError object
+}
 ```
 
 ---
@@ -138,21 +148,23 @@ The `delete` function returns a promise, resolving to the document deletion resu
 ### Example
 
 ```js
-someCollectionRepository.delete('someDocumentId')
-  .then(result => {
-    /*
-     * Outputs:
-     *  { found: true,
-     *    _index: '%<plugin name>',
-     *    _type: '<data collection>',
-     *    _id: 'someDocumentId',
-     *    _version: 3,
-     *    result: 'deleted',
-     *    _shards: { total: 2, successful: 1, failed: 0 } 
-     *  }
-     */
-    console.dir(result, {depth: null});
-  });
+try {
+  await repository.delete('someDocumentId');
+  /*
+   * Outputs:
+   *  { found: true,
+   *    _index: '%<plugin name>',
+   *    _type: '<data collection>',
+   *    _id: 'someDocumentId',
+   *    _version: 3,
+   *    result: 'deleted',
+   *    _shards: { total: 2, successful: 1, failed: 0 } 
+   *  }
+   */
+  console.dir(result, {depth: null});
+} catch(error) {
+  // "error" is a KuzzleError object
+}
 ```
 
 ---
@@ -218,27 +230,32 @@ The `replace` function returns a promise, resolving to the document replacement 
 ### Example
 
 ```js
-repository.replace({_id: '<a unique id>', 
+const content = {
+  _id: '<unique id>', 
   someField: 'some content',
   anotherField: 'another content'
-})
-  .then(result => {
-    /*
-     * Outputs:
-     * { _index: '%<plugin name>',
-     *   _type: '<data collection>',
-     *   _id: '<a unique id>',
-     *   _version: 3,
-     *   _shards: { total: 2, successful: 1, failed: 0 },
-     *   created: false,
-     *   _source: { 
-     *     someField: 'some content', 
-     *     anotherField: 'another content'
-     *   } 
-     * }
-     */
-    console.dir(result, {depth: null});
-  });
+};
+
+try {
+  const result = await repository.replace(content);
+  /*
+   * Outputs:
+   * { _index: '%<plugin name>',
+   *   _type: '<data collection>',
+   *   _id: '<a unique id>',
+   *   _version: 3,
+   *   _shards: { total: 2, successful: 1, failed: 0 },
+   *   created: false,
+   *   _source: { 
+   *     someField: 'some content', 
+   *     anotherField: 'another content'
+   *   } 
+   * }
+   */
+  console.dir(result, {depth: null});
+} catch(error) {
+  // "error" is a KuzzleError object
+}
 ```
 
 ---
@@ -311,25 +328,30 @@ The `update` function returns a promise , resolving to the document update resul
 ### Example
 
 ```js
-repository.update({_id: '<a unique id>', 
+const content = {
+  _id: '<unique id>', 
   someField: 'some content',
   anotherField: 'another content'
-})
-  .then(result => {
-    /*
-     * Outputs:
-     * { _index: '%<plugin name>',
-     *   _type: '<data collection>',
-     *   _id: '<a unique id>',
-     *   _version: 1,
-     *   result: 'updated',
-     *   _shards: { total: 2, successful: 1, failed: 0 },
-     *   _source: { 
-     *     someField: 'some content', 
-     *     anotherField: 'another content' 
-     *   } 
-     * }
-     */
-    console.dir(result, {depth: null});
-  });
+};
+
+try {
+  const result = repository.update(content);
+  /*
+   * Outputs:
+   * { _index: '%<plugin name>',
+   *   _type: '<data collection>',
+   *   _id: '<a unique id>',
+   *   _version: 1,
+   *   result: 'updated',
+   *   _shards: { total: 2, successful: 1, failed: 0 },
+   *   _source: { 
+   *     someField: 'some content', 
+   *     anotherField: 'another content' 
+   *   } 
+   * }
+   */
+  console.dir(result, {depth: null});
+} catch(error) {
+  // "error" is a KuzzleError object
+}
 ```
