@@ -43,9 +43,11 @@ const request = new context.constructors.Request({
   _id: 'documentID'
 });
 
-context.accessors.execute(request, (error, request) => {
-  /*
-   Kuzzle's response can be obtained with request.response
-   */
-});
+try {
+  // "request" is the updated Request object
+  // The API response is accessed through "request.response"
+  request = await context.accessors.execute(request);
+} catch (error) {
+  // "error" is a KuzzleError object
+}
 ```
