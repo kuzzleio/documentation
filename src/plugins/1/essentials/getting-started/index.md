@@ -1,12 +1,12 @@
 ---
 layout: full.html.hbs
 algolia: true
-title: Creating a Plugin
+title: Getting Started
 description: how to create a custom plugin
 order: 0
 ---
 
-# Creating a plugin
+# Getting Started
 
 Kuzzle can be customized and extended using plugins.
 
