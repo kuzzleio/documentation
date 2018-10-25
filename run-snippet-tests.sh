@@ -97,7 +97,7 @@ case $LANGUAGE in
   ;;
 esac
 
-if [ "$TRAVIS_PULL_REQUEST" == "true" ]; then
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
   aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/$TRAVIS_PULL_REQUEST/$LANGUAGE/$SDK_VERSION/ --recursive --exclude "*.gitkeep"
 fi
 
