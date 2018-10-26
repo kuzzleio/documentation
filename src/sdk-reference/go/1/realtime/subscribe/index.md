@@ -54,8 +54,8 @@ Return an error if something was wrong or a `types.SubscribeResult` containing t
 
 | Property    | Type    | Description |
 |--------------|---------|-------------|
-| ``room`` | string | The room ID    |
-| ``channel`` | string | The channel ID    |
+| ``Room`` | string | The room ID    |
+| ``Channel`` | string | The channel ID    |
 
 ## Usage
 
