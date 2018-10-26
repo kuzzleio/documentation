@@ -6,7 +6,7 @@ title: notify
 
 # notify
 
-Asks protocols to send data to a specific user, on some of its [channels]({{ site_base_path }}protocols/1/essentials/getting-started/#channels-default).
+Asks the protocol to send data to a specific connection, on some of its [channels]({{ site_base_path }}protocols/1/essentials/getting-started/#channels-default).
 
 ---
 

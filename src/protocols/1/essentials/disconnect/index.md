@@ -6,7 +6,7 @@ title: disconnect
 
 # disconnect
 
-Asks a protocol to force-close a connection.
+Asks the protocol to force-close a connection.
 
 ---
 
