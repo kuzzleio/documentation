@@ -8,4 +8,4 @@ order: 0
 
 The `context` object contains general functions and objects used to interact with Kuzzle.
 
-This object is passed to the protocol [init]({{ site_base_path }}protocols/1/essentials/interface/#init-default) method.
+This object is passed to the protocol [init]({{ site_base_path }}protocols/1/essentials/init/) method.

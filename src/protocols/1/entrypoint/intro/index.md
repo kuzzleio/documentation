@@ -7,7 +7,7 @@ order: 0
 
 # Properties
 
-An instance of the `EntryPoint` class is provided as an argument to the protocol's required [init]({{ site_base_path }}protocols/1/essentials/interface/#init-default) function.
+An instance of the `EntryPoint` class is provided as an argument to the protocol's required [init]({{ site_base_path }}protocols/1/essentials/init) function.
 
 That instance contains the necessary methods to make Kuzzle aware of user connections, and to pass API requests to Kuzzle.
 
