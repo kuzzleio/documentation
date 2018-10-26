@@ -31,8 +31,6 @@ Can be a hostname or an IP address.
 
 ### **options**
 
-It's recommended to initalize this structure with the macro `KUZZLE_OPTIONS_DEFAULT` to have the default values.
-
 | Option               | Type               | Description                                                        | Default  | Required |
 | -------------------- | ------------------ | ------------------------------------------------------------------ | -------- | -------- |
 | `auto_queue`         | boolean            | Automatically queue all requests during offline mode               | `false`  | no       |

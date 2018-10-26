@@ -8,19 +8,19 @@ kuzzleio::NotificationListener listener =
 try {
   // Subscribe to notifications when document leaves the scope
   const char *filters = "{ \"exists\": \"name\" }";
-  kuzzleio::room_options options = KUZZLE_ROOM_OPTIONS_DEFAULT;
+  kuzzleio::room_options options;
   options.users = "all";
 
   kuzzle->realtime->subscribe("nyc-open-data", "yellow-taxi", filters, &listener, &options);
 
   // instantiate a second kuzzle client because
   // the same sdk instance does not receive his own notifications
-  kuzzleio::options fuzzle_options = KUZZLE_OPTIONS_DEFAULT;
+  kuzzleio::options fuzzle_options;
   kuzzleio::Kuzzle* fuzzle = new kuzzleio::Kuzzle("kuzzle", &fuzzle_options);
   fuzzle->connect();
 
   // Subscribe to the same room with the second client
-  kuzzleio::room_options opfions = KUZZLE_ROOM_OPTIONS_DEFAULT;
+  kuzzleio::room_options opfions;
   opfions.users = "all";
   opfions.volatiles = "{ \"username\": \"nina vkote\" }";
 

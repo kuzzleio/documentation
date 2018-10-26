@@ -6,7 +6,7 @@ kuzzleio::NotificationListener listener =
 try {
   // Subscribe to notifications when document leaves the scope
   const char *filters = "{ \"range\": { \"age\": { \"lte\": 20 } } }";
-  kuzzleio::room_options options = KUZZLE_ROOM_OPTIONS_DEFAULT;
+  kuzzleio::room_options options;
   options.scope = "out";
 
   kuzzle->realtime->subscribe("nyc-open-data", "yellow-taxi", filters, &listener, &options);
