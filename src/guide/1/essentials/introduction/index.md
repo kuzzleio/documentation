@@ -32,7 +32,7 @@ Additionally, Kuzzle supports a variety of communication protocols:
 - Socket.io
 - MQTT (via plugin)
 
-You can interact directly with Kuzzle through its API, read the [Kuzzle API reference]({{ site_base_path }}api-documentation) for more information.
+You can interact directly with Kuzzle through its API, read the [Kuzzle API reference]({{ site_base_path }}api/1) for more information.
 
 ## Manage your data
 
