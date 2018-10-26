@@ -1,0 +1,7 @@
+name: realtime#count
+description:
+hooks:
+  before:
+  after:
+template: default
+expected: Currently 1 active subscription

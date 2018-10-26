@@ -1,0 +1,7 @@
+name: realtime#count
+description: Count subscribers for a subscription room
+hooks:
+  before:
+  after:
+template: asyncdefault
+expected: Currently 1 active subscription
