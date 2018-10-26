@@ -24,7 +24,7 @@ public int count(String roomId, io.kuzzle.sdk.QueryOptions options)
 | ``roomId`` | String | Subscription room ID |
 | `options` | io.kuzzle.sdk.QueryOptions | QueryOptions |
 
-###### **options**
+### **options**
 
 Additional query options
 

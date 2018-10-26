@@ -36,7 +36,7 @@ publish (index, collection, message, options = null)
 | ``message`` | object | Message to send    |
 | ``options`` | object | Query options    |
 
-###### **options**
+### **options**
 
 Additional query options
 

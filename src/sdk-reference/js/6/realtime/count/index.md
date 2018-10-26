@@ -29,7 +29,7 @@ count (roomId, options = null)
 | ``options`` | object | Query options    |
 
 
-###### **options**
+### **options**
 
 Additional query options
 

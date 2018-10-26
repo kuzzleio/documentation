@@ -24,7 +24,7 @@ void unsubscribe(String roomId, io.kuzzle.sdk.QueryOptions options)
 | ``roomId`` | String | Subscription room ID  |
 | `options` | io.kuzzle.sdk.QueryOptions | Query options |
 
-###### **options**
+### **options**
 
 Additional query options
 

@@ -32,7 +32,7 @@ func (r *Realtime) Subscribe(
 | ``listener`` | chan<- types.KuzzleNotification | Channel receiving the notification |
 | ``options`` | types.RoomOptions | A struct containing subscription options |
 
-###### **listener**
+### **listener**
 
 A channel for [types.KuzzleNotification]({{site_base_path}}sdk-reference/cpp/1/essentials/realtime-notifications) objects.
 The channel will receive an object each time a new notifications is received.  

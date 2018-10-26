@@ -23,7 +23,7 @@ func (r *Realtime) Count(roomID string, options types.QueryOptions) (int, error)
 | ``roomId`` | string| Subscription room ID  |
 | `options` | types.QueryOptions | Query options |
 
-###### **options**
+### **options**
 
 Additional query options
 

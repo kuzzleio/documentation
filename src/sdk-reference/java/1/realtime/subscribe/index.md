@@ -63,7 +63,7 @@ Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handl
 
 [snippet=document-notifications]
 
-<!-- *Subscription to document notifications with scope option*
+*Subscription to document notifications with scope option*
 
 [snippet=document-notifications-leave-scope]
 
@@ -73,4 +73,4 @@ Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handl
 
 *Subscription to user notifications*
 
-[snippet=user-notifications] -->
+[snippet=user-notifications]

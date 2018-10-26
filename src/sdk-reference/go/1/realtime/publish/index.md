@@ -17,7 +17,12 @@ The `<index>` and `<collection>` are indicative and serve only to distinguish th
 ## Signature
 
 ```go
-func (r *Realtime) Publish(index string, collection string, message json.RawMessage, options types.QueryOptions) error
+func (r *Realtime) Publish(
+  index string,
+  collection string,
+  message json.RawMessage,
+  options types.QueryOptions
+) error
 ```
 
 ## Arguments
@@ -29,7 +34,7 @@ func (r *Realtime) Publish(index string, collection string, message json.RawMess
 | ``message`` | json.RawMessage | Message to send |
 | ``options`` | types.QueryOptions | Query options    |
 
-###### **options**
+### **options**
 
 Additional query options
 

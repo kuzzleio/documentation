@@ -30,7 +30,7 @@ public void publish(String index, String collection, String message, io.kuzzle.s
 | ``message`` | String | JSON string representing the message to send |
 | `options` | io.kuzzle.sdk.QueryOptions | Query options |
 
-###### **options**
+### **options**
 
 Additional query options
 

@@ -28,7 +28,7 @@ unsubscribe (roomId, options = null)
 | ``roomId`` | string | Subscription room ID |
 | ``options`` | object | Query options    |
 
-###### **options**
+### **options**
 
 Additional query options
 

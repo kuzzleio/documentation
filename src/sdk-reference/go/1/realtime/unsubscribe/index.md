@@ -23,7 +23,7 @@ func (r *Realtime) Unsubscribe(roomID string, options types.QueryOptions) error
 | ``roomId`` | string| Subscription room ID  |
 | `options` | types.QueryOptions | Query options |
 
-###### **options**
+### **options**
 
 Additional query options
 
