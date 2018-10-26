@@ -71,7 +71,7 @@ Quick summary of how queries are normalized:
 
 Kuzzle triggers events on all controller routes, including those added by plugins.
 
-Read more about these automatic controller events [here]({{ site_base_path }}kuzzle-events/1/plugin-events/).
+Read more about these automatic controller events [here]({{ site_base_path }}plugins/1/events/).
 
 ---
 
