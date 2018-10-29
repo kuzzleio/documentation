@@ -1,5 +1,5 @@
 try {
-  const exists = kuzzle.index.exists('nyc-open-data');
+  const exists = await kuzzle.index.exists('nyc-open-data');
 
   if (exists === true) {
     console.log('Index exists');

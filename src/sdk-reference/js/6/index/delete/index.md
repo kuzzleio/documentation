@@ -6,7 +6,7 @@ description: Deletes an index
 order: 500
 ---
 
-# Delete
+# delete
 
 Deletes an entire data `<index>` from Kuzzle.
 
@@ -38,11 +38,7 @@ Additional query options
 
 ## Resolve
 
-Resolves to an object containing the index deletion status.
-
-| Name         | Type    | Description                                                                 |
-| ------------ | ------- | --------------------------------------------------------------------------- |
-| acknowledged | boolean | Indicates whether the index was successfully deleted in the Elastic cluster |
+Resolves to a `boolean` indicating whether the index was successfully deleted in the Elastic cluster.
 
 ## Usage
 

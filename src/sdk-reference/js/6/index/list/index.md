@@ -6,7 +6,7 @@ description: List the indexes
 order: 400
 ---
 
-# List
+# list
 
 Get the complete list of data indexes handled by Kuzzle.
 
@@ -15,16 +15,16 @@ Get the complete list of data indexes handled by Kuzzle.
 ```javascript
 /**
  * @param {object} [options]
- * @returns {Promise.<Array>}
+ * @returns {Promise<array<string>>}
  */
-list((options = null));
+list (options = null);
 ```
 
 ## Arguments
 
-| Arguments | Type   | Description                         | |
-| --------- | ------ | ----------------------------------- | -------- |
-| `options` | object | Query options. | no       |
+| Arguments | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `options` | object | Query options |
 
 ### **options**
 
@@ -36,7 +36,7 @@ Additional query options
 
 ## Resolve
 
-Resolves to an `Array` of strings containing the list of indexes names present in Kuzzle
+Resolves to an `array<string>` containing the names of Kuzzle's indexes.
 
 ## Usage
 

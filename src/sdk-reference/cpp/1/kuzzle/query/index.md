@@ -44,7 +44,7 @@ The following properties are the most common.
 
 ### **options**
 
-A pointer to a [query_option](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L169) containing additional query options.  
+A pointer to a [query_option](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L169) containing additional Query options  
 The following properties are the most common.
 
 | Property   | Type    | Description                       | Default |

@@ -6,7 +6,7 @@ description: Force Elasticsearch search index update
 order: 700
 ---
 
-# Refresh
+# refresh
 
 When writing or deleting documents in Kuzzle, the update needs to be indexed before being available in search results.
 
@@ -24,16 +24,16 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 /**
  * @param {string} index
  * @param {object} [options]
- * @returns {Promise.<Object>}
+ * @returns {Promise<object>}
  */
-refresh(index, options = null);
+refresh (index, options = null);
 ```
 
 ## Arguments
 
-| Arguments | Type   | Description                         | |
-| --------- | ------ | ----------------------------------- | -------- |
-| `options` | object | Query options. | no       |
+| Arguments | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `options` | object | Query options |
 
 ### **options**
 
@@ -45,11 +45,13 @@ Additional query options
 
 ## Resolve
 
-Resolves to an object containing the refresh status on shards.
+Resolves to an `object` containing the refresh status on shards.
 
-| Name     | Type   | Description                                                                   |
-| -------- | ------ | ----------------------------------------------------------------------------- |
-| \_shards | object | Refresh status on shards, contain 3 properties : total, successful and failed |
+| Name     | Type   | Description          |
+| -------- | ------ | ---------------------------------------------- |
+| `total` | number | Total number of shards |
+| `successful` | number | Successfully refreshed shards |
+| `fail` | number | Shards that failed to refresh |
 
 ## Usage
 

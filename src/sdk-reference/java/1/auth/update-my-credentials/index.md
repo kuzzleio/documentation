@@ -31,7 +31,7 @@ public String updateMyCredentials(
 |--------------|---------|-------------
 | `strategy` | String | the strategy to use
 | `credentials` | String | the new credentials
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing Query options
 
 
 ### **Options**

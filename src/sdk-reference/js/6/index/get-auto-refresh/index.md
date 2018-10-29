@@ -6,9 +6,9 @@ description: Returns the status of autorefresh flag
 order: 900
 ---
 
-# GetAutoRefresh
+# getAutoRefresh
 
-The getAutoRefresh action returns the current autorefresh status for the index.
+This action returns the current autorefresh status for the `<index>`.
 
 Each index has an autorefresh flag.  
 When set to true, each write request trigger a [refresh](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-refresh.html) action on Elasticsearch.  
@@ -26,17 +26,17 @@ Without a refresh after a write request, the documents may not be immediately vi
 /**
  * @param {string} index
  * @param {object} [options]
- * @returns {Promise.<Boolean>}
+ * @returns {Promise<boolean>}
  */
-getAutoRefresh(index, options = null);
+getAutoRefresh (index, options = null);
 ```
 
 ## Arguments
 
-| Arguments | Type   | Description                         | |
-| --------- | ------ | ----------------------------------- | -------- |
-| `index`   | string | Index name                          | yes      |
-| `options` | object | Query options. | no       |
+| Arguments | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `index`   | string | Index name                          |
+| `options` | object | Query options |
 
 ### **options**
 

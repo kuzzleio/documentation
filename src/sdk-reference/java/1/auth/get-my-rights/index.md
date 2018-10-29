@@ -23,7 +23,7 @@ public io.kuzzle.sdk.UserRight[] getMyRights();
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing Query options
 
 ### **Options**
 

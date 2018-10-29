@@ -6,9 +6,9 @@ description: Set the autorefresh flag
 order: 1000
 ---
 
-# setAutoRefresh(index, autorefresh, [options])
+# setAutoRefresh
 
-The setAutoRefresh action allows to set the autorefresh flag for the index.
+The setAutoRefresh action allows to set the autorefresh flag for the `<index>`.
 
 Each index has an autorefresh flag.  
 When set to true, each write request trigger a [refresh](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-refresh.html) action on Elasticsearch.  
@@ -27,18 +27,18 @@ we recommend that you avoid using it in production or at least carefully monitor
  * @param {string} index
  * @param {boolean} autoRefresh
  * @param {object} [options]
- * @returns {Promise.<Object>}
+ * @returns {Promise<boolean>}
  */
-setAutoRefresh(index, autoRefresh, options = null);
+setAutoRefresh (index, autoRefresh, options = null);
 ```
 
 ## Arguments
 
-| Arguments     | Type    | Description                        | |
-| ------------- | ------- | ---------------------------------- | -------- |
-| `index`       | String  | Index name                         | yes      |
-| `autoRefresh` | Boolean | autoRefresh flag                   | yes      |
-| `options`     | Object  | Query options | no       |
+| Arguments     | Type    | Description                        |
+| ------------- | ------- | ---------------------------------- |
+| `index`       | String  | Index name                         |
+| `autoRefresh` | Boolean | AutoRefresh value                   |
+| `options`     | Object  | Query options |
 
 ### **options**
 
@@ -50,11 +50,7 @@ Additional query options
 
 ## Resolve
 
-Resolve to an object containing the new value of autorefresh flag.
-
-| Name     | Type    | Description                                     |
-| -------- | ------- | ----------------------------------------------- |
-| response | boolean | new value for the autorefresh flag of the index |
+Resolve to a `boolean` representing the new value of the autorefresh flag.
 
 ## Usage
 

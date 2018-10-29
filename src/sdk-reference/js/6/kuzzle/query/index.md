@@ -49,7 +49,7 @@ The following properties are the most common.
 
 ### **options**
 
-An `object` containing query options.
+An `object` containing Query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |

@@ -25,7 +25,7 @@ public boolean credentialsExist(
 | Arguments  | Type             | Description
 | ---------- | ---------------- | ---------------------------------------------
 | `strategy` | String      | Strategy to use
-| `options` | io.kuzzle.sdk.QueryOptions | An object containing query options.
+| `options` | io.kuzzle.sdk.QueryOptions | An object containing Query options
 
 ### **Options**
 

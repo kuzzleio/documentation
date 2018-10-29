@@ -8,25 +8,25 @@ order: 600
 
 # mDelete
 
-Deletes multiple indexes at once.
+Deletes multiple `<indexes>` at once.
 
 ## Signature
 
 ```javascript
 /**
- * @param {array} indexes
+ * @param {array<string>} indexes
  * @param {object} [options]
- * @returns {Promise.<Array>}
+ * @returns {Promise<array<string>>}
  */
-mDelete(indexes, options = null);
+mDelete (indexes, options = null);
 ```
 
 ## Arguments
 
-| Arguments | Type   | Description                                  | |
-| --------- | ------ | -------------------------------------------- | -------- |
-| `indexes` | Array  | An array of strings containing indexes names | yes      |
-| `options` | object | Query options.          | no       |
+| Arguments | Type   | Description                                  |
+| --------- | ------ | -------------------------------------------- |
+| `indexes` | Array  | An array of strings containing indexes names |
+| `options` | object | Query options          |
 
 ### **options**
 
@@ -38,7 +38,7 @@ Additional query options
 
 ## Resolve
 
-Resolves to an `Array` of strings containing the list of indexes names successfully deleted.
+Resolves to an `array<string>` containing the list of indexes names successfully deleted.
 
 ## Usage
 

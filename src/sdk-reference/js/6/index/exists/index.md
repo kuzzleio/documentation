@@ -6,7 +6,7 @@ description: Check for index existence
 order: 300
 ---
 
-# Exists
+# exists
 
 Checks if the given `<index>` exists in Kuzzle.
 
