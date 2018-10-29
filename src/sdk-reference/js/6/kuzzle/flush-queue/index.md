@@ -16,7 +16,7 @@ Empties the offline request queue without playing it.
 /**
  * @returns {Kuzzle} this
  */
-flushQueue();
+flushQueue ()
 ```
 
 ## Return

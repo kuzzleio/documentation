@@ -16,9 +16,9 @@ A call to `disconnect()` will not trigger a `disconnected` event. This event is 
 
 ```javascript
 /**
- * @returns {undefined}
+ * @returns {}
  */
-disconnect();
+disconnect ()
 ```
 
 ## Usage

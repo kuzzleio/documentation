@@ -24,10 +24,10 @@ Kuzzle(protocol, options = null);
 
 ## Arguments
 
-| Argument   | Type               | Description                           | |
-| ---------- | ------------------ | ------------------------------------- | -------- |
-| `protocol` | string or Protocol | The protocol used by the SDK instance | yes      |
-| `options`  | object             | Kuzzle connection configuration       | yes      |
+| Argument   | Type               | Description                           |
+| ---------- | ------------------ | ------------------------------------- |
+| `protocol` | string | Protocol | Protocol used by the SDK instance |
+| `options`  | object             | Kuzzle connection configuration       |
 
 ### **protocol**
 
@@ -35,11 +35,11 @@ The protocol used to connect to the Kuzzle instance.
 It can be:
 
 - a string for embedded protocols : `http`, `websocket` or `socketio`
-- a custom [Protocol]({{ site_base_path }}/sdk-reference/protocols/create-new-protocol) object
+- a custom [Protocol]({{ site_base_path }}/sdk-reference/js/6/protocols/create-new-protocol) object
 
 ### **options**
 
-| Option              | Type    | Description                                                        | Default  | |
+| Option              | Type    | Description   | Default  | Required |
 | ------------------- | ------- | ------------------------------------------------------------------ | -------- | -------- |
 | `autoQueue`         | boolean | Automatically queue all requests during offline mode               | `false`  | no       |
 | `autoReconnect`     | boolean | Automatically reconnect after a connection loss                    | `true`   | no       |
@@ -58,24 +58,24 @@ It can be:
 
 ## Properties
 
-| Property name        | Type     | Description                                                                                                                  | Writable? |
-| -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- | :-------: |
-| `autoQueue`          | boolean  | Automatically queue all requests during offline mode                                                                         |    Yes    |
-| `autoReconnect`      | boolean  | Automatically reconnect after a connection loss                                                                              |    No     |
-| `autoReplay`         | boolean  | Automatically replay queued requests on a `reconnected` event                                                                |    Yes    |
-| `autoResubscribe`    | boolean  | Automatically renew all subscriptions on a `reconnected` event                                                               |    Yes    |
-| `host`               | string   | Target Kuzzle host                                                                                                           |    No     |
-| `port`               | integer  | Target Kuzzle port                                                                                                           |    No     |
-| `jwt`                | string   | Token used in requests for authentication.                                                                                   |    Yes    |
-| `offlineQueue`       | object   | Contains the queued requests during offline mode                                                                             |    No     |
-| `offlineQueueLoader` | function | Called before dequeuing requests after exiting offline mode, to add items at the beginning of the offline queue              |    Yes    |
-| `queueFilter`        | function | Called during offline mode. Takes a request object as arguments and returns a boolean, indicating if a request can be queued |    Yes    |
-| `queueMaxSize`       | integer  | Number of maximum requests kept during offline mode                                                                          |    Yes    |
-| `queueTTL`           | integer  | Time a queued request is kept during offline mode, in milliseconds                                                           |    Yes    |
-| `replayInterval`     | integer  | Delay between each replayed requests                                                                                         |    Yes    |
-| `reconnectionDelay`  | integer  | Number of milliseconds between reconnection attempts                                                                         |    No     |
-| `sslConnection`      | boolean  | Connect to Kuzzle using SSL                                                                                                  |    No     |
-| `volatile`           | object   | Common volatile data, will be sent to all future requests                                                                    |    Yes    |
+| Property name        | Type     | Description          | Writable? |
+| -------------------- | -------- | --------------------------------------- | :-------: |
+| `autoQueue`          | boolean  | Automatically queue all requests during offline mode    |    Yes    |
+| `autoReconnect`      | boolean  | Automatically reconnect after a connection loss    |    No     |
+| `autoReplay`         | boolean  | Automatically replay queued requests on a `reconnected` event        |    Yes    |
+| `autoResubscribe`    | boolean  | Automatically renew all subscriptions on a `reconnected` event       |    Yes    |
+| `host`               | string   | Target Kuzzle host   |    No     |
+| `port`               | integer  | Target Kuzzle port                                 |    No     |
+| `jwt`                | string   | Token used in requests for authentication        |    Yes    |
+| `offlineQueue`       | object   | Contains the queued requests during offline mode   |    No     |
+| `offlineQueueLoader` | Function | Called before dequeuing requests after exiting offline mode,</br> to add items at the beginning of the offline queue  |    Yes    |
+| `queueFilter`        | Function | Called during offline mode. </br>Takes a request object as arguments and returns a boolean, indicating if a request can be queued |    Yes    |
+| `queueMaxSize`       | integer  | Number of maximum requests kept during offline mode|    Yes    |
+| `queueTTL`           | integer  | Time a queued request is kept during offline mode, in milliseconds      |    Yes    |
+| `replayInterval`     | integer  | Delay between each replayed requests               |    Yes    |
+| `reconnectionDelay`  | integer  | Number of milliseconds between reconnection attempts         |    No     |
+| `sslConnection`      | boolean  | Connect to Kuzzle using SSL                        |    No     |
+| `volatile`           | object   | Common volatile data, will be sent to all future requests       |    Yes    |
 
 **Notes:**
 

@@ -20,7 +20,7 @@ This is a low-level method, exposed to allow advanced SDK users to bypass high-l
 /**
  * @param {object} request
  * @param {object} [options]
- * @returns {Promise.<object>}
+ * @returns {Promise<object>}
  */
 query(request, options = null);
 ```
@@ -57,7 +57,8 @@ An `object` containing Query options
 
 ## Resolve
 
-Resolve to the raw Kuzzle API response. See the [API Documentation]({{ site_base_path }}api-documentation).
+Resolve to the raw Kuzzle API response.  
+See the [API Documentation]({{ site_base_path }}api-documentation).
 
 ## Usage
 
