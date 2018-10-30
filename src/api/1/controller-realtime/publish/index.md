@@ -78,11 +78,7 @@ Returns the sent message.
   "action": "publish",
   "requestId": "<unique request identifier>",
   "result": {
-    // message content
-    "_kuzzle_info": {
-      "createdAt": 1534775616139
-      "author": "-1"
-    }
+    "published": true
   }
 }
 ```
