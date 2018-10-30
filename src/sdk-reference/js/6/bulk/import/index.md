@@ -23,7 +23,7 @@ import(bulkData, options = {})
 
 ## Description
 
-The bulk import allows to save a list of documents into a specific collection (belonging to a specific index). If a subset of the documents fails to save, a [PartialError](https://docs.kuzzle.io/api-documentation/errors#partialerror) is triggered. The `data` argument passed to the method must specify the set of documents to import and must satisfy the [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html).
+The bulk import allows to save a list of documents into a specific collection (belonging to a specific index). If a subset of the documents fails to save, a [PartialError]({{ site_base_path }}api/1/errors/#specific-errors-default) is triggered. The `data` argument passed to the method must specify the set of documents to import and must satisfy the [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-bulk.html).
 
 ### The Elasticsearch Bulk API in brief
 

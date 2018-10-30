@@ -32,8 +32,8 @@
 
     // [screen +]: Increase horizontal spacing
     @include break-from-device(screen) {
-      margin-right: 2.4rem;
-      margin-left: 2.4rem;
+      margin-right: 0;
+      margin-left: 0;
     }
 
     // Hack: add pseudo element for spacing, as the overflow of the content
