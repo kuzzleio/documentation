@@ -75,11 +75,8 @@ If you want to run Kuzzle automatically at startup there are a few scripts in `$
 Now that Kuzzle is up and running, you can start playing around with it:
 
 * install <a href="{{ site_base_path }}guide/2/essentials/installing-console">Kuzzle Admin Console</a>, a handy way to manage data and security in your Kuzzle installation
-* install a <a href="{{ site_base_path }}sdk-reference/">Kuzzle SDK</a> to power-up one of your projects:
- * <a href="https://github.com/kuzzleio/sdk-javascript">Javascript</a> (check the <a href="{{ site_base_path }}guide/2/getting-started/#fun-with-sdks">Fun with SDKs</a> section below),
- * <a href="https://github.com/kuzzleio/sdk-php">PHP</a>,
- * <a href="https://github.com/kuzzleio/sdk-android">Android</a>;
-* explore the <a href="{{ site_base_path }}api-documentation">Kuzzle API</a> documentation
+* install a <a href="{{ site_base_path }}sdk-reference/">Kuzzle SDK</a> to power-up one of your projects
+* explore the <a href="{{ site_base_path }}api/2">Kuzzle API</a> documentation
 * install Kuzzle <a href="{{ site_base_path }}guide/2/essentials/installing-kuzzle/#manual-installation">without Docker</a>
 
 ## Fun with SDKs

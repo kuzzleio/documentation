@@ -18,12 +18,6 @@ for sdk_path in $sdk_paths; do
     error=1
   fi
 
-  if [[ $error -eq 1 ]]; then
-    touch .ci/failed/$(echo $sdk_path | cut -d/ -f3)-$(echo $sdk_path | cut -d/ -f4)
-  elif [[ $error -eq 0 ]]; then
-    touch .ci/success/$(echo $sdk_path | cut -d/ -f3)-$(echo $sdk_path | cut -d/ -f4)
-  fi
-
   curl -s -o /dev/null -X POST localhost:7512/admin/_resetKuzzleData
   curl -s -o /dev/null -X POST localhost:7512/admin/_resetDatabase
 
