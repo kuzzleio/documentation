@@ -1,3 +1,3 @@
-ch := make(chan interface{})
+ch := make(chan json.RawMessage)
 
 kuzzle.AddListener(event.Connected, ch)
