@@ -51,36 +51,40 @@ class TestManager {
 
     this.logger.log(`${this.testFiles.length} tests found\n`);
 
-    for (const testFile of this.testFiles) {
-      const snippet = new Snippet(testFile, this.language);
+    if (this.testFiles.length === 0) {
+      process.exit(3);
+    } else {
+      for (const testFile of this.testFiles) {
+        const snippet = new Snippet(testFile, this.language);
 
-      try {
-        snippet.build();
+        try {
+          snippet.build();
 
-        await this.languageRunner.run(snippet);
+          await this.languageRunner.run(snippet);
 
-        results.push({
-          code: 'SUCCESS',
-          file: snippet.snippetFile
-        });
-      }
-      catch (e) {
-        if (! (e instanceof TestResult)) {
-          results.push(new TestResult({
-            code: 'ERROR',
-            actual: e
-          }));
-        } else {
-          results.push(e);
+          results.push({
+            code: 'SUCCESS',
+            file: snippet.snippetFile
+          });
         }
-      } finally {
-        this.logger.reportResult(snippet, results[results.length - 1]);
+        catch (e) {
+          if (! (e instanceof TestResult)) {
+            results.push(new TestResult({
+              code: 'ERROR',
+              actual: e
+            }));
+          } else {
+            results.push(e);
+          }
+        } finally {
+          this.logger.reportResult(snippet, results[results.length - 1]);
+        }
       }
-    }
-    this.logger.writeReport();
+      this.logger.writeReport();
 
-    if (results.filter(result => result.code !== 'SUCCESS').length > 0) {
-      process.exit(1);
+      if (results.filter(result => result.code !== 'SUCCESS').length > 0) {
+        process.exit(1);
+      }
     }
   }
 

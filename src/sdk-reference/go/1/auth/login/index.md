@@ -35,7 +35,7 @@ Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/esse
 
 ## Return
 
-The **login** action returns an encrypted JSON Web Token, that must then be sent in the [requests headers]({{ site_base_path }}api-documentation/query-syntax/authorization-token/).
+The **login** action returns an encrypted JSON Web Token, that must then be sent in the [requests headers]({{ site_base_path }}api/1/query-syntax/).
 
 ## Usage
 

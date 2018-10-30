@@ -25,7 +25,7 @@ Kuzzle automatically generates document ids and indexes them. The generated id i
 
 ## Creating an Index
 
-We will start off by [**creating a new index**]({{ site_base_path }}api-documentation/controller-index/create/) which we will use to store a collection.
+We will start off by [**creating a new index**]({{ site_base_path }}api/2/controller-index/create/) which we will use to store a collection.
 
 To create a new index, send a `POST` request to the following API endpoint and leave the request body empty:  `http://localhost:7512/<index name>/_create`.
 
@@ -57,7 +57,7 @@ You should receive the following response:
 
 ## Creating a Collection
 
-Next, we will [**create a new collection**]({{ site_base_path }}api-documentation/controller-collection/create/), which we will use to store documents.
+Next, we will [**create a new collection**]({{ site_base_path }}api/2/controller-collection/create/), which we will use to store documents.
 
 To create a collection, send a `PUT` request to the following API endpoint and leave the request body empty: `http://localhost:7512/<index name>/<colletion name>`.
 
@@ -91,7 +91,7 @@ You should receive the following response:
 
 ## Browse Collections
 
-To browse the [**list of collections**]({{ site_base_path }}api-documentation/controller-collection/list) in a given index you can send a `GET` request to the following API endpoint: `http://localhost:7512/<index name>/_list`.
+To browse the [**list of collections**]({{ site_base_path }}api/2/controller-collection/list) in a given index you can send a `GET` request to the following API endpoint: `http://localhost:7512/<index name>/_list`.
 
 Let's get the list of collections in the `myindex` index:
 
@@ -135,7 +135,7 @@ Kuzzle ships with a full data [CRUD](https://en.wikipedia.org/wiki/Create,_read,
 
 ### CREATE
 
-We can [**create a new document**]({{ site_base_path }}api-documentation/controller-document/create) by sending a `POST` request to the following API endpoint and setting the document contents in the request body: `http://localhost:7512/<index name>/<collection name>/_create`.
+We can [**create a new document**]({{ site_base_path }}api/2/controller-document/create) by sending a `POST` request to the following API endpoint and setting the document contents in the request body: `http://localhost:7512/<index name>/<collection name>/_create`.
 
 Let's create a new document in the `mycollection` collection of the `myindex` index:
 
@@ -198,7 +198,7 @@ Note that the document contains the auto-generated id `AVkDBl3YsT6qHI7MxLz0`. Ta
 ### READ
 
 
-We can [**read a document**]({{ site_base_path }}api-documentation/controller-document/get)  by sending a `GET` request to `http://localhost:7512/<index name>/<collection name>/<document id>`.
+We can [**read a document**]({{ site_base_path }}api/2/controller-document/get)  by sending a `GET` request to `http://localhost:7512/<index name>/<collection name>/<document id>`.
 
 Let's read the document we just created in the `mycollection` collection of the `myindex` index:
 
@@ -239,7 +239,7 @@ You should receive the following response (with your own `_id` value):
 
 ### UPDATE
 
-We can [**update a document**]({{ site_base_path }}api-documentation/controller-document/update) by sending a `PUT` request to the following API endpoint and setting the document's updated contents in the request body: `http://localhost:7512/<index name>/<collection name>/<document id>/_update`.
+We can [**update a document**]({{ site_base_path }}api/2/controller-document/update) by sending a `PUT` request to the following API endpoint and setting the document's updated contents in the request body: `http://localhost:7512/<index name>/<collection name>/<document id>/_update`.
 
 Let's update the document we just created, with id `AVkDBl3YsT6qHI7MxLz0`, in the `mycollection` collection of the `myindex` index:
 
@@ -279,7 +279,7 @@ You should receive the following response (with your own `_id` value):
 ### DELETE
 
 
-We can [**delete a document**]({{ site_base_path }}api-documentation/controller-document/delete)  by sending a `DELETE` request to the following API endpoint with no request body: `http://localhost:7512/<index name>/<collection name>/<document id>`.
+We can [**delete a document**]({{ site_base_path }}api/2/controller-document/delete)  by sending a `DELETE` request to the following API endpoint with no request body: `http://localhost:7512/<index name>/<collection name>/<document id>`.
 
 Let's delete the document we just created in the `mycollection` collection of the `myindex` index:
 
@@ -321,7 +321,7 @@ You should receive the following response (with your own `_id` value):
 
 One thing that Elasticsearch is _really_ good at doing is... Searching! Thanks to its powerful query DSL it can create extremely precise search queries. We wrote an [Elasticsearch Cookbook]({{ site_base_path }}elasticsearch-cookbook) to help you understand how it works in detail, but let's take a look at a couple of simple examples, just to get started.
 
-Say we want to [**find**]({{ site_base_path }}api-documentation/controller-document/search) all documents in the `mycollection` collection. Whe can do this by sending a `POST` request to `http://localhost:7512/<index name>/<collection name>/_search` and setting any search filters in the request body.
+Say we want to [**find**]({{ site_base_path }}api/2/controller-document/search) all documents in the `mycollection` collection. Whe can do this by sending a `POST` request to `http://localhost:7512/<index name>/<collection name>/_search` and setting any search filters in the request body.
 
 As an example, let's create some documents in the `mycollection` collection of the `myindex` index and then search for them:
 

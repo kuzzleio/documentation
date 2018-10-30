@@ -12,7 +12,7 @@ $md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container'
 // Sidebar container
 .md-sidebar {
   position: absolute;
-  width: 24.2rem;
+  width: 23.2rem;
   padding: 2.4rem 0;
   overflow: hidden;
   
@@ -103,6 +103,10 @@ $md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container'
         margin-right: 122rem;
         margin-left: initial;
       }
+    }
+    
+    .md-sidebar__inner {
+      overflow-x: hidden;
     }
   }
 
