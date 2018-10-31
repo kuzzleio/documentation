@@ -8,14 +8,14 @@ order: 200
 
 # createMyCredentials
 
-Create the current user's credentials for the specified `<strategy>`.
+Creates new credentials for the specified `<strategy>` for the current user.
 
 ## Signature
 
 ```javascript
 /**
- * @param {string} credentials
- * @param {object} strategy
+ * @param {string} strategy
+ * @param {object} credentials
  * @param {object} [options]
  * @returns {Promise<object>}
  */
@@ -42,7 +42,7 @@ Additional query options
 
 ## Resolve
 
-An object representing the new credentials.  
+An `object` representing the new credentials.  
 The content depends on the authentication strategy.  
 
 ## Usage

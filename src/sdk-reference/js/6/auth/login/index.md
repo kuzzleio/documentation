@@ -17,9 +17,9 @@ Authenticates a user.
  * @param {string} strategy
  * @param {object} credentials
  * @param {string} expiresIn
- * @returns {Promise<object>}
+ * @returns {Promise<string>}
  */
-login(strategy, credentials, expiresIn)
+login (strategy, credentials, expiresIn)
 ```
 
 ## Arguments
@@ -30,7 +30,7 @@ login(strategy, credentials, expiresIn)
 | ``credentials`` | string | Credentials for the strategy |
 | ``expiresIn`` | string | Expiration time in [ms library](https://www.npmjs.com/package/ms) format. (e.g. `2h`) |
 
-#### ***strategy***
+#### **strategy**
 
 The name of the authentication [strategy]({{ site_base_path }}guide/kuzzle-depth/authentication/#authentication) used to log the user in.
 
@@ -41,7 +41,7 @@ Check the appropriate [authentication plugin]({{ site_base_path }}plugins-refere
 
 ## Resolve
 
-Return the encrypted JSON Web Token.
+Return a `string` representing the encrypted JSON Web Token.
 
 ## Usage
 

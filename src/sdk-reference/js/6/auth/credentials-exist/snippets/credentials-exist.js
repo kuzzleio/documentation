@@ -2,10 +2,12 @@ const credentials = { username: 'foo', password: 'bar' };
 
 try {
   await kuzzle.auth.login('local', credentials);
-  
-  await kuzzle.auth.credentialsExist('local');
 
-  console.log('Success');
+  const exists = await kuzzle.auth.credentialsExist('local');
+
+  if (exists === true) {
+    console.log('Credentials exists');
+  }
 } catch (error) {
   console.error(error.message);
 }

@@ -16,7 +16,7 @@ try {
             updatedAt: null,
             updater: null } } }
   */
-  
+
   console.log('Success');
 } catch (error) {
   console.error(error.message);

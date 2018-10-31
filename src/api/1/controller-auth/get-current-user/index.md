@@ -8,7 +8,7 @@ title: getCurrentUser
 
 {{{since "1.0.0"}}}
 
-Returns information about the currently logged in user.
+Returns informations about the currently logged in user.
 
 ---
 

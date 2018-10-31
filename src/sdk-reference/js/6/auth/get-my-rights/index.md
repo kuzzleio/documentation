@@ -8,14 +8,14 @@ order: 200
 
 # getMyRights
 
-Returns the rights for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
+Returns the exhaustive list of granted or denied rights for the currently logged in user.
 
 ## Signature
 
 ```javascript
 /**
  * @param {object} [options]
- * @returns {Promise<object>}
+ * @returns {Promise<array<object>>}
  */
 getMyRights (options = null)
 ```
@@ -36,7 +36,7 @@ Additional query options
 
 ## Resolve
 
-An array of object containing:
+An `array<object>` containing:
 
 | Property     | Type    | Description                      
 | ---------- | ------- | ---------------------------------

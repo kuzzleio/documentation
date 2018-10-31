@@ -19,7 +19,7 @@ This API route does not require the caller to be logged in.
  * @param  {string} token
  * @return {Promise<object>}
  */
-checkToken(token)
+checkToken (token)
 ```
 
 ## Arguments
@@ -30,13 +30,13 @@ checkToken(token)
 
 ## Resolve
 
-An object representing the token validity status
+An `object` representing the token validity status
 
 | Name                | Type    | Description                        
 | ------------------- | ------- | -----------------------------------
-| valid               | boolean | Tell if the token is valid or not
-| state               | string  | Explain why the token is invalid
-| expires_at          | number  | Tells when the token expires
+| `valid`               | boolean | Tell if the token is valid or not
+| `state`               | string  | Explain why the token is invalid
+| `expires_at`          | number  | Tells when the token expires
 
 ## Usage
 

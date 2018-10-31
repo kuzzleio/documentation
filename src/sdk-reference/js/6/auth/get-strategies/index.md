@@ -8,14 +8,14 @@ order: 200
 
 # getStrategies
 
-Get all authentication strategies registered in Kuzzle.
+Gets the exhaustive list of registered authentication strategies.
 
 ## Signature
 
 ```javascript
 /**
  * @param {object} [options]
- * @returns {Promise<object>}
+ * @returns {Promise<array<string>>}
  */
 getStrategies (options = null)
 ```
@@ -36,7 +36,7 @@ Additional query options
 
 ## Resolve
 
-An array of available strategies name.
+An `array<string>` of available strategies name.
 
 ## Usage
 

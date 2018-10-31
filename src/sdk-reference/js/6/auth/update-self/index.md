@@ -8,7 +8,9 @@ order: 200
 
 # updateSelf
 
-Updates the current user object in Kuzzle.
+Updates the currently logged in user `<content>`.
+
+This route cannot update the list of associated security profiles. To change a user's security profiles, the route [security:updateUser]({{ site_base_path }}api/1/controller-security/update-user) must be used instead.
 
 ## Signature
 
@@ -18,14 +20,14 @@ Updates the current user object in Kuzzle.
  * @param {object} [options]
  * @returns {Promise<User>}
  */
-updateSelf (user, options = null)
+updateSelf (content, options = null)
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `content` | object | the new credentials
+| `content` | object | User custom informations
 | `options`  | object | Query options
 
 
@@ -44,8 +46,8 @@ A User object representing the current user logged with the SDK.
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `id` | string | The user ID |
-| `content` | object | The User content |
+| `id` | string | User ID |
+| `content` | object | User custom informations |
 
 The User content contain the following properties:
 
@@ -53,7 +55,7 @@ The User content contain the following properties:
 | ---------- | ------- | --------------------------------- |
 | `profileIds` | array<string> | An array containing the profile ids |
 | `_kuzzle_info` | object | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
-| `any` | any | Any other property savec with the user |
+| `any` | any | Any other information saved with the user |
 
 ## Usage
 

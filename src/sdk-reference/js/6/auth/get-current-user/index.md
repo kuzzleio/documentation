@@ -8,14 +8,12 @@ order: 200
 
 # getCurrentUser
 
-Returns the profile object for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
+Returns informations about the currently logged in user.
 
 ## Signature
 
 ```javascript
 /**
- * Fetches the current user
- *
  * @param {object} [options]
  * @returns {Promise<User>}
  */
@@ -38,20 +36,20 @@ Additional query options
 
 ## Resolve
 
-A User object representing the current user logged with the SDK.
+A `User` object representing the current user logged with the SDK.
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
 | `id` | string | User ID |
 | `content` | User | User content |
 
-The User content contain the following properties:
+The User content has the following properties:
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
 | `profileIds` | array<string> | An array containing the profile ids |
 | `_kuzzle_info` | object | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
-| `any` | any | Any other property savec with the user |
+| `any` | any | Any other information saved with the user |
 
 
 ## Usage

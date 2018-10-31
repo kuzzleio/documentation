@@ -8,8 +8,9 @@ order: 200
 
 # validateMyCredentials
 
-Validate the current user's credentials for the specified `<strategy>`. The `result` field is `true` if the provided credentials are valid; otherwise an error is triggered.  
-This route does not actually create or modify the user credentials. The credentials to send will depend on the authentication plugin and authentication strategy.
+Validates the provided `<credentials>` against a specified authentication `<strategy>`.
+
+This route neither creates nor modifies credentials.
 
 ## Signature
 
@@ -27,8 +28,8 @@ validateMyCredentials (strategy, credentials, options = null)
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | the strategy to use
-| `credentials` | string | the new credentials
+| `strategy` | string | Strategy to use
+| `credentials` | string | New credentials
 | `options`  | object | Query options
 
 
@@ -43,7 +44,7 @@ Additional query options
 
 ## Return
 
-A boolean
+A `boolean` indicating the credentials validity.
 
 ## Usage
 

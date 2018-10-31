@@ -16,7 +16,7 @@ Checks that the current authenticated user has credentials for the specified aut
 /**
  * @param {string} strategy
  * @param {object} [options]
- * @returns {Promise<object>}
+ * @returns {Promise<boolean>}
  */
 credentialsExist (strategy, options = null);
 ```
@@ -39,7 +39,7 @@ Additional query options
 
 ## Resolve
 
-A boolean indicating whether the credentials exists or not.
+A `boolean` indicating whether the credentials exists or not.
 
 ## Usage
 

@@ -40,7 +40,7 @@ Additional query options
 
 ## Resolve
 
-A boolean indicating if the credentials are being deleted.
+A `boolean` indicating if the credentials are being deleted.
 
 ## Usage
 

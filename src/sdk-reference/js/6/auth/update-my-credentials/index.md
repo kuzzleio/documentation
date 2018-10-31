@@ -8,22 +8,18 @@ order: 200
 
 # updateMyCredentials
 
-Update the current user's credentials for the specified `<strategy>`.  
-The credentials to send will depend on the authentication plugin and the authentication strategy.
+Updates the `<credentials>` of the currently logged in user for the specified `<strategy>`.
 
 ## Signature
 
 ```javascript
 /**
- * Update the current user's credentials for the specified `<strategy>`.
- *
  * @param {string} strategy
  * @param {object} credentials
  * @param {object} [options]
  * @returns {Promise<object>}
- * updateMyCredentials (strategy, credentials, options = null);
  */
-updateMyCredentials (strategy, credentials, options = null);
+updateMyCredentials (strategy, credentials, options = null)
 ```
 
 ## Arguments
@@ -46,7 +42,7 @@ Additional query options
 
 ## Resolve
 
-An object representing the new credentials.  
+An `object` representing the new credentials.  
 The content depends on the authentication strategy.  
 
 ## Usage
