@@ -2,7 +2,7 @@
 
 js:
   5: master
-  6: 6-dev
+  6: KZL-788-subscribe-shall-return-the-roomId
 
 cpp:
   1: 1-dev
