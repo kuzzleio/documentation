@@ -28,7 +28,7 @@ try {
   // Subscribe users notifications
   const options = { users: 'all' };
 
-  const { roomId } = await kuzzle.realtime.subscribe('nyc-open-data', 'yellow-taxi', filters, callback, options);
+  const roomId = await kuzzle.realtime.subscribe('nyc-open-data', 'yellow-taxi', filters, callback, options);
 
   // Subscribe to the same room with the second client
   const opfions = { users: 'all', volatile: { username: 'nina vkote' } };
