@@ -19,7 +19,7 @@ Subscribes by providing a set of filters: messages, document changes and, option
 * @param {object} filters
 * @param {Function} callback
 * @param {object} [options]
-* @returns {Promise.<object>}
+* @returns {Promise<string>}
  */
  subscribe (index, collection, filters, callback, options = null)
 ```
@@ -52,13 +52,7 @@ Additional subscription options.
 
 ## Resolve
 
-Resolve to an object containing the following properties:
-
-| Property   | Type    | Description                       |
-| ---------- | ------- | --------------------------------- |
-| `roomId` | String | The room ID |
-| `channel` | String | The channel ID |
-
+Resolves to a string containing the room ID
 
 ## Usage
 
