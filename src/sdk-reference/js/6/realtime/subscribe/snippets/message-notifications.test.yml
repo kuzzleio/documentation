@@ -4,4 +4,4 @@ hooks:
   before:
   after:
 template: realtime
-expected: Receive message notification
+expected: Message notification received

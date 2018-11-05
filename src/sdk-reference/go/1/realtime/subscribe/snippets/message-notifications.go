@@ -6,7 +6,7 @@ listener := make(chan types.KuzzleNotification)
 go func() {
   <-listener
 
-  fmt.Printf("Receive message notification")
+  fmt.Printf("Message notification received")
 
   exitPrgm <- true
 }()

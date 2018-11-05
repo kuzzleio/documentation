@@ -28,7 +28,7 @@ if err != nil {
 }
 
 // instantiate a second kuzzle client because
-// the same sdk instance does not receive his own notifications
+// the same sdk instance does not receive their own notifications
 f := websocket.NewWebSocket("kuzzle", nil)
 fuzzle, _ := kuzzlepkg.NewKuzzle(f, nil)
 

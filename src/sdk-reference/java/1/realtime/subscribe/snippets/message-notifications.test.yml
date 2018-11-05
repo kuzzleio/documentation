@@ -4,4 +4,4 @@ hooks:
   before:
   after:
 template: default
-expected: Receive message notification
+expected: Message notification received

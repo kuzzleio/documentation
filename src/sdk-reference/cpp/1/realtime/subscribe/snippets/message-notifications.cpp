@@ -1,6 +1,6 @@
 kuzzleio::NotificationListener listener =
   [](const kuzzleio::notification_result *notification) {
-    std::cout << "Receive message notification" << std::endl;
+    std::cout << "Message notification received" << std::endl;
   };
 
 try {

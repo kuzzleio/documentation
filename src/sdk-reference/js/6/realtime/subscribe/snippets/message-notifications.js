@@ -27,7 +27,7 @@ function callback (notification) {
     type: 'document',
     room: '24bbb5c44c343167eaf6a023dca8629e-7a90af8c8bdaac1b' }
   */
-  console.log('Receive message notification');
+  console.log('Message notification received');
 }
 
 try {

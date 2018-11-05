@@ -35,6 +35,10 @@ Additional query options
 
 Returns the number of active connections using the same provided subscription room.
 
+## Exceptions
+
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+
 ## Usage
 
 [snippet=count]

@@ -2,7 +2,7 @@ String filters = "{ \"exists\": \"name\" }";
 
 NotificationListener listener = new NotificationListener() {
   public void onMessage(NotificationResult notification) {
-    System.out.println("Receive message notification");
+    System.out.println("Message notification received");
   }
 };
 
