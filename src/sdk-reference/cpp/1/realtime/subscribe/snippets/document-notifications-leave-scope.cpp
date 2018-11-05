@@ -18,6 +18,8 @@ try {
 
   // The document isn't in the scope anymore
   kuzzle->document->update("nyc-open-data", "yellow-taxi", "nina-vkote", "{ \"age\": 42 }");
+
+  sleep(1);
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.getMessage() << std::endl;
 }
