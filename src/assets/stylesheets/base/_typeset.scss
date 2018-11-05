@@ -201,7 +201,7 @@ kbd {
     line-height: 1.4;
     background-color: white;
     -webkit-overflow-scrolling: touch;
-    color: white;
+    color: inherit;
 
     // [mobile -]: Stretch to whole width
     @include break-to-device(mobile) {
