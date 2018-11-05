@@ -151,16 +151,15 @@ kbd {
       white-space: pre-wrap;
     }
   }
-  
+
   pre > code {
     color: white
   }
-  
+
   // Inline code blocks, correct relative ems for smaller font size
   code {
     $correct: 1 / 0.85;
     padding: 3px;
-    margin: 0 0.25em * $correct;
     border-radius: 0.2rem;
     background-color: $md-code-background-inline;
     color: black;
@@ -202,7 +201,7 @@ kbd {
     line-height: 1.4;
     background-color: white;
     -webkit-overflow-scrolling: touch;
-    color: white;
+    color: inherit;
 
     // [mobile -]: Stretch to whole width
     @include break-to-device(mobile) {
