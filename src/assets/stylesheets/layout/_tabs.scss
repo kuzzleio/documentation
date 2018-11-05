@@ -73,19 +73,6 @@
     }
   }
 
-  // Fade-out tabs background upon scrolling
-  &[data-md-state='hidden'] {
-    pointer-events: none;
-
-    // Hide tabs upon scrolling - disable transition to minimizes repaints whilte
-    // scrolling down, while scrolling up seems to be okay
-    .md-tabs__link {
-      transform: translateY(50%);
-      transition: color 0.25s, transform 0s 0.4s, opacity 0.1s;
-      opacity: 0;
-    }
-  }
-
   // [screen +]: Adjust main navigation styles
   @include break-from-device(screen) {
     // Hide 1st level nested items, as they are listed in the tabs by setting

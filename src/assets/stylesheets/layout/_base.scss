@@ -94,7 +94,7 @@ hr {
   // Increase top spacing of content area to give typography more room
   &__inner {
     height: 100%;
-    padding-top: 2.4rem + 0.6rem;
+    padding-top: 5rem;
     // Hack: induce margin-collapse, because otherwise the sidebar height is
     // not calculated correctly and the overflow property on this element must
     // be left in initial state for targetted link offsets to work properly
