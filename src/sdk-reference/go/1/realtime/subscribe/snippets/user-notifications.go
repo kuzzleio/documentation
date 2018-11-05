@@ -38,10 +38,10 @@ if connectErr != nil {
   os.Exit(1)
 }
 
-// Subscribe to the same room with the second client
-opfions := types.NewRoomOptions()
-opfions.SetVolatile(json.RawMessage(`{ "username": "nina vkote" }`))
+// Set some volatile data
+fuzzle.SetVolatile(json.RawMessage(`{ "username": "nina vkote" }`))
 
-fuzzle.Realtime.Subscribe("nyc-open-data", "yellow-taxi", filters, make(chan types.KuzzleNotification), opfions)
+// Subscribe to the same room with the second client
+fuzzle.Realtime.Subscribe("nyc-open-data", "yellow-taxi", filters, make(chan types.KuzzleNotification), nil)
 
 <-exitPrgm

@@ -19,12 +19,11 @@ try {
   kuzzleio::Kuzzle* fuzzle = new kuzzleio::Kuzzle("kuzzle", &fuzzle_options);
   fuzzle->connect();
 
-  // Subscribe to the same room with the second client
-  kuzzleio::room_options opfions;
-  opfions.users = "all";
-  opfions.volatiles = "{ \"username\": \"nina vkote\" }";
+  // Set some volatile data
+  fuzzle->setVolatile("{ \"username\": \"nina vkote\" }");
 
-  fuzzle->realtime->subscribe("nyc-open-data", "yellow-taxi", filters, &listener, &opfions);
+  // Subscribe to the same room with the second client
+  fuzzle->realtime->subscribe("nyc-open-data", "yellow-taxi", filters, &listener);
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.getMessage() << std::endl;
 }
