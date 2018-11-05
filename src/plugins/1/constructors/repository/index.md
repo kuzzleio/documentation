@@ -361,8 +361,10 @@ The `options` argument accepts the following parameters:
 
 The `search` function returns a promise resolving to a search result object, with the following properties:
 
-* `hits`: {object[]} array of found documents. If a `ObjectConstructor` argument was provided to the repository constructor, then each hit is an instance of that class instead of a raw object
-* `total`: {integer} total number of found documents. Can be greater than the number of documents returned in this result set
+| Field | Type | Description |
+|-------|------|-------------|
+| `hits` | <pre>object[]</pre> | Found documents. If a `ObjectConstructor` argument was provided to the repository constructor, then each hit is an instance of that class instead of a raw object |
+| `total` | <pre>integer</pre> | Total number of found documents. Can be greater than the number of documents returned in this result set |
 
 ---
 
@@ -389,8 +391,10 @@ scroll(scrollId, [ttl])
 
 The `scroll` function returns a promise resolving to a search result object, with the following properties:
 
-* `hits`: {object[]} array of found documents. If a `ObjectConstructor` argument was provided to the repository constructor, then each hit is an instance of that class instead of a raw object
-* `total`: {integer} total number of found documents. Can be greater than the number of documents returned in this result set
+| Field | Type | Description |
+|-------|------|-------------|
+| `hits` | <pre>object[]</pre> | Found documents. If a `ObjectConstructor` argument was provided to the repository constructor, then each hit is an instance of that class instead of a raw object |
+| `total` | <pre>integer</pre> | Total number of found documents. Can be greater than the number of documents returned in this result set |
 
 ---
 

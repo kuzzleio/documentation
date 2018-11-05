@@ -64,7 +64,7 @@ getFilterIds(index, collection)
 
 ### Return
 
-The `getFilterIds` function returns an array of strings, contaning the exhaustive list of filter identifiers registered in the provided index-collection pair.
+The `getFilterIds` function returns an array of strings, containing the exhaustive list of filter identifiers registered in the provided index-collection pair.
 
 ---
 
@@ -94,10 +94,12 @@ normalize(index, collection, filters)
 
 The `normalize` function returns a promise resolving to an object with the following properties:
 
-* `index`: {string} data index name
-* `collection`: {string} data collection name
-* `normalized`: {object[]} normalized/optimized version of the supplied filters
-* `id`: {string} the filter unique identifier
+| Field | Type | Description |
+|-------|------|-------------|
+| `collection` | <pre>string</pre> | Data collection name |
+| `id` | <pre>string</pre> | The filter unique identifier |
+| `index` | <pre>string</pre> | Data index name |
+| `normalized` | <pre>object[]</pre> | Normalized/optimized version of the supplied filters |
 
 ---
 
@@ -127,8 +129,10 @@ register(index, collection, filters)
 
 The `register` functions returns a promise, resolving to an object with the following attributes:
 
-* `id`: {string} the filter unique identifier
-* `diff`: `false` if the filter already exists in the engine. Otherwise, contains an object with the normalized version of the provided filters
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | <pre>string</pre> | The filter unique identifier |
+| `diff` | <pre>object</pre> | If the filter doesn't already exist in the engine, contains the normalized version of the provided filters |
 
 ---
 
@@ -177,8 +181,10 @@ store(normalized)
 
 The `store` function returns an object with the following attributes:
 
-* `id`: {string} the filter unique identifier
-* `diff`: {object} `false` if the filter already existed in the engine. Otherwise, contains an object with the normalized version of the provided filters
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | <pre>string</pre> | The filter unique identifier |
+| `diff` | <pre>object</pre> | If the filter didn't already exist, contains the normalized version of the provided filters |
 
 ---
 
