@@ -102,6 +102,10 @@ $md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container'
     .md-sidebar__inner {
       overflow-x: hidden;
     }
+    
+    .md-nav__list li:not(:first-child) {
+      margin-left: 10px;
+    }
   }
 
   // Wrapper for scrolling on overflow
