@@ -1,0 +1,7 @@
+name: server#getLastStats
+description: Returns the most recent statistics snapshot.
+hooks:
+  before:
+  after:
+template: default
+expected: Success
