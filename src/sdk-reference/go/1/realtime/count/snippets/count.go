@@ -12,5 +12,5 @@ count, err := kuzzle.Realtime.Count(res.Room, nil)
 if err != nil {
   log.Fatal(err)
 } else {
-  fmt.Printf("Currently %d active subscription\n")
+  fmt.Printf("Currently %d active subscription\n", count)
 }
