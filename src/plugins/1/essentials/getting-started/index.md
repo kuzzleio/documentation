@@ -15,7 +15,7 @@ This chapter explains how to install and configure a plugin. The other chapters 
 * [Hooks](../hooks)
 * [Pipes](../pipes)
 * [Controllers](../controllers)
-* [Strategies](../strategies)
+* [Authentication Strategies](../strategies)
 
 A single plugin can implement as many of those interfaces as necessary.
 
