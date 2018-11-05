@@ -26,10 +26,16 @@ Returns a boolean telling whether filters exist for an index-collection pair.
 
 ### Arguments
 
-`exists(index, collection)`
+```js
+exists(index, collection)
+```
 
-* `index`: {string} data index name
-* `collection`: {string} data collection name
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `index` | <pre>string</pre> | Data index name |
+| `collection` | <pre>string</pre> | Data collection name |
 
 ### Return
 
@@ -45,10 +51,16 @@ Retrieves the list of filter identifiers registered on an index-collection pair.
 
 ### Arguments
 
-`getFilterIds(index, collection)`
+```js
+getFilterIds(index, collection)
+```
 
-* `index`: {string} data index name
-* `collection`: {string} data collection name
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `index` | <pre>string</pre> | Data index name |
+| `collection` | <pre>string</pre> | Data collection name |
 
 ### Return
 
@@ -66,11 +78,17 @@ The result can be directly used with the [store](#store-default) function.
 
 ### Arguments
 
-`normalize(index, collection, filters)`
+```js
+normalize(index, collection, filters)
+```
 
-* `index`: {string} data index name
-* `collection`: {string} data collection name
-* `filters`: {object} filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `index` | <pre>string</pre> | Data index name |
+| `collection` | <pre>string</pre> | Data collection name |
+| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format |
 
 ### Return
 
@@ -93,11 +111,17 @@ This method is equivalent to executing [normalize](#normalize-default) + [store]
 
 ### Arguments
 
-`register(index, collection, filters)`
+```js
+register(index, collection, filters)
+```
 
-* `index`: {string} data index name
-* `collection`: {string} data collection name
-* `filters`: {object} filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `index` | <pre>string</pre> | Data index name |
+| `collection` | <pre>string</pre> | Data collection name |
+| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format |
 
 ### Return
 
@@ -116,9 +140,15 @@ Removes a filter.
 
 ### Arguments
 
-`remove(filterId)`
+```js
+remove(filterId)
+```
 
-* `filterId`: {string} filter unique identifier, obtained either with [normalize](#normalize-default) or [register](#register-default)
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `filterId` | <pre>string</pre> | Filter unique identifier, obtained either with [normalize](#normalize-default) or [register](#register-default) |
 
 ### Return
 
@@ -134,9 +164,14 @@ Stores filters, normalized with the [normalize](#normalize-default)) function.
 
 ### Arguments
 
-`store(normalized)`
+```js
+store(normalized)
+```
+<br/>
 
-* `normalized`: {object} normalized filters
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `normalized` | <pre>object</pre> | Normalized filters |
 
 ### Return 
 
@@ -155,12 +190,17 @@ Tests data and returns the matching filter identifiers.
 
 ### Arguments
 
-`test(index, collection, data, [documentId])`
+```js
+test(index, collection, data, [documentId])
+```
+<br/>
 
-* `index`: {string} data index name
-* `collection`: {string} data collection name
-* `data`: {object} data to test
-* `documentId`: {optional, string} document unique identifier 
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `index` | <pre>string</pre> | Data index name |
+| `collection` | <pre>string</pre> | Data collection name |
+| `data` | <pre>object</pre> | Data to test |
+| `documentId` | <pre>string</pre> | Document unique identifier |
 
 ### Return
 
@@ -176,9 +216,15 @@ Validates the provided filters without storing them.
 
 ### Arguments
 
-`validate(filters)`
+```js
+validate(filters)
+```
 
-* `filters`: {object} filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format |
 
 ### Return
 

@@ -12,17 +12,23 @@ Triggers a custom event.
 
 This allows interactions with other plugins using [hooks]({{ site_base_path }}plugins/1/essentials/hooks/) or [pipes]({{ site_base_path }}plugins/1/essentials/pipes/).
 
-### Arguments
+## Arguments
 
-`trigger(event, [payload])`
+```js
+trigger(event, [payload])
+```
 
-* `event`: {string} custom event name
-* `payload`: {optional, object} optional event payload
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `event` | <pre>string</pre> | Custom event name |
+| `payload` | <pre>object</pre> | Event payload |
 
 
 **Note:** the triggered event is renamed using the following format:<br/>`plugin-<plugin name>:<event>`. 
 
-### Example
+## Example
 
 ```js
 // Emitting plugin, named "some-plugin"

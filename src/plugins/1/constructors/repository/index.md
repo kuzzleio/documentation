@@ -16,10 +16,16 @@ If this is not already the case, the data collection must first be created, usin
 
 ## Constructor
 
-`new context.Repository(collection, [ObjectConstructor])`
+```js
+new context.Repository(collection, [ObjectConstructor])
+```
 
-* `collection`: {string} the repository's data collection to link to this class instance
-* `ObjectConstructor`: {optional, class} fetched data are returned as plain objects. If an `ObjectConstructor` is provided, the data will be returned as instances of that class instead
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `collection` | <pre>string</pre> | The repository's data collection to link to this class instance
+| `ObjectConstructor` | <pre>object</pre> | If an `ObjectConstructor` class is provided, fetched data will be returned as instances of that class, instead of plain objects |
 
 ---
 
@@ -31,11 +37,23 @@ Creates a document.
 
 ### Arguments
 
-`create(document, [options])`
+```js
+create(document, [options])
+```
+<br/>
 
-* `document`: {object} the document to create. The provided object must contain a `_id` property, which is the document unique identifier
-* `options`: {optional, object} optional arguments. The following options are available:
-  * `refresh`: if set with the `wait_for` string value, then the function will respond only after the document has been indexed
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `document` | <pre>object</pre> | The document to create. The provided object must contain a `_id` property, which is the document unique identifier |
+| `options` | <pre>object</pre> | Optional arguments |
+
+#### options
+
+The `options` argument accepts the following parameters:
+
+| Options | Type | Description |
+|---------|------|-------------|
+| `refresh` | <pre>string</pre> | If set with the `wait_for` string value, then the function will respond only after the document has been indexed |
 
 ### Return
 
@@ -83,11 +101,23 @@ Creates or replaces a document.
 
 ### Arguments
 
-`createOrReplace(document, [options])`
+```js
+createOrReplace(document, [options])
+```
+<br/>
 
-* `document`: {object} the document to create. The provided object must contain a `_id` property, which is the document unique identifier
-* `options`: {optional, object} optional arguments. The following options are available:
-  * `refresh`: if set with the `wait_for` string value, then the function will respond only after the document has been indexed
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `document` | <pre>object</pre> | The document to create. The provided object must contain a `_id` property, which is the document unique identifier
+| `options` | <pre>object</pre> | Optional arguments |
+
+#### options
+
+The `options` argument accepts the following parameters:
+
+| Options | Type | Description |
+|---------|------|-------------|
+| `refresh` | <pre>string</pre> | If set with the `wait_for` string value, then the function will respond only after the document has been indexed |
 
 ### Return 
 
@@ -135,11 +165,24 @@ Deletes a document.
 
 ### Arguments
 
-`delete(id, [options])`
+```js
+delete(id, [options])
+```
 
-* `id`: {string} document unique identifier
-* `options`: {optional, object} optional arguments. The following options are available:
-  * `refresh`: if set with the `wait_for` string value, then the function will respond only after the document deletion has been indexed
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `id` | <pre>string</pre> | Document unique identifier |
+| `options` | <pre>object</pre> | Optional arguments |
+
+#### options
+
+The `options` argument accepts the following parameters:
+
+| Options | Type | Description |
+|---------|------|-------------|
+| `refresh` | <pre>string</pre> | If set with the `wait_for` string value, then the function will respond only after the document has been indexed |
 
 ### Return 
 
@@ -177,9 +220,15 @@ Gets a document.
 
 ### Arguments
 
-`get(id)`
+```js
+get(id)
+```
 
-* `id`: {string} document unique identifier
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `id` | <pre>string</pre> | Document unique identifier |
 
 ### Return
 
@@ -197,9 +246,15 @@ Gets multiple documents.
 
 ### Arguments
 
-`mGet([id1, id2, ...])`
+```js
+mGet(ids)
+```
 
-* `[id1, id2, ...]`: {string[]} document unique identifiers 
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `ids` | <pre>string[]</pre> | List of document unique identifiers |
 
 ### Return
 
@@ -217,11 +272,24 @@ Replaces the content of a document.
 
 ### Arguments
 
-`replace(document, [options])`
+```js
+replace(document, [options])
+```
 
-* `id`: {string} document unique identifier
-* `options`: {optional, object} optional arguments. The following options are available:
-  * `refresh`: if set with the `wait_for` string value, then the function will respond only after the document deletion has been indexed
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `document` | <pre>object</pre> | The document to create. The provided object must contain a `_id` property, which is the document unique identifier
+| `options` | <pre>object</pre> | Optional arguments |
+
+#### options
+
+The `options` argument accepts the following parameters:
+
+| Options | Type | Description |
+|---------|------|-------------|
+| `refresh` | <pre>string</pre> | If set with the `wait_for` string value, then the function will respond only after the document has been indexed |
 
 ### Return
 
@@ -268,13 +336,26 @@ Searches documents.
 
 ### Arguments
 
-`search(query, [opts])`
+```js
+search(query, [options])
+```
 
-* `query`: {object} search query, using Elasticsearch [query format]({{ site_base_path }}elasticsearch-cookbook/basic-queries)
-* `options`: {optional, object} search options. Available values:
-  * `from`: {integer} paginates search results by defining the offset from the first result you want to fetch. Usually used with the `size` option
-  * `scroll`: {string} creates a forward-only result cursor. This option must be set with a [time duration](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units), at the end of which the cursor is destroyed. If set, a cursor identifier named `scrollId` is returned in the results. This cursor can then be moved forward using the [scroll](#scroll-default) function
-  * `size`: {integer} set the maximum number of documents returned per result page
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `query` | <pre>object</pre> | Search query, using Elasticsearch [query format]({{ site_base_path }}elasticsearch-cookbook/basic-queries) |
+| `options` | <pre>object</pre> | Optional arguments |
+
+#### options
+
+The `options` argument accepts the following parameters:
+
+| Options | Type | Description |
+|---------|------|-------------|
+| `from` | <pre>integer</pre> | Paginates search results by defining the offset from the first result you want to fetch. Usually used with the `size` option |
+| `scroll` | <pre>string</pre> | Creates a forward-only result cursor. This option must be set with a [time duration](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units), at the end of which the cursor is destroyed.<br/>If set, a cursor identifier named `scrollId` is returned in the results. This cursor can then be moved forward using the [scroll](#scroll-default) function |
+| `size` | <pre>integer</pre> | Sets the maximum number of documents returned per result page |
 
 ### Return 
 
@@ -293,10 +374,16 @@ A search cursor is created by a [search](#search-default) function call, with a 
 
 ### Arguments
 
-`scroll(scrollId, [ttl])`
+```js
+scroll(scrollId, [ttl])
+```
 
-* `scrollId`: {string} scroll unique identifier, obtained by the last search/scroll function call (scroll identifiers may change from page to page)
-* `ttl`: {optional, string} refresh the cursor duration, using the [time to live](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/common-options.html#time-units) syntax
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `scrollId` | <pre>string</pre> | Scroll unique identifier, obtained by the last search/scroll function call (scroll identifiers may change from page to page) |
+| `ttl` | <pre>string</pre> | Refreshes the cursor duration, using the [time to live](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/common-options.html#time-units) syntax |
 
 ### Return
 
@@ -315,11 +402,24 @@ Updates parts of a document's content.
 
 ### Arguments
 
-`update(document, [options])`
+```js
+update(document, [options])
+```
 
-* `document`: {object} parts of the document to update. The provided object must contain a `_id` property, which is the document unique identifier
-* `options`: {optional, object} optional arguments. The following options are available:
-  * `refresh`: if set with the `wait_for` string value, then the function will respond only after the document has been indexed
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `document` | <pre>object</pre> | Parts of the document to update. The provided object must contain a `_id` property, which is the document unique identifier |
+| `options` | <pre>object</pre> | Optional arguments |
+
+#### options
+
+The `options` argument accepts the following parameters:
+
+| Options | Type | Description |
+|---------|------|-------------|
+| `refresh` | <pre>string</pre> | If set with the `wait_for` string value, then the function will respond only after the document has been indexed |
 
 ### Return
 
