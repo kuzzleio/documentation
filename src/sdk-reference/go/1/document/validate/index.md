@@ -36,8 +36,8 @@ Validate(
 
 Additional query options
 
-| Property   | Type    | Description                       |
-| ---------- | ------- | --------------------------------- |
+| Option | Type (default) | Description |
+| --- | --- | --- |
 | `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
 
 ## Return

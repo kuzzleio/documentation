@@ -49,8 +49,8 @@ Search(
 
 Additional query options
 
-| Property   | Type    | Description                       |
-| ---------- | ------- | --------------------------------- |
+| Option | Type (default) | Description |
+| --- | --- | --- |
 | `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
 | `From` | integer | Offset of the first document to fetch |
 | `Size` | integer | Maximum number of documents to retrieve per page  |

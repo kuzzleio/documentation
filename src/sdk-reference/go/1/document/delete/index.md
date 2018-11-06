@@ -36,8 +36,8 @@ Delete(
 
 Additional query options
 
-| Property   | Type    | Description                       |
-| ---------- | ------- | --------------------------------- |
+| Option | Type (default) | Description |
+| --- | --- | --- |
 | `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
 | `Refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
