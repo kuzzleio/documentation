@@ -62,10 +62,16 @@ The `init` method is called once during startup, and it is used to initialize th
 
 ### Arguments
 
-`init (config, context)`
+```js
+init (config, context)
+```
 
-* `config`: {object} contains the custom plugin configuration (see the [configuration](#configuration-default) chapter)
-* `context`: {object} the plugin context, exposing various accessors, constructors, and various helpers. The other sections of this documentation detail the interfaces made available by this object
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `config` | <pre>object</pre> | Contains the custom plugin configuration (see the [configuration](#configuration-default) chapter) |
+| `context` | <pre>object</pre> | The plugin context, exposing various accessors, constructors, and various helpers. The other sections of this documentation detail the interfaces made available by this object |
 
 ### Return
 
