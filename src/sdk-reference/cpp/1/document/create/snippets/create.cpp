@@ -1,8 +1,10 @@
 try {
   std::string response;
-  response = kuzzle->document->create("nyc-open-data", "yellow-taxi", "some-id", R"({
-    "license": "valid"
-  })")
+  response = kuzzle->document->create(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id",
+    R"({"license": "valid"})");
 
   std::cout << "Document " << response << "Created" << std::endl;
   /*

@@ -15,29 +15,32 @@ Returns a [partial error]({{ site_base_path }}api-documentation/errors/#partiale
 The optional parameter `refresh` can be used
 with the value `wait_for` in order to wait for the document indexation (indexed documents are available for `search`).
 
-## Signature
+## Arguments
 
 ```cpp
-std::vector<std::string> mDelete(const std::string& index, const std::string& collection, const std::vector<std::string>& ids, query_options *options=nullptr);
+std::vector<std::string> mDelete(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::vector<std::string>& ids, 
+    <pre>query_options</pre> *options=nullptr
+)
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | std::string | Index name |
-| `collection` | std::string | Collection name |
-| `ids` | std::vector<std::string> | The ids of the documents to delete |
-| `options` | query_options | A pointer to a `query_options` containing query options |
+| `index` | <pre>std::string</pre> | Index name |
+| `collection` | <pre>std::string</pre> | Collection name |
+| `ids` | <pre>std::vector&lt;std::string&gt;</pre> | The ids of the documents to delete |
+| `options` | <pre>query_options</pre> | A pointer to a `query_options` containing query options |
 
-### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | std::string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | |
+| Option | Type (default) | Description |
+| ------ | -------------- | ----------- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `refresh` | <pre>std::string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 
@@ -45,7 +48,7 @@ Returns a `std::vector< std::string>` containing ids of the deleted documents.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

@@ -12,28 +12,31 @@ Given a document id, retrieves the corresponding document from the database.
 
 Only documents in the persistent data storage layer can be retrieved.
 
-## Signature
+## Arguments
 
 ```cpp
-std::string get(const std::string& index, const std::string& collection, const std::string& id, query_options *options=nullptr)
+std::string get(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& id, 
+    kuzzleio::query_options *options=nullptr
+)
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | std::string | Index name |
-| `collection` | std::string | Collection name |
-| `id` | std::string | The document id |
-| `options` | query_options | A pointer to a `query_options` containing query options |
+| `index` | <pre>std::string</pre> | Index name |
+| `collection` | <pre>std::string</pre> | Collection name |
+| `id` | <pre>std::string</pre> | The document id |
+| `options` | <pre>query_options</pre> | A pointer to a `query_options` containing query options |
 
-### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option   | Type (default) | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
 
 ## Return
 
@@ -41,11 +44,11 @@ Returns a JSON string containing the document.
 
 | Name | Type | Description
 | --- | --- | ---
-| _source | object | The retrieved document
+| _source | <pre>object</pre> | The retrieved document
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

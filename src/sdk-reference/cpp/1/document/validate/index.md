@@ -14,36 +14,40 @@ Note that if no validation specifications are set for the `<index>`/`<collection
 
 This request does **not** store or publish the document.
 
-## Signature
-
-```cpp
-bool validate(const std::string& index, const std::string& collection, const std::string& body, query_options *options=nullptr)
-```
 
 ## Arguments
 
+```cpp
+bool validate(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& body, 
+    kuzzleio::query_options *options=nullptr
+)
+```
+
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | std::string | Index name |
-| `collection` | std::string | Collection name |
-| `body` | std::string | A JSON string containing the body of the document |
-| `options` | query_options | A pointer to a `query_options` containing query options |
+| `index` | <pre>std::string</pre> | Index name |
+| `collection` | <pre>std::string</pre> | Collection name |
+| `body` | <pre>std::string</pre> | A JSON string containing the body of the document |
+| `options` | <pre>query_options</pre> | A pointer to a `query_options` containing query options |
 
-### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option | Type (default) | Description |
+| ------ | -------------- | ----------- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
 
 ## Return
 
-Returns a boolean value set to true if the document is valid and false otherwise.
+Returns a <pre>boolean</pre> value set to true if the document is valid and false otherwise.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

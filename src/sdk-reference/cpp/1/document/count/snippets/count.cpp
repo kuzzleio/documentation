@@ -1,6 +1,5 @@
 try {
-  int count;
-  count = kuzzle->document->count("nyc-open-data", "yellow-taxi", R"({
+  int count = kuzzle->document->count("nyc-open-data", "yellow-taxi", R"({
     "query": {
       "match": {
         "license": "valid"
@@ -8,7 +7,7 @@ try {
     }
   })");
 
-  std::cout << "Found " << count << " documents matching licence:valid" << std::endl;
+  std::cout << "Found " << count << " documents matching license:valid" << std::endl;
 } catch (kuzzleio::KuzzleException e) {
   std::cerr << e.getMessage() << std::endl;
 }

@@ -27,57 +27,43 @@ This cursor can then be moved forward using the `next` method of the returned `s
   </p>
 </div>
 
-## Signature
-
-```cpp
-search_result* search(const std::string& index, const std::string& collection, const std::string& body, query_options *options=nullptr)
-```
 
 ## Arguments
 
+```cpp
+search_result* search(
+  const std::string& index, 
+  const std::string& collection, 
+  const std::string& body, 
+  kuzzleio::query_options *options=nullptr
+)
+```
+
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | std::string | Index name |
-| `collection` | std::string | Collection name |
-| `body` | std::string | A JSON string containing the search query |
-| `options` | query_options | A pointer to a `query_options` containing query options |
+| `index` | <pre>std::string</pre> | Index name |
+| `collection` | <pre>std::string</pre> | Collection name |
+| `body` | <pre>std::string</pre> | A JSON string containing the search query |
+| `options` | <pre>query_options</pre> | A pointer to a `query_options` containing query options |
 
-### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `from` | integer | Offset of the first document to fetch | `false` |
-| `size` | integer | Maximum number of documents to retrieve per page  | `false` |
-| `scroll` | std::string | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) | `false` |
+| Option | Type (default) | Description |
+| ------ | -------------- | ----------- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `from` | integer | Offset of the first document to fetch |
+| `size` | integer | Maximum number of documents to retrieve per page  |
+| `scroll` | <pre>std::string</pre> | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
 
 ## Return
 
-Returns a `search_result` struct
-
-### Properties
-
-| Name | Type | Description |
-| --- | --- | --- |
-| documents | char* | A JSON string containing the retrieved documents |
-| fetched | unsigned | The number of fetched documents |
-| total | unsigned | The total number of documents matching the query |
-| aggregations | char* | A JSON string containing the computed aggregations |
-| collection | char* | The collection on which the search was performed |
-| filters | char* | The original query |
-| options | query_options* | The original query options |
-
-### Functions
-
-| Name | Type | Description |
-| --- | --- | --- |
-| next | `search_result` | Returns a new page of `size` next documents |
+Returns a `SearchResult` object. See how to [handle search results hre]({{ site_base_path }}sdk-reference/cpp/1/esssentials/search-result).
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 
