@@ -1,7 +1,7 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: subscribe
+title: Subscribe
 description:
 order: 200
 ---
