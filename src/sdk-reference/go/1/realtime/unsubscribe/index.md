@@ -6,7 +6,7 @@ description: Removes a subscription
 order: 200
 ---
 
-# unsubscribe
+# Unsubscribe
 
 Removes a subscription.
 
