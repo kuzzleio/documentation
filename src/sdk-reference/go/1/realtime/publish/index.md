@@ -1,7 +1,7 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: publish
+title: Publish
 description:
 order: 200
 ---
