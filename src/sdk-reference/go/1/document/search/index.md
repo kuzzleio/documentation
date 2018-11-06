@@ -27,31 +27,34 @@ This cursor can then be moved forward using the `next` method of the returned `S
   </p>
 </div>
 
-## Signature
+## Arguments
 
 ```go
-Search(index string, collection string, body json.RawMessage, options types.QueryOptions) (*types.SearchResult, error)
+Search(
+  index string, 
+  collection string, 
+  body json.RawMessage, 
+  options types.QueryOptions
+) (*types.SearchResult, error)
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
-| `body` | json.RawMessage | A JSON string containing the search query |
-| `options` | types.QueryOptions | The query options |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `body` | <pre>json.RawMessage</pre> | A JSON string containing the search query |
+| `options` | <pre>types.QueryOptions</pre> | An struct containing query options |
 
-### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `Queuable` | boolean | Make this request queuable or not | `true`  |
-| `From` | integer | Offset of the first document to fetch | `false` |
-| `Size` | integer | Maximum number of documents to retrieve per page  | `false` |
-| `Scroll` | std::string | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) | `false` |
+| Property   | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
+| `From` | integer | Offset of the first document to fetch |
+| `Size` | integer | Maximum number of documents to retrieve per page  |
+| `Scroll` | <pre>string</pre> | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
 
 ## Return
 
@@ -61,13 +64,13 @@ Returns a `SearchResult` struct
 
 | Name | Type | Description |
 | --- | --- | --- |
-| Documents | string | A JSON string containing the retrieved documents |
+| Documents | <pre>string</pre> | A JSON string containing the retrieved documents |
 | Fetched | int | The number of fetched documents |
 | Total | int | The total number of documents matching the query |
-| Aggregations | string | A JSON string containing the computed aggregations |
-| Collection | string | The collection on which the search was performed |
-| Filters | string | The original query |
-| Options | types.QueryOptions | The original query options |
+| Aggregations | <pre>string</pre> | A JSON string containing the computed aggregations |
+| Collection | <pre>string</pre> | The collection on which the search was performed |
+| Filters | <pre>string</pre> | The original query |
+| Options | <pre>types.QueryOptions</pre> | The original query options |
 
 ### Functions
 

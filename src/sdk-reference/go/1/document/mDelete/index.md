@@ -15,29 +15,32 @@ Returns a [partial error]({{ site_base_path }}api-documentation/errors/#partiale
 The optional parameter `refresh` can be used
 with the value `wait_for` in order to wait for the document indexation (indexed documents are available for `search`).
 
-## Signature
+## Arguments
 
 ```go
-MDelete(index string, collection string, ids []string, options types.QueryOptions) ([]string, error)
+MDelete(
+    index string, 
+    collection string, 
+    ids []string, 
+    options types.QueryOptions
+) ([]string, error)
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
 | `ids` | []string | The ids of the documents to delete |
-| `options` | types.QueryOptions | The query options |
+| `options` | <pre>types.QueryOptions</pre> | An struct containing query options |
 
-###### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `Queuable` | boolean | Make this request queuable or not | `true`  |
-| `Refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| Property   | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
+| `Refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 

@@ -10,13 +10,17 @@ for i := 5; i < 15; i++ {
 }
 kuzzle.Index.Refresh("nyc-open-data", nil)
 
+options := types.NewQueryOptions()
+options.SetFrom(0)
+options.SetSize(2)
+
 response, err := kuzzle.Document.Search("nyc-open-data", "yellow-taxi", json.RawMessage(`{
   "query": {
     "match": {
       "category": "suv"
     }
   }
-}`), nil)
+}`), options)
 
 if err != nil {
   log.Fatal(err)

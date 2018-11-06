@@ -12,28 +12,32 @@ Given a document id, retrieves the corresponding document from the database.
 
 Only documents in the persistent data storage layer can be retrieved.
 
-## Signature
-
-```go
-Get(index string, collection string, _id string, options types.QueryOptions) (json.RawMessage, error)
-```
 
 ## Arguments
 
+```go
+Get(
+  index string, 
+  collection string, 
+  _id string, 
+  options types.QueryOptions
+) (json.RawMessage, error)
+```
+
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
-| `id` | string | The document id |
-| `options` | types.QueryOptions | The query options |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `id` | <pre>string</pre> | The document id |
+| `options` | <pre>types.QueryOptions</pre> | An struct containing query options |
 
-### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `Queuable` | boolean | Make this request queuable or not | `true`  |
+| Property   | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
 
 ## Return
 

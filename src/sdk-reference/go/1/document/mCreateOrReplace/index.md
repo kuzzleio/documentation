@@ -12,29 +12,32 @@ Creates or replaces new documents in the persistent data storage.
 
 Returns a partial error (with status 206) if one or more documents fail to create.
 
-## Signature
+## Arguments
 
 ```go
-MCreateOrReplace(index string, collection string, body json.RawMessage, options types.QueryOptions) (json.RawMessage, error)
+MCreateOrReplace(
+    index string, 
+    collection string, 
+    body json.RawMessage, 
+    options types.QueryOptions
+) (json.RawMessage, error)
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
-| `body` | json.RawMessage | A JSON string containing the documents to create |
-| `options` | types.QueryOptions | The query options |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `body` | <pre>json.RawMessage</pre> | A JSON string containing the documents to create |
+| `options` | <pre>types.QueryOptions</pre> | An struct containing query options |
 
-### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `Queuable` | boolean | Make this request queuable or not | `true`  |
-| `Refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| Property   | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
+| `Refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 

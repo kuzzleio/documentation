@@ -14,28 +14,31 @@ Note that if no validation specifications are set for the `<index>`/`<collection
 
 This request does **not** store or publish the document.
 
-## Signature
+## Arguments
 
 ```go
-Validate(index string, collection string, body json.RawMessage, options types.QueryOptions) (bool, error)
+Validate(
+  index string, 
+  collection string, 
+  body json.RawMessage, 
+  options types.QueryOptions
+) (bool, error)
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
-| `body` | string | A JSON string containing the body of the document |
-| `options` | types.QueryOptions | The query options |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `body` | <pre>string</pre> | A JSON string containing the body of the document |
+| `options` | <pre>types.QueryOptions</pre> | An struct containing query options |
 
-###### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `Queuable` | boolean | Make this request queuable or not | `true`  |
+| Property   | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
 
 ## Return
 

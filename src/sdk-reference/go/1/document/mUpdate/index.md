@@ -15,30 +15,33 @@ Returns a partial error (with status 206) if one or more documents can not be up
 Conflicts may occur if the same document gets updated multiple times within a short time on a database cluster. When this happens, Kuzzle answers with an error that clients have to handle.  
 You may set the `retryOnConflict` optional argument with a positive integer, asking Kuzzle to retry updating the document that number of times before rejecting the request with an error.
 
-## Signature
+## Arguments
 
 ```go
-MUpdate(index string, collection string, documents json.RawMessage, options types.QueryOptions) (json.RawMessage, error)
+MUpdate(
+    index string, 
+    collection string, 
+    documents json.RawMessage, 
+    options types.QueryOptions
+) (json.RawMessage, error)
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
-| `documents` | json.RawMessage | A JSON string containing the documents to update |
-| `options` | types.QueryOptions | The query options |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `documents` | <pre>json.RawMessage</pre> | A JSON string containing the documents to update |
+| `options` | <pre>types.QueryOptions</pre> | An struct containing query options |
 
-### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `Queuable` | boolean | Make this request queuable or not | `true`  |
-| `Refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
-| `RetryOnConflict` | int | The number of times the database layer should retry in case of version conflict | 0 |
+| Property   | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
+| `Refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `RetryOnConflict` | int(`0`) | The number of times the database layer should retry in case of version conflict |
 
 ## Return
 

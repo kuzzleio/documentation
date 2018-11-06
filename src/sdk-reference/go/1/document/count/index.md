@@ -12,29 +12,32 @@ Given some filters, gets the number of matching documents from Kuzzle.
 
 Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/query-dsl.html) syntax.
 
-## Signature
-
-```go
-Count(index string, collection string, body json.RawMessage, options types.QueryOptions) (int, error)
-```
 
 ## Arguments
 
+```go
+Count(
+  index string, 
+  collection string, 
+  body json.RawMessage, 
+  options types.QueryOptions
+) (int, error)
+```
+
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | String | Index name |
-| `collection` | String | Collection name |
-| `body` | json.RawMessage | A JSON string containing the query to match |
-| `options` | QueryOptions | An structure containing query options. |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `body` | <pre>json.RawMessage</pre> | A JSON string containing the query to match |
+| `options` | <pre>types.QueryOptions</pre> | An struct containing query options | 
 
-### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `Queuable` | boolean | Make this request queuable or not | `true`  |
-| `IncludeTrash` | boolean | If set to `true`, includes the documents from the trash | `false`  |
+| Property   | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
 
 ## Return
 

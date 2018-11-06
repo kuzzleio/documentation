@@ -14,30 +14,35 @@ Returns an error if a document with the same given id already exists in Kuzzle.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
 
-## Signature
-
-```go
-Create(index string, collection string, id string, body json.RawMessage, options types.QueryOptions) (json.RawMessage, error) {
-```
 
 ## Arguments
 
+```go
+Create(
+  index string, 
+  collection string, 
+  id string, 
+  body json.RawMessage, 
+  options types.QueryOptions
+) (json.RawMessage, error) {
+```
+
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
-| `id` | string | Optional document id. If set to a blank string, will use a auto-generated id |
-| `body` | json.RawObject | The query to match |
-| `options` | types.Queryoptions | An object containing query options. |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `id` | <pre>string</pre> | Optional document id. If set to a blank string, will use a auto-generated id |
+| `body` | <pre>json.RawMessage</pre> | The query to match |
+| `options` | <pre>types.QueryOptions</pre> | An struct containing query options |
 
-###### **Options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `Queuable` | bool | Make this request queuable or not | `true`  |
-| `Refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| Property   | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `Queuable` | <pre>bool</pre> (`true`) | Make this request queuable or not |
+| `Refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
 
 ## Return
 
