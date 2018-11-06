@@ -15,7 +15,7 @@ This chapter explains how to install and configure a plugin. The other chapters 
 * [Hooks](../hooks)
 * [Pipes](../pipes)
 * [Controllers](../controllers)
-* [Strategies](../strategies)
+* [Authentication Strategies](../strategies)
 
 A single plugin can implement as many of those interfaces as necessary.
 
@@ -43,7 +43,7 @@ and/or:
 
 ### manifest.json
 
-Kuzzle needs a few informations to make your plugin work properly. These informations must be provided in a `manifest.json` file, in the plugin directory.
+Kuzzle needs a few information to make your plugin work properly. These informations must be provided in a `manifest.json` file, in the plugin directory.
 
 The following properties can be defined in this `manifest.json` file:
 
@@ -62,10 +62,16 @@ The `init` method is called once during startup, and it is used to initialize th
 
 ### Arguments
 
-`init (config, context)`
+```js
+init (config, context)
+```
 
-* `config`: {object} contains the custom plugin configuration (see the [configuration](#configuration-default) chapter)
-* `context`: {object} the plugin context, exposing various accessors, constructors, and various helpers. The other sections of this documentation detail the interfaces made available by this object
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `config` | <pre>object</pre> | Contains the custom plugin configuration (see the [configuration](#configuration-default) chapter) |
+| `context` | <pre>object</pre> | The plugin context, exposing various accessors, constructors, and helpers. The other sections of this documentation detail the interfaces made available by this object |
 
 ### Return
 

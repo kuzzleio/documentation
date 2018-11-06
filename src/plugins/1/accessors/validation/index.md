@@ -18,9 +18,15 @@ Adds a new data type, to be used for document validation.
 
 ### Arguments
 
-`addType(Type)`
+```js
+addType(Type)
+```
 
-* `Type`: {object} a class implementing the abstract [BaseValidationType]({{ site_base_path }}plugins/1/constructors/basevalidationtype) class
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `Type` | <pre>object</pre> | A class implementing the abstract [BaseValidationType]({{ site_base_path }}plugins/1/constructors/basevalidationtype) class |
 
 ---
 
@@ -32,10 +38,15 @@ Validates the content of a request body (mutates the request).
 
 ### Arguments
 
-`validate(request, [verbose])`
+```js
+validate(request, [verbose])
+```
+<br/>
 
-* `request`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} request object with a non-empty body content
-* `verbose`: {boolean} if true, returns an exhaustive validation report, instead of failing at the first error encountered
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `request` | <a href={{ site_base_path }}plugins/1/constructors/request><pre>Request</pre></a> | Request object with a non-empty body content |
+| `verbose` | <pre>boolean</pre> | If true, returns an exhaustive validation report, instead of failing at the first error encountered |
 
 ### Return
 

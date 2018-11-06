@@ -24,12 +24,17 @@ In a cluster environment, the new strategy is automatically added to all server 
 
 ### Arguments
 
-`add(name, properties)`
+```js
+add(name, properties)
+```
 
-* `name`: {string} name of the new authentication strategy
-* `properties`: {object} strategy properties (see [managing credentials]({{ site_base_path }}plugins/1/essentials/strategies/#managing-credentials-default))
+<br/>
 
-**Note:** strategy classes must previously be declared in the [authenticators]({{ site_base_path }}plugins/1/essentials/strategies/#registering-authentication-strategies-default) property
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `name` | <pre>string</pre> | Name of the new authentication strategy |
+| `properties` | <pre>object</pre> | Strategy properties (see [managing credentials]({{ site_base_path }}plugins/1/essentials/strategies/#managing-credentials-default)) |
+
 
 ### Return
 
@@ -84,9 +89,15 @@ Authentication tokens previously created using that strategy ARE NOT invalidated
 
 ### Arguments
 
-`remove(name)`
+```js
+remove(name)
+```
 
-* `name`: {sting} authentication strategy name to remove
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `name` | <pre>string</pre> | Name of the authentication strategy to remove |
 
 ### Return
 

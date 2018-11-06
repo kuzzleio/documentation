@@ -14,10 +14,16 @@ Executes a Kuzzle's [API action]({{ site_base_path }}api/1/).
 
 ## Arguments
 
-`execute(request, [callback])`
+```js
+execute(request, [callback])
+```
 
-* `request`: {[Request]({{ site_base_path }}plugins/1/constructors/request)} the API query to execute
-* `callback`: {optional, function} callback to call with the API execution result.<br/>If not provided, `execute` returns a promise instead.
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `request` | <a href={{ site_base_path }}plugins/1/constructors/request><pre>Request</pre></a> | The API query to execute |
+| `callback` | <pre>function</pre> | Callback to call with the API execution result |
 
 ---
 

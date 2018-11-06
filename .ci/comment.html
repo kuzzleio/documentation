@@ -13,8 +13,17 @@
         width="32" height="32"></a>
       </td>
       <td align="center"><em>v6</em></td>
-      <td align="center">{{if (gt .jsv6 "0") }} :x: {{else}} :heavy_check_mark:
-      {{end}}</td>
+      <td align="center">
+        {{if (eq .jsv6 "1") }}
+          :x:
+        {{end}}
+        {{if (eq .jsv6 "0")}}
+          :heavy_check_mark:
+        {{end}}
+        {{if (eq .jsv6 "3")}}
+          :heavy_minus_sign:
+        {{end}}
+      </td>
     </tr>
         <tr>
       <td align="center">
@@ -24,7 +33,17 @@
         width="32" height="32"></a>
       </td>
       <td align="center"><em>v5</em></td>
-      <td align="center">-</td>
+      <td align="center">
+        {{if (eq .jsv5 "1") }}
+          :x:
+        {{end}}
+        {{if (eq .jsv5 "0")}}
+          :heavy_check_mark:
+        {{end}}
+        {{if (eq .jsv5 "3")}}
+          :heavy_minus_sign:
+        {{end}}
+      </td>
     </tr>
     <tr>
       <td align="center">
@@ -34,8 +53,17 @@
         width="32" height="32"></a>
       </td>
       <td align="center"><em>v1</em></td>
-      <td align="center">{{if (gt .gov1 "0") }} :x: {{else}} :heavy_check_mark:
-      {{end}}</td>
+      <td align="center">
+        {{if (eq .gov1 "1") }}
+          :x:
+        {{end}}
+        {{if (eq .gov1 "0")}}
+          :heavy_check_mark:
+        {{end}}
+        {{if (eq .gov1 "3")}}
+          :heavy_minus_sign:
+        {{end}}
+      </td>
     </tr>
     <tr>
       <td align="center">
@@ -45,8 +73,17 @@
         width="32" height="32"></a>
       </td>
       <td align="center"><em>v1</em></td>
-      <td align="center">{{if (gt .javav1 "0") }} :x: {{else}} :heavy_check_mark:
-      {{end}}</td>
+      <td align="center">
+        {{if (eq .javav1 "1") }}
+          :x:
+        {{end}}
+        {{if (eq .javav1 "0")}}
+          :heavy_check_mark:
+        {{end}}
+        {{if (eq .javav1 "3")}}
+          :heavy_minus_sign:
+        {{end}}
+      </td>
     </tr>
     <tr>
       <td align="center">
@@ -56,7 +93,16 @@
         width="32" height="32"></a>
       </td>
       <td align="center"><em>v1</em></td>
-      <td align="center">{{if (gt .cppv1 "0") }} :x: {{else}} :heavy_check_mark:
-      {{end}}</td>
+      <td align="center">
+        {{if (eq .cppv1 "1") }}
+          :x:
+        {{end}}
+        {{if (eq .cppv1 "0")}}
+          :heavy_check_mark:
+        {{end}}
+        {{if (eq .cppv1 "3")}}
+          :heavy_minus_sign:
+        {{end}}
+      </td>
     </tr>
   </table>

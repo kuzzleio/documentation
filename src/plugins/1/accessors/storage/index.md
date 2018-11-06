@@ -24,9 +24,14 @@ Can be called any number of times as long as identical mappings are provided.
 
 ### Arguments
 
-`bootstrap(collections)`
+```js
+bootstrap(collections)
+```
+<br/>
 
-* `collections`: {object} lists data collection to create, with their corresponding [data mapping]({{ site_base_path }}guide/1/essentials/persisted/#document-mapping) 
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `collections` | <pre>object</pre> | List of data collection to create, with their corresponding [data mapping]({{ site_base_path }}guide/1/essentials/persisted/#document-mapping) |
 
 ### Return
 
@@ -69,10 +74,16 @@ Can be called any number of times as long as the mapping is not modified.
 
 ### Arguments
 
-`createCollection(collection, mapping)`
+```js
+createCollection(collection, mapping)
+```
 
-* `collection`: {string} data collection name
-* `mapping`: {object} data collection [mapping]({{ site_base_path }}guide/1/essentials/persisted/#document-mapping)
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `collection` | <pre>string</pre> | Data collection name |
+| `mapping` | <pre>object</pre> | Data collection [mapping]({{ site_base_path }}guide/1/essentials/persisted/#document-mapping) |
 
 
 ### Return

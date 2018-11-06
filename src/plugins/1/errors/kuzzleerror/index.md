@@ -15,6 +15,8 @@ This class should only be used to create new Kuzzle error objects.
 
 ## Properties
 
-* `message`: {string} error message
-* `stack`: {string[]} error stack trace (not available in production mode)
-* `status`: {integer} error status code, following the standard [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+| Property | Type | Description |
+|----------|------|-------------|
+| `message` | <pre>string</pre> | Error message |
+| `stack` | <pre>string[]</pre> | Error stack trace (not available in production mode) |
+| `status` | <pre>integer</pre> | Error status code, following the standard [HTTP status code]( https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) |

@@ -42,8 +42,8 @@ Method: <verb defined by the plugin>
 
 In order to create a new controller, the plugin must expose the following properties:
 
-- A `controllers` object, describing the new controller(s) to add. It will automatically be made available to any network protocol, except for HTTP
-- A `routes` objects, describing how the new controller(s) should be exposed to the HTTP protocol
+- A `controllers` object, describing the controller(s) to add. It will automatically be made available to any network protocol, except for HTTP
+- A `routes` objects, describing how the controller(s) should be exposed to the HTTP protocol
 - The controller's actions, which are functions taking a `Request` object as an argument. These functions must return a promise, resolved with the action's result, or rejected with a [KuzzleError]({{ site_base_path }}plugins/1/errors/kuzzleerror) object.
 
 ---
