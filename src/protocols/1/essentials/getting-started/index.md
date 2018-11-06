@@ -29,7 +29,7 @@ Protocol implementation example: [MQTT](https://github.com/kuzzleio/protocol-mqt
 
 Protocols are subdirectories that must be put at the following location: `<kuzzle_install_dir>/protocols/enabled`.
 
-The recommended way to install a protocol is to put it in `protocols/available`, and then link it to the `protocols/enabled` directory.
+The recommended way to install a protocol is to put it in `protocols/available`, and to create a symbolic link pointing to it in the `protocols/enabled` directory.
 
 ### Node.js modules
 
