@@ -16,17 +16,32 @@ Technical information: [github repository](https://github.com/kuzzleio/kuzzle-co
 
 ## Constructor
 
-`new RequestContext([options])`
+```js
+new RequestContext([options])
+```
 
-* `options`: {optional, object} optional arguments
-  * `connection`: {[ClientConnection]({{ site_base_path }}protocols/1/context/clientconnection)} connection information
-  * `token`: {string} authorization token
-  * `user`: {object} Kuzzle internal user information
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+* `options` | <pre>object</pre> | Optional arguments |
+
+### options
+
+The `options` object can contain the following properties:
+
+| Properties | Type | Description |
+|-----------|------|-------------|
+| `connection` | <pre><a href=({{ site_base_path }}protocols/1/context/clientconnection>ClientConnection</a></pre> | Connection information |
+| `token` | <pre>string</pre> | Authorization token |
+| `user` | <pre>object</pre> | Kuzzle internal user information |
 
 ---
 
 ## Properties
 
-* `connection`: {[ClientConnection]({{ site_base_path }}protocols/1/context/clientconnection)} connection information
-* `token`: {string} authorization token
-* `user`: {object} Kuzzle internal user information
+| Properties | Type | Description |
+|-----------|------|-------------|
+| `connection` | <pre><a href=({{ site_base_path }}protocols/1/context/clientconnection>ClientConnection</a></pre> | Connection information
+| `token` | <pre>string</pre> | Authorization token |
+| `user` | <pre>object</pre> | Kuzzle internal user information |

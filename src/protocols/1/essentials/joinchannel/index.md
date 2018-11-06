@@ -12,10 +12,16 @@ Informs the protocol that one of its connected users joined a [channel]({{ site_
 
 ## Arguments
 
-`joinChannel(channel, connectionId)`
+```js
+joinChannel(channel, connectionId)
+```
 
-* `channel`: {string} joined channel identifier
-* `connectionId`: {string} connection unique identifier, previously registered by the protocol using [newConnection]({{ site_base_path }}protocols/1/entrypoint/newconnection)
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `channel` | <pre>string</pre> | Joined channel identifier |
+| `connectionId` | <pre>string</pre> | Connection unique identifier, previously registered by the protocol using [newConnection]({{ site_base_path }}protocols/1/entrypoint/newconnection) |
 
 ---
 

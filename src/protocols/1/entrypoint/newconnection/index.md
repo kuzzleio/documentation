@@ -14,9 +14,15 @@ Declares a new client connection to Kuzzle.
 
 ### Arguments
 
-`newConnection(connection)`
+```js
+newConnection(connection)
+```
 
-* `connection`: {[`ClientConnection`]({{ site_base_path }}protocols/1/context/clientconnection)} new user connection
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `connection` | <pre><a href={{ site_base_path }}protocols/1/context/clientconnection>ClientConnection</a></pre> | New user connection |
 
 ---
 

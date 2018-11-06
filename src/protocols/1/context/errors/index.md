@@ -20,9 +20,11 @@ This class should only be used to create new Kuzzle error objects.
 
 ### Properties
 
-* `message`: {string} error message
-* `stack`: {string[]} error stack trace (not available in production mode)
-* `status`: {integer} error status code, following the standard [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+| Properties | Type | Description |
+|-----------|------|-------------|
+| `message` | <pre>string</pre> | Error message |
+| `stack` | <pre>string[]</pre> | Error stack trace (not available in production mode) |
+| `status` | <pre>integer</pre> | Error status code, following the standard [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
 ---
 
@@ -138,7 +140,7 @@ const err = new context.errors.NotFoundError('error message');
 
 {{{since "1.0.0"}}} / {{{deprecated "1.4.1"}}}
 
-Parse error. Use [BadRequestError]({{ site_base_path }}plugins/1/errors/badrequesterror) instead.
+Parse error. Use [BadRequestError]({{ site_base_path }}protocols/1/context/errors/#badrequesterror-default) instead.
 
 ### Status Code
 
@@ -160,10 +162,16 @@ Partial request success.
 
 ### Constructor
 
-`new context.error.PartialError(message, errors)`
+```js
+new context.error.PartialError(message, errors)
+```
 
-* `message`: {string} error message
-* `failures`: {[KuzzleError]({{ site_base_path }}plugins/1/errors/kuzzleerror)[]} list of encountered errors
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `message` | <pre>string</pre> | Error message |
+| `failures` | <pre><a href={{ site_base_path }}protocols/1/context/errors/#kuzzleerror-default>KuzzleError[]</a></pre> | List of encountered errors |
 
 ### Status Code
 

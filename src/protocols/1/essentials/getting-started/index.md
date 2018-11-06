@@ -15,8 +15,9 @@ Protocols are entirely responsible of the network communication layer, which can
 Protocols can even decide to propose a dedicated message format and/or query syntax for the Kuzzle API.
 
 Protocols are provided with objects to interact with Kuzzle:
+
 * [EntryPoint]({{ site_base_path }}protocols/1/entrypoint): base communication layer (declare user connections, forward API requests, ...)
-* [context]({{ site_base_path }}protocols/1/context): utilities and object constructors not directly unrelated to network communications
+* [context]({{ site_base_path }}protocols/1/context): utilities and object constructors not directly related to network communications
 
 Protocol implementation example: [MQTT](https://github.com/kuzzleio/protocol-mqtt)
 

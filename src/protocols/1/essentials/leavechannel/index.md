@@ -12,10 +12,16 @@ Informs the protocol that one of its connected users left a [channel]({{ site_ba
 
 ## Arguments
 
-`leaveChannel(channel, connectionId)`
+```js
+leaveChannel(channel, connectionId)
+```
 
-* `channel`: {string} left channel identifier
-* `connectionId`: {string} connection unique identifier, previously registered by the protocol using [newConnection]({{ site_base_path }}protocols/1/entrypoint/newconnection)
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `channel` | <pre>string</pre> | Left channel identifier |
+| `connectionId` | <pre>string</pre> | Connection unique identifier, previously registered by the protocol using [newConnection]({{ site_base_path }}protocols/1/entrypoint/newconnection) |
 
 ---
 

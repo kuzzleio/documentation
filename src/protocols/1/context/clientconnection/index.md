@@ -14,8 +14,15 @@ The `ClientConnection` class must be instantiated whenever a new client connecti
 
 ## Arguments
 
-`new context.ClientConnection(protocol, ips, headers)`
+```js
+new context.ClientConnection(protocol, ips, headers)
+```
 
-* `protocol`: {string} the protocol unique identifier
-* `ips`: {string[]} list of forwarded ip addresses (or any client connection information) of the connection
-* `headers`: {optional, object} extra connection information
+
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `protocol` | <pre>string</pre> | The protocol unique identifier |
+| `ips` | <pre>string[]</pre> | List of forwarded ip addresses (or any client connection information) of the connection |
+| `headers` | <pre>object</pre> | Extra connection information |

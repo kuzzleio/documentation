@@ -14,9 +14,9 @@ Asks the protocol to send data to a specific connection, on some of its [channel
 
 `notify(channels, connectionId, payload)`
 
-* `channels`: {string[]} list of channels
-* `connectionId`: {string} connection unique identifier, previously registered by the protocol using [newConnection]({{ site_base_path }}protocols/1/entrypoint/newconnection)
-* `payload`: {object} data payload
+* `channels` | <pre>string[]</pre> | list of channels
+* `connectionId` | <pre>string</pre> | connection unique identifier, previously registered by the protocol using [newConnection]({{ site_base_path }}protocols/1/entrypoint/newconnection)
+* `payload` | <pre>object</pre> | data payload
 
 ---
 

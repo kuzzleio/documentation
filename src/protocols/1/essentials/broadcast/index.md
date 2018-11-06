@@ -12,10 +12,16 @@ Asks the protocol to emit a payload to [channels]({{ site_base_path }}protocols/
 
 ## Arguments
 
-`broadcast(channels, payload)`
+```js
+broadcast(channels, payload)
+```
 
-* `channels`: {string[]} list of channels
-* `payload`: {object} data payload
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `channels` | <pre>string[]</pre> | List of channels |
+| `payload` | <pre>object</pre> | Data payload |
 
 ---
 
