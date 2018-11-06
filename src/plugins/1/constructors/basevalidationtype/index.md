@@ -20,9 +20,11 @@ This class constructor takes no argument.
 
 ## Properties
 
-* `allowChildren`: {boolean} if `false`, the field must be a scalar
-* `allowedTypeOptions`: {string[]} the list of allowed data type options
-* `typeName`: {string} data type name
+| Property | Type | Description |
+|----------|------|-------------|
+| `allowChildren` | <pre>boolean</pre> | If `false`, the field must be a scalar |
+| `allowedTypeOptions` | <pre>string[]</pre> | The list of allowed data type options |
+| `typeName` | <pre>string</pre> | Data type name |
 
 ---
 
@@ -34,11 +36,17 @@ This is an abstract method. If not overloaded, it always returns `true`
 
 ### Arguments
 
-`validate(opts, field, errors)`
+```js
+validate(opts, field, errors)
+```
 
-* `opts`: {object} data type options. The provided object can only contain the keys defined in the `allowedTypeOptions` property
-* `field`: data to validate
-* `errors`: {string[]} if the provided `field` is not valid, the reason must be pushed in that array
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `opts` | <pre>object</pre> | Data type options. The provided object can only contain the keys defined in the `allowedTypeOptions` property |
+| `field` | <pre>*</pre> | Data to validate |
+| `errors` | <pre>string[]</pre> | If the provided `field` is not valid, the reason must be pushed in that array |
 
 ### Return
 
@@ -54,9 +62,15 @@ This is an abstract method. If not overloaded, it always returns `true`
 
 ### Arguments
 
-`validateFieldSpecification(opts)`
+```js
+validateFieldSpecification(opts)
+```
 
-* `opts`: {object} data type options. The provided object can only contain the keys defined in the `allowedTypeOptions` property
+<br/>
+
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `opts` | <pre>object</pre> | Data type options. The provided object can only contain the keys defined in the `allowedTypeOptions` property |
 
 ### Return
 
