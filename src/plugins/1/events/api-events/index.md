@@ -19,22 +19,22 @@ All API actions, without exception, trigger two of these three events:
 
 ## before
 
-A `before` event is triggered before the API action starts.
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `request` | <pre><a href={{ site_base_path }}plugins/1/constructors/request>Request</a></pre> | The normalized API request |
 
-### Template
+A `before` event is triggered before an API request starts.
 
-The `before` event is built using the following template:
+### Naming Template
+
+The `before` event name is built using the following template:
 
 `<controller>:before<Action>`
 
 * `controller`: API controller name
 * `Action`: controller action, camel cased
 
-### Payload
-
-* a [Request]({{ site_base_path }}plugins/1/constructors/request) object
-
-### Example
+#### Example
 
 | API action | After event name |
 |------------|------------------|
@@ -45,22 +45,22 @@ The `before` event is built using the following template:
 
 ## after
 
-An `after` event is triggered after the API action succeeds.
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `request` | <pre><a href={{ site_base_path }}plugins/1/constructors/request>Request</a></pre> | The normalized API request |
 
-### Template
+An `after` event is triggered after an API request succeeds.
 
-The `after` event is built using the following template:
+### Naming Template
+
+The `after` event name is built using the following template:
 
 `<controller>:after<Action>`
 
 * `controller`: API controller name
 * `Action`: controller action, camel cased
 
-### Payload
-
-* a [Request]({{ site_base_path }}plugins/1/constructors/request) object
-
-### Example
+#### Example
 
 | API action | After event name |
 |------------|------------------|
@@ -71,22 +71,22 @@ The `after` event is built using the following template:
 
 ## error
 
-An `error` event is triggered after the API action fails.
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `request` | <pre><a href={{ site_base_path }}plugins/1/constructors/request>Request</a></pre> | The normalized API request |
 
-### Template
+An `error` event is triggered after an API request fails.
 
-The `error` event is built using the following template:
+### Naming Template
+
+The `error` event name is built using the following template:
 
 `<controller>:error<Action>`
 
 * `controller`: API controller name
 * `Action`: controller action, camel cased
 
-### Payload
-
-* a [Request]({{ site_base_path }}plugins/1/constructors/request) object
-
-### Example
+#### Example
 
 | API action | After event name |
 |------------|------------------|

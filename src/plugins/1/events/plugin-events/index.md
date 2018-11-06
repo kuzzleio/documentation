@@ -22,11 +22,15 @@ All calls to plugins API actions trigger two of these three events:
 
 ## before
 
-A `before` event is triggered before the plugin API action starts.
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `request` | <pre><a href={{ site_base_path }}plugins/1/constructors/request>Request</a></pre> | The normalized API request |
 
-### Template
+A `before` event is triggered before a plugin API request starts.
 
-The `before` event is built using the following template:
+### Naming Template
+
+The `before` event name is built using the following template:
 
 `<plugin name>/<controller>:before<Action>`
 
@@ -34,11 +38,7 @@ The `before` event is built using the following template:
 * `controller`: API controller name
 * `Action`: controller action, camel cased
 
-### Payload
-
-* a [Request]({{ site_base_path }}plugins/1/constructors/request) object
-
-### Example
+#### Example
 
 | Plugin name | API controller | Action   | After event name    |
 |-------------|----------------|----------|---------------------|
@@ -48,11 +48,15 @@ The `before` event is built using the following template:
 
 ## after
 
-An `after` event is triggered after the plugin API action succeeds.
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `request` | <pre><a href={{ site_base_path }}plugins/1/constructors/request>Request</a></pre> | The normalized API request |
 
-### Template
+An `after` event is triggered after a plugin API request succeeds.
 
-The `after` event is built using the following template:
+### Naming Template
+
+The `after` event name is built using the following template:
 
 `<plugin name>/<controller>:after<Action>`
 
@@ -60,11 +64,7 @@ The `after` event is built using the following template:
 * `controller`: API controller name
 * `Action`: controller action, camel cased
 
-### Payload
-
-* a [Request]({{ site_base_path }}plugins/1/constructors/request) object
-
-### Example
+#### Example
 
 | Plugin name | API controller | Action   | After event name    |
 |-------------|----------------|----------|---------------------|
@@ -74,11 +74,15 @@ The `after` event is built using the following template:
 
 ## error
 
-An `error` event is triggered after the plugin API action fails.
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `request` | <pre><a href={{ site_base_path }}plugins/1/constructors/request>Request</a></pre> | The normalized API request |
 
-### Template
+An `error` event is triggered after a plugin API request fails.
 
-The `error` event is built using the following template:
+### Naming Template
+
+The `error` event name is built using the following template:
 
 `<plugin name>/<controller>:error<Action>`
 
@@ -86,11 +90,7 @@ The `error` event is built using the following template:
 * `controller`: API controller name
 * `Action`: controller action, camel cased
 
-### Payload
-
-* a [Request]({{ site_base_path }}plugins/1/constructors/request) object
-
-### Example
+#### Example
 
 | Plugin name | API controller | Action   | After event name    |
 |-------------|----------------|----------|---------------------|

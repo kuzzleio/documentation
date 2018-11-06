@@ -8,15 +8,22 @@ title: room:new
 
 {{{since "1.0.0"}}}
 
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `room` | <pre>object</pre> | Joined room information |
+
 Triggered whenever a new [subscription]({{ site_base_path }}api/1/controller-realtime/subscribe) is created.
 
 <div class="alert alert-info">Pipes cannot listen to that event, only hooks can.</div>
 
 ---
 
-## Payload
+## room
 
-* `room`: {object} room information
-  * `index`: data index name
-  * `collection`: data collection name
-  * `roomId`: the new room unique identifier
+The provided `room` object has the following properties:
+
+| Properties | Type | Description |
+|-----------|------|-------------|
+| `index` | <pre>string</pre> | Data index name |
+| `collection` | <pre>string</pre> | Data collection name |
+| `roomId` | <pre>string</pre> | The new room unique identifier |

@@ -8,10 +8,8 @@ title: security:formatUserForSerialization
 
 {{{deprecated "1.0.0"}}}
 
+| Arguments | Type | Description |
+|-----------|------|-------------|
+| `user` | <pre>User</pre> | User information |
+
 Triggered before serializing a user object.
-
----
-
-## Payload
-
-* a `User` object
