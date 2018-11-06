@@ -39,20 +39,21 @@ module.exports = class HookPlugin {
   init (customConfig, context) {
     /*
       Attaches the plugin function "myFunction" to the Kuzzle event
-      "eventType:hookName"
+      "document:afterCreate", triggered after a successful
+      document creation
      */
     this.hooks = {
-      'eventType:hookName': 'myFunction'
+      'document:afterCreate': 'myFunction'
     };
   }
 
   /*
-   Call whenever the "eventType:hookName" event 
+   Called whenever the "document:afterCreate" event 
    is triggered
    */
-  myFunction (message, event) {
+  myFunction (request, event) {
     console.log(`Event ${event} triggered`);
-    console.log(`Message received: ${message}`);
+    console.log(`Document created: ${request.result._id}`);
   }
 }
 ```
