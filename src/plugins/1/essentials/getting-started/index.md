@@ -43,7 +43,7 @@ and/or:
 
 ### manifest.json
 
-Kuzzle needs a few informations to make your plugin work properly. These informations must be provided in a `manifest.json` file, in the plugin directory.
+Kuzzle needs a few information to make your plugin work properly. These informations must be provided in a `manifest.json` file, in the plugin directory.
 
 The following properties can be defined in this `manifest.json` file:
 
@@ -71,7 +71,7 @@ init (config, context)
 | Arguments | Type | Description |
 |-----------|------|-------------|
 | `config` | <pre>object</pre> | Contains the custom plugin configuration (see the [configuration](#configuration-default) chapter) |
-| `context` | <pre>object</pre> | The plugin context, exposing various accessors, constructors, and various helpers. The other sections of this documentation detail the interfaces made available by this object |
+| `context` | <pre>object</pre> | The plugin context, exposing various accessors, constructors, and helpers. The other sections of this documentation detail the interfaces made available by this object |
 
 ### Return
 
