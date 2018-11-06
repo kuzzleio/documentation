@@ -15,36 +15,28 @@ Returns a partial error (with status 206) if one or more documents can not be up
 Conflicts may occur if the same document gets updated multiple times within a short time on a database cluster. When this happens, Kuzzle answers with an error that clients have to handle.  
 You may set the `retryOnConflict` optional argument with a positive integer, asking Kuzzle to retry updating the document that number of times before rejecting the request with an error.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {Array} documents
- * @param {object} options
- * @returns {Promise.<Array>}
- */
-mReplace (index, collection, documents, options = {})
+mReplace (index, collection, documents, [options])
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
-| `documents` | string | A JSON string containing the documents to update |
-| `options` | object | An object containing query options. |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `documents` | <pre>string</pre> | A JSON string containing the documents to update |
+| `options` | <pre>object</pre> | An object containing query options. |
 
 ### Options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| Options | Type (default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `retryOnConflict` | <pre>int</pre> (`0`) | The number of times the database layer should retry in case of version conflict |
 
 ## Resolve
 

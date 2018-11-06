@@ -27,38 +27,29 @@ This cursor can then be moved forward using the `next` method of the returned `s
   </p>
 </div>
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {object} body
- * @param {object} options
- * @returns {Promise.<object>}
- */
-search (index, collection, body = {}, options = {})
+search (index, collection, [body], [options])
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
-| `body` | string | A JSON string containing the search query |
-| `options` | object | An object containing query options. |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `body` | <pre>string</pre> | A JSON string containing the search query |
+| `options` | <pre>object</pre> | An object containing query options. |
 
 ### Options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `from` | integer | Offset of the first document to fetch | `false` |
-| `size` | integer | Maximum number of documents to retrieve per page  | `false` |
-| `scroll` | std::string | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) | `false` |
+| Options | Type (default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `from` | integer | Offset of the first document to fetch |
+| `size` | integer | Maximum number of documents to retrieve per page  |
+| `scroll` | std::string | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
 
 ## Resolve
 
@@ -69,13 +60,13 @@ Resolves to a `SearchResult` object
 
 | Name | Type | Description |
 | --- | --- | --- |
-| documents | object | The retrieved documents |
+| documents | <pre>object</pre> | The retrieved documents |
 | fetched | int | The number of fetched documents |
 | total | int | The total number of documents matching the query |
-| aggregations | object | The computed aggregations |
-| collection | string | The collection on which the search was performed |
-| filters | object | The original query |
-| options | object | The original query options |
+| aggregations | <pre>object</pre> | The computed aggregations |
+| collection | <pre>string</pre> | The collection on which the search was performed |
+| filters | <pre>object</pre> | The original query |
+| options | <pre>object</pre> | The original query options |
 
 ### Functions
 

@@ -14,29 +14,27 @@ Note that if no validation specifications are set for the `<index>`/`<collection
 
 This request does **not** store or publish the document.
 
-## Signature
+## Arguments
 
 ```java
-boolean validate(java.lang.String, java.lang.String, java.lang.String, io.kuzzle.sdk.QueryOptions) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
-boolean validate(java.lang.String, java.lang.String, java.lang.String) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
+boolean validate(String, String, String, io.kuzzle.sdk.QueryOptions)
+boolean validate(String, String, String)
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | String | Index name |
-| `collection` | String | Collection name |
-| `body` | String | A JSON string containing the body of the document |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options |
+| `index` | <pre>String</pre> | Index name |
+| `collection` | <pre>String</pre> | Collection name |
+| `body` | <pre>String</pre> | A JSON string containing the body of the document |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
 
-###### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option | Type (default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre> (`true`)| Make this request queuable or not |
 
 ## Return
 
@@ -44,7 +42,7 @@ Returns a boolean value set to true if the document is valid and false otherwise
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/essentials/error-handling).
 
 ## Usage
 

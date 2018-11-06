@@ -3,7 +3,7 @@ try {
     'nyc-open-data',
     'yellow-taxi',
     'some-id',
-    {licence: 'valid'}
+    {lastName: 'McHan'}
   );
 
   if (response._id === 'some-id') {
@@ -19,7 +19,7 @@ try {
       _shards: { total: 2, successful: 1, failed: 0 },
       created: true,
       _source:
-       { licence: 'valid',
+       { lastName: 'McHan',
          _kuzzle_info:
           { author: '-1',
             createdAt: 1537443212089,

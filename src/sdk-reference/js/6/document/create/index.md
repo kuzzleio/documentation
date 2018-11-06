@@ -14,21 +14,11 @@ Throws if a document with the same given id already exists in Kuzzle.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {string|null} id
- * @param {object} body
- * @param {object} options
- * @returns {Promise.<object>}
- */
-create(index, collection, id, body, options)
+create(index, collection, id, body, [options])
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
@@ -42,10 +32,10 @@ create(index, collection, id, body, options)
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| Options | Type (default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Resolve
 
@@ -55,8 +45,8 @@ Resolves to an object containing the document creation result.
 | --- | --- | ---
 | _id | String | The id of the newly created document
 | _version | int | The version of the document in the persistent data storage
-| _source | object | The created document
-| result | string | alway
+| _source | <pre>object</pre> | The created document
+| result | <pre>string</pre> | alway
 
 ## Usage
 

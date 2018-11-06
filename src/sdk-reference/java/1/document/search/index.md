@@ -27,32 +27,39 @@ This cursor can then be moved forward using the `next` method of the returned `s
   </p>
 </div>
 
-## Signature
+## Arguments
 
 ```java
-io.kuzzle.sdk.SearchResult search(java.lang.String, java.lang.String, java.lang.String, io.kuzzle.sdk.QueryOptions) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
-io.kuzzle.sdk.SearchResult search(java.lang.String, java.lang.String, java.lang.String) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.NotFoundException, io.kuzzle.sdk.PartialException, io.kuzzle.sdk.PreconditionException, io.kuzzle.sdk.ServiceUnavailableException, io.kuzzle.sdk.SizeLimitException, io.kuzzle.sdk.UnauthorizedException, io.kuzzle.sdk.KuzzleException;
+io.kuzzle.sdk.SearchResult search(
+  String index,
+  String collection, 
+  String body, 
+  io.kuzzle.sdk.QueryOptions options
+)
+io.kuzzle.sdk.SearchResult search(
+  String index,
+  String collection, 
+  String body
+)
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | String | Index name |
-| `collection` | String | Collection name |
-| `body` | String | A JSON string containing the search query |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options |
+| `index` | <pre>String</pre> | Index name |
+| `collection` | <pre>String</pre> | Collection name |
+| `body` | <pre>String</pre> | A JSON string containing the search query |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
 
-### Options
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `from` | int | Offset of the first document to fetch | `false` |
-| `size` | int | Maximum number of documents to retrieve per page  | `false` |
-| `scroll` | String | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) | `false` |
+| Option | Type (default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre> (`true`)| Make this request queuable or not |
+| `from` | int | Offset of the first document to fetch |
+| `size` | int | Maximum number of documents to retrieve per page  |
+| `scroll` | <pre>String</pre> | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
 
 ## Return
 
@@ -62,13 +69,13 @@ Returns a `io.kuzzle.sdk.SearchResult` object
 
 | Name | Type | Description |
 | --- | --- | --- |
-| getDocuments | String | A JSON string containing the retrieved documents |
+| getDocuments | <pre>String</pre> | A JSON string containing the retrieved documents |
 | getFetched | int | The number of fetched documents |
 | getTotal | int | The total number of documents matching the query |
-| getAggregations | String | A JSON string containing the computed aggregations |
-| getCollection | String | The collection on which the search was performed |
-| getFilters | String | The original query |
-| getOptions | io.kuzzle.sdk.QueryOptions | The original query options |
+| getAggregations | <pre>String</pre> | A JSON string containing the computed aggregations |
+| getCollection | <pre>String</pre> | The collection on which the search was performed |
+| getFilters | <pre>String</pre> | The original query |
+| getOptions | <pre>io.kuzzle.sdk.QueryOptions</pre> | The original query options |
 | next | function | Returns a new `io.kuzzle.sdk.SearchResult` of `size` next documents |
 
 ### Functions
@@ -79,7 +86,7 @@ Returns a `io.kuzzle.sdk.SearchResult` object
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/essentials/error-handling).
 
 ## Usage
 

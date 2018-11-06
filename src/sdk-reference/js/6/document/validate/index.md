@@ -14,35 +14,26 @@ Note that if no validation specifications are set for the `<index>`/`<collection
 
 This request does **not** store or publish the document.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {object} body
- * @param {object} options
- * @returns {Promise.<boolean>}
- */
-validate (index, collection, body, options = {})
+validate (index, collection, body, [options])
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
-| `body` | object | The body of the document to validate |
-| `options` | object | An object containing query options. |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `body` | <pre>object</pre> | The body of the document to validate |
+| `options` | <pre>object</pre> | An object containing query options. |
 
 ### Options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Options | Type (default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
 
 ## Resolve
 

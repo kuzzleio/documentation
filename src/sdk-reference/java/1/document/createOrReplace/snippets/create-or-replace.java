@@ -1,5 +1,5 @@
 try {
-    String response = kuzzle.getDocument().createOrReplace("nyc-open-data", "yellow-taxi", "some-id", "{\"licence\": \"valid\"}");
+    String response = kuzzle.getDocument().createOrReplace("nyc-open-data", "yellow-taxi", "some-id", "{\"lastName\": \"McHan\"}");
 
     System.out.println(response);
     /*

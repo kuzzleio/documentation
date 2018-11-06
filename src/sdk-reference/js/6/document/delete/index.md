@@ -14,20 +14,11 @@ Only documents in the persistent data storage layer can be deleted.
 
 The optional parameter refresh can be used with the value wait_for in order to wait for the document to be deleted (and to no longer be available in search).
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {id} id
- * @param {object} options
- * @returns {Promise.<string>}
- */
-delete(index, collection, id, (options = null))
+delete(index, collection, id, [options])
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
@@ -40,10 +31,10 @@ delete(index, collection, id, (options = null))
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| Options | Type (default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Resolve
 

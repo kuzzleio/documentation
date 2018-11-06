@@ -12,36 +12,26 @@ Given some filters, gets the number of matching documents from Kuzzle.
 
 Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/query-dsl.html) syntax.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {object} body
- * @param {object} options
- * @returns {Promise.<int>}
- */
-count(index, collection, body, (options = null));
+count(index, collection, body, [options]);
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | String | Index name |
-| `collection` | String | Collection name |
-| `body` | Object | The query to match |
-| `options` | Object | An object containing query options. |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `body` | <pre>object</pre> | The query to match |
+| `options` | <pre>object</pre> | An object containing query options. |
 
-### **Options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `includeTrash` | boolean | If set to `true`, includes the documents from the trash | `false`  |
+| Options | Type (default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
 
 ## Resolve
 

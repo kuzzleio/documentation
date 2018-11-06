@@ -8,20 +8,15 @@ order: 200
 
 # deleteByQuery
 
-## Signature
+Deletes all the documents from Kuzzle that match the given filter or query.
 
-```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {string} body
- * @param {object} options
- * @returns {Promise.<Array>}
- */
-deleteByQuery(index, collection, body = {}, options = {})
-```
+Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/query-dsl.html) syntax.
 
 ## Arguments
+
+```javascript
+deleteByQuery(index, collection, body = {}, options = {})
+```
 
 | Arguments | Type | Description |
 | --- | --- | --- |
@@ -34,10 +29,10 @@ deleteByQuery(index, collection, body = {}, options = {})
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) | `` |
+| Options | Type (default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Resolve
 

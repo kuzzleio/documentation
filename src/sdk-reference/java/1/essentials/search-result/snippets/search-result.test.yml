@@ -1,0 +1,7 @@
+name: essentials#searchResult
+description:
+hooks:
+  before:
+  after:
+template: default
+expected: Success

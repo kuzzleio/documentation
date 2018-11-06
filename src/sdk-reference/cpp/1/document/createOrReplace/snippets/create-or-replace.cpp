@@ -1,7 +1,7 @@
 try {
   std::string response;
   response = kuzzle->document->createOrReplace("nyc-open-data", "yellow-taxi", "some-id", R"({
-    "license": "valid"
+    "lastName": "McHan"
   })");
 
   std::cout << "Document " << response << "Created" << std::endl;
@@ -19,7 +19,7 @@ try {
     },
     "created": true,
     "_source": {
-      "licence": "valid",
+      "lastName": "McHan",
       "_kuzzle_info": {
         "author": "-1",
         "createdAt": 1537445737667,

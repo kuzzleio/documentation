@@ -7,7 +7,7 @@ hooks:
     curl -XPOST kuzzle:7512/nyc-open-data/_create
     curl -XPUT kuzzle:7512/nyc-open-data/yellow-taxi
     for i in 1 2 3 4 5; do
-      curl -H "Content-type: application/json" -d '{"licence": "valid"}' kuzzle:7512/nyc-open-data/yellow-taxi/_create
+      curl -H "Content-type: application/json" -d '{"license": "valid"}' kuzzle:7512/nyc-open-data/yellow-taxi/_create
     done
     for i in 1 2 3 4 5; do
       curl -H "Content-type: application/json" -d '{}' kuzzle:7512/nyc-open-data/yellow-taxi/_create
@@ -16,4 +16,4 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: asyncdefault
-expected: Found 5 documents matching licence:valid
+expected: Found 5 documents matching license:valid

@@ -14,36 +14,26 @@ Only documents in the persistent data storage layer can be retrieved.
 
 Returns a [partial error]({{ site_base_path }}api-documentation/errors/#partialerror) (with status 206) if one or more document can not be retrieved.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {Array.<string>} ids
- * @param {object} options
- * @returns {Promise.<Array>}
- */
-mGet (index, collection, ids, options = {})
+mGet (index, collection, ids, [options])
 ```
-
-## Arguments
 
 | Arguments | Type | Description |
 | --- | --- | --- |
-| `index` | string | Index name |
-| `collection` | string | Collection name |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
 | `ids` | Array | The document ids |
-| `options` | object | An object containing query options. |
+| `options` | <pre>object</pre> | An object containing query options. |
 
 ### Options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `includeTrash` | boolean | If set to `true`, includes the documents from the trash | `false`  |
+| Options | Type (default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
 
 ## Resolve
 
