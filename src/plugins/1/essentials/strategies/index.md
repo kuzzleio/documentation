@@ -74,15 +74,15 @@ The `methods` part of the `strategies` object can contain the following properti
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `create` | <pre>string</pre> | The name of the exposed [`create` function]({{ site_base_path }}plugins/1/essentials/strategies/#create-default) |
-| `delete` | <pre>string</pre> | The name of the exposed [`delete` function]({{ site_base_path }}plugins/1/essentials/strategies/#delete-default) |
-| `exists` | <pre>string</pre> | The name of the exposed [`exists` function]({{ site_base_path }}plugins/1/essentials/strategies/#exists-default) |
-| `update` | <pre>string</pre> | The name of the exposed [`update` function]({{ site_base_path }}plugins/1/essentials/strategies/#update-default) |
-| `validate` | <pre>string</pre> | The name of the exposed [`validate` function]({{ site_base_path }}plugins/1/essentials/strategies/#update-default) |
-| `verify` | <pre>string</pre> | The name of the exposed [`verify` function]({{ site_base_path }}plugins/1/essentials/strategies/#verify-default) |
-| `afterRegister` | <pre>string</pre> | (optional) The name of the exposed [`afterRegister` function]({{ site_base_path }}plugins/1/essentials/strategies/#optional-afterregister-default) |
-| `getById` | <pre>string</pre> | (optional) The name of the exposed [`getById` function]({{ site_base_path }}plugins/1/essentials/strategies/#optional-getbyid-default) |
-| `getInfo` | <pre>string</pre> | (optional) The name of the exposed [`getInfo` function]({{ site_base_path }}plugins/1/essentials/strategies/#optional-getinfo-default) |
+| `create` | <pre>string</pre> | The name of the exposed [create]({{ site_base_path }}plugins/1/essentials/strategies/#create-default) function |
+| `delete` | <pre>string</pre> | The name of the exposed [delete]({{ site_base_path }}plugins/1/essentials/strategies/#delete-default) function |
+| `exists` | <pre>string</pre> | The name of the exposed [exists]({{ site_base_path }}plugins/1/essentials/strategies/#exists-default) function |
+| `update` | <pre>string</pre> | The name of the exposed [update]({{ site_base_path }}plugins/1/essentials/strategies/#update-default) function |
+| `validate` | <pre>string</pre> | The name of the exposed [validate]({{ site_base_path }}plugins/1/essentials/strategies/#update-default) function |
+| `verify` | <pre>string</pre> | The name of the exposed [verify]({{ site_base_path }}plugins/1/essentials/strategies/#verify-default) function |
+| `afterRegister` | <pre>string</pre> | (optional) The name of the exposed [afterRegister]({{ site_base_path }}plugins/1/essentials/strategies/#optional-afterregister-default) function |
+| `getById` | <pre>string</pre> | (optional) The name of the exposed [getById]({{ site_base_path }}plugins/1/essentials/strategies/#optional-getbyid-default) function |
+| `getInfo` | <pre>string</pre> | (optional) The name of the exposed [getInfo]({{ site_base_path }}plugins/1/essentials/strategies/#optional-getinfo-default) function |
 
 Even though each strategy must declare its own set of properties, the same strategy method can be used by multiple strategies.
 
