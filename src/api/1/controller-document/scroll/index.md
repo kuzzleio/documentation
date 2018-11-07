@@ -8,7 +8,9 @@ title: scroll
 
 {{{since "1.0.0"}}}
 
-Moves a result set cursor forward, created by a [`search` query]({{ site_base_path }}api/1/controller-document/search/) with the `scroll` argument provided.
+Moves a search cursor forward.
+
+A search cursor is created by a [search]({{ site_base_path }}api/1/controller-document/search/) API call, with a `scroll` value provided.
 
 Results returned by a `scroll` request reflect the state of the index at the time of the initial search request, like a fixed snapshot. Subsequent changes to documents do not affect the scroll results.
 
