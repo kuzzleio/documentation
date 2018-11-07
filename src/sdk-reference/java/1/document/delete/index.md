@@ -8,12 +8,9 @@ order: 200
 
 # delete
 
-Given a document id, deletes the corresponding document from Kuzzle.
+Deletes a document.
 
-Only documents in the persistent data storage layer can be deleted.
-
-The optional parameter refresh can be used with the value wait_for in order to wait for the document to be deleted (and to no longer be available in search).
-
+The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (and to no longer be available in search).
 
 ## Arguments
 

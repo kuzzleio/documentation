@@ -10,7 +10,7 @@ order: 200
 
 Creates a new document in the persistent data storage.
 
-Returns an error if the document already exists.
+Throws an error if the document already exists.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
 

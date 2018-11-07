@@ -12,7 +12,6 @@ Gets multiple documents.
 
 Throws a partial error (error code 206) if one or more document can not be retrieved.
 
-
 ## Arguments
 
 ```cpp
@@ -41,7 +40,7 @@ Additional query options
 
 ## Return
 
-Returns a JSON string containing the retreived documents.
+Returns a JSON string containing the retrieved documents.
 
 ## Exceptions
 

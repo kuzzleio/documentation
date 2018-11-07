@@ -8,11 +8,9 @@ order: 200
 
 # mGet
 
-Given `document ids`, retrieves the corresponding documents from the database.
+Gets multiple documents.
 
-Only documents in the persistent data storage layer can be retrieved.
-
-Returns a [partial error]({{ site_base_path }}api-documentation/errors/#partialerror) (with status 206) if one or more document can not be retrieved.
+Throws a partial error (error code 206) if one or more document can not be retrieved.
 
 ## Arguments
 

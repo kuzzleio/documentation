@@ -8,7 +8,7 @@ order: 200
 
 # createOrReplace
 
-Creates a new document in the persistent data storage, or replace it if it already exists.
+Creates a new document in the persistent data storage, or replaces its content if it already exists.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
 
