@@ -9,7 +9,7 @@ order: 100
 
 # Connecting to Kuzzle
 
-A connection to Kuzzle can be made using different protocols. Currently Kuzzle ships with HTTP, WebSocket and Socket.io, but you can add other protocols using the [Protocol Plugins]({{ site_base_path }}plugins-reference).
+A connection to Kuzzle can be made using different protocols. Currently Kuzzle natively supports HTTP, WebSocket and Socket.io, but other protocols can be added by implementing the [Protocol]({{ site_base_path }}protocols/1) interface.
 
 ---
 
