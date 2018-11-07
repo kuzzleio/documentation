@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: GetLastStats
+title: getLastStats
 description: Returns the most recent statistics snapshot.
 order: 200
 ---
 
-# GetLastStats
+# getLastStats
 
 {{{since "1.0.0"}}}
 
@@ -42,7 +42,7 @@ Additional query options
 
 
 ## Return
-Returns the most recent statistics snapshot as `std::string`.
+Returns a JSON string representing the most recent statistics snapshot.
 
 ## Usage
 

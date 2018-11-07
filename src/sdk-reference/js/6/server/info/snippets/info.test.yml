@@ -3,5 +3,5 @@ description: Retrieves information about Kuzzle plugins and active services.
 hooks:
   before:
   after:
-template: asyncdefault
-expected: Success
+template: default
+expected: ^(Kuzzle Server information:) ({"serverInfo":{"kuzzle":{"version":"[0-9]\.[0-9]\.[0-9]","api":{.*}}})$

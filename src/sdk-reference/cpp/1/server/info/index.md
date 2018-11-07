@@ -35,7 +35,7 @@ Additional query options
 
 ## Return
 
-Returns current server information as `std::string`.
+Returns a JSON string representing the server information.
 
 ## Exceptions
 

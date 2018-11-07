@@ -3,5 +3,5 @@ description: Gets all stored internal statistic snapshots.
 hooks:
   before:
   after:
-template: asyncdefault
-expected: Success
+template: default
+expected: ^(Last Kuzzle Stats:) {("connections":{.*}),("ongoingRequests":{.*}),("completedRequests":{.*}),("failedRequests":{.*}),("timestamp":[0-9]{13})}$

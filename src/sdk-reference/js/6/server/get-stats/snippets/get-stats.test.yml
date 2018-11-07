@@ -3,5 +3,5 @@ description: Returns statistics snapshots within a provided timestamp range.
 hooks:
   before:
   after:
-template: asyncdefault
-expected: Success
+template: default
+expected: ^(Kuzzle Stats:) {"hits":\[({"connections":{.*},"ongoingRequests":{.*},"completedRequests":{}.*},"failedRequests":{.*},"timestamp":[0-9]{13}}(,)*)*\],"total":[0-9]+}$

@@ -1,7 +1,7 @@
-_, err := kuzzle.Server.GetConfig(nil)
+conf, err := kuzzle.Server.GetConfig(nil)
 
 if err != nil {
   log.Fatal(err)
 } else {
-  fmt.Println("Success")
+  fmt.Println("Kuzzle Server configuration as JSON string:", string(conf))
 }

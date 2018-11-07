@@ -38,7 +38,7 @@ Additional query options
 
 ## Return
 
-Returns current server configuration as `std::string`.
+Returns a JSON string representing current server configuration.
 
 ## Exceptions
 

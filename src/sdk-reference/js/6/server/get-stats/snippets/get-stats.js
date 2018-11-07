@@ -4,7 +4,7 @@ try {
     '1541426610304',
     null
   );
-  console.log('Success');
+  console.log('Kuzzle Stats:', JSON.stringify(stats));
 } catch (error) {
   console.error(error.message);
 }

@@ -1,7 +1,7 @@
 try {
-  kuzzle->server->getConfig();
+  std::string config = kuzzle->server->getConfig();
 
-  std::cout << "Success" << std::endl;
+  std::cout << "Kuzzle Server configuration as JSON string: " << config << std::endl;
 } catch (kuzzleio::KuzzleException e) {
   std::cerr << e.getMessage() << std::endl;
 }

@@ -14,7 +14,7 @@ Checks that an administrator account exists.
 
 ## Signature
 ```cpp
-bool adminExists(query_options *options);
+bool adminExists(query_options *options=nullptr);
 ```
 
 ## Arguments

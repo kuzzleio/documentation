@@ -43,7 +43,7 @@ Additional query options
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
-Returns statistics snapshots within a provided timestamp range as `std::string`.
+Returns a JSON string representing the statistics for the given period of time.
 
 ## Usage
 

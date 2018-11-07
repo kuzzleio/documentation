@@ -1,7 +1,7 @@
-_, err := kuzzle.Server.GetLastStats(nil)
+ls, err := kuzzle.Server.GetLastStats(nil)
 
 if err != nil {
   log.Fatal(err)
 } else {
-  fmt.Println("Success")
+  fmt.Println("Last Kuzzle Stats as JSON string:", string(ls))
 }

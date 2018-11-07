@@ -3,5 +3,5 @@ description: Fetch the current server timestamp, in Epoch-millis format.
 hooks:
   before:
   after:
-template: asyncdefault
-expected: Success
+template: default
+expected: ^(Epoch-millis timestamp:) [0-9]{13}$

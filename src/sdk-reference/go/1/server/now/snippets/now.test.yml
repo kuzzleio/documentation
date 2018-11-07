@@ -4,4 +4,4 @@ hooks:
   before:
   after:
 template: default
-expected: Success
+expected: ^(Epoch-millis timestamp:) [0-9]{13}$
