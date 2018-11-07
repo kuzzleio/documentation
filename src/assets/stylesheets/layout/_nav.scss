@@ -45,7 +45,19 @@
       padding-left: 16px;
     }
   }
-
+  
+  &__separator {
+    margin-top: 22px;
+    margin-bottom: 22px;
+    padding-bottom: 4px;
+    width: 90%;
+    border-bottom: 1px solid rgba(233,78,119,0.3);
+    
+    &:first-child {
+      margin-top: 8px;
+    }
+  }
+  
   // List item
   &__item {
     padding: 5px 1.2rem;

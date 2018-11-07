@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
 title: IoT
-order: 0
+order: 600
 description: IoT Code Examples
 ---
