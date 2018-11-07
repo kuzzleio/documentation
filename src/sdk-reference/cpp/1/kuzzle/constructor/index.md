@@ -37,7 +37,7 @@ Can be a hostname or an IP address.
 | `auto_reconnect`     | boolean            | Automatically reconnect after a connection loss                    | `true`   | no       |
 | `auto_replay`        | boolean            | Automatically replay queued requests on a `reconnected` event      | `false`  | no       |
 | `auto_resubscribe`   | boolean            | Automatically renew all subscriptions on a `reconnected` event     | `true`   | no       |
-| `offline_mode`       | enum Mode          | Offline mode configuration                                         | `MANUAL` | no       |
+| `offline_mode`       | enum Mode          | Offline mode configuration. `MANUAL` or `AUTO`                     | `MANUAL` | no       |
 | `queue_ttl`          | unsigned           | Time a queued request is kept during offline mode, in milliseconds | `120000` | no       |
 | `queue_max_size`     | unsigned long      | Number of maximum requests kept during offline mode                | `500`    | no       |
 | `replay_interval`    | unsigned long      | Delay between each replayed requests, in milliseconds              | `10`     | no       |
