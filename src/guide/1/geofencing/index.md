@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
 title: Geofencing
-order: 0
+order: 500
 description: Geofencing Code Examples
 ---
