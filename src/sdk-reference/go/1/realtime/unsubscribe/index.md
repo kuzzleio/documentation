@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: unsubscribe
+title: Unsubscribe
 description: Removes a subscription
 order: 200
 ---
 
-# unsubscribe
+# Unsubscribe
 
 Removes a subscription.
 

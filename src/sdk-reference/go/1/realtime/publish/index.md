@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: publish
+title: Publish
 description:
 order: 200
 ---
 
-# publish
+# Publish
 
 Sends a real-time `<message>` to Kuzzle. The `<message>` will be dispatched to all clients with subscriptions matching the `<index>`, the `<collection>` and the `<message>` content.  
 

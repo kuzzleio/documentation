@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: count
+title: Count
 description: Count subscribers for a subscription room
 order: 200
 ---
 
-# count
+# Count
 
 Returns the number of other connections sharing the same subscription.
 

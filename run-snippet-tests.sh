@@ -2,6 +2,8 @@
 
 set -e
 
+TRAVIS_PULL_REQUEST="${TRAVIS_PULL_REQUEST:-false}"
+
 function extract_language() {
   path=$1
   previous_part=""
