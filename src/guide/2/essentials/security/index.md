@@ -200,4 +200,4 @@ There are multiple ways of adding a business logic layer on top of the standard 
 
 * {{{deprecated "1.4.0"}}} Using [Permission Closures]({{ site_base_path }}guide/2/kuzzle-depth/roles-definitions), you can add functions directly into role definitions
 * If all you need is to make sure that submitted documents follow a strict set of formatting rules, you can add [document validators]({{ site_base_path }}validation-reference/schema/)
-* With a [Pipe Plugin]({{ site_base_path }}plugins-reference/2/plugins-features/adding-pipes), you can listen to one or multiple [API events]({{ site_base_path }}kuzzle-events/plugin-events/), and decide whether you accept a query or document according to your business rules
+* With a [Pipe Plugin]({{ site_base_path }}plugins/2/essentials/pipes), you can listen to one or multiple [API events]({{ site_base_path }}kuzzle-events/plugin-events/), and decide whether you accept a query or document according to your business rules
