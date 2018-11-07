@@ -44,7 +44,7 @@ Additional query options
 
 | Option | Type (default) | Description |
 | --- | --- | --- |
-| `queuable` | Boolean | Make this request queuable or not |
+| `queuable` | Boolean | If true, queues the request during downtime, until connected to Kuzzle again |
 | `refresh` | <pre>String</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 | `retryOnConflict` | <pre>int</pre> (`0`) | The number of times the database layer should retry in case of version conflict |
 

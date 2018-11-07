@@ -43,7 +43,7 @@ Search(
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `body` | <pre>json.RawMessage</pre> | A JSON string containing the search query |
-| `options` | <pre>types.QueryOptions</pre> | An struct containing query options |
+| `options` | <pre>types.QueryOptions</pre> | A struct containing query options |
 
 ### options
 
@@ -51,7 +51,7 @@ Additional query options
 
 | Option | Type (default) | Description |
 | --- | --- | --- |
-| `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
+| `Queuable` | <pre>bool</pre>  (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 | `From` | integer | Offset of the first document to fetch |
 | `Size` | integer | Maximum number of documents to retrieve per page  |
 | `Scroll` | <pre>string</pre> | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |

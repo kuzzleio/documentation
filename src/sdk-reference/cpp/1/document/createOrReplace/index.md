@@ -38,7 +38,7 @@ Additional query options
 
 | Option   | Type (default)    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
 | `refresh` | <pre>std::string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return

@@ -8,27 +8,32 @@ order: 200
 
 # <%= _.camelCase(action) %>
 
-## Signature
+## Arguments
 
 ```java
 void <%= _.camelCase(action) %>()
 ```
 
-## Arguments
+| Argument | Type | Description |
+| --- | --- | --- |
+| `index` | <pre>String</pre> | Index name |
+| `collection` | <pre>String</pre> | Collection name |
+| `id` | <pre>String</pre> | Optional document id. If set to a blank string, will use a auto-generated id |
+| `body` | <pre>String</pre> | A JSON string containing the body of the document |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``changeme`` | changme | changeme    | yes
+### Options
 
-### **arg1**
-
-### **arg2**
+| Option     | Type (default) | Description                       |
+| ---------- | -------------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `refresh` | <pre>String</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/essentials/error-handling).
 
 ## Usage
 

@@ -31,7 +31,7 @@ MUpdate(
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `documents` | <pre>json.RawMessage</pre> | A JSON string containing the documents to update |
-| `options` | <pre>types.QueryOptions</pre> | An struct containing query options |
+| `options` | <pre>types.QueryOptions</pre> | A struct containing query options |
 
 ### options
 
@@ -39,7 +39,7 @@ Additional query options
 
 | Option | Type (default) | Description |
 | --- | --- | --- |
-| `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
+| `Queuable` | <pre>bool</pre>  (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 | `Refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 | `RetryOnConflict` | int(`0`) | The number of times the database layer should retry in case of version conflict |
 

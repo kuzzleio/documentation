@@ -30,7 +30,7 @@ Validate(
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `body` | <pre>string</pre> | A JSON string containing the body of the document |
-| `options` | <pre>types.QueryOptions</pre> | An struct containing query options |
+| `options` | <pre>types.QueryOptions</pre> | A struct containing query options |
 
 ### options
 
@@ -38,7 +38,7 @@ Additional query options
 
 | Option | Type (default) | Description |
 | --- | --- | --- |
-| `Queuable` | <pre>bool</pre>  (`true`) | Make this request queuable or not |
+| `Queuable` | <pre>bool</pre>  (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 

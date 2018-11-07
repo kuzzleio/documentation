@@ -46,7 +46,7 @@ Additional query options
 
 | Options | Type (default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 | `from` | integer | Offset of the first document to fetch |
 | `size` | integer | Maximum number of documents to retrieve per page  |
 | `scroll` | std::string | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
