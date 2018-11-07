@@ -12,7 +12,7 @@ Update a document in Kuzzle.
 
 Only documents in the persistent data storage layer can be updated.
 
-Conflicts may occur if the same document gets updated multiple times within a short time on a database cluster. When this happens, Kuzzle answers with an error that clients have to handle.  
+Conflicts may occur if the same document gets updated multiple times within a short timespan, in a database cluster.
 You can set the `retryOnConflict` optional argument (with a retry count), to tell Kuzzle to retry the failing updates the specified amount of times before rejecting the request with an error.
 
 ## Arguments
