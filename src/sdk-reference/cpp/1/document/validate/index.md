@@ -12,7 +12,7 @@ Validates data against existing validation rules.
 
 Documents are always valid if no validation rules are defined on the provided index and collection.
 
-This request does **not** store or publish the document.
+This request does not store the document.
 
 
 ## Arguments
