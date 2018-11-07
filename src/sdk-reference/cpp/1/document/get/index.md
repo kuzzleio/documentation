@@ -8,9 +8,7 @@ order: 200
 
 # get
 
-Given a document id, retrieves the corresponding document from the database.
-
-Only documents in the persistent data storage layer can be retrieved.
+Gets a document.
 
 ## Arguments
 

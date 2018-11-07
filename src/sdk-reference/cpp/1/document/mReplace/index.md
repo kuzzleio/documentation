@@ -8,9 +8,9 @@ order: 200
 
 # mReplace
 
-Replaces documents in the persistent data storage.
+Replaces multiple documents.
 
-Returns a [partial error]({{ site_base_path }}api-documentation/errors/#partialerror) (with status 206) if one or more documents can not be replaced.
+Throws a partial error (error code 206) if one or more documents can not be replaced.
 
 ## Arguments
 

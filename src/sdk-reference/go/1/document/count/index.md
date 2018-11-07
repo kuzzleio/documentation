@@ -6,11 +6,11 @@ description: Count documents
 order: 200
 ---
 
-# count
+# Count
 
 Given some filters, gets the number of matching documents from Kuzzle.
 
-Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/query-dsl.html) syntax.
+Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
 
 
 ## Arguments

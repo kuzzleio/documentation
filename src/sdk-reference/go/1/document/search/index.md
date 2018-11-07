@@ -6,20 +6,12 @@ description:
 order: 200
 ---
 
-# search
+# Search
 
-Only documents in the persistent data storage layer can be searched.
+Searches documents.
 
-Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/query-dsl.html) syntax.
-
-An empty body matches all documents in the collection.
-
-Optional arguments:
-
-* `size` controls the maximum number of documents returned in the response. Cannot exceed 10000;
-* `from` is usually used with the `size` argument, and defines the offset from the first result you want to fetch
-* `scroll` allows to fetch large result sets, and it must be set with a [time duration](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units). If set, a forward-only cursor will be created (and automatically destroyed at the end of the set duration).
-This cursor can then be moved forward using the `next` method of the returned `SearchResult` struct.
+There is a limit to how many documents can be returned by a single search query.
+That limit is by default set at 10000 documents, and you can't get over it even with the from and size pagination options.
 
 <div class="alert alert-info">
   <p>

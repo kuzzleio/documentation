@@ -6,12 +6,11 @@ description:
 order: 200
 ---
 
-# deleteByQuery
+# DeleteByQuery
 
-Deletes all the documents from Kuzzle that match the given filter or query.
+Deletes documents matching the provided search query.
 
-Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/query-dsl.html) syntax.
-
+Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
 
 ## Arguments
 

@@ -8,11 +8,9 @@ order: 200
 
 # mGet
 
-Given `document ids`, retrieves the corresponding documents from the database.
+Gets multiple documents.
 
-Only documents in the persistent data storage layer can be retrieved.
-
-Returns a [partial error]({{ site_base_path }}api-documentation/errors/#partialerror) (with status 206) if one or more document can not be retrieved.
+Throws a partial error (error code 206) if one or more document can not be retrieved.
 
 
 ## Arguments
@@ -30,7 +28,7 @@ std::string mGet(
 | --- | --- | --- |
 | `index` | <pre>std::string</pre> | Index name |
 | `collection` | <pre>std::string</pre> | Collection name |
-| `ids` | std::vector<std::string> | The document ids |
+| `ids` | <pre>std::vector<std::string></pre> | The document ids |
 | `options` | <pre>query_options</pre> | A pointer to a `query_options` containing query options |
 
 ### options

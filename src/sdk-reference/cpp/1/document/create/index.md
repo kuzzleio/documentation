@@ -8,9 +8,9 @@ order: 200
 
 # create
 
-Create a new document in Kuzzle
+Creates a new document in the persistent data storage.
 
-Throws if a document with the same given id already exists in Kuzzle.
+Returns an error if the document already exists.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
 

@@ -8,9 +8,9 @@ order: 200
 
 # mCreateOrReplace
 
-Creates new documents in the persistent data storage.
+Creates or replaces multiple documents.
 
-Returns a partial error (with status 206) if one or more documents fail to create.
+Throws a partial error (error code 206) if one or more document creations/replacements fail.
 
 ## Arguments
 

@@ -6,11 +6,11 @@ description:
 order: 200
 ---
 
-# mCreate
+# MCreate
 
-Creates new documents in the persistent data storage.
+Creates multiple documents. 
 
-Returns a partial error (with status 206) if one or more documents fail to create.
+Returns a partial error (error code 206) if one or more documents creations fail.
 
 ## Arguments
 

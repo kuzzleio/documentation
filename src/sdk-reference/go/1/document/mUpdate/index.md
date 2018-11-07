@@ -6,13 +6,13 @@ description:
 order: 200
 ---
 
-# mUpdate
+# MUpdate
 
-Updates documents in the persistent data storage.
+Updates multiple documents.
 
-Returns a partial error (with status 206) if one or more documents can not be updated.
+Returns a partial error (error code 206) if one or more documents can not be updated.
 
-Conflicts may occur if the same document gets updated multiple times within a short time on a database cluster. When this happens, Kuzzle answers with an error that clients have to handle.  
+Conflicts may occur if the same document gets updated multiple times within a short timespan in a database cluster.
 You may set the `retryOnConflict` optional argument with a positive integer, asking Kuzzle to retry updating the document that number of times before rejecting the request with an error.
 
 ## Arguments

@@ -6,7 +6,7 @@ description:
 order: 200
 ---
 
-# validate
+# Validate
 
 Validates data against existing validation rules. 
 
