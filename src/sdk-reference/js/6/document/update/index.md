@@ -21,7 +21,7 @@ You may set the `retryOnConflict` optional argument with a positive integer, ask
 update (index, collection, id, body, [options])
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
@@ -29,7 +29,7 @@ update (index, collection, id, body, [options])
 | `body` | <pre>object</pre> | The partial content of the document to update |
 | `options` | <pre>object</pre> | An object containing query options. |
 
-###### Options
+### Options
 
 Additional query options
 

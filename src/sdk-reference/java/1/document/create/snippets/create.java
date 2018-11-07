@@ -1,5 +1,5 @@
 try {
-    String response = kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", "{\"licence\": \"valid\"}");
+    String response = kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", "{\"lastName\": \"Eggins\"}");
 
     System.out.println(response);
     /*
@@ -16,7 +16,7 @@ try {
       },
       "created": true,
       "_source": {
-        "licence": "valid",
+        "lastName": "Eggins",
         "_kuzzle_info": {
           "author": "-1",
           "createdAt": 1537445737667,

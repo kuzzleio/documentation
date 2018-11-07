@@ -18,7 +18,7 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 deleteByQuery(index, collection, body = {}, options = {})
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | String | Index name |
 | `collection` | String | Collection name |

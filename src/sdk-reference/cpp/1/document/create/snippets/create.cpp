@@ -4,7 +4,7 @@ try {
     "nyc-open-data",
     "yellow-taxi",
     "some-id",
-    R"({"license": "valid"})");
+    R"({"lastName": "Eggins"})");
 
   std::cout << "Document " << response << "Created" << std::endl;
   /*
@@ -21,7 +21,7 @@ try {
     },
     "created": true,
     "_source": {
-      "licence": "valid",
+      "lastName": "Eggins",
       "_kuzzle_info": {
         "author": "-1",
         "createdAt": 1537445737667,

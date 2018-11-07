@@ -17,17 +17,21 @@ try {
   options.scroll = "1m";
   options.size = 2;
 
-  kuzzleio::SearchResult* response = kuzzle->document->search("nyc-open-data", "yellow-taxi", R"(
-    {
+  kuzzleio::SearchResult* response = kuzzle->document->search(
+    "nyc-open-data",
+    "yellow-taxi",
+    R"({
       "query": {
         "match": {
           "category": "suv"
         }
       }
-    }
-  )", options);
+    })",
+    &options);
 
-  std::cout << "Successfully retrieved " << response->fetched << " documents" << std::endl;
+  kuzzleio::SearchResult* next_page = response->next();
+
+  std::cout << "Successfully retrieved " << next_page->fetched << " documents" << std::endl;
 } catch (kuzzleio::KuzzleException e) {
   std::cerr << e.getMessage() << std::endl;
 }

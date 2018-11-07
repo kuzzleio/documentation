@@ -20,7 +20,7 @@ Returns a [partial error]({{ site_base_path }}api-documentation/errors/#partiale
 mGet (index, collection, ids, [options])
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |

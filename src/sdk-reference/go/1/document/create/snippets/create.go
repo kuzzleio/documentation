@@ -1,4 +1,4 @@
-response, err := kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id", json.RawMessage(`{"licence": "valid"}`), nil)
+response, err := kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id", json.RawMessage(`{"lastName": "Eggins"}`), nil)
 
 if err != nil {
   log.Fatal(err)
@@ -18,7 +18,7 @@ if err != nil {
     },
     "created": true,
     "_source": {
-      "licence": "valid",
+      "lastName": "Eggins",
       "_kuzzle_info": {
         "author": "-1",
         "createdAt": 1537445737667,

@@ -22,7 +22,7 @@ String update(String, String, String, String, io.kuzzle.sdk.QueryOptions)
 String update(String, String, String, String)
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |

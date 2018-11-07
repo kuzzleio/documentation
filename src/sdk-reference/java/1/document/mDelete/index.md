@@ -31,7 +31,7 @@ io.kuzzle.sdk.StringVector mDelete(
 )
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |

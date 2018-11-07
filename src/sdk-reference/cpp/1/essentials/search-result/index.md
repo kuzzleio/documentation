@@ -9,25 +9,24 @@ order: 100
 
 When performing a search, Kuzzle returns an `SearchResult` object, which holds the items matching the given query and allow to drill through next result pages if applicable.
 
-The type of the `SearchResult` object depends on the method which is called. All these objects share some common properties.
+The type of the `SearchResult` object depends on the method which is called. `document.search` returns a `SearchResult` pointer, while `collection.searchSpecifications` returns a `SpecificationSearchResult`.
 
-## Common structure
+They both share the same properties.
 
-### Properties
+
+## Properties
 
 | Name | Type | Description |
 |--- |--- |--- |
-| aggregations | `std::string` | The search` aggregations if any |
-| hits | `std::string` | A JSON string containing the retrieved items |
-| total | unsigned | The total number of items matching the given query in Kuzzle database |
-| fetched | unsigned | The number of retrieved items so far |
-| scroll_id | std::string | A scroll identifier if the search was given a `scroll` parameter |
+| `aggregations` | <pre>std::string</pre> | The search` aggregations if any |
+| `hits` | <pre>std::string</pre> | A JSON string containing the retrieved items |
+| `total` | <pre>unsigned</pre> | The total number of items matching the given query in Kuzzle database |
+| `fetched` | <pre>unsigned</pre> | The number of retrieved items so far |
+| `scroll_id` | <pre>std::string</pre> | A scroll identifier if the search was given a `scroll` parameter |
 
-### Methods
+## Methods
 
 The `SearchResult` objects have a unique `next` method, which returns a new `SearchResult` object of the same type.
-
-#### Signature
 
 ```cpp
 SearchResult* SearchResult::next();
@@ -55,7 +54,7 @@ If no policy is applicable, the `next` method will throw an exception.
 
 **This is the preferred way to get some paginated results**.
 
-If the original search is given a `scroll` parameter, the `next` method will use the scroll_id to paginate results.
+If the original search is given a `scroll` parameter, the `next` method will use a cursor to paginate results.
 
 The results that are returned from a scroll request reflect the state of the index at the time the initial `search` request was performed, like a snapshot in time.
 
@@ -80,14 +79,6 @@ Because this method does not freeze the research between two calls, if some upda
     NB: It is not possible to retrieve more than 10000 items using this method. Above that limit, any call to <code>next</code> will throw an Exception.
   </p>
 </div>
-
-
-## SearchResult types
-
-| Name | Returned by | |
-|--- |--- |--- |
-| SearchResult | [`document.search`]({{ site_base_path }}/sdk-reference/cpp/1/document/search/) | 
-| SpecificationSearchResult | [`collection.searchSpecifications`]({{ site_base_path }}/sdk-reference/cpp/1/collection/searchSpecifications) | 
 
 ## Usage
 

@@ -17,7 +17,7 @@ Only documents in the persistent data storage layer can be replaced.
 replace (index, collection, _id, body, [options])
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
@@ -25,7 +25,7 @@ replace (index, collection, _id, body, [options])
 | `body` | <pre>object</pre> | The new content of the document to update |
 | `options` | <pre>object</pre> | An object containing query options. |
 
-###### Options
+### Options
 
 Additional query options
 

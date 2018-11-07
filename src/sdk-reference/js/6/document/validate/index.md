@@ -20,7 +20,7 @@ This request does **not** store or publish the document.
 validate (index, collection, body, [options])
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |

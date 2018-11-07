@@ -17,7 +17,7 @@ Only documents in the persistent data storage layer can be replaced.
 Replace(index string, collection string, _id string, body json.RawMessage, options types.QueryOptions) (json.RawMessage, error)
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |

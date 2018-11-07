@@ -33,7 +33,7 @@ This cursor can then be moved forward using the `next` method of the returned `s
 search (index, collection, [body], [options])
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |

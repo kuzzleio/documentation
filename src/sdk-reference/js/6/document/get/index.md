@@ -18,14 +18,14 @@ Only documents in the persistent data storage layer can be retrieved.
 get (index, collection, _id, options = {})
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `id` | <pre>string</pre> | The document id |
 | `options` | Object | An object containing query options. |
 
-###### Options
+### Options
 
 Additional query options
 

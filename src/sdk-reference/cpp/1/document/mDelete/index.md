@@ -22,11 +22,11 @@ std::vector<std::string> mDelete(
     const std::string& index, 
     const std::string& collection, 
     const std::vector<std::string>& ids, 
-    <pre>query_options</pre> *options=nullptr
+    kuzzleio::query_options *options=nullptr
 )
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>std::string</pre> | Index name |
 | `collection` | <pre>std::string</pre> | Collection name |

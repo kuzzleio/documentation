@@ -18,7 +18,7 @@ Returns a partial error (with status 206) if one or more documents fail to creat
 mCreateOrReplace (index, collection, documents, options = {})
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |

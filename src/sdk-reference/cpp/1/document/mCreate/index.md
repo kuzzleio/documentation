@@ -23,7 +23,7 @@ std::string mCreate(
 )
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>std::string</pre> | Index name |
 | `collection` | <pre>std::string</pre> | Collection name |

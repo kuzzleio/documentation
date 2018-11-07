@@ -18,7 +18,7 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 createOrReplace(index, collection, id, body, [options])
 ```
 
-| Arguments | Type | Description |
+| Argument | Type | Description |
 | --- | --- | --- |
 | `index` | String | Index name |
 | `collection` | String | Collection name |
