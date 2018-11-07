@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
-title: essentials
+title: Essentials
 order: 0
 separator: API
 ---
