@@ -8,8 +8,7 @@ order: 200
 
 # replace
 
-Replaces an existing document in the persistent data storage.
-Only documents in the persistent data storage layer can be replaced.
+Replaces the content of an existing document.
 
 ## Arguments
 
