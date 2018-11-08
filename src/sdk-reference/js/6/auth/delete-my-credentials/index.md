@@ -2,8 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: deleteMyCredentials
-description:
-order: 200
 ---
 
 # deleteMyCredentials

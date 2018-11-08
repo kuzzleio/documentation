@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: stopQueuing
 description: Stops the requests queuing
-order: 200
 ---
 
 # stopQueuing

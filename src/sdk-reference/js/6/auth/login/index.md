@@ -2,8 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: login
-description:
-order: 200
 ---
 
 # login
