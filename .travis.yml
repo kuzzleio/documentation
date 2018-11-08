@@ -140,7 +140,7 @@ jobs:
           fi;
 
     - stage: Snippets tests
-      name: "Deploy Kuzzle with failling tests"
+      name: "Temporarily Deploy Kuzzle Docs with failling tests"
 
       if: type != pull_request AND branch = master
 
