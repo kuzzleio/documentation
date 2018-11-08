@@ -218,7 +218,7 @@ hr {
 // ----------------------------------------------------------------------------
 
 .mobile-only {
-  display: none;
+  display: none !important;
   @include break-to-device(tablet) {
     display: block;
   }
