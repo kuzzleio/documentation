@@ -13,7 +13,8 @@ Updates multiple documents.
 Returns a partial error (error code 206) if one or more documents can not be updated.
 
 Conflicts may occur if the same document gets updated multiple times within a short timespan in a database cluster.
-You may set the `retryOnConflict` optional argument with a positive integer, asking Kuzzle to retry updating the document that number of times before rejecting the request with an error.
+
+You can set the `retryOnConflict` optional argument (with a retry count), to tell Kuzzle to retry the failing updates the specified amount of times before rejecting the request with an error.
 
 ## Arguments
 

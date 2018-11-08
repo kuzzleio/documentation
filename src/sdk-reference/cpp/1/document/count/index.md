@@ -21,7 +21,7 @@ int count(
     const std::string& index, 
     const std::string& collection, 
     const std::string& body, 
-    kuzzleio::query_options *options
+    kuzzleio::query_options *options=nullptr
 )
 ```
 
