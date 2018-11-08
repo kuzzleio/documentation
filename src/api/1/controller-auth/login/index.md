@@ -64,7 +64,7 @@ Depending on the chosen authentication strategy, additional [credential argument
 
 The API request example in this page provides the necessary arguments for the [`local` authentication plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local).
 
-Check the appropriate [authentication plugin]({{ site_base_path }}plugins-reference/1/plugins-features/adding-authentication-strategy/) documentation to get the list of additional arguments to provide.
+Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/essentials/strategies/) documentation to get the list of additional arguments to provide.
 
 ---
 

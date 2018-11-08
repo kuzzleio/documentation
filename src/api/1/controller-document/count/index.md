@@ -10,7 +10,7 @@ title: count
 
 Counts documents in a data collection.
 
-A query can be provided to alter the count result, otherwise return the total number of documents in the data collection.
+A query can be provided to alter the count result, otherwise returns the total number of documents in the data collection.
 
 ---
 

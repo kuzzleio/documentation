@@ -11,7 +11,7 @@ title: getCredentialsById
 
 Gets credential information for the user identified by the strategy's unique user identifier `userId`.
 
-The returned `result` object will vary depending on the strategy (see the [getById plugin function]({{ site_base_path }}plugins-reference/1/plugins-features/adding-authentication-strategy/#the-getbyid-function)), and it can be empty.
+The returned `result` object will vary depending on the strategy (see the [getById plugin function]({{ site_base_path }}plugins/1/essentials/strategies/#optional-getbyid-default)), and it can be empty.
 
 **Note:** the user identifier to use depends on the specified strategy. If you wish to get credential information using a [kuid]({{ site_base_path }}guide/1/essentials/user-authentication/#kuzzle-user-identifier-kuid) identifier, use the [getCredentials]({{ site_base_path }}api/1/controller-security/get-credentials/) API route instead.
 
