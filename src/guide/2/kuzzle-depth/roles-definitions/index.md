@@ -8,7 +8,7 @@ title: Advanced Roles Definitions
 
 In the [Getting Started Guide]({{ site_base_path }}guide/2/essentials/security/#user-permissions), we discussed how to assign basic permissions to users through roles and profiles. We are now going to look at more complex and dynamic permissions.
 
-Kuzzle's permissions mechanism uses boolean expressions to determine if a user can perform a specific action. So far we have shown how to limit access by hard-coding a boolean value inside the permissions configuration; however, in some cases, you will want to perform a more complex evaluation. For example, in a collaborative TO-DO application, a user should not be allowed to update another user's list. We can address this by using either a [**Pipe Plugin**]({{ site_base_path }}plugins-reference/2/plugins-features/adding-pipes) or **Permission Closures**.
+Kuzzle's permissions mechanism uses boolean expressions to determine if a user can perform a specific action. So far we have shown how to limit access by hard-coding a boolean value inside the permissions configuration; however, in some cases, you will want to perform a more complex evaluation. For example, in a collaborative TO-DO application, a user should not be allowed to update another user's list. We can address this by using either a [**Pipe Plugin**]({{ site_base_path }}plugins/2/essentials/pipes) or **Permission Closures**.
 
 ---
 
