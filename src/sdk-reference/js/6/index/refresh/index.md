@@ -47,9 +47,11 @@ Additional query options
 
 Resolves to an object containing the refresh status on shards.
 
-| Name     | Type   | Description                                                                   |
-| -------- | ------ | ----------------------------------------------------------------------------- |
-| \_shards | object | Refresh status on shards, contain 3 properties : total, successful and failed |
+| Name     | Type   | Description        |
+| -------- | ------ | ------------------|
+| total | number | Total shards |
+| successful | number | Total shards successfully refreshed |
+| failed | number | Total shards unsuccessfully refreshed |
 
 ## Usage
 

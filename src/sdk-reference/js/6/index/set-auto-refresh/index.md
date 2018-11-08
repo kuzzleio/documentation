@@ -50,11 +50,7 @@ Additional query options
 
 ## Resolve
 
-Resolve to an object containing the new value of autorefresh flag.
-
-| Name     | Type    | Description                                     |
-| -------- | ------- | ----------------------------------------------- |
-| response | boolean | new value for the autorefresh flag of the index |
+Resolve to a `boolean` indicating the new value of autorefresh flag.
 
 ## Usage
 
