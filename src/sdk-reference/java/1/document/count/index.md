@@ -8,7 +8,9 @@ order: 200
 
 # count
 
-Given some filters, gets the number of matching documents from Kuzzle.
+Counts documents in a data collection.
+
+A query can be provided to alter the count result, otherwise returns the total number of documents in the data collection.
 
 Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
 
