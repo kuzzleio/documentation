@@ -105,7 +105,7 @@ kuzzle.on("connected",function(error){
 
 Now that the document is created and stored in Kuzzle, let's perform a search that will return this document in the result.
 
-First we need to define the search criteria. Here we use the `match` term to find any document that has a `mountain` terrain. For additional terms refer to our [Elasticsearch Cookbook](http://docs.kuzzle.io/elasticsearch-cookbook) or Elasticsearch's own documentation.
+First we need to define the search criteria. Here we use the `match` term to find any document that has a `mountain` terrain. For additional terms refer to our [Elasticsearch Cookbook]({{ site_base_path }}elasticsearch-cookbook) or Elasticsearch's own documentation.
 
 We use the Collection `searchPromise` method to search for the document in Kuzzle only after the document is created:
 

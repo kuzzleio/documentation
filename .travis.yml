@@ -156,7 +156,6 @@ jobs:
         - aws s3 sync build/ s3://$AWS_S3_BUCKET/ --delete
         - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 
-
 # -----------------------------------------------------------------------------
 # Pull Request comment
 # -----------------------------------------------------------------------------
@@ -194,6 +193,3 @@ jobs:
 
       after_deploy:
         - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
-
-
-
