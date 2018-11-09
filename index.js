@@ -224,7 +224,6 @@ metalsmith
   .use(layouts({
     directory: 'src/templates'
   }));
-console.log('algolia : ', options.algolia.privateKey);
 
 if (options.algolia.privateKey) {
   log('Algolia indexing enabled');
