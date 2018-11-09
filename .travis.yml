@@ -24,8 +24,6 @@ install:
 
 stages:
   - name: Snippets tests
-  - name: Pull Request Comment
-    if: type = pull_request
   - name: Deployment
     if: type != pull_request AND branch = master
 
@@ -53,6 +51,8 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            bash ./.ci/comment_pr.sh
           fi;
 
     - stage: Snippets tests
@@ -74,6 +74,8 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            bash ./.ci/comment_pr.sh
           fi;
 
     - stage: Snippets tests
@@ -95,6 +97,8 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            bash ./.ci/comment_pr.sh
           fi;
 
     - stage: Snippets tests
@@ -116,6 +120,8 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            bash ./.ci/comment_pr.sh
           fi;
 
     - stage: Snippets tests
@@ -137,7 +143,10 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            bash ./.ci/comment_pr.sh
           fi;
+
 
     - stage: Snippets tests
       name: "Temporarily Deploy Kuzzle Docs with failling tests"
@@ -155,20 +164,6 @@ jobs:
       after_success:
         - aws s3 sync build/ s3://$AWS_S3_BUCKET/ --delete
         - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
-
-# -----------------------------------------------------------------------------
-# Pull Request comment
-# -----------------------------------------------------------------------------
-    - stage: Pull Request Comment
-      name: "Report Snippets tests status"
-
-      language: minimal
-
-      before_script:
-        - cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
-
-      script:
-        - bash ./.ci/comment_pr.sh
 
 # -----------------------------------------------------------------------------
 # Deployment
