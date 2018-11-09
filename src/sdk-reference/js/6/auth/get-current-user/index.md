@@ -2,8 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: getCurrentUser
-description:
-order: 200
 ---
 
 # getCurrentUser

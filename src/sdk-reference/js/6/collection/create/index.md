@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: create
 description: Create a new collection
-order: 200
 ---
 
 # create

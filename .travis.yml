@@ -139,6 +139,23 @@ jobs:
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
           fi;
 
+    - stage: Snippets tests
+      name: "Temporarily Deploy Kuzzle Docs with failling tests"
+
+      if: type != pull_request AND branch = master
+
+      language: node_js
+      node_js:
+        - "8"
+
+      script:
+        - npm install
+        - npm run build
+
+      after_success:
+        - aws s3 sync build/ s3://$AWS_S3_BUCKET/ --delete
+        - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+
 # -----------------------------------------------------------------------------
 # Pull Request comment
 # -----------------------------------------------------------------------------
@@ -176,6 +193,3 @@ jobs:
 
       after_deploy:
         - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
-
-
-

@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: mDelete
 description: Deletes multiple indexes
-order: 600
 ---
 
 # mDelete

@@ -12,9 +12,7 @@
 int main() {
   std::string hostname = "kuzzle";
 
-  kuzzleio::options kuzzle_options;
-
-  kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(hostname, &kuzzle_options);
+  kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(hostname);
 
   char* error = kuzzle->connect();
   if (error != nullptr) {

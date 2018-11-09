@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: GetCurrentUser
 description: Returns the profile object for the user linked to the `JSON Web Token`
-order: 200
 ---
 
 # GetCurrentUser

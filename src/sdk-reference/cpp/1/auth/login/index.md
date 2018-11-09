@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: login
 description: Authenticate a user
-order: 200
 ---
 
 # login

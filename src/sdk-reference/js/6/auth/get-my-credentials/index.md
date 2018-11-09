@@ -2,8 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: getMyCredentials
-description:
-order: 200
 ---
 
 # getMyCredentials
