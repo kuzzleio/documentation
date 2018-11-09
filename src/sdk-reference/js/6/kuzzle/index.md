@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
 title: Kuzzle
-description: Kuzzle object
+description: Kuzzle object documentation
 order: 100
 ---
-
-# Kuzzle object

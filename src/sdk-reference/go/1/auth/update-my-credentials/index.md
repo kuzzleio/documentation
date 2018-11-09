@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: UpdateMyCredentials
 description: Update the current user's credentials for the specified `<strategy>`.
-order: 200
 ---
 
 # UpdateMyCredentials

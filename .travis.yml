@@ -150,10 +150,11 @@ jobs:
 
       script:
         - npm install
-        - npm build
+        - npm run build
 
-      after_script:
+      after_success:
         - aws s3 sync build/ s3://$AWS_S3_BUCKET/ --delete
+        - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 
 # -----------------------------------------------------------------------------
 # Pull Request comment

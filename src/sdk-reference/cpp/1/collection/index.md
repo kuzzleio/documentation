@@ -1,8 +1,6 @@
 ---
 layout: sdk.html.hbs
-title: Collection
-description: Collection Controller
-order: 200
+title: collection
+description: collection controller documentation
 ---
 
-# Collection Controller
