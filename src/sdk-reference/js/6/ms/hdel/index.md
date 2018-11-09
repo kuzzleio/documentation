@@ -2,11 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: hdel
-description:
 ---
 
 # hdel
-
 
 Removes fields from a hash.
 
@@ -15,21 +13,28 @@ Removes fields from a hash.
 ## Arguments
 
 ```js
-hdel (...args) {}
-
+hdel(key, fields, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Hash key |
+| `fields` | <pre>string[]</pre> | Field keys to delete |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the number of deleted fields.
 
 ## Usage
 

@@ -2,11 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: bitpos
-description:
 ---
 
 # bitpos
-
 
 Returns the position of the first bit set to 1 or 0 in a string, or in a substring.
 
@@ -15,7 +13,7 @@ Returns the position of the first bit set to 1 or 0 in a string, or in a substri
 ## Arguments
 
 ```js
-bitpos (...args) {}
+bitpos(key, bit, [options])
 
 ```
 
@@ -23,13 +21,23 @@ bitpos (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| `bit` | <pre>integer</pre> | Bit to look for.<br/>Accepted values: `0`, `1` |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| ``end`` | <pre>integer</pre> | Search ends at the provided offset |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
+| `start` | <pre>integer</pre> | Search starts at the provided offset |
 
 ## Resolve
+
+Resolves to the position of the first bit found matching the searched value.
 
 ## Usage
 

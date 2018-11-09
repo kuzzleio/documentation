@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: dbsize
-description:
 ---
 
 # dbsize
@@ -15,7 +14,7 @@ Returns the number of keys in the application database.
 ## Arguments
 
 ```js
-dbsize (...args) {}
+dbsize([options])
 
 ```
 
@@ -23,13 +22,19 @@ dbsize (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the number of found keys.
 
 ## Usage
 

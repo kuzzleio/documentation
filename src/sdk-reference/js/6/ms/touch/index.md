@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: touch
-description:
 ---
 
 # touch
@@ -15,7 +14,7 @@ Alters the last access time of one or multiple keys. A key is ignored if it does
 ## Arguments
 
 ```js
-touch (...args) {}
+touch(key, [options])
 
 ```
 
@@ -23,11 +22,16 @@ touch (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 

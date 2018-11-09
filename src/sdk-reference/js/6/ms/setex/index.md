@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: setex
-description:
 ---
 
 # setex
@@ -15,8 +14,8 @@ Sets a value and a time to live (in seconds) on a key. If the key already exists
 ## Arguments
 
 ```js
-psetex (...args) {}
-setex (...args) {}
+psetex(key, [options])
+setex(key, [options])
 
 ```
 
@@ -24,11 +23,16 @@ setex (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 

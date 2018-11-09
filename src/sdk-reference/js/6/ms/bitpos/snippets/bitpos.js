@@ -1,5 +1,9 @@
 try {
-  await kuzzle.ms.bitpos();
+  await kuzzle.ms.set('key', '\x00\x00\x01');
+
+  // Prints: 23
+  console.log(await kuzzle.ms.bitpos('key', 1));
+
   console.log('Success');
 } catch (error) {
   console.error(error.message);

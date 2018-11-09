@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: pfcount
-description:
 ---
 
 # pfcount
@@ -15,7 +14,7 @@ Returns the probabilistic cardinality of a [HyperLogLog](https://en.wikipedia.or
 ## Arguments
 
 ```js
-pfcount (...args) {}
+pfcount(key, [options])
 
 ```
 
@@ -23,11 +22,16 @@ pfcount (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 

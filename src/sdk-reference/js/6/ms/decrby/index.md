@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: decrby
-description:
 ---
 
 # decrby
@@ -15,7 +14,7 @@ Decrements the number stored at `key` by a provided integer value. If the key do
 ## Arguments
 
 ```js
-decrby (...args) {}
+decrby(key, decrement, [options])
 
 ```
 
@@ -23,13 +22,21 @@ decrby (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| `decrement` | <pre>integer</pre> | Decrement value |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the updated key value.
 
 ## Usage
 

@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: append
-description:
 ---
 
 # append
@@ -15,21 +14,29 @@ Appends a value to a key. If the key does not exist, it is created.
 ## Arguments
 
 ```js
-append (...args) {}
-
+append(key, value, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| ``key`` | <pre>string</pre> | Key  |
+| ``value`` | <pre>string</pre> | Value to append   |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
+
 
 ## Resolve
+
+Returns the updated value length.
 
 ## Usage
 

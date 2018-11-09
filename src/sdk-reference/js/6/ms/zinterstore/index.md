@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: zinterstore
-description:
 ---
 
 # zinterstore
@@ -15,7 +14,7 @@ Computes the intersection of the provided sorted sets, and stores the result in 
 ## Arguments
 
 ```js
-zinterstore (...args) {}
+zinterstore(key, [options])
 
 ```
 
@@ -23,11 +22,16 @@ zinterstore (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 

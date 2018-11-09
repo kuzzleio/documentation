@@ -2,11 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: getbit
-description:
 ---
 
 # getbit
-
 
 Returns the bit value at the provided offset, in the string value stored in a key.
 
@@ -15,7 +13,7 @@ Returns the bit value at the provided offset, in the string value stored in a ke
 ## Arguments
 
 ```js
-getbit (...args) {}
+getbit(key, offset, options])
 
 ```
 
@@ -23,13 +21,21 @@ getbit (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| `offset` | <pre>integer</pre> | Bit offset |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the bit at the provided offset (`0` or `1`).
 
 ## Usage
 

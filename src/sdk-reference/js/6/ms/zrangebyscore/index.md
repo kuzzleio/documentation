@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: zrangebyscore
-description:
 ---
 
 # zrangebyscore
@@ -17,7 +16,7 @@ The elements are considered to be ordered from low to high scores.
 ## Arguments
 
 ```js
-zrangebyscore (...args) {}
+zrangebyscore(key, [options])
 
 ```
 
@@ -25,11 +24,16 @@ zrangebyscore (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 

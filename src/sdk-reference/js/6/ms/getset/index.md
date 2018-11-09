@@ -2,11 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: getset
-description:
 ---
 
 # getset
-
 
 Sets a new value for a key, and returns its previously stored value.
 
@@ -15,21 +13,28 @@ Sets a new value for a key, and returns its previously stored value.
 ## Arguments
 
 ```js
-getset (...args) {}
-
+getset(key, value, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| `value` | <pre>*</pre> | New key value. |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the previously set value, or `null` if the key didn't exist prior to this operation.
 
 ## Usage
 

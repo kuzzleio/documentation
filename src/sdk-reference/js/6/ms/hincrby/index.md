@@ -2,11 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: hincrby
-description:
 ---
 
 # hincrby
-
 
 Increments the number stored in a hash field by the provided integer value.
 
@@ -15,7 +13,7 @@ Increments the number stored in a hash field by the provided integer value.
 ## Arguments
 
 ```js
-hincrby (...args) {}
+hincrby(key, field, increment, [options])
 
 ```
 
@@ -23,13 +21,22 @@ hincrby (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Hash key |
+| `field` | <pre>string</pre> | Field name |
+| `increment` | <pre>integer</pre> | Increment value |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the updated value of the hash's field.
 
 ## Usage
 

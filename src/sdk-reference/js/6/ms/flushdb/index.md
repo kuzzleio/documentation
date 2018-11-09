@@ -2,11 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: flushdb
-description:
 ---
 
 # flushdb
-
 
 Empties the database dedicated to client applications (the reserved space for Kuzzle is unaffected).
 
@@ -15,21 +13,26 @@ Empties the database dedicated to client applications (the reserved space for Ku
 ## Arguments
 
 ```js
-flushdb (...args) {}
-
+flushdb([options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to `undefined` once the operation completes.
 
 ## Usage
 

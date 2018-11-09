@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: del
-description:
 ---
 
 # del
@@ -15,22 +14,27 @@ Deletes a list of keys.
 ## Arguments
 
 ```js
-del (...args) {}
-hdel (...args) {}
-
+del(keys, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `keys` | <pre>string[]</pre> | Keys to delete |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the number of deleted keys.
 
 ## Usage
 

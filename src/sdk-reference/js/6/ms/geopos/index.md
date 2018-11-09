@@ -2,20 +2,19 @@
 layout: sdk.html.hbs
 algolia: true
 title: geopos
-description:
 ---
 
 # geopos
 
 
-Returns the position (`[longitude, latitude]`) of the provided key's members (see [geoadd]({{ site_base_path }}api/1/controller-memory-storage/geoadd/)).  
+Returns the positions of the provided key's members (see [geoadd]({{ site_base_path }}sdk-reference/js/6/ms/geoadd/)).  
 
 [[_Redis documentation_]](https://redis.io/commands/geopos)
 
 ## Arguments
 
 ```js
-geopos (...args) {}
+geopos(key, geopoints, [options])
 
 ```
 
@@ -23,13 +22,21 @@ geopos (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| `geopoints` | <pre>string[]</pre> | List of geopoints to return |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the members positions (`[longitude, latitude]`), in the same order than the one provided in the query.
 
 ## Usage
 

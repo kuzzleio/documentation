@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: incrbyfloat
-description:
 ---
 
 # incrbyfloat
@@ -15,8 +14,8 @@ Increments the number stored at `key` by the provided float value. If the key do
 ## Arguments
 
 ```js
-hincrbyfloat (...args) {}
-incrbyfloat (...args) {}
+hincrbyfloat(key, [options])
+incrbyfloat(key, [options])
 
 ```
 
@@ -24,11 +23,16 @@ incrbyfloat (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 

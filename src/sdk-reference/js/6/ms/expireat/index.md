@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: expireat
-description:
 ---
 
 # expireat
@@ -10,29 +9,33 @@ description:
 
 Sets an expiration timestamp on a key. After the timestamp has been reached, the key will automatically be deleted.
 
-The `timestamp` parameter accepts an [Epoch time](https://en.wikipedia.org/wiki/Unix_time) value.
-
 [[_Redis documentation_]](https://redis.io/commands/expireat)
 
 ## Arguments
 
 ```js
-expireat (...args) {}
-pexpireat (...args) {}
-
+expireat(key, timestamp, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| `timestamp` | <pre>integer</pre> | Expiration timestamp ([Epoch](https://en.wikipedia.org/wiki/Unix_time) format) |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to a boolean telling whether the operation was successful or not.
 
 ## Usage
 

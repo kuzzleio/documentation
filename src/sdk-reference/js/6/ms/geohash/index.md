@@ -2,20 +2,19 @@
 layout: sdk.html.hbs
 algolia: true
 title: geohash
-description:
 ---
 
 # geohash
 
 
-Converts a key's geopoints (see [geoadd]({{ site_base_path }}api/1/controller-memory-storage/geoadd/)) into [geohashes](https://en.wikipedia.org/wiki/Geohash).
+Converts a key's geopoints (see [geoadd]({{ site_base_path }}sdk-reference/js/6/ms/geoadd/)) into [geohashes](https://en.wikipedia.org/wiki/Geohash).
 
 [[_Redis documentation_]](https://redis.io/commands/geohash)
 
 ## Arguments
 
 ```js
-geohash (...args) {}
+geohash(key, geopoints, [options])
 
 ```
 
@@ -23,13 +22,21 @@ geohash (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| `geopoints` | <pre>string[]</pre> | List of geopoints to convert |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to an array of converted geohashes, in the same order than the one provided in the query.
 
 ## Usage
 

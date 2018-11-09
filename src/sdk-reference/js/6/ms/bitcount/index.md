@@ -2,11 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: bitcount
-description:
 ---
 
 # bitcount
-
 
 Counts the number of set bits (population counting) in a string.  
 
@@ -15,21 +13,30 @@ Counts the number of set bits (population counting) in a string.
 ## Arguments
 
 ```js
-bitcount (...args) {}
-
+bitcount(key, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
 
-### arg2
+### options
+
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| ``end`` | <pre>integer</pre> | Count ends at the provided offset |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
+| `start` | <pre>integer</pre> | Count starts at the provided offset |
 
 ## Resolve
+
+Resolves to the number of set bits.
 
 ## Usage
 

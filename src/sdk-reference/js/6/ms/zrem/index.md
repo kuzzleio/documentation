@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: zrem
-description:
 ---
 
 # zrem
@@ -15,7 +14,7 @@ Removes members from a sorted set.
 ## Arguments
 
 ```js
-zrem (...args) {}
+zrem(key, [options])
 
 ```
 
@@ -23,11 +22,16 @@ zrem (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 

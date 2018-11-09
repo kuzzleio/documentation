@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: pfmerge
-description:
 ---
 
 # pfmerge
@@ -15,7 +14,7 @@ Merges multiple [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data st
 ## Arguments
 
 ```js
-pfmerge (...args) {}
+pfmerge(key, [options])
 
 ```
 
@@ -23,11 +22,16 @@ pfmerge (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Key |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 

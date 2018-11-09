@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 algolia: true
 title: hget
-description:
 ---
 
 # hget
@@ -15,7 +14,7 @@ Returns the field's value of a hash.
 ## Arguments
 
 ```js
-hget (...args) {}
+hget(key, field, [options])
 
 ```
 
@@ -23,13 +22,21 @@ hget (...args) {}
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `key` | <pre>string</pre> | Hash key |
+| `field` | <pre>string</pre> | Field name |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Returns the field's value.
 
 ## Usage
 

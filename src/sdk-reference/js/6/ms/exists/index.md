@@ -2,11 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: exists
-description:
 ---
 
 # exists
-
 
 Checks if the specified keys exist in the database.
 
@@ -15,22 +13,27 @@ Checks if the specified keys exist in the database.
 ## Arguments
 
 ```js
-exists (...args) {}
-hexists (...args) {}
-
+exists(keys, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+| `keys` | <pre>string[]</pre> | Keys to check for existence |
+| ``options`` | <pre>object</pre> | Optional query arguments |
 
-### arg1
+### options
 
-### arg2
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the number of existing keys.
 
 ## Usage
 
