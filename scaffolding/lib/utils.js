@@ -58,11 +58,12 @@ function injectDescription({ action, controller }, actionPath) {
 
   const
     content = fs.readFileSync(actionFile, 'utf8'),
-    regexp = new RegExp(/---\n([\s\S]+)## Query Syntax/),
-    result = content.match(regexp) || [];
+    regexp = new RegExp(`# ${_.camelCase(action)}\\n([\\s\\S]+?)---`),
+    result = content.match(regexp);
 
-  if (result.length === 0) {
+  if (!result) {
     console.log('Cannot extract the action description :(');
+    return;
   }
 
   const
