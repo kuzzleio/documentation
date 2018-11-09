@@ -1,0 +1,7 @@
+name: ms#pfcount
+description:
+hooks:
+  before:
+  after:
+template: asyncdefault
+expected: Success

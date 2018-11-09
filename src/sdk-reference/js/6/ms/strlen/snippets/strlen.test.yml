@@ -1,0 +1,7 @@
+name: ms#strlen
+description:
+hooks:
+  before:
+  after:
+template: asyncdefault
+expected: Success

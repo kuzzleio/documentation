@@ -1,0 +1,7 @@
+name: ms#spop
+description:
+hooks:
+  before:
+  after:
+template: asyncdefault
+expected: Success

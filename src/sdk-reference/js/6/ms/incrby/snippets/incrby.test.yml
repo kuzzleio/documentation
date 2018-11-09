@@ -1,0 +1,7 @@
+name: ms#incrby
+description:
+hooks:
+  before:
+  after:
+template: asyncdefault
+expected: Success

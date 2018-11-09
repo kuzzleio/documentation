@@ -1,0 +1,7 @@
+name: ms#georadius
+description:
+hooks:
+  before:
+  after:
+template: asyncdefault
+expected: Success

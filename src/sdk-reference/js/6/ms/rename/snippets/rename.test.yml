@@ -1,0 +1,7 @@
+name: ms#rename
+description:
+hooks:
+  before:
+  after:
+template: asyncdefault
+expected: Success

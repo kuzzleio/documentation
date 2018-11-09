@@ -1,0 +1,7 @@
+name: ms#sadd
+description:
+hooks:
+  before:
+  after:
+template: asyncdefault
+expected: Success
