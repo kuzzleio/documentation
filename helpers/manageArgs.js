@@ -1,5 +1,4 @@
 const manageArgs = (args, options) => {
-  console.log(args);
 
   if (args.dev) {
     options.dev.enabled = true;
