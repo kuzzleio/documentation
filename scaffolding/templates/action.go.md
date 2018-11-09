@@ -1,23 +1,21 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: <%= action %>
+title: <%= _.camelCase(action) %>
 description:
 ---
 
 # <%= _.camelCase(action) %>
 
-## Signature
+## Arguments
 
 ```go
 <%= _.upperFirst(_.camelCase(action)) %>() error
 ```
 
-## Arguments
-
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``changeme`` | changme | changeme    | yes
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``changeme`` | <pre>changme</pre> | changeme    |
 
 ### **arg1**
 

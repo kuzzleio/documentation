@@ -1,7 +1,7 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: <%= action %>
+title: <%= _.camelCase(action) %>
 description:
 ---
 
