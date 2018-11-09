@@ -6,20 +6,11 @@ description:
 ---
 
 # object
-layout: full.html.hbs
-algolia: true
-title: object
----
 
-# object
-
-{{{since "1.0.0"}}}
 
 Inspects the low-level properties of a key.
 
 [[_Redis documentation_]](https://redis.io/commands/object)
-
----
 
 ## Arguments
 

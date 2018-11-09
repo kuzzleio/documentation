@@ -6,20 +6,11 @@ description:
 ---
 
 # mset
-layout: full.html.hbs
-algolia: true
-title: mset
----
 
-# mset
-
-{{{since "1.0.0"}}}
 
 Sets the provided keys to their respective values. If a key does not exist, it is created. Otherwise, the key's value is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/mset)
-
----
 
 ## Arguments
 

@@ -6,20 +6,11 @@ description:
 ---
 
 # mget
-layout: full.html.hbs
-algolia: true
-title: mget
----
 
-# mget
-
-{{{since "1.0.0"}}}
 
 Returns the values of the provided keys.
 
 [[_Redis documentation_]](https://redis.io/commands/mget)
-
----
 
 ## Arguments
 

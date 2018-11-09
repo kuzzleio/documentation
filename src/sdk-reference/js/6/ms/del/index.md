@@ -6,18 +6,11 @@ description:
 ---
 
 # del
-layout: full.html.hbs
-algolia: true
-title: del
----
 
-{{{since "1.0.0"}}}
 
 Deletes a list of keys.
 
 [[_Redis documentation_]](https://redis.io/commands/del)
-
----
 
 ## Arguments
 

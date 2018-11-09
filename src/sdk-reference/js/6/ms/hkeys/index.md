@@ -6,20 +6,11 @@ description:
 ---
 
 # hkeys
-layout: full.html.hbs
-algolia: true
-title: hkeys
----
 
-# hkeys
-
-{{{since "1.0.0"}}}
 
 Returns all field names contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hkeys)
-
----
 
 ## Arguments
 

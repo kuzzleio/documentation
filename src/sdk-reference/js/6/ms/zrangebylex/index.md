@@ -6,20 +6,11 @@ description:
 ---
 
 # zrangebylex
-layout: full.html.hbs
-algolia: true
-title: zrangebylex
----
 
-# zrangebylex
-
-{{{since "1.0.0"}}}
 
 Returns elements within a provided interval, in a sorted set where all members have equal score, using lexicographical ordering. 
 
 [[_Redis documentation_]](https://redis.io/commands/zrangebylex)
-
----
 
 ## Arguments
 

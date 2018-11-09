@@ -6,22 +6,13 @@ description:
 ---
 
 # geodist
-layout: full.html.hbs
-algolia: true
-title: geodist
----
 
-# geodist
-
-{{{since "1.0.0"}}}
 
 Returns the distance between two geospatial members of a key (see [geoadd]({{ site_base_path }}api/1/controller-memory-storage/geoadd/)).
 
 The returned distance is expressed in meters by default.
 
 [[_Redis documentation_]](https://redis.io/commands/geodist)
-
----
 
 ## Arguments
 

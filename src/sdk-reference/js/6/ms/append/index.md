@@ -6,20 +6,11 @@ description:
 ---
 
 # append
-layout: full.html.hbs
-algolia: true
-title: append
----
 
-# append
-
-{{{since "1.0.0"}}}
 
 Appends a value to a key. If the key does not exist, it is created.
 
 [[_Redis documentation_]](https://redis.io/commands/append)
-
----
 
 ## Arguments
 

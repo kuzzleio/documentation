@@ -6,20 +6,11 @@ description:
 ---
 
 # ping
-layout: full.html.hbs
-algolia: true
-title: ping
----
 
-# ping
-
-{{{since "1.0.0"}}}
 
 Pings the memory storage database.
 
 [[_Redis documentation_]](https://redis.io/commands/ping)
-
----
 
 ## Arguments
 

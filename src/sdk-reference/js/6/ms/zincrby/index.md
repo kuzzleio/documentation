@@ -6,20 +6,11 @@ description:
 ---
 
 # zincrby
-layout: full.html.hbs
-algolia: true
-title: zincrby
----
 
-# zincrby
-
-{{{since "1.0.0"}}}
 
 Increments the score of a sorted set member by the provided value.
 
 [[_Redis documentation_]](https://redis.io/commands/zincrby)
-
----
 
 ## Arguments
 

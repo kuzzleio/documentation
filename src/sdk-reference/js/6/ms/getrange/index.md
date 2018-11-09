@@ -6,20 +6,11 @@ description:
 ---
 
 # getrange
-layout: full.html.hbs
-algolia: true
-title: getrange
----
 
-# getrange
-
-{{{since "1.0.0"}}}
 
 Returns a substring of a key's value.
 
 [[_Redis documentation_]](https://redis.io/commands/getrange)
-
----
 
 ## Arguments
 

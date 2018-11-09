@@ -6,20 +6,11 @@ description:
 ---
 
 # hstrlen
-layout: full.html.hbs
-algolia: true
-title: hstrlen
----
 
-# hstrlen
-
-{{{since "1.0.0"}}}
 
 Returns the string length of a field's value in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hstrlen)
-
----
 
 ## Arguments
 

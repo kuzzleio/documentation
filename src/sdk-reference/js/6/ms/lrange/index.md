@@ -6,14 +6,7 @@ description:
 ---
 
 # lrange
-layout: full.html.hbs
-algolia: true
-title: lrange
----
 
-# lrange
-
-{{{since "1.0.0"}}}
 
 Returns the list elements between the `start` and `stop` positions.
 
@@ -21,8 +14,6 @@ Offsets start at `0`, and the range is inclusive.
 
 [[_Redis documentation_]](https://redis.io/commands/lrange)
 
-
----
 
 ## Arguments
 

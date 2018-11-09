@@ -6,20 +6,11 @@ description:
 ---
 
 # pexpire
-layout: full.html.hbs
-algolia: true
-title: pexpire
----
 
-# pexpire
-
-{{{since "1.0.0"}}}
 
 Sets a timeout (in milliseconds) on a key. After the timeout has expired, the key will automatically be deleted.
 
 [[_Redis documentation_]](https://redis.io/commands/pexpire)
-
----
 
 ## Arguments
 

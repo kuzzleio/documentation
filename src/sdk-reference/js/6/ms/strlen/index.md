@@ -6,20 +6,11 @@ description:
 ---
 
 # strlen
-layout: full.html.hbs
-algolia: true
-title: strlen
----
 
-# strlen
-
-{{{since "1.0.0"}}}
 
 Returns the length of a value.
 
 [[_Redis documentation_]](https://redis.io/commands/strlen)
-
----
 
 ## Arguments
 

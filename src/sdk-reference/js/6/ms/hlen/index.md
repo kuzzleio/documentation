@@ -6,20 +6,11 @@ description:
 ---
 
 # hlen
-layout: full.html.hbs
-algolia: true
-title: hlen
----
 
-# hlen
-
-{{{since "1.0.0"}}}
 
 Returns the number of fields contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hlen)
-
----
 
 ## Arguments
 

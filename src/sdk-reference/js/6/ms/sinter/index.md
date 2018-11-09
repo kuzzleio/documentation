@@ -6,20 +6,11 @@ description:
 ---
 
 # sinter
-layout: full.html.hbs
-algolia: true
-title: sinter
----
 
-# sinter
-
-{{{since "1.0.0"}}}
 
 Returns the intersection of the provided sets of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sinter)
-
----
 
 ## Arguments
 

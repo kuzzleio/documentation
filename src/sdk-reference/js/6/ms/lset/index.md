@@ -6,20 +6,11 @@ description:
 ---
 
 # lset
-layout: full.html.hbs
-algolia: true
-title: lset
----
 
-# lset
-
-{{{since "1.0.0"}}}
 
 Sets the list element at `index` with the provided value.
 
 [[_Redis documentation_]](https://redis.io/commands/lset)
-
----
 
 ## Arguments
 

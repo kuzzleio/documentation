@@ -6,20 +6,11 @@ description:
 ---
 
 # zrem
-layout: full.html.hbs
-algolia: true
-title: zrem
----
 
-# zrem
-
-{{{since "1.0.0"}}}
 
 Removes members from a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zrem)
-
----
 
 ## Arguments
 

@@ -6,20 +6,11 @@ description:
 ---
 
 # hget
-layout: full.html.hbs
-algolia: true
-title: hget
----
 
-# hget
-
-{{{since "1.0.0"}}}
 
 Returns the field's value of a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hget)
-
----
 
 ## Arguments
 

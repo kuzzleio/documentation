@@ -6,20 +6,11 @@ description:
 ---
 
 # sunion
-layout: full.html.hbs
-algolia: true
-title: sunion
----
 
-# sunion
-
-{{{since "1.0.0"}}}
 
 Returns the union of sets of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sunion)
-
----
 
 ## Arguments
 

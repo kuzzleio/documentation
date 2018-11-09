@@ -6,20 +6,11 @@ description:
 ---
 
 # hexists
-layout: full.html.hbs
-algolia: true
-title: hexists
----
 
-# hexists
-
-{{{since "1.0.0"}}}
 
 Checks if a field exists in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hexists)
-
----
 
 ## Arguments
 

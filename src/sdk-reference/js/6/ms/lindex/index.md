@@ -6,20 +6,11 @@ description:
 ---
 
 # lindex
-layout: full.html.hbs
-algolia: true
-title: lindex
----
 
-# lindex
-
-{{{since "1.0.0"}}}
 
 Returns the element at the provided index in a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lindex)
-
----
 
 ## Arguments
 

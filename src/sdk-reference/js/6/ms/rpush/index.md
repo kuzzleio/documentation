@@ -6,14 +6,7 @@ description:
 ---
 
 # rpush
-layout: full.html.hbs
-algolia: true
-title: rpush
----
 
-# rpush
-
-{{{since "1.0.0"}}}
 
 Appends values at the end of a list. 
 
@@ -21,8 +14,6 @@ If the destination list does not exist, it is created holding an empty list befo
 
 [[_Redis documentation_]](https://redis.io/commands/rpush)
 
-
----
 
 ## Arguments
 

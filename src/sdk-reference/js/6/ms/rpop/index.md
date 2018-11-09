@@ -6,20 +6,11 @@ description:
 ---
 
 # rpop
-layout: full.html.hbs
-algolia: true
-title: rpop
----
 
-# rpop
-
-{{{since "1.0.0"}}}
 
 Removes the last element of a list and returns it.
 
 [[_Redis documentation_]](https://redis.io/commands/rpop)
-
----
 
 ## Arguments
 

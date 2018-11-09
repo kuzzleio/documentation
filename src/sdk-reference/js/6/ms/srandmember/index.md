@@ -6,20 +6,11 @@ description:
 ---
 
 # srandmember
-layout: full.html.hbs
-algolia: true
-title: srandmember
----
 
-# srandmember
-
-{{{since "1.0.0"}}}
 
 Returns one or more members of a set of unique values, at random.  
 
 [[_Redis documentation_]](https://redis.io/commands/srandmember)
-
----
 
 ## Arguments
 

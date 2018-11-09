@@ -6,22 +6,13 @@ description:
 ---
 
 # sinterstore
-layout: full.html.hbs
-algolia: true
-title: sinterstore
----
 
-# sinterstore
-
-{{{since "1.0.0"}}}
 
 Computes the intersection of the provided sets of unique values, and stores the result in a destination key.
 
 If the destination key already exists, it is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/sinterstore)
-
----
 
 ## Arguments
 

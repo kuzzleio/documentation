@@ -6,14 +6,7 @@ description:
 ---
 
 # scan
-layout: full.html.hbs
-algolia: true
-title: scan
----
 
-# scan
-
-{{{since "1.0.0"}}}
 
 Iterates incrementally over the set of keys in the database using a cursor.
 
@@ -23,8 +16,6 @@ To get the next page of results, simply re-send the request with the updated cur
 The scan ends when the cursor returned by the server is 0.
 
 [[_Redis documentation_]](https://redis.io/commands/scan)
-
----
 
 ## Arguments
 

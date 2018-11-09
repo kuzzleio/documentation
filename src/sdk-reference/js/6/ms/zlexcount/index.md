@@ -6,20 +6,11 @@ description:
 ---
 
 # zlexcount
-layout: full.html.hbs
-algolia: true
-title: zlexcount
----
 
-# zlexcount
-
-{{{since "1.0.0"}}}
 
 Counts elements in a sorted set where all members have equal score, using lexicographical ordering. 
 
 [[_Redis documentation_]](https://redis.io/commands/zlexcount)
-
----
 
 ## Arguments
 
