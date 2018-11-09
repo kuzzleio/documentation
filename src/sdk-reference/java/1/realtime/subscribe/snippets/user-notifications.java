@@ -1,6 +1,6 @@
 String filters = "{ \"exists\": \"name\" }";
 RoomOptions options = new RoomOptions();
-options.setUser("all");
+options.setUsers("all");
 
 NotificationListener listener = new NotificationListener() {
   public void onMessage(NotificationResult notification) {
