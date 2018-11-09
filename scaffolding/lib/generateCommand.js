@@ -4,8 +4,8 @@ const
     renderSnippetTemplate,
     renderMarkdownTemplate,
     renderSnippetConfigTemplate,
-    showSignatures,
-    showDescription
+    injectSignatures,
+    injectDescription
   } = require('./utils'),
   _ = require('lodash'),
   path = require('path');
@@ -20,12 +20,14 @@ async function generateCommand (actionPath) {
   try {
     const sdkInfos = explodeSdkPath(actionPath);
 
+    console.log(`Scaffolding: ${sdkInfos.controller}:${sdkInfos.action} (${sdkInfos.language}/${sdkInfos.version})`);
+
     await renderMarkdownTemplate(sdkInfos, actionPath);
     await renderSnippetTemplate(sdkInfos, actionPath);
     await renderSnippetConfigTemplate(sdkInfos, actionPath);
 
-    showDescription(sdkInfos);
-    showSignatures(sdkInfos);
+    injectDescription(sdkInfos, actionPath);
+    injectSignatures(sdkInfos, actionPath);
   } catch (error) {
     console.error(error);
     process.exit(1);

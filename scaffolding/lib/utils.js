@@ -24,14 +24,6 @@ function mkdirp (fullPath) {
   }
 }
 
-function display(error, stdout, stderr) {
-  if (error) {
-    console.log(error.message);
-    console.error(stderr);
-  }
-  console.log(stdout);
-}
-
 async function renderTemplate(source, destination, variables) {
   if (fs.existsSync(destination)) {
     throw new Error(`${destination} already exists.`);
@@ -56,13 +48,11 @@ async function renderTemplate(source, destination, variables) {
 
 /* EXPORTED FUNCTIONS =====================================================   */
 
-function showDescription({ action, controller }) {
-  console.log('API Description:\n');
-
-
+function injectDescription({ action, controller }, actionPath) {
   const actionFile = `./src/api/1/controller-${_.kebabCase(controller)}/${_.kebabCase(action)}/index.md`;
+
   if (! fs.existsSync(actionFile)) {
-    console.error(`Can not find corresponding action file ${actionFile}`);
+    console.error(`Cannot find the corresponding action file ${actionFile}`);
     return;
   }
 
@@ -71,36 +61,56 @@ function showDescription({ action, controller }) {
     regexp = new RegExp(/---\n([\s\S]+)## Query Syntax/),
     result = content.match(regexp) || [];
 
-  if (result.length > 0) {
-    console.log(result[1]);
-  } else {
-    console.log('Can not extract action description :(');
+  if (result.length === 0) {
+    console.log('Cannot extract the action description :(');
   }
+
+  const
+    dest = `${actionPath}/index.md`,
+    template = {
+      start: `# ${_.camelCase(action)}\n`,
+      end: '## Arguments\n'
+    };
+
+  injectInFile(dest, template, result[1]);
 }
 
-function showSignatures({ language, action, controller }) {
-  console.log('Function signature:\n');
+function injectSignatures({ language, action, controller }, actionPath) {
+  const
+    dest = `${actionPath}/index.md`,
+    template = {
+      start: `\`\`\`${language}\n`,
+      end: '\n```'
+    },
+    inject = (error, stdout, stderr) => {
+      if (error) {
+        console.log(error.message);
+        console.error(stderr);
+        return;
+      }
+
+      injectInFile(dest, template, stdout);
+    };
 
   switch (language) {
     case 'js':
-      exec(`find node_modules/kuzzle-sdk/src/controllers -name "*.js" | grep ${controller} | xargs cat | grep '${_.camelCase(action)} ('`, display);
+      exec(`find node_modules/kuzzle-sdk/src/controllers -name "*.js" | grep ${controller} | xargs cat | grep '${_.camelCase(action)} ('`, inject);
       break;
 
     case 'cpp':
-      exec(`cat test/bin/sdk-cpp/include/${controller}.hpp | grep ${_.camelCase(action)}`, display);
+      exec(`cat test/bin/sdk-cpp/include/${controller}.hpp | grep ${_.camelCase(action)}`, inject);
       break;
 
     case 'java':
-      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-amd64.jar io.kuzzle.sdk.${_.upperFirst(_.camelCase(controller))} | grep ${_.camelCase(action)}`, display);
+      exec(`javap -classpath test/bin/sdk-java/kuzzlesdk-amd64.jar io.kuzzle.sdk.${_.upperFirst(_.camelCase(controller))} | grep ${_.camelCase(action)}`, inject);
       break;
 
     case 'go':
-      exec(`grep '${_.upperFirst(_.camelCase(action))}(' ${process.env.GOPATH}/src/github.com/kuzzleio/sdk-go/${controller}/${_.camelCase(action)}.go`, display);
-      exec(`grep '${_.upperFirst(_.camelCase(action))}(' ${process.env.GOPATH}/src/github.com/kuzzleio/sdk-go/${controller}/${_.snakeCase(action)}.go`, display);
+      exec(`grep '${_.upperFirst(_.camelCase(action))}(' ${process.env.GOPATH}/src/github.com/kuzzleio/sdk-go/${controller}/${_.camelCase(action)}.go`, inject);
+      exec(`grep '${_.upperFirst(_.camelCase(action))}(' ${process.env.GOPATH}/src/github.com/kuzzleio/sdk-go/${controller}/${_.snakeCase(action)}.go`, inject);
       break;
   }
 
-  console.log('\n');
 }
 
 function renderMarkdownTemplate(variables, actionPath) {
@@ -204,6 +214,6 @@ module.exports = {
   explodeSdkPath,
   extractFromFile,
   injectInFile,
-  showSignatures,
-  showDescription
+  injectSignatures,
+  injectDescription
 };
