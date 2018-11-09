@@ -4,6 +4,8 @@ algolia: true
 title: del
 ---
 
+# del
+
 {{{since "1.0.0"}}}
 
 Deletes a list of keys.
