@@ -7,26 +7,21 @@ description:
 
 # <%= _.camelCase(action) %>
 
-## Signature
+## Arguments
 
-```javascript
-/**
- * @param {}
- * @param {}
- * @returns {}
- */
+```js
 <%= _.camelCase(action) %>()
 ```
 
-## Arguments
+<br/>
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``changeme`` | changme | changeme    | yes
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``changeme`` | <pre>changme</pre> | changeme    |
 
-### **arg1**
+### arg1
 
-### **arg2**
+### arg2
 
 ## Resolve
 
