@@ -16,18 +16,22 @@ String document = "{ \"name\": \"nina vkote\", \"age\": 19 }";
 
 try {
     kuzzle.getRealtime().subscribe(
-      "nyc-open-data", 
-      "yellow-taxi", 
-      filters, 
+      "nyc-open-data",
+      "yellow-taxi",
+      filters,
       listener
     );
 
     kuzzle.getDocument().create(
-      "nyc-open-data", 
-      "yellow-taxi", 
-      "nina-vkote", 
+      "nyc-open-data",
+      "yellow-taxi",
+      "nina-vkote",
       document
     );
-} catch (KuzzleException e) {
+
+    Thread.sleep(1000);
+  } catch (KuzzleException e) {
+    System.err.println(e.getMessage());
+  } catch (InterruptedException e) {
     System.err.println(e.getMessage());
 }
