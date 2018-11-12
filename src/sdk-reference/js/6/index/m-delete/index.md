@@ -17,7 +17,7 @@ Deletes multiple indexes at once.
  * @param {object} [options]
  * @returns {Promise.<Array>}
  */
-mDelete(indexes, (options = null));
+mDelete(indexes, options = null);
 ```
 
 ## Arguments

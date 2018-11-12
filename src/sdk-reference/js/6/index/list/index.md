@@ -16,7 +16,7 @@ Get the complete list of data indexes handled by Kuzzle.
  * @param {object} [options]
  * @returns {Promise.<Array>}
  */
-list((options = null));
+list(options = null);
 ```
 
 ## Arguments

@@ -17,7 +17,7 @@ Create a new index in Kuzzle
  * @param {object} [options]
  * @returns {Promise.<object>}
  */
-create(index, (options = null));
+create(index, options = null);
 ```
 
 ## Arguments

@@ -47,7 +47,7 @@ It can be:
 | `eventTimeout`      | integer | Time (in ms) during which a similar event is ignored               | `200`    | no       |
 | `host`              | string  | Kuzzle network host                                                | -        | yes      |
 | `port`              | integer | Kuzzle network port                                                | `7512`   | no       |
-| `offlineMode`       | string  | Offline mode configuration                                         | `manual` | no       |
+| `offlineMode`       | string  | Offline mode configuration. `auto` or `manual`                     | `manual` | no       |
 | `queueTTL`          | integer | Time a queued request is kept during offline mode, in milliseconds | `120000` | no       |
 | `queueMaxSize`      | integer | Number of maximum requests kept during offline mode                | `500`    | no       |
 | `replayInterval`    | integer | Delay between each replayed requests, in milliseconds              | `10`     | no       |

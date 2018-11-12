@@ -17,7 +17,7 @@ Deletes an entire data index from Kuzzle.
  * @param {object} [options]
  * @returns {Promise.<object>}
  */
-delete (index, (options = null));
+delete (index, options = null);
 ```
 
 ## Arguments

@@ -13,11 +13,11 @@ Returns the profile object for the user linked to the `JSON Web Token`, provided
 ```javascript
 /**
  * Fetches the current user
- * 
+ *
  * @param options
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  */
-getCurrentUser (options = null)
+getCurrentUser(options = null)
 ```
 
 ## Arguments

@@ -28,7 +28,7 @@ we recommend that you avoid using it in production or at least carefully monitor
  * @param {object} [options]
  * @returns {Promise.<Object>}
  */
-setAutoRefresh(index, autoRefresh, (options = null));
+setAutoRefresh(index, autoRefresh, options = null);
 ```
 
 ## Arguments
@@ -49,11 +49,7 @@ Additional query options
 
 ## Resolve
 
-Resolve to an object containing the new value of autorefresh flag.
-
-| Name     | Type    | Description                                     |
-| -------- | ------- | ----------------------------------------------- |
-| response | boolean | new value for the autorefresh flag of the index |
+Resolve to a `boolean` indicating the new value of autorefresh flag.
 
 ## Usage
 

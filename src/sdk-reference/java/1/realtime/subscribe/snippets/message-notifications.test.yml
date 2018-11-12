@@ -1,0 +1,7 @@
+name: realtime#subscribemessages
+description: Subscribe to message notifications
+hooks:
+  before:
+  after:
+template: default
+expected: Message notification received

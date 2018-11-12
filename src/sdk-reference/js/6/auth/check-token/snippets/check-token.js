@@ -4,7 +4,7 @@ try {
   if (res.valid) {
     console.log('Success');
   } else {
-    console.err(res.state);
+    console.error(res.state);
   }
 } catch (error) {
   console.error(error.message);

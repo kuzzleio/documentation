@@ -1,7 +1,7 @@
 kuzzle.index
   .setAutoRefresh('nyc-open-data', true)
-  .then(response => {
-    console.log(`autorefresh flag is set to ${response.response}`);
+  .then(autorefresh => {
+    console.log(`autorefresh flag is set to ${autorefresh}`);
   })
   .catch(error => {
     console.error(error.message);
