@@ -13,7 +13,7 @@ Checks if the given `<index>` exists in Kuzzle.
 ## Arguments
 
 ```javascript
-exists (index, options = null);
+exists (index, [options]);
 ```
 
 <br/>
@@ -27,9 +27,9 @@ exists (index, options = null);
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 

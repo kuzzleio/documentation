@@ -16,7 +16,7 @@ If some documents actions fail, the client will receive a [PartialError]({{ site
 ## Arguments
 
 ```javascript
-import (bulkData, options = null)
+import (bulkData, [options])
 ```
 
 <br/>
@@ -54,9 +54,9 @@ Learn more at [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticse
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ---
 

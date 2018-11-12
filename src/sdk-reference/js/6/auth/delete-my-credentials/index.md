@@ -14,7 +14,7 @@ If the credentials that generated the current JWT are removed, the user will rem
 ## Arguments
 
 ```javascript
-deleteMyCredentials (strategy, options = null);
+deleteMyCredentials (strategy, [options]);
 ```
 
 <br/>
@@ -28,9 +28,9 @@ deleteMyCredentials (strategy, options = null);
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 

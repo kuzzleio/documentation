@@ -12,7 +12,7 @@ Gets the exhaustive list of registered authentication strategies.
 ## Arguments
 
 ```javascript
-getStrategies (options = null)
+getStrategies ([options])
 ```
 
 <br/>
@@ -27,7 +27,7 @@ Additional query options
 
 | Property     | Type    | Description                       | Default
 | ---------- | ------- | --------------------------------- | -------
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Resolve
 

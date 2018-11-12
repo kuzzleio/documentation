@@ -12,7 +12,7 @@ Check if a `<collection>` exists in Kuzzle.
 ## Arguments
 
 ```javascript
-exists (index, collection, options = null)
+exists (index, collection, [options])
 ```
 
 <br/>
@@ -27,9 +27,9 @@ exists (index, collection, options = null)
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 

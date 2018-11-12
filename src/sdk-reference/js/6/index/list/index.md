@@ -13,7 +13,7 @@ Get the complete list of data indexes handled by Kuzzle.
 ## Arguments
 
 ```javascript
-list (options = null);
+list ([options]);
 ```
 
 <br/>
@@ -26,9 +26,9 @@ list (options = null);
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 

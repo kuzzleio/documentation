@@ -12,7 +12,7 @@ Create a new `<index>` in Kuzzle.
 ## Arguments
 
 ```javascript
-create (index, options = null)
+create (index, [options])
 ```
 
 <br/>
@@ -26,16 +26,16 @@ create (index, options = null)
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 
 Resolves to an `object` containing the index creation status
 
 | Name                | Type    | Description                                                                                                       |
-| ------------------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| ------------------- | ------- | -------------------------------------------------------------- |
 | `acknowledged`        | <pre>boolean</pre> | Indicates whether the index was successfully created in the Elastic cluster                                       |
 | `shards_acknowledged` | <pre>boolean</pre> | Indicates whether the requisite number of shard copies were started for each shard in the index before timing out |
 

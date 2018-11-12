@@ -16,38 +16,38 @@ This is a low-level method, exposed to allow advanced SDK users to bypass high-l
 ## Arguments
 
 ```javascript
-query(request, options = null);
+query(request, [options]);
 ```
 
 <br/>
 
-| Argument  | Type   | Description            | |
+| Argument  | Type   | Description            |
 | -------------- | --------- | ------------- |
-| `request` | <pre>object</pre> | API request options    | yes      |
-| `options` | <pre>object</pre> | Optional query options | no       |
+| `request` | <pre>object</pre> | API request options    |
+| `options` | <pre>object</pre> | Optional query options |
 
 ### **request**
 
 All properties necessary for the Kuzzle API can be added in the request object.
 The following properties are the most common.
 
-| Property     | Type   | Description                               | |
+| Property     | Type   | Description                               |
 | -------------- | --------- | ------------- |
-| `controller` | <pre>string</pre> | Controller name                           | yes      |
-| `action`     | <pre>string</pre> | Action name                               | yes      |
-| `body`       | <pre>object</pre> | Query body for this action                | no       |
-| `index`      | <pre>string</pre> | Index name for this action                | no       |
-| `collection` | <pre>string</pre> | Collection name for this action           | no       |
-| `_id`        | <pre>string</pre> | id for this action                        | no       |
-| `volatile`   | <pre>object</pre> | Additional informations to send to Kuzzle | no       |
+| `controller` | <pre>string</pre> | Controller name (mandatory)               |
+| `action`     | <pre>string</pre> | Action name (mandatory)                   |
+| `body`       | <pre>object</pre> | Query body for this action                |
+| `index`      | <pre>string</pre> | Index name for this action                |
+| `collection` | <pre>string</pre> | Collection name for this action           |
+| `_id`        | <pre>string</pre> | id for this action                        |
+| `volatile`   | <pre>object</pre> | Additional informations to send to Kuzzle |
 
 ### **options**
 
 An `object` containing Query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | true    |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Resolve
 

@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
-title: Index
+title: index
 description: Index Controller
 order: 200
 ---

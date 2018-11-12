@@ -14,7 +14,7 @@ This route cannot update the list of associated security profiles. To change a u
 ## Arguments
 
 ```javascript
-updateSelf (content, options = null)
+updateSelf (content, [options])
 ```
 
 <br/>
@@ -29,9 +29,9 @@ updateSelf (content, options = null)
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 
 ## Resolve

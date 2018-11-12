@@ -14,7 +14,7 @@ When the validation specification is not formatted correctly, a detailed error m
 ## Arguments
 
 ```javascript
-validateSpecifications (index, collection, specifications, options = null)
+validateSpecifications (index, collection, specifications, [options])
 ```
 
 <br/>
@@ -45,9 +45,9 @@ This object must follow the [Specification Structure]({{ site_base_path }}valida
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 
@@ -57,7 +57,7 @@ It contains the following properties:
 | Property    | Type    | Description |
 |--------------|---------|-------------|
 | ``valid`` | <pre>boolean</pre> | Specifications validity   |
-| ``details`` | array&lt;string&gt; | Specifications errors    |
+| ``details`` | <pre>array&lt;string&gt;</pre> | Specifications errors    |
 | ``description`` | <pre>string</pre> | Global description of errors    |
 
 ## Usage

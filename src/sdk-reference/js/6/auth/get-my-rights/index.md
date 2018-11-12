@@ -12,7 +12,7 @@ Returns the exhaustive list of granted or denied rights for the currently logged
 ## Arguments
 
 ```javascript
-getMyRights (options = null)
+getMyRights ([options])
 ```
 
 <br/>
@@ -25,9 +25,9 @@ getMyRights (options = null)
 
 Additional query options
 
-| Property     | Type    | Description                       | Default
-| ---------- | ------- | --------------------------------- | -------
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`
+| Property     | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Resolve
 

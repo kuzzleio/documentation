@@ -21,7 +21,7 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 ## Arguments
 
 ```javascript
-refresh (index, options = null);
+refresh (index, [options]);
 ```
 
 <br/>
@@ -34,9 +34,9 @@ refresh (index, options = null);
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 

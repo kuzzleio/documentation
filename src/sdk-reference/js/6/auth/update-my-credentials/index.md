@@ -12,7 +12,7 @@ Updates the `<credentials>` of the currently logged in user for the specified `<
 ## Arguments
 
 ```javascript
-updateMyCredentials (strategy, credentials, options = null)
+updateMyCredentials (strategy, credentials, [options])
 ```
 
 <br/>
@@ -28,9 +28,9 @@ updateMyCredentials (strategy, credentials, options = null)
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 
 ## Resolve

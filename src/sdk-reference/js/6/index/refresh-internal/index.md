@@ -22,7 +22,7 @@ The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-refe
 ## Arguments
 
 ```javascript
-refreshInternal (index, options = null);
+refreshInternal (index, [options]);
 ```
 
 <br/>
@@ -36,9 +36,9 @@ refreshInternal (index, options = null);
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 

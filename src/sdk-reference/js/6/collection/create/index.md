@@ -17,7 +17,7 @@ This method will only update the mapping if the `<collection>` already exists.
 ## Arguments
 
 ```javascript
-create (index, collection, mapping = null, options = null)
+create (index, collection, mapping = null, [options])
 ```
 
 <br/>
@@ -53,9 +53,9 @@ You can see the full list of Elasticsearch mapping types [here](https://www.elas
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 

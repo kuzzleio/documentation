@@ -15,7 +15,7 @@ The `from` and `size` arguments in `<options>` allows pagination. They are retur
 ## Arguments
 
 ```javascript
-list (index, options = null)
+list (index, [options])
 ```
 
 <br/>
@@ -29,11 +29,11 @@ list (index, options = null)
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
-| `from` | int | Offset of the first result | `0` |
-| `size` | int | Maximum number of returned results | `10` |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 
@@ -42,7 +42,7 @@ Resolve to an object containing the following properties:
 | Property   | Type    | Description  |
 |--------------|---------|-------------|
 | ``type`` | <pre>string</pre> | Types of returned collections </br>(`all`, `realtime` or `stored`)   |
-| ``collections`` | array&lt;object&gt; | List of collections  |
+| ``collections`` | <pre>array&lt;object&gt;</pre> | List of collections  |
 | `from` | int | Offset of the first result |
 | `size` | int | Maximum number of returned results |
 

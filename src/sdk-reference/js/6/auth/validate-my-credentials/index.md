@@ -14,7 +14,7 @@ This route neither creates nor modifies credentials.
 ## Arguments
 
 ```javascript
-validateMyCredentials (strategy, credentials, options = null)
+validateMyCredentials (strategy, credentials, [options])
 ```
 
 <br/>
@@ -30,9 +30,9 @@ validateMyCredentials (strategy, credentials, options = null)
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 
 ## Return

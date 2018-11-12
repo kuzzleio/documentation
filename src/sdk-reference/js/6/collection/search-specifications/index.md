@@ -12,7 +12,7 @@ Allows to search in the persistence layer for collection specifications.
 ## Arguments
 
 ```javascript
-searchSpecifications (body = {}, options = null)
+searchSpecifications (body = {}, [options])
 ```
 
 <br/>
@@ -42,12 +42,12 @@ const body = {
 
 ### **options**
 
-| Arguments    | Type    | Description | Default |
+|  Arguments     |  Type     |  Description  |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
-| ``from`` | <pre>number</pre> | Offset of the first document    | `0`  |
-| ``size`` | <pre>number</pre> | Maximum number of documents returned    | `10` |
-| ``scroll`` | <pre>number</pre> | Maximum duration for scroll session    | undefined |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
+| ``from`` | <pre>number</pre><br/>(`0`) | Offset of the first document    |
+| ``size`` | <pre>number</pre><br/>(`10`) | Maximum number of documents returned    |
+| ``scroll`` | <pre>number</pre><br/>(`"`) | Maximum duration for scroll session    |
 
 * `size` controls the maximum number of documents returned in the response
 * `from` is usually used with the `size` argument, and defines the offset from the first result you want to fetch

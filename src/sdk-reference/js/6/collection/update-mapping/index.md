@@ -14,7 +14,7 @@ Mapping allow you to exploit the full capabilities of our persistent data storag
 ## Arguments
 
 ```javascript
-updateMapping (index, collection, mapping, options = null)
+updateMapping (index, collection, mapping, [options])
 ```
 
 <br/>
@@ -50,9 +50,9 @@ You can see the full list of Elasticsearch mapping types [here](https://www.elas
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 

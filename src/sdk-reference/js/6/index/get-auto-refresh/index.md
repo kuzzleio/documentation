@@ -23,7 +23,7 @@ Without a refresh after a write request, the documents may not be immediately vi
 ## Arguments
 
 ```javascript
-getAutoRefresh (index, options = null);
+getAutoRefresh (index, [options]);
 ```
 
 <br/>
@@ -37,9 +37,9 @@ getAutoRefresh (index, options = null);
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 

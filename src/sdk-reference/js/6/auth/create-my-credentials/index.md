@@ -12,7 +12,7 @@ Creates new credentials for the specified `<strategy>` for the current user.
 ## Arguments
 
 ```javascript
-createMyCredentials (strategy, credentials, options = null)
+createMyCredentials (strategy, credentials, [options])
 ```
 
 <br/>
@@ -28,9 +28,9 @@ createMyCredentials (strategy, credentials, options = null)
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | boolean| Make this request queuable or not |
+| `queuable` | <pre>boolean</pre><br/>(`true`)| Make this request queuable or not |
 
 
 ## Resolve

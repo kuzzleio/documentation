@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
-title: Bulk
+title: bulk
 description: Bulk Controller
 order: 200
 ---

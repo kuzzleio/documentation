@@ -14,7 +14,7 @@ Each instance represent a connection to Kuzzle with specific options.
 ## Arguments
 
 ```javascript
-Kuzzle(protocol, options = null);
+Kuzzle(protocol, [options]);
 ```
 
 <br/>
@@ -40,14 +40,14 @@ It can be:
 | `autoReconnect`     | <pre>boolean</pre> | Automatically reconnect after a connection loss                    | `true`   | no       |
 | `autoReplay`        | <pre>boolean</pre> | Automatically replay queued requests on a `reconnected` event      | `false`  | no       |
 | `autoResubscribe`   | <pre>boolean</pre> | Automatically renew all subscriptions on a `reconnected` event     | `true`   | no       |
-| `eventTimeout`      | integer | Time (in ms) during which a similar event is ignored               | `200`    | no       |
+| `eventTimeout`      | <pre>number</pre> | Time (in ms) during which a similar event is ignored               | `200`    | no       |
 | `host`              | <pre>string</pre> | Kuzzle network host                                                | -        | yes      |
-| `port`              | integer | Kuzzle network port                                                | `7512`   | no       |
+| `port`              | <pre>number</pre> | Kuzzle network port                                                | `7512`   | no       |
 | `offlineMode`       | <pre>string</pre> | Offline mode configuration                                         | `manual` | no       |
-| `queueTTL`          | integer | Time a queued request is kept during offline mode, in milliseconds | `120000` | no       |
-| `queueMaxSize`      | integer | Number of maximum requests kept during offline mode                | `500`    | no       |
-| `replayInterval`    | integer | Delay between each replayed requests, in milliseconds              | `10`     | no       |
-| `reconnectionDelay` | integer | number of milliseconds between reconnection attempts               | `1000`   | no       |
+| `queueTTL`          | <pre>number</pre> | Time a queued request is kept during offline mode, in milliseconds | `120000` | no       |
+| `queueMaxSize`      | <pre>number</pre> | Number of maximum requests kept during offline mode                | `500`    | no       |
+| `replayInterval`    | <pre>number</pre> | Delay between each replayed requests, in milliseconds              | `10`     | no       |
+| `reconnectionDelay` | <pre>number</pre> | number of milliseconds between reconnection attempts               | `1000`   | no       |
 | `sslConnection`     | <pre>boolean</pre> | Switch Kuzzle connection to SSL mode                               | `false`  | no       |
 | `volatile`          | <pre>number</pre> | Common volatile data, will be sent to all future requests          | -        | no       |
 
@@ -60,15 +60,15 @@ It can be:
 | `autoReplay`         | <pre>boolean</pre> | Automatically replay queued requests on a `reconnected` event        |    Yes    |
 | `autoResubscribe`    | <pre>boolean</pre> | Automatically renew all subscriptions on a `reconnected` event       |    Yes    |
 | `host`               | <pre>string</pre> | Target Kuzzle host   |    No     |
-| `port`               | integer  | Target Kuzzle port                                 |    No     |
+| `port`               | <pre>number</pre>  | Target Kuzzle port                                 |    No     |
 | `jwt`                | <pre>string</pre> | Token used in requests for authentication        |    Yes    |
 | `offlineQueue`       | <pre>object</pre> | Contains the queued requests during offline mode   |    No     |
 | `offlineQueueLoader` | Function | Called before dequeuing requests after exiting offline mode,</br> to add items at the beginning of the offline queue  |    Yes    |
 | `queueFilter`        | Function | Called during offline mode. </br>Takes a request object as arguments and returns a boolean, indicating if a request can be queued |    Yes    |
-| `queueMaxSize`       | integer  | Number of maximum requests kept during offline mode|    Yes    |
-| `queueTTL`           | integer  | Time a queued request is kept during offline mode, in milliseconds      |    Yes    |
-| `replayInterval`     | integer  | Delay between each replayed requests               |    Yes    |
-| `reconnectionDelay`  | integer  | Number of milliseconds between reconnection attempts         |    No     |
+| `queueMaxSize`       | <pre>number</pre>  | Number of maximum requests kept during offline mode|    Yes    |
+| `queueTTL`           | <pre>number</pre>  | Time a queued request is kept during offline mode, in milliseconds      |    Yes    |
+| `replayInterval`     | <pre>number</pre>  | Delay between each replayed requests               |    Yes    |
+| `reconnectionDelay`  | <pre>number</pre>  | Number of milliseconds between reconnection attempts         |    No     |
 | `sslConnection`      | <pre>boolean</pre> | Connect to Kuzzle using SSL                        |    No     |
 | `volatile`           | <pre>object</pre> | Common volatile data, will be sent to all future requests       |    Yes    |
 

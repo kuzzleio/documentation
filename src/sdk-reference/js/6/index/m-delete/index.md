@@ -13,23 +13,23 @@ Deletes multiple `<indexes>` at once.
 ## Arguments
 
 ```javascript
-mDelete (indexes, options = null);
+mDelete (indexes, [options]);
 ```
 
 <br/>
 
 | Arguments | Type   | Description                                  |
 | --------- | ------ | -------------------------------------------- |
-| `indexes` | Array  | An array of strings containing indexes names |
+| `indexes` | <pre>array&lt;string&gt;</pre>  | An array of strings containing indexes names |
 | `options` | <pre>object</pre> | Query options          |
 
 ### **options**
 
 Additional query options
 
-| Property     | Type    | Description   |
+| Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolve
 
