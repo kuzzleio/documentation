@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: create
-description: Create a new index
+description: Create an index
 ---
 
 # create

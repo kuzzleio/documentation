@@ -1,8 +1,5 @@
 ---
 layout: sdk.html.hbs
 title: index
-description: Index Controller
-order: 200
+description: index controller documentation
 ---
-
-# Index Controller

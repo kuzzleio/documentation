@@ -1,8 +1,6 @@
 ---
 layout: sdk.html.hbs
 title: bulk
-description: Bulk Controller
-order: 200
+description: bulk controller documentation
 ---
 
-# Bulk Controller

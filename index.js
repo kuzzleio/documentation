@@ -33,7 +33,6 @@ const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
 
 // configuration
-const versionsConfig = require('./config/versions');
 const msDefaultOpts = require('./config/metalsmith');
 const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
 
@@ -76,27 +75,15 @@ const redirectList = {
   //If you need others, add it here
 };
 
-for (const version of versionsConfig) {
-  if (version.version_path === options.build.path) {
-    log(`Using version ${color.bold(version.version_label)}`);
-
-    options.github.repository = version.version_gh_repo;
-    options.github.branch = version.version_gh_branch;
-    options.algolia.index = version.algolia_index;
-  }
-}
-
 options.algolia.fnFileParser = (file, data) => {
   const objects = [];
   const $ = cheerio.load(data.contents.toString(), {
     normalizeWhitespace: true
   });
-  const content = $('.main-content');
+  const content = $('.md-content');
 
   // remove useless content
-  $('.hljs', content).remove();
-  $('blockquote', content).remove();
-  $('.language-tab-selector', content).remove();
+  $('pre', content).remove();
   $('h1, h2, h3, h4, h5, h6', content).remove();
 
   objects.push({
@@ -109,7 +96,7 @@ options.algolia.fnFileParser = (file, data) => {
     firstMember: (data.ancestry.firstMember ? data.ancestry.firstMember.title : ''),
     toc: data.toc
   });
-
+  
   return objects;
 };
 
@@ -126,7 +113,6 @@ const metalsmith = _metalsmith(__dirname)
     algolia_projectId: options.algolia.projectId,
     algolia_publicKey: options.algolia.publicKey,
     algolia_index: options.algolia.index,
-    versions_config: versionsConfig,
     is_dev: options.dev.enabled,
     sdkVersions: sdkVersions,
     exclude: options.exclude

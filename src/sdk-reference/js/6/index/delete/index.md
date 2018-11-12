@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: delete
-description: Delete an index
-order: 500
+description: Deletes an index
 ---
 
 # delete

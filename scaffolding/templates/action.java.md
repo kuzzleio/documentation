@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: <%= _.camelCase(action) %>
 description:
-order: 200
 ---
 
 # <%= _.camelCase(action) %>

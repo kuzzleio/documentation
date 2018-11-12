@@ -3,12 +3,11 @@ layout: sdk.html.hbs
 algolia: true
 title: query
 description: Base method to send API query to Kuzzle
-order: 200
 ---
 
 # query
 
-Base method used to send queries to Kuzzle, following the [API Documentation]({{ site_base_path }}api-documentation).
+Base method used to send queries to Kuzzle, following the [API Documentation]({{ site_base_path }}api/1).
 
 <div class="alert alert-warning">
 This is a low-level method, exposed to allow advanced SDK users to bypass high-level methods.
@@ -56,7 +55,7 @@ The following properties are the most common.
 
 ## Return
 
-A `io.kuzzle.sdk.KuzzleResponse` object containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api-documentation).  
+A `io.kuzzle.sdk.KuzzleResponse` object containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1).  
 The following properties are the most common.
 
 | Property    | Type   | Description                         |

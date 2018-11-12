@@ -65,7 +65,7 @@ The `createFirstAdmin` command lets you create an administrator to manage securi
 
 <div class="alert alert-info">NB: This command can only be run interactively</div>
 
-This call the action [security#createFirstAdmin]({{ site_base_path }}api-documentation/controller-security/create-first-admin)
+This call the action [security#createFirstAdmin]({{ site_base_path }}api/1/controller-security/create-first-admin)
 
 ---
 
@@ -77,7 +77,7 @@ This call the action [security#createFirstAdmin]({{ site_base_path }}api-documen
 
 Kuzzle uses Redis to store frequently accessed internal data. Use this command if you need to clear this data (cache).
 
-This call the action [admin#resetCache]({{ site_base_path }}api-documentation/controller-admin/reset-cache)
+This call the action [admin#resetCache]({{ site_base_path }}api/1/controller-admin/reset-cache)
 
 ---
 
@@ -105,7 +105,7 @@ The `dump` command creates a snapshot of the state of Kuzzle, including:
 
 The generated directory can be used to feed a crash report to the support team.
 
-This call the action [admin#dump]({{ site_base_path }}api-documentation/controller-admin/reset-security)
+This call the action [admin#dump]({{ site_base_path }}api/1/controller-admin/reset-security)
 
 ---
 
@@ -132,7 +132,7 @@ Asynchronously start the following sequence in Kuzzle, in this order:
 
 This action has no impact on Plugin and Document storage.
 
-This call the action [admin#resetKuzzleData]({{ site_base_path }}api-documentation/controller-admin/reset-kuzzle-data)
+This call the action [admin#resetKuzzleData]({{ site_base_path }}api/1/controller-admin/reset-kuzzle-data)
 
 ---
 
@@ -155,7 +155,7 @@ This call the action [admin#resetKuzzleData]({{ site_base_path }}api-documentati
 
 The `resetSecurity` command deletes all created users, profiles and roles and reset the default roles and profiles : `anonymous`, `admin` and `default`.
 
-This call the action [admin#resetSecurity]({{ site_base_path }}api-documentation/controller-admin/reset-security)
+This call the action [admin#resetSecurity]({{ site_base_path }}api/1/controller-admin/reset-security)
 
 ---
 
@@ -178,7 +178,7 @@ This call the action [admin#resetSecurity]({{ site_base_path }}api-documentation
 
 The `resetDatabase` delete all indexes created by users. This does not include Kuzzle's internal index.
 
-This call the action [admin#resetDatabase]({{ site_base_path }}api-documentation/controller-admin/reset-database)  
+This call the action [admin#resetDatabase]({{ site_base_path }}api/1/controller-admin/reset-database)  
 
 Note: this command has no impact on any plugins stored data, or on any Kuzzle stored documents.
 
@@ -195,7 +195,7 @@ Note: this command has no impact on any plugins stored data, or on any Kuzzle st
 
 The `shutdown` command lets you stop a Kuzzle instance after any remaining requests are processed, ensuring that no unnecessary `Service Unavailable` errors are returned to connected clients.
 
-This call the action [admin#shutdown]({{ site_base_path }}api-documentation/controller-admin/shutdown)
+This call the action [admin#shutdown]({{ site_base_path }}api/1/controller-admin/shutdown)
 
 ---
 
@@ -291,7 +291,7 @@ The file must be a JSON file with the following structure:
 **Notes:**
 
 * The file can contain any number of index and collection configurations.
-* Each collection contains an array of data to load, just like the [bulk:import API]({{ site_base_path }}api-documentation/controller-bulk/import/).
+* Each collection contains an array of data to load, just like the [bulk:import API]({{ site_base_path }}api/1/controller-bulk/import/).
 * If an index or collection does not exist, the load will fail.
 * Fixtures are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
 
@@ -342,9 +342,10 @@ The file must be a JSON file with the following structure:
 ```
 
 The roles, profiles and users definition follow the same structure as in the body parameter of the API:
- - [createRole](https://docs.kuzzle.io/api-documentation/controller-security/create-role)
- - [createProfile](https://docs.kuzzle.io/api-documentation/controller-security/create-profile)
- - [createUser](https://docs.kuzzle.io/api-documentation/controller-security/create-user)
+
+ - [createRole]({{ site_base_path }}api/1/controller-security/create-role)
+ - [createProfile]({{ site_base_path }}api/1/controller-security/create-profile)
+ - [createUser]({{ site_base_path }}api/1/controller-security/create-user)
 
 **Notes:**
 

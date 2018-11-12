@@ -11,13 +11,13 @@ order: 750
 
 Once we have created security [roles and profiles]({{ site_base_path }}guide/2/essentials/security), we can go on to create the users that will access the Kuzzle.
 
-Users can be created by either using the [Kuzzle Admin Console]({{ site_base_path }}guide/2/essentials/installing-console), the [API]({{ site_base_path }}api-documentation/controller-security/create-user/), or the [SDK]({{ site_base_path }}sdk-reference/security/create-user/).
+Users can be created by either using the [Kuzzle Admin Console]({{ site_base_path }}guide/2/essentials/installing-console), the [API]({{ site_base_path }}api/2/controller-security/create-user/), or the [SDK]({{ site_base_path }}sdk-reference/security/create-user/).
 
 When creating a user, you will need to assign them one or more [profiles]({{ site_base_path }}guide/2/essentials/security/#defining-profiles).
 
 Additionally, you can set:
 
-* [User credentials]({{ site_base_path }}guide/2/essentials/user-authentication/#user-credentials): If no credentials are provided, then the user cannot [login]({{ site_base_path }}api-documentation/controller-auth/login/)
+* [User credentials]({{ site_base_path }}guide/2/essentials/user-authentication/#user-credentials): If no credentials are provided, then the user cannot [login]({{ site_base_path }}api/2/controller-auth/login/)
 * Any number of properties that you want to store in your user object, such as a lastname or a list of hobbies. These properties are stored at the user level and are not linked to any particular authentication strategy.
 
 Let's create a user with username `jondoe` and password `letmein` through the API:
@@ -69,11 +69,11 @@ If you're interested for a more in-depth explanation on how all of this work, th
 
 ## Authentication Strategies
 
-Once a user has been created, they can access resources in Kuzzle as permitted by their security profile. However; in order to access these resources they will first need to identify & authenticate themselves using an authentication strategy. The authentication strategy defines what credentials are used and how Kuzzle should validate them. Kuzzle supports multiple authentication strategies, giving you more flexibility when building your security layer: use [Oauth](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth), Kerberos, Salesforce, and many more. And, if none of these suit your needs, follow our [Plugin Documentation]({{ site_base_path }}plugins-reference/2/plugins-features/adding-authentication-strategy) to learn how to build a custom authentication strategy. 
+Once a user has been created, they can access resources in Kuzzle as permitted by their security profile. However; in order to access these resources they will first need to identify & authenticate themselves using an authentication strategy. The authentication strategy defines what credentials are used and how Kuzzle should validate them. Kuzzle supports multiple authentication strategies, giving you more flexibility when building your security layer: use [Oauth](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth), Kerberos, Salesforce, and many more. And, if none of these suit your needs, follow our [Plugin Documentation]({{ site_base_path }}plugins/2/essentials/strategies) to learn how to build a custom authentication strategy. 
 
-To request access to Kuzzle, a user must first send an [authentication request]({{ site_base_path }}api-documentation/controller-auth/login). Kuzzle will validate the credentials it receives in the request using the predefined authentication strategy and return a [JSON Web Token](https://tools.ietf.org/html/rfc7519) if the user credentials are valid.
+To request access to Kuzzle, a user must first send an [authentication request]({{ site_base_path }}api/2/controller-auth/login). Kuzzle will validate the credentials it receives in the request using the predefined authentication strategy and return a [JSON Web Token](https://tools.ietf.org/html/rfc7519) if the user credentials are valid.
 
-The JSON Web Token must then be [appended to all subsequent requests]({{ site_base_path }}api-documentation/query-syntax/authorization-token/#authorization-token) to access Kuzzle resources.
+The JSON Web Token must then be [appended to all subsequent requests]({{ site_base_path }}api/2/query-syntax) to access Kuzzle resources.
 
 If no authentication strategy is configured, Kuzzle will default to the `local` strategy, outlined below.
 

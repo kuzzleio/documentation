@@ -2,10 +2,11 @@
 layout: sdk.html.hbs
 algolia: true
 title: import
-description: Bulk imports three documents into kuzzle
+description: Performs a bulk import on a collection
 ---
 
 # Import
+
 
 Create, update or delete large amounts of documents as fast as possible.
 
@@ -25,6 +26,7 @@ import (bulkData, [options])
 | ---------- | ----------- | --------------------------------------------------- |
 | `bulkData` | <pre>array<object></pre> | List of documents to be added to the collection |
 | `options`  | <pre>object</pre> | Query options         |
+
 
 ### **bulkData**
 

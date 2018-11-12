@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: updateSelf
-description: Updates the current user object in kuzzle.
+description: Updates the current user object in Kuzzle.
 ---
 
 # updateSelf
@@ -47,7 +47,7 @@ The User content contain the following properties:
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `profileIds` | <pre>array<string></pre> | An array containing the profile ids |
+| `profileIds` | <pre>array&lt;string&gt;</pre> | An array containing the profile ids |
 | `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
 | `any` | any | Any other information saved with the user |
 

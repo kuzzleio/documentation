@@ -3,18 +3,17 @@ layout: sdk.html.hbs
 algolia: true
 title: addListener
 description: Add a listener to an event
-order: 200
 ---
 
 # addListener
 
-Adds a listener to an event.  
+Adds a listener to an event.
 When an event is triggered, listeners are triggered in the order in which they were added.
 
 ## Signature
 
 ```go
-AddListener(event int, channel chan<- interface{})
+AddListener(event int, channel chan<- json.RawMessage{})
 ```
 
 ## Arguments
@@ -22,7 +21,7 @@ AddListener(event int, channel chan<- interface{})
 | Argument  | Type    | Description                                                                                                                                   | Required |
 | --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `event`   | int     | One of the event described in the [Event Handling]({{ site_base_path }}sdk-reference/essentials/event-handling) section of this documentation | yes      |
-| `channel` | channel | A channel taking an interface                                                                                                                 | yes      |
+| `channel` | channel | A channel taking a json.RawMessage                                                                                                                 | yes      |
 
 ### **event**
 

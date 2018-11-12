@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: Events
 description: SDK events system
-order: 100
 ---
 
 # Events
@@ -74,7 +73,7 @@ Triggered whenever a request is removed from the offline queue.
 
 **Callback arguments**
 
-A String representing a JSON object containing the [request]({{ site_base_path }}api-documentation/query-syntax/common-attributes/) removed from the queue.
+A String representing a JSON object containing the [request]({{ site_base_path }}api/1/query-syntax/) removed from the queue.
 
 ## offlineQueuePush
 
@@ -86,7 +85,7 @@ A String representing a JSON object containing the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | JSON object | The [request]({{ site_base_path }}api-documentation/query-syntax/common-attributes/) added to the queue |    
+| `request` | JSON object | The [request]({{ site_base_path }}api/1/query-syntax/) added to the queue |    
 
 ## queryError
 

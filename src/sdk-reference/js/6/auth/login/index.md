@@ -30,11 +30,11 @@ The name of the authentication [strategy]({{ site_base_path }}guide/kuzzle-depth
 Depending on the chosen authentication `<strategy>`, additional [credential arguments]({{ site_base_path}}guide/kuzzle-depth/authentication/#authentication) may be required.
 The API request example in this page provides the necessary arguments for the [`local` authentication plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local).
 
-Check the appropriate [authentication plugin]({{ site_base_path }}plugins-reference/plugins-features/adding-authentication-strategy/) documentation to get the list of additional arguments to provide.
+Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/essentials/strategies/) documentation to get the list of additional arguments to provide.
 
 ## Resolve
 
-Return a `string` representing the encrypted JSON Web Token.
+The **login** action returns an encrypted JSON Web Token, that must then be sent in the [requests headers]({{ site_base_path }}api/1/query-syntax/).
 
 ## Usage
 

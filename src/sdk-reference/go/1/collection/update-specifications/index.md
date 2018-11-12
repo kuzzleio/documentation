@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: updateSpecifications
 description: Update the validation specifications
-order: 200
 ---
 
 # updateSpecifications

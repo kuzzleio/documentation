@@ -14,7 +14,7 @@ try {
   };
 
   const searchResult = await kuzzle.collection.searchSpecifications(body, options);
-  console.log(searchResult.response);
+  console.log(searchResult);
   /*
     {
       "total": 1,
@@ -42,8 +42,7 @@ try {
       "scrollId": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAAACSFlgtZTJFYjNiU1FxQzhSNUFpNlZHZGcAAAAAAAAAkxZYLWUyRWIzYlNRcUM4UjVBaTZWR2RnAAAAAAAAAJQWWC1lMkViM2JTUXFDOFI1QWk2VkdkZwAAAAAAAACVFlgtZTJFYjNiU1FxQzhSNUFpNlZHZGcAAAAAAAAAlhZYLWUyRWIzYlNRcUM4UjVBaTZWR2Rn"
     }
   */
-
-  if (searchResult.response.hits[0]._source.validation.fields.license.type === 'string') {
+  if (searchResult.hits[0]._source.validation.fields.license.type === 'string') {
     console.log('Success');
   }
 } catch (error) {

@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: exists
-description: Test if an index exists
-order: 300
+description: Check for index existence
 ---
 
 # exists

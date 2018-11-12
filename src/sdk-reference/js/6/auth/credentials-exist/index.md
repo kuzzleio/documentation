@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: credentialsExist
-description: Checks a jwt token's validity.
+description: Check that the current user has credentials for the specified strategy
 ---
 
 # credentialsExist

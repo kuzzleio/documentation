@@ -1,8 +1,5 @@
 ---
 layout: sdk.html.hbs
 title: auth
-description: Auth Controller
-order: 200
+description: auth controller documentation
 ---
-
-# Auth Controller

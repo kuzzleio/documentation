@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: getAutoRefresh
-description: Return autorefresh status for index
-order: 900
+description: Returns the status of autorefresh flag
 ---
 
 # getAutoRefresh
