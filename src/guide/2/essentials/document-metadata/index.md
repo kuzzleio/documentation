@@ -120,4 +120,4 @@ Documents in the `trashcan` cannot be accessed, searched or counted, unless the 
  Kuzzle will routinely search and permanently delete the oldest documents in the `trashcan`. This garbage collecting can be configured using the `services.garbageCollector` property in the  Kuzzle [configuration file]({{ site_base_path }}guide/2/essentials/configuration/). In general, garbage collection works as follows:
 
 * When Kuzzle is started, it will check the `services.garbageCollector` property and wait the configured delay before running the garbage collection for the first time.
-* If Kuzzle is in [overload]({{ site_base_path }}kuzzle-events/core/#core-overload) the garbage collecting will be postponed until the load is reduced.
+* If Kuzzle is in [overload]({{ site_base_path }}plugins/2/events/core-overload) the garbage collecting will be postponed until the load is reduced.

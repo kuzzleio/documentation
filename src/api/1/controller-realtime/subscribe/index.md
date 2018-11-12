@@ -50,7 +50,7 @@ Due to the synchronous nature of the HTTP protocol, real-time notifications are 
 * `scope`: accepted values: `all`, `in`, `out`, `none` (default: `all`). Subscribe to either new documents entering the scope of the subscription filters (`in`), to documents leaving it (`out`), or both (`all`). Alternatively, document notifications can be ignored entirely (`none`)
 * `state` {{{deprecated "1.5.0"}}}: accepted values: `all`, `pending`, `done` (default: `done`). Subscribe to either changes that are about to occur (`pending`), to changes having occured (`done`), or both (`all`). In the latter case, each document change will generate 2 real-time notifications
 * `users`: accepted values: `all`, `in`, `out`, `none` (default: `none`). Receive real-time notifications about users subscribing to the same filters (`in`), about users leaving the subscription (`out`), or both (`all`). If set to `none`, no notifications are sent about users
-* `volatile`: subscription information, used in [user join/leave notifications]({{site_base_path}}api/2/volatile-data)
+* `volatile`: subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data)
 
 ---
 
@@ -67,7 +67,7 @@ An empty filter subscribes to any change occuring on the selected data index-col
 Returns an object detailing the new subscription properties:
 
 * `channel`: unique channel identifier. A channel acts as a subscription configuration ID, allowing multiple subscriptions to occur with the same filters, but different notification options.
-* `roomId`: unique subscription identifier. 
+* `roomId`: unique subscription identifier.
 
 Notifications include the `room` property, which indicates to what channel the notification is for. This is how notifications can be linked to subscriptions by front-end applications (our SDK perform these operations automatically).
 

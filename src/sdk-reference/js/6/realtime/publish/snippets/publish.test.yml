@@ -1,0 +1,7 @@
+name: realtime#publish
+description: Publish a realtime message
+hooks:
+  before:
+  after:
+template: asyncdefault
+expected: Success

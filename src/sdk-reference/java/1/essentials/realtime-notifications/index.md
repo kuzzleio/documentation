@@ -13,7 +13,7 @@ Properties can be accessed with usual getters and setters.
 
 ## Document & messages
 
-These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
+These `io.kuzzle.sdk.NotificationResult` represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
@@ -29,16 +29,16 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | `nType` | String | `document`: the notification type |
 | `volatile` | String | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
-The `result` object has the following properties for document notifications & messages:
+The `io.kuzzle.sdk.NotificationContent` object has the following properties for document notifications & messages:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
 | `id` | String | Document unique ID<br/>`null` if the notification is from a real-time message|
 | `content` | String | A JSON String message or full document content. Not present if the event is about a document deletion |
 
-## User 
+## User
 
-These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
+These `io.kuzzle.sdk.NotificationResult` represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
@@ -54,7 +54,7 @@ These notifications represent [user events]({{ site_base_path }}api/1/notificati
 | `user` | String | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
 | `volatile` | String | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
-The `result` object has the following properties for user events:
+The `io.kuzzle.sdk.NotificationContent` object has the following properties for user events:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|

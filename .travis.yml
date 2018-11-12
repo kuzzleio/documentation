@@ -149,7 +149,6 @@ jobs:
             bash ./.ci/comment_pr.sh
           fi;
 
-
     - stage: Snippets tests
       name: "Temporarily Deploy Kuzzle Docs with failling tests"
 

@@ -46,7 +46,7 @@ You can use standard getter/setter to use these properties.
 | `autoReconnect`     | bool      | Automatically reconnect after a connection loss                    | `true`         | no       |
 | `autoReplay`        | bool      | Automatically replay queued requests on a `reconnected` event      | `false`        | no       |
 | `autoResubscribe`   | bool      | Automatically renew all subscriptions on a `reconnected` event     | `true`         | no       |
-| `offlineMode`       | int          | Offline mode configuration                                         | `types.Manual` | no       |
+| `offlineMode`       | int          | Offline mode configuration. `types.Manual` or `types.Auto`      | `types.Manual` | no       |
 | `port`              | int          | Target Kuzzle port                                                 | `7512`         | no       |
 | `queueTTL`          | int          | Time a queued request is kept during offline mode, in milliseconds | `120000`       | no       |
 | `queueMaxSize`      | int          | Number of maximum requests kept during offline mode                | `500`          | no       |
@@ -91,7 +91,7 @@ For example, you can read the `volatile` property via `getVolatile()` and set it
 
 ## Return
 
-A `Kuzzle` struct and an [error struct]({{ site_base_path }}sdk-reference/essentials/error-handling).  
+A `Kuzzle` struct and an [error struct]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling).  
 The `error` struct is nil if everything was ok.
 
 ## Usage

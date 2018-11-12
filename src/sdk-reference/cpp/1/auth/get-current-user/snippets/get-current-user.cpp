@@ -3,6 +3,6 @@ try {
   kuzzleio::kuzzle_user* user = kuzzle->auth->getCurrentUser();
 
   std::cout << "Success" << std::endl;
-} catch (kuzzleio::KuzzleException e) {
+} catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.getMessage() << std::endl;
 }

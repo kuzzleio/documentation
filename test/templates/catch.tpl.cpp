@@ -22,7 +22,7 @@ int main() {
 
   try {
     [snippet-code]
-  } catch (kuzzleio::KuzzleException e) {
+  } catch (kuzzleio::KuzzleException &e) {
     std::cout << "Success" << std::endl;
   }
   return 0;
