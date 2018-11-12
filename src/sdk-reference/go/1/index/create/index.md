@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: create
 description: Create an index
-order: 200
 ---
 
 # create
