@@ -1,5 +1,5 @@
 name: document#mGet
-description: get multiple documents from Kuzzle
+description: Get multiple documents from kuzzle
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data

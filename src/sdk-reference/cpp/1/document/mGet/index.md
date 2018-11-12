@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: mGet
-description:
+description: Get multiple documents from kuzzle
 order: 200
 ---
 
@@ -16,27 +16,26 @@ Throws a partial error (error code 206) if one or more document can not be retri
 
 ```cpp
 std::string mGet(
-    const std::string& index, 
-    const std::string& collection, 
-    const std::vector<std::string>& ids, 
-    kuzzleio::query_options *options=nullptr
-)
+    const std::string& index,
+    const std::string& collection,
+    const std::vector<std::string>& ids,
+    kuzzleio::query_options *options=nullptr)
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `index` | <pre>std::string</pre> | Index name |
-| `collection` | <pre>std::string</pre> | Collection name |
+| `index` | <pre>const std::string&</pre> | Index name |
+| `collection` | <pre>const std::string&</pre> | Collection name |
 | `ids` | <pre>std::vector<std::string></pre> | The document ids |
-| `options` | <pre>query_options</pre> | A pointer to a `query_options` containing query options |
+| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | ------ | -------------- | ----------- |
-| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
 
 ## Return
 

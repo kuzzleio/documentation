@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
-title: Document
+title: document
 description: Document controller
 order: 200
 ---

@@ -20,7 +20,7 @@ std::vector<std::string> mDelete(std::vector<std::string> indexes, kuzzleio::que
 | Arguments | Type                       | Description                                             | Required |
 | --------- | -------------------------- | ------------------------------------------------------- | -------- |
 | `indexes` | `std::vector<std::string>` | containing list of indexes names                        | yes      |
-| `options` | kuzzleio::query_options              | A pointer to a `query_options` containing query options | no       |
+| `options` | kuzzleio::query_options              | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
 ### **Options**
 

@@ -7,7 +7,7 @@ description: Update the collection mapping
 
 # updateMapping
 
-Update the collection mapping.  
+Update the collection mapping.
 Mapping allow you to exploit the full capabilities of our
 persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
 
@@ -24,11 +24,11 @@ void updateMapping(const std::string& index, const std::string& collection, cons
 | ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | ``mapping`` | const std::string* | Collection data mapping in JSON format  | yes  |
-| ``options`` | kuzzleio::query_options* |  A pointer to a `query_options` containing query options  | no  |
+| ``options`` | kuzzleio::query_options* |  A pointer to a `kuzzleio::query_options` containing query options  | no  |
 
 ### **mapping**
 
-An string containing the JSON representation of the collection data mapping.  
+An string containing the JSON representation of the collection data mapping.
 
 The mapping must have a root field `properties` that contain the mapping definition:
 ```json

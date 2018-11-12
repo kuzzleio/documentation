@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: search
-description:
+description: Search documents
 order: 200
 ---
 
@@ -24,30 +24,29 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 
 ```cpp
 search_result* search(
-  const std::string& index, 
-  const std::string& collection, 
-  const std::string& body, 
-  kuzzleio::query_options *options=nullptr
-)
+  const std::string& index,
+  const std::string& collection,
+  const std::string& body,
+  kuzzleio::query_options *options=nullptr)
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `index` | <pre>std::string</pre> | Index name |
-| `collection` | <pre>std::string</pre> | Collection name |
-| `body` | <pre>std::string</pre> | A JSON string containing the search query |
-| `options` | <pre>query_options</pre> | A pointer to a `query_options` containing query options |
+| `index` | <pre>const std::string&</pre> | Index name |
+| `collection` | <pre>const std::string&</pre> | Collection name |
+| `body` | <pre>const std::string&</pre> | A JSON string containing the search query |
+| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | ------ | -------------- | ----------- |
-| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
-| `from` | integer | Offset of the first document to fetch |
-| `size` | integer | Maximum number of documents to retrieve per page  |
-| `scroll` | <pre>std::string</pre> | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
+| `from` | <pre>int</pre><br/>(`0`) | Offset of the first document to fetch |
+| `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
+| `scroll` | <pre>const std::string&</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
 
 ## Body properties
 
