@@ -35,7 +35,12 @@ Additional query options
 
 ## Resolve
 
-Resolves to an object containing the created documents.
+Resolves to an object containing created documents.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `hits` | <pre>array<object></pre> | Created documents |
+| `total` | <pre>number</pre> | Total number of created documents |
 
 ## Usage
 
