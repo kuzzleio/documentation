@@ -9,10 +9,8 @@
   sdkVersions = JSON.parse(sdkVersions.replace(/&quot;/g, '\"'));
 </script>
 
+<script src="/assets/js/bundle.min.js"></script>
+
 {{#if (eq is_dev true) }}
-  <script src="/assets/js/libs/jquery.min.js"></script>
-  <script src="/assets/js/main.min.js"></script>
   <script src="http://localhost:35729/livereload.js"></script>
-{{else}}
-  <script src="/assets/js/bundle.min.js"></script>
 {{/if}}
