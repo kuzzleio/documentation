@@ -10,7 +10,7 @@ order: 100
 
 An event system allows to be notified when the SDK status changes. These events are issued by the [Kuzzle SDK object]({{site_base_path }}sdk-reference/js/6/kuzzle).
 
-Subscription to these events is possible by specifying callbacks that will be executed when a specific event is issued by the SDK instance.  
+Subscription to these events is possible by specifying callbacks that will be executed when a specific event is issued by the SDK instance.
 
 These callbacks can be added and deleted respectively by the methods [addListener]({{site_base_path }}sdk-reference/js/6/kuzzle/add-listener) and [removeListener]({{site_base_path }}sdk-reference/js/6/kuzzle/remove-listener).
 
@@ -32,9 +32,9 @@ Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request t
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `message` | string | Error description |
-| `status` | number | Error code |
-| `stack` | string | Stacktrace (development mode only) |
+| `message` | <pre>string</pre> | Error description |
+| `status` | <pre>number</pre> | Error code |
+| `stack` | <pre>string</pre> | Stacktrace (development mode only) |
 
 ## disconnected
 
@@ -50,13 +50,13 @@ Triggered when a login attempt completes, either with a success or a failure res
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `success` | boolean | Indicate if login attempt succeed |
-| `error` | string | Error message when login fail |
+| `success` | <pre>boolean</pre> | Indicate if login attempt succeed |
+| `error` | <pre>string</pre> | Error message when login fail |
 
 ## networkError
 
-Triggered when the SDK has failed to connect to Kuzzle.  
-This event does not trigger the offline mode.  
+Triggered when the SDK has failed to connect to Kuzzle.
+This event does not trigger the offline mode.
 
 **Callback arguments:**
 
@@ -64,9 +64,9 @@ This event does not trigger the offline mode.
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `message` | string | Error description |
-| `status` | number | Error code |
-| `stack` | string | Stacktrace (development mode only) |
+| `message` | <pre>string</pre> | Error description |
+| `status` | <pre>number</pre> | Error code |
+| `stack` | <pre>string</pre> | Stacktrace (development mode only) |
 
 ## offlineQueuePop
 
@@ -87,7 +87,7 @@ Triggered whenever a request is added to the offline queue.
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | object | [Request]({{ site_base_path }}api-documentation/query-syntax/common-attributes/) added to the queue |    
+| `request` | <pre>object</pre> | [Request]({{ site_base_path }}api-documentation/query-syntax/common-attributes/) added to the queue |
 
 ## queryError
 
@@ -99,8 +99,8 @@ Triggered whenever Kuzzle responds with an error
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | object | Request that causing an error |    
-| `error` | Error | Error details |    
+| `request` | <pre>object</pre> | Request that causing an error |
+| `error` | Error | Error details |
 
 ## reconnected
 

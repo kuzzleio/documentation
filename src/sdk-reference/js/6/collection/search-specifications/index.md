@@ -9,28 +9,23 @@ description: Search for specifications
 
 Allows to search in the persistence layer for collection specifications.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {object} [body]
- * @param {object} [options]
- * @returns {Promise<SpecificationsSearchResult>}
- */
 searchSpecifications (body = {}, options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``body`` | object | An object containing the search query    |
-| ``options`` | object | Query options    |
+| ``body`` | <pre>object</pre> | An object containing the search query    |
+| ``options`` | <pre>object</pre> | Query options    |
 
 
 ### **body**
 
-The body is a set of filters using [Elasticsearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-body.html) to match the documents you are looking for.  
+The body is a set of filters using [Elasticsearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-body.html) to match the documents you are looking for.
 The filters must be inside the `query` property of the body.
 
 Example:
@@ -48,11 +43,11 @@ const body = {
 ### **options**
 
 | Arguments    | Type    | Description | Default |
-|--------------|---------|-------------|---------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| ``from`` | number | Offset of the first document    | `0`  |
-| ``size`` | number | Maximum number of documents returned    | `10` |
-| ``scroll`` | number | Maximum duration for scroll session    | undefined |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
+| ``from`` | <pre>number</pre> | Offset of the first document    | `0`  |
+| ``size`` | <pre>number</pre> | Maximum number of documents returned    | `10` |
+| ``scroll`` | <pre>number</pre> | Maximum duration for scroll session    | undefined |
 
 * `size` controls the maximum number of documents returned in the response
 * `from` is usually used with the `size` argument, and defines the offset from the first result you want to fetch

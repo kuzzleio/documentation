@@ -10,31 +10,26 @@ order: 500
 
 Deletes an entire data `<index>` from Kuzzle.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {object} [options]
- * @returns {Promise<object>}
- */
 delete (index, options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments | Type   | Description      |
 | --------- | ------ | ---------------- |
-| `index`   | string | Index name       |
-| `options` | object | Query options |
+| `index`   | <pre>string</pre> | Index name       |
+| `options` | <pre>object</pre> | Query options |
 
 ### **options**
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ## Resolve
 

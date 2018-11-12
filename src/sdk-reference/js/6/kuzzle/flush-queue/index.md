@@ -9,12 +9,9 @@ description: Empties the offline request queue
 
 Empties the offline request queue without playing it.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @returns {Kuzzle} this
- */
 flushQueue ()
 ```
 

@@ -11,31 +11,27 @@ Checks a `<token>` validity.
 
 This API route does not require the caller to be logged in.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param  {string} token
- * @return {Promise<object>}
- */
 checkToken (token)
 ```
 
-## Arguments
+<br/>
 
 | Property    | Type    | Description
 |--------------|---------|-------------
-| ``token`` | string | JWT token
+| ``token`` | <pre>string</pre> | JWT token
 
 ## Resolve
 
 An `object` representing the token validity status
 
-| Name                | Type    | Description                        
+| Name                | Type    | Description
 | ------------------- | ------- | -----------------------------------
-| `valid`               | boolean | Tell if the token is valid or not
-| `state`               | string  | Explain why the token is invalid
-| `expires_at`          | number  | Tells when the token expires
+| `valid`               | <pre>boolean</pre> | Tell if the token is valid or not
+| `state`               | <pre>string</pre> | Explain why the token is invalid
+| `expires_at`          | <pre>number</pre> | Tells when the token expires
 
 ## Usage
 

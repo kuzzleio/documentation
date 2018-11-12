@@ -7,37 +7,31 @@ description: Remove all documents from collection
 
 # truncate
 
-Remove all documents from a `<collection>` while keeping the associated mapping.  
+Remove all documents from a `<collection>` while keeping the associated mapping.
 
 It is faster than deleting all documents from a collection.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
-* @param {string} index
-* @param {string} collection
-* @param {object} [options]
-* @returns {Promise<>}
- */
 truncate (index, collection, options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``index`` | string | Index name    |
-| ``collection`` | string | Collection name    |
-| ``options`` | object | Query options    |
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``options`` | <pre>object</pre> | Query options    |
 
 ### **options**
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ## Resolve
 

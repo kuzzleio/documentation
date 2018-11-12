@@ -11,31 +11,26 @@ Deletes credentials for a specific `<strategy>` associated to the current user.
 
 If the credentials that generated the current JWT are removed, the user will remain logged in until they log out or their session expire. After that, they will no longer be able to log in with the deleted credentials.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} strategy
- * @param {object} [options]
- * @returns {Promise<object>}
- */
 deleteMyCredentials (strategy, options = null);
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | Strategy to use
-| `options` | object | Query options
+| `strategy` | <pre>string</pre> | Strategy to use
+| `options` | <pre>object</pre> | Query options
 
 ### **options**
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ## Resolve
 

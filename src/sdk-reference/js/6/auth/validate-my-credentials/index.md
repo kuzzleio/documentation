@@ -11,34 +11,28 @@ Validates the provided `<credentials>` against a specified authentication `<stra
 
 This route neither creates nor modifies credentials.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} strategy
- * @param {object} credentials
- * @param {object} [options]
- * @returns a boolean
- */
 validateMyCredentials (strategy, credentials, options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | Strategy to use
-| `credentials` | string | New credentials
-| `options`  | object | Query options
+| `strategy` | <pre>string</pre> | Strategy to use
+| `credentials` | <pre>string</pre> | New credentials
+| `options`  | <pre>object</pre> | Query options
 
 
 ### **options**
 
 Additional query options
 
-| Property     | Type    | Description                    | Default |
-| ---------- | ------- | ------------------------------ | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 
 ## Return

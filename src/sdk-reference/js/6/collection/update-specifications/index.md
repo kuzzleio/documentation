@@ -11,31 +11,24 @@ The updateSpecifications method allows you to create or update the validation sp
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
-* @param {string} index
-* @param {string} collection
-* @param {object} specifications
-* @param {object} [options]
-* @returns {Promise<object>}
- */
 updateSpecifications(index, collection, specifications, options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|----------
-| ``index`` | string | Index name    |
-| ``collection`` | string | Collection name    |
-| ``specifications`` | object | Specifications to update  |
-| ``options`` | object | Query options    |
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``specifications`` | <pre>object</pre> | Specifications to update  |
+| ``options`` | <pre>object</pre> | Query options    |
 
 ### **specifications**
 
-An object representing the specifications.  
+An object representing the specifications.
 
 This object must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
 
@@ -52,9 +45,9 @@ This object must follow the [Specification Structure]({{ site_base_path }}valida
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ## Resolve
 

@@ -9,31 +9,26 @@ description: Checks a jwt token's validity.
 
 Checks that the current authenticated user has credentials for the specified authentication `<strategy>`.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} strategy
- * @param {object} [options]
- * @returns {Promise<boolean>}
- */
 credentialsExist (strategy, options = null);
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `local` | string | Strategy to use
-| `options` | object | Query options
+| `local` | <pre>string</pre> | Strategy to use
+| `options` | <pre>object</pre> | Query options
 
 ### **options**
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 
 ## Resolve

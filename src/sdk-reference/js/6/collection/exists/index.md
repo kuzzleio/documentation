@@ -9,33 +9,27 @@ description: Check if collection exists
 
 Check if a `<collection>` exists in Kuzzle.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {object} [options]
- * @returns {Promise<boolean>}
- */
 exists (index, collection, options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``index`` | string | Index name    |
-| ``collection`` | string | Collection name    |
-| ``options`` | object | Query options    |
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``options`` | <pre>object</pre> | Query options    |
 
 ### **options**
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ## Resolve
 

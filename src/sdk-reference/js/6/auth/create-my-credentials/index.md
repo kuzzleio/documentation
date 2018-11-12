@@ -9,40 +9,34 @@ description: Create the current user's credentials for the specified `<strategy>
 
 Creates new credentials for the specified `<strategy>` for the current user.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} strategy
- * @param {object} credentials
- * @param {object} [options]
- * @returns {Promise<object>}
- */
 createMyCredentials (strategy, credentials, options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | Strategy to use
-| `credentials` | object | New credentials
-| `options`  | object | Query options
+| `strategy` | <pre>string</pre> | Strategy to use
+| `credentials` | <pre>object</pre> | New credentials
+| `options`  | <pre>object</pre> | Query options
 
 
 ### **options**
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean| Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | boolean| Make this request queuable or not |
 
 
 ## Resolve
 
-An `object` representing the new credentials.  
-The content depends on the authentication strategy.  
+An `object` representing the new credentials.
+The content depends on the authentication strategy.
 
 ## Usage
 

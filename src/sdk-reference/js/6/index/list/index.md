@@ -10,29 +10,25 @@ order: 400
 
 Get the complete list of data indexes handled by Kuzzle.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {object} [options]
- * @returns {Promise<array<string>>}
- */
 list (options = null);
 ```
 
-## Arguments
+<br/>
 
 | Arguments | Type   | Description                         |
 | --------- | ------ | ----------------------------------- |
-| `options` | object | Query options |
+| `options` | <pre>object</pre> | Query options |
 
 ### **options**
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ## Resolve
 

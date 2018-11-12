@@ -18,30 +18,25 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 
 </div>
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {object} [options]
- * @returns {Promise<object>}
- */
 refresh (index, options = null);
 ```
 
-## Arguments
+<br/>
 
 | Arguments | Type   | Description                         |
 | --------- | ------ | ----------------------------------- |
-| `options` | object | Query options |
+| `options` | <pre>object</pre> | Query options |
 
 ### **options**
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ## Resolve
 
@@ -49,9 +44,9 @@ Resolves to an `object` containing the refresh status on shards.
 
 | Name     | Type   | Description          |
 | -------- | ------ | ---------------------------------------------- |
-| `total` | number | Total number of shards |
-| `successful` | number | Successfully refreshed shards |
-| `fail` | number | Shards that failed to refresh |
+| `total` | <pre>number</pre> | Total number of shards |
+| `successful` | <pre>number</pre> | Successfully refreshed shards |
+| `fail` | <pre>number</pre> | Shards that failed to refresh |
 
 ## Usage
 

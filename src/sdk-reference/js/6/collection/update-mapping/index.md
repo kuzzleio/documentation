@@ -7,35 +7,28 @@ description: Update the collection mapping
 
 # updateMapping
 
-Update the `<collection>` mapping.  
+Update the `<collection>` mapping.
 
 Mapping allow you to exploit the full capabilities of our persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
 
-## Signature
+## Arguments
 
 ```javascript
-/**
-* @param {string} index
-* @param {string} collection
-* @param {object} mapping
-* @param {object} [options]
-* @returns {Promise<>}
- */
 updateMapping (index, collection, mapping, options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``index`` | string | Index name    |
-| ``collection`` | string | Collection name    |
-| ``mapping`` | object | Collection data mapping    |
-| ``options`` | object | Query options    |
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``mapping`` | <pre>object</pre> | Collection data mapping    |
+| ``options`` | <pre>object</pre> | Query options    |
 
 ### **mapping**
 
-An object representing the collection data mapping.  
+An object representing the collection data mapping.
 
 This object must have a root field `properties` that contain the mapping definition:
 ```javascript
@@ -57,9 +50,9 @@ You can see the full list of Elasticsearch mapping types [here](https://www.elas
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ## Resolve
 

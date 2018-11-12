@@ -10,31 +10,26 @@ order: 600
 
 Deletes multiple `<indexes>` at once.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {array<string>} indexes
- * @param {object} [options]
- * @returns {Promise<array<string>>}
- */
 mDelete (indexes, options = null);
 ```
 
-## Arguments
+<br/>
 
 | Arguments | Type   | Description                                  |
 | --------- | ------ | -------------------------------------------- |
 | `indexes` | Array  | An array of strings containing indexes names |
-| `options` | object | Query options          |
+| `options` | <pre>object</pre> | Query options          |
 
 ### **options**
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ## Resolve
 

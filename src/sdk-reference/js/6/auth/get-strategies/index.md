@@ -9,21 +9,17 @@ description: Get all authentication strategies registered in kuzzle.
 
 Gets the exhaustive list of registered authentication strategies.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {object} [options]
- * @returns {Promise<array<string>>}
- */
 getStrategies (options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options` | object | Query options
+| `options` | <pre>object</pre> | Query options
 
 ### **options**
 
@@ -31,7 +27,7 @@ Additional query options
 
 | Property     | Type    | Description                       | Default
 | ---------- | ------- | --------------------------------- | -------
-| `queuable` | boolean | Make this request queuable or not | `true`
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`
 
 ## Resolve
 

@@ -13,38 +13,33 @@ The data returned will depend on the specified authentication `<strategy>`, and 
 
 The result can be an empty object.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} strategy
- * @param {object} [options]
- * @returns {Promise<object>}
- */
 getMyCredentials (strategy, options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | Strategy to use
-| `options` | object | Query options
+| `strategy` | <pre>string</pre> | Strategy to use
+| `options` | <pre>object</pre> | Query options
 
 
 ### **options**
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 
 ## Resolve
 
-An `object` representing the credentials for the provided authentication strategy.  
-The content depends on the authentication strategy.  
+An `object` representing the credentials for the provided authentication strategy.
+The content depends on the authentication strategy.
 
 ## Usage
 

@@ -15,24 +15,24 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `action` | string | API controller's action  |
-| `collection` | string | Data collection |
-| `controller` | string | API controller  |
-| `index` | string | Data index |
-| `protocol` | string | Network protocol used to modify the document |
-| `result` | object | Notification content |
-| `room` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
-| `scope` | string | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
-|`timestamp` | number | Timestamp of the event, in Epoch-millis format |
-| `type` | string | `document`: Notification type |
-| `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `action` | <pre>string</pre> | API controller's action  |
+| `collection` | <pre>string</pre> | Data collection |
+| `controller` | <pre>string</pre> | API controller  |
+| `index` | <pre>string</pre> | Data index |
+| `protocol` | <pre>string</pre> | Network protocol used to modify the document |
+| `result` | <pre>object</pre> | Notification content |
+| `room` | <pre>string</pre> | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
+| `scope` | <pre>string</pre> | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
+|`timestamp` | <pre>number</pre> | Timestamp of the event, in Epoch-millis format |
+| `type` | <pre>string</pre> | `document`: Notification type |
+| `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
 The `result` object is the notification content, and it has the following structure:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `_id` | string | Document unique ID<br/>`null` if the notification is from a real-time message|
-| `_source` | object | Message or full document content. Not present if the event is about a document deletion |
+| `_id` | <pre>string</pre> | Document unique ID<br/>`null` if the notification is from a real-time message|
+| `_source` | <pre>object</pre> | Message or full document content. Not present if the event is about a document deletion |
 
 ## User
 
@@ -40,23 +40,23 @@ These notifications represent [user events]({{ site_base_path }}api/1/notificati
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `action` | string | API controller's action  |
-| `collection` | string | Data collection |
-| `controller` | string | API controller  |
-| `index` | string | Data index |
-| `protocol` | string | Network protocol used by the entering/leaving user |
-| `result` | object | Notification content |
-| `room` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
-|`timestamp` | number | Timestamp of the event, in Epoch-millis format |
-| `type` | string | `user`: Notification type |
-| `user` | string | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
-| `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `action` | <pre>string</pre> | API controller's action  |
+| `collection` | <pre>string</pre> | Data collection |
+| `controller` | <pre>string</pre> | API controller  |
+| `index` | <pre>string</pre> | Data index |
+| `protocol` | <pre>string</pre> | Network protocol used by the entering/leaving user |
+| `result` | <pre>object</pre> | Notification content |
+| `room` | <pre>string</pre> | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
+|`timestamp` | <pre>number</pre> | Timestamp of the event, in Epoch-millis format |
+| `type` | <pre>string</pre> | `user`: Notification type |
+| `user` | <pre>string</pre> | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
+| `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
 The `result` object is the notification content, and it has the following structure:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `count` | number |  Updated users count sharing that same subscription |
+| `count` | <pre>number</pre> |  Updated users count sharing that same subscription |
 
 ## Server
 
@@ -64,5 +64,5 @@ These notifications represent [server events]({{ site_base_path }}api/1/notifica
 
 | Property | Type | Value |
 |--------------------|------|------------------|
-| `message` | string | Server message explaining why this notification has been triggered |
-| `type` | string | `TokenExpired`: notification type |
+| `message` | <pre>string</pre> | Server message explaining why this notification has been triggered |
+| `type` | <pre>string</pre> | `TokenExpired`: notification type |

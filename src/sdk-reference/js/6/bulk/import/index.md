@@ -13,27 +13,22 @@ This route is faster than the `document:m*` routes family (e.g. [document:mCreat
 
 If some documents actions fail, the client will receive a [PartialError]({{ site_base_path }}api/1/documentation/errors/#partialerror) error.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {array<object>} bulkData
- * @param {object} [options]
- * @returns {Promise<array<object>>}
- */
 import (bulkData, options = null)
 ```
 
-## Arguments
+<br/>
 
 | Arguments  | Type        | Description                                         |
 | ---------- | ----------- | --------------------------------------------------- |
-| `bulkData` | array<object> | List of documents to be added to the collection |
-| `options`  | object | Query options         |
+| `bulkData` | <pre>array<object></pre> | List of documents to be added to the collection |
+| `options`  | <pre>object</pre> | Query options         |
 
 ### **bulkData**
 
-This API takes a JSON array containing a list of objects working in pairs.  
+This API takes a JSON array containing a list of objects working in pairs.
 In each pair, the first object specifies the action to perform (the most common is `create`) and the second specifies the document itself, like in the example below:
 
 ```javascript
@@ -59,15 +54,15 @@ Learn more at [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticse
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ---
 
 ## Resolve
 
-An array containing objects indicating the import status for each document.  
+An array containing objects indicating the import status for each document.
 Each object has the following structure:
 
 ```javascript
