@@ -160,22 +160,6 @@ jobs:
 
       script:
         - npm install
-        - npm build
-
-      after_script:
-        - aws s3 sync build/ s3://$AWS_S3_BUCKET/ --delete
-
-    - stage: Snippets tests
-      name: "Temporarily Deploy Kuzzle Docs with failling tests"
-
-      if: type != pull_request AND branch = master
-
-      language: node_js
-      node_js:
-        - "8"
-
-      script:
-        - npm install
         - npm run build
 
       after_success:
