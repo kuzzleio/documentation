@@ -19,8 +19,8 @@ int count(const std::string& room_id, kuzzleio::query_options *options=nullptr)
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `room_id` | const std::string& | Subscription room ID |
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options |
+| `room_id` | <pre>const std::string&</pre> | Subscription room ID |
+| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `query_options` containing query options |
 
 ### options
 
@@ -28,7 +28,7 @@ Additional query options
 
 | Option     | Type<br/>(default)  | Description   |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | bool<br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>bool</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Return
 

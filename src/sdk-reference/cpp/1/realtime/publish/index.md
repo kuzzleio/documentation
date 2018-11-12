@@ -28,10 +28,10 @@ void publish(
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `index` | const std::string& | Index name    |
-| `collection` | const std::string& | Collection name    |
-| `message` | const std::string& | JSON string representing the message to send |
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options |
+| `index` | <pre>const std::string&</pre> | Index name    |
+| `collection` | <pre>const std::string&</pre> | Collection name    |
+| `message` | <pre>const std::string&</pre> | JSON string representing the message to send |
+| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `query_options` containing query options |
 
 ### options
 
@@ -39,7 +39,7 @@ Additional query options
 
 | Option     | Type<br/>(default)  | Description   |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | bool<br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>bool</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Exceptions
 

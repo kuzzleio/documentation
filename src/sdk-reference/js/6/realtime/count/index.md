@@ -19,8 +19,8 @@ count (roomId, [options])
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``roomId`` | string | Subscription room ID |
-| ``options`` | object | Query options    |
+| ``roomId`` | <pre>string</pre> | Subscription room ID |
+| ``options`` | <pre>object</pre> | Query options    |
 
 
 ### options
@@ -29,7 +29,7 @@ Additional query options
 
 | Option     | Type<br/>(default)    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Resolve
 

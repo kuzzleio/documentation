@@ -23,10 +23,10 @@ publish (index, collection, message, [options])
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``index`` | string | Index name    |
-| ``collection`` | string | Collection name    |
-| ``message`` | object | Message to send    |
-| ``options`` | object | Query options    |
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``message`` | <pre>object</pre> | Message to send    |
+| ``options`` | <pre>object</pre> | Query options    |
 
 ### options
 
@@ -34,7 +34,7 @@ Additional query options
 
 | Option     | Type<br/>(default)    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Resolve
 

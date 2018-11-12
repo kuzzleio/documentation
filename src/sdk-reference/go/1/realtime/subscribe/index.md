@@ -25,11 +25,11 @@ func (r *Realtime) Subscribe(
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `index` | string | Index name    |
-| `collection` | string | Collection name    |
-| `filters` | json.RawMessage | A set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
-| `listener` | chan<- types.KuzzleNotification | Channel receiving the notification |
-| `options` | types.RoomOptions | A struct containing subscription options |
+| `index` | <pre>string</pre> | Index name    |
+| `collection` | <pre>string</pre> | Collection name    |
+| `filters` | <pre>json.RawMessage</pre> | A set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
+| `listener` | <pre>chan<- types.KuzzleNotification</pre> | Channel receiving the notification |
+| `options` | <pre>types.RoomOptions</pre> | A struct containing subscription options |
 
 ### listener
 
@@ -42,10 +42,10 @@ Additional subscription options.
 
 | Property   | Type<br/>(default)    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `scope` | string<br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
-| `users` | string<br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
-| `subscribeToSelf` | bool<br/>(`true`) | Subscribe to notifications fired by our own queries |
-| `volatile` | json.RawMessage<br/>(`{}`) | subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
+| `scope` | <pre>string</pre><br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
+| `users` | <pre>string</pre><br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
+| `subscribeToSelf` | <pre>bool</pre><br/>(`true`) | Subscribe to notifications fired by our own queries |
+| `volatile` | <pre>json.RawMessage</pre><br/>(`{}`) | subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
 
 
 ## Return
@@ -54,8 +54,8 @@ Return an error if something was wrong or a `types.SubscribeResult` containing t
 
 | Property    | Type    | Description |
 |--------------|---------|-------------|
-| ``Room`` | string | The room ID    |
-| ``Channel`` | string | The channel ID    |
+| ``Room`` | <pre>string</pre> | The room ID    |
+| ``Channel`` | <pre>string</pre> | The channel ID    |
 
 ## Usage
 

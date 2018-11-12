@@ -28,10 +28,10 @@ func (r *Realtime) Publish(
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `index` | string | Index name    |
-| `collection` | string | Collection name    |
-| `message` | json.RawMessage | Message to send |
-| `options` | types.QueryOptions | Query options    |
+| `index` | <pre>string</pre> | Index name    |
+| `collection` | <pre>string</pre> | Collection name    |
+| `message` | <pre>json.RawMessage</pre> | Message to send |
+| `options` | <pre>types.QueryOptions</pre> | Query options    |
 
 ### options
 
@@ -39,7 +39,7 @@ Additional query options
 
 | Option     | Type<br/>(default)  | Description   |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | bool<br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>bool</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Return
 

@@ -31,11 +31,11 @@ public String subscribe(
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `index` | String | Index name    |
-| `collection` | String | Collection name    |
-| `filters` | String | JSON string representing a set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
-| `listener` | [io.kuzzle.sdk.NotificationListener]({{site_base_path}}sdk-reference/java/1/essentials/realtime-notifications) | Listener function to handle notifications |
-| `options` | io.kuzzle.sdk.RoomOptions | Subscription options |
+| `index` | <pre>String</pre> | Index name    |
+| `collection` | <pre>String</pre> | Collection name    |
+| `filters` | <pre>String</pre> | JSON string representing a set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
+| `listener` | <pre><a href="{{site_base_path}}sdk-reference/java/1/essentials/realtime-notifications">io.kuzzle.sdk.NotificationListener</a></pre> | Listener function to handle notifications |
+| `options` | <pre>io.kuzzle.sdk.RoomOptions</pre> | Subscription options |
 
 ### options
 
@@ -43,10 +43,10 @@ Additional subscription options.
 
 | Property   | Type<br/>(default)    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `scope` | String<br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
-| `users` | String<br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
-| `subscribeToSelf` | boolean<br/>(`true`) | Subscribe to notifications fired by our own queries |
-| `volatile` | String<br/>(`null`) | JSON string representing subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
+| `scope` | <pre>String</pre><br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
+| `users` | <pre>String</pre><br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
+| `subscribeToSelf` | <pre>boolean</pre><br/>(`true`) | Subscribe to notifications fired by our own queries |
+| `volatile` | <pre>String</pre><br/>(`null`) | JSON string representing subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
 
 ## Return
 

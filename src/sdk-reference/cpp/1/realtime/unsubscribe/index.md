@@ -19,8 +19,8 @@ void unsubscribe(const std::string& room_id, kuzzleio::query_options *options=nu
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `room_id` | const std::string& | Subscription room ID  |
-| `options` | kuzzleio::query_options* | Query options |
+| `room_id` | <pre>const std::string&</pre> | Subscription room ID  |
+| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### options
 
@@ -28,7 +28,7 @@ Additional query options
 
 | Option     | Type<br/>(default)  | Description   |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Exceptions
 

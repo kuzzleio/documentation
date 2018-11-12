@@ -19,11 +19,11 @@ Subscribes by providing a set of filters: messages, document changes and, option
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``index`` | string | Index name    |
-| ``collection`` | string | Collection name    |
-| ``filters`` | object | Set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
-| ``callback`` | Function | Callback function to handle notifications |
-| ``options`` | object | An object containing query options |
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``filters`` | <pre>object</pre> | Set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
+| ``callback`` | <pre>Function</pre> | Callback function to handle notifications |
+| ``options`` | <pre>object</pre> | An object containing query options |
 
 ### callback
 
@@ -36,10 +36,10 @@ Additional subscription options.
 
 | Property   | Type<br/>(default)    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `scope` | string<br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
-| `users` | string<br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
-| `subscribeToSelf` | boolean<br/>(`true`) | Subscribe to notifications fired by our own queries |
-| `volatile` | object<br/>(`null`) | subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
+| `scope` | <pre>string</pre><br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
+| `users` | <pre>string</pre><br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
+| `subscribeToSelf` | <pre>boolean</pre><br/>(`true`) | Subscribe to notifications fired by our own queries |
+| `volatile` | <pre>object</pre><br/>(`null`) | subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
 
 ## Resolve
 

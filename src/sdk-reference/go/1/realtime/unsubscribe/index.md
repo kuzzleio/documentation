@@ -19,8 +19,8 @@ func (r *Realtime) Unsubscribe(roomID string, options types.QueryOptions) error
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `roomId` | string| Subscription room ID  |
-| `options` | types.QueryOptions | Query options |
+| `roomId` | <pre>string</pre> | Subscription room ID  |
+| `options` | <pre>types.QueryOptions</pre> | Query options |
 
 ### options
 
@@ -28,7 +28,7 @@ Additional query options
 
 | Option     | Type<br/>(default)    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | bool<br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>bool</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Return
 

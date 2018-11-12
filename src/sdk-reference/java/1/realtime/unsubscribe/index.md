@@ -20,8 +20,8 @@ void unsubscribe(String roomId, io.kuzzle.sdk.QueryOptions options)
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `roomId` | String | Subscription room ID  |
-| `options` | io.kuzzle.sdk.QueryOptions | Query options |
+| `roomId` | <pre>String</pre> | Subscription room ID  |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ### options
 
@@ -29,7 +29,7 @@ Additional query options
 
 | Option     | Type<br/>(default)    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Exceptions
 

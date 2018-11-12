@@ -29,10 +29,10 @@ public void publish(
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `index` | String | Index name    |
-| `collection` | String | Collection name   |
-| `message` | String | JSON string representing the message to send |
-| `options` | io.kuzzle.sdk.QueryOptions | Query options |
+| `index` | <pre>String</pre> | Index name    |
+| `collection` | <pre>String</pre> | Collection name   |
+| `message` | <pre>String</pre> | JSON string representing the message to send |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ### options
 
@@ -40,7 +40,7 @@ Additional query options
 
 | Option     | Type<br/>(default)    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Exceptions
 
