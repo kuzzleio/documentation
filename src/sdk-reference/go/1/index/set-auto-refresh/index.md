@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: setAutoRefresh
 description: Set the autorefresh flag
-order: 1000
 ---
 
 # setAutoRefresh(index, autorefresh, [options])
