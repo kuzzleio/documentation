@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: <%= _.camelCase(action) %>
 description:
-order: 200
 ---
 
 # <%= _.camelCase(action) %>
@@ -14,13 +13,9 @@ order: 200
 <%= _.upperFirst(_.camelCase(action)) %>() error
 ```
 
-| Argument | Type | Description |
-| --- | --- | --- |
-| `index` | <pre>string</pre> | Index name |
-| `collection` | <pre>string</pre> | Collection name |
-| `id` | <pre>string</pre> | The document id |
-| `body` | <pre>string</pre> | A JSON string containing the body of the document |
-| `options` | <pre>types.QueryOptions</pre> | A struct containing query options |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``changeme`` | <pre>changme</pre> | changeme    |
 
 ### options
 
