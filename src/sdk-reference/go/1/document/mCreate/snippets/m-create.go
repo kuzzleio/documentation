@@ -1,4 +1,4 @@
-body := json.RawMessage(`[
+documents := json.RawMessage(`[
   {
     "_id": "some-id",
     "body": { "capacity": 4 }
@@ -7,7 +7,11 @@ body := json.RawMessage(`[
     "body": { "this": "document id is auto-computed" }
   }
 ]`)
-response, err := kuzzle.Document.MCreate("nyc-open-data", "yellow-taxi", body, nil)
+response, err := kuzzle.Document.MCreate(
+	"nyc-open-data",
+	"yellow-taxi",
+	documents,
+	nil)
 
 if err != nil {
   log.Fatal(err)
@@ -38,15 +42,7 @@ if err != nil {
           "failed":0
       },
       "created":true,
-      "status":201,
-      "_meta":{
-          "active":true,
-          "author":"-1",
-          "updater":null,
-          "updatedAt":null,
-          "deletedAt":null,
-          "createdAt":1538484279484
-      }
+      "status":201
     },
     {
       "_id":"AWY0zxi_7XvER2v0e9xR",
@@ -71,15 +67,7 @@ if err != nil {
           "failed":0
       },
       "created":true,
-      "status":201,
-      "_meta":{
-          "active":true,
-          "author":"-1",
-          "updater":null,
-          "updatedAt":null,
-          "deletedAt":null,
-          "createdAt":1538484279484
-      }
+      "status":201
     }
   ]
   */

@@ -8,7 +8,11 @@ body := json.RawMessage(`[
     "body": { "capacity": 4 }
   }
 ]`)
-response, err := kuzzle.Document.MCreateOrReplace("nyc-open-data", "yellow-taxi", body, nil)
+response, err := kuzzle.Document.MCreateOrReplace(
+	"nyc-open-data",
+	"yellow-taxi",
+	body,
+	nil)
 
 if err != nil {
   log.Fatal(err)

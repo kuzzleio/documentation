@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: mDelete
-description:
-order: 200
+description: Delete documents
 ---
 
 # MDelete
@@ -18,28 +17,27 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 
 ```go
 MDelete(
-    index string, 
-    collection string, 
-    ids []string, 
-    options types.QueryOptions
-) ([]string, error)
+    index string,
+    collection string,
+    ids []string,
+    options types.QueryOptions) ([]string, error)
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `ids` | []string | The ids of the documents to delete |
+| `ids` | <pre>[]string</pre> | The ids of the documents to delete |
 | `options` | <pre>types.QueryOptions</pre> | A struct containing query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `Queuable` | <pre>bool</pre>  (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
-| `Refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `Queuable` | <pre>bool</pre> <br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `Refresh` | <pre>string</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 

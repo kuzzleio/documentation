@@ -7,7 +7,7 @@ description: Validate specifications format
 
 # validateSpecifications
 
-The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.  
+The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
@@ -26,7 +26,7 @@ ValidateSpecifications(index string, collection string, specifications json.RawM
 
 ### **specifications**
 
-A JSON representation of the specifications.  
+A JSON representation of the specifications.
 
 The JSON must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
 
@@ -53,12 +53,12 @@ Additional query options
 
 ## Return
 
-A `types.ValidationResponse` which contain informations about the specifications validity.  
+A `types.ValidationResponse` which contain informations about the specifications validity.
 
 | Property   | Type    | Description        |
 | ---------- | ------- | --------------------- |
 | `Valid` | bool | Specification validity |
-| `Details` | []string | Details about each specification errors |
+| `Details` | <pre>[]string</pre> | Details about each specification errors |
 | `Description` | string | General error message |
 
 ## Usage

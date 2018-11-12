@@ -27,14 +27,6 @@ if err != nil {
         "active": true,
         "deletedAt": null
       }
-    },
-    "_meta": {
-      "author": "-1",
-      "createdAt": 1537445737667,
-      "updatedAt": null,
-      "updater": null,
-      "active": true,
-      "deletedAt": null
     }
   }
   */

@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: createOrReplace
-description:
-order: 200
+description: Creates or replaces a document
 ---
 
 # CreateOrReplace
@@ -16,20 +15,19 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 
 ```go
 CreateOrReplace(
-  index string, 
-  collection string, 
-  _id string, 
-  body json.RawMessage, 
-  options types.QueryOptions
-) (json.RawMessage, error)
+  index string,
+  collection string,
+  _id string,
+  document json.RawMessage,
+  options types.QueryOptions) (json.RawMessage, error)
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `id` | <pre>string</pre> | The document id |
-| `body` | <pre>json.RawMessage</pre> | A JSON string containing the body of the document |
+| `id` | <pre>string</pre> | Document ID |
+| `document` | <pre>json.RawMessage</pre> | Document content |
 | `options` | <pre>types.QueryOptions</pre> | A struct containing query options |
 
 
@@ -37,21 +35,21 @@ CreateOrReplace(
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `Queuable` | <pre>bool</pre>  (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
-| `Refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `Queuable` | <pre>bool</pre> <br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `Refresh` | <pre>string</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 
-Returns a JSON string containing the document creation result.
+Returns a json.RawMessage containing the document creation result.
 
 | Name | Type | Description
 | --- | --- | ---
-| _id | String | The id of the newly created document
-| _version | int | The version of the document in the persistent data storage
+| _id | string | Newly created document ID
+| _version | int | Version of the document in the persistent data storage
 | _source | object | The created document
-| result | <pre>string</pre> | set to `created` in case of success and `updated` if the document already exists
+| result | <pre>string</pre> | Set to `created` in case of success and `updated` if the document already exists
 
 ## Usage
 

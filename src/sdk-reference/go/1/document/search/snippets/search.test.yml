@@ -1,5 +1,5 @@
 name: document#search
-description: search documents
+description: Search documents
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data

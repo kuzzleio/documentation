@@ -1,6 +1,16 @@
-kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id", json.RawMessage(`{"capacity": 4}`), nil)
+kuzzle.Document.Create(
+	"nyc-open-data",
+	"yellow-taxi",
+	"some-id",
+	json.RawMessage(`{"capacity": 4}`),
+	nil)
 
-response, err := kuzzle.Document.Update("nyc-open-data", "yellow-taxi", "some-id", json.RawMessage(`{"category": "suv"}`), nil)
+response, err := kuzzle.Document.Update(
+	"nyc-open-data",
+	"yellow-taxi",
+	"some-id",
+	json.RawMessage(`{"category": "suv"}`),
+	nil)
 
 if err != nil {
   log.Fatal(err)

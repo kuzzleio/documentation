@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: get
-description:
-order: 200
+description: Get a document from kuzzle
 ---
 
 # Get
@@ -14,35 +13,36 @@ Gets a document.
 
 ```go
 Get(
-  index string, 
-  collection string, 
-  _id string, 
-  options types.QueryOptions
-) (json.RawMessage, error)
+  index string,
+  collection string,
+  _id string,
+  options types.QueryOptions) (json.RawMessage, error)
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `id` | <pre>string</pre> | The document id |
+| `id` | <pre>string</pre> | Document ID |
 | `options` | <pre>types.QueryOptions</pre> | A struct containing query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `Queuable` | <pre>bool</pre>  (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `Queuable` | <pre>bool</pre> <br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Returns a JSON string containing the document
+Returns a json.RawMessage containing the document.
 
 | Name | Type | Description
 | --- | --- | ---
-| _source | object | The retrieved document
+| _id | string | Newly created document ID
+| _version | int | Version of the document in the persistent data storage
+| _source | object | The created document
 
 ## Usage
 

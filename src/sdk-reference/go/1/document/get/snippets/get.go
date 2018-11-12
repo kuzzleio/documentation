@@ -1,4 +1,10 @@
-_, err := kuzzle.Document.Create("nyc-open-data", "yellow-taxi", "some-id", json.RawMessage(`{"capacity": 4}`), nil)
+_, err := kuzzle.Document.Create(
+	"nyc-open-data",
+	"yellow-taxi",
+	"some-id",
+	json.RawMessage(`{"capacity": 4}`),
+	nil)
+
 response, err := kuzzle.Document.Get("nyc-open-data", "yellow-taxi", "some-id", nil)
 
 if err != nil {
@@ -22,14 +28,6 @@ if err != nil {
           "active":true,
           "deletedAt":null
       }
-    },
-    "_meta":{
-      "author":"-1",
-      "createdAt":1538402859880,
-      "updatedAt":null,
-      "updater":null,
-      "active":true,
-      "deletedAt":null
     }
   }
   */

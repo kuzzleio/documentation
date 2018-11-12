@@ -1,5 +1,5 @@
 name: document#mDelete
-description: delete documents 
+description: Delete documents 
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data

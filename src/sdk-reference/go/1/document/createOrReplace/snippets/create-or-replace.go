@@ -1,4 +1,9 @@
-response, err := kuzzle.Document.CreateOrReplace("nyc-open-data", "yellow-taxi", "some-id", json.RawMessage(`{"lastName": "McHan"}`), nil)
+response, err := kuzzle.Document.CreateOrReplace(
+	"nyc-open-data",
+	"yellow-taxi",
+	"some-id",
+	json.RawMessage(`{"lastName": "McHan"}`),
+	nil)
 
 if err != nil {
   log.Fatal(err)
@@ -27,14 +32,6 @@ if err != nil {
         "active": true,
         "deletedAt": null
       }
-    },
-    "_meta": {
-      "author": "-1",
-      "createdAt": 1537445737667,
-      "updatedAt": null,
-      "updater": null,
-      "active": true,
-      "deletedAt": null
     }
   }
   */

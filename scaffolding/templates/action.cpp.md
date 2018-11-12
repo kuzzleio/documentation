@@ -20,7 +20,7 @@ void <%= _.camelCase(action) %>()
 | `collection` | <pre>std::string</pre> | Collection name |
 | `id` | <pre>std::string</pre> | The document id |
 | `body` | <pre>std::string</pre> | A JSON string containing the body of the document |
-| `options` | <pre>kuzzleio::query_options</pre> | A pointer to a `query_options` containing query options |
+| `options` | <pre>kuzzleio::query_options</pre> | A pointer to a `kuzzleio::query_options` containing query options |
 
 ### options
 

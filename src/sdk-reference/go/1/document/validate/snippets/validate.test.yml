@@ -1,5 +1,5 @@
 name: document#validate
-description:
+description: Validate a document
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data

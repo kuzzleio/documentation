@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: search
-description:
-order: 200
+description: Search documents
 ---
 
 # Search
@@ -23,30 +22,29 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 
 ```go
 Search(
-  index string, 
-  collection string, 
-  body json.RawMessage, 
-  options types.QueryOptions
-) (*types.SearchResult, error)
+  index string,
+  collection string,
+  query json.RawMessage,
+  options types.QueryOptions) (*types.SearchResult, error)
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `body` | <pre>json.RawMessage</pre> | A JSON string containing the search query |
+| `query` | <pre>json.RawMessage</pre> | Search query |
 | `options` | <pre>types.QueryOptions</pre> | A struct containing query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `Queuable` | <pre>bool</pre>  (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
-| `From` | integer | Offset of the first document to fetch |
-| `Size` | integer | Maximum number of documents to retrieve per page  |
-| `Scroll` | <pre>string</pre> | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
+| `Queuable` | <pre>bool</pre> <br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `From` | <pre>int</pre><br/>(`0`) | Offset of the first document to fetch |
+| `Size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
+| `Scroll` | <pre>string</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
 
 ## Body properties
 
@@ -60,7 +58,7 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a `SearchResult` struct
+Returns a pointer on [types.SearchResult]({{ site_base_path }}src/sdk-reference/go/1/essentials/search-result) struct
 
 ### Properties
 
@@ -70,9 +68,9 @@ Returns a `SearchResult` struct
 | Fetched | int | The number of fetched documents |
 | Total | int | The total number of documents matching the query |
 | Aggregations | <pre>string</pre> | A JSON string containing the computed aggregations |
-| Collection | <pre>string</pre> | The collection on which the search was performed |
-| Filters | <pre>string</pre> | The original query |
-| Options | <pre>types.QueryOptions</pre> | The original query options |
+| Collection | <pre>string</pre> | Collection on which the search was performed |
+| Filters | <pre>string</pre> | Original query |
+| Options | <pre>types.QueryOptions</pre> | Original query options |
 
 ### Functions
 

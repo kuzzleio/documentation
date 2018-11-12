@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: count
-description: Count documents
-order: 200
+description: Count documents matching the given query
 ---
 
 # Count
@@ -19,27 +18,28 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 
 ```go
 Count(
-  index string, 
-  collection string, 
-  body json.RawMessage, 
-  options types.QueryOptions
-) (int, error)
+  index string,
+  collection string,
+  query json.RawMessage,
+  options types.QueryOptions) (int, error)
 ```
+
+<br/>
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `body` | <pre>json.RawMessage</pre> | A JSON string containing the query to match |
-| `options` | <pre>types.QueryOptions</pre> | A struct containing query options | 
+| `query` | <pre>json.RawMessage</pre> |Query to match |
+| `options` | <pre>types.QueryOptions</pre> | A struct containing query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `Queuable` | <pre>bool</pre>  (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `Queuable` | <pre>bool</pre> <br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
