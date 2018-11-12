@@ -6,6 +6,12 @@
 .md-nav {
   font-size: 1.4rem;
   line-height: 1.3;
+  
+  &--primary {
+    .md-nav__item {
+      padding-left: 0;
+    }
+  }
 
   // List title
   &__title {
@@ -33,6 +39,7 @@
     .md-nav__button {
       display: none;
     }
+    
   }
 
   // List of items
@@ -52,6 +59,7 @@
     padding-bottom: 4px;
     width: 90%;
     border-bottom: 1px solid rgba(233,78,119,0.3);
+    text-transform: uppercase;
     
     &:first-child {
       margin-top: 8px;
