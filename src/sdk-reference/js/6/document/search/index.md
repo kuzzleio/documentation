@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: search
-description:
-order: 200
+description: Search for documents
 ---
 
 # search
@@ -22,26 +21,26 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 ## Arguments
 
 ```javascript
-search (index, collection, [body], [options])
+search (index, collection, [query], [options])
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `body` | <pre>string</pre> | A JSON string containing the search query |
+| `query` | <pre>object</pre> | Search query |
 | `options` | <pre>object</pre> | An object containing query options. |
 
 ### Options
 
 Additional query options
 
-| Options | Type (default) | Description |
+| Options | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
-| `from` | integer | Offset of the first document to fetch |
-| `size` | integer | Maximum number of documents to retrieve per page  |
-| `scroll` | std::string | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `from` | <pre>number</pre><br/>(`0`) | Offset of the first document to fetch |
+| `size` | <pre>number</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
+| `scroll` | <pre>string</pre><br/>(`""`)| When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units)) |
 
 ## Body properties
 
@@ -55,26 +54,7 @@ An empty body matches all documents in the queried collection.
 
 ## Resolve
 
-Resolves to a `SearchResult` object
-
-
-### Properties
-
-| Name | Type | Description |
-| --- | --- | --- |
-| documents | <pre>object</pre> | The retrieved documents |
-| fetched | int | The number of fetched documents |
-| total | int | The total number of documents matching the query |
-| aggregations | <pre>object</pre> | The computed aggregations |
-| collection | <pre>string</pre> | The collection on which the search was performed |
-| filters | <pre>object</pre> | The original query |
-| options | <pre>object</pre> | The original query options |
-
-### Functions
-
-| Name | Type | Description |
-| --- | --- | --- |
-| next | `search_result` | Returns a new page of `size` next documents |
+Resolves to a [SearchResult]({{ site_base_path }}src/sdk-reference/js/6/essentials/search-result) object.
 
 ## Usage
 

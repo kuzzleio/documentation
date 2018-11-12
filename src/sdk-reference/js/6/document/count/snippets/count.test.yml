@@ -1,6 +1,6 @@
 ---
 name: document#count
-description: count documents matching the given query
+description: Count documents matching the given query
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data

@@ -1,10 +1,14 @@
-try {
-  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', 'some-id', {color: 'yellow'});
+const doc = { color: 'yellow' };
 
-  const response = await kuzzle.document.replace('nyc-open-data', 'yellow-taxi', 'some-id', {
-    capacity: 4,
-    category: 'sedan'
-  });
+try {
+  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', 'some-id', doc);
+
+  const response = await kuzzle.document.replace(
+    'nyc-open-data',
+    'yellow-taxi',
+    'some-id',
+    { capacity: 4, category: 'sedan' }
+  );
 
   console.log(response);
   /*
@@ -24,14 +28,7 @@ try {
         updatedAt: 1538654776456,
         updater: '-1',
         active: true,
-        deletedAt: null } },
-  _meta:
-   { author: '-1',
-     createdAt: 1538654776456,
-     updatedAt: 1538654776456,
-     updater: '-1',
-     active: true,
-     deletedAt: null } }
+        deletedAt: null } } }
   */
   console.log('Success');
 } catch (error) {

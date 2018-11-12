@@ -1,10 +1,17 @@
 try {
-  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', 'some-id', {
-    capacity: 4
-  });
-  const response = await kuzzle.document.update('nyc-open-data', 'yellow-taxi', 'some-id', {
-    category: 'suv'
-  });
+  await kuzzle.document.create(
+    'nyc-open-data',
+    'yellow-taxi',
+    'some-id',
+    { capacity: 4 }
+  );
+
+  const response = await kuzzle.document.update(
+    'nyc-open-data',
+    'yellow-taxi',
+    'some-id',
+    { category: 'suv' }
+  );
 
   console.log(response);
   /*

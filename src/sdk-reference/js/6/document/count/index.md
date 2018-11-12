@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: count
-description: Count documents
-order: 200
+description: Count documents matching the given query
 ---
 
 # count
@@ -17,23 +16,23 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 ## Arguments
 
 ```javascript
-count(index, collection, body, [options]);
+count (index, collection, query, [options]);
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `body` | <pre>object</pre> | The query to match |
+| `query` | <pre>object</pre> | Query to match |
 | `options` | <pre>object</pre> | An object containing query options. |
 
 ### options
 
 Additional query options
 
-| Options | Type (default) | Description |
+| Options | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 

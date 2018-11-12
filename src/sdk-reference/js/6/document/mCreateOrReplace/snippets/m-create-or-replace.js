@@ -1,5 +1,5 @@
 try {
-  const body = [
+  const documents = [
     {
       _id: 'some-id',
       body: { 'capacity': 4 }
@@ -9,9 +9,14 @@ try {
       body: { 'capacity': 4 }
     }
   ];
-  const response = await kuzzle.document.mCreateOrReplace('nyc-open-data', 'yellow-taxi', body);
 
-  console.log(response);
+  const response = await kuzzle.document.mCreateOrReplace(
+    'nyc-open-data',
+    'yellow-taxi',
+    documents
+  );
+
+  console.log(JSON.stringify(response));
   /*
   [ { _id: 'some-id',
     _source: { _kuzzle_info: [Object], capacity: 4 },
@@ -21,14 +26,7 @@ try {
     result: 'created',
     _shards: { total: 2, successful: 1, failed: 0 },
     created: true,
-    status: 201,
-    _meta:
-     { active: true,
-       author: '-1',
-       updater: null,
-       updatedAt: null,
-       deletedAt: null,
-       createdAt: 1538552685790 } },
+    status: 201 },
   { _id: 'some-other-id',
     _source: { _kuzzle_info: [Object], capacity: 4 },
     _index: 'nyc-open-data',
@@ -37,16 +35,9 @@ try {
     result: 'created',
     _shards: { total: 2, successful: 1, failed: 0 },
     created: true,
-    status: 201,
-    _meta:
-     { active: true,
-       author: '-1',
-       updater: null,
-       updatedAt: null,
-       deletedAt: null,
-       createdAt: 1538552685790 } } ]
+    status: 201 } ]
   */
-  console.log('Success');
+  console.log('lol');
 } catch (error) {
   console.error(error.message);
 }

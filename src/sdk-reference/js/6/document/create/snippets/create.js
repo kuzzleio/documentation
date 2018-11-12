@@ -3,7 +3,7 @@ try {
     'nyc-open-data',
     'yellow-taxi',
     'some-id',
-    {lastName: 'Eggins'}
+    { lastName: 'Eggins' }
   );
 
   if (response._id === 'some-id') {
@@ -26,14 +26,7 @@ try {
             updatedAt: null,
             updater: null,
             active: true,
-            deletedAt: null } },
-      _meta:
-       { author: '-1',
-         createdAt: 1537443212089,
-         updatedAt: null,
-         updater: null,
-         active: true,
-         deletedAt: null } }
+            deletedAt: null } } }
    */
 } catch (error) {
   console.error(error.message);

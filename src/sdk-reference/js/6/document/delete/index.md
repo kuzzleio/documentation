@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: delete
-description:
-order: 200
+description: Deletes a document from kuzzle
 ---
 
 # delete
@@ -15,24 +14,24 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 ## Arguments
 
 ```javascript
-delete(index, collection, id, [options])
+delete (index, collection, id, [options])
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `index` | String | Index name |
-| `collection` | String | Collection name |
-| `id` | String | Optional document id |
-| `options` | Object | An object containing query options. |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `id` | <pre>string</pre> | Optional document ID |
+| `options` | <pre>object</pre> | An object containing query options. |
 
 ### Options
 
 Additional query options
 
-| Options | Type (default) | Description |
+| Options | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
-| `refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `refresh` | <pre>string</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Resolve
 

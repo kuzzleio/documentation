@@ -4,7 +4,7 @@ try {
     'yellow-taxi',
     {
       query: {
-        term: {capacity: 7}
+        term: { capacity: 7 }
       }
     }
   );

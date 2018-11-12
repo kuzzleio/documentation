@@ -1,5 +1,5 @@
 name: document#create
-description: create a new document
+description: Create a new document
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data

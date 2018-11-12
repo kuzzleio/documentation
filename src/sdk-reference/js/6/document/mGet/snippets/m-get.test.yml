@@ -1,5 +1,5 @@
 name: document#mGet
-description: get multiple documents
+description: Get multiple documents
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data

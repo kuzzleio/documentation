@@ -1,5 +1,5 @@
 try {
-  const body = [
+  const documents = [
     {
       _id: 'some-id',
       body: { 'capacity': 4 }
@@ -8,9 +8,13 @@ try {
       body: { this: 'document id is auto-computed' }
     }
   ];
-  const response = await kuzzle.document.mCreate('nyc-open-data', 'yellow-taxi', body);
+  const response = await kuzzle.document.mCreate(
+    'nyc-open-data',
+    'yellow-taxi',
+    documents
+  );
 
-  console.log(response);
+  console.log(JSON.stringify(response));
   /*
   [ { _id: 'some-id',
     _source: { _kuzzle_info: [Object], capacity: 4 },
@@ -20,14 +24,7 @@ try {
     result: 'created',
     _shards: { total: 2, successful: 1, failed: 0 },
     created: true,
-    status: 201,
-    _meta:
-     { active: true,
-       author: '-1',
-       updater: null,
-       updatedAt: null,
-       deletedAt: null,
-       createdAt: 1538470871764 } },
+    status: 201 },
   { _id: 'AWY0AoLgKWETYfLdcMat',
     _source: { _kuzzle_info: [Object], this: 'document id is auto-computed' },
     _index: 'nyc-open-data',
@@ -36,16 +33,9 @@ try {
     result: 'created',
     _shards: { total: 2, successful: 1, failed: 0 },
     created: true,
-    status: 201,
-    _meta:
-     { active: true,
-       author: '-1',
-       updater: null,
-       updatedAt: null,
-       deletedAt: null,
-       createdAt: 1538470871764 } } ]
+    status: 201 } ]
   */
-  console.log('Success');
+  console.log('lol');
 } catch (error) {
   console.error(error.message);
 }

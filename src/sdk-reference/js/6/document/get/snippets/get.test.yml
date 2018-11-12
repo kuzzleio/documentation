@@ -1,5 +1,5 @@
 name: document#get
-description: get a document from Kuzzle
+description: Get a document from kuzzle
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data

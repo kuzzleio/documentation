@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: mGet
-description:
-order: 200
+description: Get multiple documents
 ---
 
 # mGet
@@ -22,16 +21,16 @@ mGet (index, collection, ids, [options])
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `ids` | Array | The document ids |
+| `ids` | <pre>array<string></pre> | Document ids |
 | `options` | <pre>object</pre> | An object containing query options. |
 
 ### Options
 
 Additional query options
 
-| Options | Type (default) | Description |
+| Options | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 

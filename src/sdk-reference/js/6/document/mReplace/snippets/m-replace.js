@@ -2,7 +2,7 @@ try {
   await kuzzle.document.create('nyc-open-data', 'yellow-taxi', 'some-id', {});
   await kuzzle.document.create('nyc-open-data', 'yellow-taxi', 'some-other-id', {});
 
-  const response = await kuzzle.document.mReplace('nyc-open-data', 'yellow-taxi', [
+  const documents = [
     {
       _id: 'some-id',
       body: { capacity: 4 }
@@ -11,7 +11,13 @@ try {
       _id: 'some-other-id',
       body: { capacity: 4 }
     }
-  ]);
+  ];
+
+  const response = await kuzzle.document.mReplace(
+    'nyc-open-data',
+    'yellow-taxi',
+    documents
+  );
 
   console.log(response);
   /*
@@ -32,14 +38,7 @@ try {
        result: 'updated',
        _shards: { total: 2, successful: 1, failed: 0 },
        created: false,
-       status: 200,
-       _meta:
-        { active: true,
-          author: '-1',
-          updater: null,
-          updatedAt: null,
-          deletedAt: null,
-          createdAt: 1538639586995 } },
+       status: 200 },
      { _id: 'some-other-id',
        _source:
         { _kuzzle_info:
@@ -56,14 +55,7 @@ try {
        result: 'updated',
        _shards: { total: 2, successful: 1, failed: 0 },
        created: false,
-       status: 200,
-       _meta:
-        { active: true,
-          author: '-1',
-          updater: null,
-          updatedAt: null,
-          deletedAt: null,
-          createdAt: 1538639586995 } } ],
+       status: 200 } ],
   total: 2 }
   */
   console.log('Success');

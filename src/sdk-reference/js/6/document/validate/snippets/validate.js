@@ -1,9 +1,11 @@
 try {
-  const isValid = await kuzzle.document.validate('nyc-open-data', 'yellow-taxi', {
-    capacity: 4
-  });
+  const valid = await kuzzle.document.validate(
+    'nyc-open-data',
+    'yellow-taxi',
+    { capacity: 4 }
+  );
 
-  if (isValid) {
+  if (valid) {
     console.log('Success');
   }
 } catch (error) {

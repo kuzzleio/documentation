@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: deleteByQuery
-description:
-order: 200
+description: Delete documents matching query
 ---
 
 # deleteByQuery
@@ -15,28 +14,28 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 ## Arguments
 
 ```javascript
-deleteByQuery(index, collection, body = {}, options = {})
+deleteByQuery (index, collection, [query], [options])
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `index` | String | Index name |
-| `collection` | String | Collection name |
-| `body` | Object | The query to match |
-| `options` | Object | An object containing query options. |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `query` | <pre>object</pre> | Query to match |
+| `options` | <pre>object</pre> | An object containing query options. |
 
 ### Options
 
 Additional query options
 
-| Options | Type (default) | Description |
+| Options | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
-| `refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `refresh` | <pre>string</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Resolve
 
-Resolves to an `Array` of strings containing the deleted document ids.
+Resolves to an array of strings containing the deleted document ids.
 
 ## Usage
 
