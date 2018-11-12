@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: query
-description: Base method to send API query to Kuzzle
-order: 200
+description: Send a request to kuzzle api
 ---
 
 # query

@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: getSpecifications
 description: Returns the validation specifications
-order: 200
 ---
 
 # getSpecifications

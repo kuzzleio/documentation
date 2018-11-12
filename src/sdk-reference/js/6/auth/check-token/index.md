@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: checkToken
-description:
-order: 200
+description: Checks a jwt token's validity.
 ---
 
 # checkToken

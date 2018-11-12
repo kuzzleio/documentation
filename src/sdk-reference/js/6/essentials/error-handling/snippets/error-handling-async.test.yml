@@ -1,5 +1,5 @@
 name: essentials#errorHandlingAsync
-description: How to handle SDK errors
+description: How to handle sdk errors
 hooks:
   before: curl -X POST kuzzle:7512/nyc-open-data/_create
   after:

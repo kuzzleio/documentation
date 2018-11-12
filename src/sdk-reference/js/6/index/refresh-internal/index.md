@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: refreshInternal
-description: Force refresh of Kuzzle internal index
+description: Force refresh of kuzzle internal index
 order: 800
 ---
 

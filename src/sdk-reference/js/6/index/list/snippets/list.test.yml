@@ -1,6 +1,6 @@
 ---
 name: index#list
-description: list indexes handled by Kuzzle
+description: List indexes handled by kuzzle
 hooks:
   before: |
     curl -X POST kuzzle:7512/admin/_resetDatabase

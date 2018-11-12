@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: getMyRights
-description: Returns the rights for the user linked to the `JSON Web Token`.
-order: 200
+description: Returns the rights for the user linked to the `json web token`.
 ---
 
 # getMyRights

@@ -1,6 +1,6 @@
 ---
 name: index#refreshInternal
-description: Force refresh of Kuzzle internal index
+description: Force refresh of kuzzle internal index
 hooks:
   before: 
   after: 

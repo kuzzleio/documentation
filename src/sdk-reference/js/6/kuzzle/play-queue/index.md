@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: playQueue
-description: Play the offline request queue
-order: 200
+description: Play the requests queued
 ---
 
 # playQueue

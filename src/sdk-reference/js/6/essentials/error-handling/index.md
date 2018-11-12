@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: Error Handling
-description: How to handle errors with the SDK
+description: How to handle sdk errors
 order: 100
 ---
 

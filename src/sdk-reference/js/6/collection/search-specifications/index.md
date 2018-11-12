@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: searchSpecifications
 description: Search for specifications
-order: 200
 ---
 
 # searchSpecifications

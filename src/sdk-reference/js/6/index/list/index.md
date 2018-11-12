@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: list
-description: List the indexes
+description: List indexes handled by kuzzle
 order: 400
 ---
 

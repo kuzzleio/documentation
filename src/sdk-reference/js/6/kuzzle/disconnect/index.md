@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: disconnect
-description: Disconnect the SDK
-order: 200
+description: Disconnect the sdk
 ---
 
 # disconnect

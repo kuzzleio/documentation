@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: connect
-description: Connects the SDK to Kuzzle
-order: 200
+description: Connects the sdk to kuzzle
 ---
 
 # connect

@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: list
 description: Returns the collection list of an index
-order: 200
 ---
 
 # list

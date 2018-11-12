@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: mDelete
-description: Deletes multiple indexes
+description: Delete multiple indexes
 order: 600
 ---
 
