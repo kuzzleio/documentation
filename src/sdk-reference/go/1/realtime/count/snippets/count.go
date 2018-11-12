@@ -5,7 +5,13 @@ go func() {
   <-listener
 }()
 
-res, _ := kuzzle.Realtime.Subscribe("nyc-open-data", "yellow-taxi", filters, listener, nil)
+res, _ := kuzzle.Realtime.Subscribe(
+	"nyc-open-data", 
+	"yellow-taxi", 
+	filters, 
+	listener, 
+	nil
+)
 
 count, err := kuzzle.Realtime.Count(res.Room, nil)
 

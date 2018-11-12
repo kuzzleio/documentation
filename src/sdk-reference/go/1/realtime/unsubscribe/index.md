@@ -10,26 +10,26 @@ order: 200
 
 Removes a subscription.
 
-## Signature
+## Arguments
 
 ```go
 func (r *Realtime) Unsubscribe(roomID string, options types.QueryOptions) error
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``roomId`` | string| Subscription room ID  |
+| `roomId` | string| Subscription room ID  |
 | `options` | types.QueryOptions | Query options |
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | bool<br/>(`true`) | Make this request queuable or not |
 
 ## Return
 

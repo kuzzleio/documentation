@@ -7,7 +7,12 @@ NotificationListener listener = new NotificationListener() {
 };
 
 try {
-    kuzzle.getRealtime().subscribe("i-dont-exist", "in-database", "{}", listener);
+    kuzzle.getRealtime().subscribe(
+      "i-dont-exist", 
+      "in-database", 
+      "{}", 
+      listener
+    );
 
     String message = "{ \"metAt\": \"Insane\", \"hello\": \"world\" }";
     kuzzle.getRealtime().publish("i-dont-exist", "in-database", message);

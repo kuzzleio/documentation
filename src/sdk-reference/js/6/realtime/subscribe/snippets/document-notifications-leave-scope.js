@@ -24,12 +24,23 @@ try {
   const filters = { range: { age: { lte: 20 } } };
   const options = { scope: 'out' };
 
-  await kuzzle.realtime.subscribe('nyc-open-data', 'yellow-taxi', filters, callback, options);
+  await kuzzle.realtime.subscribe(
+    'nyc-open-data',
+    'yellow-taxi',
+    filters,
+    callback,
+    options
+  );
 
   const document = { name: 'nina vkote', age: 19 };
 
   // The document is in the scope
-  const { _id } = await kuzzle.document.create('nyc-open-data', 'yellow-taxi', null, document);
+  const { _id } = await kuzzle.document.create(
+    'nyc-open-data',
+    'yellow-taxi',
+    null,
+    document
+  );
 
   // The document isn't in the scope anymore
   await kuzzle.document.update('nyc-open-data', 'yellow-taxi', _id, { age: 42 });

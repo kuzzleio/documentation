@@ -9,7 +9,12 @@ try {
   kuzzleio::room_options options;
   options.scope = "out";
 
-  kuzzle->realtime->subscribe("nyc-open-data", "yellow-taxi", filters, &listener, &options);
+  kuzzle->realtime->subscribe(
+    "nyc-open-data",
+    "yellow-taxi",
+    filters,
+    &listener,
+    &options);
 
   const char *document = "{ \"name\": \"nina vkote\", \"age\": 19 }";
 
@@ -17,7 +22,11 @@ try {
   kuzzle->document->create("nyc-open-data", "yellow-taxi", "nina-vkote", document);
 
   // The document isn't in the scope anymore
-  kuzzle->document->update("nyc-open-data", "yellow-taxi", "nina-vkote", "{ \"age\": 42 }");
+  kuzzle->document->update(
+    "nyc-open-data",
+    "yellow-taxi",
+    "nina-vkote",
+    "{ \"age\": 42 }");
 
   sleep(1);
 } catch (kuzzleio::KuzzleException &e) {

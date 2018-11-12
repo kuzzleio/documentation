@@ -10,15 +10,31 @@ try {
     options.setScope("out");
 
     // Subscribe to notifications when document leaves the scope
-    kuzzle.getRealtime().subscribe("nyc-open-data", "yellow-taxi", filters, listener, options);
+    kuzzle.getRealtime().subscribe(
+      "nyc-open-data", 
+      "yellow-taxi", 
+      filters, 
+      listener, 
+      options
+    );
 
     String document = "{ \"name\": \"nina vkote\", \"age\": 19 }";
 
     // The document is in the scope
-    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "nina-vkote", document);
+    kuzzle.getDocument().create(
+      "nyc-open-data", 
+      "yellow-taxi", 
+      "nina-vkote", 
+      document
+    );
 
     // The document isn't in the scope anymore
-    kuzzle.getDocument().update("nyc-open-data", "yellow-taxi", "nina-vkote", "{ \"age\": 42 }");
+    kuzzle.getDocument().update(
+      "nyc-open-data", 
+      "yellow-taxi", 
+      "nina-vkote", 
+      "{ \"age\": 42 }"
+    );
 
     Thread.sleep(1000);
 } catch (KuzzleException e) {

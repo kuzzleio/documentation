@@ -1,5 +1,5 @@
 name: realtime#count
-description:
+description: Count subscribers for a subscription room
 hooks:
   before:
   after:

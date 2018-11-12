@@ -3,7 +3,12 @@ NotificationListener listener = new NotificationListener() {
 };
 
 try {
-    String roomId = kuzzle.getRealtime().subscribe("nyc-open-data", "yellow-taxi", "{}", listener);
+    String roomId = kuzzle.getRealtime().subscribe(
+      "nyc-open-data", 
+      "yellow-taxi", 
+      "{}", 
+      listener
+    );
 
     kuzzle.getRealtime().unsubscribe(roomId);
 

@@ -5,7 +5,13 @@ go func() {
   <-listener
 }()
 
-res, err := kuzzle.Realtime.Subscribe("nyc-open-data", "yellow-taxi", filters, listener, nil)
+res, err := kuzzle.Realtime.Subscribe(
+	"nyc-open-data", 
+	"yellow-taxi", 
+	filters, 
+	listener, 
+	nil
+)
 
 if err != nil {
   log.Fatal(err)

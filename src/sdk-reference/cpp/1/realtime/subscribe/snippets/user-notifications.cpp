@@ -11,7 +11,12 @@ try {
   kuzzleio::room_options options;
   options.users = "all";
 
-  kuzzle->realtime->subscribe("nyc-open-data", "yellow-taxi", filters, &listener, &options);
+  kuzzle->realtime->subscribe(
+    "nyc-open-data",
+    "yellow-taxi",
+    filters,
+    &listener,
+    &options);
 
   // instantiate a second kuzzle client because
   // the same sdk instance does not receive his own notifications

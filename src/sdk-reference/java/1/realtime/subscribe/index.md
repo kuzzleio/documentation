@@ -10,7 +10,7 @@ order: 200
 
 Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/notifications), sent to you in real-time by Kuzzle.
 
-## Signature
+## Arguments
 
 ```java
 public String subscribe(
@@ -28,26 +28,26 @@ public String subscribe(
 )
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``index`` | String | Index name    |
-| ``collection`` | String | Collection name    |
-| ``filters`` | String | JSON string representing a set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
-| ``listener`` | [io.kuzzle.sdk.NotificationListener]({{site_base_path}}sdk-reference/java/1/essentials/realtime-notifications) | Listener function to handle notifications |
-| ``options`` | io.kuzzle.sdk.RoomOptions | Subscription options |
+| `index` | String | Index name    |
+| `collection` | String | Collection name    |
+| `filters` | String | JSON string representing a set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
+| `listener` | [io.kuzzle.sdk.NotificationListener]({{site_base_path}}sdk-reference/java/1/essentials/realtime-notifications) | Listener function to handle notifications |
+| `options` | io.kuzzle.sdk.RoomOptions | Subscription options |
 
-### **options**
+### options
 
 Additional subscription options.
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `scope` | String | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` | `all`  |
-| `user` | String | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` | `none` |
-| `subscribeToSelf` | boolean | Subscribe to notifications fired by our own queries | `true`|
-| `volatile` | String | JSON string representing subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) | `null` |
+| Property   | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `scope` | String<br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
+| `users` | String<br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
+| `subscribeToSelf` | boolean<br/>(`true`) | Subscribe to notifications fired by our own queries |
+| `volatile` | String<br/>(`null`) | JSON string representing subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
 
 ## Return
 

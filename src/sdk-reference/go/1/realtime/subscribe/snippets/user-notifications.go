@@ -21,7 +21,13 @@ go func() {
 options := types.NewRoomOptions()
 options.SetUsers(types.USERS_ALL)
 
-_, err := kuzzle.Realtime.Subscribe("nyc-open-data", "yellow-taxi", filters, listener, options)
+_, err := kuzzle.Realtime.Subscribe(
+	"nyc-open-data", 
+	"yellow-taxi", 
+	filters, 
+	listener, 
+	options
+)
 
 if err != nil {
   log.Fatal(err)
@@ -42,6 +48,12 @@ if connectErr != nil {
 fuzzle.SetVolatile(json.RawMessage(`{ "username": "nina vkote" }`))
 
 // Subscribe to the same room with the second client
-fuzzle.Realtime.Subscribe("nyc-open-data", "yellow-taxi", filters, make(chan types.KuzzleNotification), nil)
+fuzzle.Realtime.Subscribe(
+	"nyc-open-data", 
+	"yellow-taxi", 
+	filters, 
+	make(chan types.KuzzleNotification), 
+	nil
+)
 
 <-exitPrgm

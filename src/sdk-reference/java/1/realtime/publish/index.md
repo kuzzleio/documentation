@@ -14,14 +14,19 @@ The `<index>` and `<collection>` are indicative and serve only to distinguish th
 
 **Note:** real-time messages are not persisted in the database.
 
-## Signature
+## Arguments
 
 ```java
 public void publish(String index, String collection, String message)
-public void publish(String index, String collection, String message, io.kuzzle.sdk.QueryOptions options)
+public void publish(
+  String index, 
+  String collection, 
+  String message, 
+  io.kuzzle.sdk.QueryOptions options
+)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
@@ -30,13 +35,13 @@ public void publish(String index, String collection, String message, io.kuzzle.s
 | ``message`` | String | JSON string representing the message to send |
 | `options` | io.kuzzle.sdk.QueryOptions | Query options |
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
 
 ## Exceptions
 

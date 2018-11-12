@@ -13,12 +13,7 @@ Returns the number of other connections sharing the same subscription.
 ## Signature
 
 ```javascript
-/**
- * @param {string} roomId
- * @param {object} [options]
- * @returns {Promise<number>}
- */
-count (roomId, options = null)
+count (roomId, [options])
 ```
 
 ## Arguments
@@ -29,17 +24,17 @@ count (roomId, options = null)
 | ``options`` | object | Query options    |
 
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
 
 ## Resolve
 
-Resolves to the number of active connections using the same provided subscription room
+Resolves to a number represensting active connections using the same provided subscription room.
 
 ## Usage
 

@@ -14,7 +14,7 @@ The `<index>` and `<collection>` are indicative and serve only to distinguish th
 
 **Note:** real-time messages are not persisted in the database.
 
-## Signature
+## Arguments
 
 ```cpp
 void publish(
@@ -25,22 +25,22 @@ void publish(
 );
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``index`` | const std::string& | Index name    |
-| ``collection`` | const std::string& | Collection name    |
-| ``message`` | const std::string& | JSON string representing the message to send |
+| `index` | const std::string& | Index name    |
+| `collection` | const std::string& | Collection name    |
+| `message` | const std::string& | JSON string representing the message to send |
 | `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options |
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)  | Description   |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | bool<br/>(`true`) | Make this request queuable or not | 
 
 ## Exceptions
 

@@ -10,26 +10,26 @@ order: 200
 
 Returns the number of other connections sharing the same subscription.
 
-## Signature
+## Arguments
 
 ```cpp
 int count(const std::string& room_id, kuzzleio::query_options *options=nullptr)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``room_id`` | const std::string& | Subscription room ID |
+| `room_id` | const std::string& | Subscription room ID |
 | `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options |
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)  | Description   |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | bool<br/>(`true`) | Make this request queuable or not | 
 
 ## Return
 

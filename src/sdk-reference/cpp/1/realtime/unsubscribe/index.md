@@ -10,26 +10,26 @@ order: 200
 
 Removes a subscription.
 
-## Signature
+## Arguments
 
 ```cpp
 void unsubscribe(const std::string& room_id, kuzzleio::query_options *options=nullptr)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``room_id`` | const std::string& | Subscription room ID  |
+| `room_id` | const std::string& | Subscription room ID  |
 | `options` | kuzzleio::query_options* | Query options |
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)  | Description   |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | boolean<br/>(`true`) | Make this request queuable or not | 
 
 ## Exceptions
 

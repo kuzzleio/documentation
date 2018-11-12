@@ -35,7 +35,9 @@ try {
   await kuzzle.realtime.subscribe('i-dont-exist', 'in-database', {}, callback);
 
   // Publish a message to this room
-  await kuzzle.realtime.publish('i-dont-exist', 'in-database', { metAt: 'Insane', hello: 'world' });
+  const message = { metAt: 'Insane', hello: 'world' };
+
+  await kuzzle.realtime.publish('i-dont-exist', 'in-database', message);
 } catch (error) {
   console.log(error.message);
 }

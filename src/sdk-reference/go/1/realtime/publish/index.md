@@ -14,7 +14,7 @@ The `<index>` and `<collection>` are indicative and serve only to distinguish th
 
 **Note:** real-time messages are not persisted in the database.
 
-## Signature
+## Arguments
 
 ```go
 func (r *Realtime) Publish(
@@ -25,22 +25,22 @@ func (r *Realtime) Publish(
 ) error
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``index`` | string | Index name    |
-| ``collection`` | string | Collection name    |
-| ``message`` | json.RawMessage | Message to send |
-| ``options`` | types.QueryOptions | Query options    |
+| `index` | string | Index name    |
+| `collection` | string | Collection name    |
+| `message` | json.RawMessage | Message to send |
+| `options` | types.QueryOptions | Query options    |
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)  | Description   |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | bool<br/>(`true`) | Make this request queuable or not | 
 
 ## Return
 

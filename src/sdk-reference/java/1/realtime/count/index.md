@@ -10,27 +10,27 @@ order: 200
 
 Returns the number of other connections sharing the same subscription.
 
-## Signature
+## Arguments
 
 ```java
 public int count(String roomId)
 public int count(String roomId, io.kuzzle.sdk.QueryOptions options)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``roomId`` | String | Subscription room ID |
+| `roomId` | String | Subscription room ID |
 | `options` | io.kuzzle.sdk.QueryOptions | QueryOptions |
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
 
 ## Return
 

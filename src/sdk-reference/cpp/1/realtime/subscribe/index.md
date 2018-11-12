@@ -10,7 +10,7 @@ order: 200
 
 Subscribes by providing a set of `<filters>`: messages, document changes and, optionally, user events matching the provided `<filters>` will generate [real-time notifications]({{site_base_path}}api/1/notifications), sent to you in real-time by Kuzzle.
 
-## Signature
+## Arguments
 
 ```cpp
 std::string subscribe(
@@ -22,7 +22,7 @@ std::string subscribe(
 )
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
@@ -32,21 +32,22 @@ std::string subscribe(
 | ``listener`` | kuzzleio::NotificationListener* | Listener function to handle notifications |
 | ``options`` | kuzzleio::room_options* | A struct containing subscription options |
 
-### **listener**
+### listener
 
 Listener function that will be called each time a new notifications is received.  
 The listener will receive a [const kuzzleio::notification_result*]({{site_base_path}}sdk-reference/cpp/1/essentials/realtime-notifications) as only argument.  
 
-### **options**
+### options
 
 Additional subscription options.  
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `scope` | const char* | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` | `all`  |
-| `users` | const char* | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` | `none` |
-| `subscribe_to_self` | bool | Subscribe to notifications fired by our own queries | `true`|
-| `volatile` | const char* | JSON string representing subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) | `null` |
+
+| Property   | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `scope` | const char*<br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
+| `users` | const char*<br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
+| `subscribeToSelf` | boolean<br/>(`true`) | Subscribe to notifications fired by our own queries |
+| `volatile` | const char*<br/>(`null`) | JSON string representing subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
 
 ## Return
 

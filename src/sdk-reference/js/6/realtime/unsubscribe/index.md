@@ -3,38 +3,32 @@ layout: sdk.html.hbs
 algolia: true
 title: unsubscribe
 description: Removes a subscription
-order: 200
 ---
 
 # unsubscribe
 
 Removes a subscription.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} roomId
- * @param {object} [options]
- * @returns {Promise<>}
- */
-unsubscribe (roomId, options = null)
+unsubscribe (roomId, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
 | ``roomId`` | string | Subscription room ID |
 | ``options`` | object | Query options    |
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)  | Description   |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | bool<br/>(`true`) | Make this request queuable or not | 
 
 ## Usage
 

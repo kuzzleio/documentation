@@ -10,27 +10,27 @@ order: 200
 
 Removes a subscription.
 
-## Signature
+## Arguments
 
 ```java
 void unsubscribe(String roomId)
 void unsubscribe(String roomId, io.kuzzle.sdk.QueryOptions options)
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``roomId`` | String | Subscription room ID  |
+| `roomId` | String | Subscription room ID  |
 | `options` | io.kuzzle.sdk.QueryOptions | Query options |
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
 
 ## Exceptions
 

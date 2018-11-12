@@ -14,20 +14,13 @@ The `<index>` and `<collection>` are indicative and serve only to distinguish th
 
 **Note:** real-time messages are not persisted in the database.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {object} message
- * @param {object} [options]
- * @returns {Promise<boolean>}
- */
-publish (index, collection, message, options = null)
+publish (index, collection, message, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
@@ -36,13 +29,13 @@ publish (index, collection, message, options = null)
 | ``message`` | object | Message to send    |
 | ``options`` | object | Query options    |
 
-### **options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
 
 ## Resolve
 
