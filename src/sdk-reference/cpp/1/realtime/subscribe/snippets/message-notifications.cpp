@@ -9,6 +9,8 @@ try {
 
   std::string message = "{ \"metAt\": \"Insane\", \"hello\": \"world\" }";
   kuzzle->realtime->publish("i-dont-exist", "in-database", message);
+
+  sleep(1);
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.getMessage() << std::endl;
 }

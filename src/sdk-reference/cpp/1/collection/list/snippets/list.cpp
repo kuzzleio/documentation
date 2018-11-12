@@ -1,5 +1,5 @@
 try {
-  kuzzleio::query_options options = {0};
+  kuzzleio::query_options options;
   options.from = 1;
   options.size = 2;
 
