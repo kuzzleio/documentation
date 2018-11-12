@@ -122,7 +122,7 @@ class Snippet {
       case 'cpp':
         return `LD_LIBRARY_PATH=./test/bin/sdk-cpp/lib ./test/bin/${name}`;
       case 'java':
-        return `java -cp ./test/bin/kuzzlesdk-java-experimental-amd64.jar::./test/bin ${name}`;
+        return `java -cp ./test/bin/sdk-java/kuzzlesdk-java-experimental-amd64.jar::./test/bin ${name}`;
       case 'js':
         return `node test/bin/${name}.js`;
     }
