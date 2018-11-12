@@ -13,12 +13,11 @@ go func() {
 
 // Subscribe to a room
 _, err := kuzzle.Realtime.Subscribe(
-	"i-dont-exist", 
-	"i-database", 
-	json.RawMessage(`{}`), 
-	listener, 
-	nil
-)
+	"i-dont-exist",
+	"i-database",
+	json.RawMessage(`{}`),
+	listener,
+	nil)
 
 if err != nil {
   log.Fatal(err)

@@ -19,12 +19,11 @@ go func() {
 }()
 
 _, err := kuzzle.Realtime.Subscribe(
-	"nyc-open-data", 
-	"yellow-taxi", 
-	filters, 
-	listener, 
-	nil
-)
+	"nyc-open-data",
+	"yellow-taxi",
+	filters,
+	listener,
+	nil)
 
 if err != nil {
   log.Fatal(err)
@@ -32,11 +31,10 @@ if err != nil {
 
 document := json.RawMessage(`{ "name": "nina vkote", "age": 19 }`)
 kuzzle.Document.Create(
-	"nyc-open-data", 
-	"yellow-taxi", 
-	"nina-vkote", 
-	document, 
-	nil
-)
+	"nyc-open-data",
+	"yellow-taxi",
+	"nina-vkote",
+	document,
+	nil)
 
 <-exitPrgm
