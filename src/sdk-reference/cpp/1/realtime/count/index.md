@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: count
 description: Count subscribers for a subscription room
-order: 200
 ---
 
 # count
@@ -28,8 +27,8 @@ int count(const std::string& room_id, kuzzleio::query_options *options=nullptr)
 Additional query options
 
 | Option     | Type<br/>(default)  | Description   |
-| ---------- | ------- | --------------------------------- | 
-| `queuable` | bool<br/>(`true`) | Make this request queuable or not | 
+| ---------- | ------- | --------------------------------- |
+| `queuable` | bool<br/>(`true`) | Make this request queuable or not |
 
 ## Return
 

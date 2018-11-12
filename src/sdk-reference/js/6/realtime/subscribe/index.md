@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: subscribe
-description:
-order: 200
+description: Subscribe to real-time notifications
 ---
 
 # subscribe
@@ -28,8 +27,8 @@ Subscribes by providing a set of filters: messages, document changes and, option
 
 ### callback
 
-Callback function that will be called each time a new notifications is received.  
-The callback will receive the [notifications object]({{site_base_path}}sdk-reference/js/6/essentials/realtime-notifications) as only argument.  
+Callback function that will be called each time a new notifications is received.
+The callback will receive the [notifications object]({{site_base_path}}sdk-reference/js/6/essentials/realtime-notifications) as only argument.
 
 ### options
 

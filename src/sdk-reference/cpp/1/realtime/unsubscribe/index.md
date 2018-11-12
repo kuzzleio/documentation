@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: unsubscribe
 description: Removes a subscription
-order: 200
 ---
 
 # unsubscribe
@@ -28,8 +27,8 @@ void unsubscribe(const std::string& room_id, kuzzleio::query_options *options=nu
 Additional query options
 
 | Option     | Type<br/>(default)  | Description   |
-| ---------- | ------- | --------------------------------- | 
-| `queuable` | boolean<br/>(`true`) | Make this request queuable or not | 
+| ---------- | ------- | --------------------------------- |
+| `queuable` | boolean<br/>(`true`) | Make this request queuable or not |
 
 ## Exceptions
 

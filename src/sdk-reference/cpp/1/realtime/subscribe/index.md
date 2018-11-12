@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: subscribe
-description:
-order: 200
+description: Subscribe to real-time notifications
 ---
 
 # subscribe
@@ -26,20 +25,20 @@ std::string subscribe(
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``index`` | const std::string& | Index name    |
-| ``collection`` | const std::string& | Collection name    |
-| ``filters`` | const std::string& | JSON string representing a set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
-| ``listener`` | kuzzleio::NotificationListener* | Listener function to handle notifications |
-| ``options`` | kuzzleio::room_options* | A struct containing subscription options |
+| `index` | const std::string& | Index name    |
+| `collection` | const std::string& | Collection name    |
+| `filters` | const std::string& | JSON string representing a set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
+| `listener` | kuzzleio::NotificationListener* | Listener function to handle notifications |
+| `options` | kuzzleio::room_options* | A struct containing subscription options |
 
 ### listener
 
-Listener function that will be called each time a new notifications is received.  
-The listener will receive a [const kuzzleio::notification_result*]({{site_base_path}}sdk-reference/cpp/1/essentials/realtime-notifications) as only argument.  
+Listener function that will be called each time a new notifications is received.
+The listener will receive a [const kuzzleio::notification_result*]({{site_base_path}}sdk-reference/cpp/1/essentials/realtime-notifications) as only argument.
 
 ### options
 
-Additional subscription options.  
+Additional subscription options.
 
 
 | Property   | Type<br/>(default)    | Description                       |

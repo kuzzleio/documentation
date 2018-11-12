@@ -2,13 +2,12 @@
 layout: sdk.html.hbs
 algolia: true
 title: publish
-description:
-order: 200
+description: Publish a real-time message
 ---
 
 # publish
 
-Sends a real-time `<message>` to Kuzzle. The `<message>` will be dispatched to all clients with subscriptions matching the `<index>`, the `<collection>` and the `<message>` content.  
+Sends a real-time `<message>` to Kuzzle. The `<message>` will be dispatched to all clients with subscriptions matching the `<index>`, the `<collection>` and the `<message>` content.
 
 The `<index>` and `<collection>` are indicative and serve only to distinguish the rooms. They are not required to exist in the database
 

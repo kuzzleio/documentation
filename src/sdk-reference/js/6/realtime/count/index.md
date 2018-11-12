@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: count
 description: Count subscribers for a subscription room
-order: 200
 ---
 
 # count

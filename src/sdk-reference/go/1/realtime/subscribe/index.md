@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: Subscribe
-description:
-order: 200
+description: Subscribe to real-time notifications
 ---
 
 # Subscribe
@@ -26,16 +25,16 @@ func (r *Realtime) Subscribe(
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| ``index`` | string | Index name    |
-| ``collection`` | string | Collection name    |
-| ``filters`` | json.RawMessage | A set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
-| ``listener`` | chan<- types.KuzzleNotification | Channel receiving the notification |
-| ``options`` | types.RoomOptions | A struct containing subscription options |
+| `index` | string | Index name    |
+| `collection` | string | Collection name    |
+| `filters` | json.RawMessage | A set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
+| `listener` | chan<- types.KuzzleNotification | Channel receiving the notification |
+| `options` | types.RoomOptions | A struct containing subscription options |
 
 ### listener
 
 A channel for [types.KuzzleNotification]({{site_base_path}}sdk-reference/cpp/1/essentials/realtime-notifications) objects.
-The channel will receive an object each time a new notifications is received.  
+The channel will receive an object each time a new notifications is received.
 
 ### options
 

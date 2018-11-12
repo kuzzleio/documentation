@@ -27,8 +27,8 @@ unsubscribe (roomId, [options])
 Additional query options
 
 | Option     | Type<br/>(default)  | Description   |
-| ---------- | ------- | --------------------------------- | 
-| `queuable` | bool<br/>(`true`) | Make this request queuable or not | 
+| ---------- | ------- | --------------------------------- |
+| `queuable` | bool<br/>(`true`) | Make this request queuable or not |
 
 ## Usage
 

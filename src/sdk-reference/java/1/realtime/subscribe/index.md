@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: subscribe
-description:
-order: 200
+description: Subscribe to real-time notifications
 ---
 
 # subscribe
