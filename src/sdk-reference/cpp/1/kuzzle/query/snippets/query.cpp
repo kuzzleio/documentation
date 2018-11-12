@@ -1,5 +1,5 @@
 try {
-  kuzzleio::kuzzle_request request;
+  kuzzleio::kuzzle_request request = {0};
   request.controller = "document";
   request.action = "create";
   request.index = "nyc-open-data";
