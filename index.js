@@ -180,19 +180,22 @@ metalsmith
     }
     setImmediate(done);
   })
-  .use(concat({
-    files: 'assets/js/**/*.js',
-    output: 'assets/js/main.js'
-  }))
   .use(uglify({
     concat: {
-      file: 'bundle.min.js',
+      file: 'main.min.js',
       root: 'assets/js'
     },
     removeOriginal: true
   }))
   .use(permalinks({relative: false}));
 
+if (! options.dev.enabled) {
+  metalsmith
+    .use(concat({
+      files: ['assets/js/libs/jquery.min.js', 'assets/js/bundle.min.js'],
+      output: 'assets/js/bundle.min.js'
+    }));
+}
 metalsmith
   .use((files, ms, done) => {
     for (const file of Object.values(files)) {
