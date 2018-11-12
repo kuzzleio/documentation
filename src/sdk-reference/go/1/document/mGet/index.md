@@ -21,6 +21,8 @@ MGet(
     options types.QueryOptions) (json.RawMessage, error)
 ```
 
+<br/>
+
 | Arguments | Type | Description|
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |

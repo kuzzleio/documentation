@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: mGet
-description:
-order: 200
+description: Get multiple documents
 ---
 
 # mGet
@@ -16,32 +15,34 @@ Throws a partial error (error code 206) if one or more document can not be retri
 
 ```java
 String mGet(
-  String index, 
-  String collection, 
-  io.kuzzle.sdk.StringVector ids, 
+  String index,
+  String collection,
+  io.kuzzle.sdk.StringVector ids,
   io.kuzzle.sdk.QueryOptions options
 )
 String mGet(
-  String index, 
-  String collection, 
+  String index,
+  String collection,
   io.kuzzle.sdk.StringVector ids
 )
 ```
+
+<br/>
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |
-| `ids` | io.kuzzle.sdk.StringVector | The document ids |
-| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
+| `ids` | io.kuzzle.sdk.StringVector | Document IDs |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 

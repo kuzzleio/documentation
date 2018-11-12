@@ -21,6 +21,8 @@ MReplace(
     options types.QueryOptions) (json.RawMessage, error)
 ```
 
+<br/>
+
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |

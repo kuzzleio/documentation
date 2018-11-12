@@ -1,5 +1,7 @@
+String doc = "{\"capacity\": 4}";
+
 try {
-    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", "{\"capacity\": 4}");
+    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", doc);
 
     String response = kuzzle.getDocument().get("nyc-open-data", "yellow-taxi", "some-id");
     /*
@@ -19,14 +21,6 @@ try {
             "active":true,
             "deletedAt":null
             }
-        },
-        "_meta":{
-            "author":"-1",
-            "createdAt":1538402859880,
-            "updatedAt":null,
-            "updater":null,
-            "active":true,
-            "deletedAt":null
         }
     }
     */

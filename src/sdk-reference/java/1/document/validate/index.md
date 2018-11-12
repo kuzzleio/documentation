@@ -2,13 +2,12 @@
 layout: sdk.html.hbs
 algolia: true
 title: validate
-description:
-order: 200
+description: Validate a document
 ---
 
 # validate
 
-Validates data against existing validation rules. 
+Validates data against existing validation rules.
 
 Note that if no validation specifications are set for the `<index>`/`<collection>`, the document will always be valid.
 
@@ -17,24 +16,32 @@ This request does **not** store or publish the document.
 ## Arguments
 
 ```java
-boolean validate(String, String, String, io.kuzzle.sdk.QueryOptions)
-boolean validate(String, String, String)
+boolean validate(String index, String collection, String document)
+
+boolean validate(
+  String index,
+  String collection,
+  String document,
+  io.kuzzle.sdk.QueryOptions options
+)
 ```
+
+<br/>
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |
 | `body` | <pre>String</pre> | A JSON string containing the body of the document |
-| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 

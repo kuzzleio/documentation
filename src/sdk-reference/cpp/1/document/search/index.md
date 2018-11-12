@@ -23,7 +23,7 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 ## Arguments
 
 ```cpp
-search_result* search(
+SearchResult* search(
   const std::string& index,
   const std::string& collection,
   const std::string& body,
@@ -60,7 +60,7 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a `SearchResult` object. See how to [handle search results hre]({{ site_base_path }}sdk-reference/cpp/1/esssentials/search-result).
+Returns a [kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/java/1/essentials/search-result).
 
 ## Exceptions
 

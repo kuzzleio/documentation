@@ -1,4 +1,4 @@
-String body = "["
+String documents = "["
     + "   {"
     + "       \"_id\": \"some-id\","
     + "       \"body\": { \"capacity\": 4 }"
@@ -10,7 +10,11 @@ String body = "["
     + "]";
 
 try {
-    String response = kuzzle.getDocument().mCreateOrReplace("nyc-open-data", "yellow-taxi", body);
+    String response = kuzzle.getDocument().mCreateOrReplace(
+      "nyc-open-data",
+      "yellow-taxi",
+      documents
+    );
 
     System.out.println(response);
     /*
@@ -38,15 +42,7 @@ try {
             "failed":0
         },
         "created":true,
-        "status":201,
-        "_meta":{
-            "active":true,
-            "author":"-1",
-            "updater":null,
-            "updatedAt":null,
-            "deletedAt":null,
-            "createdAt":1538552685790
-        }
+        "status":201
         },
         {
         "_id":"some-other-id",
@@ -71,15 +67,7 @@ try {
             "failed":0
         },
         "created":true,
-        "status":201,
-        "_meta":{
-            "active":true,
-            "author":"-1",
-            "updater":null,
-            "updatedAt":null,
-            "deletedAt":null,
-            "createdAt":1538552685790
-        }
+        "status":201
         }
     ]
     */

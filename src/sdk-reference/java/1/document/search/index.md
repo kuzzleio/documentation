@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: search
-description:
-order: 200
+description: Search documents
 ---
 
 # search
@@ -24,34 +23,36 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 ```java
 io.kuzzle.sdk.SearchResult search(
   String index,
-  String collection, 
-  String body, 
+  String collection,
+  String body,
   io.kuzzle.sdk.QueryOptions options
 )
 io.kuzzle.sdk.SearchResult search(
   String index,
-  String collection, 
+  String collection,
   String body
 )
 ```
+
+<br/>
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |
 | `body` | <pre>String</pre> | A JSON string containing the search query |
-| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
-| `from` | int | Offset of the first document to fetch |
-| `size` | int | Maximum number of documents to retrieve per page  |
-| `scroll` | <pre>String</pre> | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
+| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+| `from` | <pre>int</pre><br/>(`1`) | Offset of the first document to fetch |
+| `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
+| `scroll` | <pre>String</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units)) |
 
 ## Body properties
 
@@ -65,26 +66,7 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a `io.kuzzle.sdk.SearchResult` object
-
-### Properties
-
-| Name | Type | Description |
-| --- | --- | --- |
-| getDocuments | <pre>String</pre> | A JSON string containing the retrieved documents |
-| getFetched | int | The number of fetched documents |
-| getTotal | int | The total number of documents matching the query |
-| getAggregations | <pre>String</pre> | A JSON string containing the computed aggregations |
-| getCollection | <pre>String</pre> | The collection on which the search was performed |
-| getFilters | <pre>String</pre> | The original query |
-| getOptions | <pre>io.kuzzle.sdk.QueryOptions</pre> | The original query options |
-| next | function | Returns a new `io.kuzzle.sdk.SearchResult` of `size` next documents |
-
-### Functions
-
-| Name | Type | Description |
-| --- | --- | --- |
-| next | `io.kuzzle.sdk.SearchResult` | Returns a new page of `size` next documents |
+Returns a [io.kuzzle.sdk.SearchResult]({{ site_base_path }}src/sdk-reference/java/1/essentials/search-result) object.
 
 ## Exceptions
 

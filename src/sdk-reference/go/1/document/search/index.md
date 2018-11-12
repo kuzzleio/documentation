@@ -28,6 +28,8 @@ Search(
   options types.QueryOptions) (*types.SearchResult, error)
 ```
 
+<br/>
+
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |

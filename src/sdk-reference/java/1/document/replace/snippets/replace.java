@@ -1,12 +1,19 @@
-try {
-    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", "{\"color\": \"yellow\"}");
+String doc = "{\"color\": \"yellow\"}";
 
-    String body = "{"
+try {
+    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", doc);
+
+    String newDocument = "{"
         + " \"capacity\": 4,"
         + " \"category\": \"suv\""
         + "}";
 
-    String response = kuzzle.getDocument().replace("nyc-open-data", "yellow-taxi", "some-id", body);
+    String response = kuzzle.getDocument().replace(
+      "nyc-open-data",
+      "yellow-taxi",
+      "some-id",
+      newDocument
+    );
 
     System.out.println(response);
     /*
@@ -33,14 +40,6 @@ try {
             "active": true,
             "deletedAt": null
         }
-        },
-        "_meta": {
-        "author": "-1",
-        "createdAt": 1538641029988,
-        "updatedAt": 1538641029988,
-        "updater": "-1",
-        "active": true,
-        "deletedAt": null
         }
     }
     */

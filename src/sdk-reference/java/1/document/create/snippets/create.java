@@ -1,5 +1,10 @@
 try {
-    String response = kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", "{\"lastName\": \"Eggins\"}");
+    String response = kuzzle.getDocument().create(
+      "nyc-open-data",
+      "yellow-taxi",
+      "some-id",
+      "{\"lastName\": \"Eggins\"}"
+    );
 
     System.out.println(response);
     /*
@@ -25,14 +30,6 @@ try {
           "active": true,
           "deletedAt": null
         }
-      },
-      "_meta": {
-        "author": "-1",
-        "createdAt": 1537445737667,
-        "updatedAt": null,
-        "updater": null,
-        "active": true,
-        "deletedAt": null
       }
     }
     */

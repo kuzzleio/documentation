@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: createOrReplace
-description:
-order: 200
+description: Creates or replaces a document
 ---
 
 # createOrReplace
@@ -16,36 +15,38 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 
 ```java
 String createOrReplace(
-  String index, 
-  String collection, 
-  String id, 
-  String body, 
+  String index,
+  String collection,
+  String id,
+  String documents,
   io.kuzzle.sdk.QueryOptions options
 )
 String createOrReplace(
-  String index, 
-  String collection, 
-  String id, 
-  String body
+  String index,
+  String collection,
+  String id,
+  String documents
 )
 ```
+
+<br/>
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |
-| `id` | <pre>String</pre> | The document id |
-| `body` | <pre>String</pre> | A JSON String containing the body of the document |
-| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
+| `id` | <pre>String</pre> | Document ID |
+| `documents` | <pre>String</pre> | A JSON String containing the body of the document |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ###### **Options**
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
-| `refresh` | <pre>String</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+| `refresh` | <pre>String</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 

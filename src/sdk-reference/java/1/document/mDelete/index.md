@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: mDelete
-description:
-order: 200
+description: Delete documents
 ---
 
 # mDelete
@@ -18,37 +17,39 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 
 ```java
 io.kuzzle.sdk.StringVector mDelete(
-  String index, 
-  String collection, 
-  io.kuzzle.sdk.StringVector ids, 
+  String index,
+  String collection,
+  io.kuzzle.sdk.StringVector ids,
   io.kuzzle.sdk.QueryOptions options
 )
 io.kuzzle.sdk.StringVector mDelete(
-  String index, 
-  String collection, 
+  String index,
+  String collection,
   io.kuzzle.sdk.StringVector ids
 )
 ```
+
+<br/>
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |
 | `ids` | io.kuzzle.sdk.StringVector | The ids of the documents to delete |
-| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- |
-| `queuable` | <pre>boolean</pre> (`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
-| `refresh` | string | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+| `refresh` | <pre>String</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 
-Returns an `io.kuzzle.sdk.StringVector` containing the list of the deleted document ids (more details about [StringVector]({{ site_base_path }}sdk-reference/java/1/essentials/stringvector))
+Returns a [io.kuzzle.sdk.StringVector]({{ site_base_path }}sdk-reference/java/1/essentials/stringvector) containing the list of the deleted document ids.
 
 ## Exceptions
 

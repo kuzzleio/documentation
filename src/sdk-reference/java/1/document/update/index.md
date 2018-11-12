@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: update
-description:
-order: 200
+description: Update a document
 ---
 
 # update
@@ -16,24 +15,33 @@ You can set the `retryOnConflict` optional argument (with a retry count), to tel
 ## Arguments
 
 ```java
-String update(String, String, String, String, io.kuzzle.sdk.QueryOptions)
-String update(String, String, String, String)
+String update(String index, String collection, String id, String document)
+
+String update(
+  String index,
+  String collection,
+  String id,
+  String document,
+  io.kuzzle.sdk.QueryOptions options
+)
 ```
+
+<br/>
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |
-| `id` | <pre>String</pre> | The document id |
+| `id` | <pre>String</pre> | Document ID |
 | `body` | <pre>String</pre> | A JSON string containing the body of the document |
-| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ###### options
 
-| Option | Type (default) | Description | 
-| --- | --- | --- | 
-| `queuable` | <pre>boolean</pre> (`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
-| `refresh` | <pre>String</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| Option | Type<br/>(default) | Description |
+| --- | --- | --- |
+| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+| `refresh` | <pre>String</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 | `retryOnConflict` | <pre>int</pre> (`0`) | The number of times the database layer should retry in case of version conflict |
 
 ## Return
@@ -42,9 +50,9 @@ Returns a JSON string containing the document update result.
 
 | Name | Type | Description
 | --- | --- | ---
-| _id | string | The id of the newly created document
-| _version | int | The version of the document in the persistent data storage
-| result | string | set to `updated` in case of success
+| _id | <pre>string</pre> | The id of the newly created document
+| _version | <pre>int</pre> | The version of the document in the persistent data storage
+| result | <pre>string</pre> | set to `updated` in case of success
 
 ## Exceptions
 

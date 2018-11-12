@@ -1,6 +1,14 @@
+String doc = "{\"capacity\": 4}";
+
 try {
-    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", "{\"capacity\": 4}");
-    String response = kuzzle.getDocument().update("nyc-open-data", "yellow-taxi", "some-id", "{\"category\": \"suv\"}");
+    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", doc);
+
+    String response = kuzzle.getDocument().update(
+      "nyc-open-data",
+      "yellow-taxi",
+      "some-id",
+      "{\"category\": \"suv\"}"
+    );
 
     System.out.println(response);
     /*

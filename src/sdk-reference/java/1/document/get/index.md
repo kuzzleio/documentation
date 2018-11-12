@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: get
-description:
-order: 200
+description: Get a document from kuzzle
 ---
 
 # get
@@ -14,40 +13,38 @@ Gets a document.
 
 ```java
 String get(
-  String index, 
-  String collection, 
-  String id, 
+  String index,
+  String collection,
+  String id,
   io.kuzzle.sdk.QueryOptions options
 )
 String get(
-  String index, 
-  String collection, 
+  String index,
+  String collection,
   String id
 )
 ```
+
+<br/>
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | string | Collection name |
-| `id` | <pre>String</pre> | The document id |
-| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
+| `id` | <pre>String</pre> | Document ID |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ### options
 
 Additional query options
 
-| Option | Type (default) | Description |
+| Option | Type<br/>(default) | Description |
 | --- | --- | --- | ------- |
-| `queuable` | <pre>boolean</pre> (`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
 Returns a JSON string containing the document.
-
-| Name | Type | Description
-| --- | --- | ---
-| _source | object | The retrieved document
 
 ## Exceptions
 

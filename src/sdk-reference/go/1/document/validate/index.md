@@ -23,6 +23,8 @@ Validate(
   options types.QueryOptions) (bool, error)
 ```
 
+<br/>
+
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |

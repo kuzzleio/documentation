@@ -2,7 +2,7 @@ try {
     kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", "{}");
     kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-other-id", "{}");
 
-    String body = "["
+    String newDocuments = "["
         + "{"
         + "     \"_id\": \"some-id\","
         + "     \"body\": { \"capacity\": 4 }"
@@ -13,8 +13,12 @@ try {
         + "}"
         + "]";
 
-    String response = kuzzle.getDocument().mReplace("nyc-open-data", "yellow-taxi", body);
-    
+    String response = kuzzle.getDocument().mReplace(
+      "nyc-open-data",
+      "yellow-taxi",
+      newDocuments
+    );
+
     System.out.println(response);
 } catch (KuzzleException e) {
     System.err.println(e.getMessage());

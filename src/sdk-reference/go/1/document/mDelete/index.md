@@ -23,6 +23,8 @@ MDelete(
     options types.QueryOptions) ([]string, error)
 ```
 
+<br/>
+
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |

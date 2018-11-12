@@ -1,6 +1,10 @@
+String doc = "{\"capacity\": 4}";
+
 try {
-    if (kuzzle.getDocument().validate("nyc-open-data", "yellow-taxi", "{\"capacity\": 4}")) {
-        System.out.println("Success");
+   boolean valid = kuzzle.getDocument().validate("nyc-open-data", "yellow-taxi", doc)
+
+    if (valid) {
+      System.out.println("Success");
     }
 } catch (KuzzleException e) {
     System.err.println(e.getMessage());

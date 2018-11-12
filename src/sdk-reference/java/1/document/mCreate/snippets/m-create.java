@@ -1,4 +1,4 @@
-String body = "["
+String documents = "["
     + "   {"
     + "       \"_id\": \"some-id\","
     + "       \"body\": { \"capacity\": 4 }"
@@ -9,7 +9,11 @@ String body = "["
     + "]";
 
 try {
-    String response = kuzzle.getDocument().mCreate("nyc-open-data", "yellow-taxi", body);
+    String response = kuzzle.getDocument().mCreate(
+      "nyc-open-data",
+      "yellow-taxi",
+      documents
+    );
 
     System.out.println(response);
     /*
@@ -37,15 +41,7 @@ try {
             "failed":0
         },
         "created":true,
-        "status":201,
-        "_meta":{
-            "active":true,
-            "author":"-1",
-            "updater":null,
-            "updatedAt":null,
-            "deletedAt":null,
-            "createdAt":1538470871764
-        }
+        "status":201
         },
         {
         "_id":"AWY0AoLgKWETYfLdcMat",
@@ -70,15 +66,7 @@ try {
             "failed":0
         },
         "created":true,
-        "status":201,
-        "_meta":{
-            "active":true,
-            "author":"-1",
-            "updater":null,
-            "updatedAt":null,
-            "deletedAt":null,
-            "createdAt":1538470871764
-        }
+        "status":201
         }
     ]
     */
