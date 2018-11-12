@@ -64,8 +64,6 @@ Body:
 
 ## Body properties
 
-A body must be provided to `count` queries. It can be left empty: in that case, the `count` query returns the total number of documents in a data collection.
-
 ### Optional:
 
 * `query`: if provided, will count only documents matching this search query. Uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
