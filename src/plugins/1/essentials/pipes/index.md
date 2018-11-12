@@ -7,7 +7,7 @@ order: 300
 
 # Pipes
 
-Pipes are functions plugged to [events]({{ site_base_path }}kuzzle-events/1), called synchronously by Kuzzle, and receiving information regarding that event.
+Pipes are functions plugged to [events]({{ site_base_path }}plugins/1/events/), called synchronously by Kuzzle, and receiving information regarding that event.
 
 Pipes can:
 
@@ -21,7 +21,7 @@ Pipes can:
 
 ## Usage
 
-Plugins can register pipes by exposing a `pipes` object: keys are listened [events]({{ site_base_path }}kuzzle-events/1/), and values are either a function name to execute whenever that event is triggered, or an array of function names.
+Plugins can register pipes by exposing a `pipes` object: keys are listened [events]({{ site_base_path }}plugins/1/events/), and values are either a function name to execute whenever that event is triggered, or an array of function names.
 
 ```javascript
 this.pipes = {
