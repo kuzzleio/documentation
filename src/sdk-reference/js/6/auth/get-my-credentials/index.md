@@ -39,7 +39,7 @@ Additional query options
 ## Resolves
 
 An `object` representing the credentials for the provided authentication strategy.
-The content depends on the authentication strategy.
+Its content depends on the authentication strategy.
 
 ## Usage
 
