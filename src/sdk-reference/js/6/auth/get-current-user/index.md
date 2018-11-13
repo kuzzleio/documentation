@@ -36,7 +36,7 @@ A `User` object representing the current user logged with the SDK.
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
 | `id` | <pre>string</pre> | User ID |
-| `content` | User | User content |
+| `content` | <pre>User</pre> | User content |
 
 The User content has the following properties:
 
@@ -44,7 +44,7 @@ The User content has the following properties:
 | ---------- | ------- | --------------------------------- |
 | `profileIds` | <pre>array&lt;string&gt;</pre> | An array containing the profile ids |
 | `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
-| `any` | any | Any other information saved with the user |
+| `any` | <pre>any</pre> | Any other information saved with the user |
 
 
 ## Usage
