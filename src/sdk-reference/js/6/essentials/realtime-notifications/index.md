@@ -21,7 +21,7 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | `protocol` | <pre>string</pre> | Network protocol used to modify the document |
 | `result` | <pre>object</pre> | Notification content |
 | `room` | <pre>string</pre> | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
-| `scope` | <pre>string</pre> | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
+| `scope` | <pre>string</pre> | `in`: document enters (or stays) in the scope<br/out`: document leaves the scope |
 |`timestamp` | <pre>number</pre> | Timestamp of the event, in Epoch-millis format |
 | `type` | <pre>string</pre> | `document`: Notification type |
 | `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
@@ -30,7 +30,7 @@ The `result` object is the notification content, and it has the following struct
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `_id` | <pre>string</pre> | Document unique ID<br/>`null` if the notification is from a real-time message|
+| `_id` | <pre>string</pre> | Document unique ID<br/null` if the notification is from a real-time message|
 | `_source` | <pre>object</pre> | Message or full document content. Not present if the event is about a document deletion |
 
 ## User
@@ -48,7 +48,7 @@ These notifications represent [user events]({{ site_base_path }}api/1/notificati
 | `room` | <pre>string</pre> | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
 |`timestamp` | <pre>number</pre> | Timestamp of the event, in Epoch-millis format |
 | `type` | <pre>string</pre> | `user`: Notification type |
-| `user` | <pre>string</pre> | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
+| `user` | <pre>string</pre> | `in`: a new user has subscribed to the same filters<br/out`: a user cancelled a shared subscription |
 | `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
 The `result` object is the notification content, and it has the following structure:

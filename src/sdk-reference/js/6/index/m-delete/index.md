@@ -7,7 +7,7 @@ description: Deletes multiple indexes
 
 # mDelete
 
-Deletes multiple `<indexes>` at once.
+Deletes multiple indexes at once.
 
 ## Arguments
 
@@ -32,7 +32,7 @@ Additional query options
 
 ## Resolves
 
-Resolves to an `array<string>` containing the list of indexes names successfully deleted.
+Resolves to an `array<string containing the list of indexes names successfully deleted.
 
 ## Usage
 

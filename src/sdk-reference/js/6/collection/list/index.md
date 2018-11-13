@@ -7,9 +7,9 @@ description: Returns the collection list of an index
 
 # list
 
-Returns the complete list of realtime and stored data collections in requested `<index>` sorted by name in alphanumerical order.
+Returns the complete list of realtime and stored data collections in requested index sorted by name in alphanumerical order.
 
-The `from` and `size` arguments in `<options>` allows pagination. They are returned in the response if provided.
+The `from` and `size` arguments in options allows pagination. They are returned in the response if provided.
 
 
 ## Arguments

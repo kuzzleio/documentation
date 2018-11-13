@@ -7,7 +7,7 @@ description: Check for index existence
 
 # exists
 
-Checks if the given `<index>` exists in Kuzzle.
+Checks if the given index exists in Kuzzle.
 
 ## Arguments
 

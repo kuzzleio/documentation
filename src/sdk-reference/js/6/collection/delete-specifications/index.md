@@ -7,7 +7,7 @@ description: Delete validation specifications for a collection
 
 # deleteSpecifications
 
-Delete the validation specifications associated with the `<collection>`.
+Delete the validation specifications associated with the collection.
 
 ## Arguments
 
@@ -33,7 +33,7 @@ Additional query options
 
 ## Resolves
 
-True if success.
+Resolves if success.
 
 ## Usage
 

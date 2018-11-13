@@ -7,7 +7,7 @@ description: Deletes an index
 
 # delete
 
-Deletes an entire data `<index>` from Kuzzle.
+Deletes an entire data index from Kuzzle.
 
 ## Arguments
 

@@ -7,7 +7,7 @@ description: Returns the validation specifications
 
 # getSpecifications
 
-Returns the validation specifications associated to the `<collection>`.
+Returns the validation specifications associated to the collection.
 
 ## Arguments
 

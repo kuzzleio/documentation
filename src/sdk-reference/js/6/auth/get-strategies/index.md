@@ -31,7 +31,7 @@ Additional query options
 
 ## Resolves
 
-An `array<string>` of available strategies name.
+An `array<string of available strategies name.
 
 ## Usage
 

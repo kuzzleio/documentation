@@ -2,12 +2,12 @@
 layout: sdk.html.hbs
 algolia: true
 title: updateMyCredentials
-description: Update the current user's credentials for the specified `<strategy>`.
+description: Update the current user's credentials for the specified strategy.
 ---
 
 # updateMyCredentials
 
-Updates the `<credentials>` of the currently logged in user for the specified `<strategy>`.
+Updates the credentials of the currently logged in user for the specified strategy.
 
 ## Arguments
 

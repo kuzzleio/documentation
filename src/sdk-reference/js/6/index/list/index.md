@@ -31,7 +31,7 @@ Additional query options
 
 ## Resolves
 
-Resolves to an `array<string>` containing the names of Kuzzle's indexes.
+Resolves to an `array<string containing the names of Kuzzle's indexes.
 
 ## Usage
 

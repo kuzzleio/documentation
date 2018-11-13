@@ -2,12 +2,12 @@
 layout: sdk.html.hbs
 algolia: true
 title: validateMyCredentials
-description: Validate the current user's credentials for the specified `<strategy>`.
+description: Validate the current user's credentials for the specified strategy.
 ---
 
 # validateMyCredentials
 
-Validates the provided `<credentials>` against a specified authentication `<strategy>`.
+Validates the provided credentials against a specified authentication strategy.
 
 This route neither creates nor modifies credentials.
 

@@ -7,7 +7,7 @@ description: Delete the current user's credentials for the specified strategy
 
 # deleteMyCredentials
 
-Deletes credentials for a specific `<strategy>` associated to the current user.
+Deletes credentials for a specific strategy associated to the current user.
 
 If the credentials that generated the current JWT are removed, the user will remain logged in until they log out or their session expire. After that, they will no longer be able to log in with the deleted credentials.
 

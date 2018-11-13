@@ -7,7 +7,7 @@ description: Checks a jwt token's validity.
 
 # checkToken
 
-Checks a `<token>` validity.
+Checks a token validity.
 
 This API route does not require the caller to be logged in.
 

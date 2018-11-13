@@ -7,7 +7,7 @@ description: Check that the current user has credentials for the specified strat
 
 # credentialsExist
 
-Checks that the current authenticated user has credentials for the specified authentication `<strategy>`.
+Checks that the current authenticated user has credentials for the specified authentication strategy.
 
 ## Arguments
 

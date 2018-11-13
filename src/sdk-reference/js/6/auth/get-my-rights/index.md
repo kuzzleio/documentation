@@ -31,7 +31,7 @@ Additional query options
 
 ## Resolves
 
-An `array<object>` containing:
+An `array<object containing:
 
 | Property     | Type    | Description
 | ---------- | ------- | ---------------------------------
