@@ -1,6 +1,6 @@
 ---
 name: kuzzle#connect
-description: Connects the sdk to kuzzle
+description: Connects the SDK to Kuzzle
 hooks:
   before: 
   after: 
