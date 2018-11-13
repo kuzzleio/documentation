@@ -26,7 +26,7 @@ public String getMyCredentials(
 | Arguments    | Type    | Description
 |--------------|---------|-------------
 | `strategy` | String | the strategy to use
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing Query options
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 ### **Options**
 

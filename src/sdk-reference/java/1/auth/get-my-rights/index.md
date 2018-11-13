@@ -22,7 +22,7 @@ public io.kuzzle.sdk.UserRight[] getMyRights();
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing Query options
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 ### **Options**
 
@@ -36,7 +36,7 @@ Additional query options
 
 An array of UserRight containing:
 
-| Property     | Type    | Description                      
+| Property     | Type    | Description
 | ---------- | ------- | ---------------------------------
 | `controller` | String | The controller on wich the rights are applied |
 | `action` | String | The action on wich the rights are applied |

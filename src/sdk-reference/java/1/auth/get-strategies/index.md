@@ -22,7 +22,7 @@ public io.kuzzle.sdk.StringVector getStrategies();
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing Query options
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 ### **Options**
 
