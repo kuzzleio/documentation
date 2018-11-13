@@ -7,9 +7,7 @@ description: Remove all documents from collection
 
 # truncate
 
-Remove all documents from a collection while keeping the associated mapping.
-
-It is faster than deleting all documents from a collection.
+Removes all documents from a data collection, while keeping the associated mapping.
 
 ## Arguments
 
@@ -35,7 +33,7 @@ Additional query options
 
 ## Resolves
 
-Resolves if the collection has successfully been truncated.
+Resolves when the collection is successfully truncated.
 
 ## Usage
 
