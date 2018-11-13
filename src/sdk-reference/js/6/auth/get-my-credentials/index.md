@@ -9,7 +9,7 @@ description: Returns the current user's credential information for the specified
 
 Returns credentials information for the currently logged in user.
 
-The data returned will depend on the specified authentication `<strategy>`, and they should not include any sensitive information.
+The data returned depends on the specified authentication `<strategy>`, and they should not include any sensitive information.
 
 The result can be an empty object.
 
