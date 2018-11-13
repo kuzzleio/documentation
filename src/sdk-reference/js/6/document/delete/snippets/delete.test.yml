@@ -8,5 +8,5 @@ hooks:
     curl -H "Content-type: application/json" -XPUT -d '{}' kuzzle:7512/nyc-open-data/yellow-taxi/some-id
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
-template: asyncdefault
+template: default
 expected: Success
