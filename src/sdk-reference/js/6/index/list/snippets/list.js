@@ -1,9 +1,11 @@
-kuzzle.index
-  .list()
-  .then(response => {
-    console.log(`Kuzzle contains ${response.length} indexes`);
-    console.log(response);
-  })
-  .catch(error => {
-    console.error(error.message);
-  });
+try {
+  const indexes = await kuzzle.index.list();
+  console.log(indexes);
+  /*
+    [ 'nyc-open-data', 'mtp-open-data' ]
+  */
+
+  console.log(`Kuzzle contains ${indexes.length} indexes`);
+} catch (error) {
+  console.error(error.message);
+}

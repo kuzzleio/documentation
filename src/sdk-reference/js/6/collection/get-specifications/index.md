@@ -7,35 +7,29 @@ description: Returns the validation specifications
 
 # getSpecifications
 
-Returns the validation specifications associated to the collection.
-
-## Signature
-
-```javascript
-/**
-* @param {string} index
-* @param {string} collection
-* @param {object} [options]
-* @returns {Promise.<object>}
- */
-getSpecifications(index, collection, options = {})
-```
+Returns the validation specifications associated to the given index and collection.
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
-| ``options`` | Object | Query options    | no  |
+```javascript
+getSpecifications (index, collection, [options])
+```
 
-### **options**
+<br/>
+
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|----------
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``options`` | <pre>object</pre> | Query options    |
+
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolves
 

@@ -2,10 +2,10 @@
 layout: sdk.html.hbs
 algolia: true
 title: refresh
-description: Force Elasticsearch search index update
+description: Forces an Elasticsearch search index update
 ---
 
-# Refresh
+# refresh
 
 When writing or deleting documents in Kuzzle, the update needs to be indexed before being available in search results.
 
@@ -17,38 +17,35 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 
 </div>
 
-## Signature
-
-```javascript
-/**
- * @param {string} index
- * @param {object} [options]
- * @returns {Promise.<Object>}
- */
-refresh(index, (options = null));
-```
-
 ## Arguments
 
-| Arguments | Type   | Description                         | Required |
-| --------- | ------ | ----------------------------------- | -------- |
-| `options` | Object | An object containing query options. | no       |
+```javascript
+refresh (index, [options]);
+```
 
-### **Options**
+<br/>
+
+| Arguments | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `options` | <pre>object</pre> | Query options |
+
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolves
 
-Resolves to an object containing the refresh status on shards.
+Resolves to an `object` containing the refresh status on shards.
 
-| Name     | Type   | Description                                                                   |
-| -------- | ------ | ----------------------------------------------------------------------------- |
-| \_shards | object | Refresh status on shards, contain 3 properties : total, successful and failed |
+| Name     | Type   | Description          |
+| -------- | ------ | ---------------------------------------------- |
+| `total` | <pre>number</pre> | Total number of shards |
+| `successful` | <pre>number</pre> | Successfully refreshed shards |
+| `fail` | <pre>number</pre> | Shards that failed to refresh |
 
 ## Usage
 

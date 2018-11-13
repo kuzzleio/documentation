@@ -41,7 +41,7 @@ Though there is no real limit to the directories depth, to keep the documentatio
 
 ## Documentation pages
 
-Pages are listed as subdirectories in `src/`.  
+Pages are listed as subdirectories in `src/`.
 For instance: `src/guide/`.
 
 Each page directory must contain an `index.md` file, with the following headers:
@@ -171,8 +171,8 @@ You can add your own template, just respect the naming rule : `template_name.tpl
 
 ## Testing the snippets locally
 
-You can test the snippets locally by using the script `run-snippet-tests.sh`.  
-This script looks recursively for snippets to test, using the path provided as an argument.    
+You can test the snippets locally by using the script `run-snippet-tests.sh`.
+This script looks recursively for snippets to test, using the path provided as an argument.
 You must at least have a sdk language and version in the provided path: `src/sdk-reference/<language>/<version>[/path/to/snippets]`
 
 First, you have to run a Kuzzle stack with the following script: `bash .travis/start_kuzzle.sh`
@@ -198,7 +198,7 @@ bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 
 ### Create a new controller action documentation
 
-You can use the scaffolding tool to initialize a new SDK controller action documentation, from its Kuzzle API counterpart.   
+You can use the scaffolding tool to initialize a new SDK controller action documentation, from its Kuzzle API counterpart.
 
 This tool takes the path of your new action as an argument and creates the following files:
 
@@ -215,11 +215,11 @@ Example:
 
 ### Copy an existing action from another SDK
 
-You can also copy an action from another SDK to save time.  
-This command extracts information from an existing action in another SDK and generates the correct files for another SDK.  
+You can also copy an action from another SDK to save time.
+This command extracts information from an existing action in another SDK and generates the correct files for another SDK.
 
 Example:
 ```bash
-# Copy informations from SDK JS 6 to SDK CPP 1
+# Copy information from SDK JS 6 to SDK CPP 1
 ./scaffolding/scaffold copy src/sdk-reference/js/6/collection/list src/sdk-reference/cpp/1/collection/list
 ```

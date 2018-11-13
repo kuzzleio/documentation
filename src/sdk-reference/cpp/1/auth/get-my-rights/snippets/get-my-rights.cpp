@@ -8,6 +8,6 @@ try {
     std::cout << rights[i]->value << std::endl;
   }
   std::cout << "Success" << std::endl;
-} catch (kuzzleio::KuzzleException e) {
+} catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.getMessage() << std::endl;
 }

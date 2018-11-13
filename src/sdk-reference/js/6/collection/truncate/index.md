@@ -7,40 +7,33 @@ description: Remove all documents from collection
 
 # truncate
 
-Remove all documents from a collection while keeping the associated mapping.
-It is faster than deleting all documents from a collection.
-
-## Signature
-
-```javascript
-/**
-* @param {string} index
-* @param {string} collection
-* @param {object} [options]
-* @returns {Promise.<object>}
- */
-truncate(index, collection, options = {})
-```
+Removes all documents from a data collection, while keeping the associated mapping.
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
-| ``options`` | Object | Query options    | no  |
+```javascript
+truncate (index, collection, [options])
+```
 
-### **options**
+<br/>
+
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``options`` | <pre>object</pre> | Query options    |
+
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolves
 
-Resolve is collection is successfully truncated.
+Resolves when the collection is successfully truncated.
 
 ## Usage
 

@@ -9,6 +9,7 @@ const layouts = require('metalsmith-layouts');
 const permalinks = require('metalsmith-permalinks');
 const livereload = require('metalsmith-livereload');
 const ancestry = require('metalsmith-ancestry');
+const ancestryHelpers = require('./helpers/ancestryHelpers');
 const links = require('metalsmith-relative-links');
 const hbtmd = require('metalsmith-hbt-md');
 const sass = require('metalsmith-sass');
@@ -179,15 +180,23 @@ metalsmith
     }
     setImmediate(done);
   })
-  .use(concat({
-    files: 'assets/js/**/*.js',
-    output: 'assets/js/main.js'
-  }))
   .use(uglify({
     concat: {
       file: 'bundle.min.js',
       root: 'assets/js'
     },
+    files: [
+      'assets/js/libs/jquery.min.js',
+      'assets/js/libs/algolia.js',
+      'assets/js/libs/prism.js',
+      'assets/js/libs/select2.js',
+      'assets/js/algolia-search.js',
+      'assets/js/languageSelector.js',
+      'assets/js/versionSelector.js',
+      'assets/js/scrollTo.js',
+      'assets/js/drawer.js',
+      'assets/js/app.js'
+    ],
     removeOriginal: true
   }))
   .use(permalinks({relative: false}));
@@ -195,23 +204,15 @@ metalsmith
 metalsmith
   .use((files, ms, done) => {
     for (const file of Object.values(files)) {
-      if (file.ancestry && file.ancestry.children) {
-        const
-          orderedPages = file.ancestry.children.sort((a,b) => {
-            if (a.order === b.order) {
-              if (a.title === b.title) {
-                return 0;
-              }
-
-              return a.title < b.title ? -1 : 1;
-            }
-
-            return a.order - b.order;
-          }),
-          href = '/' + file.src.split('/').slice(0,-1).join('/'),
-          redirect = '/' + orderedPages[0].src.split('/').slice(0,-1).join('/');
-
-        redirectList[href] = redirect;
+      if (file.ancestry) {
+        const lastChildren = ancestryHelpers.getLastChildren(file);
+        if (lastChildren.path !== file.path) {
+          const 
+            href = `/${file.path}`,
+            redirect = `/${lastChildren.path}`;
+          
+          redirectList[href] = redirect;
+        }
       }
     }
     setImmediate(done);
@@ -227,7 +228,6 @@ metalsmith
 
 if (options.algolia.privateKey) {
   log('Algolia indexing enabled');
-
   metalsmith
     .use(algolia({
       clearIndex: true,

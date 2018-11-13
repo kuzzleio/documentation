@@ -7,7 +7,7 @@ description: Validate specifications format
 
 # validateSpecifications
 
-The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.  
+The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
@@ -29,7 +29,7 @@ io.kuzzle.sdk.ValidationResponse validateSpecifications((String index, String co
 
 ### **specifications**
 
-A JSON representation of the specifications.  
+A JSON representation of the specifications.
 
 The JSON must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
 
@@ -52,7 +52,7 @@ Additional query options
 
 ## Return
 
-A `io.kuzzle.sdk.ValidationResponse` which contain informations about the specifications validity.  
+A `io.kuzzle.sdk.ValidationResponse` which contain information about the specifications validity.
 These properties are accessible with the standard getters.
 
 | Property   | Type    | Description        |
@@ -63,7 +63,7 @@ These properties are accessible with the standard getters.
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/essentials/error-handling).
 
 ## Usage
 

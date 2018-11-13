@@ -22,7 +22,7 @@ ValidateSpecifications(index string, collection string, specifications json.RawM
 | ``index`` | string | Index name    | yes  |
 | ``collection`` | string | Collection name    | yes  |
 | `specifications` | json.RawMessage | Collection data mapping in JSON format  | yes  |
-| `options` | QueryOptions | Query options. | no       |
+| `options` | QueryOptions | Query options | no       |
 
 ### **specifications**
 
@@ -53,7 +53,7 @@ Additional query options
 
 ## Return
 
-A `types.ValidationResponse` which contain informations about the specifications validity.
+A `types.ValidationResponse` which contain information about the specifications validity.
 
 | Property   | Type    | Description        |
 | ---------- | ------- | --------------------- |

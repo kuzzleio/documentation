@@ -2,49 +2,41 @@
 layout: sdk.html.hbs
 algolia: true
 title: updateMyCredentials
-description: Update the current user's credentials for the specified `<strategy>`.
+description: Update the current user's credentials for the specified strategy.
 ---
 
 # updateMyCredentials
 
-Update the current user's credentials for the specified `<strategy>`. The credentials to send will depend on the authentication plugin and the authentication strategy.
-
-## Signature
-
-```javascript
-/**
- * Update the current user's credentials for the specified `<strategy>`.
- *
- * @param strategy
- * @param credentias
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
- * updateMyCredentials (strategy, credentials, options = {});
- */
-updateMyCredentials (strategy, credentials, options = null);
-```
+Updates the credentials of the currently logged in user for the specified strategy.
 
 ## Arguments
 
+```javascript
+updateMyCredentials (strategy, credentials, [options])
+```
+
+<br/>
+
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | the strategy to use
-| `credentials` | JSON Object | the new credentials
-| `options`  | JSON Object | A JSON Object containing the options
+| `strategy` | <pre>string</pre> | Strategy to use
+| `credentials` | <pre>object</pre> | New credentials
+| `options`  | <pre>object</pre> | Query options
 
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 
 ## Resolves
 
-A JSON Object representing the new credentials.
+An `object` representing the new credentials.
+The content depends on the authentication strategy.
 
 ## Usage
 

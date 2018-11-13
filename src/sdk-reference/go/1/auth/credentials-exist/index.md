@@ -20,7 +20,7 @@ func (a *Auth) CredentialsExist(strategy string, options types.QueryOptions) (bo
 | Arguments  | Type             | Description                                             | Required |
 | ---------- | ---------------- | ------------------------------------------------------- | -------- |
 | `strategy` | string      | Strategy to use                                         | yes      |
-| `options` | QueryOptions | A structure containing query options. | yes       |
+| `options` | QueryOptions | A structure containing query options | yes       |
 
 ### **Options**
 

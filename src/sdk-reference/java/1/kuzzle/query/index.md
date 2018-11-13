@@ -29,8 +29,8 @@ io.kuzzle.sdk.KuzzleResponse query(io.kuzzle.sdk.KuzzleRequest request, io.kuzzl
 
 ### **request**
 
-A `io.kuzzle.sdk.KuzzleRequest` object containing the properties required for the Kuzzle API request.  
-Each property can be accessed with standard getter/setter.  
+A `io.kuzzle.sdk.KuzzleRequest` object containing the properties required for the Kuzzle API request.
+Each property can be accessed with standard getter/setter.
 The following properties are the most common.
 
 | Property     | Type   | Description                                                        | Required |
@@ -41,12 +41,12 @@ The following properties are the most common.
 | `index`      | String | Index name for this action                                         | no       |
 | `collection` | String | Collection name for this action                                    | no       |
 | `id`         | String | id for this action                                                 | no       |
-| `volatile`   | String | JSON string representing additional informations to send to Kuzzle | no       |
+| `volatile`   | String | JSON string representing additional information to send to Kuzzle | no       |
 
 ### **options**
 
-A `io.kuzzle.sdk.QueryOptions` object containing the additional options for this request.  
-Each property can be accessed with standard getter/setter.  
+A `io.kuzzle.sdk.QueryOptions` object containing the additional options for this request.
+Each property can be accessed with standard getter/setter.
 The following properties are the most common.
 
 | Property   | Type    | Description                       | Default |
@@ -55,7 +55,7 @@ The following properties are the most common.
 
 ## Return
 
-A `io.kuzzle.sdk.KuzzleResponse` object containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1).  
+A `io.kuzzle.sdk.KuzzleResponse` object containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1).
 The following properties are the most common.
 
 | Property    | Type   | Description                         |
@@ -67,7 +67,7 @@ The following properties are the most common.
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/essentials/error-handling).
 
 ## Usage
 

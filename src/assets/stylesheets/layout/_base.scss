@@ -220,6 +220,6 @@ hr {
 .mobile-only {
   display: none !important;
   @include break-to-device(tablet) {
-    display: block;
+    display: block !important;
   }
 }

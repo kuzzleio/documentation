@@ -7,45 +7,39 @@ description: Returns the rights for the user linked to the `JSON Web Token`.
 
 # getMyRights
 
-Returns the rights for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
-
-## Signature
-
-```javascript
-/**
- * Gets the rights array of the currently logged user.
- *
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
- */
-getMyRights (options = null)
-```
+Returns the exhaustive list of granted or denied rights for the currently logged in user.
 
 ## Arguments
 
+```javascript
+getMyRights ([options])
+```
+
+<br/>
+
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options` | JSON Object | A JSON Object containing the options
+| `options` | <pre>object</pre> | Query options
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default
-| ---------- | ------- | --------------------------------- | -------
-| `queuable` | bool | Make this request queuable or not | `true`
+| Property     | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Resolves
 
-An array of object containing:
+An `array<object containing:
 
 | Property     | Type    | Description
 | ---------- | ------- | ---------------------------------
-| `controller` | string | The controller on wich the rights are applied |
-| `action` | string | The action on wich the rights are applied |
-| `index` | string | The index on wich the rights are applied |
-| `collection` | string | The collection on wich the rights are applied |
-| `value` | string | The rights |
+| `controller` | <pre>string</pre> | Controller on wich the rights are applied |
+| `action` | <pre>string</pre> | Action on wich the rights are applied |
+| `index` | <pre>string</pre> | Index on wich the rights are applied |
+| `collection` | <pre>string</pre> | Collection on wich the rights are applied |
+| `value` | <pre>string</pre> | Rights: `allowed` or `restricted` |
 
 ## Usage
 

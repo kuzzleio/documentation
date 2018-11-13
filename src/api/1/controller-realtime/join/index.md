@@ -38,7 +38,7 @@ Due to the synchronous nature of the HTTP protocol, real-time messaging is not s
 
 ### Optional:
 
-* `volatile`: subscription information, used in [user join/leave notifications]({{site_base_path}}api/2/volatile-data)
+* `volatile`: subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data).
 
 ---
 

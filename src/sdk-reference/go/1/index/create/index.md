@@ -20,7 +20,7 @@ Create(index string, options types.QueryOptions) error
 | Arguments | Type         | Description                           | Required |
 | --------- | ------------ | ------------------------------------- | -------- |
 | `index`   | string       | Index name                            | yes      |
-| `options` | QueryOptions | Query options. | no       |
+| `options` | QueryOptions | Query options | no       |
 
 ### **Options**
 

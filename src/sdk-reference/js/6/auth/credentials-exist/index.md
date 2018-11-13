@@ -7,38 +7,33 @@ description: Check that the current user has credentials for the specified strat
 
 # credentialsExist
 
-## Signature
-
-```javascript
-/**
- * Check the existence of the specified <strategy>'s credentials for the current user.
- *
- * @param strategy
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
- */
-credentialsExist (strategy, options = null);
-```
+Checks that the current authenticated user has credentials for the specified authentication strategy.
 
 ## Arguments
 
+```javascript
+credentialsExist (strategy, [options]);
+```
+
+<br/>
+
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `local` | string | Strategy to use
-| `options` | JSON Object | A JSON Object containing the options
+| `local` | <pre>string</pre> | Strategy to use
+| `options` | <pre>object</pre> | Query options
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 
 ## Resolves
 
-A boolean.
+Resolves to `true` if the credentials exist, `false` otherwise.
 
 ## Usage
 

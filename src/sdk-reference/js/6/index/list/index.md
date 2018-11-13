@@ -2,40 +2,36 @@
 layout: sdk.html.hbs
 algolia: true
 title: list
-description: List the indexes
+description: Lists the indexes
 ---
 
-# List
+# list
 
-Get the complete list of data indexes handled by Kuzzle.
-
-## Signature
-
-```javascript
-/**
- * @param {object} [options]
- * @returns {Promise.<Array>}
- */
-list((options = null));
-```
+Returns the complete list of data indexes.
 
 ## Arguments
 
-| Arguments | Type   | Description                         | Required |
-| --------- | ------ | ----------------------------------- | -------- |
-| `options` | Object | An object containing query options. | no       |
+```javascript
+list ([options]);
+```
 
-### **Options**
+<br/>
+
+| Arguments | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `options` | <pre>object</pre> | Query options |
+
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 ## Resolves
 
-Resolves to an `Array` of strings containing the list of indexes names present in Kuzzle
+Resolves to an array of index names.
 
 ## Usage
 

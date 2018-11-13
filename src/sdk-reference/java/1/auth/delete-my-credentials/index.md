@@ -26,7 +26,7 @@ public void deleteMyCredentials(
 | Arguments    | Type    | Description
 |--------------|---------|-------------
 | `strategy` | String | the strategy to use
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 
 ### **Options**
@@ -39,7 +39,7 @@ Additional query options
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/essentials/error-handling).
 
 ## Usage
 
