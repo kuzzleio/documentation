@@ -43,7 +43,7 @@ Additional query options
 
 ## Resolves
 
-Resolve to a `boolean` representing the new value of the autorefresh flag.
+Resolves to a `boolean` representing the new value of the autorefresh flag.
 
 ## Usage
 
