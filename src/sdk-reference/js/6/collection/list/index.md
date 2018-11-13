@@ -46,7 +46,7 @@ Resolves to an object containing the following properties:
 | `from` | int | Offset of the first result |
 | `size` | int | Maximum number of returned results |
 
-Each object in the `collections` array contain the following properties:
+Each object in the `collections` array contains the following properties:
 
 | Property   | Type    | Description  |
 |--------------|---------|-------------|
