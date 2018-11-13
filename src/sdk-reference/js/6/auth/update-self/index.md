@@ -43,7 +43,7 @@ A User object representing the current user logged with the SDK.
 | `id` | <pre>string</pre> | User ID |
 | `content` | <pre>object</pre> | User custom information |
 
-The User content contain the following properties:
+The User content contains the following properties:
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
