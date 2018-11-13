@@ -16,7 +16,7 @@ This is a low-level method, exposed to allow advanced SDK users to bypass high-l
 ## Arguments
 
 ```javascript
-query(request, [options]);
+query (request, [options]);
 ```
 
 <br/>
