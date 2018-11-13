@@ -10,7 +10,7 @@ order: 200
 
 Deletes a document.
 
-The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (and to no longer be available in search).
+The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (and to be immediately available in search).
 
 ## Arguments
 
