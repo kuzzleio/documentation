@@ -49,7 +49,7 @@ The User content contains the following properties:
 | ---------- | ------- | --------------------------------- |
 | `profileIds` | <pre>string[]</pre> | List of profile identifiers |
 | `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
-| `any` | any | Any other information saved with the user |
+| `...` | <pre>*</pre> | Any other information are saved as additional user information |
 
 ## Usage
 
