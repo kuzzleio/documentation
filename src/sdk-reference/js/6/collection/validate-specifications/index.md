@@ -57,7 +57,7 @@ It contains the following properties:
 | Property    | Type    | Description |
 |--------------|---------|-------------|
 | ``valid`` | <pre>boolean</pre> | Specifications validity   |
-| ``details`` | <pre>array&lt;string&gt;</pre> | Specifications errors    |
+| ``details`` | <pre>string[]</pre> | Specifications errors    |
 | ``description`` | <pre>string</pre> | Global description of errors    |
 
 ## Usage
