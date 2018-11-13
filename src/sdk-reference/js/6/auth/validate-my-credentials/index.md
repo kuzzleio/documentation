@@ -37,7 +37,7 @@ Additional query options
 
 ## Resolves
 
-A `boolean` indicating the credentials validity.
+Resolves to `true` if the credentials are valid, `false`otherwise.
 
 ## Usage
 
