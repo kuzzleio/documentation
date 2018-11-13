@@ -1,6 +1,6 @@
 ---
 name: index#delete
-description: Delete an index
+description: Deletes an index
 hooks:
   before: curl -X POST kuzzle:7512/nyc-open-data/_create
   after:
