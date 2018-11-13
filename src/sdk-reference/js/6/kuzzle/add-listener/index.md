@@ -21,7 +21,7 @@ addListener (event, callback)
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
 | `event`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6/essentials/events) section of this documentation |
-| `callback` | <pre>function</pre> | The function to call every time one of the registered event is triggered     |
+| `callback` | <pre>function</pre> | The function to call every time the event is triggered     |
 
 ## Return
 

@@ -7,7 +7,7 @@ description: Validate specifications format
 
 # validateSpecifications
 
-The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.
+The validateSpecifications method checks if a validation specification is well formatted. It does not store or modify the existing specification.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
@@ -51,13 +51,13 @@ Additional query options
 
 ## Resolves
 
-Resolve to an object which contain information about the specifications validity.
+Resolves to an object which contain information about the specifications validity.
 It contains the following properties:
 
 | Property    | Type    | Description |
 |--------------|---------|-------------|
 | ``valid`` | <pre>boolean</pre> | Specifications validity   |
-| ``details`` | <pre>array&lt;string&gt;</pre> | Specifications errors    |
+| ``details`` | <pre>string[]</pre> | Specifications errors    |
 | ``description`` | <pre>string</pre> | Global description of errors    |
 
 ## Usage
