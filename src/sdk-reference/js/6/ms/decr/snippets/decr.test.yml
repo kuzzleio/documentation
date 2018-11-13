@@ -1,7 +1,7 @@
 name: ms#decr
-description:
+description: Decrements the number stored at `key` by 1
 hooks:
-  before:
+  before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: asyncdefault
-expected: Success
+expected: 42

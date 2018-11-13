@@ -1,7 +1,9 @@
 name: ms#geopos
-description:
+description: Returns the positions of the provided key's members
 hooks:
-  before:
+  before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: asyncdefault
-expected: Success
+expected:
+  - \[ \[ 3.910904824733734, 43.607392252329916 ],
+  - \[ 3.8971075415611267, 43.600221526170145 ] ]

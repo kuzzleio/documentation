@@ -5,8 +5,6 @@ try {
 
   // Prints: Hello World
   console.log(await kuzzle.ms.get('hw'));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }

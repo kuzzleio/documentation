@@ -6,8 +6,6 @@ try {
 
   // Prints: `bc`ab
   console.log(await kuzzle.ms.get('dest'));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }

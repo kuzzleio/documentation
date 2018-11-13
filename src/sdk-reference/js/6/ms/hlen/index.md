@@ -22,7 +22,7 @@ hlen(key, [options])
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `key` | <pre>string</pre> | Key |
+| `key` | <pre>string</pre> | Hash key |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options
@@ -34,6 +34,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the number of fields stored in a hash.
 
 ## Usage
 

@@ -3,8 +3,6 @@ try {
 
   // Prints: 23
   console.log(await kuzzle.ms.bitpos('key', 1));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }

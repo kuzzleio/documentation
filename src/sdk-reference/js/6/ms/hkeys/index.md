@@ -6,7 +6,6 @@ title: hkeys
 
 # hkeys
 
-
 Returns all field names contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hkeys)
@@ -15,14 +14,13 @@ Returns all field names contained in a hash.
 
 ```js
 hkeys(key, [options])
-
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `key` | <pre>string</pre> | Key |
+| `key` | <pre>string</pre> | Hash key |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options
@@ -34,6 +32,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to an array of hash field names.
 
 ## Usage
 

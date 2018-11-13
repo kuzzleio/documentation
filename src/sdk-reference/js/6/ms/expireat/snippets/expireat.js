@@ -9,8 +9,6 @@ try {
   // Prints: 0
   // RIP  :-(
   console.log(await kuzzle.ms.exists(['foo']));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }

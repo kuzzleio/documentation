@@ -6,8 +6,6 @@ try {
 
   // Prints: 4
   console.log(await kuzzle.ms.bitcount('key', {start: 0, end: 0}));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }

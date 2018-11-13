@@ -1,7 +1,7 @@
 name: ms#geohash
-description:
+description: Converts a key's geopoints into geohashes
 hooks:
-  before:
+  before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: asyncdefault
-expected: Success
+expected: "[ 'spfb0frz6x0', 'spfb09jv9n0' ]"

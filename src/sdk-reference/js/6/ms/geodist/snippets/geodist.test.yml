@@ -1,7 +1,7 @@
 name: ms#geodist
-description:
+description: Returns the distance between two geospatial members of a key
 hooks:
-  before:
+  before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: asyncdefault
-expected: Success
+expected: 4487.7038

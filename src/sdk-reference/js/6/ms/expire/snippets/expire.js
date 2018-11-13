@@ -8,8 +8,6 @@ try {
 
   // Prints: 10
   console.log(await kuzzle.ms.ttl('foo'));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }
