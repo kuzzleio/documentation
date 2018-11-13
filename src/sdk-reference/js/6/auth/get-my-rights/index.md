@@ -31,7 +31,7 @@ Additional query options
 
 ## Resolves
 
-An `array<object>` containing:
+An array of objects, each describing the scope of an allowed or denied right:
 
 | Property     | Type    | Description
 | ---------- | ------- | ---------------------------------
