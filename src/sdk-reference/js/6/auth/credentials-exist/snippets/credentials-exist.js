@@ -6,7 +6,7 @@ try {
   const exists = await kuzzle.auth.credentialsExist('local');
 
   if (exists === true) {
-    console.log('Credentials exists');
+    console.log('Credentials exist');
   }
 } catch (error) {
   console.error(error.message);
