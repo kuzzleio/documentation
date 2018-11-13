@@ -35,7 +35,7 @@ Additional query options
 
 ## Resolves
 
-Resolve if the collection is successfully truncated.
+Resolves if the collection has successfully been truncated.
 
 ## Usage
 
