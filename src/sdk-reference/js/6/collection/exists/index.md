@@ -33,7 +33,7 @@ Additional query options
 
 ## Resolves
 
-Resolve to a boolean indicating if the collection exists.
+Resolves to a `true` if the collection exists, `false` otherwise.
 
 ## Usage
 
