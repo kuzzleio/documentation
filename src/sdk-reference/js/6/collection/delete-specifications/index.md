@@ -33,7 +33,7 @@ Additional query options
 
 ## Resolves
 
-Resolves if success.
+Resolves if successful.
 
 ## Usage
 
