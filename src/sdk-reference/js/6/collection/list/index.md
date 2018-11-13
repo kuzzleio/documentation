@@ -35,16 +35,16 @@ Additional query options
 
 ## Resolves
 
-Resolve to an object containing the following properties:
+Resolves to an object containing the following properties:
 
 | Property   | Type    | Description  |
 |--------------|---------|-------------|
 | ``type`` | <pre>string</pre> | Types of returned collections </br>(`all`, `realtime` or `stored`)   |
-| ``collections`` | <pre>array&lt;object&gt;</pre> | List of collections  |
+| ``collections`` | <pre>object[]</pre> | List of collections  |
 | `from` | <pre>number</pre> | Offset of the first result |
 | `size` | <pre>number</pre> | Maximum number of returned results |
 
-Each object in the `collections` array contain the following properties:
+Each object in the `collections` array contains the following properties:
 
 | Property   | Type    | Description  |
 |--------------|---------|-------------|

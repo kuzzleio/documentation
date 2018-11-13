@@ -1,6 +1,6 @@
 ---
 name: kuzzle#disconnect
-description: Disconnect the sdk
+description: Disconnects the SDK
 hooks:
   before:
   after:
