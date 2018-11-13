@@ -7,7 +7,7 @@ description: Deletes an index
 
 # delete
 
-Deletes an entire data index from Kuzzle.
+Deletes a data index.
 
 ## Arguments
 
@@ -32,7 +32,7 @@ Additional query options
 
 ## Resolves
 
-Resolves to a `true` if index was successfully deleted from ElasticSearch cluster, `false`otherwise.
+Resolves to a `boolean` indicating whether the index was successfully deleted in the Elasticsearch cluster.
 
 ## Usage
 

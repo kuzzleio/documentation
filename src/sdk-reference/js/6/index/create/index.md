@@ -2,12 +2,12 @@
 layout: sdk.html.hbs
 algolia: true
 title: create
-description: Create an index
+description: Creates an index
 ---
 
 # create
 
-Create a new index in Kuzzle.
+Creates a new data index.
 
 ## Arguments
 

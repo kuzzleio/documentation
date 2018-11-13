@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: refreshInternal
-description: Force refresh of Kuzzle internal index
+description: Forces an immediate reindexation of Kuzzle internal storage.
 ---
 
 # refreshInternal

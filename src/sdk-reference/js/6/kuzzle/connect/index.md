@@ -18,7 +18,7 @@ connect ()
 
 ## Resolves
 
-Resolves if connection is made successfully.
+Resolves if the connection is successful.
 
 ## Usage
 

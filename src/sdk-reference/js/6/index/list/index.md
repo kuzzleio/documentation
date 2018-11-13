@@ -2,12 +2,12 @@
 layout: sdk.html.hbs
 algolia: true
 title: list
-description: List the indexes
+description: Lists the indexes
 ---
 
 # list
 
-Get the complete list of data indexes handled by Kuzzle.
+Returns the complete list of data indexes.
 
 ## Arguments
 
@@ -31,7 +31,7 @@ Additional query options
 
 ## Resolves
 
-Resolves to an `array<string containing the names of Kuzzle's indexes.
+Resolves to an array of index names.
 
 ## Usage
 

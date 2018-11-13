@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: refresh
-description: Force Elasticsearch search index update
+description: Forces an Elasticsearch search index update
 ---
 
 # refresh

@@ -7,10 +7,10 @@ description: Returns the status of autorefresh flag
 
 # getAutoRefresh
 
-This action returns the current autorefresh status for the index.
+This action returns the current autorefresh status of a data index.
 
 Each index has an autorefresh flag.
-When set to true, each write request trigger a [refresh](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-refresh.html) action on Elasticsearch.
+When set to true, each write request triggers a [refresh](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-refresh.html) action in Elasticsearch.
 Without a refresh after a write request, the documents may not be immediately visible in search.
 
 <div class="alert alert-info">
