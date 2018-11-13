@@ -24,7 +24,7 @@ import (bulkData, [options])
 
 | Arguments  | Type        | Description                                         |
 | ---------- | ----------- | --------------------------------------------------- |
-| `bulkData` | <pre>array<object></pre> | List of documents to be added to the collection |
+| `bulkData` | <pre>object[]</pre> | List of documents to be added to the collection |
 | `options`  | <pre>object</pre> | Query options         |
 
 
