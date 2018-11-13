@@ -38,7 +38,7 @@ A `User` object representing the current user logged with the SDK.
 | `id` | <pre>string</pre> | User ID |
 | `content` | <pre>User</pre> | User content |
 
-The User content has the following properties:
+The `User` object has the following properties:
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
