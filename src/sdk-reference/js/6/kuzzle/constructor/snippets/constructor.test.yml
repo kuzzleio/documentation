@@ -1,6 +1,6 @@
 ---
 name: kuzzle#constructor
-description: Create a new kuzzle instance connected to kuzzle
+description:  Create a new Kuzzle instance connected to kuzzle
 hooks:
   before: 
   after: 

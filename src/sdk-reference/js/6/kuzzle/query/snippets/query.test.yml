@@ -1,6 +1,6 @@
 ---
 name: kuzzle#query
-description: Send a request to kuzzle api
+description:  Send a request to Kuzzle api
 hooks:
   before: |
     curl -X POST kuzzle:7512/nyc-open-data/_create
