@@ -33,7 +33,7 @@ Additional query options
 
 ## Resolves
 
-Resolve to an object representing the collection mapping.
+Resolves to an `object` representing the collection mapping.
 
 ## Usage
 
