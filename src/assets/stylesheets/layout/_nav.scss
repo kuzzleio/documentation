@@ -64,6 +64,10 @@
     &:first-child {
       margin-top: 8px;
     }
+    
+    @include break-to-device(tablet) {
+      display: none;
+    }
   }
   
   // List item
@@ -191,8 +195,9 @@
       // inside the drawer is always styled accordingly
       html & .md-nav__title {
         position: relative;
-        height: 14rem;
-        padding: 6rem 1.6rem 0.4rem;
+        height: 6rem;
+        padding: 0.8rem 4.6rem 0.4rem;
+        padding-right: 0;
         background-color: $md-color-black--lightest;
         color: $md-color-black--light;
         font-weight: 400;
@@ -247,6 +252,12 @@
             width: 6.4rem;
             height: 6.4rem;
             font-size: 4.8rem;
+            
+            @include break-to-device(tablet) { 
+              width: 4rem;
+              height: 4rem;
+              top: -1.6rem;
+            }
           }
 
           // Hide back arrow icon
