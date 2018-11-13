@@ -42,7 +42,7 @@ Resolves to an object containing the following properties:
 | Property   | Type    | Description  |
 |--------------|---------|-------------|
 | ``type`` | <pre>string</pre> | Types of returned collections </br>(`all`, `realtime` or `stored`)   |
-| ``collections`` | <pre>array&lt;object&gt;</pre> | List of collections  |
+| ``collections`` | <pre>object[]</pre> | List of collections  |
 | `from` | int | Offset of the first result |
 | `size` | int | Maximum number of returned results |
 
