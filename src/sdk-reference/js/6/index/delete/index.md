@@ -5,43 +5,34 @@ title: delete
 description: Deletes an index
 ---
 
-# Delete
+# delete
 
-Deletes an entire data index from Kuzzle.
-
-## Signature
-
-```javascript
-/**
- * @param {string} index
- * @param {object} [options]
- * @returns {Promise.<object>}
- */
-delete (index, (options = null));
-```
+Deletes a data index.
 
 ## Arguments
 
-| Arguments | Type   | Description                         | Required |
-| --------- | ------ | ----------------------------------- | -------- |
-| `index`   | String | Index name                          | yes      |
-| `options` | Object | An object containing query options. | no       |
+```javascript
+delete (index, [options])
+```
 
-### **Options**
+<br/>
+
+| Arguments | Type   | Description      |
+| --------- | ------ | ---------------- |
+| `index`   | <pre>string</pre> | Index name       |
+| `options` | <pre>object</pre> | Query options |
+
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
-Resolves to an object containing the index deletion status.
-
-| Name         | Type    | Description                                                                 |
-| ------------ | ------- | --------------------------------------------------------------------------- |
-| acknowledged | boolean | indicates whether the index was successfully deleted in the Elastic cluster |
+Resolves to a `boolean` indicating whether the index was successfully deleted in the Elasticsearch cluster.
 
 ## Usage
 

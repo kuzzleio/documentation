@@ -60,7 +60,7 @@ function injectTemplates(sdkInfos, src, dest) {
     end: '\n'
   };
 
-  // We extract the needed informations from files with regexp
+  // We extract the needed information from files with regexp
   const
     srcIndexFile = `${src}/index.md`,
     srcTestConfigFile =`${src}/snippets/${_.kebabCase(sdkInfos.action)}.test.yml`,

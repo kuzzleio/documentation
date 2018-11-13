@@ -6,7 +6,7 @@ var algoliaSearch = {
   init: function() {
     var self = this;
     var client = algoliasearch(algolia_projectId, algolia_publicKey);
-    var index = client.initIndex('kuzzle-documentation');
+    var index = client.initIndex(algolia_index);
     var searchBar = $('.md-search__input');
     var searchTrigger = $('#search');
     var resultList = $('.md-search-result__list');
@@ -41,7 +41,7 @@ var algoliaSearch = {
   setResults: function(hits, container) {
     var content = '';
     for (var k in hits) {
-      var teaser = hits[k]._snippetResult.content.value;
+      var teaser = hits[k]._highlightResult.content.value;
       content +=
         '<li class="md-search-result__item">' +
         '<a href="' +

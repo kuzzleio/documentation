@@ -5,6 +5,6 @@ try {
     std::cout << "Success" << std::endl;
   else
     std::cerr << res->state << std::endl;
-} catch (kuzzleio::KuzzleException e) {
+} catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.getMessage() << std::endl;
 }

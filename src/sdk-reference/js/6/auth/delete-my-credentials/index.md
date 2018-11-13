@@ -2,6 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: deleteMyCredentials
+description: Deletes credentials for a specific strategy, associated to the current user
 ---
 
 # deleteMyCredentials

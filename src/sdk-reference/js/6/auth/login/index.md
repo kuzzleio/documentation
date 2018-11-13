@@ -2,45 +2,37 @@
 layout: sdk.html.hbs
 algolia: true
 title: login
+description: Authenticate a user
 ---
 
 # login
 
 Authenticates a user.
 
-## Signature
-
-```javascript
-/**
- * Send login request to kuzzle with credentials
- * If login success, store the jwt into kuzzle object
- *
- * @param strategy
- * @param credentials
- * @param expiresIn
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
- */
-login(strategy, credentials, expiresIn)
-```
-
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``strategy`` | string | the name of the strategy to use    | yes
-| ``credentials`` | string | the json credentials | yes
-| ``expiresIn`` | int | expiration time in milliseconds | no
+```javascript
+login (strategy, credentials, expiresIn)
+```
 
-#### ***strategy***
+<br/>
+
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``strategy`` | <pre>string</pre> | Name of the strategy to use    |
+| ``credentials`` | <pre>string</pre> | Credentials for the strategy |
+| ``expiresIn`` | <pre>string</pre> | Expiration time in [ms library](https://www.npmjs.com/package/ms) format. (e.g. `2h`) |
+
+#### strategy
 
 The name of the authentication [strategy]({{ site_base_path }}guide/kuzzle-depth/authentication/#authentication) used to log the user in.
 
-Depending on the chosen authentication `strategy`, additional [credential arguments]({{ site_base_path}}guide/kuzzle-depth/authentication/#authentication) may be required.  
+Depending on the chosen authentication strategy, additional [credential arguments]({{ site_base_path}}guide/kuzzle-depth/authentication/#authentication) may be required.
 The API request example in this page provides the necessary arguments for the [`local` authentication plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local).
 
 Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/essentials/strategies/) documentation to get the list of additional arguments to provide.
 
-## Return
+## Resolves
 
 The **login** action returns an encrypted JSON Web Token, that must then be sent in the [requests headers]({{ site_base_path }}api/1/query-syntax/).
 

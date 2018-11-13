@@ -7,41 +7,49 @@ description: Updates the current user object in Kuzzle.
 
 # updateSelf
 
-Updates the current user object in Kuzzle.
+Updates the currently logged in user content.
 
-## Signature
-
-```javascript
-/**
- * Update the current user in Kuzzle.
- * 
- * @param {object} body - a plain javascript object representing the user's modification
- * @param {object} [options] - (optional) arguments
- * @returns {Kuzzle} this object
- */
-updateSelf (body, options = null)
-```
+This route cannot update the list of associated security profiles. To change a user's security profiles, the route [security:updateUser]({{ site_base_path }}api/1/controller-security/update-user) must be used instead.
 
 ## Arguments
 
+```javascript
+updateSelf (content, [options])
+```
+
+<br/>
+
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `content` | JSON Object | the new credentials
-| `options`  | JSON Object | A JSON Object containing the options
+| `content` | <pre>object</pre> | User custom information
+| `options`  | <pre>object</pre> | Query options
 
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 
-## Resolve
+## Resolves
 
-A User object.
+A User object representing the current user logged with the SDK.
+
+| Property     | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `id` | <pre>string</pre> | User ID |
+| `content` | <pre>object</pre> | User custom information |
+
+The `User` object has the following properties:
+
+| Property     | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `profileIds` | <pre>string[]</pre> | List of profile identifiers |
+| `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
+| `...` | <pre>*</pre> | Any other information are saved as additional user information |
 
 ## Usage
 

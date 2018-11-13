@@ -1,9 +1,0 @@
-[
-    {
-        "version_label": "1.x",
-        "version_path": "/",
-        "algolia_index": "kuzzle-documentation",
-        "version_gh_repo": "kuzzleio/documentation-v2",
-        "version_gh_branch": "master"
-    }
-]

@@ -7,39 +7,33 @@ description: Delete validation specifications for a collection
 
 # deleteSpecifications
 
-Delete the validation specifications associated with the collection.  
-
-## Signature
-
-```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {object} [options]
- * @returns {Promise.<boolean>}
- */
-deleteSpecifications(index, collection, options = {})
-```
+Deletes validation specifications for a data collection.
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
-| ``options`` | Object | Query options    | no  |
+```javascript
+deleteSpecifications (index, collection, [options])
+```
 
-### **options**
+<br/>
+
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``options`` | <pre>object</pre> | Query options    |
+
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
-True if success
+Resolves if successful.
 
 ## Usage
 

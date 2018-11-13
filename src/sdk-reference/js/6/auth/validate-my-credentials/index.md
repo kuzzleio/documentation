@@ -2,48 +2,42 @@
 layout: sdk.html.hbs
 algolia: true
 title: validateMyCredentials
-description: Validate the current user's credentials for the specified `<strategy>`.
+description: Validate the current user's credentials for the specified strategy.
 ---
 
 # validateMyCredentials
 
-Validate the current user's credentials for the specified `<strategy>`. The `result` field is `true` if the provided credentials are valid; otherwise an error is triggered. This route does not actually create or modify the user credentials. The credentials to send will depend on the authentication plugin and authentication strategy.
+Validates the provided credentials against a specified authentication strategy.
 
-## Signature
-
-```javascript
-/**
- * Validate credentials of the specified <strategy> for the current user.
- *
- * @param strategy
- * @param credentials
- * @param options
- * @returns a boolean
- */
-validateMyCredentials (strategy, credentials, options = null)
-```
+This route neither creates nor modifies credentials.
 
 ## Arguments
 
+```javascript
+validateMyCredentials (strategy, credentials, [options])
+```
+
+<br/>
+
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | the strategy to use
-| `credentials` | string | the new credentials
-| `options`  | JSON Object | A JSON Object containing the options
+| `strategy` | <pre>string</pre> | Strategy to use
+| `credentials` | <pre>string</pre> | New credentials
+| `options`  | <pre>object</pre> | Query options
 
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                    | Default |
-| ---------- | ------- | ------------------------------ | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 
-## Return
+## Resolves
 
-A boolean
+Resolves to `true` if the credentials are valid, `false`otherwise.
 
 ## Usage
 

@@ -467,7 +467,7 @@ $md-toggle__search--checked: '[data-md-toggle="search"]:checked ~ .md-header';
     overflow: hidden;
 
     // Active or hovered link
-    &[data-md-state='active'],
+    &:focus,
     &:hover {
       background-color: transparentize($md-color-accent, 0.9);
 

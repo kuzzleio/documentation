@@ -7,37 +7,32 @@ description: Deletes multiple indexes
 
 # mDelete
 
-Deletes multiple indexes at once.
-
-## Signature
-
-```javascript
-/**
- * @param {array} indexes
- * @param {object} [options]
- * @returns {Promise.<Array>}
- */
-mDelete(indexes, (options = null));
-```
+Deletes multiple data indexes.
 
 ## Arguments
 
-| Arguments | Type   | Description                                  | Required |
-| --------- | ------ | -------------------------------------------- | -------- |
-| `indexes` | Array  | An array of strings containing indexes names | yes      |
-| `options` | Object | An object containing query options.          | no       |
+```javascript
+mDelete (indexes, [options]);
+```
 
-### **Options**
+<br/>
+
+| Arguments | Type   | Description                                  |
+| --------- | ------ | -------------------------------------------- |
+| `indexes` | <pre>string[]</pre>  | List of index names to delete |
+| `options` | <pre>object</pre> | Query options          |
+
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
-Resolves to an `Array` of strings containing the list of indexes names successfully deleted.
+Resolves to an array of successfuly deleted indexes.
 
 ## Usage
 

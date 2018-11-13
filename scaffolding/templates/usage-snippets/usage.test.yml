@@ -3,5 +3,5 @@ description:
 hooks:
   before:
   after:
-template: <%= language === 'js' ? 'asyncdefault' : 'default' %>
+template: default
 expected: Success

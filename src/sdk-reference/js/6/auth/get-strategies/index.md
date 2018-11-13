@@ -7,37 +7,31 @@ description: Get all authentication strategies registered in Kuzzle.
 
 # getStrategies
 
-Get all authentication strategies registered in Kuzzle.
-
-## Signature
-
-```javascript
-/**
- * Get the list of strategies of the current logged user.
- * 
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
- */
-getStrategies (options = null)
-```
+Gets the exhaustive list of registered authentication strategies.
 
 ## Arguments
 
+```javascript
+getStrategies ([options])
+```
+
+<br/>
+
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options` | JSON Object | A JSON Object containing the options
+| `options` | <pre>object</pre> | Query options
 
-### **Options**
+### options
 
 Additional query options
 
 | Property     | Type    | Description                       | Default
 | ---------- | ------- | --------------------------------- | -------
-| `queuable` | bool | Make this request queuable or not | `true`
+| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
-## Resolve
+## Resolves
 
-An array of string.
+An array of available strategies names.
 
 ## Usage
 

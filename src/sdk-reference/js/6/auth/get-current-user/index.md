@@ -2,47 +2,49 @@
 layout: sdk.html.hbs
 algolia: true
 title: getCurrentUser
+description: Returns the profile object for the user linked to the json web token
 ---
 
 # getCurrentUser
 
-Returns the profile object for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
-
-## Signature
-
-```javascript
-/**
- * Fetches the current user
- * 
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
- */
-getCurrentUser (options = null)
-```
+Returns information about the currently logged in user.
 
 ## Arguments
 
+```javascript
+getCurrentUser ([options])
+```
+
+<br/>
+
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options` | JSON Object | A JSON Object containing the options
+| `options` | <pre>object</pre> | Query options
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
-A User object representing the current user logged with the SDK.
+A `User` object representing the current user logged with the SDK.
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `id` | string | The user ID |
-| `content` | JSON Object | The user content |
-| `profileIds` | JSON Array | An array containing the profile ids |
+| `id` | <pre>string</pre> | User ID |
+| `content` | <pre>User</pre> | User content |
+
+The `User` object has the following properties:
+
+| Property     | Type    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `profileIds` | <pre>string[]</pre> | An array containing the profile ids |
+| `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
+| `any` | <pre>any</pre> | Any other information saved with the user |
 
 
 ## Usage

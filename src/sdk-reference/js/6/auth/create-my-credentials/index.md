@@ -7,43 +7,36 @@ description: Create the current user's credentials for the specified `<strategy>
 
 # createMyCredentials
 
-Create the current user's credentials for the specified `<strategy>`.
-
-## Signature
-
-```javascript
-/**
- * Create credentials of the specified <strategy> for the current user.
- *
- * @param credentials
- * @param strategy
- * @param options
- * @returns {Promise|*|PromiseLike<T>|Promise<T>}
- */
-createMyCredentials (strategy, credentials, options = null)
-```
+Creates new credentials for the specified strategy for the current user.
 
 ## Arguments
 
+```javascript
+createMyCredentials (strategy, credentials, [options])
+```
+
+<br/>
+
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | the strategy to use
-| `credentials` | JSON Object | the new credentials
-| `options`  | JSON Object | A JSON Object containing the options
+| `strategy` | <pre>string</pre> | Strategy to use
+| `credentials` | <pre>object</pre> | New credentials
+| `options`  | <pre>object</pre> | Query options
 
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
 
 
-## Resolve
+## Resolves
 
-A JSON Object representing the new credentials.
+An `object` representing the new credentials.
+The content depends on the authentication strategy.
 
 ## Usage
 

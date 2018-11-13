@@ -3,5 +3,5 @@ description: Create a new collection
 hooks:
   before: curl -X POST kuzzle:7512/nyc-open-data/_create
   after:
-template: asyncdefault
+template: default
 expected: Success
