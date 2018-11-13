@@ -35,7 +35,7 @@ Additional query options
 |  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 
-## Return
+## Resolves
 
 A `boolean` indicating the credentials validity.
 
