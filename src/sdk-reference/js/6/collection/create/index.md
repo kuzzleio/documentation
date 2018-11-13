@@ -26,7 +26,7 @@ create (index, collection, mapping = null, [options])
 |--------------|---------|-------------|
 | ``index`` | <pre>string</pre> | Index name    |
 | ``collection`` | <pre>string</pre> | Collection name    |
-| ``mapping`` | <pre>object</pre> | Collection data mapping    |
+| ``mapping`` | <pre>object</pre> | Describes the data mapping to associate to the new collection, using Elasticsearch [mapping format](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)    |
 | ``options`` | <pre>object</pre> | Query options    |
 
 ### mapping
