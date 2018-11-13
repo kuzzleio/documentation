@@ -62,8 +62,8 @@ It can be:
 | `port`               | <pre>number</pre>  | Target Kuzzle port                                 |    No     |
 | `jwt`                | <pre>string</pre> | Token used in requests for authentication        |    Yes    |
 | `offlineQueue`       | <pre>object</pre> | Contains the queued requests during offline mode   |    No     |
-| `offlineQueueLoader` | Function | Called before dequeuing requests after exiting offline mode,</br> to add items at the beginning of the offline queue  |    Yes    |
-| `queueFilter`        | Function | Called during offline mode. </br>Takes a request object as arguments and returns a boolean, indicating if a request can be queued |    Yes    |
+| `offlineQueueLoader` | <pre>function</pre> | Called before dequeuing requests after exiting offline mode,</br> to add items at the beginning of the offline queue  |    Yes    |
+| `queueFilter`        | <pre>function</pre> | Called during offline mode. </br>Takes a request object as arguments and returns a boolean, indicating if a request can be queued |    Yes    |
 | `queueMaxSize`       | <pre>number</pre>  | Number of maximum requests kept during offline mode|    Yes    |
 | `queueTTL`           | <pre>number</pre>  | Time a queued request is kept during offline mode, in milliseconds      |    Yes    |
 | `replayInterval`     | <pre>number</pre>  | Delay between each replayed requests               |    Yes    |
