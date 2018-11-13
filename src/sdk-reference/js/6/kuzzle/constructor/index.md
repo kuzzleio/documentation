@@ -34,7 +34,7 @@ It can be:
 ### options
 
 | Option              | Type    | Description   | Default  | Required |
-| -------------- | --------- | ------------- | -------- |
+| -------------- | --------- | ------------- | -------- | -------- |
 | `autoQueue`         | <pre>boolean</pre> | Automatically queue all requests during offline mode               | `false`  | no       |
 | `autoReconnect`     | <pre>boolean</pre> | Automatically reconnect after a connection loss                    | `true`   | no       |
 | `autoReplay`        | <pre>boolean</pre> | Automatically replay queued requests on a `reconnected` event      | `false`  | no       |
