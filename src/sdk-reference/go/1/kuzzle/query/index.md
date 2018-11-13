@@ -44,7 +44,7 @@ The following properties are the most common.
 
 ### **options**
 
-A [QueryOptions](https://github.com/kuzzleio/sdk-go/blob/master/types/query_options.go) containing additional Query options
+A [QueryOptions](https://github.com/kuzzleio/sdk-go/blob/master/types/query_options.go) containing additional query options
 Theses properties can bet Get/Set.
 The following properties are the most common.
 
