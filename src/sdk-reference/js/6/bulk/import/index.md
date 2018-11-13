@@ -62,7 +62,7 @@ Additional query options
 
 ---
 
-## Resolve
+## Resolves
 
 An array containing objects indicating the import status for each document.
 Each object has the following structure:

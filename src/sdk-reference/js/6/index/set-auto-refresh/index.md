@@ -41,7 +41,7 @@ Additional query options
 | -------------- | --------- | ------------- |
 |  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
 Resolve to a `boolean` representing the new value of the autorefresh flag.
 

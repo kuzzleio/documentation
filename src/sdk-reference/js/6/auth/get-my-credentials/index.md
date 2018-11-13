@@ -36,7 +36,7 @@ Additional query options
 |  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
 
-## Resolve
+## Resolves
 
 An `object` representing the credentials for the provided authentication strategy.
 The content depends on the authentication strategy.

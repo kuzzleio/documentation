@@ -39,7 +39,7 @@ Additional query options
 | -------------- | --------- | ------------- |
 |  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
 Resolves to a `boolean` containing the refresh status.
 

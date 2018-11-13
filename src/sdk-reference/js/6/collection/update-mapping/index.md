@@ -54,7 +54,7 @@ Additional query options
 | -------------- | --------- | ------------- |
 |  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
 Resolve if the collection is successfully updated.
 

@@ -49,7 +49,7 @@ Additional query options
 | -------------- | --------- | ------------- |
 | `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
-## Resolve
+## Resolves
 
 Resolve to the raw Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1).
 

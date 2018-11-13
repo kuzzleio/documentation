@@ -36,7 +36,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- |
 | `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
-## Resolve
+## Resolves
 
 A boolean indicating if the message was successfully published.
 

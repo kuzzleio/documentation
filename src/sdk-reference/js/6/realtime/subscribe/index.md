@@ -41,7 +41,7 @@ Additional subscription options.
 | `subscribeToSelf` | <pre>boolean</pre><br/>(`true`) | Subscribe to notifications fired by our own queries |
 | `volatile` | <pre>object</pre><br/>(`null`) | subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
 
-## Resolve
+## Resolves
 
 Resolves to a string containing the room ID
 

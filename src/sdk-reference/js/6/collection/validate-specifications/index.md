@@ -49,7 +49,7 @@ Additional query options
 | -------------- | --------- | ------------- |
 |  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
 Resolve to an object which contain information about the specifications validity.
 It contains the following properties:

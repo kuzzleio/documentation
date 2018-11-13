@@ -32,7 +32,7 @@ The API request example in this page provides the necessary arguments for the [`
 
 Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/essentials/strategies/) documentation to get the list of additional arguments to provide.
 
-## Resolve
+## Resolves
 
 The **login** action returns an encrypted JSON Web Token, that must then be sent in the [requests headers]({{ site_base_path }}api/1/query-syntax/).
 

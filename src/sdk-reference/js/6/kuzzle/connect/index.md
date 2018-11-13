@@ -16,7 +16,7 @@ Subsequent call have no effect if the SDK is already connected.
 connect ()
 ```
 
-## Resolve
+## Resolves
 
 Resolve if connection is made successfully.
 

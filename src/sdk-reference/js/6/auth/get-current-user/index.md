@@ -29,7 +29,7 @@ Additional query options
 | -------------- | --------- | ------------- |
 |  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
 A `User` object representing the current user logged with the SDK.
 

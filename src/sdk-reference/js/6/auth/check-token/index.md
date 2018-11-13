@@ -23,7 +23,7 @@ checkToken (token)
 |--------------|---------|-------------
 | ``token`` | <pre>string</pre> | JWT token
 
-## Resolve
+## Resolves
 
 An `object` representing the token validity status
 
