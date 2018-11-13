@@ -8,21 +8,23 @@ const bulkData = [
 ];
 
 try {
-  const items = await kuzzle.bulk.import(bulkData);
-  console.log(items);
+  const response = await kuzzle.bulk.import(bulkData);
+  console.log(response);
   /*
-    [ { create: {
+    { errors: false,
+      items:
+      [ { create: create: {
         _id: "1",
-        status: 200 },
-      { create: {
+        status: 200 } },
+        { create: create: {
         _id: "2",
-        status: 200 },
-      { create: {
+        status: 200 } },
+        { create: create: {
         _id: "3",
-        status: 200 } ]
+        status: 200 } } ] }
   */
-  
-  console.log(`Successfully imported ${items.length} documents`);
+
+  console.log(`Successfully imported ${response.items.length} documents`);
 } catch (error) {
   console.error(error.message);
 }

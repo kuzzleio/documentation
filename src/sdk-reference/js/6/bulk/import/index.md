@@ -64,7 +64,13 @@ Additional query options
 
 ## Resolves
 
-An array containing objects indicating the import status for each document.
+An object containing information about the import status for each document.
+
+| Property     | Type  | Description   |
+| -------------- | --------- | ------------- |
+|  `errors`  |  <pre>boolean</pre> |  `true` if there is some errors with the import |
+|  `items`  |  <pre>object[]</pre> |  Array of object containing document import statuses |
+
 Each object has the following structure:
 
 ```javascript

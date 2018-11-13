@@ -3,5 +3,5 @@ description: Removes a subscription
 hooks:
   before:
   after:
-template: asyncdefault
+template: default
 expected: Success

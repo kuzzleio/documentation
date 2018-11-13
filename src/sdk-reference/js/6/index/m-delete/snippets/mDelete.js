@@ -1,5 +1,5 @@
 try {
-  const indexes = await kuzzle.index..mDelete(['nyc-open-data', 'mtp-open-data']);
+  const indexes = await kuzzle.index.mDelete(['nyc-open-data', 'mtp-open-data']);
   console.log(indexes);
   /*
     [ 'nyc-open-data', 'mtp-open-data' ]
