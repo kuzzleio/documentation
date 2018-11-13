@@ -14,7 +14,7 @@ Returns the rights for the user linked to the `JSON Web Token`, provided in the 
 ```javascript
 /**
  * Gets the rights array of the currently logged user.
- * 
+ *
  * @param options
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  */
@@ -35,11 +35,11 @@ Additional query options
 | ---------- | ------- | --------------------------------- | -------
 | `queuable` | bool | Make this request queuable or not | `true`
 
-## Resolve
+## Resolves
 
 An array of object containing:
 
-| Property     | Type    | Description                      
+| Property     | Type    | Description
 | ---------- | ------- | ---------------------------------
 | `controller` | string | The controller on wich the rights are applied |
 | `action` | string | The action on wich the rights are applied |

@@ -33,7 +33,7 @@ query(request, (options = {}));
 
 ### **request**
 
-All properties necessary for the Kuzzle API can be added in the request object.  
+All properties necessary for the Kuzzle API can be added in the request object.
 The following properties are the most common.
 
 | Property     | Type   | Description                               | Required |
@@ -54,7 +54,7 @@ An `object` containing query options.
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | true    |
 
-## Resolve
+## Resolves
 
 Resolve to the raw Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1).
 

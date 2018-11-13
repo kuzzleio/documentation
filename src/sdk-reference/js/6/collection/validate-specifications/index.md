@@ -7,7 +7,7 @@ description: Validate specifications format
 
 # validateSpecifications
 
-The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.  
+The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
@@ -35,7 +35,7 @@ validateSpecifications(index, collection, specifications, options = {})
 
 ### **specifications**
 
-An object representing the specifications.  
+An object representing the specifications.
 
 This object must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
 
@@ -56,9 +56,9 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Resolve
+## Resolves
 
-Resolve to an object which contain informations about the specifications validity.  
+Resolve to an object which contain informations about the specifications validity.
 It contains the following properties:
 
 | Property    | Type    | Description |

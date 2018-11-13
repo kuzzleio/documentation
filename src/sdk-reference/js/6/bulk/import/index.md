@@ -64,7 +64,7 @@ Additional query options
 
 ---
 
-## Resolve
+## Resolves
 
 On resolve, the response object is the one directly sent by Elasticsearch for the bulk request.
 

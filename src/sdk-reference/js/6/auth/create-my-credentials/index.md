@@ -41,7 +41,7 @@ Additional query options
 | `queuable` | bool | Make this request queuable or not | `true`  |
 
 
-## Resolve
+## Resolves
 
 A JSON Object representing the new credentials.
 

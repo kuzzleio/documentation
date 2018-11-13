@@ -35,7 +35,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Resolve
+## Resolves
 
 Resolves to an object containing the index creation status
 

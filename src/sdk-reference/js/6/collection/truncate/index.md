@@ -7,7 +7,7 @@ description: Remove all documents from collection
 
 # truncate
 
-Remove all documents from a collection while keeping the associated mapping.  
+Remove all documents from a collection while keeping the associated mapping.
 It is faster than deleting all documents from a collection.
 
 ## Signature
@@ -38,7 +38,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Resolve
+## Resolves
 
 Resolve is collection is successfully truncated.
 

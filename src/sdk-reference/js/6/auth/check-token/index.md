@@ -24,11 +24,11 @@ checkToken(token)
 |--------------|---------|-------------
 | ``token`` | string | the token
 
-## Resolve
+## Resolves
 
 An object representing the token validity status
 
-| Name                | Type    | Description                                                                                                      
+| Name                | Type    | Description
 | ------------------- | ------- | -----------------------------------
 | valid               | bool    | Tell if the token is valid or not
 | state               | string  | Explain why the token is invalid

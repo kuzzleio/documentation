@@ -35,7 +35,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Resolve
+## Resolves
 
 Resolves to a `boolean` that indicate whether the index exists or not.
 

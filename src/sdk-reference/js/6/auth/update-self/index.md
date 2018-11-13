@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: updateSelf
-description: Updates the current user object in Kuzzle.
+description:  Updates the current user object in Kuzzle.
 ---
 
 # updateSelf
@@ -14,7 +14,7 @@ Updates the current user object in Kuzzle.
 ```javascript
 /**
  * Update the current user in Kuzzle.
- * 
+ *
  * @param {object} body - a plain javascript object representing the user's modification
  * @param {object} [options] - (optional) arguments
  * @returns {Kuzzle} this object
@@ -39,7 +39,7 @@ Additional query options
 | `queuable` | bool | Make this request queuable or not | `true`  |
 
 
-## Resolve
+## Resolves
 
 A User object.
 

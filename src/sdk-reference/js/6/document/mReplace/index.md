@@ -33,7 +33,7 @@ Additional query options
 | `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 | `refresh` | <pre>string</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
-## Resolve
+## Resolves
 
 Resolves to an array of updated documents.
 

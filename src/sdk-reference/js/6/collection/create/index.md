@@ -7,9 +7,9 @@ description: Create a new collection
 
 # create
 
-Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.  
+Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.
 You can also provide an optional data mapping that allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).  
+persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
 
 This method will only update the mapping if the collection already exists.
 
@@ -37,7 +37,7 @@ create(index, collection, mapping = {}, options = {})
 
 ### **mapping**
 
-An object representing the data mapping of the collection.  
+An object representing the data mapping of the collection.
 
 The mapping must have a root field `properties` that contain the mapping definition:
 ```js
@@ -63,7 +63,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Resolve
+## Resolves
 
 Resolves if the collection is successfully created.
 

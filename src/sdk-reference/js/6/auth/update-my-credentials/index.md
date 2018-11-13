@@ -14,7 +14,7 @@ Update the current user's credentials for the specified `<strategy>`. The creden
 ```javascript
 /**
  * Update the current user's credentials for the specified `<strategy>`.
- * 
+ *
  * @param strategy
  * @param credentias
  * @param options
@@ -42,7 +42,7 @@ Additional query options
 | `queuable` | bool | Make this request queuable or not | `true`  |
 
 
-## Resolve
+## Resolves
 
 A JSON Object representing the new credentials.
 

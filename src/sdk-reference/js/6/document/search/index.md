@@ -52,7 +52,7 @@ Additional query options
 
 An empty body matches all documents in the queried collection.
 
-## Resolve
+## Resolves
 
 Resolves to a [SearchResult]({{ site_base_path }}src/sdk-reference/js/6/essentials/search-result) object.
 

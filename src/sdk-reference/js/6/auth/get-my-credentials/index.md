@@ -13,7 +13,7 @@ Returns the current user's credential information for the specified `<strategy>`
 ```javascript
 /**
  * Get credential information of the specified <strategy> for the current user.
- * 
+ *
  * @param options
  * @returns {Promise|*|PromiseLike<T>|Promise<T>}
  */
@@ -37,7 +37,7 @@ Additional query options
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
 
-## Resolve
+## Resolves
 
 A JSON with the credentials for the provided authentication strategy and an error or nil.
 

@@ -7,7 +7,7 @@ description: Connects the SDK to Kuzzle
 
 # connect
 
-Connects to Kuzzle using the `host` property provided in the constructor options.  
+Connects to Kuzzle using the `host` property provided in the constructor options.
 Subsequent call have no effect if the SDK is already connected.
 
 ## Signature
@@ -19,7 +19,7 @@ Subsequent call have no effect if the SDK is already connected.
 connect();
 ```
 
-## Resolve
+## Resolves
 
 Resolve without value if connection is made successfully.
 

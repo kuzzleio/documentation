@@ -35,7 +35,7 @@ updateSpecifications(index, collection, specifications, options = {})
 
 ### **specifications**
 
-An object representing the specifications.  
+An object representing the specifications.
 
 This object must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
 
@@ -56,7 +56,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Resolve
+## Resolves
 
 Resolve to an object containing the specifications.
 

@@ -7,7 +7,7 @@ description: Delete validation specifications for a collection
 
 # deleteSpecifications
 
-Delete the validation specifications associated with the collection.  
+Delete the validation specifications associated with the collection.
 
 ## Signature
 
@@ -37,7 +37,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Resolve
+## Resolves
 
 True if success
 

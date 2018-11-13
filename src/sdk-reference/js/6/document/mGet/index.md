@@ -32,7 +32,7 @@ Additional query options
 | --- | --- | --- |
 | `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
-## Resolve
+## Resolves
 
 Resolves to an array of retrieved documents.
 

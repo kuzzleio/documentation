@@ -33,7 +33,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Resolve
+## Resolves
 
 Resolves to an `Array` of strings containing the list of indexes names present in Kuzzle
 

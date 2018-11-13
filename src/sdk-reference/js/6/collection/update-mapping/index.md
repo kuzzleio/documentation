@@ -7,7 +7,7 @@ description: Update the collection mapping
 
 # updateMapping
 
-Update the collection mapping.  
+Update the collection mapping.
 Mapping allow you to exploit the full capabilities of our
 persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
 
@@ -35,7 +35,7 @@ updateMapping(index, collection, mapping, options = {})
 
 ### **mapping**
 
-An string containing the JSON representation of the collection data mapping.  
+An string containing the JSON representation of the collection data mapping.
 
 The mapping must have a root field `properties` that contain the mapping definition:
 ```json
@@ -61,7 +61,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-## Resolve
+## Resolves
 
 Resolve if the collection is successfully updated.
 

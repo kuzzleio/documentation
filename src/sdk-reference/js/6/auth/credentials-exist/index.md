@@ -36,7 +36,7 @@ Additional query options
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
 
-## Resolve
+## Resolves
 
 A boolean.
 
