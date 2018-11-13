@@ -42,7 +42,7 @@ The User content has the following properties:
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `profileIds` | <pre>array&lt;string&gt;</pre> | An array containing the profile ids |
+| `profileIds` | <pre>string[]</pre> | An array containing the profile ids |
 | `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
 | `any` | <pre>any</pre> | Any other information saved with the user |
 
