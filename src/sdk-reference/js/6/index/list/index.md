@@ -7,7 +7,7 @@ description: Lists the indexes
 
 # list
 
-Get the complete list of data indexes handled by Kuzzle.
+Returns the complete list of data indexes.
 
 ## Arguments
 
