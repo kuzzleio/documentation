@@ -85,8 +85,8 @@ class Logger {
           console.log(red('        EXPECTED:'), result.expected || snippet.expected);
           console.log(red('        GOT     :'), result.actual);
         } else if (result.code === 'ERR_ORDER') {
-          console.log(red('        THIS RESULT: '), result.after);
-          console.log(red('        CAME BEFORE: '), result.before);
+          console.log(red('        THIS RESULT: '), result.actualOrder[0]);
+          console.log(red('        CAME BEFORE: '), result.actualOrder[1]);
         } else {
           console.log(red('        ERROR   :'), result.actual);
         }

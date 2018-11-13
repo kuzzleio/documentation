@@ -40,7 +40,6 @@ module.exports = class BaseRunner {
   }
 
   async runExpect(snippet) {
-    // const expectedRegexp = new RegExp(snippet.expected);
     return new Promise((resolve, reject) => {
       nexpect
         .spawn(this.nexpectCommand, { stream: 'all' })
@@ -77,8 +76,7 @@ module.exports = class BaseRunner {
             if (match.index < lastIndex) {
               return reject(new TestResult({
                 code: 'ERR_ORDER',
-                before: e,
-                after: previous
+                actualOrder: [previous, e]
               }));
             }
 
