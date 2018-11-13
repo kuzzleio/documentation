@@ -34,10 +34,6 @@
   @media print {
     display: none;
   }
-  
-  @include break-to-device(tablet) {
-    height: 5rem;    
-  }
 }
 
 // Navigation within header
