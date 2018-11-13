@@ -43,7 +43,7 @@ The following properties are the most common.
 
 ### **options**
 
-An `object` containing query options
+Additional query options
 
 | Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
