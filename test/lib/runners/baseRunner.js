@@ -55,7 +55,6 @@ module.exports = class BaseRunner {
           }
 
           const
-            output = stdout.join('\n'),
             expected = Array.isArray(snippet.expected) ? snippet.expected : [snippet.expected];
 
           let
@@ -63,7 +62,11 @@ module.exports = class BaseRunner {
             previous = null;
 
           for (const e of expected) {
-            const match = output.match(e);
+            let match = null;
+
+            for (let i = 0; i < stdout.length && match === null; i++) {
+              match = stdout[i].match(e);
+            }
 
             if (match === null) {
               return reject(new TestResult({
