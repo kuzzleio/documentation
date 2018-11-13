@@ -26,7 +26,7 @@ query (request, [options]);
 | `request` | <pre>object</pre> | API request options    |
 | `options` | <pre>object</pre> | Optional query options |
 
-### **request**
+### request
 
 All properties necessary for the Kuzzle API can be added in the request object.
 The following properties are the most common.
@@ -41,7 +41,7 @@ The following properties are the most common.
 | `_id`        | <pre>string</pre> | id for this action                        |
 | `volatile`   | <pre>object</pre> | Additional information to send to Kuzzle |
 
-### **options**
+### options
 
 Additional query options
 

@@ -23,7 +23,7 @@ getSpecifications (index, collection, [options])
 | ``collection`` | <pre>string</pre> | Collection name    |
 | ``options`` | <pre>object</pre> | Query options    |
 
-### **options**
+### options
 
 Additional query options
 

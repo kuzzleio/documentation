@@ -23,7 +23,7 @@ login (strategy, credentials, expiresIn)
 | ``credentials`` | <pre>string</pre> | Credentials for the strategy |
 | ``expiresIn`` | <pre>string</pre> | Expiration time in [ms library](https://www.npmjs.com/package/ms) format. (e.g. `2h`) |
 
-#### **strategy**
+#### strategy
 
 The name of the authentication [strategy]({{ site_base_path }}guide/kuzzle-depth/authentication/#authentication) used to log the user in.
 

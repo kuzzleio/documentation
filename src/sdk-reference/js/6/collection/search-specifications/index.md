@@ -23,7 +23,7 @@ searchSpecifications (body = {}, [options])
 | ``options`` | <pre>object</pre> | Query options    |
 
 
-### **body**
+### body
 
 The body is a set of filters using [Elasticsearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-body.html) to match the documents you are looking for.
 The filters must be inside the `query` property of the body.
@@ -40,7 +40,7 @@ const body = {
 };
 ```
 
-### **options**
+### options
 
 |  Arguments     |  Type     |  Description  |
 | -------------- | --------- | ------------- |

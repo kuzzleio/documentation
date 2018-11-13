@@ -23,7 +23,7 @@ exists (index, collection, [options])
 | ``collection`` | <pre>string</pre> | Collection name    |
 | ``options`` | <pre>object</pre> | Query options    |
 
-### **options**
+### options
 
 Additional query options
 
@@ -33,7 +33,7 @@ Additional query options
 
 ## Resolves
 
-Resolve to a boolean indicating if the collection exists.
+Resolves to a `true` if the collection exists, `false` otherwise.
 
 ## Usage
 

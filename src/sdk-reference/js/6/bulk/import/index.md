@@ -8,7 +8,7 @@ description: Performs a bulk import on a collection
 # Import
 
 
-Create, update or delete large amounts of documents as fast as possible.
+Create, update or delete large amount of documents as fast as possible.
 
 This route is faster than the `document:m*` routes family (e.g. [document:mCreate]({{ site_base_path }}sdk-reference/js/6/document/m-create)), but no real-time notifications will be generated, even if some of the documents in the import match subscription filters.
 
@@ -24,11 +24,11 @@ import (bulkData, [options])
 
 | Arguments  | Type        | Description                                         |
 | ---------- | ----------- | --------------------------------------------------- |
-| `bulkData` | <pre>array<object></pre> | List of documents to be added to the collection |
+| `bulkData` | <pre>object[]</pre> | List of documents to be added to the collection |
 | `options`  | <pre>object</pre> | Query options         |
 
 
-### **bulkData**
+### bulkData
 
 This API takes a JSON array containing a list of objects working in pairs.
 In each pair, the first object specifies the action to perform (the most common is `create`) and the second specifies the document itself, like in the example below:
@@ -52,7 +52,7 @@ Possible actions are `create`, `index`, `update`, `delete`.
 
 Learn more at [Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-bulk.html)
 
-### **options**
+### options
 
 Additional query options
 

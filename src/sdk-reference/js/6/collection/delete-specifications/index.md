@@ -7,7 +7,7 @@ description: Delete validation specifications for a collection
 
 # deleteSpecifications
 
-Delete the validation specifications associated with the collection.
+Deletes validation specifications for a data collection.
 
 ## Arguments
 
@@ -23,7 +23,7 @@ deleteSpecifications (index, collection, [options])
 | ``collection`` | <pre>string</pre> | Collection name    |
 | ``options`` | <pre>object</pre> | Query options    |
 
-### **options**
+### options
 
 Additional query options
 

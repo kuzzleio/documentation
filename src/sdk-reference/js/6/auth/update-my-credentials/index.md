@@ -24,7 +24,7 @@ updateMyCredentials (strategy, credentials, [options])
 | `options`  | <pre>object</pre> | Query options
 
 
-### **options**
+### options
 
 Additional query options
 

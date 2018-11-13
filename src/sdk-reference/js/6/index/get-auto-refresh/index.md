@@ -32,7 +32,7 @@ getAutoRefresh (index, [options]);
 | `index`   | <pre>string</pre> | Index name                          |
 | `options` | <pre>object</pre> | Query options |
 
-### **options**
+### options
 
 Additional query options
 

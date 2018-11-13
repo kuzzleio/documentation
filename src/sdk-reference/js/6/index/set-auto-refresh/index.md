@@ -33,7 +33,7 @@ setAutoRefresh (index, autoRefresh, [options]);
 | `autoRefresh` | <pre>boolean</pre> | AutoRefresh value                   |
 | `options`     | <pre>number</pre> | Query options |
 
-### **options**
+### options
 
 Additional query options
 

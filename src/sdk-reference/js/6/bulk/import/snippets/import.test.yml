@@ -1,6 +1,6 @@
 ---
 name: bulk#import
-description: Bulk imports three documents into kuzzle
+description: Bulk imports three documents into Kuzzle
 hooks:
   before: |
     curl -X POST kuzzle:7512/nyc-open-data/_create

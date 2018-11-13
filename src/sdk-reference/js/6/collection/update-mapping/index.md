@@ -26,7 +26,7 @@ updateMapping (index, collection, mapping, [options])
 | ``mapping`` | <pre>object</pre> | Collection data mapping    |
 | ``options`` | <pre>object</pre> | Query options    |
 
-### **mapping**
+### mapping
 
 An object representing the collection data mapping.
 
@@ -34,10 +34,10 @@ This object must have a root field `properties` that contain the mapping definit
 ```javascript
 const mapping = {
   properties: {
-    field1: { type: "text" },
+    field1: { type: 'text' },
     field2: {
       properties: {
-        nestedField: { type: "keyword" }
+        nestedField: { type: 'keyword' }
       }
     }
   }
@@ -46,7 +46,7 @@ const mapping = {
 
 You can see the full list of Elasticsearch mapping types [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
 
-### **options**
+### options
 
 Additional query options
 

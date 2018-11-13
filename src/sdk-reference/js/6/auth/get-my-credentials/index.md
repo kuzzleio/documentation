@@ -7,7 +7,7 @@ description: Returns the current user's credential information for the specified
 
 # getMyCredentials
 
-Returns credential information for the currently logged in user.
+Returns credentials information for the currently logged in user.
 
 The data returned will depend on the specified authentication strategy, and they should not include any sensitive information.
 
@@ -27,7 +27,7 @@ getMyCredentials (strategy, [options])
 | `options` | <pre>object</pre> | Query options
 
 
-### **options**
+### options
 
 Additional query options
 

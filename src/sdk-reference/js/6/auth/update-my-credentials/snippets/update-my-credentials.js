@@ -9,7 +9,7 @@ try {
   );
   console.log(response);
   /*
-    { username: 'foo', password: 'worakls' }
+    { username: 'foo' }
   */
 
   console.log('Success');

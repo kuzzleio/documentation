@@ -21,7 +21,7 @@ getStrategies ([options])
 |--------------|---------|-------------
 | `options` | <pre>object</pre> | Query options
 
-### **options**
+### options
 
 Additional query options
 
@@ -31,7 +31,7 @@ Additional query options
 
 ## Resolves
 
-An `array<string of available strategies name.
+An array of available strategies names.
 
 ## Usage
 

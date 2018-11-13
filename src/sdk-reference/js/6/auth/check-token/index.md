@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: checkToken
-description: Checks a jwt token's validity.
+description: Checks a JWT's validity.
 ---
 
 # checkToken
@@ -31,7 +31,7 @@ An `object` representing the token validity status
 | ------------------- | ------- | -----------------------------------
 | `valid`               | <pre>boolean</pre> | Tell if the token is valid or not
 | `state`               | <pre>string</pre> | Explain why the token is invalid
-| `expires_at`          | <pre>number</pre> | Tells when the token expires
+| `expires_at`          | <pre>number</pre> | Token expiration timestamp |
 
 ## Usage
 

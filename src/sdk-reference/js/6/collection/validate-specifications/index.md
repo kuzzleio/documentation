@@ -26,7 +26,7 @@ validateSpecifications (index, collection, specifications, [options])
 | ``specifications`` | <pre>object</pre> | Specifications to validate  |
 | ``options`` | <pre>object</pre> | Query options    |
 
-### **specifications**
+### specifications
 
 An object representing the specifications.
 
@@ -41,7 +41,7 @@ This object must follow the [Specification Structure]({{ site_base_path }}valida
 }
 ```
 
-### **options**
+### options
 
 Additional query options
 

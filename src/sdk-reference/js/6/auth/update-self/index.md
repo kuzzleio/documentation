@@ -25,7 +25,7 @@ updateSelf (content, [options])
 | `options`  | <pre>object</pre> | Query options
 
 
-### **options**
+### options
 
 Additional query options
 
@@ -43,13 +43,13 @@ A User object representing the current user logged with the SDK.
 | `id` | <pre>string</pre> | User ID |
 | `content` | <pre>object</pre> | User custom information |
 
-The User content contain the following properties:
+The User content contains the following properties:
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `profileIds` | <pre>array&lt;string&gt;</pre> | An array containing the profile ids |
+| `profileIds` | <pre>string[]</pre> | List of profile identifiers |
 | `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
-| `any` | any | Any other information saved with the user |
+| `...` | <pre>*</pre> | Any other information are saved as additional user information |
 
 ## Usage
 

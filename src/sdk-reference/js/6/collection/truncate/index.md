@@ -25,7 +25,7 @@ truncate (index, collection, [options])
 | ``collection`` | <pre>string</pre> | Collection name    |
 | ``options`` | <pre>object</pre> | Query options    |
 
-### **options**
+### options
 
 Additional query options
 
@@ -35,7 +35,7 @@ Additional query options
 
 ## Resolves
 
-Resolve if the collection is successfully truncated.
+Resolves if the collection has successfully been truncated.
 
 ## Usage
 

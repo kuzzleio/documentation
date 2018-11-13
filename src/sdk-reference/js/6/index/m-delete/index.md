@@ -22,7 +22,7 @@ mDelete (indexes, [options]);
 | `indexes` | <pre>array&lt;string&gt;</pre>  | An array of strings containing indexes names |
 | `options` | <pre>object</pre> | Query options          |
 
-### **options**
+### options
 
 Additional query options
 

@@ -21,7 +21,7 @@ getMyRights ([options])
 |--------------|---------|-------------
 | `options` | <pre>object</pre> | Query options
 
-### **options**
+### options
 
 Additional query options
 

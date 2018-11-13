@@ -20,10 +20,10 @@ Kuzzle(protocol, [options]);
 
 | Argument   | Type               | Description                           |
 | ---------- | ------------------ | ------------------------------------- |
-| `protocol` | <pre>string</pre> | Protocol | Protocol used by the SDK instance |
+| `protocol` | <pre>string</pre> | Protocol used by the SDK instance |
 | `options`  | <pre>object</pre> | Kuzzle connection configuration       |
 
-### **protocol**
+### protocol
 
 The protocol used to connect to the Kuzzle instance.
 It can be:
@@ -31,7 +31,7 @@ It can be:
 - a string for embedded protocols : `http`, `websocket` or `socketio`
 - a custom [Protocol]({{ site_base_path }}/sdk-reference/js/6/protocols/create-new-protocol) object
 
-### **options**
+### options
 
 | Option              | Type    | Description   | Default  | Required |
 | -------------- | --------- | ------------- | -------- |
