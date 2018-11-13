@@ -19,7 +19,7 @@ mDelete (indexes, [options]);
 
 | Arguments | Type   | Description                                  |
 | --------- | ------ | -------------------------------------------- |
-| `indexes` | <pre>array&lt;string&gt;</pre>  | An array of strings containing indexes names |
+| `indexes` | <pre>string[]</pre>  | List of index names to delete |
 | `options` | <pre>object</pre> | Query options          |
 
 ### options
