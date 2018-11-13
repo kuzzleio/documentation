@@ -175,7 +175,7 @@ You can test the snippets locally by using the script `run-snippet-tests.sh`.
 This script looks recursively for snippets to test, using the path provided as an argument.
 You must at least have a sdk language and version in the provided path: `src/sdk-reference/<language>/<version>[/path/to/snippets]`
 
-First, you have to run a Kuzzle stack with the following script: `bash .travis/start_kuzzle.sh`
+First, you have to run a Kuzzle stack with the following script: `bash .ci/start_kuzzle.sh`
 
 Then you can run snippets for any language:
 

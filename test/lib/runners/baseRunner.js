@@ -40,24 +40,11 @@ module.exports = class BaseRunner {
   }
 
   async runExpect(snippet) {
-    const expectedRegexp = new RegExp(snippet.expected);
-
+    // const expectedRegexp = new RegExp(snippet.expected);
     return new Promise((resolve, reject) => {
       nexpect
         .spawn(this.nexpectCommand, { stream: 'all' })
-        .wait(expectedRegexp, result => {
-          if (expectedRegexp.test(result)) {
-            resolve();
-            return;
-          }
-
-          const res = {
-            code: 'ERR_ASSERTION',
-            actual: result
-          };
-          reject(new TestResult(res));
-        })
-        .run((error, output, cerr) => {
+        .run((error, stdout, cerr) => {
           if (error) {
             const res = {
               code: 'ERR_ASSERTION',
@@ -68,10 +55,38 @@ module.exports = class BaseRunner {
             return;
           }
 
-          if (output.includes(snippet.expected)) {
-            resolve();
-            return;
+          const
+            output = stdout.join('\n'),
+            expected = Array.isArray(snippet.expected) ? snippet.expected : [snippet.expected];
+
+          let
+            lastIndex = -1,
+            previous = null;
+
+          for (const e of expected) {
+            const match = output.match(e);
+
+            if (match === null) {
+              return reject(new TestResult({
+                code: 'ERR_ASSERTION',
+                expected: e,
+                actual: stdout
+              }));
+            }
+
+            if (match.index < lastIndex) {
+              return reject(new TestResult({
+                code: 'ERR_ORDER',
+                before: e,
+                after: previous
+              }));
+            }
+
+            lastIndex = match.index;
+            previous = e;
           }
+
+          return resolve();
         });
     });
   }
