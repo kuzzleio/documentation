@@ -3,5 +3,5 @@ description: Returns the position of the first bit set to 1 or 0 in a string, or
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
-template: asyncdefault
+template: default
 expected: 23

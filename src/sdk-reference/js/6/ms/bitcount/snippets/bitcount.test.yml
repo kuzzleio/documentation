@@ -3,5 +3,7 @@ description: Counts the number of set bits (population counting) in a string
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
-template: asyncdefault
-expected: 4
+template: default
+expected:
+  - 26
+  - 4

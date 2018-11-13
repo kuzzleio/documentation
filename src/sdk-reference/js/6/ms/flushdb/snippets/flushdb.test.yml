@@ -3,5 +3,5 @@ description: Empties the database dedicated to client applications
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
-template: asyncdefault
+template: default
 expected: Success

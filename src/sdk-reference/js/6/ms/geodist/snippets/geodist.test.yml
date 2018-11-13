@@ -3,5 +3,5 @@ description: Returns the distance between two geospatial members of a key
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
-template: asyncdefault
+template: default
 expected: 4487.7038

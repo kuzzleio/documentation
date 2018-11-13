@@ -3,5 +3,5 @@ description: Deletes a list of keys
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
-template: asyncdefault
+template: default
 expected: 0
