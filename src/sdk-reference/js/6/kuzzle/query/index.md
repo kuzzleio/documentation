@@ -39,11 +39,11 @@ The following properties are the most common.
 | `index`      | <pre>string</pre> | Index name for this action                |
 | `collection` | <pre>string</pre> | Collection name for this action           |
 | `_id`        | <pre>string</pre> | id for this action                        |
-| `volatile`   | <pre>object</pre> | Additional informations to send to Kuzzle |
+| `volatile`   | <pre>object</pre> | Additional information to send to Kuzzle |
 
 ### **options**
 
-An `object` containing Query options
+An `object` containing query options
 
 | Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |

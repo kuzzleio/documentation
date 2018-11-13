@@ -21,7 +21,7 @@ updateSelf (content, [options])
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `content` | <pre>object</pre> | User custom informations
+| `content` | <pre>object</pre> | User custom information
 | `options`  | <pre>object</pre> | Query options
 
 
@@ -41,7 +41,7 @@ A User object representing the current user logged with the SDK.
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
 | `id` | <pre>string</pre> | User ID |
-| `content` | <pre>object</pre> | User custom informations |
+| `content` | <pre>object</pre> | User custom information |
 
 The User content contain the following properties:
 
