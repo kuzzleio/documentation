@@ -7,16 +7,13 @@ description: Stops the requests queuing
 
 # stopQueuing
 
-Stops the requests queuing.  
+Stops the requests queuing.
 Works only in `offline` state, and if the `autoQueue` option is set to false.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @returns {Kuzzle} this
- */
-stopQueuing();
+stopQueuing ()
 ```
 
 ## Return

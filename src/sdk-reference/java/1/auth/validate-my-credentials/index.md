@@ -13,8 +13,8 @@ Validate the current user's credentials for the specified `<strategy>`. The `res
 
 ```java
 public boolean validateMyCredentials(
-  String, 
-  String, 
+  String,
+  String,
   io.kuzzle.sdk.QueryOptions
 );
 public boolean validateMyCredentials(
@@ -29,7 +29,7 @@ public boolean validateMyCredentials(
 |--------------|---------|-------------
 | `strategy` | String | the strategy to use
 | `credentials` | String | the new credentials
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 
 ### **Options**

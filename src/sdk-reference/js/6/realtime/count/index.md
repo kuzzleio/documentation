@@ -31,7 +31,7 @@ Additional query options
 | ---------- | ------- | --------------------------------- |
 | `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
-## Resolve
+## Resolves
 
 Resolves to a number represensting active connections using the same provided subscription room.
 

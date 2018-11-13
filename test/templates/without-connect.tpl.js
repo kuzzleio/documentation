@@ -7,5 +7,13 @@ const kuzzle = new Kuzzle('websocket', {
   autoReconnect: false
 });
 
-[snippet-code]
-console.log('Success');
+// add a listener to detect any connection problems
+kuzzle.on('networkError', error => {
+  console.error(`Network Error: ${error}`);
+});
+
+(async () => {
+  [snippet-code] finally {
+    kuzzle.disconnect();
+  }
+})();

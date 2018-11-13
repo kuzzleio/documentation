@@ -7,12 +7,14 @@ description: Revokes the user's token & unsubscribe them from registered rooms.
 
 # logout
 
-Revokes the user's token & unsubscribe them from registered rooms.
+Revokes the user's authentication token.
 
-## Signature
+If there were any, real-time subscriptions are cancelled.
+
+## Arguments
 
 ```javascript
-logout();
+logout ()
 ```
 
 ## Usage

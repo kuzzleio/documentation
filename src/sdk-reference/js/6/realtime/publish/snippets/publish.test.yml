@@ -3,5 +3,5 @@ description: Publish a realtime message
 hooks:
   before:
   after:
-template: asyncdefault
+template: default
 expected: Success

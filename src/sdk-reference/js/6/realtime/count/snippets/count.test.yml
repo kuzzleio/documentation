@@ -3,5 +3,5 @@ description: Count subscribers for a subscription room
 hooks:
   before:
   after:
-template: asyncdefault
+template: default
 expected: Currently 1 active subscription

@@ -1,3 +1,5 @@
+const Bluebird = require('bluebird');
+
 // load the Kuzzle SDK module
 const { Kuzzle } = require('kuzzle-sdk');
 
@@ -12,13 +14,12 @@ kuzzle.on('networkError', error => {
   console.error(`Network Error: ${error}`);
 });
 
-(async () => {
-  try {
-    await kuzzle.connect();
-  } catch (error) {
-    console.log(`Can not connect to Kuzzle: ${error.message}`);
-  }
-  [snippet-code] finally {
-    kuzzle.disconnect();
-  }
-})();
+Bluebird.resolve(
+  kuzzle
+    .connect()
+    .then(() => {
+      return [snippet-code]
+    })
+)
+  .catch(() => 'nothing')
+  .finally(() => kuzzle.disconnect());

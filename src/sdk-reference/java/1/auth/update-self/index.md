@@ -13,7 +13,7 @@ Updates the current user object in Kuzzle.
 
 ```java
 public io.kuzzle.sdk.User updateSelf(
-  String, 
+  String,
   io.kuzzle.sdk.QueryOptions
 );
 public io.kuzzle.sdk.User updateSelf(
@@ -26,7 +26,7 @@ public io.kuzzle.sdk.User updateSelf(
 | Arguments    | Type    | Description
 |--------------|---------|-------------
 | `content` | String | the new credentials
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 
 ### **Options**

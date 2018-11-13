@@ -1,6 +1,14 @@
+const credentials = { username: 'foo', password: 'bar' };
+
 try {
-  await kuzzle.auth.login('local', {username: 'foo', password: 'bar'});
-  await kuzzle.auth.getMyCredentials('local');
+  await kuzzle.auth.login('local', credentials);
+
+  const localCredentials = await kuzzle.auth.getMyCredentials('local');
+  console.log(localCredentials);
+  /*
+    {  username: 'foo', kuid: 'foo' }
+  */
+
   console.log('Success');
 } catch (error) {
   console.error(error.message);

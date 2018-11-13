@@ -2,7 +2,7 @@
 name: kuzzle#flushQueue
 description: Empties the offline request queue
 hooks:
-  before: 
-  after: 
+  before:
+  after:
 template: without-connect
-expected: Success
+expected: Offline queue flushed

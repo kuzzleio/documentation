@@ -22,8 +22,8 @@ Subscribes by providing a set of filters: messages, document changes and, option
 | ``index`` | <pre>string</pre> | Index name    |
 | ``collection`` | <pre>string</pre> | Collection name    |
 | ``filters`` | <pre>object</pre> | Set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
-| ``callback`` | <pre>Function</pre> | Callback function to handle notifications |
-| ``options`` | <pre>object</pre> | An object containing query options |
+| ``callback`` | <pre>function</pre> | Callback function to handle notifications |
+| ``options`` | <pre>object</pre> | Query options |
 
 ### callback
 
@@ -41,7 +41,7 @@ Additional subscription options.
 | `subscribeToSelf` | <pre>boolean</pre><br/>(`true`) | Subscribe to notifications fired by our own queries |
 | `volatile` | <pre>object</pre><br/>(`null`) | subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
 
-## Resolve
+## Resolves
 
 Resolves to a string containing the room ID
 

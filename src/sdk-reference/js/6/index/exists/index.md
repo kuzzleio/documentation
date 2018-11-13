@@ -5,37 +5,32 @@ title: exists
 description: Check for index existence
 ---
 
-# Exists
+# exists
 
-Checks if the given index exists in Kuzzle.
-
-## Signature
-
-```javascript
-/**
- * @param {string} index
- * @param {object} [options]
- * @returns {Promise.<Boolean>}
- */
-exists(index, options = null);
-```
+Checks if the given data index exists.
 
 ## Arguments
 
-| Arguments | Type   | Description                         | Required |
-| --------- | ------ | ----------------------------------- | -------- |
-| `index`   | String | Index name                          | yes      |
-| `options` | Object | An object containing query options. | no       |
+```javascript
+exists (index, [options]);
+```
 
-### **Options**
+<br/>
+
+| Arguments | Type   | Description    |
+| --------- | ------ | ---------------|
+| `index`   | <pre>string</pre> | Index name     |
+| `options` | <pre>object</pre> | Query options  |
+
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
 Resolves to a `boolean` that indicate whether the index exists or not.
 
