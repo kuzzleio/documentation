@@ -29,7 +29,7 @@ Query(request *types.KuzzleRequest, options types.QueryOptions, responseChannel 
 
 ### **request**
 
-Properties required for the Kuzzle API can be set in the [KuzzleRequest](https://github.com/kuzzleio/sdk-go/blob/master/types/kuzzle_request.go).  
+Properties required for the Kuzzle API can be set in the [KuzzleRequest](https://github.com/kuzzleio/sdk-go/blob/master/types/kuzzle_request.go).
 The following properties are the most common.
 
 | Property     | Type         | Description                               | Required |
@@ -40,12 +40,12 @@ The following properties are the most common.
 | `Index`      | string       | Index name for this action                | no       |
 | `Collection` | string       | Collection name for this action           | no       |
 | `Id`         | string       | id for this action                        | no       |
-| `Volatile`   | VolatileData | Additional informations to send to Kuzzle | no       |
+| `Volatile`   | VolatileData | Additional information to send to Kuzzle | no       |
 
 ### **options**
 
-A [QueryOptions](https://github.com/kuzzleio/sdk-go/blob/master/types/query_options.go) containing additional Query options  
-Theses properties can bet Get/Set.  
+A [QueryOptions](https://github.com/kuzzleio/sdk-go/blob/master/types/query_options.go) containing additional Query options
+Theses properties can bet Get/Set.
 The following properties are the most common.
 
 | Property   | Type    | Description                       | Default |
@@ -54,7 +54,7 @@ The following properties are the most common.
 
 ### **responseChannel**
 
-A channel to receive the API response.  
+A channel to receive the API response.
 This channel will receive a [KuzzleResponse](https://github.com/kuzzleio/sdk-go/blob/master/types/kuzzle_response.go)
 
 ## Usage

@@ -8,7 +8,7 @@ title: getCurrentUser
 
 {{{since "1.0.0"}}}
 
-Returns informations about the currently logged in user.
+Returns information about the currently logged in user.
 
 ---
 
@@ -18,7 +18,7 @@ Returns informations about the currently logged in user.
 
 ```http
 URL: http://kuzzle:7512/users/_me
-Method: GET  
+Method: GET
 Headers: Authorization: "Bearer <authentication token>"
 ```
 

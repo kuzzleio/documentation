@@ -23,7 +23,7 @@ Subscribes by providing a set of filters: messages, document changes and, option
 | ``collection`` | <pre>string</pre> | Collection name    |
 | ``filters`` | <pre>object</pre> | Set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
 | ``callback`` | <pre>function</pre> | Callback function to handle notifications |
-| ``options`` | <pre>object</pre> | An object containing query options |
+| ``options`` | <pre>object</pre> | Query options |
 
 ### callback
 
