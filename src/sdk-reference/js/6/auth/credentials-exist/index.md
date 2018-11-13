@@ -33,7 +33,7 @@ Additional query options
 
 ## Resolves
 
-A `boolean` indicating whether the credentials exists or not.
+Resolves to `true` if the credentials exist, `false` otherwise.
 
 ## Usage
 
