@@ -64,6 +64,10 @@
     &:first-child {
       margin-top: 8px;
     }
+    
+    @include break-to-device(tablet) {
+      display: none;
+    }
   }
   
   // List item
