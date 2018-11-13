@@ -8,7 +8,7 @@ description: Performs a bulk import on a collection
 # Import
 
 
-Create, update or delete large amounts of documents as fast as possible.
+Create, update or delete large amount of documents as fast as possible.
 
 This route is faster than the `document:m*` routes family (e.g. [document:mCreate]({{ site_base_path }}sdk-reference/js/6/document/m-create)), but no real-time notifications will be generated, even if some of the documents in the import match subscription filters.
 
