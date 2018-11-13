@@ -37,7 +37,7 @@ Additional query options
 
 ## Resolves
 
-Resolve to an object containing the following properties:
+Resolves to an object containing the following properties:
 
 | Property   | Type    | Description  |
 |--------------|---------|-------------|
