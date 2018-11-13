@@ -7,7 +7,7 @@ description: Return collection mapping
 
 # getMapping
 
-Returns the mapping for the given collection.
+Returns a data collection mapping.
 
 ## Arguments
 

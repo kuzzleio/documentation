@@ -7,11 +7,7 @@ description: Update the validation specifications
 
 # updateSpecifications
 
-<<<<<<< HEAD
 The updateSpecifications method allows you to create or update the validation specifications for a collection.
-=======
-The updateSpecifications method allows you to create or update the validation specifications of `<collection>`.
->>>>>>> 4f0c09a43358818d2cab584b3c691ed74d6f3976
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
