@@ -35,8 +35,7 @@ but we’re working on extending the support to many more.
     <img src="/assets/images/logos/ruby.svg" alt="ruby logo" class="Languages-item-logo">
     <div class="Languages-item-name">Ruby</div>
   </a>
-  <a href="https://github.com/kuzzleio/sdk-android" class="Languages-item">
-    <div class="ribbon"><span>ALPHA</span></div>
+  <a href="/sdk-reference/java/1/essentials/" class="Languages-item">
     <img src="/assets/images/logos/android.svg" alt="android logo" class="Languages-item-logo">
     <div class="Languages-item-name">Android</div>
   </a>
