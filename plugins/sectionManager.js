@@ -1,11 +1,8 @@
 const
   path = require('path'),
-  globby = require('globby').sync,
-  readYaml = require('read-yaml');
+  globby = require('globby').sync;
 
 const SECTION_REGEX = /\[section=([a-zA-Z0-9-]+)\]/g;
-
-const sdkVersions = readYaml.sync(path.join(__dirname, '../test/sdk-versions.yml'));
 
 module.exports = function plugin () {
   const process = function process (file, files) {
@@ -23,8 +20,9 @@ module.exports = function plugin () {
 
         const lng = fn.replace(/^.*\.([^.]+)\.[^.]+$/, '$1');
         const key = `${path.dirname(file)}/${path.basename(fn).replace(/\.[^.]+$/, '')}.html`;
+        const languageName = lng === 'js' ? 'javascript' : lng;
 
-        replacement += `<div id="${name}" class="section ${sdkVersions[lng].fullname}">
+        replacement += `<div id="${name}" class="section ${languageName}">
               ${files[key].contents.toString()}
           </div>`;
       }
