@@ -23,7 +23,7 @@ Returns the current Kuzzle configuration.
  * @param {Object} options - {queuable: Boolean(true)}
  * @returns {Promise<Object>}
  */
-getConfig(options=null)
+getConfig([options])
 ```
 
 ## Arguments

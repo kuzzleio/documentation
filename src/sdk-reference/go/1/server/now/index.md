@@ -34,7 +34,7 @@ Additional query options
 
 ## Return
 
-Returns current server timestamp as `int64` or an error.
+Returns current server timestamp as `int64` or a `KuzzleError`. See how to [handle error]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling).
 
 ## Usage
 

@@ -37,7 +37,7 @@ Additional query options
 
 ## Return
 
-Returns server configuration as a `json.RawMessage` or an error.
+Returns server configuration as a `json.RawMessage` or a `KuzzleError`. See how to [handle error]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling).
 
 ## Usage
 

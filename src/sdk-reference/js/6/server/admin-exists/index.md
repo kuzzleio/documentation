@@ -19,7 +19,7 @@ Checks that an administrator account exists.
  * @param {Object} options - {queuable: Boolean(true)}
  * @returns {Promise<Object>}
  */
-adminExists(options=null)
+adminExists([options])
 ```
 
 ## Arguments

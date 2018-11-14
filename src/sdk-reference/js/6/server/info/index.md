@@ -18,7 +18,7 @@ Returns information about Kuzzle: available API (base + extended), plugins, exte
  * @param {Object} options - {queuable: Boolean(true)}
  * @returns {Promise<Object>}
  */
-info(options = null)
+info([options])
 ```
 
 

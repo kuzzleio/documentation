@@ -33,11 +33,11 @@ Additional query options
 
 ## Return
 
-Returns a `boolean` true if it exists and false if it does not.
+Returns a `boolean`: `true` if it exists and `false` if it does not.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

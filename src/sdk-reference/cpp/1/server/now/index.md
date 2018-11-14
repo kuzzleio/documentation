@@ -38,8 +38,7 @@ Returns Epoch-millis timestamp as `long long`.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
-
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

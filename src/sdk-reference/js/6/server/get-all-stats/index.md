@@ -26,7 +26,7 @@ These statistics include:
  * @param {Object} options - {queuable: Boolean(true)}
  * @returns {Promise<Object>}
  */
-getAllStats(options=null)
+getAllStats([options])
 ```
 
 ## Arguments

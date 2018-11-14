@@ -38,10 +38,12 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-
-
 ## Return
 Returns all stored internal statistic snapshots as `std::string`.
+
+## Exceptions
+
+Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

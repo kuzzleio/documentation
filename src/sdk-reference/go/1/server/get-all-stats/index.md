@@ -42,7 +42,7 @@ Additional query options
 
 ## Return
 
-Returns all stored internal statistic snapshots as a `json.RawMessage` or an error.
+Returns all stored internal statistic snapshots as a `json.RawMessage` or a `KuzzleError`. See how to [handle error]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling).
 
 ## Usage
 

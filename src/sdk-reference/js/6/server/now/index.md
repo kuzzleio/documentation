@@ -19,7 +19,7 @@ Returns the current server timestamp, in Epoch-millis format.
  * @param {object} [options]
  * @returns {Promise.<object>}
  */
-now(options = null);
+now([options]);
 ```
 
 ## Arguments
