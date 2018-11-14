@@ -3,11 +3,12 @@ layout: sdk.html.hbs
 algolia: true
 title: Constructor
 description: Create a new Kuzzle object connected to the backend
+order: 1
 ---
 
 # Constructor
 
-This is the main entry point to communicate with Kuzzle.  
+This is the main entry point to communicate with Kuzzle.
 Each instance represent a connection to Kuzzle with specific options.
 
 ## Signature
@@ -37,7 +38,7 @@ It takes the following arguments:
 | `host`    | string        | Kuzzle hostname to connect to   | yes      |
 | `options` | types.Options | Kuzzle connection configuration | yes      |
 
-The `options` parameter of the protocol constructor has the following properties.  
+The `options` parameter of the protocol constructor has the following properties.
 You can use standard getter/setter to use these properties.
 
 | Option              | Type         | Description                                                        | Default        | Required |
@@ -57,7 +58,7 @@ You can use standard getter/setter to use these properties.
 
 ## Getter & Setter
 
-These properties of the Kuzzle struct can be writable.  
+These properties of the Kuzzle struct can be writable.
 For example, you can read the `volatile` property via `getVolatile()` and set it via `setVolatile()`.
 
 | Property name        | Type               | Description                                                                                                                  | Availability |
@@ -91,12 +92,12 @@ For example, you can read the `volatile` property via `getVolatile()` and set it
 
 ## Return
 
-A `Kuzzle` struct and an [error struct]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling).  
+A `Kuzzle` struct and an [error struct]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling).
 The `error` struct is nil if everything was ok.
 
 ## Usage
 
-In a first step, you have to create a new `connection.Connection` and pass it to the constructor.  
+In a first step, you have to create a new `connection.Connection` and pass it to the constructor.
 By now the only connection available is `websocket.Websocket`.
 
 [snippet=constructor]

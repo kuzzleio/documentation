@@ -3,11 +3,12 @@ layout: sdk.html.hbs
 algolia: true
 title: Constructor
 description: Create a new Kuzzle object connected to the backend
+order: 1
 ---
 
 # Constructor
 
-This is the main entry point to communicate with Kuzzle.  
+This is the main entry point to communicate with Kuzzle.
 Each instance represent a connection to Kuzzle with specific options.
 
 ## Signature
@@ -26,7 +27,7 @@ Kuzzle(String host, io.kuzzle.sdk.Options options)
 
 ### **host**
 
-The Kuzzle host to connect to.  
+The Kuzzle host to connect to.
 Can be a hostname or an IP address.
 
 ### **options**
@@ -47,7 +48,7 @@ Can be a hostname or an IP address.
 
 ## Getter & Setter
 
-The properties can be writable.  
+The properties can be writable.
 For example, you can read the `volatile` property via `getVolatile()` and set it via `setVolatile()`.
 
 | Property name | Type          | Description                                                   | Availability |
