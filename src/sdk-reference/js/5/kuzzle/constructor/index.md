@@ -1,15 +1,9 @@
 ---
-layout: side-code.html.hbs
-language-tab:
-  js: Javascript
-  java: Android
-  php: PHP
+layout: sdk.html.hbs
 algolia: true
 title: Kuzzle
 description: Entry point and main class for the entire SDK
-show-subheader: true
-subheader-title: Constructor
-order: 100
+order: 1
 ---
 
 # Constructor

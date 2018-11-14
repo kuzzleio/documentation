@@ -1,5 +1,5 @@
 ---
-layout: full.html.hbs
+layout: sdk.html.hbs
 algolia: true
 title: Events
 order: 100
