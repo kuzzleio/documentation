@@ -19,7 +19,7 @@ go:
 
 php:
   fullname: php
-  3: 3-stable
+  3: master
 
 android:
   fullname: android
