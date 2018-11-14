@@ -1,8 +1,7 @@
 ---
 title: SDKs
 order: 1
-layout: full.html.hbs
-nosidebar: true
+layout: sdk.html.hbs
 ---
 
 # SDKs Reference
@@ -35,7 +34,7 @@ but we’re working on extending the support to many more.
     <img src="/assets/images/logos/ruby.svg" alt="ruby logo" class="Languages-item-logo">
     <div class="Languages-item-name">Ruby</div>
   </a>
-  <a href="/sdk-reference/java/1/essentials/" class="Languages-item">
+  <a href="/sdk-reference/android/3/essentials/" class="Languages-item">
     <img src="/assets/images/logos/android.svg" alt="android logo" class="Languages-item-logo">
     <div class="Languages-item-name">Android</div>
   </a>
