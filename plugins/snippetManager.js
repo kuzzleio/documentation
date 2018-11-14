@@ -3,12 +3,10 @@ const
   path = require('path'),
   marked = require('marked'),
   MarkdownIt = require('markdown-it'),
-  color = require('colors/safe'),
-  readYaml = require('read-yaml');
+  color = require('colors/safe');
 
 const SNIPPET_REGEX = /(\[snippet=)[a-zA-Z0-9-]+\]/g;
 
-const sdkVersions = readYaml.sync(path.join(__dirname, '../test/sdk-versions.yml'));
 
 module.exports = {
 
@@ -33,8 +31,10 @@ module.exports = {
           if (file.split('.')[0] === name && file.substr(-8) !== 'test.yml') {
             presentLanguages.push(file.split('.')[1]);
             let fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8');
+            const lng = file.split('.')[1];
+            const languageName = lng === 'js' ? 'javascript' : lng;
 
-            code += '``` ' + sdkVersions[file.split('.')[1]].fullname + '\n' + fileContent + '\n```\n';
+            code += '``` ' + languageName + '\n' + fileContent + '\n```\n';
           }
 
         });
