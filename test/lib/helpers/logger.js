@@ -82,11 +82,16 @@ class Logger {
         console.log(red('        CODE    :'), result.code);
         console.log(red('        FILE    :'), result.file);
         if (result.code === 'ERR_ASSERTION') {
-          console.log(red('        EXPECTED:'), snippet.expected);
+          console.log(red('        EXPECTED:'), result.expected || snippet.expected);
           console.log(red('        GOT     :'), result.actual);
+        } else if (result.code === 'ERR_ORDER') {
+          console.log(red('        THIS RESULT: '), result.actualOrder[0]);
+          console.log(red('        CAME BEFORE: '), result.actualOrder[1]);
         } else {
           console.log(red('        ERROR   :'), result.actual);
         }
+
+
         console.log(
           blue(`[${snippet.language}] `),
           'You can run the snippet locally with the following command:'
