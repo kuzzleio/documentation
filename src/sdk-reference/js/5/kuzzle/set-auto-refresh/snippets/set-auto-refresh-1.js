@@ -1,0 +1,2 @@
+
+kuzzle.setAutoRefresh('myIndex', true);
