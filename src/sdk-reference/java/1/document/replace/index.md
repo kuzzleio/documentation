@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 algolia: true
 title: replace
-description:
+description: Replaces the content of an existing document
 ---
 
 # replace

@@ -11,7 +11,7 @@ try {
   }
   kuzzle->index->refresh("nyc-open-data");
 
-  kuzzleio::query_options options = {0};
+  kuzzleio::query_options options;
   options.from = 0;
   options.size = 2;
 
