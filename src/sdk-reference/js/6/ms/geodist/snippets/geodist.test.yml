@@ -4,4 +4,6 @@ hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: 4487.7038
+expected:
+  - 1367.8521
+  - 4487.7038

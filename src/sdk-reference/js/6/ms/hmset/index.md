@@ -14,16 +14,25 @@ Sets multiple fields at once in a hash.
 ## Arguments
 
 ```js
-hmset(key, [options])
-
+hmset(key, entries, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `key` | <pre>string</pre> | Key |
+| `key` | <pre>string</pre> | Hash key |
+| `entries` | <pre>object[]</pre> | List of field-value pairs to set |
 | ``options`` | <pre>object</pre> | Optional query arguments |
+
+#### entries
+
+The `entries` array lists the fields to set in the hash. Each entry object has the following properties:
+
+| Properties    | Type    | Description |
+|--------------|---------|-------------|
+| `field` | <pre>string</pre> | Field name |
+| `value` | <pre>string</pre> | Field value |
 
 ### options
 
@@ -34,6 +43,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves once the fields have been set.
 
 ## Usage
 

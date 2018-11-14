@@ -6,8 +6,6 @@ try {
 
   // Prints: 1
   console.log(await kuzzle.ms.getbit('foo', 7));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }

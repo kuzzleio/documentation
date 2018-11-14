@@ -6,8 +6,6 @@ try {
 
   // Prints: 'bar'
   console.log(await kuzzle.ms.getrange('foo', -3, -1));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }

@@ -4,8 +4,6 @@ try {
 
   // Prints: { field1: 'val1', field2: 'val2' }
   console.log(await kuzzle.ms.hgetall('hashfoo'));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }

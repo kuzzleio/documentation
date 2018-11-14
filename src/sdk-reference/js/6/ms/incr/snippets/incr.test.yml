@@ -1,7 +1,7 @@
 name: ms#incr
-description:
+description: Increments the number stored at key by 1
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: ^42$

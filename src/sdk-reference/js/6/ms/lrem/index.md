@@ -6,7 +6,6 @@ title: lrem
 
 # lrem
 
-
 Removes the first occurences of an element from a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lrem)
@@ -14,7 +13,7 @@ Removes the first occurences of an element from a list.
 ## Arguments
 
 ```js
-lrem(key, [options])
+lrem(key, count, value, [options])
 
 ```
 
@@ -22,7 +21,9 @@ lrem(key, [options])
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `key` | <pre>string</pre> | Key |
+| `key` | <pre>string</pre> | List key |
+| `count` | <pre>integer</pre> | Number of the first found occurences to remove |
+| `value` | <pre>string</pre> | Value to remove |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options
@@ -34,6 +35,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the number of removed elements.
 
 ## Usage
 

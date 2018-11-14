@@ -15,7 +15,6 @@ Returns all values contained in a hash.
 
 ```js
 hvals(key, [options])
-
 ```
 
 <br/>
@@ -34,6 +33,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the list of hash's field values.
 
 ## Usage
 

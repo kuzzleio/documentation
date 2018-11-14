@@ -1,7 +1,9 @@
 name: ms#getset
-description:
+description: Sets a new value for a key, and returns its previously stored value
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - ^bar$
+  - ^qux$

@@ -14,10 +14,7 @@ Increments the number stored at `key` by the provided integer value. If the key 
 ## Arguments
 
 ```js
-hincrby(key, [options])
-incrby(key, [options])
-zincrby(key, [options])
-
+incrby(key, increment, [options])
 ```
 
 <br/>
@@ -25,6 +22,7 @@ zincrby(key, [options])
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
 | `key` | <pre>string</pre> | Key |
+| `increment` | <pre>integer</pre> | Increment value |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options
@@ -36,6 +34,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the incremented key value.
 
 ## Usage
 

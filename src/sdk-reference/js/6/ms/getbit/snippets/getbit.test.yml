@@ -1,7 +1,9 @@
 name: ms#getbit
-description:
+description: Returns the bit value at the provided offset
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - ^0$
+  - ^1$

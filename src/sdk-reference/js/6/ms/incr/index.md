@@ -35,6 +35,8 @@ The `options` arguments can contain the following option properties:
 
 ## Resolve
 
+Resolves to the incremented key value.
+
 ## Usage
 
 [snippet=incr]

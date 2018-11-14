@@ -1,7 +1,7 @@
 name: ms#keys
-description:
+description: Returns all keys matching the provided pattern
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: "\\[ 'foo', 'Hello' ]"

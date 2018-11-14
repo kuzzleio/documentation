@@ -1,7 +1,7 @@
 name: ms#mget
-description:
+description: Returns the values of the provided keys
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: "\\[ 'world', 'bar' ]"

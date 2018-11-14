@@ -6,8 +6,6 @@ try {
 
   // Prints: true
   console.log(await kuzzle.ms.hexists('hashfoo', 'foo'));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }

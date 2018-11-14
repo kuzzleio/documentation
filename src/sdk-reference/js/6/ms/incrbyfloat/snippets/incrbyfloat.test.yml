@@ -1,7 +1,7 @@
 name: ms#incrbyfloat
-description:
+description: Increments the number stored at key by the provided float value
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: ^3.14159$

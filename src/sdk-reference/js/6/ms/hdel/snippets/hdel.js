@@ -9,8 +9,6 @@ try {
 
   // Prints: 1
   console.log(await kuzzle.ms.hlen('hashfoo'));
-
-  console.log('Success');
 } catch (error) {
   console.error(error.message);
 }

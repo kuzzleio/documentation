@@ -6,7 +6,6 @@ title: lpush
 
 # lpush
 
-
 Prepends the specified values to a list. 
 
 If the key does not exist, it is created holding an empty list before performing the operation.
@@ -16,16 +15,15 @@ If the key does not exist, it is created holding an empty list before performing
 ## Arguments
 
 ```js
-lpush(key, [options])
-rpoplpush(key, [options])
-
+lpush(key, values, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `key` | <pre>string</pre> | Key |
+| `key` | <pre>string</pre> | List key |
+| `values` | <pre>string[]</pre> | Values to append |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options
@@ -37,6 +35,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the updated length of the list.
 
 ## Usage
 

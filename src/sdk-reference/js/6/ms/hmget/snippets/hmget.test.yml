@@ -1,7 +1,7 @@
 name: ms#hmget
-description:
+description: Returns the values of the specified hash's fields
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: \[ 'val3', 'val1' ]

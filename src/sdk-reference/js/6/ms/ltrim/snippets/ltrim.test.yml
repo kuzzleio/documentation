@@ -1,7 +1,7 @@
 name: ms#ltrim
-description:
+description: Trims an existing list
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: "\\[ 'd', 'e' ]"

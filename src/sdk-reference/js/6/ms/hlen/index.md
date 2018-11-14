@@ -6,7 +6,6 @@ title: hlen
 
 # hlen
 
-
 Returns the number of fields contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hlen)

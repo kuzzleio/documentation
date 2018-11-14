@@ -39,7 +39,6 @@ Method: GET
 
 ## Arguments
 
-* `_id`: key identifier
 * `pattern`: match pattern
 
 ---
