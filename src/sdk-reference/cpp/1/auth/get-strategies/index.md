@@ -19,7 +19,7 @@ std::vector<std::string> getStrategies(query_options *options=nullptr);
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options`  | query_options*    | A pointer to a `query_options` containing query options
+| `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
 
 ### **Options**
 
