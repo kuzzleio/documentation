@@ -1,6 +1,6 @@
 var languageSelector = {};
 
-languageSelector.excludedSDK = ['android', 'php'];
+languageSelector.excludedSDK = ['android'];
 languageSelector.currentLanguage = document.location.pathname.split('/')[2];
 
 languageSelector.init = function (select) {
@@ -16,7 +16,7 @@ languageSelector.init = function (select) {
   $('.select2-selection__arrow')
     .addClass('material-icons')
     .html('arrow_drop_down');
-    
+
   this.setCurrentLanguage(select);
   this.onChange(select);
 };
@@ -40,14 +40,14 @@ languageSelector.getLatestVersionURL = function (language) {
     baseUrl = window.location.protocol + '//' + window.location.host,
     latestVersion = '',
     customPathname = '';
-  
+
   if (language === 'javascript') {
     language = 'js';
   }
-  
+
   latestVersion = Object.keys(sdkVersions[language]).sort().slice(-1)[0];
   customPathname = '/sdk-reference/' + language + '/' + latestVersion + '/essentials';
-  
+
   return baseUrl + customPathname;
 };
 
@@ -68,11 +68,11 @@ languageSelector.setTemplate = function (state) {
   var
     baseUrl = '/assets/images/logos',
     $state;
-    
+
   if (!state.id) {
     return state.text;
   }
-  
+
   $state = $(
     '<img width="22" height="22" src="' +
     baseUrl +

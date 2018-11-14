@@ -1,0 +1,44 @@
+---
+layout: sdk.html.hbs
+algolia: true
+title: pexpire
+description: MemoryStorage:pexpire
+---
+  
+
+# pexpire
+[snippet=pexpire-1]
+
+> Callback response:
+Sets a timeout (in milliseconds) on a key. After the timeout has expired, the key will automatically be deleted.
+
+[[_Redis documentation_]](https://redis.io/commands/pexpire)
+
+---
+
+## pexpire(key, ttl, [options], [callback])
+
+| Arguments | Type | Description |
+|---------------|---------|----------------------------------------|
+| `key` | string | Key identifier |
+| `ttl` | int | Time to live of the key, in milliseconds |
+| `options` | JSON Object | Optional parameters |
+| `callback` | function | Callback |
+---
+
+## Options
+
+| Option | Type | Description | Default |
+|---------------|---------|----------------------------------------|---------|
+| `queuable` | boolean | Make this request queuable or not  | ``true`` |
+---
+
+## Return Value
+
+Returns the `MemoryStorage` object to allow chaining.
+
+---
+
+## Callback Response
+
+Returns a boolean specifying if the operation was successful or not.

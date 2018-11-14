@@ -15,7 +15,6 @@ go:
 
 php:
   3: 3-stable
-  4: 4-stable
 
 android:
   1: 1-stable
