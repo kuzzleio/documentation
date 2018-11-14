@@ -23,7 +23,7 @@ A pointer to security.User object containing:
 | ---------- | ------- | --------------------------------- |
 | `Id` | string | The user ID |
 | `Content` | map[string]interface{} | The user content |
-| `ProfileIds` | []string | An array containing the profile ids |
+| `ProfileIds` | <pre>[]string</pre> | An array containing the profile ids |
 
 ## Usage
 

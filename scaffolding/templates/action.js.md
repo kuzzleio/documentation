@@ -9,19 +9,24 @@ description:
 
 ## Arguments
 
-```js
+```javascript
 <%= _.camelCase(action) %>()
 ```
 
-<br/>
+| Argument | Type | Description |
+| --- | --- | --- |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `id` | <pre>string</pre> | Optional document id |
+| `body` | <pre>object</pre> | The query to match |
+| `options` | <pre>object</pre> | An object containing query options. |
 
-| Arguments    | Type    | Description |
-|--------------|---------|-------------|
-| ``changeme`` | <pre>changme</pre> | changeme    |
+### options
 
-### arg1
-
-### arg2
+| Option     | Type (default)    | Description                       |
+| ---------- | ----------------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `refresh` | <pre>string</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Resolve
 

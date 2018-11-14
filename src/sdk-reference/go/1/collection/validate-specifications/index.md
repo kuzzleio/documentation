@@ -58,7 +58,7 @@ A `types.ValidationResponse` which contain information about the specifications 
 | Property   | Type    | Description        |
 | ---------- | ------- | --------------------- |
 | `Valid` | bool | Specification validity |
-| `Details` | []string | Details about each specification errors |
+| `Details` | <pre>[]string</pre> | Details about each specification errors |
 | `Description` | string | General error message |
 
 ## Usage

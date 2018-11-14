@@ -2,8 +2,6 @@
 
 set -e
 
-TRAVIS_PULL_REQUEST="${TRAVIS_PULL_REQUEST:-false}"
-
 function extract_language() {
   path=$1
   previous_part=""
@@ -98,10 +96,6 @@ case $LANGUAGE in
     exit 1
   ;;
 esac
-
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-  aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/$TRAVIS_PULL_REQUEST/$LANGUAGE/$SDK_VERSION/ --recursive --exclude "*.gitkeep"
-fi
 
 if [ $START_KUZZLE -eq 1 ]; then
   sh .ci/stop_kuzzle.sh
