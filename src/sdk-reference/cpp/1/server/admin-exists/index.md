@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: adminExists
 description: Checks that an administrator account exists.
-order: 200
 ---
 
 # adminExists
@@ -12,12 +11,11 @@ order: 200
 
 Checks that an administrator account exists.
 
-## Signature
-```cpp
-bool adminExists(query_options *options=nullptr);
-```
-
 ## Arguments
+
+```cpp
+bool adminExists(kuzzleio::query_options *options=nullptr);
+```
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
@@ -27,13 +25,13 @@ bool adminExists(query_options *options=nullptr);
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 
-Returns a `boolean`: `true` if it exists and `false` if it does not.
+Returns a `boolean` set to `true` if an admin exists and `false` if it does not.
 
 ## Exceptions
 

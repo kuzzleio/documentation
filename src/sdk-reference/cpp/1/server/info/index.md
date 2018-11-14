@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: info
 description: Returns information about Kuzzle server.
-order: 200
 ---
 
 # info
@@ -12,13 +11,11 @@ order: 200
 
 Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
-## Signature
+## Arguments
 
 ```cpp
-std::string info(query_options* options=nullptr)
+std::string info(kuzzleio::query_options* options=nullptr)
 ```
-
-## Arguments
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
@@ -28,10 +25,9 @@ std::string info(query_options* options=nullptr)
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-
+| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 

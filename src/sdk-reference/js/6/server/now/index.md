@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: now
 description: Returns the current server timestamp, in Epoch-millis format.
-order: 200
 ---
 
 # now
@@ -12,17 +11,15 @@ order: 200
 
 Returns the current server timestamp, in Epoch-millis format.
 
-## Signature
+## Arguments
 
 ```javascript
 /**
- * @param {object} [options]
- * @returns {Promise.<object>}
- */
+* @param {object} [options]
+* @returns {Promise.<object>}
+*/
 now([options]);
 ```
-
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
@@ -32,10 +29,9 @@ now([options]);
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Property   | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-
+| `queuable` | boolean | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Resolve
 

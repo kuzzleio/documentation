@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: getConfig
 description: Returns the current Kuzzle configuration.
-order: 200
 ---
 
 # getConfig
@@ -16,17 +15,15 @@ Returns the current Kuzzle configuration.
   This route should only be accessible to administrators, as it might return sensitive information about the backend.
 </div>
 
-## Signature
+## Arguments
 
 ```javascript
 /**
- * @param {Object} options - {queuable: Boolean(true)}
- * @returns {Promise<Object>}
- */
+* @param {Object} options - {queuable: Boolean(true)}
+* @returns {Promise<Object>}
+*/
 getConfig([options])
 ```
-
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
@@ -36,9 +33,9 @@ getConfig([options])
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Property   | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | boolean | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Resolve
 

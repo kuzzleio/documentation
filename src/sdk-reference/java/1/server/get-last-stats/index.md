@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: getLastStats
 description: Returns the most recent statistics snapshot.
-order: 200
 ---
 
 # getLastStats
@@ -20,16 +19,14 @@ These statistics include:
 * the number of completed requests since the last frame
 * the number of failed requests since the last frame
 
-## Signature
+## Arguments
 
 ```java
 public java.lang.String getLastStats(
-  io.kuzzle.sdk.QueryOptions
+io.kuzzle.sdk.QueryOptions
 );
 public java.lang.String getLastStats();
 ```
-
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
@@ -39,7 +36,7 @@ public java.lang.String getLastStats();
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Property   | Type  | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 

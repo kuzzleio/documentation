@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: adminExists
 description: Checks that an administrator account exists.
-order: 200
 ---
 
 # adminExists
@@ -12,16 +11,14 @@ order: 200
 
 Checks that an administrator account exists.
 
-## Signature
+## Arguments
 
 ```java
 public boolean adminExists(
-  io.kuzzle.sdk.QueryOptions
+io.kuzzle.sdk.QueryOptions
 );
 public boolean adminExists();
 ```
-
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
@@ -31,14 +28,13 @@ public boolean adminExists();
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Property   | Type  | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
-
 ## Return
 
-Returns a `boolean` true if it exists and false if it does not.
+Returns a `boolean` set to `true` if an admin exists and `false` if it does not.
 
 ## Exceptions
 

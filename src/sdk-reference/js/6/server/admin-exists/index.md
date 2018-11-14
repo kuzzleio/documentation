@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: adminExists
 description: Checks that an administrator account exists.
-order: 200
 ---
 
 # adminExists
@@ -12,17 +11,15 @@ order: 200
 
 Checks that an administrator account exists.
 
-## Signature
+## Arguments
 
 ```javascript
 /**
- * @param {Object} options - {queuable: Boolean(true)}
- * @returns {Promise<Object>}
- */
+* @param {Object} options - {queuable: Boolean(true)}
+* @returns {Promise<Object>}
+*/
 adminExists([options])
 ```
-
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
@@ -32,13 +29,13 @@ adminExists([options])
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Property   | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | boolean | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Resolve
 
-Resolves to an `boolean` containing server information.
+Resolves to a `boolean` set to `true` if an admin exists and `false` if it does not.
 
 ## Usage
 

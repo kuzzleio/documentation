@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: Now
 description: Returns the current server timestamp, in Epoch-millis
-order: 200
 ---
 
 # Now
@@ -12,25 +11,23 @@ order: 200
 
 Returns the current server timestamp, in Epoch-millis format.
 
-## Signature
+## Arguments
 
 ```go
 func (s *Server) Now(options types.QueryOptions) (int64, error)
 ```
 
-## Arguments
-
 | Arguments | Type         | Description                           |
 | --------- | ------------ | ------------------------------------- |
-| `options` | QueryOptions | Query options. |
+| `options` | types.QueryOptions | Query options. |
 
 ### **Options**
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 

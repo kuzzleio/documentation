@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: getAllStats
 description: Gets all stored internal statistic snapshots.
-order: 200
 ---
 
 # getAllStats
@@ -20,11 +19,12 @@ These statistics include:
 * the number of completed requests since the last frame
 * the number of failed requests since the last frame
 
-## Signature
-```cpp
-std::string getAllStats(query_options* options=nullptr)
-```
+
 ## Arguments
+
+```cpp
+std::string getAllStats(kuzzleio::query_options* options=nullptr)
+```
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
@@ -34,9 +34,10 @@ std::string getAllStats(query_options* options=nullptr)
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+
 
 ## Return
 Returns all stored internal statistic snapshots as `std::string`.

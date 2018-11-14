@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: GetAllStats
 description: Gets all stored internal statistic snapshots.
-order: 200
 ---
 
 # GetAllStats
@@ -20,25 +19,23 @@ These statistics include:
 * the number of completed requests since the last frame
 * the number of failed requests since the last frame
 
-## Signature
+## Arguments
 
 ```go
 func (s *Server) GetAllStats(options types.QueryOptions) (json.RawMessage, error)
 ```
 
-## Arguments
-
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
-| `options` | QueryOptions | An object containing query options. | no       |
+| `options` | types.QueryOptions | An object containing query options. | no       |
 
 ### **Options**
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 

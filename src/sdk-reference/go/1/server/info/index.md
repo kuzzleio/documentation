@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: Info
 description: Returns information about Kuzzle server.
-order: 200
 ---
 
 # Info
@@ -12,23 +11,23 @@ order: 200
 
 Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
-## Signature
+## Arguments
+
 ```go
 func (s* Server) Info(options types.QueryOptions) (json.RawMessage, error)
 ```
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
-| `options` | QueryOptions | An object containing query options. | no       |
+| `options` | types.QueryOptions | An object containing query options. | no       |
 
 ### **Options**
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 

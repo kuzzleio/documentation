@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: getStats
 description: Returns statistics snapshots within a provided timestamp range.
-order: 200
 ---
 
 # getStats
@@ -20,13 +19,15 @@ These statistics include:
 * the number of completed requests since the last frame
 * the number of failed requests since the last frame
 
-## Signature
+## Arguments
 
 ```cpp
-std::string getStats(time_t start, time_t end, query_options* options=nullptr)
+std::string getStats(
+  time_t start,
+  time_t end,
+  kuzzleio::query_options* options=nullptr
+)
 ```
-
-## Arguments
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
@@ -38,9 +39,9 @@ std::string getStats(time_t start, time_t end, query_options* options=nullptr)
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 Returns a JSON string representing the statistics for the given period of time.

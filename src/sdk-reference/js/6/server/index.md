@@ -1,8 +1,7 @@
 ---
 layout: sdk.html.hbs
-title: Server
+title: server
 description: Server Controller
-order: 200
 ---
 
 # Server Controller

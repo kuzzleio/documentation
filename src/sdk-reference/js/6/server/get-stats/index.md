@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: getStats
 description: Returns statistics snapshots within a provided timestamp range.
-order: 200
 ---
 
 # getStats
@@ -20,19 +19,17 @@ These statistics include:
 * the number of completed requests since the last frame
 * the number of failed requests since the last frame
 
-## Signature
+## Arguments
 
 ```javascript
 /**
- * @param {Number|String} startTime
- * @param {Number|String} stopTime
- * @param {Object} options - {queuable: Boolean(true)}
- * @returns {Promise<Object>}
- */
+* @param {Number|String} startTime
+* @param {Number|String} stopTime
+* @param {Object} options - {queuable: Boolean(true)}
+* @returns {Promise<Object>}
+*/
 getStats(startTime, stopTime, options=null)
 ```
-
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
@@ -44,9 +41,9 @@ getStats(startTime, stopTime, options=null)
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Property   | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | boolean | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 
 ## Resolve

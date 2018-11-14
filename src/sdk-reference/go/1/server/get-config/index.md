@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: GetConfig
 description: Returns the current Kuzzle configuration.
-order: 200
 ---
 
 # GetConfig
@@ -16,24 +15,23 @@ Returns the current Kuzzle configuration.
   This route should only be accessible to administrators, as it might return sensitive information about the backend.
 </div>
 
-## Signature
+## Arguments
 
 ```go
 func (s *Server) GetConfig(options types.QueryOptions) (json.RawMessage, error)
 ```
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
-| `options` | QueryOptions | An object containing query options. | no       |
+| `options` | types.QueryOptions | An object containing query options. | no       |
 
 ### **Options**
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 

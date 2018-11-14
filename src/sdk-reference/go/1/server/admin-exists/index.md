@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: AdminExists
 description: Returns information about Kuzzle server.
-order: 200
 ---
 
 # AdminExists
@@ -12,30 +11,28 @@ order: 200
 
 Checks that an administrator account exists.
 
-## Signature
+## Arguments
 
 ```go
 func (s *Server) AdminExists(options types.QueryOptions) (bool, error)
 ```
 
-## Arguments
-
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
-| `options` | QueryOptions | An object containing query options. | no       |
+| `options` | types.QueryOptions | An object containing query options. | no       |
 
 ### **Options**
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 
 ## Return
 
-Returns if an admin exists as a `bool` or a `KuzzleError`. See how to [handle error]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling).
+Returns a `bool` set to `true` if an admin exists and `false` if it does not, or a `KuzzleError`. See how to [handle error]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling).
 
 ## Usage
 

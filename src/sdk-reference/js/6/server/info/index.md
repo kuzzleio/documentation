@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: info
 description: Returns information about Kuzzle server.
-order: 200
 ---
 
 # info
@@ -11,18 +10,15 @@ order: 200
 
 Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
-## Signature
+## Arguments
 
 ```javascript
 /**
- * @param {Object} options - {queuable: Boolean(true)}
- * @returns {Promise<Object>}
- */
+* @param {Object} options - {queuable: Boolean(true)}
+* @returns {Promise<Object>}
+*/
 info([options])
 ```
-
-
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
@@ -32,10 +28,9 @@ info([options])
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Property   | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-
+| `queuable` | boolean | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Resolve
 

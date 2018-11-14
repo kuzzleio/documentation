@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: info
 description: Returns information about Kuzzle server.
-order: 200
 ---
 
 # info
@@ -12,17 +11,14 @@ order: 200
 
 Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
-
-## Signature
+## Arguments
 
 ```java
 public java.lang.String info(
-  io.kuzzle.sdk.QueryOptions
+io.kuzzle.sdk.QueryOptions
 );
 public java.lang.String info();
 ```
-
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
@@ -32,10 +28,9 @@ public java.lang.String info();
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
+| Property   | Type  | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
-
 
 ## Return
 

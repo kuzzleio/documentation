@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: getLastStats
 description: Returns the most recent statistics snapshot.
-order: 200
 ---
 
 # getLastStats
@@ -20,13 +19,11 @@ These statistics include:
 * the number of completed requests since the last frame
 * the number of failed requests since the last frame
 
-## Signature
+## Arguments
 
 ```cpp
-std::string getLastStats(query_options* options=nullptr)
+std::string getLastStats(kuzzleio::query_options* options=nullptr)
 ```
-
-## Arguments
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
@@ -36,10 +33,9 @@ std::string getLastStats(query_options* options=nullptr)
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-
+| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 Returns a JSON string representing the most recent statistics snapshot.

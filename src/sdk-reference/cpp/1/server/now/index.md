@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: now
 description: Returns the current server timestamp, in Epoch-millis
-order: 200
 ---
 
 # now
@@ -12,13 +11,11 @@ order: 200
 
 Fetch the current server timestamp, in Epoch-millis format.
 
-## Signature
+## Arguments
 
 ```cpp
 long long now(kuzzleio::query_options *options = nullptr)
 ```
-
-## Arguments
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
@@ -28,9 +25,9 @@ long long now(kuzzleio::query_options *options = nullptr)
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type   | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 

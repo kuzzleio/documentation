@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 algolia: true
 title: now
 description: Returns the current server timestamp, in Epoch-millis
-format.order: 200
 ---
 
 # now
@@ -12,16 +11,14 @@ format.order: 200
 
 Returns the current server timestamp, in Epoch-millis format.
 
-## Signature
+## Arguments
 
 ```java
 public java.util.Date now(
-  io.kuzzle.sdk.QueryOptions
+io.kuzzle.sdk.QueryOptions
 );
 public java.util.Date now();
 ```
-
-## Arguments
 
 | Arguments | Type   | Description                         | Required |
 | --------- | ------ | ----------------------------------- | -------- |
@@ -31,12 +28,12 @@ public java.util.Date now();
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Property   | Type  | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean| Make this request queuable or not | `true`  |
-
+| `queuable` | boolean | Make this request queuable or not | `true`  |
 
 ## Return
+
 Returns current server timestamp as `java.Util.Date`.
 
 ## Exceptions
