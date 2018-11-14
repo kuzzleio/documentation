@@ -4,9 +4,11 @@ const
   marked = require('marked'),
   MarkdownIt = require('markdown-it'),
   color = require('colors/safe'),
-  config = require('../getConfig').get();
+  readYaml = require('read-yaml');
 
 const SNIPPET_REGEX = /(\[snippet=)[a-zA-Z0-9-]+\]/g;
+
+const sdkVersions = readYaml.sync(path.join(__dirname, '../test/sdk-versions.yml'));
 
 module.exports = {
 
@@ -22,7 +24,7 @@ module.exports = {
       match.forEach(el => {
         let
           name = el.split('=')[1].slice(0, -1),
-          fullPath = path.join(__dirname, '../src/' + filename.split('/').slice(0, -1).join('/') + '/' + config.code_example.snippet_folder_name),
+          fullPath = path.join(__dirname, '../src/' + filename.split('/').slice(0, -1).join('/') + '/snippets'),
           code = '',
           filenames = fs.readdirSync(fullPath);
 
@@ -32,7 +34,7 @@ module.exports = {
             presentLanguages.push(file.split('.')[1]);
             let fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8');
 
-            code += '``` ' + config.languages[file.split('.')[1]].fullname + '\n' + fileContent + '\n```\n';
+            code += '``` ' + sdkVersions[file.split('.')[1]].fullname + '\n' + fileContent + '\n```\n';
           }
 
         });
