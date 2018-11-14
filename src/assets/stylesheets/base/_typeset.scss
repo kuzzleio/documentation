@@ -143,7 +143,7 @@ kbd {
   pre {
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
     background-color: $md-code-background;
-    font-size: 1.45rem;
+    font-size: 1.4rem;
     direction: ltr;
     color: white;
     // Wrap text and hide scollbars
@@ -221,6 +221,7 @@ kbd {
       box-decoration-break: none;
       overflow: auto;
       line-height: 1.4;
+      font-size: 1.45rem;
 
       // [mobile -]: Increase padding to match text
       @include break-to-device(mobile) {
