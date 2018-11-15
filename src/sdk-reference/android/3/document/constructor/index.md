@@ -8,7 +8,6 @@ order: 1
   
 
 # Document
-[snippet=constructor-1]
 Kuzzle handles two types of documents: realtime messages and stored documents. Document is the object representation of one of these document types.
 
 ---
@@ -41,3 +40,7 @@ Kuzzle handles two types of documents: realtime messages and stored documents. D
 * setting a new value to the ``content`` property is equivalent to calling ``setContent(data, false)``
 * setting a new value to the ``id`` property will force this value for this document
 * the ``headers`` property is inherited from the provided ``Collection`` object and can be overrided
+
+## Usage
+
+[snippet=constructor-1]

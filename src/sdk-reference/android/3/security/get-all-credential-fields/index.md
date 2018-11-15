@@ -7,8 +7,6 @@ description: Security:getAllCredentialFields
   
 
 # getAllCredentialFields
-[snippet=get-all-credential-fields-1]
-> Callback response:
 Fetches a list of accepted fields per authentication strategy.
 
 ---
@@ -33,3 +31,17 @@ Fetches a list of accepted fields per authentication strategy.
 ## Callback Response
 
 Returns an object with the credential fields.
+
+## Usage
+
+[snippet=get-all-credential-fields-1]
+> Callback response:
+
+```json
+{
+  "local": [
+    "kuid",
+    "username"
+  ]
+}
+```

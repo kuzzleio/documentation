@@ -7,7 +7,6 @@ description: Security:createRole
   
 
 # createRole
-[snippet=create-role-1]
 Create a new role in Kuzzle.
 
 <aside class="notice">
@@ -40,3 +39,7 @@ That means that a role that was just created may not be returned by the <code>se
 ## Callback Response
 
 Returns a [Role]({{ site_base_path }}sdk-reference/role) object.
+
+## Usage
+
+[snippet=create-role-1]

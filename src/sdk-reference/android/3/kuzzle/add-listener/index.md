@@ -7,7 +7,6 @@ description: Kuzzle:addListener
   
 
 # addListener
-[snippet=add-listener-1]
 Adds a listener to an event. When an event is fired, listeners are called in the order that they are added.
 
 ---
@@ -24,3 +23,7 @@ Adds a listener to an event. When an event is fired, listeners are called in the
 ## Return Value
 
 Returns the `Kuzzle` object to allow chaining.
+
+## Usage
+
+[snippet=add-listener-1]

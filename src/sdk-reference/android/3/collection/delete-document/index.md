@@ -7,8 +7,6 @@ description: Collection:deleteDocument
   
 
 # deleteDocument
-[snippet=delete-document-1]
-> Callback response:
 Delete a stored document, or all stored documents matching a search filter.
 
 <aside class="notice">
@@ -56,3 +54,12 @@ Returns the `Collection` object to allow chaining.
 ## Callback Response
 
 Returns an `array` containing the ids of the deleted documents.
+
+## Usage
+
+[snippet=delete-document-1]
+> Callback response:
+
+```json
+[ "AVCoeBkimsySTKTfa8AX" ]
+```

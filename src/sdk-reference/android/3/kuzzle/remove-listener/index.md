@@ -7,7 +7,6 @@ description: Kuzzle:removeListener
   
 
 # removeListener
-[snippet=remove-listener-1]
 Remove a listener from an event.
 
 ---
@@ -24,3 +23,7 @@ Remove a listener from an event.
 ## Return Value
 
 Returns the `Kuzzle` object to allow chaining.
+
+## Usage
+
+[snippet=remove-listener-1]

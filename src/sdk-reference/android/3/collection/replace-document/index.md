@@ -7,7 +7,6 @@ description: Collection:replaceDocument
   
 
 # replaceDocument
-[snippet=replace-document-1]
 Replace an existing document and return the updated version as a [Document]({{ site_base_path }}sdk-reference/document/) object.
 
 ---
@@ -42,3 +41,7 @@ Returns the `Collection` object to allow chaining.
 ## Callback Response
 
 Returns an updated [Document]({{ site_base_path }}sdk-reference/document/) object.
+
+## Usage
+
+[snippet=replace-document-1]

@@ -7,7 +7,6 @@ description: Kuzzle:validateMyCredentials
   
 
 # validateMyCredentials
-[snippet=validate-my-credentials-1]
 Update current user's credentials for the specified `strategy`. The credentials to send depend on the authentication plugin and the strategy.
 
 ---
@@ -34,3 +33,7 @@ Update current user's credentials for the specified `strategy`. The credentials 
 ## Callback Response
 
 Returns true or false.
+
+## Usage
+
+[snippet=validate-my-credentials-1]

@@ -7,7 +7,6 @@ description: Security:updateRole
   
 
 # updateRole
-[snippet=update-role-1]
 Performs a partial update on an existing role.
 
 ---
@@ -41,3 +40,7 @@ Returns the `Security` object to allow chaining.
 ## Callback Response
 
 Returns an updated [Role]({{ site_base_path }}sdk-reference/role) object.
+
+## Usage
+
+[snippet=update-role-1]

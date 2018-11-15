@@ -7,8 +7,6 @@ description: Kuzzle:getMyRights
   
 
 # getMyRights
-[snippet=get-my-rights-1]
-> Callback response
 Gets the rights for the current user.
 
 ---
@@ -33,3 +31,27 @@ Gets the rights for the current user.
 ## Callback Response
 
 Returns an array of rights.
+
+## Usage
+
+[snippet=get-my-rights-1]
+> Callback response
+
+```json
+[
+  {
+    "controller": "my-controller",
+    "action": "my-action",
+    "index": "*",
+    "collection": "*",
+    "value": "allowed"
+  },
+  {
+    "controller": "another-controller",
+    "action": "*",
+    "index": "my-index",
+    "collection": "*",
+    "value": "conditional"
+  }
+]
+```

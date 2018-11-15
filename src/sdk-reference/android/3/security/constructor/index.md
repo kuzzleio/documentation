@@ -8,7 +8,6 @@ order: 1
   
 
 # Constructor
-[snippet=constructor-1]
 The Security component lets you handle user permissions in Kuzzle.
 
 Please refer to our [permissions guide]({{ site_base_path }}guide/essentials/security/#user-permissions) for more information.
@@ -20,3 +19,7 @@ Please refer to our [permissions guide]({{ site_base_path }}guide/essentials/sec
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
 | `Kuzzle` | object | An instantiated [Kuzzle]({{ site_base_path }}sdk-reference/kuzzle) object |
+
+## Usage
+
+[snippet=constructor-1]

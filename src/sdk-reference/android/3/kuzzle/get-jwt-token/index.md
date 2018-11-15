@@ -7,7 +7,6 @@ description: Kuzzle:getJwtToken
   
 
 # getJwtToken
-[snippet=get-jwt-token-1]
 Get internal jwtToken used to request kuzzle.
 
 ---
@@ -15,3 +14,7 @@ Get internal jwtToken used to request kuzzle.
 ## Return Value
 
 Returns the stored JWT as a string value.
+
+## Usage
+
+[snippet=get-jwt-token-1]

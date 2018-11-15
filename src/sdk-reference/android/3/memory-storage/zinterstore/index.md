@@ -7,8 +7,6 @@ description: MemoryStorage:zinterstore
   
 
 # zinterstore
-[snippet=zinterstore-1]
-> Callback response:
 Computes the intersection of the provided sorted sets and stores the result in the `destination` key.
 
 If the destination key already exists, it is overwritten.
@@ -40,3 +38,12 @@ If the destination key already exists, it is overwritten.
 ## Callback Response
 
 Returns an integer containing the number of members in the stored intersection.
+
+## Usage
+
+[snippet=zinterstore-1]
+> Callback response:
+
+```json
+4
+```

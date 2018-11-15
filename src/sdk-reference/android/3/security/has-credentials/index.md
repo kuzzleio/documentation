@@ -7,7 +7,6 @@ description: Security:hasCredentials
   
 
 # hasCredentials
-[snippet=has-credentials-1]
 Checks if a user has credentials for the provided strategy.
 
 ---
@@ -34,4 +33,6 @@ Checks if a user has credentials for the provided strategy.
 ## Callback Response
 
 Returns a boolean value.
+## Usage
 
+[snippet=has-credentials-1]

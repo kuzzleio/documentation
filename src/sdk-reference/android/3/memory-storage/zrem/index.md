@@ -7,8 +7,6 @@ description: MemoryStorage:zrem
   
 
 # zrem
-[snippet=zrem-1]
-> Callback response:
 Removes members from a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zrem)
@@ -42,3 +40,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns an integer containing the number of members removed from the sorted set.
+
+## Usage
+
+[snippet=zrem-1]
+> Callback response:
+
+```json
+3
+```

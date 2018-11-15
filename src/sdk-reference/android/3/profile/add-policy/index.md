@@ -7,8 +7,6 @@ description: Profile:addPolicy
   
 
 # addPolicy
-[snippet=add-policy-1]
-
 Adds a role to the security profile.
 
 <aside class="note">
@@ -36,3 +34,7 @@ Updating a security profile will have no impact until the <a href="{{ site_base_
 ## Return Value
 
 Returns the `Profile` object to allow chaining calls.
+
+## Usage
+
+[snippet=add-policy-1]

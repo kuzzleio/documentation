@@ -7,8 +7,6 @@ description: Security:searchProfiles
   
 
 # searchProfiles
-[snippet=search-profiles-1]
-> Callback response:
 Search for security profiles, optionally returning only those linked to the provided list of security roles.
 
 ---
@@ -45,3 +43,19 @@ Search for security profiles, optionally returning only those linked to the prov
 ## Callback Response
 
 Returns a JSON Object 
+
+## Usage
+
+[snippet=search-profiles-1]
+> Callback response:
+
+```json
+{
+  "total": 124,
+  "profiles": [
+    // array of Profile objects
+  ],
+  // only if a scroll parameter has been provided
+  "scrollId": "<scroll identifier>"
+}
+```

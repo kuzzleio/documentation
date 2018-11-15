@@ -7,7 +7,6 @@ description: Security:updateUser
   
 
 # updateUser
-[snippet=update-user-1]
 Performs a partial update on an existing user.
 
 ---
@@ -41,3 +40,7 @@ Returns the `Security` object to allow chaining.
 ## Callback Response
 
 Returns an updated [User]({{ site_base_path }}sdk-reference/user) object.
+
+## Usage
+
+[snippet=update-user-1]

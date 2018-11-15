@@ -7,7 +7,6 @@ description: Security:fetchRole
   
 
 # fetchRole
-[snippet=fetch-role-1]
 Fetches a single stored role using its unique ID.
 
 ---
@@ -33,3 +32,7 @@ Fetches a single stored role using its unique ID.
 ## Callback Response
 
 Returns a [Role]({{ site_base_path }}sdk-reference/role) object.
+
+## Usage
+
+[snippet=fetch-role-1]

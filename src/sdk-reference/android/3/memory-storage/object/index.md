@@ -7,8 +7,6 @@ description: MemoryStorage:object
   
 
 # object
-[snippet=object-1]
-> Callback response:
 Inspects the low-level properties of a key.
 
 [[_Redis documentation_]](https://redis.io/commands/object)
@@ -35,3 +33,12 @@ Inspects the low-level properties of a key.
 ## Callback Response
 
 Returns the value of the inspected property.
+
+## Usage
+
+[snippet=object-1]
+> Callback response:
+
+```json
+"raw"
+```

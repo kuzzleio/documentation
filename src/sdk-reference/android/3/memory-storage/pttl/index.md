@@ -7,8 +7,6 @@ description: MemoryStorage:pttl
   
 
 # pttl
-[snippet=pttl-1]
-> Callback response:
 Returns the remaining time to live of a key, in milliseconds.
 
 [[_Redis documentation_]](https://redis.io/commands/pttl)
@@ -35,3 +33,12 @@ Returns the remaining time to live of a key, in milliseconds.
 ## Callback Response
 
 Returns an integer containing the remaining time to live of the key, in milliseconds.
+
+## Usage
+
+[snippet=pttl-1]
+> Callback response:
+
+```json
+43159
+```

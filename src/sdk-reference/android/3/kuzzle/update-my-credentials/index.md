@@ -7,7 +7,6 @@ description: Kuzzle:updateMyCredentials
   
 
 # updateMyCredentials
-[snippet=update-my-credentials-1]
 Update current user credentials for the specified `strategy`. The credentials to send depend on the authentication plugin and the strategy.
 
 ---
@@ -34,3 +33,7 @@ Update current user credentials for the specified `strategy`. The credentials to
 ## Callback response
 
 Returns an object reflecting the updated credentials.
+
+## Usage
+
+[snippet=update-my-credentials-1]

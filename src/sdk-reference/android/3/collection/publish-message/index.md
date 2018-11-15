@@ -7,7 +7,6 @@ description: Collection:publishMessage
   
 
 # publishMessage
-[snippet=publish-message-1]
 Publish a real-time message.
 
 ---
@@ -49,3 +48,7 @@ Returns the `Collection` object to allow chaining.
 ## Callback Response
 
 Returns a raw Kuzzle response in JSON format.
+
+## Usage
+
+[snippet=publish-message-1]

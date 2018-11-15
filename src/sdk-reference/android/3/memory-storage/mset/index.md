@@ -7,7 +7,6 @@ description: MemoryStorage:mset
   
 
 # mset
-[snippet=mset-1]
 Sets the provided keys to their respective values. If a key does not exist, it is created. Otherwise, the key’s value is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/mset)
@@ -40,3 +39,6 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns null if successful.
+## Usage
+
+[snippet=mset-1]

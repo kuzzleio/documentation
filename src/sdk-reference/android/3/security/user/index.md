@@ -7,7 +7,6 @@ description: Security:user
   
 
 # user
-[snippet=user-1]
 Instantiates a new [User]({{ site_base_path }}sdk-reference/user) object.
 
 ---
@@ -24,3 +23,7 @@ Instantiates a new [User]({{ site_base_path }}sdk-reference/user) object.
 ## Return value
 
 Returns the new [User]({{ site_base_path }}sdk-reference/user) object.
+
+## Usage
+
+[snippet=user-1]

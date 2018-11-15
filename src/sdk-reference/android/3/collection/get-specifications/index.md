@@ -7,8 +7,6 @@ description: Collection:getSpecifications
   
 
 # getSpecifications
-[snippet=get-specifications-1]
-> Callback response
 Retrieves the specifications linked to the collection object.
 
 ---
@@ -27,3 +25,25 @@ Retrieves the specifications linked to the collection object.
 | Option | Type | Description | Default |
 |---------------|---------|----------------------------------------|---------|
 | ``queuable`` | boolean | Make this request queuable or not  | ``true`` |
+
+## Usage
+
+[snippet=get-specifications-1]
+> Callback response
+
+```json
+{
+  "validation": {
+    "strict": "true",
+      "fields": {
+        "foo": {
+          "mandatory": "true",
+          "type": "string",
+          "defaultValue": "bar"
+        }
+      }
+    },
+  "index": "index",
+  "collection": "collection"
+}
+```

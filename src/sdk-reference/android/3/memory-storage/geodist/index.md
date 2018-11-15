@@ -7,8 +7,6 @@ description: MemoryStorage:geodist
   
 
 # geodist
-[snippet=geodist-1]
-> Callback response:
 Returns the distance between two geospatial members of a key (see [geoadd]({{ site_base_path }}sdk-reference/memory-storage/geoadd)).  
 The returned distance is expressed in meters by default.
 
@@ -40,3 +38,12 @@ The returned distance is expressed in meters by default.
 ## Callback Response
 
 Returns the calculated distance between the two provided geospatial points.
+
+## Usage
+
+[snippet=geodist-1]
+> Callback response:
+
+```json
+166274.1516
+```

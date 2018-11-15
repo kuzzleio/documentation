@@ -8,7 +8,6 @@ order: 1
   
 
 # CollectionMapping
-[snippet=constructor-1]
 When creating a new data collection in the persistent data storage layer, Kuzzle uses a default mapping.
 This means that, by default, you won't be able to exploit the full capabilities of our persistent data storage layer (currently handled by [ElasticSearch](https://www.elastic.co/products/elasticsearch)), and your searches may suffer from below-average performance, depending on the amount of data you stored in a collection and the complexity of your database.
 
@@ -37,3 +36,7 @@ Once a field mapping has been set, it cannot be removed without reconstructing t
 | ``mapping`` | object | Easy-to-understand list of mappings per field | get/set |
 
 **Note:** the ``headers`` property is inherited from the provided [Collection]({{ site_base_path }}sdk-reference/collection/) object and can be overrided
+
+## Usage
+
+[snippet=constructor-1]

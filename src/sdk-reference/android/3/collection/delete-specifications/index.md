@@ -7,8 +7,6 @@ description: Collection:deleteSpecifications
   
 
 # deleteSpecifications
-[snippet=delete-specifications-1]
-> Callback response:
 Delete specifications linked to the collection object.
 
 ---
@@ -34,3 +32,14 @@ Delete specifications linked to the collection object.
 ## Return Value
 
 Returns the `Collection` object to allow chaining.
+
+## Usage
+
+[snippet=delete-specifications-1]
+> Callback response:
+
+```json
+{
+  "acknowledged": true
+}
+```

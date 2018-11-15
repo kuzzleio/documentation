@@ -7,7 +7,6 @@ description: Security:replaceUser
   
 
 # replaceUser
-[snippet=replace-user-1]
 Replaces an existing user.
 
 ---
@@ -41,3 +40,7 @@ Returns the `Security` object to allow chaining.
 ## Callback Response
 
 Returns a [User]({{ site_base_path }}sdk-reference/user) object.
+
+## Usage
+
+[snippet=replace-user-1]

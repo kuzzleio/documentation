@@ -7,8 +7,6 @@ description: MemoryStorage:geohash
   
 
 # geohash
-[snippet=geohash-1]
-> Callback response:
 Returns a valid [geohash](https://en.wikipedia.org/wiki/Geohash) for the provided key's members (see [geoadd]({{ site_base_path }}sdk-reference/memory-storage/geoadd)).  
 
 [[_Redis documentation_]](https://redis.io/commands/geohash)
@@ -37,3 +35,12 @@ Returns a valid [geohash](https://en.wikipedia.org/wiki/Geohash) for the provide
 ## Callback Response
 
 Returns an array of geohashes, in the same order than the provided members list.
+
+## Usage
+
+[snippet=geohash-1]
+> Callback response:
+
+```json
+["sqc8b49rny0", "sqdtr74hyu0"]
+```

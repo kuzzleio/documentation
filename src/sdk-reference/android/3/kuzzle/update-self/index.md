@@ -7,7 +7,6 @@ description: Kuzzle:updateSelf
   
 
 # updateSelf
-[snippet=update-self-1]
 ---
 
 ## updateSelf(content, [options], [callback])
@@ -39,3 +38,7 @@ Returns the `Kuzzle` SDK object to allow chaining.
 ## Callback Response
 
 Returns the updated user object.
+
+## Usage
+
+[snippet=update-self-1]

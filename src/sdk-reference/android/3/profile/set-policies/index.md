@@ -7,8 +7,6 @@ description: Profile:setPolicies
   
 
 # setPolicies
-[snippet=set-policies-1]
-
 Replaces the roles associated with this security profile.
 
 ---
@@ -36,3 +34,7 @@ Returns the `Profile` object.
 <aside class="note">
 Updating a profile will have no impact until the <code>save</code> method is called
 </aside>
+
+## Usage
+
+[snippet=set-policies-1]

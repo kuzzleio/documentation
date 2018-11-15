@@ -7,8 +7,6 @@ description: Collection:scrollSpecifications
   
 
 # scrollSpecifications
-[snippet=scroll-specifications-1]
-> Callback response
 Returns a JSON object containing the next page of the scroll session, and the `scrollId` to be used in the next `scroll` action.  
 A scroll session is always initiated by a `searchSpecification` action with the `scroll` argument.
 
@@ -30,3 +28,18 @@ A scroll session is always initiated by a `searchSpecification` action with the 
 |---------------|---------|----------------------------------------|---------|
 | ``queuable`` | boolean | Make this request queuable or not  | ``true`` |
 | ``scroll`` | string | Re-initializes the scroll session timeout to its value. If not defined, the scroll timeout is defaulted to a Kuzzle configuration | ``undefined`` |
+
+## Usage
+
+[snippet=scroll-specifications-1]
+> Callback response
+
+```json
+{
+  "hits": [
+    {"first": "specification"},
+    {"second": "specification"}
+  ],
+  "total": 2
+}
+```

@@ -7,8 +7,6 @@ description: Security:deleteCredentials
   
 
 # deleteCredentials
-[snippet=delete-credentials-1]
-> Callback response
 Delete current user's credentials for the specified `strategy`.
  
 ---
@@ -35,3 +33,14 @@ Delete current user's credentials for the specified `strategy`.
 ## Callback Response
 
 Returns an object reflecting the query status.
+
+## Usage
+
+[snippet=delete-credentials-1]
+> Callback response
+
+```json
+{
+  "acknowledged": true
+}
+```

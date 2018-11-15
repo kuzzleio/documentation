@@ -7,7 +7,6 @@ description: Document:publish
   
 
 # publish
-[snippet=publish-1]
 Publishes the content of this document as a real-time message.
 
 ---
@@ -32,3 +31,7 @@ Publishes the content of this document as a real-time message.
 ## Return Value
 
 Returns this `Document` object to allow chaining.
+
+## Usage
+
+[snippet=publish-1]

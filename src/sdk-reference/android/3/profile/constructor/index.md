@@ -8,7 +8,6 @@ order: 1
   
 
 # Constructors
-[snippet=constructor-1]
 Instantiates a new `Profile` object, representing a security [profile]({{ site_base_path }}guide/essentials/security/#users-profiles-and-roles), which is a set of one or many [Role]({{ site_base_path }}sdk-reference/role) objects.
 
 ---
@@ -39,3 +38,7 @@ Instantiates a new `Profile` object, representing a security [profile]({{ site_b
 ## Return Value
 
 Returns to the `Profile` object.
+
+## Usage
+
+[snippet=constructor-1]

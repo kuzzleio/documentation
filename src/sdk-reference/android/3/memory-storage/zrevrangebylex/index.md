@@ -7,8 +7,6 @@ description: MemoryStorage:zrevrangebylex
   
 
 # zrevrangebylex
-[snippet=zrevrangebylex-1]
-> Callback response:
 Identical to [zrangebylex]({{ site_base_path }}sdk-reference/memory-storage/zrangebylex) except that the sorted set is traversed in descending order.
 
 [[_Redis documentation_]](https://redis.io/commands/zrevrangebylex)
@@ -44,3 +42,16 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns an array of matching members.
+
+## Usage
+
+[snippet=zrevrangebylex-1]
+> Callback response:
+
+```json
+[
+  "member1",
+  "member2",
+  "..."
+]
+```

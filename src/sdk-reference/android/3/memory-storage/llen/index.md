@@ -7,8 +7,6 @@ description: MemoryStorage:llen
   
 
 # llen
-[snippet=llen-1]
-> Callback response:
 Counts the number of items in a list.
 
 [[_Redis documentation_]](https://redis.io/commands/llen)
@@ -36,3 +34,12 @@ Counts the number of items in a list.
 ## Callback Response
 
 Returns an integer containing the number of items of a list.
+
+## Usage
+
+[snippet=llen-1]
+> Callback response:
+
+```json
+3
+```

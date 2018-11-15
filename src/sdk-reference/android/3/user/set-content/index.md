@@ -7,7 +7,6 @@ description: User:setContent
   
 
 # setContent
-[snippet=set-content-1]
 Replaces the content of User.
 
 <aside class="note">
@@ -27,3 +26,7 @@ Updating a user will have no impact until the <a href="{{ site_base_path }}sdk-r
 ## Return Value
 
 Returns the `User` object.
+
+## Usage
+
+[snippet=set-content-1]

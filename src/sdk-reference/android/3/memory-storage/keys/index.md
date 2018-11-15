@@ -7,8 +7,6 @@ description: MemoryStorage:keys
   
 
 # keys
-[snippet=keys-1]
-> Callback response:
 Returns all keys matching the provided pattern.
 
 [[_Redis documentation_]](https://redis.io/commands/keys)
@@ -36,3 +34,16 @@ Returns all keys matching the provided pattern.
 ## Callback Response
 
 Returns an array of key names matching the provided pattern.
+
+## Usage
+
+[snippet=keys-1]
+> Callback response:
+
+```json
+[
+  "foo",
+  "foobar",
+  "foofighters"
+]
+```

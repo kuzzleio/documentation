@@ -7,8 +7,6 @@ description: Collection:updateSpecifications
   
 
 # updateSpecifications
-[snippet=update-specifications-1]
-> Callback response
 Update parts of a specification, by replacing some fields or adding new ones.  
 Note that you cannot remove fields this way: missing fields will simply be left unchanged.
 
@@ -37,3 +35,25 @@ Note that you cannot remove fields this way: missing fields will simply be left 
 ## Return Value
 
 Returns the `Collection` object to allow chaining.
+
+## Usage
+
+[snippet=update-specifications-1]
+> Callback response
+
+```json
+{
+  "index": {
+    "collection": {
+      "strict":"true",
+      "fields": {
+        "foo": {
+          "mandatory": "true",
+          "type": "string",
+          "defaultValue": "bar"
+        }
+      }
+    }
+  }
+}
+```

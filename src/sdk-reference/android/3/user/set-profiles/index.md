@@ -7,7 +7,6 @@ description: User:setProfiles
   
 
 # setProfiles
-[snippet=set-profiles-1]
 Replaces the security profiles linked to the user.
 
 <aside class="note">
@@ -33,3 +32,7 @@ Updating a user will have no impact until the <code>create</code> or <code>repla
 ## Return Value
 
 Returns the `User` object.
+
+## Usage
+
+[snippet=set-profiles-1]

@@ -7,7 +7,6 @@ description: Document:save
   
 
 # save
-[snippet=save-1]
 Saves this document into Kuzzle.
 
 If this is a new document, this function will create it in Kuzzle and the ``id`` property will be made available.  
@@ -43,3 +42,7 @@ Returns this `Document` object to allow chaining.
 ## Callback Response
 
 Return this `Document` object once the document has been saved.
+
+## Usage
+
+[snippet=save-1]

@@ -7,8 +7,6 @@ description: Kuzzle:now
   
 
 # now
-[snippet=now-1]
-> Callback response:
 Retrieves the current Kuzzle time.
 
 ---
@@ -33,3 +31,12 @@ Retrieves the current Kuzzle time.
 ## Callback Response
 
 Returns an `integer` containing the current Kuzzle time, encoded as an UTC Epoch time in milliseconds.
+
+## Usage
+
+[snippet=now-1]
+> Callback response:
+
+```json
+1447151167622
+```

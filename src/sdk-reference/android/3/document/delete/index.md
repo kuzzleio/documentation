@@ -7,7 +7,6 @@ description: Document:delete
   
 
 # delete
-[snippet=delete-1]
 Deletes this document in Kuzzle.
 
 ---
@@ -34,3 +33,7 @@ Deletes this document in Kuzzle.
 ## Callback Response
 
 Returns a string containing the ID of the deleted document.
+
+## Usage
+
+[snippet=delete-1]

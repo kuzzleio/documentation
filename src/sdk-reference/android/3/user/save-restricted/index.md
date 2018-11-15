@@ -7,7 +7,6 @@ description: User:saveRestricted
   
 
 # saveRestricted
-[snippet=save-restricted-1]
 Saves this user as restricted in Kuzzle.
 ---
 
@@ -37,3 +36,7 @@ Returns the `User` object to allow chaining.
 ## Callback Response
 
 Returns a `User` object.
+
+## Usage
+
+[snippet=save-restricted-1]

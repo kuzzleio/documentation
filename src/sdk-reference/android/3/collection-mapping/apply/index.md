@@ -7,7 +7,6 @@ description: CollectionMapping:apply
   
 
 # apply
-[snippet=apply-1]
 Applies the new mapping to the data collection.
 
 ---
@@ -38,3 +37,7 @@ Returns this `CollectionMapping` object to allow chaining.
 ## Callback Response
 
 Returns the updated `CollectionMapping` object.
+
+## Usage
+
+[snippet=apply-1]

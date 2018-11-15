@@ -7,7 +7,6 @@ description: Kuzzle:createMyCredentials
   
 
 # createMyCredentials
-[snippet=create-my-credentials-1]
 Create the current user's credentials for the specified strategy. The credentials required will depend on the authentication plugin and strategy.
 
 ---
@@ -34,3 +33,7 @@ Create the current user's credentials for the specified strategy. The credential
 ## Callback Response
 
 Returns an object with the created credentials.
+
+## Usage
+
+[snippet=create-my-credentials-1]

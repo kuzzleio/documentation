@@ -7,7 +7,6 @@ description: Security:scrollProfiles
   
 
 # scrollProfiles
-[snippet=scroll-profiles-1]
 Scrolls on stored profiles using the provided scroll ID.
 
 ---
@@ -33,3 +32,7 @@ Scrolls on stored profiles using the provided scroll ID.
 ## Callback Response
 
 Returns the list of fetched security profiles according to the scroll parameters (offset, limit etc.).
+
+## Usage
+
+[snippet=scroll-profiles-1]

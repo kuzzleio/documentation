@@ -7,7 +7,6 @@ description: Role:update
   
 
 # update
-[snippet=update-1]
 Updates the role object in Kuzzle.
 
 <aside class="warning">
@@ -51,3 +50,7 @@ Returns the `Role` object to allow chaining.
 ## Callback Response
 
 Returns the updated version of this object.
+
+## Usage
+
+[snippet=update-1]

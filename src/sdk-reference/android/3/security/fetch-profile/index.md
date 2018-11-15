@@ -7,7 +7,6 @@ description: Security:fetchProfile
   
 
 # fetchProfile
-[snippet=fetch-profile-1]
 Fetches a single stored profile using its unique ID.
 
 ---
@@ -33,3 +32,7 @@ Fetches a single stored profile using its unique ID.
 ## Callback Response
 
 Returns a security [Profile]({{ site_base_path }}sdk-reference/profile) object.
+
+## Usage
+
+[snippet=fetch-profile-1]

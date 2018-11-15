@@ -7,8 +7,6 @@ description: Security:searchRoles
   
 
 # searchRoles
-[snippet=search-roles-1]
-> Callback response:
 Search for security roles, optionally returning only the roles giving access to the provided controller names.
 
 ---
@@ -44,3 +42,17 @@ Search for security roles, optionally returning only the roles giving access to 
 ## Callback Response
 
 Return a JSON Object
+
+## Usage
+
+[snippet=search-roles-1]
+> Callback response:
+
+```json
+{
+  "total": 124,
+  "roles": [
+    // array of Role
+  ]
+}
+```

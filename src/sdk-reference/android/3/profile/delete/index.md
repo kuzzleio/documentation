@@ -7,7 +7,6 @@ description: Profile:delete
   
 
 # delete
-[snippet=delete-1]
 Deletes this security profile from Kuzzle.
 
 ---
@@ -32,3 +31,7 @@ Deletes this security profile from Kuzzle.
 ## Callback Response
 
 Returns the ID of the deleted profile.
+
+## Usage
+
+[snippet=delete-1]

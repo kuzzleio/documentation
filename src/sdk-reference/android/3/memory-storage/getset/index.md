@@ -7,8 +7,6 @@ description: MemoryStorage:getset
   
 
 # getset
-[snippet=getset-1]
-> Callback response:
 Sets a new value for a key and returns its previous value.
 
 [[_Redis documentation_]](https://redis.io/commands/getset)
@@ -43,3 +41,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns the key's previous value.
+
+## Usage
+
+[snippet=getset-1]
+> Callback response:
+
+```json
+"value"
+```

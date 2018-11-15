@@ -7,8 +7,6 @@ description: MemoryStorage:hincrbyfloat
   
 
 # hincrbyfloat
-[snippet=hincrbyfloat-1]
-> Callback response:
 Increments the number stored in a hash field by the provided float value.
 
 [[_Redis documentation_]](https://redis.io/commands/hincrbyfloat)
@@ -44,3 +42,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns the newly incremented value, as a floating point number.
+
+## Usage
+
+[snippet=hincrbyfloat-1]
+> Callback response:
+
+```json
+48.14159
+```

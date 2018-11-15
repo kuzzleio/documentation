@@ -7,7 +7,6 @@ description: Security:role
   
 
 # role
-[snippet=role-1]
 Instantiate a new [Role]({{ site_base_path }}sdk-reference/role) object.
 
 ---
@@ -24,3 +23,7 @@ Instantiate a new [Role]({{ site_base_path }}sdk-reference/role) object.
 ## Return Value
 
 Returns the new [Role]({{ site_base_path }}sdk-reference/role) object.
+
+## Usage
+
+[snippet=role-1]

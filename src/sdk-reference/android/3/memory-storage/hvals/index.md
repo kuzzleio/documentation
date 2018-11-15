@@ -7,8 +7,6 @@ description: MemoryStorage:hvals
   
 
 # hvals
-[snippet=hvals-1]
-> Callback response:
 Returns all values contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hvals)
@@ -36,3 +34,16 @@ Returns all values contained in a hash.
 ## Callback Response
 
 Returns an array containing the values of a hash.
+
+## Usage
+
+[snippet=hvals-1]
+> Callback response:
+
+```json
+[
+  "field1's value",
+  "field2's value",
+  "..."
+]
+```

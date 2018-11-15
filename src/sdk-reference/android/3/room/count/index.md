@@ -7,8 +7,6 @@ description: Room:count
   
 
 # count
-[snippet=count-1]
-> Callback response
 Returns the number of subscribers in the room.
 
 ---
@@ -24,3 +22,12 @@ Returns the number of subscribers in the room.
 ## Callback Response
 
 Returns an `integer` containing the number of users subscribing to this room.
+
+## Usage
+
+[snippet=count-1]
+> Callback response
+
+```json
+1
+```

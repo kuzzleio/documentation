@@ -7,7 +7,6 @@ description: Collection:validateSpecifications
   
 
 # validateSpecifications
-[snippet=validate-specifications-1]
 Validate a specification.
 
 ---
@@ -33,3 +32,7 @@ Validate a specification.
 ## Callback Response
 
 Returns a boolean indicating whether or not the input specifications is valid or not.
+
+## Usage
+
+[snippet=validate-specifications-1]

@@ -7,8 +7,6 @@ description: Collection:create
   
 
 # create
-[snippet=create-1]
-> Callback response:
 Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.  
 
 {{{since "1.3.0"}}}
@@ -47,3 +45,24 @@ Returns the `Collection` object to allow chaining.
 ## Callback Response
 
 Returns a `JSON object` containing the raw Kuzzle response.
+
+## Usage
+
+[snippet=create-1]
+> Callback response:
+
+```json
+{
+  "status": 200,
+  "error": null,
+  "requestId": "<request unique identifier>",
+  "controller": "collection",
+  "action": "create",
+  "collection": "<new collection name>",
+  "index": "index",
+  "volatile": null,
+  "result": {
+    "acknowledged": true
+  }
+}
+```

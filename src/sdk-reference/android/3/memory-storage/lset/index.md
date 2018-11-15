@@ -7,7 +7,6 @@ description: MemoryStorage:lset
   
 
 # lset
-[snippet=lset-1]
 Sets the list element at `index` with the provided value.
 
 [[_Redis documentation_]](https://redis.io/commands/lset)
@@ -42,3 +41,6 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns null if successful.
+## Usage
+
+[snippet=lset-1]
