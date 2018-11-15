@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 document.refresh(function (error, result) {
   // called once the refresh action has been completed

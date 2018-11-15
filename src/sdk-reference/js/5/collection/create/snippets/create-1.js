@@ -1,4 +1,3 @@
-
 // Optional: a mapping can be provided and will be
 // applied when the collection is created
 const mapping = {

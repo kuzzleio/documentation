@@ -7,8 +7,6 @@ description: Kuzzle:login
   
 
 # login
-
-[snippet=login-1]
 Login a user using a specified strategy and their credentials.
 
 If the Kuzzle response contains a JWT Token, the Kuzzle SDK token is set and the `loginAttempt` event is fired immediately with the following object:
@@ -45,3 +43,7 @@ This strategy requires a `username` and `password` as `credentials`
 ## Callback Response
 
 Returns a JSON object containing the Kuzzle response.
+
+## Usage
+
+[snippet=login-1]

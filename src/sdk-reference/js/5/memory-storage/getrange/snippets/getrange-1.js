@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.getrange('key', 2, 4, function (err, value) {
   // callback called once the action has completed

@@ -1,4 +1,3 @@
-
 // Using callbacks (node.js or browser)
 kuzzle.getMyCredentials('local', function (error, credentials) {
 

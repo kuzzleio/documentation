@@ -1,4 +1,3 @@
-
 // Deleting specifications using callbacks (NodeJS or Web Browser)
 kuzzle
   .collection('collection', 'index')

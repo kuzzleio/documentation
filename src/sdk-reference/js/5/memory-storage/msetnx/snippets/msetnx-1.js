@@ -1,4 +1,3 @@
-
 var entries = [
   {key: 'key1', value: 'foo'},
   {key: 'key2', value: 'bar'},

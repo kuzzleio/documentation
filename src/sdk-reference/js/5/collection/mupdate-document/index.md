@@ -7,12 +7,6 @@ description: Collection:mupdateDocument
   
 
 # mUpdateDocument
-
-[snippet=mupdate-document-1]
-> Callback response:
-
-[snippet=mupdate-document-2]
-
 Update the provided [Documents]({{ site_base_path }}sdk-reference/document/).
 
 ---
@@ -45,3 +39,18 @@ Returns the `Collection` object to allow chaining.
 
 Returns a `JSON object` containing the raw Kuzzle response.
 Can return a 206 partial error in cases where documents could not be updated. 
+
+## Usage
+
+[snippet=mupdate-document-1]
+> Callback response:
+
+```json
+{
+  "hits": [
+    {"first": "document"},
+    {"second": "document"}
+  ],
+  "total": 2
+}
+```

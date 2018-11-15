@@ -1,4 +1,3 @@
-
 room.renew({in: {field: ['some', 'new', 'filter']}}, function (err, res) {
   // called each time a change is detected on documents matching this filter
 

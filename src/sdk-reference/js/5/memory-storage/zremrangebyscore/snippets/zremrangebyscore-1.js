@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.zremrangebyscore('key', 1, 2, function (err, count) {
   // callback called once the action has completed

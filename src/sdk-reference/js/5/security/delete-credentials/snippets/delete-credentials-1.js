@@ -1,4 +1,3 @@
-
 // Using callbacks (node.js or browser)
 kuzzle.security.deleteCredentials('local', 'kuid', function (error, result) {
 

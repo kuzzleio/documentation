@@ -7,8 +7,6 @@ description: Role:setContent
   
 
 # setContent
-
-[snippet=set-content-1]
 Replaces the content of the `Role` object.
 
 <aside class="note">
@@ -28,3 +26,7 @@ Updating a role content will have no impact until the <a href="{{ site_base_path
 ## Return Value
 
 Returns the `Role` object.
+
+## Usage
+
+[snippet=set-content-1]

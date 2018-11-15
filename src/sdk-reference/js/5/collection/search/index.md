@@ -7,8 +7,6 @@ description: Collection:search
   
 
 # search
-
-[snippet=search-1]
 Executes a search on the data collection.
 
 <aside class="notice">
@@ -55,3 +53,7 @@ See [`SearchResult.fetchNext`]({{ site_base_path }}sdk-reference/search-result/f
 ## Callback Response
 
 Returns an instance of [SearchResult]({{ site_base_path }}sdk-reference/search-result).
+
+## Usage
+
+[snippet=search-1]

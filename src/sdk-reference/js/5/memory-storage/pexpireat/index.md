@@ -7,12 +7,6 @@ description: MemoryStorage:pexpireat
   
 
 # pexpireat
-
-[snippet=pexpireat-1]
-> Callback response:
-
-[snippet=pexpireat-2]
-
 Sets an expiration timestamp on a key. After the timestamp has been reached, the key will automatically be deleted.  
 The `timestamp` parameter accepts an [Epoch time](https://en.wikipedia.org/wiki/Unix_time) value, in milliseconds.
 
@@ -46,3 +40,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns a boolean specifying if the operation was successful or not.
+
+## Usage
+
+[snippet=pexpireat-1]
+> Callback response:
+
+```json
+true
+```

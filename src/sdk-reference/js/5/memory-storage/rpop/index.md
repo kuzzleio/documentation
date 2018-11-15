@@ -7,12 +7,6 @@ description: MemoryStorage:rpop
   
 
 # rpop
-
-[snippet=rpop-1]
-> Callback response:
-
-[snippet=rpop-2]
-
 Removes and returns the last element of a list.
 
 [[_Redis documentation_]](https://redis.io/commands/rpop)
@@ -43,3 +37,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns the value of the removed item.
+
+## Usage
+
+[snippet=rpop-1]
+> Callback response:
+
+```json
+"foo"
+```

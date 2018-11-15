@@ -1,4 +1,3 @@
-
 // Deleting one document using callbacks (NodeJS or Web Browser)
 kuzzle
   .collection('collection', 'index')

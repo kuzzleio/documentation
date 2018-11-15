@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.hscan('key', 0, function (err, page) {
   // callback called once the action has completed

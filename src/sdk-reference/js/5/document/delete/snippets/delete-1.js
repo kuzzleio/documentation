@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 document.delete(function (error, result) {
   // called once the delete action has been completed

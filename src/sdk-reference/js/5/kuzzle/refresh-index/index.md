@@ -7,8 +7,6 @@ description: Kuzzle:refreshIndex
   
 
 # refreshIndex
-
-[snippet=refresh-index-1]
 When writing or deleting documents in Kuzzle, the update needs to be indexed before being reflected
 in the search index.  
 By default, this operation can take up to 1 second.
@@ -54,3 +52,7 @@ Returns the `Kuzzle` SDK object to allow chaining.
 ## Callback Response
 
 Returns a JSON structure matching the response from Elasticsearch.
+
+## Usage
+
+[snippet=refresh-index-1]

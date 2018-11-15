@@ -1,4 +1,3 @@
-
 var userContent = {
   // A "profileIds" field is required to bind a user to an existing profile
   profileIds: ['some profile'],

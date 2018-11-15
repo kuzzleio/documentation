@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.sismember('key', 'member', function (err, isMember) {
   // callback called once the action has completed

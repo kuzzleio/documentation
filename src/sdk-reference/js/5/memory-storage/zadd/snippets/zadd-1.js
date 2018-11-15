@@ -1,4 +1,3 @@
-
 var elements = [
   {'score': 1, 'member': 'foo'},
   {'score': 2, 'member': 'bar'},

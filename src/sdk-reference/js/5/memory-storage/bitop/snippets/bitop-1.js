@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.bitop('key', 'AND', ['srckey1', 'srckey2', '...'], function (err, length) {
   // callback called once the action has completed

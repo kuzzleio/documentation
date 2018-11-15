@@ -1,4 +1,3 @@
-
 const
   filters = {
     match_all: {

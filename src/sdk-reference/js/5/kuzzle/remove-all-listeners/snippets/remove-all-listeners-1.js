@@ -1,4 +1,3 @@
-
 // Removes all listeners on the "unsubscribed" global event
 kuzzle.removeAllListeners('disconnected');
 

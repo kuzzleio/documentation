@@ -8,8 +8,6 @@ order: 1
   
 
 # Constructors
-
-[snippet=constructor-1]
 Instantiates a new User object, which is a representation of a Kuzzle user and is linked to a security [Profile]({{ site_base_path }}sdk-reference/profile).
 ---
 
@@ -39,3 +37,7 @@ Instantiates a new User object, which is a representation of a Kuzzle user and i
 ## Return Value
 
 Returns the `User` object.
+
+## Usage
+
+[snippet=constructor-1]

@@ -1,4 +1,3 @@
-
 var updateContent = {
   firstname: 'My Name Is',
   lastname: 'Jonas'

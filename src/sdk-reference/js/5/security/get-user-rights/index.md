@@ -7,11 +7,26 @@ description: Security:getUserRights
   
 
 # getUserRights
-
-[snippet=get-user-rights-1]
 > Callback response example
 
-[snippet=get-user-rights-2]
+```json
+[
+  {
+    "controller": "my-controller", 
+    "action": "my-action", 
+    "index": "*", 
+    "collection": "*",
+    "value": "allowed"
+  },
+  {
+    "controller": "another-controller", 
+    "action": "*", 
+    "index": "my-index", 
+    "collection": "*",
+    "value": "conditional"
+  }
+]
+```
 
 Given a Kuzzle user id (`kuid`), retrieves the list of permissions granted to that user.
 
@@ -38,4 +53,6 @@ Given a Kuzzle user id (`kuid`), retrieves the list of permissions granted to th
 ### Callback Response
 
 Returns an array of objects.
+## Usage
 
+[snippet=get-user-rights-1]

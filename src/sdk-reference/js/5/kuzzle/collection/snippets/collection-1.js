@@ -1,4 +1,3 @@
-
 var collection = kuzzle.collection('collection', 'index');
 
 // or using a default index:

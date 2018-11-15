@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.getbit('key', 10, function (err, bit) {
   // callback called once the action has completed

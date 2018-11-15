@@ -1,4 +1,3 @@
-
 var profile = kuzzle.security.fetchProfile('myprofile');
 var profileDefinition = {
   policies: [

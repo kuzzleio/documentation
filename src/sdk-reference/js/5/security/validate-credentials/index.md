@@ -7,11 +7,7 @@ description: Security:validateCredentials
   
 
 # validateCredentials
-
-[snippet=validate-credentials-1]
->> Callback response
-
-[snippet=validate-credentials-2]
+>
 
 Validate credentials of user with `kuid` for the specified `strategy`. Resolves to an error if the credentials are invalid.
 
@@ -40,3 +36,12 @@ Validate credentials of user with `kuid` for the specified `strategy`. Resolves 
 ## Callback Response
 
 Returns a boolean value if the credentials are valid, otherwise returns an error.
+
+## Usage
+
+[snippet=validate-credentials-1]
+> Callback response
+
+```json
+true
+```

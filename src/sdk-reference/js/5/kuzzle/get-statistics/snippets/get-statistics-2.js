@@ -1,10 +1,14 @@
-on
-[
-  {
-    "connections": { "socketio": 1 },
-    "ongoingRequests": { "rest": 0, "socketio": 0 },
-    "completedRequests": { "mqtt": 37, "socketio": 17 },
-    "failedRequests": { "socketio": 1 },
-    "timestamp": "1453110641308"
-  }
-]
+// Date can be either in ISO format or a timestamp (utc, in milliseconds)
+var ts = Date.parse('2015-10-26T12:19:10.213Z');
+
+// Using callbacks (NodeJS or Web Browser)
+kuzzle.getStatistics(ts, function (error, statistics) {
+
+});
+
+// Using promises (NodeJS only)
+kuzzle
+  .getStatisticsPromise(ts)
+  .then(statistics => {
+
+  });

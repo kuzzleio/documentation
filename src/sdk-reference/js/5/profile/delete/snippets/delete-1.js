@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 profile
   .delete(function(error, result) {

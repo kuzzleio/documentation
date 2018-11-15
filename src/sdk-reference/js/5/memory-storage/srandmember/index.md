@@ -7,12 +7,6 @@ description: MemoryStorage:srandmember
   
 
 # srandmember
-
-[snippet=srandmember-1]
-> Callback response:
-
-[snippet=srandmember-2]
-
 Returns one or more members of a set of unique values, at random.  
 If `count` is provided and is positive, the returned values are unique. If `count` is negative, a set member can be returned multiple times.
 
@@ -41,3 +35,16 @@ If `count` is provided and is positive, the returned values are unique. If `coun
 ## Callback Response
 
 Returns an array of members of a set of unique values.
+
+## Usage
+
+[snippet=srandmember-1]
+> Callback response:
+
+```json
+[
+  "member1",
+  "member2",
+  "..."
+]
+```

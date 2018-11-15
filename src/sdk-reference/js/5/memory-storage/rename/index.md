@@ -7,8 +7,6 @@ description: MemoryStorage:rename
   
 
 # rename
-
-[snippet=rename-1]
 Renames a key to `newkey`. If `newkey` already exists, it is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/rename)
@@ -42,3 +40,6 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns null if successful.
+## Usage
+
+[snippet=rename-1]

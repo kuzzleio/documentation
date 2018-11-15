@@ -1,4 +1,3 @@
-
 kuzzle
   .collection('collection', 'index')
   .setHeaders({

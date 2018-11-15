@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.geodist('key', 'Palermo', 'Catania', function (err, distance) {
   // callback called once the action has completed

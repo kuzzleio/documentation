@@ -7,8 +7,6 @@ description: Security:isActionAllowed
   
 
 # isActionAllowed
-
-[snippet=is-action-allowed-1]
 Specifies if an action is allowed, denied or conditional based on the rights provided as the first argument:
 
 - `allowed` is returned when an action is authorized without condition
@@ -38,3 +36,7 @@ You can get the rights from Kuzzle by using <a href="{{ site_base_path }}sdk-ref
 ## Return Value
 
 Returns either `allowed`, `denied` or `conditional`.
+
+## Usage
+
+[snippet=is-action-allowed-1]

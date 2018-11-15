@@ -1,4 +1,3 @@
-
 // optional: retrieve only roles allowing access to the
 // provided controller names
 const filters = {

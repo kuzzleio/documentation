@@ -1,4 +1,3 @@
-
 var
   collection = kuzzle.collection('foo', 'bar'),
   filters = {equals: {foo: 'bar'}},

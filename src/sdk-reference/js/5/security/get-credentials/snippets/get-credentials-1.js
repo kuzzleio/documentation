@@ -1,4 +1,3 @@
-
 // Using callbacks (node.js or browser)
 kuzzle.security.getCredentials('local', 'kuid', function (error, credentials) {
 

@@ -1,4 +1,3 @@
-
 let dataMapping = kuzzle
   .collection('collection', 'index')
   .collectionMapping({someField: {type: 'string', index: 'analyzed'}})

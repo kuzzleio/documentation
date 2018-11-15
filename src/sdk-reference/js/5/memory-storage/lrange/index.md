@@ -7,12 +7,6 @@ description: MemoryStorage:lrange
   
 
 # lrange
-
-[snippet=lrange-1]
-> Callback response:
-
-[snippet=lrange-2]
-
 Returns the list elements between the start and stop positions (inclusive).
 
 [[_Redis documentation_]](https://redis.io/commands/lrange)
@@ -41,3 +35,15 @@ Returns the list elements between the start and stop positions (inclusive).
 ## Callback Response
 
 Returns an array of retrieved values.
+
+## Usage
+
+[snippet=lrange-1]
+> Callback response:
+
+```json
+[
+  "foo",
+  "bar"
+]
+```

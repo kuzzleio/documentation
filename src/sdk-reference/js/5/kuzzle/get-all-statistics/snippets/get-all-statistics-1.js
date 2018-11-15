@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.getAllStatistics(function (err, stats) {
   stats.forEach(function (frame) {

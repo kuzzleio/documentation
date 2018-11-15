@@ -1,4 +1,3 @@
-
 /*
  Constructors are not exposed in the JS/Node SDK.
  Document objects are returned by various Collection methods.

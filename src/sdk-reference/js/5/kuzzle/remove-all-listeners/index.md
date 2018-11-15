@@ -7,8 +7,6 @@ description: Kuzzle:removeAllListeners
   
 
 # removeAllListeners
-
-[snippet=remove-all-listeners-1]
 Removes all listeners, either from a specific event or from all events
 
 ---
@@ -24,3 +22,7 @@ Removes all listeners, either from a specific event or from all events
 ## Return Value
 
 Returns the `Kuzzle` object to allow chaining.
+
+## Usage
+
+[snippet=remove-all-listeners-1]

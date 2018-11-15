@@ -1,4 +1,3 @@
-
 /*
  Constructors are not exposed in the JS/Node SDK.
  Room objects are returned by Collection.subscribe and

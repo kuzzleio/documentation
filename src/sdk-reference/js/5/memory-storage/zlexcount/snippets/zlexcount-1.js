@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.zlexcount('key', '[b', '[f' function (err, count) {
   // callback called once the action has completed

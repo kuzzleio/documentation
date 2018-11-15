@@ -62,20 +62,47 @@ description: #{human_controller}:#{human_method}#{method == "constructor" ? "\no
 
   # Remove snippets
   count = 1
-  while match = index_content.match(/```js(.*?)```/m) do
+  snippets = []
+  while match = index_content.match(/```js\n(.*?)```/m) do
     snippet = "#{method}-#{count}.js"
-    index_content.sub!(/```js(.*?)```/m, "[snippet=#{method}-#{count}]")
+    if controller.downcase == "essentials"
+      index_content.sub!(/```js\n(.*?)```/m, "[snippet=#{method}-#{count}]")
+    else
+      index_content.sub!(/```js\n(.*?)```/m, "")
+    end
+    snippets << "[snippet=#{method}-#{count}]"
     File.write("#{snippet_dir}/#{snippet}", match[1])
     count += 1
   end
   index_content.gsub!(/```java(.*?)```/m, '')
   index_content.gsub!(/```php(.*?)```/m, '')
 
+  # Description
+  index_content.gsub(/# fetchNext(.*)\-\-\-/m, '')
+
+  # Add Usage section
+  if snippets.any? && controller.downcase != "essentials"
+    index_content += %{
+## Usage
+
+#{snippets.join("\n\n")}
+}
+  end
+
+  # Move callback response
+  callback_response = index_content.match(/> Callback response:?\n\n```json.*?```/m)
+  if callback_response
+    index_content.gsub!(/> Callback response:?\n\n```json.*?```/m, "")
+    index_content += callback_response[0]
+  end
+
   # Remove new line
   index_content.gsub!(/\n{3,}/m, "\n")
 
-  # Description
-  index_content.gsub(/# fetchNext(.*)\-\-\-/m, '')
+  # Replace templates
+  index_content.gsub!("side-code.html.hbs", "sdk.html.hbs")
+  index_content.gsub!("full.html.hbs", "sdk.html.hbs")
+  index_content.gsub!("category-members.html.hbs", "sdk.html.hbs")
 
   File.write(index_file, index_content)
 end

@@ -7,12 +7,6 @@ description: MemoryStorage:randomkey
   
 
 # randomkey
-
-[snippet=randomkey-1]
-> Callback response:
-
-[snippet=randomkey-2]
-
 Returns a random key from the memory storage.
 
 [[_Redis documentation_]](https://redis.io/commands/randomkey)
@@ -38,3 +32,12 @@ Returns a random key from the memory storage.
 ## Callback Response
 
 Returns one of the stored key names, at random.
+
+## Usage
+
+[snippet=randomkey-1]
+> Callback response:
+
+```json
+"key2"
+```

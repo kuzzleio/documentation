@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.lrem('key', 1, 'foo', function (err, count) {
   // callback called once the action has completed

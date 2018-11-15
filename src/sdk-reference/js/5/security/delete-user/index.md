@@ -7,12 +7,6 @@ description: Security:deleteUser
   
 
 # deleteUser
-
-[snippet=delete-user-1]
-> Callback response
-
-[snippet=delete-user-2]
-
 Delete the provided user.
 
 <aside class="notice">
@@ -50,3 +44,12 @@ Returns the `Security` object to allow chaining.
 ## Callback Response
 
 Return the id of the user that has been deleted.
+
+## Usage
+
+[snippet=delete-user-1]
+> Callback response
+
+```json
+"deleted user identifier"
+```

@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.smove('key', 'destination', 'member', function (err, status) {
   // callback called once the action has completed

@@ -7,11 +7,6 @@ description: MemoryStorage:bitpos
   
 
 # bitpos
-
-[snippet=bitpos-1]
-> Callback response:
-
-[snippet=bitpos-2]
 Returns the position of the first bit set to 1 or 0 in a string, or in a substring.
 
 [[_Redis documentation_]](https://redis.io/commands/bitpos)
@@ -42,3 +37,12 @@ Returns the position of the first bit set to 1 or 0 in a string, or in a substri
 ## Callback Response
 
 Returns an integer containing the first position of the searched bit in the string value.
+
+## Usage
+
+[snippet=bitpos-1]
+> Callback response:
+
+```json
+0
+```

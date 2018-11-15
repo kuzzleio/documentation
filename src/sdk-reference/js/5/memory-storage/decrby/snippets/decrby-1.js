@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.decrby('key', 42, function (err, value) {
   // callback called once the action has completed

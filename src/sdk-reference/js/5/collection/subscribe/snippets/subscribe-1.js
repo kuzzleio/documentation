@@ -1,4 +1,3 @@
-
 kuzzle
   .collection('collection', 'index')
   .subscribe({equals: {title: 'foo'}}, function (error, result) {

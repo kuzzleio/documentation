@@ -1,4 +1,3 @@
-
 // optional: search only for profiles referring the listed roles
 const filters = {
   roles:  ['myrole', 'admin']

@@ -7,8 +7,6 @@ description: MemoryStorage:flushdb
   
 
 # flushdb
-
-[snippet=flushdb-1]
 Deletes all the keys of the database dedicated to client applications (the reserved space for Kuzzle is unaffected).
 
 [[_Redis documentation_]](https://redis.io/commands/flushdb)
@@ -41,3 +39,7 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns null if successful.
+
+## Usage
+
+[snippet=flushdb-1]

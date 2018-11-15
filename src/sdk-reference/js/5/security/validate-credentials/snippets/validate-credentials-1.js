@@ -1,4 +1,3 @@
-
 // Using callbacks (node.js or browser)
 kuzzle.security.validateCredentials('local', 'kuid', {'username': 'foo'}, function (error, result) {
 

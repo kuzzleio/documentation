@@ -7,12 +7,6 @@ description: MemoryStorage:hget
   
 
 # hget
-
-[snippet=hget-1]
-> Callback response:
-
-[snippet=hget-2]
-
 Returns the field’s value of a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hget)
@@ -41,3 +35,12 @@ Returns the field’s value of a hash.
 ## Callback Response
 
 Returns the requested field's value.
+
+## Usage
+
+[snippet=hget-1]
+> Callback response:
+
+```json
+"foo"
+```

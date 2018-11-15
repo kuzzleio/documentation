@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.pexpireat('key', 1488540242465, function (err, status) {
   // callback called once the action has completed

@@ -7,8 +7,6 @@ description: Security:createRestrictedUser
   
 
 # createRestrictedUser
-
-[snippet=create-restricted-user-1]
 Create a new restricted user in Kuzzle.  
 This function allows anonymous users to create a "restricted" user with predefined rights.
 
@@ -42,3 +40,7 @@ That means that a user that was just created may not be returned by the <code>se
 ## Callback response
 
 Resolves to a [User]({{ site_base_path }}sdk-reference/user) object.
+
+## Usage
+
+[snippet=create-restricted-user-1]

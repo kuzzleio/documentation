@@ -7,8 +7,6 @@ description: Profile:save
   
 
 # save
-
-[snippet=save-1]
 Creates or replaces the profile in Kuzzle.
 
 <aside class="warning">
@@ -43,3 +41,7 @@ Returns the `Profile` object to allow chaining.
 ## Callback Response
 
 Returns a `Profile` object.
+
+## Usage
+
+[snippet=save-1]

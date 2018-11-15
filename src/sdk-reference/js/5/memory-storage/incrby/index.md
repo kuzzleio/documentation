@@ -7,12 +7,6 @@ description: MemoryStorage:incrby
   
 
 # incrby
-
-[snippet=incrby-1]
-> Callback response:
-
-[snippet=incrby-2]
-
 Increments the number stored at `key` by the provided integer value. If the key does not exist, it is set to 0 before performing the operation.
 
 [[_Redis documentation_]](https://redis.io/commands/incrby)
@@ -47,3 +41,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns an integer containing the updated key value.
+
+## Usage
+
+[snippet=incrby-1]
+> Callback response:
+
+```json
+39
+```

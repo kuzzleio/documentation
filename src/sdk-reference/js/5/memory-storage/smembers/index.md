@@ -7,12 +7,6 @@ description: MemoryStorage:smembers
   
 
 # smembers
-
-[snippet=smembers-1]
-> Callback response:
-
-[snippet=smembers-2]
-
 Returns the members of a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/smembers)
@@ -45,3 +39,16 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns an array of values held by the provided set.
+
+## Usage
+
+[snippet=smembers-1]
+> Callback response:
+
+```json
+[
+  "member1",
+  "member2",
+  "..."
+]
+```

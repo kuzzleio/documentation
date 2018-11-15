@@ -7,12 +7,6 @@ description: MemoryStorage:rpush
   
 
 # rpush
-
-[snippet=rpush-1]
-> Callback response:
-
-[snippet=rpush-2]
-
 Appends the specified values at the end of a list. If the key does not exist, it is created holding an empty list before performing the operation.
 
 [[_Redis documentation_]](https://redis.io/commands/rpush)
@@ -46,3 +40,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns an integer containing the updated number of items in the list.
+
+## Usage
+
+[snippet=rpush-1]
+> Callback response:
+
+```json
+6
+```

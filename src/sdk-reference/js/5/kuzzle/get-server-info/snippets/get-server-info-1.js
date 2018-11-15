@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.getServerInfo(function (err, stats) {
   // ...

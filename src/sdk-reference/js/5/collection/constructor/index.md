@@ -8,8 +8,6 @@ order: 1
   
 
 # Collection
-
-[snippet=constructor-1]
 In Kuzzle, you manipulate documents and subscriptions, both related to data collections.
 
 A data collection is a set of data managed by Kuzzle. It acts like a data table for persistent documents, or like a room for pub/sub messages.
@@ -38,3 +36,7 @@ A data collection is a set of data managed by Kuzzle. It acts like a data table 
 | ``kuzzle`` | object | linked Kuzzle instance | get |
 
 **Note:** the ``headers`` property is inherited from the main ``Kuzzle`` object and can be overrided
+
+## Usage
+
+[snippet=constructor-1]

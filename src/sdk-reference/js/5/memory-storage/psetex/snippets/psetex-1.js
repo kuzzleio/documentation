@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.psetex('key', 'value', 42000, function (err) {
   // callback called once the action has completed

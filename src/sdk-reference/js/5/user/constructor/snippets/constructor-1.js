@@ -1,4 +1,3 @@
-
 /*
  Constructors are not exposed in the JS/Node SDK.
  User objects are returned by Security.user method:

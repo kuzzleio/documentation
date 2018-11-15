@@ -7,12 +7,6 @@ description: MemoryStorage:exists
   
 
 # exists
-
-[snippet=exists-1]
-> Callback response:
-
-[snippet=exists-2]
-
 Checks if the specified keys exist in the database.
 
 [[_Redis documentation_]](https://redis.io/commands/exists)
@@ -40,3 +34,12 @@ Checks if the specified keys exist in the database.
 ## Callback Response
 
 Returns an integer containing the number of existing keys amongst the provided list.
+
+## Usage
+
+[snippet=exists-1]
+> Callback response:
+
+```json
+2
+```

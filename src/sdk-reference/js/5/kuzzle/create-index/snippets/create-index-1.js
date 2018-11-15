@@ -1,4 +1,3 @@
-
 // Using callbacks (node.js or browser)
 kuzzle.createIndex('myIndex', function (err, res) {
   // callback called once the create operation has completed

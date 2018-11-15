@@ -7,12 +7,6 @@ description: MemoryStorage:zcount
   
 
 # zcount
-
-[snippet=zcount-1]
-> Callback response:
-
-[snippet=zcount-2]
-
 Returns the number of elements held by a sorted set with a score between the provided `min` and `max` values.
 
 By default, the provided min and max values are inclusive. This behavior can be changed using the syntax described in the Redis [ZRANGEBYSCORE](https://redis.io/commands/zrangebyscore) documentation.
@@ -43,3 +37,12 @@ By default, the provided min and max values are inclusive. This behavior can be 
 ## Callback Response
 
 Returns an integer containing the number of elements in the provided score range.
+
+## Usage
+
+[snippet=zcount-1]
+> Callback response:
+
+```json
+2
+```

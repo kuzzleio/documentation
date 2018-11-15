@@ -1,4 +1,3 @@
-
 var kuzzle = new Kuzzle('localhost', {
   defaultIndex: 'some index',
   autoReconnect: true,

@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.zcount('key', 2, 3, function (err, count) {
   // callback called once the action has completed

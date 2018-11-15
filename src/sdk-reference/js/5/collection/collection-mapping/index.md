@@ -7,8 +7,6 @@ description: Collection:collectionMapping
   
 
 # collectionMapping
-
-[snippet=collection-mapping-1]
 Creates a new [CollectionMapping]({{ site_base_path }}sdk-reference/collection-mapping/) object, using its constructor.
 
 ---
@@ -24,3 +22,7 @@ Creates a new [CollectionMapping]({{ site_base_path }}sdk-reference/collection-m
 ## Return Value
 
 Returns the newly created [CollectionMapping]({{ site_base_path }}sdk-reference/collection-mapping/) object.
+
+## Usage
+
+[snippet=collection-mapping-1]

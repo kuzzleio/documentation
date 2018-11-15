@@ -1,4 +1,3 @@
-
 // Directly with a JWT Token
 kuzzle.setJwtToken('some jwt token');
 

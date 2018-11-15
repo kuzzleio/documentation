@@ -7,12 +7,6 @@ description: Collection:mreplaceDocument
   
 
 # mReplaceDocument
-
-[snippet=mreplace-document-1]
-> Callback response:
-
-[snippet=mreplace-document-2]
-
 Replace the provided [Documents]({{ site_base_path }}sdk-reference/document/).
 
 ---
@@ -45,3 +39,18 @@ Returns the `Collection` object to allow chaining.
 
 Returns a `JSON object` containing the raw Kuzzle response.
 Can return a 206 partial error in cases where documents could not be replaced. 
+
+## Usage
+
+[snippet=mreplace-document-1]
+> Callback response:
+
+```json
+{
+  "hits": [
+    {"first": "document"},
+    {"second": "document"}
+  ],
+  "total": 2
+}
+```

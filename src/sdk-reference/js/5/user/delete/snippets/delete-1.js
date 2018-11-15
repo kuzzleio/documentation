@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 user
   .delete(function(error, result) {

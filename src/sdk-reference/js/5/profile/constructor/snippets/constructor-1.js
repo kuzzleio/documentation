@@ -1,4 +1,3 @@
-
 /*
  Constructors are not exposed in the JS/Node SDK.
  Profile objects are returned by Security.profile method:

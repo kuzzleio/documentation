@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.spop('key', function (err, elements) {
   // callback called once the action has completed

@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.hmget('key', ['field1', 'field2', '...'], function (err, values) {
   // callback called once the action has completed

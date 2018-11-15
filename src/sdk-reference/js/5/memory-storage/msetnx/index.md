@@ -7,12 +7,6 @@ description: MemoryStorage:msetnx
   
 
 # msetnx
-
-[snippet=msetnx-1]
-> Callback response:
-
-[snippet=msetnx-2]
-
 Sets the provided keys to their respective values, only if they do not exist. If a key exists, then the whole operation is aborted and no key is set.
 
 [[_Redis documentation_]](https://redis.io/commands/msetnx)
@@ -45,3 +39,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns a boolean specifying if the operation was successful or not.
+
+## Usage
+
+[snippet=msetnx-1]
+> Callback response:
+
+```json
+true
+```

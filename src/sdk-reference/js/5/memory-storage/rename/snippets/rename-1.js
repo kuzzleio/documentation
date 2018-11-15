@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.rename('key', 'newId', function (err) {
   // callback called once the action has completed

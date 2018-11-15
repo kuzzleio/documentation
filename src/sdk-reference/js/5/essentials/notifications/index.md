@@ -7,7 +7,7 @@ order: 300
 
 # Notifications
 
-With Kuzzle, you don't [subscribe]({{ site_base_path }}sdk-reference/collection/subscribe) to a room or a topic but, instead, you subscribe to documents.
+With Kuzzle, you don't [subscribe]({{ site_base_path }}sdk-reference/collection/subscribe) to a room or a topic but, instead, you subscribe to documents.  
 This means, that when you want to subscribe you must provide a set of filter definitions, using [Koncorde]({{ site_base_path }}kuzzle-dsl), that tell Kuzzle what documents should trigger a notification. Then, any time a document matches the defined filters, Kuzzle will send a notification to the subscriber.
 
 You can also provide an empty set of filters, which will tell Kuzzle that you want to listen to any change occurring on a data collection, emulating the behavior of a traditional topic.
@@ -42,7 +42,26 @@ You may subscribe multiple times to the same room, with identical or different s
 
 #### Example
 
-[snippet=notifications-4]
+```json
+{
+  "status": 200,
+  "requestId": "bc41ced6-38fc-42b9-8fd5-22ae0774aac2",
+  "controller": "name of the controller that generated the notification",
+  "action": "name of the action that generated the notification",
+  "collection": "collection name",
+  "index": "index name",
+  "volatile": {},
+  "state": "done",
+  "scope": "in",
+  "type": "document",
+  "document": {
+    "content": {
+      "content": "document content example"
+    },
+    "id": "<document identifier (when applicable)>"
+  }
+}
+```
 
 ---
 
@@ -57,4 +76,21 @@ You may subscribe multiple times to the same room, with identical or different s
 
 #### Example
 
-[snippet=notifications-5]
+```json
+{
+  "status": 200,
+  "roomId": "ID of the room concerned by this notification",
+  "requestId": "5897cd2f-a8a2-40b2-aa43-b31898172008",
+  "controller": "subscribe",
+  "user": "in",
+  "protocol": "protocol used by the notifying user",
+  "timestamp": 1453193069592,
+  "volatile": {
+    "optional": "user information"
+  },
+  "type": "user",
+  "result": {
+    "count": 42
+  }
+}
+```

@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.now(function (err, res) {
   // 'res' contains the Kuzzle timestamp (utc, in milliseconds)

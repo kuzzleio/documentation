@@ -7,8 +7,6 @@ description: Room:setHeaders
   
 
 # setHeaders
-
-[snippet=set-headers-1]
 > Returns itself
 
 This is a helper function returning itself, allowing to easily chain calls.
@@ -29,3 +27,7 @@ This is a helper function returning itself, allowing to easily chain calls.
 ## Return value
 
 Returns this `Room` object to allow chaining.
+
+## Usage
+
+[snippet=set-headers-1]

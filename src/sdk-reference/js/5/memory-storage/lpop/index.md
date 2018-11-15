@@ -7,12 +7,6 @@ description: MemoryStorage:lpop
   
 
 # lpop
-
-[snippet=lpop-1]
-> Callback response:
-
-[snippet=lpop-2]
-
 Removes and returns the first element of a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lpop)
@@ -46,3 +40,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns the value of the removed item.
+
+## Usage
+
+[snippet=lpop-1]
+> Callback response:
+
+```json
+"foo"
+```

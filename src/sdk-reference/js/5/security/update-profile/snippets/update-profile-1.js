@@ -1,4 +1,3 @@
-
 var policies = [
   {roleId: 'myrole'},
   {

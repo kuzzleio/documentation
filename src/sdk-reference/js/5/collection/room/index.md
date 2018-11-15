@@ -7,8 +7,6 @@ description: Collection:room
   
 
 # room
-
-[snippet=room-1]
 Creates a new [Room]({{ site_base_path }}sdk-reference/room/) object, using its constructor.
 
 ---
@@ -28,3 +26,7 @@ Provided options are passed directly to the [Room]({{ site_base_path }}sdk-refer
 ## Return Value
 
 Returns the newly created [Room]({{ site_base_path }}sdk-reference/room/) object.
+
+## Usage
+
+[snippet=room-1]

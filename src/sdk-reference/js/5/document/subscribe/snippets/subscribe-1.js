@@ -1,4 +1,3 @@
-
 document
   .subscribe(function (error, notification) {
     // called each time a change occurs on this document

@@ -7,8 +7,6 @@ description: Role:delete
   
 
 # delete
-
-[snippet=delete-1]
 Deletes the role from Kuzzle.
 
 ---
@@ -33,3 +31,7 @@ Deletes the role from Kuzzle.
 ## Callback Response
 
 Returns the ID of the deleted role.
+
+## Usage
+
+[snippet=delete-1]

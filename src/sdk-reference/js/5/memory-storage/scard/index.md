@@ -7,12 +7,6 @@ description: MemoryStorage:scard
   
 
 # scard
-
-[snippet=scard-1]
-> Callback response:
-
-[snippet=scard-2]
-
 Returns the number of members stored in a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/scard)
@@ -39,3 +33,12 @@ Returns the number of members stored in a set of unique values.
 ## Callback Response
 
 Returns an integer containing the number of items in the set.
+
+## Usage
+
+[snippet=scard-1]
+> Callback response:
+
+```json
+3
+```

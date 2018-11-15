@@ -7,12 +7,6 @@ description: MemoryStorage:sort
   
 
 # sort
-
-[snippet=sort-1]
-> Callback response:
-
-[snippet=sort-2]
-
 Sorts and returns elements contained in a list, a set of unique values or a sorted set.
 By default, sorting is numeric and elements are compared by their value interpreted as double precision floating point number.
 
@@ -46,3 +40,16 @@ While Kuzzle's API supports the "store" option for this command, Kuzzle SDK meth
 ### Callback Response
 
 Returns an array of sorted values.
+
+## Usage
+
+[snippet=sort-1]
+> Callback response:
+
+```json
+[
+  "sorted element1",
+  "sorted element2",
+  "..."
+]
+```

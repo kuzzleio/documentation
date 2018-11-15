@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.pexpire('key', 42000, function (err, status) {
   // callback called once the action has completed

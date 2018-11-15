@@ -1,4 +1,3 @@
-
 var entries = [
   {"field": "field1", "value": "foo"},
   {"field": "field2", "value": "bar"},

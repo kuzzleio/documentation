@@ -7,12 +7,6 @@ description: MemoryStorage:decr
   
 
 # decr
-
-[snippet=decr-1]
-> Callback response:
-
-[snippet=decr-2]
-
 Decrements the number stored at `key` by 1. If the key does not exist, it is set to 0 before performing the operation.
 
 [[_Redis documentation_]](https://redis.io/commands/decr)
@@ -46,3 +40,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns an integer containing the updated key value.
+
+## Usage
+
+[snippet=decr-1]
+> Callback response:
+
+```json
+-1
+```

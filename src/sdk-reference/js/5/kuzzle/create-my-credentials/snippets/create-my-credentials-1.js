@@ -1,4 +1,3 @@
-
 // Using callbacks (node.js or browser)
 kuzzle.createMyCredentials('local', {'username': 'foo'}, function (err, res) {
   console.log(res);     // {username: 'bar', kuid: '<kuid>'}

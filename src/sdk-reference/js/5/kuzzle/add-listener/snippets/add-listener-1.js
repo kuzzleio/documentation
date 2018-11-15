@@ -1,4 +1,3 @@
-
   var callback = function () {
     // Actions to perform when receiving a 'connected' global event
   };

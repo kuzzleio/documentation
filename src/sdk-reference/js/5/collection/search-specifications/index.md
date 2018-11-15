@@ -7,12 +7,6 @@ description: Collection:searchSpecifications
   
 
 # searchSpecifications
-
-[snippet=search-specifications-1]
-> Callback response
-
-[snippet=search-specifications-2]
-
 Retrieves every specifications across indexes/collections according to the given filters.
 
 ---
@@ -35,3 +29,19 @@ Retrieves every specifications across indexes/collections according to the given
 | ``queuable`` | boolean | Make this request queuable or not  | ``true`` |
 | ``scroll`` | string | Start a scroll session, with a time to live equals to this parameter's value following the [Elastisearch time format](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/common-options.html#time-units) | ``undefined`` |
 | ``size`` | number | Provide the maximum number of results of the request (used to paginate results) | ``10`` |
+
+## Usage
+
+[snippet=search-specifications-1]
+> Callback response
+
+```json
+{
+  "hits": [
+    {"first": "specification"},
+    {"second": "specification"}
+  ],
+  "total": 2,
+  "scrollId": "foobar"
+}
+```

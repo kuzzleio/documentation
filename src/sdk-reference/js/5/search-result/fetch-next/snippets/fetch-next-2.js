@@ -1,4 +1,3 @@
-
 var processDocument = function (document) {
   // do something with the document
 };

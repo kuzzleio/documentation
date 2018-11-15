@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.zrem('key', ['foo', 'bar', 'baz'], function (err, count) {
   // callback called once the action has completed

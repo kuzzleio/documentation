@@ -7,8 +7,6 @@ description: Collection:createDocument
   
 
 # createDocument
-
-[snippet=create-document-1]
 Create a new document in Kuzzle and instantiate a [Document]({{ site_base_path }}sdk-reference/document/) object.
 
 ---
@@ -54,3 +52,7 @@ Returns the `Collection` object to allow chaining.
 ## Callback Response
 
 Returns a [Document]({{ site_base_path }}sdk-reference/document/) object containing the newly created document.
+
+## Usage
+
+[snippet=create-document-1]

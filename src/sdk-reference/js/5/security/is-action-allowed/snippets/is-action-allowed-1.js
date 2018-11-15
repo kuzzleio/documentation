@@ -1,4 +1,3 @@
-
 kuzzle.security.getMyRights((err, rights) => {
     if (!err) {
         // returns either "allowed", "denied" or "conditional"

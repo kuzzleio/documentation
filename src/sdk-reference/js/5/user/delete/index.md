@@ -7,8 +7,6 @@ description: User:delete
   
 
 # delete
-
-[snippet=delete-1]
 Deletes the user in Kuzzle.
 
 ---
@@ -33,3 +31,7 @@ Deletes the user in Kuzzle.
 ## Callback Response
 
 Returns a `String` containing the id of the deleted user. 
+
+## Usage
+
+[snippet=delete-1]

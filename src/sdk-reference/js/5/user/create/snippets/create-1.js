@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 user
   .create(function(error, result) {

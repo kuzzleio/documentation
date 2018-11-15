@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.geohash('key', ['Palermo', 'Catania'], function (err, hashes) {
   // callback called once the action has completed

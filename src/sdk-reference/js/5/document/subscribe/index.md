@@ -7,8 +7,6 @@ description: Document:subscribe
   
 
 # subscribe
-
-[snippet=subscribe-1]
 Listens to changes occuring in this document.
 Throws an error if this document has not yet been created in Kuzzle.
 
@@ -37,3 +35,7 @@ Returns an object exposing the following method:
   `onDone(callback)`
 
 The `callback` argument is called when the subscription ends, either successfully or with an error.
+
+## Usage
+
+[snippet=subscribe-1]

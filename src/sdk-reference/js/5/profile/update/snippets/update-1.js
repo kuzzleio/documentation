@@ -1,4 +1,3 @@
-
 var updateContent = {
   policies: [
     {roleId: 'myrole'},

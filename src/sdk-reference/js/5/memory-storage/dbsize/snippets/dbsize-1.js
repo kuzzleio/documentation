@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.dbsize(function (err, count) {
   // callback called once the action has completed

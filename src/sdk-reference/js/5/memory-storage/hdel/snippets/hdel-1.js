@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.hdel('key', ['field1', 'field2'], function (err, count) {
   // callback called once the action has completed

@@ -1,4 +1,3 @@
-
 var
   Document = require('./src/Document'),
   firstDocument = new Document(collection, 'doc1', {title: 'foo', content: 'bar'}),

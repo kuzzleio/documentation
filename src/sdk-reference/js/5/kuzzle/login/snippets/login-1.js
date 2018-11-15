@@ -1,4 +1,3 @@
-
 // Expiration time is expressed as a string following the
 // time conversion library: https://www.npmjs.com/package/ms
  var expiresIn = "1h";

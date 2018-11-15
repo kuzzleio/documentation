@@ -7,8 +7,6 @@ description: Room:unsubscribe
   
 
 # unsubscribe
-
-[snippet=unsubscribe-1]
 Cancels the current subscription.
 
 ---
@@ -16,3 +14,7 @@ Cancels the current subscription.
 ## Return value
 
 Returns this `Room` object to allow chaining.
+
+## Usage
+
+[snippet=unsubscribe-1]

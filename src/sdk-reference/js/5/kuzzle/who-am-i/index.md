@@ -7,8 +7,6 @@ description: Kuzzle:whoAmI
   
 
 # whoAmI
-
-[snippet=who-am-i-1]
 Returns informations about the user who is currently loggedin.
 
 ---
@@ -24,3 +22,7 @@ Returns informations about the user who is currently loggedin.
 ## Callback Response
 
 Returns an instantiated [User]({{ site_base_path }}sdk-reference/user) object.
+
+## Usage
+
+[snippet=who-am-i-1]

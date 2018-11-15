@@ -7,12 +7,6 @@ description: Security:getCredentials
   
 
 # getCredentials
-
-[snippet=get-credentials-1]
-> Callback response
-
-[snippet=get-credentials-2]
-
 Get credential information of user with `kuid` for the specified `strategy`. 
 
 ---
@@ -39,3 +33,15 @@ Get credential information of user with `kuid` for the specified `strategy`.
 ## Callback Response
 
 The result is a an object with the credentials.
+
+## Usage
+
+[snippet=get-credentials-1]
+> Callback response
+
+```json
+{
+  "username": "foo", 
+  "kuid": "<Kuzzle User Unique Identifier>"
+}
+```

@@ -1,4 +1,3 @@
-
 // Using callbacks (node.js or browser)
 kuzzle.deleteMyCredentials('local', function (err, res) {
   console.log(res);     // {acknowledged: true}

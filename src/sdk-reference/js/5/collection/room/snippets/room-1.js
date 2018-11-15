@@ -1,4 +1,3 @@
-
 let room = kuzzle
   .collection('collection', 'index')
   .room()

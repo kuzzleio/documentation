@@ -7,8 +7,6 @@ description: User:save
   
 
 # save
-
-[snippet=save-1]
 Creates or replaces this user in Kuzzle.
 
 ---
@@ -39,3 +37,7 @@ Returns the `User` object to allow chaining.
 ## Callback Response
 
 Returns a `User` object.
+
+## Usage
+
+[snippet=save-1]

@@ -7,12 +7,6 @@ description: Security:deleteProfile
   
 
 # deleteProfile
-
-[snippet=delete-profile-1]
-> Callback response
-
-[snippet=delete-profile-2]
-
 Delete the provided profile.
 
 <aside class="notice">
@@ -49,3 +43,12 @@ Returns the `Security` object to allow chaining.
 ## Callback Response
 
 Returns the ID of the security profile that has been deleted.
+
+## Usage
+
+[snippet=delete-profile-1]
+> Callback response
+
+```json
+"deleted profile identifier"
+```

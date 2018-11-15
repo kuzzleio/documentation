@@ -7,8 +7,6 @@ description: User:addProfile
   
 
 # addProfile
-
-[snippet=add-profile-1]
 Replaces the security profile associated with the user.
 
 <aside class="note">
@@ -36,3 +34,7 @@ Updating a user will have no impact until the <a href="{{ site_base_path }}sdk-r
 ## Return Value
 
 Returns the `User` object.
+
+## Usage
+
+[snippet=add-profile-1]

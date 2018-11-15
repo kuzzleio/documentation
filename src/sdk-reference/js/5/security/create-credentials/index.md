@@ -7,12 +7,6 @@ description: Security:createCredentials
   
 
 # createCredentials
-
-[snippet=create-credentials-1]
-> Callback response
-
-[snippet=create-credentials-2]
-
 Create credentials of user with `kuid` for the specified `strategy`.
 
 ---
@@ -40,3 +34,15 @@ Create credentials of user with `kuid` for the specified `strategy`.
 ## Callback Response
 
 Returns an object with the created credentials.
+
+## Usage
+
+[snippet=create-credentials-1]
+> Callback response
+
+```json
+{
+  "username": "foo",
+  "kuid": "<Kuzzle Unique Identifier>"
+}
+```

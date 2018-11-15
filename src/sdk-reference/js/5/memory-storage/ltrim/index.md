@@ -7,8 +7,6 @@ description: MemoryStorage:ltrim
   
 
 # ltrim
-
-[snippet=ltrim-1]
 Trims an existing list so that it will contain only the specified range of elements specified.
 
 [[_Redis documentation_]](https://redis.io/commands/ltrim)
@@ -43,3 +41,7 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns null if successful.
+
+## Usage
+
+[snippet=ltrim-1]

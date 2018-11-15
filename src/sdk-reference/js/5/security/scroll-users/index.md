@@ -7,8 +7,6 @@ description: Security:scrollUsers
   
 
 # scrollUsers
-
-[snippet=scroll-users-1]
 Scrolls on stored users using the provided scroll ID.
 
 ---
@@ -34,3 +32,7 @@ Scrolls on stored users using the provided scroll ID.
 ## Callback Response
 
 Returns the list of fetched users according to the scroll parameters (offset, limit etc.).
+
+## Usage
+
+[snippet=scroll-users-1]

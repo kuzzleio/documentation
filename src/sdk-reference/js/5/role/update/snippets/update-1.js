@@ -1,4 +1,3 @@
-
 var updateContent = {
   controllers: {
     "document": {

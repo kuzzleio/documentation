@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.sort('key', function (err, values) {
   // callback called once the action has completed

@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 searchResult.fetchNext(function (error, nextSearchResult) {
   // called once the fetchNext action has been completed

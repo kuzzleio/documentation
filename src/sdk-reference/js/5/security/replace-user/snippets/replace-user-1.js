@@ -1,4 +1,3 @@
-
 var newContent = {
   profileIds: ['admin'],
   firstname: 'My Name Is',

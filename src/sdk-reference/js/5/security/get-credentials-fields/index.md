@@ -7,12 +7,6 @@ description: Security:getCredentialsFields
   
 
 # getCredentialFields
-
-[snippet=get-credentials-fields-1]
-> Callback response:
-
-[snippet=get-credentials-fields-2]
-
 Get credential information for the specified `strategy`.
 
 ---
@@ -38,3 +32,15 @@ Get credential information for the specified `strategy`.
 ## Callback Response
 
 The result is a an array of credential fields.
+
+## Usage
+
+[snippet=get-credentials-fields-1]
+> Callback response:
+
+```json
+[
+  "kuid",
+  "username"
+]
+```

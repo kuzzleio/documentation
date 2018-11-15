@@ -7,12 +7,6 @@ description: MemoryStorage:zadd
   
 
 # zadd
-
-[snippet=zadd-1]
-> Callback response:
-
-[snippet=zadd-2]
-
 Adds the specified elements to the sorted set stored at `key`. If the key does not exist, it is created, holding an empty sorted set. If it already exists and does not hold a sorted set, an error is returned.
 
 Scores are expressed as floating point numbers.
@@ -54,3 +48,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns an integer containing the number of elements added to the sorted set.
+
+## Usage
+
+[snippet=zadd-1]
+> Callback response:
+
+```json
+3
+```

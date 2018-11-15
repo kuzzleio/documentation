@@ -7,12 +7,6 @@ description: MemoryStorage:setnx
   
 
 # setnx
-
-[snippet=setnx-1]
-> Callback response:
-
-[snippet=setnx-2]
-
 Sets a value on a key, only if it does not already exist.
 
 [[_Redis documentation_]](https://redis.io/commands/setnx)
@@ -46,3 +40,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns a boolean specifying if the operation was successful or not.
+
+## Usage
+
+[snippet=setnx-1]
+> Callback response:
+
+```json
+true
+```

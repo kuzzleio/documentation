@@ -7,12 +7,6 @@ description: MemoryStorage:persist
   
 
 # persist
-
-[snippet=persist-1]
-> Callback response:
-
-[snippet=persist-2]
-
 Removes the expiration delay or timestamp from a key, making it persistent.
 
 [[_Redis documentation_]](https://redis.io/commands/persist)
@@ -43,3 +37,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns a boolean specifying if the operation was successful or not.
+
+## Usage
+
+[snippet=persist-1]
+> Callback response:
+
+```json
+true
+```

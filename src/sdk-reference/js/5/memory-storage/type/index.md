@@ -7,12 +7,6 @@ description: MemoryStorage:type
   
 
 # type
-
-[snippet=type-1]
-> Callback response:
-
-[snippet=type-2]
-
 Returns the type of the value held by a key.
 
 [[_Redis documentation_]](https://redis.io/commands/type)
@@ -39,3 +33,12 @@ Returns the type of the value held by a key.
 ## Callback Response
 
 Returns one of the following values: `hash`, `list`, `set`, `string`, `zset`.
+
+## Usage
+
+[snippet=type-1]
+> Callback response:
+
+```json
+"zset"
+```

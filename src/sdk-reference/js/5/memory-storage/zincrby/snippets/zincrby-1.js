@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.zincrby('key', 'foo', 3.14159, function (err, value) {
   // callback called once the action has completed

@@ -7,12 +7,6 @@ description: MemoryStorage:ping
   
 
 # ping
-
-[snippet=ping-1]
-> Callback response:
-
-[snippet=ping-2]
-
 Pings the memory storage database.
 
 [[_Redis documentation_]](https://redis.io/commands/ping)
@@ -38,3 +32,12 @@ Pings the memory storage database.
 ## Callback Response
 
 Returns a simple "PONG" string.
+
+## Usage
+
+[snippet=ping-1]
+> Callback response:
+
+```json
+"PONG"
+```

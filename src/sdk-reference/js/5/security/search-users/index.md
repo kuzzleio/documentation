@@ -7,12 +7,6 @@ description: Security:searchUsers
   
 
 # searchUsers
-
-[snippet=search-users-1]
-> Callback response:
-
-[snippet=search-users-2]
-
 Return users matching the given filter.  
 
 ---
@@ -45,3 +39,19 @@ Return users matching the given filter.
 ## Callback Response
 
 Return a JSON Object
+
+## Usage
+
+[snippet=search-users-1]
+> Callback response:
+
+```json
+{
+  "total": 124,
+  "users": [
+    // array of User objects
+  ],
+  // only if a scroll parameter has been provided
+  "scrollId": "<scroll identifier>"
+}
+```

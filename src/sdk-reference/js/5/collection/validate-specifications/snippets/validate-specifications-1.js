@@ -1,4 +1,3 @@
-
 var specifications = {
   strict: 'true',
   fields: {

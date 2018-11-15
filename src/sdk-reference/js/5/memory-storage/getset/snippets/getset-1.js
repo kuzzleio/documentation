@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.getset('key', 'new value', function (err, oldValue) {
   // callback called once the action has completed

@@ -7,12 +7,6 @@ description: MemoryStorage:zremrangebyrank
   
 
 # zremrangebyrank
-
-[snippet=zremrangebyrank-1]
-> Callback response:
-
-[snippet=zremrangebyrank-2]
-
 Removes members from a sorted set with their position in the set between `start` and `stop` (inclusive).
 
 Positions are 0-based, meaning the first member of the set has a position of 0.
@@ -49,3 +43,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns an integer containing the number of removed members from the sorted set.
+
+## Usage
+
+[snippet=zremrangebyrank-1]
+> Callback response:
+
+```json
+2
+```

@@ -1,2 +1,1 @@
-
 kuzzle.removeListener('disconnected', callback);

@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.sunion(['key1', 'key2', '...'], function (err, values) {
   // callback called once the action has completed

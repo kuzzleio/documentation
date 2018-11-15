@@ -1,4 +1,3 @@
-
 // Using callbacks (node.js or browser)
 kuzzle.security.getAllCredentialFields(function (error, strategies) {
   

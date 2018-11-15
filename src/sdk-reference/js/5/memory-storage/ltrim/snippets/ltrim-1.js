@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.memoryStorage.ltrim('key', 1, 2, function (err) {
   // callback called once the action has completed

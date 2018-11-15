@@ -7,12 +7,6 @@ description: Collection:count
   
 
 # count
-
-[snippet=count-1]
-> Callback response:
-
-[snippet=count-2]
-
 Returns the number of documents matching the provided set of filters.
 
 <aside class="notice">
@@ -42,3 +36,12 @@ There is a small delay between the time a document is created and its availabili
 ## Callback Response
 
 Returns a count for the number of document matches as an ``integer``.
+
+## Usage
+
+[snippet=count-1]
+> Callback response:
+
+```json
+12
+```

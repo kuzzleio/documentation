@@ -7,12 +7,6 @@ description: MemoryStorage:sismember
   
 
 # sismember
-
-[snippet=sismember-1]
-> Callback response:
-
-[snippet=sismember-2]
-
 Checks if `member` is a member of the set of unique values stored at `key`.
 
 [[_Redis documentation_]](https://redis.io/commands/sismember)
@@ -40,4 +34,11 @@ Checks if `member` is a member of the set of unique values stored at `key`.
 ## Callback Response
 
 Returns a boolean specifying if `member` is a member of the set or not.
+## Usage
 
+[snippet=sismember-1]
+> Callback response:
+
+```json
+true
+```

@@ -7,12 +7,6 @@ description: MemoryStorage:hkeys
   
 
 # hkeys
-
-[snippet=hkeys-1]
-> Callback response:
-
-[snippet=hkeys-2]
-
 Returns all field names contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hkeys)
@@ -40,3 +34,16 @@ Returns all field names contained in a hash.
 ## Callback Response
 
 Returns an array of field names.
+
+## Usage
+
+[snippet=hkeys-1]
+> Callback response:
+
+```json
+[
+  "field1",
+  "field2",
+  "..."
+]
+```

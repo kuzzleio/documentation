@@ -1,4 +1,3 @@
-
 var user = {
   content: {
     // A "profileIds" field is required to bind a user to existing profiles

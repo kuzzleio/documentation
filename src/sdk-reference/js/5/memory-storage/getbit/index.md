@@ -7,12 +7,6 @@ description: MemoryStorage:getbit
   
 
 # getbit
-
-[snippet=getbit-1]
-> Callback response:
-
-[snippet=getbit-2]
-
 Returns the bit value at `offset`, in the string value stored in a key.
 
 [[_Redis documentation_]](https://redis.io/commands/getbit)
@@ -41,3 +35,12 @@ Returns the bit value at `offset`, in the string value stored in a key.
 ## Callback Response
 
 Returns the bit value at the provided offset.
+
+## Usage
+
+[snippet=getbit-1]
+> Callback response:
+
+```json
+1
+```

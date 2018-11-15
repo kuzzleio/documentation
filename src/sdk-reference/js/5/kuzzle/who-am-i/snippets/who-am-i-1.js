@@ -1,4 +1,3 @@
-
 // Using callbacks (NodeJS or Web Browser)
 kuzzle.whoAmI(function (err, result) {
   // "result" is a User object

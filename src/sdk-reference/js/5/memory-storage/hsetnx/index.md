@@ -7,12 +7,6 @@ description: MemoryStorage:hsetnx
   
 
 # hsetnx
-
-[snippet=hsetnx-1]
-> Callback response:
-
-[snippet=hsetnx-2]
-
 Sets a field and its value in a hash, only if the field does not already exist.
 
 [[_Redis documentation_]](https://redis.io/commands/hsetnx)
@@ -48,3 +42,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns a boolean specifying if the operation was successful or not.
+
+## Usage
+
+[snippet=hsetnx-1]
+> Callback response:
+
+```json
+true
+```

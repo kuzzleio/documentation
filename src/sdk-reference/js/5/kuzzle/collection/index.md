@@ -7,8 +7,6 @@ description: Kuzzle:collection
   
 
 # collection
-
-[snippet=collection-1]
 Instantiates a new [Collection]({{ site_base_path }}sdk-reference/collection) object.
 
 ---
@@ -29,3 +27,7 @@ The ``index`` argument takes precedence over the default index.
 ## Return Value
 
 Returns a [Collection]({{ site_base_path }}sdk-reference/collection) object.
+
+## Usage
+
+[snippet=collection-1]
