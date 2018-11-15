@@ -46,13 +46,15 @@ The queue itself can be configured using the `queueTTL` and `queueMaxSize` optio
 By default, when queuing is activated, all requests are queued.
 
 However, almost all request methods accept a `queuable` option, which when set to `false`, will cause the request to be discarded if the Kuzzle SDK is disconnected.
+
 ---
 
 ## Handling Network Reconnect
 
 <aside class="warning">
-Setting <code>autoReplay</code> to <code>true</code> when using user authentication should generally be avoided.<br/>
+Setting <code>autoReplay</code> to <code>true</code> when using user authentication should generally be avoided.<br/><br/>
 When leaving offline-mode, the JWT validity is verified. If it has expired, the token will be removed and a <code>tokenExpired</code> event will be triggered.<br/>
+<br/>
 If <code>autoReplay</code> is set, then all pending requests will be automatically played as an anonymous user.
 </aside>
 
@@ -73,6 +75,7 @@ The `offlineQueuePush` event is fired whenever a request is queued. It will emit
 The `offlineQueuePop` event is fired whenever a request has been removed from the queue, either because the queue limits have been reached, or because the request has been replayed. It also provides a `types.QueryObject` to its listeners.
 
 The `offlineQueueLoader` property of the Kuzzle SDK instance loads requests to the queue, **before any previously queued request**. It is invoked every time the Kuzzle SDK starts dequeuing requests.
+
 This property must be set with a `protocol.OfflineQueueLoader` which is an interface that require to implement a `Load` method that return an array of `types.QueryObject`:
 
 ```go
