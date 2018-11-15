@@ -13,6 +13,8 @@ description:
 <%= _.upperFirst(_.camelCase(action)) %>() error
 ```
 
+<br/>
+
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
 | ``changeme`` | <pre>changme</pre> | changeme    |
