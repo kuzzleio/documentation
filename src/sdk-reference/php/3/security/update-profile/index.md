@@ -7,8 +7,6 @@ description: Security:updateProfile
   
 
 # updateProfile
-[snippet=update-profile-1]
-
 Performs a partial update on an existing profile.
 
 ---
@@ -42,3 +40,7 @@ Returns the `Security` object to allow chaining.
 ## Callback Response
 
 Return an updated [Profile]({{ site_base_path }}sdk-reference/profile) object.
+
+## Usage
+
+[snippet=update-profile-1]

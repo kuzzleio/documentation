@@ -7,8 +7,6 @@ description: User:setCredentials
   
 
 # setCredentials
-[snippet=set-credentials-1]
-
 Sets the user's credentials.
 
 <aside class="note">
@@ -28,3 +26,7 @@ Sets the user's credentials.
 ## Return Value
 
 Returns the `User` object.
+
+## Usage
+
+[snippet=set-credentials-1]

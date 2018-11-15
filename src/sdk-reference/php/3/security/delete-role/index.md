@@ -7,9 +7,6 @@ description: Security:deleteRole
   
 
 # deleteRole
-[snippet=delete-role-1]
-
-> Callback response
 Delete the provided role.
 
 <aside class="notice">
@@ -47,3 +44,12 @@ Returns the `Security` object to allow chaining.
 ## Callback Response
 
 Returns the id of the rold that has been deleted.
+
+## Usage
+
+[snippet=delete-role-1]
+> Callback response
+
+```json
+"deleted role identifier"
+```

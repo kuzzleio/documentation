@@ -7,8 +7,6 @@ description: Kuzzle:setJwtToken
   
 
 # setJwtToken
-[snippet=set-jwt-token-1]
-
 Sets the internal JWT token which will be used when making requests to Kuzzle.
 
 If the provided token is valid, a `loginAttempt` event is fired with the following object:  
@@ -38,3 +36,7 @@ If not, the `loginAttempt` event is fired with the following response:
 ## Return Value
 
 Returns the `Kuzzle` SDK object to allow chaining.
+
+## Usage
+
+[snippet=set-jwt-token-1]

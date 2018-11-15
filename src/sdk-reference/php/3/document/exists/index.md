@@ -7,8 +7,6 @@ description: Document:exists
   
 
 # exists
-[snippet=exists-1]
-
 Checks if the document exists in Kuzzle.
 
 ---
@@ -33,3 +31,7 @@ Checks if the document exists in Kuzzle.
 ## Callback Response
 
 Return a boolean indicating whether or not the document exists in Kuzzle.
+
+## Usage
+
+[snippet=exists-1]

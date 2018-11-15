@@ -7,9 +7,6 @@ description: MemoryStorage:scan
   
 
 # scan
-[snippet=scan-1]
-
-> Callback response:
 Iterates incrementally over the set of keys in the database using a cursor.
 
 An iteration starts when the cursor is set to `0`.  
@@ -45,3 +42,19 @@ Returns a JSON object containing 2 entries:
 
 * the cursor position for the next page of results (a next position of `0` indicates the end of the scan)
 * a list of fetched keys
+
+## Usage
+
+[snippet=scan-1]
+> Callback response:
+
+```json
+{
+  "cursor": 18,
+  "values": [
+    "key1",
+    "key2",
+    "..."
+  ]
+}
+```

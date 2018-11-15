@@ -7,8 +7,6 @@ description: Security:createUser
   
 
 # createUser
-[snippet=create-user-1]
-
 Create a new user in Kuzzle.
 
 <aside class="notice">
@@ -49,3 +47,7 @@ The `user` object to provide must have the following properties:
 ## Callback Response
 
 Returns a [User]({{ site_base_path }}sdk-reference/user) object.
+
+## Usage
+
+[snippet=create-user-1]

@@ -7,9 +7,6 @@ description: MemoryStorage:hincrby
   
 
 # hincrby
-[snippet=hincrby-1]
-
-> Callback response:
 Increments the number stored in a hash field by the provided integer value.
 
 [[_Redis documentation_]](https://redis.io/commands/hincrby)
@@ -45,3 +42,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns the newly incremented value.
+
+## Usage
+
+[snippet=hincrby-1]
+> Callback response:
+
+```json
+45
+```

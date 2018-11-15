@@ -7,8 +7,6 @@ description: MemoryStorage:hmset
   
 
 # hmset
-[snippet=hmset-1]
-
 Sets multiple fields at once in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hmset)
@@ -43,3 +41,7 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns null if successful.
+
+## Usage
+
+[snippet=hmset-1]

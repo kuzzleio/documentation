@@ -7,8 +7,6 @@ description: Collection:setHeaders
   
 
 # setHeaders
-[snippet=set-headers-1]
-
 This is a helper function returning itself, allowing to easily set headers while chaining calls.
 
 ---
@@ -27,3 +25,7 @@ This is a helper function returning itself, allowing to easily set headers while
 ## Return value
 
 Returns the `Collection` object to allow chaining.
+
+## Usage
+
+[snippet=set-headers-1]

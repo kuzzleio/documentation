@@ -7,8 +7,6 @@ description: MemoryStorage:pfmerge
   
 
 # pfmerge
-[snippet=pfmerge-1]
-
 Merges multiple [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data structures into an unique HyperLogLog structure stored at `key`, approximating the cardinality of the union of the source structures.
 
 [[_Redis documentation_]](https://redis.io/commands/pfmerge)
@@ -36,3 +34,6 @@ Merges multiple [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data st
 ## Callback Response
 
 Returns null if successful.
+## Usage
+
+[snippet=pfmerge-1]

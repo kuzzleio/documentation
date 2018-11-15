@@ -7,9 +7,6 @@ description: MemoryStorage:spop
   
 
 # spop
-[snippet=spop-1]
-
-> Callback response:
 Removes and returns one or more elements at random from a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/spop)
@@ -43,3 +40,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns an array of removed elements.
+
+## Usage
+
+[snippet=spop-1]
+> Callback response:
+
+```json
+[ "removed element" ]
+```

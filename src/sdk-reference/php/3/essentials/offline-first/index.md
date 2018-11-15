@@ -32,7 +32,7 @@ While in offline mode, the Kuzzle SDK client maintains all subscriptions configu
 
 ## API Requests
 
-While in offline mode, API requests can be queued, and then executed once the network connection has been reestablished.
+While in offline mode, API requests can be queued, and then executed once the network connection has been reestablished.  
 By default, there is no request queuing.
 
 * Queue all requests automatically when going offline by setting the ``autoQueue`` option to ``true`` (see [Kuzzle SDK constructor]({{ site_base_path }}sdk-reference/kuzzle))
@@ -60,7 +60,7 @@ When leaving offline-mode, the JWT validity is verified. If it has expired, the 
 If <code>autoReplay</code> is set, then all pending requests will be automatically played as an anonymous user.
 </aside>
 
-Once a ``reconnected`` event is fired, you may replay the content of the queue with the ``playQueue`` method. Or you can let the Kuzzle SDK replay it automatically upon reconnection by setting the ``autoReplay`` option to ``true``.
+Once a ``reconnected`` event is fired, you may replay the content of the queue with the ``playQueue`` method. Or you can let the Kuzzle SDK replay it automatically upon reconnection by setting the ``autoReplay`` option to ``true``.  
 
 Requests are sent to Kuzzle with a ``replayInterval`` delay between each call.
 
@@ -70,13 +70,13 @@ Any request made while the client is processing the queue will be delayed until 
 
 ## Taking Control of the Offline Queue
 
-You can be notified about what's going on in the offline queue, by using the [`offlineQueuePush`]({{ site_base_path }}sdk-reference/essentials/events) and the [`offlineQueuePop`]({{ site_base_path }}sdk-reference/essentials/events) events.
+You can be notified about what's going on in the offline queue, by using the [`offlineQueuePush`]({{ site_base_path }}sdk-reference/essentials/events) and the [`offlineQueuePop`]({{ site_base_path }}sdk-reference/essentials/events) events.  
 
 The `offlineQueuePush` event is fired whenever a request is queued. It will emit an object containing a `query` property, describing the queued request, and an optional `cb` property containing the corresponding callback, if any.
 
 The `offlineQueuePop` event is fired whenever a request has been removed from the queue, either because the queue limits have been reached, or because the request has been replayed. It provides the removed request to its listeners.
 
-The `offlineQueueLoader` property of the Kuzzle SDK instance loads requests to the queue, **before any previously queued request**. It is invoked every time the Kuzzle SDK starts dequeuing requests.
+The `offlineQueueLoader` property of the Kuzzle SDK instance loads requests to the queue, **before any previously queued request**. It is invoked every time the Kuzzle SDK starts dequeuing requests.  
 This property must be set with a function that returns an array of objects with the following accessible properties:
 
 * a `query` property, containing the request to be replayed

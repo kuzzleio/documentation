@@ -7,8 +7,6 @@ description: CollectionMapping:refresh
   
 
 # refresh
-[snippet=refresh-1]
-
 Instantiates a new CollectionMapping object with an up-to-date content.
 
 ---
@@ -33,3 +31,7 @@ Instantiates a new CollectionMapping object with an up-to-date content.
 ## Callback Response
 
 Returns the updated `CollectionMapping` object.
+
+## Usage
+
+[snippet=refresh-1]

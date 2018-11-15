@@ -7,9 +7,6 @@ description: Kuzzle:query
   
 
 ## query
-[snippet=query-1]
-
-> Callback response:
 Base method used to send queries to Kuzzle, following the [API Documentation]({{ site_base_path }}api-documentation).
 
 <aside class="warning">
@@ -66,3 +63,19 @@ Returns the `Kuzzle` SDK object to allow chaining.
 ## Callback Response
 
 Returns a `JSON object` containing the raw Kuzzle response.
+
+## Usage
+
+[snippet=query-1]
+> Callback response:
+
+```json
+{ "error": null,
+  "result": {
+    "action": "action",
+    "controller": "controller",
+    "requestId": "bf87b930-7c02-11e5-ab10-dfa9e9fd2e07",
+    "other properties": "depends of the query made"
+  }
+}
+```

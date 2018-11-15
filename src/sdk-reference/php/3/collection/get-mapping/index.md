@@ -7,8 +7,6 @@ description: Collection:getMapping
   
 
 # getMapping
-[snippet=get-mapping-1]
-
 Retrieves the current mapping of this collection as a [CollectionMapping]({{ site_base_path }}sdk-reference/collection-mapping/) object.
 
 ---
@@ -33,3 +31,7 @@ Retrieves the current mapping of this collection as a [CollectionMapping]({{ sit
 ## Callback Response
 
 Returns a [CollectionMapping]({{ site_base_path }}sdk-reference/collection-mapping/) object.
+
+## Usage
+
+[snippet=get-mapping-1]

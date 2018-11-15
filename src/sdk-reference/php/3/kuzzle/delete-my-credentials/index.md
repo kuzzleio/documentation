@@ -7,8 +7,6 @@ description: Kuzzle:deleteMyCredentials
   
 
 # deleteMyCredentials
-[snippet=delete-my-credentials-1]
-
 Delete the current user's credentials for the specified `strategy`. 
 
 ---
@@ -34,3 +32,7 @@ Delete the current user's credentials for the specified `strategy`.
 ## Callback Response
 
 Returns an object with the query status.
+
+## Usage
+
+[snippet=delete-my-credentials-1]

@@ -7,8 +7,6 @@ description: Document:setContent
   
 
 # setContent
-[snippet=set-content-1]
-
 Replaces the current content with new data.  
 This is a helper function returning a reference to itself so that you can easily chain calls.
 
@@ -32,3 +30,7 @@ Changes made by this function won't be applied until the <code>save</code> metho
 ## Return Value
 
 Returns this `Document` object to allow chaining.
+
+## Usage
+
+[snippet=set-content-1]

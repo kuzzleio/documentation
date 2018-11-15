@@ -7,8 +7,6 @@ description: Kuzzle:setDefaultIndex
   
 
 # setDefaultIndex
-[snippet=set-default-index-1]
-
 Set the default data index. Has the same effect than the `defaultIndex` constructor option.
 
 ---
@@ -16,3 +14,7 @@ Set the default data index. Has the same effect than the `defaultIndex` construc
 ## Return Value
 
 Returns the `Kuzzle` SDK object to allow chaining.
+
+## Usage
+
+[snippet=set-default-index-1]

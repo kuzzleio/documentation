@@ -7,8 +7,6 @@ description: Collection:fetchDocument
   
 
 # fetchDocument
-[snippet=fetch-document-1]
-
 Retrieves a single stored document using its unique document ID, and returns it as a [Document]({{ site_base_path }}sdk-reference/document/) object.
 
 ---
@@ -34,3 +32,7 @@ Retrieves a single stored document using its unique document ID, and returns it 
 ## Callback Response
 
 Returns a [Document]({{ site_base_path }}sdk-reference/document/) object.
+
+## Usage
+
+[snippet=fetch-document-1]

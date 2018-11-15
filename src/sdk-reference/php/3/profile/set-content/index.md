@@ -7,8 +7,6 @@ description: Profile:setContent
   
 
 # setContent
-[snippet=set-content-1]
-
 Replaces the content of the `Profile` object.
 
 <aside class="note">
@@ -28,3 +26,7 @@ Updating a profile will have no impact until the <code>save</code> method is cal
 ## Return Value
 
 Returns the `Profile` object.
+
+## Usage
+
+[snippet=set-content-1]

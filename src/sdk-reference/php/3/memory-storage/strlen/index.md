@@ -7,9 +7,6 @@ description: MemoryStorage:strlen
   
 
 # strlen
-[snippet=strlen-1]
-
-> Callback response:
 Returns the length of a value stored at `key`.
 
 [[_Redis documentation_]](https://redis.io/commands/strlen)
@@ -36,3 +33,12 @@ Returns the length of a value stored at `key`.
 ## Callback Response
 
 Returns an integer containing the length of a value.
+
+## Usage
+
+[snippet=strlen-1]
+> Callback response:
+
+```json
+13
+```

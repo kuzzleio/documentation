@@ -7,8 +7,6 @@ description: Profile:update
   
 
 # update
-[snippet=update-1]
-
 Performs a partial content update on this object.
 
 ---
@@ -40,3 +38,7 @@ Returns the `Profile` object to allow chaining.
 ## Callback Response
 
 Returns the updated version of this object.
+
+## Usage
+
+[snippet=update-1]

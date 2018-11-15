@@ -7,8 +7,6 @@ description: Collection:document
   
 
 # document
-[snippet=document-1]
-
 Creates a new [Document]({{ site_base_path }}sdk-reference/document/) object, using its constructor.
 
 ---
@@ -25,3 +23,7 @@ Creates a new [Document]({{ site_base_path }}sdk-reference/document/) object, us
 ## Return Value
 
 Returns the newly created [Document]({{ site_base_path }}sdk-reference/document) object.
+
+## Usage
+
+[snippet=document-1]

@@ -7,9 +7,6 @@ description: MemoryStorage:zrange
   
 
 # zrange
-[snippet=zrange-1]
-
-> Callback response:
 Returns elements from a sorted set depending on their position in the set, from a `start` position index to a `stop` position index (inclusives).  
 First position starts at `0`.
 
@@ -48,3 +45,16 @@ Returns an array of objects, each containing the following properties:
 
 * `member`: member value in the sorted set
 * `score`: member associated score
+
+## Usage
+
+[snippet=zrange-1]
+> Callback response:
+
+```json
+[
+  { "member": "foo", "score": 1 },
+  { "member": "bar", "score": 2 },
+  { "member": "baz", "score": 3 }
+]
+```

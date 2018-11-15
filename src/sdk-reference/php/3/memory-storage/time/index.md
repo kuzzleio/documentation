@@ -7,9 +7,6 @@ description: MemoryStorage:time
   
 
 # time
-[snippet=time-1]
-
-> Callback response:
 Returns the current server time.
 
 [[_Redis documentation_]](https://redis.io/commands/time)
@@ -38,3 +35,15 @@ Returns an array containing the following two items, in this order:
 
 * a timestamp in [Epoch time](https://en.wikipedia.org/wiki/Unix_time)
 * the number of microseconds already elapsed in the current second
+
+## Usage
+
+[snippet=time-1]
+> Callback response:
+
+```json
+[
+  1488791347,
+  494938
+]
+```

@@ -1,5 +1,9 @@
 ---
 layout: sdk.html.hbs
+language-tab:
+  js: Javascript
+  java: Android
+  php: PHP
 algolia: true
 title: Error Handling
 order: 200

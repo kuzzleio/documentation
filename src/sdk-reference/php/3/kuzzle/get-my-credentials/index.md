@@ -7,9 +7,6 @@ description: Kuzzle:getMyCredentials
   
 
 # getMyCredentials
-[snippet=get-my-credentials-1]
-
-> Callback response
 Get [credential information]({{ site_base_path }}guide/essentials/user-authentication/#user-credentials) for the current user.
 
 ---
@@ -35,3 +32,15 @@ Get [credential information]({{ site_base_path }}guide/essentials/user-authentic
 ## Callback Response
 
 Returns an object with the credentials for the provided authentication strategy.
+
+## Usage
+
+[snippet=get-my-credentials-1]
+> Callback response
+
+```json
+{
+  "username": "foo", 
+  "kuid": "<Kuzzle Unique User Identifier>"
+}
+```

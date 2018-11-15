@@ -7,8 +7,6 @@ description: User:getProfileids
   
 
 # getProfileIds
-[snippet=get-profileids-1]
-
 Returns the list of profile identifiers associated with this user.
 
 ---
@@ -16,3 +14,7 @@ Returns the list of profile identifiers associated with this user.
 ## Return Value
 
 Returns an array of strings, each a profile identifier associated with this user.
+
+## Usage
+
+[snippet=get-profileids-1]

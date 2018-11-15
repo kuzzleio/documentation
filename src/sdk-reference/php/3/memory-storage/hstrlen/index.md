@@ -7,9 +7,6 @@ description: MemoryStorage:hstrlen
   
 
 # hstrlen
-[snippet=hstrlen-1]
-
-> Callback response:
 Returns the string length of a field’s value in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hstrlen)
@@ -38,3 +35,12 @@ Returns the string length of a field’s value in a hash.
 ## Callback Response
 
 Returns the string length of a field's value.
+
+## Usage
+
+[snippet=hstrlen-1]
+> Callback response:
+
+```json
+3
+```

@@ -7,8 +7,6 @@ description: User:replace
   
 
 # replace
-[snippet=replace-1]
-
 Replaces the user in Kuzzle.
 
 ---
@@ -39,3 +37,7 @@ Returns the `User` object to allow chaining.
 ## Callback Response
 
 Returns a `User` object.
+
+## Usage
+
+[snippet=replace-1]

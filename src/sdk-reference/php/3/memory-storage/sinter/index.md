@@ -7,9 +7,6 @@ description: MemoryStorage:sinter
   
 
 # sinter
-[snippet=sinter-1]
-
-> Callback response:
 Returns the intersection of the provided sets of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sinter)
@@ -36,3 +33,16 @@ Returns the intersection of the provided sets of unique values.
 ## Callback Response
 
 Returns an array of values in the computed intersection.
+
+## Usage
+
+[snippet=sinter-1]
+> Callback response:
+
+```json
+[
+  "intersection value1",
+  "intersection value2",
+  "..."
+]
+```

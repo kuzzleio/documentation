@@ -7,10 +7,24 @@ description: Kuzzle:checkToken
   
 
 # checkToken
-[snippet=check-token-1]
-
 > Callback response if the token is valid:
+
+```json
+{
+  "expiresAt": 1454588077399,
+  "valid": true
+}
+```
+
 > Callback response if the token is invalid:
+
+```json
+{
+  "valid": false,
+  "state": "<invalidity reason>"
+}
+```
+
 Checks the validity of a JSON Web Token.
 
 <aside class="notice">
@@ -34,3 +48,7 @@ This method is non-queuable, meaning that during offline mode, it will be discar
 
 Returns a JSON object with a `valid` boolean property.  
 If the token is valid, an `expiresAt` property is set with the expiration timestamp. If not, a `state` property is set explaining why the token is invalid.
+
+## Usage
+
+[snippet=check-token-1]

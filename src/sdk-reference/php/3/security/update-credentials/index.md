@@ -7,9 +7,6 @@ description: Security:updateCredentials
   
 
 # updateCredentials
-[snippet=update-credentials-1]
-
-> Callback response
 Update the current user's credentials for the specified <strategy>. The credentials to send depend on the authentication plugin and the strategy.
 
 ---
@@ -37,3 +34,15 @@ Update the current user's credentials for the specified <strategy>. The credenti
 ## Callback Response
 
 Returns an object with the updated credentials.
+
+## Usage
+
+[snippet=update-credentials-1]
+> Callback response
+
+```json
+{
+  "username": "foo",
+  "kuid": "<Kuzzle Unique User Identifier>"
+}
+```

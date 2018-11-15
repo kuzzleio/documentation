@@ -7,9 +7,6 @@ description: MemoryStorage:lrem
   
 
 # lrem
-[snippet=lrem-1]
-
-> Callback response:
 Removes the first `count` occurences of elements equal to `value` from a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lrem)
@@ -44,3 +41,12 @@ Returns the `MemoryStorage` object to allow chaining.
 ## Callback Response
 
 Returns an integer containing the number of removed elements.
+
+## Usage
+
+[snippet=lrem-1]
+> Callback response:
+
+```json
+1
+```

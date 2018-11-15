@@ -7,9 +7,6 @@ description: MemoryStorage:dbsize
   
 
 # dbsize
-[snippet=dbsize-1]
-
-> Callback response:
 Returns the number of keys in the application database.
 
 [[_Redis documentation_]](https://redis.io/commands/dbsize)
@@ -36,3 +33,12 @@ Returns the number of keys in the application database.
 ## Callback Response
 
 Returns an integer containing the number of keys in the application database.
+
+## Usage
+
+[snippet=dbsize-1]
+> Callback response:
+
+```json
+12
+```

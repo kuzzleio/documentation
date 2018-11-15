@@ -7,9 +7,6 @@ description: MemoryStorage:zcard
   
 
 # zcard
-[snippet=zcard-1]
-
-> Callback response:
 Returns the number of elements held by a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zcard)
@@ -36,3 +33,12 @@ Returns the number of elements held by a sorted set.
 ## Callback Response
 
 Returns an integer containing the number of elements in a sorted set.
+
+## Usage
+
+[snippet=zcard-1]
+> Callback response:
+
+```json
+4
+```

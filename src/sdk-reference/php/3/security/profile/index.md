@@ -7,8 +7,6 @@ description: Security:profile
   
 
 # profile
-[snippet=profile-1]
-
 Instantiate a new security [Profile]({{ site_base_path }}sdk-reference/profile) object.
 
 ---
@@ -25,3 +23,7 @@ Instantiate a new security [Profile]({{ site_base_path }}sdk-reference/profile) 
 ## Return Value
 
 Returns the new security [Profile]({{ site_base_path }}sdk-reference/profile) object.
+
+## Usage
+
+[snippet=profile-1]

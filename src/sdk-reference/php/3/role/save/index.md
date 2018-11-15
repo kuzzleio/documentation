@@ -7,8 +7,6 @@ description: Role:save
   
 
 # save
-[snippet=save-1]
-
 Creates or replaces the role in Kuzzle's database layer.
 
 ---
@@ -39,3 +37,7 @@ Returns the `Role` object to allow chaining.
 ## Callback Response
 
 Returns a `Role` object.
+
+## Usage
+
+[snippet=save-1]

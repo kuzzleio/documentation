@@ -7,9 +7,6 @@ description: Kuzzle:listIndexes
   
 
 # listIndexes
-[snippet=list-indexes-1]
-
-> Callback response:
 Returns the list of indexes stored in Kuzzle.
 
 ---
@@ -34,3 +31,12 @@ Returns the list of indexes stored in Kuzzle.
 ## Callback Response
 
 Returns an `array` of index names.
+
+## Usage
+
+[snippet=list-indexes-1]
+> Callback response:
+
+```json
+[ "index", "another index", "..."]
+```

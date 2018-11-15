@@ -7,8 +7,6 @@ description: Collection:updateDocument
   
 
 # updateDocument
-[snippet=update-document-1]
-
 Update parts of a document, by replacing some fields or adding new ones.  
 Note that you cannot remove fields this way: missing fields will simply be left unchanged.
 
@@ -45,3 +43,7 @@ Returns the `Collection` object to allow chaining.
 ## Callback Response
 
 Returns an up-to-date [Document]({{ site_base_path }}sdk-reference/document/) object.
+
+## Usage
+
+[snippet=update-document-1]

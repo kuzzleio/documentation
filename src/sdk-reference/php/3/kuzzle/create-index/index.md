@@ -7,9 +7,6 @@ description: Kuzzle:createIndex
   
 
 # createIndex
-[snippet=create-index-1]
-
-> Callback response:
 Create a new empty data index, with no associated mapping.
 
 ---
@@ -34,3 +31,15 @@ Create a new empty data index, with no associated mapping.
 ## Callback Response
 
 Returns an object with the index creation status.
+
+## Usage
+
+[snippet=create-index-1]
+> Callback response:
+
+```json
+{
+  "acknowledged": true,
+  "shards_acknowledged": true
+}
+```

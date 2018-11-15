@@ -7,8 +7,6 @@ description: Kuzzle:logout
   
 
 # logout
-[snippet=logout-1]
-
 Logs the user out.
 
 <aside class="notice">
@@ -37,3 +35,7 @@ Returns the `Kuzzle` SDK object to allow chaining.
 
 Returns the `Kuzzle` SDK object once the logout process is complete, either successfully or not.  
 The `Kuzzle` SDK object will unset the `jwtToken` property if the user is successfully logged out.
+
+## Usage
+
+[snippet=logout-1]

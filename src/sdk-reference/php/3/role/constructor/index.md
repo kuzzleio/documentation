@@ -8,8 +8,6 @@ order: 1
   
 
 # Constructors
-[snippet=constructor-1]
-
 Instantiates a new `Role` object, which defines a set of right policies.
 
 ---
@@ -40,3 +38,7 @@ Instantiates a new `Role` object, which defines a set of right policies.
 ## Return Value
 
 Returns the `Role` object.
+
+## Usage
+
+[snippet=constructor-1]

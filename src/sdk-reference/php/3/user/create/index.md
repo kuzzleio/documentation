@@ -7,8 +7,6 @@ description: User:create
   
 
 # create
-[snippet=create-1]
-
 Create the user in Kuzzle. Credentials can be created during the process by using [setCredentials]({{ site_base_path }}sdk-reference/user/set-credentials) beforehand.
 
 ---
@@ -39,3 +37,7 @@ Returns the `User` object to allow chaining.
 ## Callback Response
 
 Returns a `User` object.
+
+## Usage
+
+[snippet=create-1]
