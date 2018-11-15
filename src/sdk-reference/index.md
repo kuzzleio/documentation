@@ -29,14 +29,18 @@ but we’re working on extending the support to many more.
     <img src="/assets/images/logos/java.svg" alt="java logo" class="Languages-item-logo">
     <div class="Languages-item-name">Java</div>
   </a>
-  <a href="https://github.com/kuzzleio/sdk-ruby" class="Languages-item">
-    <div class="ribbon"><span>ALPHA</span></div>
-    <img src="/assets/images/logos/ruby.svg" alt="ruby logo" class="Languages-item-logo">
-    <div class="Languages-item-name">Ruby</div>
+  <a href="https://github.com/kuzzleio/sdk-php" class="Languages-item">
+    <img src="/assets/images/logos/php.svg" alt="php logo" class="Languages-item-logo">
+    <div class="Languages-item-name">PHP</div>
   </a>
   <a href="/sdk-reference/android/3/essentials/" class="Languages-item">
     <img src="/assets/images/logos/android.svg" alt="android logo" class="Languages-item-logo">
     <div class="Languages-item-name">Android</div>
+  </a>
+  <a href="https://github.com/kuzzleio/sdk-ruby" class="Languages-item">
+    <div class="ribbon"><span>ALPHA</span></div>
+    <img src="/assets/images/logos/ruby.svg" alt="ruby logo" class="Languages-item-logo">
+    <div class="Languages-item-name">Ruby</div>
   </a>
   <a href="https://github.com/kuzzleio/sdk-python2" class="Languages-item">
     <div class="ribbon"><span>ALPHA</span></div>
@@ -54,7 +58,6 @@ but we’re working on extending the support to many more.
     <div class="Languages-item-name">LUA</div>
   </a>
   <a href="https://github.com/kuzzleio/sdk-php" class="Languages-item">
-    <div class="ribbon"><span>ALPHA</span></div>
     <img src="/assets/images/logos/php.svg" alt="php logo" class="Languages-item-logo">
     <div class="Languages-item-name">PHP</div>
   </a>
