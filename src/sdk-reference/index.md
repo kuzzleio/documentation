@@ -1,7 +1,8 @@
 ---
 title: SDKs
 order: 1
-layout: sdk.html.hbs
+layout: full.html.hbs
+nosidebar: true
 ---
 
 # SDKs Reference
