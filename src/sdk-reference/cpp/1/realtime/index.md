@@ -1,8 +1,7 @@
 ---
 layout: sdk.html.hbs
 title: realtime
-description: Realtime Controller
-order: 200
+description: Realtime Controller 
 ---
 
 # Realtime Controller
