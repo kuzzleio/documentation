@@ -11,7 +11,7 @@ Kuzzle has native support for the following network protocols: HTTP, Websocket a
 
 However, any number of protocols can be implemented, adding new network capabilities.
 
-Protocols are entirely responsible of the network communication layer, which can be as simple as a UDP socket, all the way to a complete pub/sub message broker.  
+Protocols are entirely responsible of the network communication layer, which can be as simple as a UDP socket, all the way to a complete pub/sub message broker.
 Protocols can even decide to propose a dedicated message format and/or query syntax for the Kuzzle API.
 
 Protocols are provided with objects to interact with Kuzzle:
@@ -21,7 +21,7 @@ Protocols are provided with objects to interact with Kuzzle:
 
 Protocol implementation example: [MQTT](https://github.com/kuzzleio/protocol-mqtt)
 
---- 
+---
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ Kuzzle loads protocols as [Node.js modules](https://nodejs.org/dist/latest-v8.x/
 
 This means that a protocol directory must contain either:
 
-* an `index.js` file 
+* an `index.js` file
 
 and/or:
 
@@ -45,7 +45,7 @@ and/or:
 
 ### manifest.json
 
-Kuzzle needs a few informations to make your protocol work properly. These informations must be provided in a `manifest.json` file, in the protocol directory.
+Kuzzle needs a few information to make your protocol work properly. These information must be provided in a `manifest.json` file, in the protocol directory.
 
 The following properties can be defined in this `manifest.json` file:
 
@@ -79,7 +79,7 @@ Kuzzle notifies protocols when one of their managed connection [joins]({{ site_b
 
 Kuzzle has no opinion on how a protocol handles channels and their associated users. It simply asks protocols to [broadcast]({{ site_base_path }}protocols/1/essentials/broadcast), or to [notify]({{ site_base_path }}protocols/1/essentials/notify) messages to listening users.
 
---- 
+---
 
 ## Configuration
 
@@ -112,13 +112,13 @@ module.exports = class MyProtocol {
     this.context = null;
     this.entryPoint = null;
     this.name = 'foobar';
-    
+
     // Example on how to maintain client connections
     this.clients = {};
     this.connections = {};
   }
 
-  /** 
+  /**
   * @param {EntryPoint} entryPoint - main protocol interface with Kuzzle
   * @param {object} context - Constructors and utilities
   */
@@ -126,7 +126,7 @@ module.exports = class MyProtocol {
     // plugin initialization
     this.entryPoint = entryPoint;
     this.context = context;
-    
+
     // user configuration can be retrieved from entryPoint.config[protocol name]
     this.config = Object.assign({
       default: 'value'
@@ -144,8 +144,8 @@ module.exports = class MyProtocol {
     // when a client connects
     this.on('onClientConnect', client => {
       const connection = new context.constructor.ClientConnection(
-        this.name, 
-        [client.connection.stream.remoteAddress], 
+        this.name,
+        [client.connection.stream.remoteAddress],
         {some: 'header'}
       );
 
@@ -192,7 +192,7 @@ module.exports = class MyProtocol {
   */
   notify (channels, connectionId, payload) {
     for (const channel of channels) {
-      // send the payload to the connection 
+      // send the payload to the connection
     });
   }
 

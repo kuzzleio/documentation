@@ -62,7 +62,7 @@ Method: POST
 
 ## Response
 
-Returns a boolean confirming the new value of the `autoRefresh` index property.
+Returns an object confirming the new value of the `autoRefresh` index property.
 
 ```javascript
 {
@@ -72,7 +72,9 @@ Returns a boolean confirming the new value of the `autoRefresh` index property.
   "controller": "index",
   "action": "setAutoRefresh",
   "requestId": "<unique request identifier>",
-  "result": true
+  "result": {
+    "response": true
+  }
 }
 ```
 

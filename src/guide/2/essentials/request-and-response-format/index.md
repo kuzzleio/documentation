@@ -16,7 +16,7 @@ Request {
     // members
     status,     // {integer}        The status of the transaction (matches HTTP codes)
     timestamp,  // {integer}
-    id,         // {string}         
+    id,         // {string}
     context,    // {RequestContext} Contains information about the connection and the current token & user
     input,      // {RequestInput}   The request input params sent by the client
     result,     // {Object}         The raw result sent by the controller (defaults to null)
@@ -67,7 +67,7 @@ The `context` attribute contains information about the state of the connection a
 
 ```javascript
 RequestContext {
-    connection {    // Network connection informations
+    connection {    // Network connection information
       id,           // {scalar}     Unique identifier of the user connection
       protocol,     // {string}     Network protocol name
       ips,          // {Array}      Chain of IP addresses, starting from the client

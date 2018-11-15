@@ -1,22 +1,16 @@
 <script type="text/javascript" data-packer="exclude">
-  var site_url = 'https://docs.kuzzle.io/';
+  var site_url = 'https://docs-v2.kuzzle.io/';
   var site_base_path = '/';
   var algolia_projectId = '{{ algolia_projectId }}';
+  var algolia_index = '{{ algolia_index }}';
   var algolia_publicKey = '{{ algolia_publicKey }}';
   var sdkVersions = '{{ sdkVersions }}';
 
   sdkVersions = JSON.parse(sdkVersions.replace(/&quot;/g, '\"'));
-
-
 </script>
 
-<script src="/assets/libs/jquery.min.js"></script>
-<script src="/assets/libs/algolia.min.js"></script>
-<script src="/assets/libs/prism.js"></script>
-<script src="/assets/libs/select2.min.js"></script>
-
 <script src="/assets/js/bundle.min.js"></script>
+
 {{#if (eq is_dev true) }}
   <script src="http://localhost:35729/livereload.js"></script>
 {{/if}}
-

@@ -20,7 +20,7 @@ MDelete(indexes []string, options types.QueryOptions) ([]string, error)
 | Arguments | Type         | Description                                   | Required |
 | --------- | ------------ | --------------------------------------------- | -------- |
 | `indexes` | Array        | An array of strings containing indexes names. | yes      |
-| `options` | QueryOptions | Query options.         | no       |
+| `options` | QueryOptions | Query options         | no       |
 
 ### **Options**
 

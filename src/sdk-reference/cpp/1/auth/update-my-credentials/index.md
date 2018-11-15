@@ -21,7 +21,7 @@ std::string updateMyCredentials(const std::string& strategy, const std::string& 
 |--------------|---------|-------------
 | `strategy` | const std::string& | the strategy to use
 | `credentials` | const std::string& | the new credentials
-| `options`  | query_options*    | A pointer to a `query_options` containing query options
+| `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
 
 
 ### **Options**
@@ -35,7 +35,7 @@ Additional query options
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Return
 

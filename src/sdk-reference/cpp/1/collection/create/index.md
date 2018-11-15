@@ -7,9 +7,9 @@ description: Create a new collection
 
 # create
 
-Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.  
+Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.
 You can also provide an optional data mapping that allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).  
+persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
 
 This method will only update the mapping if the collection already exists.
 
@@ -26,11 +26,11 @@ void create(const std::string& index, const std::string& collection, const std::
 | ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | ``mapping`` | const std::string* | Collection data mapping in JSON format  | no  |
-| ``options`` | kuzzleio::query_options* |  A pointer to a `query_options` containing query options  | no  |
+| ``options`` | kuzzleio::query_options* |  A pointer to a `kuzzleio::query_options` containing query options  | no  |
 
 ### **mapping**
 
-An string containing the JSON representation of the collection data mapping.  
+An string containing the JSON representation of the collection data mapping.
 
 The mapping must have a root field `properties` that contain the mapping definition:
 ```json
@@ -58,7 +58,7 @@ Additional query options
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

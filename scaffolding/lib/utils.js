@@ -139,6 +139,10 @@ function renderSnippetConfigTemplate(variables, actionPath) {
 }
 
 function extractFromFile(file, regexpInfo, regexpInfoFallback) {
+  if (!fs.existsSync(file)) {
+    return;
+  }
+
   const content = fs.readFileSync(file, 'utf8');
   let regexp;
 

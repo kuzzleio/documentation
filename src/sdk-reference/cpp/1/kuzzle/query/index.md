@@ -28,7 +28,7 @@ kuzzleio::kuzzle_response* query(kuzzleio::kuzzle_request* query, kuzzleio::quer
 
 ### **request**
 
-Properties required for the Kuzzle API can be set in the [kuzzle_request](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L51) struct.  
+Properties required for the Kuzzle API can be set in the [kuzzle_request](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L51) struct.
 The following properties are the most common.
 
 | Property     | Type         | Description                                                        | Required |
@@ -39,11 +39,11 @@ The following properties are the most common.
 | `index`      | const char\* | Index name for this action                                         | no       |
 | `collection` | const char\* | Collection name for this action                                    | no       |
 | `id`         | const char\* | id for this action                                                 | no       |
-| `volatiles`  | const char\* | JSON string representing additional informations to send to Kuzzle | no       |
+| `volatiles`  | const char\* | JSON string representing additional information to send to Kuzzle | no       |
 
 ### **options**
 
-A pointer to a [query_option](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L169) containing additional query options.  
+A pointer to a [query_option](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L169) containing additional query options
 The following properties are the most common.
 
 | Property   | Type    | Description                       | Default |
@@ -52,7 +52,7 @@ The following properties are the most common.
 
 ## Return
 
-A [kuzzle_response](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L445) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/kuzzle-response).  
+A [kuzzle_response](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L445) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/kuzzle-response).
 The following properties are the most common.
 
 | Property     | Type   | Description                         |
@@ -64,7 +64,7 @@ The following properties are the most common.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

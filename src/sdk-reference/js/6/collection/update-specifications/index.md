@@ -7,35 +7,28 @@ description: Update the validation specifications
 
 # updateSpecifications
 
-The updateSpecifications method allows you to create or update the validation specifications for one or more index/collection pairs.
+The updateSpecifications method allows you to create or update the validation specifications for a collection.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
-## Signature
-
-```javascript
-/**
-* @param {string} index
-* @param {string} collection
-* @param {object} specifications
-* @param {object} [options]
-* @returns {Promise.<object>}
- */
-updateSpecifications(index, collection, specifications, options = {})
-```
-
 ## Arguments
 
-| Arguments    | Type    | Description | Required
+```javascript
+updateSpecifications(index, collection, specifications, [options])
+```
+
+<br/>
+
+| Arguments    | Type    | Description |
 |--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
-| ``specifications`` | Object | Specifications to update  | yes  |
-| ``options`` | Object | Query options    | no  |
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``specifications`` | <pre>object</pre> | Specifications to update  |
+| ``options`` | <pre>object</pre> | Query options    |
 
-### **specifications**
+### specifications
 
-An object representing the specifications.  
+An object representing the specifications.
 
 This object must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
 
@@ -48,15 +41,15 @@ This object must follow the [Specification Structure]({{ site_base_path }}valida
 }
 ```
 
-### **options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
 Resolve to an object containing the specifications.
 

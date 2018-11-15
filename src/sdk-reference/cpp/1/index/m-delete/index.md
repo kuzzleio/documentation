@@ -20,7 +20,7 @@ std::vector<std::string> mDelete(std::vector<std::string> indexes, kuzzleio::que
 | Arguments | Type                       | Description                                             | Required |
 | --------- | -------------------------- | ------------------------------------------------------- | -------- |
 | `indexes` | `std::vector<std::string>` | containing list of indexes names                        | yes      |
-| `options` | kuzzleio::query_options              | A pointer to a `query_options` containing query options | no       |
+| `options` | kuzzleio::query_options              | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
 ### **Options**
 
@@ -36,7 +36,7 @@ Returns a `std::vector<std::string>` containing the list of indexes names delete
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

@@ -7,35 +7,28 @@ description: Validate specifications format
 
 # validateSpecifications
 
-The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.  
+The validateSpecifications method checks if a validation specification is well formatted. It does not store or modify the existing specification.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
-## Signature
-
-```javascript
-/**
- * @param {string} index
- * @param {string} collection
- * @param {object} specifications
- * @param {object} [options]
- * @returns {Promise.<object>}
- */
-validateSpecifications(index, collection, specifications, options = {})
-```
-
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``collection`` | String | Collection name    | yes  |
-| ``specifications`` | Object | Specifications to validate  | yes  |
-| ``options`` | Object | An object containing query options    | no  |
+```javascript
+validateSpecifications (index, collection, specifications, [options])
+```
 
-### **specifications**
+<br/>
 
-An object representing the specifications.  
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | <pre>string</pre> | Index name    |
+| ``collection`` | <pre>string</pre> | Collection name    |
+| ``specifications`` | <pre>object</pre> | Specifications to validate  |
+| ``options`` | <pre>object</pre> | Query options    |
+
+### specifications
+
+An object representing the specifications.
 
 This object must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
 
@@ -48,24 +41,25 @@ This object must follow the [Specification Structure]({{ site_base_path }}valida
 }
 ```
 
-### **options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
 
-## Resolve
+## Resolves
 
-Resolve to an object which contain informations about the specifications validity.  
+Resolves to an object which contain information about the specifications validity.
+
 It contains the following properties:
 
 | Property    | Type    | Description |
 |--------------|---------|-------------|
-| ``valid`` | Boolean | Specifications validity   |
-| ``details`` | Array.<String> | Specifications errors    |
-| ``description`` | String | Global description of errors    |
+| ``valid`` | <pre>boolean</pre> | Specifications validity   |
+| ``details`` | <pre>string[]</pre> | Specifications errors    |
+| ``description`` | <pre>string</pre> | Global description of errors    |
 
 ## Usage
 

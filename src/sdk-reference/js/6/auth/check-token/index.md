@@ -2,37 +2,36 @@
 layout: sdk.html.hbs
 algolia: true
 title: checkToken
+description: Checks a JWT's validity.
 ---
 
 # checkToken
 
-## Signature
+Checks a token validity.
 
-```javascript
-/**
- * Checks whether a given jwt token still represents a valid session in Kuzzle.
- *
- * @param  {string}   token     The jwt token to check
- * @return {Promise|*|PromiseLike<T>|Promise<T>}
- */
-checkToken(token)
-```
+This API route does not require the caller to be logged in.
 
 ## Arguments
 
+```javascript
+checkToken (token)
+```
+
+<br/>
+
 | Property    | Type    | Description
 |--------------|---------|-------------
-| ``token`` | string | the token
+| ``token`` | <pre>string</pre> | JWT token
 
-## Resolve
+## Resolves
 
-An object representing the token validity status
+An `object` representing the token validity status
 
-| Name                | Type    | Description                                                                                                      
+| Name                | Type    | Description
 | ------------------- | ------- | -----------------------------------
-| valid               | bool    | Tell if the token is valid or not
-| state               | string  | Explain why the token is invalid
-| expires_at          | number  | Tells when the token expires
+| `valid`               | <pre>boolean</pre> | Tell if the token is valid or not
+| `state`               | <pre>string</pre> | Explain why the token is invalid
+| `expires_at`          | <pre>number</pre> | Token expiration timestamp |
 
 ## Usage
 

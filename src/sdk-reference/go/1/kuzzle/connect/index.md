@@ -18,7 +18,7 @@ Connect() error
 
 ## Return
 
-Return a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/error-handling) if the SDK can not connect to Kuzzle.
+Return a [Kuzzle error]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling) if the SDK can not connect to Kuzzle.
 
 ## Usage
 

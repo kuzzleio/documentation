@@ -19,7 +19,7 @@ std::vector<std::string> list(kuzzleio::query_options *options = null)
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
+| `options` | kuzzleio::query_options* | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
 ### **Options**
 
@@ -35,7 +35,7 @@ Returns a `std::vector<std::string>` containing the list of indexes names presen
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

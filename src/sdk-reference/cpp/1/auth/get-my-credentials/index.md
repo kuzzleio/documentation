@@ -20,7 +20,7 @@ std::string getMyCredentials(const std::string& strategy, query_options *options
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
 | `strategy` | const std::string& | the strategy to use    | yes
-| `options`  | query_options*    | A pointer to a `query_options` containing query options | no       |
+| `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
 ### **Options**
 
@@ -36,7 +36,7 @@ Returns a string representing a JSON with the credentials for the provided authe
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

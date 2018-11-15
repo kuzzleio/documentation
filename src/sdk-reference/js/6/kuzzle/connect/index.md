@@ -7,25 +7,18 @@ description: Connects the SDK to Kuzzle
 
 # connect
 
-Connects to Kuzzle using the `host` property provided in the constructor options.  
+Connects to Kuzzle using the `host` property provided in the [constructor options]({{ site_base_path }}sdk-reference/js/6/kuzzle/constructor/#arguments-default).
 Subsequent call have no effect if the SDK is already connected.
 
-## Signature
+## Arguments
 
 ```javascript
-/**
- * @returns {Promise}
- */
-connect();
+connect ()
 ```
 
-## Resolve
+## Resolves
 
-Resolve without value if connection is made successfully.
-
-## Reject
-
-Reject with a [Kuzzle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Resolves if the connection is successful.
 
 ## Usage
 

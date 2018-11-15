@@ -1,4 +1,4 @@
----
+s---
 layout: sdk.html.hbs
 algolia: true
 title: list
@@ -7,41 +7,49 @@ description: Returns the collection list of an index
 
 # list
 
-Returns the complete list of realtime and stored data collections in requested index sorted by name in alphanumerical order.  
-The `from` and `size` arguments allow pagination. They are returned in the response if provided.
-
-
-## Signature
-
-```javascript
-/**
-* @param {string} index
-* @param {object} [options]
-* @returns {Promise.<object>}
- */
-list(index, options = {})
-```
+Returns the list of data collections associated to a provided data index.
+The returned list is sorted in alphanumerical order.
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
-| ``options`` | Object | Query options    | no  |
+```javascript
+list (index, [options])
+```
 
-### **options**
+<br/>
+
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| ``index`` | <pre>string</pre> | Index name    |
+| ``options`` | <pre>object</pre> | Query options    |
+
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
-| `from` | int | Offset of the first result | `0` |
-| `size` | int | Maximum number of returned results | `10` |
+| Property     | Type<br/>(default)    | Description   |
+| -------------- | --------- | ------------- |
+|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
+|  `from`  |  <pre>number</pre> <br/>(`0`) |  Offset of the first result  |
+|  `size`  |  <pre>number</pre> <br/>(`10`) |  Maximum number of returned results  |
 
-## Resolve
+## Resolves
 
-Resolve to an object containing the collection list.
+Resolves to an object containing the following properties:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| ``type`` | <pre>string</pre> | Types of returned collections </br>(`all`, `realtime` or `stored`)   |
+| ``collections`` | <pre>object[]</pre> | List of collections  |
+| `from` | <pre>number</pre> | Offset of the first result |
+| `size` | <pre>number</pre> | Maximum number of returned results |
+
+Each object in the `collections` array contains the following properties:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| ``name`` | <pre>string</pre> | Collection name |
+| ``type`` | <pre>string</pre> | Collection type (`realtime` or `stored`) |
 
 ## Usage
 

@@ -14,7 +14,7 @@ Create the current user's credentials for the specified `<strategy>`.
 ```java
 public String createMyCredentials(
   String,
-  String, 
+  String,
   io.kuzzle.sdk.QueryOptions
 );
 public String createMyCredentials(
@@ -28,7 +28,7 @@ public String createMyCredentials(
 | Arguments    | Type    | Description
 |--------------|---------|-------------
 | `content` | String | the new credentials
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options.
+| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 
 ### **Options**
@@ -46,7 +46,7 @@ A User object.
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/essentials/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/essentials/error-handling).
 
 ## Usage
 

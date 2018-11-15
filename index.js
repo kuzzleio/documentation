@@ -9,6 +9,7 @@ const layouts = require('metalsmith-layouts');
 const permalinks = require('metalsmith-permalinks');
 const livereload = require('metalsmith-livereload');
 const ancestry = require('metalsmith-ancestry');
+const ancestryHelpers = require('./helpers/ancestryHelpers');
 const links = require('metalsmith-relative-links');
 const hbtmd = require('metalsmith-hbt-md');
 const sass = require('metalsmith-sass');
@@ -33,7 +34,6 @@ const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
 
 // configuration
-const versionsConfig = require('./config/versions');
 const msDefaultOpts = require('./config/metalsmith');
 const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
 
@@ -76,27 +76,15 @@ const redirectList = {
   //If you need others, add it here
 };
 
-for (const version of versionsConfig) {
-  if (version.version_path === options.build.path) {
-    log(`Using version ${color.bold(version.version_label)}`);
-
-    options.github.repository = version.version_gh_repo;
-    options.github.branch = version.version_gh_branch;
-    options.algolia.index = version.algolia_index;
-  }
-}
-
 options.algolia.fnFileParser = (file, data) => {
   const objects = [];
   const $ = cheerio.load(data.contents.toString(), {
     normalizeWhitespace: true
   });
-  const content = $('.main-content');
+  const content = $('.md-content');
 
   // remove useless content
-  $('.hljs', content).remove();
-  $('blockquote', content).remove();
-  $('.language-tab-selector', content).remove();
+  $('pre', content).remove();
   $('h1, h2, h3, h4, h5, h6', content).remove();
 
   objects.push({
@@ -109,7 +97,7 @@ options.algolia.fnFileParser = (file, data) => {
     firstMember: (data.ancestry.firstMember ? data.ancestry.firstMember.title : ''),
     toc: data.toc
   });
-
+  
   return objects;
 };
 
@@ -126,7 +114,6 @@ const metalsmith = _metalsmith(__dirname)
     algolia_projectId: options.algolia.projectId,
     algolia_publicKey: options.algolia.publicKey,
     algolia_index: options.algolia.index,
-    versions_config: versionsConfig,
     is_dev: options.dev.enabled,
     sdkVersions: sdkVersions,
     exclude: options.exclude
@@ -193,15 +180,23 @@ metalsmith
     }
     setImmediate(done);
   })
-  .use(concat({
-    files: 'assets/js/**/*.js',
-    output: 'assets/js/main.js'
-  }))
   .use(uglify({
     concat: {
       file: 'bundle.min.js',
       root: 'assets/js'
     },
+    files: [
+      'assets/js/libs/jquery.min.js',
+      'assets/js/libs/algolia.js',
+      'assets/js/libs/prism.js',
+      'assets/js/libs/select2.js',
+      'assets/js/algolia-search.js',
+      'assets/js/languageSelector.js',
+      'assets/js/versionSelector.js',
+      'assets/js/scrollTo.js',
+      'assets/js/drawer.js',
+      'assets/js/app.js'
+    ],
     removeOriginal: true
   }))
   .use(permalinks({relative: false}));
@@ -209,23 +204,15 @@ metalsmith
 metalsmith
   .use((files, ms, done) => {
     for (const file of Object.values(files)) {
-      if (file.ancestry && file.ancestry.children) {
-        const
-          orderedPages = file.ancestry.children.sort((a,b) => {
-            if (a.order === b.order) {
-              if (a.title === b.title) {
-                return 0;
-              }
-
-              return a.title < b.title ? -1 : 1;
-            }
-
-            return a.order - b.order;
-          }),
-          href = '/' + file.src.split('/').slice(0,-1).join('/'),
-          redirect = '/' + orderedPages[0].src.split('/').slice(0,-1).join('/');
-
-        redirectList[href] = redirect;
+      if (file.ancestry) {
+        const lastChildren = ancestryHelpers.getLastChildren(file);
+        if (lastChildren.path !== file.path) {
+          const 
+            href = `/${file.path}`,
+            redirect = `/${lastChildren.path}`;
+          
+          redirectList[href] = redirect;
+        }
       }
     }
     setImmediate(done);
@@ -241,7 +228,6 @@ metalsmith
 
 if (options.algolia.privateKey) {
   log('Algolia indexing enabled');
-
   metalsmith
     .use(algolia({
       clearIndex: true,
