@@ -1,6 +1,6 @@
 try {
-  await kuzzle.ms.ping();
-  console.log('Success');
+  // Prints: PONG
+  console.log(await kuzzle.ms.ping());
 } catch (error) {
   console.error(error.message);
 }

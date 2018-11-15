@@ -1,7 +1,10 @@
 name: ms#sadd
-description:
+description: Adds members to a set of unique values stored at key
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - ^2$
+  - ^1$
+  - "\\[ '(foo|bar|baz)', '(foo|bar|baz)', '(foo|bar|baz)' ]"

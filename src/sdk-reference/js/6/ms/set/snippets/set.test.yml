@@ -1,7 +1,7 @@
 name: ms#set
-description:
+description: Creates a key holding the provided value, or overwrites it if it already exists
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: ^bar$

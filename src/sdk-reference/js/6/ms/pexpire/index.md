@@ -14,8 +14,7 @@ Sets a timeout (in milliseconds) on a key. After the timeout has expired, the ke
 ## Arguments
 
 ```js
-pexpire(key, [options])
-
+pexpire(key, milliseconds, [options])
 ```
 
 <br/>
@@ -23,6 +22,7 @@ pexpire(key, [options])
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
 | `key` | <pre>string</pre> | Key |
+| `milliseconds` | <pre>integer</pre> | Number of milliseconds after which the key is deleted |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options
@@ -34,6 +34,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to a boolean, telling whether the operation succeeded or not.
 
 ## Usage
 

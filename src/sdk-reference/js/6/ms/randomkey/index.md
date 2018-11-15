@@ -6,7 +6,6 @@ title: randomkey
 
 # randomkey
 
-
 Returns a key identifier from the memory storage, at random.
 
 [[_Redis documentation_]](https://redis.io/commands/randomkey)
@@ -14,8 +13,7 @@ Returns a key identifier from the memory storage, at random.
 ## Arguments
 
 ```js
-randomkey(key, [options])
-
+randomkey([options])
 ```
 
 <br/>
@@ -34,6 +32,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to a key identifier, at random.
 
 ## Usage
 

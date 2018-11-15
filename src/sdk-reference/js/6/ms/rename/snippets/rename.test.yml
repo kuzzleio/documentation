@@ -1,7 +1,7 @@
 name: ms#rename
-description:
+description: Renames a key
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: ^World$

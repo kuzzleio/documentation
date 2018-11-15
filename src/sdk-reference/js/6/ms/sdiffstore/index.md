@@ -6,7 +6,6 @@ title: sdiffstore
 
 # sdiffstore
 
-
 Computes the difference between a reference set of unique values, and other sets. The differences are then stored in the provided destination key.
 
 If the destination key already exists, it is overwritten.
@@ -16,7 +15,7 @@ If the destination key already exists, it is overwritten.
 ## Arguments
 
 ```js
-sdiffstore(key, [options])
+sdiffstore(ref, sets, dest, [options])
 
 ```
 
@@ -24,7 +23,9 @@ sdiffstore(key, [options])
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `key` | <pre>string</pre> | Key |
+| `ref` | <pre>string</pre> | Set key of reference |
+| `sets` | <pre>string[]</pre> | List of sets to compare to the reference |
+| `dest` | <pre>string</pre> | Destination key |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options
@@ -36,6 +37,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the number of values stored at the new key.
 
 ## Usage
 

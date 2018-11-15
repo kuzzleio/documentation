@@ -6,7 +6,6 @@ title: persist
 
 # persist
 
-
 Removes the expiration delay or timestamp from a key, making it persistent.
 
 [[_Redis documentation_]](https://redis.io/commands/persist)
@@ -15,7 +14,6 @@ Removes the expiration delay or timestamp from a key, making it persistent.
 
 ```js
 persist(key, [options])
-
 ```
 
 <br/>
@@ -34,6 +32,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves once the key is persisted.
 
 ## Usage
 

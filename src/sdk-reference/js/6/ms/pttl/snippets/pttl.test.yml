@@ -1,7 +1,7 @@
 name: ms#pttl
-description:
+description: Returns the remaining time to live of a key, in milliseconds
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: ^[0-9]+$

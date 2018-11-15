@@ -1,7 +1,9 @@
 name: ms#sismember
-description:
+description: Checks if a value is a member of a set of unique values.
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - ^true$
+  - ^false$

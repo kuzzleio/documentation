@@ -1,7 +1,7 @@
 name: ms#pfadd
-description:
+description: Adds elements to a HyperLogLog data structure
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: ^4$

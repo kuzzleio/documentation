@@ -1,7 +1,9 @@
 name: ms#psetex
-description:
+description: Sets a key with the provided value, and an expiration delay expressed in milliseconds
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - ^[0-9]{1,2}$
+  - ^bar$

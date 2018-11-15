@@ -1,7 +1,9 @@
 name: ms#persist
-description:
+description: Removes the expiration delay or timestamp from a key, making it persistent
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - ^[0-9]+$
+  - "-1"

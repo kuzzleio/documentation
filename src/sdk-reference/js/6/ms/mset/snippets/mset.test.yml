@@ -1,7 +1,9 @@
 name: ms#mset
-description:
+description: Sets the provided keys to their respective values
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - ^0$
+  - ^3$

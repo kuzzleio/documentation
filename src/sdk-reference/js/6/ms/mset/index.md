@@ -6,7 +6,6 @@ title: mset
 
 # mset
 
-
 Sets the provided keys to their respective values. If a key does not exist, it is created. Otherwise, the key's value is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/mset)
@@ -14,17 +13,24 @@ Sets the provided keys to their respective values. If a key does not exist, it i
 ## Arguments
 
 ```js
-hmset(key, [options])
-mset(key, [options])
-
+mset(entries, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `key` | <pre>string</pre> | Key |
+| `entries` | <pre>object[]</pre> | List of key-value pairs to set |
 | ``options`` | <pre>object</pre> | Optional query arguments |
+
+#### entries
+
+The `entries` argument is an array of objects. Each object is a key-value pair, defined with the following properties:
+
+| Property | Type | Description |
+|---|---|---|
+| `key` | <pre>string</pre> | Key |
+| `value` | <pre>*</pre> | Value |
 
 ### options
 
@@ -35,6 +41,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves successfully once the keys are set.
 
 ## Usage
 
