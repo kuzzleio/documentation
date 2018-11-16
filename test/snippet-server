@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+const
+ TestManager = require('./lib/testManager');
+
+function help () {
+  console.log('Usage: snipper-server <sdk> <version>');
+  process.exit(1);
+}
+
+if (process.argv.length !== 4) {
+  help();
+}
+
+const
+  sdk = process.argv[2],
+  version = process.argv[3];
+
+if (!sdk || !version) {
+  help();
+}
+
+(async () => {
+  try {
+    const manager = new TestManager(sdk, version);
+
+    await manager.downloadSdk();
+
+    manager.start();
+  } catch (e) {
+    console.error(e);
+    process.exit(1);
+  }
+})();

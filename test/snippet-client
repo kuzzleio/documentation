@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+const
+ TestCrawler = require('./lib/testCrawler');
+
+function help () {
+  console.log('Usage: snipper-client <path>');
+  process.exit(1);
+}
+
+if (process.argv.length !== 3) {
+  help();
+}
+
+const
+  path = process.argv[2];
+
+if (!path) {
+  help();
+}
+
+(async () => {
+  let crawler;
+
+  try {
+    crawler = new TestCrawler(path);
+
+    await crawler.init();
+
+    await crawler.sendSnippets();
+  } catch (e) {
+    console.error(e);
+    process.exit(1);
+  } finally {
+    crawler.kuzzle.disconnect();
+  }
+})();

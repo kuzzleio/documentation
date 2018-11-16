@@ -7,8 +7,10 @@ const
 
 class CppSdk {
   constructor(version) {
+    this.name = 'cpp';
+    this.ext = 'cpp';
     this.version = version;
-    this.versionPath = getVersionPath('cpp', this.version);
+    this.versionPath = getVersionPath(this);
     this.sdkCppArchive = 'kuzzlesdk-cpp-experimental-amd64.tar.gz';
     this.sdkDir = 'test/bin/sdk-cpp';
     this.sdkCppBucket = `https://dl.kuzzle.io/sdk/cpp/${this.versionPath}/${this.sdkCppArchive}`;

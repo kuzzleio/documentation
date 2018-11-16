@@ -17,7 +17,7 @@ module.exports = class BaseRunner {
 
     try {
       if (snippet.hooks.before) {
-        this.runHookCommand(snippet.hooks.before);
+        await this.runHookCommand(snippet.hooks.before);
       }
 
       await this.lint(snippet);
@@ -106,15 +106,19 @@ module.exports = class BaseRunner {
   }
 
   runHookCommand(command) {
-    try {
-      childProcess.execSync(command, { stderr: 'ignore', stdio: 'ignore' });
-    } catch (e) {
-      const result = {
-        code: 'HOOK_FAILED',
-        actual: e.message
-      };
+    return new Promise((resolve, reject) => {
+      childProcess.exec(command, { stderr: 'ignore', stdio: 'ignore' }, error => {
+        if (error) {
+          const result = {
+            code: 'HOOK_FAILED',
+            actual: error.message
+          };
 
-      throw new TestResult(result);
-    }
+          return reject(new TestResult(result));
+        }
+
+        resolve();
+      });
+    });
   }
 };

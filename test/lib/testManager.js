@@ -1,104 +1,100 @@
 const
   fs = require('fs'),
   path = require('path'),
+  { Kuzzle } = require('kuzzle-sdk'),
   Snippet = require('./snippet'),
   Logger = require('./helpers/logger'),
   {
-    getSupportedLanguages,
+    getSupportedSdks,
     getVersionPath
   } = require('./helpers/utils'),
   TestResult = require('./helpers/testResult');
 
 class TestManager {
-  constructor(basePath) {
-    if (basePath.indexOf('sdk-reference') === -1) {
-      throw new Error('Unable to find sdk-reference directory in basePath');
+  constructor(sdk, version) {
+    const supportedSdks = getSupportedSdks();
+    if (! supportedSdks.includes(sdk)) {
+      throw new Error(`Unknown SDK ${sdk}. Supported SDKs: ${supportedSdks.join(', ')}`);
     }
 
-    const [language, version, rest] = (basePath.split('sdk-reference/')[1] || '').split('/');
+    const Sdk = require(`./sdk/${sdk}Sdk`);
+    this.sdk = new Sdk(version);
 
-    if (! language) {
-      throw new Error('Unable to find language in basePath');
-    }
-
-    if (! version) {
-      throw new Error('Unable to find version in basePath');
-    }
-
-    const supportedLanguages = getSupportedLanguages();
-    if (! supportedLanguages.includes(language)) {
-      throw new Error(`Unknown language ${language}. Supported languages: ${supportedLanguages.join(', ')}`);
-    }
-
-    this.basePath = basePath;
-    this.language = language;
-    this.version = version;
-
-    const Sdk = require(`./sdk/${this.language}Sdk`);
-    this.sdk = new Sdk(this.version);
-
-    const Runner = require(`./runners/${language}Runner`);
+    const Runner = require(`./runners/${this.sdk.name}Runner`);
     this.languageRunner = new Runner(this.sdk);
 
-    this.logger = new Logger(this.language);
+    this.logger = new Logger(this.sdk);
 
-    this.testFiles = this._getTestFiles(this.basePath);
+    this.kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
+
+    this.results = [];
   }
 
-  async run() {
-    const
-      results = [];
+  async start () {
+    try {
+      await this.kuzzle.connect();
 
-    this.logger.log(`${this.testFiles.length} tests found\n`);
+      const collection = `${this.sdk.name}-${this.sdk.version}`;
 
-    if (this.testFiles.length === 0) {
-      process.exit(3);
-    } else {
-      for (const testFile of this.testFiles) {
-        const snippet = new Snippet(testFile, this.language);
+      await this.kuzzle.realtime.subscribe('snippets', collection, {}, this.runSnippet.bind(this));
+      await this.kuzzle.realtime.subscribe(
+        'snippets',
+        collection,
+        { equals: { status: 'finish' } },
+        this.writeReport
+      );
 
-        try {
-          snippet.build();
+      console.log(`Waiting for snippet to test on 'snippets/${collection}`)
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
-          await this.languageRunner.run(snippet);
+  async runSnippet (notification) {
+    const snippetPath = notification.result._source.snippet;
+    console.log(snippetPath)
 
-          results.push({
-            code: 'SUCCESS',
-            file: snippet.snippetFile
-          });
-        }
-        catch (e) {
-          if (! (e instanceof TestResult)) {
-            results.push(new TestResult({
-              code: 'ERROR',
-              actual: e
-            }));
-          } else {
-            results.push(e);
-          }
-        } finally {
-          this.logger.reportResult(snippet, results[results.length - 1]);
-        }
+    const snippet = new Snippet(snippetPath, this.sdk);
+
+    try {
+      snippet.build();
+
+      await this.languageRunner.run(snippet);
+
+      this.results.push({
+        code: 'SUCCESS',
+        file: snippet.snippetFile
+      });
+    }
+    catch (e) {
+      if (! (e instanceof TestResult)) {
+        this.results.push(new TestResult({
+          code: 'ERROR',
+          actual: e
+        }));
+      } else {
+        this.results.push(e);
       }
-      this.logger.writeReport();
+    } finally {
+      this.logger.reportResult(snippet, this.results[this.results.length - 1]);
+    }
+  }
 
-      if (results.filter(result => result.code !== 'SUCCESS').length > 0) {
-        process.exit(1);
-      }
+  async writeReport () {
+    this.logger.writeReport();
+
+    if (this.results.filter(result => result.code !== 'SUCCESS').length > 0) {
+      process.exit(1);
     }
   }
 
   async downloadSdk() {
-    if (this.testFiles.length === 0) {
-      return;
-    }
-
     if (process.env.DEV_MODE === 'true' && this.sdk.exists()) {
       this.logger.log('DEV_MODE is true, sdk already exists, skipping download');
       return;
     }
 
-    this.logger.log(`Install ${this.language.toUpperCase()} SDK version ${this.version} from ${getVersionPath(this.language, this.version)}`);
+    this.logger.log(`Install ${this.sdk.name.toUpperCase()} SDK version ${this.sdk.version} from ${getVersionPath(this.sdk)}`);
 
     try {
       await this.sdk.get();
@@ -108,24 +104,6 @@ class TestManager {
 
       throw e;
     }
-  }
-
-  _getTestFiles(base) {
-    let result = [];
-
-    const files = fs.readdirSync(base);
-
-    for (const file of files) {
-      const newbase = path.join(base, file);
-
-      if (fs.statSync(newbase).isDirectory()) {
-        result = result.concat(this._getTestFiles(newbase));
-      } else if (file.indexOf('.test.yml') > -1) {
-        result.push(newbase);
-      }
-    }
-
-    return result;
   }
 }
 

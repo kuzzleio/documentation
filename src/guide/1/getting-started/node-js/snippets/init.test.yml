@@ -1,8 +1,9 @@
 name: gettingstarted#nodejsinit
 description: Creates an index and a collection
 hooks:
-  before: curl -X DELETE kuzzle:7512/nyc-open-data
+  before: curl -X DELETE kuzzle:7512/nyc-open-data?refresh=wait_for
   after:
 template: empty
 expected: nyc-open-data/yellow-taxi ready!
-sdk: js/6
+sdk: js
+version: 6

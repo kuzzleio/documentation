@@ -26,6 +26,6 @@ const run = async () => {
   } finally {
     kuzzle.disconnect();
   }
-}
+};
 
 run();

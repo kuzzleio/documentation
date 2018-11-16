@@ -7,4 +7,5 @@ hooks:
   after:
 template: empty
 expected: Successfully subscribe to document notifications!
-sdk: js/6
+sdk: js
+version: 6
