@@ -147,8 +147,7 @@ kbd {
   }
 
   // Code blocks
-  code,
-  pre {
+  pre > code{
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
     background-color: $md-code-background;
     font-size: 1.4rem;
@@ -159,32 +158,20 @@ kbd {
       white-space: pre-wrap;
     }
   }
-
-  pre > code {
-    color: white;
-  }
-
-/*
-  // Disable containing block inside headlines
-  h1 code,
-  h2 code,
-  h3 code,
-  h4 code,
-  h5 code,
-  h6 code {
-    margin: 0;
-    background-color: $md-code-background;
-    box-shadow: none;
-  }
-*/
-  // Reset code if it's inside a link
-  a > code {
-    margin: inherit;
-    padding: inherit;
-    border-radius: none;
-    background-color: inherit;
-    color: inherit;
-    box-shadow: none;
+  
+  // Inline code blocks, correct relative ems for smaller font size
+  code {
+    $correct: 1 / 0.85;
+    padding: 3px;
+    border-radius: 0.2rem;
+    background-color: $md-code-background-inline;
+    color: black;
+    font-weight: normal;
+    // Remove box-shadows for print
+    @media print {
+      box-shadow: none;
+      box-decoration-break: initial;
+    }
   }
 
   // Unformatted code blocks
