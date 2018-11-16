@@ -30,7 +30,8 @@ but we’re working on extending the support to many more.
     <img src="/assets/images/logos/java.svg" alt="java logo" class="Languages-item-logo">
     <div class="Languages-item-name">Java</div>
   </a>
-  <a href="https://github.com/kuzzleio/sdk-php" class="Languages-item">
+
+  <a href="/sdk-reference/php/3/essentials/" class="Languages-item">
     <img src="/assets/images/logos/php.svg" alt="php logo" class="Languages-item-logo">
     <div class="Languages-item-name">PHP</div>
   </a>
