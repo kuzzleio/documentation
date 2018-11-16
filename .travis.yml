@@ -52,6 +52,7 @@ jobs:
       after_script:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+            aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/$TRAVIS_PULL_REQUEST/js/5/ --recursive --exclude "*.gitkeep"
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
             cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
@@ -75,6 +76,7 @@ jobs:
       after_script:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+            aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/$TRAVIS_PULL_REQUEST/js/6/ --recursive --exclude "*.gitkeep"
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
             cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
@@ -98,6 +100,7 @@ jobs:
       after_script:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+            aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/$TRAVIS_PULL_REQUEST/go/1/ --recursive --exclude "*.gitkeep"
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
             cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
@@ -121,6 +124,7 @@ jobs:
       after_script:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+            aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/$TRAVIS_PULL_REQUEST/java/1/ --recursive --exclude "*.gitkeep"
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
             cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
@@ -144,6 +148,7 @@ jobs:
       after_script:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+            aws s3 cp reports/ s3://$AWS_S3_BUCKET/reports/$TRAVIS_PULL_REQUEST/cpp/1/ --recursive --exclude "*.gitkeep"
             cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
             cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
@@ -172,3 +177,6 @@ jobs:
 
       after_deploy:
         - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+
+
+

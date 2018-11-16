@@ -52,6 +52,7 @@ Additional query options
 ## Resolves
 
 Resolves to an object which contain information about the specifications validity.
+
 It contains the following properties:
 
 | Property    | Type    | Description |

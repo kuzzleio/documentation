@@ -1,4 +1,4 @@
----
+s---
 layout: sdk.html.hbs
 algolia: true
 title: list

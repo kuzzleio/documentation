@@ -1,6 +1,6 @@
 var languageSelector = {};
 
-languageSelector.excludedSDK = ['android'];
+languageSelector.excludedSDK = [];
 languageSelector.currentLanguage = document.location.pathname.split('/')[2];
 
 languageSelector.init = function (select) {

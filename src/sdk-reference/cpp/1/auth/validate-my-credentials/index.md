@@ -21,7 +21,7 @@ bool validateMyCredentials(const std::string& strategy, const std::string& crede
 |--------------|---------|-------------
 | `strategy` | const std::string& | the strategy to use
 | `credentials` | const std::string& | the new credentials
-| `options`  | query_options*    | A pointer to a `query_options` containing query options
+| `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
 
 
 ### **Options**
