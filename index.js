@@ -97,7 +97,7 @@ options.algolia.fnFileParser = (file, data) => {
     firstMember: (data.ancestry.firstMember ? data.ancestry.firstMember.title : ''),
     toc: data.toc
   });
-  
+
   return objects;
 };
 
@@ -207,10 +207,10 @@ metalsmith
       if (file.ancestry) {
         const lastChildren = ancestryHelpers.getLastChildren(file);
         if (lastChildren.path !== file.path) {
-          const 
+          const
             href = `/${file.path}`,
             redirect = `/${lastChildren.path}`;
-          
+
           redirectList[href] = redirect;
         }
       }
@@ -284,7 +284,7 @@ metalsmith.build((error, files) => {
   if (error) {
     log(nok + color.yellow(' Ooops...'));
     console.error(error);
-    return;
+    process.exit(1);
   }
   log(ok + ' Build finished');
 });
