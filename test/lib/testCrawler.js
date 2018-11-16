@@ -6,35 +6,57 @@ const
 
 
 class TestCrawler {
-  constructor (basePath) {
+  constructor (sdk, version, basePath) {
+    this.sdk = sdk;
+    this.version = version;
     this.basePath = basePath;
 
     this.kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
 
     this.snippets = [];
+
+    this.collection = `${this.sdk}-${this.version}`;
   }
 
   async init () {
     try {
-      this.snippets = this._crawl(this.basePath);
-
       await this.kuzzle.connect();
-
-      console.log(`Found ${this.snippets.length} snippets.`);
-      return true;
     } catch (error) {
       console.error(error);
     }
   }
 
-  async sendSnippets () {
-    for (const snippet of this.snippets) {
-      const { name, sdk, version } = readYaml.sync(snippet);
-      const collection = `${sdk}-${version}`;
-      console.log(`Send ${name} to ${collection}`);
+  async finish () {
+    return this.kuzzle.realtime.publish(
+      'snippets',
+      this.collection,
+      { action: 'finish' }
+    );
+  }
 
-     await this.kuzzle.realtime.publish('snippets', collection, { snippet });
-    }
+  async sendSnippets () {
+    this.snippets = this._crawl(this.basePath).filter(snippet => {
+      const { sdk, version } = readYaml.sync(snippet);
+      return sdk === this.sdk && version.toString() === this.version;
+    });
+
+    console.log(`Send ${this.snippets.length} snippets.`);
+
+    return this.snippets.map(snippet => {
+      return this.kuzzle.realtime.publish(
+        'snippets',
+        this.collection,
+        { snippet, action: 'add' }
+      );
+    });
+  }
+
+  async startTesting () {
+    return this.kuzzle.realtime.publish(
+      'snippets',
+      this.collection,
+      { action: 'start' }
+    );
   }
 
   _crawl (base) {

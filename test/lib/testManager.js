@@ -27,33 +27,55 @@ class TestManager {
 
     this.kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
 
+    this.collection = `${this.sdk.name}-${this.sdk.version}`;
+
     this.results = [];
+
+    this.snippets = [];
   }
 
   async start () {
     try {
       await this.kuzzle.connect();
 
-      const collection = `${this.sdk.name}-${this.sdk.version}`;
-
-      await this.kuzzle.realtime.subscribe('snippets', collection, {}, this.runSnippet.bind(this));
       await this.kuzzle.realtime.subscribe(
         'snippets',
-        collection,
-        { equals: { status: 'finish' } },
-        this.writeReport
+        this.collection,
+        { equals: { action: 'add' } },
+        notification => { this.snippets.push(notification.result._source.snippet) }
       );
 
-      console.log(`Waiting for snippet to test on 'snippets/${collection}`)
+      await this.kuzzle.realtime.subscribe(
+        'snippets',
+        this.collection,
+        { equals: { action: 'start' } },
+        () => { this.runSnippets() }
+      );
+
+      await this.kuzzle.realtime.subscribe(
+        'snippets',
+        this.collection,
+        { equals: { action: 'finish' } },
+        () => { this.stopServer() }
+      );
+
+      console.log(`Waiting for snippet to test on 'snippets/${this.collection}`)
     } catch (error) {
       console.error(error);
     }
   }
 
-  async runSnippet (notification) {
-    const snippetPath = notification.result._source.snippet;
-    console.log(snippetPath)
+  async runSnippets () {
+    this.logger.log(`${this.snippets.length} snippets received\n`);
+    const snippets = this.snippets;
+    this.snippets = [];
 
+    for (const snippetPath of snippets) {
+      await this.runSnippet(snippetPath)
+    }
+  }
+
+  async runSnippet (snippetPath) {
     const snippet = new Snippet(snippetPath, this.sdk);
 
     try {
@@ -80,7 +102,15 @@ class TestManager {
     }
   }
 
-  async writeReport () {
+  async stopServer () {
+    console.log('Stop snippet server.');
+
+    this.writeReport();
+
+    this.kuzzle.disconnect();
+  }
+
+  writeReport () {
     this.logger.writeReport();
 
     if (this.results.filter(result => result.code !== 'SUCCESS').length > 0) {

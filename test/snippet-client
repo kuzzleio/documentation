@@ -4,34 +4,58 @@ const
  TestCrawler = require('./lib/testCrawler');
 
 function help () {
-  console.log('Usage: snipper-client <path>');
+  console.log('Usage: snipper-client start <sdk> <version> <path>');
+  console.log('    Crawl and send available snippets for <sdk>/<versio> from <path>.')
+  console.log('Usage: snipper-client stop <sdk> <version>');
+  console.log('    Stop the snippet server and write report.');
   process.exit(1);
 }
 
-if (process.argv.length !== 3) {
-  help();
-}
-
 const
-  path = process.argv[2];
+  action = process.argv[2],
+  sdk = process.argv[3],
+  version = process.argv[4];
+  path = process.argv[5];
 
-if (!path) {
+if (!action || !sdk || !version || !path) {
   help();
 }
+
 
 (async () => {
   let crawler;
 
   try {
-    crawler = new TestCrawler(path);
+    crawler = new TestCrawler(sdk, version, path);
 
     await crawler.init();
-
-    await crawler.sendSnippets();
-  } catch (e) {
+  } catch (error) {
     console.error(e);
     process.exit(1);
-  } finally {
-    crawler.kuzzle.disconnect();
+  }
+
+  if (action === 'start') {
+
+    try {
+      await crawler.sendSnippets();
+
+      await crawler.startTesting();
+    } catch (e) {
+      console.error(e);
+      process.exit(1);
+    } finally {
+      crawler.kuzzle.disconnect();
+    }
+  } else if (action === 'stop') {
+    try {
+      crawler.finish();
+    } catch (e) {
+      console.error(e);
+      process.exit(1);
+    } finally {
+      crawler.kuzzle.disconnect();
+    }
+  } else {
+    help();
   }
 })();
