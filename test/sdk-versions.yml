@@ -14,9 +14,7 @@ go:
   1: 1-dev
 
 php:
-  3: 3-stable
-  4: 4-stable
+  3: master
 
 android:
-  1: 1-stable
-  2: 2-dev
+  3: master

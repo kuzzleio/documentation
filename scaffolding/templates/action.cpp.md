@@ -7,12 +7,13 @@ description:
 
 # <%= _.camelCase(action) %>
 
-
 ## Arguments
 
 ```cpp
 void <%= _.camelCase(action) %>()
 ```
+
+<br/>
 
 | Argument | Type | Description |
 | --- | --- | --- |

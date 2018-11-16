@@ -1,4 +1,5 @@
 import io.kuzzle.sdk.*;
+import java.util.Date;
 
 public class CodeExampleGenericClass {
     private static Kuzzle kuzzle;

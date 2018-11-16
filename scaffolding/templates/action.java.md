@@ -13,6 +13,8 @@ description:
 void <%= _.camelCase(action) %>()
 ```
 
+<br/>
+
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |

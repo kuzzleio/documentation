@@ -2,11 +2,13 @@
 
 #include <iostream>
 #include <string>
+#include <ctime>
 #include <vector>
 
 #include "auth.hpp"
 #include "collection.hpp"
 #include "document.hpp"
+#include "server.hpp"
 #include "index.hpp"
 #include "realtime.hpp"
 #include "kuzzle.hpp"
