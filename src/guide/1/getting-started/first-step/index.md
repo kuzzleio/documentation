@@ -1,13 +1,14 @@
 ---
 layout: full.html.hbs
 algolia: true
-title: First Steps
-description: learn kuzzle in a few steps
+title: Node.js
+description: Getting started with Kuzzle and Node.js
 ---
 
-# Getting Started
+# Getting Started with Kuzzle and Node.js
 
-In this tutorial you will learn how to install, run and use **Kuzzle** in just a few steps. We will walk you through creating an app that can **store** documents in Kuzzle and generate a **notification** for each new document.
+In this tutorial you will learn how to install, run and use **Kuzzle** with Node.js and the Javascript SDK 6.
+We will walk you through creating an app that can **store** documents in Kuzzle and generate a **notification** for each new document.
 
 ## Running Kuzzle
 
@@ -129,10 +130,10 @@ kuzzle
   .then(() => kuzzle.collection('mycollection').createPromise())
   .then(() => {
     console.log('playground/mycollection ready')
-  })  
+  })
   .catch(err => {
     console.error(err.message)
-  })  
+  })
   .finally(() => kuzzle.disconnect())
 ```
 
@@ -156,10 +157,10 @@ kuzzle
   .then(() => kuzzle.collection('mycollection').createPromise())
   .then(() => {
     console.log('playground/mycollection ready')
-  })  
+  })
   .catch(err => {
     console.error(err.message)
-  })  
+  })
   .finally(() => kuzzle.disconnect())
 ```
 
