@@ -58,10 +58,6 @@ but we’re working on extending the support to many more.
     <img src="/assets/images/logos/lua.svg" alt="lua logo" class="Languages-item-logo">
     <div class="Languages-item-name">LUA</div>
   </a>
-  <a href="https://github.com/kuzzleio/sdk-php" class="Languages-item">
-    <img src="/assets/images/logos/php.svg" alt="php logo" class="Languages-item-logo">
-    <div class="Languages-item-name">PHP</div>
-  </a>
   <a href="https://github.com/kuzzleio/sdk-csharp" class="Languages-item">
     <div class="ribbon"><span>ALPHA</span></div>
     <img src="/assets/images/logos/csharp.svg" alt="csharp logo" class="Languages-item-logo">
