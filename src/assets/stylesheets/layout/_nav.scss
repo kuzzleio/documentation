@@ -115,6 +115,11 @@
     text-overflow: ellipsis;
     cursor: pointer;
     overflow: hidden;
+    
+    code {
+      background-color: $md-code-background-inline;
+      padding: 2px;
+    }
 
     // Icon
     &::after {
