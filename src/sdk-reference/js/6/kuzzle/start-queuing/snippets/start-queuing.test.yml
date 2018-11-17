@@ -2,7 +2,9 @@
 name: kuzzle#startQueuing
 description: Starts the requests queuing
 hooks:
-  before:
-  after:
+  before: 
+  after: 
 template: without-connect
 expected: Start queuing requests
+sdk: js
+version: 6

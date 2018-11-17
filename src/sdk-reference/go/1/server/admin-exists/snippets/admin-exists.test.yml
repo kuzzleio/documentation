@@ -1,7 +1,10 @@
+---
 name: server#adminExists
 description: Checks that an administrator account exists.
 hooks:
-  before:
-  after:
+  before: 
+  after: 
 template: default
-expected: ^(Admin exists\?) (true|false)$
+expected: "^(Admin exists\\?) (true|false)$"
+sdk: go
+version: 1

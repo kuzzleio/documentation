@@ -6,3 +6,5 @@ hooks:
   after: 
 template: without-connect
 expected: Success
+sdk: java
+version: 1

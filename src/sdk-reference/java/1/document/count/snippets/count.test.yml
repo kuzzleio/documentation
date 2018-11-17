@@ -13,7 +13,10 @@ hooks:
       curl -H "Content-type: application/json" -d '{}' kuzzle:7512/nyc-open-data/yellow-taxi/_create
     done
     curl -XPOST kuzzle:7512/nyc-open-data/_refresh
-  after: |
-    curl -XDELETE kuzzle:7512/nyc-open-data
+  after: 'curl -XDELETE kuzzle:7512/nyc-open-data
+
+'
 template: default
 expected: Found 5 documents matching license:valid
+sdk: java
+version: 1

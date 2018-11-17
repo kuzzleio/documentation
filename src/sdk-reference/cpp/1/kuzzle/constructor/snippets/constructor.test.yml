@@ -6,3 +6,5 @@ hooks:
   after: 
 template: blank
 expected: Everything is ok
+sdk: cpp
+version: 1

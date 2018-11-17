@@ -2,7 +2,9 @@
 name: kuzzle#constructor
 description: Creates a new Kuzzle instance connected to kuzzle
 hooks:
-  before:
-  after:
+  before: 
+  after: 
 template: blank
 expected: Everything is ok
+sdk: js
+version: 6

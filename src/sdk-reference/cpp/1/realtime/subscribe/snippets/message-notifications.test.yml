@@ -1,7 +1,10 @@
+---
 name: realtime#subscribe-messages
 description: Subscribe to message notifications
 hooks:
-  before:
-  after:
+  before: 
+  after: 
 template: default
 expected: Message notification received
+sdk: cpp
+version: 1

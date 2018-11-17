@@ -52,13 +52,6 @@ class TestManager {
         () => { this.runSnippets() }
       );
 
-      await this.kuzzle.realtime.subscribe(
-        'snippets',
-        this.collection,
-        { equals: { action: 'finish' } },
-        () => { this.stopServer() }
-      );
-
       console.log(`Waiting for snippet to test on 'snippets/${this.collection}`)
     } catch (error) {
       console.error(error);
@@ -72,6 +65,10 @@ class TestManager {
 
     for (const snippetPath of snippets) {
       await this.runSnippet(snippetPath)
+    }
+
+    if (process.env.DEV_MODE !== 'true') {
+      this.stopServer();
     }
   }
 

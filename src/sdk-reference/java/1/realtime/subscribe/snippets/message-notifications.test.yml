@@ -1,7 +1,10 @@
+---
 name: realtime#subscribemessages
 description: Subscribe to message notifications
 hooks:
-  before:
-  after:
+  before: 
+  after: 
 template: default
 expected: Message notification received
+sdk: java
+version: 1

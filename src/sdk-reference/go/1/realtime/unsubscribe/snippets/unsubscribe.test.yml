@@ -1,7 +1,10 @@
+---
 name: realtime#unsubscribe
 description: Removes a subscription
 hooks:
-  before:
-  after:
+  before: 
+  after: 
 template: default
 expected: Success
+sdk: go
+version: 1

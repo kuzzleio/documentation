@@ -1,3 +1,4 @@
+---
 name: document#mUpdate
 description: Update documents
 hooks:
@@ -5,7 +6,10 @@ hooks:
     curl -XDELETE kuzzle:7512/nyc-open-data
     curl -XPOST kuzzle:7512/nyc-open-data/_create
     curl -XPUT kuzzle:7512/nyc-open-data/yellow-taxi
-  after: |
-    curl -XDELETE kuzzle:7512/nyc-open-data
+  after: 'curl -XDELETE kuzzle:7512/nyc-open-data
+
+'
 template: default
 expected: Success
+sdk: go
+version: 1

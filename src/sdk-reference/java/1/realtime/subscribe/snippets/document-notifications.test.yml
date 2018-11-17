@@ -1,7 +1,11 @@
+---
 name: realtime#subscribedocuments
 description: Simple subscribe to document notifications
 hooks:
-  before: curl -X POST kuzzle:7512/nyc-open-data/_create ; curl -X PUT kuzzle:7512/nyc-open-data/yellow-taxi/; curl -X DELETE kuzzle:7512/nyc-open-data/yellow-taxi/nina-vkote
-  after:
+  before: curl -X POST kuzzle:7512/nyc-open-data/_create ; curl -X PUT kuzzle:7512/nyc-open-data/yellow-taxi/;
+    curl -X DELETE kuzzle:7512/nyc-open-data/yellow-taxi/nina-vkote
+  after: 
 template: default
 expected: Document nina-vkote enter the scope
+sdk: java
+version: 1

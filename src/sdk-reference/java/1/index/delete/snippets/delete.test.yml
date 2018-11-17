@@ -6,3 +6,5 @@ hooks:
   after: 
 template: default
 expected: index deleted
+sdk: java
+version: 1

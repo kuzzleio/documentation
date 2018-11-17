@@ -1,3 +1,4 @@
+---
 name: collection#updateSpecifications
 description: Update the validation specifications
 hooks:
@@ -5,3 +6,5 @@ hooks:
   after: curl -X DELETE kuzzle:7512/nyc-open-data/yellow-taxi/_specifications
 template: default
 expected: Success
+sdk: js
+version: 6

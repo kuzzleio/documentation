@@ -2,7 +2,9 @@
 name: kuzzle#disconnect
 description: Disconnect the SDK
 hooks:
-  before:
-  after:
+  before: 
+  after: 
 template: default
 expected: Success
+sdk: java
+version: 1

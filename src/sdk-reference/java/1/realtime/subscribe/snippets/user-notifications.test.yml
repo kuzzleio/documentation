@@ -1,7 +1,10 @@
+---
 name: realtime#subscribeusers
 description: Subscribe to users joining or leaving the room
 hooks:
   before: curl -X POST kuzzle:7512/nyc-open-data/_create ; curl -X PUT kuzzle:7512/nyc-open-data/yellow-taxi/
-  after:
+  after: 
 template: default
 expected: Currently 2 users in the room
+sdk: java
+version: 1

@@ -3,6 +3,8 @@ name: index#refresh
 description: Forces an Elasticsearch search index update
 hooks:
   before: curl -X POST kuzzle:7512/nyc-open-data/_create
-  after:
+  after: 
 template: default
 expected: 0 shards fail to refresh
+sdk: js
+version: 6

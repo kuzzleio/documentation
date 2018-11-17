@@ -7,3 +7,5 @@ hooks:
   after: 
 template: default
 expected: Document created
+sdk: go
+version: 1

@@ -5,6 +5,8 @@ hooks:
   before: |
     curl -X DELETE kuzzle:7512/nyc-open-data
     curl -X POST kuzzle:7512/nyc-open-data/_create
-  after:
+  after: 
 template: default
 expected: Autorefresh flag is set to true
+sdk: js
+version: 6

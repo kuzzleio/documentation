@@ -6,3 +6,5 @@ hooks:
   after: 
 template: default
 expected: Internal index successfully refreshed
+sdk: cpp
+version: 1
