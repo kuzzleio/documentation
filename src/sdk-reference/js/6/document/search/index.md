@@ -29,7 +29,7 @@ search (index, collection, [query], [options])
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `query` | <pre>object</pre> | Search query |
-| `options` | <pre>object</pre> | An object containing query options. |
+| `options` | <pre>object</pre> | Query options |
 
 ### Options
 

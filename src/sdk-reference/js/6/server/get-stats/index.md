@@ -7,8 +7,6 @@ description: Returns statistics snapshots within a provided timestamp range.
 
 # getStats
 
-{{{since "1.0.0"}}}
-
 Returns statistics snapshots within a provided timestamp range.
 By default, snapshots are made every 10 seconds and they are stored for 1 hour.
 
@@ -22,33 +20,29 @@ These statistics include:
 ## Arguments
 
 ```javascript
-/**
-* @param {Number|String} startTime
-* @param {Number|String} stopTime
-* @param {Object} options - {queuable: Boolean(true)}
-* @returns {Promise<Object>}
-*/
-getStats(startTime, stopTime, options=null)
+getStats (startTime, stopTime, [options])
 ```
 
-| Arguments | Type   | Description                         | Required |
-| --------- | ------ | ----------------------------------- | -------- |
-| `startTime` | Number, String | begining of statistics frame set (timestamp or datetime format) | yes       |
-| `stopTime`  | Number, String | end of statistics frame set (timestamp or datetime format)      | yes       |
-| `options`   | Object         | An object containing query options.                             | no        |
+<br/>
+
+| Arguments | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `startTime` | <pre>number, string</pre> | Begining of statistics frame set (timestamp or datetime format) |
+| `stopTime`  | <pre>number, string</pre> | End of statistics frame set (timestamp or datetime format)      |
+| `options`   | <pre>object</pre>         | Query options          |
 
 ### **Options**
 
 Additional query options
 
-| Property   | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Property   | Type<br/>(default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 
 ## Resolve
 
-Resolves to an `Object` containing statistics snapshots within the provided timestamp range.
+Resolves to an `object` containing statistics snapshots within the provided range.
 
 ## Usage
 

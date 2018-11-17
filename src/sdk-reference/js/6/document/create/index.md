@@ -25,7 +25,7 @@ create (index, collection, id, document, [options])
 | `collection` | <pre>string</pre> | Collection name |
 | `id` | <pre>string</pre> | Optional document ID |
 | `document` | <pre>object</pre> | Document content |
-| `options` | <pre>object</pre> | An object containing query options |
+| `options` | <pre>object</pre> | Query options |
 
 ### Options
 
