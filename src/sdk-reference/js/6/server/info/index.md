@@ -6,35 +6,32 @@ description: Returns information about Kuzzle server.
 ---
 
 # info
-{{{since "1.0.0"}}}
 
 Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
 ## Arguments
 
 ```javascript
-/**
-* @param {Object} options - {queuable: Boolean(true)}
-* @returns {Promise<Object>}
-*/
-info([options])
+info ([options])
 ```
 
-| Arguments | Type   | Description                         | Required |
-| --------- | ------ | ----------------------------------- | -------- |
-| `options` | Object | An object containing query options. | no       |
+<br/>
+
+| Arguments | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `options` | <pre>object</pre> | Query options |
 
 ### **Options**
 
 Additional query options
 
-| Property   | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Property   | Type<br/>(default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 
-Resolves to an `Object` containing server information.
+Resolves to an `object` containing server information.
 
 ## Usage
 

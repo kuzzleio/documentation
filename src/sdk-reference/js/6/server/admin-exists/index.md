@@ -7,31 +7,27 @@ description: Checks that an administrator account exists.
 
 # adminExists
 
-{{{since "1.0.0"}}}
-
 Checks that an administrator account exists.
 
 ## Arguments
 
 ```javascript
-/**
-* @param {Object} options - {queuable: Boolean(true)}
-* @returns {Promise<Object>}
-*/
-adminExists([options])
+adminExists ([options])
 ```
 
-| Arguments | Type   | Description                         | Required |
-| --------- | ------ | ----------------------------------- | -------- |
-| `options` | Object | An object containing query options. | no       |
+<br/>
+
+| Arguments | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `options` | <pre>object</pre> | Query options |
 
 ### **Options**
 
 Additional query options
 
-| Property   | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Property   | Type<br/>(default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 
