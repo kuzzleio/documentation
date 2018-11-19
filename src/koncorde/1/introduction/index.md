@@ -48,15 +48,15 @@ a given center point.
 
 First, you must install Koncorde in your project (the easiest way is to use NPM)
 
-```
+```bash
+
 npm i koncorde
 ```
 
-Then, in a JS file:
+Then, create a `koncorde-demo.js` file and copy-paste the following code inside:
 
 ```js
 const Koncorde = require('koncorde');
-
 const engine = new Koncorde();
 
 const filter = {
@@ -70,7 +70,8 @@ const filter = {
     }
 };
 
-// More on index/collection parameters later
+// Register the filter in the Koncorde Engine
+// (don't worry about the index/collection parameters for now)
 engine.register('index', 'collection', filter)
     .then(result => {
         // The filter identifier depends on a random seed (see below)
@@ -105,3 +106,13 @@ engine.register('index', 'collection', filter)
         }));
     });
 ```
+
+Then, execute the file
+
+```bash
+node koncorde-demo.js
+```
+
+to see Koncorde in action! Feel free to play with the `geoDistance` position and radius,
+as well as with tested points to see the different results.
+You can also dive into more complex filters by playing with other [terms]() and [operands]().
