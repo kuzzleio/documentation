@@ -47,8 +47,9 @@
     transition: transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.25s;
     font-size: 1.5rem;
     opacity: 1;
+    
 
-    &:after {
+    &:after{
       content: '';
       width: 0%;
       transition: width 0.3s;
@@ -57,7 +58,7 @@
       background-color: white;
     }
     // Active or hovered link
-    // &--active,
+    &--active,
     &:hover {
       color: inherit;
       opacity: 1;

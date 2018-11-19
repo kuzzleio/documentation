@@ -25,12 +25,27 @@ install:
   - pip install awscli --upgrade --user
 
 stages:
+  - name: Build
   - name: Snippets tests
   - name: Deployment
     if: type != pull_request AND branch = master
 
 jobs:
   include:
+# -----------------------------------------------------------------------------
+# Build
+# -----------------------------------------------------------------------------
+    - stage: Build
+      name: "Build documentation site"
+
+      language: node_js
+      node_js:
+        - "8"
+
+      script:
+        - npm install
+        - npm run build
+
 # -----------------------------------------------------------------------------
 # Snippets tests
 # -----------------------------------------------------------------------------

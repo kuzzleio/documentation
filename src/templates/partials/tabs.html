@@ -3,27 +3,27 @@
     <div class="md-tabs__inner md-grid">
         <ul class="md-tabs__list">
             <li class="md-tabs__item">
-                <a href="/guide" title="Guide" class="md-tabs__link md-tabs__link--active">
+                <a href="/guide" title="Guide" class="md-tabs__link md-tabs__link{{#if (startwith path "guide") }}--active {{/if}}">
                     Guides
                 </a>
             </li>
             <li class="md-tabs__item">
-                <a href="/sdk-reference" title="SDK" class="md-tabs__link md-tabs__link--active">
+                <a href="/sdk-reference" title="SDK" class="md-tabs__link md-tabs__link{{#if (startwith path "sdk") }}--active {{/if}}">
                     SDK
                 </a>
             </li>
             <li class="md-tabs__item">
-                <a href="/api" title="API" class="md-tabs__link md-tabs__link--active">
+                <a href="/api" title="API" class="md-tabs__link md-tabs__link{{#if (startwith path "api") }}--active {{/if}}">
                     API
                 </a>
             </li>
             <li class="md-tabs__item">
-                <a href="/plugins" title="Plugins" class="md-tabs__link md-tabs__link--active">
+                <a href="/plugins" title="Plugins" class="md-tabs__link md-tabs__link{{#if (startwith path "plugins") }}--active {{/if}}">
                     Plugins
                 </a>
             </li>
             <li class="md-tabs__item">
-                <a href="/protocols" title="Protocols" class="md-tabs__link md-tabs__link--active">
+                <a href="/protocols" title="Protocols" class="md-tabs__link md-tabs__link{{#if (startwith path "protocols") }}--active {{/if}}">
                     Protocols
                 </a>
             </li>

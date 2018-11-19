@@ -1,6 +1,7 @@
 code_example:
   snippet_folder_name: snippets
   section_folder_name: sections
+
 languages:
   js:
     fullname: javascript
@@ -11,14 +12,19 @@ languages:
     fullname: go
     ext: go
     sdk_url: https://github.com/kuzzleio/sdk-go.git
-    sdk_branch: 1.x
+    sdk_branch: 1-dev
   cpp:
     fullname: cpp
     ext: cpp
     sdk_url: https://github.com/kuzzleio/sdk-go.git
-    sdk_branch: 1.x
+    sdk_branch: 1-dev
   java:
     fullname: java
     ext: java
     sdk_url: https://github.com/kuzzleio/sdk-go.git
-    sdk_branch: 1.x
+    sdk_branch: 1-dev
+  php:
+    fullname: php
+    ext: php
+    sdk_url: https://github.com/kuzzleio/sdk-php.git
+    sdk_branch: 3-dev

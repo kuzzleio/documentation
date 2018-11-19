@@ -14,12 +14,12 @@ const
 function injectTemplates(sdkInfos, src, dest) {
   const longDescriptionRegexp = {
     start: `# ${_.camelCase(sdkInfos.action)}\n`,
-    end: '## Signature\n'
+    end: '## Arguments\n'
   };
 
   const shortDescriptionRegexp = {
     start: 'description:',
-    end: '\norder'
+    end: '\n---'
   };
 
   const argsTableRegexp = {

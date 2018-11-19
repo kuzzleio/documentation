@@ -15,7 +15,7 @@ module.exports = {
 
       if (! ids.has(id)) {
         anchors.push({
-          text: $(el).text(),
+          text: $(el).html(),
           id,
           language
         });

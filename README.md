@@ -86,27 +86,6 @@ Now you can add this tag in your markdown to allow metalsmith to override parts 
 
 ## Configuration files
 
-### Snippet languages support
-
-Supported languages, and their description, are detailed in the `config.yml` file at the root of the project:
-
-```yaml
-code_example:
-  snippet_folder_name: snippet
-  section_folder_name: sections
-languages:
-  js:
-    fullname: javascript
-    ext: js
-    sdk_url: https://github.com/kuzzleio/sdk-javascript.git
-    sdk_branch: master
-  go:
-    fullname: go
-    ext: go
-    sdk_url: https://github.com/kuzzleio/sdk-go.git
-    sdk_branch: 1.x
-```
-
 ### Metalsmith general configuration
 
 Metalsmith itself is configured using the `config/metalsmith.json` file.

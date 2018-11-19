@@ -3,10 +3,10 @@ const
   path = require('path'),
   marked = require('marked'),
   MarkdownIt = require('markdown-it'),
-  color = require('colors/safe'),
-  config = require('../getConfig').get();
+  color = require('colors/safe');
 
 const SNIPPET_REGEX = /(\[snippet=)[a-zA-Z0-9-]+\]/g;
+
 
 module.exports = {
 
@@ -22,7 +22,7 @@ module.exports = {
       match.forEach(el => {
         let
           name = el.split('=')[1].slice(0, -1),
-          fullPath = path.join(__dirname, '../src/' + filename.split('/').slice(0, -1).join('/') + '/' + config.code_example.snippet_folder_name),
+          fullPath = path.join(__dirname, '../src/' + filename.split('/').slice(0, -1).join('/') + '/snippets'),
           code = '',
           filenames = fs.readdirSync(fullPath);
 
@@ -31,8 +31,10 @@ module.exports = {
           if (file.split('.')[0] === name && file.substr(-8) !== 'test.yml') {
             presentLanguages.push(file.split('.')[1]);
             let fileContent = fs.readFileSync(fullPath + '/' + file, 'utf8');
+            const lng = file.split('.')[1];
+            const languageName = lng === 'js' ? 'javascript' : lng;
 
-            code += '``` ' + config.languages[file.split('.')[1]].fullname + '\n' + fileContent + '\n```\n';
+            code += '``` ' + languageName + '\n' + fileContent + '\n```\n';
           }
 
         });

@@ -22,7 +22,7 @@ void create(const std::string& index, kuzzleio::query_options *options = null)
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
 | `index`   | const std::string&   | Index name                                              | yes      |
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
+| `options` | kuzzleio::query_options* | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
 ### **Options**
 

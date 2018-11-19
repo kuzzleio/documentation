@@ -19,7 +19,7 @@ std::vector<std::string> list(kuzzleio::query_options *options = null)
 
 | Arguments | Type          | Description                                             | Required |
 | --------- | ------------- | ------------------------------------------------------- | -------- |
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
+| `options` | kuzzleio::query_options* | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
 ### **Options**
 

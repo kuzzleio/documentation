@@ -1,7 +1,6 @@
 const
   path = require('path'),
-  globby = require('globby').sync,
-  config = require('../getConfig').get();
+  globby = require('globby').sync;
 
 const SECTION_REGEX = /\[section=([a-zA-Z0-9-]+)\]/g;
 
@@ -21,8 +20,9 @@ module.exports = function plugin () {
 
         const lng = fn.replace(/^.*\.([^.]+)\.[^.]+$/, '$1');
         const key = `${path.dirname(file)}/${path.basename(fn).replace(/\.[^.]+$/, '')}.html`;
+        const languageName = lng === 'js' ? 'javascript' : lng;
 
-        replacement += `<div id="${name}" class="section ${config.languages[lng].fullname}">
+        replacement += `<div id="${name}" class="section ${languageName}">
               ${files[key].contents.toString()}
           </div>`;
       }

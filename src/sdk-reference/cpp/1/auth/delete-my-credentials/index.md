@@ -20,7 +20,7 @@ void deleteMyCredentials(const std::string& strategy, query_options *options=nul
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
 | `strategy` | const std::string& | the strategy to use    | yes
-| `options`  | query_options\*    | A pointer to a `query_options` containing query options | no       |
+| `options`  | query_options\*    | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
 
 ### **Options**
