@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: Events
 description: SDK events system
+order: 200
 ---
 
 # Events
