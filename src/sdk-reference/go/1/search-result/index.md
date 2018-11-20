@@ -3,7 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: Search Results
 description: How to deal with Kuzzle search results
-order: 100
+order: 600
 ---
 # Search Results
 
