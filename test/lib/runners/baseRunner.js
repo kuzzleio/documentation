@@ -34,7 +34,7 @@ module.exports = class BaseRunner {
       throw e;
     } finally {
       if (snippet.hooks.after) {
-        this.runHookCommand(snippet.hooks.after);
+        await this.runHookCommand(snippet.hooks.after);
       }
     }
   }
