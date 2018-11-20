@@ -5,6 +5,7 @@ title: GetLastStats
 description: Returns the most recent statistics snapshot.
 ---
 
+
 # GetLastStats
 
 {{{since "1.0.0"}}}

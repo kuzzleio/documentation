@@ -5,6 +5,7 @@ title: createMyCredentials
 description: Create the current user's credentials for the specified `<strategy>`.
 ---
 
+
 # createMyCredentials
 
 Create the current user's credentials for the specified `<strategy>`.
@@ -18,8 +19,7 @@ std::string createMyCredentials(const std::string& strategy, const std::string& 
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | const std::string& | the strategy to use
+|| `strategy` | const std::string& | the strategy to use
 | `credentials` | const std::string& | the new credentials
 | `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
 

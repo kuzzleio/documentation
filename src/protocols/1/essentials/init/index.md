@@ -4,28 +4,13 @@ algolia: true
 title: init
 ---
 
+
 # init
 
 Initializes the protocol. 
 
 Called once, during Kuzzle startup.
 
----
-
-## Arguments
-
-```js
-init (entryPoint, context)
-```
-
-<br/>
-
-| Arguments | Type | Description |
-|-----------|------|-------------|
-|`entryPoint` | <pre><a href={{ site_base_path }}protocols/1/entrypoint>EntryPoint</a></pre> | Provides an interface to protocol related methods |
-| `context` | <pre><a href={{ site_base_path }}protocols/1/context>context</a></pre> | Generic interface exposing objects and methods not directly related to the network layer |
-
----
 
 ## Return
 

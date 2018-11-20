@@ -4,6 +4,7 @@ algolia: true
 title: setContent
 description: Role:setContent
 ---
+
   
 
 # setContent
@@ -13,15 +14,6 @@ Replaces the content of the `Role` object.
 Updating a role content will have no impact until the <a href="{{ site_base_path }}sdk-reference/role/save">save</a> method is called
 </aside>
 
----
-
-## setContent(data)
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``data`` | JSON Object | Role content |
-
----
 
 ## Return Value
 

@@ -4,6 +4,7 @@ algolia: true
 title: scrollProfiles
 ---
 
+
 # scrollProfiles
 
 {{{since "1.0.0"}}}
@@ -12,29 +13,6 @@ Moves a result set cursor forward, created by a [searchProfiles]({{ site_base_pa
 
 Results returned by a `scrollProfiles` request reflect the state of the index at the time of the initial search request, like a fixed snapshot. Subsequent changes to documents do not affect the scroll results.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/profiles/_scroll/<scrollId>[?scroll=<time to live>]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "scrollProfiles",
-  "scrollId": "<scrollId>",
-  "scroll": "<time to live>"
-}
-```
-
----
 
 ## Arguments
 

@@ -4,6 +4,7 @@ algolia: true
 title: hlen
 ---
 
+
 # hlen
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns the number of fields contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hlen)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_hlen/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "hlen",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Arguments
 

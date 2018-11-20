@@ -4,31 +4,17 @@ algolia: true
 title: mcreateDocument
 description: Collection:mcreateDocument
 ---
+
   
 
 # mCreateDocument
 Create the input [Documents]({{ site_base_path }}sdk-reference/document/).
 
----
-
-## mCreateDocument(documents, [options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``documents`` | Document[] | Array of [Document]({{ site_base_path }}sdk-reference/document/) to create |
-| ``options`` | JSON Object | Optional parameters |
-| ``callback`` | function | Optional callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| ``queuable`` | boolean | Make this request queuable or not  | ``true`` |
-
----
-
+|
 ## Return Value
 
 Returns the `Collection` object to allow chaining.

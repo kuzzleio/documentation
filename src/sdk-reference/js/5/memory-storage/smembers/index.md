@@ -4,6 +4,7 @@ algolia: true
 title: smembers
 description: MemoryStorage:smembers
 ---
+
   
 
 # smembers
@@ -11,25 +12,11 @@ Returns the members of a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/smembers)
 
----
-
-## smembers(key, [options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `key` | string | Key identifier |
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| `queuable` | boolean | Make this request queuable or not  | ``true`` |
----
-
+|
 ## Return Value
 
 Returns the `MemoryStorage` object to allow chaining.

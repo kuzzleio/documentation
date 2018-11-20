@@ -5,6 +5,7 @@ title: Data Validation
 order: 500
 ---
 
+
 # Data Validation
 
 One common requirement when you are managing data is to perform **data validation**. In real world applications you may need to check that any newly created or updated document meet a certain criteria.
@@ -15,44 +16,6 @@ With Kuzzle, instead of programming the validation logic yourself, you can pick 
 
 For a detailed look at data validation, please refer to our [Data Validation Reference]({{ site_base_path }}validation-reference).
 
----
-
-## Basic Validation
-
-A validation schema is defined using a [hierarchical]({{ site_base_path }}validation-reference/schema) structure that contains a set of rules within an index, collection, and document field.
-
-For example, below is a validation schema for the `onlineshop` index  and `products` collection that defines the validation pattern for field `price` and field `productDescription`:
-
-```json
-{
-  "validation": {
-    "onlineshop": {
-      "products": {
-        "fields": {
-          "price": {
-              "type": "number",
-              "mandatory": true
-          },
-          "productDescription": {
-              "type": "string",
-              "defaultValue": "Sorry, no description available for this product."
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-Let's take a look at what this validation schema does:
-
-* It defines a set of rules for documents in the `products` collection of the `onlineshop` index.
-* It ensures that `price` exists and is a `Number`.
-* It ensures that `productDescription` is a `String` and has a value when none is provided.
-
-For a complete list of validation patterns please refer to our [Validation Patterns Reference]({{ site_base_path }}validation-reference/fields).
-
----
 
 ## Type Options
 

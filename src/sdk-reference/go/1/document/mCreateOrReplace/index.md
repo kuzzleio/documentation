@@ -5,6 +5,7 @@ title: mCreateOrReplace
 description: Create or replace documents in kuzzle
 ---
 
+
 # MCreateOrReplace
 
 Creates or replaces multiple documents.

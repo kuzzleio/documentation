@@ -5,6 +5,7 @@ title: updateMapping
 description: Update the collection mapping
 ---
 
+
 # updateMapping
 
 Updates a data collection mapping.

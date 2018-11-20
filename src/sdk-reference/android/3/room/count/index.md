@@ -4,20 +4,12 @@ algolia: true
 title: count
 description: Room:count
 ---
+
   
 
 # count
 Returns the number of subscribers in the room.
 
----
-
-## count(callback)
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``callback`` | function | Callback handling the response |
-
----
 
 ## Callback Response
 

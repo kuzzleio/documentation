@@ -4,6 +4,7 @@ algolia: true
 title: bitop
 ---
 
+
 # bitop
 
 {{{since "1.0.0"}}}
@@ -12,53 +13,11 @@ Performs a bitwise operation between multiple keys (containing string values) an
 
 [[_Redis documentation_]](https://redis.io/commands/bitop)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_bitop/<_id>
-Method: POST
-Body:
-```
-
-```js
-{
-  "operation": "[AND|OR|XOR|NOT]",
-  "keys": ["srckey1", "srckey2", "..."]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "bitop",
-  "_id": "destination key",
-  "body": {
-    "operation": "[AND|OR|XOR|NOT]",
-    "keys": ["srckey1", "srckey2", "..."]
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `_id`: destination key to create
 
----
-
-## Body properties
-
-* `keys`: the list of keys to combine
-* `operation`: the bitwise operand to use to combine keys. Allowed values: `AND`, `NOT`, `OR`, `XOR`
-
----
 
 ## Response
 

@@ -5,6 +5,7 @@ title: getCredentialsById
 ---
 
 
+
 # getCredentialsById
 
 {{{since "1.0.0"}}}
@@ -15,29 +16,6 @@ The returned `result` object will vary depending on the strategy (see the [getBy
 
 **Note:** the user identifier to use depends on the specified strategy. If you wish to get credential information using a [kuid]({{ site_base_path }}guide/1/essentials/user-authentication/#kuzzle-user-identifier-kuid) identifier, use the [getCredentials]({{ site_base_path }}api/1/controller-security/get-credentials/) API route instead.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/credentials/<strategy>/<_id>/_byId
-Method: GET  
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "getCredentialsById",
-  "strategy": "<strategy>",
-  "_id": "<userId>"
-}
-```
-
----
 
 ## Arguments
 

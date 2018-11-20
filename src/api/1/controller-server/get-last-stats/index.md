@@ -4,33 +4,13 @@ algolia: true
 title: getLastStats
 ---
 
+
 # getLastStats
 
 {{{since "1.0.0"}}}
 
 Returns the most recent statistics snapshot.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_getLastStats
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "server",
-  "action": "getLastStats"
-}
-```
-
----
 
 ## Response
 

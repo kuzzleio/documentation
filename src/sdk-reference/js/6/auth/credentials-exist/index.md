@@ -5,6 +5,7 @@ title: credentialsExist
 description: Check that the current user has credentials for the specified strategy
 ---
 
+
 # credentialsExist
 
 Checks that the current authenticated user has credentials for the specified authentication strategy.
@@ -18,8 +19,7 @@ credentialsExist (strategy, [options]);
 <br/>
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `local` | <pre>string</pre> | Strategy to use
+|| `local` | <pre>string</pre> | Strategy to use
 | `options` | <pre>object</pre> | Query options
 
 ### options

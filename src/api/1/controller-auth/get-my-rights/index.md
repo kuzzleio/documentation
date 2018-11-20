@@ -4,35 +4,13 @@ algolia: true
 title: getMyRights
 ---
 
+
 # getMyRights
 
 {{{since "1.0.0"}}}
 
 Returns the exhaustive list of granted or denied rights for the currently logged in user.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/users/_me/_rights
-Method: GET  
-Headers: Authorization: "Bearer <authentication token>"
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "auth",
-  "action": "getMyRights",
-  "jwt": "<authentication token>"
-}
-```
-
----
 
 ## Arguments
 

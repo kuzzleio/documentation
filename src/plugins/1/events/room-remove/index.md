@@ -4,6 +4,7 @@ algolia: true
 title: room:remove
 ---
 
+
 # room:remove
 
 {{{since "1.0.0"}}}

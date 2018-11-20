@@ -4,6 +4,7 @@ algolia: true
 title: srandmember
 ---
 
+
 # srandmember
 
 {{{since "1.0.0"}}}
@@ -12,30 +13,6 @@ Returns one or more members of a set of unique values, at random.
 
 [[_Redis documentation_]](https://redis.io/commands/srandmember)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_srandmember/<_id>[?count=<count>]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "srandmember",
-  "_id": "<key>",
-  // optional
-  "count": "<count>"
-}
-```
-
----
 
 ## Arguments
 

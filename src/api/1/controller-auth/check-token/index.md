@@ -4,6 +4,7 @@ algolia: true
 title: checkToken
 ---
 
+
 # checkToken
 
 {{{since "1.0.0"}}}
@@ -12,37 +13,6 @@ Checks a JWT validity.
 
 This API route does not require the caller to be logged in.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_checkToken
-Method: POST  
-Body:  
-```
-
-```js
-{
-  "token": "<the JWT to check>"
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "auth",
-  "action": "checkToken",
-  "body": {
-    "token": "<the JWT to check>"
-  }
-}
-```
-
----
 
 ## Body properties
 

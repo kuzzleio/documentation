@@ -5,6 +5,7 @@ title: create
 description: Create a new collection
 ---
 
+
 # create
 
 Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.  
@@ -22,8 +23,7 @@ Create(index string, collection string, mapping json.RawMessage, options types.Q
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
+|| ``index`` | string | Index name    | yes  |
 | ``collection`` | string | Collection name    | yes  |
 | ``mapping`` | json.RawMessage | Collection data mapping in JSON format  | no  |
 | `options` | QueryOptions | Query options | no       |

@@ -4,6 +4,7 @@ algolia: true
 title: validate
 ---
 
+
 # validate
 
 {{{deprecated "1.5.0"}}}
@@ -14,52 +15,12 @@ Validates data against existing validation rules.
 
 Messages are always valid if no validation rules are defined on the provided index and collection.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/_validate
-Method: POST  
-Body:
-```
-
-```js
-{
-  // data to validate
-}
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "realtime",
-  "action": "validate",
-  "body": {
-    // data to validate
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `collection`: data collection
 * `index`: data index
 
----
-
-## Body properties
-
-Data content to validate against validation rules.
-
----
 
 ## Response
 

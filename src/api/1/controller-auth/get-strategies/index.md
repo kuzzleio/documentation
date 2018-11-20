@@ -4,33 +4,13 @@ algolia: true
 title: getStrategies
 ---
 
+
 # getStrategies
 
 {{{since "1.0.0"}}}
 
 Gets the exhaustive list of registered authentication strategies.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/strategies
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "auth",
-  "action": "getStrategies"
-}
-```
-
----
 
 ## Response
 

@@ -5,6 +5,7 @@ title: validateMyCredentials
 description: Validate the current user's credentials for the specified `<strategy>`.
 ---
 
+
 # validateMyCredentials
 
 Validate the current user's credentials for the specified `<strategy>`. The `result` field is `true` if the provided credentials are valid; otherwise an error is triggered. This route does not actually create or modify the user credentials. The credentials to send will depend on the authentication plugin and authentication strategy.
@@ -18,8 +19,7 @@ bool validateMyCredentials(const std::string& strategy, const std::string& crede
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | const std::string& | the strategy to use
+|| `strategy` | const std::string& | the strategy to use
 | `credentials` | const std::string& | the new credentials
 | `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
 

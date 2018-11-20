@@ -4,47 +4,13 @@ algolia: true
 title: login
 ---
 
+
 # login
 
 {{{since "1.0.0"}}}
 
 Authenticates a user.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_login/<strategy>[?expiresIn=<expiresIn>]
-Method: POST  
-Body:
-```
-
-```javascript
-{
-  "username": "<username>",
-  "password": "<password>"
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "auth",
-  "action": "login",
-  "strategy": "<strategy>",
-  "expiresIn": "<expiresIn>",
-  "body": {
-    "username": "<username>",
-    "password": "<password>"
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -56,17 +22,6 @@ Body:
   * if a raw number is provided (not enclosed between quotes), then the expiration delay is in milliseconds. Example: `86400000`
   * if this value is a string, then its content is parsed by the [ms](https://www.npmjs.com/package/ms) library. Examples: `"6d"`, `"10h"`
 
----
-
-## Body properties
-
-Depending on the chosen authentication strategy, additional [credential arguments]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#authentication) may be required.
-
-The API request example in this page provides the necessary arguments for the [`local` authentication plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local).
-
-Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/essentials/strategies/) documentation to get the list of additional arguments to provide.
-
----
 
 ## Response
 

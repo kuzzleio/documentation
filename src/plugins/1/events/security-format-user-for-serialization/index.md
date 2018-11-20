@@ -4,6 +4,7 @@ algolia: true
 title: security:formatUserForSerialization
 ---
 
+
 # security:formatUserForSerialization
 
 {{{deprecated "1.0.0"}}}

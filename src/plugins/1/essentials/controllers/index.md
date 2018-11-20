@@ -5,6 +5,7 @@ title: Controllers
 order: 400
 ---
 
+
 # Controllers
 
 Kuzzle's API is divided into controllers, each exposing executable actions (see [API reference]({{ site_base_path }}api/1/query-syntax)).
@@ -13,30 +14,6 @@ Plugins can extend Kuzzle's API by adding new controllers to it.
 
 [Security access]({{ site_base_path }}guide/1/essentials/security/) to plugin controllers must be given (or denied), using the exact same way as with native API controllers.
 
----
-
-## Querying plugins controllers
-
-To avoid naming conflicts, Kuzzle prefixes plugin controllers names with the plugin name.
-
-### HTTP
-
-```http
-URL: http://<server>:<port>/_plugin/<plugin name>/<url defined by the plugin>/<resources> 
-Method: <verb defined by the plugin>
-```
-
-### Other protocols
-
-```javascript
-{
-  "controller": "<plugin name>/<added controller name>",
-  "action": "<action of the added controller>",
-  ...
-}
-```
-
----
 
 ## Creating a Controller Route
 
@@ -46,26 +23,6 @@ In order to create a new controller, the plugin must expose the following proper
 - A `routes` objects, describing how the controller(s) should be exposed to the HTTP protocol
 - The controller's actions, which are functions taking a `Request` object as an argument. These functions must return a promise, resolved with the action's result, or rejected with a [KuzzleError]({{ site_base_path }}plugins/1/errors/kuzzleerror) object.
 
----
-
-## Query normalization
-
-Kuzzle normalizes [queries]({{ site_base_path }}api/1/query-syntax) into [Request]({{ site_base_path }}plugins/1/constructors/request) objects.
-
-Quick summary of how queries are normalized:
-
-* HTTP:
-  * dynamic arguments provided in the URL, and query string arguments are stored in `request.input.args`
-  * the body content is made available in `request.input.body`
-  * if the URL contains an `index`, a `collection` or a `_id` argument, it will be stored in `request.input.resource`
-  * request headers can be found in `request.context.connection.misc.headers`
-
-* Other protocols:
-  * the `body` property is stored in `request.input.body`
-  * these root properties are available in `request.input.resource`: `index`, `collection`, `_id`
-  * any other properties at the root of the query object will be stored in `request.input.args`
-
----
 
 ## Automatic Events Generation
 

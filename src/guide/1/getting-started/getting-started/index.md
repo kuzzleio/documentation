@@ -5,6 +5,7 @@ title: First Steps
 description: learn kuzzle in a few steps
 ---
 
+
 # Getting Started
 
 In this tutorial you will learn how to install, run and use **Kuzzle** in just a few steps. We will walk you through creating an app that can **store** documents in Kuzzle and generate a **notification** for each new document.

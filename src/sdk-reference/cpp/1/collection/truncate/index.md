@@ -5,6 +5,7 @@ title: truncate
 description: Remove all documents from collection
 ---
 
+
 # truncate
 
 Remove all documents from a collection while keeping the associated mapping.  
@@ -19,8 +20,7 @@ void truncate(const std::string& index, const std::string& collection, kuzzleio:
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
+|| ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | ``options`` | kuzzleio::query_options* | Query options    | no  |
 

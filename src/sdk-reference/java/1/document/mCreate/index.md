@@ -5,6 +5,7 @@ title: mCreate
 description: Create multiple documents in kuzzle
 ---
 
+
 # mCreate
 
 Creates multiple documents.

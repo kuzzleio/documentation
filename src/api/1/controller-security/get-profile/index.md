@@ -5,34 +5,13 @@ title: getProfile
 ---
 
 
+
 # getProfile
 
 {{{since "1.0.0"}}}
 
 Gets a security profile.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/profiles/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "getProfile",
-  "_id": "<profileId>"
-}
-```
-
----
 
 ## Arguments
 

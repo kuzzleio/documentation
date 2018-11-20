@@ -5,6 +5,7 @@ title: updateMyCredentials
 description: Update the current user's credentials for the specified strategy.
 ---
 
+
 # updateMyCredentials
 
 Updates the credentials of the currently logged in user for the specified strategy.
@@ -18,8 +19,7 @@ updateMyCredentials (strategy, credentials, [options])
 <br/>
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | <pre>string</pre> | Strategy to use
+|| `strategy` | <pre>string</pre> | Strategy to use
 | `credentials` | <pre>object</pre> | New credentials
 | `options`  | <pre>object</pre> | Query options
 

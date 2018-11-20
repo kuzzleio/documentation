@@ -5,6 +5,7 @@ title: getConfig
 description: Returns the current Kuzzle configuration.
 ---
 
+
 # getConfig
 
 Returns the current Kuzzle configuration.

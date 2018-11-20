@@ -4,6 +4,7 @@ algolia: true
 title: unsetJwtToken
 description: Kuzzle:unsetJwtToken
 ---
+
   
 
 # unsetJwtToken

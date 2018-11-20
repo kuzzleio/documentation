@@ -6,6 +6,7 @@ description: learn how to create complex validators
 order: 200
 ---
 
+
 # The `validators` property
 
 The `validators` property is an array of [Koncorde filters]({{ site_base_path }}kuzzle-dsl/#FIXME). Each filter has to match in order for the document to be valid.

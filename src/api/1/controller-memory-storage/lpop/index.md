@@ -4,6 +4,7 @@ algolia: true
 title: lpop
 ---
 
+
 # lpop
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Removes and returns the first element of a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lpop)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_lpop/<_id>
-Method: POST
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "lpop",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Argument
 

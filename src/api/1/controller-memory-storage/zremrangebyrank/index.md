@@ -4,6 +4,7 @@ algolia: true
 title: zremrangebyrank
 ---
 
+
 # zremrangebyrank
 
 {{{since "1.0.0"}}}
@@ -14,53 +15,11 @@ Positions are 0-based, meaning the first member of the set has a position of 0.
 
 [[_Redis documentation_]](https://redis.io/commands/zremrangebyrank)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zremrangebyrank/<_id>
-Method: DELETE  
-Body:
-```
-
-```js
-{
-  "start": "<index start>",
-  "stop": "<index stop>"
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zremrangebyrank",
-  "_id": "<key>",
-  "body": {
-    "start": "<index start>",
-    "stop": "<index stop>"
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `_id`: sorted set identifier
 
----
-
-## Body properties
-
-* `start`: starting index position, inclusive
-* `stop`: ending index position, inclusive
-
----
 
 ## Response
 

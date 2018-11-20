@@ -5,6 +5,7 @@ title: mDelete
 description: Deletes multiple indexes
 ---
 
+
 # mDelete
 
 Deletes multiple indexes at once.

@@ -5,6 +5,7 @@ title: searchSpecifications
 description: Search for specifications
 ---
 
+
 # searchSpecifications
 
 Allows to search in the persistence layer for collection specifications.

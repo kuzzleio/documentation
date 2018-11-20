@@ -4,6 +4,7 @@ algolia: true
 title: getMyCredentials
 ---
 
+
 # getMyCredentials
 
 {{{since "1.0.0"}}}
@@ -14,30 +15,6 @@ The data returned will depend on the specified authentication strategy, and they
 
 The result can be an empty object.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/credentials/<strategy>/_me
-Method: GET  
-Headers: Authorization: "Bearer <authentication token>"
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "auth",
-  "action": "getMyCredentials",
-  "strategy": "<strategy>",
-  "jwt": "<authentication token>"
-}
-```
-
----
 
 ## Arguments
 

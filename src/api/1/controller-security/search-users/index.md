@@ -4,81 +4,13 @@ algolia: true
 title: searchUsers
 ---
 
+
 # searchUsers
 
 {{{since "1.0.0"}}}
 
 Searches users.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/users/_search[?from=0][&size=42][&scroll=<time to live>]
-Method: POST  
-Body:
-```
-
-```js
-{
-  "bool": {
-    "must": [
-      {
-        "terms": {
-          "profileIds": ["anonymous", "default"]
-        }
-      },
-      {
-        "geo_distance": {
-          "distance": "10km",
-          "pos": {
-            "lat": 48.8566140,
-            "lon": 2.352222
-          }
-        }
-      }
-    ]
-  }
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "searchUsers",
-  "body": {
-    "bool": {
-      "must": [
-        {
-          "in": {
-            "profileIds": ["anonymous", "default"]
-          }
-        },
-        {
-          "geo_distance": {
-            "distance": "10km",
-            "pos": {
-              "lat": "48.8566140",
-              "lon": "2.352222"
-            }
-          }
-        }
-      ]
-    }
-  },
-  // optional arguments
-  "from": 0,
-  "size": 10,
-  "scroll": "<time to live>"
-}
-```
-
----
 
 ## Arguments
 
@@ -88,17 +20,6 @@ Body:
 * `scroll`: create a new forward-only result cursor. This option must be set with a [time duration](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units), at the end of which the cursor is destroyed. If set, a cursor identifier named `scrollId` will be returned in the results. This cursor can then be moved forward using the [scrollUsers]({{ site_base_path }}api/1/controller-security/scroll-users) API action
 * `size`: the maximum number of users returned in one response page
 
----
-
-## Body properties
-
-### Optional:
-
-The search query itself, using the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
-
-If the body is left empty, the result will return all available users.
-
----
 
 ## Response
 

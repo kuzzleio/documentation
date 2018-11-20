@@ -4,33 +4,13 @@ algolia: true
 title: now
 ---
 
+
 # now
 
 {{{since "1.0.0"}}}
 
 Returns the current server timestamp, in Epoch-millis format.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_now
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "server",
-  "action": "now"
-}
-```
-
----
 
 ## Response
 

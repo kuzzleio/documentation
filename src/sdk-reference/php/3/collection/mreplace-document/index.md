@@ -4,31 +4,17 @@ algolia: true
 title: mreplaceDocument
 description: Collection:mreplaceDocument
 ---
+
   
 
 # mReplaceDocument
 Replace the provided [Documents]({{ site_base_path }}sdk-reference/document/).
 
----
-
-## mReplaceDocument(documents, [options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``documents`` | Document[] | Array of [Document]({{ site_base_path }}sdk-reference/document/) to replace |
-| ``options`` | JSON Object | Optional parameters |
-| ``callback`` | function | Optional callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| ``queuable`` | boolean | Make this request queuable or not  | ``true`` |
-
----
-
+|
 ## Return Value
 
 Returns the `Collection` object to allow chaining.

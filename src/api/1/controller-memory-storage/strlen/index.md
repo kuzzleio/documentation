@@ -4,6 +4,7 @@ algolia: true
 title: strlen
 ---
 
+
 # strlen
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns the length of a value.
 
 [[_Redis documentation_]](https://redis.io/commands/strlen)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_strlen/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "strlen",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Arguments
 

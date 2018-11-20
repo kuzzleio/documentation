@@ -5,6 +5,7 @@ title: Notifications
 order: 300
 ---
 
+
 # Notifications
 
 With Kuzzle, you don't [subscribe]({{ site_base_path }}sdk-reference/collection/subscribe) to a room or a topic but, instead, you subscribe to documents.  
@@ -23,40 +24,6 @@ Once you have subscribed, depending on the subscription configuration you provid
 
 You may subscribe multiple times to the same room, with identical or different subscription parameters, and with different callbacks. This allows you to dispatch notifications to dedicated processes of your application, instead of maintaining a single all-purpose notification consumer (but you can do that too I you want).
 
----
-## Document Notification
-
-| Notification field | Type |Description       | Possible values |
-|--------------------|------|------------------|-----------------|
-| `document` | [Document]({{ site_base_path }}sdk-reference/document/) | Content of the document or real-time message that generated the notification | |
-| `scope` | string | Indicates if the document enters or exits the subscription scope | `in`, `out` |
-| `state` | string | {{{deprecated "1.5.0"}}} Shows if the document is about to be changed, or if the change is done | `pending`, `done` |
-| `type` | string | Notification type | `document` |
-
-#### Example
-
-```json
-{
-  "status": 200,
-  "requestId": "bc41ced6-38fc-42b9-8fd5-22ae0774aac2",
-  "controller": "name of the controller that generated the notification",
-  "action": "name of the action that generated the notification",
-  "collection": "collection name",
-  "index": "index name",
-  "volatile": {},
-  "state": "done",
-  "scope": "in",
-  "type": "document",
-  "document": {
-    "content": {
-      "content": "document content example"
-    },
-    "id": "<document identifier (when applicable)>"
-  }
-}
-```
-
----
 
 ## User notification
 

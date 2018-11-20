@@ -4,6 +4,7 @@ algolia: true
 title: rpushx
 description: MemoryStorage:rpushx
 ---
+
   
 
 # rpushx
@@ -11,26 +12,11 @@ Appends the specified value at the end of a list, only if the key already exists
 
 [[_Redis documentation_]](https://redis.io/commands/rpushx)
 
----
-
-## rpushx(key, value, [options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `key` | string | Key identifier |
-| `value` | string | Value to add at the end of the list |
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| `queuable` | boolean | Make this request queuable or not  | ``true`` |
----
-
+|
 ## Return Value
 
 Returns the `MemoryStorage` object to allow chaining.

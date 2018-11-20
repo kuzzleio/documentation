@@ -4,43 +4,13 @@ algolia: true
 title: mGetProfiles
 ---
 
+
 # mGetProfiles
 
 {{{since "1.0.0"}}}
 
 Gets multiple security profiles.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/profiles/_mGet
-Method: POST  
-Body:
-```
-
-```js
-{
-  "ids": ["profile1", "profile2"]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "mGetProfiles",
-  "body": {
-    "ids": ["profile1", "profile2"]
-  }
-}
-```
-
----
 
 ## Body properties
 

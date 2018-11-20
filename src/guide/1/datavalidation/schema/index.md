@@ -6,6 +6,7 @@ description: understanding the validation mechanisms
 order: 0
 ---
 
+
 # Specification Structure
 
 When a collection is created, its specification is empty. As a result, any document will be valid.

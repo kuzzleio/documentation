@@ -4,6 +4,7 @@ algolia: true
 title: setAutoRefresh
 ---
 
+
 # setAutoRefresh
 
 {{{since "1.0.0"}}}
@@ -15,50 +16,11 @@ The `autoRefresh` flag, when set to true, tells Kuzzle to perform an immediate
 
 **Note:** refreshes come with performance costs. Set the `autoRefresh` flag to `true` only for indexes needing changes to be immediately available through searches, and only for slowly changing indexes.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/_autoRefresh
-Method: POST
-```
-
-```js
-{
-  "autoRefresh": <boolean>
-}
-```
-
-### Other protocols
-
-
-```js
-{
-  "index": "<index>",
-  "controller": "index",
-  "action": "setAutoRefresh",
-  "body": {
-    "autoRefresh": <boolean>
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `index`: data index to configure
 
----
-
-## Body properties
-
-* `autoRefresh`: a boolean value describing the state of the index `autoRefresh` flag
-
----
 
 ## Response
 

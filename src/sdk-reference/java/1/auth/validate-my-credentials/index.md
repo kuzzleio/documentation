@@ -5,6 +5,7 @@ title: validateMyCredentials
 description: Validate the current user's credentials for the specified `<strategy>`.
 ---
 
+
 # validateMyCredentials
 
 Validate the current user's credentials for the specified `<strategy>`. The `result` field is `true` if the provided credentials are valid; otherwise an error is triggered. This route does not actually create or modify the user credentials. The credentials to send will depend on the authentication plugin and authentication strategy.
@@ -26,8 +27,7 @@ public boolean validateMyCredentials(
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | String | the strategy to use
+|| `strategy` | String | the strategy to use
 | `credentials` | String | the new credentials
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 

@@ -4,6 +4,7 @@ algolia: true
 title: mget
 ---
 
+
 # mget
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns the values of the provided keys.
 
 [[_Redis documentation_]](https://redis.io/commands/mget)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_mget?keys=key1,key2,...
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "mget",
-  "keys": ["key1", "key2", "..."]
-}
-```
-
----
 
 ## Argument
 

@@ -6,6 +6,7 @@ description: Deletes a document from kuzzle
 order: 200
 ---
 
+
 # delete_
 
 Deletes a document.

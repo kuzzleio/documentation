@@ -5,6 +5,7 @@ title: flushQueue
 description: Empties the offline request queue
 ---
 
+
 # flushQueue
 
 Empties the offline request queue without playing it.

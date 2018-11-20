@@ -4,6 +4,7 @@ algolia: true
 title: NotFoundError
 ---
 
+
 # NotFoundError
 
 {{{since "1.0.0"}}}

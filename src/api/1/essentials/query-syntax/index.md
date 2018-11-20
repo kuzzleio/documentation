@@ -6,42 +6,11 @@ description: Kuzzle query format
 order: 200
 ---
 
+
 # Query Syntax
 
 Except for HTTP, Kuzzle expects the exact same query format for all communication protocols.
 
----
-
-## HTTP
-
-HTTP queries are split into the four HTTP usual parts: URL, verb, headers and body.
-
-Every API route documentation has a dedicated HTTP section, explaining how to use that route with the HTTP protocol. 
-
-### Optional headers
-
-The following list of HTTP headers can be added to any and all HTTP requests:
-
-* `Accept-Encoding`: compression algorithm(s) usable by Kuzzle to encode the query response. Accepted encodings, in order of preference: `gzip`, `deflate`, `identity`. 
-* `Authorization` (expected value: `Bearer <token>`): user's authentification token, obtained through the [login]({{ site_base_path }}api/1/controller-aut/login) method
-* `Content-Encoding`: compression algorithm(s) used to encode the body sent to Kuzzle. Accepted encodings: `deflate`, `gzip`, `identity`
-
-### Body encoding
-
-Body contents can be sent in the following formats:
-
-* `application/json`: raw JSON
-* `multipart/form-data`: HTML forms; both field-value pairs and field-files pairs can be sent that way
-
-If a HTML form is sent that way, the resulting body content will be translated into a JSON object, with as many keys as the provided form fields.  
-If the form field holds a file, then the corresponding JSON key will refer to an object instead of a mere value, with the following properties:
-
-  * `filename`: file's name
-  * `encoding`: file encoding
-  * `mimetype`: MIME type
-  * `file`: file content, encoded in base64
-
----
 
 ## Other protocols
 

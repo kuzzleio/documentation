@@ -4,6 +4,7 @@ algolia: true
 title: bitcount
 ---
 
+
 # bitcount
 
 {{{since "1.0.0"}}}
@@ -12,30 +13,6 @@ Counts the number of set bits (population counting) in a string.
 
 [[_Redis documentation_]](https://redis.io/commands/bitcount)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_bitcount/<_id>[?start=<integer>&end=<integer>]
-Method: GET  
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "bitcount",
-  "_id": "<key>"
-  "start": <integer>,
-  "end": <integer>
-}
-```
-
----
 
 ## Arguments
 

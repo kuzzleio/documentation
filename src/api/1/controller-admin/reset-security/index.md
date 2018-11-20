@@ -4,6 +4,7 @@ algolia: true
 title: resetSecurity
 ---
 
+
 # resetSecurity
 
 {{{since "1.4.0"}}}
@@ -11,28 +12,6 @@ title: resetSecurity
 Asynchronously deletes all users, profiles and roles.  
 Then resets `anonymous`, `default` and `admin` profiles and roles to default values, specified in Kuzzle configuration files.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/admin/_resetSecurity
-Method: POST
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "admin",
-  "action": "resetSecurity"
-}
-```
-
----
 
 ## Response
 

@@ -5,6 +5,7 @@ title: exists
 description: Check if collection exists
 ---
 
+
 # exists
 
 Check if a collection exists in Kuzzle.
@@ -18,8 +19,7 @@ bool exists(const std::string& index, const std::string& collection, kuzzleio::q
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
+|| ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | ``options`` | kuzzleio::query_options* | Query options    | no  |
 

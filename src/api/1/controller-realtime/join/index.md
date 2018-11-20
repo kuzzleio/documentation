@@ -4,35 +4,13 @@ algolia: true
 title: join
 ---
 
+
 # join
 
 {{{since "1.0.0"}}}
 
 Joins a previously created subscription.
 
----
-
-## Query Syntax
-
-### HTTP
-
-Due to the synchronous nature of the HTTP protocol, real-time messaging is not supported
-
-### Other protocols
-
-```js
-{
-  "controller": "realtime",
-  "action": "join",
-  "body": {
-    "roomId": "<subscription identifier>"
-  },
-  // optional
-  "volatile": {}
-}
-```
-
----
 
 ## Arguments
 
@@ -40,13 +18,6 @@ Due to the synchronous nature of the HTTP protocol, real-time messaging is not s
 
 * `volatile`: subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data).
 
----
-
-## Body properties
-
-* `roomId`: subscription identifier, returned by Kuzzle during upon a successful subscription
-
----
 
 ## Response
 

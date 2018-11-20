@@ -4,6 +4,7 @@ algolia: true
 title: login
 description: Kuzzle:login
 ---
+
   
 
 # login
@@ -22,23 +23,6 @@ If the login attempt fails, the `loginAttempt` event is fired with the following
 This method is non-queuable, meaning that during offline mode, it will be discarded and the callback will be called with an error. <a href="{{ site_base_path }}guide/essentials/user-authentication/#local-strategy">Learn more.</a>
 </aside>
 
----
-
-## login(strategy, [credentials], [expiresIn], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``strategy`` | string | Authentication strategy (local, facebook, github, ...) |
-| ``credentials`` | JSON object | Optional login credentials, depending on the strategy |
-| ``expiresIn`` | *varies* | Login expiration time |
-| ``callback`` | function | Optional callback handling the response |
-
-**Note:** If the ``expiresIn`` argument is not set, the default token expiration value will be taken from the Kuzzle server configuration.
-
-By default, Kuzzle comes with the [kuzzle-plugin-auth-passport-local](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local) plugin, which provides the `local` authentication strategy.
-This strategy requires a `username` and `password` as `credentials`
-
----
 
 ## Callback Response
 

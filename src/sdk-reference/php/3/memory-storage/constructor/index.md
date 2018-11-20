@@ -5,6 +5,7 @@ title: constructor
 description: MemoryStorage:constructor
 order: 1
 ---
+
   
 
 # Constructor

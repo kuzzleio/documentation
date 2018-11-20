@@ -5,6 +5,7 @@ title: validateSpecifications
 description: Validate specifications format
 ---
 
+
 # validateSpecifications
 
 The validateSpecifications method checks if a validation specification is well formatted. It does not store or modify the existing specification.

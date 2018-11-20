@@ -5,82 +5,13 @@ title: createProfile
 ---
 
 
+
 # createProfile
 
 {{{since "1.0.0"}}}
 
 Creates a new profile.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/profiles/<_id>/_create[?refresh=wait_for]
-Method: POST  
-Body:
-```
-
-```js
-{
-  "policies": [
-    {
-      "roleId": "<roleId>"
-    },
-    {
-      "roleId": "<roleId>",
-      "restrictedTo": [
-        {
-          "index": "<index>"
-        },
-        {
-          "index": "<index>",
-          "collections": [
-            "<coll1>",
-            "<coll2>"
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "createProfile",
-  "_id": "<profileId>",
-  "body": {
-    "policies": [
-      {
-        "roleId": "<roleId>"
-      },
-      {
-        "roleId": "<roleId>",
-        "restrictedTo": [
-          {
-            "index": "<index>"
-          },
-          {
-            "index": "<index>",
-            "collections": [
-              "<coll1>",
-              "<coll2>"
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -90,13 +21,6 @@ Body:
 
 * `refresh`: if set to `wait_for`, Kuzzle will not respond until the created profile is indexed
 
----
-
-## Body properties
-
-* `policies`: [profile definition]({{site_base_path}}guide/1/essentials/security/#defining-profiles)
-
----
 
 ## Response
 

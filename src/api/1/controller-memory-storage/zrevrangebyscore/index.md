@@ -4,6 +4,7 @@ algolia: true
 title: zrevrangebyscore
 ---
 
+
 # zrevrangebyscore
 
 {{{since "1.0.0"}}}
@@ -12,33 +13,6 @@ Identical to [zrangebyscore]({{ site_base_path }}api/1/controller-memory-storage
 
 [[_Redis documentation_]](https://redis.io/commands/zrevrangebyscore)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zrevrangebyscore/<_id>?min=<min interval>&max=<max interval>[&limit=offset,count][&options=withscores]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zrevrangebyscore",
-  "_id": "<key>",
-  "min": "<min interval>",
-  "max": "<max interval>",
-  // optional
-  "limit": ["<offset>", "<count>"],
-  "options": ["withscores"]
-}
-```
-
----
 
 ## Arguments:
 

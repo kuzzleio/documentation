@@ -5,21 +5,11 @@ title: Configure Security
 order: 700
 ---
 
+
 # Configuring Security
 
 Kuzzle provides a full set of functionalities to configure fine-grained permissions to your data.
 
----
-
-## Initial Setup
-
-When Kuzzle is first installed there is no administrator account and anonymous users (i.e. unauthenticated users) have administrative privileges.
-
-To secure your Kuzzle installation you will need to create an administrator account by either using the [Kuzzle Admin Console]({{ site_base_path }}guide/1/essentials/installing-console/#create-an-admin-account ) or using the [CLI]({{ site_base_path }}guide/1/essentials/cli/#createfirstadmin) tool.  
-
-Once the administrator account is created, you can remove anonymous access rights and properly secure your installation. You can then use the Kuzzle Admin Console or Kuzzle API to create new users and assign them permissions.
-
----
 
 ## Whitelist strategy
 
@@ -30,26 +20,6 @@ This means that:
 * If a role allows it, the action is authorized, *even if another role denies it*.
 * If no role explicitly allows it, the action is denied, even if no role explicitly denies it.
 
----
-
-## User Permissions
-
-User-level permissions control what data a specific user or set of users has access to, and what actions they can perform on that data.
-
-### Users, Profiles and Roles
-
-Kuzzle's security layer links `users` to one or more `profiles`.  
-You can think of a `profile` as a group of users that share the same permissions.
-
-The `profiles` themselves are made up of different groups of permissions, these groups are called `roles`.
-
-A `profile` is linked to a set of `roles`, and each `role` defines a set of permissions. For example, in the diagram below, the *editor* profile is has all permissions, the *contributor* has a subset of the permissions, and the *default* profile has only default permissions:
-
-![Users, Profiles and Roles](profiles-roles.png)
-
-All `roles` and `profiles` can be edited in the [Kuzzle Admin Console]({{ site_base_path }}guide/1/essentials/installing-console).
-
----
 
 ## Defining Roles
 
@@ -104,90 +74,6 @@ For a list of available controllers and actions from Kuzzle's API by sending a `
 curl -X GET 'http://localhost:7512/?pretty'
 ```
 
----
-
-## Defining Profiles
-
-A `profile` definition is a Javascript object that contains an array of policies, each composed of a roleId and an array of restrictions:
-
-```js
-var myProfileDefinition = {
-  policies: [
-    {
-      roleId: "< role Id >",
-      restrictedTo: [
-        {
-          index: "< some index >",
-          collections: [
-            "< a collection >",
-            "< another collection >"
-          ]
-        },
-        ...
-      ]  
-    },
-    <another role>,
-    ...
-  ]
-};
-```
-
-When applying a role to a profile, the role can be applied to all indexes and collections or it can be applied to a specific index or collection.
-
-For example, if we have a "publisher" role which allows any action on the `document` controller:
-
-```js
-var publisherRole = {
-  controllers: {
-    document: {
-      actions: {
-        '*': true
-      }
-    }
-  }
-};
-```
-
-Then we can declare three different profiles using this same role, each with varying levels of access based on the index and collection:
-
-```js
-var profile1 = {
-  policies: [
-    {roleId: 'publisherRole'}
-  ]
-};
-
-var profile2 = {
-  policies: [
-    {
-      roleId: 'publisherRole',
-      restrictedTo: [{index: 'index1'}]
-    }
-  ]
-};
-
-var profile3 = {
-  policies: [
-    {
-      roleId: 'publisherRole',
-      restrictedTo: [
-        {index: 'index1', collections: ['foo', 'bar']},
-        {index: 'index2'}
-      ]
-    }
-  ]
-};
-```
-
-These three profiles will provide the following restrictions:
-
-* users with `profile1` are allowed to use all `document` controller actions on all indexes and collections.
-* users with `profile2` are only allowed to use `document` controller actions on collections stored in index `index1`.
-* users with `profile3` are only allowed to use `document` controller actions on:
-  * all collections stored in index `index2`
-  * collections `foo` and `bar` stored in index `index1`.
-
----
 
 ## Writing complex permission rules
 

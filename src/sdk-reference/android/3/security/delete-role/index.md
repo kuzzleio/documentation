@@ -4,6 +4,7 @@ algolia: true
 title: deleteRole
 description: Security:deleteRole
 ---
+
   
 
 # deleteRole
@@ -14,27 +15,11 @@ There is a small delay between the time a role is deleted and it being reflected
 That means that a role that was just deleted may still be returned by the <code>searchRoles</code> function at first.
 </aside>
 
----
-
-## deleteRole(id, [options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``id`` | string | Unique role identifier to delete |
-| ``options`` | JSON Object | Optional parameters |
-| ``callback`` | function | (Optional) Callback handling the response |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| ``queuable`` | boolean | Make this request queuable or not  | ``true`` |
-| ``refresh`` | string | If set to ``wait_for``, Kuzzle will wait the persistence layer to finish indexing (available with Elasticsearch 5.x and above) | ``undefined`` |
-
----
-
+|
 ## Return Value
 
 Returns the `Security` object to allow chaining.

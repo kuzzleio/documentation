@@ -4,6 +4,7 @@ algolia: true
 title: setDefaultIndex
 description: Kuzzle:setDefaultIndex
 ---
+
   
 
 # setDefaultIndex

@@ -4,6 +4,7 @@ algolia: true
 title: pfcount
 description: MemoryStorage:pfcount
 ---
+
   
 
 # pfcount
@@ -11,25 +12,11 @@ Returns the probabilistic cardinality of a [HyperLogLog](https://en.wikipedia.or
 
 [[_Redis documentation_]](https://redis.io/commands/pfcount)
 
----
-
-## pfcount(keys, [options], callback)
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `keys` | string | List of HyperLogLog key identifiers |
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| `queuable` | boolean | Make this request queuable or not  | `true` |
----
-
+|
 ## Callback Response
 
 Returns an integer containing the aggregated probabilistic cardinality of HyperLogLog structures.

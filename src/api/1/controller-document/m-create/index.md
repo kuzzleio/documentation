@@ -4,6 +4,7 @@ algolia: true
 title: mCreate
 ---
 
+
 # mCreate
 
 {{{since "1.0.0"}}}
@@ -12,69 +13,6 @@ Creates multiple documents.
 
 If a document identifier already exists, the creation fails for that document.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/_mCreate[?refresh=wait_for]
-Method: POST  
-Body:
-```
-
-```js
-{
-  "documents": [
-    {
-      // Optional. If not provided, will be generated automatically.
-      "_id": "<documentId>", 
-      "body": {
-        // document content
-      }
-    },
-    {
-      // Optional. If not provided, will be generated automatically.
-      "_id": "<anotherDocumentId>", 
-      "body": {
-        // document content
-      }
-    }
-  ]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "document",
-  "action": "mCreate",
-  "body": {
-    "documents": [
-      {
-        // Optional. If not provided, will be generated automatically.
-        "_id": "<documentId>",
-        "body": {
-          "document": "body"
-        }
-      },
-      {
-        // Optional. If not provided, will be generated automatically.
-        "_id": "<anotherDocumentId>",
-        "body": {
-          "document": "body"
-        }
-      }
-    ]
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -85,15 +23,6 @@ Body:
 
 * `refresh`: if set to `wait_for`, Kuzzle will not respond until the newly created documents are indexed
 
----
-
-## Body properties
-
-* `documents`: an array of object. Each object describes a document to create, by exposing the following properties:
-  * `_id` (optional): document identifier. If not provided, an unique identifier is automatically attributed to the new document
-  * `body`: document content
-
----
 
 ## Response
 

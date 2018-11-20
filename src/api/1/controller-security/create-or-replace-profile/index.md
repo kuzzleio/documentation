@@ -4,82 +4,13 @@ algolia: true
 title: createOrReplaceProfile
 ---
 
+
 # createOrReplaceProfile
 
 {{{since "1.0.0"}}}
 
 Creates a new profile or, if the provided profile identifier already exists, replaces it.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/profiles/<_id>[?refresh=wait_for]
-Method: PUT
-Body:
-```
-
-```js
-{
-  "policies": [
-    {
-      "roleId": "<roleId>"
-    },
-    {
-      "roleId": "<anotherRoleId>",
-      "restrictedTo": [
-        {
-          "index": "<index>"
-        },
-        {
-          "index": "<index>",
-          "collections": [
-            "<coll1>",
-            "<coll2>"
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "createOrReplaceProfile",
-  "_id": "<profileId>",              
-  "body": {
-    "policies": [
-      {
-        "roleId": "<anotherRoleId>"
-      },
-      {
-        "roleId": "<roleId>",
-        "restrictedTo": [
-          {
-            "index": "<index>"
-          },
-          {
-            "index": "<index>",
-            "collections": [
-              "<coll1>",
-              "<coll2>"
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -89,13 +20,6 @@ Body:
 
 * `refresh`: if set to `wait_for`, Kuzzle will not respond until the created/replaced profile is indexed
 
----
-
-## Body properties
-
-* `policies`: [profile definition]({{site_base_path}}guide/1/essentials/security/#defining-profiles)
-
----
 
 ## Response
 

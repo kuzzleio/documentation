@@ -4,6 +4,7 @@ algolia: true
 title: incr
 ---
 
+
 # incr
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Increments the number stored at `key` by 1. If the key does not exist, it is set
 
 [[_Redis documentation_]](https://redis.io/commands/incr)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_incr/<_id>
-Method: POST
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "incr",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Arguments
 

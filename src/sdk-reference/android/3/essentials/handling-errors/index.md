@@ -9,6 +9,7 @@ title: Error Handling
 order: 200
 ---
 
+
 # Error Handling
 [snippet=handling-errors-1]
 All methods that accept a callback as an argument can return an error. The error can be generated directly by the SDK, or by Kuzzle and included in the response to a request.

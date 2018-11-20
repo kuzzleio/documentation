@@ -4,6 +4,7 @@ algolia: true
 title: sismember
 ---
 
+
 # sismember
 
 {{{since "1.0.0"}}}
@@ -12,30 +13,6 @@ Checks if a value is a member of a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sismember)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_sismember/<_id>/<member>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "sismember",
-  "_id": "<key>",
-  "member": "<member>"
-}
-```
-
-
----
 
 ## Argument
 

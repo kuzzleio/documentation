@@ -5,6 +5,7 @@ title: getStats
 description: Returns statistics snapshots within a provided timestamp range.
 ---
 
+
 # getStats
 {{{since "1.0.0"}}}
 

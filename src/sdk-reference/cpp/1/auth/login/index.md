@@ -5,6 +5,7 @@ title: login
 description: Authenticate a user
 ---
 
+
 # login
 
 Authenticates a user.
@@ -21,8 +22,7 @@ std::string login(const std::string& strategy, const std::string& credentials);
 ## Arguments
 
 | Arguments     | Type    | Description | Required
-|---------------|---------|----------------------------------|----------
-| `strategy`    | const std::string&  | the name of the strategy to use  | yes
+|| `strategy`    | const std::string&  | the name of the strategy to use  | yes
 | `credentials` | const std::string&  | the json credentials             | yes
 | `expiresIn`   | int     | expiration time in milliseconds  | no
 

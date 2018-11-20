@@ -4,6 +4,7 @@ algolia: true
 title: hscan
 ---
 
+
 # hscan
 
 {{{since "1.0.0"}}}
@@ -17,32 +18,6 @@ The scan ends when the cursor returned by the server is 0.
 
 [[_Redis documentation_]](https://redis.io/commands/hscan)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_hscan/<_id>?cursor=<cursor>[&match=<pattern>][&count=<count>]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "hscan",
-  "_id": "<key>",
-  "cursor": 0,
-  // optional
-  "match": "foo*bar",
-  "count": 20
-}
-```
-
----
 
 ## Arguments
 

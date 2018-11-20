@@ -5,6 +5,7 @@ title: Introduction
 order: 0
 ---
 
+
 # Introduction
 
 Whenever a plugin returns, rejects or throws an error, Kuzzle intercepts it and, by default, rethrows it as a [PluginImplementationError]({{ site_base_path }}plugins/1/errors/pluginimplementationerror) error.

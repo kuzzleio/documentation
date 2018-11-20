@@ -4,6 +4,7 @@ algolia: true
 title: getrange
 ---
 
+
 # getrange
 
 {{{since "1.0.0"}}}
@@ -12,30 +13,6 @@ Returns a substring of a key's value.
 
 [[_Redis documentation_]](https://redis.io/commands/getrange)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_getrange/<_id>?start=<start>&end=<end>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "getrange",
-  "_id": "<key>",
-  "start": 1,
-  "end": -3
-}
-```
-
----
 
 ## Arguments
 

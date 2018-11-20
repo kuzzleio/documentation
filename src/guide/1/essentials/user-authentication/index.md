@@ -5,6 +5,7 @@ title: Users & Authentication
 order: 750
 ---
 
+
 # Users & Authentication
 
 ## Creating Users
@@ -65,68 +66,6 @@ This system allows a user to login to Kuzzle using different strategies and, pot
 
 If you're interested for a more in-depth explanation on how all of this work, then please check our [Kuzzle In-Depth Documentation]({{ site_base_path }}guide/1/essentials/user-authentication/#kuzzle-user-identifier-kuid).
 
----
-
-## Authentication Strategies
-
-Once a user has been created, they can access resources in Kuzzle as permitted by their security profile. However; in order to access these resources they will first need to identify & authenticate themselves using an authentication strategy. The authentication strategy defines what credentials are used and how Kuzzle should validate them. Kuzzle supports multiple authentication strategies, giving you more flexibility when building your security layer: use [Oauth](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth), Kerberos, Salesforce, and many more. And, if none of these suit your needs, follow our [Plugin Documentation]({{ site_base_path }}plugins/1/essentials/strategies) to learn how to build a custom authentication strategy. 
-
-To request access to Kuzzle, a user must first send an [authentication request]({{ site_base_path }}api/1/controller-auth/login). Kuzzle will validate the credentials it receives in the request using the predefined authentication strategy and return a [JSON Web Token](https://tools.ietf.org/html/rfc7519) if the user credentials are valid.
-
-The JSON Web Token must then be [appended to all subsequent requests]({{ site_base_path }}api/1/query-syntax/) to access Kuzzle resources.
-
-
-## Local Strategy
-
-The simplest way a user can login to Kuzzle is using the `local` strategy. This strategy requires that a user identify themselves using a unique username and a password.
-
-To demonstrate the `local` strategy let's use the Kuzzle Node.js SDK (the process is similar for our other SDKs).
-
-First let's install the Node.js SDK into our folder:
-
-```bash
-npm install kuzzle-sdk
-```
-
-Then, let's create a `login.js` file that contains the following code:
-
-```javascript
-const Kuzzle = require('kuzzle-sdk')
-
-var kuzzle = new Kuzzle('localhost', () => {
-  kuzzle
-    .loginPromise('local', {
-      username: 'admin',
-      password: 'test'
-    })
-    .then(() => {
-      console.log('You are now logged in!')
-    })
-    .catch(err => {
-      console.error(err.message)
-    })
-})
-```
-
-This code will:
-
-* load the Kuzzle Node.js SDK
-* connect to the Kuzzle
-* login using username `jondoe` and password `letmein`
-
-Let's try it out! Run the `index.js` using Node.js:
-
-```
-node index.js
-```
-
-You should see the following output:
-
-```
-You are now logged in!
-```
-
----
 
 ## User Credentials
 

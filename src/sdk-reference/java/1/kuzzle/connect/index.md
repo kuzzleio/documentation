@@ -5,6 +5,7 @@ title: connect
 description: Connects the SDK to Kuzzle
 ---
 
+
 # connect
 
 Connects to Kuzzle using the `host` argument provided in the constructor options.  

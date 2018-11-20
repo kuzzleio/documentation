@@ -4,6 +4,7 @@ algolia: true
 title: scroll
 description: Collection:scroll
 ---
+
   
 
 # scroll
@@ -18,26 +19,11 @@ There is a small delay between the time a document is created and its availabili
   To get more information about scroll sessions, please refer to the <a href="{{ site_base_path }}api-documentation/controller-document/search">API reference documentation</a>.
 </aside>
 
----
-
-## scroll(scrollId, [options], callback)
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``scrollId`` | string | The "scrollId" provided with the last scroll response or from the initial search request if it is the first scroll call |
-| ``options`` | JSON object | Optional parameters |
-| ``callback`` | function | Callback handling the response |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| ``queuable`` | boolean | Make this request queuable or not  | ``true`` |
-| ``scroll`` | string | Re-initializes the scroll session timeout to its value. If not defined, the scroll timeout is defaulted to a Kuzzle configuration | ``undefined`` |
----
-
+|
 ## Callback Response
 
 Returns an instantiated [SearchResult]({{ site_base_path }}sdk-reference/search-result) object.

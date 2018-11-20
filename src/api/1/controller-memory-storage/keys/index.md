@@ -5,6 +5,7 @@ title: keys
 ---
 
 
+
 # keys
 
 {{{since "1.0.0"}}}
@@ -13,29 +14,6 @@ Returns all keys matching the provided pattern.
 
 [[_Redis documentation_]](https://redis.io/commands/keys)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_keys/<pattern>
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "keys",
-  "pattern": "foo*"
-}
-```
-
----
 
 ## Arguments
 

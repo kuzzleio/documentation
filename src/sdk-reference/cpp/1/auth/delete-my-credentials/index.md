@@ -5,6 +5,7 @@ title: deleteMyCredentials
 description: Delete the current user's credentials for the specified strategy
 ---
 
+
 # deleteMyCredentials
 
 Delete the current user's credentials for the specified `<strategy>`. If the credentials that generated the current JWT are removed, the user will remain logged in until he logs out or his session expires, after that they will no longer be able to log in with the deleted credentials.
@@ -18,8 +19,7 @@ void deleteMyCredentials(const std::string& strategy, query_options *options=nul
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `strategy` | const std::string& | the strategy to use    | yes
+|| `strategy` | const std::string& | the strategy to use    | yes
 | `options`  | query_options\*    | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
 

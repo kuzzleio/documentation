@@ -5,6 +5,7 @@ title: Realtime notifications
 description: List of realtime notifications sent by Kuzzle
 order: 300
 ---
+
 # Notifications
 
 The [Realtime.Subscribe]({{ site_base_path }}sdk-reference/go/1/realtime/subscribe) method takes a channel for `types.KuzzleNotification` objects, whose content depend on the type of notification received.  

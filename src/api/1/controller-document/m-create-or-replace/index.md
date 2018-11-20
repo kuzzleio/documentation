@@ -4,71 +4,13 @@ algolia: true
 title: mCreateOrReplace
 ---
 
+
 # mCreateOrReplace
 
 {{{since "1.0.0"}}}
 
 Creates or replaces multiple documents.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/_mCreateOrReplace[?refresh=wait_for]
-Method: PUT  
-Body:
-```
-
-```js
-{
-  "documents": [
-    {
-      "_id": "<documentId>", 
-      "body": {
-        // document content
-      }
-    },
-    {
-      "_id": "<anotherDocumentId>",
-      "body": {
-        // document content
-      }
-    }
-  ]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "document",
-  "action": "mCreateOrReplace",
-  "body": {
-    "documents": [
-      {
-        "_id": "<documentId>",
-        "body": {
-          // document content
-        }
-      },
-      {
-        "_id": "<anotherDocumentId>",
-        "body": {
-          // document content
-        }
-      }
-    ]
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -79,15 +21,6 @@ Body:
 
 * `refresh`: if set to `wait_for`, Kuzzle will not respond until the created/replaced documents are indexed
 
----
-
-## Body properties
-
-* `documents`: an array of object. Each object describes a document to create or replace, by exposing the following properties:
-  * `_id`: document unique identifier
-  * `body`: document content
-
----
 
 ## Response
 

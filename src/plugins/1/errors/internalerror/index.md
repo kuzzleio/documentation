@@ -4,6 +4,7 @@ algolia: true
 title: InternalError
 ---
 
+
 # InternalError
 
 {{{since "1.0.0"}}}

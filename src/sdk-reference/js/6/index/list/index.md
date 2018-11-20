@@ -5,6 +5,7 @@ title: list
 description: Lists the indexes
 ---
 
+
 # list
 
 Returns the complete list of data indexes.

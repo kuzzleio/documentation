@@ -5,6 +5,7 @@ title: update
 description: Update a document
 ---
 
+
 # update
 
 Updates a document content.
@@ -29,28 +30,7 @@ String update(
 <br/>
 
 | Argument | Type | Description |
-| --- | --- | --- |
-| `index` | <pre>String</pre> | Index name |
-| `collection` | <pre>String</pre> | Collection name |
-| `id` | <pre>String</pre> | Document ID |
-| `body` | <pre>String</pre> | A JSON string containing the body of the document |
-| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
-
-###### options
-
-| Option | Type<br/>(default) | Description |
-| --- | --- | --- |
-| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
-| `refresh` | <pre>String</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
-| `retryOnConflict` | <pre>int</pre> (`0`) | The number of times the database layer should retry in case of version conflict |
-
-## Return
-
-Returns a JSON string containing the document update result.
-
-| Name | Type | Description
-| --- | --- | ---
-| _id | <pre>string</pre> | The id of the newly created document
+| | _id | <pre>string</pre> | The id of the newly created document
 | _version | <pre>int</pre> | The version of the document in the persistent data storage
 | result | <pre>string</pre> | set to `updated` in case of success
 

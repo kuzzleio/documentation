@@ -4,6 +4,7 @@ algolia: true
 title: time
 ---
 
+
 # time
 
 {{{since "1.0.0"}}}
@@ -12,27 +13,6 @@ Returns the current server time.
 
 [[_Redis documentation_]](https://redis.io/commands/time)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_time
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "time"
-}
-```
-
----
 
 ## Response
  

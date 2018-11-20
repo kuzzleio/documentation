@@ -5,6 +5,7 @@ title: list
 description: Returns the collection list of an index
 ---
 
+
 # list
 
 Returns the complete list of realtime and stored data collections in requested index sorted by name in alphanumerical order.  
@@ -20,8 +21,7 @@ std::string list(const std::string& index, kuzzleio::query_options *options=null
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
+|| ``index`` | const std::string& | Index name    | yes  |
 | ``options`` | kuzzleio::query_options* | Query options    | no  |
 
 ### **options**

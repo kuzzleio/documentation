@@ -5,6 +5,7 @@ title: deleteProfile
 ---
 
 
+
 # deleteProfile
 
 {{{since "1.0.0"}}}
@@ -13,28 +14,6 @@ Deletes a security profile.
 
 An error is returned if the profile is still in use.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_profiles/<_id>[?refresh=wait_for]
-Method: DELETE
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "deleteProfile",
-  "_id": "<profileId>"
-}
-```
-
----
 
 ## Arguments
 

@@ -4,6 +4,7 @@ algolia: true
 title: sinter
 ---
 
+
 # sinter
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns the intersection of the provided sets of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sinter)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_sinter?keys=key1,key2,...
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "sinter",
-  "keys": ["key1", "key2", "..."]
-}
-```
-
----
 
 ## Argument
 

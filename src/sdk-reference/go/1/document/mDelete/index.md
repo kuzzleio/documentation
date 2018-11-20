@@ -5,6 +5,7 @@ title: mDelete
 description: Delete documents
 ---
 
+
 # MDelete
 
 Deletes multiple documents.

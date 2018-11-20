@@ -4,53 +4,13 @@ algolia: true
 title: searchProfiles
 ---
 
+
 # searchProfiles
 
 {{{since "1.0.0"}}}
 
 Searches security profiles, optionally returning only those linked to the provided list of security roles.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/profiles/_search[?from=0][&size=42][&scroll=<time to live>]
-Method: POST  
-Body:
-```
-
-```js
-{
-  "roles": [
-    "role1",
-    "admin"
-  ]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "searchProfiles",
-  "body": {
-    "roles": [
-      "role1",
-      "admin"
-    ]
-  },
-  // optional: result pagination configuration
-  "from": 0,
-  "size": 42,
-  "scroll": "<ttl>"
-}
-```
-
----
 
 ## Arguments
 
@@ -60,15 +20,6 @@ Body:
 * `scroll`: create a new forward-only result cursor. This option must be set with a [time duration](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units), at the end of which the cursor is destroyed. If set, a cursor identifier named `scrollId` will be returned in the results. This cursor can then be moved forward using the [scrollProfiles]({{ site_base_path }}api/1/controller-security/scroll-profiles) API action
 * `size`: the maximum number of profiles returned in one response page
 
----
-
-## Body properties
-
-### Optional:
-
-* `roles`: an array of role identifiers. Restrict the search to profiles linked to the provided roles.
-
----
 
 ## Response
 

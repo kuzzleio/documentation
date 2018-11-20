@@ -5,33 +5,13 @@ title: getAllCredentialFields
 ---
 
 
+
 # getAllCredentialFields
 
 {{{since "1.0.0"}}}
 
 Retrieves the list of fields accepted by authentication strategies.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/credentials/_fields
-Method: GET  
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "getAllCredentialFields"
-}
-```
-
----
 
 ## Response
 

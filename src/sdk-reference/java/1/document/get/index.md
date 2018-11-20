@@ -5,6 +5,7 @@ title: get
 description: Get a document from kuzzle
 ---
 
+
 # get
 
 Gets a document.

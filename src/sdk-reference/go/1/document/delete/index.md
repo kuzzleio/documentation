@@ -5,6 +5,7 @@ title: delete
 description: Deletes a document from kuzzle
 ---
 
+
 # Delete
 
 Deletes a document.

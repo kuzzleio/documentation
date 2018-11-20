@@ -5,6 +5,7 @@ title: constructor
 description: CollectionMapping:constructor
 order: 1
 ---
+
   
 
 # CollectionMapping
@@ -17,16 +18,6 @@ The CollectionMapping object allows you to get the current mapping in a data col
 Once a field mapping has been set, it cannot be removed without reconstructing the data collection.
 </aside>
 
----
-
-## CollectionMapping(Collection, [mapping])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `Collection` | [Collection]({{ site_base_path }}sdk-reference/collection/) | An instantiated Collection object |
-| ``mapping`` | JSON Object | Optional mapping |
-
----
 
 ## Properties
 

@@ -4,6 +4,7 @@ algolia: true
 title: geohash
 ---
 
+
 # geohash
 
 {{{since "1.0.0"}}}
@@ -12,29 +13,6 @@ Converts a key's geopoints (see [geoadd]({{ site_base_path }}api/1/controller-me
 
 [[_Redis documentation_]](https://redis.io/commands/geohash)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_geohash/<_id>?members=member1,member2,...
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "geohash",
-  "_id": "<key>",
-  "members": ["member1", "member2", "..."]
-}
-```
-
----
 
 ## Arguments
 

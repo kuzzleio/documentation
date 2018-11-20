@@ -4,37 +4,13 @@ algolia: true
 title: get
 ---
 
+
 # get
 
 {{{since "1.0.0"}}}
 
 Gets a document.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/<documentId>[?includeTrash=<boolean>]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "document",
-  "action": "get",
-  "_id": "<documentId>",
-  "includeTrash": false
-}
-```
-
----
 
 ## Arguments
 

@@ -5,6 +5,7 @@ title: Configure Kuzzle
 Order: 200
 ---
 
+
 # Configuring Kuzzle
 
 The Kuzzle **configuration** is stored in a [kuzzlerc file](https://github.com/kuzzleio/kuzzle/blob/master/.kuzzlerc.sample) found in the root folder of your Kuzzle installation.

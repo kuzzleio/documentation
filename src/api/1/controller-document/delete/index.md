@@ -4,36 +4,13 @@ algolia: true
 title: delete
 ---
 
+
 # delete
 
 {{{since "1.0.0"}}}
 
 Deletes a document.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/<documentId>[?refresh=wait_for]
-Method: DELETE
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "document",
-  "action": "delete",
-  "_id": "<documentId>"
-}
-```
-
----
 
 ## Arguments
 

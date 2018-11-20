@@ -5,6 +5,7 @@ title: mGet
 description: Get multiple documents
 ---
 
+
 # MGet
 
 Gets multiple documents.

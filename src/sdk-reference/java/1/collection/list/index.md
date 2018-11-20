@@ -5,6 +5,7 @@ title: list
 description: Returns the collection list of an index
 ---
 
+
 # list
 
 Returns the complete list of realtime and stored data collections in requested index sorted by name in alphanumerical order.  
@@ -21,8 +22,7 @@ public String list(String index, io.kuzzle.sdk.QueryOptions io.kuzzle.sdk.QueryO
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
+|| ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | io.kuzzle.sdk.QueryOptions | An object containing query options    | no  |
 

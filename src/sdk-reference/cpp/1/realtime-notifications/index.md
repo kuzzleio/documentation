@@ -5,6 +5,7 @@ title: Realtime notifications
 description: List of realtime notifications sent by Kuzzle
 order: 300
 ---
+
 # Notifications
 
 The [realtime.subscribe]({{ site_base_path }}sdk-reference/cpp/1/realtime/subscribe) method takes a listener of type `kuzzleio::NotificationListener`.  

@@ -5,6 +5,7 @@ title: updateMyCredentials
 description: Update the current user's credentials for the specified `<strategy>`.
 ---
 
+
 # updateMyCredentials
 
 Update the current user's credentials for the specified `<strategy>`. The credentials to send will depend on the authentication plugin and the authentication strategy.
@@ -27,8 +28,7 @@ public String updateMyCredentials(
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | String | the strategy to use
+|| `strategy` | String | the strategy to use
 | `credentials` | String | the new credentials
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 

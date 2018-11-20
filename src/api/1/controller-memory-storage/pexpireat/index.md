@@ -4,6 +4,7 @@ algolia: true
 title: pexpireat
 ---
 
+
 # pexpireat
 
 {{{since "1.0.0"}}}
@@ -14,13 +15,6 @@ The `timestamp` parameter accepts an [Epoch time](https://en.wikipedia.org/wiki/
 
 [[_Redis documentation_]](https://redis.io/commands/pexpireat)
 
----
-
-## Argument
-
-* `_id`: key identifier
-
----
 
 ## Query Syntax
 
@@ -51,13 +45,6 @@ Body:
 }
 ```
 
----
-
-## Argument
-
-* `_id`: key identifier
-
----
 
 ## Body properties
 

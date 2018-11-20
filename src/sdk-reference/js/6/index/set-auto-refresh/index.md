@@ -5,6 +5,7 @@ title: setAutoRefresh
 description: Set the autorefresh flag
 ---
 
+
 # setAutoRefresh
 
 The setAutoRefresh action allows to set the autorefresh flag for a data index.

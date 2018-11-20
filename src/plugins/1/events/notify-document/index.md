@@ -4,6 +4,7 @@ algolia: true
 title: notify:document
 ---
 
+
 # notify:document
 
 {{{since "1.0.0"}}}

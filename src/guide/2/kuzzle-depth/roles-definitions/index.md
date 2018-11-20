@@ -4,51 +4,13 @@ algolia: true
 title: Advanced Roles Definitions
 ---
 
+
 # Advanced Roles Definitions
 
 In the [Getting Started Guide]({{ site_base_path }}guide/2/essentials/security/#user-permissions), we discussed how to assign basic permissions to users through roles and profiles. We are now going to look at more complex and dynamic permissions.
 
 Kuzzle's permissions mechanism uses boolean expressions to determine if a user can perform a specific action. So far we have shown how to limit access by hard-coding a boolean value inside the permissions configuration; however, in some cases, you will want to perform a more complex evaluation. For example, in a collaborative TO-DO application, a user should not be allowed to update another user's list. We can address this by using either a [**Pipe Plugin**]({{ site_base_path }}plugins/2/essentials/pipes) or **Permission Closures**.
 
----
-
-## Permission Closures
-
-{{{deprecated "1.4.0"}}}
-
-With Permission Closures, instead of hard-coding the permission boolean value, we assign a function (or closure) that evaluates to a boolean value and determines whether or not an action is permitted.
-
-For example, here is a role definition that limits access to documents such that a document can only be modified by its owner:
-
-```javascript
-let role = {
-  controllers: {
-    write: {
-      actions: {
-        update: {
-          args: {
-            document: {
-              index: "$request.input.resource.index",
-              collection: "$request.input.resource.collection",
-              action: {
-                get: "$currentId"
-              }
-            }
-          },
-          test: "return args.document.content.user.id === $currentUserId"
-        }
-      }
-    }
-  }
-};
-```
-
-In the definition above:
-
-- `test` is the body of [the permission function]({{ site_base_path }}guide/2/kuzzle-depth/roles-definitions/#the-permission-function)
-- `args` is the parameter given to [the fetch definition function]({{ site_base_path }}guide/2/kuzzle-depth/roles-definitions/#the-fetch-definition)
-
----
 
 ## The Permission Function
 

@@ -5,6 +5,7 @@ title: Kuzzle's Plugin Engine
 order: 1100
 ---
 
+
 # Kuzzle's Plugin Engine
 
 Our prepackaged multi-feature backend solution will meet basic project requirements, but in some cases you may want to **implement your own business logic**.
@@ -16,37 +17,6 @@ Kuzzle's **[Plugin Engine]({{ site_base_path }}plugins/1)** is a powerful featur
 * select from a set of prebuilt plugins (such as the [OAuth2 Authentication Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth) or the [MQTT Protocol](https://github.com/kuzzleio/protocol-mqtt)).
 * [create your own plugin]({{ site_base_path }}plugins/2/essentials) to meet your specific requirements.
 
----
-
-## Plugins
-
-Plugins are used to extend Kuzzle's functionalities. They are loaded into Kuzzle during startup and share its execution thread. A plugin can implement one or multiple of the following interfaces:
-
-[Hooks]({{ site_base_path }}plugins/2/essentials/hooks): adds asynchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is sent to the listeners and Kuzzle continues its process without waiting for the listener to complete.
-
-  _Example - "Write a log to a third-party logging service every time a document is deleted"_. The [Logger Plugin](https://github.com/kuzzleio/kuzzle-plugin-logger) (shipped with Kuzzle) uses this feature to log all the data-related events.
-
-[Pipes]({{ site_base_path }}plugins/2/essentials/pipes): adds synchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is passed synchronously to listeners, each modifying the input data and returning the result to the next listener. Kuzzle waits until the last listener completes and returns its data. If any  listener returns an error, it will interrupt the Kuzzle lifecycle, and the thrown error will be used as a response by Kuzzle.
-
-  _Example - "Compare the ordered quantity with the available stock and return an error if the amount of ordered items exceeds the amount in stock"_.
-
-[Controllers]({{ site_base_path }}plugins/2/essentials/controllers): extends Kuzzle API.
-
-  _Example - "Expose a `checkout` API endpoint that handles a third-party payment process"_.
-
-[Strategies]({{ site_base_path }}plugins/2/essentials/strategy): add an authentication strategy to identify and authenticate users.
-
-  _Example - "Enable OAuth based authentication in Kuzzle"_
-  Kuzzle ships with the [Local Strategy Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local) and thanks to PassportJS, more than 300 authentication strategies are readily available.
-
-## Protocols
-
-[Protocols]({{ site_base_path }}protocols/1) add extended networking capabilities to your Kuzzle installation. These are useful if you need to handle other, even proprietary transport protocols.
-
-_Example - "Allow Kuzzle to interact with XMPP-oriented services"_
-Kuzzle ships with the [MQTT Protocol](https://github.com/kuzzleio/protocol-mqtt).
-
----
 
 ## Installing a Plugin
 
@@ -86,67 +56,6 @@ ln -s ../available/kuzzle-core-plugin-boilerplate .
 # Restart Kuzzle to reload Plugins
 ```
 
----
-
-Once Kuzzle has restarted, check the server information at `http://localhost:7512/?pretty=true` to confirm that the plugin has been installed. You should now see the `kuzzle-core-plugin-boilerplate` Plugin entry:
-
-```json
-{
-  "...": "...",
-
-  "result": {
-    "serverInfo": {
-      "kuzzle": {
-        "plugins": {
-          "kuzzle-core-plugin-boilerplate": {
-            "name": "kuzzle-core-plugin-boilerplate",
-            "hooks": [
-              "document:beforeCreateOrReplace",
-              "document:beforeReplace",
-              "document:beforeUpdate",
-              "core:overload"
-            ],
-            "pipes": [
-              "document:beforeCreate",
-              "realtime:beforePublish"
-            ],
-            "controllers": [
-              "kuzzle-core-plugin-boilerplate/myNewController"
-            ],
-            "routes": [
-              {
-                "verb": "get",
-                "url": "/kuzzle-core-plugin-boilerplate/say-something/:property",
-                "controller": "kuzzle-core-plugin-boilerplate/myNewController",
-                "action": "myNewAction"
-              },
-              {
-                "verb": "post",
-                "url": "/kuzzle-core-plugin-boilerplate/say-something",
-                "controller": "kuzzle-core-plugin-boilerplate/myNewController",
-                "action": "myNewAction"
-              }
-            ],
-            "strategies": [
-              "dummy"
-            ]
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-Note that the plugin description above contains a property for each plugin component:
-- `hooks` asynchronous operations that depend on data-related events
-- `pipes` synchronous operations that depend on data-related events
-- `controllers` list of exposed actions in the API
-- `routes` list of exposed actions in the **REST** API
-- `strategies` list of exposed authentication strategies
-
-
----
 
 ## Installing protocols
 

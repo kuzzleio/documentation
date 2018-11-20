@@ -5,6 +5,7 @@ title: validateSpecifications
 description: Validate specifications format
 ---
 
+
 # validateSpecifications
 
 The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.
@@ -20,8 +21,7 @@ validation_response* validateSpecifications(const std::string& index, const std:
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
+|| ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | `specifications` | const std::string& | Specification to validate in JSON format | yes
 | ``options`` | kuzzleio::query_options* | Query options    | no  |

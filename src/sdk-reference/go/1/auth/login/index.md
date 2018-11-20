@@ -5,6 +5,7 @@ title: Login
 description: Authenticate a user
 ---
 
+
 # Login
 
 Authenticates a user.
@@ -18,8 +19,7 @@ func (a *Auth) Login(strategy string, credentials json.RawMessage, expiresIn *in
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``strategy`` | string | the name of the strategy to use    | yes
+|| ``strategy`` | string | the name of the strategy to use    | yes
 | ``credentials`` | string | the json credentials | yes
 | ``expiresIn`` | int | expiration time in milliseconds | no
 

@@ -4,6 +4,7 @@ algolia: true
 title: Go
 ---
 
+
 ## Geofencing with Go
 
 Let's create a new project folder called `geoFence`:

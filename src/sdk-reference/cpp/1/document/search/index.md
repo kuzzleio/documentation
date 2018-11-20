@@ -6,6 +6,7 @@ description: Search documents
 order: 200
 ---
 
+
 # search
 
 Searches documents.

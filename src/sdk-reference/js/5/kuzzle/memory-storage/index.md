@@ -4,6 +4,7 @@ algolia: true
 title: memoryStorage
 description: Kuzzle:memoryStorage
 ---
+
   
 
 ## memoryStorage

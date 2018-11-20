@@ -4,6 +4,7 @@ algolia: true
 title: zrange
 ---
 
+
 # zrange
 
 {{{since "1.0.0"}}}
@@ -12,32 +13,6 @@ Returns elements depending on their position in the sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zrange)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zrange/<_id>?start=<index start>&stop=<index stop>[&options=withscores]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zrange",
-  "_id": "<key>",
-  "start": <index start>,
-  "stop": <index stop>,
-  // optional
-  "options": ["withscores"]
-}
-```
-
----
 
 ## Arguments
 

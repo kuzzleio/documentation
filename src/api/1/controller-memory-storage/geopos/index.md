@@ -4,6 +4,7 @@ algolia: true
 title: geopos
 ---
 
+
 # geopos
 
 {{{since "1.0.0"}}}
@@ -12,29 +13,6 @@ Returns the position (`[longitude, latitude]`) of the provided key's members (se
 
 [[_Redis documentation_]](https://redis.io/commands/geopos)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_geopos/<_id>?members=member1,member2,...
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "geopos",
-  "_id": "<key>",
-  "members": ["member1", "member2", "..."]
-}
-```
-
----
 
 ## Arguments
 

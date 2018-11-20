@@ -4,6 +4,7 @@ algolia: true
 title: RequestInput
 ---
 
+
 # RequestInput
 
 Request input, normalizing a [Kuzzle API call]({{ site_base_path }}api/1/query-syntax/#other-protocols-default) in JSON format.
@@ -12,37 +13,6 @@ This is the class used to build the `input` property of any [Request]({{ site_ba
 
 Technical information: [github repository](https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#modelsrequestinput)
 
----
-
-## Constructor
-
-```js
-new RequestInput(data)
-```
-
-<br/>
-
-| Arguments | Type | Description |
-|-----------|------|-------------|
-| `data` | <pre>object</pre> | API request, in JSON format |
-
-### data
-
-The `data` object can contain the following properties:
-
-| Properties | Type | Description |
-|-----------|------|-------------|
-| `_id` | <pre>string</pre> | Resource unique identifier |
-| `action` | <pre>string</pre> | Invoked API controller's action |
-| `body` | <pre>object</pre> | Request specific data (document content, search queries, ...) |
-| `collection` | <pre>string</pre> | Data collection |
-| `controller` | <pre>string</pre> | Invoked API controller |
-| `index` | <pre>string</pre> | Data index |
-| `jwt` | <pre>string</pre> |  Authentication token |
-| `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
-| `...` | <pre>*</pre> | Unrecognized properties are considered request specific, and stored in the `args` object property |
-
----
 
 ## Properties
 

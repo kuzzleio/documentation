@@ -6,6 +6,7 @@ description: Get multiple documents from kuzzle
 order: 200
 ---
 
+
 # mGet
 
 Gets multiple documents.

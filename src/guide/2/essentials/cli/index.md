@@ -5,6 +5,7 @@ title: Command Line Interface (CLI)
 Order: 900
 ---
 
+
 # Command Line Interface (CLI)
 
 Kuzzle ships with a [Command line interface](https://en.wikipedia.org/wiki/Command-line_interface) which allows you to:
@@ -51,23 +52,6 @@ To get a list of commands and options run the CLI:
 #     -C, --noColors             do not use ANSI coloring
 ```
 
----
-
-## createFirstAdmin
-
-```bash
-./bin/kuzzle createFirstAdmin
-```
-
-When Kuzzle runs for the first time, no users are defined and the anonymous user is granted full access rights.
-
-The `createFirstAdmin` command lets you create an administrator to manage security.
-
-<div class="alert alert-info">NB: This command can only be run interactively</div>
-
-This call the action [security#createFirstAdmin]({{ site_base_path }}api/2/controller-security/create-first-admin)
-
----
 
 ## clearCache
 
@@ -79,35 +63,6 @@ Kuzzle uses Redis to store frequently accessed internal data. Use this command i
 
 This call the action [admin#resetCache]({{ site_base_path }}api/2/controller-admin/reset-cache)
 
----
-
-## dump
-
-```bash
-./bin/kuzzle dump
-
-# [ℹ] Creating dump file...
-# [✔] Done!
-#
-# [ℹ] Dump has been successfully generated in "dump/<date>-<time>-cli" folder
-# [ℹ] You can send the folder to the kuzzle core team at support@kuzzle.io
-```
-
-The `dump` command creates a snapshot of the state of Kuzzle, including:
-
-* a coredump of Kuzzle
-* the current Kuzzle configuration
-* server logs
-* Node.js binary & properties
-* a list of OS properties
-* plugins configuration
-* usage statistics of the dumped instance
-
-The generated directory can be used to feed a crash report to the support team.
-
-This call the action [admin#dump]({{ site_base_path }}api/2/controller-admin/reset-security)
-
----
 
 ## reset
 
@@ -134,30 +89,6 @@ This action has no impact on Plugin and Document storage.
 
 This call the action [admin#resetKuzzleData]({{ site_base_path }}api/2/controller-admin/reset-kuzzle-data)
 
----
-
-## resetSecurity
-
-{{{since "1.4.0"}}}
-
-```bash
-./bin/kuzzle resetSecurity --help
-
-#    Usage: resetSecurity [options]
-#
-#    reset all users, profiles and roles
-#
-#    Options:
-#
-#      -h, --help             output usage information
-#      --noint                non interactive mode
-```
-
-The `resetSecurity` command deletes all created users, profiles and roles and reset the default roles and profiles : `anonymous`, `admin` and `default`.
-
-This call the action [admin#resetSecurity]({{ site_base_path }}api/2/controller-admin/reset-security)
-
----
 
 ## resetDatabase
 
@@ -182,22 +113,6 @@ This call the action [admin#resetDatabase]({{ site_base_path }}api/2/controller-
 
 Note: this command has no impact on any plugins stored data, or on any Kuzzle stored documents.
 
----
-
-## shutdown
-
-```bash
-./bin/kuzzle shutdown
-
-# [ℹ] Shutting down...
-# [✔] Done!
-```
-
-The `shutdown` command lets you stop a Kuzzle instance after any remaining requests are processed, ensuring that no unnecessary `Service Unavailable` errors are returned to connected clients.
-
-This call the action [admin#shutdown]({{ site_base_path }}api/2/controller-admin/shutdown)
-
----
 
 ## start
 

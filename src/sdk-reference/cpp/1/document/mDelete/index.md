@@ -6,6 +6,7 @@ description: Delete a document
 order: 200
 ---
 
+
 # mDelete
 
 Deletes multiple documents.

@@ -4,6 +4,7 @@ algolia: true
 title: getbit
 ---
 
+
 # getbit
 
 {{{since "1.0.0"}}}
@@ -12,30 +13,6 @@ Returns the bit value at the provided offset, in the string value stored in a ke
 
 [[_Redis documentation_]](https://redis.io/commands/getbit)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_getbit/<_id>?offset=<offset>
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "getbit",
-  "_id": "<key>",
-  "offset": "<offset>"
-}
-```
-
----
 
 ## Arguments
 

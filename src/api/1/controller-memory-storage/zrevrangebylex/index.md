@@ -4,6 +4,7 @@ algolia: true
 title: zrevrangebylex
 ---
 
+
 # zrevrangebylex
 
 {{{since "1.0.0"}}}
@@ -12,33 +13,6 @@ Identical to [zrangebylex]({{ site_base_path }}api/1/controller-memory-storage/z
 
 [[_Redis documentation_]](https://redis.io/commands/zrevrangebylex)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zrevrangebylex/<_id>?min=<min interval>&max=<max interval>[&limit=offset,count]
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "zrevrangebylex",
-  "_id": "<key>",
-  "min": "<min interval>",
-  "max": "<max interval>",
-
-  "limit": ["<offset>", "<count>"]
-}
-```
-
----
 
 ## Arguments
 

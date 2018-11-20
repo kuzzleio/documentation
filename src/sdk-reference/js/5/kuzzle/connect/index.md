@@ -4,19 +4,13 @@ algolia: true
 title: connect
 description: Kuzzle:connect
 ---
+
   
 
 # connect
 Connects to Kuzzle using the `host` parameter provided in the constructor.
 Has no effect if ``connect`` is set to ``auto``, unless ``disconnect`` has been called first.
 
----
-
-## Return value
-
-Returns the `Kuzzle` object to allow chaining.
-
----
 
 ## Callback Response
 

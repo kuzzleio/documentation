@@ -4,6 +4,7 @@ algolia: true
 title: update
 description: Role:update
 ---
+
   
 
 # update
@@ -21,26 +22,11 @@ Updates the role object in Kuzzle.
 
 To get more information about Kuzzle permissions, please refer to our [permissions guide]({{ site_base_path }}guide/essentials/security/#user-permissions).
 
----
-
-## update(content, [options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``content`` | JSON Object | New role content |
-| ``options`` | JSON Object | Optional parameters |
-| ``callback`` | function | Optional callback handling the response |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| ``queuable`` | boolean | Make this request queuable or not  | ``true`` |
-
----
-
+|
 ## Return Value
 
 Returns the `Role` object to allow chaining.

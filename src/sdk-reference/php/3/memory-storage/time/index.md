@@ -4,6 +4,7 @@ algolia: true
 title: time
 description: MemoryStorage:time
 ---
+
   
 
 # time
@@ -11,24 +12,11 @@ Returns the current server time.
 
 [[_Redis documentation_]](https://redis.io/commands/time)
 
----
-
-## time([options], callback)
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| `queuable` | boolean | Make this request queuable or not  | `true` |
----
-
+|
 ## Callback Response
 
 Returns an array containing the following two items, in this order:

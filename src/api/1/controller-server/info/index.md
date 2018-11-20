@@ -4,34 +4,13 @@ algolia: true
 title: info
 ---
 
+
 # info
 
 {{{since "1.0.0"}}}
 
 Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512
-URL(2): http://kuzzle:7512/_serverInfo
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "server",
-  "action": "info"
-}
-```
-
----
 
 ## Response
 

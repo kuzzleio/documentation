@@ -4,6 +4,7 @@ algolia: true
 title: PartialError
 ---
 
+
 # PartialError
 
 {{{since "1.0.0"}}}

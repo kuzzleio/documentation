@@ -5,6 +5,7 @@ title: create
 description: Creates an index
 ---
 
+
 # create
 
 Creates a new data index.

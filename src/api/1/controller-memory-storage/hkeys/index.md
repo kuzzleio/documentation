@@ -4,6 +4,7 @@ algolia: true
 title: hkeys
 ---
 
+
 # hkeys
 
 {{{since "1.0.0"}}}
@@ -12,29 +13,6 @@ Returns all field names contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hkeys)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_hkeys/<_id>
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "hkeys",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Arguments
 

@@ -4,43 +4,13 @@ algolia: true
 title: mDeleteRoles
 ---
 
+
 # mDeleteRoles
 
 {{{since "1.0.0"}}}
 
 Deletes multiple security roles.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/roles/_mDelete[?refresh=wait_for]
-Method: POST  
-Body:
-```
-
-```js
-{
-  "ids": ["role1", "role2", "..."]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "mDeleteRoles",
-  "body": {
-    "ids": ["role1", "role2", "..."]
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -48,13 +18,6 @@ Body:
 
 * `refresh`: if set to `wait_for`, Kuzzle will not respond until the deletions are indexed
 
----
-
-## Body properties
-
-* `ids`: an array of role identifiers to delete
-
----
 
 ## Response
 

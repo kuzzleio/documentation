@@ -4,6 +4,7 @@ algolia: true
 title: getAutoRefresh
 description: Kuzzle:getAutoRefresh
 ---
+
   
 
 # getAutoRefresh
@@ -23,22 +24,10 @@ The `getAutoRefresh` function returns the current `autoRefresh` status for the g
     </p>
 </aside>
 
----
-
-#### getAutoRefresh([index], [options], callback)
-
-| Arguments | Type | Description
-|-----------|------|------------
 | `index` | string | Optional index to query. If no set, defaults to [Kuzzle.defaultIndex]({{ site_base_path }}sdk-reference/kuzzle/#properties)
 | `options` | JSON object | Optional parameters
 | `callback`| function | Callback handling the response
 
----
-
-## Options
-
-| Option | Type | Description | Default
-|--------|------|-------------|---------
 | `queuable` | boolean | Make this request queuable or not  | `true`
 
 ---

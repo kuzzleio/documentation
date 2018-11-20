@@ -5,6 +5,7 @@ title: UpdateSelf
 description: Updates the current user object in Kuzzle.
 ---
 
+
 # UpdateSelf
 
 Updates the current user object in Kuzzle.
@@ -18,8 +19,7 @@ func (a *Auth) UpdateSelf(data json.RawMessage, options types.QueryOptions) (*se
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `content` | string | the new credentials
+|| `content` | string | the new credentials
 | `options`  | QueryOptions | QueryOptions object containing query options
 
 

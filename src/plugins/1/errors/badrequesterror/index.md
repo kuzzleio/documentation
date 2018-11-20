@@ -4,6 +4,7 @@ algolia: true
 title: BadRequestError
 ---
 
+
 # BadRequestError
 
 {{{since "1.0.0"}}}

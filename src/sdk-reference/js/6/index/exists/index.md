@@ -5,6 +5,7 @@ title: exists
 description: Check for index existence
 ---
 
+
 # exists
 
 Checks if the given data index exists.

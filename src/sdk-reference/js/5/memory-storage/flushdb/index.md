@@ -4,6 +4,7 @@ algolia: true
 title: flushdb
 description: MemoryStorage:flushdb
 ---
+
   
 
 # flushdb
@@ -11,25 +12,11 @@ Deletes all the keys of the database dedicated to client applications (the reser
 
 [[_Redis documentation_]](https://redis.io/commands/flushdb)
 
----
-
-## flushdb([options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| `queuable` | boolean | Make this request queuable or not  | ``true`` |
-
----
-
+|
 ## Return Value
 
 Returns the `MemoryStorage` object to allow chaining.

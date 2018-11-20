@@ -4,6 +4,7 @@ algolia: true
 title: createRestrictedUser
 ---
 
+
 # createRestrictedUser
 
 {{{since "1.0.0"}}}
@@ -14,58 +15,6 @@ The list of security profiles attributed to restricted users is fixed, and must 
 
 This method allows users with limited rights to create other accounts, but blocks them from creating accounts with unwanted privileges (e.g. an anonymous user creating his own account).
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/users/<_id>/_createRestricted[?refresh=wait_for] 
-URL(2): http://kuzzle:7512/users/_createRestricted[?refresh=wait_for]
-Method: POST
-Body:
-```
-
-```js
-{
-  "content": {
-    // user additional information (optional)
-    "fullname": "John Doe"
-  },
-  "credentials": {
-    // example with the "local" authentication strategy
-    "local": {
-      username: "jdoe",
-      password: "foobar"
-    }
-  }
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "createRestrictedUser",
-  "_id": "<kuid>",
-  "body": {
-    "content": {
-      "fullname": "John Doe"
-    },
-    "credentials": {
-      // example with the "local" authentication strategy
-      "local": {
-        username: "jdoe",
-        password: "foobar"
-      }
-    }
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -73,14 +22,6 @@ Body:
 
 * `_id`: user [kuid]({{site_base_path}}guide/1/kuzzle-depth/authentication/#the-kuzzle-user-identifier). An error is returned if the provided identifier already exists. If not provided, a random kuid is automatically generated.
 
----
-
-## Body properties
-
-* `content`: user additional information. Can be left empty.
-* `credentials`: describe how the new user can be authenticated. This object contains any number of properties, named after the target authentication strategy to use. Each one of these properties are objects containing the credentials information, corresponding to that authentication strategy. If left empty, the new user is created but cannot be authenticated.
-
----
 
 ## Response
 

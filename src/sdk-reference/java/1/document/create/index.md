@@ -5,6 +5,7 @@ title: create
 description: Create a new document
 ---
 
+
 # create
 
 Creates a new document in the persistent data storage.

@@ -5,6 +5,7 @@ title: truncate
 description: Remove all documents from collection
 ---
 
+
 # truncate
 
 Remove all documents from a collection while keeping the associated mapping.  
@@ -20,8 +21,7 @@ public void truncate(String index, String collection, io.kuzzle.sdk.QueryOptions
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
+|| ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | io.kuzzle.sdk.QueryOptions | Query options    | no  |
 

@@ -5,6 +5,7 @@ title: deleteSpecifications
 description: Delete validation specifications for a collection
 ---
 
+
 # deleteSpecifications
 
 Delete the validation specifications associated with the collection.  
@@ -18,8 +19,7 @@ DeleteSpecifications(index string, collection string, options types.QueryOptions
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
+|| ``index`` | string | Index name    | yes  |
 | ``collection`` | string | Collection name    | yes  |
 | ``options`` | types.QueryOptions | Query options    | no  |
 

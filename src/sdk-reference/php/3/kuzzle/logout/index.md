@@ -4,6 +4,7 @@ algolia: true
 title: logout
 description: Kuzzle:logout
 ---
+
   
 
 # logout
@@ -13,17 +14,6 @@ Logs the user out.
 This method is non-queuable, meaning that during offline mode, it will be discarded and the callback will be called with an error.
 </aside>
 
----
-
-## logout([callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``callback`` | function | Optional callback handling the response |
-
-This method empties the `jwtToken` property
-
----
 
 ## Return value
 

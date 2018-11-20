@@ -5,6 +5,7 @@ title: updateSelf
 description: Updates the current user object in Kuzzle.
 ---
 
+
 # updateSelf
 
 Updates the current user object in Kuzzle.
@@ -18,8 +19,7 @@ kuzzle_user* updateSelf(const std::string& content, query_options* options=nullp
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `content` | const std::string& | the new credentials
+|| `content` | const std::string& | the new credentials
 | `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
 
 

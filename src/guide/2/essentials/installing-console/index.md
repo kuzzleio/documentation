@@ -5,6 +5,7 @@ title: Install Kuzzle Admin Console
 order: 100
 ---
 
+
 # Installing Kuzzle Admin Console
 
 The Kuzzle Admin Console is a web application that lets you manage Kuzzle, including **data**, **real-time notifications** and **security**.

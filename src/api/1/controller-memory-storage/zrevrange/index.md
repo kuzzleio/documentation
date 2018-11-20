@@ -4,6 +4,7 @@ algolia: true
 title: zrevrange
 ---
 
+
 # zrevrange
 
 {{{since "1.0.0"}}}
@@ -12,32 +13,6 @@ Identical to [zrange]({{ site_base_path }}api/1/controller-memory-storage/zrange
 
 [[_Redis documentation_]](https://redis.io/commands/zrevrange)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zrevrange/<_id>?start=<index start>&stop=<index stop>[&options=withscores]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zrevrange",
-  "_id": "<key>",
-  "start": "<index start>",
-  "stop": "<index stop>",
-  // optional
-  "options": ["withscores"]
-}
-```
-
----
 
 ## Arguments
 

@@ -5,6 +5,7 @@ title: disconnect
 description: Disconnect the SDK
 ---
 
+
 # disconnect
 
 Closes the current connection to Kuzzle.

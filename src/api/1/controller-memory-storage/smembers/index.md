@@ -4,6 +4,7 @@ algolia: true
 title: smembers
 ---
 
+
 # smembers
 
 {{{since "1.0.0"}}}
@@ -13,28 +14,6 @@ Returns the members of a set of unique values.
 [[_Redis documentation_]](https://redis.io/commands/smembers)
 
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_smembers/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "smembers",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Argument
 

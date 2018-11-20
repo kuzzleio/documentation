@@ -5,6 +5,7 @@ title: getCredentials
 ---
 
 
+
 # getCredentials
 
 {{{since "1.0.0"}}}
@@ -13,29 +14,6 @@ Gets a user's credential information for the specified authentication strategy.
 
 The returned content depends on the authentication strategy, but it should never include sensitive information.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/credentials/<strategy>/<_id>
-Method: GET  
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "getCredentials",
-  "strategy": "<strategy>",
-  "_id": "<kuid>"
-}
-```
-
----
 
 ## Arguments
 

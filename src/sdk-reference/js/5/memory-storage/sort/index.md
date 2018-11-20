@@ -4,6 +4,7 @@ algolia: true
 title: sort
 description: MemoryStorage:sort
 ---
+
   
 
 # sort
@@ -19,13 +20,7 @@ While Kuzzle's API supports the "store" option for this command, Kuzzle SDK meth
 ### sort(key, [options], callback)
 
 | Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `key` | string | Key identifier |
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
----
-
+|
 ## Options
 
 | Option | Type | Description | Default |

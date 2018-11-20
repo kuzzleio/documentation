@@ -5,6 +5,7 @@ title: updateSelf
 description: Updates the current user object in Kuzzle.
 ---
 
+
 # updateSelf
 
 Updates the current user object in Kuzzle.
@@ -24,8 +25,7 @@ public io.kuzzle.sdk.User updateSelf(
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `content` | String | the new credentials
+|| `content` | String | the new credentials
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 

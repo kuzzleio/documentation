@@ -5,6 +5,7 @@ title: updateMapping
 description: Update the collection mapping
 ---
 
+
 # updateMapping
 
 Update the collection mapping.
@@ -20,8 +21,7 @@ void updateMapping(const std::string& index, const std::string& collection, cons
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
+|| ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | ``mapping`` | const std::string* | Collection data mapping in JSON format  | yes  |
 | ``options`` | kuzzleio::query_options* |  A pointer to a `kuzzleio::query_options` containing query options  | no  |

@@ -4,45 +4,13 @@ algolia: true
 title: replace
 ---
 
+
 # replace
 
 {{{since "1.0.0"}}}
 
 Replaces the content of an existing document.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/<documentId>/_replace[?refresh=wait_for]
-Method: PUT  
-Body:
-```
-
-```js
-{
-  // new document content
-}
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "document",
-  "action": "replace",
-  "body": {
-    // new document content
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -54,13 +22,6 @@ Body:
 
 * `refresh`: if set to `wait_for`, Kuzzle will not respond until the new document content is indexed
 
----
-
-## Body properties
-
-New document content.
-
----
 
 ## Response
 

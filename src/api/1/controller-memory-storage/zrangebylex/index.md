@@ -4,6 +4,7 @@ algolia: true
 title: zrangebylex
 ---
 
+
 # zrangebylex
 
 {{{since "1.0.0"}}}
@@ -12,32 +13,6 @@ Returns elements within a provided interval, in a sorted set where all members h
 
 [[_Redis documentation_]](https://redis.io/commands/zrangebylex)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zrangebylex/<_id>?min=<min interval>&max=<max interval>[&limit=offset,count]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zrangebylex",
-  "_id": "<key>",
-  "min": "<min interval>",
-  "max": "<max interval>",
-  // optional
-  "limit": [<offset>, <count>]
-}
-```
-
----
 
 ## Arguments
 

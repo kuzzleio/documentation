@@ -5,6 +5,7 @@ title: expire
 ---
 
 
+
 # expire
 
 {{{since "1.0.0"}}}
@@ -13,51 +14,11 @@ Sets a timeout (in seconds) on a key. After the timeout has expired, the key is 
 
 [[_Redis documentation_]](https://redis.io/commands/expire)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_expire/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  "seconds": 60
-}
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "expire",
-  "_id": "<key>",
-  "body": {
-    "seconds": 60
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `_id`: key to update
 
----
-
-## Body properties
-
-* `seconds`: number of seconds before the key expires (integer)
-
----
 
 ## Response
 

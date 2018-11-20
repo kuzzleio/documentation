@@ -5,6 +5,7 @@ title: GetConfig
 description: Returns the current Kuzzle configuration.
 ---
 
+
 # GetConfig
 
 {{{since "1.0.0"}}}

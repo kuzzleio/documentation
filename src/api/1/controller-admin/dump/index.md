@@ -4,6 +4,7 @@ algolia: true
 title: dump
 ---
 
+
 # dump
 
 {{{since "1.4.0"}}}
@@ -26,27 +27,6 @@ This report is the same as the one generated during a crash.
 
 **Note:** in a Cluster environment, the dump action will be propagated across all nodes.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/admin/_dump
-Method: POST
-```
-
-### Other protocols
-
-```json
-{
-  "controller": "admin",
-  "action": "dump"
-}
-```
-
----
 
 ## Response
 

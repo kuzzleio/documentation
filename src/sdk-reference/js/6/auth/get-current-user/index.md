@@ -5,6 +5,7 @@ title: getCurrentUser
 description: Returns the profile object for the user linked to the json web token
 ---
 
+
 # getCurrentUser
 
 Returns information about the currently logged in user.
@@ -18,8 +19,7 @@ getCurrentUser ([options])
 <br/>
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `options` | <pre>object</pre> | Query options
+|| `options` | <pre>object</pre> | Query options
 
 ### options
 

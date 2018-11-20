@@ -5,6 +5,7 @@ title: addListener
 description: Add a listener to an event
 ---
 
+
 # addListener
 
 Adds a listener to an event.  

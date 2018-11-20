@@ -4,6 +4,7 @@ algolia: true
 title: llen
 ---
 
+
 # llen
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns the length of a list.
 
 [[_Redis documentation_]](https://redis.io/commands/llen)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_llen/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "llen",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Argument
 

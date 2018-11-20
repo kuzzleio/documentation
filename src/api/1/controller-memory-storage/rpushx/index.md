@@ -4,6 +4,7 @@ algolia: true
 title: rpushx
 ---
 
+
 # rpushx
 
 {{{since "1.0.0"}}}
@@ -12,50 +13,11 @@ Appends a value at the end of a list, only if the destination key already exists
 
 [[_Redis documentation_]](https://redis.io/commands/rpushx)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_rpushx/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  "value": "<value>"
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "rpushx",
-  "_id": "<key>",
-  "body": {
-    "value": "<value>"
-  }
-}
-```
-
----
 
 ## Argument
 
 * `_id`: list key identifier
 
----
-
-## Body properties
-
-* `value`: the value to push to the list
-
----
 
 ## Response
 

@@ -5,6 +5,7 @@ title: getAutoRefresh
 description: Returns the status of autorefresh flag
 ---
 
+
 # getAutoRefresh
 
 This action returns the current autorefresh status of a data index.

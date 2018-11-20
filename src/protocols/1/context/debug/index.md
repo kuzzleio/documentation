@@ -4,6 +4,7 @@ algolia: true
 title: debug
 ---
 
+
 # debug
 
 An instance to the [debug](https://www.npmjs.com/package/debug) utility.

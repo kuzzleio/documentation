@@ -5,6 +5,7 @@ title: validateMyCredentials
 description: Validate the current user's credentials for the specified strategy.
 ---
 
+
 # validateMyCredentials
 
 Validates the provided credentials against a specified authentication strategy.
@@ -20,8 +21,7 @@ validateMyCredentials (strategy, credentials, [options])
 <br/>
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | <pre>string</pre> | Strategy to use
+|| `strategy` | <pre>string</pre> | Strategy to use
 | `credentials` | <pre>string</pre> | New credentials
 | `options`  | <pre>object</pre> | Query options
 

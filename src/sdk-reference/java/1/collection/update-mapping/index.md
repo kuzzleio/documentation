@@ -5,6 +5,7 @@ title: updateMapping
 description: Update the collection mapping
 ---
 
+
 # updateMapping
 
 Update the collection mapping.  
@@ -21,8 +22,7 @@ public void updateMapping(String index, String collection, String mapping, io.ku
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
+|| ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
 | ``mapping`` | String | Collection data mapping in JSON format  | yes  |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |

@@ -4,6 +4,7 @@ algolia: true
 title: deleteMyCredentials
 ---
 
+
 # deleteMyCredentials
 
 {{{since "1.0.0"}}}
@@ -12,30 +13,6 @@ Deletes credentials associated to the current user.
 
 If the credentials that generated the current JWT are removed, the user will remain logged in until they log out or their session expire. After that, they will no longer be able to log in with the deleted credentials.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/credentials/<strategy>/_me
-Method: DELETE  
-Headers: Authorization: "Bearer <authentication token>"
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "auth",
-  "action": "deleteMyCredentials",
-  "strategy": "<strategy>",
-  "jwt": "<authentication token>"
-}
-```
-
----
 
 ## Arguments
 

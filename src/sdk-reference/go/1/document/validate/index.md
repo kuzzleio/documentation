@@ -5,6 +5,7 @@ title: validate
 description: Validate a document
 ---
 
+
 # Validate
 
 Validates data against existing validation rules.

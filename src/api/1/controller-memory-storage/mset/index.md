@@ -4,6 +4,7 @@ algolia: true
 title: mset
 ---
 
+
 # mset
 
 {{{since "1.0.0"}}}
@@ -12,45 +13,6 @@ Sets the provided keys to their respective values. If a key does not exist, it i
 
 [[_Redis documentation_]](https://redis.io/commands/mset)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_mset
-Method: POST  
-Body:
-```
-
-```js
-{
-  "entries": [
-    {"key": "<key1>", "value": "<value1>"},
-    {"key": "<key2>", "value": "<value2>"},
-    {"key": "...", "value": "..."}
-  ]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "mset",
-  "body": {
-    "entries": [
-      {"key": "<key1>", "value": "<value1>"},
-      {"key": "<key2>", "value": "<value2>"},
-      {"key": "...", "value": "..."}
-    ]
-  }
-}
-```
-
----
 
 ## Body properties
 

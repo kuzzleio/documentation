@@ -4,6 +4,7 @@ algolia: true
 title: Architecture
 ---
 
+
 # Architecture
 
 In this section we'll take a closer look at Kuzzle's server architecture.

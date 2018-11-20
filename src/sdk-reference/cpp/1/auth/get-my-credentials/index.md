@@ -5,6 +5,7 @@ title: getMyCredentials
 description: Returns the current user's credential information for the specified `<strategy>`.
 ---
 
+
 # getMyCredentials
 
 Returns the current user's credential information for the specified `<strategy>`. The data returned will depend on the specified strategy. The result can be an empty object.
@@ -18,8 +19,7 @@ std::string getMyCredentials(const std::string& strategy, query_options *options
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `strategy` | const std::string& | the strategy to use    | yes
+|| `strategy` | const std::string& | the strategy to use    | yes
 | `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
 ### **Options**

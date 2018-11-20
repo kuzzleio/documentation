@@ -4,6 +4,7 @@ algolia: true
 title: zcard
 ---
 
+
 # zcard
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns the number of elements held by a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zcard)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zcard/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zcard",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Arguments
 

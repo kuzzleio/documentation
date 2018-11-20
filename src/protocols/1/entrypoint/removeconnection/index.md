@@ -4,6 +4,7 @@ algolia: true
 title: removeConnection
 ---
 
+
 # removeConnection 
 
 {{{since "1.0.0"}}}

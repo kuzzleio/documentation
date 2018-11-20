@@ -4,6 +4,7 @@ algolia: true
 title: isActionAllowed
 description: Security:isActionAllowed
 ---
+
   
 
 # isActionAllowed
@@ -19,19 +20,6 @@ An action is defined as a pair of action and controller (mandatory), plus an ind
 You can get the rights from Kuzzle by using <a href="{{ site_base_path }}sdk-reference/security/get-user-rights">`Security.getUserRights`</a> and <a href="{{ site_base_path }}sdk-reference/kuzzle/get-my-rights">`Kuzzle.getMyRights`</a>.
 </aside>
 
----
-
-## isActionAllowed(rights, controller, action, index, collection)
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``rights`` | JSON array | Rights list |
-| ``controller`` | String | The controller |
-| ``action`` | String | The action |
-| ``index`` | String | The index |
-| ``collection`` | String | The collection |
-
----
 
 ## Return Value
 

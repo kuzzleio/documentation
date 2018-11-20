@@ -2,8 +2,10 @@
 layout: sdk.html.hbs
 algolia: true
 title: deleteMyCredentials
-description: Deletes credentials for a specific strategy, associated to the current user
+description: Deletes credentials for a specific strategy, associated to the current
+  user
 ---
+
 
 # deleteMyCredentials
 
@@ -22,8 +24,7 @@ deleteMyCredentials (strategy, [options]);
 <br/>
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | <pre>string</pre> | Strategy to use
+|| `strategy` | <pre>string</pre> | Strategy to use
 | `options` | <pre>object</pre> | Query options
 
 ### options

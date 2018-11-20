@@ -4,6 +4,7 @@ algolia: true
 title: updateUserMapping
 ---
 
+
 # updateUserMapping
 
 {{{since "1.0.0"}}}
@@ -11,42 +12,6 @@ title: updateUserMapping
 Updates the internal user storage mapping.
 
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/users/_mapping
-Method: PUT  
-Body:
-```
-
-```js
-{
-  "properties": {
-    // mapping
-  }
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "updateUserMapping",
-
-  "body": {
-    "properties": {
-      // mapping
-    }
-  }
-}
-```
-
----
 
 ## Body properties
 

@@ -5,6 +5,7 @@ title: Introduction
 order: -10
 ---
 
+
 # Introduction
 
 The plugin context is an object containing a set of constructors, accessors and various other helpers, allowing plugins to interact with Kuzzle.

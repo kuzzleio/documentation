@@ -4,6 +4,7 @@ algolia: true
 title: validateSpecifications
 ---
 
+
 # validateSpecifications
 
 {{{since "1.0.0"}}}
@@ -15,53 +16,6 @@ The validateSpecifications method checks if a validation specification is well f
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_validateSpecifications
-Method: POST  
-Body:
-```
-
-```js
-{
-  "myindex": {
-    "mycollection": {
-      "strict": <boolean>,
-      "fields": {
-        // specification
-      }
-    }
-  }
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "collection",
-  "action": "validateSpecifications",
-
-  "body": {
-    "myindex": {
-      "mycollection": {
-        "strict": <boolean>,
-        "fields": {
-          // ...
-        }
-      }
-    }
-  }
-
-}
-```
-
----
 
 ## Body properties
 
@@ -80,35 +34,6 @@ The provided body must have the following structure:
 }
 ```
 
----
-
-## Response
-
-Returns an object with the following properties:
-
-* `valid`: a boolean telling whether the provided specifications are valid
-* `details`: the exhaustive list of rejections and their reasons. Only present if the document is invalid
-* `description`: global error description. Only present if the document is invalid
-
-Example:
-
-```javascript
-{
-  "status": 200,
-  "error": null,
-  "index": "<index>",
-  "collection": "<collection>",
-  "action": "validateSpecifications",
-  "controller": "collection",
-  "state": "done",
-  "requestId": "<unique request identifier>",
-  "result": {
-    "valid": true
-  }
-}
-```
-
----
 
 ## Possible errors
 

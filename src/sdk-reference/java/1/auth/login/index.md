@@ -5,6 +5,7 @@ title: login
 description: Authenticate a user
 ---
 
+
 # login
 
 Authenticates a user.
@@ -26,8 +27,7 @@ String login(
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``strategy`` | String | the name of the strategy to use    | yes
+|| ``strategy`` | String | the name of the strategy to use    | yes
 | ``credentials`` | String | the json credentials | yes
 | ``expiresIn`` | int | expiration time in milliseconds | no
 

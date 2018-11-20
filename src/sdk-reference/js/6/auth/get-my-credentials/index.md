@@ -5,6 +5,7 @@ title: getMyCredentials
 description: Returns the current user's credential information for the specified strategy.
 ---
 
+
 # getMyCredentials
 
 Returns credentials information for the currently logged in user.
@@ -22,8 +23,7 @@ getMyCredentials (strategy, [options])
 <br/>
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | <pre>string</pre> | Strategy to use
+|| `strategy` | <pre>string</pre> | Strategy to use
 | `options` | <pre>object</pre> | Query options
 
 

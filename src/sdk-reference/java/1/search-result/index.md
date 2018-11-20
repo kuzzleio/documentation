@@ -5,6 +5,7 @@ title: Search Results
 description: How to deal with Kuzzle search results
 order: 600
 ---
+
 # Search Results
 
 When performing a [search]({{ site_base_path }}sdk-reference/java/1/document/search), Kuzzle returns an `SearchResult` object, which holds the items matching the given query and allows to drill through next result pages if applicable.

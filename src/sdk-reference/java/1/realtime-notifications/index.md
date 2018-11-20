@@ -5,6 +5,7 @@ title: Realtime notifications
 description: List of realtime notifications sent by Kuzzle
 order: 300
 ---
+
 # Notifications
 
 The [Realtime.subscribe]({{ site_base_path }}sdk-reference/java/1/realtime/subscribe) method takes a `io.kuzzle.sdk.NotificationListener` event listener (implements the `EventListener` interface).  

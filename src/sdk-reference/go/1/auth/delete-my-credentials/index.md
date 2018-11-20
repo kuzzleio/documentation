@@ -5,6 +5,7 @@ title: DeleteMyCredentials
 description: Delete the current user's credentials for the specified strategy
 ---
 
+
 # DeleteMyCredentials
 
 Delete the current user's credentials for the specified `<strategy>`. If the credentials that generated the current JWT are removed, the user will remain logged in until he logs out or his session expires, after that they will no longer be able to log in with the deleted credentials.
@@ -18,8 +19,7 @@ func (a *Auth) DeleteMyCredentials(strategy string, options types.QueryOptions) 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `strategy` | string | the strategy to use    | yes
+|| `strategy` | string | the strategy to use    | yes
 | `options`  | QueryOptions    | QueryOptions object containing query options | yes       |
 
 

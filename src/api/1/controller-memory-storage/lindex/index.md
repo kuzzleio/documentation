@@ -4,6 +4,7 @@ algolia: true
 title: lindex
 ---
 
+
 # lindex
 
 {{{since "1.0.0"}}}
@@ -12,30 +13,6 @@ Returns the element at the provided index in a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lindex)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_lindex/<_id>/<index>
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "lindex",
-  "_id": "<key>",
-  "index": 3
-}
-```
-
----
 
 ## Argument
 

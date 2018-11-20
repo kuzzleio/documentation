@@ -4,6 +4,7 @@ algolia: true
 title: zcount
 ---
 
+
 # zcount
 
 {{{since "1.0.0"}}}
@@ -12,30 +13,6 @@ Returns the number of elements held by a sorted set with a score within the prov
 
 [[_Redis documentation_]](https://redis.io/commands/zcount)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zcount/<_id>?min=<min score>&max=<max score>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zcount",
-  "_id": "<key>",
-  "min": "<min score>",
-  "max": "<max score>"
-}
-```
-
----
 
 ## Arguments
 

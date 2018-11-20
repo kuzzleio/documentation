@@ -4,34 +4,13 @@ algolia: true
 title: list
 ---
 
+
 # list
 
 {{{since "1.0.0"}}}
 
 Lists subscriptions on all indexes and all collections.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_listSubscriptions
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "realtime",
-  "action": "list"
-}
-```
-
----
 
 ## Response
 

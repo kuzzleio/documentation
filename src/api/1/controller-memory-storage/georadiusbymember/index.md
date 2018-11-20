@@ -4,6 +4,7 @@ algolia: true
 title: georadiusbymember
 ---
 
+
 # georadiusbymember
 
 {{{since "1.0.0"}}}
@@ -12,32 +13,6 @@ Returns the members (added with [geoadd]({{ site_base_path }}api/1/controller-me
 
 [[_Redis documentation_]](https://redis.io/commands/georadiusbymember)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_georadiusbymember/<_id>?member=<member>&distance=<distance>&unit=[m|km|mi|ft][&options=option1,option2,...]
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "georadiusbymember",
-  "_id": "<key>",
-  "member": "kuzzle HQ",
-  "distance": "1500"
-  "unit": "m"
-}
-```
-
----
 
 ## Arguments
 

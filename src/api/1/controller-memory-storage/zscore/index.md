@@ -4,6 +4,7 @@ algolia: true
 title: zscore
 ---
 
+
 # zscore
 
 {{{since "1.0.0"}}}
@@ -12,29 +13,6 @@ Returns the score of an element in a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zscore)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zscore/<_id>/<member>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zscore",
-  "_id": "<key>",
-  "member": "<member>"
-}
-```
-
----
 
 ## Arguments
 

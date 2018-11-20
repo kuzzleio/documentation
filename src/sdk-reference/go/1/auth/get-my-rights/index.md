@@ -5,6 +5,7 @@ title: GetMyRights
 description: Returns the rights for the user linked to the `JSON Web Token`.
 ---
 
+
 # GetMyRights
 
 Returns the rights for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
@@ -18,16 +19,14 @@ func (a *Auth) GetMyRights(options types.QueryOptions) ([]*types.UserRights, err
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `options`  | QueryOptions    | QueryOptions object containing query options | yes
+|| `options`  | QueryOptions    | QueryOptions object containing query options | yes
 
 ### **Options**
 
 Additional query options
 
 | Property     | Type    | Description                       | Default
-| ---------- | ------- | --------------------------------- | -------
-| `Queuable` | bool | Make this request queuable or not | `true`
+| | `Queuable` | bool | Make this request queuable or not | `true`
 
 ## Return
 

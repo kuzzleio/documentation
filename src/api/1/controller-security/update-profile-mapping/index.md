@@ -4,47 +4,13 @@ algolia: true
 title: updateProfileMapping
 ---
 
+
 # updateProfileMapping
 
 {{{since "1.0.0"}}}
 
 Updates the internal profile storage mapping.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/profiles/_mapping
-Method: PUT  
-Body:
-```
-
-```js
-{
-  "properties": {
-    // mapping
-  }
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "updateProfileMapping",
-  "body": {
-    "properties": {
-      // mapping
-    }
-  }
-}
-```
-
----
 
 ## Body properties
 

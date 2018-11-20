@@ -4,6 +4,7 @@ algolia: true
 title: pfcount
 ---
 
+
 # pfcount
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns the probabilistic cardinality of a [HyperLogLog](https://en.wikipedia.or
 
 [[_Redis documentation_]](https://redis.io/commands/pfcount)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_pfcount?keys=key1,key2,...
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "pfcount",
-  "keys": ["key1", "key2", "..."]
-}
-```
-
----
 
 ## Argument
 

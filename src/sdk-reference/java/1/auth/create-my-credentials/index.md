@@ -5,6 +5,7 @@ title: createMyCredentials
 description: Create the current user's credentials for the specified `<strategy>`.
 ---
 
+
 # createMyCredentials
 
 Create the current user's credentials for the specified `<strategy>`.
@@ -26,8 +27,7 @@ public String createMyCredentials(
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `content` | String | the new credentials
+|| `content` | String | the new credentials
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 

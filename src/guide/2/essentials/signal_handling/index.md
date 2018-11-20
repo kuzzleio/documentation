@@ -5,6 +5,7 @@ title: Signal Handling
 order: 1000
 ---
 
+
 # Signal Handling
 
 Kuzzle handles certain Unix signals which fall into the following three categories:

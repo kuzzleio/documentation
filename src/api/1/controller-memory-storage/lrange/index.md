@@ -4,6 +4,7 @@ algolia: true
 title: lrange
 ---
 
+
 # lrange
 
 {{{since "1.0.0"}}}
@@ -15,30 +16,6 @@ Offsets start at `0`, and the range is inclusive.
 [[_Redis documentation_]](https://redis.io/commands/lrange)
 
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_lrange/<_id>?start=<start>&stop=<stop>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "lrange",
-  "_id": "<key>",
-  "start": 0,
-  "stop": -3
-}
-```
-
----
 
 ## Argument
 

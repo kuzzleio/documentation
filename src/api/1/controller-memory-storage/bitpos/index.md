@@ -4,6 +4,7 @@ algolia: true
 title: bitpos
 ---
 
+
 # bitpos
 
 {{{since "1.0.0"}}}
@@ -12,32 +13,6 @@ Returns the position of the first bit set to 1 or 0 in a string, or in a substri
 
 [[_Redis documentation_]](https://redis.io/commands/bitpos)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_bitpos/<_id>?bit=[0|1][&start=<integer>&end=<integer>]
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "bitpos",
-  "_id": "<key>",
-  "bit": "[0|1]",
-  "start": <integer>,
-  "end": <integer>
-}
-```
-
----
 
 ## Arguments
 

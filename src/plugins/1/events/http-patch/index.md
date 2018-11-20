@@ -4,6 +4,7 @@ algolia: true
 title: http:patch
 ---
 
+
 # http:patch
 
 {{{since "1.2.0"}}}

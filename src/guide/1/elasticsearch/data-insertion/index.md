@@ -6,71 +6,11 @@ description: learn how to index data with elasticsearch
 order: 200
 ---
 
+
 # Data Insertion
 
 We use the `?pretty` keyword to get human-readable outputs from our requests.
 
----
-
-## Creating a Mapping
-
-We will provide Elasticsearch with a mapping (RDBM: schema) for the data we want to index.
-Here we create a new document `type` (RDBM: table) called `blogpost` with 6 fields (RDBM: columns).
-
-<aside class="warning">
-  The mapping is not mandatory, but if you don't define it before pushing data to Elasticsearch,
-  Elasticsearch will infer the mapping for each field based on its content.
-  Once defined, the field type cannot be changed.
-</aside>
-
-```bash
-curl -g -X PUT "http://localhost:9200/example/?pretty" -d '{
-  "settings" : {
-    "index" : {
-      "number_of_shards" : 1
-    }
-  },
-  "mappings": {
-    "blogpost": {
-      "properties": {
-        "author": {
-          "type": "text",
-          "analyzer": "standard"
-        },
-        "title": {
-          "type": "text",
-          "analyzer": "english"
-        },
-        "body": {
-          "type": "text",
-          "analyzer": "english"
-        },
-        "tags": {
-          "type": "keyword"
-        },
-        "status": {
-          "type": "keyword"
-        },
-        "publish_date": {
-          "type": "date",
-          "format": "yyyy-MM-dd||epoch_millis"
-        }
-      }
-    }
-  }
-}'
-```
-
-
-Reply:
-
-```json
-{
-  "acknowledged" : true
-}
-```
-
----
 
 
 ## Creating a Document
@@ -201,18 +141,6 @@ Replies:
 }
 ```
 
----
-
-
-## The 'id'
-
-The number (1 to 5) at the end of the request url specifies the document id \(RDBM: primary key\).
-
-If you do not specify it, Elasticsearch will automatically generate an ID and assign it to the document.  
-Even if the ID is actually a String, you can use numbers for convenience.
-For the sake of this example, we explicitly defined the ID of each document (take a look at the last chunk of the URLs).
-
----
 
 ## The 'body'
 

@@ -5,6 +5,7 @@ title: info
 description: Returns information about Kuzzle server.
 ---
 
+
 # info
 
 {{{since "1.0.0"}}}

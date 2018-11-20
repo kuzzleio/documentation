@@ -4,6 +4,7 @@ algolia: true
 title: exists
 ---
 
+
 # exists
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Checks if the specified keys exist in the database.
 
 [[_Redis documentation_]](https://redis.io/commands/exists)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_exists?keys=key1,key2,...
-Method: GET  
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "exists",
-  "keys": ["key1", "key2", "..."]
-}
-```
-
----
 
 ## Arguments
 

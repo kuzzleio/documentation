@@ -5,6 +5,7 @@ title: updateMapping
 description: Update the collection mapping
 ---
 
+
 # updateMapping
 
 Update the collection mapping.  
@@ -20,8 +21,7 @@ UpdateMapping(index string, collection string, mapping json.RawMessage, options 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
+|| ``index`` | string | Index name    | yes  |
 | ``collection`` | string | Collection name    | yes  |
 | ``mapping`` | json.RawMessage | Collection data mapping in JSON format  | yes  |
 | `options` | QueryOptions | Query options | no       |

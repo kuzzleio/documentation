@@ -4,43 +4,13 @@ algolia: true
 title: updateUser
 ---
 
+
 # updateUser
 
 {{{since "1.0.0"}}}
 
 Updates a user definition.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/users/<_id>/_update[?refresh=wait_for]
-Method: PUT  
-Body:
-```
-
-```js
-{
-  "fullname": "Walter Smith"
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "updateUser",
-  "_id": "<kuid>",
-  "body": {
-    "fullname": "Walter Smith"
-  }
-}
-```
----
 
 ## Arguments
 

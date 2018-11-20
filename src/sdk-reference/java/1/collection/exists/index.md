@@ -5,6 +5,7 @@ title: exists
 description: Check if collection exists
 ---
 
+
 # exists
 
 Check if a collection exists in Kuzzle.
@@ -19,8 +20,7 @@ public boolean exists(String index, String collection, io.kuzzle.sdk.QueryOption
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
+|| ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | io.kuzzle.sdk.QueryOptions | An object containing query options    | no  |
 

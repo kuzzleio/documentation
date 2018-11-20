@@ -5,6 +5,7 @@ title: login
 description: Authenticate a user
 ---
 
+
 # login
 
 Authenticates a user.

@@ -4,6 +4,7 @@ algolia: true
 title: setAutoRefresh
 description: Kuzzle:setAutoRefresh
 ---
+
   
 
 # setAutoRefresh
@@ -23,32 +24,13 @@ Given an index, the `setAutoRefresh` function updates its `autoRefresh` status.
     </p>
 </aside>
 
----
-
-## setAutoRefresh([index], autoRefresh, [options], [callback])
-
-| Argument | Type | Description
-|----------|------|-------------
 | `index` | string | _Optional_ The index to set the `autoRefresh` for. If not set, defaults to [kuzzle.defaultIndex]({{ site_base_path }}sdk-reference/kuzzle/#properties).
 | `autoRefresh` | boolean | The value to set for the `autoRefresh` setting.
 | `options` | JSON object | Optional parameters
 | `callback` | function | _Optional_ Callback handling the response
 
----
-
-## Options
-
-| Option | Type | Description | Default
-|--------|------|-------------|---------
 | `queuable` | boolean | Make this request queuable or not | `true`
 
----
-
-## Return Value
-
-Returns the `Kuzzle` SDK object to allow chaining.
-
----
 
 ## Callback Response
 

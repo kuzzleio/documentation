@@ -5,34 +5,13 @@ title: getProfileRights
 ---
 
 
+
 # getProfileRights
 
 {{{since "1.0.0"}}}
 
 Gets the detailed rights configured by a security profile.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_profiles/<_id>/_rights
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "getProfileRights",
-  "_id": "<profileId>"
-}
-```
-
----
 
 ## Arguments
 

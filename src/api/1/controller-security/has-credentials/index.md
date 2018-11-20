@@ -4,35 +4,13 @@ algolia: true
 title: hasCredentials
 ---
 
+
 # hasCredentials
 
 {{{since "1.0.0"}}}
 
 Checks if a user has credentials registered for the specified authentication strategy.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/credentials/<strategy>/<_id>/_exists
-Method: GET  
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "hasCredentials",
-  "strategy": "<strategy>",
-  "_id": "<kuid>"
-}
-```
-
----
 
 ## Arguments
 

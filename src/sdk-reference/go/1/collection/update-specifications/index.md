@@ -5,6 +5,7 @@ title: updateSpecifications
 description: Update the validation specifications
 ---
 
+
 # updateSpecifications
 
 The updateSpecifications method allows you to create or update the validation specifications for one or more index/collection pairs.
@@ -20,8 +21,7 @@ UpdateSpecifications(index string, collection string, specifications json.RawMes
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
+|| ``index`` | string | Index name    | yes  |
 | ``collection`` | string | Collection name    | yes  |
 | ``specifications`` | json.RawMessage | Specifications in JSON format  | yes  |
 | `options` | QueryOptions | Query options | no       |

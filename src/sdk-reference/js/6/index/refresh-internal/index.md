@@ -5,6 +5,7 @@ title: refreshInternal
 description: Forces an immediate reindexation of Kuzzle internal storage.
 ---
 
+
 # refreshInternal
 
 When writing or deleting security and internal documents (users, roles, profiles, configuration, etc.) in Kuzzle, the update needs to be indexed before being reflected in the search index.

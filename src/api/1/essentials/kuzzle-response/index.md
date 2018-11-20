@@ -5,6 +5,7 @@ title: Kuzzle Response
 order: 300
 ---
 
+
 # Kuzzle Response
 
 A Kuzzle Response is a standardized result. This format is shared by all API routes, including routes added by controller plugins.

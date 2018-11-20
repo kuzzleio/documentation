@@ -4,6 +4,7 @@ algolia: true
 title: zrevrange
 description: MemoryStorage:zrevrange
 ---
+
   
 
 # zrevrange
@@ -11,27 +12,11 @@ Identical to [zrange]({{ site_base_path }}sdk-reference/memory-storage/zrange), 
 
 [[_Redis documentation_]](https://redis.io/commands/zrevrange)
 
----
-
-## zrevrange(key, start, stop, [options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `key` | string | Key identifier |
-| `start` | int | Start position in the set (index starts at position `0`) |
-| `stop` | int | End position in the set |
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| `queuable` | boolean | Make this request queuable or not  | ``true`` |
----
-
+|
 ## Return Value
 
 Returns the `MemoryStorage` object to allow chaining.

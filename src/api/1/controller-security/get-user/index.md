@@ -4,34 +4,13 @@ algolia: true
 title: getUser
 ---
 
+
 # getUser
 
 {{{since "1.0.0"}}}
 
 Gets a user.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/users/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "getUser",
-  "_id": "<kuid>"
-}
-```
-
----
 
 ## Arguments
 

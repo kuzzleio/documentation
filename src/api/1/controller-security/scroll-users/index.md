@@ -4,6 +4,7 @@ algolia: true
 title: scrollUsers
 ---
 
+
 # scrollUsers
 
 {{{since "1.0.0"}}}
@@ -12,29 +13,6 @@ Moves a result set cursor forward, created by a [searchUsers]({{ site_base_path 
 
 Results returned by a `scrollUsers` request reflect the state of the index at the time of the initial search request, like a fixed snapshot. Subsequent changes to documents do not affect the scroll results.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/users/_scroll/<scrollId>[?scroll=<time to live>]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "scrollUsers",
-  "scrollId": "<scrollId>",
-  "scroll": "<time to live>"
-}
-```
-
----
 
 ## Arguments
 

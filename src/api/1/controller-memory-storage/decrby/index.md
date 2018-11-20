@@ -4,6 +4,7 @@ algolia: true
 title: decrby
 ---
 
+
 # decrby
 
 {{{since "1.0.0"}}}
@@ -12,50 +13,11 @@ Decrements the number stored at `key` by a provided integer value. If the key do
 
 [[_Redis documentation_]](https://redis.io/commands/decrby)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_decrby/<_id>
-Method: POST  
-Body:  
-```
-
-```js
-{
-  "value": <decrement value>
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "decrby",
-  "_id": "<key>",
-  "body": {
-    "value": <decrement value>
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `_id`: key to decrement
 
----
-
-## Body properties
-
-* `value`: the decrement value
-
----
 
 ## Response
 

@@ -5,6 +5,7 @@ title: getSpecifications
 description: Returns the validation specifications
 ---
 
+
 # getSpecifications
 
 Returns the validation specifications associated to the collection.
@@ -18,8 +19,7 @@ std::string getSpecifications(const std::string& index, const std::string& colle
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
+|| ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | ``options`` | kuzzleio::query_options* | Query options    | no  |
 

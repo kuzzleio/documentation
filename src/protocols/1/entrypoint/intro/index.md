@@ -5,6 +5,7 @@ title: Properties
 order: 0
 ---
 
+
 # Properties
 
 An instance of the `EntryPoint` class is provided as an argument to the protocol's required [init]({{ site_base_path }}protocols/1/essentials/init) function.

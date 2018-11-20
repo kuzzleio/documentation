@@ -4,33 +4,13 @@ algolia: true
 title: adminExists
 ---
 
+
 # adminExists
 
 {{{since "1.0.0"}}}
 
 Checks that an administrator account exists.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_adminExists
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "server",
-  "action": "adminExists"
-}
-```
-
----
 
 ## Response
 

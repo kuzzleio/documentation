@@ -5,6 +5,7 @@ title: validateSpecifications
 description: Validate specifications format
 ---
 
+
 # validateSpecifications
 
 The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.
@@ -21,8 +22,7 @@ io.kuzzle.sdk.ValidationResponse validateSpecifications((String index, String co
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | java.lang.String | Index name    | yes  |
+|| ``index`` | java.lang.String | Index name    | yes  |
 | ``collection`` | java.lang.String | Collection name    | yes  |
 | `specifications` | java.lang.String | Specification to validate in JSON format | yes  |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |

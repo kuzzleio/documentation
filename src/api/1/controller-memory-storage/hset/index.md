@@ -4,6 +4,7 @@ algolia: true
 title: hset
 ---
 
+
 # hset
 
 {{{since "1.0.0"}}}
@@ -16,53 +17,11 @@ If the field already exists, its value is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/hset)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_hset/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  "field": "<field name>",
-  "value": "<field value>"
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "hset",
-  "_id": "<key>",
-  "body": {
-    "field": "<field name>",
-    "value": "<field value>"
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `_id`: hash key identifier
 
---- 
-
-## Body properties
-
-* `field`: hash field name to set
-* `value`: hash field value
-
----
 
 ## Response
 

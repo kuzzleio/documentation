@@ -5,6 +5,7 @@ title: getMapping
 description: Return collection mapping
 ---
 
+
 # getMapping
 
 Returns the mapping for the given `collection`.
@@ -18,8 +19,7 @@ std::string getMapping(const std::string& index, const std::string& collection, 
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
+|| ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | ``options`` | kuzzleio::query_options* | Query options    | no  |
 

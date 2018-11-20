@@ -4,6 +4,7 @@ algolia: true
 title: dbsize
 ---
 
+
 # dbsize
 
 {{{since "1.0.0"}}}
@@ -12,27 +13,6 @@ Returns the number of keys in the application database.
 
 [[_Redis documentation_]](https://redis.io/commands/dbsize)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_dbsize
-Method: GET  
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "dbsize",
-}
-```
-
----
 
 ## Response
 

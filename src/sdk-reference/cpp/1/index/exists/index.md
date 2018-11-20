@@ -5,6 +5,7 @@ title: exists
 description: Check for index existence
 ---
 
+
 # Exists
 
 Checks if the given index exists in Kuzzle.

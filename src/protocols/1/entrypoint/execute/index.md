@@ -4,6 +4,7 @@ algolia: true
 title: execute
 ---
 
+
 # execute
 
 {{{since "1.0.0"}}}
@@ -12,21 +13,6 @@ Executes a Kuzzle's [API action]({{ site_base_path }}api/1/).
 
 The `execute` function main usage is to forward users API requests to Kuzzle.
 
----
-
-## Arguments
-
-```js
-execute(request, [callback])
-```
-<br/>
-
-| Arguments | Type | Description |
-|-----------|------|-------------|
-| `request` | <pre><a href={{ site_base_path }}protocols/1/context/request>Request</a></pre> | The API query to execute |
-| `callback` | <pre>function</pre> | Callback to call with the API execution result.<br/>If not provided, `execute` returns a promise instead |
-
----
 
 ## Return
 

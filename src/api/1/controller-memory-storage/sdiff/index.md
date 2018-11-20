@@ -4,6 +4,7 @@ algolia: true
 title: sdiff
 ---
 
+
 # sdiff
 
 {{{since "1.0.0"}}}
@@ -12,30 +13,6 @@ Returns the difference between a reference set and a list of other sets.
 
 [[_Redis documentation_]](https://redis.io/commands/sdiff)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_sdiff/<_id>?keys=key1,key2,...
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "sdiff",
-  "_id": "<key>",
-  "keys": ["key1", "key2", "..."]
-}
-```
-
----
 
 ## Argument
 

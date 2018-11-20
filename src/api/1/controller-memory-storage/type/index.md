@@ -4,6 +4,7 @@ algolia: true
 title: type
 ---
 
+
 # type
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns the type of the value held by a key.
 
 [[_Redis documentation_]](https://redis.io/commands/type)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_type/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "type",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Arguments
 

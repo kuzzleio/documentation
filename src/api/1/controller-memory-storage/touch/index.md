@@ -4,6 +4,7 @@ algolia: true
 title: touch
 ---
 
+
 # touch
 
 {{{since "1.0.0"}}}
@@ -12,37 +13,6 @@ Alters the last access time of one or multiple keys. A key is ignored if it does
 
 [[_Redis documentation_]](https://redis.io/commands/touch)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_touch
-Method: POST  
-Body:
-```
-
-```js
-{
-  "keys": ["key1", "key2", "..."]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "touch",
-  "body": {
-    "keys": ["key1", "key2", "..."]
-  }
-}
-```
-
----
 
 ## Arguments
 

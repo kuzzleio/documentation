@@ -4,6 +4,7 @@ algolia: true
 title: hvals
 ---
 
+
 # hvals
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns all values contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hvals)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_hvals/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "hvals",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Arguments
 

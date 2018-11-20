@@ -4,47 +4,13 @@ algolia: true
 title: updateRoleMapping
 ---
 
+
 # updateRoleMapping
 
 {{{since "1.0.0"}}}
 
 Updates the internal role storage mapping.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/roles/_mapping
-Method: PUT  
-Body:
-```
-
-```js
-{
-  "properties": {
-    // mapping
-  }
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "updateRoleMapping",
-  "body": {
-    "properties": {
-      // mapping
-    }
-  }
-}
-```
-
----
 
 ## Body properties
 

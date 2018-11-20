@@ -4,6 +4,7 @@ algolia: true
 title: pfmerge
 description: MemoryStorage:pfmerge
 ---
+
   
 
 # pfmerge
@@ -11,26 +12,11 @@ Merges multiple [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data st
 
 [[_Redis documentation_]](https://redis.io/commands/pfmerge)
 
----
-
-## pfmerge(key, sources, [options], callback)
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `key` | string | Destination key identifier |
-| `sources` | string | List of HyperLogLog source key identifiers |
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| `queuable` | boolean | Make this request queuable or not  | `true` |
----
-
+|
 ## Callback Response
 
 Returns null if successful.

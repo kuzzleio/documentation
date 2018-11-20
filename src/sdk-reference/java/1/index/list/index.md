@@ -5,6 +5,7 @@ title: list
 description: List the indexes
 ---
 
+
 # List
 
 Get the complete list of data indexes handled by Kuzzle.

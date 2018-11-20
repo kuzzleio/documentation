@@ -5,6 +5,7 @@ title: connect
 description: Connects the SDK to Kuzzle
 ---
 
+
 # connect
 
 Connects to Kuzzle using the `host` argument provided to the `connection.Connection` (see [Kuzzle constructor]({{ site_base_path }}sdk-reference/kuzzle/constructor#usage-go)).  

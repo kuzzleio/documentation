@@ -4,6 +4,7 @@ algolia: true
 title: pexpireat
 description: MemoryStorage:pexpireat
 ---
+
   
 
 # pexpireat
@@ -12,25 +13,11 @@ The `timestamp` parameter accepts an [Epoch time](https://en.wikipedia.org/wiki/
 
 [[_Redis documentation_]](https://redis.io/commands/pexpireat)
 
----
-
-## pexpireat(key, timestamp, [options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `key` | string | Key identifier |
-| `timestamp` | int | Key's expiration timestamp, in milliseconds |
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| `queuable` | boolean | Make this request queuable or not  | ``true`` |
----
-
+|
 ## Return Value
 
 Returns the `MemoryStorage` object to allow chaining.

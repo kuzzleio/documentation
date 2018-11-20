@@ -4,6 +4,7 @@ algolia: true
 title: hgetall
 ---
 
+
 # hgetall
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns all fields and values of a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hgetall)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_hgetall/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "hgetall",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Arguments
 

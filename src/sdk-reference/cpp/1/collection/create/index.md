@@ -5,6 +5,7 @@ title: create
 description: Create a new collection
 ---
 
+
 # create
 
 Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.
@@ -22,8 +23,7 @@ void create(const std::string& index, const std::string& collection, const std::
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
+|| ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | ``mapping`` | const std::string* | Collection data mapping in JSON format  | no  |
 | ``options`` | kuzzleio::query_options* |  A pointer to a `kuzzleio::query_options` containing query options  | no  |

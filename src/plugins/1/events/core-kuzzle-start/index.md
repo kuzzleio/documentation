@@ -4,6 +4,7 @@ algolia: true
 title: core:kuzzleStart
 ---
 
+
 # core:kuzzleStart
 
 {{{since "1.0.0"}}}

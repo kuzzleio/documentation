@@ -4,6 +4,7 @@ algolia: true
 title: geodist
 ---
 
+
 # geodist
 
 {{{since "1.0.0"}}}
@@ -14,31 +15,6 @@ The returned distance is expressed in meters by default.
 
 [[_Redis documentation_]](https://redis.io/commands/geodist)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_geodist/<_id>/<member1>/<member2>[?unit=[m|km|mi|ft]]
-Method: GET
-```
-
-### Other protocols
-
-```javascript
-{
-  "controller": "ms",
-  "action": "geodist",
-  "_id": "<key>",
-  "member1": "first member name",
-  "member2": "second member name",
-  "unit": "ft"
-}
-```
-
----
 
 ## Arguments
 

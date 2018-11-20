@@ -5,6 +5,7 @@ title: exists
 description: Check if collection exists
 ---
 
+
 # exists
 
 Check if a collection exists in Kuzzle.
@@ -18,8 +19,7 @@ Exists(index string, collection string, options types.QueryOptions) (bool, error
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
+|| ``index`` | string | Index name    | yes  |
 | ``collection`` | string | Collection name    | yes  |
 | ``options`` | types.QueryOptions | An object containing query options    | no  |
 

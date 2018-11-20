@@ -4,19 +4,13 @@ algolia: true
 title: Dsl
 ---
 
+
 # Dsl
 
 {{{since "1.0.0"}}}
 
 Instantiates a new [Koncorde]({{ site_base_path }}kuzzle-dsl/1) engine.
 
----
-
-## Constructor
-
-This class constructor takes no argument.
-
----
 
 ## exists
 
@@ -33,16 +27,7 @@ exists(index, collection)
 <br/>
 
 | Arguments | Type | Description |
-|-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
-
-### Return
-
-The `exists` function returns a boolean telling whether at least one filter exists in the provided index-collection pair.
-
----
-
+|
 ## getFilterIds
 
 {{{since "1.0.0"}}}
@@ -58,16 +43,7 @@ getFilterIds(index, collection)
 <br/>
 
 | Arguments | Type | Description |
-|-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
-
-### Return
-
-The `getFilterIds` function returns an array of strings, containing the exhaustive list of filter identifiers registered in the provided index-collection pair.
-
----
-
+|
 ## normalize
 
 {{{since "1.1.0"}}}
@@ -85,24 +61,7 @@ normalize(index, collection, filters)
 <br/>
 
 | Arguments | Type | Description |
-|-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
-| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format |
-
-### Return
-
-The `normalize` function returns a promise resolving to an object with the following properties:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `collection` | <pre>string</pre> | Data collection name |
-| `id` | <pre>string</pre> | The filter unique identifier |
-| `index` | <pre>string</pre> | Data index name |
-| `normalized` | <pre>object[]</pre> | Normalized/optimized version of the supplied filters |
-
----
-
+|
 ## register
 
 {{{since "1.0.0"}}}
@@ -120,22 +79,7 @@ register(index, collection, filters)
 <br/>
 
 | Arguments | Type | Description |
-|-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
-| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format |
-
-### Return
-
-The `register` functions returns a promise, resolving to an object with the following attributes:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `id` | <pre>string</pre> | The filter unique identifier |
-| `diff` | <pre>object</pre> | If the filter doesn't already exist in the engine, contains the normalized version of the provided filters |
-
----
-
+|
 ## remove
 
 {{{since "1.0.0"}}}
@@ -151,15 +95,7 @@ remove(filterId)
 <br/>
 
 | Arguments | Type | Description |
-|-----------|------|-------------|
-| `filterId` | <pre>string</pre> | Filter unique identifier, obtained either with [normalize](#normalize-default) or [register](#register-default) |
-
-### Return
-
-The `remove` function returns a promise, resolved once the filter has been completely removed from the DSL.
-
----
-
+|
 ## store
 
 {{{since "1.1.0"}}}
@@ -174,20 +110,7 @@ store(normalized)
 <br/>
 
 | Arguments | Type | Description |
-|-----------|------|-------------|
-| `normalized` | <pre>object</pre> | Normalized filters |
-
-### Return 
-
-The `store` function returns an object with the following attributes:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `id` | <pre>string</pre> | The filter unique identifier |
-| `diff` | <pre>object</pre> | If the filter didn't already exist, contains the normalized version of the provided filters |
-
----
-
+|
 ## test
 
 {{{since "1.0.0"}}}
@@ -202,18 +125,7 @@ test(index, collection, data, [documentId])
 <br/>
 
 | Arguments | Type | Description |
-|-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
-| `data` | <pre>object</pre> | Data to test |
-| `documentId` | <pre>string</pre> | Document unique identifier |
-
-### Return
-
-The `test` function returns an array of strings, which is the exhaustive list of matching filter identifiers.
-
----
-
+|
 ## validate
 
 {{{since "1.0.0"}}}

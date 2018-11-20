@@ -4,6 +4,7 @@ algolia: true
 title: expireat
 ---
 
+
 # expireat
 
 {{{since "1.0.0"}}}
@@ -14,50 +15,11 @@ The `timestamp` parameter accepts an [Epoch time](https://en.wikipedia.org/wiki/
 
 [[_Redis documentation_]](https://redis.io/commands/expireat)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_expireat/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  "timestamp": 1538640821
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "expireat",
-  "_id": "<key>",
-  "body": {
-    "timestamp": 1538640821
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `_id`: key to update
 
----
-
-## Body properties
-
-* `timestamp`: timestamp of when the key expires, in Epoch format (integer)
-
----
 
 ## Response
 

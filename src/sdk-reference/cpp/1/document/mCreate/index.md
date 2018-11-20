@@ -6,6 +6,7 @@ description: Creates multiple documents in kuzzle
 order: 200
 ---
 
+
 # mCreate
 
 Creates multiple documents.

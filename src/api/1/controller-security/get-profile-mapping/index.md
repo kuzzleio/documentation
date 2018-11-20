@@ -4,33 +4,13 @@ algolia: true
 title: getProfileMapping
 ---
 
+
 # getProfileMapping
 
 {{{since "1.0.0"}}}
 
 Gets the mapping of the internal security profiles collection.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/profiles/_mapping
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "getProfileMapping"
-}
-```
-
----
 
 ## Response
 

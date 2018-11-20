@@ -4,6 +4,7 @@ algolia: true
 title: validate
 ---
 
+
 # validate
 
 {{{since "1.0.0"}}}
@@ -14,54 +15,12 @@ Documents are always valid if no validation rules are defined on the provided in
 
 This request does not store the document.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/_validate
-Method: POST  
-Body:
-```
-
-```js
-{
-  // Document content to check
-}
-```
-
-
-### Other protocols
-
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "document",
-  "action": "validate",
-  "body": {
-    // document content to check
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `collection`: data collection
 * `index`: data index
 
----
-
-## Body properties
-
-Document content to validate.
-
----
 
 ## Response
 

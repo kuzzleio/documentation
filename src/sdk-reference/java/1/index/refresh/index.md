@@ -5,6 +5,7 @@ title: refresh
 description: Force Elasticsearch search index update
 ---
 
+
 # Refresh
 
 When writing or deleting documents in Kuzzle, the update needs to be indexed before being available in search results.

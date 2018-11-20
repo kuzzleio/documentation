@@ -5,6 +5,7 @@ title: updateSpecifications
 description: Update the validation specifications
 ---
 
+
 # updateSpecifications
 
 The updateSpecifications method allows you to create or update the validation specifications for one or more index/collection pairs.
@@ -21,8 +22,7 @@ public String updateSpecifications(String index, String collection, String speci
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
+|| ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
 | ``specifications`` | String | Specifications in JSON format  | yes  |
 | `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |

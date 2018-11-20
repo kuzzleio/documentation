@@ -4,6 +4,7 @@ algolia: true
 title: spop
 ---
 
+
 # spop
 
 {{{since "1.0.0"}}}
@@ -12,54 +13,11 @@ Removes and returns one or more elements at random from a set of unique values. 
 
 [[_Redis documentation_]](https://redis.io/commands/spop)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_spop/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  // optional
-  "count": 2
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "spop",
-  "_id": "<key>",
-  "body": {
-    // optional
-    "count": 2
-  }
-}
-```
-
----
 
 ## Argument
 
 * `_id`: key identifier
 
----
-
-## Body properties
-
-### Optional:
-
-* `count`: number of elements to remove (default: `1`)
-
----
 
 ## Response
 

@@ -5,6 +5,7 @@ title: getSpecifications
 description: Returns the validation specifications
 ---
 
+
 # getSpecifications
 
 Returns the validation specifications associated to the given index and collection.
@@ -18,8 +19,7 @@ getSpecifications (index, collection, [options])
 <br/>
 
 | Arguments    | Type    | Description |
-|--------------|---------|-------------|----------
-| ``index`` | <pre>string</pre> | Index name    |
+|| ``index`` | <pre>string</pre> | Index name    |
 | ``collection`` | <pre>string</pre> | Collection name    |
 | ``options`` | <pre>object</pre> | Query options    |
 

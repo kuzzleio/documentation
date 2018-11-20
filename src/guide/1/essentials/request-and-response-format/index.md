@@ -5,6 +5,7 @@ title: Request and Response Format
 order: 800
 ---
 
+
 # Request and Response Format
 
 Any access to a Kuzzle resource must be made through a [request](https://github.com/kuzzleio/kuzzle-common-objects#request). The `Request` object is [sealed](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/seal), which means you cannot add or delete fields once the object is initialized. The `Request` state evolves along with the [lifecycle of the transaction]({{ site_base_path }}guide/1/essentials/request-and-response-format/#request-life-cycle).
@@ -34,32 +35,6 @@ Let's take a look at the attributes of this object.
 * The `id` attribute bears a unique, auto-generated value that identifies the transaction.
 * The `timestamp` attribute stores the creation date (in seconds after the Epoch time).
 
----
-
-## Input
-
-The `input` field contains all the parameters that express the request from the client. It has the following structure:
-
-```javascript
-RequestInput {
-    // members
-    args,           // {Object}     Parametric arguments (e.g. for REST, taken from the query string)
-    volatile,       // {Object}
-    body,           // {Object}     Content of the resource for REST like routes, main parameters for others
-    controller,     // {string}
-    action,         // {string}
-    resource {
-        index,
-        collection,
-        _id
-    }
-
-    // methods
-    constructor (data) // data is a JS Object that has the same structure as the Websocket message
-}
-```
-
----
 
 ## Context
 
@@ -78,41 +53,6 @@ RequestContext {
 }
 ```
 
----
-
-## Status Codes
-
-The `status` attribute is a numeric code similar to a [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
-It is used to inform the client about the resulting status of the request (i.e. if an error occurred or not).
-
-### List of Status Codes Supported by Kuzzle
-
-#### 1xx Processing
-
-* `102`: Standard status for an unhandled request.
-
-#### 2xx Success
-
-* ``200``: Standard status for a successful request.
-* ``206``: The request (typically a bulk import) is partially successful: some actions encountered an error.
-(in this case, error details are returned within _error.errors_)
-
-#### 4xx Client Error
-
-* ``400``: The request is malformed (usually: an argument is missing).
-* ``401``: A login attempt failed.
-* ``403``: The client is not allowed to perform the requested action.
-* ``404``: The requested resource cannot be found.
-* ``412``: A pre-requisite is not satisfied (for instance, adding a non-existing Profile to a User)
-* ``413``: A query input or response exceeds a configured Kuzzle limit.
-
-#### 5xx Server Error
-
-* ``500``: Kuzzle encountered an unexpected error.
-* ``503``: Kuzzle is temporarily unavailable.
-* ``504``: An external resource takes too long to respond.
-
----
 
 ## Error Object Format
 

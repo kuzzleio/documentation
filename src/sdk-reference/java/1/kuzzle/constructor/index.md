@@ -5,6 +5,7 @@ title: Constructor
 description: Create a new Kuzzle object connected to the backend
 ---
 
+
 # Constructor
 
 This is the main entry point to communicate with Kuzzle.  

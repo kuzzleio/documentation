@@ -4,42 +4,13 @@ algolia: true
 title: mGetRoles
 ---
 
+
 # mGetRoles
 
 {{{since "1.0.0"}}}
 
 Gets multiple security roles.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/roles/_mGet
-Method: POST  
-Body:
-```
-
-```js
-{
-  "ids": ["role1", "role2"]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "mGetRoles",
-  "body": {
-    "ids": ["role1", "role2"]
-  }
-}
-```
----
 
 ## Body properties
 

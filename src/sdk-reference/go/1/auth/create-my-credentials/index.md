@@ -5,6 +5,7 @@ title: CreateMyCredentials
 description: Create the current user's credentials for the specified `<strategy>`.
 ---
 
+
 # CreateMyCredentials
 
 Create the current user's credentials for the specified `<strategy>`.
@@ -16,8 +17,7 @@ func (a *Auth) CreateMyCredentials(strategy string, credentials json.RawMessage,
 ```
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | string | the strategy to use
+|| `strategy` | string | the strategy to use
 | `credentials` | json.RawMessage | the new credentials
 | `options`  | QueryOptions    | QueryOptions object containing query options
 

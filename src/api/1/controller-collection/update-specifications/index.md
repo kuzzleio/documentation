@@ -4,6 +4,7 @@ algolia: true
 title: updateSpecifications
 ---
 
+
 # updateSpecifications
 
 {{{since "1.0.0"}}}
@@ -15,52 +16,6 @@ The updateSpecifications method allows you to create or update the validation sp
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_specifications
-Method: PUT  
-Body:
-```
-
-```js
-{
-  "myindex": {
-    "mycollection": {
-      "strict": <boolean>,
-      "fields": {
-        // ... specification for each field
-      }
-    }
-  }
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "collection",
-  "action": "updateSpecifications",
-  "body": {
-    "myindex": {
-      "mycollection": {
-        "strict": <boolean>,
-        "fields": {
-          // ... specification for each field
-        }
-      }
-    }
-  }
-
-}
-```
-
----
 
 ## Body properties
 
@@ -79,34 +34,6 @@ The provided body must have the following structure:
 }
 ```
 
----
-
-## Response
-
-The returned result contains the updated specification:
-
-```javascript
-{
-  "status": 200,
-  "error": null,
-  "index": "<index>",
-  "collection": "<collection>",
-  "action": "updateSpecifications",
-  "controller": "collection",
-  "result": {
-    "myindex": {
-      "mycollection": {
-        "strict": <boolean>,
-        "fields": {
-          // ... specification for each field
-        }
-      }
-    }
-  }
-}
-```
-
----
 
 ## Possible errors
 

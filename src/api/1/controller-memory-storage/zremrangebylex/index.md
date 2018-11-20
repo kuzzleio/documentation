@@ -4,6 +4,7 @@ algolia: true
 title: zremrangebylex
 ---
 
+
 # zremrangebylex
 
 {{{since "1.0.0"}}}
@@ -12,55 +13,11 @@ Removes members within a provided range, from a sorted set where all elements ha
 
 [[_Redis documentation_]](https://redis.io/commands/zremrangebylex)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zremrangebylex/<_id>
-Method: DELETE  
-Body:
-```
-
-```js
-{
-  "min": "<min interval>",
-  "max": "<max interval>"
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zremrangebylex",
-  "_id": "<key>",
-  "body": {
-    "min": "<min interval>",
-    "max": "<max interval>"
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `_id`: sorted set identifier
 
----
-
-## Body properties
-
-* `min`: minimum range value
-* `max`: maximum range value
-
-The `min` and `max` interval are inclusive. See the [Redis documentation](https://redis.io/commands/zrangebylex) to change this behavior.
-
----
 
 ## Response
 

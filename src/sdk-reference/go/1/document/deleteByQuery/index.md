@@ -5,6 +5,7 @@ title: deleteByQuery
 description: Delete documents matching query
 ---
 
+
 # DeleteByQuery
 
 Deletes documents matching the provided search query.

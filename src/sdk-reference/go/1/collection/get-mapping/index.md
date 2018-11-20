@@ -5,6 +5,7 @@ title: getMapping
 description: Return collection mapping
 ---
 
+
 # getMapping
 
 Returns the mapping for the given `collection`.
@@ -18,8 +19,7 @@ GetMapping(index string, collection string, options types.QueryOptions) (json.Ra
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
+|| ``index`` | string | Index name    | yes  |
 | ``collection`` | string | Collection name    | yes  |
 | ``options`` | types.QueryOptions | Query options    | no  |
 

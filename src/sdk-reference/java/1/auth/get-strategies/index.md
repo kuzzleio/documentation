@@ -5,6 +5,7 @@ title: getStrategies
 description: Get all authentication strategies registered in Kuzzle.
 ---
 
+
 # getStrategies
 
 Get all authentication strategies registered in Kuzzle.
@@ -21,8 +22,7 @@ public io.kuzzle.sdk.StringVector getStrategies();
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
+|| `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 ### **Options**
 

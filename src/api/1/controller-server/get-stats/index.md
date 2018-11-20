@@ -4,35 +4,13 @@ algolia: true
 title: getStats
 ---
 
+
 # getStats
 
 {{{since "1.0.0"}}}
 
 Returns statistics snapshots within a provided timestamp range.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_getStats[?startTime=<Epoch-millis>][&stopTime=<Epoch-millis>]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "server",
-  "action": "getStats",
-  "startTime": <timestamp>,
-  "stopTime": <timestamp>
-}
-```
-
----
 
 ## Response
 

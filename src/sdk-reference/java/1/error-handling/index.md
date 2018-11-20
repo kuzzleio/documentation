@@ -7,6 +7,7 @@ order: 100
 separator: essentials
 ---
 
+
 # Error Handling
 
 SDK methods handle failure by throwing exceptions inheriting the `KuzzleException` class, which is a standard Java exception extending the `Throwable` class.

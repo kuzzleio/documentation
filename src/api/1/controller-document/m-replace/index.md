@@ -4,71 +4,13 @@ algolia: true
 title: mReplace
 ---
 
+
 # mReplace
 
 {{{since "1.0.0"}}}
 
 Replaces multiple documents.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/_mReplace[?refresh=wait_for]
-Method: PUT  
-Body:
-```
-
-```js
-{
-  "documents": [
-    {
-      "_id": "<documentId>", 
-      "body": {
-        // new document content
-      }
-    },
-    {
-      "_id": "<anotherDocumentId>",
-      "body": {
-        // new document content
-      }
-    }
-  ]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "document",
-  "action": "mReplace",
-  "body": {
-    "documents": [
-      {
-        "_id": "<documentId>",
-        "body": {
-          // new document content
-        }
-      },
-      {
-        "_id": "<anotherDocumentId>",
-        "body": {
-          // new document content
-        }
-      }
-    ]
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -79,15 +21,6 @@ Body:
 
 * `refresh`: if set to `wait_for`, Kuzzle will not respond until the replacements are indexed
 
----
-
-## Body properties
-
-* `documents`: an array of object. Each object describes a document to replace, by exposing the following properties:
-  * `_id` : ID of the document to replace
-  * `body`: document content
-
----
 
 ## Response
 

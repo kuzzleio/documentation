@@ -4,6 +4,7 @@ algolia: true
 title: pfadd
 ---
 
+
 # pfadd
 
 {{{since "1.0.0"}}}
@@ -12,50 +13,11 @@ Adds elements to a [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data
 
 [[_Redis documentation_]](https://redis.io/commands/pfadd)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_pfadd/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  "elements": ["element1", "element2", "..."]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "pfadd",
-  "_id": "<key>",
-  "body": {
-    "elements": ["element1", "element2", "..."]
-  }
-}
-```
-
----
 
 ## Argument
 
 * `_id`: hyperloglog key identifier
 
----
-
-## Body properties
-
-* `elements`: an array of values to add to the hyperloglog structure
-
----
 
 ## Response
 

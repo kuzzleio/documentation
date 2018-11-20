@@ -5,6 +5,7 @@ title: validateSpecifications
 description: Validate specifications format
 ---
 
+
 # validateSpecifications
 
 The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.
@@ -18,8 +19,7 @@ ValidateSpecifications(index string, collection string, specifications json.RawM
 ```
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
+|| ``index`` | string | Index name    | yes  |
 | ``collection`` | string | Collection name    | yes  |
 | `specifications` | json.RawMessage | Collection data mapping in JSON format  | yes  |
 | `options` | QueryOptions | Query options | no       |

@@ -5,6 +5,7 @@ title: update
 description: Update a document
 ---
 
+
 # update
 
 Updates a document content.

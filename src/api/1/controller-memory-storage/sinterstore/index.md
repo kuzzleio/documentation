@@ -4,6 +4,7 @@ algolia: true
 title: sinterstore
 ---
 
+
 # sinterstore
 
 {{{since "1.0.0"}}}
@@ -14,39 +15,6 @@ If the destination key already exists, it is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/sinterstore)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_sinterstore
-Method: POST  
-Body:
-```
-
-```js
-{
-  "destination": "<destination key>",
-  "keys": ["key1", "key2", "..."]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "sinterstore",
-  "body": {
-    "destination": "<destination key>",
-    "keys": ["key1", "key2", "..."]
-  }
-}
-```
-
----
 
 ## Body properties
 

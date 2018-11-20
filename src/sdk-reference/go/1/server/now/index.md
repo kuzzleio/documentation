@@ -5,6 +5,7 @@ title: Now
 description: Returns the current server timestamp, in Epoch-millis
 ---
 
+
 # Now
 
 {{{since "1.0.0"}}}

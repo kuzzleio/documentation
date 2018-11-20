@@ -5,6 +5,7 @@ title: UpdateMyCredentials
 description: Update the current user's credentials for the specified `<strategy>`.
 ---
 
+
 # UpdateMyCredentials
 
 Update the current user's credentials for the specified `<strategy>`. The credentials to send will depend on the authentication plugin and the authentication strategy.
@@ -18,8 +19,7 @@ func (a *Auth) UpdateMyCredentials(strategy string, credentials json.RawMessage,
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | string | the strategy to use
+|| `strategy` | string | the strategy to use
 | `credentials` | json.RawMessage | the new credentials
 | `options`  | QueryOptions    | QueryOptions object containing query options
 

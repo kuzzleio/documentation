@@ -4,6 +4,7 @@ algolia: true
 title: publish
 ---
 
+
 # publish
 
 {{{since "1.0.0"}}}
@@ -17,52 +18,12 @@ A `_kuzzle_info` object will be added to the message content, with the following
 
 **Note:** real-time messages are not persisted in the database.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/_publish
-Method: POST  
-Body:
-```
-
-```js
-{
-  // message content
-}
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "realtime",
-  "action": "publish",
-  "body": {
-    // message content
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `collection`: data collection
 * `index`: data index
 
----
-
-## Body properties
-
-Message content.
-
----
 
 ## Response
 

@@ -6,6 +6,7 @@ description: Get a document from kuzzle
 order: 200
 ---
 
+
 # get
 
 Gets a document.
@@ -21,27 +22,7 @@ std::string get(
 ```
 
 | Argument | Type | Description |
-| --- | --- | --- |
-| `index` | <pre>const std::string&</pre> | Index name |
-| `collection` | <pre>const std::string&</pre> | Collection name |
-| `id` | <pre>const std::string&</pre> | The document id |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
-
-### options
-
-Additional query options
-
-| Option   | Type<br/>(default) | Description                       |
-| ---------- | ------- | --------------------------------- |
-| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
-
-## Return
-
-Returns a JSON string containing the document.
-
-| Name | Type | Description
-| --- | --- | ---
-| _source | <pre>std::string</pre> | A JSON string representing the retrieved document
+| | _source | <pre>std::string</pre> | A JSON string representing the retrieved document
 
 ## Exceptions
 

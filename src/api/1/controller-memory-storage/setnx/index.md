@@ -4,6 +4,7 @@ algolia: true
 title: setnx
 ---
 
+
 # setnx
 
 {{{since "1.0.0"}}}
@@ -12,50 +13,11 @@ Sets a value on a key, only if it does not already exist.
 
 [[_Redis documentation_]](https://redis.io/commands/setnx)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_setnx/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  "value": "<value>"
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "setnx",
-  "_id": "<key>",
-  "body": {
-    "value": "<value>"
-  }
-}
-```
-
----
 
 ## Argument
 
 * `_id`: key identifier
 
----
-
-## Body properties
-
-* `value`: new key value
-
----
 
 ## Response
 

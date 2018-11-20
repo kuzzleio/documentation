@@ -5,6 +5,7 @@ title: query
 description: Base method to send API query to Kuzzle
 ---
 
+
 # query
 
 Base method used to send queries to Kuzzle, following the [API Documentation]({{ site_base_path }}api/1).

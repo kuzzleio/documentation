@@ -5,6 +5,7 @@ title: search
 description: Search documents
 ---
 
+
 # Search
 
 Searches documents.

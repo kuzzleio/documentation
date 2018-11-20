@@ -4,6 +4,7 @@ algolia: true
 title: resetDatabase
 ---
 
+
 # resetDatabase
 
 {{{since "1.4.0"}}}
@@ -12,28 +13,6 @@ Asynchronously deletes all indexes created by users.
 
 Neither Kuzzle internal indexes nor Plugin indexes are deleted.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/admin/_resetDatabase
-Method: POST
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "admin",
-  "action": "resetDatabase"
-}
-```
-
----
 
 ## Response
 

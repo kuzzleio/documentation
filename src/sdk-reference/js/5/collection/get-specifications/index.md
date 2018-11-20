@@ -4,21 +4,12 @@ algolia: true
 title: getSpecifications
 description: Collection:getSpecifications
 ---
+
   
 
 # getSpecifications
 Retrieves the specifications linked to the collection object.
 
----
-
-## getSpecifications([options], callback)
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``options`` | JSON Object | Optional parameters |
-| ``callback`` | function | Callback handling the response |
-
----
 
 ## Options
 

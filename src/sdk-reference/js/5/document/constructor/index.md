@@ -5,24 +5,12 @@ title: constructor
 description: Document:constructor
 order: 1
 ---
+
   
 
 # Document
 Kuzzle handles two types of documents: realtime messages and stored documents. Document is the object representation of one of these document types.
 
----
-
-## Document(Collection, [documentId], [content])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``Collection`` | object | An instantiated Collection object |
-| ``content`` | JSON Object | Initializes this document with the provided content |
-| ``documentId`` | string | ID of an existing document. |
-
-**Note:**  this constructor won't make any call to Kuzzle. When providing only a document ID, the `refresh` method should be called to retrieve the corresponding document content.
-
----
 
 ## Properties
 

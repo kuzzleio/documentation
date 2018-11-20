@@ -4,6 +4,7 @@ algolia: true
 title: search
 ---
 
+
 # search
 
 {{{since "1.0.0"}}}
@@ -15,61 +16,6 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 
 To handle larger result sets, you have to either create a cursor by providing a value to the `scroll` option or, if you sort the results, by using the Elasticsearch [search_after](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-search-after.html) command.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/_search[?from=<int>][&size=<int>][&scroll=<time to live>][&includeTrash=<boolean>]
-Method: POST  
-Body:
-```
-
-```js
-{
-  "query": {
-    // ...
-  },
-  "aggregations": {
-    // ...
-  },
-  "sort": [
-    // ...
-  ]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "document",
-  "action": "search",
-  "body": {
-    "query": {
-      // ...
-    },
-    "aggregations": {
-      // ...
-    },
-    "sort": [
-      // ...
-    ]
-  },
-
-  // optional:
-  "from": <starting offset>,
-  "size": <page size>,
-  "scroll": "<scroll duration>",
-  "includeTrash": <boolean>
-}
-```
-
----
 
 ## Arguments
 
@@ -83,19 +29,6 @@ Body:
 * `scroll`: creates a forward-only result cursor. This option must be set with a [time duration](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units), at the end of which the cursor is destroyed. If set, a cursor identifier named `scrollId` is returned in the results. This cursor can then be moved forward using the [scroll]({{ site_base_path }}api/1/controller-document/scroll) API action
 * `size`: set the maximum number of documents returned per result page
 
----
-
-## Body properties
-
-### Optional: 
-
-* `query`: the search query itself, using the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
-* `aggregations`: control how the search result should be [aggregated](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-aggregations.html)
-* `sort`: contains a list of fields, used to [sort search results](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-sort.html), in order of importance
-
-An empty body matches all documents in the queried collection.
-
----
 
 ## Response
 

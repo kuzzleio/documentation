@@ -4,41 +4,13 @@ algolia: true
 title: subscribe
 ---
 
+
 # subscribe
 
 {{{since "1.0.0"}}}
 
 Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/notifications), sent to you in real-time by Kuzzle.
 
----
-
-## Query Syntax
-
-### HTTP
-
-Due to the synchronous nature of the HTTP protocol, real-time notifications are not supported.
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "realtime",
-  "action": "subscribe",
-  "body": {
-    // subscription filters
-  },
-  "volatile": {
-    // query volatile data
-  },
-  "scope": "<all|in|out|none>",
-  "state": "<all|pending|done>",
-  "users": "<all|in|out|none>"
-}
-```
-
----
 
 ## Arguments
 
@@ -52,15 +24,6 @@ Due to the synchronous nature of the HTTP protocol, real-time notifications are 
 * `users`: accepted values: `all`, `in`, `out`, `none` (default: `none`). Receive real-time notifications about users subscribing to the same filters (`in`), about users leaving the subscription (`out`), or both (`all`). If set to `none`, no notifications are sent about users
 * `volatile`: subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data)
 
----
-
-## Body properties
-
-Subscription filters, following the [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde)
-
-An empty filter subscribes to any change occuring on the selected data index-collection pair.
-
----
 
 ## Response
 

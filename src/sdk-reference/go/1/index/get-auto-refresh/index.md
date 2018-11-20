@@ -5,6 +5,7 @@ title: getAutoRefresh
 description: Returns the status of autorefresh flag
 ---
 
+
 # GetAutoRefresh
 
 The getAutoRefresh action returns the current autorefresh status for the index.

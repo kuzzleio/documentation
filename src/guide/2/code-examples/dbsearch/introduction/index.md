@@ -3,7 +3,9 @@ layout: full.html.hbs
 title: Introduction
 order: 0
 description: Database Code Examples
+algolia: true
 ---
+
 
 ## Code Example: Database Search 
 

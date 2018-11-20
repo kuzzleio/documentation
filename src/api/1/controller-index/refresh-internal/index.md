@@ -4,6 +4,7 @@ algolia: true
 title: refreshInternal
 ---
 
+
 # refreshInternal
 
 {{{since "1.0.0"}}}
@@ -15,27 +16,6 @@ By default, this operation can take up to 1 second.
 
 **Note:** forcing immediate refreshes comes with performance costs, and should only performed when absolutely necessary.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_refreshInternal
-Method: POST
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "index",
-  "action": "refreshInternal"
-}
-```
-
----
 
 ## Response
 

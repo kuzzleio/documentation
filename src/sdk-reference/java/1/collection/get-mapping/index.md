@@ -5,6 +5,7 @@ title: getMapping
 description: Return collection mapping
 ---
 
+
 # getMapping
 
 Returns the mapping for the given `collection`.
@@ -19,8 +20,7 @@ Returns the mapping for the given `collection`.
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
+|| ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | io.kuzzle.sdk.QueryOptions | Query options    | no  |
 

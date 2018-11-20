@@ -2,7 +2,9 @@
 layout: full.html.hbs
 title: Introduction
 order: 0
+algolia: true
 ---
+
 
 # Introduction
 

@@ -4,6 +4,7 @@ algolia: true
 title: expireat
 description: MemoryStorage:expireat
 ---
+
   
 
 # expireat
@@ -12,27 +13,11 @@ The `timestamp` parameter accepts an [Epoch time](https://en.wikipedia.org/wiki/
 
 [[_Redis documentation_]](https://redis.io/commands/expireat)
 
----
-
-## expireat(key, timestamp, [options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `key` | string | Key identifier |
-| `timestamp` | int | Expiration timestamp |
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| `queuable` | boolean | Make this request queuable or not  | ``true`` |
-
----
-
+|
 ## Return Value
 
 Returns the `MemoryStorage` object to allow chaining.

@@ -4,6 +4,7 @@ algolia: true
 title: zlexcount
 ---
 
+
 # zlexcount
 
 {{{since "1.0.0"}}}
@@ -12,30 +13,6 @@ Counts elements in a sorted set where all members have equal score, using lexico
 
 [[_Redis documentation_]](https://redis.io/commands/zlexcount)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zlexcount/<_id>?min=<min value>&max=<max value>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zlexcount",
-  "_id": "<key>",
-  "min": "<min value>",
-  "max": "<max value>"
-}
-```
-
----
 
 ## Arguments
 

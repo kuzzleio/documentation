@@ -5,6 +5,7 @@ title: getSpecifications
 description: Returns the validation specifications
 ---
 
+
 # getSpecifications
 
 Returns the validation specifications associated to the collection.
@@ -19,8 +20,7 @@ Returns the validation specifications associated to the collection.
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
+|| ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | io.kuzzle.sdk.QueryOptions | Query options    | no  |
 

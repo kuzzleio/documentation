@@ -4,35 +4,13 @@ algolia: true
 title: deleteCredentials
 ---
 
+
 # deleteCredentials
 
 {{{since "1.0.0"}}}
 
 Deletes user credentials for the specified authentication strategy.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/credentials/<strategy>/<_id>
-Method: DELETE  
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "deleteCredentials",
-  "strategy": "<strategy>",
-  "_id": "<kuid>"
-}
-```
-
----
 
 ## Arguments
 

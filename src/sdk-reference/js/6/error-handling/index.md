@@ -7,6 +7,7 @@ order: 100
 separator: essentials
 ---
 
+
 # Error Handling
 
 All SDK methods return a promise, that can be rejected with a `KuzzleError` value in case of failure.

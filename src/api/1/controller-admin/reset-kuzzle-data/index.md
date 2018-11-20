@@ -4,6 +4,7 @@ algolia: true
 title: resetKuzzleData
 ---
 
+
 # resetKuzzleData
 
 {{{since "1.4.0"}}}
@@ -17,27 +18,6 @@ Asynchronously starts the following sequence, in this order:
 
 This action has no impact on Plugin and Document storages.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/admin/_resetKuzzleData
-Method: POST
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "admin",
-  "action": "resetKuzzleData"
-}
-```
-
----
 
 ## Response
 

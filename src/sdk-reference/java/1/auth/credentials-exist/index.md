@@ -5,6 +5,7 @@ title: credentialsExist
 description: Check that the current user has credentials for the specified strategy
 ---
 
+
 # credentialsExist
 
 ## Signature
@@ -22,8 +23,7 @@ public boolean credentialsExist(
 ## Arguments
 
 | Arguments  | Type             | Description
-| ---------- | ---------------- | ---------------------------------------------
-| `strategy` | String      | Strategy to use
+| | `strategy` | String      | Strategy to use
 | `options` | io.kuzzle.sdk.QueryOptions | An object containing query options
 
 ### **Options**

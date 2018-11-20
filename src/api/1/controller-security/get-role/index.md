@@ -4,34 +4,13 @@ algolia: true
 title: getRole
 ---
 
+
 # getRole
 
 {{{since "1.0.0"}}}
 
 Gets a security role.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/roles/<_id>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "getRole",
-  "_id": "<roleId>"
-}
-```
-
----
 
 ## Arguments
 

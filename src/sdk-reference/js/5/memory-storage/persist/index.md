@@ -4,6 +4,7 @@ algolia: true
 title: persist
 description: MemoryStorage:persist
 ---
+
   
 
 # persist
@@ -11,22 +12,6 @@ Removes the expiration delay or timestamp from a key, making it persistent.
 
 [[_Redis documentation_]](https://redis.io/commands/persist)
 
----
-
-## persist(key, [options], [callback])
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `key` | string | Key identifier |
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
-## Options
-
-| Option | Type | Description | Default |
-|---------------|---------|----------------------------------------|---------|
-| `queuable` | boolean | Make this request queuable or not  | ``true`` |
----
 
 ## Return Value
 

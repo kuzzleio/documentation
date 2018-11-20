@@ -4,6 +4,7 @@ algolia: true
 title: logout
 ---
 
+
 # logout
 
 {{{since "1.0.0"}}}
@@ -12,29 +13,6 @@ Revokes the provided authentication token.
 
 If there were any, real-time subscriptions are cancelled.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_logout
-Method: POST  
-Headers: Authorization: "Bearer <authentication token>"
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "auth",
-  "action": "logout",
-  "jwt": "<authentication token>"
-}
-```
-
----
 
 ## Arguments
 

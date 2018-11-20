@@ -5,6 +5,7 @@ title: getStrategies
 description: Get all authentication strategies registered in Kuzzle.
 ---
 
+
 # getStrategies
 
 Get all authentication strategies registered in Kuzzle.
@@ -18,16 +19,14 @@ std::vector<std::string> getStrategies(query_options *options=nullptr);
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
+|| `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
 
 ### **Options**
 
 Additional query options
 
 | Property     | Type    | Description                       | Default
-| ---------- | ------- | --------------------------------- | -------
-| `queuable` | bool | Make this request queuable or not | `true`
+| | `queuable` | bool | Make this request queuable or not | `true`
 
 ## Return
 

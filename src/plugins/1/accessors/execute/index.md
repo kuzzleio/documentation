@@ -4,28 +4,13 @@ algolia: true
 title: execute
 ---
 
+
 # execute
 
 {{{since "1.0.0"}}}
 
 Executes a Kuzzle's [API action]({{ site_base_path }}api/1/).
 
----
-
-## Arguments
-
-```js
-execute(request, [callback])
-```
-
-<br/>
-
-| Arguments | Type | Description |
-|-----------|------|-------------|
-| `request` | <a href={{ site_base_path }}plugins/1/constructors/request><pre>Request</pre></a> | The API query to execute |
-| `callback` | <pre>function</pre> | Callback to call with the API execution result |
-
----
 
 ## Return
 

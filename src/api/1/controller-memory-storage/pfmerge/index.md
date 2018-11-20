@@ -4,6 +4,7 @@ algolia: true
 title: pfmerge
 ---
 
+
 # pfmerge
 
 {{{since "1.0.0"}}}
@@ -12,50 +13,11 @@ Merges multiple [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data st
 
 [[_Redis documentation_]](https://redis.io/commands/pfmerge)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_pfmerge/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  "sources": ["key1", "key2", "..."]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "pfmerge",
-  "_id": "<key>",
-  "body": {
-    "sources": ["key1", "key2", "..."]
-  }
-}
-```
-
----
 
 ## Argument
 
 * `_id`: hyperloglog destination key 
 
----
-
-## Body properties
-
-* `sources`: an array of hyperloglog keys, used as sources for the merge
-
----
 
 ## Response
 

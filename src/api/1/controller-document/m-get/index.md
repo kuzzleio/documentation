@@ -4,46 +4,13 @@ algolia: true
 title: mGet
 ---
 
+
 # mGet
 
 {{{since "1.0.0"}}}
 
 Gets multiple documents.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/_mGet[?includeTrash=<true|false>]
-Method: POST  
-Body:
-```
-
-```js
-{
-  "ids": ["<documentId>", "<anotherDocumentId>"]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "document",
-  "action": "mGet",
-  "body": {
-    "ids": ["<documentId>", "<anotherDocumentId>"]
-  },
-  "includeTrash": false
-}
-```
-
----
 
 ## Arguments
 
@@ -54,13 +21,6 @@ Body:
 
 * `includeTrash`: if set, documents in the [trashcan]({{ site_base_path }}guide/1/essentials/document-metadata/) can be returned.
 
----
-
-## Body properties
-
-* `ids`: an array of document identifiers to fetch
-
----
 
 ## Response
 

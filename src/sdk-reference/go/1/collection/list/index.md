@@ -5,6 +5,7 @@ title: list
 description: Returns the collection list of an index
 ---
 
+
 # list
 
 Returns the complete list of realtime and stored data collections in requested index sorted by name in alphanumerical order.  
@@ -20,8 +21,7 @@ List(index string, options types.QueryOptions) (json.RawMessage, error)
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
+|| ``index`` | string | Index name    | yes  |
 | ``options`` | types.QueryOptions | An object containing query options    | no  |
 
 ### **options**

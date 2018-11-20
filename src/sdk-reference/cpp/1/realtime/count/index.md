@@ -5,6 +5,7 @@ title: count
 description: Count subscribers for a subscription room
 ---
 
+
 # count
 
 Returns the number of other connections sharing the same subscription.

@@ -5,6 +5,7 @@ title: delete
 description: Deletes an index
 ---
 
+
 # delete
 
 Deletes a data index.

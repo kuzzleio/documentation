@@ -4,31 +4,11 @@ algolia: true
 title: validation
 ---
 
+
 # validation
 
 Accessor to the [data validation API]({{ site_base_path }}validation-reference/1/)
 
----
-
-## addType
-
-{{{since "1.0.0"}}}
-
-Adds a new data type, to be used for document validation.
-
-### Arguments
-
-```js
-addType(Type)
-```
-
-<br/>
-
-| Arguments | Type | Description |
-|-----------|------|-------------|
-| `Type` | <pre>object</pre> | A class implementing the abstract [BaseValidationType]({{ site_base_path }}plugins/1/constructors/basevalidationtype) class |
-
----
 
 ## validate
 

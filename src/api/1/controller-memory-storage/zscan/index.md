@@ -4,6 +4,7 @@ algolia: true
 title: zscan
 ---
 
+
 # zscan
 
 {{{since "1.0.0"}}}
@@ -17,33 +18,6 @@ The scan ends when the cursor returned by the server is 0.
 
 [[_Redis documentation_]](https://redis.io/commands/sscan)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zscan/<_id>?cursor=<cursor>[&match=<pattern>][&count=<count>]
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "zscan",
-  "_id": "<key>",
-  "cursor": "<cursor>",
-  // optional
-  "match": "<pattern>",
-  "count": "<count>"
-}
-```
-
----
 
 ## Arguments
 

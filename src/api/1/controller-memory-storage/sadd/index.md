@@ -4,6 +4,7 @@ algolia: true
 title: sadd
 ---
 
+
 # sadd
 
 {{{since "1.0.0"}}}
@@ -14,50 +15,11 @@ If the destination set does not exist, it is created beforehand.
 
 [[_Redis documentation_]](https://redis.io/commands/sadd)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_sadd/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  "members": ["member1", "member2", "..."]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "sadd",
-  "_id": "<key>",
-  "body": {
-    "members": ["member1", "member2", "..."]
-  }
-}
-```
-
----
 
 ## Argument
 
 * `_id`: set key identifier
 
----
-
-## Body properties
-
-* `members`: an array of values to add to the set
-
----
 
 ## Response
 

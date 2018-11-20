@@ -5,6 +5,7 @@ title: exists
 description: Check if collection exists
 ---
 
+
 # exists
 
 Check if a collection exists in Kuzzle.

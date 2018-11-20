@@ -5,34 +5,13 @@ title: deleteUser
 ---
 
 
+
 # deleteUser
 
 {{{since "1.0.0"}}}
 
 Deletes a user and all their associate credentials.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/users/<_id>[?refresh=wait_for]
-Method: DELETE
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "deleteUser",
-  "_id": "<kuid>"
-}
-```
-
----
 
 ## Arguments
 

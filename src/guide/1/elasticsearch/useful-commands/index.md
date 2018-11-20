@@ -6,28 +6,11 @@ description: learn time-saving elasticsearch commands
 order: 300
 ---
 
+
 # Useful Commands
 
 Let's take a look at some commands that we can use to explore the Elasticsearch instance.
 
----
-
-## List Indices
-
-List all available indices on your Elasticsearch instance:
-
-```bash
-curl -g "http://localhost:9200/_cat/indices?pretty"
-```
-
-
-Reply:
-
-```bash
-# yellow open example 1 1 5 0 10.4kb 10.4kb
-```
-
----
 
 
 ## Get an Index Mapping

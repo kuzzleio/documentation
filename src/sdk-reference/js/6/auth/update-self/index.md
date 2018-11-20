@@ -2,8 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: updateSelf
-description:  Updates the current user object in Kuzzle.
+description: Updates the current user object in Kuzzle.
 ---
+
 
 # updateSelf
 
@@ -20,8 +21,7 @@ updateSelf (content, [options])
 <br/>
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `content` | <pre>object</pre> | User custom information
+|| `content` | <pre>object</pre> | User custom information
 | `options`  | <pre>object</pre> | Query options
 
 

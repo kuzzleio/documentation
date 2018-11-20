@@ -2,8 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: GetMyCredentials
-description:
+description: 
 ---
+
 
 # GetMyCredentials
 
@@ -18,8 +19,7 @@ func (a *Auth) GetMyCredentials(strategy string, options types.QueryOptions) (js
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `strategy` | string | the strategy to use    | yes
+|| `strategy` | string | the strategy to use    | yes
 | `options`  | QueryOptions    | QueryOptions object containing query options | yes
 
 ### **Options**

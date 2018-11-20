@@ -4,82 +4,13 @@ algolia: true
 title: updateProfile
 ---
 
+
 # updateProfile
 
 {{{since "1.0.0"}}}
 
 Updates a security profile definition.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/profiles/<_id>/_update[?refresh=wait_for]
-Method: PUT  
-Body:
-```
-
-```js
-{
-    "policies": [
-      {
-        "roleId": "<roleId>"
-      },
-      {
-        "roleId": "<roleId>",
-        "restrictedTo": [
-          {
-            "index": "<index>"
-          },
-          {
-            "index": "<index>",
-            "collections": [
-              "<coll1>",
-              "<coll2>"
-            ]
-          }
-        ]
-      }
-    ]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "updateProfile",
-  "_id": "<profileId>",
-  "body": {
-    "policies": [
-      {
-        "roleId": "<roleId>"
-      },
-      {
-        "roleId": "<roleId>",
-        "restrictedTo": [
-          {
-            "index": "<index>"
-          },
-          {
-            "index": "<index>",
-            "collections": [
-              "<coll1>",
-              "<coll2>"
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -89,13 +20,6 @@ Body:
 
 * `refresh`: if set to `wait_for`, Kuzzle will not respond until the profile changes are indexed
 
----
-
-## Body properties
-
-* `policies`: [profile definition]({{site_base_path}}guide/1/essentials/security/#defining-profiles)
-
----
 
 ## Response
 

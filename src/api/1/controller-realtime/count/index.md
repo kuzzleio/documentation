@@ -4,33 +4,13 @@ algolia: true
 title: count
 ---
 
+
 # count
 
 {{{since "1.0.0"}}}
 
 Returns the number of other connections sharing the same subscription.
 
----
-
-## Query Syntax
-
-### HTTP
-
-Due to the synchronous nature of the HTTP protocol, real-time messaging is not supported
-
-### Other protocols
-
-```js
-{
-  "controller": "realtime",
-  "action": "count",
-  "body": {
-    "roomId": "unique room ID"
-  }
-}
-```
-
----
 
 ## Body properties
 

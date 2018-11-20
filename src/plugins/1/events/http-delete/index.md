@@ -4,6 +4,7 @@ algolia: true
 title: http:delete
 ---
 
+
 # http:delete
 
 {{{since "1.2.0"}}}

@@ -4,6 +4,7 @@ algolia: true
 title: hscan
 description: MemoryStorage:hscan
 ---
+
   
 
 # hscan
@@ -11,29 +12,11 @@ Identical to [scan]({{ site_base_path }}sdk-reference/memory-storage/scan), exce
 
 [[_Redis documentation_]](https://redis.io/commands/hscan)
 
----
-
-## hscan(key, cursor, [options], callback)
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| `key` | string | Key identifier |
-| `cursor` | int | Page number (iteration starts with a cursor value of `0`, and ends when the next cursor position is `0`) |
-| `options` | JSON Object | Optional parameters |
-| `callback` | function | Callback |
-
----
 
 ## Options
 
 | Option | Type | Description | Default |
-|--------|------|-------------|---------|
-| `count` | int | Return the _approximate_ `count` number of items per result page | `10` |
-| `match` | string | Search only for field names matching the provided pattern | `*` |
-| `queuable` | boolean | Make this request queuable or not  | `true` |
-
----
-
+|
 ## Callback Response
 
 Returns an object containing 2 entries:

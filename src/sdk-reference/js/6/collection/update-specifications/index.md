@@ -5,6 +5,7 @@ title: updateSpecifications
 description: Update the validation specifications
 ---
 
+
 # updateSpecifications
 
 The updateSpecifications method allows you to create or update the validation specifications for a collection.
@@ -20,8 +21,7 @@ updateSpecifications(index, collection, specifications, [options])
 <br/>
 
 | Arguments    | Type    | Description |
-|--------------|---------|-------------|----------
-| ``index`` | <pre>string</pre> | Index name    |
+|| ``index`` | <pre>string</pre> | Index name    |
 | ``collection`` | <pre>string</pre> | Collection name    |
 | ``specifications`` | <pre>object</pre> | Specifications to update  |
 | ``options`` | <pre>object</pre> | Query options    |

@@ -4,6 +4,7 @@ algolia: true
 title: refreshIndex
 description: Kuzzle:refreshIndex
 ---
+
   
 
 # refreshIndex
@@ -23,31 +24,12 @@ Given an index, the `refresh` action forces a [`refresh`](https://www.elastic.co
     </div>
 </aside>
 
----
-
-## refreshIndex([index], [options], [callback])
-
-| Argument | Type | Description
-|----------|------|-------------
 | `index` | string | _Optional_. The index to refresh. If not set, defaults to [kuzzle.defaultIndex]({{ site_base_path }}sdk-reference/kuzzle/#properties).
 | `options` | JSON object | Optional parameters
 | `callback` | function | _Optional_. Callback handling the response.
 
----
-
-## Options
-
-| Option | Type | Description | Default
-|--------|------|-------------|---------
 | `queuable` | boolean | Make this request queuable or not | `true`
 
----
-
-## Return Value
-
-Returns the `Kuzzle` SDK object to allow chaining.
-
----
 
 ## Callback Response
 

@@ -5,6 +5,7 @@ title: deleteMyCredentials
 description: Delete the current user's credentials for the specified strategy
 ---
 
+
 # deleteMyCredentials
 
 Delete the current user's credentials for the specified `<strategy>`. If the credentials that generated the current JWT are removed, the user will remain logged in until he logs out or his session expires, after that they will no longer be able to log in with the deleted credentials.
@@ -24,8 +25,7 @@ public void deleteMyCredentials(
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | String | the strategy to use
+|| `strategy` | String | the strategy to use
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 

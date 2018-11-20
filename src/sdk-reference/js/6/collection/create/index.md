@@ -5,6 +5,7 @@ title: create
 description: Create a new collection
 ---
 
+
 # create
 
 Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided index.

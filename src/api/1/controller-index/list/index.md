@@ -4,34 +4,13 @@ algolia: true
 title: list
 ---
 
+
 # list
 
 {{{since "1.0.0"}}}
 
 Returns the complete list of data indexes.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/_list
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "index",
-  "action": "list"
-}
-```
-
----
 
 ## Response
 

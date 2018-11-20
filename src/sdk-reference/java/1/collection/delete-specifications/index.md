@@ -5,6 +5,7 @@ title: deleteSpecifications
 description: Delete validation specifications for a collection
 ---
 
+
 # deleteSpecifications
 
 Delete the validation specifications associated with the collection.  
@@ -19,8 +20,7 @@ Delete the validation specifications associated with the collection.
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | String | Index name    | yes  |
+|| ``index`` | String | Index name    | yes  |
 | ``collection`` | String | Collection name    | yes  |
 | ``options`` | io.kuzzle.sdk.QueryOptions | Query options    | no  |
 

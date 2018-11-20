@@ -4,6 +4,7 @@ algolia: true
 title: ForbiddenError
 ---
 
+
 # ForbiddenError
 
 {{{since "1.0.0"}}}

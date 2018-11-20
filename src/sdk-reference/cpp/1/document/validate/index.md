@@ -6,6 +6,7 @@ description: Validate a document
 order: 200
 ---
 
+
 # validate
 
 Validates data against existing validation rules.

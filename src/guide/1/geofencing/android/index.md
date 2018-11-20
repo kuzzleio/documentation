@@ -4,6 +4,7 @@ algolia: true
 title: Android
 ---
 
+
 ## Geofencing with Android
 
 Let's create a new Android project. 

@@ -4,6 +4,7 @@ algolia: true
 title: lpush
 ---
 
+
 # lpush
 
 {{{since "1.0.0"}}}
@@ -14,50 +15,11 @@ If the key does not exist, it is created holding an empty list before performing
 
 [[_Redis documentation_]](https://redis.io/commands/lpush)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_lpush/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  "values": ["value1", "value2", "..."]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "lpush",
-  "_id": "<key>",
-  "body": {
-    "values": ["value1", "value2", "..."]
-  }
-}
-```
-
----
 
 ## Argument
 
 * `_id`: list key identifier
 
----
-
-## Body properties
-
-* `values`: array of values to push to the list
-
----
 
 ## Response
 

@@ -4,6 +4,7 @@ algolia: true
 title: log
 ---
 
+
 # log
 
 The `context.log` object exposes functions used to send messages to Kuzzle's logging system.
@@ -13,23 +14,6 @@ The lower the log level, the higher its priority.
 
 Levels above the threshold configued in the `logs` section of Kuzzle's [configuration file]({{ site_base_path }}guide/1/essentials/configuration) are ignored.
 
----
-
-## error
-
-{{{since "1.0.0"}}}
-
-### Priority
-
-`0` (highest priority)
-
-### Example 
-
-```js
-context.log.error('error message');
-```
-
----
 
 ## warn
 
@@ -45,23 +29,6 @@ context.log.error('error message');
 context.log.warn('warning message');
 ```
 
----
-
-## info
-
-{{{since "1.0.0"}}}
-
-### Priority
-
-`2`
-
-### Example
-
-```js
-context.log.info('info message');
-```
-
----
 
 ## verbose
 
@@ -77,23 +44,6 @@ context.log.info('info message');
 context.log.verbose('verbose message');
 ```
 
----
-
-## debug
-
-{{{since "1.0.0"}}}
-
-### Priority
-
-`4` (ignored by default)
-
-### Example
-
-```js
-context.log.debug('debug message');
-```
-
----
 
 ## silly
 

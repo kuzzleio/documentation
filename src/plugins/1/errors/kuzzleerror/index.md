@@ -5,6 +5,7 @@ title: KuzzleError
 order: 10
 ---
 
+
 # KuzzleError
 
 {{{since "1.0.0"}}}

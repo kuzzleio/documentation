@@ -4,6 +4,7 @@ algolia: true
 title: trigger
 ---
 
+
 # trigger
 
 {{{since "1.0.0"}}}

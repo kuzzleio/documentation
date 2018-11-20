@@ -6,6 +6,7 @@ description: SDK events system
 order: 200
 ---
 
+
 # Events
 
 An event system allows to be notified when the SDK status changes. These events are issued by the [Kuzzle SDK object]({{site_base_path }}sdk-reference/java/1/kuzzle).

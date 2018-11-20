@@ -4,6 +4,7 @@ algolia: true
 title: request:onAuthorized
 ---
 
+
 # request:onAuthorized
 
 {{{since "1.0.0"}}}

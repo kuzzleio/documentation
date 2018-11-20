@@ -4,20 +4,13 @@ algolia: true
 title: core:auth:strategyRemoved
 ---
 
+
 # core:auth:strategyRemoved
 
 {{{since "1.2.0"}}}
 
 | Arguments | Type | Description |
-|-----------|------|-------------|
-| `strategy` | <pre>object</pre> | Authentication strategy information |
-
-Triggered whenever a plugin [dynamically removes]({{ site_base_path }}plugins/1/accessors/strategies/) an authentication strategy.
-
-<div class="alert alert-info">Pipes cannot listen to that event, only hooks can.</div>
-
----
-## strategy
+|## strategy
 
 The provided `strategy` object has the following properties:
 

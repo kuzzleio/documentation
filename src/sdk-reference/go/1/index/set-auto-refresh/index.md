@@ -5,6 +5,7 @@ title: setAutoRefresh
 description: Set the autorefresh flag
 ---
 
+
 # setAutoRefresh(index, autorefresh, [options])
 
 The setAutoRefresh action allows to set the autorefresh flag for the index.

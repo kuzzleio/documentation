@@ -5,6 +5,7 @@ title: getStrategies
 description: Get all authentication strategies registered in Kuzzle.
 ---
 
+
 # getStrategies
 
 Gets the exhaustive list of registered authentication strategies.
@@ -18,16 +19,14 @@ getStrategies ([options])
 <br/>
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `options` | <pre>object</pre> | Query options
+|| `options` | <pre>object</pre> | Query options
 
 ### options
 
 Additional query options
 
 | Property     | Type    | Description                       | Default
-| ---------- | ------- | --------------------------------- | -------
-| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
+| | `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 
 ## Resolves
 

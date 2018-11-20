@@ -5,6 +5,7 @@ title: getMapping
 description: Return collection mapping
 ---
 
+
 # getMapping
 
 Returns a data collection mapping.

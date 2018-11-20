@@ -4,6 +4,7 @@ algolia: true
 title: import
 ---
 
+
 # import
 
 {{{since "1.0.0"}}}
@@ -14,67 +15,12 @@ This route is faster than the `document:m*` routes family (e.g. [document:mCreat
 
 If some documents actions fail, the client will receive a [PartialError]({{ site_base_path }}api/1/documentation/errors/#partialerror) error.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/<index>/<collection>/_bulk
-Method: POST  
-Body:
-```
-
-```js
-{
-  "bulkData": [
-    {"create": {}},
-    {"a": "document", "with": "any", "number": "of fields"},
-    {"create": {}},
-    {"another": "document"},
-    {"create": {}},
-    {"and": {"another": "one"}}
-  ]
-}
-```
-
-### Other protocols
-
-```js
-{
-  "index": "<index>",
-  "collection": "<collection>",
-  "controller": "bulk",
-  "action": "import",
-
-  "body": {
-    "bulkData": [
-      {"create": {}},
-      {"a": "document", "with": "any", "number": "of fields"},
-      {"create": {}},
-      {"another": "document"},
-      {"create": {}},
-      {"and": {"another": "one"}}
-    ]
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `collection`: data collection
 * `index`: data index
 
----
-
-## Body properties
-
-The body must contain a `bulkData` array, detailing the bulk operations to perform, following [ElasticSearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-bulk.html).
-
----
 
 ## Response
 

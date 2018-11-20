@@ -4,6 +4,7 @@ algolia: true
 title: get
 ---
 
+
 # get
 
 {{{since "1.0.0"}}}
@@ -12,29 +13,6 @@ Gets the value of a key.
 
 [[_Redis documentation_]](https://redis.io/commands/get)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/<_id>
-Method: GET
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "get",
-  "_id": "<key>"
-}
-```
-
----
 
 ## Arguments
 

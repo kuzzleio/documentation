@@ -4,6 +4,7 @@ algolia: true
 title: UnauthorizedError
 ---
 
+
 # UnauthorizedError
 
 {{{since "1.0.0"}}}

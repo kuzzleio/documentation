@@ -5,6 +5,7 @@ title: getSpecifications
 description: Returns the validation specifications
 ---
 
+
 # getSpecifications
 
 Returns the validation specifications associated to the collection.
@@ -18,8 +19,7 @@ GetSpecifications(index string, collection string, options types.QueryOptions) (
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
+|| ``index`` | string | Index name    | yes  |
 | ``collection`` | string | Collection name    | yes  |
 | ``options`` | types.QueryOptions | Query options    | no  |
 

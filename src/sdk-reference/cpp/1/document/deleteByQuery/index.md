@@ -6,6 +6,7 @@ description: Delete documents matching query
 order: 200
 ---
 
+
 # deleteByQuery
 
 Deletes documents matching the provided search query.

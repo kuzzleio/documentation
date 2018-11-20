@@ -5,6 +5,7 @@ title: updateSpecifications
 description: Update the validation specifications
 ---
 
+
 # updateSpecifications
 
 The updateSpecifications method allows you to create or update the validation specifications for one or more index/collection pairs.
@@ -20,8 +21,7 @@ std::string updateSpecifications(const std::string& index, const std::string& co
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
+|| ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | `specifications` | const std::string& | Specification in JSON format | yes
 | ``options`` | kuzzleio::query_options* | Query options    | no  |

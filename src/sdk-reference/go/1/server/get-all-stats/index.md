@@ -5,6 +5,7 @@ title: GetAllStats
 description: Gets all stored internal statistic snapshots.
 ---
 
+
 # GetAllStats
 
 {{{since "1.0.0"}}}

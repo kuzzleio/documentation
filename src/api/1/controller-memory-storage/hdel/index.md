@@ -5,6 +5,7 @@ title: hdel
 ---
 
 
+
 # hdel
 
 {{{since "1.0.0"}}}
@@ -13,51 +14,11 @@ Removes fields from a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hdel)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_hdel/<_id>
-Method: DELETE  
-Body:
-```
-
-```js
-{
-  "fields": ["field1", "field2", "..."]
-}
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "hdel",
-  "_id": "<key>",
-  "body": {
-    "fields": ["field1", "field2", "..."]
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `_id`: hash key identifier
 
----
-
-## Body properties
-
-* `fields`: an array of hash fields to delete
-
----
 
 ## Response
 

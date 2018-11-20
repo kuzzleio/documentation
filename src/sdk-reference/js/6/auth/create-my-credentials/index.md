@@ -5,6 +5,7 @@ title: createMyCredentials
 description: Create the current user's credentials for the specified strategy.
 ---
 
+
 # createMyCredentials
 
 Creates new credentials for the specified strategy for the current user.
@@ -18,8 +19,7 @@ createMyCredentials (strategy, credentials, [options])
 <br/>
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | <pre>string</pre> | Strategy to use
+|| `strategy` | <pre>string</pre> | Strategy to use
 | `credentials` | <pre>object</pre> | New credentials
 | `options`  | <pre>object</pre> | Query options
 

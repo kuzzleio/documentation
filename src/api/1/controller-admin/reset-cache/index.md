@@ -4,32 +4,13 @@ algolia: true
 title: resetCache
 ---
 
+
 # resetCache
 
 {{{since "1.4.0"}}}
 
 Asynchronously clears the cache database.  
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/admin/_resetCache?database=[internalCache|memoryStorage]
-Method: POST
-```
-
-### Other protocols
-
-```js
-{
-  "database": "internalCache"
-}
-```
-
----
 
 ## Arguments
 

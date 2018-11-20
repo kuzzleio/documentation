@@ -4,48 +4,13 @@ algolia: true
 title: replaceUser
 ---
 
+
 # replaceUser
 
 {{{since "1.0.0"}}}
 
 Replaces a user with new configuration.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/users/<_id>/_replace[?refresh=wait_for]
-Method: PUT  
-Body:
-```
-
-```js
-{
-  "profileIds": ["<profileId>"],
-  // additional user properties (optional)
-  "fullname": "John Doe"
-}
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "replaceUser",
-  "_id": "<kuid>",
-  "body": {
-    "profileIds": ["<profileId>"],
-    // additional user properties (optional)
-    "fullname": "John Doe"
-  }
-}
-```
-
----
 
 ## Arguments
 
@@ -55,17 +20,6 @@ Body:
 
 * `refresh`: if set to `wait_for`, Kuzzle will not respond until the user replacement is indexed
 
----
-
-## Body properties
-
-* `profileIds`: an array of security profiles attributed to the user
-
-### Optional:
-
-* any other property: additional user information
-
----
 
 ## Response
 

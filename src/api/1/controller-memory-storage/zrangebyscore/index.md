@@ -4,6 +4,7 @@ algolia: true
 title: zrangebyscore
 ---
 
+
 # zrangebyscore
 
 {{{since "1.0.0"}}}
@@ -14,33 +15,6 @@ The elements are considered to be ordered from low to high scores.
 
 [[_Redis documentation_]](https://redis.io/commands/zrangebyscore)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zrangebyscore/<_id>?min=<min interval>&max=<max interval>[&limit=offset,count][&options=withscores]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zrangebyscore",
-  "_id": "<key>",
-  "min": "<min interval>",
-  "max": "<max interval>",
-  // optional
-  "limit": ["<offset>", "<count>"],
-  "options": ["withscores"]
-}
-```
-
----
 
 ## Arguments:
 

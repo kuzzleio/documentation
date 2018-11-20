@@ -7,6 +7,7 @@ order: 100
 separator: essentials
 ---
 
+
 # Error Handling
 
 All methods return an "error" struct, which holds a non-nil value if the call failed.

@@ -5,6 +5,7 @@ title: adminExists
 description: Checks that an administrator account exists.
 ---
 
+
 # adminExists
 
 {{{since "1.0.0"}}}

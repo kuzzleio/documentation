@@ -6,6 +6,7 @@ description: learn how to install elasticsearch from scratch
 order: 100
 ---
 
+
 # Installation
 
 We want you to work with Elasticsearch while you are reading this cookbook,
@@ -14,37 +15,6 @@ and, optionally, [docker](https://www.docker.com/products/docker) to speed up th
 
 Alternatively you can simply trust the results we provide in the cookbook and skip the installation chapter.
 
----
-
-## Launch Elasticsearch
-
-Below we provide a way to get Elasticsearch running quickly using docker, but you can follow the official
-[installation documentation](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/_installation.html) instead.
-
-
-To launch Elasticsearch, run these commands:
-
-
-```bash
-sudo sysctl -w vm.max_map_count=262144
-docker run -p 9200:9200 elasticsearch:5.4.1
-```
-
-This will run Elasticsearch in the terminal. To stop it, you can simply exit the terminal or press Ctrl-C.
-
-The Elasticsearch instance will be accessible on port 9200 of the localhost.
-If you installed Elasticsearch using another method, adapt the examples provided in this cookbook to your installation configuration.
-
-If you get the following message in Elasticsearch logs during the docker image boot sequence:
-```bash
-ERROR: bootstrap checks failed max file descriptors [16384] for elasticsearch process is too low, increase to at least [65536]
-```
-Try to launch the container with these arguments:
-```bash
-docker run -p 9200:9200 --ulimit nofile=65536:65536 elasticsearch:5.4.1
-```
-
----
 
 ## Confirm Elasticsearch is Running
 

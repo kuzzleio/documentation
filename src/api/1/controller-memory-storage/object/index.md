@@ -4,6 +4,7 @@ algolia: true
 title: object
 ---
 
+
 # object
 
 {{{since "1.0.0"}}}
@@ -12,29 +13,6 @@ Inspects the low-level properties of a key.
 
 [[_Redis documentation_]](https://redis.io/commands/object)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_object/<_id>?subcommand=[refcount|encoding|idletime]
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "object",
-  "_id": "<key>",
-  "subcommand": "[refcount|encoding|idletime]"
-}
-```
-
----
 
 ## Argument
 

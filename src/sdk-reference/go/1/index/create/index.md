@@ -5,6 +5,7 @@ title: create
 description: Create an index
 ---
 
+
 # create
 
 Create a new index in Kuzzle

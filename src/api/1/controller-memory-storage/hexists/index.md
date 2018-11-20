@@ -4,6 +4,7 @@ algolia: true
 title: hexists
 ---
 
+
 # hexists
 
 {{{since "1.0.0"}}}
@@ -12,29 +13,6 @@ Checks if a field exists in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hexists)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_hexists/<_id>/<field>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "hexists",
-  "_id": "<key>",
-  "field": "field name"
-}
-```
-
----
 
 ## Arguments
 

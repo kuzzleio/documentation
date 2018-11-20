@@ -4,6 +4,7 @@ algolia: true
 title: Fields Specification
 ---
 
+
 # Fields Specification
 
 In this section, you'll learn how to create simple field validators.
@@ -12,35 +13,6 @@ In this section, you'll learn how to create simple field validators.
 
 The property name defines the path of the field in the document. For root fields, the path is simply the name of the field, while for subfields, the path with have the pattern `objectField/<subField>[/ ...]`.
 
----
-
-### type
-
-**Possible values (Elasticsearch types)**:
-
-*   `string`: value(s) must be a string, additional **optional constraints in typeOptions**
-*   `ip_address`: value(s) must be a valid IP address(v4 or v6)
-*   `integer`: value(s) must be a valid integer, additional **optional constraints in typeOptions**
-*   `numeric`: value(s) must be a valid number, additional **optional constraints in typeOptions**
-*   `geo_point`: value(s) must be a valid geo-point
-*   `geo_shape`: value(s) must be a valid geo-shape
-*   `date`: value(s) must be a valid date, additional **optional constraints in typeOptions**
-*   `object`: value(s) must be a valid object, additional **optional constraints in typeOptions**
-
-**Possible values (Special types)**:
-
-*   `email`: value(s) must be a valid email address, additional **optional constraints in typeOptions**
-*   `url`: value(s) must be a valid url
-*   `enum`: (**string**) value(s) must be contained in the valid values, additional **mandatory configuration in typeOptions**
-*   `anything`: value(s) can be of any type (useful to specify a **mandatory** or multi-valued field without any other constraints, or when you use the **strict** option)
-
-**Default**: no default (mandatory)
-
-**Purpose**: Defines the type of the provided fields. Checks are performed depending on the provided type.
-
-**Documentation**: You can find more information about Elasticsearch types in the [Elasticearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/mapping-types.html)
-
----
 
 ### mandatory
 
@@ -50,17 +22,6 @@ The property name defines the path of the field in the document. For root fields
 
 **Purpose**: Specifies whether the field must be present and different from the NULL value.
 
----
-
-### defaultValue
-
-**Possible values**: Any value that fits the type of the field. If the field is multi-valued, the default value **MUST** be an `array` of values (even if it contains only one value).
-
-**Purpose**: Provides a value if the field is not present or equals NULL.
-
-**Behavior** : Applies the default value to the given field when it is not specified or its value is `null`.
-
----
 
 ### description
 
@@ -70,35 +31,6 @@ The property name defines the path of the field in the document. For root fields
 
 **Purpose**: Allows the author of the validation specification to remember the field's purpose (can also contain keywords to search for the field in a configuration file).
 
----
-
-### multivalued
-
-#### multivalued.value
-
-**Possible values**: `Boolean` true or false
-
-**Default**: false
-
-**Purpose**: Specifies whether the field must contain an array of values or not. If true, fields[field].multivalued.minCount and fields[field].multivalued.maxCount can be used. **If true, a scalar cannot be provided for the field**.
-
-#### multivalued.minCount
-
-**Possible values**: A positive `integer`, less or equal to multivalued.maxCount
-
-**Default**: 0
-
-**Purpose**: Defines the minimum (**inclusive**) count of items provided in the multi-valued field.
-
-#### multivalued.maxCount
-
-**Possible values**: A positive `integer`, greater or equal to multivalued.minCount
-
-**Default**: infinite
-
-**Purpose**: Defines the maximum (**inclusive**) count of items provided in the multi-valued field.
-
----
 
 ### typeOptions
 

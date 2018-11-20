@@ -5,6 +5,7 @@ title: GetCurrentUser
 description: Returns the profile object for the user linked to the `JSON Web Token`
 ---
 
+
 # GetCurrentUser
 
 Returns the profile object for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.

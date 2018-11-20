@@ -4,6 +4,7 @@ algolia: true
 title: zrevrank
 ---
 
+
 # zrevrank
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Returns the position of an element in a sorted set, with scores in descending or
 
 [[_Redis documentation_]](https://redis.io/commands/zrevrank)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_zrevrank/<_id>/<member>
-Method: GET
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "ms",
-  "action": "zrevrank",
-  "_id": "<key>",
-  "member": "<member>"
-}
-```
----
 
 ## Arguments
 

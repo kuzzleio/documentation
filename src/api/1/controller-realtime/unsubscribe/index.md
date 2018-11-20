@@ -5,33 +5,13 @@ title: unsubscribe
 ---
 
 
+
 # unsubscribe
 
 {{{since "1.0.0"}}}
 
 Removes a subscription.
 
----
-
-## Query Syntax
-
-### HTTP
-
-Due to the synchronous nature of the HTTP protocol, real-time messaging is not supported
-
-### Other protocols
-
-```js
-{
-  "controller": "realtime",
-  "action": "unsubscribe",
-  "body": {
-    "roomId": "<unique room ID>"
-  }
-}
-```
-
----
 
 ## Body properties
 

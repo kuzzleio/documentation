@@ -5,6 +5,7 @@ title: count
 description: Count documents matching the given query
 ---
 
+
 # count
 
 Counts documents in a data collection.

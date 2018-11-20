@@ -4,6 +4,7 @@ algolia: true
 title: deleteRole
 ---
 
+
 # deleteRole
 
 {{{since "1.0.0"}}}
@@ -12,28 +13,6 @@ Deletes a security role.
 
 An error is returned if the role is still in use.
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/roles/<_id>[?refresh=wait_for]
-Method: DELETE
-```
-
-### Other protocols
-
-```js
-{
-  "controller": "security",
-  "action": "deleteRole",
-  "_id": "<roleId>"
-}
-```
-
----
 
 ## Arguments
 

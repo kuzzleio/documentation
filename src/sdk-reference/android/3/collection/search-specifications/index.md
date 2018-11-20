@@ -4,22 +4,12 @@ algolia: true
 title: searchSpecifications
 description: Collection:searchSpecifications
 ---
+
   
 
 # searchSpecifications
 Retrieves every specifications across indexes/collections according to the given filters.
 
----
-
-## searchSpecifications(filters, [options], callback)
-
-| Arguments | Type | Description |
-|---------------|---------|----------------------------------------|
-| ``filters`` | JSON object | Search request body, using [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/search-request-body.html) format. <br>If given an empty object, matches all specifications across index/collections |
-| ``options`` | JSON object | Optional parameters |
-| ``callback`` | function | Callback handling the response |
-
----
 
 ## Options
 

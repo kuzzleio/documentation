@@ -5,6 +5,7 @@ title: deleteSpecifications
 description: Delete validation specifications for a collection
 ---
 
+
 # deleteSpecifications
 
 Delete the validation specifications associated with the collection.  
@@ -18,8 +19,7 @@ void deleteSpecifications(const std::string& index, const std::string& collectio
 ## Arguments
 
 | Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
+|| ``index`` | const std::string& | Index name    | yes  |
 | ``collection`` | const std::string& | Collection name    | yes  |
 | ``options`` | kuzzleio::query_options* | Query options    | no  |
 

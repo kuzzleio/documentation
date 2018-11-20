@@ -4,6 +4,7 @@ algolia: true
 title: hincrby
 ---
 
+
 # hincrby
 
 {{{since "1.0.0"}}}
@@ -12,54 +13,11 @@ Increments the number stored in a hash field by the provided integer value.
 
 [[_Redis documentation_]](https://redis.io/commands/hincrby)
 
----
-
-## Query Syntax
-
-### HTTP
-
-```http
-URL: http://kuzzle:7512/ms/_hincrby/<_id>
-Method: POST  
-Body:
-```
-
-```js
-{
-  "field": "field name",
-  "value": <increment integer value>
-}
-```
-
-### Other protocols
-
-
-```js
-{
-  "controller": "ms",
-  "action": "hincrby",
-  "_id": "<key>",
-  "body": {
-    "field": "field name",
-    "value": <increment integer value>
-  }
-}
-```
-
----
 
 ## Arguments
 
 * `_id`: hash key identifier
 
----
-
-## Body properties
-
-* `field`: the hash field to increment
-* `value`: the integer to add to the field value
-
----
 
 ## Response
 

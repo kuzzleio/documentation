@@ -2,8 +2,9 @@
 layout: sdk.html.hbs
 algolia: true
 title: getMyCredentials
-description:
+description: 
 ---
+
 
 # getMyCredentials
 
@@ -24,8 +25,7 @@ public String getMyCredentials(
 ## Arguments
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `strategy` | String | the strategy to use
+|| `strategy` | String | the strategy to use
 | `options`  | io.kuzzle.sdk.QueryOptions    | An object containing query options
 
 ### **Options**
