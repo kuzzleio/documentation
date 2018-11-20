@@ -4,7 +4,7 @@
   "description": "Kuzzle Documentation",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js --gzip --algolia-private-key $ALGOLIA_KEY",
+    "build": "node index.js --gzip",
     "dev": "node index.js --dev --watch",
     "lint": "eslint --max-warnings=0 *.js ./test/lib ./test/test ./helpers ./scaffolding/lib ./plugins",
     "snippets-testing": "bash run-all-snippet-tests.sh",
