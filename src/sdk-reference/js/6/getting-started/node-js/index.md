@@ -20,7 +20,7 @@ Open a terminal and run the following command:
 bash -c "$(curl https://get.kuzzle.io/)"
 ```
 
-This command downloads and executes the installation script. The script checks the system for a set of prerequisites and installs any necessary tools, like Docker or Docker Compose. When the installation is complete it will automatically run Kuzzle.
+This command downloads and executes the installation script. The script checks the system for a set of prerequisites, like Docker or Docker Compose. If something's missing, the script will give you some hints on how to install them. When the installation is complete it will automatically run Kuzzle.
 
 <div class="alert alert-info">
 There are also more <a href="{{ site_base_path }}guide/1/essentials/installing-kuzzle/">alternative ways</a> to install Kuzzle.
@@ -64,10 +64,7 @@ Having trouble?
 
 It's time to play with the [Kuzzle Javscript SDK]({{ site_base_path }}sdk-reference/js/6). In this section, we will store a document and subscribe to notifications in Kuzzle using the Javascript SDK.
 
-Before proceeding, please make sure your system has these programs installed:
-
-* **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>)
-* Kuzzle
+Before proceeding, please make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
 
 ## Prepare your environment
 
@@ -95,7 +92,7 @@ Next we will instantiate a client that will connect to Kuzzle via websockets. If
 const kuzzle = new Kuzzle('websocket', { host: 'localhost' });
 ```
 
-Next we will add a listener to detect if there is a problem with our connection to Kuzzle:
+Next we add a listener to be notified in case of connection error:
 
 ```javascript
 kuzzle.on('networkError', error => {
@@ -104,7 +101,7 @@ kuzzle.on('networkError', error => {
 ```
 
 Then we have to connect the client to your Kuzzle server with the `connect()` method.
-This method will be wrapped in an `async` function to use the `await` keyword.
+This method will be wrapped in an `async` function to use the `await` construct.
 
 ```javascript
 const run = async () => {
@@ -196,7 +193,7 @@ node create.js
 
 <div class="alert alert-success">
 You have now successfully stored your first document into Kuzzle. Click <a href="{{ site_base_path }}guide/1/essentials/installing-console">here</a> to see how you can use the
-  <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
+   [<strong>Kuzzle Admin Console</strong>](http://console.kuzzle.io/) to browse your collection and confirm that your document was saved.
 </div>
 
 <div class="alert alert-info">
