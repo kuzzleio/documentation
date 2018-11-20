@@ -1,7 +1,7 @@
 const
   fs = require('fs'),
   path = require('path'),
-  { Kuzzle } = require('kuzzle-sdk'),
+  readYaml = require('read-yaml'),
   Snippet = require('./snippet'),
   Logger = require('./helpers/logger'),
   {
@@ -11,11 +11,13 @@ const
   TestResult = require('./helpers/testResult');
 
 class TestManager {
-  constructor(sdk, version) {
+  constructor(sdk, version, path) {
     const supportedSdks = getSupportedSdks();
     if (! supportedSdks.includes(sdk)) {
       throw new Error(`Unknown SDK ${sdk}. Supported SDKs: ${supportedSdks.join(', ')}`);
     }
+
+    this.basePath = path;
 
     const Sdk = require(`./sdk/${sdk}Sdk`);
     this.sdk = new Sdk(version);
@@ -25,8 +27,6 @@ class TestManager {
 
     this.logger = new Logger(this.sdk);
 
-    this.kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
-
     this.collection = `${this.sdk.name}-${this.sdk.version}`;
 
     this.results = [];
@@ -34,41 +34,25 @@ class TestManager {
     this.snippets = [];
   }
 
-  async start () {
-    try {
-      await this.kuzzle.connect();
+  async crawlSnippets () {
+    this.snippets = this._crawl(this.basePath).filter(snippet => {
+      const { sdk, version } = readYaml.sync(snippet);
 
-      await this.kuzzle.realtime.subscribe(
-        'snippets',
-        this.collection,
-        { equals: { action: 'add' } },
-        notification => { this.snippets.push(notification.result._source.snippet) }
-      );
+      return sdk === this.sdk.name && version.toString() === this.sdk.version;
+    });
 
-      await this.kuzzle.realtime.subscribe(
-        'snippets',
-        this.collection,
-        { equals: { action: 'start' } },
-        () => { this.runSnippets() }
-      );
-
-      console.log(`Waiting for snippet to test on 'snippets/${this.collection}`)
-    } catch (error) {
-      console.error(error);
-    }
+    this.logger.log(`Found ${this.snippets.length} snippets.\n`)
   }
 
   async runSnippets () {
-    this.logger.log(`${this.snippets.length} snippets received\n`);
-    const snippets = this.snippets;
-    this.snippets = [];
-
-    for (const snippetPath of snippets) {
+    for (const snippetPath of this.snippets) {
       await this.runSnippet(snippetPath)
     }
 
-    if (process.env.DEV_MODE !== 'true') {
-      this.stopServer();
+    this.logger.writeReport();
+
+    if (this.results.filter(result => result.code !== 'SUCCESS').length > 0) {
+      process.exit(1);
     }
   }
 
@@ -84,8 +68,7 @@ class TestManager {
         code: 'SUCCESS',
         file: snippet.snippetFile
       });
-    }
-    catch (e) {
+    } catch (e) {
       if (! (e instanceof TestResult)) {
         this.results.push(new TestResult({
           code: 'ERROR',
@@ -99,20 +82,22 @@ class TestManager {
     }
   }
 
-  async stopServer () {
-    console.log('Stop snippet server.');
+  _crawl (base) {
+    let result = [];
 
-    this.writeReport();
+    const files = fs.readdirSync(base);
 
-    this.kuzzle.disconnect();
-  }
+    for (const file of files) {
+      const newbase = path.join(base, file);
 
-  writeReport () {
-    this.logger.writeReport();
-
-    if (this.results.filter(result => result.code !== 'SUCCESS').length > 0) {
-      process.exit(1);
+      if (fs.statSync(newbase).isDirectory()) {
+        result = result.concat(this._crawl(newbase));
+      } else if (file.indexOf('.test.yml') > -1) {
+        result.push(newbase);
+      }
     }
+
+    return result;
   }
 
   async downloadSdk() {
