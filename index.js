@@ -185,18 +185,7 @@ metalsmith
       file: 'bundle.min.js',
       root: 'assets/js'
     },
-    files: [
-      'assets/js/libs/jquery.min.js',
-      'assets/js/libs/algolia.js',
-      'assets/js/libs/prism.js',
-      'assets/js/libs/select2.js',
-      'assets/js/algolia-search.js',
-      'assets/js/languageSelector.js',
-      'assets/js/versionSelector.js',
-      'assets/js/scrollTo.js',
-      'assets/js/drawer.js',
-      'assets/js/app.js'
-    ],
+    root: 'assets/js',
     removeOriginal: true
   }))
   .use(permalinks({relative: false}));
@@ -266,13 +255,12 @@ if (options.dev.enabled) {
     .use(
       watch({
         paths: {
-          'src/assets/stylesheets/**/*': '**/*',
-          'src/assets/**/*.js': '**/*',
-          'src/**/*.md': '**/*',
-          'src/templates/**/*': '**/*',
+          '${source}/assets/**/*': '**/*',
+          '${source}/**/*.md': true,
+          '${source}/templates/**/*': '**/*',
           'helpers/**/*': '**/*',
-          '**/**/sections/*': '**/*',
-          '**/**/snippets/*': '**/*'
+          '${source}/**/sections/*': '**/*',
+          '${source}/**/snippets/*': '${dirname}/../*'
         },
         livereload: true
       })
