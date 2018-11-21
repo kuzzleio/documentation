@@ -180,12 +180,12 @@ metalsmith
     }
     setImmediate(done);
   })
-  .use(uglify({
+)  .use(uglify({
     concat: {
       file: 'bundle.min.js',
       root: 'assets/js'
     },
-    // we need to force the order of the files to uglify
+    // we need to force the order of the files to bundle
     files: [
       'assets/js/libs/jquery.min.js',
       'assets/js/libs/algolia.js',
@@ -198,7 +198,7 @@ metalsmith
       'assets/js/drawer.js',
       'assets/js/app.js'
     ],
-    removeOriginal: false
+    removeOriginal: true
   }))
   .use(permalinks({relative: false}));
 
