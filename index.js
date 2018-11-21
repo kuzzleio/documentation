@@ -180,7 +180,7 @@ metalsmith
     }
     setImmediate(done);
   })
-)  .use(uglify({
+  .use(uglify({
     concat: {
       file: 'bundle.min.js',
       root: 'assets/js'
