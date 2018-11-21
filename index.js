@@ -185,8 +185,20 @@ metalsmith
       file: 'bundle.min.js',
       root: 'assets/js'
     },
-    root: 'assets/js',
-    removeOriginal: true
+    // we need to force the order of the files to uglify
+    files: [
+      'assets/js/libs/jquery.min.js',
+      'assets/js/libs/algolia.js',
+      'assets/js/libs/prism.js',
+      'assets/js/libs/select2.js',
+      'assets/js/algolia-search.js',
+      'assets/js/languageSelector.js',
+      'assets/js/versionSelector.js',
+      'assets/js/scrollTo.js',
+      'assets/js/drawer.js',
+      'assets/js/app.js'
+    ],
+    removeOriginal: false
   }))
   .use(permalinks({relative: false}));
 
@@ -256,11 +268,11 @@ if (options.dev.enabled) {
       watch({
         paths: {
           '${source}/assets/**/*': '**/*',
-          '${source}/**/*.md': true,
+          '${source}/**/*.md': ['assets/lib/**/*', '${self}'],
           '${source}/templates/**/*': '**/*',
           'helpers/**/*': '**/*',
           '${source}/**/sections/*': '**/*',
-          '${source}/**/snippets/*': '${dirname}/../*'
+          '${source}/**/snippets/*': ['assets/lib/**/*', '${dirname}/../*']
         },
         livereload: true
       })
