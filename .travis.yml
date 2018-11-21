@@ -181,7 +181,7 @@ jobs:
 
       script:
         - npm install
-        - npm run build
+        - node index.js -- --algolia-private-key $ALGOLIA_KEY
 
       deploy:
         provider: script

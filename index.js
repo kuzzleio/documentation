@@ -185,6 +185,7 @@ metalsmith
       file: 'bundle.min.js',
       root: 'assets/js'
     },
+    // we need to force the order of the files to bundle
     files: [
       'assets/js/libs/jquery.min.js',
       'assets/js/libs/algolia.js',
@@ -266,13 +267,12 @@ if (options.dev.enabled) {
     .use(
       watch({
         paths: {
-          'src/assets/stylesheets/**/*': '**/*',
-          'src/assets/**/*.js': '**/*',
-          'src/**/*.md': '**/*',
-          'src/templates/**/*': '**/*',
+          '${source}/assets/**/*': '**/*',
+          '${source}/**/*.md': ['assets/lib/**/*', '${self}'],
+          '${source}/templates/**/*': '**/*',
           'helpers/**/*': '**/*',
-          '**/**/sections/*': '**/*',
-          '**/**/snippets/*': '**/*'
+          '${source}/**/sections/*': '**/*',
+          '${source}/**/snippets/*': ['assets/lib/**/*', '${dirname}/../*']
         },
         livereload: true
       })
