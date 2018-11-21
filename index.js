@@ -268,11 +268,11 @@ if (options.dev.enabled) {
       watch({
         paths: {
           '${source}/assets/**/*': '**/*',
-          '${source}/**/*.md': ['assets/lib/**/*', '${self}'],
+          '${source}/**/*.md': ['assets/**/*', '${self}'],
           '${source}/templates/**/*': '**/*',
           'helpers/**/*': '**/*',
           '${source}/**/sections/*': '**/*',
-          '${source}/**/snippets/*': ['assets/lib/**/*', '${dirname}/../*']
+          '${source}/**/snippets/*': ['assets/**/*', '${dirname}/../*']
         },
         livereload: true
       })
