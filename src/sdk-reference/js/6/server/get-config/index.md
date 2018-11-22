@@ -7,8 +7,6 @@ description: Returns the current Kuzzle configuration.
 
 # getConfig
 
-{{{since "1.0.0"}}}
-
 Returns the current Kuzzle configuration.
 
 <div class="alert alert-warning">
@@ -18,28 +16,26 @@ Returns the current Kuzzle configuration.
 ## Arguments
 
 ```javascript
-/**
-* @param {Object} options - {queuable: Boolean(true)}
-* @returns {Promise<Object>}
-*/
-getConfig([options])
+getConfig ([options])
 ```
 
-| Arguments | Type   | Description                         | Required |
-| --------- | ------ | ----------------------------------- | -------- |
-| `options` | Object | An object containing query options. | no       |
+<br/>
+
+| Arguments | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `options` | <pre>object</pre> | Query options |
 
 ### **Options**
 
 Additional query options
 
-| Property   | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Property   | Type<br/>(default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 
-Resolves to an `Object` containing server configuration.
+Resolves to an `object` containing server configuration.
 
 ## Usage
 

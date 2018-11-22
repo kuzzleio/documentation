@@ -1,4 +1,4 @@
-s---
+---
 layout: sdk.html.hbs
 algolia: true
 title: list
@@ -29,7 +29,7 @@ Additional query options
 
 | Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-|  `queuable`  |  <pre>boolean</pre> <br/>(`true`) |  Make this request queuable or not  |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 |  `from`  |  <pre>number</pre> <br/>(`0`) |  Offset of the first result  |
 |  `size`  |  <pre>number</pre> <br/>(`10`) |  Maximum number of returned results  |
 

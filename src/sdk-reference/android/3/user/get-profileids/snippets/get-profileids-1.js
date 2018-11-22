@@ -1,2 +1,0 @@
-
-String[] profileIds = user.getProfileIds();

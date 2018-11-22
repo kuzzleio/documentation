@@ -25,6 +25,7 @@ install:
   - pip install awscli --upgrade --user
 
 stages:
+  - name: Build
   - name: Snippets tests
   - name: Deployment
     if: type != pull_request AND branch = master
@@ -32,9 +33,35 @@ stages:
 jobs:
   include:
 # -----------------------------------------------------------------------------
+# Build
+# -----------------------------------------------------------------------------
+    - stage: Build
+      name: "Build documentation site"
+
+      language: node_js
+      node_js:
+        - "8"
+
+      script:
+        - npm install
+        - npm run build
+
+    - stage: Build
+      name: "Check deadlinks with VFinder"
+
+      language: node_js
+      node_js:
+        - "8"
+
+      script:
+        - npm install
+        - npm run build
+        - docker run --rm -it -v "$(pwd)":/mnt alexandrebouthinon/vfinder vfinder -d /mnt/build -x /mnt/.ci/vfinder/exceptions.txt
+
+# -----------------------------------------------------------------------------
 # Snippets tests
 # -----------------------------------------------------------------------------
-    - stage: Snippets tests
+    - stage: Tests
       name: "Kuzzle SDK JS - v5"
 
       language: node_js
@@ -58,7 +85,7 @@ jobs:
             bash ./.ci/comment_pr.sh
           fi;
 
-    - stage: Snippets tests
+    - stage: Tests
       name: "Kuzzle SDK JS - v6"
 
       language: node_js
@@ -82,7 +109,7 @@ jobs:
             bash ./.ci/comment_pr.sh
           fi;
 
-    - stage: Snippets tests
+    - stage: Tests
       name: "Kuzzle SDK Go - v1"
 
       language: node_js
@@ -106,7 +133,7 @@ jobs:
             bash ./.ci/comment_pr.sh
           fi;
 
-    - stage: Snippets tests
+    - stage: Tests
       name: "Kuzzle SDK Java - v1"
 
       language: node_js
@@ -130,7 +157,7 @@ jobs:
             bash ./.ci/comment_pr.sh
           fi;
 
-    - stage: Snippets tests
+    - stage: Tests
       name: "Kuzzle SDK C++ - v1"
 
       language: node_js
@@ -166,7 +193,7 @@ jobs:
 
       script:
         - npm install
-        - npm run build
+        - node index.js -- --algolia-private-key $ALGOLIA_KEY
 
       deploy:
         provider: script

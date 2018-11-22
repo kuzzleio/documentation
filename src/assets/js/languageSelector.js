@@ -46,7 +46,7 @@ languageSelector.getLatestVersionURL = function (language) {
   }
 
   latestVersion = Object.keys(sdkVersions[language]).sort().slice(-1)[0];
-  customPathname = '/sdk-reference/' + language + '/' + latestVersion + '/essentials';
+  customPathname = '/sdk-reference/' + language + '/' + latestVersion;
 
   return baseUrl + customPathname;
 };

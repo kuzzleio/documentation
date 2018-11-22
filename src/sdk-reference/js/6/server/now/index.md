@@ -7,35 +7,31 @@ description: Returns the current server timestamp, in Epoch-millis format.
 
 # now
 
-{{{since "1.0.0"}}}
-
 Returns the current server timestamp, in Epoch-millis format.
 
 ## Arguments
 
 ```javascript
-/**
-* @param {object} [options]
-* @returns {Promise.<object>}
-*/
-now([options]);
+now ([options]);
 ```
 
-| Arguments | Type   | Description                         | Required |
-| --------- | ------ | ----------------------------------- | -------- |
-| `options` | Object | An object containing query options. | no       |
+<br/>
+
+| Arguments | Type   | Description                         |
+| --------- | ------ | ----------------------------------- |
+| `options` | <pre>object</pre> | Query options |
 
 ### **Options**
 
 Additional query options
 
-| Property   | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Property   | Type<br/>(default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
 
-Resolves to the current server timestamp as an `integer`.
+Resolves to the current server timestamp in Epoch-millis format.
 
 ## Usage
 
