@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: Events
 order: 100
+separator: essentials
 ---
 
 # Events
