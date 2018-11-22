@@ -73,10 +73,10 @@ Body:
 
 ### Optional:
 
-* `ch` (boolean): if true, instead of returning the number of added elements, return the number of changes performed
+* `ch` (boolean): if true, instead of returning the number of added elements, returns the number of changes performed
 * `incr` (boolean): if true, instead of adding elements, increments the existing member with the provided `score`. Only one score-element pair can be specified if this option is set
-* `nx` (boolean): if true, only add new elements, do not update existing ones
-* `xx` (boolean): if true, never add new elements, update only existing ones
+* `nx` (boolean): if true, only adds new elements, without altering existing ones
+* `xx` (boolean): if true, ignores new elements, alters only existing ones
 
 ---
 
