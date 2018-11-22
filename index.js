@@ -122,7 +122,7 @@ const metalsmith = _metalsmith(__dirname)
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
-  .clean(false)
+  .clean(true)
   .ignore(ignored)
   .use(saveSrc())
   .use((files, ms, done) => {
