@@ -2,5 +2,6 @@
 layout: sdk.html.hbs
 title: Kuzzle
 description: Kuzzle object
-order: 100
+order: 400
+separator: core classes
 ---
