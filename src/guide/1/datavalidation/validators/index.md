@@ -10,7 +10,7 @@ order: 200
 
 The `validators` property is an array of [Koncorde filters]({{ site_base_path }}kuzzle-dsl/#FIXME). Each filter has to match in order for the document to be valid.
 
-<aside class="warning">You have to be careful with fields that are empty or undefined.</aside>
+<div class="alert alert-warning">You have to be careful with fields that are empty or undefined.</div>
 
 ## Structure
 
