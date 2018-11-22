@@ -27,11 +27,13 @@ const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
 const discoverPartials = require('metalsmith-discover-partials');
+const deepclone = require('fast-deepclone');
 
 // custom plugins
 const snippetManager = require('./plugins/snippetManager');
 const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
+let filesSave = null;
 
 // configuration
 const msDefaultOpts = require('./config/metalsmith');
@@ -120,7 +122,7 @@ const metalsmith = _metalsmith(__dirname)
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
-  .clean(true)
+  .clean(false)
   .ignore(ignored)
   .use(saveSrc())
   .use((files, ms, done) => {
@@ -137,7 +139,23 @@ metalsmith
   .use(ancestry({
     match: '**/*.md',
     sortBy: ['order', 'title']
-  }));
+  }))
+  // restore ancestry on partial rebuilds
+  .use((files, ms, done) => {
+    setImmediate(done);
+
+    // in case of a 1st build: save and return
+    if (filesSave === null) {
+      filesSave = deepclone(files, true);
+      return;
+    }
+
+    for (const file of Object.keys(files)) {
+      if (filesSave[file] && filesSave[file].ancestry) {
+        files[file].ancestry = filesSave[file].ancestry;
+      }
+    }
+  });
 
 if (options.dev.enabled) {
   console.log('= generating map sass files =');
@@ -165,7 +183,7 @@ metalsmith
     renderer: newMDRenderer
   }))
   .use((files, ms, done) => {
-    for (const file in files) {
+    for (const file of Object.keys(files)) {
       if (file.endsWith('index.html')) {
         // Code Examples
         const codeExampleData = snippetManager.process(file, files[file]);
@@ -198,7 +216,12 @@ metalsmith
       'assets/js/drawer.js',
       'assets/js/app.js'
     ],
-    removeOriginal: true
+    removeOriginal: true,
+    uglify: {
+      // disable compression in development mode, speeding up
+      // rebuilds
+      compress: options.dev.enabled ? false : {}
+    }
   }))
   .use(permalinks({relative: false}));
 
