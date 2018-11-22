@@ -24,7 +24,7 @@ count (index, collection, query, [options]);
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `query` | <pre>object</pre> | Query to match |
-| `options` | <pre>object</pre> | An object containing query options. |
+| `options` | <pre>object</pre> | Query options |
 
 ### options
 
@@ -41,5 +41,3 @@ Resolves to the number of matched documents.
 ## Usage
 
 [snippet=count]
-
-

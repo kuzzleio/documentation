@@ -24,7 +24,7 @@ validate (index, collection, document, [options])
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `document` | <pre>object</pre> | Document to validate |
-| `options` | <pre>object</pre> | An object containing query options. |
+| `options` | <pre>object</pre> | Query options |
 
 ### Options
 

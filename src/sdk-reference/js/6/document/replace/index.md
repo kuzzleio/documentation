@@ -21,7 +21,7 @@ replace (index, collection, id, document, [options])
 | `collection` | <pre>string</pre> | Collection name |
 | `id` | <pre>string</pre> | Document ID  |
 | `document` | <pre>object</pre> | New content of the document to update |
-| `options` | <pre>object</pre> | An object containing query options. |
+| `options` | <pre>object</pre> | Query options |
 
 ### Options
 
