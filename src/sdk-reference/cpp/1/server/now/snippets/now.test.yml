@@ -1,10 +1,7 @@
----
 name: server#now
 description: Fetch the current server timestamp, in Epoch-millis format.
 hooks:
-  before: 
-  after: 
+  before:
+  after:
 template: default
-expected: "^(Epoch-millis timestamp:) [0-9]{13}$"
-sdk: cpp
-version: 1
+expected: ^(Epoch-millis timestamp:) [0-9]{13}$

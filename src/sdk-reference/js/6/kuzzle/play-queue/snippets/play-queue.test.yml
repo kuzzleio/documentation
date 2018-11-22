@@ -2,9 +2,7 @@
 name: kuzzle#playQueue
 description: Play the requests queued
 hooks:
-  before: 
-  after: 
+  before:
+  after:
 template: without-connect
 expected: Start playing offline queue
-sdk: js
-version: 6

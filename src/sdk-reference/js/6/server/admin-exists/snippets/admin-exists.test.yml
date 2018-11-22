@@ -1,10 +1,7 @@
----
 name: server#adminExists
 description: Checks that an administrator account exists.
 hooks:
-  before: 
-  after: 
+  before:
+  after:
 template: default
-expected: "^(Admin exists\\?) (true|false)$"
-sdk: js
-version: 6
+expected: ^(Admin exists\?) (true|false)$

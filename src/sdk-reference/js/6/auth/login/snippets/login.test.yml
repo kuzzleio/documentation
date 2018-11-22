@@ -6,5 +6,3 @@ hooks:
   after: curl -X DELETE kuzzle:7512/users/foo
 template: default
 expected: Success
-sdk: js
-version: 6

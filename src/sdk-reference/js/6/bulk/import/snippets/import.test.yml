@@ -8,5 +8,3 @@ hooks:
   after: curl -X DELETE kuzzle:7512/nyc-open-data
 template: default
 expected: Successfully imported 3 documents
-sdk: js
-version: 6

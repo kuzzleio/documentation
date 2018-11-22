@@ -1,4 +1,3 @@
----
 name: auth#logout
 description: Revokes the user's token & unsubscribe them from registered rooms.
 hooks:
@@ -6,5 +5,3 @@ hooks:
   after: curl -X DELETE kuzzle:7512/users/foo
 template: default
 expected: Success
-sdk: js
-version: 6

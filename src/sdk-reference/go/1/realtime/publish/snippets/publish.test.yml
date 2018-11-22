@@ -1,10 +1,7 @@
----
 name: realtime#publish
 description: Publish a realtime message
 hooks:
-  before: 
-  after: 
+  before:
+  after:
 template: default
 expected: Success
-sdk: go
-version: 1

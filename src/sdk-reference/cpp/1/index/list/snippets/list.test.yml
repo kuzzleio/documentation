@@ -6,5 +6,3 @@ hooks:
   after: 
 template: default
 expected: Kuzzle contains 1 indexes
-sdk: cpp
-version: 1

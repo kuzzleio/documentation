@@ -6,5 +6,3 @@ hooks:
   after: 
 template: default
 expected: Successfully deleted 2 indexes
-sdk: go
-version: 1

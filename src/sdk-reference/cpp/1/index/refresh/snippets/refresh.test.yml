@@ -6,5 +6,3 @@ hooks:
   after: 
 template: default
 expected: 0 shards fail to refresh
-sdk: cpp
-version: 1
