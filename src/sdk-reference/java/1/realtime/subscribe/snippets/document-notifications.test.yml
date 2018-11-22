@@ -5,3 +5,6 @@ hooks:
   after:
 template: default
 expected: Document nina-vkote enter the scope
+
+sdk: java
+version: 1

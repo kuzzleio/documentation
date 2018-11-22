@@ -7,3 +7,6 @@ hooks:
   after: 
 template: default
 expected: Document created
+
+sdk: java
+version: 1

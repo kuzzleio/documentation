@@ -5,3 +5,6 @@ hooks:
   after:
 template: default
 expected: Message notification received
+
+sdk: java
+version: 1

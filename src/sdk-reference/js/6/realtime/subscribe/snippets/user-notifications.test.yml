@@ -5,3 +5,6 @@ hooks:
   after:
 template: realtime
 expected: Currently 2 users in the room
+
+sdk: js
+version: 6

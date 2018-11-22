@@ -6,3 +6,6 @@ hooks:
   after: 
 template: default
 expected: index created
+
+sdk: cpp
+version: 1

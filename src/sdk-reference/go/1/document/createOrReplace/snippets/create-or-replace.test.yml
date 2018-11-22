@@ -9,3 +9,6 @@ hooks:
     curl -XDELETE kuzzle:7512/index
 template: default
 expected: Success
+
+sdk: go
+version: 1
