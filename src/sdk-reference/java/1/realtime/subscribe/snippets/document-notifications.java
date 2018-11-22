@@ -30,8 +30,8 @@ try {
     );
 
     Thread.sleep(1000);
-  } catch (KuzzleException e) {
+} catch (KuzzleException e) {
     System.err.println(e.getMessage());
-  } catch (InterruptedException e) {
+} catch (InterruptedException e) {
     System.err.println(e.getMessage());
 }

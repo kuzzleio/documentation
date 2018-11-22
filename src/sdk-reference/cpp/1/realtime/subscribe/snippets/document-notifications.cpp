@@ -16,6 +16,8 @@ try {
 
   const char *document = "{ \"name\": \"nina vkote\", \"age\": 19 }";
   kuzzle->document->create("nyc-open-data", "yellow-taxi", "nina-vkote", document);
+
+  sleep(1);
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.getMessage() << std::endl;
 }

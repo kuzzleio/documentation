@@ -16,6 +16,10 @@ try {
 
     String message = "{ \"metAt\": \"Insane\", \"hello\": \"world\" }";
     kuzzle.getRealtime().publish("i-dont-exist", "in-database", message);
+
+    Thread.sleep(1000);
 } catch (KuzzleException e) {
+    System.err.println(e.getMessage());
+} catch (InterruptedException e) {
     System.err.println(e.getMessage());
 }
