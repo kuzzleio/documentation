@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: Dsl
+algolia: true
 ---
 
 # Dsl

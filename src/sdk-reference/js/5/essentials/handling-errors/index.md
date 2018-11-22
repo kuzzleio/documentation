@@ -1,5 +1,6 @@
 ---
 layout: sdk.html.hbs
+algolia: true
 language-tab:
   js: Javascript
   java: Android

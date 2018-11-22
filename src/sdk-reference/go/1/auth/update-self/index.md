@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: UpdateSelf
 description: Updates the current user object in Kuzzle.
+algolia: true
 ---
 
 # UpdateSelf

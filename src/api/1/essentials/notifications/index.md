@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: Real-time Notifications
 order: 500
+algolia: true
 ---
 
 # Real-time Notifications

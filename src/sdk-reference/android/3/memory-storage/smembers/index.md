@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: smembers
 description: MemoryStorage:smembers
+algolia: true
 ---
   
 

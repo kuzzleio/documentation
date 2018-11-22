@@ -4,6 +4,7 @@ algolia: true
 title: mCreateOrReplace
 description: Create or replace documents in kuzzle
 order: 200
+algolia: true
 ---
 
 # mCreateOrReplace

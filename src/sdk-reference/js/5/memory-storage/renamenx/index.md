@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: renamenx
 description: MemoryStorage:renamenx
+algolia: true
 ---
   
 

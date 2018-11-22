@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: setDefaultIndex
 description: Kuzzle:setDefaultIndex
+algolia: true
 ---
   
 

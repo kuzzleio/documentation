@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: Hooks
 order: 200
+algolia: true
 ---
 
 # Hooks

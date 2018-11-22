@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: Kuzzle's Plugin Engine
 order: 1100
+algolia: true
 ---
 
 # Kuzzle's Plugin Engine

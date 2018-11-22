@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: Strategies
 order: 500
+algolia: true
 ---
 
 # Strategies

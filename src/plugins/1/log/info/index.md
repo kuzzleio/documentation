@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: info
 order: 2
+algolia: true
 ---
 
 # info

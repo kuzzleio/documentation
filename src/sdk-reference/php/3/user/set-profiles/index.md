@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: setProfiles
 description: User:setProfiles
+algolia: true
 ---
   
 
