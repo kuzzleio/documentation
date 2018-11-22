@@ -27,11 +27,13 @@ const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
 const discoverPartials = require('metalsmith-discover-partials');
+const deepclone = require('fast-deepclone');
 
 // custom plugins
 const snippetManager = require('./plugins/snippetManager');
 const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
+let filesSave = null;
 
 // configuration
 const msDefaultOpts = require('./config/metalsmith');
@@ -137,7 +139,23 @@ metalsmith
   .use(ancestry({
     match: '**/*.md',
     sortBy: ['order', 'title']
-  }));
+  }))
+  // restore ancestry on partial rebuilds
+  .use((files, ms, done) => {
+    setImmediate(done);
+
+    // in case of a 1st build: save and return
+    if (filesSave === null) {
+      filesSave = deepclone(files, true);
+      return;
+    }
+
+    for (const file of Object.keys(files)) {
+      if (filesSave[file] && filesSave[file].ancestry) {
+        files[file].ancestry = filesSave[file].ancestry;
+      }
+    }
+  });
 
 if (options.dev.enabled) {
   console.log('= generating map sass files =');
@@ -165,7 +183,7 @@ metalsmith
     renderer: newMDRenderer
   }))
   .use((files, ms, done) => {
-    for (const file in files) {
+    for (const file of Object.keys(files)) {
       if (file.endsWith('index.html')) {
         // Code Examples
         const codeExampleData = snippetManager.process(file, files[file]);
@@ -185,6 +203,7 @@ metalsmith
       file: 'bundle.min.js',
       root: 'assets/js'
     },
+    // we need to force the order of the files to bundle
     files: [
       'assets/js/libs/jquery.min.js',
       'assets/js/libs/algolia.js',
@@ -197,7 +216,12 @@ metalsmith
       'assets/js/drawer.js',
       'assets/js/app.js'
     ],
-    removeOriginal: true
+    removeOriginal: true,
+    uglify: {
+      // disable compression in development mode, speeding up
+      // rebuilds
+      compress: options.dev.enabled ? false : {}
+    }
   }))
   .use(permalinks({relative: false}));
 
@@ -266,13 +290,12 @@ if (options.dev.enabled) {
     .use(
       watch({
         paths: {
-          'src/assets/stylesheets/**/*': '**/*',
-          'src/assets/**/*.js': '**/*',
-          'src/**/*.md': '**/*',
-          'src/templates/**/*': '**/*',
+          '${source}/assets/**/*': '**/*',
+          '${source}/**/*.md': ['assets/**/*', '${self}'],
+          '${source}/templates/**/*': '**/*',
           'helpers/**/*': '**/*',
-          '**/**/sections/*': '**/*',
-          '**/**/snippets/*': '**/*'
+          '${source}/**/sections/*': '**/*',
+          '${source}/**/snippets/*': ['assets/**/*', '${dirname}/../*']
         },
         livereload: true
       })
