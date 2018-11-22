@@ -1,7 +1,9 @@
 name: ms#sunionstore
-description:
+description: Stores the union of multiple sets of unique values
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - ^9$
+  - "\\[ ('[a-i]', ){8}'[a-i]' ]"

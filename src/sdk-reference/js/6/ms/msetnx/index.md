@@ -23,7 +23,7 @@ msetnx(entries, [options])
 | `entries` | <pre>object[]</pre> | List of key-value pairs to set |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
-#### entries
+### entries
 
 The `entries` argument is an array of objects. Each object is a key-value pair, defined with the following properties:
 

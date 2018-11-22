@@ -6,7 +6,6 @@ title: type
 
 # type
 
-
 Returns the type of the value held by a key.
 
 [[_Redis documentation_]](https://redis.io/commands/type)
@@ -15,7 +14,6 @@ Returns the type of the value held by a key.
 
 ```js
 type(key, [options])
-
 ```
 
 <br/>
@@ -34,6 +32,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to one of the following: `hash`, `list`, `string`, `set`, `zset`
 
 ## Usage
 

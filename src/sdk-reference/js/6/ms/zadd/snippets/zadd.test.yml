@@ -1,7 +1,10 @@
 name: ms#zadd
-description:
+description: Adds elements to a sorted set
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - "\\[ { member: 'baz', score: -272.15 },"
+  - "  { member: 'bar', score: 4 },"
+  - "  { member: 'foo', score: 42 } ]"

@@ -25,7 +25,7 @@ hmset(key, entries, [options])
 | `entries` | <pre>object[]</pre> | List of field-value pairs to set |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
-#### entries
+### entries
 
 The `entries` array lists the fields to set in the hash. Each entry object has the following properties:
 

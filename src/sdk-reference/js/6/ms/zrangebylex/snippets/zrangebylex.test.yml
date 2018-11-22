@@ -1,7 +1,7 @@
 name: ms#zrangebylex
-description:
+description: Returns elements within a provided interval, using lexicographical ordering
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: "\\[ 'bar', 'baz' ]"

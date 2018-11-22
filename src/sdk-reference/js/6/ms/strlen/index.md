@@ -6,7 +6,6 @@ title: strlen
 
 # strlen
 
-
 Returns the length of a value.
 
 [[_Redis documentation_]](https://redis.io/commands/strlen)
@@ -14,9 +13,7 @@ Returns the length of a value.
 ## Arguments
 
 ```js
-hstrlen(key, [options])
 strlen(key, [options])
-
 ```
 
 <br/>
@@ -35,6 +32,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the value's length.
 
 ## Usage
 

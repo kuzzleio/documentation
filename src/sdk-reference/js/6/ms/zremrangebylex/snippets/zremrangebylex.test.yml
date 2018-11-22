@@ -1,7 +1,7 @@
 name: ms#zremrangebylex
-description:
+description: Removes members within a provided range, using lexicographical ordering
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: "\\[ 'bar' ]"

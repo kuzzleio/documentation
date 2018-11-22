@@ -1,7 +1,9 @@
 name: ms#zrank
-description:
+description: Returns the position of an element in a sorted set
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - ^2$
+  - ^null$

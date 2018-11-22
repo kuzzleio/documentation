@@ -1,7 +1,7 @@
 name: ms#sunion
-description:
+description: Returns the union of sets of unique values
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected: "\\[ ('[a-i]', ){8}'[a-i]' ]"

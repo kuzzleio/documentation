@@ -6,7 +6,6 @@ title: sunion
 
 # sunion
 
-
 Returns the union of sets of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sunion)
@@ -14,15 +13,14 @@ Returns the union of sets of unique values.
 ## Arguments
 
 ```js
-sunion(key, [options])
-
+sunion(keys, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `key` | <pre>string</pre> | Key |
+| `keys` | <pre>string[]</pre> | List of set keys |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options
@@ -34,6 +32,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to the result of the union between the provided sets.
 
 ## Usage
 

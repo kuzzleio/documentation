@@ -6,7 +6,6 @@ title: zrange
 
 # zrange
 
-
 Returns elements depending on their position in the sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zrange)
@@ -14,15 +13,16 @@ Returns elements depending on their position in the sorted set.
 ## Arguments
 
 ```js
-zrange(key, [options])
-
+zrange(key, start, stop, [options])
 ```
 
 <br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `key` | <pre>string</pre> | Key |
+| `key` | <pre>string</pre> | Sorted set key |
+| `start` | <pre>integer</pre> | Starting index offset (inclusive) |
+| `stop` | <pre>integer</pre> | Ending index offset (inclusive) |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options
@@ -34,6 +34,8 @@ The `options` arguments can contain the following option properties:
 | `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolve
+
+Resolves to a list of element objects.
 
 ## Usage
 
