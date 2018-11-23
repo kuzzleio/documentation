@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: listCollections
 description: Kuzzle:listCollections
+algolia: true
 ---
   
 

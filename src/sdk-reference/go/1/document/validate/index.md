@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: validate
 description: Validate a document
+algolia: true
 ---
 
 # Validate

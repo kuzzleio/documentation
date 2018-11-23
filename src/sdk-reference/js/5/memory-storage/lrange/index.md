@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: lrange
 description: MemoryStorage:lrange
+algolia: true
 ---
   
 

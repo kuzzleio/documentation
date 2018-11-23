@@ -4,6 +4,7 @@ algolia: true
 title: mReplace
 description: Replace documents
 order: 200
+algolia: true
 ---
 
 # mReplace

@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: zrank
+algolia: true
 ---
 
 # zrank

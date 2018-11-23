@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zlexcount
 description: MemoryStorage:zlexcount
+algolia: true
 ---
   
 

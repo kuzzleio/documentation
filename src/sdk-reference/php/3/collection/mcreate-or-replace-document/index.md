@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: mcreateOrReplaceDocument
 description: Collection:mcreateOrReplaceDocument
+algolia: true
 ---
   
 

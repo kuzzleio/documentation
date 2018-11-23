@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: AdminExists
 description: Returns information about Kuzzle server.
+algolia: true
 ---
 
 # AdminExists

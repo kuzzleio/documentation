@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: lindex
 description: MemoryStorage:lindex
+algolia: true
 ---
   
 

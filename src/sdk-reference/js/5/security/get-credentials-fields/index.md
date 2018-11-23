@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: getCredentialsFields
 description: Security:getCredentialsFields
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zremrangebyrank
 description: MemoryStorage:zremrangebyrank
+algolia: true
 ---
   
 

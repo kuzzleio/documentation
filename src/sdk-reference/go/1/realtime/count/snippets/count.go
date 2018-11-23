@@ -1,6 +1,6 @@
 filters := json.RawMessage(`{}`)
 
-listener := make(chan types.KuzzleNotification)
+listener := make(chan types.NotificationResult)
 go func() {
   <-listener
 }()

@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: pexpire
+algolia: true
 ---
 
 # pexpire

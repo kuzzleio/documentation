@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: flushQueue
 description: Kuzzle:flushQueue
+algolia: true
 ---
   
 

@@ -4,6 +4,7 @@ algolia: true
 title: SearchResult
 description: How to deal with Kuzzle search results
 order: 600
+algolia: true
 ---
 # SearchResult
 

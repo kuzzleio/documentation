@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: mDeleteProfiles
+algolia: true
 ---
 
 # mDeleteProfiles

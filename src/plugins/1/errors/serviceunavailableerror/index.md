@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: ServiceUnavailableError
+algolia: true
 ---
 
 # ServiceUnavailableError

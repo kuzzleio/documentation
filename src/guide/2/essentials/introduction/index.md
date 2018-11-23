@@ -4,6 +4,7 @@ algolia: true
 title: Introduction
 description: learn mechanisms of kuzzle
 order: 0
+algolia: true
 ---
 
 # Introduction

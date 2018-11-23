@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: hdel
 description: MemoryStorage:hdel
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: updateMyCredentials
 description: Kuzzle:updateMyCredentials
+algolia: true
 ---
   
 

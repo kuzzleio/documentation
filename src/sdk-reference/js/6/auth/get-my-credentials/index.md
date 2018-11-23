@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: getMyCredentials
 description: Returns the current user's credential information for the specified strategy.
+algolia: true
 ---
 
 # getMyCredentials
