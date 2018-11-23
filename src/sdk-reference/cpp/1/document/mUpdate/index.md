@@ -4,6 +4,7 @@ algolia: true
 title: mUpdate
 description: Update documents
 order: 200
+algolia: true
 ---
 
 # mUpdate

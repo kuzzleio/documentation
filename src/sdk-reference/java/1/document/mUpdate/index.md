@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: mUpdate
 description: Update documents
+algolia: true
 ---
 
 # mUpdate

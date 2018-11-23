@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: Request and Response Format
 order: 800
+algolia: true
 ---
 
 # Request and Response Format

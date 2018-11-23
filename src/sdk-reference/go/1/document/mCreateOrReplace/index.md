@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: mCreateOrReplace
 description: Create or replace documents in kuzzle
+algolia: true
 ---
 
 # MCreateOrReplace

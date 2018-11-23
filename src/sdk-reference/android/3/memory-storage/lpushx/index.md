@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: lpushx
 description: MemoryStorage:lpushx
+algolia: true
 ---
   
 

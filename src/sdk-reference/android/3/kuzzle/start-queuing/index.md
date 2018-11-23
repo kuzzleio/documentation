@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: startQueuing
 description: Kuzzle:startQueuing
+algolia: true
 ---
   
 

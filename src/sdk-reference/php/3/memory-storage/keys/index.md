@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: keys
 description: MemoryStorage:keys
+algolia: true
 ---
   
 

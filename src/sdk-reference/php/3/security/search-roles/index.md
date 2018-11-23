@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: searchRoles
 description: Security:searchRoles
+algolia: true
 ---
   
 

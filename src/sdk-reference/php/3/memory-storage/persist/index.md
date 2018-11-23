@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: persist
 description: MemoryStorage:persist
+algolia: true
 ---
   
 

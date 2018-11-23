@@ -4,6 +4,7 @@ algolia: true
 title: mDelete
 description: Delete a document
 order: 200
+algolia: true
 ---
 
 # mDelete

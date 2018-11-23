@@ -4,6 +4,7 @@ algolia: true
 title: constructor
 description: Room:constructor
 order: 1
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: Working with Persistent Data
 order: 400
+algolia: true
 ---
 
 # Working with Persistent Data

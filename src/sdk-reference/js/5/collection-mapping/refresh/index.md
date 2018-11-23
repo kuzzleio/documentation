@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: refresh
 description: CollectionMapping:refresh
+algolia: true
 ---
   
 

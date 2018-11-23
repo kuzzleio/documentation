@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zscore
 description: MemoryStorage:zscore
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: full.html.hbs
 title: Introduction
 order: 0
 description: IoT Code Examples
+algolia: true
 ---
 
 ## Code Example: Real-Time Pub/Sub

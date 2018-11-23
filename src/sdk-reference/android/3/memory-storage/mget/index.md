@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: mget
 description: MemoryStorage:mget
+algolia: true
 ---
   
 

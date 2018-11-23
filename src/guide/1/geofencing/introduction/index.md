@@ -3,6 +3,7 @@ layout: full.html.hbs
 title: Introduction
 order: 0
 description: Geofencing Code Examples
+algolia: true
 ---
 
 ## Code Example: Geofencing 
