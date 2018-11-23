@@ -1,5 +1,6 @@
 #include <unistd.h>
 
+#include <sstream>
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -13,6 +14,17 @@
 #include "realtime.hpp"
 #include "kuzzle.hpp"
 
+bool is_empty(std::ostringstream *stream) {
+  bool empty;
+  std::streampos position = stream->tellp();
+
+  stream->seekp(0, std::ios_base::end);
+  empty = stream->tellp() == 0;
+  stream->seekp(position);
+
+  return empty;
+}
+
 int main() {
   std::string hostname = "kuzzle";
 
@@ -24,7 +36,20 @@ int main() {
     return 1;
   }
 
+  std::streambuf *cout_original = std::cout.rdbuf();
+  std::ostringstream cout_copy;
+
+  std::cout.rdbuf(cout_copy.rdbuf());
+
   [snippet-code]
-  sleep(1);
+
+  while (is_empty(&cout_copy)) {
+    std::cerr << "HEHEH" << std::endl;
+    usleep(200);
+  }
+
+  std::cout.rdbuf(cout_original);
+  std::cout << cout_copy.str();
+
   return 0;
 }
