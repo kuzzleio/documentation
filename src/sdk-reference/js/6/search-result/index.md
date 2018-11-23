@@ -1,11 +1,11 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: Search Results
+title: SearchResult
 description: How to deal with Kuzzle search results
 order: 700
 ---
-# Search Results
+# SearchResult
 
 When performing a [search]({{ site_base_path }}sdk-reference/js/6/document/search), Kuzzle returns an `SearchResult` object, which holds the items matching the given query and allows to drill through next result pages if applicable.
 

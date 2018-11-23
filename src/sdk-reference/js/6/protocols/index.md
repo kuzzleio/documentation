@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
-title: Protocols
+title: Protocol
 description: Protocols objects documentation
 order: 500
 ---
