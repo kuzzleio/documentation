@@ -28,6 +28,11 @@ func main() {
 
 	[snippet-code]
 
+	go func() {
+		time.Sleep(4 * time.Second)
+		os.Exit(0)
+	}()
+
 	b := make([]byte, 4096)
 	n, _ := r.Read(b)
 

@@ -18,7 +18,7 @@ public class CodeExampleGenericClass {
 
       [snippet-code]
 
-      while (baos.size() == 0) {
+      for (int i = 20; i > 0 && baos.size() == 0; --i) {
         try {
           Thread.sleep(200);
         } catch (InterruptedException e) {

@@ -43,7 +43,7 @@ int main() {
 
   [snippet-code]
 
-  while (is_empty(&cout_copy)) {
+  for (size_t i = 20; i > 0 && is_empty(&cout_copy); --i) {
     usleep(200);
   }
 
