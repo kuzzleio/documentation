@@ -29,4 +29,6 @@ func main() {
 	}()
 
 	[snippet-code]
+
+	time.Sleep(1000 * time.Millisecond)
 }
