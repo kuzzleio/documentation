@@ -29,6 +29,8 @@ try {
 
   // Subscribe to the same room with the second client
   fuzzle->realtime->subscribe("nyc-open-data", "yellow-taxi", filters, &listener);
+
+  sleep(1);
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.getMessage() << std::endl;
 }
