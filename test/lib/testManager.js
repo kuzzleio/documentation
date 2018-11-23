@@ -83,6 +83,10 @@ class TestManager {
   }
 
   _crawl (base) {
+    if (fs.statSync(base).isFile() && base.indexOf('.test.yml') > -1) {
+      return [base];
+    }
+
     let result = [];
 
     const files = fs.readdirSync(base);
