@@ -19,6 +19,6 @@ kuzzle.on('networkError', error => {
     console.log(`Cannot connect to Kuzzle: ${error.message}`);
   }
   [snippet-code] finally {
-    setTimeout(() => kuzzle.disconnect(), 100);
+    setTimeout(() => kuzzle.disconnect(), 1000);
   }
 })();
