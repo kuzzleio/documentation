@@ -34,8 +34,6 @@ try {
       filters,
       listener
     );
-
-    Thread.sleep(1000);
   } catch (KuzzleException e) {
     System.err.println(e.getMessage());
 }

@@ -1,6 +1,3 @@
-// Avoid program exit before receiving notification
-exitPrgm := make(chan bool)
-
 // Subscribe to notifications for documents containing a 'name' property
 filters := json.RawMessage(`{ "exists": "name" }`)
 
@@ -14,8 +11,6 @@ go func() {
     // Volatile data: {"sdkVersion":"1.0.0","username":"nina vkote"}
     fmt.Printf("Currently %d users in the room\n", notification.Result.Count)
   }
-
-  exitPrgm <- true
 }()
 
 options := types.NewRoomOptions()
@@ -53,5 +48,3 @@ fuzzle.Realtime.Subscribe(
 	filters,
 	make(chan types.NotificationResult),
 	nil)
-
-<-exitPrgm
