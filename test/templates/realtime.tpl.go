@@ -30,7 +30,7 @@ func main() {
 
 	go func() {
 		time.Sleep(4 * time.Second)
-		os.Exit(0)
+		os.Exit(1)
 	}()
 
 	b := make([]byte, 4096)
