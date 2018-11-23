@@ -26,7 +26,7 @@ module.exports = {
     });
 
     return {
-      anchors: anchors,
+      anchors,
       fileContent: Buffer.from($.html())
     };
   }
