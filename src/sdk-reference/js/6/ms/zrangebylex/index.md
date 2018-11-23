@@ -38,6 +38,8 @@ The `options` arguments can contain the following option properties:
 
 ## Resolve
 
+Resolves to an array of matched elements.
+
 ## Usage
 
 [snippet=zrangebylex]

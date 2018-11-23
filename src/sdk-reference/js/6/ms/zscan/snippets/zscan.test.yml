@@ -1,7 +1,9 @@
 name: ms#zscan
-description:
+description: Iterates incrementally over fields contained in a sorted set, using a cursor
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+    - "{ cursor: '0',"
+    - "values: \\[ 'baz', '-272.1\\d{1,}', 'bar', '4', 'foo', '42' ] }"

@@ -1,7 +1,10 @@
 name: ms#zrevrank
-description:
+description: Returns the position of an element in a sorted set, in reverse order
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - ^0$
+  - ^null$
+

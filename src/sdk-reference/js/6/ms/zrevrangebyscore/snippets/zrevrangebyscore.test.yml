@@ -1,7 +1,10 @@
 name: ms#zrevrangebyscore
-description:
+description: Returns all sorted set elements with a score within a provided range in descending order
 hooks:
   before: curl -X POST kuzzle:7512/ms/_flushdb
   after:
 template: default
-expected: Success
+expected:
+  - "\\[ { member: 'bar', score: 4 },"
+  - "{ member: 'baz', score: -272.15 } ]"
+

@@ -15,7 +15,7 @@ The elements are considered to be ordered from low to high scores.
 ## Arguments
 
 ```js
-zrangebyscore(key, [options])
+zrangebyscore(key, min, max, [options])
 
 ```
 
