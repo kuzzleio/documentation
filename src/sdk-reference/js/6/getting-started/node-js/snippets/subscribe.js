@@ -2,7 +2,8 @@
 const { Kuzzle } = require('kuzzle-sdk');
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle('websocket', { host: 'localhost' });
+// replace "kuzzle" with your Kuzzle instance hostname, probaly "localhost"
+const kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
@@ -26,7 +27,7 @@ const run = async () => {
         const driver = notification.result._source;
         const driverId = notification.result._id;
 
-        console.log(`New driver ${driver.name} with id ${driverId} has B license.`)
+        console.log(`New driver ${driver.name} with id ${driverId} has B license.`);
       }
     };
 
@@ -37,6 +38,6 @@ const run = async () => {
   } catch (error) {
     console.error(error.message);
   }
-}
+};
 
 run();

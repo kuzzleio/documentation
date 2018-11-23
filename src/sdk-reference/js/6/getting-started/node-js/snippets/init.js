@@ -2,7 +2,8 @@
 const { Kuzzle } = require('kuzzle-sdk');
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle('websocket', { host: 'localhost' });
+// replace "kuzzle" with your Kuzzle instance hostname, probaly "localhost"
+const kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
@@ -26,6 +27,6 @@ const run = async () => {
   } finally {
     kuzzle.disconnect();
   }
-}
+};
 
 run();
