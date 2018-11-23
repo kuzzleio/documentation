@@ -9,7 +9,7 @@ const kuzzle = new Kuzzle('websocket', {
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
-  console.error(`Network Error: ${error}`);
+  console.error(`Network Error: ${error.message}`);
 });
 
 (async () => {
