@@ -2,7 +2,7 @@
 exitPrgm := make(chan bool)
 
 // Start an async listener
-listener := make(chan types.KuzzleNotification)
+listener := make(chan types.NotificationResult)
 go func() {
   <-listener
 
