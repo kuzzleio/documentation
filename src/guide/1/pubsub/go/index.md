@@ -102,15 +102,15 @@ Use the Collection `Subscribe` method to execute the subscription request, using
 c := collection.NewCollection(k, "mycollection", "myindex")
 
 ro := types.NewRoomOptions()
-rtc := make(chan *types.KuzzleNotification)
+rtc := make(chan *types.NotificationResult)
 res := <- c.Subscribe(filter, ro, rtc)
 
 if res.Error != nil {
     handleError(res.Error)
 } else {
-    go func (rtc chan *types.KuzzleNotification) {
+    go func (rtc chan *types.NotificationResult) {
     //Triggered each time the document matches the filter
-    doSomething(<-rtc)  
+    doSomething(<-rtc)
     }(rtc)
 }
 ```
@@ -124,7 +124,7 @@ Now let's move on to the publish side of the test. Here we will publish a docume
 
 We will program a *publish* method that connects to Kuzzle and creates a document that contains the value `hello world` in the `message` field.
 
- 
+
 ```Go
 c := collection.NewCollection(k, "mycollection", "myindex")
 
@@ -171,18 +171,18 @@ func  Subscribe(){
 
     //Get the collection
     c := collection.NewCollection(k, "mycollection", "myindex")
-    
+
     //Subscribe to document changes using the filter
     ro := types.NewRoomOptions()
-    rtc := make(chan *types.KuzzleNotification)
+    rtc := make(chan *types.NotificationResult)
     res := <- c.Subscribe(filter, ro, rtc)
 
     if res.Error != nil {
         handleError(res.Error)
     } else {
-        go func (rtc chan *types.KuzzleNotification) {
+        go func (rtc chan *types.NotificationResult) {
             //Triggered each time the document matches the filter
-            doSomething(<-rtc)  
+            doSomething(<-rtc)
         }(rtc)
     }
 
@@ -201,7 +201,7 @@ func Publish(){
     type doc struct {
         Message    string `json:"message"`
     }
-    
+
     // Publish the document
     qo := types.NewQueryOptions()
     c.PublishMessage(&doc{Message: "hello world"}, qo)
@@ -210,10 +210,8 @@ func Publish(){
 
 ```
 
-Create a test file using your favorite test framework. For a working example of this code refer to `go` folder in our snippet test [github repository](https://github.com/kuzzleio/kuzzle.io-snippet-tests). You can run the test using Visual Studio Code (using the launch.json configuration provided in the repository) or simply by executing the following command in the `realtimePubSub` folder: 
+Create a test file using your favorite test framework. For a working example of this code refer to `go` folder in our snippet test [github repository](https://github.com/kuzzleio/kuzzle.io-snippet-tests). You can run the test using Visual Studio Code (using the launch.json configuration provided in the repository) or simply by executing the following command in the `realtimePubSub` folder:
 
 ```bash
     go run test.go snippet.go
 ```
-
- 
