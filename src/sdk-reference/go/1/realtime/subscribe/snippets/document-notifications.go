@@ -5,7 +5,7 @@ exitPrgm := make(chan bool)
 filters := json.RawMessage(`{ "exists": "name" }`)
 
 // Start an async listener
-listener := make(chan types.KuzzleNotification)
+listener := make(chan types.NotificationResult)
 go func() {
   notification := <-listener
 
