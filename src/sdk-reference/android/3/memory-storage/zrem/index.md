@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zrem
 description: MemoryStorage:zrem
+algolia: true
 ---
   
 

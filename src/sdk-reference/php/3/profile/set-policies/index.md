@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: setPolicies
 description: Profile:setPolicies
+algolia: true
 ---
   
 

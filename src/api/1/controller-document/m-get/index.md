@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: mGet
+algolia: true
 ---
 
 # mGet

@@ -3,6 +3,7 @@ title: SDKs
 order: 1
 layout: full.html.hbs
 nosidebar: true
+algolia: true
 ---
 
 # SDKs Reference

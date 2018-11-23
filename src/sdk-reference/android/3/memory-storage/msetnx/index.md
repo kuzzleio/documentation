@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: msetnx
 description: MemoryStorage:msetnx
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: mCreate
 description: Creates multiple documents in kuzzle
+algolia: true
 ---
 
 # MCreate

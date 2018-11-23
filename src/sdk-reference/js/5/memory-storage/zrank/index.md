@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zrank
 description: MemoryStorage:zrank
+algolia: true
 ---
   
 

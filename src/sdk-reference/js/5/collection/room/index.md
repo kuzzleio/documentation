@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: room
 description: Collection:room
+algolia: true
 ---
   
 

@@ -4,6 +4,7 @@ title: Introduction
 order: 80
 description: Learn how to query persistent data in Kuzzle
 icon: fa-book
+algolia: true
 ---
 
 # Elasticsearch Cookbook

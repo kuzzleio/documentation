@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: dbsize
 description: MemoryStorage:dbsize
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: "> Plugin Events"
 order: 200
+algolia: true
 ---
 
 # Plugin Events

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: sinter
 description: MemoryStorage:sinter
+algolia: true
 ---
   
 

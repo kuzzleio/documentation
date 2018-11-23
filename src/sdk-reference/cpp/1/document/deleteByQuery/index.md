@@ -4,6 +4,7 @@ algolia: true
 title: deleteByQuery
 description: Delete documents matching query
 order: 200
+algolia: true
 ---
 
 # deleteByQuery

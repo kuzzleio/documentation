@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: sscan
 description: MemoryStorage:sscan
+algolia: true
 ---
   
 

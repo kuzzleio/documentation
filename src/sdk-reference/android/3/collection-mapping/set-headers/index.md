@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: setHeaders
 description: CollectionMapping:setHeaders
+algolia: true
 ---
   
 

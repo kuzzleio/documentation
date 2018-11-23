@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: subscribe
 description: Document:subscribe
+algolia: true
 ---
   
 
