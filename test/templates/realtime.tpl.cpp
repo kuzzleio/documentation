@@ -44,7 +44,6 @@ int main() {
   [snippet-code]
 
   while (is_empty(&cout_copy)) {
-    std::cerr << "HEHEH" << std::endl;
     usleep(200);
   }
 

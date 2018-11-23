@@ -12,7 +12,7 @@ public class CodeExampleGenericClass {
 
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       PrintStream ps = new PrintStream(baos);
-      PrintStream cout_original = System.out;
+      PrintStream outOriginal = System.out;
 
       System.setOut(ps);
 
@@ -27,7 +27,7 @@ public class CodeExampleGenericClass {
       }
 
       System.out.flush();
-      System.setOut(cout_original);
+      System.setOut(outOriginal);
       System.out.println(baos.toString());
     }
 }
