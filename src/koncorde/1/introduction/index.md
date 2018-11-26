@@ -7,7 +7,7 @@ description: Introduction to Koncorde
 
 ## What is Koncorde
 
-[Koncorde](https://www.npmjs.com/package/koncorde), is a data percolation engine
+[Koncorde](https://www.npmjs.com/package/koncorde) is a data percolation engine
 and is part of Kuzzle's real-time engine. It is used to:
 
 - trigger notifications on [real-time subscriptions]({{ site_base_path }}guide/essentials/real-time/)
