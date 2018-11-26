@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
-title: server
+title: getServer
 description: Server Controller
 algolia: true
 ---

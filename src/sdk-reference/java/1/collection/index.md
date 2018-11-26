@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
-title: Collection
+title: getCollection
 description: Collection Controller
 algolia: true
 ---

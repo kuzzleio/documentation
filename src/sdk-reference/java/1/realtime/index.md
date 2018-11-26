@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
-title: realtime
+title: getRealtime
 description: Realtime Controller
 algolia: true
 ---
