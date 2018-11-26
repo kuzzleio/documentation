@@ -144,7 +144,7 @@ module.exports = class MyProtocol {
   handleClient () {
     // when a client connects
     this.on('onClientConnect', client => {
-      const connection = new context.constructor.ClientConnection(
+      const connection = new this.context.ClientConnection(
         this.name,
         [client.connection.stream.remoteAddress],
         {some: 'header'}
@@ -160,7 +160,7 @@ module.exports = class MyProtocol {
       // Instantiates a Request object to be passed to Kuzzle
       const
         connection = this.connections[client.id],
-        request = new this.context.Request(data, this.connections[client.id]);
+        request = new this.context.Request(data, { connection });
 
       this.entryPoint.execute(request, response => {
         // forward the response to the client
