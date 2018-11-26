@@ -1,8 +1,9 @@
-s---
+---
 layout: sdk.html.hbs
 algolia: true
 title: list
 description: Returns the collection list of an index
+algolia: true
 ---
 
 # list

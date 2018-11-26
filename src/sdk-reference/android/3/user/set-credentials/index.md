@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: setCredentials
 description: User:setCredentials
+algolia: true
 ---
   
 

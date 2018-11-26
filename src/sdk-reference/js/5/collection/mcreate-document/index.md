@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: mcreateDocument
 description: Collection:mcreateDocument
+algolia: true
 ---
   
 

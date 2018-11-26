@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zunionstore
 description: MemoryStorage:zunionstore
+algolia: true
 ---
   
 

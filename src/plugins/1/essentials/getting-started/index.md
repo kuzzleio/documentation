@@ -4,6 +4,7 @@ algolia: true
 title: Getting Started
 description: how to create a custom plugin
 order: 0
+algolia: true
 ---
 
 # Getting Started

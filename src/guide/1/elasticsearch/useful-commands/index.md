@@ -4,6 +4,7 @@ algolia: true
 title: Useful Commands
 description: learn time-saving elasticsearch commands
 order: 300
+algolia: true
 ---
 
 # Useful Commands

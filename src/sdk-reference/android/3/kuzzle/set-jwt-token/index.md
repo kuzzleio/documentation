@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: setJwtToken
 description: Kuzzle:setJwtToken
+algolia: true
 ---
   
 

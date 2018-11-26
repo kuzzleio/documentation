@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: replace
 description: User:replace
+algolia: true
 ---
   
 

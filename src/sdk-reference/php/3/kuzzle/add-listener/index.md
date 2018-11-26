@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: addListener
 description: Kuzzle:addListener
+algolia: true
 ---
   
 

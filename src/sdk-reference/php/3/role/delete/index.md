@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: delete
 description: Role:delete
+algolia: true
 ---
   
 

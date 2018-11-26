@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zinterstore
 description: MemoryStorage:zinterstore
+algolia: true
 ---
   
 

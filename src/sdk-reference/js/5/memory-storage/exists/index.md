@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: exists
 description: MemoryStorage:exists
+algolia: true
 ---
   
 

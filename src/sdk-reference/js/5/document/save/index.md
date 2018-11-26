@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: save
 description: Document:save
+algolia: true
 ---
   
 

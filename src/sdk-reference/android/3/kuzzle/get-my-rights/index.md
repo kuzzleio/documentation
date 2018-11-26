@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: getMyRights
 description: Kuzzle:getMyRights
+algolia: true
 ---
   
 

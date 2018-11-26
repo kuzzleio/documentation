@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: warn
 order: 1
+algolia: true
 ---
 
 # warn

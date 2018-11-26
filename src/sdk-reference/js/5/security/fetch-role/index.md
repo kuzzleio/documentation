@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: fetchRole
 description: Security:fetchRole
+algolia: true
 ---
   
 

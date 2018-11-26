@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: memoryStorage
 description: Kuzzle:memoryStorage
+algolia: true
 ---
   
 

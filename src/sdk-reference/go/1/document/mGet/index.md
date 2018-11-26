@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: mGet
 description: Get multiple documents
+algolia: true
 ---
 
 # MGet

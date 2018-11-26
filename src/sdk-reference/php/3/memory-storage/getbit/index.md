@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: getbit
 description: MemoryStorage:getbit
+algolia: true
 ---
   
 

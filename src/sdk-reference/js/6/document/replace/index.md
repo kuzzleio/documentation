@@ -3,6 +3,7 @@ layout: sdk.html
 algolia: true
 title: replace
 description: Replace a document
+algolia: true
 ---
 
 # replace

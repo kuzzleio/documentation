@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: publishMessage
 description: Collection:publishMessage
+algolia: true
 ---
   
 

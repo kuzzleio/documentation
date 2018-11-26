@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: adminExists
 description: Checks that an administrator account exists.
+algolia: true
 ---
 
 # adminExists

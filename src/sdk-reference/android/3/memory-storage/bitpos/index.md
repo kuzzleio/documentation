@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: bitpos
 description: MemoryStorage:bitpos
+algolia: true
 ---
   
 

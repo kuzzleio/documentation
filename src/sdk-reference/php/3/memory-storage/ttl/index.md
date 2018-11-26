@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: ttl
 description: MemoryStorage:ttl
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: GetConfig
 description: Returns the current Kuzzle configuration.
+algolia: true
 ---
 
 # GetConfig
