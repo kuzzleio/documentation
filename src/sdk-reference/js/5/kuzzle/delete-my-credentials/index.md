@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: deleteMyCredentials
 description: Kuzzle:deleteMyCredentials
+algolia: true
 ---
   
 

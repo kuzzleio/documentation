@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: Offline First
 order: 400
+algolia: true
 ---
 
 # Offline First

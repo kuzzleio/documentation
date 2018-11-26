@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: sdiffstore
 description: MemoryStorage:sdiffstore
+algolia: true
 ---
   
 

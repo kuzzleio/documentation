@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: setContent
 description: Profile:setContent
+algolia: true
 ---
   
 

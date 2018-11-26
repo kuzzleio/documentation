@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: Command Line Interface (CLI)
 Order: 900
+algolia: true
 ---
 
 # Command Line Interface (CLI)

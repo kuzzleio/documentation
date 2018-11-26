@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: GetAllStats
 description: Gets all stored internal statistic snapshots.
+algolia: true
 ---
 
 # GetAllStats

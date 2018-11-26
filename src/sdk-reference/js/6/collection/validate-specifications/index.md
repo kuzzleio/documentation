@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: validateSpecifications
 description: Validate specifications format
+algolia: true
 ---
 
 # validateSpecifications

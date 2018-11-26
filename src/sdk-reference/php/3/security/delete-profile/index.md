@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: deleteProfile
 description: Security:deleteProfile
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: create
 description: Create a new document
+algolia: true
 ---
 
 # Create

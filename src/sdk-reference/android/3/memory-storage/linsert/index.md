@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: linsert
 description: MemoryStorage:linsert
+algolia: true
 ---
   
 

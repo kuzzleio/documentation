@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zrevrange
 description: MemoryStorage:zrevrange
+algolia: true
 ---
   
 

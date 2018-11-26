@@ -4,6 +4,7 @@ algolia: true
 title: Data Insertion
 description: learn how to index data with elasticsearch
 order: 200
+algolia: true
 ---
 
 # Data Insertion

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: search
 description: Collection:search
+algolia: true
 ---
   
 

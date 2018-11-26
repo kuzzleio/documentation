@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: checkToken
 description: Kuzzle:checkToken
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zrevrangebyscore
 description: MemoryStorage:zrevrangebyscore
+algolia: true
 ---
   
 

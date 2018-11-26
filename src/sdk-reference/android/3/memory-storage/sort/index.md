@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: sort
 description: MemoryStorage:sort
+algolia: true
 ---
   
 

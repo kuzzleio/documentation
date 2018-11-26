@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: createRestrictedUser
 description: Security:createRestrictedUser
+algolia: true
 ---
   
 

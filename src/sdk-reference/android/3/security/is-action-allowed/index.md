@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: isActionAllowed
 description: Security:isActionAllowed
+algolia: true
 ---
   
 

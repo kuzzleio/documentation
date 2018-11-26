@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: exists
 description: Document:exists
+algolia: true
 ---
   
 

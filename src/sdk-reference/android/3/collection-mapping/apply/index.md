@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: apply
 description: CollectionMapping:apply
+algolia: true
 ---
   
 

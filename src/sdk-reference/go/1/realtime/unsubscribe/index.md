@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: Unsubscribe
 description: Removes a subscription
+algolia: true
 ---
 
 # Unsubscribe

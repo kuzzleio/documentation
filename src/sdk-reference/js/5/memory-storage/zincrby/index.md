@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zincrby
 description: MemoryStorage:zincrby
+algolia: true
 ---
   
 

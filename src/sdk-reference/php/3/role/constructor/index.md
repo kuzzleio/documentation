@@ -4,6 +4,7 @@ algolia: true
 title: constructor
 description: Role:constructor
 order: 1
+algolia: true
 ---
   
 

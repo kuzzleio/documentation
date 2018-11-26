@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: Android
+algolia: true
 ---
 
 ## Database Search with Android

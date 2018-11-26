@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: getServerInfo
 description: Kuzzle:getServerInfo
+algolia: true
 ---
   
 

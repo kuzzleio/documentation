@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: refreshIndex
 description: Kuzzle:refreshIndex
+algolia: true
 ---
   
 

@@ -4,6 +4,7 @@ title: Introduction
 order: 0
 description: The reference for the data-validation engine in Kuzzle.
 icon: fa-check
+algolia: true
 ---
 
 # Data Validation

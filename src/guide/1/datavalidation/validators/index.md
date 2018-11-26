@@ -4,6 +4,7 @@ algolia: true
 title: Validators
 description: learn how to create complex validators
 order: 200
+algolia: true
 ---
 
 # The `validators` property
