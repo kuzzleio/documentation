@@ -12,10 +12,12 @@ separator: essentials
 In this tutorial you will learn how to install the Kuzzle **Go SDK**.
 We will walk you through creating scripts that can **store** documents in Kuzzle and subscribe to **notification** for each new document created.
 
+<div class="alert alert-success">
 Before proceeding, please make sure your system has these programs installed:
 
-* **Go** version 1.9 or higher (<a href="https://golang.org/doc/install">instructions here</a>)
-* A running Kuzzle server.
+* **Go** version 1.9 or higher (you can find instructions <a href="https://golang.org/doc/install">here</a>).
+* A running Kuzzle server (you can find instructions <a href="guide/1/essentials/installing-kuzzle/">here</a>).
+</div>
 
 ## Installation
 
