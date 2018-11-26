@@ -29,8 +29,8 @@ This will fetch the SDK and install it in your `GOPATH`.
 
 ## First connection
 
-Initialize a new Go project as describe in [Go Documentation](https://golang.org/doc/code.html#Command).
-Then, create a `init.go` file and start by adding the code below:
+Initialize a new Go project as described in [Go Documentation](https://golang.org/doc/code.html#Command).
+Then create a `init.go` file and start by adding the code below:
 
 [snippet=init]
 
@@ -55,7 +55,7 @@ You are now able to:
 
 ## Create your first document
 
-Now you successfully connected to your Kuzzle server with the Go SDK and have an index and a collection, it's time to manipulate data. Kuzzle use `indexes` that contain `collections`.
+Now you successfully connected to your Kuzzle server with the Go SDK and have an index and a collection, it's time to manipulate data. Kuzzle uses `indexes` that contain `collections`.
 Those `collections` store `documents`.
 Create a `document.go` file in the playground and add this code:
 
@@ -73,7 +73,7 @@ You can perform other actions such as [delete]({{ site_base_path }}sdk-reference
 [replace]({{ site_base_path }}sdk-reference/go/1/document/replace) or [search]({{ site_base_path }}sdk-reference/go/1/document/search) documents. There are also other way to manipulate data in Kuzzle
 like our [Admin Console]({{ site_base_path }}guide/2/essentials/installing-console/), the [Kuzzle HTTP API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/) or your [own protocol](protocols/1/essentials/getting-started/).
 
-Now, you know how to:
+Now you know how to:
 * Store data in your Kuzzle server with documents and access it.
 
 ## Subscribe to realtime document notifications (pub/sub)
