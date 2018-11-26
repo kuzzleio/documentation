@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: fetchDocument
 description: Collection:fetchDocument
+algolia: true
 ---
   
 

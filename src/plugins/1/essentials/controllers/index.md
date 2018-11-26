@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: Controllers
 order: 400
+algolia: true
 ---
 
 # Controllers

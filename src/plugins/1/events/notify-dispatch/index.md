@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: notify:dispatch
+algolia: true
 ---
 
 # notify:dispatch

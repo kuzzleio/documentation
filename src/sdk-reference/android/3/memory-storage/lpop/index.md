@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: lpop
 description: MemoryStorage:lpop
+algolia: true
 ---
   
 

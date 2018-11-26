@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: setContent
 description: Document:setContent
+algolia: true
 ---
   
 

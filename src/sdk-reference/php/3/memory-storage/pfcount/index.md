@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: pfcount
 description: MemoryStorage:pfcount
+algolia: true
 ---
   
 

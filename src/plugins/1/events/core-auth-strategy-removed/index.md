@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: core:auth:strategyRemoved
+algolia: true
 ---
 
 # core:auth:strategyRemoved

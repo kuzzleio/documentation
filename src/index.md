@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: full.html.hbs
+algolia: true
 ---
 
 # Introduction

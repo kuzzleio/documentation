@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: del
 description: MemoryStorage:del
+algolia: true
 ---
   
 

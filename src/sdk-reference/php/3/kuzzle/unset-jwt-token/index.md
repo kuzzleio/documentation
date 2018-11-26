@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: unsetJwtToken
 description: Kuzzle:unsetJwtToken
+algolia: true
 ---
   
 

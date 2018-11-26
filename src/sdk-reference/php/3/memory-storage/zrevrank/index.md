@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: zrevrank
 description: MemoryStorage:zrevrank
+algolia: true
 ---
   
 

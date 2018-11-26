@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: incrby
 description: MemoryStorage:incrby
+algolia: true
 ---
   
 

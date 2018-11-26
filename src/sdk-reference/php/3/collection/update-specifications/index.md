@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: updateSpecifications
 description: Collection:updateSpecifications
+algolia: true
 ---
   
 

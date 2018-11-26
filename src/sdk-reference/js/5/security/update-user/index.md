@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: updateUser
 description: Security:updateUser
+algolia: true
 ---
   
 
