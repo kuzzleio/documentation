@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: getRoleMapping
-algolia: true
 ---
 
 

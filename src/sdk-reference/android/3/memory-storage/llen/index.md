@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: llen
 description: MemoryStorage:llen
-algolia: true
 ---
   
 

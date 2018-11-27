@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: credentialsExist
 description: Check that the current user has credentials for the specified strategy
-algolia: true
 ---
 
 # credentialsExist

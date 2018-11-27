@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Events
 order: 100
-algolia: true
 ---
 
 # Events

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: hincrbyfloat
 description: MemoryStorage:hincrbyfloat
-algolia: true
 ---
   
 

@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Javascript
-algolia: true
 ---
 
 ## Pub/Sub with Javascript

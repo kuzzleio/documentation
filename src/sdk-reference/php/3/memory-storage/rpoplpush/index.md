@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: rpoplpush
 description: MemoryStorage:rpoplpush
-algolia: true
 ---
   
 

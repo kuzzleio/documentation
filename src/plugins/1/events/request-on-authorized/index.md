@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: request:onAuthorized
-algolia: true
 ---
 
 # request:onAuthorized

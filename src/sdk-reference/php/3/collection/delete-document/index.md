@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: deleteDocument
 description: Collection:deleteDocument
-algolia: true
 ---
   
 

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: zscan
 description: MemoryStorage:zscan
-algolia: true
 ---
   
 

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: hexists
 description: MemoryStorage:hexists
-algolia: true
 ---
   
 

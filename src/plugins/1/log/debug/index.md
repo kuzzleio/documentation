@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: debug
 order: 4
-algolia: true
 ---
 
 # debug

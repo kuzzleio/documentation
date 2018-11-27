@@ -1,10 +1,8 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Specification Structure
 description: understanding the validation mechanisms
 order: 0
-algolia: true
 ---
 
 # Specification Structure
