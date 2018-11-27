@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: First Steps
 description: learn kuzzle in a few steps
-algolia: true
 ---
 
 # Getting Started

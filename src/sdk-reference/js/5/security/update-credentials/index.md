@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: updateCredentials
 description: Security:updateCredentials
-algolia: true
 ---
   
 

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: createProfile
 description: Security:createProfile
-algolia: true
 ---
   
 

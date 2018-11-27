@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: save
 description: Profile:save
-algolia: true
 ---
   
 

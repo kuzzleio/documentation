@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: bitcount
 description: MemoryStorage:bitcount
-algolia: true
 ---
   
 

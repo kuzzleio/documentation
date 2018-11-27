@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: deleteUser
 description: Security:deleteUser
-algolia: true
 ---
   
 

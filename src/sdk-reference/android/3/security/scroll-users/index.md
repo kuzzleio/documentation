@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: scrollUsers
 description: Security:scrollUsers
-algolia: true
 ---
   
 

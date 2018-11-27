@@ -1,10 +1,8 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: SearchResult
 description: How to deal with Kuzzle search results
 order: 700
-algolia: true
 ---
 # SearchResult
 

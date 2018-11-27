@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: ping
 description: MemoryStorage:ping
-algolia: true
 ---
   
 

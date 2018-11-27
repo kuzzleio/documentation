@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: persist
-algolia: true
 ---
 
 # persist

@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Advanced Roles Definitions
-algolia: true
 ---
 
 # Advanced Roles Definitions

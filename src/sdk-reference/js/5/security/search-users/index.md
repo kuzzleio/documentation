@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: searchUsers
 description: Security:searchUsers
-algolia: true
 ---
   
 

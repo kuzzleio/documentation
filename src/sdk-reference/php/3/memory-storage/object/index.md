@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: object
 description: MemoryStorage:object
-algolia: true
 ---
   
 

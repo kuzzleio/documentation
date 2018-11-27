@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Subscribe
 description: Subscribe to real-time notifications
-algolia: true
 ---
 
 # Subscribe

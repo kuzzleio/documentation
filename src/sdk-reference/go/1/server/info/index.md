@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Info
 description: Returns information about Kuzzle server.
-algolia: true
 ---
 
 # Info

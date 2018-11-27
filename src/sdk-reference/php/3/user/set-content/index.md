@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: setContent
 description: User:setContent
-algolia: true
 ---
   
 

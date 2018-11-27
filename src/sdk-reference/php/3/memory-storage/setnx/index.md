@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: setnx
 description: MemoryStorage:setnx
-algolia: true
 ---
   
 

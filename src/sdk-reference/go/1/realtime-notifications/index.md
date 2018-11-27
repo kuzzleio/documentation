@@ -1,10 +1,8 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Realtime notifications
 description: List of realtime notifications sent by Kuzzle
 order: 300
-algolia: true
 ---
 # Notifications
 

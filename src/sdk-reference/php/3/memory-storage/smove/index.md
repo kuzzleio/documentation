@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: smove
 description: MemoryStorage:smove
-algolia: true
 ---
   
 

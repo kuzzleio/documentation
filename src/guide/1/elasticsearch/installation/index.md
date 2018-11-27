@@ -1,10 +1,8 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Installation
 description: learn how to install elasticsearch from scratch
 order: 100
-algolia: true
 ---
 
 # Installation
