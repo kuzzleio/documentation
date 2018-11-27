@@ -31,11 +31,9 @@ function sleep (ms) {
   };
 
   [snippet-code] finally {
-    (async () => {
-      for (let i = 20; i > 0 && outputs.length <= 0; --i) {
-        await sleep(200);
-      }
-    })();
+    for (let i = 20; i > 0 && outputs.length <= 0; --i) {
+      await sleep(200);
+    }
 
     console.log = consoleLog;
     console.log(...outputs);

@@ -22,7 +22,7 @@ function callback (notification) {
 try {
   // Subscribe to notifications when document leaves the scope
   const filters = { range: { age: { lte: 20 } } };
-  const options = {};//{ scope: 'out' };
+  const options = { scope: 'out' };
 
   await kuzzle.realtime.subscribe(
     'nyc-open-data',
