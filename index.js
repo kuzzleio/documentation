@@ -253,6 +253,18 @@ metalsmith
 if (options.algolia.privateKey) {
   log('Algolia indexing enabled');
   metalsmith
+    //Add algolia metas automatically only if needed
+    .use((files, ms, done) => {
+      for (const file of Object.values(files)) {
+        if (file.ancestry) {
+          const lastChildren = ancestryHelpers.getLastChildren(file);
+          if (lastChildren.path === file.path) {
+            file.algolia = true;
+          }
+        }
+      }
+      setImmediate(done);
+    })
     .use(algolia({
       clearIndex: true,
       projectId: options.algolia.projectId,
