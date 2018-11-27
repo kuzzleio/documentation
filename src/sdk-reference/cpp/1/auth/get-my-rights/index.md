@@ -13,7 +13,7 @@ Returns the rights for the user linked to the `JSON Web Token`, provided in the 
 ## Signature
 
 ```cpp
-user_right* getMyRights(query_options *options=nullptr);
+std::vector<user_right*> getMyRights(query_options *options=nullptr);
 ```
 
 ## Arguments
@@ -32,15 +32,15 @@ Additional query options
 
 ## Return
 
-A pointer to a user_right object containing:
+A std::vector of `user_right*`. The `user_right` structure contain:
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `controller` | const char* | The controller on wich the rights are applied |
-| `action` | const char* | The action on wich the rights are applied |
-| `index` | const char* | The index on wich the rights are applied |
-| `collection` | const char* | The collection on wich the rights are applied |
-| `value` | const char* | The rights |
+| `controller` | const char* | Controller on wich the rights are applied |
+| `action` | const char* | Action on wich the rights are applied |
+| `index` | const char* | Index on wich the rights are applied |
+| `collection` | const char* | Collection on wich the rights are applied |
+| `value` | const char* | Rights (`allowed|denied|conditional`) |
 
 ## Exceptions
 

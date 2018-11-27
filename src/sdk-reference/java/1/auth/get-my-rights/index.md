@@ -35,15 +35,15 @@ Additional query options
 
 ## Return
 
-An array of UserRight containing:
+An array of `UserRight`. The `UserRight` class contain:
 
 | Property     | Type    | Description
 | ---------- | ------- | ---------------------------------
-| `controller` | String | The controller on wich the rights are applied |
-| `action` | String | The action on wich the rights are applied |
-| `index` | String | The index on wich the rights are applied |
-| `collection` | String | The collection on wich the rights are applied |
-| `value` | String | The rights |
+| `controller` | String | Controller on wich the rights are applied |
+| `action` | String | Action on wich the rights are applied |
+| `index` | String | Index on wich the rights are applied |
+| `collection` | String | Collection on wich the rights are applied |
+| `value` | String | Rights (`allowed|denied|conditional`) |
 
 ## Exceptions
 
