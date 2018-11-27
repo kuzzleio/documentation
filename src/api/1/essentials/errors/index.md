@@ -4,6 +4,7 @@ algolia: true
 title: Error Handling
 description: Understanding the Kuzzle error handling mechanisms
 order: 500
+algolia: true
 ---
 
 # Error Handling

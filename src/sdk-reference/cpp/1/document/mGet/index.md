@@ -4,6 +4,7 @@ algolia: true
 title: mGet
 description: Get multiple documents from kuzzle
 order: 200
+algolia: true
 ---
 
 # mGet

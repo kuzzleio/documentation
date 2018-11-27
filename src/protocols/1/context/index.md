@@ -4,4 +4,5 @@ algolia: true
 title: Context
 description: Protocol context
 order: 200
+algolia: true
 ---

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: getMapping
 description: Return collection mapping
+algolia: true
 ---
 
 # getMapping

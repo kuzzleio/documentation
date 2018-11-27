@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: hset
 description: MemoryStorage:hset
+algolia: true
 ---
   
 

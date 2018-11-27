@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: http:patch
+algolia: true
 ---
 
 # http:patch

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: setHeaders
 description: Room:setHeaders
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: pexpire
 description: MemoryStorage:pexpire
+algolia: true
 ---
   
 

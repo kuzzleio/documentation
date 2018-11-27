@@ -2,6 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: scroll
+algolia: true
 ---
 
 # scroll

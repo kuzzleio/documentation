@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: rename
 description: MemoryStorage:rename
+algolia: true
 ---
   
 

@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: bitop
 description: MemoryStorage:bitop
+algolia: true
 ---
   
 

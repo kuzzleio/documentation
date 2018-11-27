@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: connect
 description: Kuzzle:connect
+algolia: true
 ---
   
 

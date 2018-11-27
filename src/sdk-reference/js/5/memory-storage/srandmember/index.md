@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: srandmember
 description: MemoryStorage:srandmember
+algolia: true
 ---
   
 

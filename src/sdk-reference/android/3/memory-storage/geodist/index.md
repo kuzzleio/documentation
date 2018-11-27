@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: geodist
 description: MemoryStorage:geodist
+algolia: true
 ---
   
 

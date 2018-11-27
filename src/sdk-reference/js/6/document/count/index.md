@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: count
 description: Count documents matching the given query
+algolia: true
 ---
 
 # count

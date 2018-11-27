@@ -3,6 +3,7 @@ layout: sdk.html.hbs
 algolia: true
 title: getSpecifications
 description: Collection:getSpecifications
+algolia: true
 ---
   
 

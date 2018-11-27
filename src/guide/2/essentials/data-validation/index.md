@@ -3,6 +3,7 @@ layout: full.html.hbs
 algolia: true
 title: Data Validation
 order: 500
+algolia: true
 ---
 
 # Data Validation
