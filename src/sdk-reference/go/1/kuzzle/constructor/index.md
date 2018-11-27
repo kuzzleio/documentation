@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Constructor
 description: Create a new Kuzzle object connected to the backend
 ---

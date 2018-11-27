@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Error Handling
 description: Understanding the Kuzzle error handling mechanisms
 order: 500

@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Validators
 description: learn how to create complex validators
 order: 200

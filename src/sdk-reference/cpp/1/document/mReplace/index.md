@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: mReplace
 description: Replace documents
 order: 200

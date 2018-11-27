@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: constructor
 description: Role:constructor
 order: 1

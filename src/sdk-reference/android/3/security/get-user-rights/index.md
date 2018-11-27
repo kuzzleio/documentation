@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getUserRights
 description: Security:getUserRights
 ---

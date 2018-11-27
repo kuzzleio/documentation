@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: validateMyCredentials
 description: Validate the current user's credentials for the specified `<strategy>`.
 ---

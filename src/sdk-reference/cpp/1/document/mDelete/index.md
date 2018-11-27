@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: mDelete
 description: Delete a document
 order: 200

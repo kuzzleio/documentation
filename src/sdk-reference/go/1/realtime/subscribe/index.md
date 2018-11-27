@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Subscribe
 description: Subscribe to real-time notifications
 ---
@@ -16,7 +15,7 @@ func (r *Realtime) Subscribe(
   index string,
   collection string,
   filters json.RawMessage,
-  listener chan<- types.KuzzleNotification,
+  listener chan<- types.NotificationResult,
   options types.RoomOptions
 ) (*types.SubscribeResult, error)
 ```
@@ -28,12 +27,12 @@ func (r *Realtime) Subscribe(
 | `index` | <pre>string</pre> | Index name    |
 | `collection` | <pre>string</pre> | Collection name    |
 | `filters` | <pre>json.RawMessage</pre> | A set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
-| `listener` | <pre>chan<- types.KuzzleNotification</pre> | Channel receiving the notification |
+| `listener` | <pre>chan<- types.NotificationResult</pre> | Channel receiving the notification |
 | `options` | <pre>types.RoomOptions</pre> | A struct containing subscription options |
 
 ### listener
 
-A channel for [types.KuzzleNotification]({{site_base_path}}sdk-reference/cpp/1/essentials/realtime-notifications) objects.
+A channel for [types.NotificationResult]({{site_base_path}}sdk-reference/cpp/1/essentials/realtime-notifications) objects.
 The channel will receive an object each time a new notifications is received.
 
 ### options

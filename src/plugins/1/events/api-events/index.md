@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: "> API Events"
 order: 100
 ---

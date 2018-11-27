@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: updateDocument
 description: Collection:updateDocument
 ---

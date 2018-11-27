@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Query Syntax
 description: Kuzzle query format
 order: 200

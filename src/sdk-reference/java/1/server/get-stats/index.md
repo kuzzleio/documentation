@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getStats
 description: Returns statistics snapshots within a provided timestamp range.
 ---

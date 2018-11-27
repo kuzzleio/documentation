@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Basic Queries
 description: learn how to search data with elasticsearch
 order: 400

@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Go
 ---
 
@@ -66,7 +65,7 @@ func Subscribe() {
 func Publish() {
     cn := websocket.NewWebSocket("localhost", nil)
     k, _ := kuzzle.NewKuzzle(cn, nil)
-    
+
     /* TODO */
 }
 ```
@@ -102,7 +101,7 @@ var filters = GeofencingFilters{
 }
 ```
 
-This defines a circular boundary centered around [Big Ben](https://www.google.com/maps/place/Big+Ben/@51.510357,-0.116773,15z/data=!4m12!1m6!3m5!1s0x0:0xb78f2474b9a45aa9!2sBig+Ben!8m2!3d51.5007292!4d-0.116773!3m4!1s0x0:0xb78f2474b9a45aa9!8m2!3d51.5007292!4d-0.1246254) with a radius of 2km. For more information about the `geoDistance` filter click [here]({{ site_base_path }}kuzzle-dsl/terms/geo-distance/). 
+This defines a circular boundary centered around [Big Ben](https://www.google.com/maps/place/Big+Ben/@51.510357,-0.116773,15z/data=!4m12!1m6!3m5!1s0x0:0xb78f2474b9a45aa9!2sBig+Ben!8m2!3d51.5007292!4d-0.116773!3m4!1s0x0:0xb78f2474b9a45aa9!8m2!3d51.5007292!4d-0.1246254) with a radius of 2km. For more information about the `geoDistance` filter click [here]({{ site_base_path }}kuzzle-dsl/terms/geo-distance/).
 
 Note that we use the field name `location` to store the geopoint we are centered around. This means that Kuzzle will monitor the field named `location` for position changes, and so any user location document sent to Kuzzle must also contain this field.
 
@@ -114,12 +113,12 @@ Now use the Collection `Subscribe` method to execute the subscription request, a
 c := collection.NewCollection(k, "mycollection", "myindex")
 
 ro := types.NewRoomOptions()
-rtc := make(chan *types.KuzzleNotification)
+rtc := make(chan *types.NotificationResult)
 res := <- c.Subscribe(filters, ro.SetScope("out"), rtc)
 if res.Error != nil {
     handleError(res.Error)
 } else {
-    go func (rtc chan *types.KuzzleNotification) {
+    go func (rtc chan *types.NotificationResult) {
         doSomething(<-rtc) // triggered each time the user leaves the circular area around Big Ben
     }(rtc)
 }
@@ -166,7 +165,7 @@ newLocation.Content = []byte(`{"location": {"lat": 51.507268, "lon": -0.165730}}
 c.UpdateDocument("326c8f08-63b0-429f-8917-b782d30930e9", newLocation, nil)
 ```
 
-When the document update request is sent to Kuzzle, it will detect the change in location and send a message to the subscriber, which in this case is our App. 
+When the document update request is sent to Kuzzle, it will detect the change in location and send a message to the subscriber, which in this case is our App.
 
 ## Run the Test
 
@@ -212,12 +211,12 @@ func  Subscribe(){
     }
     //Create a subscription that triggers a notification when a user the circular area
     ro := types.NewRoomOptions()
-    rtc := make(chan *types.KuzzleNotification)
+    rtc := make(chan *types.NotificationResult)
     res := <- c.Subscribe(filters, ro.SetScope("out"), rtc)
     if res.Error != nil {
         handleError(res.Error)
     } else {
-        go func (rtc chan *types.KuzzleNotification) {
+        go func (rtc chan *types.NotificationResult) {
         doSomething(<-rtc) // triggered each time the user leaves the circular area around Big Ben
         }(rtc)
     }
@@ -228,7 +227,7 @@ func Publish(){
     //Connect to Kuzzle
     cn := websocket.NewWebSocket("localhost", nil)
     k, _ := kuzzle.NewKuzzle(cn, nil)
-    
+
     //Get the collection
     c := collection.NewCollection(k, "mycollection", "myindex")
 
@@ -249,7 +248,7 @@ func Publish(){
 
 ```
 
-Create a test file using your favorite test framework. For a working example of this code refer to `go` folder in our snippet test [github repository](https://github.com/kuzzleio/kuzzle.io-snippet-tests). You can run the test using Visual Studio Code (using the launch.json configuration provided in the repository) or simply by executing the following command in the `geoFence` folder: 
+Create a test file using your favorite test framework. For a working example of this code refer to `go` folder in our snippet test [github repository](https://github.com/kuzzleio/kuzzle.io-snippet-tests). You can run the test using Visual Studio Code (using the launch.json configuration provided in the repository) or simply by executing the following command in the `geoFence` folder:
 
 ```bash
     go run test.go snippet.go

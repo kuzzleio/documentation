@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: startQueuing
 description: Starts the requests queuing
 ---

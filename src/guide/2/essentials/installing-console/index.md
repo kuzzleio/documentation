@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Install Kuzzle Admin Console
 order: 100
 ---

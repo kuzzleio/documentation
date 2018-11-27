@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Controllers
 order: 400
 ---
