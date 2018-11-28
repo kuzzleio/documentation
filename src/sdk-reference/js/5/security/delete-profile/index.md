@@ -8,10 +8,10 @@ description: Security:deleteProfile
 # deleteProfile
 Delete the provided profile.
 
-<aside class="notice">
+<div class="alert alert-info">
 There is a small delay between the time a profile is deleted and it being reflected in the search layer (usually a couple of seconds).
 That means that a profile that was just deleted may still be returned by the <code>searchProfiles</code> function at first.
-</aside>
+</div>
 
 ---
 

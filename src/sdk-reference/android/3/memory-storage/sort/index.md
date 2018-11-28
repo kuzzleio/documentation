@@ -9,9 +9,9 @@ description: MemoryStorage:sort
 Sorts and returns elements contained in a list, a set of unique values or a sorted set.
 By default, sorting is numeric and elements are compared by their value interpreted as double precision floating point number.
 
-<aside class="left notice">
+<div class="alert alert-info"
 While Kuzzle's API supports the "store" option for this command, Kuzzle SDK methods do not. To sort and store in the same process, use the <a href="{{ site_base_path }}sdk-reference/kuzzle/query">query method</a>
-</aside>
+</div>
 
 [[_Redis documentation_]](https://redis.io/commands/sort)
 

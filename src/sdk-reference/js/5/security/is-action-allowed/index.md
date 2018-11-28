@@ -14,9 +14,9 @@ Specifies if an action is allowed, denied or conditional based on the rights pro
 
 An action is defined as a pair of action and controller (mandatory), plus an index and a collection(optional).
 
-<aside class="notice">
+<div class="alert alert-info">
 You can get the rights from Kuzzle by using <a href="{{ site_base_path }}sdk-reference/security/get-user-rights">`Security.getUserRights`</a> and <a href="{{ site_base_path }}sdk-reference/kuzzle/get-my-rights">`Kuzzle.getMyRights`</a>.
-</aside>
+</div>
 
 ---
 

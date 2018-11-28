@@ -29,9 +29,9 @@ Return users matching the given filter.
 | ``scroll`` | string | Start a scroll session, with a time to live equals to this parameter's value following the [Elastisearch time format](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/common-options.html#time-units) | ``undefined`` |
 | ``size`` | number |  Number of hits to return per result page | ``10`` |
 
-<aside class="notice">
+<div class="alert alert-info">
   To get more information about scroll sessions, please refer to the <a href="{{ site_base_path }}api-documentation/controller-document/search">API reference documentation</a>.
-</aside>
+</div>
 
 ---
 

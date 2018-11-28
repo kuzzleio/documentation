@@ -23,9 +23,9 @@ If the previous request was a search action which provided `from` and `size` arg
 ## How to process every document of a collection
 The safest way to process all documents in a collection is to fetch them as a batch in order to avoid memory exhaustion and possibly hitting some hard limits<sup>\[1\]</sup> on the database layer.
 
-<aside class="warning">Make sure your first search request includes <code>size</code> and <code>scroll</code> parameters</aside>
+<div class="alert alert-warning">Make sure your first search request includes <code>size</code> and <code>scroll</code> parameters</div>
 
-<aside class="notice"><sup>\[1\]</sup> Elasticsearch limits the number of documents inside a single page to [10,000 by default](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/index-modules.html#dynamic-index-settings).</aside>
+<div class="alert alert-info"><sup>\[1\]</sup> Elasticsearch limits the number of documents inside a single page to [10,000 by default](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/index-modules.html#dynamic-index-settings).</div>
 
 ## Usage
 

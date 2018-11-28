@@ -17,9 +17,9 @@ If the request succeeds but there is no token, then it means that the chosen str
 If the login attempt fails, the `loginAttempt` event is fired with the following response:  
 `{ success: false, error: 'error message' }`
 
-<aside class="notice">
+<div class="alert alert-info">
 This method is non-queuable, meaning that during offline mode, it will be discarded and the callback will be called with an error. <a href="{{ site_base_path }}guide/essentials/user-authentication/#local-strategy">Learn more.</a>
-</aside>
+</div>
 
 ---
 

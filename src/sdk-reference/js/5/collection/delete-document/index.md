@@ -8,9 +8,9 @@ description: Collection:deleteDocument
 # deleteDocument
 Delete a stored document, or all stored documents matching a search filter.
 
-<aside class="notice">
+<div class="alert alert-info">
 There is a small delay between the time a document is deleted and it being reflected in the search layer (usually a couple of seconds). That means that a document that was just deleted may still be returned by this function at first.
-</aside>
+</div>
 
 ---
 
