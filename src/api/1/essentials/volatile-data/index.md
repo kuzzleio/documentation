@@ -1,10 +1,8 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Volatile Data
 description: broadcast extra information to subscribers
 order: 400
-algolia: true
 ---
 
 # Volatile Data

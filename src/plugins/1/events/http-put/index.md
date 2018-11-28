@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: http:put
-algolia: true
 ---
 
 # http:put

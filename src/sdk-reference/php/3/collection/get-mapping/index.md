@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getMapping
 description: Collection:getMapping
-algolia: true
 ---
   
 

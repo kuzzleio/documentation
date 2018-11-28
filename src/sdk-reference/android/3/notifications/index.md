@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Notifications
 order: 300
-algolia: true
 ---
 
 # Notifications

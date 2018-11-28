@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: strlen
 description: MemoryStorage:strlen
-algolia: true
 ---
   
 

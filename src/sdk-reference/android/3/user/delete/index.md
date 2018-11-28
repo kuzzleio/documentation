@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: delete
 description: User:delete
-algolia: true
 ---
   
 

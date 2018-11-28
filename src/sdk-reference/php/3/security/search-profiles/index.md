@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: searchProfiles
 description: Security:searchProfiles
-algolia: true
 ---
   
 

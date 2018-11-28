@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: publish
 description: Document:publish
-algolia: true
 ---
   
 

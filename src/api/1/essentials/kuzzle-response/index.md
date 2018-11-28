@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Kuzzle Response
 order: 300
-algolia: true
 ---
 
 # Kuzzle Response

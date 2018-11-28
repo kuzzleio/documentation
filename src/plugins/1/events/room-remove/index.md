@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: room:remove
-algolia: true
 ---
 
 # room:remove

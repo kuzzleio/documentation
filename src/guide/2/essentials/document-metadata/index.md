@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Document Metadata
 order: 450
-algolia: true
 ---
 
 # Document Metadata

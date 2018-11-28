@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: scard
 description: MemoryStorage:scard
-algolia: true
 ---
   
 
