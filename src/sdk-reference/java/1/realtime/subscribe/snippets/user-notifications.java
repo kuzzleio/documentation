@@ -21,7 +21,8 @@ try {
 
     // instantiate a second kuzzle client because
     // the same sdk instance does not receive his own notifications
-    Kuzzle fuzzle = new Kuzzle("kuzzle");
+    WebSocket anotherSocket = new WebSocket("kuzzle");
+    Kuzzle fuzzle = new Kuzzle(anotherSocket);
     fuzzle.connect();
 
     // Set some volatile data
