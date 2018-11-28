@@ -8,7 +8,7 @@
 #include "websocket.hpp"
 
 int main() {
-  const char* hostname = "kuzzle";
+  std::string hostname = "kuzzle";
 
   kuzzleio::WebSocket* ws = new kuzzleio::WebSocket(hostname);
   kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(ws);
