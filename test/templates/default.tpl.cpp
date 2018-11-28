@@ -8,14 +8,16 @@
 #include "websocket.hpp"
 
 int main() {
-  std::string hostname = "kuzzle";
+  const char* hostname = "kuzzle";
 
   kuzzleio::WebSocket* ws = new kuzzleio::WebSocket(hostname);
   kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(ws);
 
-  char* error = kuzzle->connect();
-  if (error != nullptr) {
-    std::cerr << "Unable to connect to " << hostname << ":" << kuzzle->getProtocol()->getPort() << std::endl << error << std::endl;
+  try {
+    kuzzle->connect();
+  }
+  catch (kuzzleio::KuzzleException e) {
+    std::cerr << "Unable to connect to " << hostname << ":" << kuzzle->getProtocol()->getPort() << std::endl << e.what() << std::endl;
     return 1;
   }
 
