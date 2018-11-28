@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Pipes
 order: 300
-algolia: true
 ---
 
 # Pipes

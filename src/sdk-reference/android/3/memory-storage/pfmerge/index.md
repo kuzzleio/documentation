@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: pfmerge
 description: MemoryStorage:pfmerge
-algolia: true
 ---
   
 

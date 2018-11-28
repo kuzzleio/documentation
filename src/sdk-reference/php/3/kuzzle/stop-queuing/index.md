@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: stopQueuing
 description: Kuzzle:stopQueuing
-algolia: true
 ---
   
 

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: setHeaders
 description: Kuzzle:setHeaders
-algolia: true
 ---
   
 

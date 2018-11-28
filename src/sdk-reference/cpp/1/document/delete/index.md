@@ -1,10 +1,8 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: delete
 description: Deletes a document from kuzzle
 order: 200
-algolia: true
 ---
 
 # delete_

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: setAutoRefresh
 description: Kuzzle:setAutoRefresh
-algolia: true
 ---
   
 

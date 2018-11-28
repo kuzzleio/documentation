@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Android
-algolia: true
 ---
 
 ## Pub/Sub with Android

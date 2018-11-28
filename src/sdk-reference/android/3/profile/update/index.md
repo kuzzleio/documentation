@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: update
 description: Profile:update
-algolia: true
 ---
   
 

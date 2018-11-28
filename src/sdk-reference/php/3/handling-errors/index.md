@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Error Handling
 order: 200
-algolia: true
 ---
 
 # Error Handling

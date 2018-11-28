@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: logout
 description: Kuzzle:logout
-algolia: true
 ---
   
 

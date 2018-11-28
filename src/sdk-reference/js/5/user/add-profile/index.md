@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: addProfile
 description: User:addProfile
-algolia: true
 ---
   
 

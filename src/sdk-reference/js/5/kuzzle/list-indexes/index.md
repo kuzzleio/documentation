@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: listIndexes
 description: Kuzzle:listIndexes
-algolia: true
 ---
   
 

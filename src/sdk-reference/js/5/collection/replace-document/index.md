@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: replaceDocument
 description: Collection:replaceDocument
-algolia: true
 ---
   
 

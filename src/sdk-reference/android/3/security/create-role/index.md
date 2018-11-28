@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: createRole
 description: Security:createRole
-algolia: true
 ---
   
 

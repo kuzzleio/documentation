@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: KuzzleError
 order: 10
-algolia: true
 ---
 
 # KuzzleError
