@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: setAutoRefresh
 description: Set the autorefresh flag
-algolia: true
 ---
 
 # setAutoRefresh

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getJwtToken
 description: Kuzzle:getJwtToken
-algolia: true
 ---
   
 

@@ -1,18 +1,16 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: setContent
 description: Role:setContent
-algolia: true
 ---
   
 
 # setContent
 Replaces the content of the `Role` object.
 
-<aside class="note">
+<div class="alert alert-info">
 Updating a role content will have no impact until the <a href="{{ site_base_path }}sdk-reference/role/save">save</a> method is called
-</aside>
+</div>
 
 ---
 

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: replaceUser
 description: Security:replaceUser
-algolia: true
 ---
   
 

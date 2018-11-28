@@ -1,8 +1,7 @@
 ---
 layout: sdk.html.hbs
-title: Index
+title: getIndex
 description: Index Controller
-algolia: true
 ---
 
 # Index Controller

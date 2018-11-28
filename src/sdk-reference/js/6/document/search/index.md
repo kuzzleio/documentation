@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: search
 description: Search for documents
-algolia: true
 ---
 
 # search

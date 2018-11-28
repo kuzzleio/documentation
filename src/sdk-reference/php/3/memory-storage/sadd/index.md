@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: sadd
 description: MemoryStorage:sadd
-algolia: true
 ---
   
 

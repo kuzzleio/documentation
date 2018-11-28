@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: removeListener
 description: Kuzzle:removeListener
-algolia: true
 ---
   
 

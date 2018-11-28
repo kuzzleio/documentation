@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: hvals
 description: MemoryStorage:hvals
-algolia: true
 ---
   
 

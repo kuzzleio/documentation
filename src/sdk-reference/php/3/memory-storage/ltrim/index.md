@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: ltrim
 description: MemoryStorage:ltrim
-algolia: true
 ---
   
 

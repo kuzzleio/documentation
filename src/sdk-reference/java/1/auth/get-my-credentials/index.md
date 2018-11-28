@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getMyCredentials
 description:
-algolia: true
 ---
 
 # getMyCredentials

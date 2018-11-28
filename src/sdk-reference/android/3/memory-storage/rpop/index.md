@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: rpop
 description: MemoryStorage:rpop
-algolia: true
 ---
   
 

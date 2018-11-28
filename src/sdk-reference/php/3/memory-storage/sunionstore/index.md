@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: sunionstore
 description: MemoryStorage:sunionstore
-algolia: true
 ---
   
 

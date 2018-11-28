@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: silly
 order: 5
-algolia: true
 ---
 
 # silly

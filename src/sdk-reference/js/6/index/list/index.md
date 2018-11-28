@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: list
 description: Lists the indexes
-algolia: true
 ---
 
 # list
