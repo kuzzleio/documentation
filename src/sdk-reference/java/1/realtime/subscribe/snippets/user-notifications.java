@@ -12,16 +12,17 @@ String document = "{ \"name\": \"nina vkote\", \"age\": 19 }";
 
 try {
     kuzzle.getRealtime().subscribe(
-      "nyc-open-data", 
-      "yellow-taxi", 
-      filters, 
-      listener, 
+      "nyc-open-data",
+      "yellow-taxi",
+      filters,
+      listener,
       options
     );
 
     // instantiate a second kuzzle client because
     // the same sdk instance does not receive his own notifications
-    Kuzzle fuzzle = new Kuzzle("kuzzle");
+    WebSocket anotherSocket = new WebSocket("kuzzle");
+    Kuzzle fuzzle = new Kuzzle(anotherSocket);
     fuzzle.connect();
 
     // Set some volatile data
@@ -29,9 +30,9 @@ try {
 
     // Subscribe to the same room with the second client
     fuzzle.getRealtime().subscribe(
-      "nyc-open-data", 
-      "yellow-taxi", 
-      filters, 
+      "nyc-open-data",
+      "yellow-taxi",
+      filters,
       listener
     );
 } catch (KuzzleException e) {
