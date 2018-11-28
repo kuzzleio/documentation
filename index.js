@@ -257,7 +257,7 @@ if (options.algolia.privateKey) {
     // the last child in the tree structure
     .use((files, ms, done) => {
       for (const file of Object.values(files)) {
-        if (file.ancestry) { // only content page (.md) has ancestry object
+        if (file.ancestry) { // only content pages (.md) have ancestry object
           const lastChildren = ancestryHelpers.getLastChildren(file);
           if (lastChildren.path === file.path) {
             file.algolia = true;
