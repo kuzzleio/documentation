@@ -39,8 +39,8 @@ int main() {
 
   [snippet-code]
 
-  for (size_t i = 20; i > 0 && is_empty(&cout_copy); --i) {
-    usleep(200);
+  for (size_t i = 150; i > 0 && is_empty(&cout_copy); --i) {
+    usleep(200000);
   }
 
   std::cout.rdbuf(cout_original);

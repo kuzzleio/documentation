@@ -19,7 +19,7 @@ public class CodeExampleGenericClass {
 
       [snippet-code]
 
-      for (int i = 20; i > 0 && baos.size() == 0; --i) {
+      for (int i = 150; i > 0 && baos.size() == 0; --i) {
         try {
           Thread.sleep(200);
         } catch (InterruptedException e) {
