@@ -8,10 +8,10 @@ description: Security:createRole
 # createRole
 Create a new role in Kuzzle.
 
-<aside class="notice">
+<div class="alert alert-info">
 There is a small delay between role creation and its availability in our search layer (usually a couple of seconds).
 That means that a role that was just created may not be returned by the <code>searchRole</code> function at first.
-</aside>
+</div>
 ---
 
 ## createRole(id, content, [options], callback)

@@ -12,7 +12,7 @@ immediately after each write request, causing documents to be immediately visibl
 
 Given an index, the `setAutoRefresh` function updates its `autoRefresh` status.
 
-<aside class="left warning">
+<div class="alert alert-warning">
     <p>
         A refresh operation comes with some performance costs.
     </p>
@@ -20,7 +20,7 @@ Given an index, the `setAutoRefresh` function updates its `autoRefresh` status.
         While forcing the autoRefresh can be convenient on a development or test environmnent, we recommend that you avoid
         using it in production or at least carefully monitor its implications before using it.
     </p>
-</aside>
+</div>
 
 ---
 

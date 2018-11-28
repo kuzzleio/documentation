@@ -8,10 +8,10 @@ description: Kuzzle:query
 ## query
 Base method used to send queries to Kuzzle, following the [API Documentation]({{ site_base_path }}api-documentation).
 
-<aside class="warning">
+<div class="alert alert-warning">
 This is a low-level method, exposed to allow advanced SDK users to bypass high-level methods.<br/>
 Refer to Kuzzle's API Reference <a href="{{ site_base_path }}api-documentation">here</a>
-</aside>
+</div>
 
 ---
 

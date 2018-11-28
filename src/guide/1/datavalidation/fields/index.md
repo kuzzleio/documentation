@@ -144,7 +144,7 @@ This configuration is available depending on the types of the field.
 *   Only date: "2010-12-25"
 *   Time relative to the current day : "T14:12:44"
 
-<aside class="warning">Beware when using dates as range values: always make sure that, at some point, your rule won't prevent all documents from entering the system.</aside>
+<div class="alert alert-warning">Beware when using dates as range values: always make sure that, at some point, your rule won't prevent all documents from entering the system.</div>
 
 #### typeOptions.length
 
@@ -270,13 +270,13 @@ strict_year_month_day
 
 **Purpose**: Define the accepted formats that can be used for dates
 
-<aside class="warning">
+<div class="alert alert-warning">
 The format defined in the specification has to match the formats defined in the Elasticsearch mapping for the field.
 <br/>
 Non strict mode is slightly different from the one explained and implemented by Elasticsearch. Please refer to the <a href="http://momentjs.com/guides/#/parsing/strict-mode/">Moment.js documentation</a> for further details, this is the date library we use internally.
 <br/>
 Non strict mode has been implemented to fit Elasticsearch date formats but we recommend to use strict mode when possible.
-</aside>
+</div>
 
 #### typeOptions.strict
 

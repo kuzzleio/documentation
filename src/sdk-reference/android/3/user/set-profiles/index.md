@@ -8,9 +8,9 @@ description: User:setProfiles
 # setProfiles
 Replaces the security profiles linked to the user.
 
-<aside class="note">
+<div class="alert alert-info">
 Updating a user will have no impact until the <code>create</code> or <code>replace</code> method is called
-</aside>
+</div>
 ---
 
 ## setProfiles(profileIds)
