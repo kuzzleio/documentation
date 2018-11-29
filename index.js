@@ -227,6 +227,8 @@ metalsmith
 
 metalsmith
   .use((files, ms, done) => {
+    // automatically add redirection to the last children if the current file 
+    // isn't the last children (Leaf of the arborescence)
     for (const file of Object.values(files)) {
       if (file.ancestry && ! file.noredirect) {
         const lastChildren = ancestryHelpers.getLastChildren(file);
