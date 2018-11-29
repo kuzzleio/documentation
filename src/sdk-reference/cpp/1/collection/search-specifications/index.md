@@ -1,49 +1,43 @@
 ---
 layout: sdk.html.hbs
 algolia: true
-title: search
-description: Search documents
-order: 200
+title: searchSpecifications
+description: Searches collection specifications
 ---
 
-# search
+# searchSpecifications
 
-Searches documents.
+{{{since "1.0.0"}}}
 
-There is a limit to how many documents can be returned by a single search query.
-That limit is by default set at 10000 documents, and you can't get over it even with the from and size pagination options.
+Searches collection specifications.
+
+There is a limit to how many items can be returned by a single search query.
+That limit is by default set at 10000, and you can't get over it even with the from and size pagination options.
 
 <div class="alert alert-info">
-  <p>
-  When processing a large number of documents (i.e. more than 1000), it is advised to paginate the results using <code>SearchResult.next</code> rather than increasing the size parameter.
-  </p>
+  When processing a large number of items (i.e. more than 1000), it is advised to paginate the results using <code>SearchResult.next</code> rather than increasing the size parameter.
 </div>
-
 
 ## Arguments
 
 ```cpp
-SearchResult* search(
-  const std::string& index,
-  const std::string& collection,
-  const std::string& body,
-  kuzzleio::query_options *options=nullptr)
+SearchResult* searchSpecifications(
+  const std:string& body, 
+  query_options *options=nullptr)
 ```
+
+<br/>
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `index` | <pre>const std::string&</pre> | Index name |
-| `collection` | <pre>const std::string&</pre> | Collection name |
-| `body` | <pre>const std::string&</pre> | A JSON string containing the search query |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `body` | <pre>std::string</pre> | A JSON string containing the query to match |
+| `options` | <pre>kuzzleio::query_options</pre> | A pointer to a `kuzzleio::query_options` containing query options |
 
 ### options
 
-Additional query options
-
-| Option | Type<br/>(default) | Description |
-| ------ | -------------- | ----------- |
-| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
+| Options    | Type (default) | Description                       |
+| ---------- | -------------- | --------------------------------- |
+| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 | `from` | <pre>int</pre><br/>(`0`) | Offset of the first document to fetch |
 | `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
 | `scroll` | <pre>const std::string&</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
@@ -68,4 +62,4 @@ Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ s
 
 ## Usage
 
-[snippet=search]
+[snippet=search-specifications]

@@ -1,0 +1,7 @@
+name: collection#searchSpecifications
+description:
+hooks:
+  before:
+  after:
+template: default
+expected: Success

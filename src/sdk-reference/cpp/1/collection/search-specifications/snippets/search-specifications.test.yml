@@ -19,4 +19,4 @@ hooks:
     }' kuzzle:7512/_specifications?refresh=wait_for
   after: 
 template: default
-expected: 'fetched: 1'
+expected: Successfully retrieved 1 specifications
