@@ -38,6 +38,7 @@ function sleep (ms) {
     console.log = consoleLog;
     console.log(...outputs);
 
-    kuzzle.disconnect();
+    // force exit: do not wait for the event loop to be empty
+    process.exit(0);
   }
 })();
