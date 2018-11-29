@@ -1,27 +1,12 @@
 function callback (notification) {
   if (notification.type === 'user') {
-    console.log(notification);
+    console.log(notification.volatile);
     /*
-    { status: 200,
-      timestamp: 1539696822690,
-      volatile: { sdkVersion: '6.0.0-beta-2', username: 'nina vkote' },
-      index: 'nyc-open-data',
-      collection: 'yellow-taxi',
-      controller: 'realtime',
-      action: 'subscribe',
-      protocol: 'websocket',
-      user: 'in',
-      result: { count: 2 },
-      type: 'user',
-      room: '14b675feccf5ac320456ef0dbdf6c1fa-0bab84b784bbf372' }
+      { sdkVersion: '<current SDK version>', username: 'nina vkote' },
     */
     console.log(`Currently ${notification.result.count} users in the room`);
   }
 }
-
-// instantiate a second kuzzle client because
-// the same sdk instance does not receive his own notifications
-const fuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
 
 try {
   const filters = { exists: 'name' };
@@ -36,19 +21,21 @@ try {
     options
   );
 
+  // instantiate a second kuzzle client because
+  // subscribing again to the same filters won't be considered
+  // by Kuzzle as new users
+  const kuzzle2 = new Kuzzle('websocket', { host: 'kuzzle' });
+  await kuzzle2.connect();
+
   // Subscribe to the same room with the second client
-  const opfions = { users: 'all', volatile: { username: 'nina vkote' } };
-  await fuzzle.connect();
-  await fuzzle.realtime.subscribe(
+  const options2 = { users: 'all', volatile: { username: 'nina vkote' } };
+  await kuzzle2.realtime.subscribe(
     'nyc-open-data',
     'yellow-taxi',
     filters,
     () => {},
-    opfions
+    options2
   );
-
-  await kuzzle.realtime.unsubscribe(roomId);
-  fuzzle.disconnect();
 } catch (error) {
   console.log(error.message);
 }
