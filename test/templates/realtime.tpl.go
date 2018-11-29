@@ -29,7 +29,7 @@ func main() {
 	[snippet-code]
 
 	go func() {
-		time.Sleep(4 * time.Second)
+		time.Sleep(30 * time.Second)
 		os.Exit(1)
 	}()
 

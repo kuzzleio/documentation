@@ -31,7 +31,7 @@ function sleep (ms) {
   };
 
   [snippet-code] finally {
-    for (let i = 20; i > 0 && outputs.length <= 0; --i) {
+    for (let i = 150; i > 0 && outputs.length <= 0; --i) {
       await sleep(200);
     }
 
