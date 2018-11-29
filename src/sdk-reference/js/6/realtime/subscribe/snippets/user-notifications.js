@@ -21,9 +21,8 @@ try {
     options
   );
 
-  // instantiate a second kuzzle client because
-  // subscribing again to the same filters won't be considered
-  // by Kuzzle as new users
+  // Instantiates a second kuzzle client: multiple subscriptions
+  // made by the same user will not trigger "new user" notifications
   const kuzzle2 = new Kuzzle('websocket', { host: 'kuzzle' });
   await kuzzle2.connect();
 
