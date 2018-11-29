@@ -21,7 +21,8 @@ try {
   // instantiate a second kuzzle client because
   // the same sdk instance does not receive his own notifications
   kuzzleio::options fuzzle_options;
-  kuzzleio::Kuzzle* fuzzle = new kuzzleio::Kuzzle("kuzzle", &fuzzle_options);
+  kuzzleio::WebSocket* another_socket = new kuzzleio::WebSocket("kuzzle");
+  kuzzleio::Kuzzle* fuzzle = new kuzzleio::Kuzzle(another_socket, &fuzzle_options);
   fuzzle->connect();
 
   // Set some volatile data
