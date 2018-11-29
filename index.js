@@ -228,7 +228,7 @@ metalsmith
 metalsmith
   .use((files, ms, done) => {
     for (const file of Object.values(files)) {
-      if (file.ancestry) {
+      if (file.ancestry && ! file.noredirect) {
         const lastChildren = ancestryHelpers.getLastChildren(file);
         if (lastChildren.path !== file.path) {
           const
