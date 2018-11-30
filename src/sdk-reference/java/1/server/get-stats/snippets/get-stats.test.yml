@@ -5,3 +5,6 @@ hooks:
   after:
 template: default
 expected: ^(Kuzzle Stats as JSON string:) {"hits":\[({"connections":{.*},"ongoingRequests":{.*},"completedRequests":{}.*},"failedRequests":{.*},"timestamp":[0-9]{13}}(,)*)*\],"total":[0-9]+}$
+
+sdk: java
+version: 1

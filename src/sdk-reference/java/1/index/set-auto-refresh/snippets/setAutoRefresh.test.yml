@@ -6,3 +6,6 @@ hooks:
   after: 
 template: default
 expected: autorefresh flag is set to true
+
+sdk: java
+version: 1

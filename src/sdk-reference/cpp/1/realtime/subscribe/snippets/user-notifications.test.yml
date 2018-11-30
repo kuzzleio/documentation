@@ -5,3 +5,5 @@ hooks:
   after:
 template: realtime
 expected: "\"username\":\"nina vkote\""
+sdk: cpp
+version: 1

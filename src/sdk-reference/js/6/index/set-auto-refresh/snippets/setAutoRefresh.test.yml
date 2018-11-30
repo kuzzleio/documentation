@@ -8,3 +8,6 @@ hooks:
   after:
 template: default
 expected: Autorefresh flag is set to true
+
+sdk: js
+version: 6

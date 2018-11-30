@@ -6,3 +6,6 @@ hooks:
   after:
 template: default
 expected: Index exists
+
+sdk: js
+version: 6

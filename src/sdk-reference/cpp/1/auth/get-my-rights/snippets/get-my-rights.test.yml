@@ -6,3 +6,5 @@ hooks:
 template: default
 expected:
   - allowed
+sdk: cpp
+version: 1
