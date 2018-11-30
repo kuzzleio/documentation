@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Command Line Interface (CLI)
 Order: 900
 ---

@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Working with Persistent Data
 order: 400
 ---

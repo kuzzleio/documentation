@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: logout
 description: Kuzzle:logout
 ---
@@ -9,9 +8,9 @@ description: Kuzzle:logout
 # logout
 Logs the user out.
 
-<aside class="notice">
+<div class="alert alert-info">
 This method is non-queuable, meaning that during offline mode, it will be discarded and the callback will be called with an error.
-</aside>
+</div>
 
 ---
 

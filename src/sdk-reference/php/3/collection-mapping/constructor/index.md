@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: constructor
 description: CollectionMapping:constructor
 order: 1
@@ -13,9 +12,9 @@ This means that, by default, you won't be able to exploit the full capabilities 
 
 The CollectionMapping object allows you to get the current mapping in a data collection and to modify it if necessary.
 
-<aside class="notice">
+<div class="alert alert-info">
 Once a field mapping has been set, it cannot be removed without reconstructing the data collection.
-</aside>
+</div>
 
 ---
 

@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: hmget
 description: MemoryStorage:hmget
 ---

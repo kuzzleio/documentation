@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: get
 description: Get a document from kuzzle
 ---

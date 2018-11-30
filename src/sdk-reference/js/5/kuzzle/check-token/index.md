@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: checkToken
 description: Kuzzle:checkToken
 ---
@@ -27,9 +26,9 @@ description: Kuzzle:checkToken
 
 Checks the validity of a JSON Web Token.
 
-<aside class="notice">
+<div class="alert alert-info">
 This method is non-queuable, meaning that during offline mode, it will be discarded and the callback return an error.
-</aside>
+</div>
 
 ---
 

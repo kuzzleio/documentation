@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Offline First
 order: 300
 ---
@@ -54,11 +53,11 @@ Additionally, almost all request methods accept a ``queuable`` option, which whe
 
 ## Handling Network Reconnect
 
-<aside class="warning">
+<div class="alert alert-warning">
 Setting <code>autoReplay</code> to <code>true</code> when using user authentication should generally be avoided.<br/>
 When leaving offline-mode, the JWT validity is verified. If it has expired, the token will be removed and a <code>tokenExpired</code> event will be triggered.<br/>
 If <code>autoReplay</code> is set, then all pending requests will be automatically played as an anonymous user.
-</aside>
+</div>
 
 Once a ``reconnected`` event is fired, you may replay the content of the queue with the ``playQueue`` method. Or you can let the Kuzzle SDK replay it automatically upon reconnection by setting the ``autoReplay`` option to ``true``.  
 

@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Signal Handling
 order: 1000
 ---

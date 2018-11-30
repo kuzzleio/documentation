@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: spop
 description: MemoryStorage:spop
 ---

@@ -1,7 +1,6 @@
-char* error = kuzzle->connect();
-
-if (error == nullptr) {
+try {
+  kuzzle->connect();
   std::cout << "Successfully connected" << std::endl;
-} else {
-  std::cerr << error << std::endl;
+} catch (kuzzleio::KuzzleException e) {
+  std::cerr << e.what() << std::endl;
 }

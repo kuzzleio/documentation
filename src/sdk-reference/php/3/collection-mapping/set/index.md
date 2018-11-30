@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: set
 description: CollectionMapping:set
 ---
@@ -9,9 +8,9 @@ description: CollectionMapping:set
 # set
 Adds or updates a field mapping.
 
-<aside class="notice">
+<div class="alert alert-info">
 Changes made by this function won't be applied until you call the <code>apply</code> method
-</aside>
+</div>
 
 ---
 

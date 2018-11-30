@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: createOrReplace
 description: Creates or replaces a document
 ---

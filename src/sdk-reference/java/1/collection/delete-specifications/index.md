@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: deleteSpecifications
 description: Delete validation specifications for a collection
 ---

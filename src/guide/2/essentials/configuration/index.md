@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Configure Kuzzle
 Order: 200
 ---

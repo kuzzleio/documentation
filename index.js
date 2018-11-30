@@ -253,6 +253,19 @@ metalsmith
 if (options.algolia.privateKey) {
   log('Algolia indexing enabled');
   metalsmith
+    // Add algolia metas automatically only on
+    // the last children of the tree structure (Leaf of the arborescence)
+    .use((files, ms, done) => {
+      for (const file of Object.values(files)) {
+        if (file.ancestry) { // only content pages (.md) have ancestry object
+          const lastChildren = ancestryHelpers.getLastChildren(file);
+          if (lastChildren.path === file.path) {
+            file.algolia = true;
+          }
+        }
+      }
+      setImmediate(done);
+    })
     .use(algolia({
       clearIndex: true,
       projectId: options.algolia.projectId,

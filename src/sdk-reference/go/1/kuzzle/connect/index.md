@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: connect
 description: Connects the SDK to Kuzzle
 ---

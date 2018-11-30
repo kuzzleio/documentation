@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: GetStrategies
 description: Get all authentication strategies registered in Kuzzle.
 ---

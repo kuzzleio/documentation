@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: setContent
 description: Profile:setContent
 ---
@@ -9,9 +8,9 @@ description: Profile:setContent
 # setContent
 Replaces the content of the `Profile` object.
 
-<aside class="note">
+<div class="alert alert-info">
 Updating a profile will have no impact until the <code>save</code> method is called
-</aside>
+</div>
 
 ---
 

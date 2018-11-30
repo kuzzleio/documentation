@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: search
 description: Collection:search
 ---
@@ -9,9 +8,9 @@ description: Collection:search
 # search
 Executes a search on the data collection.
 
-<aside class="notice">
+<div class="alert alert-info">
 There is a small delay between the time a document is created and its availability in our search layer (usually a couple of seconds). That means that a document that was just created might not be returned by this function at first.
-</aside>
+</div>
 
 ## Processing large data sets
 
@@ -44,9 +43,9 @@ See [`SearchResult.fetchNext`]({{ site_base_path }}sdk-reference/search-result/f
 | ``scroll`` | string | Start a scroll session, with a time to live equals to this parameter's value following the [Elastisearch time format](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/common-options.html#time-units) | ``undefined`` |
 | ``size`` | number | Provide the maximum number of results of the request (used to paginate results) | ``10`` |
 
-<aside class="notice">
+<div class="alert alert-info">
   To get more information about scroll sessions, please refer to the <a href="{{ site_base_path }}api-documentation/controller-document/search">API reference documentation</a>.
-</aside>
+</div>
 
 ---
 

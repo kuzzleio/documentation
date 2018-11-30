@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: refreshIndex
 description: Kuzzle:refreshIndex
 ---
@@ -14,14 +13,14 @@ By default, this operation can take up to 1 second.
 Given an index, the `refresh` action forces a [`refresh`](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-refresh.html),
  on it, making the documents visible to search immediately.
 
-<aside class="left warning">
+<div class="alert alert-warning">
     A refresh operation comes with some performance costs.<br>
     <br>
     From <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-refresh.html">elasticsearch documentation</a>:
     <div class="quote">
     "While a refresh is much lighter than a commit, it still has a performance cost. A manual refresh can be useful when writing tests, but don’t do a manual refresh every time you index a document in production; it will hurt your performance. Instead, your application needs to be aware of the near real-time nature of Elasticsearch and make allowances for it."
     </div>
-</aside>
+</div>
 
 ---
 

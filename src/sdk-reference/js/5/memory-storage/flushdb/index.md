@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: flushdb
 description: MemoryStorage:flushdb
 ---

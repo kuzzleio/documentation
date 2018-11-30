@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: saveRestricted
 description: User:saveRestricted
 ---

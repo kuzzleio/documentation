@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Real-time Notifications
 order: 600
 ---

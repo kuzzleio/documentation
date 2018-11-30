@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: scrollSpecifications
 description: Collection:scrollSpecifications
 ---

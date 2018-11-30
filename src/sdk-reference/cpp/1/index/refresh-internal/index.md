@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: refreshInternal
 description: Force refresh of Kuzzle internal index
 ---
