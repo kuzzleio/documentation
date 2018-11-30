@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: strategies
-algolia: true
 ---
 
 # strategies
@@ -84,9 +82,9 @@ Removes an authentication strategy, preventing new authentications from using it
 
 In a cluster environment, the new strategy is automatically removed from all server nodes.
 
-<aside class="alert alert-warning">
+<div class="alert alert-warning">
 Authentication tokens previously created using that strategy ARE NOT invalidated after using this method.
-</aside>
+</div>
 
 ### Arguments
 

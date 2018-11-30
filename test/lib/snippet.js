@@ -14,9 +14,9 @@ const
   GENERIC_JAVA_CLASSNAME = 'CodeExampleGenericClass';
 
 class Snippet {
-  constructor(testFile, language) {
+  constructor(testFile, sdk) {
     this.testFile = testFile;
-    this.language = language;
+    this.sdk = sdk;
   }
 
   build() {
@@ -29,12 +29,13 @@ class Snippet {
 
       throw new TestResult(result);
     }
-    for (const [attribute, value] of Object.entries(this.testDefinition)) {
-      this[attribute] = value;
-    }
-    this.name = this.name.replace('#', '');
+    this.name = this.testDefinition.name.replace('#', '');
+    this.description = this.testDefinition.description;
+    this.expected = this.testDefinition.expected
+    this.template = this.testDefinition.template
+    this.hooks = this.testDefinition.hooks
 
-    this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.language}`;
+    this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.sdk.ext}`;
     if (! fs.existsSync(this.templateFile)) {
       const result = {
         code: 'MISSING_TEMPLATE',
@@ -44,7 +45,7 @@ class Snippet {
       throw new TestResult(result);
     }
 
-    this.snippetFile = this.testFile.replace('.test.yml', `.${this.language}`);
+    this.snippetFile = this.testFile.replace('.test.yml', `.${this.sdk.ext}`);
     if (! fs.existsSync(this.snippetFile)) {
       const result = {
         code: 'MISSING_SNIPPET',
@@ -84,11 +85,11 @@ class Snippet {
       snippetName = this._sanitizeFileName(this.name),
       renderedSnippet = this.templateContent.replace(/(\[snippet-code])/g, indentedSnippet);
 
-    this.renderedSnippetPath = `${RENDERED_SNIPPETS_DIR}${snippetName}.${this.language}`;
+    this.renderedSnippetPath = `${RENDERED_SNIPPETS_DIR}${snippetName}.${this.sdk.ext}`;
 
     // JAVA hack, because filename has to be the same of the class name
     // We replace the template generique class name by the name of the test
-    if (this.language === 'java') {
+    if (this.sdk.ext === 'java') {
       fs.writeFileSync(this.renderedSnippetPath, this._overrideClassName(renderedSnippet, snippetName));
     } else {
       fs.writeFileSync(this.renderedSnippetPath, renderedSnippet);
@@ -105,7 +106,7 @@ class Snippet {
   }
 
   saveRendered() {
-    const dest = `${SAVE_FAIL_DIR}${this.name}.${this.language}`;
+    const dest = `${SAVE_FAIL_DIR}${this.name}.${this.sdk.ext}`;
     fs.copyFileSync(this.snippetFile, dest);
   }
 
@@ -116,7 +117,7 @@ class Snippet {
   getLocalCommand() {
     const name = this.name.toLowerCase();
 
-    switch (this.language) {
+    switch (this.sdk.name) {
       case 'go':
         return `cp test/bin/${name}.go $GOPATH && cd $GOPATH && go run ${name}.go ; cd -`;
       case 'cpp':

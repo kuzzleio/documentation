@@ -1,14 +1,9 @@
-// Avoid program exit before receiving notification
-exitPrgm := make(chan bool)
-
 // Start an async listener
 listener := make(chan types.NotificationResult)
 go func() {
   <-listener
 
   fmt.Printf("Message notification received")
-
-  exitPrgm <- true
 }()
 
 // Subscribe to a room
@@ -26,5 +21,3 @@ if err != nil {
 message := json.RawMessage(`{ "metAt": "Insane", "hello": "world" }`)
 // Publish a message to this room
 kuzzle.Realtime.Publish("i-dont-exist", "i-database", message, nil)
-
-<-exitPrgm

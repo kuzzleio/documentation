@@ -1,11 +1,9 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 language-tab:
   js: Javascript
   java: Android
   php: PHP
-algolia: true
 title: Kuzzle
 description: Entry point and main class for the entire SDK
 show-subheader: true

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: deleteCredentials
 description: Security:deleteCredentials
-algolia: true
 ---
   
 

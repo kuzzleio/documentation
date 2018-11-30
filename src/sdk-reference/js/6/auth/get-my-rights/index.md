@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getMyRights
 description: Returns the rights for the user linked to the `JSON Web Token`.
-algolia: true
 ---
 
 # getMyRights
@@ -40,7 +38,7 @@ An `array<object containing:
 | `action` | <pre>string</pre> | Action on wich the rights are applied |
 | `index` | <pre>string</pre> | Index on wich the rights are applied |
 | `collection` | <pre>string</pre> | Collection on wich the rights are applied |
-| `value` | <pre>string</pre> | Rights: `allowed` or `restricted` |
+| `value` | <pre>string</pre> | Rights (`allowed|denied|conditional`) |
 
 ## Usage
 

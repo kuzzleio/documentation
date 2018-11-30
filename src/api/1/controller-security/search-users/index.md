@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: searchUsers
-algolia: true
 ---
 
 # searchUsers

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: rpushx
 description: MemoryStorage:rpushx
-algolia: true
 ---
   
 

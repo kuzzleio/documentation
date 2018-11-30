@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Users & Authentication
 order: 750
-algolia: true
 ---
 
 # Users & Authentication

@@ -7,8 +7,10 @@ const
 
 class JavaSdk {
   constructor(version) {
+    this.name = 'java';
+    this.ext = 'java';
     this.version = version;
-    this.versionPath = getVersionPath('java', this.version);
+    this.versionPath = getVersionPath(this);
     this.sdkJavaJar = 'kuzzlesdk-java-experimental-amd64.jar';
     this.sdkDir = 'test/bin/sdk-java';
     this.sdkJavaBucket = `https://dl.kuzzle.io/sdk/java/${this.versionPath}/${this.sdkJavaJar}`;

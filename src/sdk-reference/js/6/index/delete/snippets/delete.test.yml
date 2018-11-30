@@ -6,3 +6,6 @@ hooks:
   after:
 template: default
 expected: Index deleted
+
+sdk: js
+version: 6

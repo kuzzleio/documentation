@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: createDocument
 description: Collection:createDocument
-algolia: true
 ---
   
 

@@ -1,6 +1,3 @@
-// Avoid program exit before receiving notification
-exitPrgm := make(chan bool)
-
 // Subscribe to notifications for documents containing a 'name' property
 filters := json.RawMessage(`{ "exists": "name" }`)
 
@@ -14,8 +11,6 @@ go func() {
   } else {
     fmt.Printf("Document %s leave the scope\n", notification.Result.Id)
   }
-
-  exitPrgm <- true
 }()
 
 _, err := kuzzle.Realtime.Subscribe(
@@ -36,5 +31,3 @@ kuzzle.Document.Create(
 	"nina-vkote",
 	document,
 	nil)
-
-<-exitPrgm

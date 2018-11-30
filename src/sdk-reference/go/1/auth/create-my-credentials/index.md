@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: CreateMyCredentials
 description: Create the current user's credentials for the specified `<strategy>`.
-algolia: true
 ---
 
 # CreateMyCredentials
