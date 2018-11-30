@@ -6,3 +6,6 @@ hooks:
   after:
 template: default
 expected: autorefresh is false
+
+sdk: js
+version: 6

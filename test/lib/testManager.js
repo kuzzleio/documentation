@@ -1,104 +1,116 @@
 const
   fs = require('fs'),
   path = require('path'),
+  readYaml = require('read-yaml'),
   Snippet = require('./snippet'),
   Logger = require('./helpers/logger'),
   {
-    getSupportedLanguages,
+    getSupportedSdks,
     getVersionPath
   } = require('./helpers/utils'),
   TestResult = require('./helpers/testResult');
 
 class TestManager {
-  constructor(basePath) {
-    if (basePath.indexOf('sdk-reference') === -1) {
-      throw new Error('Unable to find sdk-reference directory in basePath');
+  constructor(sdk, version, path) {
+    const supportedSdks = getSupportedSdks();
+    if (! supportedSdks.includes(sdk)) {
+      throw new Error(`Unknown SDK ${sdk}. Supported SDKs: ${supportedSdks.join(', ')}`);
     }
 
-    const [language, version, rest] = (basePath.split('sdk-reference/')[1] || '').split('/');
+    this.basePath = path;
 
-    if (! language) {
-      throw new Error('Unable to find language in basePath');
-    }
+    const Sdk = require(`./sdk/${sdk}Sdk`);
+    this.sdk = new Sdk(version);
 
-    if (! version) {
-      throw new Error('Unable to find version in basePath');
-    }
+    const Runner = require(`./runners/${this.sdk.name}Runner`);
+    this.sdkRunner = new Runner(this.sdk);
 
-    const supportedLanguages = getSupportedLanguages();
-    if (! supportedLanguages.includes(language)) {
-      throw new Error(`Unknown language ${language}. Supported languages: ${supportedLanguages.join(', ')}`);
-    }
+    this.logger = new Logger(this.sdk);
 
-    this.basePath = basePath;
-    this.language = language;
-    this.version = version;
+    this.collection = `${this.sdk.name}-${this.sdk.version}`;
 
-    const Sdk = require(`./sdk/${this.language}Sdk`);
-    this.sdk = new Sdk(this.version);
+    this.results = [];
 
-    const Runner = require(`./runners/${language}Runner`);
-    this.languageRunner = new Runner(this.sdk);
-
-    this.logger = new Logger(this.language);
-
-    this.testFiles = this._getTestFiles(this.basePath);
+    this.snippets = [];
   }
 
-  async run() {
-    const
-      results = [];
+  crawlSnippets () {
+    this.snippets = this._crawl(this.basePath).filter(snippet => {
+      const { sdk, version } = readYaml.sync(snippet);
 
-    this.logger.log(`${this.testFiles.length} tests found\n`);
+      return sdk === this.sdk.name && version.toString() === this.sdk.version;
+    });
 
-    if (this.testFiles.length === 0) {
-      process.exit(3);
-    } else {
-      for (const testFile of this.testFiles) {
-        const snippet = new Snippet(testFile, this.language);
+    this.logger.log(`Found ${this.snippets.length} snippets.\n`)
+  }
 
-        try {
-          snippet.build();
+  async runSnippets () {
+    for (const snippetPath of this.snippets) {
+      await this.runSnippet(snippetPath)
+    }
 
-          await this.languageRunner.run(snippet);
+    this.logger.writeReport();
 
-          results.push({
-            code: 'SUCCESS',
-            file: snippet.snippetFile
-          });
-        }
-        catch (e) {
-          if (! (e instanceof TestResult)) {
-            results.push(new TestResult({
-              code: 'ERROR',
-              actual: e
-            }));
-          } else {
-            results.push(e);
-          }
-        } finally {
-          this.logger.reportResult(snippet, results[results.length - 1]);
-        }
+    if (this.results.filter(result => result.code !== 'SUCCESS').length > 0) {
+      process.exit(1);
+    }
+  }
+
+  async runSnippet (snippetPath) {
+    const snippet = new Snippet(snippetPath, this.sdk);
+
+    try {
+      snippet.build();
+
+      await this.sdkRunner.run(snippet);
+
+      this.results.push({
+        code: 'SUCCESS',
+        file: snippet.snippetFile
+      });
+    } catch (e) {
+      if (! (e instanceof TestResult)) {
+        this.results.push(new TestResult({
+          code: 'ERROR',
+          actual: e
+        }));
+      } else {
+        this.results.push(e);
       }
-      this.logger.writeReport();
+    } finally {
+      this.logger.reportResult(snippet, this.results[this.results.length - 1]);
+    }
+  }
 
-      if (results.filter(result => result.code !== 'SUCCESS').length > 0) {
-        process.exit(1);
+  _crawl (base) {
+    if (fs.statSync(base).isFile() && base.indexOf('.test.yml') > -1) {
+      return [base];
+    }
+
+    let result = [];
+
+    const files = fs.readdirSync(base);
+
+    for (const file of files) {
+      const newbase = path.join(base, file);
+
+      if (fs.statSync(newbase).isDirectory()) {
+        result = result.concat(this._crawl(newbase));
+      } else if (file.indexOf('.test.yml') > -1) {
+        result.push(newbase);
       }
     }
+
+    return result;
   }
 
   async downloadSdk() {
-    if (this.testFiles.length === 0) {
-      return;
-    }
-
     if (process.env.DEV_MODE === 'true' && this.sdk.exists()) {
       this.logger.log('DEV_MODE is true, sdk already exists, skipping download');
       return;
     }
 
-    this.logger.log(`Install ${this.language.toUpperCase()} SDK version ${this.version} from ${getVersionPath(this.language, this.version)}`);
+    this.logger.log(`Install ${this.sdk.name.toUpperCase()} SDK version ${this.sdk.version} from ${getVersionPath(this.sdk)}`);
 
     try {
       await this.sdk.get();
@@ -108,24 +120,6 @@ class TestManager {
 
       throw e;
     }
-  }
-
-  _getTestFiles(base) {
-    let result = [];
-
-    const files = fs.readdirSync(base);
-
-    for (const file of files) {
-      const newbase = path.join(base, file);
-
-      if (fs.statSync(newbase).isDirectory()) {
-        result = result.concat(this._getTestFiles(newbase));
-      } else if (file.indexOf('.test.yml') > -1) {
-        result.push(newbase);
-      }
-    }
-
-    return result;
   }
 }
 

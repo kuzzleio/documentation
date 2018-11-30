@@ -9,3 +9,6 @@ hooks:
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
 expected: '{"_index":"nyc-open-data","_type":"yellow-taxi","_id":"some-id",.*"result":"updated"'
+
+sdk: cpp
+version: 1
