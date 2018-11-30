@@ -38,7 +38,7 @@ An `array<object containing:
 | `action` | <pre>string</pre> | Action on wich the rights are applied |
 | `index` | <pre>string</pre> | Index on wich the rights are applied |
 | `collection` | <pre>string</pre> | Collection on wich the rights are applied |
-| `value` | <pre>string</pre> | Rights: `allowed` or `restricted` |
+| `value` | <pre>string</pre> | Rights (`allowed|denied|conditional`) |
 
 ## Usage
 

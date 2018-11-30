@@ -5,6 +5,7 @@ options.setUsers("all");
 NotificationListener listener = new NotificationListener() {
   public void onMessage(NotificationResult notification) {
     System.out.println(notification.getVolatiles());
+    // "{ "username\": "nina vkote" }"
     System.out.println("Currently " + notification.getResult().getCount() + " users in the room");
   }
 };
