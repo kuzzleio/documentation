@@ -5,3 +5,6 @@ hooks:
   after:
 template: default
 expected: ^(Admin exists\?) (true|false)$
+
+sdk: go
+version: 1

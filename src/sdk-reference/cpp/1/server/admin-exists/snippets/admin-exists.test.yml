@@ -5,3 +5,6 @@ hooks:
   after:
 template: default
 expected: ^(Admin exists\?) (0|1)$
+
+sdk: cpp
+version: 1

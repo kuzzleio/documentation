@@ -5,3 +5,6 @@ hooks:
   after:
 template: default
 expected: Success
+
+sdk: cpp
+version: 1

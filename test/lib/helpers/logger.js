@@ -12,8 +12,8 @@ const
 /* eslint-disable no-console */
 
 class Logger {
-  constructor(language) {
-    this.language = language;
+  constructor(sdk) {
+    this.sdk = sdk;
 
     this.reportFile = `${path.join(__dirname, '../../../reports/')}report.json`;
 
@@ -68,14 +68,14 @@ class Logger {
     switch (result.code) {
       case 'SUCCESS':
         console.log(
-          blue(`[${snippet.language}] `),
+          blue(`[${this.sdk.name}] `),
           green('✔'),
           green(`${snippet.name}: ${snippet.description}`)
         );
         break;
       default:
         console.log(
-          blue(`[${snippet.language}] `),
+          blue(`[${this.sdk.name}] `),
           red('✗'),
           red(`${snippet.name}: ${snippet.description}`)
         );
@@ -94,11 +94,11 @@ class Logger {
 
 
         console.log(
-          blue(`[${snippet.language}] `),
+          blue(`[${this.sdk.name}] `),
           'You can run the snippet locally with the following command:'
         );
         console.log(
-          blue(`[${snippet.language}] `),
+          blue(`[${this.sdk.name}] `),
           snippet.getLocalCommand()
         );
         break;
@@ -120,7 +120,7 @@ class Logger {
     })();
 
     console.log(
-      blue(`[${this.language}] `),
+      blue(`[${this.sdk.name}] `),
       message,
       statusMessage
     );

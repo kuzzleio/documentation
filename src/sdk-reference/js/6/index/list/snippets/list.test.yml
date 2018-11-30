@@ -9,3 +9,6 @@ hooks:
   after:
 template: default
 expected: Kuzzle contains 2 indexes
+
+sdk: js
+version: 6
