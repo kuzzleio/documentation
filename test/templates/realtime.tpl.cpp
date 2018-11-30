@@ -28,7 +28,7 @@ int main() {
   try {
     kuzzle->connect();
   } catch (kuzzleio::KuzzleException e) {
-    std::cerr << "Unable to connect to " << hostname << ":" << kuzzle->getProtocol()->getPort() << std::endl << e.what() << std::endl;
+    std::cerr << "Unable to connect to " << hostname << ":" << ws->getPort() << std::endl << e.what() << std::endl;
     return 1;
   }
 
@@ -39,7 +39,7 @@ int main() {
 
   [snippet-code]
 
-  for (size_t i = 150; i > 0 && is_empty(&cout_copy); --i) {
+  for (size_t i = 10; i > 0 && is_empty(&cout_copy); --i) {
     usleep(200000);
   }
 
