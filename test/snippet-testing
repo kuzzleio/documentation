@@ -28,7 +28,7 @@ if (!sdk || !version || !path) {
 
     await manager.downloadSdk();
 
-    await manager.crawlSnippets();
+    manager.crawlSnippets();
 
     await manager.runSnippets();
   } catch (e) {

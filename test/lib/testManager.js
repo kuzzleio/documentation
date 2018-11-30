@@ -23,7 +23,7 @@ class TestManager {
     this.sdk = new Sdk(version);
 
     const Runner = require(`./runners/${this.sdk.name}Runner`);
-    this.languageRunner = new Runner(this.sdk);
+    this.sdkRunner = new Runner(this.sdk);
 
     this.logger = new Logger(this.sdk);
 
@@ -34,7 +34,7 @@ class TestManager {
     this.snippets = [];
   }
 
-  async crawlSnippets () {
+  crawlSnippets () {
     this.snippets = this._crawl(this.basePath).filter(snippet => {
       const { sdk, version } = readYaml.sync(snippet);
 
@@ -62,7 +62,7 @@ class TestManager {
     try {
       snippet.build();
 
-      await this.languageRunner.run(snippet);
+      await this.sdkRunner.run(snippet);
 
       this.results.push({
         code: 'SUCCESS',
