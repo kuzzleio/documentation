@@ -1,10 +1,8 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: constructor
 description: MemoryStorage:constructor
 order: 1
-algolia: true
 ---
   
 

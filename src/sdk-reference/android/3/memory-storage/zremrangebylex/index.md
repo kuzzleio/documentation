@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: zremrangebylex
 description: MemoryStorage:zremrangebylex
-algolia: true
 ---
   
 

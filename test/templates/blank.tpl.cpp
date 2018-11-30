@@ -2,12 +2,8 @@
 #include <string>
 #include <vector>
 
-#include "auth.hpp"
-#include "collection.hpp"
-#include "document.hpp"
-#include "index.hpp"
-#include "realtime.hpp"
 #include "kuzzle.hpp"
+#include "websocket.hpp"
 
 int main() {
   [snippet-code]

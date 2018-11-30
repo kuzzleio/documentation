@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: time
 description: MemoryStorage:time
-algolia: true
 ---
   
 

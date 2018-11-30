@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: georadius
 description: MemoryStorage:georadius
-algolia: true
 ---
   
 

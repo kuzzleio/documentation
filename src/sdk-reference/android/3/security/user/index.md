@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: user
 description: Security:user
-algolia: true
 ---
   
 

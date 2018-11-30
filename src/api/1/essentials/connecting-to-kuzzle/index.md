@@ -1,10 +1,8 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Connecting to Kuzzle
 description: Connecting to Kuzzle using HTTP, WebSocket or Protocol plugins
 order: 100
-algolia: true
 ---
 
 
@@ -106,9 +104,9 @@ Kuzzle {
 
 By default, the MQTT plugin protocol listens on port 1883.
 
-<aside class="notice">
+<div class="alert alert-info">
     The examples given in this documentation use the CLI client from the mqtt node.js
     library that is shipped in the Kuzzle Docker image.<br />
     To test them out yourself you will need to enter into the container shell once your docker compose stack is up and running:<br />
     <code>docker exec -ti kuzzle_kuzzle_1 bash</code>
-</aside>
+</div>

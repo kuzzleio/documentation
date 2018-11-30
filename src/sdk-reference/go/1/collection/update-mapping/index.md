@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: updateMapping
 description: Update the collection mapping
-algolia: true
 ---
 
 # updateMapping

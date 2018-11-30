@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: error
 order: 0
-algolia: true
 ---
 
 # error

@@ -28,10 +28,6 @@ try {
       "nina-vkote",
       document
     );
-
-    Thread.sleep(1000);
-  } catch (KuzzleException e) {
-    System.err.println(e.getMessage());
-  } catch (InterruptedException e) {
+} catch (KuzzleException e) {
     System.err.println(e.getMessage());
 }

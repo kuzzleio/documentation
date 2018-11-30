@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: updateSelf
 description: Kuzzle:updateSelf
-algolia: true
 ---
   
 

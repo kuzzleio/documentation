@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: randomkey
 description: MemoryStorage:randomkey
-algolia: true
 ---
   
 

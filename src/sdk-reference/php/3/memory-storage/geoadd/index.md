@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: geoadd
 description: MemoryStorage:geoadd
-algolia: true
 ---
   
 

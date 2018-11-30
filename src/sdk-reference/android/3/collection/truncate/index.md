@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: truncate
 description: Collection:truncate
-algolia: true
 ---
   
 

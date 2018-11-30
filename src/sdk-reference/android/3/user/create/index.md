@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: create
 description: User:create
-algolia: true
 ---
   
 

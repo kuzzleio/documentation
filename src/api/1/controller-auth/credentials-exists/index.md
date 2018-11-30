@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: credentialsExist
-algolia: true
 ---
 
 # credentialsExist

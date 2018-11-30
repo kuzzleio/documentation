@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: zadd
 description: MemoryStorage:zadd
-algolia: true
 ---
   
 

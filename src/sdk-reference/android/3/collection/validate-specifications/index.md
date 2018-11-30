@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: validateSpecifications
 description: Collection:validateSpecifications
-algolia: true
 ---
   
 

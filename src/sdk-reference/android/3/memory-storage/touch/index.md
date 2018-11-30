@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: touch
 description: MemoryStorage:touch
-algolia: true
 ---
   
 

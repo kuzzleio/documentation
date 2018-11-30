@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Configure Security
 order: 700
-algolia: true
 ---
 
 # Configuring Security

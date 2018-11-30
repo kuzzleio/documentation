@@ -1,19 +1,17 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: createProfile
 description: Security:createProfile
-algolia: true
 ---
   
 
 # createProfile
 Create a new profile in Kuzzle.
 
-<aside class="notice">
+<div class="alert alert-info">
 There is a small delay between profile creation and its availability in our search layer (usually a couple of seconds).
 That means that a profile that was just created might not be returned by the <code>searchProfiles</code> function at first.
-</aside>
+</div>
 
 ---
 

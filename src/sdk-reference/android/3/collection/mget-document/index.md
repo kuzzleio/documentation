@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: mgetDocument
 description: Collection:mgetDocument
-algolia: true
 ---
   
 
