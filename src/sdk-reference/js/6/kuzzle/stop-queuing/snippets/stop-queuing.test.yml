@@ -6,3 +6,6 @@ hooks:
   after:
 template: without-connect
 expected: Stop queuing requests
+
+sdk: js
+version: 6

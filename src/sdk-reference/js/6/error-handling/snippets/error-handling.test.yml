@@ -5,3 +5,6 @@ hooks:
   after:
 template: thencatch
 expected: Try with another name!
+
+sdk: js
+version: 6

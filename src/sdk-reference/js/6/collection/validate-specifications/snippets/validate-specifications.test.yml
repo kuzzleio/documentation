@@ -5,3 +5,6 @@ hooks:
   after:
 template: default
 expected: Some errors with provided specifications.
+
+sdk: js
+version: 6

@@ -5,3 +5,6 @@ hooks:
   after:
 template: realtime
 expected: Message notification received
+
+sdk: go
+version: 1

@@ -6,3 +6,6 @@ hooks:
   after:
 template: without-connect
 expected: Offline queue flushed
+
+sdk: js
+version: 6

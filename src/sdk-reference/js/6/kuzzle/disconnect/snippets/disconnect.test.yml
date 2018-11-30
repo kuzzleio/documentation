@@ -6,3 +6,6 @@ hooks:
   after:
 template: without-connect
 expected: Successfully disconnected
+
+sdk: js
+version: 6

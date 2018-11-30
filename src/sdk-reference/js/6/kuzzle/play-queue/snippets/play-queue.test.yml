@@ -6,3 +6,6 @@ hooks:
   after:
 template: without-connect
 expected: Start playing offline queue
+
+sdk: js
+version: 6

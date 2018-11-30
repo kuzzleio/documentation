@@ -75,7 +75,7 @@ jobs:
 
       script:
         - npm install
-        - bash ./run-snippet-tests.sh -p src/sdk-reference/js/5
+        - bash ./run-snippet-tests.sh -p src -s js -v 5
 
       after_script:
         - |
@@ -99,7 +99,7 @@ jobs:
 
       script:
         - npm install
-        - bash ./run-snippet-tests.sh -p src/sdk-reference/js/6
+        - bash ./run-snippet-tests.sh -p src -s js -v 6
 
       after_script:
         - |
@@ -123,7 +123,7 @@ jobs:
 
       script:
         - npm install
-        - bash ./run-snippet-tests.sh -p src/sdk-reference/go/1
+        - bash ./run-snippet-tests.sh -p src -s go -v 1
 
       after_script:
         - |
@@ -147,7 +147,7 @@ jobs:
 
       script:
         - npm install
-        - bash ./run-snippet-tests.sh -p src/sdk-reference/java/1
+        - bash ./run-snippet-tests.sh -p src -s java -v 1
 
       after_script:
         - |
@@ -171,7 +171,7 @@ jobs:
 
       script:
         - npm install
-        - bash ./run-snippet-tests.sh -p src/sdk-reference/cpp/1
+        - bash ./run-snippet-tests.sh -p src -s cpp -v 1
 
       after_script:
         - |
