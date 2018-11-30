@@ -5,3 +5,5 @@ hooks:
   after:
 template: realtime
 expected: "\"username\":\"nina vkote\""
+sdk: java
+version: 1

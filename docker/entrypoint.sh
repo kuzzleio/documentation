@@ -6,7 +6,7 @@ fi
 
 chmod 777 node_modules
 
-/app/test/snippet-testing run $@
+/app/test/snippet-testing $@
 RETURN_TESTS="$?"
 chmod 777 /app/test/bin/*
 
@@ -20,4 +20,3 @@ elif [ "$RETURN_TESTS" -eq 3 ]; then
   touch /app/.ci/not_implemented/"$LANGUAGE"-"$SDK_VERSION"
   exit 0
 fi
-

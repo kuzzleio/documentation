@@ -19,3 +19,6 @@ hooks:
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
 expected: Successfully deleted 5 documents
+
+sdk: js
+version: 6
