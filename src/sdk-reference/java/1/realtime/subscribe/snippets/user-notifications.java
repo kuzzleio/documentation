@@ -4,7 +4,7 @@ options.setUsers("all");
 
 NotificationListener listener = new NotificationListener() {
   public void onMessage(NotificationResult notification) {
-    System.out.println(notification.getVolatile());
+    System.out.println(notification.getVolatiles());
     System.out.println("Currently " + notification.getResult().getCount() + " users in the room");
   }
 };
@@ -26,7 +26,7 @@ try {
 
   // Set some volatile data
   RoomOptions options2 = new RoomOptions();
-  options2.setVolatile("{ \"username\": \"nina vkote\" }");
+  options2.setVolatiles("{ \"username\": \"nina vkote\" }");
 
   // Subscribe to the same room with the second client
   kuzzle2.getRealtime().subscribe(
