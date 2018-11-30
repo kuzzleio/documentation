@@ -15,7 +15,7 @@ int main() {
     kuzzle->connect();
   }
   catch (kuzzleio::KuzzleException e) {
-    std::cerr << "Unable to connect to " << hostname << ":" << kuzzle->getProtocol()->getPort() << std::endl << e.what() << std::endl;
+    std::cerr << "Unable to connect to " << hostname << ":" << ws->getPort() << std::endl << e.what() << std::endl;
     return 1;
   }
 
