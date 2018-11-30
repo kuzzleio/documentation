@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: mset
 description: MemoryStorage:mset
-algolia: true
 ---
   
 

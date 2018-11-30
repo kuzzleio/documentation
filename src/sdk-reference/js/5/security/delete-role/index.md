@@ -1,19 +1,17 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: deleteRole
 description: Security:deleteRole
-algolia: true
 ---
   
 
 # deleteRole
 Delete the provided role.
 
-<aside class="notice">
+<div class="alert alert-info">
 There is a small delay between the time a role is deleted and it being reflected in the search layer (usually a couple of seconds).
 That means that a role that was just deleted may still be returned by the <code>searchRoles</code> function at first.
-</aside>
+</div>
 
 ---
 

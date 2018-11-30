@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: addListener
 description: Add a listener to an event
-algolia: true
 ---
 
 # addListener

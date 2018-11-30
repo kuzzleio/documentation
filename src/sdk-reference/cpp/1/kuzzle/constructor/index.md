@@ -1,9 +1,8 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Constructor
 description: Create a new Kuzzle object connected to the backend
-algolia: true
+order: 0
 ---
 
 # Constructor
@@ -14,20 +13,16 @@ Each instance represent a connection to Kuzzle with specific options.
 ## Signature
 
 ```cpp
-Kuzzle(std::string host, kuzzleio::options *options = nullptr)
+Kuzzle(protocol, kuzzleio::options *options = nullptr)
 ```
 
 ## Arguments
 
-| Argument  | Type        | Description                     | Required |
-| --------- | ----------- | ------------------------------- | -------- |
-| `host`    | std::string | The target Kuzzle host          | yes      |
-| `options` | options\*   | Kuzzle connection configuration | yes      |
+| Argument  | Type        | Description                     |
+| --------- | ----------- | ------------------------------- |
+| `protocol`    | <pre><a href={{ site_base_path }}sdk-reference/cpp/1/protocols/>Protocol</a></pre> | Network protocol configuration |
+| `options` | <pre>options\*</pre>   | Kuzzle connection configuration |
 
-### **hostname**
-
-The Kuzzle host to connect to.  
-Can be a hostname or an IP address.
 
 ### **options**
 

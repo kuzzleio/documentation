@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Logout
 description: Revokes the user's token & unsubscribe them from registered rooms.
-algolia: true
 ---
 
 # Logout

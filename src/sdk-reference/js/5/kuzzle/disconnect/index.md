@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: disconnect
 description: Kuzzle:disconnect
-algolia: true
 ---
   
 

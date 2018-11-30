@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Introduction
 order: 0
-algolia: true
 ---
 
 # Introduction

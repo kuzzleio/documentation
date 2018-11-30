@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Publish
 description: Publish a real-time message
-algolia: true
 ---
 
 # Publish

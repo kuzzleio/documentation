@@ -1,4 +1,5 @@
 Options options = new Options();
 options.setAutoResubscribe(false);
 
-Kuzzle kuzzle = new Kuzzle("kuzzle", options);
+WebSocket ws = new WebSocket("kuzzle");
+Kuzzle kuzzle = new Kuzzle(ws, options);

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: hscan
 description: MemoryStorage:hscan
-algolia: true
 ---
   
 

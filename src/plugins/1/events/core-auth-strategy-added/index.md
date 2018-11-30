@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: core:auth:strategyAdded
-algolia: true
 ---
 
 # core:auth:strategyAdded

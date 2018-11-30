@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: setex
 description: MemoryStorage:setex
-algolia: true
 ---
   
 

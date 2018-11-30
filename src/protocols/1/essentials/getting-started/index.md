@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Getting Started
 order: 0
-algolia: true
 ---
 
 # Getting Started

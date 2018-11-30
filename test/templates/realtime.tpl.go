@@ -22,11 +22,20 @@ func main() {
 		os.Exit(1)
 	}
 
-	go func() {
-		time.Sleep(1 * time.Second)
-		fmt.Println("Timeout exceeded")
-		os.Exit(2)
-	}()
+	rescueStdout := os.Stdout
+	r, w, _ := os.Pipe()
+	os.Stdout = w
 
 	[snippet-code]
+
+	go func() {
+		time.Sleep(30 * time.Second)
+		os.Exit(1)
+	}()
+
+	b := make([]byte, 4096)
+	n, _ := r.Read(b)
+
+	os.Stdout = rescueStdout
+	fmt.Print(string(b[:n]))
 }

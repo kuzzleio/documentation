@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: pfadd
 description: MemoryStorage:pfadd
-algolia: true
 ---
   
 

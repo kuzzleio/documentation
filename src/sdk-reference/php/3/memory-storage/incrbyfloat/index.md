@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: incrbyfloat
 description: MemoryStorage:incrbyfloat
-algolia: true
 ---
   
 

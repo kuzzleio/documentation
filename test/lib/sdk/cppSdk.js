@@ -11,6 +11,7 @@ class CppSdk {
     this.versionPath = getVersionPath('cpp', this.version);
     this.sdkCppArchive = 'kuzzlesdk-cpp-experimental-amd64.tar.gz';
     this.sdkDir = 'test/bin/sdk-cpp';
+    this.archiveDir = 'kuzzle-cpp-sdk';
     this.sdkCppBucket = `https://dl.kuzzle.io/sdk/cpp/${this.versionPath}/${this.sdkCppArchive}`;
   }
 
@@ -19,8 +20,8 @@ class CppSdk {
     await execute('mkdir', ['-p', this.sdkDir]);
     await execute('curl', ['-o', this.sdkCppArchive, this.sdkCppBucket], { cwd: this.sdkDir });
     await execute('tar', ['-xf', this.sdkCppArchive], { cwd: this.sdkDir });
-    await execute('rm', [this.sdkCppArchive], { cwd: this.sdkDir });
-    await execute('cp', ['include/kuzzlesdk.h', 'include/kuzzle.h'], { cwd: this.sdkDir });
+    await execute('mv', [`${this.archiveDir}/include`, `${this.archiveDir}/lib`, '.'], { cwd: this.sdkDir });
+    await execute('rm', ['-r', this.archiveDir, this.sdkCppArchive], { cwd: this.sdkDir });
   }
 
   exists() {

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: mReplace
 description: Replace documents
-algolia: true
 ---
 
 # MReplace

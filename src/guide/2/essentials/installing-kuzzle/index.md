@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Install Kuzzle
 order: 1
-algolia: true
 ---
 
 # Installing Kuzzle

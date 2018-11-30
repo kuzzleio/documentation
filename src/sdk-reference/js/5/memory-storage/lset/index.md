@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: lset
 description: MemoryStorage:lset
-algolia: true
 ---
   
 
