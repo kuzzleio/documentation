@@ -1,6 +1,6 @@
 kuzzleio::NotificationListener listener =
   [](const kuzzleio::notification_result *notification) {
-    std::cout << notification->volatile << std::endl;
+    std::cout << notification->volatiles << std::endl;
     // "{ "username": "nina vkote" }"
     std::cout << "Currently " << notification->result->count << " users in the room" << std::endl;
   };
