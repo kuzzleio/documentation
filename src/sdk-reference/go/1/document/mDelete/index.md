@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: mDelete
 description: Delete documents
-algolia: true
 ---
 
 # MDelete

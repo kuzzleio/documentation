@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: fetchProfile
 description: Security:fetchProfile
-algolia: true
 ---
   
 

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: sinterstore
 description: MemoryStorage:sinterstore
-algolia: true
 ---
   
 

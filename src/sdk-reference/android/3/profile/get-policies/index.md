@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getPolicies
 description: Profile:getPolicies
-algolia: true
 ---
   
 

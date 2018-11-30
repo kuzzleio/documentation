@@ -62,10 +62,12 @@ module.exports = class BaseRunner {
             previous = null;
 
           for (const e of expected) {
-            let match = null;
+            let
+              match = null,
+              index;
 
-            for (let i = 0; i < stdout.length && match === null; i++) {
-              match = stdout[i].match(e);
+            for (index = 0; index < stdout.length && match === null; index++) {
+              match = stdout[index].match(e);
             }
 
             if (match === null) {
@@ -76,14 +78,15 @@ module.exports = class BaseRunner {
               }));
             }
 
-            if (match.index < lastIndex) {
+            if (index < lastIndex) {
               return reject(new TestResult({
                 code: 'ERR_ORDER',
-                actualOrder: [previous, e]
+                actualOrder: [previous, e],
+                actual: stdout
               }));
             }
 
-            lastIndex = match.index;
+            lastIndex = index;
             previous = e;
           }
 

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: sunion
 description: MemoryStorage:sunion
-algolia: true
 ---
   
 

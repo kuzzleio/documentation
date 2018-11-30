@@ -1,6 +1,3 @@
-// Avoid program exit before receiving notification
-exitPrgm := make(chan bool)
-
 // Subscribe to notifications for documents containing a 'name' property
 filters := json.RawMessage(`{ "range": { "age": { "lte": 20 } } }`)
 
@@ -10,8 +7,6 @@ go func() {
   notification := <-listener
 
   fmt.Printf("Document moved %s from the scope\n", notification.Scope)
-
-  exitPrgm <- true
 }()
 
 options := types.NewRoomOptions()
@@ -45,5 +40,3 @@ kuzzle.Document.Update(
 	"nina-vkote",
 	json.RawMessage(`{ "age": 42 }`),
 	nil)
-
-<-exitPrgm

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: createIndex
 description: Kuzzle:createIndex
-algolia: true
 ---
   
 

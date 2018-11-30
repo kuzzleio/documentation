@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getSpecifications
 description: Returns the validation specifications
-algolia: true
 ---
 
 # getSpecifications
