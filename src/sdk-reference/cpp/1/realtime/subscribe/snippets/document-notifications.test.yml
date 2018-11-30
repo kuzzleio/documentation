@@ -5,3 +5,6 @@ hooks:
   after:
 template: realtime
 expected: Document nina-vkote enter the scope
+
+sdk: cpp
+version: 1
