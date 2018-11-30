@@ -5,6 +5,5 @@ hooks:
   after:
 template: default
 expected:
-  - "{ cursor: '0',"
-  - "values: \\[ 'key[123]', 'key[123]', 'key[123]' ] }"
+  - "{ cursor: '0', values: \\[ 'key[123]', 'key[123]', 'key[123]' ] }"
 

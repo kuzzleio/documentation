@@ -5,5 +5,4 @@ hooks:
   after:
 template: default
 expected:
-  - "\\[ { member: 'foo', score: 42 },"
-  - "{ member: 'bar', score: 4 } ]"
+  - "\\[ { member: 'foo', score: 42 }, { member: 'bar', score: 4 } ]"

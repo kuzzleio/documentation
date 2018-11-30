@@ -87,6 +87,7 @@ class Logger {
         } else if (result.code === 'ERR_ORDER') {
           console.log(red('        THIS RESULT: '), result.actualOrder[0]);
           console.log(red('        CAME BEFORE: '), result.actualOrder[1]);
+          console.log(red('        COMPLETE OUTPUT: '), result.actual);
         } else {
           console.log(red('        ERROR   :'), result.actual);
         }
