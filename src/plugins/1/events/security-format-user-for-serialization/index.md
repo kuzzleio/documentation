@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: security:formatUserForSerialization
-algolia: true
 ---
 
 # security:formatUserForSerialization

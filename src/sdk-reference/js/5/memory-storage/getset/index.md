@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getset
 description: MemoryStorage:getset
-algolia: true
 ---
   
 

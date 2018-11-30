@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: now
 description: Returns the current server timestamp, in Epoch-millis
-algolia: true
 ---
 
 # now

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: deleteSpecifications
 description: Collection:deleteSpecifications
-algolia: true
 ---
   
 

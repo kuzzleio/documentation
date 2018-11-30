@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: get
 description: MemoryStorage:get
-algolia: true
 ---
   
 

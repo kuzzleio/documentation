@@ -8,9 +8,9 @@ NotificationListener listener = new NotificationListener() {
 
 try {
     kuzzle.getRealtime().subscribe(
-      "i-dont-exist", 
-      "in-database", 
-      "{}", 
+      "i-dont-exist",
+      "in-database",
+      "{}",
       listener
     );
 

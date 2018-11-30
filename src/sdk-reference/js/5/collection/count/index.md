@@ -1,18 +1,16 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: count
 description: Collection:count
-algolia: true
 ---
   
 
 # count
 Returns the number of documents matching the provided set of filters.
 
-<aside class="notice">
+<div class="alert alert-info">
 There is a small delay between the time a document is created and its availability in our search layer (usually a couple of seconds). That means that a document that was just created might not be returned by this function at first.
-</aside>
+</div>
 
 ---
 

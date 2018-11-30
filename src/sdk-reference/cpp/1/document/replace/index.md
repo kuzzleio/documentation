@@ -1,10 +1,8 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: replace
 description: Replace a document
 order: 200
-algolia: true
 ---
 
 # replace

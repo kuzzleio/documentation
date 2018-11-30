@@ -1,9 +1,7 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Properties
 order: 0
-algolia: true
 ---
 
 # Properties

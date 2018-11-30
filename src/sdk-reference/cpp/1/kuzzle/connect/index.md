@@ -1,25 +1,23 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: connect
 description: Connects the SDK to Kuzzle
-algolia: true
 ---
 
 # connect
 
-Connects to Kuzzle using the `host` argument provided in the constructor options.  
+Connects to Kuzzle using the `Protocol` argument provided in the constructor options.  
 Subsequent call have no effect if the SDK is already connected.
 
 ## Signature
 
 ```cpp
-char* connect()
+connect()
 ```
 
-## Return
+## Exceptions
 
-A `char*` with the error message or `nullptr` if connection is made successfully.
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 
