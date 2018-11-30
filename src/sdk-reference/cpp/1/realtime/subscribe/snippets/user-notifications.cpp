@@ -18,17 +18,23 @@ try {
     &listener,
     &options);
 
-  // instantiate a second kuzzle client because
-  // the same sdk instance does not receive his own notifications
-  kuzzleio::options fuzzle_options;
-  kuzzleio::Kuzzle* fuzzle = new kuzzleio::Kuzzle("kuzzle", &fuzzle_options);
-  fuzzle->connect();
+  // Instantiates a second kuzzle client: multiple subscriptions
+  // made by the same user will not trigger "new user" notifications
+  kuzzleio::WebSocket* ws2 = new kuzzleio::WebSocket("kuzzle");
+  kuzzleio::Kuzzle* kuzzle2 = new kuzzleio::Kuzzle(ws2);
+  kuzzle2->connect();
 
   // Set some volatile data
-  fuzzle->setVolatile("{ \"username\": \"nina vkote\" }");
+  kuzzleio::room_options options2;
+  options2.volatiles = "{ \"username\": \"nina vkote\" }";
 
   // Subscribe to the same room with the second client
-  fuzzle->realtime->subscribe("nyc-open-data", "yellow-taxi", filters, &listener);
+  kuzzle2->realtime->subscribe(
+    "nyc-open-data",
+    "yellow-taxi",
+    filters,
+    &listener,
+    &options2);
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.getMessage() << std::endl;
 }

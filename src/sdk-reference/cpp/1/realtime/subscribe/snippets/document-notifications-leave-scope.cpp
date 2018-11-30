@@ -27,8 +27,6 @@ try {
     "yellow-taxi",
     "nina-vkote",
     "{ \"age\": 42 }");
-
-  sleep(1);
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.getMessage() << std::endl;
 }
