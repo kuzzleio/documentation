@@ -6,3 +6,6 @@ hooks:
   after:
 template: without-connect
 expected: Success
+
+sdk: cpp
+version: 1

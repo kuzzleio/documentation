@@ -6,3 +6,6 @@ hooks:
   after: 
 template: without-connect
 expected: Successfully connected
+
+sdk: go
+version: 1
