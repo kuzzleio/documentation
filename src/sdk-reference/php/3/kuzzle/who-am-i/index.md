@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: whoAmI
 description: Kuzzle:whoAmI
-algolia: true
 ---
   
 

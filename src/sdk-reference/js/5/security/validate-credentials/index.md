@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: validateCredentials
 description: Security:validateCredentials
-algolia: true
 ---
   
 

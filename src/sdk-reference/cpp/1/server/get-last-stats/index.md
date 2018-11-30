@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getLastStats
 description: Returns the most recent statistics snapshot.
-algolia: true
 ---
 
 # getLastStats

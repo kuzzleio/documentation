@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: getStatistics
 description: Kuzzle:getStatistics
-algolia: true
 ---
   
 

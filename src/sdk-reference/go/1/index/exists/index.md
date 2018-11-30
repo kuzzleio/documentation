@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: exists
 description: Check for index existence
-algolia: true
 ---
 
 # Exists

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: scan
 description: MemoryStorage:scan
-algolia: true
 ---
   
 

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: expireat
 description: MemoryStorage:expireat
-algolia: true
 ---
   
 

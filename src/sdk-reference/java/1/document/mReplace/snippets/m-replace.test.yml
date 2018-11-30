@@ -9,3 +9,6 @@ hooks:
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
 expected: '\[{"_id":"some-id"'
+
+sdk: java
+version: 1

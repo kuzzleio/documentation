@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: refreshInternal
-algolia: true
 ---
 
 # refreshInternal

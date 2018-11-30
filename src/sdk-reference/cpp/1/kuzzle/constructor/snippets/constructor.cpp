@@ -1,4 +1,7 @@
 kuzzleio::options options;
 options.auto_resubscribe = false;
+std::string hostname = "kuzzle";
 
-kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle("kuzzle", &options);
+kuzzleio::WebSocket* ws = new kuzzleio::WebSocket(hostname);
+
+kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(ws, &options);

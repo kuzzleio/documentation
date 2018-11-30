@@ -1,1 +1,1 @@
-[snippet-code]
+setTimeout(() => process.exit(0), 1000);

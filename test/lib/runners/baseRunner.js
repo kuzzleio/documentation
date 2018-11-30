@@ -17,7 +17,7 @@ module.exports = class BaseRunner {
 
     try {
       if (snippet.hooks.before) {
-        this.runHookCommand(snippet.hooks.before);
+        await this.runHookCommand(snippet.hooks.before);
       }
 
       await this.lint(snippet);
@@ -34,7 +34,7 @@ module.exports = class BaseRunner {
       throw e;
     } finally {
       if (snippet.hooks.after) {
-        this.runHookCommand(snippet.hooks.after);
+        await this.runHookCommand(snippet.hooks.after);
       }
     }
   }
@@ -62,10 +62,12 @@ module.exports = class BaseRunner {
             previous = null;
 
           for (const e of expected) {
-            let match = null;
+            let
+              match = null,
+              index;
 
-            for (let i = 0; i < stdout.length && match === null; i++) {
-              match = stdout[i].match(e);
+            for (index = 0; index < stdout.length && match === null; index++) {
+              match = stdout[index].match(e);
             }
 
             if (match === null) {
@@ -76,14 +78,15 @@ module.exports = class BaseRunner {
               }));
             }
 
-            if (match.index < lastIndex) {
+            if (index < lastIndex) {
               return reject(new TestResult({
                 code: 'ERR_ORDER',
-                actualOrder: [previous, e]
+                actualOrder: [previous, e],
+                actual: stdout
               }));
             }
 
-            lastIndex = match.index;
+            lastIndex = index;
             previous = e;
           }
 
@@ -106,15 +109,19 @@ module.exports = class BaseRunner {
   }
 
   runHookCommand(command) {
-    try {
-      childProcess.execSync(command, { stderr: 'ignore', stdio: 'ignore' });
-    } catch (e) {
-      const result = {
-        code: 'HOOK_FAILED',
-        actual: e.message
-      };
+    return new Promise((resolve, reject) => {
+      childProcess.exec(command, { stderr: 'ignore', stdio: 'ignore' }, error => {
+        if (error) {
+          const result = {
+            code: 'HOOK_FAILED',
+            actual: error.message
+          };
 
-      throw new TestResult(result);
-    }
+          return reject(new TestResult(result));
+        }
+
+        resolve();
+      });
+    });
   }
 };

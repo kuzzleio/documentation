@@ -1,8 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Request Life-Cycle
-algolia: true
 ---
 
 # Request Life-Cycle

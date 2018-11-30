@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: sismember
 description: MemoryStorage:sismember
-algolia: true
 ---
   
 

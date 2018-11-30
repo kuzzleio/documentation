@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: GetMyRights
 description: Returns the rights for the user linked to the `JSON Web Token`.
-algolia: true
 ---
 
 # GetMyRights
@@ -37,11 +35,11 @@ A pointer to an array of UserRight object containing:
 
 | Property     | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `Controller` | string | The controller on wich the rights are applied |
-| `Action` | string | The action on wich the rights are applied |
-| `Index` | string | The index on wich the rights are applied |
-| `Collection` | string | The collection on wich the rights are applied |
-| `Value` | string | The rights |
+| `Controller` | string | Controller on wich the rights are applied |
+| `Action` | string | Action on wich the rights are applied |
+| `Index` | string | Index on wich the rights are applied |
+| `Collection` | string | Collection on wich the rights are applied |
+| `Value` | string | Rights (`allowed|denied|conditional`) |
 
 and an error or `nil`
 

@@ -1,9 +1,7 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: decr
 description: MemoryStorage:decr
-algolia: true
 ---
   
 
