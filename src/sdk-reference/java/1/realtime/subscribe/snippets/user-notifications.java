@@ -4,37 +4,38 @@ options.setUsers("all");
 
 NotificationListener listener = new NotificationListener() {
   public void onMessage(NotificationResult notification) {
+    System.out.println(notification.getVolatiles());
     System.out.println("Currently " + notification.getResult().getCount() + " users in the room");
   }
 };
 
-String document = "{ \"name\": \"nina vkote\", \"age\": 19 }";
-
 try {
-    kuzzle.getRealtime().subscribe(
-      "nyc-open-data",
-      "yellow-taxi",
-      filters,
-      listener,
-      options
-    );
+  kuzzle.getRealtime().subscribe(
+    "nyc-open-data",
+    "yellow-taxi",
+    filters,
+    listener,
+    options
+  );
 
-    // instantiate a second kuzzle client because
-    // the same sdk instance does not receive his own notifications
-    WebSocket anotherSocket = new WebSocket("kuzzle");
-    Kuzzle fuzzle = new Kuzzle(anotherSocket);
-    fuzzle.connect();
+  // Instantiates a second kuzzle client: multiple subscriptions
+  // made by the same user will not trigger "new user" notifications
+  WebSocket ws2 = new WebSocket("kuzzle");
+  Kuzzle kuzzle2 = new Kuzzle(ws2);
+  kuzzle2.connect();
 
-    // Set some volatile data
-    fuzzle.setVolatile("{ \"username\": \"nina vkote\" }");
+  // Set some volatile data
+  RoomOptions options2 = new RoomOptions();
+  options2.setVolatiles("{ \"username\": \"nina vkote\" }");
 
-    // Subscribe to the same room with the second client
-    fuzzle.getRealtime().subscribe(
-      "nyc-open-data",
-      "yellow-taxi",
-      filters,
-      listener
-    );
+  // Subscribe to the same room with the second client
+  kuzzle2.getRealtime().subscribe(
+    "nyc-open-data",
+    "yellow-taxi",
+    filters,
+    listener,
+    options2
+  );
 } catch (KuzzleException e) {
-    System.err.println(e.getMessage());
+  System.err.println(e.getMessage());
 }

@@ -3,5 +3,5 @@ description: Subscribe to message notifications
 hooks:
   before:
   after:
-template: default
+template: realtime
 expected: Message notification received
