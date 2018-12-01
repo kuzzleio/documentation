@@ -58,7 +58,7 @@ module.exports = class BaseRunner {
             expected = Array.isArray(snippet.expected) ? snippet.expected : [snippet.expected];
 
           let
-            lastIndex = -1,
+            lastIndex = 0,
             previous = null;
 
           for (const e of expected) {
@@ -66,22 +66,30 @@ module.exports = class BaseRunner {
               match = null,
               index;
 
-            for (index = 0; index < stdout.length && match === null; index++) {
+            for (index = lastIndex; index < stdout.length && match === null; index++) {
               match = stdout[index].match(e);
             }
 
             if (match === null) {
+              // check if the looked up item is actually before a previous
+              // one
+              if (previous !== null) {
+                for(let i = 0; i < lastIndex && match === null; i++) {
+                  match = stdout[i].match(e);
+                }
+              }
+
+              if (match !== null) {
+                return reject(new TestResult({
+                  code: 'ERR_ORDER',
+                  actualOrder: [previous, e],
+                  actual: stdout
+                }));
+              }
+
               return reject(new TestResult({
                 code: 'ERR_ASSERTION',
                 expected: e,
-                actual: stdout
-              }));
-            }
-
-            if (index < lastIndex) {
-              return reject(new TestResult({
-                code: 'ERR_ORDER',
-                actualOrder: [previous, e],
                 actual: stdout
               }));
             }
