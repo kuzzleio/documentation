@@ -14,11 +14,11 @@ Searches collection specifications.
 
 ```java
   public io.kuzzle.sdk.SpecificationSearchResult searchSpecifications(
-    String body, 
+    String query,
     io.kuzzle.sdk.QueryOptions
   )
   public io.kuzzle.sdk.SpecificationSearchResult searchSpecifications(
-    String body
+    String query
   )
 ```
 
@@ -26,10 +26,7 @@ Searches collection specifications.
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `index` | <pre>String</pre> | Index name |
-| `collection` | <pre>String</pre> | Collection name |
-| `id` | <pre>String</pre> | Optional document id. If set to a blank string, will use a auto-generated id |
-| `body` | <pre>String</pre> | A JSON string containing the body of the document |
+| `query` | <pre>String</pre> | A JSON string containing the query of the document |
 | `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | The query options |
 
 ### Options

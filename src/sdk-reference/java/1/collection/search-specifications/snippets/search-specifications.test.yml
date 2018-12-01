@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: Success
+sdk: java
+version: 1

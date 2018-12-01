@@ -17,6 +17,8 @@ hooks:
         }
       }
     }' kuzzle:7512/_specifications?refresh=wait_for
-  after: 
+  after:
 template: default
 expected: Successfully retrieved 1 specifications
+sdk: go
+version: 1
