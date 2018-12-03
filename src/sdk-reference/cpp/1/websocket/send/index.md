@@ -18,7 +18,7 @@ kuzzle_response* send(const std::string& query, query_options *options, const st
 
 | Argument  | Type             | Description
 | --------- | ---------------- | ------------------------
-| `query` | <pre>std::string&</pre> | API request
+| `query` | <pre>const std::string&</pre> | API request
 | `options` | <pre>kuzzleio::query_options*</pre>  | Additional query options
 | `request_id` | <pre>std::string&</pre> | the request_id of the request if you want to set one
 
