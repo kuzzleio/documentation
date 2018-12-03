@@ -11,7 +11,7 @@ Base method used to send queries to Kuzzle, following the [API Documentation]({{
 ## Signature
 
 ```cpp
-kuzzle_response* send(const std::string& query, query_options *options, const std::string& request_id);
+kuzzleio::kuzzle_response* send(const std::string& query, kuzzleio::query_options *options, const std::string& request_id);
 ```
 
 ## Arguments
