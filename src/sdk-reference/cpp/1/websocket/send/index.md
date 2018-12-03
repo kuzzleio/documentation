@@ -57,7 +57,7 @@ The following properties are the most common.
 
 | Property     | Type   | Description                         |
 | ------------ | ------ | ----------------------------------- |
-| `request_id` | char\* | Request unique id                   |
+| `request_id` | <pre>const char*</pre>| Request unique id                   |
 | `result`     | <pre>const char*</pre> | Raw JSON result                     |
 | `error`      | char\* | Error message                       |
 | `status`     | <pre>int</pre>    | Request status (eg: 200, 403, etc.) |
