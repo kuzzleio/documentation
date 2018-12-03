@@ -42,9 +42,6 @@ try {
       "scrollId": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAAACSFlgtZTJFYjNiU1FxQzhSNUFpNlZHZGcAAAAAAAAAkxZYLWUyRWIzYlNRcUM4UjVBaTZWR2RnAAAAAAAAAJQWWC1lMkViM2JTUXFDOFI1QWk2VkdkZwAAAAAAAACVFlgtZTJFYjNiU1FxQzhSNUFpNlZHZGcAAAAAAAAAlhZYLWUyRWIzYlNRcUM4UjVBaTZWR2Rn"
     }
   */
-  if (searchResult.hits[0]._source.validation.fields.license.type === 'string') {
-    console.log('Success');
-  }
 } catch (error) {
   console.error(error.message);
 }
