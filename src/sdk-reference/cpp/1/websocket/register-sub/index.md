@@ -20,7 +20,7 @@ Used when subscribing to store a listener.
 | ---------- |---------------------------------------------------------------------------------------------- |
 | `channel`    | <pre>const std::string&</pre>           | A string representing the channel of the subscription
 | `room_id` | <pre>const std::string&</pre>  | A string representing the roomId of the subscription
-| `filters` | <pre>std::string&</pre> | A JSON string representing the filters of the subscription
+| `filters` | <pre>const std::string&</pre> | A JSON string representing the filters of the subscription
 | `subscribe_to_self` | <pre>bool</pre> | Subscribe to notifications fired by our own queries
 | `listener` | <pre>NotificationListener*</pre> | A pointer to the listener
 
