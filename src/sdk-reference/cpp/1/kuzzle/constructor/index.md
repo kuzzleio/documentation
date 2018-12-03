@@ -21,7 +21,7 @@ Kuzzle(kuzzleio::Protocol* protocol, kuzzleio::options *options = nullptr)
 | Argument  | Type        | Description                     |
 | --------- | ----------- | ------------------------------- |
 | `protocol`    | <pre><a href={{ site_base_path }}sdk-reference/cpp/1/protocol/>Protocol</a></pre> | Network protocol configuration |
-| `options` | <pre>options\*</pre>   | Kuzzle connection configuration |
+| `options` | <pre>kuzzleio::options\*</pre>   | Kuzzle connection configuration |
 
 
 ### **options**
