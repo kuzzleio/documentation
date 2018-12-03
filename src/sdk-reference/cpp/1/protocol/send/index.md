@@ -29,7 +29,7 @@ The following properties are the most common.
 
 | Property     | Type         | Description                                                        | Required |
 | ------------ | ------------ | ------------------------------------------------------------------ | -------- |
-| `controller` | const char\* | Controller name                                                    | yes      |
+| `controller` | <pre>const char*</pre> | Controller name                                                    | yes      |
 | `action`     | const char\* | Action name                                                        | yes      |
 | `body`       | const char\* | JSON query body string for this action                             | no       |
 | `index`      | const char\* | Index name for this action                                         | no       |
