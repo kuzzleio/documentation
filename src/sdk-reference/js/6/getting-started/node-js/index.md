@@ -70,7 +70,7 @@ Before proceeding, please make sure your system has **Node.js** version 8 or hig
 
 Create your playground directory and install the [Javascript SDK]({{ site_base_path }}sdk-reference/js/6) from the command line using npm:
 
-```bash
+```sh
 mkdir "kuzzle-playground"
 cd "kuzzle-playground"
 npm install git://github.com/kuzzleio/sdk-javascript.git#6-beta
@@ -80,10 +80,14 @@ npm install git://github.com/kuzzleio/sdk-javascript.git#6-beta
 If you are performing a clean install you might see some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
 </div>
 
-Then, create an `init.js` file and start by adding the code below. This will load the Kuzzle Javascript SDK and then instantiate a client that will connect to Kuzzle via websockets.  
-If Kuzzle is not running on localhost, replace it with the corresponding server name or ip address.
+Then, create an `init.js` file and start by adding the code below.  
+This will load the Kuzzle Javascript SDK and then instantiate a client that will connect to Kuzzle via websockets.  
 
 [snippet=load-sdk]
+
+<div class="alert alert-info">
+You need to replace 'kuzzle' which is the Kuzzle backend hostname with 'localhost' or the hostname where your Kuzzle backend is running.
+</div>
 
 Next we add a listener to be notified in case of connection error:
 
@@ -97,7 +101,7 @@ Then we have to connect the client to your Kuzzle server with the `connect()` me
 Then, we will add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' that we will use to store data later on.  
 These methods will be wrapped in an `async` function to use the `await` construct.
 
-[snippet-prepare-db]
+[snippet=prepare-db]
 
 Your `init.js` file should now look like this:
 
@@ -151,14 +155,14 @@ node create.js
 
 <div class="alert alert-success">
 You have now successfully stored your first document into Kuzzle. Click <a href="{{ site_base_path }}guide/1/essentials/installing-console">here</a> to see how you can use the
-   [<strong>Kuzzle Admin Console</strong>](http://console.kuzzle.io/) to browse your collection and confirm that your document was saved.
+   <a href="http://console.kuzzle.io" target="_blank"><strong>Kuzzle Admin Console</strong></a> to browse your collection and confirm that your document was saved.
 </div>
 
 <div class="alert alert-info">
 Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
 </div>
 
-_You can find more resources about Kuzzle SDK in the [SDK Reference]({{ site_base_path }}sdk-reference/js/6)._
+_You can find more resources about Kuzzle Javascript SDK in the [SDK Reference]({{ site_base_path }}sdk-reference/js/6)._
 
 ## Subscribe to realtime document notifications (pub/sub)
 
