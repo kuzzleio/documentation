@@ -20,7 +20,7 @@ virtual kuzzleio::kuzzle_response* send(const std::string& query, kuzzleio::quer
 | --------- | ---------------- | ------------------------
 | `query` | <pre>const std::string&</pre> | API request
 | `options` | <pre>kuzzleio::query_options*</pre>  | Additional query options
-| `request_id` | <pre>std::string&</pre> | the request_id of the request if you want to set one
+| `request_id` | <pre>const std::string&</pre> | the request_id of the request if you want to set one
 
 ### **request**
 
