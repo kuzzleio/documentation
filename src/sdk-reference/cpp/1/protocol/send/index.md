@@ -31,11 +31,11 @@ The following properties are the most common.
 | ------------ | ------------ | ------------------------------------------------------------------ | -------- |
 | `controller` | <pre>const char*</pre> | Controller name                                                    | yes      |
 | `action`     | <pre>const char*</pre> | Action name                                                        | yes      |
-| `body`       | const char\* | JSON query body string for this action                             | no       |
-| `index`      | const char\* | Index name for this action                                         | no       |
-| `collection` | const char\* | Collection name for this action                                    | no       |
-| `id`         | const char\* | id for this action                                                 | no       |
-| `volatiles`  | const char\* | JSON string representing additional information to send to Kuzzle | no       |
+| `body`       | <pre>const char*</pre> | JSON query body string for this action                             | no       |
+| `index`      | <pre>const char*</pre> | Index name for this action                                         | no       |
+| `collection` | <pre>const char*</pre> | Collection name for this action                                    | no       |
+| `id`         | <pre>const char*</pre> | id for this action                                                 | no       |
+| `volatiles`  | <pre>const char*</pre> | JSON string representing additional information to send to Kuzzle | no       |
 
 ### **options**
 
