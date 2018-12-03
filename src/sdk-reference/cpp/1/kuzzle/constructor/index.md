@@ -13,14 +13,14 @@ Each instance represent a connection to Kuzzle with specific options.
 ## Signature
 
 ```cpp
-Kuzzle(protocol, kuzzleio::options *options = nullptr)
+Kuzzle(kuzzleio::Protocol* protocol, kuzzleio::options *options = nullptr)
 ```
 
 ## Arguments
 
 | Argument  | Type        | Description                     |
 | --------- | ----------- | ------------------------------- |
-| `protocol`    | <pre><a href={{ site_base_path }}sdk-reference/cpp/1/protocols/>Protocol</a></pre> | Network protocol configuration |
+| `protocol`    | <pre><a href={{ site_base_path }}sdk-reference/cpp/1/protocol/>Protocol</a></pre> | Network protocol configuration |
 | `options` | <pre>options\*</pre>   | Kuzzle connection configuration |
 
 
