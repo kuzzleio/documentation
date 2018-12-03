@@ -1,6 +1,6 @@
 const run = async () => {
   try {
-    // Connect to Kuzzle server
+    // Connect to Kuzzle backend
     await kuzzle.connect();
 
     // Create an index
