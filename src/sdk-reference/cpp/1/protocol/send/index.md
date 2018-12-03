@@ -11,16 +11,16 @@ Base method used to send queries to Kuzzle, following the [API Documentation]({{
 ## Signature
 
 ```cpp
-virtual kuzzle_response* send(const std::string& query, query_options *options, const std::string& request_id) = 0;
+virtual kuzzleio::kuzzle_response* send(const std::string& query, kuzzleio::query_options *options, const std::string& request_id) = 0;
 ```
 
 ## Arguments
 
 | Argument  | Type             | Description
 | --------- | ---------------- | ------------------------
-| `query` | <pre>std::string&</pre> | API request
+| `query` | <pre>const std::string&</pre> | API request
 | `options` | <pre>kuzzleio::query_options*</pre>  | Additional query options
-| `request_id` | <pre>std::string&</pre> | the request_id of the request if you want to set one
+| `request_id` | <pre>const std::string&</pre> | the request_id of the request if you want to set one
 
 ### **request**
 

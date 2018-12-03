@@ -18,13 +18,13 @@ Used when subscribing to store a listener.
 
 | Argument   | Type                      | Description
 | ---------- |---------------------------------------------------------------------------------------------- |
-| `channel`    | <pre>std::string&</pre>           | A string representing the channel of the subscription
-| `room_id` | <pre>std::string&</pre>  | A string representing the roomId of the subscription
-| `filters` | <pre>std::string&</pre> | A JSON string representing the filters of the subscription
+| `channel`    | <pre>const std::string&</pre>           | A string representing the channel of the subscription
+| `room_id` | <pre>const std::string&</pre>  | A string representing the roomId of the subscription
+| `filters` | <pre>const std::string&</pre> | A JSON string representing the filters of the subscription
 | `subscribe_to_self` | <pre>bool</pre> | Subscribe to notifications fired by our own queries
 | `listener` | <pre>NotificationListener*</pre> | A pointer to the listener
 
 ### **listener**
 
-A c++11 lambda which take a `const std::string`
-`EventListener` is defined as `const std::function<void(const std::string)>`.
+A c++11 lambda which take a `const std::string&`
+`EventListener` is defined as `const std::function<void(const std::string&)>`.
