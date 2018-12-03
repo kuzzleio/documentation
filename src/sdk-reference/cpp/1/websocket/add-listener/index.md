@@ -41,5 +41,5 @@ ERROR
 
 ### **listener**
 
-A c++11 lambda which take a `const std::string`
+A c++11 lambda which take a `const std::string&`
 `EventListener` is defined as `const std::function<void(const std::string)>`.
