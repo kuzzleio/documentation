@@ -44,7 +44,7 @@ The following properties are the most common.
 
 | Property   | Type    | Description
 | ---------- | ------- | --------------------------------- |
-| `queuable` | boolean(true) | Make this request queuable or not |
+| `queuable` | bool(true) | Make this request queuable or not |
 
 ### **request_id**
 
