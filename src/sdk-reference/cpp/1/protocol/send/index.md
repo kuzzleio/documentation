@@ -59,5 +59,5 @@ The following properties are the most common.
 | ------------ | ------ | ----------------------------------- |
 | `request_id` | <pre>const char *</pre> | Request unique id                   |
 | `result`     | <pre>const char *</pre> | Raw JSON result                     |
-| `error`      | char\* | Error message                       |
+| `error`      | <pre>const char *</pre> | Error message                       |
 | `status`     | int    | Request status (eg: 200, 403, etc.) |
