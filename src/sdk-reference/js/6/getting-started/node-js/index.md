@@ -80,66 +80,24 @@ npm install git://github.com/kuzzleio/sdk-javascript.git#6-beta
 If you are performing a clean install you might see some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
 </div>
 
-Then, create an `init.js` file and start by adding the code below. This will load the Kuzzle Javascript SDK:
+Then, create an `init.js` file and start by adding the code below. This will load the Kuzzle Javascript SDK and then instantiate a client that will connect to Kuzzle via websockets.  
+If Kuzzle is not running on localhost, replace it with the corresponding server name or ip address.
 
-```javascript
-const { Kuzzle } = require('kuzzle-sdk');
-```
-
-Next we will instantiate a client that will connect to Kuzzle via websockets. If Kuzzle is not running on localhost, replace it with the corresponding server name or ip address.
-
-```javascript
-const kuzzle = new Kuzzle('websocket', { host: 'localhost' });
-```
+[snippet=load-sdk]
 
 Next we add a listener to be notified in case of connection error:
 
 ```javascript
 kuzzle.on('networkError', error => {
-  console.error(`Network Error: ${error}`);
+  console.error('Network Error: ', error);
 });
 ```
 
-Then we have to connect the client to your Kuzzle server with the `connect()` method.
-This method will be wrapped in an `async` function to use the `await` construct.
+Then we have to connect the client to your Kuzzle server with the `connect()` method.  
+Then, we will add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' that we will use to store data later on.  
+These methods will be wrapped in an `async` function to use the `await` construct.
 
-```javascript
-const run = async () => {
-  try {
-    // Connect to Kuzzle server
-    await kuzzle.connect();
-
-  } catch (error) {
-    console.error(error.message);
-  } finally {
-    kuzzle.disconnect();
-  }
-}
-```
-
-
-Finally, we will add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' that we will use to store data later on.
-
-```javascript
-const run = async () => {
-  try {
-    // Connect to Kuzzle server
-    await kuzzle.connect();
-
-    // Create an index
-    await kuzzle.index.create('nyc-open-data');
-
-    // Create a collection
-    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
-
-    console.log('nyc-open-data/yellow-taxi ready!');
-  } catch (error) {
-    console.error(error.message);
-  } finally {
-    kuzzle.disconnect();
-  }
-}
-```
+[snippet-prepare-db]
 
 Your `init.js` file should now look like this:
 
@@ -148,7 +106,7 @@ Your `init.js` file should now look like this:
 This code does the following:
 * loads the `Kuzzle SDK` from its NPM package
 * creates an instance of the SDK
-* connects it to Kuzzle running on `localhost` with the `websocket` protocol
+* connects it to Kuzzle running on `kuzzle` (change your hostname if you need) with the `websocket` protocol
 * creates the `nyc-open-data` index
 * creates the `yellow-taxi` collection (within the `nyc-open-data` index),
 * disconnects from Kuzzle after the collection is created or if an error occurs

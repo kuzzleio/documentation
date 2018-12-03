@@ -17,5 +17,7 @@ class MyCustomProtocol extends KuzzleAbstractNetwork {
   }
 }
 
+const kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
+
 [snippet-code]
 console.log('Everything is ok');

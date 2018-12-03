@@ -5,6 +5,7 @@ hooks:
     curl -XPOST kuzzle:7512/nyc-open-data/_create
     curl -XPUT kuzzle:7512/nyc-open-data/yellow-taxi
   after:
-template: empty-realtime
+template: empty
 expected: Successfully subscribe to document notifications!
-sdk: js/6
+sdk: js
+version: 6

@@ -12,7 +12,7 @@ console.log = (...args) => {
 [snippet-code]
 
 (async () => {
-  for (let i = 10; i > 0 && outputs.length <= 0; --i) {
+  for (let i = 150; i > 0 && outputs.length <= 0; --i) {
     await sleep(200);
   }
 })();
@@ -20,4 +20,5 @@ console.log = (...args) => {
 console.log = consoleLog;
 console.log(...outputs);
 
-kuzzle.disconnect();
+// force exit: do not wait for the event loop to be empty
+process.exit(0);

@@ -21,8 +21,8 @@ const run = async () => {
       birthday: '1959-06-22',
       license: 'B'
     };
-    await kuzzle.document.create('nyc-open-data', 'yellow-taxi', null, driver);
 
+    await kuzzle.document.create('nyc-open-data', 'yellow-taxi', null, driver);
     console.log('New document successfully created!');
   } catch (error) {
     console.error(error.message);

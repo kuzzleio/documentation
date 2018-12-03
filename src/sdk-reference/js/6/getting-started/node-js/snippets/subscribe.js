@@ -37,6 +37,8 @@ const run = async () => {
     console.log('Successfully subscribe to document notifications!');
   } catch (error) {
     console.error(error.message);
+  } finally {
+    kuzzle.disconnect();
   }
 };
 
