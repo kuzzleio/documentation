@@ -7,7 +7,7 @@ const kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
-  console.error(`Network Error: ${error}`);
+  console.error('Network Error:', error);
 });
 
 const run = async () => {
