@@ -11,7 +11,7 @@ Used when subscribing to store a listener.
 ## Signature
 
 ```cpp
-    void registerSub(const std::string& channel, const std::string& room_id, const std::string& filters, bool subscrive_to_self, NotificationListener* listener);
+    void registerSub(const std::string& channel, const std::string& room_id, const std::string& filters, bool subscribe_to_self, NotificationListener* listener);
 ```
 
 ## Arguments
