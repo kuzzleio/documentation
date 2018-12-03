@@ -30,7 +30,7 @@ The following properties are the most common.
 | Property     | Type         | Description                                                        | Required |
 | ------------ | ------------ | ------------------------------------------------------------------ | -------- |
 | `controller` | <pre>const char*</pre> | Controller name                                                    | yes      |
-| `action`     | const char\* | Action name                                                        | yes      |
+| `action`     | <pre>const char*</pre> | Action name                                                        | yes      |
 | `body`       | const char\* | JSON query body string for this action                             | no       |
 | `index`      | const char\* | Index name for this action                                         | no       |
 | `collection` | const char\* | Collection name for this action                                    | no       |
