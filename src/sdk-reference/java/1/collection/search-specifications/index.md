@@ -33,7 +33,7 @@ Searches collection specifications.
 
 | Option     | Type (default) | Description                       |
 | ---------- | -------------- | --------------------------------- |
-| `queuable` | <pre>boolean</pre> (`true`) | Make this request queuable or not |
+| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 | `from` | <pre>int</pre><br/>(`1`) | Offset of the first document to fetch |
 | `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
 | `scroll` | <pre>String</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units)) |
