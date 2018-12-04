@@ -6,4 +6,4 @@ hooks:
 template: standalone
 expected:
 - Connected!
-- New document added to yellow-taxi collection!
+- New document added to the yellow-taxi collection!

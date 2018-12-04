@@ -12,35 +12,35 @@ import (
 )
 
 func main() {
-	// Create websocket protocol, replace "kuzzle" with
+	// Creates a WebSocket connection.
+	// Replace "kuzzle" with
 	// your Kuzzle hostname like "localhost"
 	c := websocket.NewWebSocket("kuzzle", nil)
-	// Instanciate a Kuzzle client
+	// Instantiates a Kuzzle client
 	kuzzle, _ := kuzzle.NewKuzzle(c, nil)
 
-	// ... then connect to the server.
+	// Connects to the server.
 	if err := kuzzle.Connect(); err != nil {
 		log.Fatal(err)
 		os.Exit(1)
 	}
 	fmt.Println("Connected!")
 
-	// Avoid program exit before receiving notification
+	// Prevents the program from exiting before receiving a notification
 	exit := make(chan bool)
-	// Start an async listener
+
+	// Starts an async listener
 	listener := make(chan types.NotificationResult)
 	go func() {
 		notification := <-listener
 
-		// Access document content through notification.
-		// We can organize data like we want using the Go Reflection API...
+		// Parses the document content embedded in the notification.
 		var doc struct {
 			Name     string `json:"name"`
 			Birthday string `json:"birthday"`
 			License  string `json:"license"`
 		}
 
-		// ...and json.Unmarshal() function.
 		json.Unmarshal(notification.Result.Content, &doc)
 		fmt.Printf("Driver %s born on %s got a %s license.\n",
 			doc.Name,
@@ -48,11 +48,11 @@ func main() {
 			doc.License,
 		)
 
-		// It's time to quit.
+		// Allows the program to exit
 		exit <- true
 	}()
 
-	// Subscribe to notifications for drivers having B drive license.
+	// Subscribes to notifications for drivers having a "B" driver license.
 	filters := json.RawMessage(`
 		{
 			"equals": {
@@ -61,7 +61,7 @@ func main() {
 		}
 	`)
 
-	// Start subscribing.
+	// Sends the subscription
 	if _, err := kuzzle.Realtime.Subscribe(
 		"nyc-open-data",
 		"yellow-taxi",
@@ -72,9 +72,9 @@ func main() {
 		log.Fatal(err)
 		os.Exit(1)
 	}
-	fmt.Println("Successfully subscribing!")
+	fmt.Println("Successfully subscribed!")
 
-	// Now let's trigger our subscription.
+	// Writes a new document. This triggers a notification sent to our subscription.
 	content := json.RawMessage(`
 		{
 			"name": "John",
@@ -83,7 +83,6 @@ func main() {
 		}
 	`)
 
-	// Create the new document matching our filter
 	if _, err := kuzzle.Document.Create(
 		"nyc-open-data",
 		"yellow-taxi",
@@ -94,11 +93,11 @@ func main() {
 		log.Fatal(err)
 		os.Exit(1)
 	}
-	fmt.Println("New document added to yellow-taxi collection!")
+	fmt.Println("New document added to the yellow-taxi collection!")
 
-	// Wait for notification
+	// Waits for a notification to be received
 	<-exit
 
-	// Finally, we can disconnect the SDK.
+	// Disconnects the SDK.
 	kuzzle.Disconnect()
 }

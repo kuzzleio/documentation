@@ -10,13 +10,14 @@ import (
 )
 
 func main()	{
-	// Create websocket protocol, replace "kuzzle" with
+	// Creates a WebSocket connection.
+	// Replace "kuzzle" with
 	// your Kuzzle hostname like "localhost"
 	c := websocket.NewWebSocket("kuzzle", nil)
-	// Instanciate a Kuzzle client
+	// Instantiates a Kuzzle client
 	kuzzle, _ := kuzzle.NewKuzzle(c, nil)
 
-	// ... then connect to the server.
+	// Connects to the server.
 	err := kuzzle.Connect()
 	if err != nil {
 		log.Fatal(err)
@@ -24,7 +25,7 @@ func main()	{
 	}
 	fmt.Println("Connected!")
 
-	// Fresh installed Kuzzle is empty, so we need to create
+	// Freshly installed Kuzzle servers are empty: we need to create
 	// a new index.
 	if err := kuzzle.Index.Create("nyc-open-data", nil); err != nil {
 		log.Fatal(err)
@@ -32,7 +33,7 @@ func main()	{
 	}
 	fmt.Println("Index nyc-open-data created!")
 
-	// We can now create collection passing index and collection name.
+	// Creates a collection 
 	if err := kuzzle.Collection.Create(
 		"nyc-open-data",
 		"yellow-taxi",
@@ -44,6 +45,6 @@ func main()	{
 	}
 	fmt.Println("Collection yellow-taxi created!")
 
-	// Finally, we can disconnect the SDK
+	// Disconnects the SDK
 	kuzzle.Disconnect()
 }

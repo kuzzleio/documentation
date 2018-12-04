@@ -6,6 +6,6 @@ hooks:
 template: standalone
 expected:
 - Connected!
-- Successfully subscribing!
-- New document added to yellow-taxi collection!
+- Successfully subscribed!
+- New document added to the yellow-taxi collection!
 - Driver John born on 1995-11-27 got a B license.
