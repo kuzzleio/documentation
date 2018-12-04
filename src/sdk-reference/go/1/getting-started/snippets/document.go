@@ -14,7 +14,7 @@ func main() {
 	// Create websocket protocol, replace "kuzzle" with
 	// your Kuzzle hostname like "localhost"
 	c := websocket.NewWebSocket("kuzzle", nil)
-	// Create Kuzzle SDK instances.
+	// Instanciate a Kuzzle client
 	kuzzle, _ := kuzzle.NewKuzzle(c, nil)
 
 	// Connect to the server.
@@ -33,7 +33,7 @@ func main() {
 		}
 	`)
 
-	// ... then save our document in Kuzzle.
+	// ... then save our document in "yellow-taxi" collection.
 	if _, err := kuzzle.Document.Create(
 		"nyc-open-data",
 		"yellow-taxi",

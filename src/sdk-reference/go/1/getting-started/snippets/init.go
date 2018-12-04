@@ -13,7 +13,7 @@ func main()	{
 	// Create websocket protocol, replace "kuzzle" with
 	// your Kuzzle hostname like "localhost"
 	c := websocket.NewWebSocket("kuzzle", nil)
-	// Create Kuzzle SDK instances
+	// Instanciate a Kuzzle client
 	kuzzle, _ := kuzzle.NewKuzzle(c, nil)
 
 	// ... then connect to the server.
@@ -33,7 +33,6 @@ func main()	{
 	fmt.Println("Index nyc-open-data created!")
 
 	// We can now create collection passing index and collection name.
-	// Third argument is the previously declared mapping.
 	if err := kuzzle.Collection.Create(
 		"nyc-open-data",
 		"yellow-taxi",

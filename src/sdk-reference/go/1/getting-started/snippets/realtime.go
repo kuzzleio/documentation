@@ -15,7 +15,7 @@ func main() {
 	// Create websocket protocol, replace "kuzzle" with
 	// your Kuzzle hostname like "localhost"
 	c := websocket.NewWebSocket("kuzzle", nil)
-	// Create Kuzzle SDK instances
+	// Instanciate a Kuzzle client
 	kuzzle, _ := kuzzle.NewKuzzle(c, nil)
 
 	// ... then connect to the server.
@@ -29,15 +29,15 @@ func main() {
 	exit := make(chan bool)
 	// Start an async listener
 	listener := make(chan types.NotificationResult)
-	go func ()	{
+	go func() {
 		notification := <-listener
 
 		// Access document content through notification.
 		// We can organize data like we want using the Go Reflection API...
 		var doc struct {
-			Name		 string `json:"name"`
+			Name     string `json:"name"`
 			Birthday string `json:"birthday"`
-			License	 string `json:"license"`
+			License  string `json:"license"`
 		}
 
 		// ...and json.Unmarshal() function.

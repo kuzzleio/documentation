@@ -38,7 +38,7 @@ Then create a `init.go` file and start by adding the code below:
 
 This program will initialize our Kuzzle creating an index and a collection
 we'll use in the next section.
-Run this little bunch of code:
+Run the program with the following command:
 
 ```bash
 $ go run init.go
