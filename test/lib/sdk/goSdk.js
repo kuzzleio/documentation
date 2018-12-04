@@ -7,6 +7,8 @@ const
 
 class GoSdk {
   constructor(version) {
+    this.name = 'go';
+    this.ext = 'go';
     this.version = version;
 
     this.repository = 'https://github.com/kuzzleio/sdk-go';
@@ -14,7 +16,7 @@ class GoSdk {
   }
 
   async get() {
-    await execute('git', ['clone', '-b', getVersionPath('go', this.version), this.repository]);
+    await execute('git', ['clone', '-b', getVersionPath(this), this.repository]);
     await execute('mv', ['sdk-go', this.sdkDir]);
     await execute('go', ['get', './...'], { cwd: this.sdkDir });
   }

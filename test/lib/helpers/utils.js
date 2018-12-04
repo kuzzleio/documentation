@@ -23,23 +23,23 @@ async function execute(command, args, options = {}) {
   return status;
 }
 
-function getVersionPath(language, version) {
+function getVersionPath(sdk) {
   const sdkVersions = readYaml.sync(SDK_VERSIONS_PATH);
-  const supportedLanguages = getSupportedLanguages(sdkVersions);
+  const supportedSdks = getSupportedSdks(sdkVersions);
 
-  if (! supportedLanguages.includes(language)) {
-    throw new Error(`Unknown language ${language}. Supported languages: ${supportedLanguages.join(', ')}`);
+  if (! supportedSdks.includes(sdk.name)) {
+    throw new Error(`Unknown SDK ${sdk.name}. Supported SDKs: ${supportedSdks.join(', ')}`);
   }
 
-  const sdkVersionPath = sdkVersions[language][version];
+  const sdkVersionPath = sdkVersions[sdk.name][sdk.version];
   if (! sdkVersionPath) {
-    throw new Error(`Unknown version ${version} for ${language} SDK.`);
+    throw new Error(`Unknown version ${sdk.version} for ${sdk.name} SDK.`);
   }
 
   return sdkVersionPath;
 }
 
-function getSupportedLanguages(sdkVersions = null) {
+function getSupportedSdks(sdkVersions = null) {
   if (! sdkVersions) {
     sdkVersions = readYaml.sync(SDK_VERSIONS_PATH);
   }
@@ -50,5 +50,5 @@ function getSupportedLanguages(sdkVersions = null) {
 module.exports = {
   execute,
   getVersionPath,
-  getSupportedLanguages
+  getSupportedSdks
 };

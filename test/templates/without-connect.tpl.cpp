@@ -2,17 +2,14 @@
 #include <string>
 #include <vector>
 
-#include "auth.hpp"
-#include "collection.hpp"
-#include "document.hpp"
-#include "index.hpp"
-#include "realtime.hpp"
 #include "kuzzle.hpp"
+#include "websocket.hpp"
 
 int main() {
   std::string hostname = "kuzzle";
 
-  kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(hostname);
+  kuzzleio::WebSocket* ws = new kuzzleio::WebSocket(hostname);
+  kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(ws);
 
   [snippet-code]
 

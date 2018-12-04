@@ -8,7 +8,8 @@
   top: 0;
   right: 0;
   left: 0;
-  height: 10rem;
+  // height: 10rem; DISCLAIMER BANNER
+  height: calc(10rem + 28px);
   transition: background-color 0.25s, color 0.25s;
   background-color: $md-color-primary;
   color: $md-color-white;
@@ -16,7 +17,8 @@
   z-index: 2;
   // Hack: putting the header on the GPU avoids unnecessary repaints
   backface-visibility: hidden;
-
+  
+  
   // Always show shadow, in case JavaScript is not available
   .no-js & {
     transition: none;
@@ -37,6 +39,17 @@
   
   @include break-to-device(tablet) {
     height: 5rem;    
+  }
+  
+  .disclaimer {
+    position: relative;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: #e94e77;
+    font-size: 1.3rem;
+    padding: 6px;
+    background-color: #ead8db;
   }
 }
 

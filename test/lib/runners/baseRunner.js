@@ -17,7 +17,7 @@ module.exports = class BaseRunner {
 
     try {
       if (snippet.hooks.before) {
-        this.runHookCommand(snippet.hooks.before);
+        await this.runHookCommand(snippet.hooks.before);
       }
 
       await this.lint(snippet);
@@ -34,7 +34,7 @@ module.exports = class BaseRunner {
       throw e;
     } finally {
       if (snippet.hooks.after) {
-        this.runHookCommand(snippet.hooks.after);
+        await this.runHookCommand(snippet.hooks.after);
       }
     }
   }
@@ -58,17 +58,35 @@ module.exports = class BaseRunner {
             expected = Array.isArray(snippet.expected) ? snippet.expected : [snippet.expected];
 
           let
-            lastIndex = -1,
+            lastIndex = 0,
             previous = null;
 
           for (const e of expected) {
-            let match = null;
+            let
+              match = null,
+              index;
 
-            for (let i = 0; i < stdout.length && match === null; i++) {
-              match = stdout[i].match(e);
+            for (index = lastIndex; index < stdout.length && match === null; index++) {
+              match = stdout[index].match(e);
             }
 
             if (match === null) {
+              // check if the looked up item is actually before a previous
+              // one
+              if (previous !== null) {
+                for(let i = 0; i < lastIndex && match === null; i++) {
+                  match = stdout[i].match(e);
+                }
+              }
+
+              if (match !== null) {
+                return reject(new TestResult({
+                  code: 'ERR_ORDER',
+                  actualOrder: [previous, e],
+                  actual: stdout
+                }));
+              }
+
               return reject(new TestResult({
                 code: 'ERR_ASSERTION',
                 expected: e,
@@ -76,14 +94,7 @@ module.exports = class BaseRunner {
               }));
             }
 
-            if (match.index < lastIndex) {
-              return reject(new TestResult({
-                code: 'ERR_ORDER',
-                actualOrder: [previous, e]
-              }));
-            }
-
-            lastIndex = match.index;
+            lastIndex = index;
             previous = e;
           }
 
@@ -106,15 +117,19 @@ module.exports = class BaseRunner {
   }
 
   runHookCommand(command) {
-    try {
-      childProcess.execSync(command, { stderr: 'ignore', stdio: 'ignore' });
-    } catch (e) {
-      const result = {
-        code: 'HOOK_FAILED',
-        actual: e.message
-      };
+    return new Promise((resolve, reject) => {
+      childProcess.exec(command, { stderr: 'ignore', stdio: 'ignore' }, error => {
+        if (error) {
+          const result = {
+            code: 'HOOK_FAILED',
+            actual: error.message
+          };
 
-      throw new TestResult(result);
-    }
+          return reject(new TestResult(result));
+        }
+
+        resolve();
+      });
+    });
   }
 };

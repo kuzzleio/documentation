@@ -5,3 +5,6 @@ hooks:
   after:
 template: default
 expected: Currently 1 active subscription
+
+sdk: cpp
+version: 1

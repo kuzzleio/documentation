@@ -1,5 +1,6 @@
 ---
 layout: sdk.html.hbs
+algolia: true
 title: search
 description: Search documents
 order: 200
@@ -59,7 +60,7 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a [kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/java/1/essentials/search-result).
+Returns a [kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/cpp/1/search-result).
 
 ## Exceptions
 

@@ -6,3 +6,6 @@ hooks:
   after: 
 template: default
 expected: 0 shards fail to refresh
+
+sdk: java
+version: 1

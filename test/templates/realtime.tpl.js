@@ -9,8 +9,12 @@ const kuzzle = new Kuzzle('websocket', {
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
-  console.error(`Network Error: ${error}`);
+  console.error(`Network Error: ${error.message}`);
 });
+
+function sleep (ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 (async () => {
   try {
@@ -18,7 +22,23 @@ kuzzle.on('networkError', error => {
   } catch (error) {
     console.log(`Cannot connect to Kuzzle: ${error.message}`);
   }
+
+  const consoleLog = console.log;
+  const outputs = [];
+
+  console.log = (...args) => {
+    outputs.push(...args);
+  };
+
   [snippet-code] finally {
-    setTimeout(() => kuzzle.disconnect(), 100);
+    for (let i = 150; i > 0 && outputs.length <= 0; --i) {
+      await sleep(200);
+    }
+
+    console.log = consoleLog;
+    console.log(...outputs);
+
+    // force exit: do not wait for the event loop to be empty
+    process.exit(0);
   }
 })();

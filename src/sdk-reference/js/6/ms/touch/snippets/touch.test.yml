@@ -1,0 +1,7 @@
+name: ms#touch
+description: Alters the last access time of the provided keys
+hooks:
+  before: curl -X POST kuzzle:7512/ms/_flushdb
+  after:
+template: default
+expected: ^2$
