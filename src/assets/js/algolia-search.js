@@ -3,6 +3,17 @@ $(document).ready(function() {
 });
 
 var algoliaSearch = {
+
+  currentTags: window.location.pathname
+    .substring(1)
+    .split('/')
+    .slice(0, 4)
+    .map(function(tag) {
+      if (tag === 'sdk-reference') { return 'sdk'; }
+      if (/^\+?(0|[1-9]\d*)$/.test(tag)) { return tag + '.x'; }
+      return tag;
+    }),
+
   init: function() {
     var self = this;
     var client = algoliasearch(algolia_projectId, algolia_publicKey);
@@ -22,7 +33,7 @@ var algoliaSearch = {
         if (err) {
           return;
         }
-        self.setResults(content.hits, resultList);
+        self.setResults(content.hits.sort(algoliaSearch.sortByTags), resultList);
       });
     });
 
@@ -44,23 +55,39 @@ var algoliaSearch = {
       var teaser = hits[k]._highlightResult.content.value;
       content +=
         '<li class="md-search-result__item">' +
-        '<a href="' +
-        site_url +
-        hits[k].path +
-        '" class="md-search-result__link" title="' +
-        hits[k].title +
-        '" data-md-state="">' +
-        '<article class="md-search-result__article">' +
-        '<h1 class="md-search-result__title">' +
-        hits[k].title +
-        '</h1>' +
-        '<p class="md-search-result__teaser">' +
-        teaser +
-        '</p>' +
-        '</article>' +
-        '</a>' +
+          '<a href="' + site_url + hits[k].path + '" class="md-search-result__link" title="' + hits[k].title + '">' +
+            '<article class="md-search-result__article">' +
+              '<h1 class="md-search-result__title">' + 
+                hits[k].title + algoliaSearch.formatTags(hits[k].tags) +
+              '</h1>' +
+              '<p class="md-search-result__teaser">' + teaser + '</p>' +
+            '</article>' +
+          '</a>' +
         '</li>';
     }
     container.html(content);
+  },
+
+  formatTags: function(tags) {
+    var formated = '';
+    for (var k in tags) {
+      formated += '<span class="tag">' + tags[k] + '</span>';
+    }
+    return formated;
+  },
+  
+  sortByTags: function(a, b) {
+    return algoliaSearch.getTagsScore(a.tags) < algoliaSearch.getTagsScore(b.tags);
+  },
+  
+  getTagsScore: function(tags) {
+    var score = 0;
+    for(var k in tags) {
+      if (algoliaSearch.currentTags.includes(tags[k])) {
+        ++score;
+      }
+    }
+    return score;
   }
+
 };
