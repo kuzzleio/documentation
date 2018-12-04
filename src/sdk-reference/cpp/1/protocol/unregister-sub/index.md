@@ -17,7 +17,7 @@ Used when unsubscribing to remove a listener.
 ## Arguments
 
 | Argument   | Type                      | Description
-| ---------- |------------------------------------------------------------------------------- |
+| ---------- |---------------------------|-------------------------------------------------- |
 | `room_id` | <pre>const std::string&</pre>  | A string representing the roomId of the subscription
 
 ### **listener**
