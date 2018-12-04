@@ -10,7 +10,7 @@ var algoliaSearch = {
     .slice(0, 4)
     .map(function(tag) {
       if (tag === 'sdk-reference') { return 'sdk'; }
-      if (/^\+?(0|[1-9]\d*)$/.test(tag)) { return tag + '.x'; }
+      if (/^[0-9]+$/.test(tag)) { return tag + '.x'; }
       return tag;
     }),
 

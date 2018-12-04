@@ -36,7 +36,7 @@ const algoliaHelpers = {
     
     return path.split('/').slice(start, end).map(tag => {
       if (tag === 'sdk-reference') { return 'sdk'; }
-      if (/^\+?(0|[1-9]\d*)$/.test(tag)) { return `${tag}.x`; }
+      if (/^[0-9]+$/.test(tag)) { return `${tag}.x`; }
       return tag;
     });
   }
