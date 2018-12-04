@@ -17,7 +17,7 @@ Used when subscribing to store a listener.
 ## Arguments
 
 | Argument   | Type                      | Description
-| ---------- |---------------------------------------------------------------------------------------------- |
+| ---------- |---------------------------|--------------------------------------------------------------------- |
 | `channel`    | <pre>const std::string&</pre>           | A string representing the channel of the subscription
 | `room_id` | <pre>const std::string&</pre>  | A string representing the roomId of the subscription
 | `filters` | <pre>const std::string&</pre> | A JSON string representing the filters of the subscription

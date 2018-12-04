@@ -13,7 +13,3 @@ Closes the current connection to Kuzzle.
 ```cpp
 std::string close();
 ```
-
-## Usage
-
-[snippet=disconnect]
