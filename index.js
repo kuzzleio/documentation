@@ -21,12 +21,12 @@ const htmlMin = require('metalsmith-html-minifier');
 const algolia = require('metalsmith-algolia');
 const metalsmithRedirect = require('metalsmith-redirect');
 const concat = require('metalsmith-concat');
-const uglify = require('metalsmith-uglify');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
 const discoverPartials = require('metalsmith-discover-partials');
 const deepclone = require('fast-deepclone');
+const metalsmithWebpack = require('metalsmith-webpack');
 
 // custom plugins
 const snippetManager = require('./plugins/snippetManager');
@@ -65,7 +65,9 @@ const ignored = [
   '**/**/page.go.md',
   '**/**/page.cpp.md',
   '**/**/page.java.md',
-  '**/templates/*'
+  '**/templates/*',
+  // with webpack, it is no longer necessary to copy js files in build folder
+  '**/**/assets/js/*' 
 ];
 
 if (!options.dev.enabled) {
@@ -178,31 +180,7 @@ metalsmith
     }
     setImmediate(done);
   })
-  .use(uglify({
-    concat: {
-      file: 'bundle.min.js',
-      root: 'assets/js'
-    },
-    // we need to force the order of the files to bundle
-    files: [
-      'assets/js/libs/jquery.min.js',
-      'assets/js/libs/algolia.js',
-      'assets/js/libs/prism.js',
-      'assets/js/libs/select2.js',
-      'assets/js/algolia-search.js',
-      'assets/js/languageSelector.js',
-      'assets/js/versionSelector.js',
-      'assets/js/scrollTo.js',
-      'assets/js/drawer.js',
-      'assets/js/app.js'
-    ],
-    removeOriginal: true,
-    uglify: {
-      // disable compression in development mode, speeding up
-      // rebuilds
-      compress: options.dev.enabled ? false : {}
-    }
-  }))
+  .use(metalsmithWebpack(require('./config/webpack.js')))
   .use(permalinks({relative: false}));
 
 metalsmith
