@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: removeAllListeners
-description: Remove a listener to an event
+description: Removes all listeners from an event
 ---
 
 # removeAllListeners
 
-Removes all listeners of an Event type.
+Removes all listeners from an event.
 
 ## Signature
 

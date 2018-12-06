@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: once
-description: Add a listener to an event and trigger it only once
+description: Attaches a listener to an event and removes it after it has been triggered once
 ---
 
 # once
 
-Adds a listener to an event and trigger it only once
+Attaches a listener to an event and removes it after it has been triggered once.
 
 ## Signature
 
@@ -18,7 +18,7 @@ virtual void once(kuzzleio::Event event, kuzzleio::EventListener* listener) = 0;
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------
-| `event`    | <pre>kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/essentials/event-handling)
+| `event`    | <pre>kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events)
 | `listener` | <pre>kuzzleio::EventListener*</pre> | A pointer to a c++11 lambda
 
 ### **event**
@@ -41,5 +41,5 @@ ERROR
 
 ### **listener**
 
-A c++11 lambda which take a `const std::string`
+A c++11 lambda which takes a `const std::string` argument.
 `EventListener` is defined as `const std::function<void(const std::string)>`.

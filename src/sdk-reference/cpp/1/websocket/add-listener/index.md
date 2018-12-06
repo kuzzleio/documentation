@@ -1,7 +1,7 @@
 ---
 layout: sdk.html.hbs
 title: addListener
-description: Add a listener to an event
+description: Adds a listener to an event
 ---
 
 # addListener

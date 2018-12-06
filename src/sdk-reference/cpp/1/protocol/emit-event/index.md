@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: emitEvent
-description: Remove a listener to an event
+description: Emits an event
 ---
 
 # emitEvent
 
-Emit an event.
+Emits an event.
 
 ## Signature
 
@@ -18,7 +18,7 @@ virtual void emitEvent(kuzzleio::Event event) = 0;
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------
-| `event`    | <pre>kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/essentials/event-handling)
+| `event`    | <pre>kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events)
 
 ### **event**
 

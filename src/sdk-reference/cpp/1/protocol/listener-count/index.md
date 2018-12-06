@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: listenerCount
-description: Count the number of listener you have on an event
+description: Returns the number of listeners attached to an event
 ---
 
 # listenerCount
 
-Count the number of listener you have on an event
+Returns the number of listeners attached to an event.
 
 ## Signature
 
@@ -18,7 +18,7 @@ virtual int listenerCount(kuzzleio::Event event) = 0;
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------
-| `event`    | <pre>kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/essentials/event-handling)
+| `event`    | <pre>kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events)
 
 ### **event**
 
@@ -40,4 +40,4 @@ ERROR
 
 ## Return
 
-The number of listener you have on the specified event.
+The number of listeners attached to the specified event.

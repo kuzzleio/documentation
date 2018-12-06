@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: getHost
-description: Return the host on which the protocol is connected
+description: Returns the host name on which the protocol is connected
 ---
 
 # getHost
 
-Return the host on which the protocol is connected.
+Returns the host name on which the protocol is connected
 
 ## Signature
 
@@ -16,4 +16,4 @@ std::string getHost();
 
 ## Return
 
-The host on which the protocol is connected.
+The host name on which the protocol is connected.

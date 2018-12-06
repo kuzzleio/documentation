@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: cancelSubs
-description: Cancel every subscription
+description: Cancels all subscriptions
 ---
 
 # cancelSubs
 
-Cancel every subscription.
+Cancels all subscriptions.
 
 ## Signature
 

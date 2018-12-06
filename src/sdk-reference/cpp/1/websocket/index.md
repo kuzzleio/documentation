@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
 title: WebSocket
-description: WebSocket objects documentation
+description: WebSocket object documentation
 order: 700
 ---

@@ -1,7 +1,7 @@
 ---
 layout: sdk.html.hbs
 title: close
-description: Disconnect the SDK
+description: Closes the current connection to Kuzzle
 ---
 
 # close

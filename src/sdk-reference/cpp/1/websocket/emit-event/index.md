@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: emitEvent
-description: Remove a listener to an event
+description: Emits an event
 ---
 
 # emitEvent
 
-Emit an event.
+Emits an event.
 
 ## Signature
 

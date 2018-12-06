@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: listenerCount
-description: Count the number of listener you have on an event
+description: Returns the number of listeners attached on an event
 ---
 
 # listenerCount
 
-Count the number of listener you have on an event
+Returns the number of listeners attached on an event.
 
 ## Signature
 
@@ -40,4 +40,4 @@ ERROR
 
 ## Return
 
-The number of listener you have on the specified event.
+The number of listeners attached on the specified event.

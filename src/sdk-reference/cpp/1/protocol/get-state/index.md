@@ -1,7 +1,7 @@
 ---
 layout: sdk.html.hbs
 title: getState
-description: Get the current state
+description: Gets the current state
 ---
 
 # getState
