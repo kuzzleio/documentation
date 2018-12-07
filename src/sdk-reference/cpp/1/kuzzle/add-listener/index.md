@@ -13,14 +13,14 @@ Theses listener will receive a `const std::string` as argument. This string is a
 ## Signature
 
 ```cpp
-kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::Event event, kuzzleio::EventListener* listener)
+kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::KuzzleEvent event, kuzzleio::EventListener* listener)
 ```
 
 ## Arguments
 
 | Argument   | Type                      | Description                                                                                            | Required |
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------ | -------- |
-| `event`    | kuzzleio::Event           | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes      |
+| `event`    | kuzzleio::KuzzleEvent           | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes      |
 | `listener` | kuzzleio::EventListener\* | A pointer to a c++11 lambda                                           | yes      |
 
 ### **event**
@@ -28,17 +28,17 @@ kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::Event event, kuzzleio::Event
 One of the following event:
 
 ```cpp
-CONNECTED
-DISCARDED
-DISCONNECTED
-LOGIN_ATTEMPT
-NETWORK_ERROR
-OFFLINE_QUEUE_POP
-OFFLINE_QUEUE_PUSH
-QUERY_ERROR
-RECONNECTED
-JWT_EXPIRED
-ERROR
+KUZZLE_EVENT_CONNECTED
+KUZZLE_EVENT_DISCARDED
+KUZZLE_EVENT_DISCONNECTED
+KUZZLE_EVENT_LOGIN_ATTEMPT
+KUZZLE_EVENT_NETWORK_ERROR
+KUZZLE_EVENT_OFFLINE_QUEUE_POP
+KUZZLE_EVENT_OFFLINE_QUEUE_PUSH
+KUZZLE_EVENT_QUERY_ERROR
+KUZZLE_EVENT_RECONNECTED
+KUZZLE_EVENT_JWT_EXPIRED
+KUZZLE_EVENT_ERROR
 ```
 
 ### **listener**
