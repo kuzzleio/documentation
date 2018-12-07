@@ -11,7 +11,7 @@ In this tutorial you will learn how to install and run **Kuzzle**.
 
 ## Running Kuzzle
 
-In this section we'll learn how to quickly get Kuzzle up and running using our installation script.
+This section explains how to quickly get Kuzzle up and running using our installation script.
 
 Open a terminal and run the following command:
 
