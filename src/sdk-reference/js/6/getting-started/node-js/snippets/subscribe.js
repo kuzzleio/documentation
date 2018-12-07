@@ -24,8 +24,10 @@ const run = async () => {
     const callback = (notification) => {
 
       if (notification.type === 'document' && notification.action === 'create') {
-        const driver = notification.result._source;
-        const driverId = notification.result._id;
+        const {
+          _source: driver,
+          _id: driverId
+        } = notification.result;
 
         console.log(`New driver ${driver.name} with id ${driverId} has B license.`);
       }

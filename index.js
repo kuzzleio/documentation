@@ -31,6 +31,7 @@ const deepclone = require('fast-deepclone');
 
 // custom plugins
 const snippetManager = require('./plugins/snippetManager');
+const include = require('./plugins/include');
 const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
 let filesSave = null;
@@ -182,6 +183,7 @@ metalsmith
   .use(markdown({
     renderer: newMDRenderer
   }))
+  .use(include())
   .use((files, ms, done) => {
     for (const file of Object.keys(files)) {
       if (file.endsWith('index.html')) {

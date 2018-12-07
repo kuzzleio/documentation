@@ -1,68 +1,22 @@
 ---
 layout: full.html.hbs
-algolia: true
-title: NodeJS
+title: Node.js
 description: Getting started with Kuzzle and Node.js
 ---
 
 # Getting Started with Kuzzle and Node.js
 
-In this tutorial you will learn how to install, run and use **Kuzzle** with **Node.js** and the **Javascript SDK**.
-We will walk you through creating scripts that can **store** documents in Kuzzle and subscribe to **notification** for each new document created.
+This tutorial explains you how to install, run and use **Kuzzle** with **Node.js** and the **Javascript SDK**.  
 
-## Running Kuzzle
+You are going to create scripts that can **store** documents in Kuzzle and subscribe to **notification** for each new document created.
 
-In this section we'll learn how to quickly get Kuzzle up and running using our installation script.
+## Running Kuzzle 
 
-Open a terminal and run the following command:
-
-```bash
-bash -c "$(curl https://get.kuzzle.io/)"
-```
-
-This command downloads and executes the installation script. The script checks the system for a set of prerequisites, like Docker or Docker Compose. If something's missing, the script will give you some hints on how to install them. When the installation is complete it will automatically run Kuzzle.
-
-<div class="alert alert-info">
-There are also more <a href="{{ site_base_path }}guide/1/essentials/installing-kuzzle/">alternative ways</a> to install Kuzzle.
-</div>
-
-This command downloads, installs and runs Kuzzle.
-
-Use the `--no-run` option to prevent the script from running Kuzzle.
-
-Once the installation process is complete, you will see the following message:
-
-```bash
-# Kuzzle is now running
-```
-
-Your Kuzzle is now running! To test it, you can explore the main HTTP API by clicking this <a href="http://localhost:7512?pretty">link</a> or by using cURL on the command line:
-
-```bash
-curl "http://localhost:7512/?pretty"
-```
-
-If everything is working you should see a JSON document that contains a list of API endpoints.
-
-<div class="alert alert-success">
-Congratulations! You have completed the Kuzzle installation, it will now accept requests on <code>localhost:7512</code>:
-<ul>
-  <li>via <strong>HTTP</strong></li>
-  <li>via <strong>Websocket</strong></li>
-</ul>
-</div>
-
-<div class="alert alert-info">
-Having trouble?
-<ul>
-  <li>Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.</li>
-  <li>Try one of <a href="{{ site_base_path }}guide/1/essentials/installing-kuzzle/">these</a> alternative installation methods.</li>
-</ul>
-</div>
+[include=../../../../../guide/1/getting-started/running-kuzzle/content]
 
 ## Fun with the SDK
 
-It's time to play with the [Kuzzle Javscript SDK]({{ site_base_path }}sdk-reference/js/6). In this section, we will store a document and subscribe to notifications in Kuzzle using the Javascript SDK.
+It's time to play with the [Kuzzle Javscript SDK]({{ site_base_path }}sdk-reference/js/6). This section, explains you how to store a document and subscribe to notifications in Kuzzle using the Javascript SDK.
 
 Before proceeding, please make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
 
@@ -89,7 +43,7 @@ This will load the Kuzzle Javascript SDK and then instantiate a client that will
 You need to replace 'kuzzle' which is the Kuzzle backend hostname with 'localhost' or the hostname where your Kuzzle backend is running.
 </div>
 
-Next we add a listener to be notified in case of connection error:
+Next, add a listener to be notified in case of connection error:
 
 ```javascript
 kuzzle.on('networkError', error => {
@@ -97,8 +51,7 @@ kuzzle.on('networkError', error => {
 });
 ```
 
-Then we have to connect the client to your Kuzzle server with the `connect()` method.  
-Then, we will add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' that we will use to store data later on.  
+Then, connect the client to your Kuzzle server with the `connect()` method, afterwards you have to add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' that you will use to store data later on.  
 These methods will be wrapped in an `async` function to use the `await` construct.
 
 [snippet=prepare-db]
@@ -168,7 +121,7 @@ _You can find more resources about Kuzzle Javascript SDK in the [SDK Reference](
 
 Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the <a href="{{ site_base_path }}sdk-reference/js/6/essentials/realtime-notifications/">realtime notifications</a> documentation).
 
-Let's get started. Create a `subscribe.js` file with following code:
+Let's get started. Create a `subscribe.js` file with the following code:
 
 [snippet=subscribe]
 
@@ -180,7 +133,7 @@ node subscribe.js
 
 Your `subscribe.js` app is now running and monitoring any documents that match the filter, specifically documents that have a `license` field that is equals to `'B'`.
 
-Now in another terminal, launch the `create.js` file that we created in the previous section.
+Now in another terminal, launch the `create.js` file that you created in the previous section.
 
 ```bash
 node create.js
