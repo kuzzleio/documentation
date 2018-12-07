@@ -6,7 +6,7 @@ Open a terminal and run the following command:
 bash -c "$(curl https://get.kuzzle.io/)"
 ```
 
-This command downloads and executes the installation script. The script checks the system for a set of prerequisites and installs any necessary tools, like Docker or Docker Compose. When the installation is complete it will automatically run Kuzzle.
+This command downloads and executes the installation script. The script checks the system for a set of prerequisites and installs missing ones, such as [Docker](https://www.docker.com/). When the installation is complete, it will automatically run Kuzzle.
 
 <div class="alert alert-info">
 There are also more <a href="{{ site_base_path }}guide/1/essentials/installing-kuzzle/">alternative ways</a> to install Kuzzle.

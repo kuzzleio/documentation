@@ -6,6 +6,6 @@ hooks:
     curl -XPUT kuzzle:7512/nyc-open-data/yellow-taxi
   after:
 template: empty
-expected: Successfully subscribe to document notifications!
+expected: Successfully subscribed to document notifications!
 sdk: js
 version: 6

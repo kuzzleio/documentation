@@ -1,12 +1,12 @@
 const run = async () => {
   try {
-    // Connect to Kuzzle backend
+    // Connects to the Kuzzle backend
     await kuzzle.connect();
 
-    // Create an index
+    // Creates an index
     await kuzzle.index.create('nyc-open-data');
 
-    // Create a collection
+    // Creates a collection
     await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
 
     console.log('nyc-open-data/yellow-taxi ready!');

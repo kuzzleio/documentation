@@ -1,24 +1,24 @@
-// load the Kuzzle SDK module
+// Loads the Kuzzle SDK module
 const { Kuzzle } = require('kuzzle-sdk');
 
-// instantiate a Kuzzle client
-// replace 'kuzzle' with your Kuzzle backend hostname, probaly 'localhost'
+// Instantiates a Kuzzle client
+// Replace 'kuzzle' with your Kuzzle backend hostname (e.g. 'localhost')
 const kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
 
-// add a listener to detect any connection problems
+// Adds a listener to detect connection problems
 kuzzle.on('networkError', error => {
   console.error('Network Error:', error);
 });
 
 const run = async () => {
   try {
-    // Connect to Kuzzle server
+    // Connects to the Kuzzle server
     await kuzzle.connect();
 
-    // Create an index
+    // Creates an index
     await kuzzle.index.create('nyc-open-data');
 
-    // Create a collection
+    // Creates a collection
     await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
 
     console.log('nyc-open-data/yellow-taxi ready!');

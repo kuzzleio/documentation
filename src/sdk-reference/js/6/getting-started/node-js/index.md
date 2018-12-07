@@ -1,5 +1,6 @@
 ---
 layout: full.html.hbs
+algolia: true
 title: Node.js
 description: Getting started with Kuzzle and Node.js
 ---
@@ -7,6 +8,7 @@ description: Getting started with Kuzzle and Node.js
 # Getting Started with Kuzzle and Node.js
 
 This tutorial explains you how to install, run and use **Kuzzle** with **Node.js** and the **Javascript SDK**.  
+We will walk you through creating scripts that can **store** documents in Kuzzle and subscribe to **notifications** about document creations.
 
 You are going to create scripts that can **store** documents in Kuzzle and subscribe to **notification** for each new document created.
 
@@ -35,15 +37,15 @@ If you are performing a clean install you might see some `UNMET PEER DEPENDENCY`
 </div>
 
 Then, create an `init.js` file and start by adding the code below.  
-This will load the Kuzzle Javascript SDK and then instantiate a client that will connect to Kuzzle via websockets.  
+This loads the SDK and connects it to a Kuzzle instance using WebSocket.  
 
 [snippet=load-sdk]
 
 <div class="alert alert-info">
-You need to replace 'kuzzle' which is the Kuzzle backend hostname with 'localhost' or the hostname where your Kuzzle backend is running.
+Replace 'kuzzle' which is the Kuzzle backend hostname with 'localhost' or the hostname where your Kuzzle backend is running.
 </div>
 
-Next, add a listener to be notified in case of connection error:
+Next, add a listener to be notified in case of a connection error:
 
 ```javascript
 kuzzle.on('networkError', error => {
@@ -63,18 +65,18 @@ Your `init.js` file should now look like this:
 This code does the following:
 * loads the `Kuzzle SDK` from its NPM package
 * creates an instance of the SDK
-* connects it to Kuzzle running on `kuzzle` (change your hostname if you need) with the `websocket` protocol
+* connects it to Kuzzle running on `kuzzle` (change the hostname if needed) using WebSocket
 * creates the `nyc-open-data` index
 * creates the `yellow-taxi` collection (within the `nyc-open-data` index),
 * disconnects from Kuzzle after the collection is created or if an error occurs
 
-Run your file with Node.js
+Run the code with Node.js:
 
 ```bash
 node init.js
 ```
 
-Your console should output the following message:
+The console should output the following message:
 
 ```bash
 nyc-open-data/yellow-taxi ready!
@@ -90,17 +92,17 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 ## Create your first "Hello World" document
 
-Create a `create.js` file with following code:
+Create a `create.js` file with the following code:
 
 [snippet=create]
 
 This code does the following:
-* creates a new document in `nyc-open-data` within the `yellow-taxi` index
+* creates a new document in the `yellow-taxi` collection, within the `nyc-open-data` index
 * logs a success message to the console if everything went fine
-* logs an error message if any of the previous actions failed
+* logs an error message if any of the previous actions fails
 * disconnects from Kuzzle after the document is created or if an error occurs
 
-Run your file with Node.js
+Run the code with Node.js:
 
 ```bash
 node create.js
@@ -125,28 +127,29 @@ Let's get started. Create a `subscribe.js` file with the following code:
 
 [snippet=subscribe]
 
-Run your file in Node.js
+Run the code with Node.js:
 
 ```bash
 node subscribe.js
 ```
 
-Your `subscribe.js` app is now running and monitoring any documents that match the filter, specifically documents that have a `license` field that is equals to `'B'`.
+The `subscribe.js` program is now running endlessly, waiting for notifications about documents matching its filters, specifically documents that have a `license` field equal to `'B'`.
 
-Now in another terminal, launch the `create.js` file that you created in the previous section.
+Now in another terminal, launch the `create.js` file from the previous section.
 
 ```bash
 node create.js
 ```
 
-This will create a new document in Kuzzle which will trigger a [document notification]({{ site_base_path }}api/1/essentials/notifications/#documents-changes-messages-default) in the `subscribe.js` app. Check the `subscribe.js` terminal to make sure a new log appears every time a document is created using the `create.js` app:
+This creates a new document in Kuzzle which, in turn, triggers a [document notification]({{ site_base_path }}api/1/essentials/notifications/#documents-changes-messages-default) sent to the `subscribe.js` program.  
+Check the `subscribe.js` terminal: a new message is printed everytime a document is created using the `create.js` code.
 
 ```bash
 New driver Sirkis with id AWccRe3-DfukVhSzMdUo has B license.
 ```
 
 <div class="alert alert-success">
-Congratulations! You have just choreographed your first pub/sub pattern!
+Congratulations! You have just set up your first pub/sub communication!
 </div>
 
 <div class="alert alert-info">
@@ -157,7 +160,7 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 Now that you're more familiar with Kuzzle, dive even deeper to learn how to leverage its full capabilities:
 
-* take a look at the <a href="{{ site_base_path }}sdk-reference/js/6">SDK Reference</a>
+* discover what this SDK has to offer by browsing other sections of this documentation
 * learn how to use <a href="{{ site_base_path }}koncorde/1">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
-* follow our guide to learn how to implement <a href="{{ site_base_path }}guide/1/essentials/user-authentication/#local-strategy">basic authentication</a>
-* follow our guide to learn how to implement <a href="{{ site_base_path }}guide/1/essentials/security/">manage users and setup fine-grained access control</a>
+* follow our guide to learn how to perform a <a href="{{ site_base_path }}guide/1/essentials/user-authentication/#local-strategy">basic authentication</a>
+* follow our guide to learn how to <a href="{{ site_base_path }}guide/1/essentials/security/">manage users, and how to set up fine-grained access control</a>
