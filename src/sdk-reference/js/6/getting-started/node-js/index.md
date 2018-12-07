@@ -1,7 +1,7 @@
 ---
 layout: full.html.hbs
 algolia: true
-title: NodeJS
+title: Node.js
 description: Getting started with Kuzzle and Node.js
 ---
 
