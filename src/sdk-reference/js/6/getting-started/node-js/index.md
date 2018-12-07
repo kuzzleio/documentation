@@ -62,7 +62,7 @@ Having trouble?
 
 ## Fun with the SDK
 
-It's time to play with the [Kuzzle Javscript SDK]({{ site_base_path }}sdk-reference/js/6). In this section, we will store a document and subscribe to notifications in Kuzzle using the Javascript SDK.
+It's time to play with the [Kuzzle Javascript SDK]({{ site_base_path }}sdk-reference/js/6). This section explains how to store a document and how to subscribe to real-time notifications, using the Javascript SDK.
 
 Before proceeding, please make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
 
