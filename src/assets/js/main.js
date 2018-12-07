@@ -1,5 +1,6 @@
 require('select2');
 require('./app.js');
+require('./prism.js');
 require('./algolia-search.js');
 require('./drawer.js');
 require('./languageSelector.js');
@@ -15,5 +16,5 @@ $(document).ready(function () {
     }
   });
 
-  Prism.highlightAll();
+  prism.highlightAll();
 });
