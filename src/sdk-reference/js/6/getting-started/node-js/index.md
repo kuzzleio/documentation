@@ -8,7 +8,7 @@ description: Getting started with Kuzzle and Node.js
 # Getting Started with Kuzzle and Node.js
 
 In this tutorial you will learn how to install, run and use **Kuzzle** with **Node.js** and the **Javascript SDK**.
-We will walk you through creating scripts that can **store** documents in Kuzzle and subscribe to **notification** for each new document created.
+We will walk you through creating scripts that can **store** documents in Kuzzle and subscribe to **notifications** about document creations.
 
 ## Running Kuzzle
 
