@@ -1,6 +1,6 @@
 const _metalsmith = require('metalsmith');
 const handlebars = require('handlebars');
-const cheerio = require('cheerio');
+
 const ymlRead = require('read-yaml');
 const path = require('path');
 const markdown = require('metalsmith-markdown');
@@ -9,7 +9,6 @@ const layouts = require('metalsmith-layouts');
 const permalinks = require('metalsmith-permalinks');
 const livereload = require('metalsmith-livereload');
 const ancestry = require('metalsmith-ancestry');
-const ancestryHelpers = require('./helpers/ancestryHelpers');
 const links = require('metalsmith-relative-links');
 const hbtmd = require('metalsmith-hbt-md');
 const sass = require('metalsmith-sass');
@@ -22,12 +21,12 @@ const htmlMin = require('metalsmith-html-minifier');
 const algolia = require('metalsmith-algolia');
 const metalsmithRedirect = require('metalsmith-redirect');
 const concat = require('metalsmith-concat');
-const uglify = require('metalsmith-uglify');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
 const color = require('colors/safe');
 const discoverPartials = require('metalsmith-discover-partials');
 const deepclone = require('fast-deepclone');
+const metalsmithWebpack = require('metalsmith-webpack');
 
 // custom plugins
 const snippetManager = require('./plugins/snippetManager');
@@ -43,6 +42,10 @@ const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk
 // arguments
 const argv = require('yargs').argv;
 const manageArgs = require('./helpers/manageArgs');
+
+// Helpers
+const algoliaHelpers = require('./helpers/algolia');
+const ancestryHelpers = require('./helpers/ancestryHelpers');
 
 // We override the default Markdown table renderer because
 // we want tables to be wrapped into divs (for responsivity reasons).
@@ -63,7 +66,9 @@ const ignored = [
   '**/**/page.go.md',
   '**/**/page.cpp.md',
   '**/**/page.java.md',
-  '**/templates/*'
+  '**/templates/*',
+  // with webpack, it is no longer necessary to copy js files in build folder
+  '**/**/assets/js/*' 
 ];
 
 if (!options.dev.enabled) {
@@ -79,30 +84,7 @@ const redirectList = {
   //If you need others, add it here
 };
 
-options.algolia.fnFileParser = (file, data) => {
-  const objects = [];
-  const $ = cheerio.load(data.contents.toString(), {
-    normalizeWhitespace: true
-  });
-  const content = $('.md-content');
-
-  // remove useless content
-  $('pre', content).remove();
-  $('h1, h2, h3, h4, h5, h6', content).remove();
-
-  objects.push({
-    objectID: data.path,
-    title: data.title,
-    description: data.description ? data.description : '',
-    path: data.path,
-    content: content.text(),
-    parent: (data.ancestry.parent ? data.ancestry.parent.title : ''),
-    firstMember: (data.ancestry.firstMember ? data.ancestry.firstMember.title : ''),
-    toc: data.toc
-  });
-
-  return objects;
-};
+options.algolia.fnFileParser = algoliaHelpers.fileParser;
 
 handlebars.registerHelper(require('./helpers/handlebars.js'));
 
@@ -200,37 +182,15 @@ metalsmith
     }
     setImmediate(done);
   })
-  .use(uglify({
-    concat: {
-      file: 'bundle.min.js',
-      root: 'assets/js'
-    },
-    // we need to force the order of the files to bundle
-    files: [
-      'assets/js/libs/jquery.min.js',
-      'assets/js/libs/algolia.js',
-      'assets/js/libs/prism.js',
-      'assets/js/libs/select2.js',
-      'assets/js/algolia-search.js',
-      'assets/js/languageSelector.js',
-      'assets/js/versionSelector.js',
-      'assets/js/scrollTo.js',
-      'assets/js/drawer.js',
-      'assets/js/app.js'
-    ],
-    removeOriginal: true,
-    uglify: {
-      // disable compression in development mode, speeding up
-      // rebuilds
-      compress: options.dev.enabled ? false : {}
-    }
-  }))
+  .use(metalsmithWebpack(require('./config/webpack.js')))
   .use(permalinks({relative: false}));
 
 metalsmith
   .use((files, ms, done) => {
+    // automatically add redirection to the last children if the current file 
+    // isn't the last children (Leaf of the arborescence)
     for (const file of Object.values(files)) {
-      if (file.ancestry) {
+      if (file.ancestry && ! file.noredirect) {
         const lastChildren = ancestryHelpers.getLastChildren(file);
         if (lastChildren.path !== file.path) {
           const

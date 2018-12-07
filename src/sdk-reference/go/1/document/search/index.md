@@ -59,25 +59,7 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a pointer on [types.SearchResult]({{ site_base_path }}src/sdk-reference/go/1/essentials/search-result) struct
-
-### Properties
-
-| Name | Type | Description |
-| --- | --- | --- |
-| Documents | <pre>string</pre> | A JSON string containing the retrieved documents |
-| Fetched | int | The number of fetched documents |
-| Total | int | The total number of documents matching the query |
-| Aggregations | <pre>string</pre> | A JSON string containing the computed aggregations |
-| Collection | <pre>string</pre> | Collection on which the search was performed |
-| Filters | <pre>string</pre> | Original query |
-| Options | <pre>types.QueryOptions</pre> | Original query options |
-
-### Functions
-
-| Name | Type | Description |
-| --- | --- | --- |
-| Next | `SearchResult` | Returns a new page of `size` next documents |
+Returns a pointer on [types.SearchResult]({{ site_base_path }}src/sdk-reference/go/1/search-result) struct
 
 ## Usage
 

@@ -42,7 +42,7 @@ versionSelector.onChange = function (select) {
     baseUrl = window.location.protocol + '//' + window.location.host;
     
   select.on('change', function() {
-    var path = '/sdk-reference/' + self.currentLanguage + '/' + select.val() + '/essentials';
+    var path = '/sdk-reference/' + self.currentLanguage + '/' + select.val();
     window.location.assign(baseUrl + path);
   });
 };
