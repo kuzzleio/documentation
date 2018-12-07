@@ -1,6 +1,6 @@
 const _metalsmith = require('metalsmith');
 const handlebars = require('handlebars');
-const cheerio = require('cheerio');
+
 const ymlRead = require('read-yaml');
 const path = require('path');
 const markdown = require('metalsmith-markdown');
@@ -9,7 +9,6 @@ const layouts = require('metalsmith-layouts');
 const permalinks = require('metalsmith-permalinks');
 const livereload = require('metalsmith-livereload');
 const ancestry = require('metalsmith-ancestry');
-const ancestryHelpers = require('./helpers/ancestryHelpers');
 const links = require('metalsmith-relative-links');
 const hbtmd = require('metalsmith-hbt-md');
 const sass = require('metalsmith-sass');
@@ -42,6 +41,10 @@ const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk
 // arguments
 const argv = require('yargs').argv;
 const manageArgs = require('./helpers/manageArgs');
+
+// Helpers
+const algoliaHelpers = require('./helpers/algolia');
+const ancestryHelpers = require('./helpers/ancestryHelpers');
 
 // We override the default Markdown table renderer because
 // we want tables to be wrapped into divs (for responsivity reasons).
@@ -80,30 +83,7 @@ const redirectList = {
   //If you need others, add it here
 };
 
-options.algolia.fnFileParser = (file, data) => {
-  const objects = [];
-  const $ = cheerio.load(data.contents.toString(), {
-    normalizeWhitespace: true
-  });
-  const content = $('.md-content');
-
-  // remove useless content
-  $('pre', content).remove();
-  $('h1, h2, h3, h4, h5, h6', content).remove();
-
-  objects.push({
-    objectID: data.path,
-    title: data.title,
-    description: data.description ? data.description : '',
-    path: data.path,
-    content: content.text(),
-    parent: (data.ancestry.parent ? data.ancestry.parent.title : ''),
-    firstMember: (data.ancestry.firstMember ? data.ancestry.firstMember.title : ''),
-    toc: data.toc
-  });
-
-  return objects;
-};
+options.algolia.fnFileParser = algoliaHelpers.fileParser;
 
 handlebars.registerHelper(require('./helpers/handlebars.js'));
 

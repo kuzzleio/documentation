@@ -541,6 +541,16 @@ $md-toggle__search--checked: '[data-md-toggle="search"]:checked ~ .md-header';
     font-size: ms(-1);
     font-weight: 700;
     line-height: 1.4;
+    
+    .tag {
+      padding: 3px;
+      margin-left: 6px;
+      border-radius: 0.2rem;
+      background-color: #EDEDED;
+      color: black;
+      font-weight: normal;
+      font-family: "Roboto Mono", "Courier New", Courier, monospace;
+    }
   }
 
   // stylelint-disable value-no-vendor-prefix, property-no-vendor-prefix
