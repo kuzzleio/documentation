@@ -31,7 +31,7 @@ const run = async () => {
       }
     };
 
-    // Subscribes to document notifications with our filter
+    // Subscribes to document notifications using the above filter
     await kuzzle.realtime.subscribe('nyc-open-data', 'yellow-taxi', filter, callback);
 
     console.log('Successfully subscribe to document notifications!');
