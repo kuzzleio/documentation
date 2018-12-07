@@ -1,26 +1,26 @@
-// load the Kuzzle SDK module
+// Loads the Kuzzle SDK module
 const { Kuzzle } = require('kuzzle-sdk');
 
-// instantiate a Kuzzle client
-// replace "kuzzle" with your Kuzzle backend hostname, probaly 'localhost'
+// Instantiates a Kuzzle client
+// Replace 'kuzzle' with your Kuzzle backend hostname (e.g. 'localhost')
 const kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
 
-// add a listener to detect any connection problems
+// Adds a listener to detect any connection problems
 kuzzle.on('networkError', error => {
   console.error('Network Error:', error);
 });
 
 const run = async () => {
   try {
-    // Connect to Kuzzle server
+    // Connects to the Kuzzle server
     await kuzzle.connect();
 
-    // Define a filter
+    // Defines a filter
     const filter = {
       equals: { license: 'B' }
     };
 
-    // Define a callback
+    // Defines a callback invoked each time a notification is received
     const callback = (notification) => {
 
       if (notification.type === 'document' && notification.action === 'create') {
