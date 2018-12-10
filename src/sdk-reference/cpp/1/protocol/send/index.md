@@ -44,7 +44,7 @@ The following properties are the most common:
 
 | Property   | Type    | Description
 | ---------- | ------- | --------------------------------- |
-| `queuable` | bool(true) | Make this request queuable or not |
+| `queuable` | bool(true) | If true, queues the request during downtime, until connected to Kuzzle again
 
 ### **request_id**
 
