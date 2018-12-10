@@ -7,5 +7,8 @@ template: standalone
 expected:
 - Connected!
 - Successfully subscribed!
-- New document added to the yellow-taxi collection!
 - Driver John born on 1995-11-27 got a B license.
+
+sdk: go
+version: 1
+

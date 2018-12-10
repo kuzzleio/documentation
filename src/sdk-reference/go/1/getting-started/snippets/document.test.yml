@@ -7,3 +7,7 @@ template: standalone
 expected:
 - Connected!
 - New document added to the yellow-taxi collection!
+
+sdk: go
+version: 1
+

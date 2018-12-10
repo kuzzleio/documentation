@@ -8,3 +8,7 @@ expected:
 - Connected!
 - Index nyc-open-data created!
 - Collection yellow-taxi created!
+
+sdk: go
+version: 1
+
