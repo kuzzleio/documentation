@@ -41,5 +41,5 @@ One of the following event:
 
 ### **listener**
 
-A c++11 lambda which take a `const std::string&`
-`EventListener` is defined as `const std::function<void(const std::string&)>`.
+A c++11 lambda which takes a `const std::string` argument.
+`EventListener` is defined as `const std::function<void(const std::string)>`.
