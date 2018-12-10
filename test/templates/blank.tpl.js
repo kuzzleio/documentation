@@ -3,6 +3,7 @@ const
   {
     Kuzzle,
     Websocket,
+    Http
   } = require('kuzzle-sdk');
 
 [snippet-code]

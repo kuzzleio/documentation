@@ -3,8 +3,14 @@ const options = {
   autoResubscribe: false
 };
 
-// Instantiate the SDK with the specified protocol
+// Instantiate the SDK with the websocket protocol
 const
-  kuzzle = new Kuzzle(
+  kuzzleWs = new Kuzzle(
     new Websocket(options)
+  );
+
+// Instantiate the SDK with the http protocol
+const
+  kuzzleHttp = new Kuzzle(
+    new Http(options)
   );
