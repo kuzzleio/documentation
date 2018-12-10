@@ -9,7 +9,7 @@ description: Connects the SDK to Kuzzle
 Connects to Kuzzle using the `protocol` argument provided in the constructor.  
 Subsequent calls have no effect if the SDK is already connected.
 
-## Signature
+## Arguments
 
 ```cpp
 void connect();

@@ -8,19 +8,17 @@ description: Removes all listeners from an event
 
 Removes all listeners from an event.
 
-## Signature
+## Arguments
 
 ```cpp
 virtual void removeAllListeners(kuzzleio::Event event) = 0;
 ```
 
-## Arguments
-
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------
 | `event`    | <pre>kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events/)
 
-### **event**
+### event
 
 One of the following event:
 

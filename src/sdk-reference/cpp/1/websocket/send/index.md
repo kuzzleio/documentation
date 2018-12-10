@@ -8,13 +8,11 @@ description: Base method to send API query to Kuzzle
 
 Base method used to send queries to Kuzzle, following the [API Documentation]({{ site_base_path }}api/1).
 
-## Signature
+## Arguments
 
 ```cpp
 kuzzleio::kuzzle_response* send(const std::string& query, kuzzleio::query_options *options, const std::string& request_id);
 ```
-
-## Arguments
 
 | Argument  | Type             | Description
 | --------- | ---------------- | ------------------------
@@ -22,7 +20,7 @@ kuzzleio::kuzzle_response* send(const std::string& query, kuzzleio::query_option
 | `options` | <pre>kuzzleio::query_options*</pre>  | Additional query options
 | `request_id` | <pre>const std::string&</pre> | the request_id of the request if you want to set one
 
-### **request**
+### request
 
 Properties required for the Kuzzle API can be set in the [kuzzle_request](https://github.com/kuzzleio/sdk-c/blob/1-dev/include/internal/kuzzle_structs.h#L195) struct.
 The following properties are the most common.
@@ -37,7 +35,7 @@ The following properties are the most common.
 | `id`         | <pre>const char*</pre> | Unique identifier                                        |
 | `volatiles`  | <pre>const char*</pre> | Additional, non-meaningful information (JSON format)     |
 
-### **options**
+### options
 
 A pointer to a [query_option](https://github.com/kuzzleio/sdk-c/blob/master/include/internal/kuzzle_structs.h#L129) containing additional query options
 The following properties are the most common.
@@ -46,7 +44,7 @@ The following properties are the most common.
 | ---------- | ------- | --------------------------------- |
 | `queuable` | bool(true) | Make this request queuable or not |
 
-### **request_id**
+### request_id
 
 A string representing the request Id.| Property     | Type         | Description 
 | ------------ | ------------ | ------------------------------------------------------------------ |

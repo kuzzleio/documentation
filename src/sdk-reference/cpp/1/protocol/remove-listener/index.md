@@ -8,20 +8,18 @@ description: Removes a listener from an event
 
 Removes a listener from an event.
 
-## Signature
+## Arguments
 
 ```cpp
 virtual void removeListener(kuzzleio::Event event, kuzzleio::EventListener* listener) = 0;
 ```
-
-## Arguments
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------ |
 | `event`    | <pre>kuzzleio::KuzzleEvent</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events/)
 | `listener` | <pre>kuzzleio::EventListener*</pre> | A pointer to a c++11 lambda
 
-### **event**
+### event
 
 One of the following event:
 
@@ -39,7 +37,7 @@ One of the following event:
   KUZZLE_EVENT_ERROR
 ```
 
-### **listener**
+### listener
 
 A c++11 lambda which takes a `const std::string` argument.
 `EventListener` is defined as `const std::function<void(const std::string)>`.

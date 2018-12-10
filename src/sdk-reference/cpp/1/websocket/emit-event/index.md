@@ -8,19 +8,17 @@ description: Emits an event
 
 Emits an event.
 
-## Signature
+## Arguments
 
 ```cpp
 void emitEvent(kuzzleio::Event event);
 ```
 
-## Arguments
-
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------
 | `event`    | <pre>kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events)
 
-### **event**
+### event
 
 One of the following event:
 
