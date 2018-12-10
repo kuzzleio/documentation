@@ -6,7 +6,7 @@ description: Used when subscribing to store a listener.
 
 # registerSub
 
-Used when subscribing to store a listener. 
+Attaches a notifications listener to an existing subscription.
 
 ## Signature
 
