@@ -2,7 +2,7 @@
 layout: full.html.hbs
 algolia: true
 title: Filter Operands
-description: Combine multiple terms to create complex filters
+description: Combines multiple terms to create complex filters
 order: 300
 ---
 
