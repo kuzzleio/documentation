@@ -15,4 +15,3 @@ Subsequent calls have no effect if the SDK is already connected.
 void connect();
 ```
 
-

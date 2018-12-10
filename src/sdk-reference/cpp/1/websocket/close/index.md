@@ -11,5 +11,5 @@ Closes the current connection to Kuzzle.
 ## Signature
 
 ```cpp
-std::string close();
+void close();
 ```

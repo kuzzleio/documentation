@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: unregisterSub
-description: Used when unsubscribing to store a listener.
+description: Removes a subscription's notifications listener.
 ---
 
 # registerSub
 
-Used when unsubscribing to remove a listener. 
+Removes a subscription's notifications listener.
 
 ## Signature
 
@@ -18,7 +18,7 @@ Used when unsubscribing to remove a listener.
 
 | Argument   | Type                      | Description
 | ---------- |---------------------------|-------------------------------------------------- |
-| `room_id` | <pre>const std::string&</pre>  | A string representing the roomId of the subscription
+| `room_id` | <pre>const std::string&</pre>  | Subscription unique identifier
 
 ### **listener**
 

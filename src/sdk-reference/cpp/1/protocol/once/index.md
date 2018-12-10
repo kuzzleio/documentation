@@ -18,7 +18,7 @@ virtual void once(kuzzleio::Event event, kuzzleio::EventListener* listener) = 0;
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------
-| `event`    | <pre>kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events)
+| `event`    | <pre>kuzzleio::KuzzleEvent</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events)
 | `listener` | <pre>kuzzleio::EventListener*</pre> | A pointer to a c++11 lambda
 
 ### **event**
@@ -26,17 +26,17 @@ virtual void once(kuzzleio::Event event, kuzzleio::EventListener* listener) = 0;
 One of the following event:
 
 ```cpp
-CONNECTED
-DISCARDED
-DISCONNECTED
-LOGIN_ATTEMPT
-NETWORK_ERROR
-OFFLINE_QUEUE_POP
-OFFLINE_QUEUE_PUSH
-QUERY_ERROR
-RECONNECTED
-JWT_EXPIRED
-ERROR
+  KUZZLE_EVENT_CONNECTED,
+  KUZZLE_EVENT_DISCARDED,
+  KUZZLE_EVENT_DISCONNECTED,
+  KUZZLE_EVENT_LOGIN_ATTEMPT,
+  KUZZLE_EVENT_NETWORK_ERROR,
+  KUZZLE_EVENT_OFFLINE_QUEUE_POP,
+  KUZZLE_EVENT_OFFLINE_QUEUE_PUSH,
+  KUZZLE_EVENT_QUERY_ERROR,
+  KUZZLE_EVENT_RECONNECTED,
+  KUZZLE_EVENT_JWT_EXPIRED,
+  KUZZLE_EVENT_ERROR
 ```
 
 ### **listener**
