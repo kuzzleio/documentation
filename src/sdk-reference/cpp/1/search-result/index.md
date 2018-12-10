@@ -8,6 +8,8 @@ order: 500
 
 When performing a [search]({{ site_base_path }}sdk-reference/cpp/1/document/search), Kuzzle returns an `SearchResult` object, which holds the items matching the given query and allows to drill through next result pages if applicable.
 
+The type of object returned depends on the method called. For instance, `document.search` returns a `SearchResult` object and `collection.searchSpecifications` returns a `SpecificationSearchResult` object. Both types behave the same way.
+
 ## Properties
 
 | Property | Type | Description |
