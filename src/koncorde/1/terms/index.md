@@ -571,6 +571,7 @@ The following filter validates the last two documents:
 ## regexp
 
 {{{since "1.0.0"}}}
+
 The `regexp` filter matches attributes using [PCREs](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions).
 
 ### Syntax
