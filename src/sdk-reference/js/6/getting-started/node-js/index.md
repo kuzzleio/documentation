@@ -8,11 +8,11 @@ description: Getting started with Kuzzle and Node.js
 # Getting Started with Kuzzle and Node.js
 
 This tutorial explains you how to use **Kuzzle** with **Node.js** and the **Javascript SDK**.  
-We will walk you through creating scripts that can **store** documents in Kuzzle and subscribe to **notifications** about document creations.
+It will walk you through creating scripts that can **store** documents in Kuzzle and subscribe to **notifications** about document creations.
 
-You are going to create scripts that can **store** documents in Kuzzle and subscribe to **notification** for each new document created.
+You are going to write an application that **stores** documents in Kuzzle Server and subscribe to **real time notifications** for each created document.
 
-To do this tutorial, you must have a Kuzzle ready and running. Follow these instructions if this is not already done yet: [Running Kuzzle]({{ site_base_path }}guide/1/getting-started/running-kuzzle).
+To follow this tutorial, you must have a Kuzzle Server up and running. Follow these instructions if this is not already the case: [Running Kuzzle]({{ site_base_path }}guide/1/getting-started/running-kuzzle).
 
 ## Explore the SDK
 
@@ -31,7 +31,7 @@ npm install git://github.com/kuzzleio/sdk-javascript.git#6-beta
 ```
 
 <div class="alert alert-info">
-If you are performing a clean install you might see some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
+If you are performing a clean install you might get some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
 </div>
 
 Then, create an `init.js` file and start by adding the code below.  
