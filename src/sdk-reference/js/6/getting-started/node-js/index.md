@@ -12,7 +12,7 @@ We will walk you through creating scripts that can **store** documents in Kuzzle
 
 You are going to create scripts that can **store** documents in Kuzzle and subscribe to **notification** for each new document created.
 
-To do this tutorial, you must have a Kuzzle ready and running. Follow these instructions if this is not already done yet: [Running Kuzzle]({{ site_base_path }}guide/1/getting-started/running-kuzzle).
+To follow this tutorial, you must have a Kuzzle Server up and running. Follow these instructions if this is not already the case: [Running Kuzzle]({{ site_base_path }}guide/1/getting-started/running-kuzzle).
 
 ## Fun with the SDK
 
