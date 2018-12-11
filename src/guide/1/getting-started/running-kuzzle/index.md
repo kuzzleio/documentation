@@ -54,3 +54,21 @@ Having trouble?
   <li>Try one of <a href="{{ site_base_path }}guide/1/essentials/installing-kuzzle/">these</a> alternative installation methods.</li>
 </ul>
 </div>
+
+#### Helper scripts for systemd
+
+If you want to run Kuzzle automatically at startup there are a few scripts that help you do this with systemd.
+
+If you want to run Kuzzle automatically at startup there are a few scripts in `$PWD/kuzzle/script/` that help you do this with systemd:
+
+* Run the `add-kuzzle-boot-systemd.sh` as root to add a service inside /etc/systemd/system that will start Kuzzle on boot.
+* Run the `remove-kuzzle-boot-systemd.sh` as root to remove the service so that Kuzzle won't start on boot.
+
+#### What now?
+
+Now that Kuzzle is up and running, you can start playing around with it:
+
+* install and learn a <a href="{{ site_base_path }}sdk-reference/">Kuzzle SDK</a> to power-up one of your projects
+* install <a href="{{ site_base_path }}guide/1/essentials/installing-console">Kuzzle Admin Console</a>, a handy way to manage data and security in your Kuzzle installation
+* explore the <a href="{{ site_base_path }}api/1">Kuzzle API</a> documentation
+* install Kuzzle <a href="{{ site_base_path }}guide/1/essentials/installing-kuzzle/#manual-installation">without Docker</a>
