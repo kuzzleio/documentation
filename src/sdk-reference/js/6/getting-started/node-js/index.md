@@ -7,18 +7,16 @@ description: Getting started with Kuzzle and Node.js
 
 # Getting Started with Kuzzle and Node.js
 
-This tutorial explains you how to install, run and use **Kuzzle** with **Node.js** and the **Javascript SDK**.  
+This tutorial explains you how to use **Kuzzle** with **Node.js** and the **Javascript SDK**.  
 We will walk you through creating scripts that can **store** documents in Kuzzle and subscribe to **notifications** about document creations.
 
 You are going to create scripts that can **store** documents in Kuzzle and subscribe to **notification** for each new document created.
 
-## Running Kuzzle 
-
-[include=../../../../../guide/1/getting-started/running-kuzzle/content]
+To do this tutorial, you must have a Kuzzle ready and running. Follow these instructions if this is not already done yet: [Running Kuzzle]({{ site_base_path }}guide/1/getting-started/running-kuzzle).
 
 ## Fun with the SDK
 
-It's time to play with the [Kuzzle Javscript SDK]({{ site_base_path }}sdk-reference/js/6). This section, explains you how to store a document and subscribe to notifications in Kuzzle using the Javascript SDK.
+It's time to play with the [Kuzzle Javascript SDK]({{ site_base_path }}sdk-reference/js/6). This section, explains you how to store a document and subscribe to notifications in Kuzzle using the Javascript SDK.
 
 Before proceeding, please make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
 
