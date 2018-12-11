@@ -9,7 +9,7 @@
   right: 0;
   left: 0;
   // height: 10rem; DISCLAIMER BANNER
-  height: calc(10rem + 28px);
+  // height: calc(10rem + 28px);
   transition: background-color 0.25s, color 0.25s;
   background-color: $md-color-primary;
   color: $md-color-white;
@@ -37,9 +37,9 @@
     display: none;
   }
   
-  @include break-to-device(tablet) {
-    height: 5rem;    
-  }
+  // @include break-to-device(tablet) {
+  //   height: 5rem;    
+  // }
   
   .disclaimer {
     position: relative;
