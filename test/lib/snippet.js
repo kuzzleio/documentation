@@ -31,9 +31,9 @@ class Snippet {
     }
     this.name = this.testDefinition.name.replace('#', '');
     this.description = this.testDefinition.description;
-    this.expected = this.testDefinition.expected
-    this.template = this.testDefinition.template
-    this.hooks = this.testDefinition.hooks
+    this.expected = this.testDefinition.expected;
+    this.template = this.testDefinition.template;
+    this.hooks = this.testDefinition.hooks;
 
     this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.sdk.ext}`;
     if (! fs.existsSync(this.templateFile)) {
