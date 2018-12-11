@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Filter Terms
 description: Filtering terms rundown
 order: 200
