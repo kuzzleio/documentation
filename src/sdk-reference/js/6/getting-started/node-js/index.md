@@ -14,15 +14,15 @@ You are going to create scripts that can **store** documents in Kuzzle and subsc
 
 To do this tutorial, you must have a Kuzzle ready and running. Follow these instructions if this is not already done yet: [Running Kuzzle]({{ site_base_path }}guide/1/getting-started/running-kuzzle).
 
-## Fun with the SDK
+## Explore the SDK
 
-It's time to play with the [Kuzzle Javascript SDK]({{ site_base_path }}sdk-reference/js/6). This section, explains you how to store a document and subscribe to notifications in Kuzzle using the Javascript SDK.
+It's time to get started with the [Kuzzle Javascript SDK]({{ site_base_path }}sdk-reference/js/6). This section, explains you how to store a document and subscribe to notifications in Kuzzle using the Javascript SDK.
 
 Before proceeding, please make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
 
 ## Prepare your environment
 
-Create your playground directory and install the [Javascript SDK]({{ site_base_path }}sdk-reference/js/6) from the command line using npm:
+Create your playground directory and install the Javascript SDK from the command line using npm:
 
 ```sh
 mkdir "kuzzle-playground"
