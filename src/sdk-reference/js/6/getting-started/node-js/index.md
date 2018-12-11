@@ -31,7 +31,7 @@ npm install git://github.com/kuzzleio/sdk-javascript.git#6-beta
 ```
 
 <div class="alert alert-info">
-If you are performing a clean install you might see some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
+If you are performing a clean install you might get some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
 </div>
 
 Then, create an `init.js` file and start by adding the code below.  
