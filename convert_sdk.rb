@@ -31,11 +31,8 @@ class Section
 
   def parse
     match = @page.read_content.match(@regexp)
-    # byebug
 
-    if match.nil?
-      return false
-    end
+    return false if match.nil?
 
     @content = match[1]
 
@@ -98,6 +95,14 @@ class Exceptions < Section
   end
 end
 
+class Usage < Section
+  REGEXP = /(^## \w+$[^[##]]+)/
+
+  def initialize(page)
+    super(:usage, REGEXP, page)
+  end
+end
+
 class Page
   attr_reader :path, :sdk, :version, :controller, :action, :sections
 
@@ -116,15 +121,15 @@ class Page
   end
 
   def parse
-    @sections << extract_header
-    @sections << extract_description
-    @sections << extract_signature
-    @sections << extract_arguments
-    while argument = extract_argument
+    @sections << extract_section(:header)
+    @sections << extract_section(:description)
+    @sections << extract_section(:signature)
+    @sections << extract_section(:arguments)
+    while argument = extract_section(:argument)
       @sections << argument
     end
-    @sections << extract_exceptions
-    byebug
+    @sections << extract_section(:exceptions)
+    @sections << extract_section(:usage)
   end
 
   def read_content
@@ -137,44 +142,8 @@ class Page
 
   private
 
-  def extract_header
-    section = Header.new(self)
-    if section.parse
-      section
-    else
-      nil
-    end
-  end
-
-  def extract_description
-    section = Description.new(self)
-    if section.parse
-      section
-    else
-      nil
-    end
-  end
-
-  def extract_signature
-    section = Signature.new(self)
-    if section.parse
-      section
-    else
-      nil
-    end
-  end
-
-  def extract_arguments
-    section = Arguments.new(self)
-    if section.parse
-      section
-    else
-      nil
-    end
-  end
-
-  def extract_argument
-    section = Argument.new(self)
+  def extract_section(section_name)
+    section = section_name.to_s.capitalize.constantize.new(self)
     if section.parse
       section
     else
@@ -183,8 +152,6 @@ class Page
   end
 end
 
-def extract_sections(content)
-end
 
 page = Page.new(ARGV[0])
 page.parse
