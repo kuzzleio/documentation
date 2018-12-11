@@ -2,5 +2,6 @@
 layout: sdk.html.hbs
 title: Protocol
 description: Protocol objects documentation
-order: 500
+order: 800
+separator: virtual classes
 ---
