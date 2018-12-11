@@ -24,12 +24,13 @@ $md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container'
 
   // [tablet -]: Convert navigation to drawer
   @include break-to-device(tablet) {
+    $sidebar-width-tablet: 26.2rem;
     // Render primary sidebar as a slideout container
     &--primary {
       position: fixed;
       top: 0;
-      left: -24.2rem;
-      width: 24.2rem;
+      left: -$sidebar-width-tablet;
+      width: $sidebar-width-tablet;
       height: 100%;
       transform: translateX(0);
       transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s;
@@ -38,7 +39,7 @@ $md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container'
 
       // Adjust for RTL languages
       [dir='rtl'] & {
-        right: -24.2rem;
+        right: -$sidebar-width-tablet;
         left: initial;
       }
 
@@ -51,11 +52,11 @@ $md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container'
       #{$md-toggle__drawer--checked} & {
         @include z-depth(8);
 
-        transform: translateX(24.2rem);
+        transform: translateX($sidebar-width-tablet);
 
         // Adjust for RTL languages
         [dir='rtl'] & {
-          transform: translateX(-24.2rem);
+          transform: translateX(-$sidebar-width-tablet);
         }
 
         // Just show drawer, if browser doesn't support 3D transforms

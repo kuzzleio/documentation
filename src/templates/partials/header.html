@@ -2,7 +2,6 @@
 <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off" />
 <div class="overlay hidden"></div>
 <header class="md-header" data-md-component="header">
-    {{> disclaimer }}
     <!-- Top-level navigation -->
     <nav class="md-header-nav md-grid">
         <div class="md-flex">
@@ -24,6 +23,7 @@
                 <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
                     <span class="md-header-nav__topic">
                         Kuzzle Documentation
+                        {{> betaChip }}
                     </span>
                     <span class="md-header-nav__topic">
                         {{ title }}

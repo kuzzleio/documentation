@@ -107,6 +107,20 @@
     }
   }
 
+  &__beta {
+    background-color: $md-color-pink;
+    font-size: 0.8em;
+    padding: 2px 6px;
+    border-radius: 3px;
+
+    @include break-to-device(mobile) {
+      background-color: transparent;
+      color: $md-color-pink;
+      font-size: 0.6em;
+      padding: 0;
+    }
+  }
+
   // Header topics
   &__topic {
     display: block;
