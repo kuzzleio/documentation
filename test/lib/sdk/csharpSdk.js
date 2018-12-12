@@ -35,7 +35,7 @@ class CsharpSdk {
   }
 
   exists() {
-    return this.sdkFiles.map(async file => {
+    return this.sdkFiles.map(file => {
       return fs.existsSync(`${this.sdkDir}/${file}`);
     }).filter(fileExists => fileExists).length === this.sdkFiles.length;
   }
