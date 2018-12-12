@@ -1,18 +1,18 @@
 const Bluebird = require('bluebird');
 
-// load the Kuzzle SDK module and the websocket protocol
+// Loads the Kuzzle SDK module and the websocket protocol
 const {
   Kuzzle,
   Websocket
 } = require('kuzzle-sdk');
 
-// instantiate a Kuzzle client
+ // Instantiates a Kuzzle client
 const
   kuzzle = new Kuzzle(
     new Websocket({ host: 'kuzzle', autoReconnect: false })
   );
 
-// add a listener to detect any connection problems
+ // Adds a listener to detect any connection problems
 kuzzle.on('networkError', error => {
   console.error(`Network Error: ${error.message}`);
 });
