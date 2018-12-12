@@ -5,6 +5,8 @@ description: Geopoint description
 order: 400
 ---
 
+# Geofencing
+
 Geofencing in Koncorde consists in defining forms in the geo-space using geopoints and geodistances within terms like
 [geoBoundingBox]({{ site_base_path}}koncorde/1/terms#geoboundingbox-default), [geoDistance]({{ site_base_path}}koncorde/1/terms#geodistance-default) [geoDistanceRange]({{ site_base_path}}koncorde/1/terms#geodistancerange-default) and [geoPolygon]({{ site_base_path}}koncorde/1/terms#geopolygon-default). In this section, you will find a detailed
 explanation about how to specify geopoints and geodistances.

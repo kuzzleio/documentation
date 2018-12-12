@@ -5,6 +5,8 @@ description: Combines multiple terms to create complex filters
 order: 300
 ---
 
+# Operands
+
 Filters in Koncorde are constituted of terms and operands. In this section, you will find an exhaustive listing of all 
 the available operands. Operands allow you to combine multiple terms together in the same filter.
 You can also refer to the [terms]({{ site_base_path }}koncorde/1/terms) reference to know about

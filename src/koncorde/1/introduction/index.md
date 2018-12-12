@@ -5,13 +5,13 @@ order: 0
 description: Introduction to Koncorde
 ---
 
-## What is Koncorde
+# Introduction
 
 [Koncorde](https://www.npmjs.com/package/koncorde) is a data percolation engine
 and is part of Kuzzle's real-time engine. It is used to:
 
-- trigger notifications on [real-time subscriptions]({{ site_base_path }}guide/essentials/real-time/)
-- [perform data validation]({{ site_base_path }}guide/essentials/data-validation/) 
+- trigger notifications on [real-time subscriptions]({{ site_base_path }}guide/1/essentials/real-time/)
+- [perform data validation]({{ site_base_path }}guide/1/essentials/data-validation/) 
 
 Koncorde exposes a [DSL](https://wikipedia.org/en/Domain-specific_language) that enables you to define filters you can apply to any
 stream of data and be notified whenever the content of the stream matches the filter.

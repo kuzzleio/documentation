@@ -5,6 +5,8 @@ description: Filtering terms rundown
 order: 200
 ---
 
+# Filter Terms
+
 Filters in Koncorde are constituted of terms and operands. In this section, you will find an exhaustive listing of all 
 the available terms. Terms allow you to express a predicate to apply on a data stream: if the data matches the filter,
 Koncorde will execute the registered callback. One term can constitute a filter on its own or be combined

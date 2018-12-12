@@ -4,6 +4,7 @@ title: Advanced Notions
 order: 600
 ---
 
+# Advanced Notions
 
 ## Filter Equivalence 
 
@@ -43,7 +44,7 @@ And:
 }
 ```
 
-For more information, please refer to the [Koncorde](https://www.npmjs.com/package/koncorde#filter-unique-identifier) documentation.
+For more information, please refer to the [Koncorde README](https://www.npmjs.com/package/koncorde#filter-unique-identifier).
 
 ## Testing Nested Fields
 
