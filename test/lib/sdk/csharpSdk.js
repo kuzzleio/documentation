@@ -35,7 +35,9 @@ class CsharpSdk {
   }
 
   exists() {
-    return fs.existsSync(`${this.sdkDir}/kuzzlesdk-0.0.1.dll`);
+    return this.sdkFiles.map(async file => {
+      return fs.existsSync(`${this.sdkDir}/${file}`);
+    }).filter(fileExists => fileExists).length === this.sdkFiles.length;
   }
 }
 

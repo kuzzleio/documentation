@@ -32,7 +32,8 @@ module.exports = class CsharpRunner extends BaseRunner {
   }
 
   async lint(snippet) {
-//    await super.lint(snippet, this.lintOptions.concat(snippet.renderedSnippetPath));
+    // No linter for now
+    // await super.lint(snippet, this.lintOptions.concat(snippet.renderedSnippetPath));
   }
 
   clean(snippet) {
