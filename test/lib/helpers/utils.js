@@ -7,7 +7,6 @@ const SDK_VERSIONS_PATH = path.join(__dirname, '../../sdk-versions.yml');
 
 async function execute(command, args, options = {}) {
   options.encoding = 'utf8';
-  console.log(command, args)
   const { status, output, error } = spawnSync(command, args, options);
 
   if (error) {

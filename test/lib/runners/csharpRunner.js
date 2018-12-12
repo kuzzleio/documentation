@@ -19,7 +19,7 @@ module.exports = class CsharpRunner extends BaseRunner {
     this.nexpectCommand = `mono ${executableFile}`;
 
     try {
-      await execute('mcs', this.compileOptions.concat([`-out:${this.executableFile}`, snippet.renderedSnippetPath]));
+      await execute('mcs', this.compileOptions.concat([`-out:${executableFile}`, snippet.renderedSnippetPath]));
     } catch (e) {
       const res = {
         code: 'COMPILATION_FAIL',
