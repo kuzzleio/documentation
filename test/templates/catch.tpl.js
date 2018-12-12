@@ -4,7 +4,7 @@ const {
   Websocket
 } = require('kuzzle-sdk');
 
-// instantiate a Kuzzle client
+ // Instantiates a Kuzzle client
 const
   kuzzle = new Kuzzle(
     new Websocket({ host: 'kuzzle', autoReconnect: false })
