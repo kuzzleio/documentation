@@ -8,13 +8,11 @@ description: Updates the current user object in Kuzzle.
 
 Updates the current user object in Kuzzle.
 
-## Signature
+## Arguments
 
 ```cpp
-kuzzle_user* updateSelf(const std::string& content, query_options* options=nullptr);
+User updateSelf(const std::string& content, query_options* options=nullptr);
 ```
-
-## Arguments
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
@@ -38,7 +36,7 @@ Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle er
 
 ## Return
 
-A pointer to a kuzzle_user.
+A [User]({{ site_base_path }}sdk-reference/cpp/1/user/) object.
 
 ## Usage
 
