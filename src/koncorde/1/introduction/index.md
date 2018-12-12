@@ -5,13 +5,13 @@ order: 0
 description: Introduction to Koncorde
 ---
 
-## What is Koncorde
+# Introduction
 
 [Koncorde](https://www.npmjs.com/package/koncorde) is a data percolation engine
 and is part of Kuzzle's real-time engine. It is used to:
 
-- trigger notifications on [real-time subscriptions]({{ site_base_path }}guide/essentials/real-time/)
-- [perform data validation]({{ site_base_path }}guide/essentials/data-validation/) 
+- trigger notifications on [real-time subscriptions]({{ site_base_path }}guide/1/essentials/real-time/)
+- [perform data validation]({{ site_base_path }}guide/1/essentials/data-validation/) 
 
 Koncorde exposes a [DSL](https://wikipedia.org/en/Domain-specific_language) that enables you to define filters you can apply to any
 stream of data and be notified whenever the content of the stream matches the filter.
@@ -38,7 +38,7 @@ contained in your data are contained or not in it.
 If you are looking for information about how to setup a live data subscription
 in Kuzzle, please refer to [the specific docs in the Essentials section]({{ site_base_path }}guide/1/essentials/real-time/).
 
-## First steps
+## Quick start
 
 As mentioned above, Koncorde lets you express "filters" that you can test on
 a set of "documents" (represented as POJOs) to check whether the filter matches
@@ -107,12 +107,14 @@ engine.register('index', 'collection', filter)
     });
 ```
 
-Then, execute the file
+Then, to see Koncorde in action, execute the file
 
 ```bash
 node koncorde-demo.js
 ```
 
-to see Koncorde in action! Feel free to play with the `geoDistance` position and radius,
-as well as with tested points to see the different results.
-You can also dive into more complex filters by playing with other [terms]() and [operands]().
+## Next steps
+
+Feel free to play with the `geoDistance` position and radius,
+as well as with tested points to see the different results in the previous example.
+You can also dive into more complex filters by playing with other [terms]({{ site_base_path }}koncorde/1/terms) and [operands]({{ site_base_path }}koncorde/1/operands).
