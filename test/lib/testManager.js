@@ -11,13 +11,13 @@ const
   TestResult = require('./helpers/testResult');
 
 class TestManager {
-  constructor(sdk, version, path) {
+  constructor(sdk, version, sdkPath) {
     const supportedSdks = getSupportedSdks();
     if (! supportedSdks.includes(sdk)) {
       throw new Error(`Unknown SDK ${sdk}. Supported SDKs: ${supportedSdks.join(', ')}`);
     }
 
-    this.basePath = path;
+    this.basePath = sdkPath;
 
     const Sdk = require(`./sdk/${sdk}Sdk`);
     this.sdk = new Sdk(version);
@@ -41,12 +41,12 @@ class TestManager {
       return sdk === this.sdk.name && version.toString() === this.sdk.version;
     });
 
-    this.logger.log(`Found ${this.snippets.length} snippets.\n`)
+    this.logger.log(`Found ${this.snippets.length} snippets.\n`);
   }
 
   async runSnippets () {
     for (const snippetPath of this.snippets) {
-      await this.runSnippet(snippetPath)
+      await this.runSnippet(snippetPath);
     }
 
     this.logger.writeReport();
