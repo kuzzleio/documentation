@@ -15,18 +15,18 @@ User updateSelf(const std::string& content, query_options* options=nullptr);
 ```
 
 | Arguments    | Type    | Description
-|--------------|---------|-------------
-| `content` | const std::string& | the new credentials
-| `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
+|--------------|---------|-------------|
+| `content` | <pre>const std::string&</pre> | New credentials |
+| `options`  | <pre>kuzzleio::query_options*</pre>  | Optional query options |
 
 
 ### **Options**
 
-Additional query options
+Additional query options:
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type    | Description  |
+| ---------- | ------- | -------------- |
+| `queuable` | <pre>bool (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
