@@ -11,7 +11,7 @@ Returns the rights for the user linked to the `JSON Web Token`, provided in the 
 ## Signature
 
 ```cpp
-std::vector<user_right*> getMyRights(query_options *options=nullptr);
+std::vector<std::unique_ptr<UserRight>> getMyRights(query_options *options=nullptr);
 ```
 
 ## Arguments
