@@ -23,17 +23,11 @@ Triggered when the SDK has successfully connected to Kuzzle.
 
 ## discarded
 
-Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request too large, ...).
+Triggered when Kuzzle discards a request, typically if no connection is established and the request is not queuable, either because the offline mode is not set or if set explicitely.
 
 **Callback arguments:**
 
-`@param {Error} error`
-
-| Property   | Type    | Description       |
-| ---------- | ------- | ----------------- |
-| `message` | <pre>string</pre> | Error description |
-| `status` | <pre>number</pre> | Error code |
-| `stack` | <pre>string</pre> | Stacktrace (development mode only) |
+`@param {object} request`: the discarded [request]({{ site_base_path }}api/1/query-syntax/)
 
 ## disconnected
 
@@ -55,7 +49,6 @@ Triggered when a login attempt completes, either with a success or a failure res
 ## networkError
 
 Triggered when the SDK has failed to connect to Kuzzle.
-This event does not trigger the offline mode.
 
 **Callback arguments:**
 

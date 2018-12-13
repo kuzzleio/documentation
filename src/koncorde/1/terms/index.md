@@ -1,10 +1,16 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Filter Terms
 description: Filtering terms rundown
-order: 700
+order: 200
 ---
+
+# Filter Terms
+
+Filters in Koncorde are constituted of terms and operands. In this section, you will find an exhaustive listing of all 
+the available terms. Terms allow you to express a predicate to apply on a data stream: if the data matches the filter,
+Koncorde will execute the registered callback. One term can constitute a filter on its own or be combined
+with other terms in the same filter using the [operands]({{ site_base_path }}koncorde/1/operands).
 
 
 ## equals
@@ -566,6 +572,7 @@ The following filter validates the last two documents:
 ## regexp
 
 {{{since "1.0.0"}}}
+
 The `regexp` filter matches attributes using [PCREs](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions).
 
 ### Syntax
