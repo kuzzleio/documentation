@@ -28,15 +28,13 @@ Additional query options
 | ---------- | ------- | --------------------------------- | ------- |
 | `queuable` | boolean | Make this request queuable or not | `true`  |
 
+## Return
+
+A [User]({{ site_base_path }}sdk-reference/cpp/1/user/) object.
 
 ## Exceptions
 
 Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
-
-
-## Return
-
-A [User]({{ site_base_path }}sdk-reference/cpp/1/user/) object.
 
 ## Usage
 

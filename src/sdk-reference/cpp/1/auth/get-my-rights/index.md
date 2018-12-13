@@ -8,37 +8,30 @@ description: Returns the rights for the user linked to the `JSON Web Token`.
 
 Returns the rights for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
 
-## Signature
-
-```cpp
-std::vector<std::unique_ptr<UserRight>> getMyRights(query_options *options=nullptr);
-```
-
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options | no
+```cpp
+std::vector<std::unique_ptr<UserRight>> 
+  getMyRights(query_options *options=nullptr);
+```
 
-### **Options**
+<br/>
 
-Additional query options
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `options`  | <pre>kuzzleio::query_options*</pre>  | Optional query options |
 
-| Property     | Type    | Description                       | Default
-| ---------- | ------- | --------------------------------- | -------
-| `queuable` | bool | Make this request queuable or not | `true`
+### options
+
+Additional query options:
+
+| Property     | Type    | Description  |
+| ---------- | ------- | -------------- |
+| `queuable` | <pre>bool (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-A std::vector of `user_right*`. The `user_right` structure contain:
-
-| Property     | Type    | Description                       |
-| ---------- | ------- | --------------------------------- |
-| `controller` | const char* | Controller on wich the rights are applied |
-| `action` | const char* | Action on wich the rights are applied |
-| `index` | const char* | Index on wich the rights are applied |
-| `collection` | const char* | Collection on wich the rights are applied |
-| `value` | const char* | Rights (`allowed|denied|conditional`) |
+A [UserRight]({{ site_base_path }}sdk-reference/cpp/1/user-right/) object.
 
 ## Exceptions
 
