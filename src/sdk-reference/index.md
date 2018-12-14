@@ -39,11 +39,17 @@ but we’re working on extending the support to many more.
     <img src="/assets/images/logos/android.svg" alt="android logo" class="Languages-item-logo">
     <div class="Languages-item-name">Android</div>
   </a>
+  <a href="/sdk-reference/csharp/1" class="Languages-item">
+    <div class="ribbon"><span>ALPHA</span></div>
+    <img src="/assets/images/logos/csharp.svg" alt="csharp logo" class="Languages-item-logo">
+    <div class="Languages-item-name">C#</div>
+  </a>
   <a href="https://github.com/kuzzleio/sdk-ruby" class="Languages-item">
     <div class="ribbon"><span>ALPHA</span></div>
     <img src="/assets/images/logos/ruby.svg" alt="ruby logo" class="Languages-item-logo">
     <div class="Languages-item-name">Ruby</div>
   </a>
+
   <a href="https://github.com/kuzzleio/sdk-python2" class="Languages-item">
     <div class="ribbon"><span>ALPHA</span></div>
     <img src="/assets/images/logos/python.svg" alt="python logo" class="Languages-item-logo">
@@ -58,10 +64,5 @@ but we’re working on extending the support to many more.
     <div class="ribbon"><span>ALPHA</span></div>
     <img src="/assets/images/logos/lua.svg" alt="lua logo" class="Languages-item-logo">
     <div class="Languages-item-name">LUA</div>
-  </a>
-  <a href="https://github.com/kuzzleio/sdk-csharp" class="Languages-item">
-    <div class="ribbon"><span>ALPHA</span></div>
-    <img src="/assets/images/logos/csharp.svg" alt="csharp logo" class="Languages-item-logo">
-    <div class="Languages-item-name">C#</div>
   </a>
 </div>
