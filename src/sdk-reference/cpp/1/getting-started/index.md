@@ -112,6 +112,14 @@ Create a `create-document.cpp` file with the following source code :
 
 Build and run :
 
+``` bash
+$ gcc -o create-document create-document.cpp -std=c++11 -lstdc++ -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread -Wl,-rpath=${KUZZLE_SDK_PATH}/lib
+$ ./create-document
+Connected to Kuzzle Server
+Document created successfuly
+{"_index":"nyc-open-data","_type":"yellow-taxi","_id":"AWesW0cJYEmXIw2Bonx4","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"created":true,"_source":{"birthday":"1959-06-22","license":"B","name":"Sirkis","_kuzzle_info":{"author":"-1","createdAt":1544784922373,"updatedAt":null,"updater":null,"active":true,"deletedAt":null}},"_meta":{"author":"-1","createdAt":1544784922373,"updatedAt":null,"updater":null,"active":true,"deletedAt":null}}
+```
+
 You can perform other actions such as [delete]({{ site_base_path }}sdk-reference/go/1/document/delete),
 [replace]({{ site_base_path }}sdk-reference/go/1/document/replace) or [search]({{ site_base_path }}sdk-reference/go/1/document/search) documents. There are also other ways to interact with Kuzzle like our [Admin Console]({{ site_base_path }}guide/2/essentials/installing-console/), the [Kuzzle HTTP API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/) or by using your [own protocol](protocols/1/essentials/getting-started/).
 
