@@ -19,7 +19,7 @@ module.exports = class CsharpRunner extends BaseRunner {
     this.nexpectCommand = `mono ${executableFile}`;
 
     try {
-      await execute('mcs', this.compileOptions.concat([`-out:${this.executableFile}`, snippet.renderedSnippetPath]));
+      await execute('mcs', this.compileOptions.concat([`-out:${executableFile}`, snippet.renderedSnippetPath]));
     } catch (e) {
       const res = {
         code: 'COMPILATION_FAIL',
@@ -32,7 +32,8 @@ module.exports = class CsharpRunner extends BaseRunner {
   }
 
   async lint(snippet) {
-//    await super.lint(snippet, this.lintOptions.concat(snippet.renderedSnippetPath));
+    // No linter for now
+    // await super.lint(snippet, this.lintOptions.concat(snippet.renderedSnippetPath));
   }
 
   clean(snippet) {

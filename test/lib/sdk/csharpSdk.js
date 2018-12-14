@@ -15,22 +15,29 @@ class CsharpSdk {
     this.sdkDir = 'test/bin/';
     this.archiveDir = 'kuzzle-csharp-sdk';
     this.sdkCsharpBucket = `https://dl.kuzzle.io/sdk/csharp/${this.versionPath}/${this.sdkCsharpArchive}`;
+    this.sdkFiles = [
+      'kuzzlesdk-0.0.1.dll',
+      'libkuzzle-wrapper-csharp.dll',
+      'libkuzzlesdk.so'
+    ];
   }
 
   async get() {
-    await execute('rm', [`${this.archiveDir}/kuzzlesdk-0.0.1.dll`], { cwd: this.sdkDir });
-    await execute('rm', [`${this.archiveDir}/libkuzzle-wrapper-csharp.dll`], { cwd: this.sdkDir });
-    await execute('rm', [`${this.archiveDir}/libkuzzlesdk.so`], { cwd: this.sdkDir });
+    this.sdkFiles.forEach(async file => {
+      await execute('rm', ['-f' ,`${this.archiveDir}/${file}`], { cwd: this.sdkDir });
+    });
     await execute('curl', ['-o', this.sdkCsharpArchive, this.sdkCsharpBucket], { cwd: this.sdkDir });
     await execute('tar', ['-xf', this.sdkCsharpArchive], { cwd: this.sdkDir });
-    await execute('mv', [`${this.archiveDir}/kuzzlesdk-0.0.1.dll`, '.'], { cwd: this.sdkDir });
-    await execute('mv', [`${this.archiveDir}/libkuzzle-wrapper-csharp.dll`, '.'], { cwd: this.sdkDir });
-    await execute('mv', [`${this.archiveDir}/libkuzzlesdk.so`, '.'], { cwd: this.sdkDir });
+    this.sdkFiles.forEach(async file => {
+      await execute('mv', [`${this.archiveDir}/${file}`, '.'], { cwd: this.sdkDir });
+    });
     await execute('rm', ['-r', this.archiveDir, this.sdkCsharpArchive], { cwd: this.sdkDir });
   }
 
   exists() {
-    return fs.existsSync(`${this.sdkDir}/kuzzlesdk-0.0.1.dll`);
+    return this.sdkFiles.map(file => {
+      return fs.existsSync(`${this.sdkDir}/${file}`);
+    }).filter(fileExists => fileExists).length === this.sdkFiles.length;
   }
 }
 
