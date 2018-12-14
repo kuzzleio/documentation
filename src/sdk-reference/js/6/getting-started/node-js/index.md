@@ -84,10 +84,6 @@ nyc-open-data/yellow-taxi ready!
 Congratulations! You are now ready to say Hello to the World!
 </div>
 
-<div class="alert alert-info">
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</div>
-
 ## Create your first "Hello World" document
 
 Create a `create.js` file with the following code:
@@ -148,10 +144,6 @@ New driver Sirkis with id AWccRe3-DfukVhSzMdUo has B license.
 
 <div class="alert alert-success">
 Congratulations! You have just set up your first pub/sub communication!
-</div>
-
-<div class="alert alert-info">
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
 </div>
 
 ## Where do we go from here?
