@@ -40,7 +40,7 @@ This loads the SDK and connects it to a Kuzzle instance using WebSocket.
 [snippet=load-sdk]
 
 <div class="alert alert-info">
-Replace 'kuzzle' which is the Kuzzle backend hostname with 'localhost' or the hostname where your Kuzzle backend is running.
+Replace 'kuzzle' which is the Kuzzle server hostname with 'localhost' or the hostname where your Kuzzle server is running.
 </div>
 
 Next, add a listener to be notified in case of a connection error:

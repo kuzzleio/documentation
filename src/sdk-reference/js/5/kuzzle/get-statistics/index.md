@@ -9,7 +9,7 @@ description: Kuzzle:getStatistics
 
 > Without argument, retrieves the last statistic frame in an array:
 > When providing a timestamp, retrieves all frames recorded after that timestamp:
-Kuzzle Backend monitors active connections, and ongoing/completed/failed requests.  
+Kuzzle server monitors active connections, and ongoing/completed/failed requests.  
 This method returns either the last statistics frame, or a set of frames starting from a provided timestamp.
 
 ---

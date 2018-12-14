@@ -2,7 +2,7 @@
 const { Kuzzle } = require('kuzzle-sdk');
 
 // Instantiates a Kuzzle client
-// Replace 'kuzzle' with your Kuzzle backend hostname (e.g. 'localhost')
+// Replace 'kuzzle' with your Kuzzle server hostname (e.g. 'localhost')
 const kuzzle = new Kuzzle('websocket', { host: 'kuzzle' });
 
 // Adds a listener to detect connection problems
