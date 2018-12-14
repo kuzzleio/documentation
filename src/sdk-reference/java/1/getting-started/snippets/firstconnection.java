@@ -16,7 +16,7 @@ public class gettingstartedfirstconnection {
             kuzzle.connect();
             System.out.println("Connected!");
         } catch(KuzzleException e){
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
 
         // Freshly installed Kuzzle servers are empty: we need to create
@@ -25,7 +25,7 @@ public class gettingstartedfirstconnection {
             kuzzle.getIndex().create("nyc-open-data");
             System.out.println("Index nyc-open-data created!");
         } catch(KuzzleException e){
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
 
         // Creates a collection
@@ -33,7 +33,7 @@ public class gettingstartedfirstconnection {
             kuzzle.getCollection().create("nyc-open-data", "yellow-taxi");
             System.out.println("Collection yellow-taxi created!");
         } catch(KuzzleException e){
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
 
         // Disconnects the SDK

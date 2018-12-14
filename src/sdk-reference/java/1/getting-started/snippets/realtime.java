@@ -16,7 +16,7 @@ public class gettingstartedrealtime {
             kuzzle.connect();
             System.out.println("Connected!");
         } catch(KuzzleException e){
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
 
         // Starts an async listener
@@ -36,7 +36,7 @@ public class gettingstartedrealtime {
                   .subscribe( "nyc-open-data", "yellow-taxi", filters, listener);
             System.out.println("Successfully subscribed!");
         } catch(KuzzleException e){
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
 
         // Writes a new document. This triggers a notification
@@ -52,7 +52,7 @@ public class gettingstartedrealtime {
                   .create( "nyc-open-data", "yellow-taxi", "", content);
             System.out.println("New document added to the yellow-taxi collection!");
         } catch(KuzzleException e){
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
 
         // Disconnects the SDK.

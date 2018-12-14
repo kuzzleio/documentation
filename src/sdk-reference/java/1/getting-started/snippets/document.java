@@ -16,7 +16,7 @@ public class gettingstartedstorage {
             kuzzle.connect();
             System.out.println("Connected!");
         } catch(KuzzleException e){
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
 
         // New document content
@@ -32,7 +32,7 @@ public class gettingstartedstorage {
                   .create( "nyc-open-data", "yellow-taxi", "some-id", content);
             System.out.println("New document added to the yellow-taxi collection!");
         } catch(KuzzleException e){
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
 
         // Disconnects the SDK.
