@@ -8,22 +8,15 @@ description: Returns the profile object for the user linked to the `JSON Web Tok
 
 Returns the profile object for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
 
-## Signature
+## Arguments
 
 ```cpp
-kuzzle_user* getCurrentUser();
+User getCurrentUser();
 ```
 
 ## Return
 
-A pointer to a kuzzle_user object containing:
-
-| Property     | Type    | Description                       |
-| ---------- | ------- | --------------------------------- |
-| `id` | const char* | The user ID |
-| `content` | const char* | The user content |
-| `profile_ids` | char** | An array containing the profile ids |
-| `profile_ids_length` | size_t | The size of the profile_ids array |
+A [User]({{ site_base_path }}sdk-reference/cpp/1/user/) object.
 
 ## Exceptions
 
