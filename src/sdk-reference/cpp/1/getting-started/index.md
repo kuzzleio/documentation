@@ -110,17 +110,7 @@ Create a `create-document.cpp` file with the following source code :
 
 [snippet=create-document]
 
-```
-gcc -o create-document-app create-document.cpp -std=c++11 -lstdc++ -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread -Wl,-rpath=${KUZZLE_SDK_PATH}/lib
-```
-
-As you did before, run your program:
-
-```bash
-$ go run document.go
-Connected!
-New document added to yellow-taxi collection!
-```
+Build and run :
 
 You can perform other actions such as [delete]({{ site_base_path }}sdk-reference/go/1/document/delete),
 [replace]({{ site_base_path }}sdk-reference/go/1/document/replace) or [search]({{ site_base_path }}sdk-reference/go/1/document/search) documents. There are also other ways to interact with Kuzzle like our [Admin Console]({{ site_base_path }}guide/2/essentials/installing-console/), the [Kuzzle HTTP API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/) or by using your [own protocol](protocols/1/essentials/getting-started/).
