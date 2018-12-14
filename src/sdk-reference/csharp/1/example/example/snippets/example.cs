@@ -1,2 +1,2 @@
-Console.WriteLine(k.server.info());
+Console.WriteLine(kuzzle.server.info());
 Console.WriteLine("Success");

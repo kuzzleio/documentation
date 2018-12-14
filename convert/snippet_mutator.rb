@@ -7,24 +7,45 @@ require 'section_mutator.rb'
 module SnippetMutator
 
   class Csharp
-    REPLACE = SectionMutator::Csharp::REPLACE.merge({
+    REPLACE = {
       /&/                                                => '',
       /->/                                               => '.',
-      /Kuzzleio::/                                       => ''
-    })
+      /kuzzleio::/                                       => '',
+      /Kuzzleio::/                                       => '',
+      /std::string/                                      => 'string',
+      /query_options options;/                           => 'QueryOptions options = new QueryOptions();',
+      /SearchResult\*/                                   => 'SearchResult',
+      /validation_response \*validation_response/ => 'validation_response validation_response'
+    }
     STDOUT_FIND = /std::cout.*std::endl;/
     STDERR_FIND = /std::cerr.*std::endl;/
     STREAM_REPLACE = /[<<]([^<]+)[<<]/
+    MULTILINE_STRING_REPLACE = /R"\((.*)\)"/m
 
     def mutate(content)
       common_replace(content)
       stdout_replace(content)
       stderr_replace(content)
-
+      temp_replace(content)
+      multiline_string_replace(content)
       content
     end
 
     private
+
+    def multiline_string_replace(content)
+      match = content.match(MULTILINE_STRING_REPLACE)
+      return if match.nil?
+
+      multiline_string = match[1]
+      multiline_string.gsub!('"', '""')
+      content.gsub!(MULTILINE_STRING_REPLACE, "@\"#{multiline_string}\"")
+    end
+
+    def temp_replace(content)
+      content.gsub!(/\(KuzzleException e\)/, '')
+      content.gsub!(/e.getMessage\(\)/, '""')
+    end
 
     def common_replace(content)
       REPLACE.each do |regexp, replace_value|

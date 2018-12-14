@@ -4,6 +4,6 @@ try {
   kuzzle.collection.create("nyc-open-data", "yellow-taxi", mapping);
 
   Console.WriteLine("Success");
-} catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+} catch  {
+  Console.Error.WriteLine("");
 }
