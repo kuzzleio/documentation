@@ -47,26 +47,19 @@ To make building the sample application in the following step easier, we'll expo
 $ export KUZZLE_SDK_PATH=$PWD/kuzzle-cpp-sdk
 ```
 
-## Building the application
-
-To build the sample C++ application, we'll use the following `Makefile` :
-
-``` Makefile
-K_LIB_PATH = $(KUZZLE_SDK_PATH)/lib
-K_INCLUDE_PATH = $(KUZZLE_SDK_PATH)/include
-
-EXEC_NAME=my-first-kuzzle-app
-SRCS = my-first-kuzzle-app.cpp
-
-all:
-    gcc -o $(EXEC_NAME) $(SRCS) -std=c++11 -lstdc++ -I$(K_INCLUDE_PATH) -L$(K_LIB_PATH) -lkuzzlesdk -lpthread -Wl,-rpath=$(K_LIB_PATH)
-```
-
 ## First connection
 
-Then create a `my-first-kuzzle-app.cpp` file and with the following source code :
+Create a `my-first-kuzzle-app.cpp` file and with the following source code :
 
 [snippet=connect]
+
+Build and run :
+
+``` bash
+$ gcc -o my-first-kuzzle-app my-first-kuzzle-app.cpp -std=c++11 -lstdc++ -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread -Wl,-rpath=${KUZZLE_SDK_PATH}/lib
+$ ./my-first-kuzzle-app
+Connected to Kuzzle Server
+```
 
 ## Create data structure
 
@@ -79,8 +72,7 @@ Update `my-first-kuzzle-app.cpp` with the following content :
 Build and execute the program with the following commands :
 
 ``` sh
-$ make
-gcc -o my-first-kuzzle-app my-first-kuzzle-app.cpp -std=c++11 -lstdc++ -I./kuzzle-cpp-sdk/include -L./kuzzle-cpp-sdk/lib -lkuzzlesdk -lpthread -Wl,-rpath=./kuzzle-cpp-sdk/lib
+$ gcc -o my-first-kuzzle-app my-first-kuzzle-app.cpp -std=c++11 -lstdc++ -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread -Wl,-rpath=${KUZZLE_SDK_PATH}/lib
 $ ./my-first-kuzzle-app
 Connected to Kuzzle Server
 Index 'nyc-open-data' and collection 'yellow-taxi' created
