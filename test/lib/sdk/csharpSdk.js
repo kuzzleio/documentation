@@ -17,8 +17,7 @@ class CsharpSdk {
     this.sdkCsharpBucket = `https://dl.kuzzle.io/sdk/csharp/${this.versionPath}/${this.sdkCsharpArchive}`;
     this.sdkFiles = [
       'kuzzlesdk-0.0.1.dll',
-      'libkuzzle-wrapper-csharp.dll',
-      'libkuzzlesdk.so'
+      'libkuzzle-wrapper-csharp.dll'
     ];
   }
 

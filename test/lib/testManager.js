@@ -68,6 +68,8 @@ class TestManager {
         code: 'SUCCESS',
         file: snippet.snippetFile
       });
+
+      this.sdkRunner.clean();
     } catch (e) {
       if (! (e instanceof TestResult)) {
         this.results.push(new TestResult({
