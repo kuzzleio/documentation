@@ -17,7 +17,7 @@ That limit is by default set at 10000, and you can't get over it even with the f
   When processing a large number of items (i.e. more than 1000), it is advised to paginate the results using <code>SearchResult.next</code> rather than increasing the size parameter.
 </div>
 
-## Arguments
+## Signature
 
 ```cpp
 kuzzleio::SearchResult* searchSpecifications(
@@ -25,12 +25,23 @@ kuzzleio::SearchResult* searchSpecifications(
   kuzzleio::query_options *options=nullptr)
 ```
 
-<br/>
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `query` | <pre>const std::string&</pre> | A JSON string containing the query to match |
 | `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+
+### query
+
+A JSON string representing the Elasticsearch query.  
+It may contain the following root properties:
+
+- `query`: the search query itself, using the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
+- `aggregations`: controls how the search results should be [aggregated](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-aggregations.html)
+- `sort`: contains a list of fields, used to [sort search results](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-sort.html), in order of importance.
+
+An empty query matches all documents in the queried collection.
 
 ### options
 
@@ -40,16 +51,6 @@ kuzzleio::SearchResult* searchSpecifications(
 | `from` | <pre>int</pre><br/>(`0`) | Offset of the first document to fetch |
 | `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
 | `scroll` | <pre>const std::string&</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units)) |
-
-## Query properties
-
-### Optional:
-
-- `query`: the search query itself, using the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
-- `aggregations`: controls how the search results should be [aggregated](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-aggregations.html)
-- `sort`: contains a list of fields, used to [sort search results](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-request-sort.html), in order of importance.
-
-An empty body matches all documents in the queried collection.
 
 ## Return
 
