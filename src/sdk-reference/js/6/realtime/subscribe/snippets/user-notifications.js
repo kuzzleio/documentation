@@ -13,7 +13,7 @@ try {
   // Subscribe users notifications
   const options = { users: 'all' };
 
-  const roomId = await kuzzle.realtime.subscribe(
+  await kuzzle.realtime.subscribe(
     'nyc-open-data',
     'yellow-taxi',
     filters,
@@ -23,7 +23,9 @@ try {
 
   // Instantiates a second kuzzle client: multiple subscriptions
   // made by the same user will not trigger "new user" notifications
-  const kuzzle2 = new Kuzzle('websocket', { host: 'kuzzle' });
+  const kuzzle2 = new Kuzzle(
+    new Websocket({ host: 'kuzzle' })
+  );
   await kuzzle2.connect();
 
   // Subscribe to the same room with the second client
