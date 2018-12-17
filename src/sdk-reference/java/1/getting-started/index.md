@@ -15,7 +15,7 @@ This page shows examples of scripts that **store** documents in Kuzzle, and of s
 Before proceeding, please make sure your system meets the following requirements:
 
 * **Oracle JDK or OpenJDK** version 8 or higher (<a href="https://openjdk.java.net/install/">OpenJDK installation instructions</a>)
-* A running Kuzzle server (<a href="guide/1/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
+* A running Kuzzle Server (<a href="guide/1/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
 </div>
 
 ## Installation
@@ -39,7 +39,7 @@ Initialize a new Java project, create a `gettingstartedfirstconnection.java` fil
 
 [snippet=firstconnection]
 
-This program initializes the Kuzzle server storage by creating a data index, and a data collection inside it
+This program initializes the Kuzzle Server storage by creating a data index, and a data collection inside it
 Run the program with the following command:
 
 ```bash
@@ -50,16 +50,15 @@ Index nyc-open-data created!
 Collection yellow-taxi created!
 ```
 
-Congratulations, you performed a first connection to Kuzzle with a Java program.
-You are now able to:
-* Instantiate a protocol (here `websocket`) and a Kuzzle SDK instance
-* Connect to a Kuzzle instance running on `localhost`, with the WebSocket protocol
+Congratulations, you performed your first connection to Kuzzle Server via a Java program.
+You now know how to:
+* Instantiate Kuzzle SDK and connect to Kuzzle Server using a specific protocol (here `websocket`)
 * Create a data index
 * Create a data collection within an existing index
 
 ## Create your first document
 
-Now that you successfully connected to your Kuzzle server with the Java SDK, and created an index and a collection, it's time to manipulate data.
+Now that you successfully connected to your Kuzzle Server instance, and created an index and a collection, it's time to manipulate some data.
 
 Here is how Kuzzle structures its storage space:
 - data indexes contain data collections
@@ -68,7 +67,7 @@ Create a `gettingstartedstorage.java` file in the playground and add this code:
 
 [snippet=document]
 
-As you did before, run your program:
+As you did before, build and run your program:
 
 ```bash
 $ javac -classpath ./path/to/the/sdk.jar  gettingstartedstorage.java
@@ -81,7 +80,7 @@ You can perform other actions such as [delete]({{ site_base_path }}sdk-reference
 [replace]({{ site_base_path }}sdk-reference/go/1/document/replace) or [search]({{ site_base_path }}sdk-reference/go/1/document/search) documents. There are also other ways to interact with Kuzzle like our [Admin Console]({{ site_base_path }}guide/2/essentials/installing-console/), the [Kuzzle HTTP API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/) or by using your [own protocol](protocols/1/essentials/getting-started/).
 
 Now you know how to:
-* Store documents in a Kuzzle server, and access those
+* Store documents in a Kuzzle Server, and access those
 
 ## Subscribe to realtime document notifications (pub/sub)
 
@@ -90,7 +89,8 @@ Time to use realtime with Kuzzle. Create a new file `gettingstartedrealtime.java
 [snippet=realtime]
 
 This program subscribes to changes made to documents with a `license` field set to `B`, within the `yellow-taxi` collection. Whenever a document matching the provided filters changes, a new notification is received from Kuzzle.
-Run your program:
+
+Build and run your program:
 
 ```bash
 $ javac -classpath ./path/to/the/sdk.jar gettingstartedrealtime.java
