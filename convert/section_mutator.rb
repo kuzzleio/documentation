@@ -39,7 +39,7 @@ module SectionMutator
       /A pointer to a/                             => 'A',
       /delete_/                                    => 'delete',
       /token_validity/                             => 'TokenValidity',
-      /struct/                                     => 'class',
+      /struct /                                    => 'class ',
       /cpp\/1/                                     => 'csharp/1',
       /cpp/                                        => 'csharp',
       /std::runtime_error/                         => 'System.Exception',

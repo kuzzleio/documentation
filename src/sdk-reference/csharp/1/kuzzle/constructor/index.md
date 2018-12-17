@@ -1,11 +1,11 @@
 ---
 layout: sdk.html.hbs
-title: Conclassor
+title: Constructor
 description: Create a new Kuzzle object connected to the backend
 order: 0
 ---
 
-# Conclassor
+# Constructor
 
 This is the main entry point to communicate with Kuzzle.  
 Each instance represent a connection to Kuzzle with specific options.
@@ -33,9 +33,9 @@ Each instance represent a connection to Kuzzle with specific options.
 | `auto_resubscribe`   | bool            | Automatically renew all subscriptions on a `reconnected` event     | `true`   | no       |
 | `offline_mode`       | enum Mode          | Offline mode configuration. `MANUAL` or `AUTO`                     | `MANUAL` | no       |
 | `queue_ttl`          | int           | Time a queued request is kept during offline mode, in milliseconds | `120000` | no       |
-| `queue_max_size`     | int long      | Number of maximum requests kept during offline mode                | `500`    | no       |
-| `replay_interval`    | int long      | Delay between each replayed requests, in milliseconds              | `10`     | no       |
-| `reconnection_delay` | int long      | number of milliseconds between reconnection attempts               | `1000`   | no       |
+| `queue_max_size`     | long      | Number of maximum requests kept during offline mode                | `500`    | no       |
+| `replay_interval`    | long      | Delay between each replayed requests, in milliseconds              | `10`     | no       |
+| `reconnection_delay` | long      | number of milliseconds between reconnection attempts               | `1000`   | no       |
 | `volatile`           | string (json) | Common volatile data, will be sent to all future requests          | -        | no       |
 
 ## Getter & Setter
@@ -65,4 +65,4 @@ A `Kuzzle` instance.
 
 ## Usage
 
-[snippet=conclassor]
+[snippet=constructor]
