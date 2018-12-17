@@ -30,6 +30,7 @@ module SectionMutator
 
   class Csharp < Base
     REPLACE = {
+      /std::vector<std::string>/                   => 'List<string>',
       /const std::string&/                         => 'string',
       /const std::string\*/                        => 'string',
       /const std::string/                          => 'string',
@@ -37,9 +38,12 @@ module SectionMutator
       /kuzzleio::query_options\*/                  => 'Kuzzleio::QueryOptions',
       /kuzzleio::query_options/                    => 'Kuzzleio::QueryOptions',
       /boolean/                                    => 'bool',
+      /Boolean/                                    => 'bool',
       /kuzzleio::KuzzleException/                  => 'Kuzzleio::KuzzleException',
       /kuzzleio::SearchResult*/                    => 'Kuzzleio::SearchResult',
-      /A pointer to a/                             => 'A'
+      /A pointer to a/                             => 'A',
+      /delete_/                                    => 'delete',
+      /struct/                                     => 'class'
     }
 
     def initialize()

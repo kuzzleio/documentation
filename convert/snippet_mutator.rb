@@ -8,38 +8,44 @@ module SnippetMutator
 
   class Csharp
     REPLACE = {
+      /\.size\(\)/                                       => '.Count',
       /&/                                                => '',
       /->/                                               => '.',
+      /push_back/                                        => 'Add',
       /kuzzleio::/                                       => '',
       /Kuzzleio::/                                       => '',
       /std::string/                                      => 'string',
       /query_options options;/                           => 'QueryOptions options = new QueryOptions();',
       /SearchResult\*/                                   => 'SearchResult',
-      /validation_response \*validation_response/ => 'validation_response validation_response'
+      /validation_response \*validation_response/        => 'validation_response validation_response',
+      /delete_\(/                                        => 'delete('
     }
     STDOUT_FIND = /std::cout.*std::endl;/
     STDERR_FIND = /std::cerr.*std::endl;/
     STREAM_REPLACE = /[<<]([^<]+)[<<]/
-    MULTILINE_STRING_REPLACE = /R"\((.*)\)"/m
+    MULTILINE_STRING_REPLACE = /(R"\(([\[\n\{\s"\w:\-,\}\]]+)\)")/m
+    VECTOR_INIT_REPLACE = /(std::vector<(.*)>\W+(\w+);)/
+    VECTOR_ASSIGN_REPLACE = /(std::vector<(.*)>\W+(\w+))\s+=/
 
     def mutate(content)
       common_replace(content)
       stdout_replace(content)
       stderr_replace(content)
-      exceptions_replace(content)
       multiline_string_replace(content)
+      exceptions_replace(content)
+      vector_replace(content)
       content
     end
 
     private
 
     def multiline_string_replace(content)
-      match = content.match(MULTILINE_STRING_REPLACE)
-      return if match.nil?
+      multiline_strings = content.scan(MULTILINE_STRING_REPLACE)
 
-      multiline_string = match[1]
-      multiline_string.gsub!('"', '""')
-      content.gsub!(MULTILINE_STRING_REPLACE, "@\"#{multiline_string}\"")
+      multiline_strings.each do |(full_match, string_match)|
+        string_match.gsub!('"', '""')
+        content.gsub!(full_match, "@\"#{string_match}\"")
+      end
     end
 
     def exceptions_replace(content)
@@ -73,6 +79,23 @@ module SnippetMutator
 
         content.gsub!(line, "Console.Error.WriteLine(#{string});")
       end
+    end
+
+    def vector_replace(content)
+      vector_init_lines = content.scan(VECTOR_INIT_REPLACE)
+
+      vector_init_lines.each do |(line, var_type, var_name)|
+        csharp_line = "List<#{var_type}> #{var_name} = new List<#{var_type}>();"
+        content.gsub!(VECTOR_INIT_REPLACE, csharp_line)
+      end
+
+      vector_assign_lines = content.scan(VECTOR_ASSIGN_REPLACE)
+
+      vector_assign_lines.each do |(line, var_type, var_name)|
+        csharp_line = "List<#{var_type}> #{var_name} ="
+        content.gsub!(VECTOR_ASSIGN_REPLACE, csharp_line)
+      end
+
     end
 
   end

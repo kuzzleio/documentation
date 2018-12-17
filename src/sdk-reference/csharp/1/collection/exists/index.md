@@ -39,3 +39,6 @@ True if the collection exists
 
 Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
 
+## Usage
+
+[snippet=exists]

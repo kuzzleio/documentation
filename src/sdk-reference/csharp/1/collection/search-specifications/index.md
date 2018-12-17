@@ -50,3 +50,7 @@ Returns a [Kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/csharp/
 
 Returns a [Kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/csharp/1/search-result).
 
+## Return
+
+Returns a [Kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/csharp/1/search-result).
+

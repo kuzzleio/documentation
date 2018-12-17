@@ -56,6 +56,7 @@ class Page
     while argument = extract_section(:argument)
       @sections << argument
     end
+    @sections << extract_section(:return) if section_return?
     @sections << extract_section(:exceptions)
     @sections << extract_section(:usage)
 
@@ -79,5 +80,9 @@ class Page
     else
       nil
     end
+  end
+
+  def section_return?
+    ! @content.match(/## Return/).nil?
   end
 end

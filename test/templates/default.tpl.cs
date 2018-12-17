@@ -1,5 +1,6 @@
 using Kuzzleio;
 using System;
+using System.Collections.Generic;
 
 public class Example {
   static void Main() {

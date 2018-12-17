@@ -75,6 +75,14 @@ class Argument < Section
   end
 end
 
+class Return < Section
+  REGEXP = /(^## \w+$[^[##]]+)^##/
+
+  def initialize(page)
+    super(:return, REGEXP, page)
+  end
+end
+
 class Exceptions < Section
   REGEXP = /(^## \w+$[^[##]]+)^##/
 

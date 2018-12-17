@@ -41,7 +41,7 @@ Additional query options
 
 ## Return
 
-Returns a <pre>bool</pre> value set to true if the document is valid and false otherwise.
+Returns a `bool` value set to true if the document is valid and false otherwise.
 
 ## Exceptions
 

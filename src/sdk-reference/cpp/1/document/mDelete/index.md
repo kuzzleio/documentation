@@ -37,11 +37,11 @@ Additional query options
 | Option | Type<br/>(default) | Description |
 | ------ | -------------- | ----------- |
 | `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
-| `refresh` | <pre>const std::string&<br/>(`""`)</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `refresh` | <pre>const std::string&</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 
-Returns a `std::vector< std::string>` containing ids of the deleted documents.
+Returns a `std::vector<std::string>` containing ids of the deleted documents.
 
 ## Exceptions
 

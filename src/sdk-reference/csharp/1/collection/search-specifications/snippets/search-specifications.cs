@@ -10,6 +10,6 @@ try {
   }", options);
 
   Console.WriteLine("Successfully retrieved " + response.fetched + " specifications");
-} catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+} catch  {
+  Console.Error.WriteLine("");
 }
