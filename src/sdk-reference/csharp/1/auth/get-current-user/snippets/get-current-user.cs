@@ -3,6 +3,6 @@ try {
   User user = kuzzle.auth.getCurrentUser();
 
   Console.WriteLine("Success");
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }

@@ -68,7 +68,7 @@ class Arguments < Section
 end
 
 class Argument < Section
-  REGEXP = /(^### [\w|\*]+$[^[##]]+)^##/
+  REGEXP = /(^### [\w|\*]+$.+?)^##/m
 
   def initialize(page)
     super(:argument, REGEXP, page)

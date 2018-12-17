@@ -21,7 +21,7 @@ public string updateMyCredentials(string strategy, string credentials, QueryOpti
 |--------------|---------|-------------
 | `strategy` | string | the strategy to use
 | `credentials` | string | the new credentials
-| `options`  | query_options*    | A `Kuzzleio::QueryOptions` containing query options
+| `options`  | Kuzzleio::QueryOptions    | A `Kuzzleio::QueryOptions` containing query options
 
 
 ### **Options**

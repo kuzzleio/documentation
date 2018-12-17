@@ -6,7 +6,7 @@ description: Authenticate a user
 
 # login
 
-Authenticates a user.
+Authenticates a user.z
 
 
 ## Signature
@@ -25,7 +25,7 @@ std::string login(const std::string& strategy, const std::string& credentials);
 | `credentials` | const std::string&  | the json credentials             | yes
 | `expiresIn`   | int     | expiration time in milliseconds  | no
 
-#### ***strategy***
+### strategy
 
 The name of the authentication [strategy]({{ site_base_path }}guide/kuzzle-depth/authentication/#authentication) used to log the user in.
 

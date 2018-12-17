@@ -3,6 +3,6 @@ try {
   kuzzle.auth.getMyCredentials("local");
 
   Console.WriteLine("Success");
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }

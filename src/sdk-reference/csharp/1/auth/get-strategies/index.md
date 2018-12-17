@@ -19,7 +19,7 @@ public SWIGTYPE_p_std__vectorT_std__string_t getStrategies(QueryOptions options)
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options`  | query_options*    | A `Kuzzleio::QueryOptions` containing query options
+| `options`  | Kuzzleio::QueryOptions    | A `Kuzzleio::QueryOptions` containing query options
 
 ### **Options**
 

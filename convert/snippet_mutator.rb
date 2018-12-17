@@ -18,7 +18,8 @@ module SnippetMutator
       /query_options options;/                           => 'QueryOptions options = new QueryOptions();',
       /SearchResult\*/                                   => 'SearchResult',
       /validation_response \*validation_response/        => 'validation_response validation_response',
-      /delete_\(/                                        => 'delete('
+      /delete_\(/                                        => 'delete(',
+      /token_validity*/                                  => 'TokenValidity'
     }
     STDOUT_FIND = /std::cout.*std::endl;/
     STDERR_FIND = /std::cerr.*std::endl;/
@@ -26,14 +27,16 @@ module SnippetMutator
     MULTILINE_STRING_REPLACE = /(R"\(([\[\n\{\s"\w:\-,\}\]]+)\)")/m
     VECTOR_INIT_REPLACE = /(std::vector<(.*)>\W+(\w+);)/
     VECTOR_ASSIGN_REPLACE = /(std::vector<(.*)>\W+(\w+))\s+=/
+    UNIQUE_PTR_REPLACE = /(std::unique_ptr<([\w:]+)>)/
 
     def mutate(content)
       common_replace(content)
       stdout_replace(content)
       stderr_replace(content)
       multiline_string_replace(content)
-      exceptions_replace(content)
+#      exceptions_replace(content)
       vector_replace(content)
+      unique_ptr_replace(content)
       content
     end
 
@@ -95,7 +98,14 @@ module SnippetMutator
         csharp_line = "List<#{var_type}> #{var_name} ="
         content.gsub!(VECTOR_ASSIGN_REPLACE, csharp_line)
       end
+    end
 
+    def unique_ptr_replace(content)
+      unique_ptr_lines = content.scan(UNIQUE_PTR_REPLACE)
+
+      unique_ptr_lines.each do |(line, var_type)|
+        content.gsub!(line, var_type)
+      end
     end
 
   end

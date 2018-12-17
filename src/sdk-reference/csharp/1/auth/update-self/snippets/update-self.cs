@@ -4,6 +4,6 @@ try {
 
   // Prints: {"foo":"bar","profileIds":["default"]}
   Console.WriteLine(updatedUser.content());
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }

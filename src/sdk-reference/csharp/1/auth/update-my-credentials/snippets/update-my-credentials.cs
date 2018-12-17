@@ -3,6 +3,6 @@ try {
   kuzzle.auth.updateMyCredentials("local", "{\"username\":\"foo\",\"password\":\"bar\",\"other\":\"value\"}");
 
   Console.WriteLine("Success");
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }

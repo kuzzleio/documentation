@@ -1,7 +1,7 @@
 try {
   kuzzle.auth.login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
 
-  List<std::unique_ptr<UserRight>> rights =
+  List<UserRight> rights =
     kuzzle.auth.getMyRights();
 
   for (int i = 0; i < rights.Count; i++) {
@@ -9,6 +9,6 @@ try {
     Console.WriteLine(rights[i].index + " " + rights[i].collection);
     Console.WriteLine(rights[i].value);
   }
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }

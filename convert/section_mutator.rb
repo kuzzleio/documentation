@@ -13,17 +13,13 @@ module SectionMutator
       section_mutator = "#{section.kind}_mutator".to_sym
 
       if respond_to?(section_mutator)
-        global_mutator(public_send(section_mutator, section))
+        public_send(section_mutator, section)
       else
-        global_mutator(content_mutator(section.content))
+        content_mutator(section.content)
       end
     end
 
     def content_mutator(content)
-      content
-    end
-
-    def global_mutator(content)
       content
     end
   end
@@ -35,18 +31,22 @@ module SectionMutator
       /const std::string\*/                        => 'string',
       /const std::string/                          => 'string',
       /std::string/                                => 'string',
+      /char\\\*/                                   => 'string',
       /kuzzleio::query_options\*/                  => 'Kuzzleio::QueryOptions',
       /kuzzleio::query_options/                    => 'Kuzzleio::QueryOptions',
+      /query_options\*/                            => 'Kuzzleio::QueryOptions',
       /boolean/                                    => 'bool',
       /Boolean/                                    => 'bool',
       /kuzzleio::KuzzleException/                  => 'Kuzzleio::KuzzleException',
       /kuzzleio::SearchResult*/                    => 'Kuzzleio::SearchResult',
       /A pointer to a/                             => 'A',
       /delete_/                                    => 'delete',
-      /struct/                                     => 'class'
+      /token_validity/                             => 'TokenValidity',
+      /struct/                                     => 'class',
+      /cpp\/1/                                     => 'csharp/1'
     }
 
-    def initialize()
+    def initialize
       @signature_extractor = SignatureExtractor::Csharp.new
     end
 
@@ -65,10 +65,6 @@ module SectionMutator
 
     def content_mutator(content)
       common_replace(content)
-    end
-
-    def global_mutator(content)
-      content.gsub(/cpp\/1/, 'csharp/1')
     end
 
     private

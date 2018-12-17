@@ -22,12 +22,12 @@ public TokenValidity checkToken(string token);
 
 ## Return
 
-A token_validity struct which has:
+A TokenValidity class which has:
 
 | Name                | Type     | Description                        
 | ------------------- | -------- | -----------------------------------
 | valid               | bool     | Tell if the token is valid or not
-| state               | char\*   | Explain why the token is invalid
+| state               | string   | Explain why the token is invalid
 | expires_at          | int      | Tells when the token expires
 
 ## Exceptions

@@ -20,7 +20,7 @@ public string getMyCredentials(string strategy, QueryOptions options);
 | Arguments    | Type    | Description | Required
 |--------------|---------|-------------|----------
 | `strategy` | string | the strategy to use    | yes
-| `options`  | query_options*    | A `Kuzzleio::QueryOptions` containing query options | no       |
+| `options`  | Kuzzleio::QueryOptions    | A `Kuzzleio::QueryOptions` containing query options | no       |
 
 ### **Options**
 
