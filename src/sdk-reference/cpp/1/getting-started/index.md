@@ -67,7 +67,7 @@ Now we'll learn how to nitializes the Kuzzle Server storage by creating an index
 
 Update `my-first-kuzzle-app.cpp` with the following content :
 
-[snippet=initstorage]
+[snippet=init]
 
 Build and execute the program with the following commands :
 
@@ -100,7 +100,7 @@ We will create a document in `nyc-open-data/yellow-taxi`
 
 Create a `create-document.cpp` file with the following source code :
 
-[snippet=create-document]
+[snippet=document]
 
 Build and run :
 

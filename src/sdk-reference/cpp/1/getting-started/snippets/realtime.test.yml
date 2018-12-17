@@ -7,8 +7,8 @@ template: standalone
 expected:
 - Connected!
 - Successfully subscribed!
-- Driver John born on 1995-11-27 got a B license.
+- New created document notification: some-id
 
-sdk: go
+sdk: cpp
 version: 1
 

@@ -1,13 +1,13 @@
-name: getting-started#storage
-description: Data manipulation
+name: getting-started#createdocument
+description: Create a document
 hooks:
   before: curl -X POST kuzzle:7512/nyc-open-data/_create ; curl -X PUT kuzzle:7512/nyc-open-data/yellow-taxi/; curl -X DELETE kuzzle:7512/nyc-open-data/yellow-taxi/some-id
-  after:
+  after: curl -X DELETE kuzzle:7512/nyc-open-data/yellow-taxi/some-id
 template: standalone
 expected:
 - Connected!
-- New document added to the yellow-taxi collection!
+- ^Document created successfuly: .*$
 
-sdk: go
+sdk: cpp
 version: 1
 
