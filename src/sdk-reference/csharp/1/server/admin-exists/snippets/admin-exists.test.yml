@@ -1,0 +1,10 @@
+name: server#adminExists
+description: Checks that an administrator account exists.
+hooks:
+  before:
+  after:
+template: default
+expected: ^(Admin exists\?) (0|1)$
+
+sdk: csharp
+version: 1

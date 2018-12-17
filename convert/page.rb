@@ -7,6 +7,9 @@ require 'section.rb'
 require 'section_mutator.rb'
 
 class Page
+  CONTROLLERS = %w(auth collection document index realtime server)
+  CORE_CLASSES = %w(kuzzle protocol search-result user user-right websocket)
+
   attr_reader :path, :sdk, :version, :controller, :action, :sections
 
   def initialize(path)
@@ -22,6 +25,14 @@ class Page
     @action = parts[5]
 
     @sections = []
+
+    if @controller.in?(CONTROLLERS)
+      @kind = :controller
+    elsif @controller.in?(CORE_CLASSES)
+      @kind = :core_class
+    else
+      @kind = :other
+    end
   end
 
   def copy_to(sdk, version)
@@ -57,6 +68,7 @@ class Page
     while argument = extract_section(:argument)
       @sections << argument
     end
+    @sections << extract_section(:custom) if section_custom?(/## Getter & Setter/)
     @sections << extract_section(:return) if section_return?
     @sections << extract_section(:exceptions)
     @sections << extract_section(:usage)
@@ -85,5 +97,9 @@ class Page
 
   def section_return?
     ! @content.match(/## Return/).nil?
+  end
+
+  def section_custom?(regexp)
+    ! @content.match(regexp).nil?
   end
 end

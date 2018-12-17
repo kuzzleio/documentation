@@ -13,12 +13,21 @@ class Snippet
     @content = File.read(@path)
 
     parts = @path.split('/')
+    # Handle controller/action/snippets/snippet.cpp and
+    # section/snippets/snippet.cpp
+    controller_section = parts.size == 8
+
     @root = parts[0..1].join('/')
     @sdk = parts[2]
     @version = parts[3]
     @controller = parts[4]
-    @action = parts[5]
-    @snippet = parts[7].split('.').first
+    if controller_section
+      @action = parts[5]
+      @snippet = parts[7].split('.').first
+    else
+      @action = ""
+      @snippet = parts[6].split('.').first
+    end
   end
 
   def copy_to(sdk, version)

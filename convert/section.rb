@@ -91,6 +91,14 @@ class Exceptions < Section
   end
 end
 
+class Custom < Section
+  REGEXP = /(^## [\w&\s]+$[^[##]]+)^##/
+
+  def initialize(page)
+    super(:custom, REGEXP, page)
+  end
+end
+
 class Usage < Section
   REGEXP = /(^## \w+$[^[##]]+)/
 

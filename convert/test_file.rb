@@ -11,12 +11,21 @@ class TestFile
     @path = path.gsub(/\/\//, '/')
 
     parts = @path.split('/')
+    # Handle controller/action/snippets/snippet.test.yml and
+    # section/snippets/snippet.test.yml
+
+    controller_section = parts.size == 8
     @root = parts[0..1].join('/')
     @sdk = parts[2]
     @version = parts[3]
     @controller = parts[4]
-    @action = parts[5]
-    @snippet = parts[7]
+    if controller_section
+      @action = parts[5]
+      @snippet = parts[7]
+    else
+      @action = ""
+      @snippet = parts[6]
+    end
   end
 
   def copy_to(sdk, version)

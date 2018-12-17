@@ -27,13 +27,10 @@ module SectionMutator
   class Csharp < Base
     REPLACE = {
       /std::vector<std::string>/                   => 'List<string>',
-      /const std::string&/                         => 'string',
-      /const std::string\*/                        => 'string',
-      /const std::string/                          => 'string',
-      /std::string/                                => 'string',
-      /char\\\*/                                   => 'string',
-      /kuzzleio::query_options\*/                  => 'Kuzzleio::QueryOptions',
-      /kuzzleio::query_options/                    => 'Kuzzleio::QueryOptions',
+      /(const )?std::string[\*&]?/                 => 'string',
+      /const char\s?\*/                            => 'string',
+      /char[\\]?\*/                                => 'string',
+      /kuzzleio::query_options\*?/                 => 'Kuzzleio::QueryOptions',
       /query_options\*/                            => 'Kuzzleio::QueryOptions',
       /boolean/                                    => 'bool',
       /Boolean/                                    => 'bool',
@@ -43,7 +40,19 @@ module SectionMutator
       /delete_/                                    => 'delete',
       /token_validity/                             => 'TokenValidity',
       /struct/                                     => 'class',
-      /cpp\/1/                                     => 'csharp/1'
+      /cpp\/1/                                     => 'csharp/1',
+      /cpp/                                        => 'csharp',
+      /std::runtime_error/                         => 'System.Exception',
+      /unsigned int/                               => 'int',
+      /const[\s]+/                                 => '',
+      /kuzzleio::options\\\*/                      => 'Options',
+      /unsigned long( long)?/                      => 'long',
+      /unsigned/                                   => 'int',
+      /kuzzleio::room_options\*/                   => 'RoomOptions',
+      /kuzzleio::NotificationListener[\*]?/        => 'NotificationListener',
+      /kuzzleio::notification_result[\*]?/         => 'NotificationResult',
+      /kuzzleio::notification_content[\*]?/        => 'NotificationContent',
+      /SearchResult[\*]?/                          => 'SearchResult'
     }
 
     def initialize
