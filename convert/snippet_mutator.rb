@@ -26,7 +26,7 @@ module SnippetMutator
       common_replace(content)
       stdout_replace(content)
       stderr_replace(content)
-      temp_replace(content)
+      exceptions_replace(content)
       multiline_string_replace(content)
       content
     end
@@ -42,7 +42,7 @@ module SnippetMutator
       content.gsub!(MULTILINE_STRING_REPLACE, "@\"#{multiline_string}\"")
     end
 
-    def temp_replace(content)
+    def exceptions_replace(content)
       content.gsub!(/\(KuzzleException e\)/, '')
       content.gsub!(/e.getMessage\(\)/, '""')
     end
