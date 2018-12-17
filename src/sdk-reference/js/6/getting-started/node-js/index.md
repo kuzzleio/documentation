@@ -52,7 +52,6 @@ kuzzle.on('networkError', error => {
 ```
 
 Then, connect the client to your Kuzzle server with the `connect()` method, afterwards you have to add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' that you will use to store data later on.  
-These methods will be wrapped in an `async` function to use the `await` construct.
 
 [snippet=prepare-db]
 
