@@ -7,6 +7,8 @@ order: 0
 
 # Constructor
 
+WebSocket is a class implementing the virtual class [Protocol]({{site_base_path}}sdk-reference/cpp/1/protocol).
+
 This is the main entry point to communicate with Websocket protocol.
 Give an instance of WebSocket to Kuzzle to connect to it.
 
