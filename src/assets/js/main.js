@@ -1,11 +1,12 @@
 require('select2');
 require('./app.js');
-require('./prism.js');
 require('./algolia-search.js');
 require('./drawer.js');
 require('./languageSelector.js');
 require('./versionSelector.js');
 require('./scrollTo.js');
+
+const prism = require('./prism.js');
 
 $(document).ready(function () {
 

@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 title: SearchResult
 description: How to deal with Kuzzle search results
-order: 500
+order: 400
 ---
 # SearchResult
 

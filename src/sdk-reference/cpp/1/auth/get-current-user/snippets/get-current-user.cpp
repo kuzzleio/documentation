@@ -1,6 +1,6 @@
 try {
   kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
-  kuzzleio::kuzzle_user* user = kuzzle->auth->getCurrentUser();
+  kuzzleio::User user = kuzzle->auth->getCurrentUser();
 
   std::cout << "Success" << std::endl;
 } catch (kuzzleio::KuzzleException &e) {
