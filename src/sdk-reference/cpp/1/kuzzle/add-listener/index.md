@@ -13,14 +13,14 @@ Theses listener will receive a `const std::string` as argument. This string is a
 ## Signature
 
 ```cpp
-kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::KuzzleEvent event, kuzzleio::EventListener* listener)
+kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::Event event, kuzzleio::EventListener* listener)
 ```
 
 ## Arguments
 
 | Argument   | Type                      | Description                                                                                            | Required |
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------ | -------- |
-| `event`    | kuzzleio::KuzzleEvent           | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes      |
+| `event`    | kuzzleio::Event           | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes      |
 | `listener` | kuzzleio::EventListener\* | A pointer to a c++11 lambda                                           | yes      |
 
 ### **event**
