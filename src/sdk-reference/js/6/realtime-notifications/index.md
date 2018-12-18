@@ -4,6 +4,7 @@ title: Realtime notifications
 description: List of realtime notifications sent by Kuzzle
 order: 300
 ---
+
 # Notifications
 
 The [realtime.subscribe]({{ site_base_path }}sdk-reference/js/6/realtime/subscribe) method takes a callback argument, called with a notification object, whose properties depends on the type of notification received.
