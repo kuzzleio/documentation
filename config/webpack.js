@@ -1,7 +1,8 @@
-const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const 
+  webpack = require('webpack'),
+  UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
+  path = require('path'),
+  VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   context: path.resolve(__dirname, '../src/assets/js/'),
