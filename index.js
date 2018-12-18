@@ -26,7 +26,7 @@ const watch = require('metalsmith-watch');
 const color = require('colors/safe');
 const discoverPartials = require('metalsmith-discover-partials');
 const deepclone = require('fast-deepclone');
-const metalsmithWebpack = require('metalsmith-webpack');
+const metalsmithWebpack = require('metalsmith-webpack2');
 
 // custom plugins
 const snippetManager = require('./plugins/snippetManager');
@@ -36,7 +36,7 @@ let filesSave = null;
 
 // configuration
 const msDefaultOpts = require('./config/metalsmith');
-const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
+const sdkVersions = require('./config/sdk').sdk;
 
 // arguments
 const argv = require('yargs').argv;
@@ -99,7 +99,7 @@ const metalsmith = _metalsmith(__dirname)
     algolia_publicKey: options.algolia.publicKey,
     algolia_index: options.algolia.index,
     is_dev: options.dev.enabled,
-    sdkVersions: sdkVersions,
+    sdkVersions: JSON.stringify(sdkVersions),
     exclude: options.exclude
   })
   .source('./src')
@@ -180,7 +180,7 @@ metalsmith
     }
     setImmediate(done);
   })
-  .use(metalsmithWebpack(require('./config/webpack.js')))
+  .use(metalsmithWebpack('./config/webpack.js'))
   .use(permalinks({relative: false}));
 
 metalsmith

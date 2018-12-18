@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   context: path.resolve(__dirname, '../src/assets/js/'),
@@ -14,9 +15,9 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
       algoliasearch: 'algoliasearch',
-      select2: 'select2'
     }),
     new UglifyJsPlugin({sourceMap: true}),
+    new VueLoaderPlugin()
   ],
   module: {
     loaders: [
@@ -27,6 +28,29 @@ module.exports = {
         query: {
           presets: ['@babel/preset-env']
         }
+      },
+    ],
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              indentedSyntax: true
+            }
+          }
+        ]
       }
     ]
   },
