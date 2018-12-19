@@ -30,12 +30,14 @@ const metalsmithWebpack = require('metalsmith-webpack');
 
 // custom plugins
 const snippetManager = require('./plugins/snippetManager');
+const include = require('./plugins/include');
 const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
 let filesSave = null;
 
 // configuration
 const msDefaultOpts = require('./config/metalsmith');
+const webpackConfig = require('./config/webpack');
 const sdkVersions = JSON.stringify(ymlRead.sync(path.join(__dirname, './test/sdk-versions.yml'))).replace(/\s+/g, '');
 
 // arguments
@@ -67,7 +69,7 @@ const ignored = [
   '**/**/page.java.md',
   '**/templates/*',
   // with webpack, it is no longer necessary to copy js files in build folder
-  '**/**/assets/js/*' 
+  '**/**/assets/js/*'
 ];
 
 if (!options.dev.enabled) {
@@ -164,6 +166,7 @@ metalsmith
   .use(markdown({
     renderer: newMDRenderer
   }))
+  .use(include())
   .use((files, ms, done) => {
     for (const file of Object.keys(files)) {
       if (file.endsWith('index.html')) {
@@ -180,12 +183,12 @@ metalsmith
     }
     setImmediate(done);
   })
-  .use(metalsmithWebpack(require('./config/webpack.js')))
+  .use(metalsmithWebpack(webpackConfig(options)))
   .use(permalinks({relative: false}));
 
 metalsmith
   .use((files, ms, done) => {
-    // automatically add redirection to the last children if the current file 
+    // automatically add redirection to the last children if the current file
     // isn't the last children (Leaf of the arborescence)
     for (const file of Object.values(files)) {
       if (file.ancestry && ! file.noredirect) {

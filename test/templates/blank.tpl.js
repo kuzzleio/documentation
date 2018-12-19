@@ -2,20 +2,13 @@
 const
   {
     Kuzzle,
-    KuzzleAbstractNetwork
+    Websocket,
+    Http
   } = require('kuzzle-sdk');
 
-// create a custom protocol class
-class MyCustomProtocol extends KuzzleAbstractNetwork {
-  connect () {
-    this.state = 'ready';
-    return Promise.resolve();
-  }
-
-  send (request) {
-    return Promise.resolve();
-  }
-}
+const kuzzle = new Kuzzle(
+  new Websocket({ host: 'kuzzle' })
+);
 
 [snippet-code]
 console.log('Everything is ok');
