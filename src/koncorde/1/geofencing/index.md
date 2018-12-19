@@ -1,5 +1,6 @@
 ---
 layout: full.html.hbs
+algolia: true
 title: Geofencing
 description: Geopoint description
 order: 400
