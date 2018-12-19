@@ -51,23 +51,25 @@ Body:
   "controller": "security",
   "action": "searchUsers",
   "body": {
-    "bool": {
-      "must": [
-        {
-          "in": {
-            "profileIds": ["anonymous", "default"]
-          }
-        },
-        {
-          "geo_distance": {
-            "distance": "10km",
-            "pos": {
-              "lat": "48.8566140",
-              "lon": "2.352222"
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "in": {
+              "profileIds": ["anonymous", "default"]
+            }
+          },
+          {
+            "geo_distance": {
+              "distance": "10km",
+              "pos": {
+                "lat": "48.8566140",
+                "lon": "2.352222"
+              }
             }
           }
-        }
-      ]
+        ]
+      }
     }
   },
   // optional arguments
