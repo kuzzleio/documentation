@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
-algolia: true
+
 title: search
 description: Search documents
 order: 200

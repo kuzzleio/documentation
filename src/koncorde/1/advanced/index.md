@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
-algolia: true
+
 title: Advanced Notions
 order: 600
 ---
