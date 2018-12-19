@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-
 title: search
 description: Search documents
 order: 200
