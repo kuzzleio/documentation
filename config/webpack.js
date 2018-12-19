@@ -1,4 +1,4 @@
-const 
+const
   webpack = require('webpack'),
   UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
   path = require('path'),
