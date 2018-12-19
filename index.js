@@ -36,6 +36,7 @@ let filesSave = null;
 
 // configuration
 const msDefaultOpts = require('./config/metalsmith');
+const webpackConfig = require('./config/webpack');
 const sdkVersions = require('./config/sdk').sdk;
 
 // arguments
@@ -180,7 +181,7 @@ metalsmith
     }
     setImmediate(done);
   })
-  .use(metalsmithWebpack('./config/webpack.js'))
+  .use(metalsmithWebpack(webpackConfig(options)))
   .use(permalinks({relative: false}));
 
 metalsmith
