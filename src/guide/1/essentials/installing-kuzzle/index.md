@@ -118,7 +118,7 @@ Associated password is your unique instance ID. You can get it from the EC2 AWS 
 
 ---
 
-### Manual Installation
+## Manual Installation
 
 In this section we will perform a manual installation of Kuzzle on a Linux distribution. We choose Linux because all Kuzzle components work natively on it.
 
@@ -146,7 +146,7 @@ The following operating systems are actively supported (64-bit versions only):
 * a C++11 compatible compiler.
 
 <div class="alert alert-info">
- The last three prerequisites can be fulfilled on Debian-based systems by installing packages : `build-essential`, `gdb` and `python`.
+ The last three prerequisites can be fulfilled on Debian-based systems by installing packages : <code>build-essential</code>, <code>gdb</code> and <code>python</code>.
 </div>
 
 ---
@@ -254,11 +254,11 @@ You should see the following message (it may take a few seconds):
 # kuzzle_1         | [✔] Kuzzle server ready
 ```
 
-Kuzzle's HTTP API can now be reached at http://localhost:7512/ and the socket.io and websocket channels can also be reached on port 7512 of localhost.
+Kuzzle can now be reached at the following URL, using either HTTP, WebSocket or Socket.io: `http://localhost:7512/`
 
 #### PM2 cheatsheet
 
-Below are a list of useful commands to help you manage your Kuzzle installation running with pm2:
+Below is a list of useful commands to help you manage your Kuzzle installation running with pm2:
 
 ```bash
 # Display Kuzzle logs:
