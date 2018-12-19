@@ -1,30 +1,29 @@
-var scrollTo = {};
+const scrollTo = {
 
-scrollTo.minimumScroll = 50;
+  minimumScroll: 50,
 
-scrollTo.init = function (elSelector, targetSelector) {
-  var
-    el = document.querySelector(elSelector),
-    target = document.querySelector(targetSelector);
+  init: (elSelector, targetSelector) => {
+    const
+      el = document.querySelector(elSelector),
+      target = document.querySelector(targetSelector);
+    
+    if (!scrollTo.isInViewport(target)) {
+      setTimeout(function() {
+        el.scrollTop = target.offsetTop - scrollTo.minimumScroll;
+      }, 10);
+    }
+  },
 
-  if (this.hasScrollbar(el) && ! this.isInViewport(target)) {
-    el.scrollTop = target.offsetTop - this.minimumScroll;
-  }
-};
+  isInViewport: target => {
+    const rect = target.getBoundingClientRect();
 
-scrollTo.hasScrollbar = function (el) {
-  return el.scrollHeight > el.clientHeight;
-};
-
-scrollTo.isInViewport = function (el) {
-  var rect = el.getBoundingClientRect();
-
-  return rect.bottom > 0 &&
+    return rect.bottom > 0 &&
       rect.right > 0 &&
       rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
       rect.top < (window.innerHeight || document.documentElement.clientHeight);
-};
+  },
 
+};
 
 $(document).ready(function() {
   scrollTo.init('.md-sidebar--primary .md-sidebar__scrollwrap', '.md-nav__link--active');

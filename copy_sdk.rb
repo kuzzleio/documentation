@@ -53,7 +53,6 @@ description: #{human_controller} documentation
   # replace metalsmith header
   header = %{---
 layout: sdk.html.hbs
-algolia: true
 title: #{human_method}
 description: #{human_controller}:#{human_method}#{method == "constructor" ? "\norder: 1" : ""}
 ---

@@ -1,11 +1,24 @@
+// Loads the Kuzzle SDK module
+const
+  {
+    Kuzzle,
+    Websocket,
+    Http
+  } = require('kuzzle-sdk');
+
 const options = {
   host: 'localhost',
   autoResubscribe: false
 };
 
-// Instantiate the SDK with an embedded protocol
-const kuzzleWS = new Kuzzle('websocket', options);
+// Instantiates the SDK with the websocket protocol
+const
+  kuzzleWs = new Kuzzle(
+    new Websocket(options)
+  );
 
-// Instantiate the SDK with a custom protocol
-const customProtocol = new MyCustomProtocol();
-const kuzzleCustom = new Kuzzle(customProtocol, options);
+// Instantiates the SDK with the http protocol
+const
+  kuzzleHttp = new Kuzzle(
+    new Http(options)
+  );
