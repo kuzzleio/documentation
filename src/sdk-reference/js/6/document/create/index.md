@@ -15,15 +15,15 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 ## Arguments
 
 ```javascript
-create (index, collection, id, document, [options])
+create (index, collection, document, [id], [options])
 ```
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `id` | <pre>string</pre> | Optional document ID |
 | `document` | <pre>object</pre> | Document content |
+| `id` | <pre>string</pre> | Optional document ID |
 | `options` | <pre>object</pre> | Query options |
 
 ### Options

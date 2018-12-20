@@ -8,7 +8,9 @@ description: Delete documents matching query
 
 Deletes documents matching the provided search query.
 
-Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
+Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.  
+
+An empty or null query will match all documents in the collection.
 
 ## Arguments
 

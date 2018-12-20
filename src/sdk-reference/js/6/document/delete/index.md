@@ -20,7 +20,7 @@ delete (index, collection, id, [options])
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `id` | <pre>string</pre> | Optional document ID |
+| `id` | <pre>string</pre> | Document ID |
 | `options` | <pre>object</pre> | Query options |
 
 ### Options
