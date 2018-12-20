@@ -21,7 +21,7 @@ validateMyCredentials (strategy, [credentials], [options])
 | Arguments    | Type    | Description
 |--------------|---------|-------------
 | `strategy` | <pre>string</pre> | Strategy to use
-| `credentials` | <pre>string</pre> | Credentials
+ | `credentials` | <pre>object</pre> | Credentials
 | `options`  | <pre>object</pre> | Query options
 
 
