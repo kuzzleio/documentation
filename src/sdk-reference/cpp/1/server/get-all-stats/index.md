@@ -29,12 +29,12 @@ std::string getAllStats(kuzzleio::query_options* options=nullptr)
 | --------- | ------------- | ------------------------------------------------------- | -------- |
 | `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
 
-### **Options**
+### options
 
 Additional query options
 
 | Option     | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
+| ---------- | ------- | --------------------------------- | 
 | `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 

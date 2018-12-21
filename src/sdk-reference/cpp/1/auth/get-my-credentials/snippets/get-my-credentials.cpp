@@ -5,5 +5,5 @@ try {
   std::cout << local_credentials << std::endl;
   std::cout << "Successfully get local credentials" << std::endl;
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

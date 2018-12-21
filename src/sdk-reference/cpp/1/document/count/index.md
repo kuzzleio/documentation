@@ -27,7 +27,7 @@ int count(
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `body` | <pre>const std::string&</pre> | A JSON string containing the query to match |
+| `body` | <pre>const std::string&</pre> | A JSON string representing the query to match |
 | `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options² |
 
 ### options

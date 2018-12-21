@@ -29,5 +29,5 @@ try {
 
   std::cout << "Successfully retrieved " << response->total << " documents" << std::endl;
 } catch (kuzzleio::KuzzleException e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

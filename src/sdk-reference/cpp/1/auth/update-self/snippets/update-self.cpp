@@ -5,5 +5,5 @@ try {
   std::cout << updatedUser.content() << std::endl;
   // {"age": 42,"profileIds": ["default"]}
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

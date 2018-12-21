@@ -29,16 +29,16 @@ void setAutoRefresh(const std::string& index, bool autoRefresh, kuzzleio::query_
 | Arguments     | Type          | Description                                             | Required |
 | ------------- | ------------- | ------------------------------------------------------- | -------- |
 | `index`       | const std::string&   | Index name                                              | yes      |
-| `autoRefresh` | Boolean       | autoRefresh flag                                        | yes      |
+| `autoRefresh` | bool       | autoRefresh flag                                        | yes      |
 | `options`     | kuzzleio::query_options* | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
-### **Options**
+### options
 
 Additional query options
 
 | Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 

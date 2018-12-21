@@ -6,5 +6,5 @@ try {
 
   std::cout << "Kuzzle Stats as JSON string: " << stats << std::endl;
 } catch (kuzzleio::KuzzleException e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

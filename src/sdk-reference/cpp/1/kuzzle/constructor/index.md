@@ -24,14 +24,14 @@ Kuzzle(kuzzleio::Protocol* protocol, kuzzleio::options *options = nullptr)
 | `options` | <pre>kuzzleio::options\*</pre>   | Kuzzle connection configuration |
 
 
-### **options**
+### options
 
 | Option               | Type               | Description                                                        | Default  | Required |
 | -------------------- | ------------------ | ------------------------------------------------------------------ | -------- | -------- |
-| `auto_queue`         | boolean            | Automatically queue all requests during offline mode               | `false`  | no       |
-| `auto_reconnect`     | boolean            | Automatically reconnect after a connection loss                    | `true`   | no       |
-| `auto_replay`        | boolean            | Automatically replay queued requests on a `reconnected` event      | `false`  | no       |
-| `auto_resubscribe`   | boolean            | Automatically renew all subscriptions on a `reconnected` event     | `true`   | no       |
+| `auto_queue`         | bool            | Automatically queue all requests during offline mode               | `false`  | no       |
+| `auto_reconnect`     | bool            | Automatically reconnect after a connection loss                    | `true`   | no       |
+| `auto_replay`        | bool            | Automatically replay queued requests on a `reconnected` event      | `false`  | no       |
+| `auto_resubscribe`   | bool            | Automatically renew all subscriptions on a `reconnected` event     | `true`   | no       |
 | `offline_mode`       | enum Mode          | Offline mode configuration. `MANUAL` or `AUTO`                     | `MANUAL` | no       |
 | `queue_ttl`          | unsigned           | Time a queued request is kept during offline mode, in milliseconds | `120000` | no       |
 | `queue_max_size`     | unsigned long      | Number of maximum requests kept during offline mode                | `500`    | no       |
@@ -46,7 +46,7 @@ For example, you can read the `volatile` property via `getVolatile()` and set it
 
 | Property name | Type               | Description                                                   | Availability |
 | ------------- | ------------------ | ------------------------------------------------------------- | :----------: |
-| `autoReplay`  | boolean            | Automatically replay queued requests on a `reconnected` event |     Set      |
+| `autoReplay`  | bool            | Automatically replay queued requests on a `reconnected` event |     Set      |
 | `jwt`         | std::string        | Token used in requests for authentication.                    |     Get      |
 | `volatile`    | std::string (json) | Common volatile data, will be sent to all future requests     |   Get/Set    |
 

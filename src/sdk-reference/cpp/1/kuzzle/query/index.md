@@ -40,14 +40,14 @@ The following properties are the most common.
 | `id`         | const char\* | id for this action                                                 | no       |
 | `volatiles`  | const char\* | JSON string representing additional information to send to Kuzzle | no       |
 
-### **options**
+### options
 
 A pointer to a [query_option](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L169) containing additional query options
 The following properties are the most common.
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | true    |
+| Property     | Type<br/>(default)    | Description        |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | bool | Make this request queuable or not | true    |
 
 ## Return
 

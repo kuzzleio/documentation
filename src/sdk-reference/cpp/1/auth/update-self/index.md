@@ -20,7 +20,7 @@ kuzzleio::User updateSelf(const std::string& content, query_options* options=nul
 | `options`  | <pre>kuzzleio::query_options*</pre>  | Query options |
 
 
-### **Options**
+### options
 
 Additional query options:
 

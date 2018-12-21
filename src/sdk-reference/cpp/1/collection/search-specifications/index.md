@@ -29,14 +29,14 @@ kuzzleio::SearchResult* searchSpecifications(
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `query` | <pre>const std::string&</pre> | A JSON string containing the query to match |
+| `query` | <pre>const std::string&</pre> | A JSON string representing the query to match |
 | `options` | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### options
 
 | Options    | Type (default) | Description                       |
 | ---------- | -------------- | --------------------------------- |
-| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `queuable` | <pre>bool</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 | `from` | <pre>int</pre><br/>(`0`) | Offset of the first document to fetch |
 | `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
 | `scroll` | <pre>const std::string&</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units)) |

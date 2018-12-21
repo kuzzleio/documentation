@@ -22,7 +22,7 @@ void deleteMyCredentials(const std::string& strategy, kuzzleio::query_options *o
 | `options`  | <pre>kuzzleio::query_options\* </pre>   | Query options
 
 
-### **Options**
+### options
 
 Additional query options
 

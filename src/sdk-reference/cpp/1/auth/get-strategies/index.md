@@ -20,7 +20,7 @@ std::vector<std::string> getStrategies(query_options *options=nullptr);
 |--------------|---------|-------------
 | `options`  | <pre>kuzzleio::query_options*</pre>    | Query options
 
-### **Options**
+### options
 
 Additional query options
 

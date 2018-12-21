@@ -11,5 +11,5 @@ try {
 
   std::cout << "Successfully deleted " << deleted.size() << " documents" << std::endl;
 } catch (kuzzleio::KuzzleException e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

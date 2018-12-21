@@ -20,5 +20,5 @@ try {
   std::cout << response << std::endl;
   std::cout << "Success" << std::endl;
 } catch (kuzzleio::KuzzleException e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

@@ -36,5 +36,5 @@ try {
     &listener,
     &options2);
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

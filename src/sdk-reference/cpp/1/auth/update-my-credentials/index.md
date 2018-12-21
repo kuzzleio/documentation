@@ -23,7 +23,7 @@ std::string updateMyCredentials(const std::string& strategy, const std::string& 
 | `options`  | <pre>kuzzleio::query_options*</pre>    | Query options
 
 
-### **Options**
+### options
 
 Additional query options
 

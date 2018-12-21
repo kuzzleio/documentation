@@ -31,5 +31,5 @@ try {
 
   std::cout << "Successfully retrieved " << next_page->fetched << " documents" << std::endl;
 } catch (kuzzleio::KuzzleException e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

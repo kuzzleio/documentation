@@ -3,5 +3,5 @@ try {
 
   std::cout << "autorefresh flag is set to true" << std::endl;
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

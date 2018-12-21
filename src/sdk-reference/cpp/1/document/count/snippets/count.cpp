@@ -9,5 +9,5 @@ try {
 
   std::cout << "Found " << count << " documents matching license:valid" << std::endl;
 } catch (kuzzleio::KuzzleException e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

@@ -21,7 +21,7 @@ Check that the current user has credentials for the specified strategy.
 | `strategy` | <pre>const std::string&</pre>      | Strategy to use                                         |
 | `options`  | <pre>kuzzleio::query_options\*</pre>    | Query options
 
-### **Options**
+### options
 
 Additional query options
 

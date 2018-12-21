@@ -21,7 +21,7 @@ std::string getMyCredentials(const std::string& strategy, kuzzleio::query_option
 | `strategy` | <pre>const std::string&</pre> | Strategy to use    |
 | `options`  | <pre>kuzzleio::query_options*</pre>    | Query options
 
-### **Options**
+### options
 
 Additional query options
 

@@ -1,7 +1,8 @@
 try {
   std::string specifications = kuzzle->collection->getSpecifications("nyc-open-data", "yellow-taxi");
 
-  std::cout << "Success" << std::endl;
+  std::cout << specifications << std::endl;
+  // {"nyc-open-data": {"yellow-taxi": {"strict": false, "fields": {"license": {"type": "string"}}}}}
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

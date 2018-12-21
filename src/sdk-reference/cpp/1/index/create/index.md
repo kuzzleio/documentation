@@ -23,13 +23,13 @@ void create(const std::string& index, kuzzleio::query_options *options = null)
 | `index`   | const std::string&   | Index name                                              | yes      |
 | `options` | kuzzleio::query_options* | A pointer to a `kuzzleio::query_options` containing query options | no       |
 
-### **Options**
+### options
 
 Additional query options
 
 | Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 

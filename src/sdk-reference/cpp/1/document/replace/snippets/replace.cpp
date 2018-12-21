@@ -7,7 +7,7 @@ try {
   })");
 
   std::cout << response << std::endl;
-  /* 
+  /*
   {
     "_index": "nyc-open-data",
     "_type": "yellow-taxi",
@@ -44,5 +44,5 @@ try {
   */
   std::cout << "Success" << std::endl;
 } catch (kuzzleio::KuzzleException e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }
