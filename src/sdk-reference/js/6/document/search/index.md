@@ -53,7 +53,7 @@ An empty body matches all documents in the queried collection.
 
 ## Resolves
 
-Resolves to a [SearchResult]({{ site_base_path }}src/sdk-reference/js/6/search-result) object.
+Resolves to a [SearchResult]({{ site_base_path }}sdk-reference/js/6/search-result) object.
 
 ## Usage
 
