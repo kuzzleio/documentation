@@ -1,7 +1,7 @@
 try {
   std::string jwt = kuzzle->auth->login(
     "local",
-    "{\"username\":\"foo\",\"password\":\"bar\"}"
+    R"({"username":"foo","password":"bar"})"
   );
 
   kuzzleio::token_validity* res = kuzzle->auth->checkToken(jwt);

@@ -1,5 +1,5 @@
 try {
-  kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
+  kuzzle->auth->login("local", R"({"username":"foo","password":"bar"})");
   std::string local_credentials = kuzzle->auth->getMyCredentials("local");
 
   std::cout << local_credentials << std::endl;

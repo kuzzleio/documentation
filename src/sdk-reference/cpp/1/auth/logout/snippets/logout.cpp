@@ -1,5 +1,5 @@
 try {
-  kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
+  kuzzle->auth->login("local", R"({"username":"foo","password":"bar"})");
   kuzzle->auth->logout();
 
   std::cout << "Success" << std::endl;

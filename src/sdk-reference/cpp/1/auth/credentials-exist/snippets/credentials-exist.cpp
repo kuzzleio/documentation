@@ -1,5 +1,5 @@
 try {
-  kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
+  kuzzle->auth->login("local", R"({"username":"foo","password":"bar"})");
   bool exists = kuzzle->auth->credentialsExist("local");
 
   if (exists) {

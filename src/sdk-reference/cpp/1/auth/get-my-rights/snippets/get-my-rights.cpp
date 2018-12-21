@@ -1,5 +1,5 @@
 try {
-  kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
+  kuzzle->auth->login("local", R"({"username":"foo","password":"bar"})");
 
   std::vector<std::shared_ptr<kuzzleio::UserRight>> rights =
     kuzzle->auth->getMyRights();

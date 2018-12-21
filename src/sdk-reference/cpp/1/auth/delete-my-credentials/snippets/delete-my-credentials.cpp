@@ -1,5 +1,5 @@
 try {
-  kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
+  kuzzle->auth->login("local", R"({"username":"foo","password":"bar"})");
   kuzzle->auth->deleteMyCredentials("local");
 
   std::cout << "Credentials Successfully deleted" << std::endl;
