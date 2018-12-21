@@ -1,8 +1,10 @@
 try {
   kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
-  kuzzle->auth->credentialsExist("local");
+  bool exists = kuzzle->auth->credentialsExist("local");
 
-  std::cout << "Success" << std::endl;
+  if (exists) {
+    std::cout << "Credentials exists for local strategy" << std::endl;
+  }
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

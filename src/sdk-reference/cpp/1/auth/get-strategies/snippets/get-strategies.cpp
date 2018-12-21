@@ -1,8 +1,10 @@
 try {
   kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
-  kuzzle->auth->getStrategies();
+  std::vector<std::string> strategies = kuzzle->auth->getStrategies();
 
-  std::cout << "Success" << std::endl;
+  for (auto strategy: strategies) {
+    std::cout << strategy << std::endl;
+  }
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

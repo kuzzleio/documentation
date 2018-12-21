@@ -6,12 +6,12 @@ description: Returns the rights for the user linked to the `JSON Web Token`.
 
 # getMyRights
 
-Returns the rights for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
+Returns the rights for the user currently loggued with the SDK instance.
 
 ## Arguments
 
 ```cpp
-std::vector<std::unique_ptr<UserRight>> 
+std::vector<std::shared_ptr<kuzzleio::UserRight>> 
   getMyRights(query_options *options=nullptr);
 ```
 
@@ -25,13 +25,13 @@ std::vector<std::unique_ptr<UserRight>>
 
 Additional query options:
 
-| Property     | Type    | Description  |
-| ---------- | ------- | -------------- |
-| `queuable` | <pre>bool (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
+| Property     | Type<br/>(default)    | Description        | 
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-A [UserRight]({{ site_base_path }}sdk-reference/cpp/1/user-right/) object.
+A vector of pointer to [kuzzleio::UserRight]({{ site_base_path }}sdk-reference/cpp/1/user-right/) object.
 
 ## Exceptions
 

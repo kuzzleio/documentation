@@ -11,24 +11,24 @@ Delete the current user's credentials for the specified `<strategy>`. If the cre
 ## Signature
 
 ```cpp
-void deleteMyCredentials(const std::string& strategy, query_options *options=nullptr);
+void deleteMyCredentials(const std::string& strategy, kuzzleio::query_options *options=nullptr);
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `strategy` | const std::string& | the strategy to use    | yes
-| `options`  | query_options\*    | A pointer to a `kuzzleio::query_options` containing query options | no       |
+| Arguments    | Type    | Description | 
+|--------------|---------|-------------|
+| `strategy` | <pre>const std::string&</pre> | Strategy to use
+| `options`  | <pre>kuzzleio::query_options\* </pre>   | Query options
 
 
 ### **Options**
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        | 
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 
