@@ -1,7 +1,12 @@
 try {
-  kuzzle->document->create("nyc-open-data", "yellow-taxi", "some-id", "{\"capacity\": 4}");
+  kuzzle->document->create(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id",
+    R"({"capacity": 4})");
 
-  std::string response = kuzzle->document->get("nyc-open-data", "yellow-taxi", "some-id");
+  std::string response =
+    kuzzle->document->get("nyc-open-data", "yellow-taxi", "some-id");
   /*
   {
     "_index":"nyc-open-data",
@@ -19,19 +24,11 @@ try {
           "active":true,
           "deletedAt":null
         }
-    },
-    "_meta":{
-        "author":"-1",
-        "createdAt":1538402859880,
-        "updatedAt":null,
-        "updater":null,
-        "active":true,
-        "deletedAt":null
     }
   }
   */
 
   std::cout << "Success" << std::endl;
-} catch (kuzzleio::KuzzleException e) {
+} catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }

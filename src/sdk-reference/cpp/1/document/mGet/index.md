@@ -25,8 +25,8 @@ std::string mGet(
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `ids` | <pre>std::vector<std::string></pre> | The document ids |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `ids` | <pre>std::vector&lt;std::string&gt;</pre> | Document IDs |
+| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### options
 
@@ -38,11 +38,17 @@ Additional query options
 
 ## Return
 
-Returns a JSON string containing the retrieved documents.
+A JSON string representing an object containing the following properties:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| `hits` | <pre>object[]</pre> | Array of document |
+| `total` | <pre>number</pre> | Total documents count |
+
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

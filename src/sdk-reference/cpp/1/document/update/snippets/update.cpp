@@ -1,6 +1,12 @@
 try {
   kuzzle->document->create("nyc-open-data", "yellow-taxi", "some-id", R"({"capacity": 4})");
-  std::string response = kuzzle->document->update("nyc-open-data", "yellow-taxi", "some-id", R"({"category": "suv"})");
+
+  std::string response = kuzzle->document->update(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id",
+    R"({"category": "suv"})"
+  );
 
   std::cout << response << std::endl;
   /*
@@ -17,6 +23,7 @@ try {
     }
   }
   */
-} catch (kuzzleio::KuzzleException e) {
+ std::cout << "Document successfully updated" << std::endl;
+} catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }

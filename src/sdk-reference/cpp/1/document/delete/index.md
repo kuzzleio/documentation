@@ -25,8 +25,8 @@ std::string delete_(
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `id` | <pre>const std::string&</pre> | The document id |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `id` | <pre>const std::string&</pre> | Document ID |
+| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### Options
 
@@ -39,11 +39,11 @@ Additional query options
 
 ## Return
 
-Returns the id of the deleted document.
+The ID of the deleted document.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

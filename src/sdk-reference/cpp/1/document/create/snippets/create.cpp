@@ -4,9 +4,10 @@ try {
     "nyc-open-data",
     "yellow-taxi",
     "some-id",
-    R"({"lastName": "Eggins"})");
+    R"({"lastName": "Eggins"})"
+  );
 
-  std::cout << "Document " << response << "Created" << std::endl;
+  std::cout << response << std::endl;
   /*
   {
     "_index": "nyc-open-data",
@@ -30,19 +31,11 @@ try {
         "active": true,
         "deletedAt": null
       }
-    },
-    "_meta": {
-      "author": "-1",
-      "createdAt": 1537445737667,
-      "updatedAt": null,
-      "updater": null,
-      "active": true,
-      "deletedAt": null
     }
   }
   */
 
-  std::cout << "Success" << std::endl;
-} catch (kuzzleio::KuzzleException e) {
+  std::cout << "Document successfully created" << std::endl;
+} catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }

@@ -17,7 +17,7 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 std::vector<std::string> deleteByQuery(
     const std::string& index,
     const std::string& collection,
-    const std::string& body,
+    const std::string& query,
     kuzzleio::query_options *options=nullptr)
 ```
 
@@ -25,8 +25,8 @@ std::vector<std::string> deleteByQuery(
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `body` | <pre>const std::string&</pre> | A JSON string containing query to match |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `query` | <pre>const std::string&</pre> | JSON string representing query to match |
+| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### options
 
@@ -39,11 +39,11 @@ Additional query options
 
 ## Return
 
-Returns the list of the deleted document ids.
+A vector containing the ids of deleted documents.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

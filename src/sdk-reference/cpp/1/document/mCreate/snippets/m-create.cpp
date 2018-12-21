@@ -1,4 +1,4 @@
-std::string body = R"([
+std::string documents = R"([
   {
     "_id": "some-id",
     "body": { "capacity": 4 }
@@ -9,7 +9,12 @@ std::string body = R"([
 ])";
 
 try {
-  std::string response = kuzzle->document->mCreate("nyc-open-data", "yellow-taxi", body);
+  std::string response = kuzzle->document->mCreate(
+    "nyc-open-data",
+    "yellow-taxi",
+    documents);
+
+  std::cout << response << std::endl;
   /*
   [
     {
@@ -35,15 +40,7 @@ try {
           "failed":0
       },
       "created":true,
-      "status":201,
-      "_meta":{
-          "active":true,
-          "author":"-1",
-          "updater":null,
-          "updatedAt":null,
-          "deletedAt":null,
-          "createdAt":1538470871764
-      }
+      "status":201
     },
     {
       "_id":"AWY0AoLgKWETYfLdcMat",
@@ -68,20 +65,12 @@ try {
           "failed":0
       },
       "created":true,
-      "status":201,
-      "_meta":{
-          "active":true,
-          "author":"-1",
-          "updater":null,
-          "updatedAt":null,
-          "deletedAt":null,
-          "createdAt":1538470871764
-      }
+      "status":201
     }
   ]
   */
 
-  std::cout << "Success" << std::endl;
-} catch (kuzzleio::KuzzleException e) {
+  std::cout << "Documents successfully created" << std::endl;
+} catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }

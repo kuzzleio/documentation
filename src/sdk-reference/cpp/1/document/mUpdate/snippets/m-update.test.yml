@@ -8,7 +8,9 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
-expected: Success
+expected:
+  - "\"category\":\"limousine\""
+  - Successfully updated 2 documents
 
 sdk: cpp
 version: 1

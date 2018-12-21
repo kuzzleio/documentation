@@ -8,7 +8,8 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
-expected: Success
-
+expected:
+  - "\"total\":2"
+  - Successfully retrieved 2 documents
 sdk: cpp
 version: 1

@@ -1,9 +1,11 @@
 try {
-  if (kuzzle->document->validate("nyc-open-data", "yellow-taxi", R"({
+  bool valid = kuzzle->document->validate("nyc-open-data", "yellow-taxi", R"({
     "capacity": 4
-  })")) {
-    std::cout << "Success" << std::endl;
+  })");
+
+  if (valid) {
+    std::cout << "The document is valid" << std::endl;
   }
-} catch (kuzzleio::KuzzleException e) {
+} catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }

@@ -5,6 +5,6 @@ try {
   std::string stats = kuzzle->server->getStats(start, stop);
 
   std::cout << "Kuzzle Stats as JSON string: " << stats << std::endl;
-} catch (kuzzleio::KuzzleException e) {
+} catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }
