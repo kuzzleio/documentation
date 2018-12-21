@@ -11,6 +11,5 @@ template: default
 expected:
   - "\"category\":\"limousine\""
   - Successfully updated 2 documents
-
 sdk: cpp
 version: 1

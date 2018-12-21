@@ -3,8 +3,7 @@ try {
     "nyc-open-data",
     "yellow-taxi",
     "some-id",
-    R"({"color": "yellow"})"
-  );
+    R"({"color": "yellow"})");
 
   std::string response = kuzzle->document->replace(
     "nyc-open-data",
@@ -13,8 +12,7 @@ try {
     R"({
       "capacity": 4,
       "category": "sedan"
-    })"
-  );
+    })");
 
   std::cout << response << std::endl;
   /*

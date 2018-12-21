@@ -9,7 +9,7 @@ hooks:
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
 expected:
-  - "\"total\":2"
+  - "\\[{\"_index\":\"nyc-open-data\""
   - Successfully retrieved 2 documents
 sdk: cpp
 version: 1

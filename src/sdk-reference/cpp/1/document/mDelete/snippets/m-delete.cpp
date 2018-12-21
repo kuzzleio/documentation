@@ -10,8 +10,7 @@ try {
   std::vector<std::string> deleted = kuzzle->document->mDelete(
     "nyc-open-data",
     "yellow-taxi",
-    ids
-  );
+    ids);
 
   std::cout << "Successfully deleted " << deleted.size() << " documents" << std::endl;
 } catch (kuzzleio::KuzzleException& e) {

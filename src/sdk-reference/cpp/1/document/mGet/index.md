@@ -38,13 +38,12 @@ Additional query options
 
 ## Return
 
-A JSON string representing an object containing the following properties:
+A JSON string representing an array of objects containing the following properties:
 
 | Property   | Type    | Description  |
 |--------------|---------|-------------|
-| `hits` | <pre>object[]</pre> | Array of document |
-| `total` | <pre>number</pre> | Total documents count |
-
+| `_id_` | <pre>string</pre> | Document ID |
+| `_source_` | <pre>object</pre> | Document content |
 
 ## Exceptions
 

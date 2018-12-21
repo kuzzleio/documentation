@@ -4,8 +4,7 @@ try {
     "nyc-open-data",
     "yellow-taxi",
     "some-id",
-    R"({"lastName": "Eggins"})"
-  );
+    R"({"lastName": "Eggins"})");
 
   std::cout << response << std::endl;
   /*

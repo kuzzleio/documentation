@@ -9,9 +9,10 @@ try {
     }
   })";
 
-  std::string specifications = kuzzle->collection->updateSpecifications("nyc-open-data", "yellow-taxi", specifications);
+  std::string updated_specifications =
+    kuzzle->collection->updateSpecifications("nyc-open-data", "yellow-taxi", specifications);
 
-  std::cout << specifications << std::endl;
+  std::cout << updated_specifications << std::endl;
   // {"strict":false,"fields":{"license":{"mandatory":true,"type":"string"}}}
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.what() << std::endl;

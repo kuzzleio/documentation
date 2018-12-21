@@ -1,7 +1,7 @@
 ---
 layout: sdk.html.hbs
 title: updateMyCredentials
-description: Update the current user's credentials for the specified `<strategy>`.
+description: Update the current user's credentials for the specified strategy.
 ---
 
 # updateMyCredentials

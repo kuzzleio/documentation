@@ -5,8 +5,7 @@ try {
     "nyc-open-data",
     "yellow-taxi",
     "some-id",
-    R"({"category": "suv"})"
-  );
+    R"({"category": "suv"})");
 
   std::cout << response << std::endl;
   /*
@@ -23,7 +22,7 @@ try {
     }
   }
   */
- std::cout << "Document successfully updated" << std::endl;
+  std::cout << "Document successfully updated" << std::endl;
 } catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }

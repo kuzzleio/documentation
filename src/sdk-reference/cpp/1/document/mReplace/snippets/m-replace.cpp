@@ -18,8 +18,7 @@ try {
   std::string response = kuzzle->document->mReplace(
     "nyc-open-data",
     "yellow-taxi",
-    documents
-  );
+    documents);
 
   std::cout << response << std::endl;
     /*

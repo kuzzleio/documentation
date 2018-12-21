@@ -13,8 +13,7 @@ try {
     kuzzle->collection->validateSpecifications(
       "nyc-open-data",
       "yellow-taxi",
-      specifications
-    );
+      specifications);
 
   if (validation_response->valid) {
     std::cout << "Specifications are valid" << std::endl;

@@ -13,8 +13,7 @@ try {
   std::string response = kuzzle->document->mCreateOrReplace(
     "nyc-open-data",
     "yellow-taxi",
-    documents
-  );
+    documents);
 
   std::cout << response << std::endl;
   /*
