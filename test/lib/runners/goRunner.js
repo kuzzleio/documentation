@@ -10,9 +10,9 @@ module.exports = class GoRunner extends BaseRunner {
     this.lintCommand = 'golint';
   }
 
-  async runExpect(snippet) {
+  async runSnippet(snippet) {
     const fileName = snippet.renderedSnippetPath.split('/').pop();
-    this.nexpectCommand = `go run ${this.goProjectPath}${fileName}`;
+    this.snippetCommand = `go run ${this.goProjectPath}${fileName}`;
 
     try {
       await execute('goimports', ['-w', `${this.goProjectPath}${fileName}`]);
@@ -24,7 +24,7 @@ module.exports = class GoRunner extends BaseRunner {
       throw new TestResult(res);
     }
 
-    await super.runExpect(snippet);
+    await super.runSnippet(snippet);
   }
 
   async lint(snippet) {
