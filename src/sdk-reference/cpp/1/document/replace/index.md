@@ -25,7 +25,7 @@ std::string replace(
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
 | `id` | <pre>const std::string&</pre> | Document ID |
-| `document` | <pre>const std::string&</pre> | A JSON string representing the document |
+| `document` | <pre>const std::string&</pre> | JSON string representing the document |
 | `options` | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### options

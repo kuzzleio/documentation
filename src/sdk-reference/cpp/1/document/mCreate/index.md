@@ -25,7 +25,7 @@ std::string mCreate(
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `documents` | <pre>const std::string&</pre> | A JSON string representing the documents to create |
+| `documents` | <pre>const std::string&</pre> | JSON string representing the documents to create |
 | `options` | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### options

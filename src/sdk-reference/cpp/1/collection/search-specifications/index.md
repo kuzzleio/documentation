@@ -29,7 +29,7 @@ kuzzleio::SearchResult* searchSpecifications(
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `query` | <pre>const std::string&</pre> | A JSON string representing the query to match |
+| `query` | <pre>const std::string&</pre> | JSON string representing the query to match |
 | `options` | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### options

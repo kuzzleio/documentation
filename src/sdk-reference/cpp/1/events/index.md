@@ -27,7 +27,7 @@ Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request t
 
 **Callback argument**
 
-A String representing a JSON object containing the following properties:
+A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
@@ -45,7 +45,7 @@ Triggered when a login attempt completes, either with a success or a failure res
 
 **Callback arguments**
 
-A String representing a JSON object containing the following properties:
+A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
@@ -59,7 +59,7 @@ This event does not trigger the offline mode.
 
 **Callback arguments**
 
-A String representing a JSON object containing the following properties:
+A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
@@ -73,7 +73,7 @@ Triggered whenever a request is removed from the offline queue.
 
 **Callback arguments**
 
-A String representing a JSON object containing the [request]({{ site_base_path }}api/1/query-syntax/) removed from the queue.
+A JSON string representing the [request]({{ site_base_path }}api/1/query-syntax/) removed from the queue.
 
 ## offlineQueuePush
 
@@ -81,11 +81,11 @@ Triggered whenever a request is added to the offline queue.
 
 **Callback arguments**
 
-A String representing a JSON object containing the following properties:
+A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | JSON object | The [request]({{ site_base_path }}api/1/query-syntax/) added to the queue |    
+| `request` | std::string | JSON string representing [request]({{ site_base_path }}api/1/query-syntax/) added to the queue |    
 
 ## queryError
 
@@ -93,12 +93,12 @@ Triggered whenever Kuzzle responds with an error
 
 **Callback arguments**
 
-A String representing a JSON object containing the following properties:
+A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | JSON object | The request that causing an error |    
-| `error` | JSON object | The error details |    
+| `request` | std::string | JSON string representing the request that causing an error |    
+| `error` | std::string | Error details |    
 
 ## reconnected
 
