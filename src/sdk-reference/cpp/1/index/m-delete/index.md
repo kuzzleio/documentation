@@ -16,22 +16,22 @@ std::vector<std::string> mDelete(std::vector<std::string> indexes, kuzzleio::que
 
 ## Arguments
 
-| Arguments | Type                       | Description                                             | Required |
-| --------- | -------------------------- | ------------------------------------------------------- | -------- |
-| `indexes` | `std::vector<std::string>` | containing list of indexes names                        | yes      |
-| `options` | kuzzleio::query_options              | Query options | no       |
+| Arguments | Type                       | Description  |
+| --------- | -------------------------- | --------------|
+| `indexes` | <pre>std::vector<std::string></pre> | List of indexes |
+| `options` | <pre>kuzzleio::query_options*</pre>    | Query options |
 
 ### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type    | Description                       | 
 | ---------- | ------- | --------------------------------- | 
 | `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Returns a `std::vector<std::string>` containing the list of indexes names deleted
+A vector of string containing the list of deleted indexes.
 
 ## Exceptions
 

@@ -1,11 +1,9 @@
----
 name: index#delete
 description: delete an index
 hooks:
   before: curl -X POST kuzzle:7512/nyc-open-data/_create
-  after: 
+  after:
 template: default
-expected: index deleted
-
+expected: Index successfully deleted
 sdk: cpp
 version: 1

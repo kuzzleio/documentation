@@ -28,8 +28,8 @@ std::string getStats(
 )
 ```
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
 | `startTime` | time_t                   | begining of statistics frame set (timestamp or datetime format) | yes       |
 | `stopTime`  | time_t                   | end of statistics frame set (timestamp or datetime format)      | yes       |
 | `options`   | kuzzleio::query_options* | A pointer to a `query_options` containing query options           |  no       |

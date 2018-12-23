@@ -6,9 +6,7 @@ description: Create an index
 
 # create
 
-Create a new index in Kuzzle
-
-## Signature
+Create a new index in Kuzzle.
 
 ## Signature
 
@@ -18,16 +16,16 @@ void create(const std::string& index, kuzzleio::query_options *options = null)
 
 ## Arguments
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`   | const std::string&   | Index name                                              | yes      |
-| `options` | kuzzleio::query_options* | Query options | no       |
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `index`   | <pre>const std::string&</pre>   | Index name     |
+| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type    | Description                       | 
 | ---------- | ------- | --------------------------------- | 
 | `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 

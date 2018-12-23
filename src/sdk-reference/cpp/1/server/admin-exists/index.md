@@ -16,8 +16,8 @@ Checks that an administrator account exists.
 bool adminExists(kuzzleio::query_options *options=nullptr);
 ```
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
 | `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
 
 ### options

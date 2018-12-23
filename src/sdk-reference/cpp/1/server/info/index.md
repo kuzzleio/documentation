@@ -16,8 +16,8 @@ Returns information about Kuzzle: available API (base + extended), plugins, exte
 std::string info(kuzzleio::query_options* options=nullptr)
 ```
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
 | `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
 
 ### options

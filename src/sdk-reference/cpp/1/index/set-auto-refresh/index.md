@@ -4,7 +4,7 @@ title: setAutoRefresh
 description: Set the autorefresh flag
 ---
 
-# setAutoRefresh(index, autorefresh, [options])
+# setAutoRefresh
 
 The setAutoRefresh action allows to set the autorefresh flag for the index.
 
@@ -26,17 +26,17 @@ void setAutoRefresh(const std::string& index, bool autoRefresh, kuzzleio::query_
 
 ## Arguments
 
-| Arguments     | Type          | Description                                             | Required |
-| ------------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`       | const std::string&   | Index name                                              | yes      |
-| `autoRefresh` | bool       | autoRefresh flag                                        | yes      |
-| `options`     | kuzzleio::query_options* | Query options | no       |
+| Arguments     | Type          | Description          |
+| ------------- | ------------- | -------------------- |
+| `index`       | <pre>const std::string&</pre>   | Index name    |
+| `autoRefresh` | <pre>bool</pre>       | Autorefresh flag value  |
+| `options`     | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type    | Description                       | 
 | ---------- | ------- | --------------------------------- | 
 | `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 

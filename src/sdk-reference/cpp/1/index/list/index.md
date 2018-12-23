@@ -4,7 +4,7 @@ title: list
 description: List the indexes
 ---
 
-# List
+# list
 
 Get the complete list of data indexes handled by Kuzzle.
 
@@ -16,21 +16,21 @@ std::vector<std::string> list(kuzzleio::query_options *options = null)
 
 ## Arguments
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
-| `options` | kuzzleio::query_options* | Query options | no       |
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
 
 ### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
+| Option     | Type    | Description                       | 
 | ---------- | ------- | --------------------------------- | 
 | `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Returns a `std::vector<std::string>` containing the list of indexes names present in Kuzzle
+A vector of string containing the list of indexes present in Kuzzle
 
 ## Exceptions
 
