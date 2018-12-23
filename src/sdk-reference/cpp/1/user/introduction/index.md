@@ -17,10 +17,6 @@ Instances of the `User` class are returned by methods such as [auth:getCurrentUs
 namespace kuzzleio {
   class User {
     public:
-      User(const kuzzle_user* u);
-      User() = default;
-      User& operator=(const kuzzle_user*);
-
       const std::string& id() const;
       const std::string& content() const;
       const std::vector<std::string>& profile_ids() const;

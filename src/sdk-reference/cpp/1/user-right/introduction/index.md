@@ -17,9 +17,6 @@ Instances of the `UserRight` class are returned by methods such as [auth:getMyRi
 namespace kuzzleio {
   class UserRight {
     public:
-      UserRight() = default;
-      UserRight(const user_right* r);
-
       const std::string& controller() const;
       const std::string& action() const;
       const std::string& index() const;
@@ -28,13 +25,3 @@ namespace kuzzleio {
   };
 }
 ```
-
-## Properties
-
-| Property | Type | Description |
-|--- |--- |--- |
-| `action` | <pre>const std::string</pre> | Action on wich the rights are applied |
-| `collection` | <pre>const std::string</pre> | Collection on wich the rights are applied |
-| `controller` | <pre>const std::string</pre> | Controller on wich the rights are applied |
-| `index` | <pre>const std::string</pre> | Index on wich the rights are applied |
-| `value` | <pre>const std::string</pre> | Right status.<br/>Possible values: `allowed`, `denied`, `conditional` |
