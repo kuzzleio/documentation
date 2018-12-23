@@ -6,9 +6,9 @@ description: Publish a real-time message
 
 # publish
 
-Sends a real-time `<message>` to Kuzzle. The `<message>` will be dispatched to all clients with subscriptions matching the `<index>`, the `<collection>` and the `<message>` content.
+Sends a real-time message to Kuzzle. The message will be dispatched to all clients with subscriptions matching the index, the collection and the message content.
 
-The `<index>` and `<collection>` are indicative and serve only to distinguish the rooms. They are not required to exist in the database
+The index and collection are indicative and serve only to distinguish the rooms. They are not required to exist in the database
 
 **Note:** real-time messages are not persisted in the database.
 
@@ -29,7 +29,7 @@ void publish(
 |--------------|---------|-------------|
 | `index` | <pre>const std::string&</pre> | Index name    |
 | `collection` | <pre>const std::string&</pre> | Collection name    |
-| `message` | <pre>const std::string&</pre> | JSON string representing the message to send |
+| `message` | <pre>const std::string&</pre> | JSON string representing a JSON payload |
 | `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options

@@ -1,6 +1,6 @@
 kuzzleio::NotificationListener listener =
   [](const kuzzleio::notification_result *notification) {
-    const char *id = notification->result->id;
+    std::string id = notification->result->id;
 
     if (notification->scope == std::string("in")) {
       std::cout << "Document " << id << " enter the scope" << std::endl;
@@ -11,11 +11,16 @@ kuzzleio::NotificationListener listener =
 
 try {
   // Subscribe to notifications for documents containing a 'name' property
-  const char *filters = "{ \"exists\": \"name\" }";
+  std::string filters = R"({ "exists": "name" })";
   kuzzle->realtime->subscribe("nyc-open-data", "yellow-taxi", filters, &listener);
 
-  const char *document = "{ \"name\": \"nina vkote\", \"age\": 19 }";
-  kuzzle->document->create("nyc-open-data", "yellow-taxi", "nina-vkote", document);
+  // Create a document matching the provided filters
+  kuzzle->document->create(
+    "nyc-open-data",
+    "yellow-taxi",
+    "nina-vkote",
+    R"({ "name": "nina vkote", "age": 19 })");
+
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.what() << std::endl;
 }
