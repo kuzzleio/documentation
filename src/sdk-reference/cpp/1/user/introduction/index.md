@@ -5,7 +5,7 @@ description: Kuzzle user representation
 order: 0
 ---
 
-# Introduction
+# kuzzleio::User
 
 The `User` class is the SDK representation of a Kuzzle [user]({{ site_base_path }}guide/1/essentials/user-authentication/#creating-users-default).
 

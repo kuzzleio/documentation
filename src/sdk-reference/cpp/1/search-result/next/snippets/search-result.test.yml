@@ -1,5 +1,5 @@
 name: essentials#searchResult
-description: How to handle Kuzzle search results
+description: SearchResult next method
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data
