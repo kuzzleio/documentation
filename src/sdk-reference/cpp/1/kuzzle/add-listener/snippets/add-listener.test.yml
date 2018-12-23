@@ -4,6 +4,6 @@ hooks:
   before:
   after:
 template: without-connect
-expected: Success
+expected: Listener successfully added
 sdk: cpp
 version: 1

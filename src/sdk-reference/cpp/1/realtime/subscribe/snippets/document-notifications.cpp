@@ -20,7 +20,6 @@ try {
     "yellow-taxi",
     "nina-vkote",
     R"({ "name": "nina vkote", "age": 19 })");
-
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.what() << std::endl;
 }

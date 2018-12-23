@@ -1,6 +1,5 @@
 kuzzleio::NotificationListener listener =
   [](const kuzzleio::notification_result *notification) {
-
     std::cout << "Currently " << notification->result->count << " users in the room" << std::endl;
 
     std::cout << notification->volatiles << std::endl;
@@ -38,7 +37,6 @@ try {
     filters,
     &listener,
     &options2);
-
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.what() << std::endl;
 }

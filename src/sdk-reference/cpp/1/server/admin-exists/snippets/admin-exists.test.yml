@@ -4,6 +4,6 @@ hooks:
   before:
   after:
 template: default
-expected: Admin user exists
+expected: Admin user does not exists
 sdk: cpp
 version: 1

@@ -44,7 +44,7 @@ Returns the reconnection delay used by the protocol instance.
 ### Signature
 
 ```cpp
-unsigned long long getReconnectionDelay()
+uint64_t getReconnectionDelay()
 ```
 
 ## isSslConnection

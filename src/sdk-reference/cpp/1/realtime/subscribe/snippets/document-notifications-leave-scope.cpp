@@ -30,7 +30,6 @@ try {
     "yellow-taxi",
     "nina-vkote",
     R"({ "age": 42 })");
-
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.what() << std::endl;
 }
