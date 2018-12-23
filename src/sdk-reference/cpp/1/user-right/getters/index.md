@@ -2,13 +2,14 @@
 layout: sdk.html.hbs
 title: Getters
 description: Getters for UserRight class
+order: 100
 ---
 
 # UserRight class getters
 
 ## controller
 
-Returns the controller name on which the rights apply. 
+Returns the controller name on which the rights apply.  
 Can be a wildcard (`*`).
 
 ### Signature
@@ -19,7 +20,7 @@ const std::string& controller() const
 
 ## action
 
-Returns the action name on which the rights apply.
+Returns the action name on which the rights apply.  
 Can be a wildcard (`*`).
 
 ### Signature
@@ -30,7 +31,7 @@ const std::string& action() const
 
 ## index
 
-Returns the index name on which the rights apply.
+Returns the index name on which the rights apply.   
 Can be a wildcard (`*`).
 
 ### Signature
@@ -41,7 +42,7 @@ const std::string& index() const
 
 ## collection
 
-Returns the collection name on which the rights apply.
+Returns the collection name on which the rights apply.   
 Can be a wildcard (`*`).
 
 ### Signature

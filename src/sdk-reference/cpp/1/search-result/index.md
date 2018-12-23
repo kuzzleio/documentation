@@ -4,6 +4,7 @@ title: SearchResult
 description: How to deal with Kuzzle search results
 order: 400
 ---
+
 # SearchResult
 
 When performing a [document:search]({{ site_base_path }}sdk-reference/cpp/1/document/search), Kuzzle returns an `SearchResult` object, which holds the items matching the given query and allows to drill through next result pages if applicable.

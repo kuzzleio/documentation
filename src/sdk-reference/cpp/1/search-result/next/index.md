@@ -6,7 +6,7 @@ description: SearchResult next method
 
 # next
 
-Returns a pointer to a new `SearchResult` object which contain the next results of the search.
+Returns a pointer to a new `SearchResult` object which contain the subsequent results of the search.
 
 ## Signature
 

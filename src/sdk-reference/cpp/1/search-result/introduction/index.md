@@ -5,9 +5,9 @@ description: SearchResult class
 order: 0
 ---
 
-# kuzzleio::SearchResult
+# SearchResult
 
-The class is used to retrieve the following paginated results of a search query.  
+The class is used to retrieve the subsequent paginated results of a search query.  
 The following method returns a `SearchResult` or a `SpecificationSearchResult` (which acts the same):
  - [document:search]({{ site_base_path }}sdk-reference/cpp/1/document/search)
  - [collection:searchSpecifications]({{ site_base_path }}sdk-reference/cpp/1/document/search)

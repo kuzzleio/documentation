@@ -5,7 +5,7 @@ description: Kuzzle right representation
 order: 0
 ---
 
-# kuzzleio::UserRight
+# UserRight
 
 The `UserRight` class is the SDK representation of a single [user's right]({{ site_base_path }}guide/1/essentials/user-authentication/#creating-users-default).
 
@@ -17,6 +17,7 @@ Instances of the `UserRight` class are returned by methods such as [auth:getMyRi
 namespace kuzzleio {
   class UserRight {
     public:
+      // Getters
       const std::string& controller() const;
       const std::string& action() const;
       const std::string& index() const;
