@@ -61,3 +61,7 @@ Can be one of the following: `allowed`, `denied` or `conditional`
 ```cpp
 const std::string& value() const
 ```
+
+## Usage
+
+[snippet=getters]

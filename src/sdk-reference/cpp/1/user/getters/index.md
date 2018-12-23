@@ -36,3 +36,7 @@ Returns the list of profile identifiers attached to this user.
 ```cpp
 const std::vector<std::string>& profile_ids() const;
 ```
+
+## Usage
+
+[snippet=getters]

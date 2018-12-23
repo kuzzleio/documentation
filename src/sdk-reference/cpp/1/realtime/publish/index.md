@@ -39,6 +39,7 @@ Additional query options
 | Option     | Type<br/>(default)  | Description   |
 | ---------- | ------- | --------------------------------- |
 | `queuable` | <pre>bool</pre><br/>(`true`) |  If true, queues the request during downtime, until connected to Kuzzle again |
+| `volatiles` | <pre>const char\*</pre><br/>(`"{}"`) | JSON string representing subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/essentials/volatile-data/) |
 
 ## Exceptions
 

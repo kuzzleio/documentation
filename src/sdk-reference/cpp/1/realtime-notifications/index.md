@@ -25,7 +25,7 @@ These `kuzzleio::notification_result` represent [documents changes & messages]({
 | `scope` | <pre>const char\*</pre> | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
 | `timestamp` | <pre>unsigned long long</pre> | Timestamp of the event, in Epoch-millis format |
 | `n_type` | <pre>const char\*</pre> | `document`: the notification type |
-| `volatiles` | <pre>const char\*</pre> | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `volatiles` | <pre>const char\*</pre> | JSON String representing request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
 
 The `kuzzleio::notification_content` struct has the following properties for document notifications & messages:
 
@@ -50,7 +50,7 @@ These `kuzzleio::notification_result` represent [user events]({{ site_base_path 
 | `timestamp` | <pre>unsigned long long</pre> | Timestamp of the event, in Epoch-millis format |
 | `n_type` | <pre>const char\*</pre> | `user`: the notification type |
 | `user` | <pre>const char\*</pre> | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
-| `volatiles` | <pre>const char\*</pre> | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `volatiles` | <pre>const char\*</pre> | JSON String representing request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
 
 The `kuzzleio::notification_content` struct has the following properties for document notifications & messages:
 

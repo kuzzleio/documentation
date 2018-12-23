@@ -4,6 +4,6 @@ hooks:
   before:
   after:
 template: blank
-expected: Everything is ok
+expected: New SDK instance successfully created
 sdk: cpp
 version: 1
