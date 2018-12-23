@@ -8,7 +8,7 @@ description: Used when subscribing to store a listener.
 
 Attaches a notifications listener to an existing subscription.
 
-## Arguments
+## Signature
 
 ```cpp
 virtual void registerSub(
@@ -18,6 +18,8 @@ virtual void registerSub(
   bool subscribe_to_self, 
   NotificationListener* listener) = 0;
 ```
+
+## Arguments
 
 | Argument   | Type                      | Description
 | ---------- |---------------------------|--------------------------------------------------------------------- |

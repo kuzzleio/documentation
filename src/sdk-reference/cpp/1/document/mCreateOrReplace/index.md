@@ -11,7 +11,7 @@ Creates or replaces multiple documents.
 
 Throws a partial error (error code 206) if one or more document creations/replacements fail.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string mCreateOrReplace(
@@ -20,6 +20,8 @@ std::string mCreateOrReplace(
     const std::string& body,
     kuzzleio::query_options *options=nullptr);
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

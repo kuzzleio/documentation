@@ -18,7 +18,7 @@ These statistics include:
 * the number of completed requests since the last frame
 * the number of failed requests since the last frame
 
-## Arguments
+## Signature
 
 ```cpp
 std::string getStats(
@@ -27,6 +27,8 @@ std::string getStats(
   kuzzleio::query_options* options=nullptr
 )
 ```
+
+## Arguments
 
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|

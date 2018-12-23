@@ -8,14 +8,14 @@ description: Returns the rights for the user linked to the `JSON Web Token`.
 
 Returns the rights for the user currently loggued with the SDK instance.
 
-## Arguments
+## Signature
 
 ```cpp
 std::vector<std::shared_ptr<kuzzleio::UserRight>> 
   getMyRights(query_options *options=nullptr);
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -8,7 +8,7 @@ description: Getter for the _id property
 
 Returns the user's unique identifier (or [kuid]({{ site_base_path }}guide/1/essentials/user-authentication/#kuzzle-user-identifier-kuid-default)).
 
-## Arguments
+## Signature
 
 ```cpp
 std::string const& id() const;

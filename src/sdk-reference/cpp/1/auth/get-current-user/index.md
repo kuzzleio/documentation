@@ -8,7 +8,7 @@ description: Returns the profile object for the user linked to the `JSON Web Tok
 
 Returns informations about the user currently loggued with the SDK instance.
 
-## Arguments
+## Signature
 
 ```cpp
 User getCurrentUser();

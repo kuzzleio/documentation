@@ -8,7 +8,7 @@ description: Getter for the _content property
 
 Returns the user's content.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string const& content() const;
@@ -17,4 +17,3 @@ std::string const& content() const;
 ## Return
 
 The `content` getter returns the user's content.
-

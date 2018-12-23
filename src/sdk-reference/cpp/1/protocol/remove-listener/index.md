@@ -8,11 +8,13 @@ description: Removes a listener from an event
 
 Removes a listener from an event.
 
-## Arguments
+## Signature
 
 ```cpp
 virtual void removeListener(kuzzleio::Event event, kuzzleio::EventListener* listener) = 0;
 ```
+
+## Arguments
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | --------------------------

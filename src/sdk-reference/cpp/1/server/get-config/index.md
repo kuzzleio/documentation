@@ -14,15 +14,17 @@ Returns the current Kuzzle configuration.
   This route should only be accessible to administrators, as it might return sensitive information about the backend.
 </div>
 
-## Arguments
+## Signature
 
 ```cpp
 std::string getConfig(kuzzleio::query_options* options=nullptr);
 ```
 
+## Arguments
+
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
+| `options` | kuzzleio::query_options* | Query options | no       |
 
 ### options
 

@@ -8,7 +8,7 @@ description: Sends a query to the Kuzzle API
 
 Sends a query to the [Kuzzle API]({{ site_base_path }}api/1).
 
-## Arguments
+## Signature
 
 ```cpp
 virtual kuzzleio::kuzzle_response* send(
@@ -16,6 +16,8 @@ virtual kuzzleio::kuzzle_response* send(
   kuzzleio::query_options *options, 
   const std::string& request_id) = 0;
 ```
+
+## Arguments
 
 | Argument  | Type             | Description
 | --------- | ---------------- | ------------------------

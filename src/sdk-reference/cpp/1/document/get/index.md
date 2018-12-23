@@ -9,7 +9,7 @@ order: 200
 
 Gets a document.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string get(
@@ -18,6 +18,8 @@ std::string get(
     const std::string& id,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

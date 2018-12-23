@@ -8,13 +8,13 @@ description: Removes a subscription
 
 Removes a subscription.
 
-## Arguments
+## Signature
 
 ```cpp
 void unsubscribe(const std::string& room_id, kuzzleio::query_options *options=nullptr)
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
@@ -27,7 +27,7 @@ Additional query options
 
 | Option     | Type<br/>(default)  | Description   |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | <pre>bool</pre><br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>bool</pre><br/>(`true`) |  If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 

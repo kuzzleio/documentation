@@ -10,15 +10,17 @@ description: Returns the current server timestamp, in Epoch-millis
 
 Fetch the current server timestamp, in Epoch-millis format.
 
-## Arguments
+## Signature
 
 ```cpp
 long long now(kuzzleio::query_options *options = nullptr)
 ```
 
+## Arguments
+
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
+| `options` | kuzzleio::query_options* | Query options | no       |
 
 ### options
 

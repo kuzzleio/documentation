@@ -11,7 +11,7 @@ Creates multiple documents.
 
 Throws a partial error (error code 206) if one or more documents creations fail.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string mCreate(
@@ -20,6 +20,8 @@ std::string mCreate(
     const std::string& documents,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

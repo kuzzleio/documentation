@@ -14,7 +14,7 @@ Documents are always valid if no validation rules are defined on the provided in
 This request does not store the document.
 
 
-## Arguments
+## Signature
 
 ```cpp
 bool validate(
@@ -23,6 +23,8 @@ bool validate(
     const std::string& document,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

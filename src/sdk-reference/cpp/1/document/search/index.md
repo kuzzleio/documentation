@@ -20,7 +20,7 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 </div>
 
 
-## Arguments
+## Signature
 
 ```cpp
 SearchResult* search(
@@ -29,6 +29,8 @@ SearchResult* search(
   const std::string& query,
   kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

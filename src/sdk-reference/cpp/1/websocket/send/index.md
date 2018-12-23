@@ -8,11 +8,13 @@ description: Base method to send API query to Kuzzle
 
 Base method used to send queries to Kuzzle, following the [API Documentation]({{ site_base_path }}api/1).
 
-## Arguments
+## Signature
 
 ```cpp
 kuzzleio::kuzzle_response* send(const std::string& query, kuzzleio::query_options *options, const std::string& request_id);
 ```
+
+## Arguments
 
 | Argument  | Type             | Description
 | --------- | ---------------- | ------------------------
@@ -42,7 +44,7 @@ The following properties are the most common.
 
 | Property   | Type    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | bool(true) | Make this request queuable or not |
+| `queuable` | bool(true) |  If true, queues the request during downtime, until connected to Kuzzle again |
 
 ### request_id
 

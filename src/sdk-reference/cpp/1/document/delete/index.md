@@ -11,7 +11,7 @@ Deletes a document.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (and to be immediately available in search).
 
-## Arguments
+## Signature
 
 ```cpp
 std::string delete_(
@@ -20,6 +20,8 @@ std::string delete_(
     const std::string& id,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

@@ -11,7 +11,7 @@ Deletes documents matching the provided search query.
 
 Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
 
-## Arguments
+## Signature
 
 ```cpp
 std::vector<std::string> deleteByQuery(
@@ -20,6 +20,8 @@ std::vector<std::string> deleteByQuery(
     const std::string& query,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

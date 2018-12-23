@@ -13,7 +13,7 @@ Throws a partial error (error code 206) if one or more document deletions fail.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document indexation (indexed documents are available for `search`).
 
-## Arguments
+## Signature
 
 ```cpp
 std::vector<std::string> mDelete(
@@ -22,6 +22,8 @@ std::vector<std::string> mDelete(
     const std::vector<std::string>& ids,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

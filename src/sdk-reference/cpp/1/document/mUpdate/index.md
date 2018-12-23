@@ -15,7 +15,7 @@ Conflicts may occur if the same document gets updated multiple times within a sh
 
 You can set the `retryOnConflict` optional argument (with a retry count), to tell Kuzzle to retry the failing updates the specified amount of times before rejecting the request with an error.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string mUpdate(
@@ -24,6 +24,8 @@ std::string mUpdate(
     const std::string& documents,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

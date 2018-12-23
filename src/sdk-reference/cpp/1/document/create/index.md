@@ -12,7 +12,7 @@ Throws an error if the document already exists.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
 
-## Arguments
+## Signature
 
 ```cpp
 std::string create(
@@ -22,6 +22,8 @@ std::string create(
     const std::string& document,
     kuzzleio::query_options *options=nullptr);
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

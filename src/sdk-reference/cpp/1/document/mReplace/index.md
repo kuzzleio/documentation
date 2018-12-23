@@ -11,7 +11,7 @@ Replaces multiple documents.
 
 Throws a partial error (error code 206) if one or more documents can not be replaced.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string mReplace(
@@ -20,6 +20,8 @@ std::string mReplace(
     const std::string& documents,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

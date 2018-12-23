@@ -10,15 +10,17 @@ description: Checks that an administrator account exists.
 
 Checks that an administrator account exists.
 
-## Arguments
+## Signature
 
 ```cpp
 bool adminExists(kuzzleio::query_options *options=nullptr);
 ```
 
+## Arguments
+
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
+| `options` | kuzzleio::query_options* | Query options | no       |
 
 ### options
 

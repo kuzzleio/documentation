@@ -8,11 +8,13 @@ description: Used when subscribing to store a listener.
 
 Attaches a notifications listener to an existing subscription.
 
-## Arguments
+## Signature
 
 ```cpp
 void registerSub(const std::string& channel, const std::string& room_id, const std::string& filters, bool subscribe_to_self, NotificationListener* listener);
 ```
+
+## Arguments
 
 | Argument   | Type                      | Description
 | ---------- |---------------------------|--------------------------------------------------------------------- |

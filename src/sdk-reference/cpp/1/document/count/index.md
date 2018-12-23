@@ -12,7 +12,7 @@ A query can be provided to alter the count result, otherwise returns the total n
 
 Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
 
-## Arguments
+## Signature
 
 ```cpp
 int count(
@@ -21,7 +21,8 @@ int count(
     const std::string& query,
     kuzzleio::query_options *options=nullptr)
 ```
-<br/>
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

@@ -10,15 +10,17 @@ description: Returns information about Kuzzle server.
 
 Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string info(kuzzleio::query_options* options=nullptr)
 ```
 
+## Arguments
+
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
+| `options` | kuzzleio::query_options* | Query options | no       |
 
 ### options
 

@@ -8,17 +8,18 @@ description: Updates the current user object in Kuzzle.
 
 Updates the current user object in Kuzzle.
 
-## Arguments
+## Signature
 
 ```cpp
 kuzzleio::User updateSelf(const std::string& content, query_options* options=nullptr);
 ```
 
+## Arguments
+
 | Arguments    | Type    | Description
 |--------------|---------|-------------|
 | `content` | <pre>const std::string&</pre> | JSON string representing the user content |
 | `options`  | <pre>kuzzleio::query_options\*</pre>  | Query options |
-
 
 ### options
 

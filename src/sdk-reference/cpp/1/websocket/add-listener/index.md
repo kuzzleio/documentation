@@ -8,11 +8,13 @@ description: Adds a listener to an event
 
 Adds a listener to an event.
 
-## Arguments
+## Signature
 
 ```cpp
 void addListener(kuzzleio::Event event, kuzzleio::EventListener* listener);
 ```
+
+## Arguments
 
 | Argument   | Type                      | Description
 | ---------- |------------------------------------------------------------------------------------------------------ | -------- |

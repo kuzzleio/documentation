@@ -11,7 +11,7 @@ Gets multiple documents.
 
 Throws a partial error (error code 206) if one or more document can not be retrieved.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string mGet(
@@ -20,6 +20,8 @@ std::string mGet(
     const std::vector<std::string>& ids,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

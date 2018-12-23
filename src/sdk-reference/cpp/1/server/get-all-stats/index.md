@@ -19,15 +19,17 @@ These statistics include:
 * the number of failed requests since the last frame
 
 
-## Arguments
+## Signature
 
 ```cpp
 std::string getAllStats(kuzzleio::query_options* options=nullptr)
 ```
 
+## Arguments
+
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
+| `options` | kuzzleio::query_options* | Query options | no       |
 
 ### options
 

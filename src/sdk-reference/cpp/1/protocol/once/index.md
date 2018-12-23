@@ -8,11 +8,13 @@ description: Attaches a listener to an event and removes it after it has been tr
 
 Attaches a listener to an event and removes it after it has been triggered once.
 
-## Arguments
+## Signature
 
 ```cpp
 virtual void once(kuzzleio::Event event, kuzzleio::EventListener* listener) = 0;
 ```
+
+## Arguments
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ----------------------------

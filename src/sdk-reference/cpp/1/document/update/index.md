@@ -12,7 +12,7 @@ Updates a document content.
 Conflicts may occur if the same document gets updated multiple times within a short timespan, in a database cluster.
 You can set the `retryOnConflict` optional argument (with a retry count), to tell Kuzzle to retry the failing updates the specified amount of times before rejecting the request with an error.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string update(
@@ -22,6 +22,8 @@ std::string update(
     const std::string& document,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

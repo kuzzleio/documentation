@@ -10,7 +10,7 @@ Creates a new document in the persistent data storage, or replaces its content i
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
 
-## Arguments
+## Signature
 
 ```cpp
 std::string Document::createOrReplace(
@@ -20,7 +20,8 @@ std::string Document::createOrReplace(
     const std::string& document,
     kuzzleio::query_options* options)
 ```
-<br/>
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

@@ -9,7 +9,7 @@ order: 200
 
 Replaces the content of an existing document.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string replace(
@@ -19,6 +19,8 @@ std::string replace(
     const std::string& document,
     kuzzleio::query_options *options=nullptr)
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |

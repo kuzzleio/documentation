@@ -8,7 +8,7 @@ description: Getter for the _profile_ids property
 
 Returns the list of profile identifiers attached to this user.
 
-## Arguments
+## Signature
 
 ```cpp
 std::vector<std::string> const& profile_ids() const;
