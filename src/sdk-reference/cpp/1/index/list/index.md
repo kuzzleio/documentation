@@ -24,7 +24,7 @@ std::vector<std::string> list(kuzzleio::query_options *options = null)
 
 Additional query options
 
-| Option     | Type    | Description                       | 
+| Option     | Type<br/>(default)   | Description  |
 | ---------- | ------- | --------------------------------- | 
 | `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 

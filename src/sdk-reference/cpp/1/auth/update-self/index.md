@@ -25,9 +25,9 @@ kuzzleio::User updateSelf(const std::string& content, query_options* options=nul
 
 Additional query options:
 
-| Property     | Type    | Description  |
+| Option     | Type<br/>(default)   | Description  |
 | ---------- | ------- | -------------- |
-| `queuable` | <pre>bool (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 

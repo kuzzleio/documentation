@@ -6,8 +6,6 @@ description: Returns the most recent statistics snapshot.
 
 # getLastStats
 
-{{{since "1.0.0"}}}
-
 Returns the most recent statistics snapshot.
 By default, snapshots are made every 10 seconds and they are stored for 1 hour.
 
@@ -28,18 +26,19 @@ std::string getLastStats(kuzzleio::query_options* options=nullptr)
 
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
-| `options` | kuzzleio::query_options* | Query options | no       |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 
 Additional query options
 
-| Option     | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | 
-| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Option     | Type<br/>(default)   | Description  |
+| ---------- | ------- | -------------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
-Returns a JSON string representing the most recent statistics snapshot.
+
+A JSON string representing the most recent statistics snapshot.
 
 ## Exceptions
 

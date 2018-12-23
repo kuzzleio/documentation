@@ -6,8 +6,6 @@ description: Returns statistics snapshots within a provided timestamp range.
 
 # getStats
 
-{{{since "1.0.0"}}}
-
 Returns statistics snapshots within a provided timestamp range.
 By default, snapshots are made every 10 seconds and they are stored for 1 hour.
 
@@ -32,20 +30,21 @@ std::string getStats(
 
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
-| `startTime` | time_t                   | begining of statistics frame set (timestamp or datetime format) | yes       |
-| `stopTime`  | time_t                   | end of statistics frame set (timestamp or datetime format)      | yes       |
-| `options`   | kuzzleio::query_options* | A pointer to a `query_options` containing query options           |  no       |
+| `startTime` | <pre>time_t</pre>   | Timestamp of the begining of statistics frame set |
+| `stopTime`  | <pre>time_t</pre>   | Timestamp of the end of statistics frame set      |
+| `options`   | <pre>kuzzleio::query_options\*</pre> | Query options        |
 
 ### options
 
 Additional query options
 
-| Option     | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | 
-| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Option     | Type<br/>(default)   | Description  |
+| ---------- | ------- | -------------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
-Returns a JSON string representing the statistics for the given period of time.
+
+A JSON string representing the statistics for the given period of time.
 
 ## Exceptions
 

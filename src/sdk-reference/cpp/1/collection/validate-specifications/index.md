@@ -59,7 +59,7 @@ A `kuzzleio::validation_response` object which contain information about the spe
 | Property   | Type    | Description        |
 | ---------- | ------- | --------------------- |
 | `valid` | <pre>bool</pre> | Specification validity |
-| `details` | <pre>const char * const \*</pre> | Array of string with details about each specification errors |
+| `details` | <pre>const char \* const \*</pre> | Array of string with details about each specification errors |
 | `description` | <pre>const char \*</pre> | General error message |
 
 ## Usage

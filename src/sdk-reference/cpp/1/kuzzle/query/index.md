@@ -25,7 +25,7 @@ kuzzleio::kuzzle_response* query(kuzzleio::kuzzle_request* query, kuzzleio::quer
 | `request` | <pre>kuzzle_request\*</pre> | API request parameters |
 | `options` | <pre>kuzzleio::query_options\*</pre>  | Query options |
 
-### **request**
+### request
 
 Properties required for the Kuzzle API can be set in the [kuzzle_request](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L51) struct.
 The following properties are the most common.
@@ -44,7 +44,7 @@ The following properties are the most common.
 
 Additional query options
 
-| Option     | Type    | Description                       | 
+| Option     | Type<br/>(default)   | Description  |   
 | ---------- | ------- | --------------------------------- | 
 | `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 

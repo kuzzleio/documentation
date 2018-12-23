@@ -6,7 +6,7 @@ description: Searches collection specifications
 
 # searchSpecifications
 
-{{{since "1.0.0"}}}
+
 
 Searches collection specifications.
 

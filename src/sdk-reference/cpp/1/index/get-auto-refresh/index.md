@@ -35,7 +35,7 @@ bool getAutoRefresh(const std::string& index, kuzzleio::query_options *options =
 
 Additional query options
 
-| Option     | Type    | Description                       | 
+| Option     | Type<br/>(default)   | Description  |   
 | ---------- | ------- | --------------------------------- | 
 | `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
