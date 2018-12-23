@@ -10,7 +10,6 @@ module.exports = class CppRunner extends BaseRunner {
     this.compileOptions = ['-std=c++11', `-I${this.sdk.sdkDir}/include`, `-L${this.sdk.sdkDir}/lib`, '-lkuzzlesdk', '-lpthread'];
     this.lintCommand = 'cpplint';
     this.lintOptions = ['--filter=-legal/copyright,-whitespace/line_length'];
-    this.executablePath = '';
   }
 
   async runSnippet(snippet) {
@@ -35,7 +34,6 @@ module.exports = class CppRunner extends BaseRunner {
   }
 
   clean(snippet) {
-    fs.unlinkSync(snippet.renderedSnippetPath);
-    fs.unlinkSync(this.executablePath);
+    fs.unlinkSync(this.snippetCommand);
   }
 };
