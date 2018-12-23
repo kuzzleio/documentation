@@ -18,7 +18,7 @@ std::vector<std::string> getStrategies(query_options *options=nullptr);
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options`  | <pre>kuzzleio::query_options*</pre>    | Query options
+| `options`  | <pre>kuzzleio::query_options\*</pre>    | Query options
 
 ### options
 

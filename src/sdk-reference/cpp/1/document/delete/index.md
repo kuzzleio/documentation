@@ -26,7 +26,7 @@ std::string delete_(
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
 | `id` | <pre>const std::string&</pre> | Document ID |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### Options
 

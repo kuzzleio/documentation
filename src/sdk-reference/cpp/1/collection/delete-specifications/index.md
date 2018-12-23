@@ -20,7 +20,7 @@ void deleteSpecifications(const std::string& index, const std::string& collectio
 |--------------|---------|-------------|
 | `index` | <pre>const std::string&</pre> | Index name    | 
 | `collection` | <pre>const std::string&</pre> | Collection name    |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options    | 
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options    | 
 
 ### options
 

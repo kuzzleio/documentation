@@ -19,7 +19,7 @@ std::vector<std::shared_ptr<kuzzleio::UserRight>>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `options`  | <pre>kuzzleio::query_options*</pre>  | Optional query options |
+| `options`  | <pre>kuzzleio::query_options\*</pre>  | Optional query options |
 
 ### options
 

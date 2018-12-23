@@ -20,7 +20,7 @@ bool validateMyCredentials(const std::string& strategy, const std::string& crede
 |--------------|---------|-------------
 | `strategy` | <pre>const std::string&</pre> | Strategy to use
 | `credentials` | <pre>const std::string&</pre> | JSON string representing the credentials
-| `options`  | <pre>kuzzleio::query_options*</pre>    | Query options
+| `options`  | <pre>kuzzleio::query_options\*</pre>    | Query options
 
 ### options
 

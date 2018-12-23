@@ -42,10 +42,10 @@ Additional subscription options.
 
 | Property   | Type<br/>(default)    | Description                       |
 | ---------- | ------- | --------------------------------- |
-| `scope` | <pre>const char*</pre><br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
-| `users` | <pre>const char*</pre><br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
+| `scope` | <pre>const char\*</pre><br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
+| `users` | <pre>const char\*</pre><br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
 | `subscribeToSelf` | <pre>bool</pre><br/>(`true`) | Subscribe to notifications fired by our own queries |
-| `volatile` | <pre>const char*</pre><br/>(`null`) | JSON string representing subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
+| `volatile` | <pre>const char\*</pre><br/>(`null`) | JSON string representing subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
 
 ## Return
 

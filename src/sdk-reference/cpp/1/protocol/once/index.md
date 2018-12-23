@@ -15,13 +15,13 @@ virtual void once(kuzzleio::Event event, kuzzleio::EventListener* listener) = 0;
 ```
 
 | Argument   | Type                      | Description
-| ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------
-| `event`    | <pre>kuzzleio::KuzzleEvent</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events)
-| `listener` | <pre>kuzzleio::EventListener*</pre> | A pointer to a c++11 lambda
+| ---------- | ------------------------- | ----------------------------
+| `event`    | <pre>kuzzleio::Event</pre>  | Enum representing the event to emit
+| `listener` | <pre>kuzzleio::EventListener\*</pre> | Pointer to a c++11 lambda
 
 ### event
 
-One of the following event:
+One of the following [event]({{ site_base_path }}sdk-reference/cpp/1/events):
 
 ```cpp
 KUZZLE_EVENT_CONNECTED,

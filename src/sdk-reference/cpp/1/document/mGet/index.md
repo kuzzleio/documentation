@@ -26,7 +26,7 @@ std::string mGet(
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
 | `ids` | <pre>std::vector&lt;std::string&gt;</pre> | Document IDs |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 

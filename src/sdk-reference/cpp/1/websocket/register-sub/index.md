@@ -20,7 +20,7 @@ void registerSub(const std::string& channel, const std::string& room_id, const s
 | `room_id` | <pre>const std::string&</pre>  | A string representing the roomId of the subscription
 | `filters` | <pre>const std::string&</pre> | JSON string representing the filters of the subscription
 | `subscribe_to_self` | <pre>bool</pre> | Subscribe to notifications fired by our own queries
-| `listener` | <pre>NotificationListener*</pre> | A pointer to the listener
+| `listener` | <pre>NotificationListener\*</pre> | A pointer to the listener
 
 ### listener
 

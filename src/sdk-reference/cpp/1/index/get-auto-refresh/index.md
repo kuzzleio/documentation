@@ -29,7 +29,7 @@ bool getAutoRefresh(const std::string& index, kuzzleio::query_options *options =
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
 | `index`   | <pre>const std::string&</pre>   | Index name     |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 

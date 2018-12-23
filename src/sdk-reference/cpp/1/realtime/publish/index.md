@@ -30,7 +30,7 @@ void publish(
 | `index` | <pre>const std::string&</pre> | Index name    |
 | `collection` | <pre>const std::string&</pre> | Collection name    |
 | `message` | <pre>const std::string&</pre> | JSON string representing the message to send |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `query_options` containing query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | A pointer to a `query_options` containing query options |
 
 ### options
 

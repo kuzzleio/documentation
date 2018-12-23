@@ -29,7 +29,7 @@ bool validate(
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
 | `document` | <pre>const std::string&</pre> | JSON string representing the document |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 

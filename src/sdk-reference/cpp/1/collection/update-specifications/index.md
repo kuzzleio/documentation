@@ -23,7 +23,7 @@ std::string updateSpecifications(const std::string& index, const std::string& co
 | `index` | <pre>const std::string&</pre> | Index name    | 
 | `collection` | <pre>const std::string&</pre> | Collection name    |
 | `specifications` | const std::string& | Specification in JSON format | yes
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options    | 
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options    | 
 
 ### specifications
 

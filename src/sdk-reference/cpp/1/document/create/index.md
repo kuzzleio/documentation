@@ -29,7 +29,7 @@ std::string create(
 | `collection` | <pre>const std::string&</pre> | Collection name |
 | `id` | <pre>const std::string&</pre> | Document ID. Will use an auto-generated id if not specified |
 | `document` | <pre>const std::string&</pre> | JSON string representing the body of the document |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 

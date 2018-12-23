@@ -17,7 +17,7 @@ kuzzleio::kuzzle_response* send(const std::string& query, kuzzleio::query_option
 | Argument  | Type             | Description
 | --------- | ---------------- | ------------------------
 | `query` | <pre>const std::string&</pre> | API request
-| `options` | <pre>kuzzleio::query_options*</pre>  | Additional query options
+| `options` | <pre>kuzzleio::query_options\*</pre>  | Additional query options
 | `request_id` | <pre>const std::string&</pre> | the request_id of the request if you want to set one
 
 ### request
@@ -27,13 +27,13 @@ The following properties are the most common.
 
 | Property     | Type         | Description 
 | ------------ | ------------ | ------------------------------------------------------------------ |
-| `controller` | <pre>const char*</pre> | Controller name                                          |
-| `action`     | <pre>const char*</pre> | Action name                                              |
-| `body`       | <pre>const char*</pre> | Query body, in JSON format                               |
-| `index`      | <pre>const char*</pre> | Data index name                                          |
-| `collection` | <pre>const char*</pre> | Data collection name                                     |
-| `id`         | <pre>const char*</pre> | Unique identifier                                        |
-| `volatiles`  | <pre>const char*</pre> | Additional, non-meaningful information (JSON format)     |
+| `controller` | <pre>const char\*</pre> | Controller name                                          |
+| `action`     | <pre>const char\*</pre> | Action name                                              |
+| `body`       | <pre>const char\*</pre> | Query body, in JSON format                               |
+| `index`      | <pre>const char\*</pre> | Data index name                                          |
+| `collection` | <pre>const char\*</pre> | Data collection name                                     |
+| `id`         | <pre>const char\*</pre> | Unique identifier                                        |
+| `volatiles`  | <pre>const char\*</pre> | Additional, non-meaningful information (JSON format)     |
 
 ### options
 
@@ -48,13 +48,13 @@ The following properties are the most common.
 
 A string representing the request Id.| Property     | Type         | Description 
 | ------------ | ------------ | ------------------------------------------------------------------ |
-| `controller` | <pre>const char*</pre> | Controller name                                          |
-| `action`     | <pre>const char*</pre> | Action name                                              |
-| `body`       | <pre>const char*</pre> | Query body, in JSON format                               |
-| `index`      | <pre>const char*</pre> | Data index name                                          |
-| `collection` | <pre>const char*</pre> | Data collection name                                     |
-| `id`         | <pre>const char*</pre> | Unique identifier                                        |
-| `volatiles`  | <pre>const char*</pre> | Additional, non-meaningful information (JSON format)     |
+| `controller` | <pre>const char\*</pre> | Controller name                                          |
+| `action`     | <pre>const char\*</pre> | Action name                                              |
+| `body`       | <pre>const char\*</pre> | Query body, in JSON format                               |
+| `index`      | <pre>const char\*</pre> | Data index name                                          |
+| `collection` | <pre>const char\*</pre> | Data collection name                                     |
+| `id`         | <pre>const char\*</pre> | Unique identifier                                        |
+| `volatiles`  | <pre>const char\*</pre> | Additional, non-meaningful information (JSON format)     |
 
 ## Return
 
@@ -63,7 +63,7 @@ The following properties are the most common.
 
 | Property     | Type   | Description                         |
 | ------------ | ------ | ----------------------------------- |
-| `request_id` | <pre>const char*</pre>| Request unique id                   |
-| `result`     | <pre>const char*</pre> | Raw JSON result                     |
-| `error`      | <pre>const char*</pre> | Error message                       |
+| `request_id` | <pre>const char\*</pre>| Request unique id                   |
+| `result`     | <pre>const char\*</pre> | Raw JSON result                     |
+| `error`      | <pre>const char\*</pre> | Error message                       |
 | `status`     | <pre>int</pre>    | Request status (eg: 200, 403, etc.) |

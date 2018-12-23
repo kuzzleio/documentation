@@ -19,7 +19,7 @@ int count(const std::string& room_id, kuzzleio::query_options *options=nullptr)
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
 | `room_id` | <pre>const std::string&</pre> | Subscription room ID |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `query_options` containing query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | A pointer to a `query_options` containing query options |
 
 ### options
 

@@ -28,7 +28,7 @@ std::vector<std::string> mDelete(
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
 | `ids` | <pre>std::vector&lt;std::string&gt;</pre> | IDs of the documents to delete |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 

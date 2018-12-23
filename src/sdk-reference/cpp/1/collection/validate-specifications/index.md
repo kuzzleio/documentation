@@ -23,7 +23,7 @@ kuzzleio::validation_response* validateSpecifications(const std::string& index, 
 | `index` | <pre>const std::string&</pre> | Index name    | 
 | `collection` | <pre>const std::string&</pre> | Collection name    |
 | `specifications` | <pre>const std::string&<pre> | JSON string representating the specifications to validate |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options    | 
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options    | 
 
 ### specifications
 
@@ -59,8 +59,8 @@ A `kuzzleio::validation_response` object which contain information about the spe
 | Property   | Type    | Description        |
 | ---------- | ------- | --------------------- |
 | `valid` | <pre>bool</pre> | Specification validity |
-| `details` | <pre>const char * const *</pre> | Array of string with details about each specification errors |
-| `description` | <pre>const char *</pre> | General error message |
+| `details` | <pre>const char * const \*</pre> | Array of string with details about each specification errors |
+| `description` | <pre>const char \*</pre> | General error message |
 
 ## Usage
 

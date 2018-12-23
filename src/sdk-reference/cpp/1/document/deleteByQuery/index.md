@@ -26,7 +26,7 @@ std::vector<std::string> deleteByQuery(
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
 | `query` | <pre>const std::string&</pre> | JSON string representing query to match |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 

@@ -25,7 +25,7 @@ void create(const std::string& index, const std::string& collection, const std::
 | `index` | <pre>const std::string&</pre> | Index name    | 
 | `collection` | <pre>const std::string&</pre> | Collection name    |
 | `mapping` | <pre>const std::string*</pre> | JSON string representing the collection data mapping  |
-| `options` | <pre>kuzzleio::query_options*</pre> |  Query options  |
+| `options` | <pre>kuzzleio::query_options\*</pre> |  Query options  |
 
 ### mapping
 

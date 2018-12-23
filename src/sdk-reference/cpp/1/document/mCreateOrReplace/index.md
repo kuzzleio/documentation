@@ -26,7 +26,7 @@ std::string mCreateOrReplace(
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
 | `body` | <pre>const std::string&</pre> | A JSON string containing the documents to create |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 

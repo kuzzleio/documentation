@@ -19,7 +19,7 @@ void unsubscribe(const std::string& room_id, kuzzleio::query_options *options=nu
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
 | `room_id` | <pre>const std::string&</pre> | Subscription room ID  |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 

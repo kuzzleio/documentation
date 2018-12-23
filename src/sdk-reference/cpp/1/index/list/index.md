@@ -18,7 +18,7 @@ std::vector<std::string> list(kuzzleio::query_options *options = null)
 
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 

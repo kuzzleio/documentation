@@ -56,7 +56,7 @@ The following properties are the most common.
 | Property     | Type   | Description                         |
 | ------------ | ------ | ----------------------------------- |
 | `request_id` | <pre>char\*</pre> | Request unique ID                   |
-| `result`     | <pre>char\*</pre> | JSON string representing the result |
+| `result`     | <pre>char\*</pre> | JSON string representing Kuzzle API result |
 | `error`      | <pre>char\*</pre> | Error message                       |
 | `status`     | <pre>int</pre>    | Request status (eg: 200, 403, etc.) |
 
