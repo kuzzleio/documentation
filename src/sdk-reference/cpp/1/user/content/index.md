@@ -6,7 +6,7 @@ description: Getter for the _content property
 
 # content
 
-Returns the user's content.
+Returns the user's content stored by Kuzzle.  
 
 ## Signature
 
@@ -16,4 +16,4 @@ std::string const& content() const;
 
 ## Return
 
-The `content` getter returns the user's content.
+A JSON string representing the user informations stored by Kuzzle

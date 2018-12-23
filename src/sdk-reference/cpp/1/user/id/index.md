@@ -16,4 +16,4 @@ std::string const& id() const;
 
 ## Return
 
-The `id` getter returns the user's kuid.
+The user's kuid.

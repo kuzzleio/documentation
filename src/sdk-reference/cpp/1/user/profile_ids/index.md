@@ -16,4 +16,4 @@ std::vector<std::string> const& profile_ids() const;
 
 ## Return
 
-The `profile_ids` getter returns a list of profile identifiers.
+A list of profile identifiers.
