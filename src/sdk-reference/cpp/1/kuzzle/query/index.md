@@ -20,10 +20,10 @@ kuzzleio::kuzzle_response* query(kuzzleio::kuzzle_request* query, kuzzleio::quer
 
 ## Arguments
 
-| Argument  | Type             | Description              | Required |
-| --------- | ---------------- | ------------------------ | -------- |
-| `request` | kuzzle_request\* | API request options      | yes      |
-| `options` | kuzzleio::query_options\*  | Additional query options | no       |
+| Argument  | Type             | Description              |
+| --------- | ---------------- | ------------------------ |
+| `request` | <pre>kuzzle_request\*</pre> | API request parameters |
+| `options` | <pre>kuzzleio::query_options\*</pre>  | Query options |
 
 ### **request**
 
@@ -32,22 +32,21 @@ The following properties are the most common.
 
 | Property     | Type         | Description                                                        | Required |
 | ------------ | ------------ | ------------------------------------------------------------------ | -------- |
-| `controller` | const char\* | Controller name                                                    | yes      |
-| `action`     | const char\* | Action name                                                        | yes      |
-| `body`       | const char\* | JSON query body string for this action                             | no       |
-| `index`      | const char\* | Index name for this action                                         | no       |
-| `collection` | const char\* | Collection name for this action                                    | no       |
-| `id`         | const char\* | id for this action                                                 | no       |
-| `volatiles`  | const char\* | JSON string representing additional information to send to Kuzzle | no       |
+| `controller` | <pre>const char\*</pre> | Controller name                                         | yes      |
+| `action`     | <pre>const char\*</pre> | Action name                                             | yes      |
+| `body`       | <pre>const char\*</pre> | JSON string representing body for this action           | no       |
+| `index`      | <pre>const char\*</pre> | Index name for this action                              | no       |
+| `collection` | <pre>const char\*</pre> | Collection name for this action                         | no       |
+| `id`         | <pre>const char\*</pre> | ID for this action                                      | no       |
+| `volatiles`  | <pre>const char\*</pre> | JSON string representing additional information to send to Kuzzle | no       |
 
 ### options
 
-A pointer to a [query_option](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L169) containing additional query options
-The following properties are the most common.
+Additional query options
 
-| Property     | Type<br/>(default)    | Description        |
+| Option     | Type    | Description                       | 
 | ---------- | ------- | --------------------------------- | 
-| `queuable` | bool | Make this request queuable or not | true    |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
@@ -56,10 +55,10 @@ The following properties are the most common.
 
 | Property     | Type   | Description                         |
 | ------------ | ------ | ----------------------------------- |
-| `request_id` | char\* | Request unique id                   |
-| `result`     | char\* | Raw JSON result                     |
-| `error`      | char\* | Error message                       |
-| `status`     | int    | Request status (eg: 200, 403, etc.) |
+| `request_id` | <pre>char\*</pre> | Request unique ID                   |
+| `result`     | <pre>char\*</pre> | JSON string representing the result |
+| `error`      | <pre>char\*</pre> | Error message                       |
+| `status`     | <pre>int</pre>    | Request status (eg: 200, 403, etc.) |
 
 ## Exceptions
 

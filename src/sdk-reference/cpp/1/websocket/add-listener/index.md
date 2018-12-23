@@ -16,7 +16,7 @@ void addListener(kuzzleio::Event event, kuzzleio::EventListener* listener);
 
 | Argument   | Type                      | Description
 | ---------- |------------------------------------------------------------------------------------------------------ | -------- |
-| `event`    | <pre>kuzzleio::KuzzleEvent</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/essentials/event-handling)
+| `event`    | <pre>kuzzleio::KuzzleEvent</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events)
 | `listener` | <pre>kuzzleio::EventListener*</pre> | A pointer to a c++11 lambda
 
 ### event

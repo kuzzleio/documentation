@@ -1,4 +1,3 @@
----
 name: kuzzle#addListener
 description: Add a listener to an event
 hooks:
@@ -6,6 +5,5 @@ hooks:
   after:
 template: without-connect
 expected: Success
-
 sdk: cpp
 version: 1

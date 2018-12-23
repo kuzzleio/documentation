@@ -17,11 +17,11 @@ These callbacks can be added and deleted respectively by the methods [addListene
 
 # Emitted Events
 
-## connected
+## CONNECTED
 
 Triggered when the SDK has successfully connected to Kuzzle.
 
-## discarded
+## DISCARDED
 
 Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request too large, ...).
 
@@ -35,11 +35,11 @@ A JSON string representing an object with the following properties:
 | `status` | int | Error code |
 | `stack` | std::string | Stacktrace (development mode only) |
 
-## disconnected
+## DISCONNECTED
 
 Triggered when the current session has been unexpectedly disconnected.
 
-## loginAttempt
+## LOGIN_ATTEMPT
 
 Triggered when a login attempt completes, either with a success or a failure result.
 
@@ -52,7 +52,7 @@ A JSON string representing an object with the following properties:
 | `success` | bool | Indicate if login attempt succeed |
 | `error` | std::string | Error message when login fail |
 
-## networkError
+## NETWORK_ERROR
 
 Triggered when the SDK has failed to connect to Kuzzle.  
 This event does not trigger the offline mode.  
@@ -67,7 +67,7 @@ A JSON string representing an object with the following properties:
 | `status` | int | Error code |
 | `stack` | std::string | Stacktrace (development mode only) |
 
-## offlineQueuePop
+## OFFLINE_QUEUE_POP
 
 Triggered whenever a request is removed from the offline queue.
 
@@ -75,7 +75,7 @@ Triggered whenever a request is removed from the offline queue.
 
 A JSON string representing the [request]({{ site_base_path }}api/1/query-syntax/) removed from the queue.
 
-## offlineQueuePush
+## OFFLINE_QUEUE_PUSH
 
 Triggered whenever a request is added to the offline queue.
 
@@ -87,7 +87,7 @@ A JSON string representing an object with the following properties:
 | ---------- | ------- | ----------------- |
 | `request` | std::string | JSON string representing [request]({{ site_base_path }}api/1/query-syntax/) added to the queue |    
 
-## queryError
+## QUERY_ERROR
 
 Triggered whenever Kuzzle responds with an error
 
@@ -100,10 +100,10 @@ A JSON string representing an object with the following properties:
 | `request` | std::string | JSON string representing the request that causing an error |    
 | `error` | std::string | Error details |    
 
-## reconnected
+## RECONNECTED
 
 Triggered when the current session has reconnected to Kuzzle after a disconnection, and only if ``autoReconnect`` is set to ``true``.
 
-## tokenExpired
+## TOKEN_EXPIRED
 
 Triggered when Kuzzle rejects a request because the authentication token has expired.

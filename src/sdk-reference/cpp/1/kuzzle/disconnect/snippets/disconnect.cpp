@@ -1,2 +1,3 @@
 kuzzle->disconnect();
-std::cout << "Success" << std::endl;
+
+std::cout << "Successfully disconnected" << std::endl;

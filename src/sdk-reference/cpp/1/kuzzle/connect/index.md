@@ -12,7 +12,7 @@ Subsequent call have no effect if the SDK is already connected.
 ## Signature
 
 ```cpp
-connect()
+void connect()
 ```
 
 ## Exceptions
