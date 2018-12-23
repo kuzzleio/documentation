@@ -23,9 +23,10 @@ Theses protocol classes must implement the [Protocol]({{ site_base_path }}sdk-re
 
 The following table summarizes the differences between the available protocols:
 
-| Protocol | API access | Realtime notifications | Connection loss resilience |
-| -------- | :--------: | :--------------------: | :------------------------: |
-| [WebSocket]({{ site_base_path }}sdk-reference/cpp/1/websocket) | yes | yes | yes |
+| Feature | [WebSocket]({{ site_base_path }}sdk-reference/cpp/1/websocket) | Http | 
+| -------- | :--------: | :--------: | 
+| Realtime notifications | yes | *wip* |
+| Connection loss resilience | yes | *wip* |
 
 ## Volatile data
 
@@ -65,7 +66,7 @@ namespace kuzzleio {
       std::string getVolatile();
       std::map<int, EventListener*> getListeners();
 
-      // KUzzleEventEmitter implementation
+      // KuzzleEventEmitter implementation
       virtual int listenerCount(Event) override;
       virtual KuzzleEventEmitter* addListener(Event, EventListener*) override;
       virtual KuzzleEventEmitter* removeListener(Event, EventListener*) override;
