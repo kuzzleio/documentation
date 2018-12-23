@@ -6,7 +6,7 @@ order: 300
 ---
 # Notifications
 
-The [realtime.subscribe]({{ site_base_path }}sdk-reference/cpp/1/realtime/subscribe) method takes a listener of type `kuzzleio::NotificationListener`.  
+The [realtime:subscribe]({{ site_base_path }}sdk-reference/cpp/1/realtime/subscribe) method takes a listener of type `kuzzleio::NotificationListener`.  
 That listener is called with a `const kuzzleio::notification_result*` argument, pointing to an object whose content depends on the type of notification received.
 
 ## Document & messages
@@ -15,24 +15,24 @@ These `kuzzleio::notification_result` represent [documents changes & messages]({
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `action` | const char* | API controller's action  |
-| `collection` | const char* | Data collection |
-| `controller` | const char* | API controller  |
-| `index` | const char* | Data index |
-| `protocol` | const char* | Network protocol used to modify the document |
-| `result` | kuzzleio::notification_content* | Notification content |
-| `room_id` | const char* | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
-| `scope` | const char* | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
-| `timestamp` | unsigned long long | Timestamp of the event, in Epoch-millis format |
-| `n_type` | const char* | `document`: the notification type |
-| `volatiles` | const char* | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `action` | <pre>const char\*</pre> | API controller's action  |
+| `collection` | <pre>const char\*</pre> | Collection name |
+| `controller` | <pre>const char\*</pre> | API controller  |
+| `index` | <pre>const char\*</pre> | Index name |
+| `protocol` | <pre>const char\*</pre> | Network protocol used to modify the document |
+| `result` | <pre>kuzzleio::notification_content\*</pre> | Notification content |
+| `room_id` | <pre>const char\*</pre> | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
+| `scope` | <pre>const char\*</pre> | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
+| `timestamp` | <pre>unsigned long long</pre> | Timestamp of the event, in Epoch-millis format |
+| `n_type` | <pre>const char\*</pre> | `document`: the notification type |
+| `volatiles` | <pre>const char\*</pre> | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
 The `kuzzleio::notification_content` struct has the following properties for document notifications & messages:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `id` | const char* | Document unique ID<br/>`null` if the notification is from a real-time message|
-| `content` | const char* | A JSON String message or full document content. Not present if the event is about a document deletion |
+| `id` | <pre>const char\*</pre> | Document unique ID<br/>`null` if the notification is from a real-time message|
+| `content` | <pre>const char\*</pre> | JSON String representing the message or the full document content. Not present if the event is about a document deletion |
 
 ## User
 
@@ -40,20 +40,20 @@ These `kuzzleio::notification_result` represent [user events]({{ site_base_path 
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `action` | const char* | API controller's action  |
-| `collection` | const char* | Data collection |
-| `controller` | const char* | API controller  |
-| `index` | const char* | Data index |
-| `protocol` | const char* | Network protocol used by the entering/leaving user |
-| `result` | kuzzleio::notification_content | Notification content |
-| `room_id` | const char* | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
-| `timestamp` | unsigned long long | Timestamp of the event, in Epoch-millis format |
-| `n_type` | const char* | `user`: the notification type |
-| `user` | const char* | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
-| `volatiles` | const char* | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `action` | <pre>const char\*</pre> | API controller's action  |
+| `collection` | <pre>const char\*</pre> | Collection name |
+| `controller` | <pre>const char\*</pre> | API controller  |
+| `index` | <pre>const char\*</pre> | Index name |
+| `protocol` | <pre>const char\*</pre> | Network protocol used by the entering/leaving user |
+| `result` | <pre>kuzzleio::notification_content\*</pre> | Notification content |
+| `room_id` | <pre>const char\*</pre> | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
+| `timestamp` | <pre>unsigned long long</pre> | Timestamp of the event, in Epoch-millis format |
+| `n_type` | <pre>const char\*</pre> | `user`: the notification type |
+| `user` | <pre>const char\*</pre> | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
+| `volatiles` | <pre>const char\*</pre> | JSON String representing request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
 
 The `kuzzleio::notification_content` struct has the following properties for document notifications & messages:
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
-| `count` | int |  Updated users count sharing that same subscription |
+| `count` | <pre>int</pre> |  Updated users count sharing that same subscription |
