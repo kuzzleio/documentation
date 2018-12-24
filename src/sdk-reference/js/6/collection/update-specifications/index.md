@@ -19,7 +19,7 @@ updateSpecifications(index, collection, specifications, [options])
 <br/>
 
 | Arguments    | Type    | Description |
-|--------------|---------|-------------|----------
+|--------------|---------|-------------|
 | ``index`` | <pre>string</pre> | Index name    |
 | ``collection`` | <pre>string</pre> | Collection name    |
 | ``specifications`` | <pre>object</pre> | Specifications to update  |
@@ -29,7 +29,7 @@ updateSpecifications(index, collection, specifications, [options])
 
 An object representing the specifications.
 
-This object must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
+This object must follow the [Specification Structure]({{ site_base_path }}guide/1/essentials/data-validation/):
 
 ```js
 {
