@@ -20,7 +20,7 @@ function start_sdk_tests() {
   fi
 
   curl -s -o /dev/null -X POST localhost:7512/admin/_resetKuzzleData
-  curl -s -o /dev/null -X POST localhost:7512/admin/_resetDatabase    
+  curl -s -o /dev/null -X POST localhost:7512/admin/_resetDatabase
 }
 
 start_sdk_tests js 5
@@ -28,5 +28,6 @@ start_sdk_tests js 6
 start_sdk_tests go 1
 start_sdk_tests cpp 1
 start_sdk_tests java 1
+start_sdk_tests csharp 1
 
 exit $error
