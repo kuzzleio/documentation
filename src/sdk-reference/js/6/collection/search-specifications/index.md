@@ -55,7 +55,7 @@ const body = {
 | `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
 | ``from`` | <pre>number</pre><br/>(`0`) | Offset of the first document    |
 | ``size`` | <pre>number</pre><br/>(`10`) | Maximum number of documents returned    |
-| ``scroll`` | <pre>number</pre><br/> | Maximum duration for scroll session    |
+| ``scroll`` | <pre>string</pre><br/> | Maximum duration for scroll session   |
 
 * `size` controls the maximum number of documents returned in the response
 * `from` is usually used with the `size` argument, and defines the offset from the first result you want to fetch
@@ -63,7 +63,7 @@ const body = {
 
 ## Resolves
 
-Resolve to a [SpecificationsSearchResult]({{ site_base_path }}sdk-reference/js/6/essentials/search-result).
+Resolve to a [SpecificationsSearchResult]({{ site_base_path }}sdk-reference/js/6/search-result).
 
 ## Usage
 
