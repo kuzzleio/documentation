@@ -1,11 +1,11 @@
 try {
   for (let i = 0; i < 5; i++) {
-    await kuzzle.document.create('nyc-open-data', 'yellow-taxi', '', {
+    await kuzzle.document.create('nyc-open-data', 'yellow-taxi', {
       category: 'suv'
     });
   }
   for (let i = 5; i < 15; i++) {
-    await kuzzle.document.create('nyc-open-data', 'yellow-taxi', '', {
+    await kuzzle.document.create('nyc-open-data', 'yellow-taxi', {
       category: 'limousine'
     });
   }

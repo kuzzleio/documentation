@@ -2,8 +2,8 @@ const doc1 = { capacity: 4 };
 const doc2 = { capacity: 7 };
 
 try {
-  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', 'some-id', doc1);
-  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', 'some-other-id', doc2);
+  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', doc1, 'some-id');
+  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', doc2, 'some-other-id');
 
   const documents = [
     {

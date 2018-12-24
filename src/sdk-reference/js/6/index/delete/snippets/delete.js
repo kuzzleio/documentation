@@ -1,9 +1,5 @@
 try {
-  const response = kuzzle.index.delete('nyc-open-data');
-  console.log(response);
-  /*
-    { acknowledged: 1 }
-  */
+  kuzzle.index.delete('nyc-open-data');
 
   console.log('Index deleted');
 } catch (error) {

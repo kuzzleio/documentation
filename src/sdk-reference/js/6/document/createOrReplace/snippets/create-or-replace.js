@@ -1,5 +1,5 @@
 try {
-  const response = await kuzzle.document.create(
+  const response = await kuzzle.document.createOrReplace(
     'nyc-open-data',
     'yellow-taxi',
     'some-id',

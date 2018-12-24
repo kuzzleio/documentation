@@ -44,7 +44,7 @@ Resolves to an `object` containing the refresh status on shards.
 | -------- | ------ | ---------------------------------------------- |
 | `total` | <pre>number</pre> | Total number of shards |
 | `successful` | <pre>number</pre> | Successfully refreshed shards |
-| `fail` | <pre>number</pre> | Shards that failed to refresh |
+| `failed` | <pre>number</pre> | Shards that failed to refresh |
 
 ## Usage
 
