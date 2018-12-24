@@ -1,6 +1,6 @@
 try {
-  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', 'some-id', {});
-  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', 'some-other-id', {});
+  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', {}, 'some-id');
+  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', {}, 'some-other-id');
 
   const deleted = await kuzzle.document.mDelete(
     'nyc-open-data',

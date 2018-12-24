@@ -29,6 +29,10 @@ Additional query options
 | ---------- | ------- | --------------------------------- |
 | `queuable` | <pre>bool</pre><br/>(`true`) | Make this request queuable or not |
 
+## Resolves
+
+Resolves if successfuly unsubscribed.
+
 ## Usage
 
 [snippet=unsubscribe]

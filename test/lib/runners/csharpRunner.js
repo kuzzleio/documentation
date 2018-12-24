@@ -13,13 +13,13 @@ module.exports = class CsharpRunner extends BaseRunner {
     this.executablePath = '';
   }
 
-  async runExpect(snippet) {
-    this.executablePath = `${snippet.renderedSnippetPath.split('.')[0]}.exe`;
+  async runSnippet(snippet) {
+    const executableFile = `${snippet.renderedSnippetPath.split('.')[0]}.exe`
     process.env.LD_LIBRARY_PATH = `./${this.sdk.sdkDir}/`;
-    this.nexpectCommand = `mono ${this.executablePath}`;
+    this.snippetCommand = `mono ${executableFile}`;
 
     try {
-      await execute('mcs', this.compileOptions.concat([`-out:${this.executablePath}`, snippet.renderedSnippetPath]));
+      await execute('mcs', this.compileOptions.concat([`-out:${executableFile}`, snippet.renderedSnippetPath]));
     } catch (e) {
       const res = {
         code: 'COMPILATION_FAIL',
@@ -28,15 +28,16 @@ module.exports = class CsharpRunner extends BaseRunner {
       throw new TestResult(res);
     }
 
-    await super.runExpect(snippet);
+    await super.runSnippet(snippet);
   }
 
-  async lint() {
+  async lint(snippet) {
     // No linter for now
     // await super.lint(snippet, this.lintOptions.concat(snippet.renderedSnippetPath));
   }
 
   clean(snippet) {
+    super.clean(snippet);
     fs.unlinkSync(this.executablePath);
   }
 };

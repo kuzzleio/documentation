@@ -11,11 +11,11 @@ module.exports = class JavaTester extends BaseRunner {
     this.lintOptions = ['-cp', `${this.sdk.sdkDir}/kuzzlesdk-java-experimental-amd64.jar`];
   }
 
-  async runExpect(snippet) {
+  async runSnippet(snippet) {
     const generatedFilename = path.basename(snippet.renderedSnippetPath, '.java');
-    this.nexpectCommand = `${this.runCommand} ${generatedFilename}`;
+    this.snippetCommand = `${this.runCommand} ${generatedFilename}`;
 
-    await super.runExpect(snippet);
+    await super.runSnippet(snippet);
   }
 
   async lint(snippet) {
