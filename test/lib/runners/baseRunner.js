@@ -1,4 +1,5 @@
 const
+  fs = require('fs'),
   childProcess = require('child_process'),
   { execute } = require('../helpers/utils'),
   TestResult = require('../helpers/testResult');
