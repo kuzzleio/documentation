@@ -34,6 +34,7 @@ module.exports = class CppRunner extends BaseRunner {
   }
 
   clean(snippet) {
+    super.clean(snippet);
     fs.unlinkSync(this.snippetCommand);
   }
 };

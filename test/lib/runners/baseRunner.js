@@ -21,9 +21,6 @@ module.exports = class BaseRunner {
 
       await this.lint(snippet);
       await this.runSnippet(snippet);
-
-      // Remove the generated files only if test succeed
-      snippet.clean();
     } catch (e) {
       // Save renderedSnippet to display it in the web view
       snippet.saveRendered();
@@ -133,6 +130,6 @@ module.exports = class BaseRunner {
   }
 
   clean(snippet) {
+    fs.unlinkSync(snippet.renderedSnippetPath);
   }
-
 };
