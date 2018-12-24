@@ -13,6 +13,7 @@ module.exports = class CsharpRunner extends BaseRunner {
     this.executablePath = '';
   }
 
+<<<<<<< HEAD
   async runExpect(snippet) {
     this.executablePath = `${snippet.renderedSnippetPath.split('.')[0]}.exe`;
     process.env.LD_LIBRARY_PATH = `./${this.sdk.sdkDir}/`;
@@ -20,6 +21,15 @@ module.exports = class CsharpRunner extends BaseRunner {
 
     try {
       await execute('mcs', this.compileOptions.concat([`-out:${this.executablePath}`, snippet.renderedSnippetPath]));
+=======
+  async runSnippet(snippet) {
+    const executableFile = `${snippet.renderedSnippetPath.split('.')[0]}.exe`
+    process.env.LD_LIBRARY_PATH = `./${this.sdk.sdkDir}/`;
+    this.snippetCommand = `mono ${executableFile}`;
+
+    try {
+      await execute('mcs', this.compileOptions.concat([`-out:${executableFile}`, snippet.renderedSnippetPath]));
+>>>>>>> origin/master
     } catch (e) {
       const res = {
         code: 'COMPILATION_FAIL',
@@ -28,15 +38,26 @@ module.exports = class CsharpRunner extends BaseRunner {
       throw new TestResult(res);
     }
 
+<<<<<<< HEAD
     await super.runExpect(snippet);
   }
 
   async lint() {
+=======
+    await super.runSnippet(snippet);
+  }
+
+  async lint(snippet) {
+>>>>>>> origin/master
     // No linter for now
     // await super.lint(snippet, this.lintOptions.concat(snippet.renderedSnippetPath));
   }
 
   clean(snippet) {
+<<<<<<< HEAD
+=======
+    fs.unlinkSync(snippet.renderedSnippetPath);
+>>>>>>> origin/master
     fs.unlinkSync(this.executablePath);
   }
 };

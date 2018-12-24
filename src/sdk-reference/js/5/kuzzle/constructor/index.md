@@ -20,7 +20,7 @@ This is the main entry point to communicate with Kuzzle. Every other object inhe
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``host`` | string | The server name (or the IP address) of a Kuzzle Backend installation |
+| ``host`` | string | The server name (or the IP address) of a Kuzzle server installation |
 | ``options`` | JSON object | Optional Kuzzle connection configuration |
 | ``callback`` | function | Optional callback |
 

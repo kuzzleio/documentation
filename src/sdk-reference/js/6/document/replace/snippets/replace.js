@@ -1,7 +1,7 @@
 const doc = { color: 'yellow' };
 
 try {
-  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', 'some-id', doc);
+  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', doc, 'some-id');
 
   const response = await kuzzle.document.replace(
     'nyc-open-data',
