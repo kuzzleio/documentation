@@ -122,6 +122,10 @@ class Snippet {
         return `java -cp ./test/bin/sdk-java/kuzzlesdk-java-experimental-amd64.jar::./test/bin ${name}`;
       case 'js':
         return `node test/bin/${name}.js`;
+      case 'csharp':
+        return `LD_LIBRARY_PATH=./test/bin/ mono ./test/bin/${name}.exe`;
+      default:
+        return `Unknown sdk name ${this.sdk.name}`
     }
   }
 
