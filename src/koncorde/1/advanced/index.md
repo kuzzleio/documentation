@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-
 title: Advanced Notions
 order: 600
 ---
