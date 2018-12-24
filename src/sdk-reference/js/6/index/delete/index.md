@@ -31,7 +31,7 @@ Additional query options
 
 ## Resolves
 
-Resolves to a `boolean` indicating whether the index was successfully deleted in the Elasticsearch cluster.
+Resolves if the index was successfully deleted in the Elasticsearch cluster.
 
 ## Usage
 

@@ -27,7 +27,7 @@ const run = async () => {
       license: 'B'
     };
 
-    await kuzzle.document.create('nyc-open-data', 'yellow-taxi', null, driver);
+    await kuzzle.document.create('nyc-open-data', 'yellow-taxi', driver);
     console.log('New document successfully created!');
   } catch (error) {
     console.error(error.message);

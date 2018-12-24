@@ -1,0 +1,9 @@
+name: example#example
+description: This is a csharp example
+hooks:
+  before:
+  after:
+template: default
+expected: Success
+sdk: csharp
+version: 1

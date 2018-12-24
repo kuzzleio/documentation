@@ -17,7 +17,7 @@ getSpecifications (index, collection, [options])
 <br/>
 
 | Arguments    | Type    | Description |
-|--------------|---------|-------------|----------
+|--------------|---------|-------------|
 | ``index`` | <pre>string</pre> | Index name    |
 | ``collection`` | <pre>string</pre> | Collection name    |
 | ``options`` | <pre>object</pre> | Query options    |

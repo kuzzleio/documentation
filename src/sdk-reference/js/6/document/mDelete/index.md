@@ -36,6 +36,8 @@ Additional query options
 
 ## Resolves
 
+Resolves to an array of objects representing the deleted documents.
+
 ## Usage
 
 [snippet=m-delete]

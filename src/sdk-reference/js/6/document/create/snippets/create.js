@@ -2,8 +2,8 @@ try {
   const response = await kuzzle.document.create(
     'nyc-open-data',
     'yellow-taxi',
-    'some-id',
-    { lastName: 'Eggins' }
+    { lastName: 'Eggins' },
+    'some-id'
   );
 
   if (response._id === 'some-id') {

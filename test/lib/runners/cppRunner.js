@@ -13,12 +13,12 @@ module.exports = class CppRunner extends BaseRunner {
     this.executablePath = '';
   }
 
-  async runExpect(snippet) {
+  async runSnippet(snippet) {
     process.env.LD_LIBRARY_PATH = `./${this.sdk.sdkDir}/lib`;
-    this.nexpectCommand = snippet.renderedSnippetPath.split('.')[0];
+    this.snippetCommand = snippet.renderedSnippetPath.split('.')[0];
 
     try {
-      await execute('g++', this.compileOptions.concat(['-o', this.nexpectCommand, snippet.renderedSnippetPath]));
+      await execute('g++', this.compileOptions.concat(['-o', this.snippetCommand, snippet.renderedSnippetPath]));
     } catch (e) {
       const res = {
         code: 'COMPILATION_FAIL',
@@ -27,7 +27,7 @@ module.exports = class CppRunner extends BaseRunner {
       throw new TestResult(res);
     }
 
-    await super.runExpect(snippet);
+    await super.runSnippet(snippet);
   }
 
   async lint(snippet) {

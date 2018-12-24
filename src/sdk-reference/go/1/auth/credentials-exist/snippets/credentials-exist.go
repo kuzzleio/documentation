@@ -6,6 +6,7 @@ if err != nil {
 } else {
 	if res == true {
 		fmt.Println("Success")
-	}
-	log.Fatal("Error")
+	} else {
+	 log.Fatal("Error")
+  }
 }
