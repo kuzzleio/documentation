@@ -131,4 +131,8 @@ module.exports = class BaseRunner {
       });
     });
   }
+
+  clean(snippet) {
+  }
+
 };
