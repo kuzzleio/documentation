@@ -13,10 +13,10 @@ module.exports = class CsharpRunner extends BaseRunner {
     this.executablePath = '';
   }
 
-  async runExpect(snippet) {
+  async runSnippet(snippet) {
     const executableFile = `${snippet.renderedSnippetPath.split('.')[0]}.exe`
     process.env.LD_LIBRARY_PATH = `./${this.sdk.sdkDir}/`;
-    this.nexpectCommand = `mono ${executableFile}`;
+    this.snippetCommand = `mono ${executableFile}`;
 
     try {
       await execute('mcs', this.compileOptions.concat([`-out:${executableFile}`, snippet.renderedSnippetPath]));
@@ -28,7 +28,7 @@ module.exports = class CsharpRunner extends BaseRunner {
       throw new TestResult(res);
     }
 
-    await super.runExpect(snippet);
+    await super.runSnippet(snippet);
   }
 
   async lint(snippet) {
