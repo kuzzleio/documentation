@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-
 title: Filter Terms
 description: Filtering terms rundown
 order: 200
