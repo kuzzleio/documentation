@@ -4,7 +4,7 @@ const
   TestManager = require('./lib/testManager');
 
 function help () {
-  console.log('Usage: snipper-testing <sdk> <version> <path>');
+  console.log('Usage: snippet-testing <sdk> <version> <path>');
   process.exit(1);
 }
 
