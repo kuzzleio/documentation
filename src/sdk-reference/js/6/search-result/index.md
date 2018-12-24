@@ -12,11 +12,11 @@ When performing a [search]({{ site_base_path }}sdk-reference/js/6/document/searc
 
 | Property | Type | Description |
 |--- |--- |--- |
-| `aggregations` | <pre>string</pre> | The search` aggregations if any |
+| `aggregations` | <pre>object</pre> | Search aggregations if any |
 | `hits` | <pre>string</pre> | A JSON string containing the retrieved items for the current page |
-| `total` | <pre>int</pre> | The total number of items matching the given query in Kuzzle database |
-| `fetched` | <pre>int</pre> | The number of retrieved items so far |
-| `scroll_id` | <pre>string</pre> | A scroll identifier if the search was given a `scroll` parameter |
+| `total` | <pre>int</pre> |  Total number of items matching the given query in Kuzzle database |
+| `fetched` | <pre>int</pre> | Number of retrieved items so far |
+| `scroll_id` | <pre>string</pre> | Scroll identifier if the search was given a `scroll` parameter |
 
 ## Methods
 

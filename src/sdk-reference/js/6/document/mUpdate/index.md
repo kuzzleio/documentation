@@ -17,7 +17,7 @@ You can set the `retryOnConflict` optional argument (with a retry count), to tel
 ## Arguments
 
 ```javascript
-mReplace (index, collection, documents, [options])
+mUpdate (index, collection, documents, [options])
 ```
 
 | Argument | Type | Description |
@@ -39,9 +39,12 @@ Additional query options
 
 ## Resolves
 
-Resolves to an array of updated documents.
+Resolves to an object containing the updated documents.
 
-## Usage
+| Property | Type | Description |
+| --- | --- | --- |
+| `hits` | <pre>array<object></pre> | Updated documents |
+| `total` | <pre>number</pre> | Total updated documents |
 
 ## Usage
 
