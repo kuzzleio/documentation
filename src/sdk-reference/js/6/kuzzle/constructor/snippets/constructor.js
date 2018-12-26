@@ -1,3 +1,11 @@
+// Loads the Kuzzle SDK module
+const
+  {
+    Kuzzle,
+    Websocket,
+    Http
+  } = require('kuzzle-sdk');
+
 const options = {
   host: 'localhost',
   autoResubscribe: false
