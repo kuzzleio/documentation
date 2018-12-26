@@ -34,7 +34,13 @@ Additional query options
 
 ## Resolves
 
-Resolves to an array of updated documents.
+Resolves to an object containing the replaced documents.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `hits` | <pre>array<object></pre> | Replaced documents |
+| `total` | <pre>number</pre> | Total replaced documents |
+
 
 ## Usage
 

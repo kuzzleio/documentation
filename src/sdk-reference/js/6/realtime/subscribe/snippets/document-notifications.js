@@ -40,7 +40,7 @@ try {
   await kuzzle.realtime.subscribe('nyc-open-data', 'yellow-taxi', filters, callback);
 
   const document = { name: 'nina vkote', age: 19 };
-  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', null, document);
+  await kuzzle.document.create('nyc-open-data', 'yellow-taxi', document);
 } catch (error) {
   console.log(error.message);
 }

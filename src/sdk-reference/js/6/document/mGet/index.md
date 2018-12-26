@@ -33,7 +33,13 @@ Additional query options
 
 ## Resolves
 
-Resolves to an array of retrieved documents.
+Resolves to an object containing the retrieved documents.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `hits` | <pre>array<object></pre> | Retrieved documents |
+| `total` | <pre>number</pre> | Total retrieved documents |
+
 
 ## Usage
 

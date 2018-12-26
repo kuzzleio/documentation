@@ -1,6 +1,5 @@
 ---
 layout: sdk.html.hbs
-algolia: true
 title: Node.js
 description: Getting started with Kuzzle and Node.js
 ---

@@ -13,7 +13,7 @@ This route neither creates nor modifies credentials.
 ## Arguments
 
 ```javascript
-validateMyCredentials (strategy, credentials, [options])
+validateMyCredentials (strategy, [credentials], [options])
 ```
 
 <br/>
@@ -21,7 +21,7 @@ validateMyCredentials (strategy, credentials, [options])
 | Arguments    | Type    | Description
 |--------------|---------|-------------
 | `strategy` | <pre>string</pre> | Strategy to use
-| `credentials` | <pre>string</pre> | New credentials
+ | `credentials` | <pre>object</pre> | Credentials
 | `options`  | <pre>object</pre> | Query options
 
 
@@ -36,7 +36,7 @@ Additional query options
 
 ## Resolves
 
-Resolves to `true` if the credentials are valid, `false`otherwise.
+Resolves to `true` if the credentials are valid, `false` otherwise.
 
 ## Usage
 

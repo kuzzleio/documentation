@@ -2,8 +2,8 @@ try {
   await kuzzle.document.create(
     'nyc-open-data',
     'yellow-taxi',
-    'some-id',
-    { capacity: 4 }
+    { capacity: 4 },
+    'some-id'
   );
 
   const response = await kuzzle.document.update(

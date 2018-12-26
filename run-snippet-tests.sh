@@ -76,8 +76,11 @@ case $SDK in
   java)
     docker run -it --name runner_java --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:java $SDK $SDK_VERSION $TESTS_PATH
   ;;
+  csharp)
+    docker run -it --name runner_csharp --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:csharp $SDK $SDK_VERSION $TESTS_PATH
+  ;;
   *)
-    echo "$SDK is not a valid language"
+    echo "$SDK is not a valid sdk"
     show_help
     exit 1
   ;;
