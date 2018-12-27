@@ -37,7 +37,7 @@ Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/esse
 ## Return
 
 Returns the encrypted JSON Web Token.  
-Once `auth:login` is used, the returned JWT will stored by the SDK and used for all the following actions, ensuring they will be authenticated.
+Once `auth::login` has been called, the returned JWT is stored by the SDK and used for all the subsequent API call, ensuring they are properly authenticated.
 
 ## Exceptions
 
