@@ -59,6 +59,7 @@
     "metalsmith-webpack": "^1.0.3",
     "minimatch": "^3.0.4",
     "prettier": "^1.14.3",
+    "puppeteer": "^1.11.0",
     "read-yaml": "^1.1.0",
     "sanitize-filename": "^1.6.1",
     "select2": "^4.0.6-rc.1",
