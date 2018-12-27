@@ -1,7 +1,7 @@
 const
   jsSdk = require('./jsSdk');
 
-class JsWebSdk extends jsSdk{
+class JsWebSdk extends jsSdk {
   constructor(version) {
     super(version);
     

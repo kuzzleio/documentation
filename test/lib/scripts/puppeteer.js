@@ -2,7 +2,7 @@ const
   puppeteer = require('puppeteer'),
   renderedSnippetPath = process.argv[2];
 
-const runInBrowser = async (renderedSnippetPath) => {
+const runInBrowser = async (snippetPath) => {
   try {
     const 
       browser = await puppeteer.launch({
@@ -10,7 +10,7 @@ const runInBrowser = async (renderedSnippetPath) => {
           '--no-sandbox',
         ],
         dumpio: false,
-      });
+      }),
       page = await browser.newPage();
     
     page.on('console', message => {
@@ -29,7 +29,7 @@ const runInBrowser = async (renderedSnippetPath) => {
       console.error(err);
     });
     
-    await page.goto(`file:${renderedSnippetPath}`, {
+    await page.goto(`file:${snippetPath}`, {
       waitUntil: 'networkidle0'
     });
     
@@ -37,6 +37,6 @@ const runInBrowser = async (renderedSnippetPath) => {
   } catch (error) {
     console.error(error);
   }
-}
+};
 
-runInBrowser(renderedSnippetPath)
+runInBrowser(renderedSnippetPath);
