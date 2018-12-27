@@ -4,6 +4,9 @@ js:
   5: master
   6: 6-dev
 
+jsWeb:
+  6: 6-dev
+
 cpp:
   1: 1-dev
 
