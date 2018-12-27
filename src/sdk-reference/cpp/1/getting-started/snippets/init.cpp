@@ -15,7 +15,6 @@ int main(int argc, char * argv[]) {
     Kuzzle *kuzzle = new kuzzleio::Kuzzle(new kuzzleio::WebSocket("kuzzle"));
 
     try {
-
         // Connects to the server.
         kuzzle->connect();
         std::cout << "Connected!" << std::endl;
