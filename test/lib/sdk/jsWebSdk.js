@@ -1,38 +1,12 @@
 const
-  {
-    execute,
-    getVersionPath
-  } = require('../helpers/utils'),
-  fs = require('fs');
+  jsSdk = require('./jsSdk');
 
-class JsWebSdk {
+class JsWebSdk extends jsSdk{
   constructor(version) {
+    super(version);
+    
     this.name = 'jsWeb';
     this.ext = 'html';
-    this.version = version;
-
-    this.npmPackage = `https://github.com/kuzzleio/sdk-javascript#${getVersionPath(this)}`;
-    this.sdkDir = 'node_modules/kuzzle-sdk';
-  }
-
-  async get() {
-    await execute('npm', ['install', '--no-save', this.npmPackage]);
-  }
-
-  exists() {
-    const packageFile = `${this.sdkDir}/package.json`;
-
-    if (! fs.existsSync(this.sdkDir) || ! fs.existsSync(packageFile)) {
-      return false;
-    }
-
-    const versionString = JSON.parse(fs.readFileSync(packageFile))._id;
-
-    if (! versionString || ! versionString.includes(`kuzzle-sdk@${this.version}`)) {
-      return false;
-    }
-
-    return true;
   }
 }
 

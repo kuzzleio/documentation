@@ -1,8 +1,6 @@
 const
   BaseRunner = require('./baseRunner'),
-  path = require('path'),
-  { execute } = require('../helpers/utils'),
-  TestResult = require('../helpers/testResult');
+  path = require('path');
 
 module.exports = class JsWebRunner extends BaseRunner {
   constructor(sdk) {
@@ -16,7 +14,6 @@ module.exports = class JsWebRunner extends BaseRunner {
 
   async runSnippet(snippet) {
     this.snippetCommand = `node ${this.scriptPath} ${snippet.renderedSnippetPath}`;
-
     await super.runSnippet(snippet);
   }
 
