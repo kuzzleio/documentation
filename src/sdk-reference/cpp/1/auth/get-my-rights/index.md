@@ -6,7 +6,7 @@ description: Returns the rights for the user linked to the `JSON Web Token`.
 
 # getMyRights
 
-Returns the rights for the user currently loggued with the SDK instance.
+Returns the rights for the currently logged in user within the SDK instance.
 
 ## Signature
 

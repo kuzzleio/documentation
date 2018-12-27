@@ -34,7 +34,7 @@ Volatile data are data in JSON format that will be transmitted to Kuzzle in each
 
 This data is used in real-time notifications for [user join/leave notifications]({{site_base_path}}api/1/essentials/volatile-data/) to provide additional informations about the client who sent the request.
 
-If additionnal data are provided within a specific request, the volatile data will be merged with the request specific data taking priority over the global ones.
+If additional data is provided within a specific request, the volatile data will be merged with the request specific data taking priority over the global ones.
 
 ## Public class definition
 

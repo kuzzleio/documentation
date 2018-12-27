@@ -30,7 +30,7 @@ Additional query options
 
 ## Return
 
-A vector of string representing the available authentication strategy.
+A vector of string representing the available authentication strategies.
 
 ## Exceptions
 
