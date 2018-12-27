@@ -14,7 +14,7 @@ module.exports = class CsharpRunner extends BaseRunner {
   }
 
   async runSnippet(snippet) {
-    const executableFile = `${snippet.renderedSnippetPath.split('.')[0]}.exe`
+    const executableFile = `${snippet.renderedSnippetPath.split('.')[0]}.exe`;
     process.env.LD_LIBRARY_PATH = `./${this.sdk.sdkDir}/`;
     this.snippetCommand = `mono ${executableFile}`;
 
