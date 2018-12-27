@@ -19,5 +19,5 @@ const
 // Instantiates the SDK with the http protocol
 const
   kuzzleHttp = new Kuzzle(
-    new Http(options)
+    new Http('kuzzle', options)
   );
