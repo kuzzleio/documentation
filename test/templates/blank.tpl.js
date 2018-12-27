@@ -2,12 +2,12 @@
 const
   {
     Kuzzle,
-    Websocket,
+    WebSocket,
     Http
   } = require('kuzzle-sdk');
 
 const kuzzle = new Kuzzle(
-  new Websocket({ host: 'kuzzle' })
+  new WebSocket('kuzzle')
 );
 
 [snippet-code]

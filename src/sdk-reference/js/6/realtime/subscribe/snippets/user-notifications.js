@@ -24,7 +24,7 @@ try {
   // Instantiates a second kuzzle client: multiple subscriptions
   // made by the same user will not trigger "new user" notifications
   const kuzzle2 = new Kuzzle(
-    new Websocket({ host: 'kuzzle' })
+    new WebSocket('kuzzle')
   );
   await kuzzle2.connect();
 
