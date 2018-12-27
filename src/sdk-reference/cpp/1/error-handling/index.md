@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 title: Error Handling
 description: How to handle errors with the SDK
-order: 100
-separator: essentials
+order: 110
 ---
 
 # Error Handling
