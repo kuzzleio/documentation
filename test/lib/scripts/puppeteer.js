@@ -1,5 +1,6 @@
 const 
-  puppeteer = require('puppeteer'),
+  //puppeteer is globally installed in the container
+  puppeteer = require('/usr/local/lib/node_modules/puppeteer'), 
   renderedSnippetPath = process.argv[2];
 
 const runInBrowser = async (snippetPath) => {
