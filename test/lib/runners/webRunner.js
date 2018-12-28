@@ -19,7 +19,6 @@ module.exports = class WebRunner extends BaseRunner {
   }
 
   async lint(snippet) {
-    // /!\ TO-DO /!\
-    // await super.lint(snippet, this.lintOptions.concat(snippet.renderedSnippetPath));
+    await super.lint(snippet, this.lintOptions.concat(snippet.renderedSnippetPath));
   }
 };
