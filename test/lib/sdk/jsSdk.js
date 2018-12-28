@@ -15,7 +15,7 @@ class JsSdk {
   }
 
   async get() {
-    await execute('npm', ['install', this.npmPackage]);
+    await execute('npm', ['install', '--no-save', this.npmPackage]);
   }
 
   exists() {
