@@ -67,9 +67,6 @@ case $SDK in
   js)
     docker run -it --name runner_js --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:js $SDK $SDK_VERSION $TESTS_PATH
   ;;
-  jsWeb)
-    docker run -it --name runner_jsweb --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:jsweb $SDK $SDK_VERSION $TESTS_PATH
-  ;;
   go)
     docker run -it --name runner_go --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app -v "$(pwd)"/test/bin:/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go $SDK $SDK_VERSION $TESTS_PATH
   ;;

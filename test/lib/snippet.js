@@ -91,11 +91,11 @@ class Snippet {
       snippetName = this._sanitizeFileName(this.name),
       renderedSnippet = this.templateContent.replace(/(\[snippet-code])/g, indentedSnippet);
 
-    this.renderedSnippetPath = `${RENDERED_SNIPPETS_DIR}${snippetName}.${this.sdk.ext}`;
+    this.renderedSnippetPath = `${RENDERED_SNIPPETS_DIR}${snippetName}.${this.runner.ext}`;
 
     // JAVA hack, because filename has to be the same of the class name
     // We replace the template generique class name by the name of the test
-    if (this.sdk.ext === 'java') {
+    if (this.runner.ext === 'java') {
       fs.writeFileSync(this.renderedSnippetPath, this._overrideClassName(renderedSnippet, snippetName));
     } else {
       fs.writeFileSync(this.renderedSnippetPath, renderedSnippet);
@@ -112,7 +112,7 @@ class Snippet {
   }
 
   saveRendered() {
-    const dest = `${SAVE_FAIL_DIR}${this.name}.${this.sdk.ext}`;
+    const dest = `${SAVE_FAIL_DIR}${this.name}.${this.runner.ext}`;
     fs.copyFileSync(this.snippetFile, dest);
   }
 
