@@ -8,8 +8,7 @@ const runInBrowser = async (snippetPath) => {
       browser = await puppeteer.launch({
         args: [
           '--no-sandbox',
-        ],
-        dumpio: false,
+        ]
       }),
       page = await browser.newPage();
     
