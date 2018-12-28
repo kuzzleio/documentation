@@ -16,23 +16,23 @@ bool exists(const std::string& index, const std::string& collection, kuzzleio::q
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | const std::string& | Index name    | yes  |
-| ``collection`` | const std::string& | Collection name    | yes  |
-| ``options`` | kuzzleio::query_options* | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `index` | <pre>const std::string&</pre> | Index name    | 
+| `collection` | <pre>const std::string&</pre> | Collection name    |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options    | 
 
-### **options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-True if the collection exists
+A boolean indicating if the collection exists or not.
 
 ## Exceptions
 

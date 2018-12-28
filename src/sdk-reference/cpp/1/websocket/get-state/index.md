@@ -8,7 +8,7 @@ description: Gets the current state
 
 Gets the current connection state.
 
-## Arguments
+## Signature
 
 ```cpp
 int getState();
@@ -28,4 +28,3 @@ KUZZLE_STATE_LOGGUED_OUT,
 KUZZLE_STATE_ERROR,
 KUZZLE_STATE_OFFLINE
 ```
-

@@ -8,16 +8,18 @@ description: Attaches a listener to an event and removes it after it has been tr
 
 Attaches a listener to an event and removes it after it has been triggered once.
 
-## Arguments
+## Signature
 
 ```cpp
 void once(kuzzleio::Event event, kuzzleio::EventListener* listener);
 ```
 
+## Arguments
+
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------
 | `event`    | <pre>kuzzleio::KuzzleEvent</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events/)
-| `listener` | <pre>kuzzleio::EventListener*</pre> | A pointer to a c++11 lambda
+| `listener` | <pre>kuzzleio::EventListener\*</pre> | Pointer to a c++11 lambda
 
 ### event
 

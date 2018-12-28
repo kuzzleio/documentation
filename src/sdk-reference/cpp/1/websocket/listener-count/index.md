@@ -8,11 +8,13 @@ description: Returns the number of listeners attached on an event
 
 Returns the number of listeners attached on an event.
 
-## Arguments
+## Signature
 
 ```cpp
 int listenerCount(kuzzleio::Event event);
 ```
+
+## Arguments
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------

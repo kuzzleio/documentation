@@ -8,7 +8,6 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
-expected: Success
-
+expected: Document successfully created
 sdk: cpp
 version: 1

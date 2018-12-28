@@ -23,7 +23,7 @@ module.exports = class JavaTester extends BaseRunner {
   }
 
   clean(snippet) {
-    fs.unlinkSync(snippet.renderedSnippetPath);
+    super.clean(snippet);
     fs.unlinkSync(snippet.renderedSnippetPath.replace('.java', '.class'));
   }
 };
