@@ -2,7 +2,7 @@
   const kuzzle = new KuzzleSDK.Kuzzle(
     new KuzzleSDK.WebSocket('kuzzle')
   );
-  
+
   kuzzle.connect();
   kuzzle.addListener('connected', () => {
     console.log('Hello Kuzzle !');

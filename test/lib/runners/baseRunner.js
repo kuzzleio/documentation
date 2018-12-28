@@ -9,6 +9,7 @@ module.exports = class BaseRunner {
     this.snippetCommand = '';
     this.lintCommand = '';
     this.lintOptions = [];
+    this.ext = '';
   }
 
   async run(snippet) {

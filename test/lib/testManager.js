@@ -22,9 +22,6 @@ class TestManager {
     const Sdk = require(`./sdk/${sdk}Sdk`);
     this.sdk = new Sdk(version);
 
-    // const Runner = require(`./runners/${this.sdk.name}Runner`);
-    // snippet.runner = new Runner(this.sdk);
-
     this.logger = new Logger(this.sdk);
 
     this.collection = `${this.sdk.name}-${this.sdk.version}`;
