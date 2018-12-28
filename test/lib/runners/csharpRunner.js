@@ -11,6 +11,7 @@ module.exports = class CsharpRunner extends BaseRunner {
     this.lintCommand = 'echo "none"';
     this.lintOptions = [];
     this.executablePath = '';
+    this.ext = 'cs';
   }
 
   async runSnippet(snippet) {

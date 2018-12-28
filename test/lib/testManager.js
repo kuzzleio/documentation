@@ -22,8 +22,8 @@ class TestManager {
     const Sdk = require(`./sdk/${sdk}Sdk`);
     this.sdk = new Sdk(version);
 
-    const Runner = require(`./runners/${this.sdk.name}Runner`);
-    this.sdkRunner = new Runner(this.sdk);
+    // const Runner = require(`./runners/${this.sdk.name}Runner`);
+    // snippet.runner = new Runner(this.sdk);
 
     this.logger = new Logger(this.sdk);
 
@@ -62,7 +62,7 @@ class TestManager {
     try {
       snippet.build();
 
-      await this.sdkRunner.run(snippet);
+      await snippet.runner.run(snippet);
 
       this.results.push({
         code: 'SUCCESS',

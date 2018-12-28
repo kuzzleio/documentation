@@ -8,7 +8,6 @@ const
 class JavaSdk {
   constructor(version) {
     this.name = 'java';
-    this.ext = 'java';
     this.version = version;
     this.versionPath = getVersionPath(this);
     this.sdkJavaJar = 'kuzzlesdk-java-experimental-amd64.jar';

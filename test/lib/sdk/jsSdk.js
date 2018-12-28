@@ -8,7 +8,6 @@ const
 class JsSdk {
   constructor(version) {
     this.name = 'js';
-    this.ext = 'js';
     this.version = version;
 
     this.npmPackage = `https://github.com/kuzzleio/sdk-javascript#${getVersionPath(this)}`;

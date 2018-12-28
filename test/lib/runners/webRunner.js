@@ -2,7 +2,7 @@ const
   BaseRunner = require('./baseRunner'),
   path = require('path');
 
-module.exports = class JsWebRunner extends BaseRunner {
+module.exports = class WebRunner extends BaseRunner {
   constructor(sdk) {
     super(sdk);
 
@@ -10,6 +10,7 @@ module.exports = class JsWebRunner extends BaseRunner {
     this.lintCommand = './node_modules/.bin/eslint';
     this.lintOptions = ['-c', this.lintConfig];
     this.scriptPath = path.join(__dirname, '../scripts/puppeteer.js');
+    this.ext = 'html';
   }
 
   async runSnippet(snippet) {

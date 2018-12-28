@@ -34,8 +34,14 @@ class Snippet {
     this.expected = this.testDefinition.expected;
     this.template = this.testDefinition.template;
     this.hooks = this.testDefinition.hooks;
+    
+    const
+      runnerName = `${this.testDefinition.runner || this.sdk.name}Runner`,
+      Runner = require(`./runners/${runnerName}`);
+    
+    this.runner = new Runner(this.sdk);
 
-    this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.sdk.ext}`;
+    this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.runner.ext}`;
     if (! fs.existsSync(this.templateFile)) {
       const result = {
         code: 'MISSING_TEMPLATE',
@@ -45,7 +51,7 @@ class Snippet {
       throw new TestResult(result);
     }
 
-    this.snippetFile = this.testFile.replace('.test.yml', `.${this.sdk.ext}`);
+    this.snippetFile = this.testFile.replace('.test.yml', `.${this.runner.ext}`);
     if (! fs.existsSync(this.snippetFile)) {
       const result = {
         code: 'MISSING_SNIPPET',
