@@ -53,7 +53,7 @@ The `data` object can contain the following properties:
 | `controller` | <pre>string</pre> | Invoked API controller |
 | `jwt` | <pre>string</pre> | Authentication token |
 | `resource` | <pre>object</pre> | Stored resource target |
-| `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
+| `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data/) |
 
 ### resource
 
