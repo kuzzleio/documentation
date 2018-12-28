@@ -106,7 +106,7 @@ These notifications are sent only if the `users` argument is set to any other va
 |`timestamp` | number | Timestamp of the event, in Epoch-millis format |
 | `type` | string | `user`: the notification type |
 | `user` | string | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
-| `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
+| `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data/) |
 
 The `result` object is the notification content, and it has the following structure:
 
