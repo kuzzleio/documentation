@@ -42,7 +42,7 @@ A document notification contains the following fields:
 | `state` | string | {{{deprecated "1.5.0"}}}<br/>`done`: the change has been applied<br/>`pending`: the change is about to happen | `pending`, `done` |
 |`timestamp` | number | Timestamp of the event, in Epoch-millis format |
 | `type` | string | `document`: the notification type |
-| `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
+| `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data/) |
 
 The `result` object is the notification content, and it has the following structure:
 
