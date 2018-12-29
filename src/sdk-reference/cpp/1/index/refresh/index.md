@@ -4,7 +4,7 @@ title: refresh
 description: Force Elasticsearch search index update
 ---
 
-# Refresh
+# refresh
 
 When writing or deleting documents in Kuzzle, the update needs to be indexed before being available in search results.
 
@@ -24,18 +24,18 @@ void refresh(const std::string& index, kuzzleio::query_options *options = null)
 
 ## Arguments
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`   | const std::string&   | Index name                                              | yes      |
-| `options` | kuzzleio::query_options* | A pointer to a `kuzzleio::query_options` containing query options | no       |
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `index`   | <pre>const std::string&</pre>   | Index name     |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
-### **Options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)   | Description  |   
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 

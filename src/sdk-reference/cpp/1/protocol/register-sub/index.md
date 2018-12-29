@@ -8,11 +8,18 @@ description: Used when subscribing to store a listener.
 
 Attaches a notifications listener to an existing subscription.
 
-## Arguments
+## Signature
 
 ```cpp
-virtual void registerSub(const std::string& channel, const std::string& room_id, const std::string& filters, bool subscribe_to_self, NotificationListener* listener) = 0;
+virtual void registerSub(
+  const std::string& channel, 
+  const std::string& room_id, 
+  const std::string& filters, 
+  bool subscribe_to_self, 
+  NotificationListener* listener) = 0;
 ```
+
+## Arguments
 
 | Argument   | Type                      | Description
 | ---------- |---------------------------|--------------------------------------------------------------------- |
@@ -20,7 +27,7 @@ virtual void registerSub(const std::string& channel, const std::string& room_id,
 | `room_id` | <pre>const std::string&</pre>  | Subscription room identifier
 | `filters` | <pre>const std::string&</pre> | Subscription filters
 | `subscribe_to_self` | <pre>bool</pre> | Subscribe to notifications fired by our own queries
-| `listener` | <pre>NotificationListener*</pre> | A pointer to the listener
+| `listener` | <pre>NotificationListener\*</pre> | A pointer to the listener
 
 ### listener
 

@@ -9,7 +9,7 @@ order: 200
 
 Gets a document.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string get(
@@ -19,12 +19,14 @@ std::string get(
     kuzzleio::query_options *options=nullptr)
 ```
 
+## Arguments
+
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `id` | <pre>const std::string&</pre> | The document id |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `id` | <pre>const std::string&</pre> | Document ID |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 
@@ -36,15 +38,15 @@ Additional query options
 
 ## Return
 
-Returns a JSON string containing the document.
+A JSON string representing the document content.
 
-| Name | Type | Description
+| Property | Type | Description
 | --- | --- | ---
-| _source | <pre>std::string</pre> | A JSON string representing the retrieved document
+| _source | <pre>object</pre> | Document content
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 

@@ -8,7 +8,7 @@ description: Gets the current state
 
 Gets the current connection state.
 
-## Arguments
+## Signature
 
 ```cpp
 virtual int getState() = 0;

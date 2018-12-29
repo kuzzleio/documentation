@@ -1,7 +1,11 @@
 try {
   bool exists = kuzzle->server->adminExists();
 
-  std::cout << "Admin exists? " << exists << std::endl;
-} catch (kuzzleio::KuzzleException e) {
-  std::cerr << e.getMessage() << std::endl;
+  if (exists) {
+    std::cout << "Admin user exists" << std::endl;
+  } else {
+    std::cout << "Admin user does not exists" << std::endl;
+  }
+} catch (kuzzleio::KuzzleException& e) {
+  std::cerr << e.what() << std::endl;
 }

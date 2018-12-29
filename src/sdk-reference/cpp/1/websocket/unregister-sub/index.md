@@ -8,11 +8,13 @@ description: Removes a subscription's notifications listener.
 
 Removes a subscription's notifications listener.
 
-## Arguments
+## Signature
 
 ```cpp
 void unregisterSub(const std::string&);
 ```
+
+## Arguments
 
 | Argument   | Type                      | Description
 | ---------- |---------------------------|-------------------------------------------------- |

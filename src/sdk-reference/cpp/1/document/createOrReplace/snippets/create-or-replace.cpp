@@ -1,10 +1,11 @@
 try {
-  std::string response;
-  response = kuzzle->document->createOrReplace("nyc-open-data", "yellow-taxi", "some-id", R"({
-    "lastName": "McHan"
-  })");
+  std::string response = kuzzle->document->createOrReplace(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id",
+    R"({"lastName": "McHan"})");
 
-  std::cout << "Document " << response << "Created" << std::endl;
+  std::cout << response << std::endl;
   /*
   {
     "_index": "nyc-open-data",
@@ -28,20 +29,11 @@ try {
         "active": true,
         "deletedAt": null
       }
-    },
-    "_meta": {
-      "author": "-1",
-      "createdAt": 1537445737667,
-      "updatedAt": null,
-      "updater": null,
-      "active": true,
-      "deletedAt": null
     }
   }
   */
 
-  std::cout << "Success" << std::endl;
-} catch (kuzzleio::KuzzleException e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cout << "Document successfully created" << std::endl;
+} catch (kuzzleio::KuzzleException& e) {
+  std::cerr << e.what() << std::endl;
 }
-

@@ -116,10 +116,6 @@ class Snippet {
     fs.copyFileSync(this.snippetFile, dest);
   }
 
-  clean() {
-    fs.unlinkSync(this.renderedSnippetPath);
-  }
-
   getLocalCommand() {
     const name = this.name.toLowerCase();
 

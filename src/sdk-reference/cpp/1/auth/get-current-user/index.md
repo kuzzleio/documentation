@@ -6,9 +6,9 @@ description: Returns the profile object for the user linked to the `JSON Web Tok
 
 # getCurrentUser
 
-Returns the profile object for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
+Returns informations about the user currently loggued with the SDK instance.
 
-## Arguments
+## Signature
 
 ```cpp
 User getCurrentUser();
@@ -16,7 +16,7 @@ User getCurrentUser();
 
 ## Return
 
-A [User]({{ site_base_path }}sdk-reference/cpp/1/user/) object.
+A [kuzzleio::User]({{ site_base_path }}sdk-reference/cpp/1/user/) object.
 
 ## Exceptions
 

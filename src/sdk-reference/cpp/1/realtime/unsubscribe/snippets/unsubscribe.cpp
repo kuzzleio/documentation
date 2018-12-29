@@ -10,7 +10,7 @@ try {
 
   kuzzle->realtime->unsubscribe(room_id);
 
-  std::cout << "Success" << std::endl;
+  std::cout << "Successfully unsubscribed" << std::endl;
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }
