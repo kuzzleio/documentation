@@ -11,7 +11,7 @@ Returns informations about the user currently loggued with the SDK instance.
 ## Signature
 
 ```cpp
-User getCurrentUser();
+kuzzleio::User getCurrentkuzzleio::User()
 ```
 
 ## Return

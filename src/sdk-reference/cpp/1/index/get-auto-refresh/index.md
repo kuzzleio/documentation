@@ -21,7 +21,9 @@ Without a refresh after a write request, the documents may not be immediately vi
 ## Signature
 
 ```cpp
-bool getAutoRefresh(const std::string& index, kuzzleio::query_options *options = null)
+bool getAutoRefresh(const std::string& index)
+
+bool getAutoRefresh(const std::string& index, const kuzzleio::query_options& options)
 ```
 
 ## Arguments

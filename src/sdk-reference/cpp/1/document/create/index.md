@@ -16,11 +16,17 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 
 ```cpp
 std::string create(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& id,
-    const std::string& document,
-    kuzzleio::query_options *options=nullptr);
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& id, 
+    const std::string& document)
+
+std::string create(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& id, 
+    const std::string& document, 
+    const kuzzleio::query_options& options)
 ```
 
 ## Arguments

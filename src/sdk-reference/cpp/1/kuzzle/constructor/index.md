@@ -13,7 +13,9 @@ Each instance represent a different connection to a Kuzzle server with specific 
 ## Signature
 
 ```cpp
-Kuzzle(kuzzleio::Protocol* protocol, kuzzleio::options *options = nullptr)
+kuzzleio::Kuzzle(kuzzleio::Protocol* protocol)
+
+kuzzleio::Kuzzle(kuzzleio::Protocol* protocol, const options& options)
 ```
 
 ## Arguments
@@ -29,8 +31,8 @@ Kuzzle(kuzzleio::Protocol* protocol, kuzzleio::options *options = nullptr)
 | -------------------- | ------------------ | ------------------------------------------------------------------ | 
 | `auto_queue`         | <pre>bool</pre><br/>(`false`)  | Automatically queue all requests during offline mode   |
 | `auto_reconnect`     | <pre>bool</pre><br/>(`true`)  | Automatically reconnect after a connection loss         |
-| `auto_replay`        | <pre>bool</pre><br/>(`false`)  | Automatically replay queued requests on a `KUZZLE_EVENT_RECONNECTED` event |
-| `auto_resubscribe`   | <pre>bool</pre><br/>(`true`)  | Automatically renew all subscriptions on a `KUZZLE_EVENT_RECONNECTED` event |
+| `auto_replay`        | <pre>bool</pre><br/>(`false`)  | Automatically replay queued requests on a `EVENT_RECONNECTED` event |
+| `auto_resubscribe`   | <pre>bool</pre><br/>(`true`)  | Automatically renew all subscriptions on a `EVENT_RECONNECTED` event |
 | `offline_mode`       | <pre>enum Mode</pre><br/>(`MANUAL`) | Offline mode configuration. `MANUAL` or `AUTO` |
 | `queue_ttl`          | <pre>unsigned</pre><br/>(`120000`) | Time a queued request is kept during offline mode, in milliseconds |
 | `queue_max_size`     | <pre>unsigned long</pre><br/>(`500`) | Number of maximum requests kept during offline mode |

@@ -11,7 +11,9 @@ Get the complete list of data indexes handled by Kuzzle.
 ## Signature
 
 ```cpp
-std::vector<std::string> list(kuzzleio::query_options *options = null)
+std::vector<std::string> list()
+
+std::vector<std::string> list(const kuzzleio::query_options& options)
 ```
 
 ## Arguments

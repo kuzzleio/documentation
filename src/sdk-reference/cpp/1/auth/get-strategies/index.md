@@ -11,7 +11,9 @@ Get all authentication strategies registered in Kuzzle.
 ## Signature
 
 ```cpp
-std::vector<std::string> getStrategies(query_options *options=nullptr);
+std::vector<std::string> getStrategies()
+
+std::vector<std::string> getStrategies(const kuzzleio::query_options& options)
 ```
 
 ## Arguments

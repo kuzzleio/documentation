@@ -13,10 +13,15 @@ Gets a document.
 
 ```cpp
 std::string get(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& id,
-    kuzzleio::query_options *options=nullptr)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& id)
+
+std::string get(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& id, 
+    const kuzzleio::query_options& options)
 ```
 
 ## Arguments

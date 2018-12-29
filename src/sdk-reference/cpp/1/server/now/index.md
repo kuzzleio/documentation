@@ -11,7 +11,9 @@ Fetch the current server timestamp, in Epoch-millis format.
 ## Signature
 
 ```cpp
-long long now(kuzzleio::query_options *options = nullptr)
+long long now()
+
+long long now(const kuzzleio::query_options& options)
 ```
 
 ## Arguments

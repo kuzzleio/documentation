@@ -11,7 +11,9 @@ Removes a subscription.
 ## Signature
 
 ```cpp
-void unsubscribe(const std::string& room_id, kuzzleio::query_options *options=nullptr)
+void unsubscribe(const std::string& room_id)
+
+void unsubscribe(const std::string& room_id, const kuzzleio::query_options& options)
 ```
 
 ## Arguments

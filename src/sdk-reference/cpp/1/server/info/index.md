@@ -11,7 +11,9 @@ Returns information about Kuzzle: available API (base + extended), plugins, exte
 ## Signature
 
 ```cpp
-std::string info(kuzzleio::query_options* options=nullptr)
+std::string info()
+
+std::string info(const kuzzleio::query_options& options)
 ```
 
 ## Arguments

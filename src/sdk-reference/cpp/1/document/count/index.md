@@ -15,11 +15,23 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 ## Signature
 
 ```cpp
+int count(const std::string& index, const std::string& collection)
+
 int count(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& query,
-    kuzzleio::query_options *options=nullptr)
+    const std::string& index, 
+    const std::string& collection, 
+    const kuzzleio::query_options& options)
+
+int count(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& query)
+
+int count(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& query, 
+    const kuzzleio::query_options& options)
 ```
 
 ## Arguments

@@ -12,8 +12,12 @@ Authenticates a user.
 ## Signature
 
 ```cpp
-std::string login(const std::string& strategy, const std::string& credentials, int expiresIn);
-std::string login(const std::string& strategy, const std::string& credentials);
+std::string login(const std::string& strategy, const std::string& credentials)
+
+std::string login(
+    const std::string& strategy, 
+    const std::string& credentials, 
+    int expiresIn)
 ```
 
 

@@ -11,7 +11,11 @@ Delete the current user's credentials for the specified strategy. If the credent
 ## Signature
 
 ```cpp
-void deleteMyCredentials(const std::string& strategy, kuzzleio::query_options *options=nullptr);
+void deleteMyCredentials(const std::string& strategy)
+
+void deleteMyCredentials(
+    const std::string& strategy, 
+    const kuzzleio::query_options& options)
 ```
 
 ## Arguments

@@ -12,12 +12,17 @@ Subscribes by providing a set of filters: messages, document changes and, option
 
 ```cpp
 std::string subscribe(
-  const std::string& index,
-  const std::string& collection,
-  const std::string& filters,
-  kuzzleio::NotificationListener* listener,
-  kuzzleio::room_options* options=nullptr
-)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& filters, 
+    kuzzleio::NotificationListener* listener)
+
+std::string subscribe(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& filters, 
+    kuzzleio::NotificationListener* listener, 
+    const kuzzleio::room_options& options)
 ```
 
 ## Arguments

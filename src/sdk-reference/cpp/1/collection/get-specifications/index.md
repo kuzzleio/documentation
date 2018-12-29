@@ -11,7 +11,14 @@ Returns the validation specifications associated to the collection.
 ## Signature
 
 ```cpp
-std::string getSpecifications(const std::string& index, const std::string& collection, kuzzleio::query_options *options=nullptr)
+std::string getSpecifications(
+    const std::string& index, 
+    const std::string& collection)
+
+std::string getSpecifications(
+    const std::string& index, 
+    const std::string& collection, 
+    const kuzzleio::query_options& options)
 ```
 
 ## Arguments

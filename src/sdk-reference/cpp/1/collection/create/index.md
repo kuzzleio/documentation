@@ -15,7 +15,23 @@ This method will only update the mapping if the collection already exists.
 ## Signature
 
 ```cpp
-void create(const std::string& index, const std::string& collection, const std::string* mapping=nullptr, kuzzleio::query_options *options=nullptr)
+void create(const std::string& index, const std::string& collection)
+
+void create(
+    const std::string& index, 
+    const std::string& collection, 
+    const kuzzleio::query_options& options)
+
+void create(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& mapping)
+
+void create(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& mapping, 
+    const kuzzleio::query_options& options)
 ```
 
 ## Arguments

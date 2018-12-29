@@ -19,7 +19,9 @@ These statistics include:
 ## Signature
 
 ```cpp
-std::string getLastStats(kuzzleio::query_options* options=nullptr)
+std::string getLastStats()
+
+std::string getLastStats(const kuzzleio::query_options& options)
 ```
 
 ## Arguments

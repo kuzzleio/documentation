@@ -12,7 +12,7 @@ Works only in `offline` state, and if the `autoQueue` option is set to false.
 ## Signature
 
 ```cpp
-kuzzleio::Kuzzle* startQueuing()
+kuzzleio::Kuzzle* startQueuing() noexcept
 ```
 
 ## Return

@@ -112,7 +112,6 @@ end
 
 each_dir(ARGV[0]) do |file|
   if file.end_with?('.md')
-    puts file
     file.gsub!(/\/\//, '/')
     parts = file.split('/')
     root = parts[0..1].join('/')
@@ -123,11 +122,13 @@ each_dir(ARGV[0]) do |file|
 
     puts "#{controller}:#{action}"
     content = File.read(file)
-    next if controller.in?(["search-result", "user", "user-right"])
+    next if controller.in?(["search-result", "user", "user-right", "websocket", "protocol"])
+    next if action.in?(["getters", "setters", "introduction"])
     if content.match(/```cpp[^`]+```/)
+      puts file
       new_signature = signature_mutator(controller, action)
       byebug if new_signature.empty?
-      content.gsub!(/(```cpp[^`]+```)/, new_signature)
+      content.gsub!(/##\s+Signature\n+```cpp[^`]+```/, "## Signature\n\n#{new_signature}")
       File.write(file, content)
     else
     end

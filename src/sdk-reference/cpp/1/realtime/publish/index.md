@@ -16,11 +16,15 @@ The index and collection are indicative and serve only to distinguish the rooms.
 
 ```cpp
 void publish(
-  const std::string& index,
-  const std::string& collection,
-  const std::string& message,
-  kuzzleio::query_options *options=nullptr
-);
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& message)
+
+void publish(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& message, 
+    const kuzzleio::query_options& options)
 ```
 
 ## Arguments
