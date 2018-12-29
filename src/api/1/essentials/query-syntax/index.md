@@ -83,7 +83,7 @@ There are 3 parameters that can be provided to all queries, independently to the
 
 * `jwt`: user's authentification token, obtained through the [login]({{ site_base_path }}api/1/controller-aut/login) method
 * `requestId`: user-defined request identifier. Kuzzle does not guarantee that responses are sent back in the same order than queries are made; use that field to link responses to their  query of origin
-* `volatile`: user-defined data, without any impact to the query. Use that object to pass information about the query itself to real-time subscribers. Read more [here]({{ site_base_path }}/api/1/volatile-data)
+* `volatile`: user-defined data, without any impact to the query. Use that object to pass information about the query itself to real-time subscribers. Read more [here]({{ site_base_path }}/api/1/essentials/volatile-data/)
 
 Additionally, a few other parameters are very commonly found in API queries:
 

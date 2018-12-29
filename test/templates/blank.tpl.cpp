@@ -7,7 +7,7 @@
 
 int main() {
   [snippet-code]
-  std::cout << "Everything is ok" << std::endl;
 
+  std::cout << "Snippet success" << std::endl;
   return 0;
 }

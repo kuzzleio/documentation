@@ -8,11 +8,13 @@ description: Remove a listener to an event
 
 Removes all listeners of an Event type.
 
-## Arguments
+## Signature
 
 ```cpp
 void removeAllListeners(kuzzleio::Event event);
 ```
+
+## Arguments
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------

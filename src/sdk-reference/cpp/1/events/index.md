@@ -17,93 +17,93 @@ These callbacks can be added and deleted respectively by the methods [addListene
 
 # Emitted Events
 
-## connected
+## KUZZLE_EVENT_CONNECTED
 
 Triggered when the SDK has successfully connected to Kuzzle.
 
-## discarded
+## KUZZLE_EVENT_DISCARDED
 
 Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request too large, ...).
 
 **Callback argument**
 
-A String representing a JSON object containing the following properties:
+A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `message` | std::string | Error description |
-| `status` | int | Error code |
-| `stack` | std::string | Stacktrace (development mode only) |
+| `message` | <pre>std::string</pre> | Error description |
+| `status` | <pre>int</pre> | Error code |
+| `stack` | <pre>std::string</pre> | Stacktrace (development mode only) |
 
-## disconnected
+## KUZZLE_EVENT_DISCONNECTED
 
 Triggered when the current session has been unexpectedly disconnected.
 
-## loginAttempt
+## KUZZLE_EVENT_LOGIN_ATTEMPT
 
 Triggered when a login attempt completes, either with a success or a failure result.
 
 **Callback arguments**
 
-A String representing a JSON object containing the following properties:
+A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `success` | bool | Indicate if login attempt succeed |
-| `error` | std::string | Error message when login fail |
+| `success` | <pre>bool</pre> | Indicate if login attempt succeed |
+| `error` | <pre>std::string</pre> | Error message when login fail |
 
-## networkError
+## KUZZLE_EVENT_NETWORK_ERROR
 
 Triggered when the SDK has failed to connect to Kuzzle.  
 This event does not trigger the offline mode.  
 
 **Callback arguments**
 
-A String representing a JSON object containing the following properties:
+A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `message` | std::string | Error description |
-| `status` | int | Error code |
-| `stack` | std::string | Stacktrace (development mode only) |
+| `message` | <pre>std::string</pre> | Error description |
+| `status` | <pre>int</pre> | Error code |
+| `stack` | <pre>std::string</pre> | Stacktrace (development mode only) |
 
-## offlineQueuePop
+## KUZZLE_EVENT_OFFLINE_QUEUE_POP
 
 Triggered whenever a request is removed from the offline queue.
 
 **Callback arguments**
 
-A String representing a JSON object containing the [request]({{ site_base_path }}api/1/query-syntax/) removed from the queue.
+A JSON string representing the [request]({{ site_base_path }}api/1/query-syntax/) removed from the queue.
 
-## offlineQueuePush
+## KUZZLE_EVENT_OFFLINE_QUEUE_PUSH
 
 Triggered whenever a request is added to the offline queue.
 
 **Callback arguments**
 
-A String representing a JSON object containing the following properties:
+A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | JSON object | The [request]({{ site_base_path }}api/1/query-syntax/) added to the queue |    
+| `request` | <pre>std::string</pre> | JSON string representing [request]({{ site_base_path }}api/1/query-syntax/) added to the queue |    
 
-## queryError
+## KUZZLE_EVENT_QUERY_ERROR
 
 Triggered whenever Kuzzle responds with an error
 
 **Callback arguments**
 
-A String representing a JSON object containing the following properties:
+A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | JSON object | The request that causing an error |    
-| `error` | JSON object | The error details |    
+| `request` | <pre>std::string</pre> | JSON string representing the request that causing an error |    
+| `error` | <pre>std::string</pre> | Error details |    
 
-## reconnected
+## KUZZLE_EVENT_RECONNECTED
 
 Triggered when the current session has reconnected to Kuzzle after a disconnection, and only if ``autoReconnect`` is set to ``true``.
 
-## tokenExpired
+## KUZZLE_EVENT_TOKEN_EXPIRED
 
 Triggered when Kuzzle rejects a request because the authentication token has expired.

@@ -30,7 +30,7 @@ Additional query options
 
 ## Resolve
 
-Resolves to the current server timestamp in Epoch-millis format.
+Resolves to a number representing the current server timestamp in Epoch-millis format.
 
 ## Usage
 

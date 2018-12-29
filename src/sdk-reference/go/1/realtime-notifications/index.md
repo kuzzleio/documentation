@@ -24,7 +24,7 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | `Scope` | string | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
 | `Timestamp` | int | Timestamp of the event, in Epoch-millis format |
 | `Type` | string | `document`: the notification type |
-| `Volatile` | json.RawMessage | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `Volatile` | json.RawMessage | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
 
 The `Result` property has the following structure for document notifications & messages:
 
@@ -49,7 +49,7 @@ These notifications represent [user events]({{ site_base_path }}api/1/notificati
 | `Timestamp` | int | Timestamp of the event, in Epoch-millis format |
 | `Type` | string | `user`: the notification type |
 | `User` | string | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
-| `Volatile` | json.RawMessage | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `Volatile` | json.RawMessage | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
 
 The `Result` property has the following structure for user events:
 

@@ -31,7 +31,7 @@ Additional query options
 
 ## Resolves
 
-Resolves to an array of successfuly deleted indexes.
+Resolves to an array of Successfully deleted indexes.
 
 ## Usage
 

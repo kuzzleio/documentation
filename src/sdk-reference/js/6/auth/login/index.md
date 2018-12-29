@@ -11,7 +11,7 @@ Authenticates a user.
 ## Arguments
 
 ```javascript
-login (strategy, credentials, expiresIn)
+login (strategy, [credentials], [expiresIn])
 ```
 
 <br/>
@@ -19,7 +19,7 @@ login (strategy, credentials, expiresIn)
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
 | ``strategy`` | <pre>string</pre> | Name of the strategy to use    |
-| ``credentials`` | <pre>string</pre> | Credentials for the strategy |
+| ``credentials`` | <pre>object</pre> | Credentials for the strategy |
 | ``expiresIn`` | <pre>string</pre> | Expiration time in [ms library](https://www.npmjs.com/package/ms) format. (e.g. `2h`) |
 
 #### strategy

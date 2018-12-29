@@ -1,11 +1,9 @@
----
 name: index#refreshInternal
 description: Force refresh of Kuzzle internal index
 hooks:
-  before: 
-  after: 
+  before:
+  after:
 template: default
 expected: Internal index successfully refreshed
-
 sdk: cpp
 version: 1

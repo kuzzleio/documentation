@@ -8,11 +8,13 @@ description: Emits an event
 
 Emits an event.
 
-## Arguments
+## Signature
 
 ```cpp
 void emitEvent(kuzzleio::Event event);
 ```
+
+## Arguments
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------

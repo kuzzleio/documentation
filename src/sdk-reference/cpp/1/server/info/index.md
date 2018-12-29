@@ -6,35 +6,35 @@ description: Returns information about Kuzzle server.
 
 # info
 
-{{{since "1.0.0"}}}
-
 Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string info(kuzzleio::query_options* options=nullptr)
 ```
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
+## Arguments
 
-### **Options**
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
+
+### options
 
 Additional query options
 
-| Option     | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Option     | Type<br/>(default)   | Description  |
+| ---------- | ------- | -------------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Returns a JSON string representing the server information.
+A JSON string representing the server information.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
 
 ## Usage
 
