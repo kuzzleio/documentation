@@ -9,7 +9,7 @@ description: User:addProfile
 Replaces the security profile associated with the user.
 
 <div class="alert alert-info">
-Updating a user will have no impact until the <a href="{{ site_base_path }}sdk-reference/user/create"><code>create</code></a> or <a href="{{ site_base_path }}sdk-reference/user/replace"><code>replace</code></a> method is called
+Updating a user will have no impact until the <a href="{{ site_base_path }}sdk-reference/js/5/user/create"><code>create</code></a> or <a href="{{ site_base_path }}sdk-reference/js/5/user/replace"><code>replace</code></a> method is called
 </div>
 
 ---
@@ -26,7 +26,7 @@ Updating a user will have no impact until the <a href="{{ site_base_path }}sdk-r
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``profile`` | Profile | An instantiated [Profile]({{ site_base_path }}sdk-reference/profile) object |
+| ``profile`` | Profile | An instantiated [Profile]({{ site_base_path }}sdk-reference/js/5/profile) object |
 
 ---
 

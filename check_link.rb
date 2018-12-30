@@ -31,7 +31,10 @@ each_dir(ARGV[0]) do |file_path|
   match.each do |(relative_path)|
     # Remove anchor
     relative_path.gsub!(/#[\w-]+/, '')
+
     full_path = "src/#{relative_path}/index.md"
+    # Remove double //
+    full_path.gsub!(/\/\//, '/')
     next if File.exists?(full_path)
 
     dead_links[:internal][full_path] ||= []
@@ -59,10 +62,8 @@ end
 
 hydra.run
 
-File.write('./dead_links.json', JSON.pretty_generate(dead_links))
 
 puts "Found #{dead_links[:internal].count} uniq internal dead links:\n"
-
 dead_links[:internal].each do |link, pages|
   puts "  - #{link} found on #{pages.count} pages:"
   pages.each do |page|
@@ -77,3 +78,5 @@ dead_links[:external].each do |link, pages|
     puts "    -> #{page}"
   end
 end
+
+File.write('./dead_links.json', JSON.pretty_generate(dead_links))

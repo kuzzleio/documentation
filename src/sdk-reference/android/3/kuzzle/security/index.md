@@ -7,4 +7,4 @@ description: Kuzzle:security
 
 # security
 
-A [Security]({{ site_base_path }}sdk-reference/security) singleton.
+A [Security]({{ site_base_path }}sdk-reference/android/3/security) singleton.

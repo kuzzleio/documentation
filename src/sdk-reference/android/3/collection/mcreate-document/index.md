@@ -6,7 +6,7 @@ description: Collection:mcreateDocument
   
 
 # mCreateDocument
-Create the input [Documents]({{ site_base_path }}sdk-reference/document/).
+Create the input [Documents]({{ site_base_path }}sdk-reference/android/3/document/).
 
 ---
 
@@ -14,7 +14,7 @@ Create the input [Documents]({{ site_base_path }}sdk-reference/document/).
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``documents`` | Document[] | Array of [Document]({{ site_base_path }}sdk-reference/document/) to create |
+| ``documents`` | Document[] | Array of [Document]({{ site_base_path }}sdk-reference/android/3/document/) to create |
 | ``options`` | JSON Object | Optional parameters |
 | ``callback`` | function | Optional callback |
 

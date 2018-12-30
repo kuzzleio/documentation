@@ -13,7 +13,7 @@ Publish a real-time message.
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``Document`` | object | [Document]({{ site_base_path }}sdk-reference/document/) object |
+| ``Document`` | object | [Document]({{ site_base_path }}sdk-reference/android/3/document/) object |
 | ``options`` | JSON Object | Optional parameters |
 | ``callback`` | function | Optional callback |
 

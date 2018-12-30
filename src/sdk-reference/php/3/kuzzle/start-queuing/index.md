@@ -6,7 +6,7 @@ description: Kuzzle:startQueuing
   
 
 # startQueuing
-Starts the requests queuing. Works only in offline mode, and if the [autoQueue]({{ site_base_path }}sdk-reference/kuzzle/#properties) option is set to `false`.
+Starts the requests queuing. Works only in offline mode, and if the [autoQueue]({{ site_base_path }}sdk-reference/php/3/kuzzle/#properties) option is set to `false`.
 
 ---
 

@@ -14,7 +14,7 @@ Updates the role object in Kuzzle.
     In other words, you always need to provide the complete role definition in the <code>updateContent</code> object.
   </p>
   <p>
-    This method has the same effect as calling <a href="{{ site_base_path }}sdk-reference/role/set-content"><code>setContent</code></a> followed by the <a href="{{ site_base_path }}sdk-reference/role/save"><code>save</code></a> method.
+    This method has the same effect as calling <a href="{{ site_base_path }}sdk-reference/js/5/role/set-content"><code>setContent</code></a> followed by the <a href="{{ site_base_path }}sdk-reference/js/5/role/save"><code>save</code></a> method.
   </p>
 </div>
 

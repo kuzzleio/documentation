@@ -17,7 +17,7 @@ Please refer to our [permissions guide]({{ site_base_path }}guide/1/essentials/s
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| `Kuzzle` | object | An instantiated [Kuzzle]({{ site_base_path }}sdk-reference/kuzzle) object |
+| `Kuzzle` | object | An instantiated [Kuzzle]({{ site_base_path }}sdk-reference/php/3/kuzzle) object |
 
 ## Usage
 

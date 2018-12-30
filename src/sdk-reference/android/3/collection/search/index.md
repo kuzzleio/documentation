@@ -44,7 +44,7 @@ See [`SearchResult.fetchNext`]({{ site_base_path }}sdk-reference/search-result/f
 | ``size`` | number | Provide the maximum number of results of the request (used to paginate results) | ``10`` |
 
 <div class="alert alert-info">
-  To get more information about scroll sessions, please refer to the <a href="{{ site_base_path }}api-documentation/controller-document/search">API reference documentation</a>.
+  To get more information about scroll sessions, please refer to the <a href="{{ site_base_path }}api/1/controller-document/search">API reference documentation</a>.
 </div>
 
 ---

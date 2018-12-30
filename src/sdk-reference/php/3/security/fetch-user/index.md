@@ -30,7 +30,7 @@ Fetches a single stored user using its unique ID.
 
 ## Callback Response
 
-Returns a [User]({{ site_base_path }}sdk-reference/user) object.
+Returns a [User]({{ site_base_path }}sdk-reference/php/3/user) object.
 
 ## Usage
 

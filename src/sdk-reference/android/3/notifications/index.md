@@ -27,7 +27,7 @@ You may subscribe multiple times to the same room, with identical or different s
 
 | Notification field | Type |Description       | Possible values |
 |--------------------|------|------------------|-----------------|
-| `document` | [Document]({{ site_base_path }}sdk-reference/document/) | Content of the document or real-time message that generated the notification | |
+| `document` | [Document]({{ site_base_path }}sdk-reference/android/3/document/) | Content of the document or real-time message that generated the notification | |
 | `scope` | string | Indicates if the document enters or exits the subscription scope | `in`, `out` |
 | `state` | string | {{{deprecated "1.5.0"}}} Shows if the document is about to be changed, or if the change is done | `pending`, `done` |
 | `type` | string | Notification type | `document` |

@@ -6,7 +6,7 @@ description: Collection:mreplaceDocument
   
 
 # mReplaceDocument
-Replace the provided [Documents]({{ site_base_path }}sdk-reference/document/).
+Replace the provided [Documents]({{ site_base_path }}sdk-reference/android/3/document/).
 
 ---
 
@@ -14,7 +14,7 @@ Replace the provided [Documents]({{ site_base_path }}sdk-reference/document/).
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``documents`` | Document[] | Array of [Document]({{ site_base_path }}sdk-reference/document/) to replace |
+| ``documents`` | Document[] | Array of [Document]({{ site_base_path }}sdk-reference/android/3/document/) to replace |
 | ``options`` | JSON Object | Optional parameters |
 | ``callback`` | function | Optional callback |
 
