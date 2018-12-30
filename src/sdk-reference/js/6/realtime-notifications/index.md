@@ -10,7 +10,7 @@ The [realtime.subscribe]({{ site_base_path }}sdk-reference/js/6/realtime/subscri
 
 ## Document & messages
 
-These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
+These notifications represent [documents changes & messages]({{ site_base_path }}api/1/essentials/notifications#documents-changes-messages-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
@@ -35,7 +35,7 @@ The `result` object is the notification content, and it has the following struct
 
 ## User
 
-These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
+These notifications represent [user events]({{ site_base_path }}api/1/essentials/notifications#user-events-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
@@ -59,7 +59,7 @@ The `result` object is the notification content, and it has the following struct
 
 ## Server
 
-These notifications represent [server events]({{ site_base_path }}api/1/notifications/#server-events-default).
+These notifications represent [server events]({{ site_base_path }}api/1/essentials/notifications#server-events-default).
 
 | Property | Type | Value |
 |--------------------|------|------------------|

@@ -29,6 +29,8 @@ each_dir(ARGV[0]) do |file_path|
   # Scan internal links
   match = content.scan(/\(\{\{\s+site_base_path\s+\}\}([^)]+)/)
   match.each do |(relative_path)|
+    # Remove anchor
+    relative_path.gsub!(/#[\w-]+/, '')
     full_path = "src/#{relative_path}/index.md"
     next if File.exists?(full_path)
 
