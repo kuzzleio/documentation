@@ -11,7 +11,7 @@ Returns a pointer to a new `SearchResult` object which contain the subsequent re
 ## Signature
 
 ```cpp
-(SearchResult* sr) next();
+kuzzleio::SearchResult* next();
 ```
 
 ## Behaviour of the next method
