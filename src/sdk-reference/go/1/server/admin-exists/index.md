@@ -31,7 +31,7 @@ Additional query options
 
 ## Return
 
-Returns a `bool` set to `true` if an admin exists and `false` if it does not, or a `KuzzleError`. See how to [handle error]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling).
+Returns a `bool` set to `true` if an admin exists and `false` if it does not, or a `KuzzleError`. See how to [handle error]({{ site_base_path }}sdk-reference/go/1/error-handling).
 
 ## Usage
 
