@@ -53,7 +53,7 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a [kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/cpp/1/search-result).
+Returns a [kuzzleio::SearchResult]({{ site_base_path }}sdk-reference/cpp/1/search-result).
 
 ## Exceptions
 

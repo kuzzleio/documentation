@@ -53,7 +53,7 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a [types.SearchResult]({{ site_base_path }}src/sdk-reference/go/1/search-result) struct
+Returns a [types.SearchResult]({{ site_base_path }}sdk-reference/go/1/search-result) struct
 
 ## Usage
 
