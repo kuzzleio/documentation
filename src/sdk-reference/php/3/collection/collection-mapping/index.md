@@ -6,7 +6,7 @@ description: Collection:collectionMapping
   
 
 # collectionMapping
-Creates a new [CollectionMapping]({{ site_base_path }}sdk-reference/php/3collection-mapping/) object, using its constructor.
+Creates a new [CollectionMapping]({{ site_base_path }}sdk-reference/php/3/collection-mapping/) object, using its constructor.
 
 ---
 
@@ -20,7 +20,7 @@ Creates a new [CollectionMapping]({{ site_base_path }}sdk-reference/php/3collect
 
 ## Return Value
 
-Returns the newly created [CollectionMapping]({{ site_base_path }}sdk-reference/php/3collection-mapping/) object.
+Returns the newly created [CollectionMapping]({{ site_base_path }}sdk-reference/php/3/collection-mapping/) object.
 
 ## Usage
 

@@ -17,8 +17,8 @@ end
 hydra = Typhoeus::Hydra.new
 
 dead_links = {
-  internal: [],
-  external: []
+  internal: {},
+  external: {}
 }
 
 each_dir(ARGV[0]) do |file_path|
@@ -34,10 +34,8 @@ each_dir(ARGV[0]) do |file_path|
     full_path = "src/#{relative_path}/index.md"
     next if File.exists?(full_path)
 
-    dead_links[:internal] << {
-      page: file_path,
-      link: full_path
-    }
+    dead_links[:internal][full_path] ||= []
+    dead_links[:internal][full_path] << file_path
   end
 
   # Scan external links
@@ -50,10 +48,8 @@ each_dir(ARGV[0]) do |file_path|
 
     request.on_complete do |response|
       if response.code != 200
-        dead_links[:external] << {
-          page: file_path,
-          link: external_link
-        }
+        dead_links[:external][external_link] ||= []
+        dead_links[:external][external_link] << file_path
       end
     end
 
@@ -65,12 +61,19 @@ hydra.run
 
 File.write('./dead_links.json', JSON.pretty_generate(dead_links))
 
-puts "Found #{dead_links[:internal].count} internal dead links:\n"
-dead_links[:internal].each do |dead_link|
-  puts "  - on #{dead_link[:page]}: #{dead_link[:link]}"
+puts "Found #{dead_links[:internal].count} uniq internal dead links:\n"
+
+dead_links[:internal].each do |link, pages|
+  puts "  - #{link} found on #{pages.count} pages:"
+  pages.each do |page|
+    puts "    -> #{page}"
+  end
 end
 
-puts "Found #{dead_links[:external].count} external dead links:\n"
-dead_links[:external].each do |dead_link|
-  puts "  - on #{dead_link[:page]}: #{dead_link[:link]}"
+puts "Found #{dead_links[:external].count} uniq external dead links:\n"
+dead_links[:external].each do |link, pages|
+  puts "  - #{link} found on #{pages.count} pages:"
+  pages.each do |page|
+    puts "    -> #{page}"
+  end
 end
