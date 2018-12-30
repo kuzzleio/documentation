@@ -6,7 +6,7 @@ description: Kuzzle:collection
   
 
 # collection
-Instantiates a new [Collection]({{ site_base_path }}sdk-reference/collection) object.
+Instantiates a new [Collection]({{ site_base_path }}sdk-reference/php/3collection) object.
 
 ---
 
@@ -25,7 +25,7 @@ The ``index`` argument takes precedence over the default index.
 
 ## Return Value
 
-Returns a [Collection]({{ site_base_path }}sdk-reference/collection) object.
+Returns a [Collection]({{ site_base_path }}sdk-reference/php/3collection) object.
 
 ## Usage
 

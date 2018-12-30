@@ -23,7 +23,7 @@ There are two ways to handle a network disconnect:
 
 ## Subscriptions
 
-A subscription opens a permanent pipe between the client and Kuzzle. Whenever a real-time message or a modified document matches a subscription filter, a notification is sent by Kuzzle to the client (for instance, see the [Collection.subscribe]({{ site_base_path }}sdk-reference/collection/subscribe) method).
+A subscription opens a permanent pipe between the client and Kuzzle. Whenever a real-time message or a modified document matches a subscription filter, a notification is sent by Kuzzle to the client (for instance, see the [Collection.subscribe]({{ site_base_path }}sdk-reference/php/3collection/subscribe) method).
 
 While in offline mode, the Kuzzle SDK client maintains all subscriptions configurations and, by default, when Kuzzle SDK client reconnects, all subscriptions are renewed. This behavior can be changed by setting the ``autoResubscribe`` to ``false``, in which case, each subscription will have to be renewed manually using the ``Room.renew`` method.
 
