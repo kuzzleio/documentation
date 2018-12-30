@@ -17,7 +17,7 @@ try {
     "yellow-taxi",
     filters,
     &listener,
-    &options);
+    options);
 
   // Instantiates a second kuzzle client:
   //  multiple subscriptions made by the same user
@@ -36,7 +36,7 @@ try {
     "yellow-taxi",
     filters,
     &listener,
-    &options2);
+    options2);
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.what() << std::endl;
 }
