@@ -72,7 +72,7 @@ Once a user has been created, they can access resources in Kuzzle as permitted b
 
 To request access to Kuzzle, a user must first send an [authentication request]({{ site_base_path }}api/1/controller-auth/login). Kuzzle will validate the credentials it receives in the request using the predefined authentication strategy and return a [JSON Web Token](https://tools.ietf.org/html/rfc7519) if the user credentials are valid.
 
-The JSON Web Token must then be [appended to all subsequent requests]({{ site_base_path }}api/1/query-syntax/) to access Kuzzle resources.
+The JSON Web Token must then be [appended to all subsequent requests]({{ site_base_path }}api/1/essentials/query-syntax/) to access Kuzzle resources.
 
 
 ## Local Strategy

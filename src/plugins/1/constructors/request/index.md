@@ -7,7 +7,7 @@ title: Request
 
 {{{since "1.0.0"}}}
 
-Object representation of a Kuzzle [API call]({{ site_base_path }}api/1/query-syntax).
+Object representation of a Kuzzle [API call]({{ site_base_path }}api/1/essentials/query-syntax).
 
 That object is continuously updated to reflect the current state of the request, during its entire lifecycle.
 
@@ -46,7 +46,7 @@ new Request(data, [options])
 | Arguments | Type | Description |
 |-----------|------|-------------|
 | `request` | <a href="#request-default"><pre>Request</pre></a> | A source request to inherit from |
-| `data` | <pre>object</pre> | API call, following the same format than non-HTTP [API calls]({{ site_base_path }}api/1/query-syntax) |
+| `data` | <pre>object</pre> | API call, following the same format than non-HTTP [API calls]({{ site_base_path }}api/1/essentials/query-syntax) |
 | `options` | <pre>object</pre> | Additional request context |
 
 ### options

@@ -7,7 +7,7 @@ title: Request
 
 {{{since "1.0.0"}}}
 
-Object representation of a Kuzzle [API call]({{ site_base_path }}api/1/query-syntax), to be used with the [entryPoint.execute]({{ site_base_path }}protocols/1/entrypoint/execute) function.
+Object representation of a Kuzzle [API call]({{ site_base_path }}api/1/essentials/query-syntax), to be used with the [entryPoint.execute]({{ site_base_path }}protocols/1/entrypoint/execute) function.
 
 That object is continuously updated to reflect the current state of the request, during its entire lifecycle.
 
@@ -32,7 +32,7 @@ new Request(data, [options])
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `data` | <pre>object</pre> | API call, following the same format than non-HTTP [API calls]({{ site_base_path }}api/1/query-syntax) |
+| `data` | <pre>object</pre> | API call, following the same format than non-HTTP [API calls]({{ site_base_path }}api/1/essentials/query-syntax) |
 | `options` | <pre>object</pre> | Additional request context |
 
 

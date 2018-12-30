@@ -7,7 +7,7 @@ order: 400
 
 # Volatile Data
 
-All queries accept a `volatile` object parameter (see the [query syntax]({{site_base_path}}api/1/query-syntax) documentation).
+All queries accept a `volatile` object parameter (see the [query syntax]({{site_base_path}}api/1/essentials/query-syntax) documentation).
 
 The content of this object is not meant to be used directly: it has no impact on the query itself.
 
