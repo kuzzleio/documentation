@@ -27,7 +27,7 @@ virtual kuzzleio::kuzzle_response* send(
 
 ### request
 
-Properties required for the Kuzzle API can be set in the [kuzzle_request](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L51) struct.
+Properties required for the Kuzzle API can be set in the [kuzzle_request]({{ site_base_path }}sdk-reference/cpp/1/kuzzle-request) struct.
 The following properties are the most common.
 
 | Property     | Type         | Description                                                        | Required |
@@ -42,20 +42,25 @@ The following properties are the most common.
 
 ### options
 
-A pointer to a [query_option](https://github.com/kuzzleio/sdk-c/blob/master/include/internal/kuzzle_structs.h#L129) containing additional query options
+Additionnal query options.
 The following properties are the most common:
 
 | Property     | Type<br/>(default)    | Description        |
 | ---------- | ------- | --------------------------------- | 
-| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
+| `refresh` | <pre>const std::string&</pre><br/>(`""`)| If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `from` | <pre>int</pre><br/>(`0`) | Offset of the first document to fetch |
+| `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
+| `scroll` | <pre>const std::string&</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
 
 ### request_id
 
-User-defined request identifier. Kuzzle does not guarantee that responses are sent back in the same order than queries are made: use that field to link responses to their query of origin.
+User-defined request identifier.  
+Kuzzle does not guarantee that responses are sent back in the same order than queries are made: use that field to link responses to their query of origin.
 
 ## Return
 
-A [kuzzle_response](https://github.com/kuzzleio/sdk-c/blob/master/include/internal/kuzzle_structs.h#L152) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/essentials/kuzzle-response).
+A [kuzzle_response]({{ site_base_path }}sdk-reference/cpp/1/kuzzle-response) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/essentials/kuzzle-response).
 The following properties are the most common:
 
 | Property     | Type   | Description                         |
