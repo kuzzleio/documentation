@@ -198,5 +198,5 @@ For instance, suppose you have a chat application and you want the users to only
 There are multiple ways of adding a business logic layer on top of the standard Kuzzle security one:
 
 * {{{deprecated "1.4.0"}}} Using [Permission Closures]({{ site_base_path }}guide/1/kuzzle-depth/roles-definitions), you can add functions directly into role definitions
-* If all you need is to make sure that submitted documents follow a strict set of formatting rules, you can add [document validators]({{ site_base_path }}validation-reference/schema/)
+* If all you need is to make sure that submitted documents follow a strict set of formatting rules, you can add [document validators]({{ site_base_path }}guide/1/datavalidation/)
 * With a [Pipe Plugin]({{ site_base_path }}plugins/1/essentials/pipes), you can listen to one or multiple [API events]({{ site_base_path }}plugins/1/events/), and decide whether you accept a query or document according to your business rules

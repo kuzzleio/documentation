@@ -18,7 +18,7 @@ For a detailed look at data validation, please refer to our [Data Validation Ref
 
 ## Basic Validation
 
-A validation schema is defined using a [hierarchical]({{ site_base_path }}validation-reference/schema) structure that contains a set of rules within an index, collection, and document field.
+A validation schema is defined using a [hierarchical]({{ site_base_path }}guide/1/datavalidation) structure that contains a set of rules within an index, collection, and document field.
 
 For example, below is a validation schema for the `onlineshop` index  and `products` collection that defines the validation pattern for field `price` and field `productDescription`:
 
@@ -151,4 +151,3 @@ The idea is simple: use Koncorde to specify a filter that can be used to validat
 ```
 
 In the example above, we used both the `exists` operator and the `or` operator to build our validation rule. For more information take a look at our [Koncorde Reference]({{ site_base_path }}kuzzle-dsl/2/terms/exists).
-
