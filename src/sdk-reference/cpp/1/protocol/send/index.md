@@ -55,7 +55,7 @@ User-defined request identifier. Kuzzle does not guarantee that responses are se
 
 ## Return
 
-A [kuzzle_response](https://github.com/kuzzleio/sdk-c/blob/master/include/internal/kuzzle_structs.h#L152) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/kuzzle-response).
+A [kuzzle_response](https://github.com/kuzzleio/sdk-c/blob/master/include/internal/kuzzle_structs.h#L152) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/essentials/kuzzle-response).
 The following properties are the most common:
 
 | Property     | Type   | Description                         |

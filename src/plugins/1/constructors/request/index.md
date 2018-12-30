@@ -73,7 +73,7 @@ Read-only:
 | `context` | <pre><a href=https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#modelsrequestcontext>RequestContext</a></pre> | General request information (logged user, network information, ...) |
 | `error` | <pre><a href={{ site_base_path }}plugins/1/errors>KuzzleError</a></pre> | Request error |
 | `input` | <pre><a href=https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#modelsrequestinput>RequestInput</a></pre> | Input request representation |
-| `response` | <pre><a href=https://github.com/kuzzleio/kuzzle-common-objects#requestresponse>RequestResponse</a></pre> | Serialized [request response]({{ site_base_path }}api/1/kuzzle-response) |
+| `response` | <pre><a href=https://github.com/kuzzleio/kuzzle-common-objects#requestresponse>RequestResponse</a></pre> | Serialized [request response]({{ site_base_path }}api/1/essentials/kuzzle-response) |
 | `result` | <pre>*</pre> | Request result |
 | `timestamp` | <pre>integer</pre> | Request creation timestamp, in Epoch-millis format |
 
@@ -161,5 +161,5 @@ The `options` argument accepts the following parameters:
 | Options | Type (default) | Description |
 |---------|------|-------------|
 | `headers` | <pre>object (null)</pre> | Network specific headers. Shortcut to the [response](https://github.com/kuzzleio/kuzzle-common-objects#requestresponse) header functions |
-| `raw` | <pre>boolean (false)</pre> | If `true`, instead of a standard [kuzzle response]({{ site_base_path }}api/1/kuzzle-response), the result is sent as is to the client, without being interpreted |
+| `raw` | <pre>boolean (false)</pre> | If `true`, instead of a standard [kuzzle response]({{ site_base_path }}api/1/essentials/kuzzle-response), the result is sent as is to the client, without being interpreted |
 | `status` | <pre>integer (200)</pre> | Request status |
