@@ -1,3 +1,4 @@
+require 'json'
 require 'uri'
 require "typhoeus"
 
@@ -59,6 +60,8 @@ each_dir(ARGV[0]) do |file_path|
 end
 
 hydra.run
+
+File.write('./dead_links.json', JSON.pretty_generate(dead_links))
 
 puts "Found #{dead_links[:internal].count} internal dead links:\n"
 dead_links[:internal].each do |dead_link|
