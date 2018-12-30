@@ -18,12 +18,12 @@ The following method returns a `SearchResult` or a `SpecificationSearchResult` (
 namespace kuzzleio {
     class SearchResult {
         public:
-            SearchResult* next();
+            SearchResult* next() const;
     };
 
     class SpecificationSearchResult : public SearchResult {
         public:
-            SpecificationSearchResult* next();
+            SpecificationSearchResult* next() const;
     };
 }
 ```
