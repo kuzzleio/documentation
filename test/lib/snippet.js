@@ -110,10 +110,6 @@ class Snippet {
     fs.copyFileSync(this.snippetFile, dest);
   }
 
-  clean() {
-    fs.unlinkSync(this.renderedSnippetPath);
-  }
-
   getLocalCommand() {
     const name = this.name.toLowerCase();
 
@@ -129,7 +125,7 @@ class Snippet {
       case 'csharp':
         return `LD_LIBRARY_PATH=./test/bin/ mono ./test/bin/${name}.exe`;
       default:
-        return `Unknown sdk name ${this.sdk.name}`
+        return `Unknown sdk name ${this.sdk.name}`;
     }
   }
 

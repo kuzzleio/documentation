@@ -20,5 +20,5 @@ catch (kuzzleio::UnauthorizedException& e) {
   std::cerr << "You are not connected" << std::endl;
 }
 catch (kuzzleio::KuzzleException& e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

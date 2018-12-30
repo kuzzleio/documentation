@@ -1,6 +1,6 @@
 ---
 title: SDKs
-order: 1
+order: 3
 layout: full.html.hbs
 nosidebar: true
 ---

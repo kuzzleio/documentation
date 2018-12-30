@@ -1,7 +1,9 @@
 try {
-  if (kuzzle->collection->exists("nyc-open-data", "green-taxi")) {
-    std::cout << "Success" << std::endl;
+  bool exists = kuzzle->collection->exists("nyc-open-data", "green-taxi");
+
+  if (exists) {
+    std::cout << "Collection green-taxi exists" << std::endl;
   }
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

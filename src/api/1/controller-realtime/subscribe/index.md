@@ -49,7 +49,7 @@ Due to the synchronous nature of the HTTP protocol, real-time notifications are 
 * `scope`: accepted values: `all`, `in`, `out`, `none` (default: `all`). Subscribe to either new documents entering the scope of the subscription filters (`in`), to documents leaving it (`out`), or both (`all`). Alternatively, document notifications can be ignored entirely (`none`)
 * `state` {{{deprecated "1.5.0"}}}: accepted values: `all`, `pending`, `done` (default: `done`). Subscribe to either changes that are about to occur (`pending`), to changes having occured (`done`), or both (`all`). In the latter case, each document change will generate 2 real-time notifications
 * `users`: accepted values: `all`, `in`, `out`, `none` (default: `none`). Receive real-time notifications about users subscribing to the same filters (`in`), about users leaving the subscription (`out`), or both (`all`). If set to `none`, no notifications are sent about users
-* `volatile`: subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data)
+* `volatile`: subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/essentials/volatile-data/)
 
 ---
 

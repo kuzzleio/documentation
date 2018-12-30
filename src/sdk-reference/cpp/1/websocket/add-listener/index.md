@@ -8,16 +8,18 @@ description: Adds a listener to an event
 
 Adds a listener to an event.
 
-## Arguments
+## Signature
 
 ```cpp
 void addListener(kuzzleio::Event event, kuzzleio::EventListener* listener);
 ```
 
+## Arguments
+
 | Argument   | Type                      | Description
 | ---------- |------------------------------------------------------------------------------------------------------ | -------- |
-| `event`    | <pre>kuzzleio::KuzzleEvent</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/essentials/event-handling)
-| `listener` | <pre>kuzzleio::EventListener*</pre> | A pointer to a c++11 lambda
+| `event`    | <pre>kuzzleio::KuzzleEvent</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events)
+| `listener` | <pre>kuzzleio::EventListener\*</pre> | Pointer to a c++11 lambda
 
 ### event
 

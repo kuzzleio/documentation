@@ -34,7 +34,7 @@ If you are performing a clean install you might get some `UNMET PEER DEPENDENCY`
 </div>
 
 Then, create an `init.js` file and start by adding the code below.  
-This loads the SDK and connects it to a Kuzzle instance using the Websocket protocol.  
+This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol.  
 
 [snippet=load-sdk]
 

@@ -44,7 +44,7 @@ Additional subscription options.
 | `scope` | <pre>string</pre><br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
 | `users` | <pre>string</pre><br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
 | `subscribeToSelf` | <pre>bool</pre><br/>(`true`) | Subscribe to notifications fired by our own queries |
-| `volatile` | <pre>json.RawMessage</pre><br/>(`{}`) | subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
+| `volatile` | <pre>json.RawMessage</pre><br/>(`{}`) | subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/essentials/volatile-data/) |
 
 
 ## Return

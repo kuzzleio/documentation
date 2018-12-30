@@ -1,0 +1,14 @@
+name: getting-started#initstorage
+description: Create an index and collection
+hooks:
+  before: curl -X DELETE kuzzle:7512/nyc-open-data
+  after:
+template: standalone
+expected:
+- Connected!
+- Index nyc-open-data created!
+- Collection yellow-taxi created!
+
+sdk: cpp
+version: 1
+

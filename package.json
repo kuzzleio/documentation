@@ -33,7 +33,6 @@
     "jquery": "^3.3.1",
     "jsonfile": "^5.0.0",
     "jstransformer-handlebars": "^1.1.0",
-    "kuzzle-sdk": "git+https://github.com/kuzzleio/sdk-javascript.git#6-dev",
     "markdown-it": "^8.4.2",
     "marked": "^0.5.1",
     "metalsmith": "^2.3.0",

@@ -11,14 +11,14 @@ Checks a JWT Token's validity.
 ## Signature
 
 ```cpp
-token_validity* checkToken(const std::string& token);
+kuzzleio::token_validity* checkToken(const std::string& token);
 ```
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `token`      | string  | the token   | yes
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `token`      | <pre>string</pre>  | JWT token   |
 
 ## Return
 
@@ -26,9 +26,9 @@ A pointer to a token_validity struct which has:
 
 | Name                | Type     | Description                        
 | ------------------- | -------- | -----------------------------------
-| valid               | bool     | Tell if the token is valid or not
-| state               | char\*   | Explain why the token is invalid
-| expires_at          | int      | Tells when the token expires
+| valid               | <pre>bool</pre>     | Token validity
+| state               | <pre>const char\*</pre>   | Explain why the token is invalid
+| expires_at          | <pre>unsigned long long</pre>      | Token expiration timestamp
 
 ## Exceptions
 
