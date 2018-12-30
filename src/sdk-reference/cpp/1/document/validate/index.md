@@ -20,13 +20,13 @@ This request does not store the document.
 bool validate(
     const std::string& index, 
     const std::string& collection, 
-    const std::string& document)
+    const std::string& document);
 
 bool validate(
     const std::string& index, 
     const std::string& collection, 
     const std::string& document, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

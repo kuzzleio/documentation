@@ -17,13 +17,13 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 std::vector<std::string> deleteByQuery(
     const std::string& index, 
     const std::string& collection, 
-    const std::string& query)
+    const std::string& query);
 
 std::vector<std::string> deleteByQuery(
     const std::string& index, 
     const std::string& collection, 
     const std::string& query, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

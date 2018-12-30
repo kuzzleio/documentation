@@ -13,12 +13,12 @@ Create the current user's credentials for the specified strategy.
 ```cpp
 std::string createMyCredentials(
     const std::string& strategy, 
-    const std::string& credentials)
+    const std::string& credentials);
 
 std::string createMyCredentials(
     const std::string& strategy, 
     const std::string& credentials, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

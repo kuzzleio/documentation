@@ -19,7 +19,7 @@ kuzzleio::kuzzle_response* query(const kuzzleio::kuzzle_request& request)
 
 kuzzleio::kuzzle_response* query(
     const kuzzleio::kuzzle_request& request, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

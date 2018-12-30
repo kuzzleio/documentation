@@ -13,12 +13,12 @@ Update the current user's credentials for the specified strategy. The credential
 ```cpp
 std::string updateMyCredentials(
     const std::string& strategy, 
-    const std::string& credentials)
+    const std::string& credentials);
 
 std::string updateMyCredentials(
     const std::string& strategy, 
     const std::string& credentials, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

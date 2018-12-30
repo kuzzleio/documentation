@@ -13,12 +13,12 @@ Validate the current user's credentials for the specified strategy. The `result`
 ```cpp
 bool validateMyCredentials(
     const std::string& strategy, 
-    const std::string& credentials)
+    const std::string& credentials);
 
 bool validateMyCredentials(
     const std::string& strategy, 
     const std::string& credentials, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

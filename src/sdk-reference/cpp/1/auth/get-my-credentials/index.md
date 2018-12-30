@@ -15,7 +15,7 @@ std::string getMyCredentials(const std::string& strategy)
 
 std::string getMyCredentials(
     const std::string& strategy, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

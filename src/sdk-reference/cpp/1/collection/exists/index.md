@@ -16,7 +16,7 @@ bool exists(const std::string& index, const std::string& collection)
 bool exists(
     const std::string& index, 
     const std::string& collection, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

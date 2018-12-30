@@ -20,18 +20,18 @@ void create(const std::string& index, const std::string& collection)
 void create(
     const std::string& index, 
     const std::string& collection, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 
 void create(
     const std::string& index, 
     const std::string& collection, 
-    const std::string& mapping)
+    const std::string& mapping);
 
 void create(
     const std::string& index, 
     const std::string& collection, 
     const std::string& mapping, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

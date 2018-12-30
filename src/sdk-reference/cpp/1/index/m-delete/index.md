@@ -15,7 +15,7 @@ std::vector<std::string> mDelete(const std::vector<std::string>& indexes)
 
 std::vector<std::string> mDelete(
     const std::vector<std::string>& indexes, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

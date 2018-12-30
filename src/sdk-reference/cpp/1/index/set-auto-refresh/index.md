@@ -26,7 +26,7 @@ void setAutoRefresh(const std::string& index, bool auto_refresh)
 void setAutoRefresh(
     const std::string& index, 
     bool auto_refresh, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

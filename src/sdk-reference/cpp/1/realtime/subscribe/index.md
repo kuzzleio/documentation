@@ -15,14 +15,14 @@ std::string subscribe(
     const std::string& index, 
     const std::string& collection, 
     const std::string& filters, 
-    kuzzleio::NotificationListener* listener)
+    kuzzleio::NotificationListener* listener);
 
 std::string subscribe(
     const std::string& index, 
     const std::string& collection, 
     const std::string& filters, 
     kuzzleio::NotificationListener* listener, 
-    const kuzzleio::room_options& options)
+    const kuzzleio::room_options& options);
 ```
 
 ## Arguments

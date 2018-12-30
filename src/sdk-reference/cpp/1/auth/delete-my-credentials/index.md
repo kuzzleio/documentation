@@ -15,7 +15,7 @@ void deleteMyCredentials(const std::string& strategy)
 
 void deleteMyCredentials(
     const std::string& strategy, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

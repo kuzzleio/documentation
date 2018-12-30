@@ -15,7 +15,7 @@ Theses listener will receive a `const std::string` as argument. This string is a
 ```cpp
 virtual kuzzleio::Kuzzlekuzzleio::EventEmitter* addListener(
     kuzzleio::Event event, 
-    kuzzleio::EventListener* listener)
+    kuzzleio::EventListener* listener);
 ```
 
 ## Arguments

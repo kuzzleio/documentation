@@ -14,7 +14,7 @@ Returns the rights for the currently logged in user within the SDK instance.
 std::vector<std::shared_ptr<kuzzleio::kuzzleio::UserRight>> getMyRights()
 
 std::vector<std::shared_ptr<kuzzleio::kuzzleio::UserRight>> getMyRights(
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

@@ -24,7 +24,7 @@ kuzzleio::SearchResult* searchSpecifications(const std::string& query)
 
 kuzzleio::SearchResult* searchSpecifications(
     const std::string& query, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

@@ -20,18 +20,18 @@ int count(const std::string& index, const std::string& collection)
 int count(
     const std::string& index, 
     const std::string& collection, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 
 int count(
     const std::string& index, 
     const std::string& collection, 
-    const std::string& query)
+    const std::string& query);
 
 int count(
     const std::string& index, 
     const std::string& collection, 
     const std::string& query, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

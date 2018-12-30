@@ -16,13 +16,13 @@ When the validation specification is not formatted correctly, a detailed error m
 kuzzleio::validation_response* validateSpecifications(
     const std::string& index, 
     const std::string& collection, 
-    const std::string& specifications)
+    const std::string& specifications);
 
 kuzzleio::validation_response* validateSpecifications(
     const std::string& index, 
     const std::string& collection, 
     const std::string& specifications, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

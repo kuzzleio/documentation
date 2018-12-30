@@ -21,13 +21,13 @@ You can set the `retryOnConflict` optional argument (with a retry count), to tel
 std::string mUpdate(
     const std::string& index, 
     const std::string& collection, 
-    const std::string& documents)
+    const std::string& documents);
 
 std::string mUpdate(
     const std::string& index, 
     const std::string& collection, 
     const std::string& documents, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

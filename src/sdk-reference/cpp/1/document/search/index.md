@@ -25,13 +25,13 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 kuzzleio::SearchResult* search(
     const std::string& index, 
     const std::string& collection, 
-    const std::string& query)
+    const std::string& query);
 
 kuzzleio::SearchResult* search(
     const std::string& index, 
     const std::string& collection, 
     const std::string& query, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

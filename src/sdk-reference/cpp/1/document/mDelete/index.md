@@ -19,13 +19,13 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 std::vector<std::string> mDelete(
     const std::string& index, 
     const std::string& collection, 
-    const std::vector<std::string>& ids)
+    const std::vector<std::string>& ids);
 
 std::vector<std::string> mDelete(
     const std::string& index, 
     const std::string& collection, 
     const std::vector<std::string>& ids, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

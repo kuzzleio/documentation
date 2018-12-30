@@ -17,13 +17,13 @@ Throws a partial error (error code 206) if one or more documents can not be repl
 std::string mReplace(
     const std::string& index, 
     const std::string& collection, 
-    const std::string& documents)
+    const std::string& documents);
 
 std::string mReplace(
     const std::string& index, 
     const std::string& collection, 
     const std::string& documents, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

@@ -16,13 +16,13 @@ persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/e
 void updateMapping(
     const std::string& index, 
     const std::string& collection, 
-    const std::string& mapping)
+    const std::string& mapping);
 
 void updateMapping(
     const std::string& index, 
     const std::string& collection, 
     const std::string& mapping, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

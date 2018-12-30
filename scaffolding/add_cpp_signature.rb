@@ -88,7 +88,7 @@ def signature_mutator(controller, action)
     if signature.size > 80
       match = signature.match(/([<>\w\s\*:]+)\(([\w:&\s,\*<>]+)\)/)
       params = match[2].split(', ').map {|param| "\n    #{param}" }.join(", ")
-      "#{match[1]}(#{params})"
+      "#{match[1]}(#{params});"
     else
       signature
     end

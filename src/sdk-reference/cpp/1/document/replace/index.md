@@ -16,14 +16,14 @@ std::string replace(
     const std::string& index, 
     const std::string& collection, 
     const std::string& id, 
-    const std::string& document)
+    const std::string& document);
 
 std::string replace(
     const std::string& index, 
     const std::string& collection, 
     const std::string& id, 
     const std::string& document, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

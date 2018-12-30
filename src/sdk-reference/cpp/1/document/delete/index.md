@@ -17,13 +17,13 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 std::string delete_(
     const std::string& index, 
     const std::string& collection, 
-    const std::string& id)
+    const std::string& id);
 
 std::string delete_(
     const std::string& index, 
     const std::string& collection, 
     const std::string& id, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

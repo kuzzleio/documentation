@@ -13,12 +13,12 @@ Delete the validation specifications associated with the collection.
 ```cpp
 void deleteSpecifications(
     const std::string& index, 
-    const std::string& collection)
+    const std::string& collection);
 
 void deleteSpecifications(
     const std::string& index, 
     const std::string& collection, 
-    const kuzzleio::query_options& options)
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
