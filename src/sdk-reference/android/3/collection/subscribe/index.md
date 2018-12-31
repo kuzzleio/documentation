@@ -8,7 +8,7 @@ description: Collection:subscribe
 # subscribe
 Subscribes to this data collection with a set of filters.
 
-The provided callback will be called everytime a [notification]({{ site_base_path }}sdk-reference/android/3/essentials/notifications) is received from Kuzzle.
+The provided callback will be called everytime a [notification]({{ site_base_path }}sdk-reference/android/3/notifications) is received from Kuzzle.
 
 ---
 

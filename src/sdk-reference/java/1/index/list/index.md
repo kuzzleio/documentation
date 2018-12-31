@@ -31,7 +31,7 @@ Additional query options
 
 ## Return
 
-Returns an `io.kuzzle.sdk.StringVector` containing the list of indexes names present in Kuzzle (more details about [StringVector]({{ site_base_path }}sdk-reference/java/1/essentials/string-vector))
+Returns an `io.kuzzle.sdk.StringVector` containing the list of indexes names present in Kuzzle (more details about [StringVector]({{ site_base_path }}sdk-reference/java/1/string-vector))
 
 ## Exceptions
 

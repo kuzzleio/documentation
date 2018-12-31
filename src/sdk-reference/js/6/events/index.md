@@ -79,7 +79,7 @@ Triggered whenever a request is added to the offline queue.
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | <pre>object</pre> | [Request]({{ site_base_path }}api/1/essentials/query-syntax/common-attributes/) added to the queue |
+| `request` | <pre>object</pre> | [Request]({{ site_base_path }}api/1/essentials/query-syntax//) added to the queue |
 
 ## queryError
 
@@ -92,7 +92,7 @@ Triggered whenever Kuzzle responds with an error
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
 | `request` | <pre>object</pre> | Request that causing an error |
-| `error` | Error | Error details |
+| `error` | <pre>Error</pre> | Error details |
 
 ## reconnected
 

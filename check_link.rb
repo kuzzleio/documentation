@@ -2,12 +2,15 @@ require 'rbtrace'
 require 'json'
 require 'uri'
 require 'typhoeus'
+require 'optparse'
 
 class LinkChecker
   INTERNAL_LINK_REGEXP = /\(\{\{\s+site_base_path\s+\}\}([^)]+)/
 
-  def initialize(path)
-    @path = path
+  def initialize(options)
+    @path = options[:path]
+    @only = options[:only] || ''
+    @json_file = options[:file] || './dead_links.json'
 
     @hydra = Typhoeus::Hydra.new
 
@@ -18,14 +21,14 @@ class LinkChecker
   end
 
   def run
-    each_dir(ARGV[0]) do |file_path|
+    each_dir(@path) do |file_path|
       next unless file_path.end_with?('.md')
 
       content = File.read(file_path)
 
-      scan_internal_links(file_path, content)
+      scan_internal_links(file_path, content) unless @only == 'external'
 
-      scan_external_links(file_path, content)
+      scan_external_links(file_path, content) unless @only == 'internal'
     end
 
     @hydra.run
@@ -38,6 +41,7 @@ class LinkChecker
       pages.each do |page|
         puts "    -> #{page}"
       end
+      puts ""
     end
 
     puts "Found #{@dead_links[:external].count} uniq external dead links:\n"
@@ -49,8 +53,8 @@ class LinkChecker
     end
   end
 
-  def report_json(path = './dead_links.json')
-    File.write(path, JSON.pretty_generate(@dead_links))
+  def report_json
+    File.write(@json_file, JSON.pretty_generate(@dead_links))
   end
 
   private
@@ -104,12 +108,15 @@ class LinkChecker
   end
 end
 
-if ARGV[0].to_s.empty?
-  puts 'Usage: ruby check_link.rb <path>'
-  exit 1
-end
+options = {}
 
-link_checker = LinkChecker.new(ARGV[0])
+OptionParser.new do |opt|
+  opt.on('-p PATH') { |o| options[:path] = o }
+  opt.on('--only TYPE') { |o| options[:only] = o }
+  opt.on('--output FILE') { |o| options[:file] = o }
+end.parse!
+
+link_checker = LinkChecker.new(options)
 
 link_checker.run
 
