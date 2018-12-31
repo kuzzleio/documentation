@@ -5,7 +5,7 @@ require 'typhoeus'
 require 'optparse'
 
 class LinkChecker
-  INTERNAL_LINK_REGEXP = /\(\{\{\s+site_base_path\s+\}\}([^)]+)/
+  INTERNAL_LINK_REGEXP = /\(\{\{\s+site_base_path\s+\}\}([^)>]+)/
 
   def initialize(options)
     @path = options[:path]
@@ -65,14 +65,19 @@ class LinkChecker
       # Remove anchor
       relative_path.gsub!(/#[\w-]+/, '')
 
-      full_path = "src/#{relative_path}/index.md"
+      if relative_path.end_with?('.png')
+        full_path = "src/#{relative_path}"
+      else
+        full_path = "src/#{relative_path}/index.md"
+      end
+
       # Remove double //
       full_path.gsub!(/\/\//, '/')
 
       next if File.exists?(full_path)
 
       @dead_links[:internal][full_path] ||= []
-      @dead_links[:internal][full_path] << file_path
+      @dead_links[:internal][full_path] << file_path.gsub(/\/\//, '/')
     end
   end
 
@@ -87,7 +92,7 @@ class LinkChecker
       request.on_complete do |response|
         if response.code != 200
           @dead_links[:external][external_link] ||= []
-          @dead_links[:external][external_link] << file_path
+          @dead_links[:external][external_link] << file_path.gsub(/\/\//, '/')
         end
       end
 

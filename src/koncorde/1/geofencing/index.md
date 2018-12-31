@@ -39,7 +39,7 @@ Alternative 2:
 
 ## Geodistances
 
-Distances used in geofencing filters such as [geoDistance]({{ site_base_path }}koncorde/1/terms/geo-distance/) or [geoDistanceRange]({{ site_base_path }}koncorde/1/terms/geo-distance-range/) can be expressed in various ways.
+Distances used in geofencing filters such as [geoDistance]({{ site_base_path }}koncorde/1/terms/#geodistance-default/) or [geoDistanceRange]({{ site_base_path }}koncorde/1/terms/#geodistance-default-range/) can be expressed in various ways.
 
 Accepted units:
 

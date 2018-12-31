@@ -10,7 +10,7 @@ order: 750
 
 Once we have created security [roles and profiles]({{ site_base_path }}guide/1/essentials/security), we can go on to create the users that will access the Kuzzle.
 
-Users can be created by either using the [Kuzzle Admin Console]({{ site_base_path }}guide/1/essentials/installing-console), the [API]({{ site_base_path }}api/1/controller-security/create-user/), or the [SDK]({{ site_base_path }}sdk-reference/security/create-user/).
+Users can be created by either using the [Kuzzle Admin Console]({{ site_base_path }}guide/1/essentials/installing-console) or the [API]({{ site_base_path }}api/1/controller-security/create-user/).
 
 When creating a user, you will need to assign them one or more [profiles]({{ site_base_path }}guide/1/essentials/security/#defining-profiles).
 
@@ -68,7 +68,7 @@ If you're interested for a more in-depth explanation on how all of this work, th
 
 ## Authentication Strategies
 
-Once a user has been created, they can access resources in Kuzzle as permitted by their security profile. However; in order to access these resources they will first need to identify & authenticate themselves using an authentication strategy. The authentication strategy defines what credentials are used and how Kuzzle should validate them. Kuzzle supports multiple authentication strategies, giving you more flexibility when building your security layer: use [Oauth](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth), Kerberos, Salesforce, and many more. And, if none of these suit your needs, follow our [Plugin Documentation]({{ site_base_path }}plugins/1/essentials/strategies) to learn how to build a custom authentication strategy. 
+Once a user has been created, they can access resources in Kuzzle as permitted by their security profile. However; in order to access these resources they will first need to identify & authenticate themselves using an authentication strategy. The authentication strategy defines what credentials are used and how Kuzzle should validate them. Kuzzle supports multiple authentication strategies, giving you more flexibility when building your security layer: use [OAuth](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth), Kerberos, Salesforce, and many more. And, if none of these suit your needs, follow our [Plugin Documentation]({{ site_base_path }}plugins/1/essentials/strategies) to learn how to build a custom authentication strategy. 
 
 To request access to Kuzzle, a user must first send an [authentication request]({{ site_base_path }}api/1/controller-auth/login). Kuzzle will validate the credentials it receives in the request using the predefined authentication strategy and return a [JSON Web Token](https://tools.ietf.org/html/rfc7519) if the user credentials are valid.
 

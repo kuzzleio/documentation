@@ -14,7 +14,7 @@ Kuzzle provides a full set of functionalities to configure fine-grained permissi
 
 When Kuzzle is first installed there is no administrator account and anonymous users (i.e. unauthenticated users) have administrative privileges.
 
-To secure your Kuzzle installation you will need to create an administrator account by either using the [Kuzzle Admin Console]({{ site_base_path }}guide/1/essentials/installing-console/#create-an-admin-account ) or using the [CLI]({{ site_base_path }}guide/1/essentials/cli/#createfirstadmin) tool.  
+To secure your Kuzzle installation you will need to create an administrator account by either using the [Kuzzle Admin Console]({{ site_base_path }}guide/1/essentials/installing-console/#create-an-admin-account) or using the [CLI]({{ site_base_path }}guide/1/essentials/cli/#createfirstadmin) tool.  
 
 Once the administrator account is created, you can remove anonymous access rights and properly secure your installation. You can then use the Kuzzle Admin Console or Kuzzle API to create new users and assign them permissions.
 

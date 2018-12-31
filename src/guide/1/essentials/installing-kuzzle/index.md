@@ -15,7 +15,7 @@ In this section we'll describe different ways of installing Kuzzle.
 The easiest way to install Kuzzle is by using our installation script:
 
 ```bash
-bash -c "$(curl http://get.kuzzle.io)"
+bash -c "$(curl https://get.kuzzle.io)"
 ```
 
 ---
@@ -31,7 +31,7 @@ Before launching Kuzzle using Docker containers, ensure that your system meets t
 
 To install docker, you need to download the docker-compose file:
 
-
+<div class="alert alert-info">
 Before starting the docker stack, you need to increase the maximum amount of virtual memory in order to run Elasticsearch, which is part of our stack (see why <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.6/_maximum_map_count_check.html">here</a>):
 
 ```bash
@@ -43,6 +43,7 @@ To make this configuration permanent, you need to update your `/etc/sysctl.conf`
 ```bash
 echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 ```
+</div>
 
 Now, we can start the docker stack:
 
@@ -376,6 +377,6 @@ PM2        |     at process._tickDomainCallback (internal/process/next_tick.js:1
 Once your Kuzzle instance is up and running, dive even deeper to learn how to leverage its full capabilities:
 
 - take a look at the [SDK Reference]({{site_base_path}}sdk-reference)
-- learn how to use [Koncorde]({{ site_base_path }}koncorde/1/essential/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+- learn how to use [Koncorde]({{ site_base_path }}koncorde/1) to create incredibly fine-grained and blazing-fast subscriptions
 - follow our guide to learn how to [implement basic authentication]({{site_base_path}}guide/1/essentials/user-authentication/#local-strategy).
 - follow our guide to learn how to [implement manage users and setup fine-grained access control]({{site_base_path}}guide/1/essentials/security).
