@@ -26,7 +26,7 @@ func (r *Realtime) Subscribe(
 |--------------|---------|-------------|
 | `index` | <pre>string</pre> | Index name    |
 | `collection` | <pre>string</pre> | Collection name    |
-| `filters` | <pre>json.RawMessage</pre> | A set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
+| `filters` | <pre>json.RawMessage</pre> | A set of filters following [Koncorde syntax]({{site_base_path}}koncorde/1/essential/koncorde) |
 | `listener` | <pre>chan<- types.NotificationResult</pre> | Channel receiving the notification |
 | `options` | <pre>types.RoomOptions</pre> | A struct containing subscription options |
 

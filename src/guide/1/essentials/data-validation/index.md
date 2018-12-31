@@ -92,7 +92,7 @@ Below is an example of how the `range` type option is used to ensure that the fi
 
 ## Advanced Validation
 
-If the basic validation functionality doesn't meet your requirements, you can take advantage of [Koncorde]({{ site_base_path }}kuzzle-dsl/1) to create complex validation specifications. 
+If the basic validation functionality doesn't meet your requirements, you can take advantage of [Koncorde]({{ site_base_path }}koncorde/1) to create complex validation specifications. 
 
 <div class="alert alert-info">
 Koncorde is the same component used to create real-time subscriptions.
@@ -150,4 +150,4 @@ The idea is simple: use Koncorde to specify a filter that can be used to validat
 }
 ```
 
-In the example above, we used both the `exists` operator and the `or` operator to build our validation rule. For more information take a look at our [Koncorde Reference]({{ site_base_path }}kuzzle-dsl/1/terms/exists).
+In the example above, we used both the `exists` operator and the `or` operator to build our validation rule. For more information take a look at our [Koncorde Reference]({{ site_base_path }}koncorde/1/terms/exists).

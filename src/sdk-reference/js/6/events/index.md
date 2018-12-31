@@ -79,7 +79,7 @@ Triggered whenever a request is added to the offline queue.
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | <pre>object</pre> | [Request]({{ site_base_path }}api-documentation/query-syntax/common-attributes/) added to the queue |
+| `request` | <pre>object</pre> | [Request]({{ site_base_path }}api/1/essentials/query-syntax/common-attributes/) added to the queue |
 
 ## queryError
 

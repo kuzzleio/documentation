@@ -65,10 +65,10 @@ Test for the existence of a key in an object, or of a scalar in an array.
 Since Koncorde 1.2, the `exists` syntax is as follows:
 
 `exists: 'nested.field.path'`
-(see [nested field syntax]({{ site_base_path }}kuzzle-dsl/essential/nested))
+(see [nested field syntax]({{ site_base_path }}koncorde/1/essential/nested))
 
 `exists: 'nested.array[value]'`
-(see [array value syntax]({{ site_base_path }}kuzzle-dsl/essential/arrayvalues))
+(see [array value syntax]({{ site_base_path }}koncorde/1/essential/arrayvalues))
 
 The following syntax is deprecated since Koncorde 1.2, and supported for backward compatibility only:
 
@@ -121,7 +121,7 @@ Filter documents containing a geographical point confined within a bounding box:
 
 A bounding box is a 2D box that can be defined using either of the following formats:
 
-* 2 [geopoints]({{ site_base_path }}kuzzle-dsl/essential/geopoints/), defining the top left (`topLeft` or `top_left`) and bottom right (`bottomRight` or `bottom_right`) corners of the box
+* 2 [geopoints]({{ site_base_path }}koncorde/1/essential/geopoints/), defining the top left (`topLeft` or `top_left`) and bottom right (`bottomRight` or `bottom_right`) corners of the box
 * 4 distinct values defining the 4 box corners: `top` and `bottom` are latitudes, `left` and `right` are longitudes
 
 The bounding box description must be stored in an attribute, named after the geographical point to be tested in future documents.
@@ -221,9 +221,9 @@ Filter documents containing a geographical point, whose position is within a dis
 
 A `geoDistanceRange` filter contains the following properties:
 
-* a [geopoint]({{ site_base_path }}kuzzle-dsl/essential/geopoints/) defining the center point of the distance range. This geopoint attribute must be named after the geographical point to test in future documents
-* a `from` attribute, describing the minimum distance from the center point, using a [geodistance format]({{ site_base_path }}kuzzle-dsl/essential/geodistances/)
-* a `to` attribute, describing the maximum distance from the center point, using a [geodistance format]({{ site_base_path }}kuzzle-dsl/essential/geodistances/)
+* a [geopoint]({{ site_base_path }}koncorde/1/essential/geopoints/) defining the center point of the distance range. This geopoint attribute must be named after the geographical point to test in future documents
+* a `from` attribute, describing the minimum distance from the center point, using a [geodistance format]({{ site_base_path }}koncorde/1/essential/geodistances/)
+* a `to` attribute, describing the maximum distance from the center point, using a [geodistance format]({{ site_base_path }}koncorde/1/essential/geodistances/)
 
 ### Syntax
 
@@ -282,8 +282,8 @@ Filter documents containing a geographical point, whose position is within a dis
 
 A `geoDistance` filter contains the following properties:
 
-* a [geopoint]({{ site_base_path }}kuzzle-dsl/essential/geopoints/) defining the point of origin. This geopoint attribute must be named after the geographical point to test in future documents
-* a `distance` parameter in [geodistance format]({{ site_base_path }}kuzzle-dsl/essential/geodistances/)
+* a [geopoint]({{ site_base_path }}koncorde/1/essential/geopoints/) defining the point of origin. This geopoint attribute must be named after the geographical point to test in future documents
+* a `distance` parameter in [geodistance format]({{ site_base_path }}koncorde/1/essential/geodistances/)
 
 ### Syntax
 
@@ -341,7 +341,7 @@ Filter documents containing a geographical point, confined within a polygon that
 
 ![Illustration of geoPolygon]({{ site_base_path }}assets/images/geolocation/geoPolygon.png)
 
-A `geoPolygon` filter is described using a `points` array, containing an arbitrary number of [geopoints]({{ site_base_path }}kuzzle-dsl/essential/geopoints/) (at least 3).  
+A `geoPolygon` filter is described using a `points` array, containing an arbitrary number of [geopoints]({{ site_base_path }}koncorde/1/essential/geopoints/) (at least 3).  
 
 Koncorde automatically closes geopolygons.
 
@@ -456,10 +456,10 @@ A `missing` filter used to match arrays without a specific value will also match
 Since Koncorde 1.2, the `missing` syntax is as follows:
 
 `missing: 'nested.field.path'`
-(see [nested field syntax]({{ site_base_path }}kuzzle-dsl/essential/nested))
+(see [nested field syntax]({{ site_base_path }}koncorde/1/essential/nested))
 
 `missing: 'nested.array[value]'`
-(see [array value syntax]({{ site_base_path }}kuzzle-dsl/essential/arrayvalues)
+(see [array value syntax]({{ site_base_path }}koncorde/1/essential/arrayvalues)
 
 The following syntax is deprecated since Koncorde 1.2, and supported for backward compatibility only:
 

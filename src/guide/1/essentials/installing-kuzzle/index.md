@@ -376,6 +376,6 @@ PM2        |     at process._tickDomainCallback (internal/process/next_tick.js:1
 Once your Kuzzle instance is up and running, dive even deeper to learn how to leverage its full capabilities:
 
 - take a look at the [SDK Reference]({{site_base_path}}sdk-reference)
-- learn how to use [Koncorde]({{ site_base_path }}kuzzle-dsl/1/essential/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+- learn how to use [Koncorde]({{ site_base_path }}koncorde/1/essential/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
 - follow our guide to learn how to [implement basic authentication]({{site_base_path}}guide/1/essentials/user-authentication/#local-strategy).
 - follow our guide to learn how to [implement manage users and setup fine-grained access control]({{site_base_path}}guide/1/essentials/security).
