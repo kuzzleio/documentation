@@ -24,7 +24,7 @@ kuzzleio::kuzzle_response* send(const std::string& query, kuzzleio::query_option
 
 ### request
 
-Properties required for the Kuzzle API can be set in the [kuzzle_request]({{ site_base_path }}sdk-reference/cpp/1/kuzzle-request) struct.
+Properties required for the Kuzzle API can be set in the [kuzzle_request]({{ site_base_path }}sdk-reference/cpp/1/cpp/1/kuzzle-request) struct.
 The following properties are the most common.
 
 | Property     | Type         | Description                                                        | Required |
@@ -57,7 +57,7 @@ Kuzzle does not guarantee that responses are sent back in the same order than qu
 
 ## Return
 
-A [kuzzle_response]({{ site_base_path }}sdk-reference/cpp/1/kuzzle-response) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/essentials/kuzzle-response).
+A [kuzzle_response]({{ site_base_path }}sdk-reference/cpp/1/cpp/1/kuzzle-response) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/essentials/kuzzle-response).
 The following properties are the most common.
 
 | Property     | Type   | Description                         |

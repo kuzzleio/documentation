@@ -6,7 +6,7 @@ description: Connects the SDK to Kuzzle
 
 # connect
 
-Connects to Kuzzle using the `host` argument provided to the `connection.Connection` (see [Kuzzle constructor]({{ site_base_path }}sdk-reference/kuzzle/constructor#usage-go)).  
+Connects to Kuzzle using the `host` argument provided to the `connection.Connection` (see [Kuzzle constructor]({{ site_base_path }}sdk-reference/go/1/kuzzle/constructor#usage-go)).  
 Subsequent call have no effect if the SDK is already connected.
 
 ## Signature

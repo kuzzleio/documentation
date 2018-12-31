@@ -19,7 +19,7 @@ io.kuzzle.sdk.KuzzleEventEmitter addListener(io.kuzzle.sdk.Event event, io.kuzzl
 
 | Argument   | Type          | Description                                                                                            | Required |
 | ---------- | ------------- | ------------------------------------------------------------------------------------------------------ | -------- |
-| `event`    | io.kuzzle.sdk.Event | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes      |
+| `event`    | io.kuzzle.sdk.Event | An enum representing the listened [event]({{ site_base_path }}sdk-reference/java/1/essentials/event-handling) | yes      |
 | `listener` | io.kuzzle.sdk.EventListener | An instance of an `io.kuzzle.sdk.EventListener`                                                                      | yes      |
 
 ### **event**

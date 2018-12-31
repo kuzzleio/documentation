@@ -6,7 +6,7 @@ description: Collection:scroll
   
 
 # scroll
-Returns a [SearchResult]({{ site_base_path }}sdk-reference/search-result/) object containing the next page of the scroll session, and the `scrollId` to be used in the next `scroll` action.  
+Returns a [SearchResult]({{ site_base_path }}sdk-reference/php/3/search-result/) object containing the next page of the scroll session, and the `scrollId` to be used in the next `scroll` action.  
 A scroll session is always initiated by a `search` action and including the `scroll` argument; more information below.
 
 <div class="alert alert-info">
@@ -39,7 +39,7 @@ There is a small delay between the time a document is created and its availabili
 
 ## Callback Response
 
-Returns an instantiated [SearchResult]({{ site_base_path }}sdk-reference/search-result) object.
+Returns an instantiated [SearchResult]({{ site_base_path }}sdk-reference/php/3/search-result) object.
 
 ---
 ## Usage

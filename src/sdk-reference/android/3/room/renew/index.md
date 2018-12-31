@@ -17,7 +17,7 @@ Unsubscribes first if this `Room` object was already listening to events.
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
 | ``filters`` | JSON Object | [Filters]({{ site_base_path }}koncorde/1) |
-| ``notificationCallback`` | function | Function called each time a [notification]({{ site_base_path }}sdk-reference/essentials/notifications) is received |
+| ``notificationCallback`` | function | Function called each time a [notification]({{ site_base_path }}sdk-reference/android/3/essentials/notifications) is received |
 | ``subscriptionCallback`` | function | Function called with the subscription result |
 
 ## Usage
