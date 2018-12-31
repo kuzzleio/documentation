@@ -1,11 +1,12 @@
-require 'rbtrace'
 require 'json'
 require 'uri'
 require 'typhoeus'
 require 'optparse'
-require 'byebug'
+
 class LinkChecker
   INTERNAL_LINK_REGEXP = /\(\{\{\s+site_base_path\s+\}\}([^)>]+)/
+
+  attr_reader :internal, :external
 
   def initialize(options)
     @path = options[:path]
@@ -14,10 +15,8 @@ class LinkChecker
 
     @hydra = Typhoeus::Hydra.new(max_concurrency: 200)
 
-    @dead_links = {
-      internal: {},
-      external: {}
-    }
+    @internal = {}
+    @external = {}
   end
 
   def run
@@ -36,8 +35,8 @@ class LinkChecker
   end
 
   def report_stdout
-    puts "Found #{@dead_links[:internal].count} uniq internal dead links:\n"
-    @dead_links[:internal].each do |link, pages|
+    puts "Found #{@internal.count} uniq internal dead links:\n"
+    @internal.each do |link, pages|
       puts "  - #{link} found on #{pages.count} pages:"
       pages.each do |page|
         puts "    -> #{page}"
@@ -45,8 +44,8 @@ class LinkChecker
       puts ""
     end
 
-    puts "Found #{@dead_links[:external].count} uniq external dead links:\n"
-    @dead_links[:external].each do |link, pages|
+    puts "Found #{@external.count} uniq external dead links:\n"
+    @external.each do |link, pages|
       puts "  - #{link} found on #{pages.count} pages:"
       pages.each do |page|
         puts "    -> #{page}"
@@ -77,8 +76,8 @@ class LinkChecker
 
       next if File.exists?(full_path)
 
-      @dead_links[:internal][full_path] ||= []
-      @dead_links[:internal][full_path] << file_path.gsub(/\/\//, '/')
+      @internal[full_path] ||= []
+      @internal[full_path] << file_path.gsub(/\/\//, '/')
     end
   end
 
@@ -96,8 +95,8 @@ class LinkChecker
 
       request.on_complete do |response|
         if response.code != 200
-          @dead_links[:external][external_link] ||= []
-          @dead_links[:external][external_link] << file_path.gsub(/\/\//, '/')
+          @external[external_link] ||= []
+          @external[external_link] << file_path.gsub(/\/\//, '/')
         end
       end
 
