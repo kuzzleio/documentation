@@ -54,7 +54,7 @@ class LinkChecker
   end
 
   def report_json
-    File.write(@json_file, JSON.pretty_generate(@dead_links))
+    File.write(@json_file, JSON.pretty_generate({ external: @external, internal: @internal }))
   end
 
   private
