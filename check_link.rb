@@ -3,7 +3,7 @@ require 'json'
 require 'uri'
 require 'typhoeus'
 require 'optparse'
-
+require 'byebug'
 class LinkChecker
   INTERNAL_LINK_REGEXP = /\(\{\{\s+site_base_path\s+\}\}([^)>]+)/
 
@@ -12,7 +12,7 @@ class LinkChecker
     @only = options[:only] || ''
     @json_file = options[:file] || './dead_links.json'
 
-    @hydra = Typhoeus::Hydra.new
+    @hydra = Typhoeus::Hydra.new(max_concurrency: 200)
 
     @dead_links = {
       internal: {},
@@ -31,6 +31,7 @@ class LinkChecker
       scan_external_links(file_path, content) unless @only == 'internal'
     end
 
+    puts "Checking #{@hydra.queued_requests.count} external links.."
     @hydra.run
   end
 
@@ -83,7 +84,11 @@ class LinkChecker
 
   def scan_external_links(file_path, content)
     external_links = URI.extract(content, ['http', 'https'])
-    external_links.each do |external_link|
+    external_links.keep_if do |external_link|
+      !external_link.start_with?('http://kuzzle') &&
+        !external_link.start_with?('http://localhost') &&
+        !external_link.start_with?('http://<')
+    end.each do |external_link|
       # Remove markdown parenthesis and other garbage
       external_link.gsub!(/[\)][\.:,]*/, '')
 
