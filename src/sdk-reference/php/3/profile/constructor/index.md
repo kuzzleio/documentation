@@ -7,7 +7,7 @@ order: 1
   
 
 # Constructors
-Instantiates a new `Profile` object, representing a security [profile]({{ site_base_path }}guide/essentials/security/#users-profiles-and-roles), which is a set of one or many [Role]({{ site_base_path }}sdk-reference/role) objects.
+Instantiates a new `Profile` object, representing a security [profile]({{ site_base_path }}guide/1/essentials/security/#users-profiles-and-roles), which is a set of one or many [Role]({{ site_base_path }}sdk-reference/php/3/role) objects.
 
 ---
 
@@ -15,7 +15,7 @@ Instantiates a new `Profile` object, representing a security [profile]({{ site_b
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``Security`` | Security | An instantiated [Security]({{ site_base_path }}sdk-reference/security) object |
+| ``Security`` | Security | An instantiated [Security]({{ site_base_path }}sdk-reference/php/3/security) object |
 | ``id`` | string | Unique profile identifier |
 | ``content`` | JSON Object | Profile content |
 | ``meta`` | JSON Object | Profile metadata |

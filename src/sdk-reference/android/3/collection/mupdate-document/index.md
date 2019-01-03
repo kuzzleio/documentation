@@ -6,7 +6,7 @@ description: Collection:mupdateDocument
   
 
 # mUpdateDocument
-Update the provided [Documents]({{ site_base_path }}sdk-reference/document/).
+Update the provided [Documents]({{ site_base_path }}sdk-reference/android/3/document/).
 
 ---
 
@@ -14,7 +14,7 @@ Update the provided [Documents]({{ site_base_path }}sdk-reference/document/).
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``documents`` | Document[] | Array of [Documents]({{ site_base_path }}sdk-reference/document/) to update |
+| ``documents`` | Document[] | Array of [Documents]({{ site_base_path }}sdk-reference/android/3/document/) to update |
 | ``options`` | JSON Object | Optional parameters |
 | ``callback`` | function | Optional callback |
 

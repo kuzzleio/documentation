@@ -77,7 +77,7 @@ Here we assume you have installed Kuzzle on your localhost, if this is not the c
 ## Subscribe to Documents with Specific Criteria
 
 
-We will perform a subscription request that tells Kuzzle that the App wants to be notified anytime a document is created that contains the *message* field. We define this subscription filter as follows, for more information about filters click [here]({{ site_base_path }}kuzzle-dsl/):
+We will perform a subscription request that tells Kuzzle that the App wants to be notified anytime a document is created that contains the *message* field. We define this subscription filter as follows, for more information about filters click [here]({{ site_base_path }}koncorde/1/):
 
 In the Subscribe function add:
 

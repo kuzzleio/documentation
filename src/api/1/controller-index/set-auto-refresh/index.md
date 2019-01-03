@@ -81,5 +81,5 @@ Returns an object confirming the new value of the `autoRefresh` index property.
 
 ## Possible errors
 
-- [Common errors]({{ site_base_path }}api/1/errors/#common-errors)
-- [NotFoundError]({{ site_base_path }}api/1/errors/#notfounderror)
+- [Common errors]({{ site_base_path }}api/1/essentials/errors/#common-errors)
+- [NotFoundError]({{ site_base_path }}api/1/essentials/errors/#notfounderror)

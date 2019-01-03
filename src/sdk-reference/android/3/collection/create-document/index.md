@@ -6,7 +6,7 @@ description: Collection:createDocument
   
 
 # createDocument
-Create a new document in Kuzzle and instantiate a [Document]({{ site_base_path }}sdk-reference/document/) object.
+Create a new document in Kuzzle and instantiate a [Document]({{ site_base_path }}sdk-reference/android/3/document/) object.
 
 ---
 
@@ -14,7 +14,7 @@ Create a new document in Kuzzle and instantiate a [Document]({{ site_base_path }
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``Document`` | object | [Document]({{ site_base_path }}sdk-reference/document/) object |
+| ``Document`` | object | [Document]({{ site_base_path }}sdk-reference/android/3/document/) object |
 | ``options`` | JSON object | Optional parameters |
 | ``callback`` | function | Optional callback |
 
@@ -50,7 +50,7 @@ Returns the `Collection` object to allow chaining.
 
 ## Callback Response
 
-Returns a [Document]({{ site_base_path }}sdk-reference/document/) object containing the newly created document.
+Returns a [Document]({{ site_base_path }}sdk-reference/android/3/document/) object containing the newly created document.
 
 ## Usage
 

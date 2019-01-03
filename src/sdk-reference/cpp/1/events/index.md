@@ -73,7 +73,7 @@ Triggered whenever a request is removed from the offline queue.
 
 **Callback arguments**
 
-A JSON string representing the [request]({{ site_base_path }}api/1/query-syntax/) removed from the queue.
+A JSON string representing the [request]({{ site_base_path }}api/1/essentials/query-syntax/) removed from the queue.
 
 ## KUZZLE_EVENT_OFFLINE_QUEUE_PUSH
 
@@ -85,7 +85,7 @@ A JSON string representing an object with the following properties:
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | <pre>std::string</pre> | JSON string representing [request]({{ site_base_path }}api/1/query-syntax/) added to the queue |    
+| `request` | <pre>std::string</pre> | JSON string representing [request]({{ site_base_path }}api/1/essentials/query-syntax/) added to the queue |    
 
 ## KUZZLE_EVENT_QUERY_ERROR
 

@@ -6,7 +6,7 @@ description: Security:user
   
 
 # user
-Instantiates a new [User]({{ site_base_path }}sdk-reference/user) object.
+Instantiates a new [User]({{ site_base_path }}sdk-reference/php/3/user) object.
 
 ---
 
@@ -21,7 +21,7 @@ Instantiates a new [User]({{ site_base_path }}sdk-reference/user) object.
 
 ## Return value
 
-Returns the new [User]({{ site_base_path }}sdk-reference/user) object.
+Returns the new [User]({{ site_base_path }}sdk-reference/php/3/user) object.
 
 ## Usage
 

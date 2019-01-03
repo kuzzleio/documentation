@@ -22,7 +22,7 @@ describe('TestManager', () => {
 
     it('throw an error if sdk-reference is not found in basePath', () => {
       should(() => {
-        testManager = new TestManager('src/guide/essentials/');
+        testManager = new TestManager('src/guide/1/essentials/');
       }).throw('Unable to find sdk-reference directory in basePath');
     });
 

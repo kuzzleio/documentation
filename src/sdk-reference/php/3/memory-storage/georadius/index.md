@@ -33,7 +33,7 @@ description: MemoryStorage:georadius
 ]
 ```
 
-Returns the members (added with [geoadd]({{ site_base_path }}sdk-reference/memory-storage/geoadd)) of a given key inside the provided geospatial radius.
+Returns the members (added with [geoadd]({{ site_base_path }}sdk-reference/php/3/memory-storage/geoadd)) of a given key inside the provided geospatial radius.
 
 [[_Redis documentation_]](https://redis.io/commands/georadius)
 
