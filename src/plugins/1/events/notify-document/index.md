@@ -9,7 +9,7 @@ title: notify:document
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `message` | <pre><a href={{ site_base_path }}api/1/notifications>Notification</a></pre> | The normalized real-time notification |
+| `message` | <pre><a href={{ site_base_path }}api/1/essentials/real-time>Notification</a></pre> | The normalized real-time notification |
 
 Triggered whenever a real-time document notification is about to be sent.
 

@@ -14,11 +14,11 @@ Updates the role object in Kuzzle.
     In other words, you always need to provide the complete role definition in the <code>updateContent</code> object.
   </p>
   <p>
-    This method has the same effect as calling <a href="{{ site_base_path }}sdk-reference/role/set-content"><code>setContent</code></a> followed by the <a href="{{ site_base_path }}sdk-reference/role/save"><code>save</code></a> method.
+    This method has the same effect as calling <a href="{{ site_base_path }}sdk-reference/android/3/role/set-content"><code>setContent</code></a> followed by the <a href="{{ site_base_path }}sdk-reference/android/3/role/save"><code>save</code></a> method.
   </p>
 </div>
 
-To get more information about Kuzzle permissions, please refer to our [permissions guide]({{ site_base_path }}guide/essentials/security/#user-permissions).
+To get more information about Kuzzle permissions, please refer to our [permissions guide]({{ site_base_path }}guide/1/essentials/security/#user-permissions).
 
 ---
 

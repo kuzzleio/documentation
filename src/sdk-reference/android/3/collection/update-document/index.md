@@ -41,7 +41,7 @@ Returns the `Collection` object to allow chaining.
 
 ## Callback Response
 
-Returns an up-to-date [Document]({{ site_base_path }}sdk-reference/document/) object.
+Returns an up-to-date [Document]({{ site_base_path }}sdk-reference/android/3/document/) object.
 
 ## Usage
 

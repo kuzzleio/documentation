@@ -99,7 +99,7 @@ Each created document is an object with the following properties:
 * `_version`: version number of the document 
 * `created`: a boolean telling whether a document is created 
 
-If one or more document creations fail, the response status is set to `206`, and the `error` object contain a [partial error]({{ site_base_path }}api/1/errors/#partialerror) error.
+If one or more document creations fail, the response status is set to `206`, and the `error` object contain a [partial error]({{ site_base_path }}api/1/essentials/errors/#partialerror) error.
 
 ### Example
 

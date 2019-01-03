@@ -15,7 +15,7 @@ In this code example we will show you how geofencing works with Kuzzle.
 
 ## Configure Kuzzle
 
-First let's make sure Kuzzle is running and create the index and collection we will use to store documents. Follow these [instructions]({{ site_base_path }}guide/1/getting-started/#running-kuzzle").
+First let's make sure Kuzzle is running and create the index and collection we will use to store documents. Follow these [instructions]({{ site_base_path }}guide/1/getting-started/#running-kuzzle).
 
 
 ## Create Your App
@@ -33,5 +33,3 @@ Before we get started on the App, there are a few basics you need to know:
 * Secondly, in order for Kuzzle to detect that a user leaves a geographical boundary, it must first detect that the user has entered the geographical boundary. This means that we need to create a document that contains a location field where the geopoint is inside the boundary prior to updating that document and setting the location field to a geopoint outside the boundary.
 
 * Thirdly, a subscription is done at the collection level. This means that Kuzzle will only monitor changes to documents in the specified collection.
-
-

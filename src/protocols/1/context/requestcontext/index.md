@@ -31,7 +31,7 @@ The `options` object can contain the following properties:
 
 | Properties | Type | Description |
 |-----------|------|-------------|
-| `connection` | <pre><a href=({{ site_base_path }}protocols/1/context/clientconnection>ClientConnection</a></pre> | Connection information |
+| `connection` | <pre><a href={{ site_base_path }}protocols/1/context/clientconnection>ClientConnection</a></pre> | Connection information |
 | `token` | <pre>string</pre> | Authorization token |
 | `user` | <pre>object</pre> | Kuzzle internal user information |
 
@@ -41,6 +41,6 @@ The `options` object can contain the following properties:
 
 | Properties | Type | Description |
 |-----------|------|-------------|
-| `connection` | <pre><a href=({{ site_base_path }}protocols/1/context/clientconnection>ClientConnection</a></pre> | Connection information
+| `connection` | <pre><a href={{ site_base_path }}protocols/1/context/clientconnection>ClientConnection</a></pre> | Connection information
 | `token` | <pre>string</pre> | Authorization token |
 | `user` | <pre>object</pre> | Kuzzle internal user information |

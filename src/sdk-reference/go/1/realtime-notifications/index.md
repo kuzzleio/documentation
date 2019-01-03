@@ -10,7 +10,7 @@ The [Realtime.Subscribe]({{ site_base_path }}sdk-reference/go/1/realtime/subscri
 
 ## Document & messages
 
-These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
+These notifications represent [documents changes & messages]({{ site_base_path }}api/1/essentials/notifications#documents-changes-messages-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
@@ -35,7 +35,7 @@ The `Result` property has the following structure for document notifications & m
 
 ## User
 
-These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
+These notifications represent [user events]({{ site_base_path }}api/1/essentials/notifications#user-events-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
