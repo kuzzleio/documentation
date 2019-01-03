@@ -8,18 +8,18 @@ description: Removes a subscription
 
 Removes a subscription.
 
-## Arguments
+## Signature
 
 ```cpp
 void unsubscribe(const std::string& room_id, kuzzleio::query_options *options=nullptr)
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
 | `room_id` | <pre>const std::string&</pre> | Subscription room ID  |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 
@@ -27,11 +27,11 @@ Additional query options
 
 | Option     | Type<br/>(default)  | Description   |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>bool</pre><br/>(`true`) |  If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

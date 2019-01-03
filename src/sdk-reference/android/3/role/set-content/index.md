@@ -9,7 +9,7 @@ description: Role:setContent
 Replaces the content of the `Role` object.
 
 <div class="alert alert-info">
-Updating a role content will have no impact until the <a href="{{ site_base_path }}sdk-reference/role/save">save</a> method is called
+Updating a role content will have no impact until the <a href="{{ site_base_path }}sdk-reference/android/3/role/save">save</a> method is called
 </div>
 
 ---

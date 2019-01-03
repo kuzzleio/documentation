@@ -24,7 +24,7 @@ Updating a user will have no impact until the <code>create</code> or <code>repla
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``profiles`` | array of Profile objects | An array of instantiated [Profile]({{ site_base_path }}sdk-reference/profile) objects |
+| ``profiles`` | array of Profile objects | An array of instantiated [Profile]({{ site_base_path }}sdk-reference/php/3/profile) objects |
 
 ---
 

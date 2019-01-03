@@ -15,7 +15,7 @@ Conflicts may occur if the same document gets updated multiple times within a sh
 
 You can set the `retryOnConflict` optional argument (with a retry count), to tell Kuzzle to retry the failing updates the specified amount of times before rejecting the request with an error.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string mUpdate(
@@ -25,12 +25,14 @@ std::string mUpdate(
     kuzzleio::query_options *options=nullptr)
 ```
 
+## Arguments
+
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `documents` | <pre>const std::string&</pre> | A JSON string containing the body of the document |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `documents` | <pre>const std::string&</pre> | JSON string representing the documents to update |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 
@@ -44,11 +46,16 @@ Additional query options
 
 ## Return
 
-Returns a JSON string containing the updated documents.
+A JSON string representing an object containing the following properties:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| `hits` | <pre>object[]</pre> | Array of updated documents |
+| `total` | <pre>number</pre> | Total documents updated |
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

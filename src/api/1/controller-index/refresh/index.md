@@ -70,5 +70,5 @@ Returns an object detailing the status of the forced refresh.
 
 ## Possible errors
 
-- [Common errors]({{ site_base_path }}api/1/errors/#common-errors)
-- [NotFoundError]({{ site_base_path }}api/1/errors/#notfounderror)
+- [Common errors]({{ site_base_path }}api/1/essentials/errors/#common-errors)
+- [NotFoundError]({{ site_base_path }}api/1/essentials/errors/#notfounderror)

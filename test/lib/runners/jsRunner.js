@@ -1,7 +1,6 @@
 const
   BaseRunner = require('./baseRunner'),
   path = require('path'),
-  nexpect = require('nexpect'),
   { execute } = require('../helpers/utils'),
   TestResult = require('../helpers/testResult');
 
@@ -14,10 +13,10 @@ module.exports = class JsRunner extends BaseRunner {
     this.lintOptions = ['-c', this.lintConfig];
   }
 
-  async runExpect(snippet) {
-    this.nexpectCommand = `node ${snippet.renderedSnippetPath}`;
+  async runSnippet(snippet) {
+    this.snippetCommand = `node ${snippet.renderedSnippetPath}`;
 
-    await super.runExpect(snippet);
+    await super.runSnippet(snippet);
   }
 
   async lint(snippet) {

@@ -9,7 +9,7 @@ description: Profile:addPolicy
 Adds a role to the security profile.
 
 <div class="alert alert-info">
-Updating a security profile will have no impact until the <a href="{{ site_base_path }}sdk-reference/profile/save">save</a> method is called
+Updating a security profile will have no impact until the <a href="{{ site_base_path }}sdk-reference/js/5/profile/save">save</a> method is called
 </div>
 
 ---

@@ -62,4 +62,4 @@ Returns a boolean telling whether the provided data collection exists:
 
 ## Possible errors
 
-- [Common errors]({{ site_base_path }}api/1/errors/#common-errors)
+- [Common errors]({{ site_base_path }}api/1/essentials/errors/#common-errors)

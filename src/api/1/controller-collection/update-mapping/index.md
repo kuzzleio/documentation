@@ -98,5 +98,5 @@ Body:
 
 ## Possible errors
 
-- [Common errors]({{ site_base_path }}api/1/errors/#common-errors)
-- [NotFoundError]({{ site_base_path }}api/1/errors/#notfounderror)
+- [Common errors]({{ site_base_path }}api/1/essentials/errors/#common-errors)
+- [NotFoundError]({{ site_base_path }}api/1/essentials/errors/#notfounderror)

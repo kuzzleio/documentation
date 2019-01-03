@@ -20,7 +20,7 @@ createOrReplace (index, collection, id, document, [options])
 | --- | --- | --- |
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
-| `id` | <pre>string</pre> | Optional document ID |
+| `id` | <pre>string</pre> | Document ID |
 | `document` | <pre>object</pre> | Document content |
 | `options` | <pre>object</pre> | Query options |
 

@@ -318,7 +318,7 @@ You should receive the following response (with your own `_id` value):
 
 ## Document Search
 
-One thing that Elasticsearch is _really_ good at doing is... Searching! Thanks to its powerful query DSL it can create extremely precise search queries. We wrote an [Elasticsearch Cookbook]({{ site_base_path }}elasticsearch-cookbook) to help you understand how it works in detail, but let's take a look at a couple of simple examples, just to get started.
+One thing that Elasticsearch is _really_ good at doing is... Searching! Thanks to its powerful query DSL it can create extremely precise search queries. We wrote an [Elasticsearch Cookbook]({{ site_base_path }}guide/1/elasticsearch) to help you understand how it works in detail, but let's take a look at a couple of simple examples, just to get started.
 
 Say we want to [**find**]({{ site_base_path }}api/1/controller-document/search) all documents in the `mycollection` collection. Whe can do this by sending a `POST` request to `http://localhost:7512/<index name>/<collection name>/_search` and setting any search filters in the request body.
 
@@ -545,6 +545,6 @@ Please note that the mappings of a collection cannot be updated once they are cr
 ## What Now?
 
 
-* Read our [Elasticsearch Cookbook]({{ site_base_path }}elasticsearch-cookbook) to learn more about how querying works in Kuzzle
+* Read our [Elasticsearch Cookbook]({{ site_base_path }}guide/1/elasticsearch) to learn more about how querying works in Kuzzle
 * Use [document metadata]({{ site_base_path }}guide/1/essentials/document-metadata) to find or recover documents
 * Keep track of data changes using [Real-time Notifications]({{ site_base_path }}guide/1/essentials/real-time)

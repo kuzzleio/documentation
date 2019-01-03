@@ -8,7 +8,7 @@ description: Returns the host name on which the protocol is connected
 
 Returns the host name on which the protocol is connected
 
-## Arguments
+## Signature
 
 ```cpp
 std::string getHost();

@@ -10,15 +10,14 @@ module.exports = class CppRunner extends BaseRunner {
     this.compileOptions = ['-std=c++11', `-I${this.sdk.sdkDir}/include`, `-L${this.sdk.sdkDir}/lib`, '-lkuzzlesdk', '-lpthread'];
     this.lintCommand = 'cpplint';
     this.lintOptions = ['--filter=-legal/copyright,-whitespace/line_length'];
-    this.executablePath = '';
   }
 
-  async runExpect(snippet) {
+  async runSnippet(snippet) {
     process.env.LD_LIBRARY_PATH = `./${this.sdk.sdkDir}/lib`;
-    this.nexpectCommand = snippet.renderedSnippetPath.split('.')[0];
+    this.snippetCommand = snippet.renderedSnippetPath.split('.')[0];
 
     try {
-      await execute('g++', this.compileOptions.concat(['-o', this.nexpectCommand, snippet.renderedSnippetPath]));
+      await execute('g++', this.compileOptions.concat(['-o', this.snippetCommand, snippet.renderedSnippetPath]));
     } catch (e) {
       const res = {
         code: 'COMPILATION_FAIL',
@@ -27,7 +26,7 @@ module.exports = class CppRunner extends BaseRunner {
       throw new TestResult(res);
     }
 
-    await super.runExpect(snippet);
+    await super.runSnippet(snippet);
   }
 
   async lint(snippet) {
@@ -35,7 +34,7 @@ module.exports = class CppRunner extends BaseRunner {
   }
 
   clean(snippet) {
-    fs.unlinkSync(snippet.renderedSnippetPath);
-    fs.unlinkSync(this.executablePath);
+    super.clean(snippet);
+    fs.unlinkSync(this.snippetCommand);
   }
 };

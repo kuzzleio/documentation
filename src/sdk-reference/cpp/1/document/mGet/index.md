@@ -11,7 +11,7 @@ Gets multiple documents.
 
 Throws a partial error (error code 206) if one or more document can not be retrieved.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string mGet(
@@ -21,12 +21,14 @@ std::string mGet(
     kuzzleio::query_options *options=nullptr)
 ```
 
+## Arguments
+
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `ids` | <pre>std::vector<std::string></pre> | The document ids |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `ids` | <pre>std::vector&lt;std::string&gt;</pre> | Document IDs |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 
@@ -38,11 +40,16 @@ Additional query options
 
 ## Return
 
-Returns a JSON string containing the retrieved documents.
+A JSON string representing an array of objects containing the following properties:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| `_id_` | <pre>string</pre> | Document ID |
+| `_source_` | <pre>object</pre> | Document content |
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

@@ -8,7 +8,7 @@ description: Closes the current connection to Kuzzle
 
 Closes the current connection to Kuzzle.  
 
-## Arguments
+## Signature
 
 ```cpp
 void close();

@@ -1,5 +1,5 @@
 ---
-layout: sdk.html
+layout: sdk.html.hbs
 title: replace
 description: Replace a document
 ---
@@ -39,7 +39,7 @@ Resolves to an object containing the the document update result.
 | --- | --- | ---
 | _id | <pre>string</pre> | ID of the newly created document
 | _version | <pre>number</pre> | Version of the document in the persistent data storage
-| result | <pre>string</pre> | Set to `updated` in case of success
+| _source | <pre>object</pre> | The updated document
 
 ## Usage
 

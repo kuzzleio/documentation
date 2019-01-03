@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: updateMyCredentials
-description: Update the current user's credentials for the specified `<strategy>`.
+description: Update the current user's credentials for the specified strategy.
 ---
 
 # updateMyCredentials
 
-Update the current user's credentials for the specified `<strategy>`. The credentials to send will depend on the authentication plugin and the authentication strategy.
+Update the current user's credentials for the specified strategy. The credentials to send will depend on the authentication plugin and the authentication strategy.
 
 ## Signature
 
@@ -18,27 +18,27 @@ std::string updateMyCredentials(const std::string& strategy, const std::string& 
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | const std::string& | the strategy to use
-| `credentials` | const std::string& | the new credentials
-| `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
+| `strategy` | <pre>const std::string&</pre> | Strategy to use
+| `credentials` | <pre>const std::string&</pre> | JSON string representing the credentials
+| `options`  | <pre>kuzzleio::query_options\*</pre>    | Query options
 
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        | 
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Return
 
-A string representing a JSON object of the new credentials.
+A JSON string representing the updated credentials.
 
 ## Usage
 

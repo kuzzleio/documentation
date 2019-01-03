@@ -19,7 +19,7 @@ Kuzzle(protocol, [options]);
 
 | Argument   | Type               | Description                           |
 | ---------- | ------------------ | ------------------------------------- |
-| `protocol` | <pre>string</pre> | Protocol used by the SDK instance |
+| `protocol` | <pre>Protocol</pre> | Protocol used by the SDK instance |
 | `options`  | <pre>object</pre> | Kuzzle connection configuration       |
 
 ### protocol
@@ -27,7 +27,7 @@ Kuzzle(protocol, [options]);
 The protocol used to connect to the Kuzzle instance.
 It can be:
 
-- a string for embedded protocols : `http`, `websocket` or `socketio`
+- one of the embedded Protocol : `Http`, `WebSocket` or `SocketIO`
 - a custom [Protocol]({{ site_base_path }}/sdk-reference/js/6/protocols/create-new-protocol) object
 
 ### options
@@ -73,7 +73,7 @@ It can be:
 **Notes:**
 
 - multiple methods allow passing specific `volatile` data. These `volatile` data will be merged with the global Kuzzle `volatile` object when sending the request, with the request specific `volatile` taking priority over the global ones.
-- the `queueFilter` property is a function taking an object as an argument. This object is the request sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/query-syntax) format
+- the `queueFilter` property is a function taking an object as an argument. This object is the request sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/essentials/query-syntax) format
 - if `queueTTL` is set to `0`, requests are kept indefinitely
 - The offline buffer acts like a first-in first-out (FIFO) queue, meaning that if the `queueMaxSize` limit is reached, older requests are discarded to make room for new requests
 - if `queueMaxSize` is set to `0`, an unlimited number of requests is kept until the buffer is flushed

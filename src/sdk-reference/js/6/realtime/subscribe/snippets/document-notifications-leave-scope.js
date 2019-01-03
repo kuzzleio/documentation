@@ -38,7 +38,6 @@ try {
   const { _id } = await kuzzle.document.create(
     'nyc-open-data',
     'yellow-taxi',
-    null,
     document
   );
 

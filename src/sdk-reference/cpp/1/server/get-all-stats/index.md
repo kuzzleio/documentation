@@ -6,8 +6,6 @@ description: Gets all stored internal statistic snapshots.
 
 # getAllStats
 
-{{{since "1.0.0"}}}
-
 Gets all stored internal statistic snapshots.
 By default, snapshots are made every 10 seconds and they are stored for 1 hour.
 
@@ -18,32 +16,33 @@ These statistics include:
 * the number of completed requests since the last frame
 * the number of failed requests since the last frame
 
-
-## Arguments
+## Signature
 
 ```cpp
 std::string getAllStats(kuzzleio::query_options* options=nullptr)
 ```
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
-| `options` | kuzzleio::query_options* | A pointer to a `query_options` containing query options | no       |
+## Arguments
 
-### **Options**
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
+
+### options
 
 Additional query options
 
-| Option     | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
-
+| Option     | Type<br/>(default)   | Description  |
+| ---------- | ------- | -------------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
-Returns all stored internal statistic snapshots as `std::string`.
+
+A JSON string representing the internal statistics
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

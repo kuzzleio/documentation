@@ -61,4 +61,4 @@ Returns a confirmation that the index is being created:
 
 ## Possible errors
 
-- [Common errors]({{ site_base_path }}api/1/errors/#common-errors)
+- [Common errors]({{ site_base_path }}api/1/essentials/errors/#common-errors)

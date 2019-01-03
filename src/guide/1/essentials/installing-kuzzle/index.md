@@ -15,7 +15,7 @@ In this section we'll describe different ways of installing Kuzzle.
 The easiest way to install Kuzzle is by using our installation script:
 
 ```bash
-bash -c "$(curl http://get.kuzzle.io)"
+bash -c "$(curl https://get.kuzzle.io)"
 ```
 
 ---
@@ -31,7 +31,7 @@ Before launching Kuzzle using Docker containers, ensure that your system meets t
 
 To install docker, you need to download the docker-compose file:
 
-
+<div class="alert alert-info">
 Before starting the docker stack, you need to increase the maximum amount of virtual memory in order to run Elasticsearch, which is part of our stack (see why <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.6/_maximum_map_count_check.html">here</a>):
 
 ```bash
@@ -43,6 +43,7 @@ To make this configuration permanent, you need to update your `/etc/sysctl.conf`
 ```bash
 echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 ```
+</div>
 
 Now, we can start the docker stack:
 
@@ -118,7 +119,7 @@ Associated password is your unique instance ID. You can get it from the EC2 AWS 
 
 ---
 
-### Manual Installation
+## Manual Installation
 
 In this section we will perform a manual installation of Kuzzle on a Linux distribution. We choose Linux because all Kuzzle components work natively on it.
 
@@ -146,7 +147,7 @@ The following operating systems are actively supported (64-bit versions only):
 * a C++11 compatible compiler.
 
 <div class="alert alert-info">
- The last three prerequisites can be fulfilled on Debian-based systems by installing packages : `build-essential`, `gdb` and `python`.
+ The last three prerequisites can be fulfilled on Debian-based systems by installing packages : <code>build-essential</code>, <code>gdb</code> and <code>python</code>.
 </div>
 
 ---
@@ -254,11 +255,11 @@ You should see the following message (it may take a few seconds):
 # kuzzle_1         | [✔] Kuzzle server ready
 ```
 
-Kuzzle's HTTP API can now be reached at http://localhost:7512/ and the socket.io and websocket channels can also be reached on port 7512 of localhost.
+Kuzzle can now be reached at the following URL, using either HTTP, WebSocket or Socket.io: `http://localhost:7512/`
 
 #### PM2 cheatsheet
 
-Below are a list of useful commands to help you manage your Kuzzle installation running with pm2:
+Below is a list of useful commands to help you manage your Kuzzle installation running with pm2:
 
 ```bash
 # Display Kuzzle logs:
@@ -376,6 +377,6 @@ PM2        |     at process._tickDomainCallback (internal/process/next_tick.js:1
 Once your Kuzzle instance is up and running, dive even deeper to learn how to leverage its full capabilities:
 
 - take a look at the [SDK Reference]({{site_base_path}}sdk-reference)
-- learn how to use [Koncorde]({{ site_base_path }}kuzzle-dsl/1/essential/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+- learn how to use [Koncorde]({{ site_base_path }}koncorde/1) to create incredibly fine-grained and blazing-fast subscriptions
 - follow our guide to learn how to [implement basic authentication]({{site_base_path}}guide/1/essentials/user-authentication/#local-strategy).
 - follow our guide to learn how to [implement manage users and setup fine-grained access control]({{site_base_path}}guide/1/essentials/security).

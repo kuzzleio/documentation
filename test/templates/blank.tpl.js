@@ -2,9 +2,13 @@
 const
   {
     Kuzzle,
-    Websocket,
+    WebSocket,
     Http
   } = require('kuzzle-sdk');
+
+const kuzzle = new Kuzzle(
+  new WebSocket('kuzzle')
+);
 
 [snippet-code]
 console.log('Everything is ok');

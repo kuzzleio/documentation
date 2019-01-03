@@ -6,7 +6,7 @@ description: Subscribe to real-time notifications
 
 # Subscribe
 
-Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/notifications), sent to you in real-time by Kuzzle.
+Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/essentials/real-time), sent to you in real-time by Kuzzle.
 
 ## Arguments
 
@@ -26,7 +26,7 @@ func (r *Realtime) Subscribe(
 |--------------|---------|-------------|
 | `index` | <pre>string</pre> | Index name    |
 | `collection` | <pre>string</pre> | Collection name    |
-| `filters` | <pre>json.RawMessage</pre> | A set of filters following [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde) |
+| `filters` | <pre>json.RawMessage</pre> | A set of filters following [Koncorde syntax]({{site_base_path}}koncorde/1/essential/koncorde) |
 | `listener` | <pre>chan<- types.NotificationResult</pre> | Channel receiving the notification |
 | `options` | <pre>types.RoomOptions</pre> | A struct containing subscription options |
 
@@ -44,7 +44,7 @@ Additional subscription options.
 | `scope` | <pre>string</pre><br/>(`all`) | Subscribe to document entering or leaving the scope</br>Possible values: `all`, `in`, `out`, `none` |
 | `users` | <pre>string</pre><br/>(`none`) | Subscribe to users entering or leaving the room</br>Possible values: `all`, `in`, `out`, `none` |
 | `subscribeToSelf` | <pre>bool</pre><br/>(`true`) | Subscribe to notifications fired by our own queries |
-| `volatile` | <pre>json.RawMessage</pre><br/>(`{}`) | subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/volatile-data) |
+| `volatile` | <pre>json.RawMessage</pre><br/>(`{}`) | subscription information, used in [user join/leave notifications]({{site_base_path}}api/1/essentials/volatile-data/) |
 
 
 ## Return

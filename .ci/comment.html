@@ -105,4 +105,24 @@
         {{end}}
       </td>
     </tr>
+    <tr>
+      <td align="center">
+        <a href="https://dl.kuzzle.io/reports/{{.prId}}/csharp/1/report.html"
+        style="font-size:0;"><img src=
+        "https://docs-v2.kuzzle.io/assets/images/logos/csharp.png"
+        width="32" height="32"></a>
+      </td>
+      <td align="center"><em>v1</em></td>
+      <td align="center">
+        {{if (eq .csharpv1 "1") }}
+          :x:
+        {{end}}
+        {{if (eq .csharpv1 "0")}}
+          :heavy_check_mark:
+        {{end}}
+        {{if (eq .csharpv1 "3")}}
+          :heavy_minus_sign:
+        {{end}}
+      </td>
+    </tr>
   </table>

@@ -1,5 +1,5 @@
 const
-  nexpect = require('nexpect'),
+  fs = require('fs'),
   childProcess = require('child_process'),
   { execute } = require('../helpers/utils'),
   TestResult = require('../helpers/testResult');
@@ -7,7 +7,7 @@ const
 module.exports = class BaseRunner {
   constructor(sdk) {
     this.sdk = sdk;
-    this.nexpectCommand = '';
+    this.snippetCommand = '';
     this.lintCommand = '';
     this.lintOptions = [];
   }
@@ -21,10 +21,7 @@ module.exports = class BaseRunner {
       }
 
       await this.lint(snippet);
-      await this.runExpect(snippet);
-
-      // Remove the generated files only if test succeed
-      snippet.clean();
+      await this.runSnippet(snippet);
     } catch (e) {
       // Save renderedSnippet to display it in the web view
       snippet.saveRendered();
@@ -39,67 +36,67 @@ module.exports = class BaseRunner {
     }
   }
 
-  async runExpect(snippet) {
+  async runSnippet(snippet) {
     return new Promise((resolve, reject) => {
-      nexpect
-        .spawn(this.nexpectCommand, { stream: 'all' })
-        .run((error, stdout, cerr) => {
-          if (error) {
-            const res = {
-              code: 'ERR_ASSERTION',
-              actual: error.actual
-            };
-            reject(new TestResult(res));
+      childProcess.exec(this.snippetCommand, (error, stdout, stderr) => {
+        const output = stdout.split('\n').concat(stderr.split('\n'));
 
-            return;
+        if (error) {
+          const res = {
+            code: 'ERR_ASSERTION',
+            actual: error.actual || error
+          };
+
+          reject(new TestResult(res));
+          return;
+        }
+
+        const
+          expected = Array.isArray(snippet.expected) ? snippet.expected : [snippet.expected];
+
+        let
+          lastIndex = 0,
+          previous = null;
+
+        for (const e of expected) {
+          let
+            match = null,
+            index;
+
+          for (index = lastIndex; index < output.length && match === null; index++) {
+            match = output[index].match(e);
           }
 
-          const
-            expected = Array.isArray(snippet.expected) ? snippet.expected : [snippet.expected];
-
-          let
-            lastIndex = 0,
-            previous = null;
-
-          for (const e of expected) {
-            let
-              match = null,
-              index;
-
-            for (index = lastIndex; index < stdout.length && match === null; index++) {
-              match = stdout[index].match(e);
+          if (match === null) {
+            // check if the looked up item is actually before a previous
+            // one
+            if (previous !== null) {
+              for(let i = 0; i < lastIndex && match === null; i++) {
+                match = output[i].match(e);
+              }
             }
 
-            if (match === null) {
-              // check if the looked up item is actually before a previous
-              // one
-              if (previous !== null) {
-                for(let i = 0; i < lastIndex && match === null; i++) {
-                  match = stdout[i].match(e);
-                }
-              }
-
-              if (match !== null) {
-                return reject(new TestResult({
-                  code: 'ERR_ORDER',
-                  actualOrder: [previous, e],
-                  actual: stdout
-                }));
-              }
-
+            if (match !== null) {
               return reject(new TestResult({
-                code: 'ERR_ASSERTION',
-                expected: e,
-                actual: stdout
+                code: 'ERR_ORDER',
+                actualOrder: [previous, e],
+                actual: output
               }));
             }
 
-            lastIndex = index;
-            previous = e;
+            return reject(new TestResult({
+              code: 'ERR_ASSERTION',
+              expected: e,
+              actual: output
+            }));
           }
 
-          return resolve();
-        });
+          lastIndex = index;
+          previous = e;
+        }
+
+        return resolve();
+      });
     });
   }
 
@@ -131,5 +128,9 @@ module.exports = class BaseRunner {
         resolve();
       });
     });
+  }
+
+  clean(snippet) {
+    fs.unlinkSync(snippet.renderedSnippetPath);
   }
 };

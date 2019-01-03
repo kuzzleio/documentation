@@ -1,8 +1,8 @@
 try {
-  kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
+  kuzzle->auth->login("local", R"({"username":"foo","password":"bar"})");
   kuzzle->auth->deleteMyCredentials("local");
 
-  std::cout << "Success" << std::endl;
+  std::cout << "Credentials Successfully deleted" << std::endl;
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

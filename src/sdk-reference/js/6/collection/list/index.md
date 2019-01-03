@@ -38,7 +38,7 @@ Resolves to an object containing the following properties:
 
 | Property   | Type    | Description  |
 |--------------|---------|-------------|
-| ``type`` | <pre>string</pre> | Types of returned collections </br>(`all`, `realtime` or `stored`)   |
+| ``type`` | <pre>string</pre> | Types of returned collections <br/>(`all`, `realtime` or `stored`)   |
 | ``collections`` | <pre>object[]</pre> | List of collections  |
 | `from` | <pre>number</pre> | Offset of the first result |
 | `size` | <pre>number</pre> | Maximum number of returned results |
