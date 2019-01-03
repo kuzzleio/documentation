@@ -11,7 +11,7 @@ Returns the current user's credential information for the specified strategy. Th
 ## Signature
 
 ```cpp
-std::string getMyCredentials(const std::string& strategy)
+ std::string getMyCredentials(const std::string& strategy);
 
 std::string getMyCredentials(
     const std::string& strategy, 
