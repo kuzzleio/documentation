@@ -11,7 +11,7 @@ Updates the current user object in Kuzzle.
 ## Signature
 
 ```cpp
-kuzzleio::User updateSelf(const std::string& content)
+ kuzzleio::User updateSelf(const std::string& content);
 
 kuzzleio::User updateSelf(const std::string& content, const kuzzleio::query_options& options)
 ```
