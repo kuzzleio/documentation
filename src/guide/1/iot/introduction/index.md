@@ -34,7 +34,7 @@ cd /home/kuzzle/protocols/available
 git clone https://github.com/kuzzleio/protocol-mqtt.git
 ```
 
-Now create the `enabled` folder, that will be used to store any protocol we wish to enable in our Kuzzle instance. We will use a symbolic link to enable protocols as per these [recommendations]({{ site_base_path }}guide/1/essentials/plugins/#installing-a-plugin").
+Now create the `enabled` folder, that will be used to store any protocol we wish to enable in our Kuzzle instance. We will use a symbolic link to enable protocols as per these [recommendations]({{ site_base_path }}plugins/1/essentials/getting-started/#prerequisites-default).
 
 ```bash
 mkdir /home/kuzzle/protocols/enabled
@@ -125,4 +125,3 @@ Before we get started on the App, there are a few basics you need to know:
 * Firstly, a subscription is done at the collection level. This means that Kuzzle will only monitor changes to documents in the specified collection.
 
 * Secondly, we are using the MQTT Protocol as a transport layer to access the Kuzzle API. This means that the full Kuzzle API is available through this transport, but that the mechanism for handling requests and responses differs from that of the websocket transport. This is most evident for the Publish/Subscribe methods of the Kuzzle API. We need to distinguish between the subscription to the "Kuzzle/Response" MQTT topic, used only to communicate with the Kuzzle API, and a subscription to a Kuzzle Collection, used for pub/sub in the context of an application. To create a subscription to a Kuzzle Collection via the MQTT protocol, first we must publish a request to Kuzzle on the "Request" topic with action set to "subscribe", then we will receive a response on the "Kuzzle/response" MQTT topic that contains the name of the MQTT topic that we need to subscribe to. Once the response is received on the "Kuzzle/response" MQTT topic, we can then subscribe to the  MQTT topic specified is response's topic field to listen for messages.
-

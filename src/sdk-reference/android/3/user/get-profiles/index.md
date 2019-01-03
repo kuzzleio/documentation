@@ -6,7 +6,7 @@ description: User:getProfiles
   
 
 # getProfiles
-Gets the security [Profile]({{ site_base_path }}sdk-reference/profile) instances linked to the user from Kuzzle's API.
+Gets the security [Profile]({{ site_base_path }}sdk-reference/android/3/profile) instances linked to the user from Kuzzle's API.
 
 ---
 
@@ -28,7 +28,7 @@ Gets the security [Profile]({{ site_base_path }}sdk-reference/profile) instances
 ---
 ## Callback Response
 
-Returns an array of security [Profile]({{ site_base_path }}sdk-reference/profile) objects.
+Returns an array of security [Profile]({{ site_base_path }}sdk-reference/android/3/profile) objects.
 
 ## Usage
 

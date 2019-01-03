@@ -38,7 +38,7 @@ Returns the `Security` object to allow chaining.
 
 ## Callback Response
 
-Returns a [User]({{ site_base_path }}sdk-reference/user) object.
+Returns a [User]({{ site_base_path }}sdk-reference/android/3/user) object.
 
 ## Usage
 

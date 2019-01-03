@@ -110,5 +110,5 @@ Returns a confirmation that the collection is being created:
 
 ## Possible errors
 
-- [Common errors]({{ site_base_path }}api/1/errors/#common-errors)
-- [PreconditionError]({{ site_base_path }}api/1/errors/#preconditionerror)
+- [Common errors]({{ site_base_path }}api/1/essentials/errors/#common-errors)
+- [PreconditionError]({{ site_base_path }}api/1/essentials/errors/#preconditionerror)

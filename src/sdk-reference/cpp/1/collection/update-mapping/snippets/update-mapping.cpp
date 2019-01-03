@@ -1,9 +1,13 @@
 try {
-  std::string mapping = "{\"properties\": {\"plate\": {\"type\": \"keyword\"}}}";
+  std::string mapping = R"({
+    "properties": {
+      "plate": { "type": "keyword" }
+    }
+  })";
 
   kuzzle->collection->updateMapping("nyc-open-data", "yellow-taxi", mapping);
 
-  std::cout << "Success" << std::endl;
+  std::cout << "Mapping successfully updated" << std::endl;
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

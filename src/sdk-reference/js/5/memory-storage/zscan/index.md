@@ -6,7 +6,7 @@ description: MemoryStorage:zscan
   
 
 # zscan
-Identical to [scan]({{ site_base_path }}sdk-reference/memory-storage/scan), except that `zscan` iterates the members held by a sorted set.
+Identical to [scan]({{ site_base_path }}sdk-reference/js/5/memory-storage/scan), except that `zscan` iterates the members held by a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zscan)
 

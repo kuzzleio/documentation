@@ -1,0 +1,13 @@
+name: getting-started#connection
+description: First connection
+hooks:
+  before: curl -X DELETE kuzzle:7512/nyc-open-data
+  after:
+template: standalone
+expected:
+- Connected!
+- ^(Server current timestamp:) [0-9]{13}$
+
+sdk: cpp
+version: 1
+

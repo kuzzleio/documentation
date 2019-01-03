@@ -6,7 +6,7 @@ description: Kuzzle:stopQueuing
   
 
 # stopQueuing
-Stops the requests queuing. Works only in offline mode, and if the [autoQueue]({{ site_base_path }}sdk-reference/kuzzle/#properties) option is set to `false`.
+Stops the requests queuing. Works only in offline mode, and if the [autoQueue]({{ site_base_path }}sdk-reference/android/3/kuzzle/#properties) option is set to `false`.
 
 ---
 

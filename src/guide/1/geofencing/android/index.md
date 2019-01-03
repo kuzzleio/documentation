@@ -42,11 +42,11 @@ JSONObject bigBen = new JSONObject().put("lat", 51.510357).put("lon",  -0.116773
 JSONObject filter = new JSONObject().put("geoDistance", new JSONObject().put("location", bigBen).put("distance", "2km"));
 ```
 
-This defines a circular boundary centered around [Big Ben](https://www.google.com/maps/place/Big+Ben/@51.510357,-0.116773,15z/data=!4m12!1m6!3m5!1s0x0:0xb78f2474b9a45aa9!2sBig+Ben!8m2!3d51.5007292!4d-0.116773!3m4!1s0x0:0xb78f2474b9a45aa9!8m2!3d51.5007292!4d-0.1246254) with a radius of 2km. For more information about the `geoDistance` filter click [here]({{ site_base_path }}kuzzle-dsl/terms/geo-distance/). 
+This defines a circular boundary centered around [Big Ben](https://www.google.com/maps/place/Big+Ben/@51.510357,-0.116773,15z/data=!4m12!1m6!3m5!1s0x0:0xb78f2474b9a45aa9!2sBig+Ben!8m2!3d51.5007292!4d-0.116773!3m4!1s0x0:0xb78f2474b9a45aa9!8m2!3d51.5007292!4d-0.1246254) with a radius of 2km. For more information about the `geoDistance` filter click [here]({{ site_base_path }}koncorde/1/terms/#geodistance-default/). 
 
 Note that we use the field name `location` to store the geopoint we are centered around. This means that Kuzzle will monitor the field named `location` for position changes, and so any user location document sent to Kuzzle must also contain this field.
 
-Now the App must request a subscription to the geographical boundary defined in our `filter` object. To ensure that the App only receives a message when the `location` changes from inside the boundary to outside the boundary, we need to set the subscription scope to `out`, for more scope options click [here]({{ site_base_path }}sdk-reference/collection/subscribe/).
+Now the App must request a subscription to the geographical boundary defined in our `filter` object. To ensure that the App only receives a message when the `location` changes from inside the boundary to outside the boundary, we need to set the subscription scope to `out`, for more scope options click [here]({{ site_base_path }}sdk-reference/android/3/collection/subscribe/).
 
 Let's create a *subscribe* method and add the following code to it:
 

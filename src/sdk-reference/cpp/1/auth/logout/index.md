@@ -11,7 +11,7 @@ Revokes the user's token & unsubscribe them from registered rooms.
 ## Signature
 
 ```cpp
-void logout() noexcept;
+void logout();
 ```
 
 ## Usage

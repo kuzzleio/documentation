@@ -35,7 +35,7 @@ Given a Kuzzle user id (`kuid`), retrieves the list of permissions granted to th
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``kuid`` | String | [Kuzzle User Unique Identifier]({{ site_base_path }}guide/essentials/user-authentication/#kuzzle-user-identifier-kuid) |
+| ``kuid`` | String | [Kuzzle User Unique Identifier]({{ site_base_path }}guide/1/essentials/user-authentication/#kuzzle-user-identifier-kuid) |
 | ``options`` | JSON Object | Optional parameters |
 | ``callback`` | function | Callback handling the response |
 

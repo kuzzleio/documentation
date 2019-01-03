@@ -1,13 +1,13 @@
 // Loads the Kuzzle SDK modules
 const {
   Kuzzle,
-  Websocket
+  WebSocket
 } = require('kuzzle-sdk');
 
-// Instantiates a Kuzzle client with the Websocket protocol
+// Instantiates a Kuzzle client with the WebSocket protocol
 // Replace 'kuzzle' with your Kuzzle server hostname (e.g. 'localhost')
 const kuzzle = new Kuzzle(
-  new Websocket({ host: 'kuzzle' })
+  new WebSocket('kuzzle')
 );
 
 // Adds a listener to detect any connection problems

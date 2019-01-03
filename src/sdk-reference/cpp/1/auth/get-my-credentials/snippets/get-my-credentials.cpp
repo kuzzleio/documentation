@@ -1,8 +1,9 @@
 try {
-  kuzzle->auth->login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
-  kuzzle->auth->getMyCredentials("local");
+  kuzzle->auth->login("local", R"({"username":"foo","password":"bar"})");
+  std::string local_credentials = kuzzle->auth->getMyCredentials("local");
 
-  std::cout << "Success" << std::endl;
+  std::cout << local_credentials << std::endl;
+  std::cout << "Successfully got local credentials" << std::endl;
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

@@ -92,13 +92,15 @@ class Logger {
           console.log(red('        ERROR   :'), result.actual);
         }
 
+        console.log(
+          blue(`[${this.sdk.name}] `),
+          'Check linter error:',
+          `cat -n test/bin/${snippet.name.toLowerCase()}.${this.sdk.ext} | less`
+        );
 
         console.log(
           blue(`[${this.sdk.name}] `),
-          'You can run the snippet locally with the following command:'
-        );
-        console.log(
-          blue(`[${this.sdk.name}] `),
+          'Run snippet:',
           snippet.getLocalCommand()
         );
         break;
