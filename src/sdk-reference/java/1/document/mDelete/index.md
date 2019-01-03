@@ -48,11 +48,11 @@ Additional query options
 
 ## Return
 
-Returns a [io.kuzzle.sdk.StringVector]({{ site_base_path }}sdk-reference/java/1/essentials/stringvector) containing the list of the deleted document ids.
+Returns a [io.kuzzle.sdk.StringVector]({{ site_base_path }}sdk-reference/java/1/string-vector) containing the list of the deleted document ids.
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/essentials/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/error-handling).
 
 ## Usage
 

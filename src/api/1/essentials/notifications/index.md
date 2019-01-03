@@ -87,7 +87,7 @@ The `result` object is the notification content, and it has the following struct
 
 User notifications about users are triggered by the following events:
 
-* A user subscribes to [the same room]({{ site_base_path }}kuzzle-dsl/1/roomid/)
+* A user subscribes to the same room
 * A user leaves that room
 
 These notifications are sent only if the `users` argument is set to any other value than the default `none` one (see [subscription request]({{ site_base_path }}api/1/controller-realtime/subscribe/)).

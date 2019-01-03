@@ -6,7 +6,7 @@ description: MemoryStorage:sscan
   
 
 # sscan
-Identical to [scan]({{ site_base_path }}sdk-reference/memory-storage/scan), except that `sscan` iterates the members held by a set of unique values.
+Identical to [scan]({{ site_base_path }}sdk-reference/js/5/memory-storage/scan), except that `sscan` iterates the members held by a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sscan)
 

@@ -6,7 +6,7 @@ description: Collection:mcreateOrReplaceDocument
   
 
 # mCreateOrReplaceDocument
-Create or replace the input [Documents]({{ site_base_path }}sdk-reference/document/).
+Create or replace the input [Documents]({{ site_base_path }}sdk-reference/php/3/document/).
 
 ---
 
@@ -14,7 +14,7 @@ Create or replace the input [Documents]({{ site_base_path }}sdk-reference/docume
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``documents`` | Document[] | Array of [Document]({{ site_base_path }}sdk-reference/document/) to create or replace |
+| ``documents`` | Document[] | Array of [Document]({{ site_base_path }}sdk-reference/php/3/document/) to create or replace |
 | ``options`` | JSON Object | Optional parameters |
 | ``callback`` | function | Optional callback |
 

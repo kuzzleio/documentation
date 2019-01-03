@@ -30,7 +30,7 @@ Return users matching the given filter.
 | ``size`` | number |  Number of hits to return per result page | ``10`` |
 
 <div class="alert alert-info">
-  To get more information about scroll sessions, please refer to the <a href="{{ site_base_path }}api-documentation/controller-document/search">API reference documentation</a>.
+  To get more information about scroll sessions, please refer to the <a href="{{ site_base_path }}api/1/controller-document/search">API reference documentation</a>.
 </div>
 
 ---
