@@ -33,10 +33,10 @@ If multiple pipes are plugged to the same event (either from the same plugin or 
 
 Pipes must notify Kuzzle about their completion by one of these two means:
 
-* by calling the `callback(error, updatedData)` function received as their last argument (leave the `error` null if the pipe executed successfully)
-* by returning a promise, resolved (or rejected) with the modified request upon the completion of the pipe
+* by calling the `callback(error, request)` function received as their last argument (leave the `error` null if the pipe executed successfully)
+* by returning a promise, resolved (or rejected) with a valid [Request]({{ site_base_path }}guide/1/essentials/request-and-response-format) upon the completion of the pipe
 
-<div class="alert alert-warning">You must return either call the callback with the original request or return a promise resolving to it.</div>
+<div class="alert alert-warning">You must either call the callback with a valid <a href="{{ site_base_path }}guide/1/essentials/request-and-response-format">Request</a> or return a promise resolving to one.</div>
 
 If a pipe throws an error, it is advised to throw one of the available [KuzzleError]({{ site_base_path }}plugins/1/errors/kuzzleerror) object. Otherwise, Kuzzle will reject the task with a `PluginImplementationError` error.
 
@@ -54,11 +54,10 @@ module.exports = class PipePlugin {
    */
   init (customConfig, context) {
     /*
-      Attaches the plugin function "addCreatedAt" to the Kuzzle event
-      "document:beforeCreate"
+      Attaches the plugin function "restrictUser" to the Kuzzle event
+      "document:afterGet"
      */
     this.pipes = {
-      'document:beforeCreate': 'addCreatedAt',
       'document:afterGet': 'restrictUser'
     };
   }
@@ -66,7 +65,8 @@ module.exports = class PipePlugin {
   // Restrict document access to creator with callback
   restrictUser (request, callback) {
     if (request.context.user._id !== request.result._source._kuzzle_info.author) {
-      return callback(new this.context.errors.NotFoundError(), null);
+      callback(new this.context.errors.NotFoundError(), null);
+      return;
     }
 
     callback(null, request);
@@ -81,7 +81,7 @@ module.exports = class PipePlugin {
     // You must return the original request if there is no error
     return request;
   }
-  
+
   // Restrict document access to creator with traditional promises
   restrictUser (request) {
     if (request.context.user._id !== request.result._source._kuzzle_info.author) {
