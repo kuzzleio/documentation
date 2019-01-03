@@ -11,9 +11,9 @@ Deletes an entire data index from Kuzzle.
 ## Signature
 
 ```cpp
-void delete_(const std::string& index)
+void delete_(const std::string& index);
 
-void delete_(const std::string& index, const kuzzleio::query_options& options)
+void delete_(const std::string& index, const kuzzleio::query_options& options);
 ```
 
 ## Arguments

@@ -11,7 +11,7 @@ Returns the mapping for the given collection.
 ## Signature
 
 ```cpp
-std::string getMapping(const std::string& index, const std::string& collection)
+std::string getMapping(const std::string& index, const std::string& collection);
 
 std::string getMapping(
     const std::string& index, 

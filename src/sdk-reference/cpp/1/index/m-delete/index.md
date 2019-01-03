@@ -11,7 +11,7 @@ Deletes multiple indexes at once.
 ## Signature
 
 ```cpp
-std::vector<std::string> mDelete(const std::vector<std::string>& indexes)
+std::vector<std::string> mDelete(const std::vector<std::string>& indexes);
 
 std::vector<std::string> mDelete(
     const std::vector<std::string>& indexes, 

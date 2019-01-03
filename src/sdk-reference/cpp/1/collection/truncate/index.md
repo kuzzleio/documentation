@@ -12,7 +12,7 @@ It is faster than deleting all documents from a collection.
 ## Signature
 
 ```cpp
-void truncate(const std::string& index, const std::string& collection)
+void truncate(const std::string& index, const std::string& collection);
 
 void truncate(
     const std::string& index, 

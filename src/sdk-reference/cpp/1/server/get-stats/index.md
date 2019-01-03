@@ -19,9 +19,9 @@ These statistics include:
 ## Signature
 
 ```cpp
-std::string getStats(time_t start, time_t end)
+std::string getStats(time_t start, time_t end);
 
-std::string getStats(time_t start, time_t end, const kuzzleio::query_options& options)
+std::string getStats(time_t start, time_t end, const kuzzleio::query_options& options);
 ```
 
 ## Arguments

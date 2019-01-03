@@ -13,9 +13,9 @@ The `from` and `size` arguments allow pagination. They are returned in the respo
 ## Signature
 
 ```cpp
-std::string list(const std::string& index)
+std::string list(const std::string& index);
 
-std::string list(const std::string& index, const kuzzleio::query_options& options)
+std::string list(const std::string& index, const kuzzleio::query_options& options);
 ```
 
 ## Arguments

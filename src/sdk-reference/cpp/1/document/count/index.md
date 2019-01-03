@@ -15,7 +15,7 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 ## Signature
 
 ```cpp
-int count(const std::string& index, const std::string& collection)
+int count(const std::string& index, const std::string& collection);
 
 int count(
     const std::string& index, 

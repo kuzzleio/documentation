@@ -11,9 +11,9 @@ Checks if the given index exists in Kuzzle.
 ## Signature
 
 ```cpp
-bool exists(const std::string& index)
+bool exists(const std::string& index);
 
-bool exists(const std::string& index, const kuzzleio::query_options& options)
+bool exists(const std::string& index, const kuzzleio::query_options& options);
 ```
 
 ## Arguments

@@ -11,7 +11,7 @@ Empties the offline request queue without playing it.
 ## Signature
 
 ```cpp
-kuzzleio::Kuzzle* flushQueue() noexcept
+kuzzleio::Kuzzle* flushQueue() noexcept;
 ```
 
 ## Return

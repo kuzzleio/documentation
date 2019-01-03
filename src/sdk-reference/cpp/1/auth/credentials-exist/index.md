@@ -11,9 +11,9 @@ Check that the current user has credentials for the specified strategy.
 ## Signature
 
 ```cpp
-bool credentialsExist(const std::string& strategy)
+bool credentialsExist(const std::string& strategy);
 
-bool credentialsExist(const std::string& strategy, const kuzzleio::query_options& options)
+bool credentialsExist(const std::string& strategy, const kuzzleio::query_options& options);
 ```
 
 ## Arguments

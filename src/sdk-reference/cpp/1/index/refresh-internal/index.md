@@ -20,9 +20,9 @@ The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-refe
 ## Signature
 
 ```cpp
-void refreshInternal()
+void refreshInternal();
 
-void refreshInternal(const kuzzleio::query_options& options)
+void refreshInternal(const kuzzleio::query_options& options);
 ```
 
 ## Arguments

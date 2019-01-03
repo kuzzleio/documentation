@@ -11,7 +11,7 @@ Checks a JWT Token's validity.
 ## Signature
 
 ```cpp
-kuzzleio::token_validity* checkToken(const std::string& token)
+kuzzleio::token_validity* checkToken(const std::string& token);
 ```
 
 ## Arguments

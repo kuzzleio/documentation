@@ -13,9 +13,9 @@ Each instance represent a different connection to a Kuzzle server with specific 
 ## Signature
 
 ```cpp
-kuzzleio::Kuzzle(kuzzleio::Protocol* protocol)
+kuzzleio::Kuzzle(kuzzleio::Protocol* protocol);
 
-kuzzleio::Kuzzle(kuzzleio::Protocol* protocol, const options& options)
+kuzzleio::Kuzzle(kuzzleio::Protocol* protocol, const options& options);
 ```
 
 ## Arguments

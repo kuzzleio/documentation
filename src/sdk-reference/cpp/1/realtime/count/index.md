@@ -11,9 +11,9 @@ Returns the number of other connections sharing the same subscription.
 ## Signature
 
 ```cpp
-int count(const std::string& room_id)
+int count(const std::string& room_id);
 
-int count(const std::string& room_id, const kuzzleio::query_options& options)
+int count(const std::string& room_id, const kuzzleio::query_options& options);
 ```
 
 ## Arguments

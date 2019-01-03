@@ -21,7 +21,7 @@ we recommend that you avoid using it in production or at least carefully monitor
 ## Signature
 
 ```cpp
-void setAutoRefresh(const std::string& index, bool auto_refresh)
+void setAutoRefresh(const std::string& index, bool auto_refresh);
 
 void setAutoRefresh(
     const std::string& index, 

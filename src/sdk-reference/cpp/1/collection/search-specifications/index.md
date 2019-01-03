@@ -20,7 +20,7 @@ That limit is by default set at 10000, and you can't get over it even with the f
 ## Signature
 
 ```cpp
-kuzzleio::SearchResult* searchSpecifications(const std::string& query)
+kuzzleio::SearchResult* searchSpecifications(const std::string& query);
 
 kuzzleio::SearchResult* searchSpecifications(
     const std::string& query, 

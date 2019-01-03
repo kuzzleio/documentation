@@ -90,7 +90,7 @@ def signature_mutator(controller, action)
       params = match[2].split(', ').map {|param| "\n    #{param}" }.join(", ")
       "#{match[1]}(#{params});"
     else
-      signature
+      "#{signature};"
     end
   end.map do |signature|
     ADD_NAMESPACE.each do |regexp|

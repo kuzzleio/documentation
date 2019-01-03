@@ -11,9 +11,9 @@ Checks that an administrator account exists.
 ## Signature
 
 ```cpp
-bool adminExists()
+bool adminExists();
 
-bool adminExists(const kuzzleio::query_options& options)
+bool adminExists(const kuzzleio::query_options& options);
 ```
 
 ## Arguments

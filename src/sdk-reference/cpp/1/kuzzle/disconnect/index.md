@@ -13,7 +13,7 @@ A call to `disconnect()` will not trigger a `DISCONNECTED` event. This event is 
 ## Signature
 
 ```cpp
-void disconnect() noexcept
+void disconnect() noexcept;
 ```
 
 ## Usage

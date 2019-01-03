@@ -11,7 +11,7 @@ Delete the current user's credentials for the specified strategy. If the credent
 ## Signature
 
 ```cpp
-void deleteMyCredentials(const std::string& strategy)
+void deleteMyCredentials(const std::string& strategy);
 
 void deleteMyCredentials(
     const std::string& strategy, 
