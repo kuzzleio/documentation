@@ -14,6 +14,6 @@ try {
 
   Console.WriteLine(updated_specifications);
   // {"strict":false,"fields":{"license":{"mandatory":true,"type":"string"}}}
-} catch  {
-  Console.Error.WriteLine(e.what());
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }

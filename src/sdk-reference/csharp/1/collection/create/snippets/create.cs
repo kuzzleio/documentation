@@ -14,6 +14,6 @@ try {
   kuzzle.collection.create("nyc-open-data", "yellow-taxi", mapping);
 
   Console.WriteLine("Collection successfully created");
-} catch  {
-  Console.Error.WriteLine(e.what());
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }

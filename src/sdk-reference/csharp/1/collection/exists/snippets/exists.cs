@@ -4,6 +4,6 @@ try {
   if (exists) {
     Console.WriteLine("Collection green-taxi exists");
   }
-} catch  {
-  Console.Error.WriteLine(e.what());
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }

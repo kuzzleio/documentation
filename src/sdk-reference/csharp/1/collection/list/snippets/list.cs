@@ -7,6 +7,6 @@ try {
 
   Console.WriteLine(collection_list);
   // {"type":"all","collections":[{"name":"pink-taxi","type":"stored"}],"from":1,"size":2}
-} catch  {
-  Console.Error.WriteLine(e.what());
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }

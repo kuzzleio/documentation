@@ -15,7 +15,8 @@ module SnippetMutator
       /std::string/                                      => 'string',
       /query_options options;/                           => 'QueryOptions options = new QueryOptions();',
       /SearchResult\*/                                   => 'SearchResult',
-      /validation_response \*validation_response/ => 'validation_response validation_response'
+      /validation_response \*validation_response/         => 'validation_response validation_response',
+      /e.what\(\)/                                       => 'e.getMessage()'
     }
     STDOUT_FIND = /std::cout.*std::endl;/
     STDERR_FIND = /std::cerr.*std::endl;/
@@ -26,7 +27,6 @@ module SnippetMutator
       common_replace(content)
       stdout_replace(content)
       stderr_replace(content)
-      exceptions_replace(content)
       multiline_string_replace(content)
       content
     end
@@ -40,11 +40,6 @@ module SnippetMutator
       multiline_string = match[1]
       multiline_string.gsub!('"', '""')
       content.gsub!(MULTILINE_STRING_REPLACE, "@\"#{multiline_string}\"")
-    end
-
-    def exceptions_replace(content)
-      content.gsub!(/\(KuzzleException e\)/, '')
-      content.gsub!(/e.getMessage\(\)/, '""')
     end
 
     def common_replace(content)

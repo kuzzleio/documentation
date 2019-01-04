@@ -3,6 +3,6 @@ try {
 
   Console.WriteLine(specifications);
   // {"nyc-open-data": {"yellow-taxi": {"strict": false, "fields": {"license": {"type": "string"}}}}}
-} catch  {
-  Console.Error.WriteLine(e.what());
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }

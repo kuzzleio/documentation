@@ -18,6 +18,6 @@ try {
   if (validation_response.valid) {
     Console.WriteLine("Specifications are valid");
   }
-} catch  {
-  Console.Error.WriteLine(e.what());
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.getMessage());
 }
