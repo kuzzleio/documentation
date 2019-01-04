@@ -35,7 +35,7 @@ It can be one of the following available protocols:
 
 Kuzzle SDK instance options.
 
-| Property              | <br/>(default)  | Description   |
+| Property              | Type<br/>(default)  | Description   |
 | -------------- | --------- | ------------- |
 | `autoQueue`         | <pre>boolean</pre><br/>(`false`) | Automatically queue all requests during offline mode               | 
 | `autoReplay`        | <pre>boolean</pre><br/>(`false`) | Automatically replay queued requests on a `reconnected` event      | 

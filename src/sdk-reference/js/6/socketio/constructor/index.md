@@ -33,7 +33,7 @@ SocketIO(host, [options]);
 
 SocketIO protocol connection options.
 
-| Property              | <br/>(default)  | Description   |
+| Property              | Type<br/>(default)  | Description   |
 | -------------- | --------- | ------------- |
 | `port`         | <pre>number</pre><br/>(`7512`) | Kuzzle server port               | 
 | `sslConnection`     | <pre>boolean</pre><br/>(`false`) | Use SSL to connect to Kuzzle server                    |   
