@@ -2,7 +2,7 @@ $LOAD_PATH.unshift File.dirname(__FILE__)
 
 require 'active_support/all'
 require 'byebug'
-require 'extract_signature.rb'
+require 'signature_extractor.rb'
 
 module SectionMutator
   class Base

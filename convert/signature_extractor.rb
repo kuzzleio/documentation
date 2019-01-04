@@ -45,6 +45,16 @@ class SignatureExtractor::Csharp < SignatureExtractor
   end
 
   def extract(*args)
-    super { |sig| "#{sig.squish};" }
+    super do |signature|
+      signature.squish!
+
+      if signature.size > 80
+        match = signature.match(/([<>\w\s\*:]+)\(([\w:&\s,\*<>]+)\)/)
+        params = match[2].split(', ').map { |param| "\n    #{param}" }.join(", ")
+        "#{match[1]}(#{params});\n"
+      else
+        "#{signature};\n"
+      end
+    end
   end
 end
