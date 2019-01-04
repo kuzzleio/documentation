@@ -12,7 +12,7 @@ Works only if the SDK is not in a `offline` state, and if the `autoReplay` optio
 ## Signature
 
 ```cpp
-kuzzleio::Kuzzle* playQueue()
+kuzzleio::Kuzzle* playQueue() noexcept;
 ```
 
 ## Return

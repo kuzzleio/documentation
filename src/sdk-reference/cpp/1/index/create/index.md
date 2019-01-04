@@ -11,7 +11,9 @@ Create a new index in Kuzzle.
 ## Signature
 
 ```cpp
-void create(const std::string& index, kuzzleio::query_options *options = null)
+void create(const std::string& index);
+
+void create(const std::string& index, const kuzzleio::query_options& options);
 ```
 
 ## Arguments

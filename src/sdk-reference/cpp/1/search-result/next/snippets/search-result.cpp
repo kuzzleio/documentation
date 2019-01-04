@@ -15,7 +15,7 @@ try {
   options.scroll = "1m";
   options.size = 2;
 
-  kuzzleio::SearchResult* response = kuzzle->document->search(
+  kuzzleio::SearchResult* first_page = kuzzle->document->search(
     "nyc-open-data",
     "yellow-taxi",
     R"({
@@ -25,11 +25,11 @@ try {
         }
       }
     })",
-    &options);
+    options);
 
-  kuzzleio::SearchResult* next_page = response->next();
+  kuzzleio::SearchResult* second_page = first_page->next();
 
-  std::cout << "Successfully retrieved " << next_page->fetched << " documents" << std::endl;
+  std::cout << "Successfully retrieved " << second_page->fetched << " documents" << std::endl;
 } catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }

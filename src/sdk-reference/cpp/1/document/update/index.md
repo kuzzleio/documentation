@@ -16,11 +16,17 @@ You can set the `retryOnConflict` optional argument (with a retry count), to tel
 
 ```cpp
 std::string update(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& id,
-    const std::string& document,
-    kuzzleio::query_options *options=nullptr)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& id, 
+    const std::string& document);
+
+std::string update(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& id, 
+    const std::string& document, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

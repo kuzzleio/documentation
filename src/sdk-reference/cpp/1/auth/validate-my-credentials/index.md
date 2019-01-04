@@ -11,7 +11,14 @@ Validate the current user's credentials for the specified strategy. The `result`
 ## Signature
 
 ```cpp
-bool validateMyCredentials(const std::string& strategy, const std::string& credentials, kuzzleio::query_options* options=nullptr);
+bool validateMyCredentials(
+    const std::string& strategy, 
+    const std::string& credentials);
+
+bool validateMyCredentials(
+    const std::string& strategy, 
+    const std::string& credentials, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
