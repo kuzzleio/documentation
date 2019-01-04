@@ -55,7 +55,7 @@ Returns a paginated search result set, with the following properties:
 
 * `hits`: array of found documents. Each document has the following properties:
   * `_id`: document unique identifier
-  * `_score`: relevance score
+  * `_score`: [relevance score](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html)
   * `_source`: new document content
 * `scrollId`: identifier to the next page of result. Can be different than the previous one(s)
 * `total`: total number of found documents. Usually greater than the number of documents in a result page

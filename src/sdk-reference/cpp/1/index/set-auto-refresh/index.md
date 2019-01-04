@@ -21,7 +21,12 @@ we recommend that you avoid using it in production or at least carefully monitor
 ## Signature
 
 ```cpp
-void setAutoRefresh(const std::string& index, bool autoRefresh, kuzzleio::query_options *options = null)
+void setAutoRefresh(const std::string& index, bool auto_refresh);
+
+void setAutoRefresh(
+    const std::string& index, 
+    bool auto_refresh, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

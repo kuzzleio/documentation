@@ -21,12 +21,7 @@ It gives access to the different functionalities of the SDKs:
 Each instance of the class communicates with the Kuzzle server through a class representing a network protocol implementation.  
 Theses protocol classes must implement the [Protocol]({{ site_base_path }}sdk-reference/cpp/1/protocol) class.
 
-The following table summarizes the differences between the available protocols:
-
-| Feature | [WebSocket]({{ site_base_path }}sdk-reference/cpp/1/websocket) | Http | 
-| -------- | :--------: | :--------: | 
-| Realtime notifications | yes | *wip* |
-| Connection loss resilience | yes | *wip* |
+For the moment, only the [WebSocket]({{ site_base_path }}sdk-reference/cpp/1/websocket) protocol is available. 
 
 ## Volatile data
 
@@ -42,13 +37,15 @@ If additional data is provided within a specific request, the volatile data will
 namespace kuzzleio {
   class Kuzzle : public KuzzleEventEmitter {
     public:
-      Kuzzle(Protocol*, options *options=nullptr);
+      Kuzzle(Protocol* protocol);
+      Kuzzle(Protocol* protocol, const options& options);
       virtual ~Kuzzle();
 
       void connect();
       void disconnect();
-      void emitEvent(Event, const std::string&);
-      kuzzle_response* query(kuzzle_request*, query_options* options=nullptr);
+      void emitEvent(Event event, const std::string& payload);
+      kuzzle_response* query(const kuzzle_request& request);
+      kuzzle_response* query(const kuzzle_request& request, const query_options& options);
 
       // Offline queue
       Kuzzle* startQueuing();
@@ -57,8 +54,8 @@ namespace kuzzleio {
       Kuzzle* flushQueue();
 
       // Setters
-      Kuzzle* setAutoReplay(bool);
-      Kuzzle* setVolatile(const std::string&);
+      Kuzzle* setAutoReplay(bool value);
+      Kuzzle* setVolatile(const std::string& volatile_data);
 
       // Getters
       Protocol* getProtocol();
@@ -67,12 +64,11 @@ namespace kuzzleio {
       std::map<int, EventListener*> getListeners();
 
       // KuzzleEventEmitter implementation
-      virtual int listenerCount(Event) override;
-      virtual KuzzleEventEmitter* addListener(Event, EventListener*) override;
-      virtual KuzzleEventEmitter* removeListener(Event, EventListener*) override;
-      virtual KuzzleEventEmitter* removeAllListeners(Event) override;
-      virtual KuzzleEventEmitter* once(Event, EventListener*) override;
-
+      virtual int listenerCount(Event event) override;
+      virtual KuzzleEventEmitter* addListener(Event event, EventListener* listener) override;
+      virtual KuzzleEventEmitter* removeListener(Event event, EventListener* listener) override;
+      virtual KuzzleEventEmitter* removeAllListeners(Event event) override;
+      virtual KuzzleEventEmitter* once(Event event, EventListener* listener) override;
   };
 }
 ```

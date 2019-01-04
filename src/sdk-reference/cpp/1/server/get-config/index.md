@@ -15,7 +15,9 @@ Returns the current Kuzzle configuration.
 ## Signature
 
 ```cpp
-std::string getConfig(kuzzleio::query_options* options=nullptr);
+std::string getConfig();
+
+std::string getConfig(const kuzzleio::query_options& options);
 ```
 
 ## Arguments

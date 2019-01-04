@@ -19,7 +19,9 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 ## Signature
 
 ```cpp
-void refresh(const std::string& index, kuzzleio::query_options *options = null)
+void refresh(const std::string& index);
+
+void refresh(const std::string& index, const kuzzleio::query_options& options);
 ```
 
 ## Arguments
