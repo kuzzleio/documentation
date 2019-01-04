@@ -66,7 +66,7 @@ class TestManager {
         file: snippet.snippetFile
       });
 
-      await this.sdkRunner.clean(snippet);
+      await snippet.runner.clean(snippet);
     } catch (e) {
       if (! (e instanceof TestResult)) {
         this.results.push(new TestResult({
