@@ -8,6 +8,7 @@ module.exports = class GoRunner extends BaseRunner {
     super(sdk);
     this.goProjectPath = '/go/src/github.com/kuzzleio/go-test/';
     this.lintCommand = 'golint';
+    this.ext = 'go';
   }
 
   async runSnippet(snippet) {
