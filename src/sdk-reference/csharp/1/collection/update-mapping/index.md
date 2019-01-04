@@ -14,7 +14,13 @@ persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/e
 
 ```csharp
 public void updateMapping(string index, string collection, string body);
-public void updateMapping(string index, string collection, string body, QueryOptions options);
+
+public void updateMapping(
+    string index, 
+    string collection, 
+    string body, 
+    QueryOptions options);
+
 ```
 
 ## Arguments

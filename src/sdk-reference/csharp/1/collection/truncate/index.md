@@ -13,7 +13,9 @@ It is faster than deleting all documents from a collection.
 
 ```csharp
 public void truncate(string index, string collection);
+
 public void truncate(string index, string collection, QueryOptions options);
+
 ```
 
 ## Arguments

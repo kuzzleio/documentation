@@ -12,7 +12,12 @@ Returns the validation specifications associated to the collection.
 
 ```csharp
 public string getSpecifications(string index, string collection);
-public string getSpecifications(string index, string collection, QueryOptions options);
+
+public string getSpecifications(
+    string index, 
+    string collection, 
+    QueryOptions options);
+
 ```
 
 ## Arguments

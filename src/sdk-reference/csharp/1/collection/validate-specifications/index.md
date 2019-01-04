@@ -13,8 +13,17 @@ When the validation specification is not formatted correctly, a detailed error m
 ## Signature
 
 ```csharp
-public validation_response validateSpecifications(string index, string collection, string specifications);
-public validation_response validateSpecifications(string index, string collection, string specifications, QueryOptions options);
+public validation_response validateSpecifications(
+    string index, 
+    string collection, 
+    string specifications);
+
+public validation_response validateSpecifications(
+    string index, 
+    string collection, 
+    string specifications, 
+    QueryOptions options);
+
 ```
 
 ## Arguments

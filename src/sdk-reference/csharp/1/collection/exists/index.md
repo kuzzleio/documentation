@@ -12,7 +12,9 @@ Check if a collection exists in Kuzzle.
 
 ```csharp
 public bool exists(string index, string collection);
+
 public bool exists(string index, string collection, QueryOptions options);
+
 ```
 
 ## Arguments

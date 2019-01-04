@@ -16,9 +16,17 @@ This method will only update the mapping if the collection already exists.
 
 ```csharp
 public void create(string index, string collection);
+
 public void create(string index, string collection, QueryOptions options);
+
 public void create(string index, string collection, string body);
-public void create(string index, string collection, string body, QueryOptions options);
+
+public void create(
+    string index, 
+    string collection, 
+    string body, 
+    QueryOptions options);
+
 ```
 
 ## Arguments

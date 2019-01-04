@@ -12,7 +12,12 @@ Delete the validation specifications associated with the collection.
 
 ```csharp
 public void deleteSpecifications(string index, string collection);
-public void deleteSpecifications(string index, string collection, QueryOptions options);
+
+public void deleteSpecifications(
+    string index, 
+    string collection, 
+    QueryOptions options);
+
 ```
 
 ## Arguments

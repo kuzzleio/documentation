@@ -21,7 +21,9 @@ That limit is by default set at 10000, and you can't get over it even with the f
 
 ```csharp
 public SearchResult searchSpecifications(string body);
+
 public SearchResult searchSpecifications(string body, QueryOptions options);
+
 ```
 
 ## Arguments
