@@ -19,7 +19,8 @@ module SnippetMutator
       /SearchResult\*/                                   => 'SearchResult',
       /validation_response \*validation_response/        => 'validation_response validation_response',
       /delete_\(/                                        => 'delete(',
-      /token_validity*/                                  => 'TokenValidity'
+      /token_validity*/                                  => 'TokenValidity',
+      /e.what\(\)/                                       => 'e.Message()'
     }
     STDOUT_FIND = /std::cout.*std::endl;/
     STDERR_FIND = /std::cerr.*std::endl;/
@@ -34,7 +35,6 @@ module SnippetMutator
       stdout_replace(content)
       stderr_replace(content)
       multiline_string_replace(content)
-#      exceptions_replace(content)
       vector_replace(content)
       unique_ptr_replace(content)
       content
@@ -49,11 +49,6 @@ module SnippetMutator
         string_match.gsub!('"', '""')
         content.gsub!(full_match, "@\"#{string_match}\"")
       end
-    end
-
-    def exceptions_replace(content)
-      content.gsub!(/\(KuzzleException e\)/, '')
-      content.gsub!(/e.getMessage\(\)/, '""')
     end
 
     def common_replace(content)
