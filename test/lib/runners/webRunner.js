@@ -1,22 +1,20 @@
 const
   BaseRunner = require('./baseRunner'),
-  path = require('path'),
-  { execute } = require('../helpers/utils'),
-  TestResult = require('../helpers/testResult');
+  path = require('path');
 
-module.exports = class JsRunner extends BaseRunner {
+module.exports = class WebRunner extends BaseRunner {
   constructor(sdk) {
     super(sdk);
 
     this.lintConfig = path.join(__dirname, '../../linters/eslint.json');
     this.lintCommand = './node_modules/.bin/eslint';
     this.lintOptions = ['-c', this.lintConfig];
-    this.ext = 'js';
+    this.scriptPath = path.join(__dirname, '../scripts/puppeteer.js');
+    this.ext = 'html';
   }
 
   async runSnippet(snippet) {
-    this.snippetCommand = `node ${snippet.renderedSnippetPath}`;
-
+    this.snippetCommand = `node ${this.scriptPath} ${snippet.renderedSnippetPath}`;
     await super.runSnippet(snippet);
   }
 
