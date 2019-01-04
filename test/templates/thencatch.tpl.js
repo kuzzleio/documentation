@@ -3,13 +3,13 @@ const Bluebird = require('bluebird');
 // Loads the Kuzzle SDK module and the websocket protocol
 const {
   Kuzzle,
-  Websocket
+  WebSocket
 } = require('kuzzle-sdk');
 
 // Instantiates a Kuzzle client
 const
   kuzzle = new Kuzzle(
-    new Websocket({ host: 'kuzzle', autoReconnect: false })
+    new WebSocket('kuzzle', { autoReconnect: false })
   );
 
 // Adds a listener to detect any connection problems

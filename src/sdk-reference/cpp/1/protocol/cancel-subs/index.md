@@ -8,7 +8,7 @@ description: Cancels all subscriptions
 
 Cancels all subscriptions.
 
-## Arguments
+## Signature
 
 ```cpp
 virtual void cancelSubs() = 0;

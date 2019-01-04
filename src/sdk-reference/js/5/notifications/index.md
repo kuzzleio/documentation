@@ -6,8 +6,8 @@ order: 300
 
 # Notifications
 
-With Kuzzle, you don't [subscribe]({{ site_base_path }}sdk-reference/collection/subscribe) to a room or a topic but, instead, you subscribe to documents.  
-This means, that when you want to subscribe you must provide a set of filter definitions, using [Koncorde]({{ site_base_path }}kuzzle-dsl), that tell Kuzzle what documents should trigger a notification. Then, any time a document matches the defined filters, Kuzzle will send a notification to the subscriber.
+With Kuzzle, you don't [subscribe]({{ site_base_path }}sdk-reference/js/5/collection/subscribe) to a room or a topic but, instead, you subscribe to documents.  
+This means, that when you want to subscribe you must provide a set of filter definitions, using [Koncorde]({{ site_base_path }}koncorde/1), that tell Kuzzle what documents should trigger a notification. Then, any time a document matches the defined filters, Kuzzle will send a notification to the subscriber.
 
 You can also provide an empty set of filters, which will tell Kuzzle that you want to listen to any change occurring on a data collection, emulating the behavior of a traditional topic.
 
@@ -34,7 +34,7 @@ You may subscribe multiple times to the same room, with identical or different s
 
 | Notification field | Type |Description       | Possible values |
 |--------------------|------|------------------|-----------------|
-| `document` | [Document]({{ site_base_path }}sdk-reference/document/) | Content of the document or real-time message that generated the notification | |
+| `document` | [Document]({{ site_base_path }}sdk-reference/js/5/document/) | Content of the document or real-time message that generated the notification | |
 | `scope` | string | Indicates if the document enters or exits the subscription scope | `in`, `out` |
 | `state` | string | {{{deprecated "1.5.0"}}} Shows if the document is about to be changed, or if the change is done | `pending`, `done` |
 | `type` | string | Notification type | `document` |

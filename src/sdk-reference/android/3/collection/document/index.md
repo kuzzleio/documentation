@@ -6,7 +6,7 @@ description: Collection:document
   
 
 # document
-Creates a new [Document]({{ site_base_path }}sdk-reference/document/) object, using its constructor.
+Creates a new [Document]({{ site_base_path }}sdk-reference/android/3/document/) object, using its constructor.
 
 ---
 
@@ -21,7 +21,7 @@ Creates a new [Document]({{ site_base_path }}sdk-reference/document/) object, us
 
 ## Return Value
 
-Returns the newly created [Document]({{ site_base_path }}sdk-reference/document) object.
+Returns the newly created [Document]({{ site_base_path }}sdk-reference/android/3/document) object.
 
 ## Usage
 

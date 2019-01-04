@@ -71,7 +71,7 @@ Each document is an object with the following properties:
 * `_source`: document content
 * `_version`: version number of the document
 
-If one or more document retrievals fail, the response status is set to `206`, and the `error` object contain a [partial error]({{ site_base_path }}api/1/errors/#partialerror) error.
+If one or more document retrievals fail, the response status is set to `206`, and the `error` object contain a [partial error]({{ site_base_path }}api/1/essentials/errors/#partialerror) error.
 
 
 ```js

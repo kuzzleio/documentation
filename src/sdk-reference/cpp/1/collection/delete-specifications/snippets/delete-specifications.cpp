@@ -1,7 +1,7 @@
 try {
   kuzzle->collection->deleteSpecifications("nyc-open-data", "yellow-taxi");
 
-  std::cout << "Success" << std::endl;
+  std::cout << "Specifications successfully deleted" << std::endl;
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

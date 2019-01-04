@@ -42,7 +42,7 @@ A document notification contains the following fields:
 | `state` | string | {{{deprecated "1.5.0"}}}<br/>`done`: the change has been applied<br/>`pending`: the change is about to happen | `pending`, `done` |
 |`timestamp` | number | Timestamp of the event, in Epoch-millis format |
 | `type` | string | `document`: the notification type |
-| `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data/) |
 
 The `result` object is the notification content, and it has the following structure:
 
@@ -87,7 +87,7 @@ The `result` object is the notification content, and it has the following struct
 
 User notifications about users are triggered by the following events:
 
-* A user subscribes to [the same room]({{ site_base_path }}kuzzle-dsl/1/roomid/)
+* A user subscribes to the same room
 * A user leaves that room
 
 These notifications are sent only if the `users` argument is set to any other value than the default `none` one (see [subscription request]({{ site_base_path }}api/1/controller-realtime/subscribe/)).
@@ -106,7 +106,7 @@ These notifications are sent only if the `users` argument is set to any other va
 |`timestamp` | number | Timestamp of the event, in Epoch-millis format |
 | `type` | string | `user`: the notification type |
 | `user` | string | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
-| `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `volatile` | object | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data/) |
 
 The `result` object is the notification content, and it has the following structure:
 

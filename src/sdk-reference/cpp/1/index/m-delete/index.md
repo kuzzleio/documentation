@@ -11,31 +11,35 @@ Deletes multiple indexes at once.
 ## Signature
 
 ```cpp
-std::vector<std::string> mDelete(std::vector<std::string> indexes, kuzzleio::query_options *options = null)
+std::vector<std::string> mDelete(const std::vector<std::string>& indexes);
+
+std::vector<std::string> mDelete(
+    const std::vector<std::string>& indexes, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
 
-| Arguments | Type                       | Description                                             | Required |
-| --------- | -------------------------- | ------------------------------------------------------- | -------- |
-| `indexes` | `std::vector<std::string>` | containing list of indexes names                        | yes      |
-| `options` | kuzzleio::query_options              | A pointer to a `kuzzleio::query_options` containing query options | no       |
+| Arguments | Type                       | Description  |
+| --------- | -------------------------- | --------------|
+| `indexes` | <pre>std::vector<std::string></pre> | List of indexes |
+| `options` | <pre>kuzzleio::query_options\*</pre>    | Query options |
 
-### **Options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)   | Description  |   
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Returns a `std::vector<std::string>` containing the list of indexes names deleted
+A vector of string containing the list of deleted indexes.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

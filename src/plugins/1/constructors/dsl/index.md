@@ -7,7 +7,7 @@ title: Dsl
 
 {{{since "1.0.0"}}}
 
-Instantiates a new [Koncorde]({{ site_base_path }}kuzzle-dsl/1) engine.
+Instantiates a new [Koncorde]({{ site_base_path }}koncorde/1) engine.
 
 ---
 
@@ -87,7 +87,7 @@ normalize(index, collection, filters)
 |-----------|------|-------------|
 | `index` | <pre>string</pre> | Data index name |
 | `collection` | <pre>string</pre> | Data collection name |
-| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format |
+| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}koncorde/1) format |
 
 ### Return
 
@@ -122,7 +122,7 @@ register(index, collection, filters)
 |-----------|------|-------------|
 | `index` | <pre>string</pre> | Data index name |
 | `collection` | <pre>string</pre> | Data collection name |
-| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format |
+| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}koncorde/1) format |
 
 ### Return
 
@@ -229,7 +229,7 @@ validate(filters)
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}kuzzle-dsl/1) format |
+| `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}koncorde/1) format |
 
 ### Return
 

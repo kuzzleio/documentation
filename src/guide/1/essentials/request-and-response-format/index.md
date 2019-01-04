@@ -132,5 +132,5 @@ Here is how the request life-cycle works:
   - The raw response of the controller is set to the `result` field.
   - If an error occurs, Kuzzle updates the `error` field via the `setError` method.
   - The `status` field is then set with an HTTP-compliant numeric code.
-  - Kuzzle sets the `response` as per the [Kuzzle Response API Standard]({{ site_base_path }}api/1/kuzzle-response)
+  - Kuzzle sets the `response` as per the [Kuzzle Response API Standard]({{ site_base_path }}api/1/essentials/kuzzle-response)
 * Kuzzle sends the response back to the client.

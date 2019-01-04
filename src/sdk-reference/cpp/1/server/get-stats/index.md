@@ -6,8 +6,6 @@ description: Returns statistics snapshots within a provided timestamp range.
 
 # getStats
 
-{{{since "1.0.0"}}}
-
 Returns statistics snapshots within a provided timestamp range.
 By default, snapshots are made every 10 seconds and they are stored for 1 hour.
 
@@ -18,36 +16,37 @@ These statistics include:
 * the number of completed requests since the last frame
 * the number of failed requests since the last frame
 
-## Arguments
+## Signature
 
 ```cpp
-std::string getStats(
-  time_t start,
-  time_t end,
-  kuzzleio::query_options* options=nullptr
-)
+std::string getStats(time_t start, time_t end);
+
+std::string getStats(time_t start, time_t end, const kuzzleio::query_options& options);
 ```
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
-| `startTime` | time_t                   | begining of statistics frame set (timestamp or datetime format) | yes       |
-| `stopTime`  | time_t                   | end of statistics frame set (timestamp or datetime format)      | yes       |
-| `options`   | kuzzleio::query_options* | A pointer to a `query_options` containing query options           |  no       |
+## Arguments
 
-### **Options**
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `startTime` | <pre>time_t</pre>   | Timestamp of the begining of statistics frame set |
+| `stopTime`  | <pre>time_t</pre>   | Timestamp of the end of statistics frame set      |
+| `options`   | <pre>kuzzleio::query_options\*</pre> | Query options        |
+
+### options
 
 Additional query options
 
-| Option     | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Option     | Type<br/>(default)   | Description  |
+| ---------- | ------- | -------------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
-Returns a JSON string representing the statistics for the given period of time.
+
+A JSON string representing the statistics for the given period of time.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

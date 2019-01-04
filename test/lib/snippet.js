@@ -34,8 +34,14 @@ class Snippet {
     this.expected = this.testDefinition.expected;
     this.template = this.testDefinition.template;
     this.hooks = this.testDefinition.hooks;
+    
+    const
+      runnerName = `${this.testDefinition.runner || this.sdk.name}Runner`,
+      Runner = require(`./runners/${runnerName}`);
+    
+    this.runner = new Runner(this.sdk);
 
-    this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.sdk.ext}`;
+    this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.runner.ext}`;
     if (! fs.existsSync(this.templateFile)) {
       const result = {
         code: 'MISSING_TEMPLATE',
@@ -45,7 +51,7 @@ class Snippet {
       throw new TestResult(result);
     }
 
-    this.snippetFile = this.testFile.replace('.test.yml', `.${this.sdk.ext}`);
+    this.snippetFile = this.testFile.replace('.test.yml', `.${this.runner.ext}`);
     if (! fs.existsSync(this.snippetFile)) {
       const result = {
         code: 'MISSING_SNIPPET',
@@ -85,11 +91,11 @@ class Snippet {
       snippetName = this._sanitizeFileName(this.name),
       renderedSnippet = this.templateContent.replace(/(\[snippet-code])/g, indentedSnippet);
 
-    this.renderedSnippetPath = `${RENDERED_SNIPPETS_DIR}${snippetName}.${this.sdk.ext}`;
+    this.renderedSnippetPath = `${RENDERED_SNIPPETS_DIR}${snippetName}.${this.runner.ext}`;
 
     // JAVA hack, because filename has to be the same of the class name
     // We replace the template generique class name by the name of the test
-    if (this.sdk.ext === 'java') {
+    if (this.runner.ext === 'java') {
       fs.writeFileSync(this.renderedSnippetPath, this._overrideClassName(renderedSnippet, snippetName));
     } else {
       fs.writeFileSync(this.renderedSnippetPath, renderedSnippet);
@@ -106,7 +112,7 @@ class Snippet {
   }
 
   saveRendered() {
-    const dest = `${SAVE_FAIL_DIR}${this.name}.${this.sdk.ext}`;
+    const dest = `${SAVE_FAIL_DIR}${this.name}.${this.runner.ext}`;
     fs.copyFileSync(this.snippetFile, dest);
   }
 
@@ -125,7 +131,7 @@ class Snippet {
       case 'csharp':
         return `LD_LIBRARY_PATH=./test/bin/ mono ./test/bin/${name}.exe`;
       default:
-        return `Unknown sdk name ${this.sdk.name}`
+        return `Unknown sdk name ${this.sdk.name}`;
     }
   }
 

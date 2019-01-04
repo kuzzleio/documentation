@@ -19,22 +19,29 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 </div>
 
 
-## Arguments
+## Signature
 
 ```cpp
-SearchResult* search(
-  const std::string& index,
-  const std::string& collection,
-  const std::string& body,
-  kuzzleio::query_options *options=nullptr)
+kuzzleio::SearchResult* search(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& query);
+
+kuzzleio::SearchResult* search(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& query, 
+    const kuzzleio::query_options& options);
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `body` | <pre>const std::string&</pre> | A JSON string containing the search query |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `query` | <pre>const std::string&</pre> | JSON string representing the search query |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 
@@ -47,9 +54,9 @@ Additional query options
 | `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
 | `scroll` | <pre>const std::string&</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
 
-## Body properties
+### query
 
-### Optional:
+A JSON string representing the query. Query can have the following root properties:
 
 - `query`: the search query itself, using the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
 - `aggregations`: control how the search results should be [aggregated](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-aggregations.html)
@@ -59,11 +66,11 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a [kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/cpp/1/search-result).
+Returns a [kuzzleio::SearchResult]({{ site_base_path }}sdk-reference/cpp/1/search-result).
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

@@ -22,9 +22,6 @@ class TestManager {
     const Sdk = require(`./sdk/${sdk}Sdk`);
     this.sdk = new Sdk(version);
 
-    const Runner = require(`./runners/${this.sdk.name}Runner`);
-    this.sdkRunner = new Runner(this.sdk);
-
     this.logger = new Logger(this.sdk);
 
     this.collection = `${this.sdk.name}-${this.sdk.version}`;
@@ -62,14 +59,14 @@ class TestManager {
     try {
       snippet.build();
 
-      await this.sdkRunner.run(snippet);
+      await snippet.runner.run(snippet);
 
       this.results.push({
         code: 'SUCCESS',
         file: snippet.snippetFile
       });
 
-      this.sdkRunner.clean(snippet);
+      await snippet.runner.clean(snippet);
     } catch (e) {
       if (! (e instanceof TestResult)) {
         this.results.push(new TestResult({
