@@ -35,7 +35,7 @@ If you are performing a clean install you might get some `UNMET PEER DEPENDENCY`
 </div>
 
 Then, create an `init.js` file and start by adding the code below.  
-This loads the SDK and connects it to a Kuzzle instance using the Websocket protocol.  
+This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol.  
 
 [snippet=load-sdk]
 
@@ -112,7 +112,7 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 ## Subscribe to realtime document notifications (pub/sub)
 
-Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the <a href="{{ site_base_path }}sdk-reference/js/6/essentials/realtime-notifications/">realtime notifications</a> documentation).
+Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the <a href="{{ site_base_path }}sdk-reference/js/6//realtime-notifications/">realtime notifications</a> documentation).
 
 Let's get started. Create a `subscribe.js` file with the following code:
 

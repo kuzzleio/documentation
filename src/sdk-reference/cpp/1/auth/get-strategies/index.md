@@ -11,30 +11,32 @@ Get all authentication strategies registered in Kuzzle.
 ## Signature
 
 ```cpp
-std::vector<std::string> getStrategies(query_options *options=nullptr);
+std::vector<std::string> getStrategies();
+
+std::vector<std::string> getStrategies(const kuzzleio::query_options& options);
 ```
 
 ## Arguments
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options`  | query_options*    | A pointer to a `kuzzleio::query_options` containing query options
+| `options`  | <pre>kuzzleio::query_options\*</pre>    | Query options
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default
-| ---------- | ------- | --------------------------------- | -------
-| `queuable` | bool | Make this request queuable or not | `true`
+| Property     | Type<br/>(default)    | Description        | 
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-A vector of string.
+A vector of string representing the available authentication strategies.
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

@@ -14,22 +14,29 @@ Documents are always valid if no validation rules are defined on the provided in
 This request does not store the document.
 
 
-## Arguments
+## Signature
 
 ```cpp
 bool validate(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& body,
-    kuzzleio::query_options *options=nullptr)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& document);
+
+bool validate(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& document, 
+    const kuzzleio::query_options& options);
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `body` | <pre>const std::string&</pre> | A JSON string containing the body of the document |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `document` | <pre>const std::string&</pre> | JSON string representing the document |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 
@@ -41,11 +48,11 @@ Additional query options
 
 ## Return
 
-Returns a `bool` value set to true if the document is valid and false otherwise.
+A boolean set to true if the document is valid and false otherwise.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

@@ -33,7 +33,7 @@ Plugins are used to extend Kuzzle's functionalities. They are loaded into Kuzzle
 
   _Example - "Expose a `checkout` API endpoint that handles a third-party payment process"_.
 
-[Strategies]({{ site_base_path }}plugins/1/essentials/strategy): add an authentication strategy to identify and authenticate users.
+[Strategies]({{ site_base_path }}plugins/1/essentials/strategies): add an authentication strategy to identify and authenticate users.
 
   _Example - "Enable OAuth based authentication in Kuzzle"_
   Kuzzle ships with the [Local Strategy Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local) and thanks to PassportJS, more than 300 authentication strategies are readily available.

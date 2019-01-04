@@ -11,22 +11,29 @@ Replaces multiple documents.
 
 Throws a partial error (error code 206) if one or more documents can not be replaced.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string mReplace(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& documents,
-    kuzzleio::query_options *options=nullptr)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& documents);
+
+std::string mReplace(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& documents, 
+    const kuzzleio::query_options& options);
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `documents` | <pre>const std::string&</pre> | A JSON string containing the documents to update |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `documents` | <pre>const std::string&</pre> | JSON string representing the documents to replace |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 
@@ -39,11 +46,16 @@ Additional query options
 
 ## Return
 
-Returns a JSON string containing the updated documents.
+A JSON string representing an object containing the following properties:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| `hits` | <pre>object[]</pre> | Array of replaced documents |
+| `total` | <pre>number</pre> | Total documents replaced |
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

@@ -1,8 +1,9 @@
 try {
-  std::string message = "{ \"realtime\": \"rule the web\" }";
+  std::string message = R"({ "realtime": "rule the web" })";
+
   kuzzle->realtime->publish("i-dont-exist", "in-database", message);
 
-  std::cout << "Success" << std::endl;
+  std::cout << "Message successfully published" << std::endl;
 } catch (kuzzleio::KuzzleException &e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

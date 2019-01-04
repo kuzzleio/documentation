@@ -37,7 +37,7 @@ That means that a role that was just created may not be returned by the <code>se
 
 ## Callback Response
 
-Returns a [Role]({{ site_base_path }}sdk-reference/role) object.
+Returns a [Role]({{ site_base_path }}sdk-reference/js/5/role) object.
 
 ## Usage
 

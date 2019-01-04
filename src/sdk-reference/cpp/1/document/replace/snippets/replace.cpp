@@ -1,13 +1,21 @@
 try {
-  kuzzle->document->create("nyc-open-data", "yellow-taxi", "some-id", R"({"color": "yellow"})");
+  kuzzle->document->create(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id",
+    R"({"color": "yellow"})");
 
-  std::string response = kuzzle->document->replace("nyc-open-data", "yellow-taxi", "some-id", R"({
-    "capacity": 4,
-    "category": "sedan"
-  })");
+  std::string response = kuzzle->document->replace(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id",
+    R"({
+      "capacity": 4,
+      "category": "sedan"
+    })");
 
   std::cout << response << std::endl;
-  /* 
+  /*
   {
     "_index": "nyc-open-data",
     "_type": "yellow-taxi",
@@ -31,18 +39,10 @@ try {
         "active": true,
         "deletedAt": null
       }
-    },
-    "_meta": {
-      "author": "-1",
-      "createdAt": 1538641029988,
-      "updatedAt": 1538641029988,
-      "updater": "-1",
-      "active": true,
-      "deletedAt": null
     }
   }
   */
-  std::cout << "Success" << std::endl;
-} catch (kuzzleio::KuzzleException e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cout << "Document successfully replaced" << std::endl;
+} catch (kuzzleio::KuzzleException& e) {
+  std::cerr << e.what() << std::endl;
 }

@@ -10,7 +10,7 @@ The [realtime.subscribe]({{ site_base_path }}sdk-reference/js/6/realtime/subscri
 
 ## Document & messages
 
-These notifications represent [documents changes & messages]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default).
+These notifications represent [documents changes & messages]({{ site_base_path }}api/1/essentials/notifications#documents-changes-messages-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
@@ -24,7 +24,7 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | `scope` | <pre>string</pre> | `in`: document enters (or stays) in the scope<br/out`: document leaves the scope |
 |`timestamp` | <pre>number</pre> | Timestamp of the event, in Epoch-millis format |
 | `type` | <pre>string</pre> | `document`: Notification type |
-| `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
 
 The `result` object is the notification content, and it has the following structure:
 
@@ -35,7 +35,7 @@ The `result` object is the notification content, and it has the following struct
 
 ## User
 
-These notifications represent [user events]({{ site_base_path }}api/1/notifications/#user-events-default).
+These notifications represent [user events]({{ site_base_path }}api/1/essentials/notifications#user-events-default).
 
 | Property | Type |Description       |
 |--------------------|------|------------------|
@@ -49,7 +49,7 @@ These notifications represent [user events]({{ site_base_path }}api/1/notificati
 |`timestamp` | <pre>number</pre> | Timestamp of the event, in Epoch-millis format |
 | `type` | <pre>string</pre> | `user`: Notification type |
 | `user` | <pre>string</pre> | `in`: a new user has subscribed to the same filters<br/out`: a user cancelled a shared subscription |
-| `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/volatile-data/) |
+| `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
 
 The `result` object is the notification content, and it has the following structure:
 
@@ -59,7 +59,7 @@ The `result` object is the notification content, and it has the following struct
 
 ## Server
 
-These notifications represent [server events]({{ site_base_path }}api/1/notifications/#server-events-default).
+These notifications represent [server events]({{ site_base_path }}api/1/essentials/notifications#server-events-default).
 
 | Property | Type | Value |
 |--------------------|------|------------------|

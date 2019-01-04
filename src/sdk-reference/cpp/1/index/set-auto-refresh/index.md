@@ -4,7 +4,7 @@ title: setAutoRefresh
 description: Set the autorefresh flag
 ---
 
-# setAutoRefresh(index, autorefresh, [options])
+# setAutoRefresh
 
 The setAutoRefresh action allows to set the autorefresh flag for the index.
 
@@ -21,28 +21,33 @@ we recommend that you avoid using it in production or at least carefully monitor
 ## Signature
 
 ```cpp
-void setAutoRefresh(const std::string& index, bool autoRefresh, kuzzleio::query_options *options = null)
+void setAutoRefresh(const std::string& index, bool auto_refresh);
+
+void setAutoRefresh(
+    const std::string& index, 
+    bool auto_refresh, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
 
-| Arguments     | Type          | Description                                             | Required |
-| ------------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`       | const std::string&   | Index name                                              | yes      |
-| `autoRefresh` | Boolean       | autoRefresh flag                                        | yes      |
-| `options`     | kuzzleio::query_options* | A pointer to a `kuzzleio::query_options` containing query options | no       |
+| Arguments     | Type          | Description          |
+| ------------- | ------------- | -------------------- |
+| `index`       | <pre>const std::string&</pre>   | Index name    |
+| `autoRefresh` | <pre>bool</pre>       | Autorefresh flag value  |
+| `options`     | <pre>kuzzleio::query_options\*</pre> | Query options |
 
-### **Options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)   | Description  |   
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

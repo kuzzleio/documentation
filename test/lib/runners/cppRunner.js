@@ -11,6 +11,7 @@ module.exports = class CppRunner extends BaseRunner {
     this.lintCommand = 'cpplint';
     this.lintOptions = ['--filter=-legal/copyright,-whitespace/line_length'];
     this.executablePath = '';
+    this.ext = 'cpp';
   }
 
   async runSnippet(snippet) {
@@ -35,7 +36,7 @@ module.exports = class CppRunner extends BaseRunner {
   }
 
   clean(snippet) {
-    fs.unlinkSync(snippet.renderedSnippetPath);
-    fs.unlinkSync(this.executablePath);
+    super.clean(snippet);
+    fs.unlinkSync(this.snippetCommand);
   }
 };

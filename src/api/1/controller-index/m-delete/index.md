@@ -83,4 +83,4 @@ Returns an array of indexes that were actually deleted.
 
 ## Possible errors
 
-- [Common errors]({{ site_base_path }}api/1/errors/#common-errors)
+- [Common errors]({{ site_base_path }}api/1/essentials/errors/#common-errors)

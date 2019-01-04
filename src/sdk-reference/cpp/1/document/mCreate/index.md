@@ -11,22 +11,29 @@ Creates multiple documents.
 
 Throws a partial error (error code 206) if one or more documents creations fail.
 
-## Arguments
+## Signature
 
 ```cpp
 std::string mCreate(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& body,
-    kuzzleio::query_options *options=nullptr)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& documents);
+
+std::string mCreate(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& documents, 
+    const kuzzleio::query_options& options);
 ```
+
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>const std::string&</pre> | Index name |
 | `collection` | <pre>const std::string&</pre> | Collection name |
-| `body` | <pre>const std::string&</pre> | A JSON string containing the documents to create |
-| `options` | <pre>kuzzleio::query_options*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
+| `documents` | <pre>const std::string&</pre> | JSON string representing the documents to create |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### options
 
@@ -39,11 +46,11 @@ Additional query options
 
 ## Return
 
-Returns an JSON string containing the created documents.
+A JSON string containing an array representing the created documents.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

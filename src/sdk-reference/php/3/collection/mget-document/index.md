@@ -6,7 +6,7 @@ description: Collection:mgetDocument
   
 
 # mGetDocument
-Get multiple [Documents]({{ site_base_path }}sdk-reference/document/) according to the input document IDs.
+Get multiple [Documents]({{ site_base_path }}sdk-reference/php/3/document/) according to the input document IDs.
 
 ---
 

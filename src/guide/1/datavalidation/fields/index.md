@@ -23,6 +23,7 @@ The property name defines the path of the field in the document. For root fields
 *   `numeric`: value(s) must be a valid number, additional **optional constraints in typeOptions**
 *   `geo_point`: value(s) must be a valid geo-point
 *   `geo_shape`: value(s) must be a valid geo-shape
+*   `boolean`: value(s) must be a valid boolean
 *   `date`: value(s) must be a valid date, additional **optional constraints in typeOptions**
 *   `object`: value(s) must be a valid object, additional **optional constraints in typeOptions**
 
@@ -37,7 +38,7 @@ The property name defines the path of the field in the document. For root fields
 
 **Purpose**: Defines the type of the provided fields. Checks are performed depending on the provided type.
 
-**Documentation**: You can find more information about Elasticsearch types in the [Elasticearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/5.x/mapping-types.html)
+**Documentation**: You can find more information about Elasticsearch types in the [Elasticearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping-types.html)
 
 ---
 

@@ -6,7 +6,7 @@ description: Collection:mdeleteDocument
   
 
 # mDeleteDocument
-Delete multiple [Documents]({{ site_base_path }}sdk-reference/document/) according to the input IDs.
+Delete multiple [Documents]({{ site_base_path }}sdk-reference/js/5/document/) according to the input IDs.
 
 ---
 

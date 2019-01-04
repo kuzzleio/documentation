@@ -8,7 +8,7 @@ description: Disconnects the SDK
 
 Closes the current connection to Kuzzle.  
 
-## Arguments
+## Signature
 
 ```cpp
 virtual void close() = 0;

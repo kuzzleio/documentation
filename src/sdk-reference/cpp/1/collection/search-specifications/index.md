@@ -6,7 +6,7 @@ description: Searches collection specifications
 
 # searchSpecifications
 
-{{{since "1.0.0"}}}
+
 
 Searches collection specifications.
 
@@ -20,17 +20,19 @@ That limit is by default set at 10000, and you can't get over it even with the f
 ## Signature
 
 ```cpp
+kuzzleio::SearchResult* searchSpecifications(const std::string& query);
+
 kuzzleio::SearchResult* searchSpecifications(
-  const std:string& query,
-  kuzzleio::query_options *options=nullptr)
+    const std::string& query, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `query` | <pre>const std::string&</pre> | A JSON string containing the query to match |
-| `options` | <pre>kuzzleio::query_options*</pre> | Query options |
+| `query` | <pre>const std::string&</pre> | JSON string representing the query to match |
+| `options` | <pre>kuzzleio::query_options\*</pre> | Query options |
 
 ### query
 
@@ -47,18 +49,18 @@ An empty query matches all documents in the queried collection.
 
 | Options    | Type (default) | Description                       |
 | ---------- | -------------- | --------------------------------- |
-| `queuable` | <pre>boolean</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `queuable` | <pre>bool</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 | `from` | <pre>int</pre><br/>(`0`) | Offset of the first document to fetch |
 | `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
 | `scroll` | <pre>const std::string&</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units)) |
 
 ## Return
 
-Returns a [kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/cpp/1/search-result).
+Returns a [kuzzleio::SearchResult]({{ site_base_path }}sdk-reference/cpp/1/search-result).
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

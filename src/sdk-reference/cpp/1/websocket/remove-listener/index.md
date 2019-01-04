@@ -8,33 +8,35 @@ description: Remove a listener to an event
 
 Removes a listener to an event.
 
-## Arguments
+## Signature
 
 ```cpp
 void removeListener(kuzzleio::Event event, kuzzleio::EventListener* listener);
 ```
 
+## Arguments
+
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `event`    | <pre>kuzzleio::KuzzleEvent</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/essentials/event-handling)
-| `listener` | <pre>kuzzleio::EventListener*</pre> | A pointer to a c++11 lambda
+| `event`    | <pre>kuzzleio::KuzzleEvent</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/cpp/1/events)
+| `listener` | <pre>kuzzleio::EventListener\*</pre> | Pointer to a c++11 lambda
 
 ### event
 
 One of the following event:
 
 ```cpp
-KUZZLE_EVENT_CONNECTED,
-KUZZLE_EVENT_DISCARDED,
-KUZZLE_EVENT_DISCONNECTED,
-KUZZLE_EVENT_LOGIN_ATTEMPT,
-KUZZLE_EVENT_NETWORK_ERROR,
-KUZZLE_EVENT_OFFLINE_QUEUE_POP,
-KUZZLE_EVENT_OFFLINE_QUEUE_PUSH,
-KUZZLE_EVENT_QUERY_ERROR,
-KUZZLE_EVENT_RECONNECTED,
-KUZZLE_EVENT_JWT_EXPIRED,
-KUZZLE_EVENT_ERROR
+EVENT_CONNECTED,
+EVENT_DISCARDED,
+EVENT_DISCONNECTED,
+EVENT_LOGIN_ATTEMPT,
+EVENT_NETWORK_ERROR,
+EVENT_OFFLINE_QUEUE_POP,
+EVENT_OFFLINE_QUEUE_PUSH,
+EVENT_QUERY_ERROR,
+EVENT_RECONNECTED,
+EVENT_JWT_EXPIRED,
+EVENT_ERROR
 ```
 
 ### listener

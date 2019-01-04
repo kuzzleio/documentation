@@ -7,4 +7,4 @@ description: Kuzzle:memoryStorage
 
 ## memoryStorage
 
-A [MemoryStorage]({{ site_base_path }}sdk-reference/memory-storage) singleton.
+A [MemoryStorage]({{ site_base_path }}sdk-reference/android/3/memory-storage) singleton.

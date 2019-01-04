@@ -11,6 +11,7 @@ module.exports = class JsRunner extends BaseRunner {
     this.lintConfig = path.join(__dirname, '../../linters/eslint.json');
     this.lintCommand = './node_modules/.bin/eslint';
     this.lintOptions = ['-c', this.lintConfig];
+    this.ext = 'js';
   }
 
   async runSnippet(snippet) {

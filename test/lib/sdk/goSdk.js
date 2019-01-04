@@ -8,7 +8,6 @@ const
 class GoSdk {
   constructor(version) {
     this.name = 'go';
-    this.ext = 'go';
     this.version = version;
 
     this.repository = 'https://github.com/kuzzleio/sdk-go';

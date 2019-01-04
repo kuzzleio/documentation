@@ -9,15 +9,17 @@
 
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "browser": true
   },
 
-  "plugins": ["import", "node", "promise", "standard"],
+  "plugins": ["import", "node", "promise", "standard", "html"],
 
   "globals": {
     "document": false,
     "navigator": false,
-    "window": false
+    "window": false,
+    "KuzzleSDK": true
   },
 
   "rules": {

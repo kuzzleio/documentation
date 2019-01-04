@@ -10,7 +10,7 @@ try {
   kuzzleio::query_options options;
   options.refresh = "wait_for";
 
-  kuzzleio::kuzzle_response* response = kuzzle->query(&request, &options);
+  kuzzleio::kuzzle_response* response = kuzzle->query(request, options);
 
   if (response->status == 200) {
     std::cout << "Document created" << std::endl;
@@ -20,5 +20,5 @@ catch (kuzzleio::UnauthorizedException& e) {
   std::cerr << "You are not connected" << std::endl;
 }
 catch (kuzzleio::KuzzleException& e) {
-  std::cerr << e.getMessage() << std::endl;
+  std::cerr << e.what() << std::endl;
 }

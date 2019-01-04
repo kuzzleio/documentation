@@ -23,7 +23,7 @@ NewKuzzle(protocol connection.Connection) (*Kuzzle, error)
 
 ### **protocol**
 
-A [Protocol]({{ site_base_path }}/sdk-reference/protocols/create-new-protocol) is a structure implementing the `connection.Connection` interface.
+A [Protocol]({{ site_base_path }}/sdk-reference/go/1/protocols/create-new-protocol) is a structure implementing the `connection.Connection` interface.
 The available protocols are:
 
 - `websocket.Websocket`
@@ -81,7 +81,7 @@ For example, you can read the `volatile` property via `getVolatile()` and set it
 **Notes:**
 
 - multiple methods allow passing specific `volatile` data. These `volatile` data will be merged with the global Kuzzle `volatile` object when sending the request, with the request specific `volatile` taking priority over the global ones.
-- the `queueFilter` property is a function taking a `QueryObject` as an argument. This object is the request sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/query-syntax) format
+- the `queueFilter` property is a function taking a `QueryObject` as an argument. This object is the request sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/essentials/query-syntax) format
 - if `queueTTL` is set to `0`, requests are kept indefinitely
 - The offline buffer acts like a first-in first-out (FIFO) queue, meaning that if the `queueMaxSize` limit is reached, older requests are discarded to make room for new requests
 - if `queueMaxSize` is set to `0`, an unlimited number of requests is kept until the buffer is flushed
@@ -90,7 +90,7 @@ For example, you can read the `volatile` property via `getVolatile()` and set it
 
 ## Return
 
-A `Kuzzle` struct and an [error struct]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling).  
+A `Kuzzle` struct and an [error struct]({{ site_base_path }}sdk-reference/go/1/error-handling).  
 The `error` struct is nil if everything was ok.
 
 ## Usage

@@ -6,7 +6,7 @@ description: Collection:getMapping
   
 
 # getMapping
-Retrieves the current mapping of this collection as a [CollectionMapping]({{ site_base_path }}sdk-reference/collection-mapping/) object.
+Retrieves the current mapping of this collection as a [CollectionMapping]({{ site_base_path }}sdk-reference/php/3/collection-mapping/) object.
 
 ---
 
@@ -29,7 +29,7 @@ Retrieves the current mapping of this collection as a [CollectionMapping]({{ sit
 
 ## Callback Response
 
-Returns a [CollectionMapping]({{ site_base_path }}sdk-reference/collection-mapping/) object.
+Returns a [CollectionMapping]({{ site_base_path }}sdk-reference/php/3/collection-mapping/) object.
 
 ## Usage
 

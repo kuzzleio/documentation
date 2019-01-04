@@ -7,7 +7,7 @@ order: 400
 
 # Volatile Data
 
-All queries accept a `volatile` object parameter (see the [query syntax]({{site_base_path}}api/1/query-syntax) documentation).
+All queries accept a `volatile` object parameter (see the [query syntax]({{site_base_path}}api/1/essentials/query-syntax) documentation).
 
 The content of this object is not meant to be used directly: it has no impact on the query itself.
 
@@ -21,7 +21,7 @@ Volatile data can be used to provide additional context about a query; this allo
 
 Moreover, plugins receive the complete query made by a user, including volatile data.
 
-Lastly, if a query triggers [document notifications]({{ site_base_path }}api/1/notifications/#documents-changes-messages-default), then its volatile data are included in the notifications content. This allows real-time subscribers to get elements of context about changes made to documents, if needs be.
+Lastly, if a query triggers [document notifications]({{ site_base_path }}api/1/essentials/notifications#documents-changes-messages-default), then its volatile data are included in the notifications content. This allows real-time subscribers to get elements of context about changes made to documents, if needs be.
 
 ### Example:
 
@@ -75,7 +75,7 @@ There is one special case, where volatile data are stored by Kuzzle for a later 
 
 Volatile data passed to a new subscription query are used two times by Kuzzle:
 
-* if the new subscription triggers [user notifications]({{ site_base_path }}api/1/notifications/#user-events-default), its volatile data are included into those
+* if the new subscription triggers [user notifications]({{ site_base_path }}api/1/essentials/notifications#user-events-default), its volatile data are included into those
 * if that subscription is cancelled, whether because of a call to [realtime:unsubscribe]({{ site_base_path }}api/1/controller-realtime/unsubscribe), or after the user disconnects: the volatile data provided **at the time of the subscription** are once again copied into user notifications triggered by that event
 
 This allows other real-time subscribers to get context information about a user joining or leaving the same subscription as them.
