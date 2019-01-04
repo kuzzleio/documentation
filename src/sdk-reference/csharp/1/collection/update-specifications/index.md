@@ -19,39 +19,43 @@ public string updateSpecifications(string index, string collection, string speci
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `index` | <pre>string</pre> | Index name    | 
+| `collection` | <pre>string</pre> | Collection name    |
 | `specifications` | string | Specification in JSON format | yes
-| ``options`` | Kuzzleio::QueryOptions | Query options    | no  |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options    | 
 
-### **specifications**
+### specifications
 
-A JSON representation of the specifications.  
+A JSON string representing the specifications.  
 
-The JSON must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
+The JSON must follow the [Specification Structure]({{ site_base_path }}guide/1/datavalidation/schema/):
 
 ```json
 {
-  "strict": "<bool>",
+  "strict": "true",
   "fields": {
+    "licence": {
+      "mandatory": true,
+      "type": "string"
+    },
     // ... specification for each field
   }
 }
 ```
 
-### **options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Return a string containing a JSON representation of the specifications
+A JSON string representing the specifications
 
 ## Usage
 

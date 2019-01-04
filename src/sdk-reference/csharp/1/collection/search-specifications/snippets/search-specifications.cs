@@ -3,13 +3,15 @@ try {
   options.from = 0;
   options.size = 2;
 
-  SearchResult response = kuzzle.collection.searchSpecifications(@"{
-    ""query"": {
-      ""match_all"": {}
-    }
-  }", options);
+  SearchResult response = kuzzle.collection.searchSpecifications(
+    @"{
+      ""query"": {
+        ""match_all"": {}
+      }
+    }",
+    options);
 
   Console.WriteLine("Successfully retrieved " + response.fetched + " specifications");
-} catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+} catch  {
+  Console.Error.WriteLine(e.what());
 }

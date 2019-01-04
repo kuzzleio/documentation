@@ -1,7 +1,7 @@
 try {
   kuzzle.collection.deleteSpecifications("nyc-open-data", "yellow-taxi");
 
-  Console.WriteLine("Success");
+  Console.WriteLine("Specifications successfully deleted");
 } catch  {
-  Console.Error.WriteLine("");
+  Console.Error.WriteLine(e.what());
 }

@@ -17,19 +17,19 @@ public void deleteSpecifications(string index, string collection, QueryOptions o
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``options`` | Kuzzleio::QueryOptions | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `index` | <pre>string</pre> | Index name    | 
+| `collection` | <pre>string</pre> | Collection name    |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options    | 
 
-### **options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Usage
 

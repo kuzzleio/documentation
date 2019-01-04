@@ -19,45 +19,49 @@ public validation_response validateSpecifications(string index, string collectio
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| `specifications` | string | Specification to validate in JSON format | yes
-| ``options`` | Kuzzleio::QueryOptions | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `index` | <pre>string</pre> | Index name    | 
+| `collection` | <pre>string</pre> | Collection name    |
+| `specifications` | <pre>string<pre> | JSON string representating the specifications to validate |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options    | 
 
-### **specifications**
+### specifications
 
-A JSON representation of the specifications.
+A JSON string representing the specifications the specifications.
 
-The JSON must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
+The JSON must follow the [Specification Structure]({{ site_base_path }}guide/1/datavalidation):
 
 ```json
 {
-  "strict": "<bool>",
+  "strict": "true",
   "fields": {
+    "licence": {
+      "mandatory": true,
+      "type": "string"
+    },
     // ... specification for each field
   }
 }
 ```
 
-### **options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-An allocated `validation_response` structure which contain information about the specifications validity.
+A `kuzzleio::validation_response` object which contain information about the specifications validity.
 
 | Property   | Type    | Description        |
 | ---------- | ------- | --------------------- |
-| `valid` | bool | Specification validity |
-| `details` | const char * const * | Array of string with details about each specification errors |
-| `Description` | const char * | General error message |
+| `valid` | <pre>bool</pre> | Specification validity |
+| `details` | <pre>const char \* const \*</pre> | Array of string with details about each specification errors |
+| `description` | <pre>const char \*</pre> | General error message |
 
 ## Usage
 

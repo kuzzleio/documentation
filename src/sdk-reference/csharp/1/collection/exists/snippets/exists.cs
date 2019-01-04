@@ -1,7 +1,9 @@
 try {
-  if (kuzzle.collection.exists("nyc-open-data", "green-taxi")) {
-    Console.WriteLine("Success");
+  bool exists = kuzzle.collection.exists("nyc-open-data", "green-taxi");
+
+  if (exists) {
+    Console.WriteLine("Collection green-taxi exists");
   }
 } catch  {
-  Console.Error.WriteLine("");
+  Console.Error.WriteLine(e.what());
 }

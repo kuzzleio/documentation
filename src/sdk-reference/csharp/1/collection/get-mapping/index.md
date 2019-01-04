@@ -6,7 +6,7 @@ description: Return collection mapping
 
 # getMapping
 
-Returns the mapping for the given `collection`.
+Returns the mapping for the given collection.
 
 ## Signature
 
@@ -17,23 +17,23 @@ public string getMapping(string index, string collection, QueryOptions options);
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``options`` | Kuzzleio::QueryOptions | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `index` | <pre>string</pre> | Index name    | 
+| `collection` | <pre>string</pre> | Collection name    |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options    | 
 
-### **options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Return a string containing the collection mapping in JSON format.
+A JSON string representing the collection data mapping.
 
 ## Usage
 
