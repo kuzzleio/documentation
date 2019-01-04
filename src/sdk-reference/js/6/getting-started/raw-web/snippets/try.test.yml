@@ -1,0 +1,10 @@
+name: gettingstarted#tryrawweb
+description: just a try
+hooks:
+  before: 
+  after:
+template: default
+expected: Hello Kuzzle !
+sdk: js
+version: 6
+runner: web

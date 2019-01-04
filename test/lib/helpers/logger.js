@@ -95,7 +95,7 @@ class Logger {
         console.log(
           blue(`[${this.sdk.name}] `),
           'Check linter error:',
-          `cat -n test/bin/${snippet.name.toLowerCase()}.${this.sdk.ext} | less`
+          `cat -n test/bin/${snippet.name.toLowerCase()}.${snippet.runner.ext} | less`
         );
 
         console.log(

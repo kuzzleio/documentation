@@ -8,7 +8,6 @@ const
 class CsharpSdk {
   constructor(version) {
     this.name = 'csharp';
-    this.ext = 'cs';
     this.version = version;
     this.versionPath = getVersionPath(this);
     this.sdkCsharpArchive = 'kuzzlesdk-csharp-experimental-amd64.tar.gz';
