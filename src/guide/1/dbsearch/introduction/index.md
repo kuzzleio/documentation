@@ -12,7 +12,7 @@ Kuzzle uses Elasticsearch as its datastore and provides a user friendly interfac
 
 ## Configure Kuzzle
 
-First let's make sure Kuzzle is running and create the index and collection we will use to store documents. Follow these [instructions]({{ site_base_path }}guide/1/getting-started/#running-kuzzle").
+First let's make sure Kuzzle is running and create the index and collection we will use to store documents. Follow these [instructions]({{ site_base_path }}guide/1/getting-started/#running-kuzzle).
 
 
 ## Create Your App
@@ -22,4 +22,3 @@ Now that we have our Kuzzle configured, we can start programming our App. Here i
 1. *Connect to Kuzzle*
 2. *Create a document* that will be stored in Kuzzle
 3. *Search for the Document*
-

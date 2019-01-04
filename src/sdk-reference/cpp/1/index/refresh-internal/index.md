@@ -20,7 +20,9 @@ The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-refe
 ## Signature
 
 ```cpp
-void refreshInternal(const std::string& index, kuzzleio::query_options *options = null)
+void refreshInternal();
+
+void refreshInternal(const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -40,7 +42,7 @@ Additional query options
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

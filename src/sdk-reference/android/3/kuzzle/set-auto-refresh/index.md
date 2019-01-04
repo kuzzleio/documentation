@@ -28,7 +28,7 @@ Given an index, the `setAutoRefresh` function updates its `autoRefresh` status.
 
 | Argument | Type | Description
 |----------|------|-------------
-| `index` | string | _Optional_ The index to set the `autoRefresh` for. If not set, defaults to [kuzzle.defaultIndex]({{ site_base_path }}sdk-reference/kuzzle/#properties).
+| `index` | string | _Optional_ The index to set the `autoRefresh` for. If not set, defaults to [kuzzle.defaultIndex]({{ site_base_path }}sdk-reference/android/3/kuzzle/#properties).
 | `autoRefresh` | boolean | The value to set for the `autoRefresh` setting.
 | `options` | JSON object | Optional parameters
 | `callback` | function | _Optional_ Callback handling the response

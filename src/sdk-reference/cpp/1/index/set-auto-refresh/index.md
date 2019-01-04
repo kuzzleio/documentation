@@ -21,7 +21,12 @@ we recommend that you avoid using it in production or at least carefully monitor
 ## Signature
 
 ```cpp
-void setAutoRefresh(const std::string& index, bool autoRefresh, kuzzleio::query_options *options = null)
+void setAutoRefresh(const std::string& index, bool auto_refresh);
+
+void setAutoRefresh(
+    const std::string& index, 
+    bool auto_refresh, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -42,7 +47,7 @@ Additional query options
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

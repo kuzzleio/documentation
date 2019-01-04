@@ -38,7 +38,7 @@ That means that a user that was just created may not be returned by the <code>se
 
 ## Callback response
 
-Resolves to a [User]({{ site_base_path }}sdk-reference/user) object.
+Resolves to a [User]({{ site_base_path }}sdk-reference/php/3/user) object.
 
 ## Usage
 

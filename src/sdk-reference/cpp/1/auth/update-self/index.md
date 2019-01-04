@@ -11,7 +11,9 @@ Updates the current user object in Kuzzle.
 ## Signature
 
 ```cpp
-kuzzleio::User updateSelf(const std::string& content, query_options* options=nullptr);
+kuzzleio::User updateSelf(const std::string& content);
+
+kuzzleio::User updateSelf(const std::string& content, const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -35,7 +37,7 @@ A [kuzzleio::User]({{ site_base_path }}sdk-reference/cpp/1/user/) object.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

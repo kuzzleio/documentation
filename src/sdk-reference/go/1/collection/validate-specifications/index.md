@@ -27,7 +27,7 @@ ValidateSpecifications(index string, collection string, specifications json.RawM
 
 A JSON representation of the specifications.
 
-The JSON must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
+The JSON must follow the [Specification Structure]({{ site_base_path }}guide/1/datavalidation):
 
 ```json
 {

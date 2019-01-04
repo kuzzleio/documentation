@@ -18,10 +18,15 @@ This request does not store the document.
 
 ```cpp
 bool validate(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& document,
-    kuzzleio::query_options *options=nullptr)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& document);
+
+bool validate(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& document, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -47,7 +52,7 @@ A boolean set to true if the document is valid and false otherwise.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

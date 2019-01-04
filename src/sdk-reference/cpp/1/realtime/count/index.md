@@ -11,7 +11,9 @@ Returns the number of other connections sharing the same subscription.
 ## Signature
 
 ```cpp
-int count(const std::string& room_id, kuzzleio::query_options *options=nullptr)
+int count(const std::string& room_id);
+
+int count(const std::string& room_id, const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -35,7 +37,7 @@ Returns the number of active connections using the same provided subscription ro
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

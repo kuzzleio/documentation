@@ -12,8 +12,12 @@ Authenticates a user.
 ## Signature
 
 ```cpp
-std::string login(const std::string& strategy, const std::string& credentials, int expiresIn);
 std::string login(const std::string& strategy, const std::string& credentials);
+
+std::string login(
+    const std::string& strategy, 
+    const std::string& credentials, 
+    int expiresIn);
 ```
 
 
@@ -41,7 +45,7 @@ Once `auth:login` has been called, the returned JWT is stored by the SDK and use
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

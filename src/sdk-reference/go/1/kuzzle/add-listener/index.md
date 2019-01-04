@@ -19,7 +19,7 @@ AddListener(event int, channel chan<- json.RawMessage{})
 
 | Argument  | Type    | Description                                                                                                                                   | Required |
 | --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `event`   | int     | One of the event described in the [Event Handling]({{ site_base_path }}sdk-reference/essentials/event-handling) section of this documentation | yes      |
+| `event`   | int     | One of the event described in the [Event Handling]({{ site_base_path }}sdk-reference/go/1/events) section of this documentation | yes      |
 | `channel` | channel | A channel taking a json.RawMessage                                                                                                                 | yes      |
 
 ### **event**

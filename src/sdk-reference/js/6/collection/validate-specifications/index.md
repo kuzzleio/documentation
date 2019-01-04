@@ -29,7 +29,7 @@ validateSpecifications (index, collection, specifications, [options])
 
 An object representing the specifications.
 
-This object must follow the [Specification Structure]({{ site_base_path }}validation-reference/schema):
+This object must follow the [Specification Structure]({{ site_base_path }}guide/1/datavalidation):
 
 ```js
 {

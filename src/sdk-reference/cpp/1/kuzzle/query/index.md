@@ -15,7 +15,11 @@ This is a low-level method, exposed to allow advanced SDK users to bypass high-l
 ## Signature
 
 ```cpp
-kuzzleio::kuzzle_response* query(kuzzleio::kuzzle_request* query, kuzzleio::query_options* options = nullptr)
+kuzzleio::kuzzle_response* query(const kuzzleio::kuzzle_request& request);
+
+kuzzleio::kuzzle_response* query(
+    const kuzzleio::kuzzle_request& request, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -27,7 +31,7 @@ kuzzleio::kuzzle_response* query(kuzzleio::kuzzle_request* query, kuzzleio::quer
 
 ### request
 
-Properties required for the Kuzzle API can be set in the [kuzzle_request](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L51) struct.
+Properties required for the Kuzzle API can be set in the [kuzzle_request]({{ site_base_path }}sdk-reference/cpp/1/kuzzle-request) struct.
 The following properties are the most common.
 
 | Property     | Type         | Description                                                        | Required |
@@ -50,7 +54,7 @@ Additional query options
 
 ## Return
 
-A [kuzzle_response](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L445) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/kuzzle-response).
+A [kuzzle_response]({{ site_base_path }}sdk-reference/cpp/1/kuzzle-response) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/essentials/kuzzle-response).
 The following properties are the most common.
 
 | Property     | Type   | Description                         |
@@ -62,7 +66,7 @@ The following properties are the most common.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

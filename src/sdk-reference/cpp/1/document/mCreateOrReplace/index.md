@@ -15,10 +15,15 @@ Throws a partial error (error code 206) if one or more document creations/replac
 
 ```cpp
 std::string mCreateOrReplace(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& body,
-    kuzzleio::query_options *options=nullptr);
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& documents);
+
+std::string mCreateOrReplace(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& documents, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -45,7 +50,7 @@ Returns an JSON string containing the created documents.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

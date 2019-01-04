@@ -30,8 +30,8 @@ Here is an overview of the files structure:
 
 - `src/`: documentation entry point
 - `src/<section>/` (for instance: `src/guide/`, entry point of the Guide documentation section)
-- `src/<section>/<subsection>/` (for instance: `src/guide/essentials/`)
-- `src/<section>/<subsection>/<article>.md` (for instance: `src/guide/essentials/installing-kuzzle.md`)
+- `src/<section>/<subsection>/` (for instance: `src/guide/1/essentials/`)
+- `src/<section>/<subsection>/<article>.md` (for instance: `src/guide/1/essentials/installing-kuzzle.md`)
 
 For the SDKs:
 

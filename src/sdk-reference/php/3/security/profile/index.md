@@ -6,7 +6,7 @@ description: Security:profile
   
 
 # profile
-Instantiate a new security [Profile]({{ site_base_path }}sdk-reference/profile) object.
+Instantiate a new security [Profile]({{ site_base_path }}sdk-reference/php/3/profile) object.
 
 ---
 
@@ -21,7 +21,7 @@ Instantiate a new security [Profile]({{ site_base_path }}sdk-reference/profile) 
 
 ## Return Value
 
-Returns the new security [Profile]({{ site_base_path }}sdk-reference/profile) object.
+Returns the new security [Profile]({{ site_base_path }}sdk-reference/php/3/profile) object.
 
 ## Usage
 

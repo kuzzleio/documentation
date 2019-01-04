@@ -6,7 +6,7 @@ description: Collection:create
   
 
 # create
-Creates a new [collection]({{ site_base_path }}guide/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.  
+Creates a new [collection]({{ site_base_path }}guide/1/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.  
 
 {{{since "1.3.0"}}}
 

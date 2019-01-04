@@ -15,7 +15,7 @@ Can be a wildcard (`*`).
 ### Signature
 
 ```cpp
-const std::string& controller() const
+const std::string& controller() const;
 ```
 
 ## action
@@ -26,7 +26,7 @@ Can be a wildcard (`*`).
 ### Signature
 
 ```cpp
-const std::string& action() const
+const std::string& action() const;
 ```
 
 ## index
@@ -37,7 +37,7 @@ Can be a wildcard (`*`).
 ### Signature
 
 ```cpp
-const std::string& index() const
+const std::string& index() const;
 ```
 
 ## collection
@@ -48,7 +48,7 @@ Can be a wildcard (`*`).
 ### Signature
 
 ```cpp
-const std::string& collection() const
+const std::string& collection() const;
 ```
 
 ## value
@@ -59,7 +59,7 @@ Can be one of the following: `allowed`, `denied` or `conditional`
 ### Signature
 
 ```cpp
-const std::string& value() const
+const std::string& value() const;
 ```
 
 ## Usage

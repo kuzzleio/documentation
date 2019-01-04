@@ -72,7 +72,7 @@ Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/esse
 The result contains the following properties:
 
 * `_id`: user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication#the-kuzzle-user-identifier) 
-* `jwt`: encrypted JSON Web Token, that must then be sent in the [requests headers]({{ site_base_path }}api/1/documentation/query-syntax/authorization-token/)
+* `jwt`: encrypted JSON Web Token, that must then be sent in the [requests headers]({{ site_base_path }}api/1/essentials/query-syntax/#http-default) or in the [query]({{ site_base_path }}api/1/essentials/query-syntax/#other-protocols-default)
 * `expiresAt`: token expiration date, in Epoch-millis (UTC)
 * `ttl`: token time to live, in milliseconds
 

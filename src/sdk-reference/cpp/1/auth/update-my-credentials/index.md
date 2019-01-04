@@ -11,7 +11,14 @@ Update the current user's credentials for the specified strategy. The credential
 ## Signature
 
 ```cpp
-std::string updateMyCredentials(const std::string& strategy, const std::string& credentials, query_options *options=nullptr);
+std::string updateMyCredentials(
+    const std::string& strategy, 
+    const std::string& credentials);
+
+std::string updateMyCredentials(
+    const std::string& strategy, 
+    const std::string& credentials, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -34,7 +41,7 @@ Additional query options
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Return
 

@@ -13,11 +13,17 @@ Replaces the content of an existing document.
 
 ```cpp
 std::string replace(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& id,
-    const std::string& document,
-    kuzzleio::query_options *options=nullptr)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& id, 
+    const std::string& document);
+
+std::string replace(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& id, 
+    const std::string& document, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -52,7 +58,7 @@ A JSON string representing an object containing the document creation result.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

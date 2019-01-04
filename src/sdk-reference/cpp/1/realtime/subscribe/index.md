@@ -6,18 +6,23 @@ description: Subscribe to real-time notifications
 
 # subscribe
 
-Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/notifications), sent to you in real-time by Kuzzle.
+Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/essentials/real-time), sent to you in real-time by Kuzzle.
 
 ## Signature
 
 ```cpp
 std::string subscribe(
-  const std::string& index,
-  const std::string& collection,
-  const std::string& filters,
-  kuzzleio::NotificationListener* listener,
-  kuzzleio::room_options* options=nullptr
-)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& filters, 
+    kuzzleio::NotificationListener* listener);
+
+std::string subscribe(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& filters, 
+    kuzzleio::NotificationListener* listener, 
+    const kuzzleio::room_options& options);
 ```
 
 ## Arguments
@@ -52,7 +57,7 @@ The room ID.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

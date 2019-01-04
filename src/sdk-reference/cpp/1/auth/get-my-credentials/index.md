@@ -11,7 +11,11 @@ Returns the current user's credential information for the specified strategy. Th
 ## Signature
 
 ```cpp
-std::string getMyCredentials(const std::string& strategy, kuzzleio::query_options *options=nullptr);
+std::string getMyCredentials(const std::string& strategy);
+
+std::string getMyCredentials(
+    const std::string& strategy, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -35,7 +39,7 @@ Returns a JSON string representing the credentials for the provided authenticati
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

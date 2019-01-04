@@ -11,7 +11,9 @@ Returns information about Kuzzle: available API (base + extended), plugins, exte
 ## Signature
 
 ```cpp
-std::string info(kuzzleio::query_options* options=nullptr)
+std::string info();
+
+std::string info(const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -34,7 +36,7 @@ A JSON string representing the server information.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

@@ -21,7 +21,9 @@ Without a refresh after a write request, the documents may not be immediately vi
 ## Signature
 
 ```cpp
-bool getAutoRefresh(const std::string& index, kuzzleio::query_options *options = null)
+bool getAutoRefresh(const std::string& index);
+
+bool getAutoRefresh(const std::string& index, const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -45,7 +47,7 @@ A boolean indicating the status of the **autoRefresh** flag.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

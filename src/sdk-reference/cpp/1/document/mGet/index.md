@@ -15,10 +15,15 @@ Throws a partial error (error code 206) if one or more document can not be retri
 
 ```cpp
 std::string mGet(
-    const std::string& index,
-    const std::string& collection,
-    const std::vector<std::string>& ids,
-    kuzzleio::query_options *options=nullptr)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::vector<std::string>& ids);
+
+std::string mGet(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::vector<std::string>& ids, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -49,7 +54,7 @@ A JSON string representing an array of objects containing the following properti
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

@@ -15,7 +15,9 @@ Returns the current Kuzzle configuration.
 ## Signature
 
 ```cpp
-std::string getConfig(kuzzleio::query_options* options=nullptr);
+std::string getConfig();
+
+std::string getConfig(const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -38,7 +40,7 @@ A JSON string representing current server configuration.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

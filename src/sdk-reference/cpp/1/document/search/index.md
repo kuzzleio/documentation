@@ -22,11 +22,16 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 ## Signature
 
 ```cpp
-SearchResult* search(
-  const std::string& index,
-  const std::string& collection,
-  const std::string& query,
-  kuzzleio::query_options *options=nullptr)
+kuzzleio::SearchResult* search(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& query);
+
+kuzzleio::SearchResult* search(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& query, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -61,11 +66,11 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a [kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/cpp/1/search-result).
+Returns a [kuzzleio::SearchResult]({{ site_base_path }}sdk-reference/cpp/1/search-result).
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

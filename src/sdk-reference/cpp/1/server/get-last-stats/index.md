@@ -19,7 +19,9 @@ These statistics include:
 ## Signature
 
 ```cpp
-std::string getLastStats(kuzzleio::query_options* options=nullptr)
+std::string getLastStats();
+
+std::string getLastStats(const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -42,7 +44,7 @@ A JSON string representing the most recent statistics snapshot.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

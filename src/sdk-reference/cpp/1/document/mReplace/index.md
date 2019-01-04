@@ -15,10 +15,15 @@ Throws a partial error (error code 206) if one or more documents can not be repl
 
 ```cpp
 std::string mReplace(
-    const std::string& index,
-    const std::string& collection,
-    const std::string& documents,
-    kuzzleio::query_options *options=nullptr)
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& documents);
+
+std::string mReplace(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& documents, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -50,7 +55,7 @@ A JSON string representing an object containing the following properties:
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

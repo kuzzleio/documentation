@@ -11,7 +11,14 @@ Create the current user's credentials for the specified strategy.
 ## Signature
 
 ```cpp
-std::string createMyCredentials(const std::string& strategy, const std::string& credentials, kuzzleio::query_options* options=nullptr);
+std::string createMyCredentials(
+    const std::string& strategy, 
+    const std::string& credentials);
+
+std::string createMyCredentials(
+    const std::string& strategy, 
+    const std::string& credentials, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

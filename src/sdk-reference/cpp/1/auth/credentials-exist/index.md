@@ -11,7 +11,9 @@ Check that the current user has credentials for the specified strategy.
 ## Signature
 
 ```cpp
- bool credentialsExist(const std::string& strategy, kuzzleio::query_options *options=nullptr);
+bool credentialsExist(const std::string& strategy);
+
+bool credentialsExist(const std::string& strategy, const kuzzleio::query_options& options);
 ```
 
 ## Arguments
@@ -36,7 +38,7 @@ A boolean indicating if credentials exists for the strategy.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/essentials/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/cpp/1/error-handling).
 
 ## Usage
 

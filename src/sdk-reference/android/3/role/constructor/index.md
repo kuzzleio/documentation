@@ -15,7 +15,7 @@ Instantiates a new `Role` object, which defines a set of right policies.
 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
-| ``Security`` | Security | An instantiated [Security]({{ site_base_path }}sdk-reference/security) object |
+| ``Security`` | Security | An instantiated [Security]({{ site_base_path }}sdk-reference/android/3/security) object |
 | ``id`` | string | Unique role identifier |
 | ``content`` | JSON Object | Role content |
 | ``meta`` | JSON Object | Role metadata |
