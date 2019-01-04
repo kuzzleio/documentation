@@ -27,7 +27,7 @@ Triggered when Kuzzle discards a request, typically if no connection is establis
 
 **Callback arguments:**
 
-`@param {object} request`: the discarded [request]({{ site_base_path }}api/1/query-syntax/)
+`@param {object} request`: the discarded [request]({{ site_base_path }}api/1/essentials/query-syntax/)
 
 ## disconnected
 
@@ -66,7 +66,7 @@ Triggered whenever a request is removed from the offline queue.
 
 **Callback arguments:**
 
-`@param {object} request`: the [request]({{ site_base_path }}api/1/query-syntax/) removed from the queue
+`@param {object} request`: the [request]({{ site_base_path }}api/1/essentials/query-syntax/) removed from the queue
 
 
 ## offlineQueuePush
@@ -79,7 +79,7 @@ Triggered whenever a request is added to the offline queue.
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | <pre>object</pre> | [Request]({{ site_base_path }}api-documentation/query-syntax/common-attributes/) added to the queue |
+| `request` | <pre>object</pre> | [Request]({{ site_base_path }}api/1/essentials/query-syntax//) added to the queue |
 
 ## queryError
 
@@ -92,7 +92,7 @@ Triggered whenever Kuzzle responds with an error
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
 | `request` | <pre>object</pre> | Request that causing an error |
-| `error` | Error | Error details |
+| `error` | <pre>Error</pre> | Error details |
 
 ## reconnected
 

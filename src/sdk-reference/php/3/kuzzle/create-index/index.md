@@ -13,7 +13,7 @@ Create a new empty data index, with no associated mapping.
 
 | Arguments | Type | Description
 |-----------|------|------------
-| `index` | string | Optional index to query. If no set, defaults to [Kuzzle.defaultIndex]({{ site_base_path }}sdk-reference/kuzzle/#properties)
+| `index` | string | Optional index to query. If no set, defaults to [Kuzzle.defaultIndex]({{ site_base_path }}sdk-reference/php/3/kuzzle/#properties)
 | `options` | JSON object | Optional parameters
 | `callback`| function | Callback handling the response
 

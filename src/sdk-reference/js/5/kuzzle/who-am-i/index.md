@@ -20,7 +20,7 @@ Returns informations about the user who is currently loggedin.
 
 ## Callback Response
 
-Returns an instantiated [User]({{ site_base_path }}sdk-reference/user) object.
+Returns an instantiated [User]({{ site_base_path }}sdk-reference/js/5/user) object.
 
 ## Usage
 

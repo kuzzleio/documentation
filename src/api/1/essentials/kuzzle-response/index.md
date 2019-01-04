@@ -15,7 +15,7 @@ A Kuzzle Response is a JSON object with the following format:
 | `action` | Executed controller action
 | `collection` | Data collection name, or `null` if no collection was involved |
 | `controller` | Executed API controller |
-| `error` | [KuzzleError]({{site_base_path}}api/1/errors) object, or `null` if there was no error |
+| `error` | [KuzzleError]({{site_base_path}}api/1/essentials/errors) object, or `null` if there was no error |
 | `index` | Data index name, or `null` if no index was involved |
 | `requestId` | Request unique identifier |
 | `result` | Query result, or `null` if an error occured |

@@ -7,7 +7,7 @@ title: subscribe
 
 {{{since "1.0.0"}}}
 
-Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/notifications), sent to you in real-time by Kuzzle.
+Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/essentials/real-time), sent to you in real-time by Kuzzle.
 
 ---
 
@@ -55,7 +55,7 @@ Due to the synchronous nature of the HTTP protocol, real-time notifications are 
 
 ## Body properties
 
-Subscription filters, following the [Koncorde syntax]({{site_base_path}}kuzzle-dsl/1/essential/koncorde)
+Subscription filters, following the [Koncorde syntax]({{site_base_path}}koncorde/1/essential/koncorde)
 
 An empty filter subscribes to any change occuring on the selected data index-collection pair.
 

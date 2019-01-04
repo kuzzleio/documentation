@@ -5,7 +5,7 @@ title: validation
 
 # validation
 
-Accessor to the [data validation API]({{ site_base_path }}validation-reference/1/)
+Accessor to the [data validation API]({{ site_base_path }}guide/1/datavalidation)
 
 ---
 

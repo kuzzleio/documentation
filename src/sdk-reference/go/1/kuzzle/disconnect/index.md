@@ -18,7 +18,7 @@ Disconnect() error
 
 ## Return
 
-Return a [Kuzzle error]({{ site_base_path }}sdk-reference/go/1/essentials/error-handling) if the connection can't be closed.
+Return a [Kuzzle error]({{ site_base_path }}sdk-reference/go/1/error-handling) if the connection can't be closed.
 
 ## Usage
 
