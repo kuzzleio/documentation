@@ -17,26 +17,26 @@ public SWIGTYPE_p_std__vectorT_std__string_t mDelete(SWIGTYPE_p_std__vectorT_std
 
 ## Arguments
 
-| Arguments | Type                       | Description                                             | Required |
-| --------- | -------------------------- | ------------------------------------------------------- | -------- |
-| `indexes` | `List<string>` | containing list of indexes names                        | yes      |
-| `options` | Kuzzleio::QueryOptions              | A `Kuzzleio::QueryOptions` containing query options | no       |
+| Arguments | Type                       | Description  |
+| --------- | -------------------------- | --------------|
+| `indexes` | <pre>List<string></pre> | List of indexes |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre>    | Query options |
 
-### **Options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)   | Description  |   
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Returns a `List<string>` containing the list of indexes names deleted
+A vector of string containing the list of deleted indexes.
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

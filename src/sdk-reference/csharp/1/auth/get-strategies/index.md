@@ -19,23 +19,23 @@ public SWIGTYPE_p_std__vectorT_std__string_t getStrategies(QueryOptions options)
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `options`  | Kuzzleio::QueryOptions    | A `Kuzzleio::QueryOptions` containing query options
+| `options`  | <pre>Kuzzleio::QueryOptions\*</pre>    | Query options
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default
-| ---------- | ------- | --------------------------------- | -------
-| `queuable` | bool | Make this request queuable or not | `true`
+| Property     | Type<br/>(default)    | Description        | 
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-A vector of string.
+A vector of string representing the available authentication strategies.
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

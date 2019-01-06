@@ -1,6 +1,7 @@
 try {
-  string allStats = kuzzle.server.getAllStats();
-  Console.WriteLine("All Kuzzle Stats as JSON string: " + allStats);
+  string statistics = kuzzle.server.getAllStats();
+
+  Console.WriteLine(statistics);
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

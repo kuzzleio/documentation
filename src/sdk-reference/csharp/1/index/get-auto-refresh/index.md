@@ -4,12 +4,12 @@ title: getAutoRefresh
 description: Returns the status of autorefresh flag
 ---
 
-# GetAutoRefresh
+# getAutoRefresh
 
 The getAutoRefresh action returns the current autorefresh status for the index.
 
 Each index has an autorefresh flag.
-When set to true, each write request trigger a [refresh](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-refresh.html) action on Elasticsearch.
+When set to true, each write request trigger a [refresh](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-refresh.html) action on Elasticsearch.
 Without a refresh after a write request, the documents may not be immediately visible in search.
 
 <div class="alert alert-info">
@@ -27,26 +27,26 @@ public bool getAutoRefresh(string index, QueryOptions options);
 
 ## Arguments
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`   | string   | Index name                                              | yes      |
-| `options` | Kuzzleio::QueryOptions | A `Kuzzleio::QueryOptions` containing query options | no       |
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `index`   | <pre>string</pre>   | Index name     |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
-### **Options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)   | Description  |   
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Returns a `bool` that indicate the status of the **autoRefresh** flag.
+A bool indicating the status of the **autoRefresh** flag.
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

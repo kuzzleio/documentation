@@ -1,7 +1,7 @@
 try {
-  string jwt = kuzzle.auth.login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
+  string jwt = kuzzle.auth.login("local", @"{""username"":""foo"",""password"":""bar""}");
 
   Console.WriteLine("Success");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

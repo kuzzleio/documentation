@@ -17,23 +17,23 @@ public string getSpecifications(string index, string collection, QueryOptions op
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``collection`` | string | Collection name    | yes  |
-| ``options`` | Kuzzleio::QueryOptions | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `index` | <pre>string</pre> | Index name    | 
+| `collection` | <pre>string</pre> | Collection name    |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options    | 
 
-### **options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Return a string in JSON format representing the validation specifications.
+A JSON string representing the validation specifications.
 
 ## Usage
 

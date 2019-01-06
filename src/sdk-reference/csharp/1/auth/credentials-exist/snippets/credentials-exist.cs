@@ -1,8 +1,10 @@
 try {
-  kuzzle.auth.login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
-  kuzzle.auth.credentialsExist("local");
+  kuzzle.auth.login("local", @"{""username"":""foo"",""password"":""bar""}");
+  bool exists = kuzzle.auth.credentialsExist("local");
 
-  Console.WriteLine("Success");
+  if (exists) {
+    Console.WriteLine("Credentials exists for local strategy");
+  }
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

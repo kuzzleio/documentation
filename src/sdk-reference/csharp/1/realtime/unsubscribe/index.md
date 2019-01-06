@@ -15,17 +15,24 @@ public void unsubscribe(string roomId);
 public void unsubscribe(string roomId, QueryOptions options);
 ```
 
+## Arguments
+
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `room_id` | <pre>string</pre> | Subscription room ID  |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+
 ### options
 
 Additional query options
 
 | Option     | Type<br/>(default)  | Description   |
 | ---------- | ------- | --------------------------------- |
-| `queuable` | <pre>bool</pre><br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>bool</pre><br/>(`true`) |  If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

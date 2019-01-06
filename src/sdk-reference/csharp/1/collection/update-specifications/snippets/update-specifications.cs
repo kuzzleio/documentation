@@ -1,9 +1,19 @@
 try {
-  string specifications = "{ \"strict\": false, \"fields\": { \"license\": { \"mandatory\": true, \"type\": \"string\" } } }";
+  string specifications = @"{
+    ""strict"": false,
+    ""fields"": {
+      ""license"": {
+        ""mandatory"": true,
+        ""type"": ""string""
+      }
+    }
+  }";
 
-  string response = kuzzle.collection.updateSpecifications("nyc-open-data", "yellow-taxi", specifications);
+  string updated_specifications =
+    kuzzle.collection.updateSpecifications("nyc-open-data", "yellow-taxi", specifications);
 
-  Console.WriteLine("Success");
-} catch  {
-  Console.Error.WriteLine("");
+  Console.WriteLine(updated_specifications);
+  // {"strict":false,"fields":{"license":{"mandatory":true,"type":"string"}}}
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.what());
 }

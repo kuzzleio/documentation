@@ -6,8 +6,6 @@ description: Returns statistics snapshots within a provided timestamp range.
 
 # getStats
 
-{{{since "1.0.0"}}}
-
 Returns statistics snapshots within a provided timestamp range.
 By default, snapshots are made every 10 seconds and they are stored for 1 hour.
 
@@ -25,20 +23,29 @@ public string getStats(SWIGTYPE_p_time_t start, SWIGTYPE_p_time_t end);
 public string getStats(SWIGTYPE_p_time_t start, SWIGTYPE_p_time_t end, QueryOptions options);
 ```
 
-### **Options**
+## Arguments
+
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `startTime` | <pre>time_t</pre>   | Timestamp of the begining of statistics frame set |
+| `stopTime`  | <pre>time_t</pre>   | Timestamp of the end of statistics frame set      |
+| `options`   | <pre>Kuzzleio::QueryOptions\*</pre> | Query options        |
+
+### options
 
 Additional query options
 
-| Option     | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Option     | Type<br/>(default)   | Description  |
+| ---------- | ------- | -------------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
-Returns a JSON string representing the statistics for the given period of time.
+
+A JSON string representing the statistics for the given period of time.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

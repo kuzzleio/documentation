@@ -1,7 +1,7 @@
 try {
-  string config = kuzzle.server.getConfig();
+  string configuration = kuzzle.server.getConfig();
 
-  Console.WriteLine("Kuzzle Server configuration as JSON string: " + config);
+  Console.WriteLine(configuration);
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

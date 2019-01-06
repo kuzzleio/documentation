@@ -1,2 +1,3 @@
 kuzzle.disconnect();
-Console.WriteLine("Success");
+
+Console.WriteLine("Successfully disconnected");

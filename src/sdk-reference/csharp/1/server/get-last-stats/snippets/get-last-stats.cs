@@ -1,6 +1,7 @@
 try {
-  string lastStats = kuzzle.server.getLastStats();
-  Console.WriteLine("Last Kuzzle Stats as JSON string: " + lastStats);
+  string last_statistics = kuzzle.server.getLastStats();
+
+  Console.WriteLine(last_statistics);
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

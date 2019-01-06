@@ -20,5 +20,5 @@ catch (UnauthorizedException e) {
   Console.Error.WriteLine("You are not connected");
 }
 catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

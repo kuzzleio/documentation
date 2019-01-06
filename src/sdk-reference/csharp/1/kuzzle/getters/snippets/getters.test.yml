@@ -1,0 +1,9 @@
+name: kuzzle#getters
+description: Kuzzle class getters
+hooks:
+  before:
+  after:
+template: blank
+expected: Snippet success
+sdk: csharp
+version: 1

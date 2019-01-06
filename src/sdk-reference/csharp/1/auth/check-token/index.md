@@ -16,9 +16,9 @@ public TokenValidity checkToken(string token);
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `token`      | string  | the token   | yes
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `token`      | <pre>string</pre>  | JWT token   |
 
 ## Return
 
@@ -26,11 +26,11 @@ A TokenValidity class which has:
 
 | Name                | Type     | Description                        
 | ------------------- | -------- | -----------------------------------
-| valid               | bool     | Tell if the token is valid or not
-| state               | string   | Explain why the token is invalid
-| expires_at          | int      | Tells when the token expires
+| valid               | <pre>bool</pre>     | Token validity
+| state               | <pre>string</pre>   | Explain why the token is invalid
+| expires_at          | <pre>long</pre>      | Token expiration timestamp
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 

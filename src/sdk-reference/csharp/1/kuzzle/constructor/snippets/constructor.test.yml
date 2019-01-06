@@ -1,11 +1,9 @@
----
 name: kuzzle#constructor
 description: Create a new Kuzzle instance connected to Kuzzle
 hooks:
-  before: 
-  after: 
+  before:
+  after:
 template: blank
-expected: Everything is ok
-
+expected: New SDK instance successfully created
 sdk: csharp
 version: 1

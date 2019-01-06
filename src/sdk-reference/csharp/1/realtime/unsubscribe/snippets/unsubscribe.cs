@@ -10,7 +10,7 @@ try {
 
   kuzzle.realtime.unsubscribe(room_id);
 
-  Console.WriteLine("Success");
+  Console.WriteLine("Successfully unsubscribed");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

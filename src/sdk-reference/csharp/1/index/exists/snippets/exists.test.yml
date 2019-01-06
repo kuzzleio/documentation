@@ -1,11 +1,9 @@
----
 name: index#exists
-description: test if an index exists
+description: Test if an index exists
 hooks:
   before: curl -X POST kuzzle:7512/nyc-open-data/_create
-  after: 
+  after:
 template: default
-expected: index exists
-
+expected: Index exists in Kuzzle
 sdk: csharp
 version: 1

@@ -1,8 +1,9 @@
 try {
-  string message = "{ \"realtime\": \"rule the web\" }";
+  string message = @"{ ""realtime"": ""rule the web"" }";
+
   kuzzle.realtime.publish("i-dont-exist", "in-database", message);
 
-  Console.WriteLine("Success");
+  Console.WriteLine("Message successfully published");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

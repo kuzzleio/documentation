@@ -4,7 +4,6 @@ hooks:
   before:
   after:
 template: default
-expected: Success
-
+expected: Message successfully published
 sdk: csharp
 version: 1

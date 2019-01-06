@@ -4,8 +4,8 @@ NotificationListener listener =
   };
 
 try {
-  // Subscribe to notifications when document leaves the scope
-  const char *filters = "{ \"range\": { \"age\": { \"lte\": 20 } } }";
+  // Subscribes to notifications when document leaves the scope
+  string filters = @"{ ""range"": { ""age"": { ""lte"": 20 } } }";
   room_options options;
   options.scope = "out";
 
@@ -16,17 +16,20 @@ try {
     listener,
     options);
 
-  const char *document = "{ \"name\": \"nina vkote\", \"age\": 19 }";
+  // Creates a document who is in the scope
+  kuzzle.document.create(
+    "nyc-open-data",
+    "yellow-taxi",
+    "nina-vkote",
+    @"{ ""name"": ""nina vkote"", ""age"": 19 }");
 
-  // The document is in the scope
-  kuzzle.document.create("nyc-open-data", "yellow-taxi", "nina-vkote", document);
-
-  // The document isn't in the scope anymore
+  // Update the document so he isn't in the scope anymore
+  // we shall receive a notification
   kuzzle.document.update(
     "nyc-open-data",
     "yellow-taxi",
     "nina-vkote",
-    "{ \"age\": 42 }");
+    @"{ ""age"": 42 }");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

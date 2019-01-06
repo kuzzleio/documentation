@@ -4,8 +4,9 @@ try {
   options.size = 2;
 
   string collection_list = kuzzle.collection.list("mtp-open-data", options);
+
+  Console.WriteLine(collection_list);
   // {"type":"all","collections":[{"name":"pink-taxi","type":"stored"}],"from":1,"size":2}
-  Console.WriteLine("Success");
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.what());
 }

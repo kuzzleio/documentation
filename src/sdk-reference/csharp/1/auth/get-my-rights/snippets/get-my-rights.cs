@@ -1,14 +1,14 @@
 try {
-  kuzzle.auth.login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
+  kuzzle.auth.login("local", @"{""username"":""foo"",""password"":""bar""}");
 
-  List<UserRight> rights =
+  List<std::shared_ptr<UserRight>> rights =
     kuzzle.auth.getMyRights();
 
-  for (int i = 0; i < rights.Count; i++) {
-    Console.WriteLine(rights[i].controller + " " + rights[i].action);
-    Console.WriteLine(rights[i].index + " " + rights[i].collection);
-    Console.WriteLine(rights[i].value);
+  for (auto right : rights) {
+    Console.WriteLine(right.controller() + " " + right.action());
+    Console.WriteLine(right.index() + " " + right.collection());
+    Console.WriteLine(right.value());
   }
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

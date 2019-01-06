@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: updateMyCredentials
-description: Update the current user's credentials for the specified `<strategy>`.
+description: Update the current user's credentials for the specified strategy.
 ---
 
 # updateMyCredentials
 
-Update the current user's credentials for the specified `<strategy>`. The credentials to send will depend on the authentication plugin and the authentication strategy.
+Update the current user's credentials for the specified strategy. The credentials to send will depend on the authentication plugin and the authentication strategy.
 
 ## Signature
 
@@ -19,27 +19,27 @@ public string updateMyCredentials(string strategy, string credentials, QueryOpti
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | the strategy to use
-| `credentials` | string | the new credentials
-| `options`  | Kuzzleio::QueryOptions    | A `Kuzzleio::QueryOptions` containing query options
+| `strategy` | <pre>string</pre> | Strategy to use
+| `credentials` | <pre>string</pre> | JSON string representing the credentials
+| `options`  | <pre>Kuzzleio::QueryOptions\*</pre>    | Query options
 
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        | 
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Return
 
-A string representing a JSON object of the new credentials.
+A JSON string representing the updated credentials.
 
 ## Usage
 

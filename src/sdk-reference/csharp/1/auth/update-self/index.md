@@ -15,21 +15,28 @@ public SWIGTYPE_p_User updateSelf(string content);
 public SWIGTYPE_p_User updateSelf(string content, QueryOptions options);
 ```
 
-### **Options**
+## Arguments
+
+| Arguments    | Type    | Description
+|--------------|---------|-------------|
+| `content` | <pre>string</pre> | JSON string representing the user content |
+| `options`  | <pre>Kuzzleio::QueryOptions\*</pre>  | Query options |
+
+### options
 
 Additional query options:
 
-| Property     | Type    | Description  |
+| Option     | Type<br/>(default)   | Description  |
 | ---------- | ------- | -------------- |
-| `queuable` | <pre>bool (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-A [User]({{ site_base_path }}sdk-reference/csharp/1/user/) object.
+A [kuzzleio::User]({{ site_base_path }}sdk-reference/csharp/1/user/) object.
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

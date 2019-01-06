@@ -1,0 +1,9 @@
+name: user#getters
+description: User class getters
+hooks:
+  before:
+  after:
+template: blank
+expected: Snippet success
+sdk: csharp
+version: 1

@@ -1,7 +1,8 @@
 try {
   string mapping = kuzzle.collection.getMapping("nyc-open-data", "yellow-taxi");
 
-  Console.WriteLine("Success");
-} catch  {
-  Console.Error.WriteLine("");
+  Console.WriteLine(mapping);
+  // {"properties":{"license":{"type":"keyword"},"driver":{"properties":{"name":{"type":"keyword"},"curriculum":{"type":"text"}}}}}
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.what());
 }

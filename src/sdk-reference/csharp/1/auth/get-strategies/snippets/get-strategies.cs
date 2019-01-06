@@ -1,8 +1,10 @@
 try {
-  kuzzle.auth.login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
-  kuzzle.auth.getStrategies();
+  kuzzle.auth.login("local", @"{""username"":""foo"",""password"":""bar""}");
+  List<string> strategies = kuzzle.auth.getStrategies();
 
-  Console.WriteLine("Success");
+  for (auto strategy : strategies) {
+    Console.WriteLine(strategy);
+  }
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

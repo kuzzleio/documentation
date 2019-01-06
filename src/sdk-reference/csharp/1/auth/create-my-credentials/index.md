@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: createMyCredentials
-description: Create the current user's credentials for the specified `<strategy>`.
+description: Create the current user's credentials for the specified strategy.
 ---
 
 # createMyCredentials
 
-Create the current user's credentials for the specified `<strategy>`.
+Create the current user's credentials for the specified strategy.
 
 ## Signature
 
@@ -19,23 +19,23 @@ public string createMyCredentials(string strategy, string credentials, QueryOpti
 
 | Arguments    | Type    | Description
 |--------------|---------|-------------
-| `strategy` | string | the strategy to use
-| `credentials` | string | the new credentials
-| `options`  | Kuzzleio::QueryOptions    | A `Kuzzleio::QueryOptions` containing query options
+| `strategy` | <pre>string</pre> | Strategy to use
+| `credentials` | <pre>string</pre> | JSON string representing the credentials
+| `options`  | <pre>Kuzzleio::QueryOptions\*</pre>    | Query options
 
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        | 
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 
 ## Return
 
-A string representing a JSON object of the new credentials.
+A JSON string representing the new credentials.
 
 ## Usage
 

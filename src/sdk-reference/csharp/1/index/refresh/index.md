@@ -4,7 +4,7 @@ title: refresh
 description: Force Elasticsearch search index update
 ---
 
-# Refresh
+# refresh
 
 When writing or deleting documents in Kuzzle, the update needs to be indexed before being available in search results.
 
@@ -25,22 +25,22 @@ public void refresh(string index, QueryOptions options);
 
 ## Arguments
 
-| Arguments | Type          | Description                                             | Required |
-| --------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`   | string   | Index name                                              | yes      |
-| `options` | Kuzzleio::QueryOptions | A `Kuzzleio::QueryOptions` containing query options | no       |
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `index`   | <pre>string</pre>   | Index name     |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
-### **Options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)   | Description  |   
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

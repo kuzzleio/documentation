@@ -1,11 +1,9 @@
----
 name: kuzzle#connect
 description: Connects the SDK to Kuzzle
 hooks:
-  before: 
-  after: 
+  before:
+  after:
 template: without-connect
 expected: Successfully connected
-
 sdk: csharp
 version: 1

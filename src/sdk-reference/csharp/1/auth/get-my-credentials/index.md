@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: getMyCredentials
-description: Returns the current user's credential information for the specified `<strategy>`.
+description: Returns the current user's credential information for the specified strategy.
 ---
 
 # getMyCredentials
 
-Returns the current user's credential information for the specified `<strategy>`. The data returned will depend on the specified strategy. The result can be an empty object.
+Returns the current user's credential information for the specified strategy. The data returned will depend on the specified strategy. The result can be an empty string.
 
 ## Signature
 
@@ -17,26 +17,26 @@ public string getMyCredentials(string strategy, QueryOptions options);
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| `strategy` | string | the strategy to use    | yes
-| `options`  | Kuzzleio::QueryOptions    | A `Kuzzleio::QueryOptions` containing query options | no       |
+| Arguments    | Type    | Description | 
+|--------------|---------|-------------|
+| `strategy` | <pre>string</pre> | Strategy to use    |
+| `options`  | <pre>Kuzzleio::QueryOptions\*</pre>    | Query options
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        | 
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Returns a string representing a JSON with the credentials for the provided authentication strategy.
+Returns a JSON string representing the credentials for the provided authentication strategy.
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

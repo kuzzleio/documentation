@@ -1,11 +1,9 @@
----
 name: kuzzle#disconnect
 description: Disconnect the SDK
 hooks:
   before:
   after:
 template: default
-expected: Success
-
+expected: Successfully disconnected
 sdk: csharp
 version: 1

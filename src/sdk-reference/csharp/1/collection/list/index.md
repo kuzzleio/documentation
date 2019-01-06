@@ -19,24 +19,39 @@ public string list(string index, QueryOptions options);
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``index`` | string | Index name    | yes  |
-| ``options`` | Kuzzleio::QueryOptions | Query options    | no  |
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `index` | <pre>string</pre> | Index name    | 
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options    | 
 
-### **options**
+### options
 
 Additional query options
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
-| `from` | long | Offset of the first result | `0` |
-| `size` | long | Maximum number of returned results | `10` |
+| Property     | Type<br/>(default)    | Description        |
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `from` | <pre>long</pre><br/>(`0`) | Offset of the first result |
+| `size` | <pre>long</pre><br/>(`10`) | Maximum number of returned results |
 
 ## Return
 
-Returns a string containing a JSON representation of the API response.
+A JSON string representing the following object:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| `type` | <pre>string</pre> | Types of returned collections <br/>(`all`, `realtime` or `stored`)   |
+| ``collections`` | <pre>object[]</pre> | List of collections  |
+| `from` | <pre>number</pre> | Offset of the first result |
+| `size` | <pre>number</pre> | Maximum number of returned results |
+
+Each object in the `collections` array contains the following properties:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| `name` | <pre>string</pre> | Collection name |
+| `type` | <pre>string</pre> | Collection type (`realtime` or `stored`) |
+
 
 ## Usage
 

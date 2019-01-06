@@ -6,8 +6,6 @@ description: Returns the current Kuzzle configuration.
 
 # getConfig
 
-{{{since "1.0.0"}}}
-
 Returns the current Kuzzle configuration.
 
 <div class="alert alert-warning">
@@ -21,21 +19,27 @@ public string getConfig();
 public string getConfig(QueryOptions options);
 ```
 
-### **Options**
+## Arguments
+
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+
+### options
 
 Additional query options
 
-| Option     | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Option     | Type<br/>(default)   | Description  |
+| ---------- | ------- | -------------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Returns a JSON string representing current server configuration.
+A JSON string representing current server configuration.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

@@ -7,6 +7,6 @@ try {
   List<string> deleted = kuzzle.index.mDelete(indexes);
 
   Console.WriteLine("Successfully deleted " + deleted.Count + " indexes");
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.what());
 }

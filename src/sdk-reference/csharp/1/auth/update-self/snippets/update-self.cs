@@ -1,9 +1,9 @@
 try {
-  kuzzle.auth.login("local", "{\"username\":\"foo\",\"password\":\"bar\"}");
-  User updatedUser = kuzzle.auth.updateSelf("{\"foo\":\"bar\"}");
+  kuzzle.auth.login("local", @"{""username"":""foo"",""password"":""bar""}");
+  User updatedUser = kuzzle.auth.updateSelf(@"{""age"": 42}");
 
-  // Prints: {"foo":"bar","profileIds":["default"]}
   Console.WriteLine(updatedUser.content());
+  // {"age": 42}
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

@@ -18,33 +18,33 @@ public override KuzzleEventEmitter addListener(Event arg0, SWIGTYPE_p_std__funct
 
 ## Arguments
 
-| Argument   | Type                      | Description                                                                                            | Required |
-| ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------ | -------- |
-| `event`    | kuzzleio::Event           | An enum representing the listened [event]({{ site_base_path }}sdk-reference/essentials/event-handling) | yes      |
-| `listener` | kuzzleio::EventListener\* | A c++11 lambda                                           | yes      |
+| Argument   | Type                      | Description            |
+| ---------- | ------------------------- | ------------------------|
+| `event`    | kuzzleio::Event           | An enum representing the listened [event]({{ site_base_path }}sdk-reference/csharp/1/events) |
+| `listener` | kuzzleio::EventListener\* | Pointer to a c++11 lambda   |
 
-### **event**
+### event
 
 One of the following event:
 
-```cpp
-CONNECTED
-DISCARDED
-DISCONNECTED
-LOGIN_ATTEMPT
-NETWORK_ERROR
-OFFLINE_QUEUE_POP
-OFFLINE_QUEUE_PUSH
-QUERY_ERROR
-RECONNECTED
-JWT_EXPIRED
+```csharp
+CONNECTED,
+DISCARDED,
+DISCONNECTED,
+LOGIN_ATTEMPT,
+NETWORK_ERROR,
+OFFLINE_QUEUE_POP,
+OFFLINE_QUEUE_PUSH,
+QUERY_ERROR,
+RECONNECTED,
+JWT_EXPIRED,
 ERROR
 ```
 
-### **listener**
+### listener
 
 A c++11 lambda which take a `string`
-`EventListener` is defined as ` std::function<void(string)>`.
+`EventListener` is defined as `std::function<void(string)>`.
 
 ## Return
 

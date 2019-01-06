@@ -1,7 +1,5 @@
 # now
 
-{{{since "1.0.0"}}}
-
 Fetch the current server timestamp, in Epoch-millis format.
 
 ## Signature
@@ -11,23 +9,29 @@ public long now();
 public long now(QueryOptions options);
 ```
 
-### **Options**
+## Arguments
+
+| Arguments | Type          | Description       |
+| --------- | ------------- | ------------------|
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+
+### options
 
 Additional query options
 
-| Option     | Type   | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| Option     | Type<br/>(default)   | Description  |
+| ---------- | ------- | -------------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
-Returns Epoch-millis timestamp as `long long`.
+An Epoch-millis timestamp.
 
 ## Return
 
-Returns Epoch-millis timestamp as `long long`.
+An Epoch-millis timestamp.
 
-## Exceptions
+## Return
 
-Throws a `KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+An Epoch-millis timestamp.
 

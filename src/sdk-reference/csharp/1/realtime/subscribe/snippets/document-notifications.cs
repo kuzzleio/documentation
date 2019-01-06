@@ -1,6 +1,6 @@
 NotificationListener listener =
   [](const notification_result *notification) {
-    const char *id = notification.result.id;
+    string id = notification.result.id;
 
     if (notification.scope == string("in")) {
       Console.WriteLine("Document " + id + " enter the scope");
@@ -11,11 +11,15 @@ NotificationListener listener =
 
 try {
   // Subscribe to notifications for documents containing a 'name' property
-  const char *filters = "{ \"exists\": \"name\" }";
+  string filters = @"{ ""exists"": ""name"" }";
   kuzzle.realtime.subscribe("nyc-open-data", "yellow-taxi", filters, listener);
 
-  const char *document = "{ \"name\": \"nina vkote\", \"age\": 19 }";
-  kuzzle.document.create("nyc-open-data", "yellow-taxi", "nina-vkote", document);
+  // Create a document matching the provided filters
+  kuzzle.document.create(
+    "nyc-open-data",
+    "yellow-taxi",
+    "nina-vkote",
+    @"{ ""name"": ""nina vkote"", ""age"": 19 }");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

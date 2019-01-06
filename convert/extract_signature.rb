@@ -30,7 +30,13 @@ end
 
 class SignatureExtractor::Csharp < SignatureExtractor
   SIGNATURE_REGEXP_EVALUATOR = -> (action_name) { /(public .* #{action_name}\([^{]+)/ }
-  FILE_NAME_EVALUATOR = -> (controller_name) { "#{controller_name.camelcase}.cs" }
+  FILE_NAME_EVALUATOR = -> (controller_name) do
+    if controller_name == 'websocket'
+      'WebSocket.cs'
+    else
+      "#{controller_name.underscore.camelcase}.cs"
+    end
+  end
 
   def initialize(path = nil)
     super(SIGNATURE_REGEXP_EVALUATOR, FILE_NAME_EVALUATOR)

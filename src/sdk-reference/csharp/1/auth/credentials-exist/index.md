@@ -17,27 +17,27 @@ public bool credentialsExist(string strategy, QueryOptions options);
 
 ## Arguments
 
-| Arguments  | Type             | Description                                             | Required |
-| ---------- | ---------------- | ------------------------------------------------------- | -------- |
-| `strategy` | string      | Strategy to use                                         | yes      |
-| `options`  | query_options\*    | A `Kuzzleio::QueryOptions` containing query options | no       |
+| Arguments  | Type             | Description                                             |
+| ---------- | ---------------- | ------------------------------------------------------- |
+| `strategy` | <pre>string</pre>      | Strategy to use                                         |
+| `options`  | <pre>Kuzzleio::QueryOptions\*</pre>    | Query options
 
-### **Options**
+### options
 
 Additional query options
 
-| Property     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Property     | Type<br/>(default)    | Description        | 
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 
 ## Return
 
-True if exists, false if not.
+A bool indicating if credentials exists for the strategy.
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

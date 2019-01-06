@@ -1,11 +1,9 @@
----
 name: kuzzle#startQueuing
 description: Starts the requests queuing
 hooks:
-  before: 
-  after: 
+  before:
+  after:
 template: without-connect
-expected: Success
-
+expected: Kuzzle will auto queue next request sent in 'disconnected' state
 sdk: csharp
 version: 1

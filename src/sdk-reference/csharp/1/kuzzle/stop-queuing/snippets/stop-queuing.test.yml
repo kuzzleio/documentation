@@ -1,11 +1,9 @@
----
 name: kuzzle#stopQueuing
 description: Stops the requests queuing
 hooks:
-  before: 
-  after: 
+  before:
+  after:
 template: without-connect
-expected: Success
-
+expected: Kuzzle will not auto queue next requests
 sdk: csharp
 version: 1

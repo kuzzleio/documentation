@@ -5,6 +5,5 @@ hooks:
   after:
 template: default
 expected: ^(Epoch-millis timestamp:) [0-9]{13}$
-
 sdk: csharp
 version: 1

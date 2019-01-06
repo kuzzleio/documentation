@@ -1,6 +1,7 @@
 try {
   kuzzle.index.create("nyc-open-data");
-  Console.WriteLine("index created");
-} catch  {
-  Console.Error.WriteLine("");
+
+  Console.WriteLine("Index successfully created");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.what());
 }

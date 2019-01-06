@@ -1,7 +1,7 @@
 try {
   kuzzle.index.refresh("nyc-open-data");
 
-  Console.WriteLine("0 shards fail to refresh");
-} catch  {
-  Console.Error.WriteLine("");
+  Console.WriteLine("Index successfully refreshed");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.what());
 }

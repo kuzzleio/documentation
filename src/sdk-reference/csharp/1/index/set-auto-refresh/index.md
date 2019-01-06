@@ -4,6 +4,20 @@ title: setAutoRefresh
 description: Set the autorefresh flag
 ---
 
+# setAutoRefresh
+
+The setAutoRefresh action allows to set the autorefresh flag for the index.
+
+Each index has an autorefresh flag.
+When set to true, each write request trigger a [refresh](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-refresh.html) action on Elasticsearch.
+Without a refresh after a write request, the documents may not be immediately visible in search.
+
+<div class="alert alert-info">
+A refresh operation comes with some performance costs.
+While forcing the autoRefresh can be convenient on a development or test environment,
+we recommend that you avoid using it in production or at least carefully monitor its implications before using it.
+</div>
+
 ## Signature
 
 ```csharp
@@ -13,41 +27,24 @@ public void setAutoRefresh(string index, bool autoRefresh, QueryOptions options)
 
 ## Arguments
 
-| Arguments     | Type          | Description                                             | Required |
-| ------------- | ------------- | ------------------------------------------------------- | -------- |
-| `index`       | string   | Index name                                              | yes      |
-| `autoRefresh` | bool       | autoRefresh flag                                        | yes      |
-| `options`     | Kuzzleio::QueryOptions | A `Kuzzleio::QueryOptions` containing query options | no       |
+| Arguments     | Type          | Description          |
+| ------------- | ------------- | -------------------- |
+| `index`       | <pre>string</pre>   | Index name    |
+| `autoRefresh` | <pre>bool</pre>       | Autorefresh flag value  |
+| `options`     | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
-### **Options**
-
-Additional query options
-
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
-
-### **Options**
+### options
 
 Additional query options
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
-
-### **Options**
-
-Additional query options
-
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| Option     | Type<br/>(default)   | Description  |   
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
-## Exceptions
+## Usage
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
-
+[snippet=setAutoRefresh]

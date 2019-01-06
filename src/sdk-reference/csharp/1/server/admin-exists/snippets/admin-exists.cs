@@ -1,7 +1,11 @@
 try {
   bool exists = kuzzle.server.adminExists();
 
-  Console.WriteLine("Admin exists? " + exists);
+  if (exists) {
+    Console.WriteLine("Admin user exists");
+  } else {
+    Console.WriteLine("Admin user does not exists");
+  }
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

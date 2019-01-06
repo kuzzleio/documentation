@@ -21,44 +21,50 @@ public KuzzleResponse query(KuzzleRequest query, QueryOptions options);
 
 ## Arguments
 
-| Argument  | Type             | Description              | Required |
-| --------- | ---------------- | ------------------------ | -------- |
-| `request` | kuzzle_request\* | API request options      | yes      |
-| `options` | Kuzzleio::QueryOptions\*  | Additional query options | no       |
+| Argument  | Type             | Description              |
+| --------- | ---------------- | ------------------------ |
+| `request` | <pre>kuzzle_request\*</pre> | API request parameters |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre>  | Query options |
 
-### **request**
+### request
 
-Properties required for the Kuzzle API can be set in the [kuzzle_request](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L51) class.
+Properties required for the Kuzzle API can be set in the [kuzzle_request]({{ site_base_path }}sdk-reference/csharp/1/kuzzle-request) struct.
 The following properties are the most common.
 
 | Property     | Type         | Description                                                        | Required |
 | ------------ | ------------ | ------------------------------------------------------------------ | -------- |
-| `controller` |  string | Controller name                                                    | yes      |
-| `action`     |  string | Action name                                                        | yes      |
-| `body`       |  string | JSON query body string for this action                             | no       |
-| `index`      |  string | Index name for this action                                         | no       |
-| `collection` |  string | Collection name for this action                                    | no       |
-| `id`         |  string | id for this action                                                 | no       |
-| `volatiles`  |  string | JSON string representing additional information to send to Kuzzle | no       |
+| `controller` | <pre>string</pre> | Controller name                                         | yes      |
+| `action`     | <pre>string</pre> | Action name                                             | yes      |
+| `body`       | <pre>string</pre> | JSON string representing body for this action           | no       |
+| `index`      | <pre>string</pre> | Index name for this action                              | no       |
+| `collection` | <pre>string</pre> | Collection name for this action                         | no       |
+| `id`         | <pre>string</pre> | ID for this action                                      | no       |
+| `volatiles`  | <pre>string</pre> | JSON string representing additional information to send to Kuzzle | no       |
 
-### **options**
+### options
 
-A [query_option](https://github.com/kuzzleio/sdk-go/blob/1.x/internal/wrappers/headers/kuzzlesdk.h#L169) containing additional query options
+Additional query options
+
+| Option     | Type<br/>(default)   | Description  |   
+| ---------- | ------- | --------------------------------- | 
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+
+## Return
+
+A [kuzzle_response]({{ site_base_path }}sdk-reference/csharp/1/kuzzle-response) containing the Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1/essentials/kuzzle-response).
 The following properties are the most common.
 
-| Property   | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | true    |
+| Property     | Type   | Description                         |
+| ------------ | ------ | ----------------------------------- |
+| `request_id` | <pre>string</pre> | Request unique ID                   |
+| `result`     | <pre>string</pre> | JSON string representing Kuzzle API result |
+| `error`      | <pre>string</pre> | Error message                       |
+| `status`     | <pre>int</pre>    | Request status (eg: 200, 403, etc.) |
 
 ## Exceptions
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
-## Exceptions
+## Usage
 
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
-
-## Exceptions
-
-Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
-
+[snippet=query]

@@ -6,7 +6,7 @@ description: Searches collection specifications
 
 # searchSpecifications
 
-{{{since "1.0.0"}}}
+
 
 Searches collection specifications.
 
@@ -20,16 +20,16 @@ That limit is by default set at 10000, and you can't get over it even with the f
 ## Signature
 
 ```csharp
-public SWIGTYPE_p_kuzzleio__SearchResult searchSpecifications(string body);
-public SWIGTYPE_p_kuzzleio__SearchResult searchSpecifications(string body, QueryOptions options);
+public SearchResult searchSpecifications(string body);
+public SearchResult searchSpecifications(string body, QueryOptions options);
 ```
 
 ## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
-| `query` | <pre>string</pre> | A JSON string containing the query to match |
-| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
+| `query` | <pre>string</pre> | JSON string representing the query to match |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
 ### query
 
@@ -42,15 +42,23 @@ It may contain the following root properties:
 
 An empty query matches all documents in the queried collection.
 
+### options
+
+| Options    | Type (default) | Description                       |
+| ---------- | -------------- | --------------------------------- |
+| `queuable` | <pre>bool</pre> (`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
+| `from` | <pre>int</pre><br/>(`0`) | Offset of the first document to fetch |
+| `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
+| `scroll` | <pre>string</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#time-units)) |
+
 ## Return
 
-Returns a [Kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/csharp/1/search-result).
+Returns a [Kuzzleio::SearchResult]({{ site_base_path }}sdk-reference/csharp/1/search-result).
 
-## Return
+## Exceptions
 
-Returns a [Kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/csharp/1/search-result).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
-## Return
+## Usage
 
-Returns a [Kuzzleio::SearchResult]({{ site_base_path }}src/sdk-reference/csharp/1/search-result).
-
+[snippet=search-specifications]

@@ -1,0 +1,9 @@
+name: websocket#getters
+description: WebSocket class getters
+hooks:
+  before:
+  after:
+template: blank
+expected: Snippet success
+sdk: csharp
+version: 1

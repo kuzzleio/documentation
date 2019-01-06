@@ -5,6 +5,5 @@ hooks:
   after:
 template: default
 expected: Currently 1 active subscription
-
 sdk: csharp
 version: 1

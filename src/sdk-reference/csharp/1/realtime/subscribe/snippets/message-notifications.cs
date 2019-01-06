@@ -1,14 +1,17 @@
 NotificationListener listener =
   [](const notification_result *notification) {
     Console.WriteLine("Message notification received");
+
+    Console.WriteLine(notification.result.content);
+    // { "metAt": "Insane", "hello": "world" }
   };
 
 try {
-  // Subscribe to notifications for documents containing a 'name' property
+  // Subscribes to notifications for documents
   kuzzle.realtime.subscribe("i-dont-exist", "in-database", "{}", listener);
 
-  string message = "{ \"metAt\": \"Insane\", \"hello\": \"world\" }";
+  string message = @"{ ""metAt"": ""Insane"", ""hello"": ""world"" }";
   kuzzle.realtime.publish("i-dont-exist", "in-database", message);
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.what());
 }

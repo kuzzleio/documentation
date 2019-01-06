@@ -2,6 +2,6 @@ try {
   kuzzle.index.refreshInternal();
 
   Console.WriteLine("Internal index successfully refreshed");
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.what());
 }
