@@ -1,21 +1,19 @@
 try {
-  for (size_t i = 0; i < 5; i++) {
+  for (size_t i = 0; i < 10; i++) {
     kuzzle->document->create("nyc-open-data", "yellow-taxi", "", R"({
       "category": "suv"
     })");
   }
-  for (size_t i = 5; i < 15; i++) {
-    kuzzle->document->create("nyc-open-data", "yellow-taxi", "", R"({
-      "category": "limousine"
-    })");
-  }
+
+  // Waits documents to be indexed
   kuzzle->index->refresh("nyc-open-data");
 
   kuzzleio::query_options options = {};
   options.scroll = "1m";
-  options.size = 2;
+  options.size = 5;
 
-  kuzzleio::SearchResult* first_page = kuzzle->document->search(
+  // Retrieve the first 5 documents
+  kuzzleio::SearchResult* results = kuzzle->document->search(
     "nyc-open-data",
     "yellow-taxi",
     R"({
@@ -27,9 +25,10 @@ try {
     })",
     options);
 
-  kuzzleio::SearchResult* second_page = first_page->next();
+  // Retrieve the next 5 documents
+  kuzzleio::SearchResult* next_results = results->next();
 
-  std::cout << "Successfully retrieved " << second_page->fetched << " documents" << std::endl;
+  std::cout << "Successfully retrieved " << next_results->fetched << " documents" << std::endl;
 } catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }

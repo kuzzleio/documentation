@@ -31,7 +31,7 @@ If no policy is applicable, the `next` method will throw an exception.
   </p>
 </div>
 
-### 1. scroll
+## Usage with scroll
 
 **This is the preferred way to get some paginated results**.
 
@@ -43,7 +43,7 @@ As such, even if some documents are added or deleted from the database between t
 
 [snippet=scroll]
 
-### 2. sort / size
+## Usage with sort / size
 
 If the initial search is given some `sort` and `size` parameters, the `next` method will retrieve the next items matching the sort.
 
@@ -51,7 +51,7 @@ To avoid too many duplicates, it is advised to provide a sort combination that w
 
 Because this method does not freeze the research between two calls, if some updates are applied to the database between two calls, it is still possible to miss some documents and/or to get some duplicates between search pages.
 
-### 3. from / size
+## Usage with from / size
 
 If the initial search is given some `from` and `size` parameters, the `next` method will increment the `from` parameter to retrieved the next results.
 
