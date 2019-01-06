@@ -28,12 +28,9 @@ public string login(string strategy, string credentials, int expiresIn);
 
 ### strategy
 
-The name of the authentication [strategy]({{ site_base_path }}guide/1/kuzzle-depth/authentication/## Return
+The name of the authentication [strategy]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#authentication) used to log the user in.
 
-Returns the encrypted JSON Web Token.  
-Once `auth:login` has been called, the returned JWT is stored by the SDK and used for all the subsequent API call, ensuring they are properly authenticated.
-
-## Return
+Depending on the chosen authentication `strategy`, additional [credential arguments]({{ site_base_path}}guide/1/kuzzle-depth/authentication/## Return
 
 Returns the encrypted JSON Web Token.  
 Once `auth:login` has been called, the returned JWT is stored by the SDK and used for all the subsequent API call, ensuring they are properly authenticated.
@@ -47,21 +44,10 @@ Once `auth:login` has been called, the returned JWT is stored by the SDK and use
 
 Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
-## Usage
+## Exceptions
 
-[snippet=login]
-## Usage
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
-[snippet=login]
-## Usage
-
-[snippet=login]
-## Usage
-
-[snippet=login]
-## Usage
-
-[snippet=login]
 ## Usage
 
 [snippet=login]

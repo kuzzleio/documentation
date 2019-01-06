@@ -11,11 +11,17 @@ class Section
   end
 
   def parse(extract_regexp = GENERIC_REGEXP)
-    match = @page.read_content.match(extract_regexp)
+    @content = @page.read_content
+
+    replace_anchors
+
+    match = @content.match(extract_regexp)
 
     return false if match.nil?
 
     @content = match[1]
+
+    replace_anchors(reverse: true)
 
     @page.move_forward(@content.length)
 
@@ -39,6 +45,21 @@ class Section
 
   def to_s
     @content
+  end
+
+  private
+
+  # Anchors breaks the regexp because of the '#'
+  def replace_anchors(reverse: false)
+    links = @content.scan(/(<a.*<\/a>)|(\[[\w\s]+\]\(\{\{ \w+ \}\}[\w\/#-]+\))/)
+
+    args = ['#', 'i_am_the_anchor_now']
+    args = args.reverse if reverse
+
+    links.flatten.compact.each do |link|
+      new_link = link.gsub(*args)
+      @content.gsub!(link, new_link)
+    end
   end
 end
 

@@ -20,7 +20,9 @@ public string content();
 
 ## id
 
-Returns the user's unique identifier (or [kuid]({{ site_base_path }}guide/1/essentials/user-authentication/## Signature
+Returns the user's unique identifier (or [kuid]({{ site_base_path }}guide/1/essentials/user-authentication/#kuzzle-user-identifier-kuid-default)).
+
+## Signature
 
 ```csharp
 public string id();
@@ -36,9 +38,6 @@ Returns the list of profile identifiers attached to this user.
 ```csharp
 ```
 
-## Usage
-
-[snippet=getters]
 ## Usage
 
 [snippet=getters]

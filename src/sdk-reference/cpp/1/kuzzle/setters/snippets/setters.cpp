@@ -1,4 +1,4 @@
-kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(
+kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(
   new kuzzleio::WebSocket("kuzzle"));
 
 kuzzle->setAutoReplay(true);

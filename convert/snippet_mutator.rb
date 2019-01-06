@@ -25,7 +25,9 @@ module SnippetMutator
       /size_t/                                           => 'uint',
       /WebSocket\*/                                      => 'WebSocket',
       /Kuzzle\*/                                         => 'Kuzzle',
-      /kuzzle_response\*/                                => 'kuzzle_response'
+      /kuzzle_response\*/                                => 'KuzzleResponse',
+      /kuzzle_request\*? request;/                       => 'KuzzleRequest request = new KuzzleRequest();',
+      /Protocol\*/                                       => 'Protocol'
     }
     STDOUT_FIND = /std::cout.*std::endl;/
     STDERR_FIND = /std::cerr.*std::endl;/

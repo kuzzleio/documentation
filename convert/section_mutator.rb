@@ -53,6 +53,7 @@ module SectionMutator
       /kuzzleio::notification_result[\*]?/         => 'NotificationResult',
       /kuzzleio::notification_content[\*]?/        => 'NotificationContent',
       /kuzzleio::kuzzle_request[\\]?\*/            => 'Kuzzleio::KuzzleRequest',
+      /kuzzleio::kuzzle_reresponse[\\]?\*/         => 'Kuzzleio::KuzzleResponse',
       /SearchResult[\\]?\*/                        => 'SearchResult',
       /[\s]*const[\s]*/                            => '',
       /what()/                                     => 'getMessage()',

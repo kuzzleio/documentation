@@ -63,10 +63,10 @@ class Page
 
   def parse
     @sections << extract_section(nil, Header)
+
     while next_section = extract_section(@sections.last)
       @sections << next_section
     end
-
     @sections.compact!
   end
 

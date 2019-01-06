@@ -1,5 +1,5 @@
 try {
-  kuzzleio::kuzzle_request request = {0};
+  kuzzleio::kuzzle_request request;
   request.controller = "document";
   request.action = "create";
   request.index = "nyc-open-data";
@@ -12,9 +12,7 @@ try {
 
   kuzzleio::kuzzle_response* response = kuzzle->query(request, options);
 
-  if (response->status == 200) {
-    std::cout << "Document created" << std::endl;
-  }
+  std::cout << "Document created" << std::endl;
 }
 catch (kuzzleio::UnauthorizedException& e) {
   std::cerr << "You are not connected" << std::endl;

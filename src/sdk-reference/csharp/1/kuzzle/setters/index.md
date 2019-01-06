@@ -20,21 +20,16 @@ public Kuzzle setAutoReplay(bool value);
 
 ## setVolatile
 
-Set the value of the global [volatile data]({{ site_base_path }}sdk-reference/csharp/1/kuzzle/introduction## Signature
+Set the value of the global [volatile data]({{ site_base_path }}sdk-reference/csharp/1/kuzzle/introduction#volatile-data-default).  
+Value must be a JSON string representing a JSON object. (eg: `{"username": "Aschen"}`)
+
+## Signature
 
 ```csharp
 public Kuzzle setVolatile(string volatile_data);
 
 ```
 
-## Signature
-
-```csharp
-```
-
-## Usage
-
-[snippet=setters]
 ## Usage
 
 [snippet=setters]

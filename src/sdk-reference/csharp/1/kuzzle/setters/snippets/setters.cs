@@ -1,4 +1,4 @@
-Kuzzle *kuzzle = new Kuzzle(
+Kuzzle kuzzle = new Kuzzle(
   new WebSocket("kuzzle"));
 
 kuzzle.setAutoReplay(true);

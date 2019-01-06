@@ -1,5 +1,5 @@
 try {
-  kuzzle_request request = {0};
+  KuzzleRequest request = new KuzzleRequest();
   request.controller = "document";
   request.action = "create";
   request.index = "nyc-open-data";
@@ -10,11 +10,9 @@ try {
   QueryOptions options = new QueryOptions();
   options.refresh = "wait_for";
 
-  kuzzle_response response = kuzzle.query(request, options);
+  KuzzleResponse response = kuzzle.query(request, options);
 
-  if (response.status == 200) {
-    Console.WriteLine("Document created");
-  }
+  Console.WriteLine("Document created");
 }
 catch (UnauthorizedException e) {
   Console.Error.WriteLine("You are not connected");
