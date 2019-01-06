@@ -23,8 +23,8 @@ When performing a [search]({{ site_base_path }}sdk-reference/js/6/document/searc
 
 The `SearchResult` object has an unique `next` method, which returns a new `SearchResult` object.
 
-```cpp
-(SearchResult* sr) Next();
+```javascript
+next();
 ```
 
 ## Behaviour of the next method
