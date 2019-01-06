@@ -6,5 +6,5 @@ try {
 
   Console.WriteLine("Credentials successfully updated");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

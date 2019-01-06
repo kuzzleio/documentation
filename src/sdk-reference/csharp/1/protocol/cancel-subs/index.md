@@ -11,5 +11,7 @@ Cancels all subscriptions.
 ## Signature
 
 ```csharp
-virtual void cancelSubs() = 0;
+public virtual void cancelSubs();
+
 ```
+

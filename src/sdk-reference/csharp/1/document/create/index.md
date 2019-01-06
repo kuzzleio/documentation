@@ -38,7 +38,7 @@ public string create(
 | `collection` | <pre>string</pre> | Collection name |
 | `id` | <pre>string</pre> | Document ID. Will use an auto-generated id if not specified |
 | `document` | <pre>string</pre> | JSON string representing the body of the document |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 

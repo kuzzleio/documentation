@@ -5,6 +5,12 @@ description: Getters for SearchResult class
 order: 100
 ---
 
+# SearchResult class getters
+
+## aggregations
+
+Returns a JSON string representing the search [aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations.html).  
+
 ## Signature
 
 ```csharp
@@ -21,61 +27,36 @@ Each object has the following properties:
 | _score | <pre>number</pre> | [Relevance score](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html) |
 | _source | <pre>object</pre> | Document content |
 
-### Signature
+## Signature
 
 ```csharp
-string hits() const;
 ```
 
-### Signature
+## total
+
+Returns the total number of found documents. 
+Can be greater than the number of documents fetched by the current `SearchResult` instance.
+
+## Signature
 
 ```csharp
-string hits() const;
 ```
 
-### Signature
+## fetched
+
+Returns the number of document fetched in the current `SearchResult` instance.
+
+## Signature
 
 ```csharp
-int total() const;
-```
-
-### Signature
-
-```csharp
-int total() const;
-```
-
-### Signature
-
-```csharp
-int total() const;
-```
-
-### Signature
-
-```csharp
-int total() const;
-```
-
-### Signature
-
-```csharp
-int fetched() const;
-```
-
-### Signature
-
-```csharp
-int fetched() const;
-```
-
-### Signature
-
-```csharp
-int fetched() const;
 ```
 
 ## scroll_id
 
 Returns the identifier to the next page of result.
+
+## Signature
+
+```csharp
+```
 

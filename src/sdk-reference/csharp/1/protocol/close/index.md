@@ -11,5 +11,7 @@ Closes the current connection to Kuzzle.
 ## Signature
 
 ```csharp
-virtual void close() = 0;
+public virtual void close();
+
 ```
+

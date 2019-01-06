@@ -9,5 +9,5 @@ try {
 
   Console.WriteLine("Found " + count + " documents matching license:valid");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

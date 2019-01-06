@@ -34,7 +34,7 @@ public bool validate(
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `document` | <pre>string</pre> | JSON string representing the document |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 

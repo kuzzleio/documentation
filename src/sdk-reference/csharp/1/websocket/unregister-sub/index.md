@@ -21,3 +21,7 @@ public override void unregisterSub(string arg0);
 | ---------- |---------------------------|-------------------------------------------------- |
 | `room_id` | <pre>string</pre>  | Subscription unique identifier
 
+### listener
+
+A c++11 lambda which takes a `string` argument.
+`EventListener` is defined as `std::function<void(string)>`.

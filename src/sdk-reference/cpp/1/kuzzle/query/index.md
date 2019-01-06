@@ -26,7 +26,7 @@ kuzzleio::kuzzle_response* query(
 
 | Argument  | Type             | Description              |
 | --------- | ---------------- | ------------------------ |
-| `request` | <pre>kuzzle_request\*</pre> | API request parameters |
+| `request` | <pre>kuzzleio::kuzzle_request\*</pre> | API request parameters |
 | `options` | <pre>kuzzleio::query_options\*</pre>  | Query options |
 
 ### request

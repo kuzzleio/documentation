@@ -44,8 +44,7 @@ class Page
       @action
     ].join('/')
 
-    # Avoid cpp/1/index.md
-    return if @controller == 'index.md'
+    return if @controller.in?(['index.md', 'getting-started'])
 
     section_mutator = "SectionMutator::#{sdk.camelcase}".constantize.new
 
@@ -55,7 +54,7 @@ class Page
     end
 
     new_page_content = @sections.map do |section|
-      content = section_mutator.mutate(section)
+      section_mutator.mutate(section)
     end.join
 
     FileUtils.mkdir_p(dest_path)
@@ -63,17 +62,10 @@ class Page
   end
 
   def parse
-    @sections << extract_section(:header)
-    @sections << extract_section(:description)
-    @sections << extract_section(:signature)
-    @sections << extract_section(:arguments)
-    while argument = extract_section(:argument)
-      @sections << argument
+    @sections << extract_section(nil, Header)
+    while next_section = extract_section(@sections.last)
+      @sections << next_section
     end
-    @sections << extract_section(:custom) if section_custom?(/## Getter & Setter/)
-    @sections << extract_section(:return) if section_return?
-    @sections << extract_section(:exceptions)
-    @sections << extract_section(:usage)
 
     @sections.compact!
   end
@@ -88,20 +80,12 @@ class Page
 
   private
 
-  def extract_section(section_name)
-    section = section_name.to_s.capitalize.constantize.new(self)
+  def extract_section(up_section, section_klass = Section)
+    section = section_klass.new(self, up_section)
     if section.parse
       section
     else
       nil
     end
-  end
-
-  def section_return?
-    ! @content.match(/## Return/).nil?
-  end
-
-  def section_custom?(regexp)
-    ! @content.match(regexp).nil?
   end
 end

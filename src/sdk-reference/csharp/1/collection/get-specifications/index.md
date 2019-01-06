@@ -26,7 +26,7 @@ public string getSpecifications(
 |--------------|---------|-------------|
 | `index` | <pre>string</pre> | Index name    | 
 | `collection` | <pre>string</pre> | Collection name    |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options    | 
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options    | 
 
 ### options
 

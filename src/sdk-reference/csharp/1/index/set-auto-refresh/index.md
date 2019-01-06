@@ -36,7 +36,7 @@ public void setAutoRefresh(
 | ------------- | ------------- | -------------------- |
 | `index`       | <pre>string</pre>   | Index name    |
 | `autoRefresh` | <pre>bool</pre>       | Autorefresh flag value  |
-| `options`     | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options`     | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 

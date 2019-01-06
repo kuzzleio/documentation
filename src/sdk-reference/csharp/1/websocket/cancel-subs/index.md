@@ -11,5 +11,7 @@ Cancels all subscriptions.
 ## Signature
 
 ```csharp
-void cancelSubs();
+public override void cancelSubs();
+
 ```
+

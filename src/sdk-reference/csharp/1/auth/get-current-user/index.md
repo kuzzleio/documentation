@@ -17,7 +17,7 @@ public User getCurrentUser();
 
 ## Return
 
-A [kuzzleio::User]({{ site_base_path }}sdk-reference/csharp/1/user/) object.
+A [Kuzzleio::User]({{ site_base_path }}sdk-reference/csharp/1/user/) object.
 
 ## Exceptions
 

@@ -22,7 +22,7 @@ public bool credentialsExist(string strategy, query_options options);
 | Arguments  | Type             | Description                                             |
 | ---------- | ---------------- | ------------------------------------------------------- |
 | `strategy` | <pre>string</pre>      | Strategy to use                                         |
-| `options`  | <pre>Kuzzleio::QueryOptions\*</pre>    | Query options
+| `options`  | <pre>Kuzzleio::QueryOptions</pre>    | Query options
 
 ### options
 

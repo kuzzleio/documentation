@@ -34,7 +34,7 @@ public SWIGTYPE_p_std__vectorT_std__string_t deleteByQuery(
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `query` | <pre>string</pre> | JSON string representing query to match |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 

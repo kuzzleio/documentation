@@ -1,7 +1,7 @@
-kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(
+kuzzleio::Kuzzle* kuzzle = new kuzzleio::Kuzzle(
   new kuzzleio::WebSocket("kuzzle"));
 
-kuzzleio::Protocol *protocol = kuzzle->getProtocol();
+kuzzleio::Protocol* protocol = kuzzle->getProtocol();
 
 std::string jwt_token = kuzzle->getJwt();
 

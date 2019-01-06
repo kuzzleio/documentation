@@ -3,14 +3,15 @@ require 'active_support/all'
 require 'byebug'
 
 class Section
-  attr_reader :kind, :content, :page
+  GENERIC_REGEXP = /(^#* [\w\s]+$[^#]*)/
+  attr_reader :kind, :content, :page, :title, :up
 
-  def initialize(kind, regexp, page)
-    @kind, @regexp, @page = kind, regexp, page
+  def initialize(page, up)
+    @page, @up = page, up
   end
 
-  def parse
-    match = @page.read_content.match(@regexp)
+  def parse(extract_regexp = GENERIC_REGEXP)
+    match = @page.read_content.match(extract_regexp)
 
     return false if match.nil?
 
@@ -18,7 +19,22 @@ class Section
 
     @page.move_forward(@content.length)
 
+    find_kind
+
+    unless @kind == :header
+      match = @content.match(/^#* ([\w\s]+)$/)
+      @title =  match[1].gsub!(/\n/, '')
+    end
+
     true
+  end
+
+  def find_kind
+    if @content.match(/^#* Signature+$/)
+      @kind = :signature
+    else
+      @kind = :section
+    end
   end
 
   def to_s
@@ -27,82 +43,18 @@ class Section
 end
 
 class Header < Section
-  REGEXP = /(^---$[^-]+^---$)/
-
-  def initialize(page)
-    super(:header, REGEXP, page)
-  end
+  HEADER_REGEXP = /(^---$[^-]+^---$)/
 
   def parse
-    if super
+    if super(HEADER_REGEXP)
       @content += "\n\n"
       true
     else
       false
     end
   end
-end
 
-class Description < Section
-  REGEXP = /(^# \w+$[^#]+)/
-
-  def initialize(page)
-    super(:description, REGEXP, page)
-  end
-end
-
-class Signature < Section
-  REGEXP = /(^## \w+$[^[##]]+)^##/
-
-  def initialize(page)
-    super(:signature, REGEXP, page)
-  end
-end
-
-class Arguments < Section
-  REGEXP = /(^## \w+$[^[###]]+)^###/
-
-  def initialize(page)
-    super(:arguments, REGEXP, page)
-  end
-end
-
-class Argument < Section
-  REGEXP = /(^### [\w|\*]+$.+?)^##/m
-
-  def initialize(page)
-    super(:argument, REGEXP, page)
-  end
-end
-
-class Return < Section
-  REGEXP = /(^## \w+$[^[##]]+)^##/
-
-  def initialize(page)
-    super(:return, REGEXP, page)
-  end
-end
-
-class Exceptions < Section
-  REGEXP = /(^## \w+$[^[##]]+)^##/
-
-  def initialize(page)
-    super(:exceptions, REGEXP, page)
-  end
-end
-
-class Custom < Section
-  REGEXP = /(^## [\w&\s]+$[^[##]]+)^##/
-
-  def initialize(page)
-    super(:custom, REGEXP, page)
-  end
-end
-
-class Usage < Section
-  REGEXP = /(^## \w+$[^[##]]+)/
-
-  def initialize(page)
-    super(:usage, REGEXP, page)
+  def find_kind
+    @kind = :header
   end
 end

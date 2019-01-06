@@ -7,7 +7,7 @@ order: 50
 
 # Constructor
 
-Use this constructor to create a new instance of the SDK.  
+Use thisructor to create a new instance of the SDK.  
 Each instance represent a different connection to a Kuzzle server with specific options.
 
 ## Signature
@@ -43,4 +43,4 @@ A `Kuzzle` instance.
 
 ## Usage
 
-[snippet=constructor]
+[snippet=ructor]

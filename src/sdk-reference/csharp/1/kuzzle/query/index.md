@@ -25,8 +25,8 @@ public KuzzleResponse query(KuzzleRequest request, query_options options);
 
 | Argument  | Type             | Description              |
 | --------- | ---------------- | ------------------------ |
-| `request` | <pre>kuzzle_request\*</pre> | API request parameters |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre>  | Query options |
+| `request` | <pre>Kuzzleio::KuzzleRequest</pre> | API request parameters |
+| `options` | <pre>Kuzzleio::QueryOptions</pre>  | Query options |
 
 ### request
 

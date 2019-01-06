@@ -5,73 +5,61 @@ description: Getters for WebSocket class
 order: 100
 ---
 
+# WebSocket class getters
+
+## isAutoReconnect
+
+Returns the auto-reconnection flag value.
+
 ## Signature
 
 ```csharp
+public bool isAutoReconnect();
+
 ```
 
 ## isAutoResubscribe
 
 Returns the auto-resubscribe flag value.
 
-### Signature
+## Signature
 
 ```csharp
-bool isAutoResubscribe()
+public bool isAutoResubscribe();
+
 ```
 
-### Signature
+## getPort
+
+Returns the port number used by the protocol instance.
+
+## Signature
 
 ```csharp
-bool isAutoResubscribe()
+public uint getPort();
+
 ```
 
-### Signature
+## getReconnectionDelay
+
+Returns the reconnection delay used by the protocol instance.
+
+## Signature
 
 ```csharp
-int getPort()
+public ulong getReconnectionDelay();
+
 ```
 
-### Signature
+## isSslConnection
+
+Returns a bool indicating is the protocol instance is using SSL or not.
+
+## Signature
 
 ```csharp
-int getPort()
-```
+public bool isSslConnection();
 
-### Signature
-
-```csharp
-uint64_t getReconnectionDelay()
-```
-
-### Signature
-
-```csharp
-uint64_t getReconnectionDelay()
-```
-
-### Signature
-
-```csharp
-uint64_t getReconnectionDelay()
-```
-
-### Signature
-
-```csharp
-bool isSslConnection()
-```
-
-### Signature
-
-```csharp
-bool isSslConnection()
-```
-
-### Signature
-
-```csharp
-bool isSslConnection()
 ```
 
 ## Usage

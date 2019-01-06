@@ -3,5 +3,5 @@ try {
 
   Console.WriteLine("Autorefresh is now enabled on index");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

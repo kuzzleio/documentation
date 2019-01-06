@@ -33,7 +33,7 @@ public string updateSpecifications(
 | `index` | <pre>string</pre> | Index name    | 
 | `collection` | <pre>string</pre> | Collection name    |
 | `specifications` | string | Specification in JSON format | yes
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options    | 
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options    | 
 
 ### specifications
 

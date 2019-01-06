@@ -23,8 +23,8 @@ public override KuzzleEventEmitter addListener(
 
 | Argument   | Type                      | Description            |
 | ---------- | ------------------------- | ------------------------|
-| `event`    | kuzzleio::Event           | An enum representing the listened [event]({{ site_base_path }}sdk-reference/csharp/1/events) |
-| `listener` | kuzzleio::EventListener\* | Pointer to a c++11 lambda   |
+| `event`    | Kuzzleio::Event           | An enum representing the listened [event]({{ site_base_path }}sdk-reference/csharp/1/events) |
+| `listener` | Kuzzleio::EventListener\* | Pointer to a c++11 lambda   |
 
 ### event
 

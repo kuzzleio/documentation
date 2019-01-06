@@ -28,11 +28,10 @@ module SectionMutator
     REPLACE = {
       /std::vector<std::string>/                   => 'List<string>',
       /(const )?std::string[\*&]?/                 => 'string',
-      /const char\s?\*/                            => 'string',
+      /const char\s?[\\]?\*/                       => 'string',
       /char[\\]?\*/                                => 'string',
-      /kuzzleio::query_options\\\*?/               => 'Kuzzleio::QueryOptions',
-      /kuzzleio::query_options\*?/               => 'Kuzzleio::QueryOptions',
-      /query_options\*/                            => 'Kuzzleio::QueryOptions',
+      /kuzzleio::query_options[\\]?\*/             => 'Kuzzleio::QueryOptions',
+      /query_options[\\]?\*/                       => 'Kuzzleio::QueryOptions',
       /boolean/                                    => 'bool',
       /Boolean/                                    => 'bool',
       /kuzzleio::KuzzleException/                  => 'Kuzzleio::KuzzleException',
@@ -43,17 +42,22 @@ module SectionMutator
       /struct /                                    => 'class ',
       /cpp\/1/                                     => 'csharp/1',
       /cpp/                                        => 'csharp',
-      /std::runtime_error/                         => 'System.Exception',
+      /std::runtime_error/                         => 'System.ApplicationException',
       /unsigned int/                               => 'int',
       /const[\s]+/                                 => '',
-      /kuzzleio::options\\\*/                      => 'Options',
+      /kuzzleio::options[\\]?\*/                   => 'Options',
       /unsigned long( long)?/                      => 'long',
       /unsigned/                                   => 'int',
-      /kuzzleio::room_options\*/                   => 'RoomOptions',
+      /kuzzleio::room_options[\\]?\*/              => 'RoomOptions',
       /kuzzleio::NotificationListener[\*]?/        => 'NotificationListener',
       /kuzzleio::notification_result[\*]?/         => 'NotificationResult',
       /kuzzleio::notification_content[\*]?/        => 'NotificationContent',
-      /SearchResult[\*]?/                          => 'SearchResult'
+      /kuzzleio::kuzzle_request[\\]?\*/            => 'Kuzzleio::KuzzleRequest',
+      /SearchResult[\\]?\*/                        => 'SearchResult',
+      /[\s]*const[\s]*/                            => '',
+      /what()/                                     => 'getMessage()',
+      /kuzzleio::/                                 => 'Kuzzleio::',
+      /Protocol[\\]?\*/                            => 'Protocol'
     }
 
     def initialize
@@ -66,7 +70,12 @@ module SectionMutator
       content << "## Signature"
       content << ""
       content << "```csharp"
-      content += @signature_extractor.extract(section.page.controller, section.page.action)
+      content +=
+        if section.page.action.in?(['getters', 'setters'])
+          @signature_extractor.extract(section.page.controller, section.up.title)
+        else
+          @signature_extractor.extract(section.page.controller, section.page.action)
+        end
       content << "```"
       content << "\n"
 

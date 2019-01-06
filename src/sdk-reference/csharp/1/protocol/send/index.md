@@ -23,7 +23,7 @@ public virtual SWIGTYPE_p_kuzzle_response send(
 | Argument  | Type             | Description
 | --------- | ---------------- | ------------------------
 | `query` | <pre>string</pre> | API request
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre>  | Additional query options
+| `options` | <pre>Kuzzleio::QueryOptions</pre>  | Additional query options
 | `request_id` | <pre>string</pre> | Optional request identifier
 
 ### request
@@ -52,9 +52,7 @@ The following properties are the most common:
 | `refresh` | <pre>string</pre><br/>(`""`)| If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 | `from` | <pre>int</pre><br/>(`0`) | Offset of the first document to fetch |
 | `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
-| `scroll` | <pre>string</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
-
-### request_id
+| `scroll` | <pre>string</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html### request_id
 
 User-defined request identifier.  
 Kuzzle does not guarantee that responses are sent back in the same order than queries are made: use that field to link responses to their query of origin.
@@ -66,7 +64,7 @@ The following properties are the most common:
 
 | Property     | Type   | Description                         |
 | ------------ | ------ | ----------------------------------- |
-| `request_id` | <pre>char \*</pre> | Request unique ID                 |
-| `result`     | <pre>char \*</pre> | JSON string representing Kuzzle API result  |
-| `error`      | <pre>char \*</pre> | Error message                       |
+| `request_id` | <pre>string</pre> | Request unique ID                 |
+| `result`     | <pre>string</pre> | JSON string representing Kuzzle API result  |
+| `error`      | <pre>string</pre> | Error message                       |
 | `status`     | <pre>int</pre>    | Request status (eg: 200, 403, etc.) |

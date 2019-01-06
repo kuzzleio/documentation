@@ -29,7 +29,7 @@ public string get(
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `id` | <pre>string</pre> | Document ID |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 

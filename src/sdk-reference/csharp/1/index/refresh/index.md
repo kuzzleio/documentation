@@ -30,7 +30,7 @@ public void refresh(string index, query_options options);
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
 | `index`   | <pre>string</pre>   | Index name     |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 

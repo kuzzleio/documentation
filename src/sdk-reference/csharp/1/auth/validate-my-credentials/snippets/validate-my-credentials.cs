@@ -6,5 +6,5 @@ try {
     Console.WriteLine("Credentials are valid");
   }
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

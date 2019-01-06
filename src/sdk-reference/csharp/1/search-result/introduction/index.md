@@ -12,3 +12,18 @@ The following methods returns a `SearchResult` or a `SpecificationSearchResult` 
  - [document:search]({{ site_base_path }}sdk-reference/csharp/1/document/search)
  - [collection:searchSpecifications]({{ site_base_path }}sdk-reference/csharp/1/collection/search-specifications)
 
+## Public class definition
+
+```csharp
+namespace kuzzleio {
+    class SearchResult {
+        public:
+            SearchResult next();
+    };
+
+    class SpecificationSearchResult : public SearchResult {
+        public:
+            SpecificationSearchResult next();
+    };
+}
+```

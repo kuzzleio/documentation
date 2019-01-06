@@ -23,7 +23,7 @@ public string getMapping(string index, string collection, query_options options)
 |--------------|---------|-------------|
 | `index` | <pre>string</pre> | Index name    | 
 | `collection` | <pre>string</pre> | Collection name    |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options    | 
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options    | 
 
 ### options
 

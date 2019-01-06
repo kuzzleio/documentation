@@ -9,7 +9,7 @@ NotificationListener listener =
 try {
   // Subscription to notifications and notifications when user join or leave
   const char *filters = @"{ ""exists"": ""name"" }";
-  room_options options;
+  room_options options = new options();
   options.users = "all";
 
   kuzzle.realtime.subscribe(
@@ -22,8 +22,8 @@ try {
   // Instantiates a second kuzzle client:
   //  multiple subscriptions made by the same user
   //  will not trigger "new user" notifications
-  WebSocket* ws2 = new WebSocket("kuzzle");
-  Kuzzle* kuzzle2 = new Kuzzle(ws2);
+  WebSocket ws2 = new WebSocket("kuzzle");
+  Kuzzle kuzzle2 = new Kuzzle(ws2);
   kuzzle2.connect();
 
   // Set some volatile data
@@ -38,5 +38,5 @@ try {
     listener,
     options2);
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

@@ -10,7 +10,7 @@ try {
   QueryOptions options = new QueryOptions();
   options.refresh = "wait_for";
 
-  kuzzle_response* response = kuzzle.query(request, options);
+  kuzzle_response response = kuzzle.query(request, options);
 
   if (response.status == 200) {
     Console.WriteLine("Document created");
@@ -20,5 +20,5 @@ catch (UnauthorizedException e) {
   Console.Error.WriteLine("You are not connected");
 }
 catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

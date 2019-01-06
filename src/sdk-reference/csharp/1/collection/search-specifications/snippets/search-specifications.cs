@@ -13,5 +13,5 @@ try {
 
   Console.WriteLine("Successfully retrieved " + response.fetched + " specifications");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

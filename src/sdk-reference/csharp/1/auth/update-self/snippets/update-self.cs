@@ -5,5 +5,5 @@ try {
   Console.WriteLine(updatedUser.content());
   // {"age": 42}
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

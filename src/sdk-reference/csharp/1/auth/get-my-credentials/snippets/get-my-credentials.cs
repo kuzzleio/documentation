@@ -5,5 +5,5 @@ try {
   Console.WriteLine(local_credentials);
   Console.WriteLine("Successfully got local credentials");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

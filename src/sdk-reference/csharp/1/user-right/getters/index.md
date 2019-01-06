@@ -5,9 +5,20 @@ description: Getters for UserRight class
 order: 100
 ---
 
+# UserRight class getters
+
+## controller
+
+Returns the controller name on which the rights apply.  
+Can be a wildcard (`*`).
+
 ## Signature
 
 ```csharp
+public string controller();
+
+public void controller(string arg0);
+
 ```
 
 ## action
@@ -15,64 +26,55 @@ order: 100
 Returns the action name on which the rights apply.  
 Can be a wildcard (`*`).
 
-### Signature
+## Signature
 
 ```csharp
-string action() const;
+public string action();
+
+public void action(string arg0);
+
 ```
 
-### Signature
+## index
+
+Returns the index name on which the rights apply.   
+Can be a wildcard (`*`).
+
+## Signature
 
 ```csharp
-string action() const;
+public string index();
+
+public void index(string arg0);
+
 ```
 
-### Signature
+## collection
+
+Returns the collection name on which the rights apply.   
+Can be a wildcard (`*`).
+
+## Signature
 
 ```csharp
-string index() const;
+public string collection();
+
+public void collection(string arg0);
+
 ```
 
-### Signature
+## value
+
+Returns the value name on which the rights apply.  
+Can be one of the following: `allowed`, `denied` or `conditional`
+
+## Signature
 
 ```csharp
-string index() const;
-```
+public string value();
 
-### Signature
+public void value(string arg0);
 
-```csharp
-string index() const;
-```
-
-### Signature
-
-```csharp
-string collection() const;
-```
-
-### Signature
-
-```csharp
-string collection() const;
-```
-
-### Signature
-
-```csharp
-string value() const;
-```
-
-### Signature
-
-```csharp
-string value() const;
-```
-
-### Signature
-
-```csharp
-string value() const;
 ```
 
 ## Usage

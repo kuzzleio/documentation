@@ -30,3 +30,7 @@ public virtual void registerSub(
 | `subscribe_to_self` | <pre>bool</pre> | Subscribe to notifications fired by our own queries
 | `listener` | <pre>NotificationListener\*</pre> | A pointer to the listener
 
+### listener
+
+A c++11 lambda which takes a `string` argument.
+`EventListener` is defined as `std::function<void(string)>`.

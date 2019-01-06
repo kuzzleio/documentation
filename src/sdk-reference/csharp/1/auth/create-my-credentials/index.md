@@ -26,7 +26,7 @@ public string createMyCredentials(
 |--------------|---------|-------------
 | `strategy` | <pre>string</pre> | Strategy to use
 | `credentials` | <pre>string</pre> | JSON string representing the credentials
-| `options`  | <pre>Kuzzleio::QueryOptions\*</pre>    | Query options
+| `options`  | <pre>Kuzzleio::QueryOptions</pre>    | Query options
 
 
 ### options

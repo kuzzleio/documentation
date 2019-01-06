@@ -3,5 +3,5 @@ try {
 
   Console.WriteLine(statistics);
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

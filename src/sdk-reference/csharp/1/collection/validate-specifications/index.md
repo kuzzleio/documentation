@@ -33,7 +33,7 @@ public validation_response validateSpecifications(
 | `index` | <pre>string</pre> | Index name    | 
 | `collection` | <pre>string</pre> | Collection name    |
 | `specifications` | <pre>string<pre> | JSON string representating the specifications to validate |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options    | 
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options    | 
 
 ### specifications
 
@@ -64,13 +64,13 @@ Additional query options
 
 ## Return
 
-A `kuzzleio::validation_response` object which contain information about the specifications validity.
+A `Kuzzleio::validation_response` object which contain information about the specifications validity.
 
 | Property   | Type    | Description        |
 | ---------- | ------- | --------------------- |
 | `valid` | <pre>bool</pre> | Specification validity |
-| `details` | <pre>char \* \*</pre> | Array of string with details about each specification errors |
-| `description` | <pre>char \*</pre> | General error message |
+| `details` | <pre>string \*</pre> | Array of string with details about each specification errors |
+| `description` | <pre>string</pre> | General error message |
 
 ## Usage
 

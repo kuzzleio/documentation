@@ -36,7 +36,7 @@ public SWIGTYPE_p_std__vectorT_std__string_t mDelete(
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `ids` | <pre>std::vector&lt;stringgt;</pre> | IDs of the documents to delete |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 

@@ -38,6 +38,8 @@ class TestFile
       "snippets"
     ].join('/')
 
+    return if @controller.in?(['getting-started'])
+
     new_snippet_content = File.read(@path)
     new_snippet_content.gsub!('sdk: cpp', "sdk: #{sdk}")
     new_snippet_content.gsub!('version: 1', "version: #{version}")

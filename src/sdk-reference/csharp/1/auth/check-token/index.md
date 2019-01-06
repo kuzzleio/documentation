@@ -35,3 +35,6 @@ A TokenValidity class which has:
 
 Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
+## Usage
+
+[snippet=check-token]

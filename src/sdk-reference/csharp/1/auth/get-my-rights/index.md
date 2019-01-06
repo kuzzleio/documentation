@@ -22,7 +22,7 @@ public SWIGTYPE_p_std__vectorT_std__shared_ptrT_kuzzleio__UserRight_t_t getMyRig
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
-| `options`  | <pre>Kuzzleio::QueryOptions\*</pre>  | Optional query options |
+| `options`  | <pre>Kuzzleio::QueryOptions</pre>  | Optional query options |
 
 ### options
 
@@ -34,7 +34,7 @@ Additional query options:
 
 ## Return
 
-A vector of pointer to [kuzzleio::UserRight]({{ site_base_path }}sdk-reference/csharp/1/user-right/) object.
+A vector of pointer to [Kuzzleio::UserRight]({{ site_base_path }}sdk-reference/csharp/1/user-right/) object.
 
 ## Exceptions
 

@@ -19,7 +19,7 @@ public virtual int listenerCount(SWIGTYPE_p_Event arg0);
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | -----------
-| `event`    | <pre>kuzzleio::Event</pre>  | Enum representing the event to emit
+| `event`    | <pre>Kuzzleio::Event</pre>  | Enum representing the event to emit
 
 ### event
 

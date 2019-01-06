@@ -22,7 +22,7 @@ public User updateSelf(string content, query_options options);
 | Arguments    | Type    | Description
 |--------------|---------|-------------|
 | `content` | <pre>string</pre> | JSON string representing the user content |
-| `options`  | <pre>Kuzzleio::QueryOptions\*</pre>  | Query options |
+| `options`  | <pre>Kuzzleio::QueryOptions</pre>  | Query options |
 
 ### options
 
@@ -34,7 +34,7 @@ Additional query options:
 
 ## Return
 
-A [kuzzleio::User]({{ site_base_path }}sdk-reference/csharp/1/user/) object.
+A [Kuzzleio::User]({{ site_base_path }}sdk-reference/csharp/1/user/) object.
 
 ## Exceptions
 

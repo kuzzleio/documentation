@@ -26,7 +26,7 @@ public void publish(
 | `index` | <pre>string</pre> | Index name    |
 | `collection` | <pre>string</pre> | Collection name    |
 | `message` | <pre>string</pre> | JSON string representing a JSON payload |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 
@@ -41,6 +41,15 @@ Additional query options
 
 Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
+## Usage
+
+[snippet=publish]
+## Usage
+
+[snippet=publish]
+## Usage
+
+[snippet=publish]
 ## Usage
 
 [snippet=publish]

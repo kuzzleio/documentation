@@ -6,7 +6,7 @@ NotificationListener listener =
 try {
   // Subscribes to notifications when document leaves the scope
   string filters = @"{ ""range"": { ""age"": { ""lte"": 20 } } }";
-  room_options options;
+  room_options options = new options();
   options.scope = "out";
 
   kuzzle.realtime.subscribe(
@@ -31,5 +31,5 @@ try {
     "nina-vkote",
     @"{ ""age"": 42 }");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

@@ -16,11 +16,16 @@ module SnippetMutator
       /Kuzzleio::/                                       => '',
       /std::string/                                      => 'string',
       /query_options options;/                           => 'QueryOptions options = new QueryOptions();',
+      /options options;/                                 => 'options options = new options();',
       /SearchResult\*/                                   => 'SearchResult',
       /validation_response \*validation_response/        => 'validation_response validation_response',
       /delete_\(/                                        => 'delete(',
-      /token_validity\*/                                  => 'TokenValidity',
-      /e.what\(\)/                                       => 'e.getMessage()'
+      /token_validity\*/                                 => 'TokenValidity',
+      /e.what\(\)/                                       => 'e.getMessage()',
+      /size_t/                                           => 'uint',
+      /WebSocket\*/                                      => 'WebSocket',
+      /Kuzzle\*/                                         => 'Kuzzle',
+      /kuzzle_response\*/                                => 'kuzzle_response'
     }
     STDOUT_FIND = /std::cout.*std::endl;/
     STDERR_FIND = /std::cerr.*std::endl;/
@@ -30,7 +35,7 @@ module SnippetMutator
     VECTOR_ASSIGN_REPLACE = /(std::vector<(.*)>\W+(\w+))\s+=/
     UNIQUE_PTR_REPLACE = /(std::unique_ptr<([\w:]+)>)/
     SHARED_PTR_REPLACE = /(std::shared_ptr<([\w:]+)>)/
-    FOR_LOOP_FIND = /for \(.*/
+    FOR_LOOP_FIND = /for \(.*:.*/
     FOR_LOOP_REPLACE = /for \(auto ([\w]+) : ([\w]+)\) {/
 
     def mutate(content)

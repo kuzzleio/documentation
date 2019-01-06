@@ -40,6 +40,8 @@ class Snippet
       "snippets"
     ].join('/')
 
+    return if @controller.in?(['getting-started'])
+
     snippet_mutator = "SnippetMutator::#{sdk.camelcase}".constantize.new
     new_snippet_content = snippet_mutator.mutate(content)
 

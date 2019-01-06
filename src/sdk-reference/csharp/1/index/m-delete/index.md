@@ -25,7 +25,7 @@ public SWIGTYPE_p_std__vectorT_std__string_t mDelete(
 | Arguments | Type                       | Description  |
 | --------- | -------------------------- | --------------|
 | `indexes` | <pre>List<string></pre> | List of indexes |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre>    | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre>    | Query options |
 
 ### options
 

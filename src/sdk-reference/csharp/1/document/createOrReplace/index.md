@@ -36,7 +36,7 @@ public string createOrReplace(
 | `collection` | <pre>string</pre> | Collection name |
 | `id` | <pre>string</pre> | Document ID |
 | `document` | <pre>string</pre> | JSON string representing the body of the document |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 

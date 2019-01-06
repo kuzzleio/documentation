@@ -14,6 +14,14 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 ## Signature
 
 ```csharp
+public string delete(string index, string collection, string id);
+
+public string delete(
+    string index, 
+    string collection, 
+    string id, 
+    query_options options);
+
 ```
 
 ## Arguments
@@ -23,7 +31,7 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 | `index` | <pre>string</pre> | Index name |
 | `collection` | <pre>string</pre> | Collection name |
 | `id` | <pre>string</pre> | Document ID |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### Options
 

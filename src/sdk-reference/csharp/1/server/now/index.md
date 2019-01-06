@@ -2,6 +2,10 @@
 
 Fetch the current server timestamp, in Epoch-millis format.
 
+# now
+
+Fetch the current server timestamp, in Epoch-millis format.
+
 ## Signature
 
 ```csharp
@@ -15,7 +19,7 @@ public long now(query_options options);
 
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 
@@ -33,7 +37,10 @@ An Epoch-millis timestamp.
 
 An Epoch-millis timestamp.
 
-## Return
+## Exceptions
 
-An Epoch-millis timestamp.
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
+## Usage
+
+[snippet=now]

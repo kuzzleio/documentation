@@ -22,7 +22,7 @@ public void unsubscribe(string room_id, query_options options);
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
 | `room_id` | <pre>string</pre> | Subscription room ID  |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 

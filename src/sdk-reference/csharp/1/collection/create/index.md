@@ -36,7 +36,7 @@ public void create(
 | `index` | <pre>string</pre> | Index name    | 
 | `collection` | <pre>string</pre> | Collection name    |
 | `mapping` | <pre>string</pre> | JSON string representing the collection data mapping  |
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> |  Query options  |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> |  Query options  |
 
 ### mapping
 

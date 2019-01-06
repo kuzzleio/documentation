@@ -1,7 +1,7 @@
-Kuzzle *kuzzle = new Kuzzle(
+Kuzzle kuzzle = new Kuzzle(
   new WebSocket("kuzzle"));
 
-Protocol *protocol = kuzzle.getProtocol();
+Protocol* protocol = kuzzle.getProtocol();
 
 string jwt_token = kuzzle.getJwt();
 

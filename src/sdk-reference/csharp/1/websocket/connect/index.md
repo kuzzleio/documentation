@@ -6,11 +6,13 @@ description: Connects the SDK to Kuzzle
 
 # connect
 
-Connects to Kuzzle using the `protocol` argument provided in the constructor.  
+Connects to Kuzzle using the `protocol` argument provided in theructor.  
 Subsequent calls have no effect if the SDK is already connected.
 
 ## Signature
 
 ```csharp
-void connect();
+public override void connect();
+
 ```
+

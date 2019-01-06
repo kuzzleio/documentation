@@ -19,7 +19,7 @@ public override int listenerCount(SWIGTYPE_p_Event arg0);
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------
-| `event`    | <pre>kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/csharp/1/events)
+| `event`    | <pre>Kuzzleio::Event</pre>           | An enum representing the listener [event]({{ site_base_path }}sdk-reference/csharp/1/events)
 
 ### event
 

@@ -10,5 +10,5 @@ try {
 
   Console.WriteLine("Successfully deleted " + response.Count + " documents");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

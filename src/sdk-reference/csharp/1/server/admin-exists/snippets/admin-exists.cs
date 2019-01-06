@@ -7,5 +7,5 @@ try {
     Console.WriteLine("Admin user does not exists");
   }
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

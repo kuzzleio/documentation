@@ -21,5 +21,5 @@ try {
     "nina-vkote",
     @"{ ""name"": ""nina vkote"", ""age"": 19 }");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

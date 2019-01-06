@@ -34,7 +34,7 @@ public string getStats(
 | --------- | ------------- | ------------------|
 | `startTime` | <pre>time_t</pre>   | Timestamp of the begining of statistics frame set |
 | `stopTime`  | <pre>time_t</pre>   | Timestamp of the end of statistics frame set      |
-| `options`   | <pre>Kuzzleio::QueryOptions\*</pre> | Query options        |
+| `options`   | <pre>Kuzzleio::QueryOptions</pre> | Query options        |
 
 ### options
 

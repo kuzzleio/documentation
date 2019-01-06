@@ -4,5 +4,5 @@ try {
 
   Console.WriteLine("Successfully got current user");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.Message());
+  Console.Error.WriteLine(e.getMessage());
 }

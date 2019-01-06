@@ -21,8 +21,8 @@ public virtual void removeListener(
 
 | Argument   | Type                      | Description
 | ---------- | ------------------------- | --------------------------
-| `event`    | <pre>kuzzleio::Event</pre>  | Enum representing the event to emit
-| `listener` | <pre>kuzzleio::EventListener\*</pre> | Pointer to a c++11 lambda
+| `event`    | <pre>Kuzzleio::Event</pre>  | Enum representing the event to emit
+| `listener` | <pre>Kuzzleio::EventListener\*</pre> | Pointer to a c++11 lambda
 
 ### event
 
@@ -42,3 +42,7 @@ EVENT_JWT_EXPIRED,
 EVENT_ERROR
 ```
 
+### listener
+
+A c++11 lambda which takes a `string` argument.
+`EventListener` is defined as `std::function<void(string)>`.

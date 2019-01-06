@@ -21,7 +21,7 @@ public bool adminExists(query_options options);
 
 | Arguments | Type          | Description       |
 | --------- | ------------- | ------------------|
-| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
+| `options` | <pre>Kuzzleio::QueryOptions</pre> | Query options |
 
 ### options
 

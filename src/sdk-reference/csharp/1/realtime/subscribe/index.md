@@ -58,3 +58,28 @@ The room ID.
 
 The room ID.
 
+## Return
+
+The room ID.
+
+## Exceptions
+
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
+
+## Usage
+
+*Simple subscription to document notifications*
+
+[snippet=document-notifications]
+
+*Subscription to document notifications with scope option*
+
+[snippet=document-notifications-leave-scope]
+
+*Subscription to message notifications*
+
+[snippet=message-notifications]
+
+*Subscription to user notifications*
+
+[snippet=user-notifications]
