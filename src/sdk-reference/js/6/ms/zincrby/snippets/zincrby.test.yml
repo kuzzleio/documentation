@@ -8,3 +8,5 @@ expected:
   - "\\[ { member: 'baz', score: -272.15 },"
   - "\\{ member: 'foo', score: 42 },"
   - "\\{ member: 'bar', score: 1337 } ]"
+sdk: js
+version: 6

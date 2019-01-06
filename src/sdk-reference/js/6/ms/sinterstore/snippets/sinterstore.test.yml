@@ -7,3 +7,5 @@ template: default
 expected:
   - ^1$
   - "\\[ 'foo' ]"
+sdk: js
+version: 6
