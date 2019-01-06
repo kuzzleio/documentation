@@ -9,7 +9,8 @@ const
 const options = {
   offlineMode: 'auto',
   volatile: { username: 'Gordon' }
-}
+};
+
 // Instantiates the SDK with the websocket protocol
 const
   kuzzleWs = new Kuzzle(
