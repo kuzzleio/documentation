@@ -18,6 +18,8 @@ public override void registerSub(
     bool arg3, 
     SWIGTYPE_p_NotificationListener arg4);
 
+public override void unregisterSub(string arg0);
+
 ```
 
 ## Arguments

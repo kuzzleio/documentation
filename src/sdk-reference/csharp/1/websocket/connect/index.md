@@ -12,6 +12,8 @@ Subsequent calls have no effect if the SDK is already connected.
 ## Signature
 
 ```csharp
+public bool isAutoReconnect();
+
 public override void connect();
 
 ```

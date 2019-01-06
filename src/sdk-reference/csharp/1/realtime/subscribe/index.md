@@ -18,6 +18,10 @@ public string subscribe(
     SWIGTYPE_p_std__functionT_void_fkuzzleio__notification_result_pF_t listener, 
     room_options options);
 
+public void unsubscribe(string room_id);
+
+public void unsubscribe(string room_id, query_options options);
+
 ```
 
 ## Arguments

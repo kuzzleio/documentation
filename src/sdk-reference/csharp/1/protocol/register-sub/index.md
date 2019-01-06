@@ -18,6 +18,8 @@ public virtual void registerSub(
     bool arg3, 
     SWIGTYPE_p_NotificationListener arg4);
 
+public virtual void unregisterSub(string arg0);
+
 ```
 
 ## Arguments

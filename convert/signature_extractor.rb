@@ -13,10 +13,10 @@ class SignatureExtractor
     action = action.underscore.camelcaselow
     content = File.read("#{@path}/#{@file_name_evaluator.call(controller)}")
 
-    match = content.scan(@sig_regexp_evaluator.call(action))
+    match = content.scan(@sig_regexp_evaluator.call(controller, action))
 
-    if match.nil?
-      byebug
+    if match.empty?
+      puts "Can't extract signature for #{controller} #{action}"
       return []
     end
 
@@ -29,7 +29,14 @@ class SignatureExtractor
 end
 
 class SignatureExtractor::Csharp < SignatureExtractor
-  SIGNATURE_REGEXP_EVALUATOR = -> (action_name) { /(public .* #{action_name}\([^{]+)/ }
+  SIGNATURE_REGEXP_EVALUATOR = -> (controller_name, action_name) do
+    if action_name == 'constructor'
+      /(public .*\s?#{controller_name.underscore.camelcase}\([^{]+)/
+    else
+      /(public .*\s?#{action_name}\([^{]+)/
+    end
+  end
+
   FILE_NAME_EVALUATOR = -> (controller_name) do
     if controller_name == 'websocket'
       'WebSocket.cs'

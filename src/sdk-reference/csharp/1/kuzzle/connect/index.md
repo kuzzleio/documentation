@@ -14,6 +14,8 @@ Subsequent call have no effect if the SDK is already connected.
 ```csharp
 public void connect();
 
+public void disconnect();
+
 ```
 
 ## Exceptions

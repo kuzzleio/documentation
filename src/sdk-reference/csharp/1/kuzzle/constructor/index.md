@@ -13,6 +13,13 @@ Each instance represent a different connection to a Kuzzle server with specific 
 ## Signature
 
 ```csharp
+public Kuzzle(
+    Protocol protocol);
+
+public Kuzzle(
+    Protocol protocol, 
+    options options);
+
 ```
 
 ## Arguments
