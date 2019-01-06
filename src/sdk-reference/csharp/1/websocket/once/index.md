@@ -11,7 +11,8 @@ Attaches a listener to an event and removes it after it has been triggered once.
 ## Signature
 
 ```csharp
-public override void once(Event arg0, SWIGTYPE_p_EventListener arg1);
+public override void once(SWIGTYPE_p_Event arg0, SWIGTYPE_p_EventListener arg1);
+
 ```
 
 ## Arguments

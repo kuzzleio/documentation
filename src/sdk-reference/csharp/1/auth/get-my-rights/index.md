@@ -11,8 +11,11 @@ Returns the rights for the currently logged in user within the SDK instance.
 ## Signature
 
 ```csharp
-public SWIGTYPE_p_std__vectorT_std__shared_ptrT_UserRight_t_t getMyRights();
-public SWIGTYPE_p_std__vectorT_std__shared_ptrT_UserRight_t_t getMyRights(QueryOptions options);
+public SWIGTYPE_p_std__vectorT_std__shared_ptrT_kuzzleio__UserRight_t_t getMyRights();
+
+public SWIGTYPE_p_std__vectorT_std__shared_ptrT_kuzzleio__UserRight_t_t getMyRights(
+    query_options options);
+
 ```
 
 ## Arguments

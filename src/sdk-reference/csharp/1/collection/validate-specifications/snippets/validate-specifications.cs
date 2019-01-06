@@ -19,5 +19,5 @@ try {
     Console.WriteLine("Specifications are valid");
   }
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.Message());
 }

@@ -21,7 +21,9 @@ The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-refe
 
 ```csharp
 public void refreshInternal();
-public void refreshInternal(QueryOptions options);
+
+public void refreshInternal(query_options options);
+
 ```
 
 ## Arguments

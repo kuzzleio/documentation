@@ -11,9 +11,9 @@ Checks if the given index exists in Kuzzle.
 ## Signature
 
 ```csharp
-public bool exists(string index, string collection);
+public bool exists(string index);
 
-public bool exists(string index, string collection, QueryOptions options);
+public bool exists(string index, query_options options);
 
 ```
 

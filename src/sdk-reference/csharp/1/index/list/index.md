@@ -12,7 +12,9 @@ Get the complete list of data indexes handled by Kuzzle.
 
 ```csharp
 public SWIGTYPE_p_std__vectorT_std__string_t list();
-public SWIGTYPE_p_std__vectorT_std__string_t list(QueryOptions options);
+
+public SWIGTYPE_p_std__vectorT_std__string_t list(query_options options);
+
 ```
 
 ## Arguments

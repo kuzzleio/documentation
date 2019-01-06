@@ -7,5 +7,5 @@ try {
     Console.Error.WriteLine("Autorefresh is disabled");
   }
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.what());
+  Console.Error.WriteLine(e.Message());
 }

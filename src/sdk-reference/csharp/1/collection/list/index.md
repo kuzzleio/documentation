@@ -15,7 +15,7 @@ The `from` and `size` arguments allow pagination. They are returned in the respo
 ```csharp
 public string list(string index);
 
-public string list(string index, QueryOptions options);
+public string list(string index, query_options options);
 
 ```
 

@@ -1,10 +1,10 @@
 try {
-  for (int i = 0; i < 5; i++) {
+  for (size_t i = 0; i < 5; i++) {
     kuzzle.document.create("nyc-open-data", "yellow-taxi", "", @"{
       ""category"": ""suv""
     }");
   }
-  for (int i = 5; i < 15; i++) {
+  for (size_t i = 5; i < 15; i++) {
     kuzzle.document.create("nyc-open-data", "yellow-taxi", "", @"{
       ""category"": ""limousine""
     }");
@@ -28,6 +28,6 @@ try {
     options);
 
   Console.WriteLine("Successfully retrieved " + response.total + " documents");
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.Message());
 }

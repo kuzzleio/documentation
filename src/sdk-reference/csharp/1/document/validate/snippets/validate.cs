@@ -1,9 +1,11 @@
 try {
-  if (kuzzle.document.validate("nyc-open-data", "yellow-taxi", @"{
+  bool valid = kuzzle.document.validate("nyc-open-data", "yellow-taxi", @"{
     ""capacity"": 4
-  }")) {
-    Console.WriteLine("Success");
+  }");
+
+  if (valid) {
+    Console.WriteLine("The document is valid");
   }
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.Message());
 }

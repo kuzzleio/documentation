@@ -5,5 +5,5 @@ try {
 
   Console.WriteLine("Message successfully published");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.what());
+  Console.Error.WriteLine(e.Message());
 }

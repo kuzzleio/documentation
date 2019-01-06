@@ -5,8 +5,19 @@ Subscribes by providing a set of filters: messages, document changes and, option
 ## Signature
 
 ```csharp
-public string subscribe(string index, string collection, string body, SWIGTYPE_p_std__functionT_void_fkuzzleio__notification_result_pF_t cb);
-public string subscribe(string index, string collection, string body, SWIGTYPE_p_std__functionT_void_fkuzzleio__notification_result_pF_t cb, room_options options);
+public string subscribe(
+    string index, 
+    string collection, 
+    string filters, 
+    SWIGTYPE_p_std__functionT_void_fkuzzleio__notification_result_pF_t listener);
+
+public string subscribe(
+    string index, 
+    string collection, 
+    string filters, 
+    SWIGTYPE_p_std__functionT_void_fkuzzleio__notification_result_pF_t listener, 
+    room_options options);
+
 ```
 
 ## Arguments

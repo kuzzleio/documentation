@@ -12,7 +12,9 @@ Returns information about Kuzzle: available API (base + extended), plugins, exte
 
 ```csharp
 public string info();
-public string info(QueryOptions options);
+
+public string info(query_options options);
+
 ```
 
 ## Arguments

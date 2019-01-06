@@ -16,7 +16,7 @@ public string getSpecifications(string index, string collection);
 public string getSpecifications(
     string index, 
     string collection, 
-    QueryOptions options);
+    query_options options);
 
 ```
 

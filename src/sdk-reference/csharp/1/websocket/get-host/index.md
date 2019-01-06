@@ -12,6 +12,7 @@ Returns the host name on which the protocol is connected
 
 ```csharp
 public override string getHost();
+
 ```
 
 ## Return

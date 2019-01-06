@@ -11,7 +11,8 @@ Removes all listeners of an Event type.
 ## Signature
 
 ```csharp
-public override void removeAllListeners(Event arg0);
+public override void removeAllListeners(SWIGTYPE_p_Event arg0);
+
 ```
 
 ## Arguments

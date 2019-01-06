@@ -11,7 +11,8 @@ Returns informations about the user currently loggued with the SDK instance.
 ## Signature
 
 ```csharp
-public SWIGTYPE_p_User getCurrentUser();
+public User getCurrentUser();
+
 ```
 
 ## Return

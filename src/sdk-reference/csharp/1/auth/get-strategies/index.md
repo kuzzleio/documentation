@@ -12,7 +12,10 @@ Get all authentication strategies registered in Kuzzle.
 
 ```csharp
 public SWIGTYPE_p_std__vectorT_std__string_t getStrategies();
-public SWIGTYPE_p_std__vectorT_std__string_t getStrategies(QueryOptions options);
+
+public SWIGTYPE_p_std__vectorT_std__string_t getStrategies(
+    query_options options);
+
 ```
 
 ## Arguments

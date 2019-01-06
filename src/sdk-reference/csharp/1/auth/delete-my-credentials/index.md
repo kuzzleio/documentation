@@ -12,7 +12,9 @@ Delete the current user's credentials for the specified strategy. If the credent
 
 ```csharp
 public void deleteMyCredentials(string strategy);
-public void deleteMyCredentials(string strategy, QueryOptions options);
+
+public void deleteMyCredentials(string strategy, query_options options);
+
 ```
 
 ## Arguments

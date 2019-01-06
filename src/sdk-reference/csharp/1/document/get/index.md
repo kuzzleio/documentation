@@ -13,8 +13,23 @@ Gets a document.
 
 ```csharp
 public string get(string index, string collection, string id);
-public string get(string index, string collection, string id, QueryOptions options);
+
+public string get(
+    string index, 
+    string collection, 
+    string id, 
+    query_options options);
+
 ```
+
+## Arguments
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `id` | <pre>string</pre> | Document ID |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
 ### options
 
@@ -26,15 +41,15 @@ Additional query options
 
 ## Return
 
-Returns a JSON string containing the document.
+A JSON string representing the document content.
 
-| Name | Type | Description
+| Property | Type | Description
 | --- | --- | ---
-| _source | <pre>string</pre> | A JSON string representing the retrieved document
+| _source | <pre>object</pre> | Document content
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

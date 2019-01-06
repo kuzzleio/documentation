@@ -3,5 +3,5 @@ try {
 
   Console.WriteLine("Epoch-millis timestamp: " + timestamp);
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.what());
+  Console.Error.WriteLine(e.Message());
 }

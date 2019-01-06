@@ -13,7 +13,10 @@ Theses listener will receive a `string` as argument. This string is a JSON paylo
 ## Signature
 
 ```csharp
-public override KuzzleEventEmitter addListener(Event arg0, SWIGTYPE_p_std__functionT_void_fstd__string_constF_t listener);
+public override KuzzleEventEmitter addListener(
+    KuzzleEvent arg0, 
+    SWIGTYPE_p_std__functionT_void_fstd__string_constF_t listener);
+
 ```
 
 ## Arguments

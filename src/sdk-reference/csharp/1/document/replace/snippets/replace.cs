@@ -1,13 +1,21 @@
 try {
-  kuzzle.document.create("nyc-open-data", "yellow-taxi", "some-id", @"{""color"": ""yellow""}");
+  kuzzle.document.create(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id",
+    @"{""color"": ""yellow""}");
 
-  string response = kuzzle.document.replace("nyc-open-data", "yellow-taxi", "some-id", @"{
-    ""capacity"": 4,
-    ""category"": ""sedan""
-  }");
+  string response = kuzzle.document.replace(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id",
+    @"{
+      ""capacity"": 4,
+      ""category"": ""sedan""
+    }");
 
   Console.WriteLine(response);
-  /* 
+  /*
   {
     "_index": "nyc-open-data",
     "_type": "yellow-taxi",
@@ -31,18 +39,10 @@ try {
         "active": true,
         "deletedAt": null
       }
-    },
-    "_meta": {
-      "author": "-1",
-      "createdAt": 1538641029988,
-      "updatedAt": 1538641029988,
-      "updater": "-1",
-      "active": true,
-      "deletedAt": null
     }
   }
   */
-  Console.WriteLine("Success");
-} catch  {
-  Console.Error.WriteLine("");
+  Console.WriteLine("Document successfully replaced");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.Message());
 }

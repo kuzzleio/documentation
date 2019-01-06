@@ -8,7 +8,8 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
-expected: Success
-
+expected:
+  - "\"lastName\":\"Eggins\""
+  - Document successfully created
 sdk: csharp
 version: 1

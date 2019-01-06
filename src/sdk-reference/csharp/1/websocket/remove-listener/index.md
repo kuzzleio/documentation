@@ -11,7 +11,10 @@ Removes a listener to an event.
 ## Signature
 
 ```csharp
-public override void removeListener(Event arg0, SWIGTYPE_p_EventListener arg1);
+public override void removeListener(
+    SWIGTYPE_p_Event arg0, 
+    SWIGTYPE_p_EventListener arg1);
+
 ```
 
 ## Arguments

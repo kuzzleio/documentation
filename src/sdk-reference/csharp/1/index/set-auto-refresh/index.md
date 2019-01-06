@@ -21,8 +21,13 @@ we recommend that you avoid using it in production or at least carefully monitor
 ## Signature
 
 ```csharp
-public void setAutoRefresh(string index, bool autoRefresh);
-public void setAutoRefresh(string index, bool autoRefresh, QueryOptions options);
+public void setAutoRefresh(string index, bool auto_refresh);
+
+public void setAutoRefresh(
+    string index, 
+    bool auto_refresh, 
+    query_options options);
+
 ```
 
 ## Arguments

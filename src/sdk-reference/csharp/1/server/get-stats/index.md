@@ -20,7 +20,12 @@ These statistics include:
 
 ```csharp
 public string getStats(SWIGTYPE_p_time_t start, SWIGTYPE_p_time_t end);
-public string getStats(SWIGTYPE_p_time_t start, SWIGTYPE_p_time_t end, QueryOptions options);
+
+public string getStats(
+    SWIGTYPE_p_time_t start, 
+    SWIGTYPE_p_time_t end, 
+    query_options options);
+
 ```
 
 ## Arguments

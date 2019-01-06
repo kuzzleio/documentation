@@ -16,7 +16,9 @@ Returns the current Kuzzle configuration.
 
 ```csharp
 public string getConfig();
-public string getConfig(QueryOptions options);
+
+public string getConfig(query_options options);
+
 ```
 
 ## Arguments

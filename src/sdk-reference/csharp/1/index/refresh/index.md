@@ -20,7 +20,9 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 
 ```csharp
 public void refresh(string index);
-public void refresh(string index, QueryOptions options);
+
+public void refresh(string index, query_options options);
+
 ```
 
 ## Arguments

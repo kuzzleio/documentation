@@ -20,7 +20,9 @@ These statistics include:
 
 ```csharp
 public string getAllStats();
-public string getAllStats(QueryOptions options);
+
+public string getAllStats(query_options options);
+
 ```
 
 ## Arguments

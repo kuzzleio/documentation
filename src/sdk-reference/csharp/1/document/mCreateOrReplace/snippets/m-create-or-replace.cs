@@ -1,4 +1,4 @@
-string body = @"[
+string documents = @"[
   {
     ""_id"": ""some-id"",
     ""body"": { ""capacity"": 4 }
@@ -10,7 +10,10 @@ string body = @"[
 ]";
 
 try {
-  string response = kuzzle.document.mCreateOrReplace("nyc-open-data", "yellow-taxi", body);
+  string response = kuzzle.document.mCreateOrReplace(
+    "nyc-open-data",
+    "yellow-taxi",
+    documents);
 
   Console.WriteLine(response);
   /*
@@ -38,15 +41,7 @@ try {
         "failed":0
       },
       "created":true,
-      "status":201,
-      "_meta":{
-        "active":true,
-        "author":"-1",
-        "updater":null,
-        "updatedAt":null,
-        "deletedAt":null,
-        "createdAt":1538552685790
-      }
+      "status":201
     },
     {
       "_id":"some-other-id",
@@ -71,19 +66,11 @@ try {
         "failed":0
       },
       "created":true,
-      "status":201,
-      "_meta":{
-        "active":true,
-        "author":"-1",
-        "updater":null,
-        "updatedAt":null,
-        "deletedAt":null,
-        "createdAt":1538552685790
-      }
+      "status":201
     }
   ]
   */
-  Console.WriteLine("Success");
-} catch  {
-  Console.Error.WriteLine("");
+  Console.WriteLine("Document successfully created");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.Message());
 }

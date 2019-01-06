@@ -12,7 +12,12 @@ Create the current user's credentials for the specified strategy.
 
 ```csharp
 public string createMyCredentials(string strategy, string credentials);
-public string createMyCredentials(string strategy, string credentials, QueryOptions options);
+
+public string createMyCredentials(
+    string strategy, 
+    string credentials, 
+    query_options options);
+
 ```
 
 ## Arguments

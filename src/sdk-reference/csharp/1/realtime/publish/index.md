@@ -9,8 +9,14 @@ The index and collection are indicative and serve only to distinguish the rooms.
 ## Signature
 
 ```csharp
-public void publish(string index, string collection, string body);
-public void publish(string index, string collection, string body, QueryOptions options);
+public void publish(string index, string collection, string message);
+
+public void publish(
+    string index, 
+    string collection, 
+    string message, 
+    query_options options);
+
 ```
 
 ## Arguments

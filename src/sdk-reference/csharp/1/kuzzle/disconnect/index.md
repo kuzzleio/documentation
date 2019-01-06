@@ -14,6 +14,7 @@ A call to `disconnect()` will not trigger a `DISCONNECTED` event. This event is 
 
 ```csharp
 public void disconnect();
+
 ```
 
 ## Usage

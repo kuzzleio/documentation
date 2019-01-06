@@ -8,6 +8,6 @@ try {
   }");
 
   Console.WriteLine("Found " + count + " documents matching license:valid");
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.Message());
 }

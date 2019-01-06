@@ -6,5 +6,5 @@ try {
 
   Console.WriteLine("Kuzzle Stats as JSON string: " + stats);
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.what());
+  Console.Error.WriteLine(e.Message());
 }

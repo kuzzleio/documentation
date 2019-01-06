@@ -1,0 +1,15 @@
+name: getting-started#realtime
+description: Realtime interactions
+hooks:
+  before: |
+    curl -X POST kuzzle:7512/nyc-open-data/_create
+    curl -X PUT kuzzle:7512/nyc-open-data/yellow-taxi/
+    curl -X DELETE kuzzle:7512/nyc-open-data/yellow-taxi/some-id
+  after:
+template: standalone
+expected:
+- Connected!
+- Successfully subscribed!
+- New created document notification: some-id
+sdk: csharp
+version: 1

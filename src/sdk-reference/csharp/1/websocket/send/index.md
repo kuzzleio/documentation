@@ -11,7 +11,11 @@ Base method used to send queries to Kuzzle, following the [API Documentation]({{
 ## Signature
 
 ```csharp
-public override SWIGTYPE_p_kuzzle_response send(string arg0, SWIGTYPE_p_query_options arg1, string arg2);
+public override SWIGTYPE_p_kuzzle_response send(
+    string arg0, 
+    SWIGTYPE_p_query_options arg1, 
+    string arg2);
+
 ```
 
 ## Arguments

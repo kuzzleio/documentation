@@ -3,5 +3,5 @@ try {
 
   Console.WriteLine("Specifications successfully deleted");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.Message());
 }

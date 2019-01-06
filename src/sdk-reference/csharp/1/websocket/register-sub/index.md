@@ -11,7 +11,13 @@ Attaches a notifications listener to an existing subscription.
 ## Signature
 
 ```csharp
-public override void registerSub(string arg0, string arg1, string arg2, bool arg3, SWIGTYPE_p_NotificationListener arg4);
+public override void registerSub(
+    string arg0, 
+    string arg1, 
+    string arg2, 
+    bool arg3, 
+    SWIGTYPE_p_NotificationListener arg4);
+
 ```
 
 ## Arguments

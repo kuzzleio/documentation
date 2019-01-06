@@ -14,9 +14,24 @@ Throws a partial error (error code 206) if one or more documents creations fail.
 ## Signature
 
 ```csharp
-public string mCreate(string index, string collection, string body);
-public string mCreate(string index, string collection, string body, QueryOptions options);
+public string mCreate(string index, string collection, string documents);
+
+public string mCreate(
+    string index, 
+    string collection, 
+    string documents, 
+    query_options options);
+
 ```
+
+## Arguments
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `documents` | <pre>string</pre> | JSON string representing the documents to create |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
 ### options
 
@@ -29,11 +44,11 @@ Additional query options
 
 ## Return
 
-Returns an JSON string containing the created documents.
+A JSON string containing an array representing the created documents.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

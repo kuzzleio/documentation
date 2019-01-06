@@ -11,7 +11,8 @@ Emits an event.
 ## Signature
 
 ```csharp
-public override void emitEvent(Event arg0);
+public override void emitEvent(SWIGTYPE_p_Event arg0);
+
 ```
 
 ## Arguments

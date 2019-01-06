@@ -17,6 +17,5 @@ hooks:
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
 expected: Found 5 documents matching license:valid
-
 sdk: csharp
 version: 1

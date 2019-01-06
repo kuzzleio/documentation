@@ -12,7 +12,9 @@ Check that the current user has credentials for the specified strategy.
 
 ```csharp
 public bool credentialsExist(string strategy);
-public bool credentialsExist(string strategy, QueryOptions options);
+
+public bool credentialsExist(string strategy, query_options options);
+
 ```
 
 ## Arguments

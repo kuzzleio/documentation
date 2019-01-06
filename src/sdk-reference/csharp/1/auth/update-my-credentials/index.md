@@ -12,7 +12,12 @@ Update the current user's credentials for the specified strategy. The credential
 
 ```csharp
 public string updateMyCredentials(string strategy, string credentials);
-public string updateMyCredentials(string strategy, string credentials, QueryOptions options);
+
+public string updateMyCredentials(
+    string strategy, 
+    string credentials, 
+    query_options options);
+
 ```
 
 ## Arguments

@@ -12,7 +12,9 @@ Returns the current user's credential information for the specified strategy. Th
 
 ```csharp
 public string getMyCredentials(string strategy);
-public string getMyCredentials(string strategy, QueryOptions options);
+
+public string getMyCredentials(string strategy, query_options options);
+
 ```
 
 ## Arguments

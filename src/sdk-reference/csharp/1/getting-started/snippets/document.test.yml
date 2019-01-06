@@ -1,0 +1,13 @@
+name: getting-started#createdocument
+description: Create a document
+hooks:
+  before: curl -X POST kuzzle:7512/nyc-open-data/_create ; curl -X PUT kuzzle:7512/nyc-open-data/yellow-taxi/; curl -X DELETE kuzzle:7512/nyc-open-data/yellow-taxi/some-id
+  after: curl -X DELETE kuzzle:7512/nyc-open-data/yellow-taxi/some-id
+template: standalone
+expected:
+- Connected!
+- ^Document created successfuly: .*$
+
+sdk: csharp
+version: 1
+

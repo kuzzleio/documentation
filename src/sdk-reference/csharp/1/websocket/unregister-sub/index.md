@@ -12,6 +12,7 @@ Removes a subscription's notifications listener.
 
 ```csharp
 public override void unregisterSub(string arg0);
+
 ```
 
 ## Arguments

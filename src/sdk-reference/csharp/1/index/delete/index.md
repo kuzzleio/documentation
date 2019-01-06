@@ -11,8 +11,6 @@ Deletes an entire data index from Kuzzle.
 ## Signature
 
 ```csharp
-public void delete(string index);
-public void delete(string index, QueryOptions options);
 ```
 
 ## Arguments

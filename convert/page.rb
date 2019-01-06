@@ -40,9 +40,12 @@ class Page
       @root,
       sdk,
       version,
-      controller,
-      action
+      @controller,
+      @action
     ].join('/')
+
+    # Avoid cpp/1/index.md
+    return if @controller == 'index.md'
 
     section_mutator = "SectionMutator::#{sdk.camelcase}".constantize.new
 
@@ -50,7 +53,6 @@ class Page
       FileUtils.mkdir_p(dest_path.split('/')[0..-2].join('/'))
       return File.write(dest_path, section_mutator.content_mutator(@content))
     end
-
 
     new_page_content = @sections.map do |section|
       content = section_mutator.mutate(section)

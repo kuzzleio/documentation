@@ -8,7 +8,7 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
-expected: ^Successfully retrieved 5 documents$
-
+expected:
+  - Successfully retrieved 5 documents$
 sdk: csharp
 version: 1

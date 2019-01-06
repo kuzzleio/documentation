@@ -6,7 +6,9 @@ Fetch the current server timestamp, in Epoch-millis format.
 
 ```csharp
 public long now();
-public long now(QueryOptions options);
+
+public long now(query_options options);
+
 ```
 
 ## Arguments

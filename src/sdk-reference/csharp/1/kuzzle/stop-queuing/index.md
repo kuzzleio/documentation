@@ -13,6 +13,7 @@ Works only in `offline` state, and if the `autoQueue` option is set to false.
 
 ```csharp
 public Kuzzle stopQueuing();
+
 ```
 
 ## Return

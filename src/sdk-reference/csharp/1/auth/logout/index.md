@@ -12,6 +12,7 @@ Revokes the user's token & unsubscribe them from registered rooms.
 
 ```csharp
 public void logout();
+
 ```
 
 ## Usage

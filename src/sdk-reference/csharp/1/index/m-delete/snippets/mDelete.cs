@@ -8,5 +8,5 @@ try {
 
   Console.WriteLine("Successfully deleted " + deleted.Count + " indexes");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.what());
+  Console.Error.WriteLine(e.Message());
 }

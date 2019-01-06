@@ -12,7 +12,12 @@ Validate the current user's credentials for the specified strategy. The `result`
 
 ```csharp
 public bool validateMyCredentials(string strategy, string credentials);
-public bool validateMyCredentials(string strategy, string credentials, QueryOptions options);
+
+public bool validateMyCredentials(
+    string strategy, 
+    string credentials, 
+    query_options options);
+
 ```
 
 ## Arguments

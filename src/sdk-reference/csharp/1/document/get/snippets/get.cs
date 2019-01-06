@@ -1,7 +1,12 @@
 try {
-  kuzzle.document.create("nyc-open-data", "yellow-taxi", "some-id", "{\"capacity\": 4}");
+  kuzzle.document.create(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id",
+    @"{""capacity"": 4}");
 
-  string response = kuzzle.document.get("nyc-open-data", "yellow-taxi", "some-id");
+  string response =
+    kuzzle.document.get("nyc-open-data", "yellow-taxi", "some-id");
   /*
   {
     "_index":"nyc-open-data",
@@ -19,19 +24,11 @@ try {
           "active":true,
           "deletedAt":null
         }
-    },
-    "_meta":{
-        "author":"-1",
-        "createdAt":1538402859880,
-        "updatedAt":null,
-        "updater":null,
-        "active":true,
-        "deletedAt":null
     }
   }
   */
 
   Console.WriteLine("Success");
-} catch  {
-  Console.Error.WriteLine("");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.Message());
 }

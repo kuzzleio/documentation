@@ -14,9 +14,16 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 ## Signature
 
 ```csharp
-public string delete(string index, string collection, string id);
-public string delete(string index, string collection, string id, QueryOptions options);
 ```
+
+## Arguments
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `id` | <pre>string</pre> | Document ID |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
 ### Options
 
@@ -29,11 +36,11 @@ Additional query options
 
 ## Return
 
-Returns the id of the deleted document.
+The ID of the deleted document.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

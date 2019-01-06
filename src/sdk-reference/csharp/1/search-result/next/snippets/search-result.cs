@@ -31,5 +31,5 @@ try {
 
   Console.WriteLine("Successfully retrieved " + second_page.fetched + " documents");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.what());
+  Console.Error.WriteLine(e.Message());
 }

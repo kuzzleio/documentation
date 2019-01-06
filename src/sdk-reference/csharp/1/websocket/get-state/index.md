@@ -12,6 +12,7 @@ Gets the current connection state.
 
 ```csharp
 public override int getState();
+
 ```
 
 ## Return

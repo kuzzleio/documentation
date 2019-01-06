@@ -16,10 +16,27 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 
 ```csharp
 public int count(string index, string collection);
-public int count(string index, string collection, QueryOptions options);
-public int count(string index, string collection, string body);
-public int count(string index, string collection, string body, QueryOptions options);
+
+public int count(string index, string collection, query_options options);
+
+public int count(string index, string collection, string query);
+
+public int count(
+    string index, 
+    string collection, 
+    string query, 
+    query_options options);
+
 ```
+
+## Arguments
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `query` | <pre>string</pre> | JSON string representing the query to match |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
 ### options
 
@@ -35,7 +52,7 @@ Returns the number of matched documents.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

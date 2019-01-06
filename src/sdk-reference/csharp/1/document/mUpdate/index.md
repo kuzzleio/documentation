@@ -18,9 +18,24 @@ You can set the `retryOnConflict` optional argument (with a retry count), to tel
 ## Signature
 
 ```csharp
-public string mUpdate(string index, string collection, string body);
-public string mUpdate(string index, string collection, string body, QueryOptions options);
+public string mUpdate(string index, string collection, string documents);
+
+public string mUpdate(
+    string index, 
+    string collection, 
+    string documents, 
+    query_options options);
+
 ```
+
+## Arguments
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `documents` | <pre>string</pre> | JSON string representing the documents to update |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
 ### options
 
@@ -34,11 +49,16 @@ Additional query options
 
 ## Return
 
-Returns a JSON string containing the updated documents.
+A JSON string representing an object containing the following properties:
+
+| Property   | Type    | Description  |
+|--------------|---------|-------------|
+| `hits` | <pre>object[]</pre> | Array of updated documents |
+| `total` | <pre>number</pre> | Total documents updated |
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

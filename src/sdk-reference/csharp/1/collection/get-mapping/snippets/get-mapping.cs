@@ -4,5 +4,5 @@ try {
   Console.WriteLine(mapping);
   // {"properties":{"license":{"type":"keyword"},"driver":{"properties":{"name":{"type":"keyword"},"curriculum":{"type":"text"}}}}}
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.getMessage());
+  Console.Error.WriteLine(e.Message());
 }

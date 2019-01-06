@@ -11,8 +11,10 @@ Returns the number of other connections sharing the same subscription.
 ## Signature
 
 ```csharp
-public int count(string roomId);
-public int count(string roomId, QueryOptions options);
+public int count(string room_id);
+
+public int count(string room_id, query_options options);
+
 ```
 
 ## Arguments

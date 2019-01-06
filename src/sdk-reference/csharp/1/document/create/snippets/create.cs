@@ -6,7 +6,7 @@ try {
     "some-id",
     @"{""lastName"": ""Eggins""}");
 
-  Console.WriteLine("Document " + response + "Created");
+  Console.WriteLine(response);
   /*
   {
     "_index": "nyc-open-data",
@@ -30,19 +30,11 @@ try {
         "active": true,
         "deletedAt": null
       }
-    },
-    "_meta": {
-      "author": "-1",
-      "createdAt": 1537445737667,
-      "updatedAt": null,
-      "updater": null,
-      "active": true,
-      "deletedAt": null
     }
   }
   */
 
-  Console.WriteLine("Success");
-} catch  {
-  Console.Error.WriteLine("");
+  Console.WriteLine("Document successfully created");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.Message());
 }

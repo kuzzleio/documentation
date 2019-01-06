@@ -13,9 +13,30 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 ## Signature
 
 ```csharp
-public string createOrReplace(string index, string collection, string id, string body);
-public string createOrReplace(string index, string collection, string id, string body, QueryOptions options);
+public string createOrReplace(
+    string index, 
+    string collection, 
+    string id, 
+    string document);
+
+public string createOrReplace(
+    string index, 
+    string collection, 
+    string id, 
+    string document, 
+    query_options options);
+
 ```
+
+## Arguments
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `id` | <pre>string</pre> | Document ID |
+| `document` | <pre>string</pre> | JSON string representing the body of the document |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
 ### options
 
@@ -28,18 +49,18 @@ Additional query options
 
 ## Return
 
-Returns a JSON string containing the document creation result.
+A JSON string representing an object containing the document creation result.
 
-| Name | Type | Description
+| Property | Type | Description
 | --- | --- | ---
-| _id | <pre>string</pre> | The id of the newly created document
-| _version | <pre>int</pre> | The version of the document in the persistent data storage
-| _source | <pre>string</pre> | The created document
-| result | <pre>string</pre> | set to `created` in case of success and `updated` if the document already exists
+| _id | <pre>string</pre> | ID of the newly created document
+| _version | <pre>number</pre> | Version of the document in the persistent data storage
+| _source | <pre>object</pre> | JSON string representing the created document
+| result | <pre>string</pre> | Set to `created` in case of success
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

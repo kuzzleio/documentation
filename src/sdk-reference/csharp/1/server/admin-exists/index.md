@@ -12,7 +12,9 @@ Checks that an administrator account exists.
 
 ```csharp
 public bool adminExists();
-public bool adminExists(QueryOptions options);
+
+public bool adminExists(query_options options);
+
 ```
 
 ## Arguments

@@ -11,7 +11,8 @@ Returns the number of listeners attached on an event.
 ## Signature
 
 ```csharp
-public override int listenerCount(Event arg0);
+public override int listenerCount(SWIGTYPE_p_Event arg0);
+
 ```
 
 ## Arguments

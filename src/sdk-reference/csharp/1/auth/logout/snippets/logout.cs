@@ -4,5 +4,5 @@ try {
 
   Console.WriteLine("Success");
 } catch (KuzzleException e) {
-  Console.Error.WriteLine(e.what());
+  Console.Error.WriteLine(e.Message());
 }

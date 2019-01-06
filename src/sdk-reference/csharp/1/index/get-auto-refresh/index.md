@@ -22,7 +22,9 @@ Without a refresh after a write request, the documents may not be immediately vi
 
 ```csharp
 public bool getAutoRefresh(string index);
-public bool getAutoRefresh(string index, QueryOptions options);
+
+public bool getAutoRefresh(string index, query_options options);
+
 ```
 
 ## Arguments

@@ -12,6 +12,7 @@ Checks a JWT Token's validity.
 
 ```csharp
 public TokenValidity checkToken(string token);
+
 ```
 
 ## Arguments

@@ -12,6 +12,7 @@ Returns a pointer to a new `SearchResult` object which contain the subsequent re
 
 ```csharp
 public SearchResult next();
+
 ```
 
 ## Return

@@ -13,7 +13,7 @@ Returns the mapping for the given collection.
 ```csharp
 public string getMapping(string index, string collection);
 
-public string getMapping(string index, string collection, QueryOptions options);
+public string getMapping(string index, string collection, query_options options);
 
 ```
 

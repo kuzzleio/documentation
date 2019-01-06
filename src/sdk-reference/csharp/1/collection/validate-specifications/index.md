@@ -22,7 +22,7 @@ public validation_response validateSpecifications(
     string index, 
     string collection, 
     string specifications, 
-    QueryOptions options);
+    query_options options);
 
 ```
 
@@ -69,8 +69,8 @@ A `kuzzleio::validation_response` object which contain information about the spe
 | Property   | Type    | Description        |
 | ---------- | ------- | --------------------- |
 | `valid` | <pre>bool</pre> | Specification validity |
-| `details` | <pre>const char \* const \*</pre> | Array of string with details about each specification errors |
-| `description` | <pre>const char \*</pre> | General error message |
+| `details` | <pre>char \* \*</pre> | Array of string with details about each specification errors |
+| `description` | <pre>char \*</pre> | General error message |
 
 ## Usage
 

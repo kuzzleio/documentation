@@ -11,8 +11,10 @@ Updates the current user object in Kuzzle.
 ## Signature
 
 ```csharp
-public SWIGTYPE_p_User updateSelf(string content);
-public SWIGTYPE_p_User updateSelf(string content, QueryOptions options);
+public User updateSelf(string content);
+
+public User updateSelf(string content, query_options options);
+
 ```
 
 ## Arguments

@@ -11,8 +11,10 @@ Removes a subscription.
 ## Signature
 
 ```csharp
-public void unsubscribe(string roomId);
-public void unsubscribe(string roomId, QueryOptions options);
+public void unsubscribe(string room_id);
+
+public void unsubscribe(string room_id, query_options options);
+
 ```
 
 ## Arguments

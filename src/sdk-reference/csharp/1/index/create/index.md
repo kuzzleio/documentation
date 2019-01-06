@@ -12,7 +12,9 @@ Create a new index in Kuzzle.
 
 ```csharp
 public void create(string index);
-public void create(string index, QueryOptions options);
+
+public void create(string index, query_options options);
+
 ```
 
 ## Arguments

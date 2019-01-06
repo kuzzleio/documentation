@@ -1,6 +1,11 @@
 try {
   kuzzle.document.create("nyc-open-data", "yellow-taxi", "some-id", @"{""capacity"": 4}");
-  string response = kuzzle.document.update("nyc-open-data", "yellow-taxi", "some-id", @"{""category"": ""suv""}");
+
+  string response = kuzzle.document.update(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id",
+    @"{""category"": ""suv""}");
 
   Console.WriteLine(response);
   /*
@@ -17,6 +22,7 @@ try {
     }
   }
   */
-} catch  {
-  Console.Error.WriteLine("");
+  Console.WriteLine("Document successfully updated");
+} catch (KuzzleException e) {
+  Console.Error.WriteLine(e.Message());
 }

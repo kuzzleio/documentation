@@ -1,0 +1,11 @@
+name: collection#getMapping
+description: Return collection mapping
+hooks:
+  before: |
+    curl -X POST kuzzle:7512/nyc-open-data/_create
+    curl -X PUT kuzzle:7512/nyc-open-data/yellow-taxi/ -H "Content-Type:application/json" --data '{"properties":{"license":{"type":"keyword"},"driver":{"properties":{"name":{"type":"keyword"},"curriculum":{"type":"text"}}}}}'
+  after:
+template: default
+expected: "\"curriculum\":{\"type\":\"text\"}"
+sdk: csharp
+version: 1

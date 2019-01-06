@@ -13,7 +13,9 @@ Authenticates a user.z
 
 ```csharp
 public string login(string strategy, string credentials);
+
 public string login(string strategy, string credentials, int expiresIn);
+
 ```
 
 ## Arguments

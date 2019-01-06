@@ -12,6 +12,7 @@ Empties the offline request queue without playing it.
 
 ```csharp
 public Kuzzle flushQueue();
+
 ```
 
 ## Return

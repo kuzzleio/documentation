@@ -17,9 +17,24 @@ This request does not store the document.
 ## Signature
 
 ```csharp
-public bool validate(string index, string collection, string body);
-public bool validate(string index, string collection, string body, QueryOptions options);
+public bool validate(string index, string collection, string document);
+
+public bool validate(
+    string index, 
+    string collection, 
+    string document, 
+    query_options options);
+
 ```
+
+## Arguments
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
+| `document` | <pre>string</pre> | JSON string representing the document |
+| `options` | <pre>Kuzzleio::QueryOptions\*</pre> | Query options |
 
 ### options
 
@@ -31,11 +46,11 @@ Additional query options
 
 ## Return
 
-Returns a `bool` value set to true if the document is valid and false otherwise.
+A bool set to true if the document is valid and false otherwise.
 
 ## Exceptions
 
-Throws a `KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/essentials/error-handling).
+Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
 
 ## Usage
 

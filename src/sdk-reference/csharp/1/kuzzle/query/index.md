@@ -15,8 +15,10 @@ This is a low-level method, exposed to allow advanced SDK users to bypass high-l
 ## Signature
 
 ```csharp
-public KuzzleResponse query(KuzzleRequest query);
-public KuzzleResponse query(KuzzleRequest query, QueryOptions options);
+public KuzzleResponse query(KuzzleRequest request);
+
+public KuzzleResponse query(KuzzleRequest request, query_options options);
+
 ```
 
 ## Arguments

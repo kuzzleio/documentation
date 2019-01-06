@@ -11,8 +11,13 @@ Deletes multiple indexes at once.
 ## Signature
 
 ```csharp
-public SWIGTYPE_p_std__vectorT_std__string_t mDelete(SWIGTYPE_p_std__vectorT_std__string_t indexes);
-public SWIGTYPE_p_std__vectorT_std__string_t mDelete(SWIGTYPE_p_std__vectorT_std__string_t indexes, QueryOptions options);
+public SWIGTYPE_p_std__vectorT_std__string_t mDelete(
+    SWIGTYPE_p_std__vectorT_std__string_t indexes);
+
+public SWIGTYPE_p_std__vectorT_std__string_t mDelete(
+    SWIGTYPE_p_std__vectorT_std__string_t indexes, 
+    query_options options);
+
 ```
 
 ## Arguments
