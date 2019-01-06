@@ -21,7 +21,8 @@ It gives access to the different functionalities of the SDKs:
 Each instance of the class communicates with the Kuzzle server through a class representing a network protocol implementation.  
 Theses protocol classes must implement the [Protocol]({{ site_base_path }}sdk-reference/cpp/1/protocol) class.
 
-For the moment, only the [WebSocket]({{ site_base_path }}sdk-reference/cpp/1/websocket) protocol is available. 
+The following protocols are available in the SDK CPP 1:
+  - [WebSocket]({{ site_base_path }}sdk-reference/cpp/1/websocket)
 
 ## Volatile data
 

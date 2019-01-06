@@ -2,13 +2,13 @@
 layout: sdk.html.hbs
 title: Constructor
 description: Creates a new Kuzzle object connected to the backend
-order: 0
+order: 50
 ---
 
 # Constructor
 
-This is the main entry point to communicate with Kuzzle.
-Each instance represent a connection to Kuzzle with specific options.
+Use this constructor to create a new instance of the SDK.  
+Each instance represent a different connection to a Kuzzle server with specific options.
 
 ## Signature
 
@@ -21,7 +21,7 @@ Kuzzle(protocol, [options]);
 | Argument   | Type               | Description                           |
 | ---------- | ------------------ | ------------------------------------- |
 | `protocol` | <pre>Protocol</pre> | Protocol used by the SDK instance |
-| `options`  | <pre>object</pre> | Kuzzle connection configuration       |
+| `options`  | <pre>object</pre> | Kuzzle object configuration       |
 
 ### protocol
 

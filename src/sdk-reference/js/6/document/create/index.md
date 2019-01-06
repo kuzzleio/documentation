@@ -15,7 +15,13 @@ The optional parameter `refresh` can be used with the value `wait_for` in order 
 ## Arguments
 
 ```javascript
-create (index, collection, document, [id], [options])
+create (
+  index: string, 
+  collection: string, 
+  document: object, 
+  id?: string, 
+  options?: object
+) => SearchResult
 ```
 
 | Argument | Type | Description |
