@@ -1,18 +1,21 @@
 const suv = { category: 'suv' };
-const limousine = { category: 'limousine' };
 
 try {
   const requests = [];
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     requests.push(kuzzle.document.create('nyc-open-data', 'yellow-taxi', suv));
   }
-  for (let i = 0; i < 10; i++) {
-    requests.push(kuzzle.document.create('nyc-open-data', 'yellow-taxi', limousine));
-  }
+
   await Promise.all(requests);
 
+  // Waits documents to be indexed
   await kuzzle.index.refresh('nyc-open-data');
+
+  const searchOptions = {
+    from: 1,
+    size: 5
+  };
 
   const results = await kuzzle.document.search(
     'nyc-open-data',
@@ -23,10 +26,14 @@ try {
           category: 'suv'
         }
       }
-    }
+    },
+    searchOptions
   );
 
-  console.log(results);
+  const nextResults = await results.next();
+
+  console.log(`Successfully retrieved ${nextResults.fetched} documents`);
+  console.log(nextResults);
   /*
     {
       "aggregations": undefined,
@@ -51,11 +58,12 @@ try {
         ...
       ]
     },
-    "total": 5,
-    "fetched": 5,
-    "scroll_id": undefined
+    "total": 10,
+    "fetched": 10,
+    "scroll_id": undefined,
+    "from": 1,
+    "size": 5
   */
-  console.log(`Successfully retrieved ${results.total} documents`);
 } catch (error) {
   console.error(error.message);
 }
