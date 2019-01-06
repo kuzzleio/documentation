@@ -19,8 +19,8 @@ module SnippetMutator
       /SearchResult\*/                                   => 'SearchResult',
       /validation_response \*validation_response/        => 'validation_response validation_response',
       /delete_\(/                                        => 'delete(',
-      /token_validity*/                                  => 'TokenValidity',
-      /e.what\(\)/                                       => 'e.Message()'
+      /token_validity\*/                                  => 'TokenValidity',
+      /e.what\(\)/                                       => 'e.getMessage()'
     }
     STDOUT_FIND = /std::cout.*std::endl;/
     STDERR_FIND = /std::cerr.*std::endl;/
@@ -29,6 +29,9 @@ module SnippetMutator
     VECTOR_INIT_REPLACE = /(std::vector<(.*)>\W+(\w+);)/
     VECTOR_ASSIGN_REPLACE = /(std::vector<(.*)>\W+(\w+))\s+=/
     UNIQUE_PTR_REPLACE = /(std::unique_ptr<([\w:]+)>)/
+    SHARED_PTR_REPLACE = /(std::shared_ptr<([\w:]+)>)/
+    FOR_LOOP_FIND = /for \(.*/
+    FOR_LOOP_REPLACE = /for \(auto ([\w]+) : ([\w]+)\) {/
 
     def mutate(content)
       common_replace(content)
@@ -37,6 +40,9 @@ module SnippetMutator
       multiline_string_replace(content)
       vector_replace(content)
       unique_ptr_replace(content)
+      shared_ptr_replace(content)
+      for_loop_replace(content)
+
       content
     end
 
@@ -102,6 +108,26 @@ module SnippetMutator
         content.gsub!(line, var_type)
       end
     end
+
+    def shared_ptr_replace(content)
+      shared_ptr_lines = content.scan(SHARED_PTR_REPLACE)
+
+      shared_ptr_lines.each do |(line, var_type)|
+        content.gsub!(line, var_type)
+      end
+    end
+
+    def for_loop_replace(content)
+      for_loop_lines = content.scan(FOR_LOOP_FIND)
+
+      for_loop_lines.each do |line|
+        match = line.scan(FOR_LOOP_REPLACE)&.first
+        byebug if match.nil?
+
+        content.gsub!(line, "foreach (var #{match[0]} in #{match[1]}) {")
+      end
+    end
+
 
   end
 end

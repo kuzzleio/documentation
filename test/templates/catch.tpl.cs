@@ -13,6 +13,10 @@ public class Example {
       Console.Error.WriteLine(e.getMessage());
     }
 
-    [snippet-code]
+    try {
+      [snippet-code]
+    } catch (BadRequestException e) {
+      Console.WriteLine("Success");
+    }
   }
 }
