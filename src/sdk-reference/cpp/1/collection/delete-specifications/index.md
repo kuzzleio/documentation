@@ -11,7 +11,14 @@ Delete the validation specifications associated with the collection.
 ## Signature
 
 ```cpp
-void deleteSpecifications(const std::string& index, const std::string& collection, kuzzleio::query_options *options=nullptr)
+void deleteSpecifications(
+    const std::string& index, 
+    const std::string& collection);
+
+void deleteSpecifications(
+    const std::string& index, 
+    const std::string& collection, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

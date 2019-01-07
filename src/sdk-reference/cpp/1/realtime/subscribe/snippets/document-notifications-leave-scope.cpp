@@ -14,7 +14,7 @@ try {
     "yellow-taxi",
     filters,
     &listener,
-    &options);
+    options);
 
   // Creates a document who is in the scope
   kuzzle->document->create(

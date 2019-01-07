@@ -7,7 +7,7 @@ order: 0
 
 # WebSocket
 
-The Websocket protocol can be used by an instance of the SDK to communicate with your Kuzzle server.  
+The WebSocket protocol can be used by an instance of the SDK to communicate with your Kuzzle server.  
 This protocol allows you to use all the features of Kuzzle, including [real-time notifications]({{ site_base_path }}sdk-reference/cpp/1/realtime-notifications).
 
 ## Public class definition
@@ -16,15 +16,16 @@ This protocol allows you to use all the features of Kuzzle, including [real-time
 namespace kuzzleio {
   class WebSocket : public Protocol {
     public:
-      WebSocket(const std::string&, options* query_options=nullptr);
+      WebSocket(const std::string& host);
+      WebSocket(const std::string& host, const options& query_options);
 
-      NotificationListener* getNotificationListener(const std::string&) noexcept;
-      std::list<EventListener*> getListeners(int) noexcept;
-      std::list<EventListener*> getOnceListeners(int) noexcept;
+      std::list<EventListener*> getListeners(int);
+      std::list<EventListener*> getOnceListeners(int);
+      NotificationListener* getNotificationListener(const std::string&);
 
       // Protocol implementation
-      virtual int listenerCount(Event);
       virtual int getState();
+      virtual int listenerCount(Event);
       virtual void addListener(Event, EventListener*);
       virtual void removeListener(Event, EventListener*);
       virtual void removeAllListeners(Event);

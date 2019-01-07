@@ -13,7 +13,9 @@ Theses listener will receive a `const std::string` as argument. This string is a
 ## Signature
 
 ```cpp
-kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::Event event, kuzzleio::EventListener* listener)
+virtual kuzzleio::Kuzzlekuzzleio::EventEmitter* addListener(
+    kuzzleio::Event event, 
+    kuzzleio::EventListener* listener);
 ```
 
 ## Arguments
@@ -28,17 +30,17 @@ kuzzleio::KuzzleEventEmitter* addListener(kuzzleio::Event event, kuzzleio::Event
 One of the following event:
 
 ```cpp
-KUZZLE_EVENT_CONNECTED,
-KUZZLE_EVENT_DISCARDED,
-KUZZLE_EVENT_DISCONNECTED,
-KUZZLE_EVENT_LOGIN_ATTEMPT,
-KUZZLE_EVENT_NETWORK_ERROR,
-KUZZLE_EVENT_OFFLINE_QUEUE_POP,
-KUZZLE_EVENT_OFFLINE_QUEUE_PUSH,
-KUZZLE_EVENT_QUERY_ERROR,
-KUZZLE_EVENT_RECONNECTED,
-KUZZLE_EVENT_JWT_EXPIRED,
-KUZZLE_EVENT_ERROR
+CONNECTED,
+DISCARDED,
+DISCONNECTED,
+LOGIN_ATTEMPT,
+NETWORK_ERROR,
+OFFLINE_QUEUE_POP,
+OFFLINE_QUEUE_PUSH,
+QUERY_ERROR,
+RECONNECTED,
+JWT_EXPIRED,
+ERROR
 ```
 
 ### listener

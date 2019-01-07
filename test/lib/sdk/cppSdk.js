@@ -8,7 +8,6 @@ const
 class CppSdk {
   constructor(version) {
     this.name = 'cpp';
-    this.ext = 'cpp';
     this.version = version;
     this.versionPath = getVersionPath(this);
     this.sdkCppArchive = 'kuzzlesdk-cpp-experimental-amd64.tar.gz';
