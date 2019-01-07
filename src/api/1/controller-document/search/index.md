@@ -103,7 +103,7 @@ Returns a paginated search result set, with the following properties:
 * `aggregations`: provides aggregation information. Present only if an `aggregations` object has been provided in the search body
 * `hits`: array of found documents. Each document has the following properties:
   * `_id`: document unique identifier
-  * `_score`: relevance score
+  * `_score`: [relevance score](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html)
   * `_source`: new document content
 * `scrollId`: identifier to the next page of result. Present only if the `scroll` argument has been set
 * `total`: total number of found documents. Can be greater than the number of documents in a result page, meaning that other matches than the one retrieved are available

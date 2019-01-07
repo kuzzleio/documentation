@@ -1,3 +1,5 @@
+#include <unistd.h>
+
 #include <iostream>
 
 #include "websocket.hpp"
@@ -55,6 +57,8 @@ int main(int argc, char * argv[]) {
       )";
 
       kuzzle->document->create(K_INDEX_NAME, K_COLLECTION_NAME, "some-id", document);
+      // Wait for notification
+      sleep(2);
     } catch (kuzzleio::KuzzleException &e) {
       std::cerr << e.what() << std::endl;
       kuzzle->disconnect();

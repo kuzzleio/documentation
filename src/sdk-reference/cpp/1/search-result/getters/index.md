@@ -19,12 +19,13 @@ const std::string& aggregations() const;
 
 ## hits
 
-Returns a JSON string representing an array of JSON objects containing the matching documents. Each object has the following properties:
+Returns a JSON string representing an array of JSON objects containing the matching documents.  
+Each object has the following properties:
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
 | _id | <pre>string</pre> | Document ID |
-| _score | <pre>number</pre> | Relevance score |
+| _score | <pre>number</pre> | [Relevance score](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html) |
 | _source | <pre>object</pre> | Document content |
 
 ### Signature

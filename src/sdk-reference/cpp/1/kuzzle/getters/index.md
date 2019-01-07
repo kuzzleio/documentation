@@ -14,7 +14,7 @@ Returns the protocol instance used internally to communicate with the Kuzzle ser
 ### Signature
 
 ```cpp
-Protocol* getProtocol()
+Protocol* getProtocol();
 ```
 
 ## getJwt
@@ -24,7 +24,7 @@ Returns the JWT token currently used to authenticate requests.
 ### Signature
 
 ```cpp
-std::string getJwt()
+std::string getJwt();
 ```
 
 ## getVolatile
@@ -34,7 +34,7 @@ Returns the JSON string representing volatile data sent with each request.
 ### Signature
 
 ```cpp
-std::string getVolatile()
+std::string getVolatile();
 ```
 
 ## getListeners
@@ -44,7 +44,7 @@ Returns a map containing the listeners registered on [SDK event]({{ site_base_pa
 ### Signature
 
 ```cpp
-std::map<int, EventListener*> getListeners()
+std::map<int, EventListener*> getListeners();
 ```
 
 ## Usage

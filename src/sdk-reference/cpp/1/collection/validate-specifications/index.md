@@ -13,7 +13,16 @@ When the validation specification is not formatted correctly, a detailed error m
 ## Signature
 
 ```cpp
-kuzzleio::validation_response* validateSpecifications(const std::string& index, const std::string& collection, const std::string& specifications, query_options *options=nullptr)
+kuzzleio::validation_response* validateSpecifications(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& specifications);
+
+kuzzleio::validation_response* validateSpecifications(
+    const std::string& index, 
+    const std::string& collection, 
+    const std::string& specifications, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

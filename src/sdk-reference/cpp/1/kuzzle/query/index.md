@@ -15,7 +15,11 @@ This is a low-level method, exposed to allow advanced SDK users to bypass high-l
 ## Signature
 
 ```cpp
-kuzzleio::kuzzle_response* query(kuzzleio::kuzzle_request* query, kuzzleio::query_options* options = nullptr)
+kuzzleio::kuzzle_response* query(const kuzzleio::kuzzle_request& request);
+
+kuzzleio::kuzzle_response* query(
+    const kuzzleio::kuzzle_request& request, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments
