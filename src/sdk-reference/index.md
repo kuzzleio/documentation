@@ -19,14 +19,17 @@ but we’re working on extending the support to many more.
     <div class="Languages-item-name">Javascript</div>
   </a>
   <a href="/sdk-reference/go/1" class="Languages-item">
+    <div class="ribbon"><span>BETA</span></div>
     <img src="/assets/images/logos/go.svg" alt="golang logo" class="Languages-item-logo">
     <div class="Languages-item-name">Golang</div>
   </a>
   <a href="/sdk-reference/cpp/1" class="Languages-item">
+    <div class="ribbon"><span>BETA</span></div>
     <img src="/assets/images/logos/cpp.svg" alt="c++ logo" class="Languages-item-logo">
     <div class="Languages-item-name">C++</div>
   </a>
   <a href="/sdk-reference/java/1" class="Languages-item">
+    <div class="ribbon"><span>BETA</span></div>
     <img src="/assets/images/logos/java.svg" alt="java logo" class="Languages-item-logo">
     <div class="Languages-item-name">Java</div>
   </a>

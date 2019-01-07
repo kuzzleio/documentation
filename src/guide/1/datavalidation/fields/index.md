@@ -23,6 +23,7 @@ The property name defines the path of the field in the document. For root fields
 *   `numeric`: value(s) must be a valid number, additional **optional constraints in typeOptions**
 *   `geo_point`: value(s) must be a valid geo-point
 *   `geo_shape`: value(s) must be a valid geo-shape
+*   `boolean`: value(s) must be a valid boolean
 *   `date`: value(s) must be a valid date, additional **optional constraints in typeOptions**
 *   `object`: value(s) must be a valid object, additional **optional constraints in typeOptions**
 

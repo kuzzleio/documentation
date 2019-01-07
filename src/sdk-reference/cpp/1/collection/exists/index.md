@@ -11,7 +11,12 @@ Check if a collection exists in Kuzzle.
 ## Signature
 
 ```cpp
-bool exists(const std::string& index, const std::string& collection, kuzzleio::query_options *options=nullptr)
+bool exists(const std::string& index, const std::string& collection);
+
+bool exists(
+    const std::string& index, 
+    const std::string& collection, 
+    const kuzzleio::query_options& options);
 ```
 
 ## Arguments

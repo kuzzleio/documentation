@@ -9,6 +9,7 @@ module.exports = class JavaTester extends BaseRunner {
     this.runCommand = `java -cp ./${this.sdk.sdkDir}/kuzzlesdk-java-experimental-amd64.jar:./test/bin`;
     this.lintCommand = 'javac';
     this.lintOptions = ['-cp', `${this.sdk.sdkDir}/kuzzlesdk-java-experimental-amd64.jar`];
+    this.ext = 'java';    
   }
 
   async runSnippet(snippet) {

@@ -25,7 +25,7 @@ try {
         }
       }
     })",
-    &options);
+    options);
 
   std::cout << "Successfully retrieved " << response->total << " documents" << std::endl;
 } catch (kuzzleio::KuzzleException& e) {

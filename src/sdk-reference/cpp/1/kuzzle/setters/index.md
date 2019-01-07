@@ -14,7 +14,7 @@ Set the value for the auto-replay flag which allow to play queued request after 
 ### Signature
 
 ```cpp
-Kuzzle* setAutoReplay(bool)
+Kuzzle* setAutoReplay(bool);
 ```
 
 ## setVolatile
@@ -25,7 +25,7 @@ Value must be a JSON string representing a JSON object. (eg: `{"username": "Asch
 ### Signature
 
 ```cpp
-Kuzzle* setVolatile(const std::string&)
+Kuzzle* setVolatile(const std::string&);
 ```
 
 ## Usage
