@@ -6,9 +6,10 @@ description: Create a new collection
 
 # create
 
-Creates a new [collection]({{ site_base_path }}guide/1/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.
-You can also provide an optional data mapping that allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
+Creates a new persistent [collection]({{ site_base_path }}guide/1/essentials/persisted) in Kuzzle via the persistence engine, in the provided `index`.
+
+You can also provide an optional data mapping allowing you to exploit the full capabilities of our
+persistent data storage layer, ElasticSearch: [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
 
 This method will only update the mapping if the collection already exists.
 
@@ -17,15 +18,15 @@ This method will only update the mapping if the collection already exists.
 ```csharp
 public void create(string index, string collection);
 
-public void create(string index, string collection, QueryOptions options);
+public void create(string index, string collection, query_options options);
 
-public void create(string index, string collection, string body);
+public void create(string index, string collection, string mapping);
 
 public void create(
     string index, 
     string collection, 
-    string body, 
-    QueryOptions options);
+    string mapping, 
+    query_options options);
 
 ```
 

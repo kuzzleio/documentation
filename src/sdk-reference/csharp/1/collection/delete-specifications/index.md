@@ -16,7 +16,7 @@ public void deleteSpecifications(string index, string collection);
 public void deleteSpecifications(
     string index, 
     string collection, 
-    QueryOptions options);
+    query_options options);
 
 ```
 

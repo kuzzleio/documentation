@@ -13,7 +13,7 @@ Checks if a collection exists in Kuzzle.
 ```csharp
 public bool exists(string index, string collection);
 
-public bool exists(string index, string collection, QueryOptions options);
+public bool exists(string index, string collection, query_options options);
 
 ```
 
@@ -40,3 +40,4 @@ A bool indicating if the collection exists or not.
 ## Exceptions
 
 Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
+

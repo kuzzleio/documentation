@@ -7,19 +7,19 @@ description: Updates the collection mapping
 # updateMapping
 
 Updates the collection mapping.
-Mapping allows you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
+
+Mapping allows you to exploit the full capabilities of our Elasticsearch [mapping capabilities](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
 
 ## Signature
 
 ```csharp
-public void updateMapping(string index, string collection, string body);
+public void updateMapping(string index, string collection, string mapping);
 
 public void updateMapping(
     string index, 
     string collection, 
-    string body, 
-    QueryOptions options);
+    string mapping, 
+    query_options options);
 
 ```
 

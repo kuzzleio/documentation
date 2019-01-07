@@ -22,7 +22,7 @@ public validation_response validateSpecifications(
     string index, 
     string collection, 
     string specifications, 
-    QueryOptions options);
+    query_options options);
 
 ```
 

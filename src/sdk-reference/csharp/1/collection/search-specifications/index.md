@@ -20,9 +20,9 @@ That limit is by default set at 10000, and you can't get over it even with the f
 ## Signature
 
 ```csharp
-public SearchResult searchSpecifications(string body);
+public SearchResult searchSpecifications(string query);
 
-public SearchResult searchSpecifications(string body, QueryOptions options);
+public SearchResult searchSpecifications(string query, query_options options);
 
 ```
 

@@ -22,7 +22,7 @@ public string updateSpecifications(
     string index, 
     string collection, 
     string specifications, 
-    QueryOptions options);
+    query_options options);
 
 ```
 
