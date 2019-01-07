@@ -15,8 +15,8 @@ try {
   std::string aggregations = results->aggregations();
   std::string hits = results->hits();
   std::string scroll_id = results->scroll_id();
-	
-	std::cout << "Snippet success" << std::endl;
+
+  std::cout << "Snippet success" << std::endl;
 } catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }
