@@ -8,8 +8,7 @@ try {
           "category": "suv"
         }
       }
-    })",
-    options);
+    })");
 
   size_t total_documents = results->total();
   size_t fetched_documents = results->fetched();
