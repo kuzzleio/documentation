@@ -10,7 +10,7 @@ order: 0
 The Kuzzle class is the main class of the SDK.  
 Once instantiated, it represents a connection to your Kuzzle server.
 
-It gives access to the different functionalities of the SDKs:
+It gives access to the different features of the SDKs:
  - access to the available controllers
  - [SDK events]({{ site_base_path }}sdk-reference/cpp/1/events) handling
  - activation of resilience to connection loss
