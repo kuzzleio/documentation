@@ -10,7 +10,7 @@ title: validateSpecifications
 You can specify validation specifications in order to enforce your own rules over documents and real-time messages.
 Whenever a document is stored or updated, or a message is published, Kuzzle applies these specifications to check if the new data complies to the defined rules. If not, the document or message will be rejected and the request will return an error message.
 
-The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.
+Checks if a validation specification is well formatted. It does not store nor modify the existing specification.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 

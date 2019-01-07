@@ -180,7 +180,7 @@ The following diagram shows how a client can subscribe to a channel.
 
 ![pubsub_scenario_details1](Asynchronous_Communication_Subscription.png)
 
-* The client application opens a socket (or MQ) connection, sends a subscription request (see the [API Documentation]({{ site_base_path }}api/1/controller-realtime/subscribe)), and then listens for the `<requestId>` event on the socket. The subscription request is a message that contains a filter description that defines which events should trigger a response. For instance, the following filter will trigger a response anytime content is posted to the `users` collection that contains the field `hobby` with value `computer` (see the [Koncorde Reference]({{ site_base_path }}koncorde/1/) for more details):
+* The client application opens a socket (or MQ) connection, sends a subscription request (see the [API Documentation]({{ site_base_path }}api/1/controller-realtime/subscribe)), and then listens for the `<requestId>` event on the socket. The subscription request is a message containings a filter description that defines which events should trigger a response. For instance, the following filter will trigger a response anytime content is posted to the `users` collection containings the field `hobby` with value `computer` (see the [Koncorde Reference]({{ site_base_path }}koncorde/1/) for more details):
 
 ```javascript
 {

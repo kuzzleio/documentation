@@ -121,7 +121,7 @@ We have now programmed the subscription side of the test.
 
 Now let's move on to the publish side of the test. Here we will create a document that represents the user's location, placed inside the circular boundary around Big Ben.
 
-We will program a *publish* method that creates a document that contains three fields: `firstName`, `lastName` and `location`.
+We will program a *publish* method that creates a document containings three fields: `firstName`, `lastName` and `location`.
 
 Let's start by creating the user *Ada Lovelace* located at Big Ben. Create the Document object as follows:
 

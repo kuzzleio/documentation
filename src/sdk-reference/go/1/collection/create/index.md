@@ -31,7 +31,7 @@ Create(index string, collection string, mapping json.RawMessage, options types.Q
 
 An string containing the JSON representation of the collection data mapping.  
 
-The mapping must have a root field `properties` that contain the mapping definition:
+The mapping must have a root field `properties` containing the mapping definition:
 ```json
 {
   "properties": {

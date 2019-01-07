@@ -41,7 +41,7 @@ Your Kuzzle is now running! To test it, you can explore the main HTTP API by cli
 curl "http://localhost:7512/?pretty"
 ```
 
-If everything is working you should see a JSON document that contains a list of API endpoints.
+If everything is working you should see a JSON document containings a list of API endpoints.
 
 <div class="alert alert-success">
 Congratulations! You have completed the Kuzzle installation, it will now accept requests on <code>localhost:7512</code>:
@@ -201,7 +201,7 @@ const Kuzzle = require('kuzzle-sdk')
 // instantiate a Kuzzle client, this will automatically connect to the Kuzzle server
 const kuzzle = new Kuzzle('localhost', {defaultIndex: 'playground'})
 
-// create an object that contains the message we want to store
+// create an object containings the message we want to store
 const message = {message: "Hello, World!"}
 
 // create a document in the 'mycollection' collection

@@ -6,7 +6,7 @@ description: Validate specifications format
 
 # validateSpecifications
 
-The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.
+Checks if a validation specification is well formatted. It does not store nor modify the existing specification.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
@@ -51,7 +51,7 @@ Additional query options
 
 ## Return
 
-A `io.kuzzle.sdk.ValidationResponse` which contain information about the specifications validity.
+A `io.kuzzle.sdk.ValidationResponse` containing information about the specifications validity.
 These properties are accessible with the standard getters.
 
 | Property   | Type    | Description        |

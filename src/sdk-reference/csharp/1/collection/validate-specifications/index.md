@@ -6,7 +6,7 @@ description: Validate specifications format
 
 # validateSpecifications
 
-The validateSpecifications method checks if a validation specification is well formatted. It does not store nor modify the existing specification.
+Checks if a validation specification is well formatted. It does not store nor modify the existing specification.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
@@ -64,7 +64,7 @@ Additional query options
 
 ## Return
 
-A `kuzzleio::validation_response` object which contain information about the specifications validity.
+A `kuzzleio::validation_response` object containing information about the specifications validity.
 
 | Property   | Type    | Description        |
 | ---------- | ------- | --------------------- |

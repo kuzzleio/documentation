@@ -1,13 +1,13 @@
 ---
 layout: sdk.html.hbs
 title: updateMapping
-description: Update the collection mapping
+description: Updates the collection mapping
 ---
 
 # updateMapping
 
-Update the collection mapping.
-Mapping allow you to exploit the full capabilities of our
+Updates the collection mapping.
+Mapping allows you to exploit the full capabilities of our
 persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
 
 ## Signature
@@ -36,7 +36,7 @@ public void updateMapping(
 
 A JSON string representing the collection data mapping.
 
-The mapping must have a root field `properties` that contain the mapping definition:
+The mapping must have a root field `properties` containing the mapping definition:
 ```json
 {
   "properties": {

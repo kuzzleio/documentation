@@ -87,7 +87,7 @@ First let's install the Node.js SDK into our folder:
 npm install kuzzle-sdk
 ```
 
-Then, let's create a `login.js` file that contains the following code:
+Then, let's create a `login.js` file containings the following code:
 
 ```javascript
 const Kuzzle = require('kuzzle-sdk')

@@ -107,7 +107,7 @@ curl -X GET 'http://localhost:7512/?pretty'
 
 ## Defining Profiles
 
-A `profile` definition is a Javascript object that contains an array of policies, each composed of a roleId and an array of restrictions:
+A `profile` definition is a Javascript object containings an array of policies, each composed of a roleId and an array of restrictions:
 
 ```js
 var myProfileDefinition = {

@@ -42,7 +42,7 @@ public void create(
 
 A JSON string representing the collection data mapping.
 
-The mapping must have a root field `properties` that contain the mapping definition:
+The mapping must have a root field `properties` containing the mapping definition:
 ```json
 {
   "properties": {

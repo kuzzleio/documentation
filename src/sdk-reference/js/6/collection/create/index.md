@@ -6,10 +6,10 @@ description: Create a new collection
 
 # create
 
-Creates a new [collection]({{ site_base_path }}guide/1/essentials/persisted) in Kuzzle via the persistence engine, in the provided index.
+Creates a new persistent [collection]({{ site_base_path }}guide/1/essentials/persisted) in Kuzzle via the persistence engine, in the provided index.
 
-You can also provide an optional data mapping that allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
+You can also provide an optional data mapping allowing you to exploit the full capabilities of our
+persistent data storage layer, ElasticSearch: [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
 
 This method will only update the mapping if the collection already exists.
 
@@ -32,7 +32,7 @@ create (index, collection, [mapping], [options])
 
 An object representing the data mapping of the collection.
 
-The mapping must have a root field `properties` that contain the mapping definition:
+The mapping must have a root field `properties` containing the mapping definition:
 ```js
 const mapping = {
   properties: {

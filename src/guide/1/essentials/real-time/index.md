@@ -128,7 +128,7 @@ This subscription is very handy and will notify Tom about the events 1, 2 and 3 
 
 Kuzzle ships with a powerful filtering tool named [Koncorde]({{ site_base_path }}koncorde/1/). It enables you to perform fine-grained selections on the documents you want to subscribe to.
 
-In our case, we want to select all the documents that contain the `URGENT` word in the `label` field. The best pick for this case is the [regexp]({{ site_base_path }}koncorde/1/terms/#regexp-default) filter.
+In our case, we want to select all the documents containing the `URGENT` word in the `label` field. The best pick for this case is the [regexp]({{ site_base_path }}koncorde/1/terms/#regexp-default) filter.
 
 
 ```javascript

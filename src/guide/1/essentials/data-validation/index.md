@@ -18,7 +18,7 @@ For a detailed look at data validation, please refer to our [Data Validation Ref
 
 ## Basic Validation
 
-A validation schema is defined using a [hierarchical]({{ site_base_path }}guide/1/datavalidation) structure that contains a set of rules within an index, collection, and document field.
+A validation schema is defined using a [hierarchical]({{ site_base_path }}guide/1/datavalidation) structure containings a set of rules within an index, collection, and document field.
 
 For example, below is a validation schema for the `onlineshop` index  and `products` collection that defines the validation pattern for field `price` and field `productDescription`:
 

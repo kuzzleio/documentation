@@ -6,7 +6,7 @@ description: Delete validation specifications for a collection
 
 # deleteSpecifications
 
-Delete the validation specifications associated with the collection.  
+Deletes the validation specifications associated with the collection.  
 
 ## Signature
 

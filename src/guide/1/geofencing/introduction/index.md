@@ -28,8 +28,8 @@ Now that we have our Kuzzle configured, we can start programming our App. Here i
 
 Before we get started on the App, there are a few basics you need to know:
 
-* Firstly, Kuzzle subscription mechanism works by monitoring changes in documents sent through the API. A subscriber will tell Kuzzle what changes to look out for and will receive a message whenever Kuzzle detects such a change in a request. So an App that wants to receive a message from Kuzzle whenever *a user leaves a geographical boundary* will receive that message as a result of Kuzzle detecting a change in a document that represents the user's location. We can do this by sending a document to Kuzzle which contains a location field. 
+* Firstly, Kuzzle subscription mechanism works by monitoring changes in documents sent through the API. A subscriber will tell Kuzzle what changes to look out for and will receive a message whenever Kuzzle detects such a change in a request. So an App that wants to receive a message from Kuzzle whenever *a user leaves a geographical boundary* will receive that message as a result of Kuzzle detecting a change in a document that represents the user's location. We can do this by sending a document to Kuzzle containings a location field. 
 
-* Secondly, in order for Kuzzle to detect that a user leaves a geographical boundary, it must first detect that the user has entered the geographical boundary. This means that we need to create a document that contains a location field where the geopoint is inside the boundary prior to updating that document and setting the location field to a geopoint outside the boundary.
+* Secondly, in order for Kuzzle to detect that a user leaves a geographical boundary, it must first detect that the user has entered the geographical boundary. This means that we need to create a document containings a location field where the geopoint is inside the boundary prior to updating that document and setting the location field to a geopoint outside the boundary.
 
 * Thirdly, a subscription is done at the collection level. This means that Kuzzle will only monitor changes to documents in the specified collection.

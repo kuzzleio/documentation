@@ -22,7 +22,7 @@ func (a *Auth) CheckToken(token string) (*TokenValidity, error)
 
 ## Return
 
-A TokenValidity struct which contains:
+A TokenValidity struct containings:
 
 | Name                | Type    | Description                                                                                                      
 | ------------------- | ------- | -----------------------------------

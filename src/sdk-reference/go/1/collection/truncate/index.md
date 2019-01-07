@@ -1,12 +1,12 @@
 ---
 layout: sdk.html.hbs
 title: truncate
-description: Remove all documents from collection
+description: Removes all documents from collection
 ---
 
 # truncate
 
-Remove all documents from a collection while keeping the associated mapping.  
+Removes all documents from a collection while keeping the associated mapping.  
 It is faster than deleting all documents from a collection.
 
 ## Signature

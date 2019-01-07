@@ -43,7 +43,7 @@ in Kuzzle, please refer to [the specific docs in the Essentials section]({{ site
 As mentioned above, Koncorde lets you express "filters" that you can test on
 a set of "documents" (represented as POJOs) to check whether the filter matches
 or not the contents of the document. So, let's try it out by defining a filter
-that matches all the documents that contain a geo-point at less than 500m from
+that matches all the documents containing a geo-point at less than 500m from
 a given center point.
 
 First, you must install Koncorde in your project (the easiest way is to use NPM)

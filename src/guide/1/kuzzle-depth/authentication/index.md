@@ -152,7 +152,7 @@ The authentication flow has two steps: first we request the Authentication Provi
 
 * The user then authenticates with the *OAuth2 Provider* and gives Kuzzle permission to use their third-party credentials.
 
-* The *OAuth2 Provider* sends an HTTP redirect response to the Client Application which contains the OAuth2 Authorization Code:
+* The *OAuth2 Provider* sends an HTTP redirect response to the Client Application containings the OAuth2 Authorization Code:
 
 ```
 HTTP/1.1 302 Found

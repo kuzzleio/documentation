@@ -51,7 +51,7 @@ private void subscribe() throws JSONException {
 }
 ```
 
-We will perform a subscription request that tells Kuzzle that the App wants to be notified anytime a document is created that contains the *message* field. We define this subscription filter in a JSONObject as follows, for more information about filters click [here]({{ site_base_path }}koncorde/1/):
+We will perform a subscription request that tells Kuzzle that the App wants to be notified anytime a document is created containings the *message* field. We define this subscription filter in a JSONObject as follows, for more information about filters click [here]({{ site_base_path }}koncorde/1/):
 
 ```Java
 private void subscribe() throws JSONException {
@@ -88,9 +88,9 @@ We have now programmed the subscription side of the test. Let's move on to the *
 
 ## Publishing a Document
 
-Now let's move on to the publish side of the test. Here we will publish a document that contains the `message` field. When Kuzzle receives this message, it will detect that there is a subscriber listening for such messages and will send it to these subscribers, in this case to our Android App.
+Now let's move on to the publish side of the test. Here we will publish a document containings the `message` field. When Kuzzle receives this message, it will detect that there is a subscriber listening for such messages and will send it to these subscribers, in this case to our Android App.
 
-We will program a *publish* method that creates a document that contains the value `hello world` in the `message` field.
+We will program a *publish* method that creates a document containings the value `hello world` in the `message` field.
 
 ```Java
 private void publish() throws JSONException {

@@ -8,8 +8,7 @@
 </label>
 {{#if (eq this.layout "sdk.html.hbs")}}
   <div class="selector-container mobile-only">
-    <select class="language-selector" style="width:56%"></select>
-    <select class="version-selector" style="width:24%"></select>
+    <Selector :items="{{ sdkVersions }}"/>
   </div>
 {{/if}}
 <div class="md-nav__source mobile-only">

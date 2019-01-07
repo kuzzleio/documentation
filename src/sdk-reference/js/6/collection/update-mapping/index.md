@@ -1,12 +1,14 @@
 ---
 layout: sdk.html.hbs
 title: updateMapping
-description: Update the collection mapping
+description: Updates the collection mapping
 ---
 
 # updateMapping
 
-Updates a data collection mapping.
+Updates the collection mapping.
+
+Mapping allows you to exploit the full capabilities of our Elasticsearch [mapping capabilities](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
 
 ## Arguments
 
@@ -27,7 +29,7 @@ updateMapping (index, collection, mapping, [options])
 
 An object representing the collection data mapping.
 
-This object must have a root field `properties` that contain the mapping definition:
+This object must have a root field `properties` containing the mapping definition:
 ```javascript
 const mapping = {
   properties: {

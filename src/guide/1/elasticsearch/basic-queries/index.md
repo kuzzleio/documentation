@@ -376,7 +376,7 @@ Reply:
 }
 ```
 
-You can see that the second document does not have a title that contains the text "cake" but it is still considered a match.
+You can see that the second document does not have a title containings the text "cake" but it is still considered a match.
 This is because, by default, the `match` query operator applies an `or` operand to the provided search terms.
 In order to return documents matching all tokens, you have to use the `and` operator:
 

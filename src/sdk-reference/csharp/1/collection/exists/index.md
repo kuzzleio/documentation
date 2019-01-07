@@ -6,7 +6,7 @@ description: Check if collection exists
 
 # exists
 
-Check if a collection exists in Kuzzle.
+Checks if a collection exists in Kuzzle.
 
 ## Signature
 
@@ -40,4 +40,3 @@ A bool indicating if the collection exists or not.
 ## Exceptions
 
 Throws a `Kuzzleio::KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/csharp/1/error-handling).
-
