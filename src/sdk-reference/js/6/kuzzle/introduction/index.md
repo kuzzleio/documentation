@@ -14,7 +14,7 @@ It gives access to the different features of the SDKs:
  - access to the available controllers
  - [SDK events]({{ site_base_path }}sdk-reference/cpp/1/events) handling
  - resilience to connection loss
- - offline queue management
+ - network request queue management
 
 ## Network protocol
 
