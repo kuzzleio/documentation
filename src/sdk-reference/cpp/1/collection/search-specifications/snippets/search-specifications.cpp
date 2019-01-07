@@ -11,7 +11,7 @@ try {
     })",
     options);
 
-  std::cout << "Successfully retrieved " << response->fetched << " specifications" << std::endl;
+  std::cout << "Successfully retrieved " << response->fetched() << " specifications" << std::endl;
 } catch (kuzzleio::KuzzleException &e) {
   std::cerr << e.what() << std::endl;
 }
