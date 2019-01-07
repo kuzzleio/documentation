@@ -38,6 +38,13 @@ Kuzzle(kuzzleio::Protocol* protocol, kuzzleio::options *options = nullptr)
 | `reconnection_delay` | <pre>unsigned long</pre><br/>(`10000`) | Number of milliseconds between reconnection attempts |
 | `volatile`           | <pre>std::string</pre><br/>(`"{}"`) | JSON string representing common volatile data, will be sent to all future requests |
 
+**Notes:**
+
+- if `queue_ttl` is set to `0`, requests are kept indefinitely
+- The offline buffer acts like a first-in first-out (FIFO) queue, meaning that if the `queue_max_size` limit is reached, older requests are discarded to make room for new requests
+- if `queue_max_size` is set to `0`, an unlimited number of requests is kept until the buffer is flushed
+- multiple methods allow passing specific `volatile` data. These `volatile` data will be merged with the global Kuzzle `volatile` object when sending the request, with the request specific `volatile` taking priority over the global ones.
+
 ## Return
 
 A `Kuzzle` instance.

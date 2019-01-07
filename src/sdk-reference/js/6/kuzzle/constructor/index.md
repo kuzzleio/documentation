@@ -2,6 +2,7 @@
 layout: sdk.html.hbs
 title: Constructor
 description: Creates a new Kuzzle object connected to the backend
+order: 100
 ---
 
 # Constructor
