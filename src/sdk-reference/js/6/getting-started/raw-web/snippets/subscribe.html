@@ -1,0 +1,23 @@
+<script>
+  var kuzzle = new KuzzleSDK.Kuzzle(
+    new KuzzleSDK.Websocket({ host: "kuzzle" })
+  );
+
+  kuzzle.on('networkError', error => {
+    console.error('Network Error: ', error);
+  });
+  kuzzle.addListener('connected', () => {
+    console.log('Successfully connected to Kuzzle');
+  });
+
+  kuzzle.connect()
+    .then(() => {
+      return kuzzle.document.create('nyc-open-data', 'yellow-taxi', driver);
+    })
+    .then(() => {
+      console.log('New document successfully created!');
+    })
+    .catch(error => {
+      console.error('Ooops! An error occurred: ', error)
+    })
+</script>
