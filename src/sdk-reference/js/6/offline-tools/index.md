@@ -27,7 +27,7 @@ A writable `number` defining the time in milliseconds a queued request is kept i
 
 Starts the requests queuing. Request will be put in the `offlineQueue` instead of being discarded, until `stopQueuing` is called.
 Works only in `offline` state, and if the `autoQueue` option is set to false. Call `playQueue` to send to Kuzzle the
-requests in the queue, once the SDK state passes to `online`. Call `flushQueue` to empty the queue without sendint the requests.
+requests in the queue, once the SDK state passes to `online`. Call `flushQueue` to empty the queue without sending the requests.
 
 ## stopQueuing()
 
