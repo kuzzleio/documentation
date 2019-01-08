@@ -8,13 +8,11 @@ description: Getting started with Kuzzle in the browser
 
 This tutorial explains you how to use **Kuzzle** with the **Javascript SDK** in the **browser**.  
 
-To follow this tutorial, you must have a Kuzzle Server up and running. Follow these instructions if this is not already the case: [Running Kuzzle]({{ site_base_path }}guide/1/getting-started/running-kuzzle).
-
-## Explore the SDK
-
-It's time to get started with the [Kuzzle Javascript SDK]({{ site_base_path }}sdk-reference/js/6). This section explains how to **store** a document and **subscribe** to notifications in Kuzzle using the Javascript SDK.
+To follow this tutorial, you must have a Kuzzle Server up and running (you'll need to know the hostname of the machine running it). If this is not already the case, take a look at [how to Run Kuzzle]({{ site_base_path }}guide/1/getting-started/running-kuzzle).
 
 Before proceeding, please make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
+
+In this tutorial, you'll learn how to **store** a document and **subscribe** to notifications in Kuzzle using the Javascript SDK.
 
 ## Prepare your environment
 
@@ -27,7 +25,7 @@ npm install git://github.com/kuzzleio/sdk-javascript.git#6-beta
 ```
 
 <div class="alert alert-info">
-If you are performing a clean install you might get some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
+If you are performing a clean install you might get some <code>UNMET PEER DEPENDENCY</code> warnings, these are safe to ignore as they refer to optional dependencies.
 </div>
 
 Then, create an `index.html` file with the following structure:
@@ -52,30 +50,27 @@ in the console. Once the connection i established, a success message is displaye
 [snippet=load-sdk]
 
 <div class="alert alert-info">
-Replace 'kuzzle' which is the Kuzzle server hostname with 'localhost' or the hostname where your Kuzzle server is running.
+Replace <code>kuzzle</code> which is the Kuzzle server hostname with <code>localhost</code> or the hostname where your Kuzzle server is running.
 </div>
 
-Now you have to add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' 
+Now you have to add the code that will access Kuzzle to create a new index `nyc-open-data` and a new collection `yellow-taxi` 
 that you will use to store data later on. Make sure the code inside your `body` tag looks like the following:
 
 [snippet=prepare-db]
 
-Now, let's take a look at what your script is doing
+Now, let's take a look at what your script is doing:
 
-[snippet=init]
-
-This code does the following:
 * creates an instance of the SDK,
 * connects it to Kuzzle running on `kuzzle` (change the hostname if needed) using WebSocket,
 * creates the `nyc-open-data` index,
 * creates the `yellow-taxi` collection (within the `nyc-open-data` index),
-* disconnects from Kuzzle after the collection is created or if an error occurs,
+* disconnects from Kuzzle after the collection is created,
 * displays an error whenever something goes wrong.
 
 Run this code by opening the `index.html` file in your favorite browser.
 The console should output the following message:
 
-```
+```plaintext
 Successfully connected to Kuzzle
 nyc-open-data/yellow-taxi ready!
 ```
@@ -86,27 +81,12 @@ Congratulations! You are now ready to say Hello to the World!
 
 <div class="alert alert-info">
 If you reload the page, you should see an error in the console. This is OK, since Kuzzle is just refusing to create
-the `nyc-open-data` index as it already exists.
+the <code>nyc-open-data</code> index as it already exists.
 </div>
 
 ## Create your first "Hello World" document
 
-Create a `create.html` file with the same structure as `index.html`:
-
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Kuzzle SDK Playground</title>
-  <script src="node_modules/kuzzle-sdk/dist/kuzzle.js"></script>
-</head>
-<body></body>
-</html>
-```
-
+Create a `create.html` file with the same structure as `index.html` (see above).
 And, right like before, add some code to the `body` tag:
 
 [snippet=create]
@@ -128,8 +108,7 @@ New document successfully created!
 ```
 
 <div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click <a href="{{ site_base_path }}guide/1/essentials/installing-console">here</a> to see how you can use the
-   <a href="http://console.kuzzle.io" target="_blank"><strong>Kuzzle Admin Console</strong></a> to browse your collection and confirm that your document was saved.
+You have now successfully stored your first document into Kuzzle. Click <a href="{{ site_base_path }}guide/1/essentials/installing-console">here</a> to see how you can use the <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
 </div>
 
 <div class="alert alert-info">
@@ -144,22 +123,19 @@ Let's get started. Create a `subscribe.html` file (same structure as above) with
 
 [snippet=subscribe]
 
-Run the code with Node.js:
+Run this code by opening the `subscribe.html` file in a new tab, leaving the previous one (showing `create.html`) open.
+The console should output the following message:
 
-```bash
-node subscribe.js
+```
+Successfully connected to Kuzzle
+Successfully subscribed to document notifications!
 ```
 
-The `subscribe.js` program is now running endlessly, waiting for notifications about documents matching its filters, specifically documents that have a `license` field equal to `'B'`.
+The code in the `subscribe.html` page is now running endlessly, waiting for notifications about documents matching its filters, specifically documents that have a `license` field equal to `'B'`.
 
-Now in another terminal, launch the `create.js` file from the previous section.
+Now go back to the other tab and reload `create.html`.
 
-```bash
-node create.js
-```
-
-This creates a new document in Kuzzle which, in turn, triggers a [document notification]({{ site_base_path }}api/1/essentials/notifications/#documents-changes-messages-default) sent to the `subscribe.js` program.  
-Check the `subscribe.js` terminal: a new message is printed everytime a document is created using the `create.js` code.
+This creates a new document in Kuzzle which, in turn, triggers a [document notification]({{ site_base_path }}api/1/essentials/notifications/#documents-changes-messages-default) sent to the `subscribe.html` tab. Check the `subscribe.html` tab: a new message is printed everytime a document is created using the `create.html` code.
 
 ```bash
 New driver Sirkis with id AWccRe3-DfukVhSzMdUo has B license.

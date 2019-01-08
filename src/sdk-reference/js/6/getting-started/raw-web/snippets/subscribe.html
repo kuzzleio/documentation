@@ -1,6 +1,6 @@
 <script>
   var kuzzle = new KuzzleSDK.Kuzzle(
-    new KuzzleSDK.Websocket({ host: "kuzzle" })
+    new KuzzleSDK.Websocket({ host: 'kuzzle' })
   );
 
   kuzzle.on('networkError', error => {
@@ -10,12 +10,25 @@
     console.log('Successfully connected to Kuzzle');
   });
 
+  var filter = {
+    equals: { license: 'B' }
+  };
+  
+  var callback = (notification) => {
+    if (notification.type === 'document' && notification.action === 'create') {
+      var driverId = notification.result._id;
+      var driver = notification.result._source;
+
+      console.log('New driver ' + driver.name + ' with id ' + driverId + ' has B license.');
+    }
+  };
+
   kuzzle.connect()
     .then(() => {
-      return kuzzle.document.create('nyc-open-data', 'yellow-taxi', driver);
+      return kuzzle.realtime.subscribe('nyc-open-data', 'yellow-taxi', filter, callback);
     })
     .then(() => {
-      console.log('New document successfully created!');
+      console.log('Successfully subscribed to document notifications!');
     })
     .catch(error => {
       console.error('Ooops! An error occurred: ', error)

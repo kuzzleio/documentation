@@ -30,7 +30,7 @@ module.exports = (opts) => {
       loaders: [
         {
           test: /\.js$/,
-          exclude: [/\/app.js$/, /\/prism.js$/, /node_modules/],
+          exclude: [/app.js$/, /prism.js$/, /node_modules/],
           loader: 'babel-loader',
           query: {
             presets: ['@babel/preset-env']
