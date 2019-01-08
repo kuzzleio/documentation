@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: ^World$
+sdk: js
+version: 6

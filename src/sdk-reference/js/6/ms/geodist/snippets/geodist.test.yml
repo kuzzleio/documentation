@@ -7,3 +7,5 @@ template: default
 expected:
   - 1367.8521
   - 4487.7038
+sdk: js
+version: 6

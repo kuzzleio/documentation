@@ -11,3 +11,5 @@ expected:
   - "\\[ { member: 'foo', score: -29 },"
   - "  { member: 'bar', score: 4 },"
   - "  { member: 'baz', score: 300 } ]"
+sdk: js
+version: 6

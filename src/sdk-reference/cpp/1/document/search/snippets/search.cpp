@@ -15,7 +15,7 @@ try {
   options.from = 0;
   options.size = 2;
 
-  kuzzleio::SearchResult* response = kuzzle->document->search(
+  kuzzleio::SearchResult* results = kuzzle->document->search(
     "nyc-open-data",
     "yellow-taxi",
     R"({
@@ -27,7 +27,7 @@ try {
     })",
     options);
 
-  std::cout << "Successfully retrieved " << response->total << " documents" << std::endl;
+  std::cout << "Successfully retrieved " << results->total() << " documents" << std::endl;
 } catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }
