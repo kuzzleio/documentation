@@ -3,7 +3,6 @@ layout: sdk.html.hbs
 title: Offline Tools
 description: Tools to handle the loss of connection to the Kuzzle server
 order: 400
-separator: essentials
 ---
 
 # Offline tools
@@ -13,7 +12,7 @@ during its lifespan.
 
 ## offlineQueue
 
-A read-only `Object` containing the requests queued while the SDK is in the `offline` state.
+A read-only `Array` containing the requests queued while the SDK is in the `offline` state (it behaves like a FIFO queue).
 
 ## queueMaxSize
 

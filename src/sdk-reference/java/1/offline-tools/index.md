@@ -13,7 +13,7 @@ during its lifespan.
 
 ## offlineQueue
 
-A read-only `QueryObject` containing the requests queued while the SDK is in the `offline` state.
+A read-only list of `QueryObject` containing the requests queued while the SDK is in the `offline` state (it behaves like a FIFO queue).
 
 ## queueMaxSize
 
