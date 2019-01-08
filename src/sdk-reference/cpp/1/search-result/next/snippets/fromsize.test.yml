@@ -1,5 +1,5 @@
-name: essentials#searchResult
-description: How to handle Kuzzle search results
+name: searchresult#fromsize
+description: Next method with from/size
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data
@@ -8,4 +8,6 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
-expected: Successfully retrieved 4 documents
+expected: Successfully retrieved 10 documents
+sdk: cpp
+version: 1

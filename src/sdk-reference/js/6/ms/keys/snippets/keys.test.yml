@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: "\\[ '(Hello|foo)', '(Hello|foo)' ]"
+sdk: js
+version: 6

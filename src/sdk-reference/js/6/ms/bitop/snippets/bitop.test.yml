@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: "`bc`ab"
+sdk: js
+version: 6

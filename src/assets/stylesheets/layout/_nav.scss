@@ -225,7 +225,7 @@
         ~ .md-nav__list {
           background-color: $md-color-white;
           box-shadow: 0 0.1rem 0 $md-color-black--lightest inset;
-
+          z-index: -2;
           // Remove border for first list item
           & > .md-nav__item:first-child {
             border-top: 0;
