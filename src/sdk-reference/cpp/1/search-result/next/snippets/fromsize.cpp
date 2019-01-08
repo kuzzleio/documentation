@@ -28,7 +28,7 @@ try {
   // Retrieve the next 5 documents
   kuzzleio::SearchResult* next_results = results->next();
 
-  std::cout << "Successfully retrieved " << next_results->fetched << " documents" << std::endl;
+  std::cout << "Successfully retrieved " << next_results->fetched() << " documents" << std::endl;
 } catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }
