@@ -19,6 +19,13 @@ namespace kuzzleio {
     class SearchResult {
         public:
             SearchResult* next() const;
+
+            // Getters
+            size_t total() const;
+            size_t fetched() const;
+            const std::string& aggregations() const;
+            const std::string& hits() const;
+            const std::string& scroll_id() const;
     };
 
     class SpecificationSearchResult : public SearchResult {

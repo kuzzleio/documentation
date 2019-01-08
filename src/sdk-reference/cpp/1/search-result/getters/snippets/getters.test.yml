@@ -1,0 +1,9 @@
+name: searchresult#getters
+description: SearchResult class getters
+hooks:
+  before:
+  after:
+template: default
+expected: Snippet success
+sdk: cpp
+version: 1

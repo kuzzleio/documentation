@@ -64,3 +64,7 @@ Returns the identifier to the next page of result.
 ```cpp
 const std::string& scroll_id() const;
 ```
+
+## Usage
+
+[snippet=getters]
