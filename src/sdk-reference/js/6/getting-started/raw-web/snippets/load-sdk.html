@@ -1,6 +1,6 @@
 <script>
   var kuzzle = new KuzzleSDK.Kuzzle(
-    new KuzzleSDK.Websocket({ host: 'kuzzle' })
+    new KuzzleSDK.WebSocket('kuzzle')
   );
 
   kuzzle.on('networkError', error => {

@@ -1,5 +1,5 @@
-name: gettingstarted#tryrawweb
-description: just a try
+name: gettingstarted#browservanillaconnect
+description: Connect to Kuzzle
 hooks:
   before: 
   after:

@@ -160,9 +160,9 @@ Then you can run snippets for any language:
 
 ```bash
 # Execute all snippets under the repertory 'src/sdk-reference/js/6'
-bash run-snippet-tests.sh -n -p src/sdk-reference/js/6
+bash run-snippet-tests.sh -n -s js -v 6 -p src/sdk-reference/js/6
 # Execute all snippets for the controller index in SDK CPP 1
-bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
+bash run-snippet-tests.sh -n -s cpp -v 1 -p src/sdk-reference/cpp/1/index
 ```
 
 If you want to avoid downloading the SDK each time you run a snippet, you can use the following variable:
