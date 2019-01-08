@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: "\\[ 'foo', 'bar', 'baz' ]"
+sdk: js
+version: 6

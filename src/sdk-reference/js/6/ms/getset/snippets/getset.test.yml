@@ -7,3 +7,5 @@ template: default
 expected:
   - ^bar$
   - ^qux$
+sdk: js
+version: 6

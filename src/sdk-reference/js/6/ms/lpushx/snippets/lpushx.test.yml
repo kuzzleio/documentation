@@ -9,3 +9,5 @@ expected:
   - "\\[]"
   - ^2$
   - "\\[ 'foo', 'bar' ]"
+sdk: js
+version: 6

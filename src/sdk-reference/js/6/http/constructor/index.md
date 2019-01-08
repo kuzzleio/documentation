@@ -2,21 +2,12 @@
 layout: sdk.html.hbs
 title: Constructor
 description: Creates a new Http protocol
-order: 0
+order: 50
 ---
 
 # Constructor
 
-The Http protocol can be used by an instance of the SDK to communicate with your Kuzzle server.  
-
-<div class="alert alert-info">
-  <p>
-  This protocol does not allow to use the <a href="{{ site_base_path }}sdk-reference/js/6/realtime-notifications">real-time notifications</a>. 
-  </p>
-  <p>
-  You have to use <a href="{{ site_base_path }}sdk-reference/js/6/websocket">WebSocket</a> or <a href="{{ site_base_path }}sdk-reference/js/6/socketio">SocketIO</a> protocol instead.
-  </p>
-</div>
+Use this constructor to create a new instance of the `Http` protocol with specific options.  
 
 ## Signature
 

@@ -6,3 +6,5 @@ hooks:
 template: default
 expected:
   - "\\[ \\d{10}, \\d+ ]$"
+sdk: js
+version: 6

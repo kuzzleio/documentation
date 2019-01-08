@@ -7,3 +7,5 @@ template: default
 expected:
   - "{ cursor: '0', values: \\[ 'ba[rz]', 'ba[rz]' ] }"
 
+sdk: js
+version: 6

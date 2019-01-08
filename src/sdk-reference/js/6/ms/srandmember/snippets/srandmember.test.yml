@@ -7,3 +7,5 @@ template: default
 expected:
   - "^\\[ '[a-f]' ]"
   - "^\\[ '[a-f]', '[a-f]', '[a-f]' ]"
+sdk: js
+version: 6

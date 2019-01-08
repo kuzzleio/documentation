@@ -7,3 +7,5 @@ template: default
 expected:
   - ^oba$
   - ^bar$
+sdk: js
+version: 6
