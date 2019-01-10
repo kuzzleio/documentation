@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: "{ field1: 'val1', field2: 'val2' }"
+sdk: js
+version: 6

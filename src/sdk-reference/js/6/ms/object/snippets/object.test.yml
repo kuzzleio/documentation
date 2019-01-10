@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: ^hashtable$
+sdk: js
+version: 6

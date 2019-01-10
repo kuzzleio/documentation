@@ -7,3 +7,5 @@ template: default
 expected:
   - ^true$
   - ^false$
+sdk: js
+version: 6

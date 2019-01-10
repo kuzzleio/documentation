@@ -7,3 +7,5 @@ template: default
 expected:
   - -1
   - ^[1-9]+
+sdk: js
+version: 6

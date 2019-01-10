@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: "\\[ ('[a-i]', ){8}'[a-i]' ]"
+sdk: js
+version: 6

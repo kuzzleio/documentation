@@ -8,3 +8,5 @@ expected:
   - ^string$
   - ^list$
   - ^set$
+sdk: js
+version: 6

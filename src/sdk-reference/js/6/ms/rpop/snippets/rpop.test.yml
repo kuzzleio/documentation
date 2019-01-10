@@ -7,3 +7,5 @@ template: default
 expected:
   - ^baz$
   - "\\[ 'foo', 'bar' ]"
+sdk: js
+version: 6

@@ -8,3 +8,5 @@ expected:
   - ^true$
   - ^false$
   - ^bar$
+sdk: js
+version: 6
