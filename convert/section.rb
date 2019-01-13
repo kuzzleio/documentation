@@ -51,7 +51,7 @@ class Section
 
   # Anchors breaks the regexp because of the '#'
   def replace_anchors(reverse: false)
-    links = @content.scan(/(<a.*<\/a>)|(\[[\w\s]+\]\(\{\{ \w+ \}\}[\w\/#-]+\))/)
+    links = @content.scan(/(<a.*<\/a>)|(\[[\w\s]+\]\((\{\{ \w+ \}\})?[\w\/\:\.#-]+\))/)
 
     args = ['#', 'i_am_the_anchor_now']
     args = args.reverse if reverse

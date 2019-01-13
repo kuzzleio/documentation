@@ -50,7 +50,9 @@ Additional query options
 | `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
 | `from` | <pre>int</pre><br/>(`0`) | Offset of the first document to fetch |
 | `size` | <pre>int</pre><br/>(`10`) | Maximum number of documents to retrieve per page  |
-| `scroll` | <pre>string</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html### query
+| `scroll` | <pre>string</pre><br/>(`""`) | When set, gets a forward-only cursor having its ttl set to the given value (ie `30s`; cf [elasticsearch time limits](https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#time-units)) |
+
+### query
 
 A JSON string representing the query. Query can have the following root properties:
 
