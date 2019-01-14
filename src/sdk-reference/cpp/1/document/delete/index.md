@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: delete
 description: Deletes a document from kuzzle
-order: 200
 ---
 
 # delete_

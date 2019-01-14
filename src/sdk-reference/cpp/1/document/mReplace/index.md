@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: mReplace
 description: Replace documents
-order: 200
 ---
 
 # mReplace

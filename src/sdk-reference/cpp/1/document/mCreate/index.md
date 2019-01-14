@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: mCreate
 description: Creates multiple documents in kuzzle
-order: 200
 ---
 
 # mCreate

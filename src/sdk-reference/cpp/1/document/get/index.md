@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: get
 description: Get a document from kuzzle
-order: 200
 ---
 
 # get
