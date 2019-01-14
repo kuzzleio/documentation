@@ -5,7 +5,6 @@ hooks:
   before: 
   after: 
 template: blank
-expected: Everything is ok
-
+expected: Snippet success
 sdk: cpp
 version: 1
