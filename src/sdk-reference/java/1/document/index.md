@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
-title: getDocument
+title: document
 description: Document controller
 ---
 
