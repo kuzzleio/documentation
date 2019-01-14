@@ -1,5 +1,5 @@
 name: document#mDelete
-description: Delete documents
+description: Delete a document
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data
@@ -9,6 +9,5 @@ hooks:
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
 expected: Successfully deleted 2 documents
-
 sdk: java
 version: 1

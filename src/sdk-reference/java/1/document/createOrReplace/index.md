@@ -10,46 +10,53 @@ Creates a new document in the persistent data storage, or replaces its content i
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
 
-## Arguments
+## Signature
 
 ```java
-String createOrReplace(
-  String index,
-  String collection,
-  String id,
-  String documents,
-  io.kuzzle.sdk.QueryOptions options
-)
-String createOrReplace(
-  String index,
-  String collection,
-  String id,
-  String documents
-)
+public String createOrReplace(
+    String index, 
+    String collection, 
+    String id, 
+    String document);
+
+public String createOrReplace(
+    String index, 
+    String collection, 
+    String id, 
+    String document, 
+    QueryOptions options);
+
 ```
 
-<br/>
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |
 | `id` | <pre>String</pre> | Document ID |
-| `documents` | <pre>String</pre> | A JSON String containing the body of the document |
+| `document` | <pre>String</pre> | JSON string representing the body of the document |
 | `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
-###### **Options**
+### options
 
 Additional query options
 
-| Option | Type<br/>(default) | Description |
-| --- | --- | --- |
-| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+| Option   | Type<br/>(default)    | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
 | `refresh` | <pre>String</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 
-Returns a JSON string containing the updated/created document.
+A JSON string representing an object containing the document creation result.
+
+| Property | Type | Description
+| --- | --- | ---
+| _id | <pre>string</pre> | ID of the newly created document
+| _version | <pre>number</pre> | Version of the document in the persistent data storage
+| _source | <pre>object</pre> | JSON string representing the created document
+| result | <pre>string</pre> | Set to `created` in case of success
 
 ## Exceptions
 

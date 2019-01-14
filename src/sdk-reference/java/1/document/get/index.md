@@ -2,34 +2,35 @@
 layout: sdk.html.hbs
 title: get
 description: Get a document from kuzzle
+order: 200
 ---
 
 # get
 
 Gets a document.
 
-## Arguments
+## Signature
 
 ```java
-String get(
-  String index,
-  String collection,
-  String id,
-  io.kuzzle.sdk.QueryOptions options
-)
-String get(
-  String index,
-  String collection,
-  String id
-)
+public String get(
+    String index, 
+    String collection, 
+    String id);
+
+public String get(
+    String index, 
+    String collection, 
+    String id, 
+    QueryOptions options);
+
 ```
 
-<br/>
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
-| `collection` | string | Collection name |
+| `collection` | <pre>String</pre> | Collection name |
 | `id` | <pre>String</pre> | Document ID |
 | `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
@@ -37,17 +38,21 @@ String get(
 
 Additional query options
 
-| Option | Type<br/>(default) | Description |
-| --- | --- | --- | ------- |
-| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+| Option   | Type<br/>(default) | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
 
 ## Return
 
-Returns a JSON string containing the document.
+A JSON string representing the document content.
+
+| Property | Type | Description
+| --- | --- | ---
+| _source | <pre>object</pre> | Document content
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/java/1/error-handling).
 
 ## Usage
 

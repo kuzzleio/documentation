@@ -1,5 +1,5 @@
 name: document#mGet
-description: Get multiple documents
+description: Get multiple documents from kuzzle
 hooks:
   before: |
     curl -XDELETE kuzzle:7512/nyc-open-data
@@ -8,7 +8,8 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
-expected: Success
-
+expected:
+  - "\\[{\"_index\":\"nyc-open-data\""
+  - Successfully retrieved 2 documents
 sdk: java
 version: 1

@@ -1,24 +1,33 @@
-String suv = "{\"category\": \"suv\"}";
-String limousine = "{\"category\": \"limousine\"}";
-
 try {
-    int i;
+  for (int i = 0; i < 5; i++) {
+    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "", "{" +
+      "\"category\": \"suv\"" +
+    "}");
+  }
+  for (int i = 5; i < 15; i++) {
+    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "", "{" +
+      "\"category\": \"limousine\"" +
+    "}");
+  }
+  kuzzle.getIndex().refresh("nyc-open-data");
 
-    for (i = 0; i < 5; i++) {
-        kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "", suv);
-    }
-    for (i = 5; i < 15; i++) {
-        kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "", limousine);
-    }
-    kuzzle.getIndex().refresh("nyc-open-data");
+  QueryOptions options = new QueryOptions();
+  options.setFrom(0);
+  options.setSize(2);
 
-    SearchResult response = kuzzle.getDocument().search(
-      "nyc-open-data",
-      "yellow-taxi",
-      "{\"query\":{\"match\": {\"category\": \"suv\"}}}"
-    );
+  SearchResult results = kuzzle.getDocument().search(
+    "nyc-open-data",
+    "yellow-taxi",
+    "{" +
+      "\"query\": {" +
+        "\"match\": {" +
+          "\"category\": \"suv\"" +
+        "}" +
+      "}" +
+    "}",
+    options);
 
-    System.out.println(String.format("Successfully retrieved %d documents", response.getTotal()));
+  System.out.println("Successfully retrieved " + results.getTotal() + " documents");
 } catch (KuzzleException e) {
-    System.err.println(e.getMessage());
+  System.err.println(e.getMessage());
 }

@@ -9,7 +9,6 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
-expected: Success
-
+expected: Document some-id successfully deleted
 sdk: java
 version: 1

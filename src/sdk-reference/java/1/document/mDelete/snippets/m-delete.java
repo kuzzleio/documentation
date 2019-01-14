@@ -4,12 +4,15 @@ ids.add("some-id");
 ids.add("some-other-id");
 
 try {
-    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", "{}");
-    kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-other-id", "{}");
+  kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-id", "{}");
+  kuzzle.getDocument().create("nyc-open-data", "yellow-taxi", "some-other-id", "{}");
 
-    StringVector deleted = kuzzle.getDocument().mDelete("nyc-open-data", "yellow-taxi", ids);
+  StringVector deleted = kuzzle.getDocument().mDelete(
+    "nyc-open-data",
+    "yellow-taxi",
+    ids);
 
-    System.out.println(String.format("Successfully deleted %d documents", deleted.size()));
+  System.out.println("Successfully deleted " + deleted.size() + " documents");
 } catch (KuzzleException e) {
-    System.err.println(e.getMessage());
+  System.err.println(e.getMessage());
 }

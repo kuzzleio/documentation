@@ -1,39 +1,40 @@
 ---
 layout: sdk.html.hbs
 title: replace
-description: Replaces the content of an existing document
+description: Replace a document
+order: 200
 ---
 
 # replace
 
 Replaces the content of an existing document.
 
-## Arguments
+## Signature
 
 ```java
-String replace(
-  String index,
-  String collection,
-  String id,
-  String body,
-  io.kuzzle.sdk.QueryOptions options
-)
-String replace(
-  String index,
-  String collection,
-  String id,
-  String body
-)
+public String replace(
+    String index, 
+    String collection, 
+    String id, 
+    String document);
+
+public String replace(
+    String index, 
+    String collection, 
+    String id, 
+    String document, 
+    QueryOptions options);
+
 ```
 
-<br/>
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |
 | `id` | <pre>String</pre> | Document ID |
-| `body` | <pre>String</pre> | A JSON string containing the body of the document |
+| `document` | <pre>String</pre> | JSON string representing the document |
 | `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ### options
@@ -41,17 +42,24 @@ String replace(
 Additional query options
 
 | Option | Type<br/>(default) | Description |
-| --- | --- | --- |
-| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
-| `refresh` | <pre>String</pre><br/>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| ------ | -------------- | ----------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
+| `refresh` | <pre>String<br/>(`""`)</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 
 ## Return
 
-Returns a JSON string containing the updated document.
+A JSON string representing an object containing the document creation result.
+
+| Property | Type | Description
+| --- | --- | ---
+| _id | <pre>string</pre> | ID of the newly created document
+| _version | <pre>number</pre> | Version of the document in the persistent data storage
+| _source | <pre>object</pre> | JSON string representing the replaced document
+| result | <pre>string</pre> | Set to `replaced` in case of success
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/java/1/error-handling).
 
 ## Usage
 

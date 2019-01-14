@@ -1,5 +1,5 @@
 name: document#replace
-description: Replaces a document
+description: Replace a document
 hooks:
   before: |
     curl -XPOST kuzzle:7512/nyc-open-data/_create
@@ -7,7 +7,8 @@ hooks:
   after: |
     curl -XDELETE kuzzle:7512/nyc-open-data
 template: default
-expected: Success
-
+expected:
+  - "\"category\":\"sedan\""
+  - Document successfully replaced
 sdk: java
 version: 1

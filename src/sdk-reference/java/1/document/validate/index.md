@@ -2,36 +2,41 @@
 layout: sdk.html.hbs
 title: validate
 description: Validate a document
+order: 200
 ---
 
 # validate
 
 Validates data against existing validation rules.
 
-Note that if no validation specifications are set for the `<index>`/`<collection>`, the document will always be valid.
+Documents are always valid if no validation rules are defined on the provided index and collection.
 
-This request does **not** store or publish the document.
+This request does not store the document.
 
-## Arguments
+
+## Signature
 
 ```java
-boolean validate(String index, String collection, String document)
+public boolean validate(
+    String index, 
+    String collection, 
+    String document);
 
-boolean validate(
-  String index,
-  String collection,
-  String document,
-  io.kuzzle.sdk.QueryOptions options
-)
+public boolean validate(
+    String index, 
+    String collection, 
+    String document, 
+    QueryOptions options);
+
 ```
 
-<br/>
+## Arguments
 
 | Argument | Type | Description |
 | --- | --- | --- |
 | `index` | <pre>String</pre> | Index name |
 | `collection` | <pre>String</pre> | Collection name |
-| `body` | <pre>String</pre> | A JSON string containing the body of the document |
+| `document` | <pre>String</pre> | JSON string representing the document |
 | `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options |
 
 ### options
@@ -39,16 +44,16 @@ boolean validate(
 Additional query options
 
 | Option | Type<br/>(default) | Description |
-| --- | --- | --- |
-| `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+| ------ | -------------- | ----------- |
+| `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
 
 ## Return
 
-Returns a boolean value set to true if the document is valid and false otherwise.
+A boolean set to true if the document is valid and false otherwise.
 
 ## Exceptions
 
-Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle error]({{ site_base_path }}sdk-reference/java/1/error-handling).
+Throws a `io.kuzzle.sdk.KuzzleException` if there is an error. See how to [handle errors]({{ site_base_path }}sdk-reference/java/1/error-handling).
 
 ## Usage
 

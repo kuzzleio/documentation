@@ -142,19 +142,28 @@ module SnippetMutator
       /push_back/                                        => 'add',
       /kuzzleio::/                                       => '',
       /std::string/                                      => 'String',
+      /bool/                                             => 'boolean',
       /query_options options;/                           => 'QueryOptions options = new QueryOptions();',
       /options options;/                                 => 'Options options = new Options();',
       /SearchResult\*/                                   => 'SearchResult',
       /validation_response \*validation_response/        => 'ValidationResponse validation_response',
       /delete_\(/                                        => 'delete(',
       /token_validity\*/                                 => 'TokenValidity',
-      /e.what\(\)/                                       => 'e.getMessage()',
+      /e.what\(\)/                                       => 'e.message()',
       /size_t/                                           => 'int',
       /WebSocket\*/                                      => 'WebSocket',
       /Kuzzle\*/                                         => 'Kuzzle',
       /kuzzle_response\*/                                => 'KuzzleResponse',
       /kuzzle_request\*? request;/                       => 'KuzzleRequest request = new KuzzleRequest();',
       /Protocol\*/                                       => 'Protocol'
+    }
+    CONTROLERS = {
+      /kuzzle\.auth/                                     => 'kuzzle.getAuth()',
+      /kuzzle\.collection/                               => 'kuzzle.getCollection()',
+      /kuzzle\.document/                                 => 'kuzzle.getDocument()',
+      /kuzzle\.index/                                    => 'kuzzle.getIndex()',
+      /kuzzle\.realtime/                                 => 'kuzzle.getRealtime()',
+      /kuzzle\.server/                                   => 'kuzzle.getServer()'
     }
     STDOUT_FIND = /std::cout.*std::endl;/
     STDERR_FIND = /std::cerr.*std::endl;/
@@ -166,6 +175,8 @@ module SnippetMutator
     SHARED_PTR_REPLACE = /(std::shared_ptr<([\w:]+)>)/
     FOR_LOOP_FIND = /for \(.*:.*/
     FOR_LOOP_REPLACE = /for \(auto ([\w]+) : ([\w]+)\) {/
+    GETTER_REPLACE = /((\w+)(\.|->)(\w+)\(\))/
+    SETTER_REPLACE = /((\w+)(\.|->)(\w+)\s+=\s+(\w+))/
 
     def mutate(content)
       common_replace(content)
@@ -175,10 +186,15 @@ module SnippetMutator
       vector_replace(content)
       unique_ptr_replace(content)
       shared_ptr_replace(content)
-      for_loop_replace(content)
+      # for_loop_replace(content)
+      getters_replace(content)
+      setters_replace(content)
+      controlers_replace(content)
 
       content
     end
+
+    private
 
     def extract_padding(str)
       padding = 0
@@ -191,8 +207,6 @@ module SnippetMutator
       padding
     end
 
-    private
-
     def multiline_string_replace(content)
       multiline_strings = content.scan(MULTILINE_STRING_REPLACE)
 
@@ -202,16 +216,22 @@ module SnippetMutator
         new_multiline_string = multiline_string.split("\n").map do |line|
           padding = extract_padding(line)
 
-          "#{' ' * padding}\"#{line[padding..-1]}\""
+          "#{' ' * padding}\"#{line[padding..-1].gsub("\"", "\\\"")}\""
         end.join(" +\n")
 
-        new_multiline_string.gsub!(/\\/, "\\\\")
-        byebug
+        content.gsub!(full_match, new_multiline_string)
       end
     end
 
     def common_replace(content)
       REPLACE.each do |regexp, replace_value|
+        content.gsub!(regexp, replace_value)
+      end
+    end
+
+    # This must be done after the getters replacement
+    def controlers_replace(content)
+      CONTROLERS.each do |regexp, replace_value|
         content.gsub!(regexp, replace_value)
       end
     end
@@ -223,7 +243,7 @@ module SnippetMutator
         match = line.scan(STREAM_REPLACE)
         string = match.join(" + ").squish
 
-        content.gsub!(line, "Console.WriteLine(#{string});")
+        content.gsub!(line, "System.out.println(#{string});")
       end
     end
 
@@ -234,7 +254,7 @@ module SnippetMutator
         match = line.scan(STREAM_REPLACE)
         string = match.join(" + ").squish
 
-        content.gsub!(line, "Console.Error.WriteLine(#{string});")
+        content.gsub!(line, "System.err.println(#{string});")
       end
     end
 
@@ -242,14 +262,14 @@ module SnippetMutator
       vector_init_lines = content.scan(VECTOR_INIT_REPLACE)
 
       vector_init_lines.each do |(line, var_type, var_name)|
-        csharp_line = "List<#{var_type}> #{var_name} = new List<#{var_type}>();"
+        csharp_line = "#{var_type}Vector #{var_name} = new #{var_type}Vector();"
         content.gsub!(VECTOR_INIT_REPLACE, csharp_line)
       end
 
       vector_assign_lines = content.scan(VECTOR_ASSIGN_REPLACE)
 
       vector_assign_lines.each do |(line, var_type, var_name)|
-        csharp_line = "List<#{var_type}> #{var_name} ="
+        csharp_line = "#{var_type}Vector #{var_name} ="
         content.gsub!(VECTOR_ASSIGN_REPLACE, csharp_line)
       end
     end
@@ -280,6 +300,24 @@ module SnippetMutator
         content.gsub!(line, "foreach (var #{match[0]} in #{match[1]}) {")
       end
     end
+
+    def getters_replace(content)
+      getters_lines = content.scan(GETTER_REPLACE)
+
+      getters_lines.each do |(full_line, var_name, _, method_name)|
+        next if method_name == "size" # Avoid size() method from StringVector etc
+        content.gsub!(full_line, "#{var_name}.get#{method_name.camelize}()")
+      end
+    end
+
+    def setters_replace(content)
+      setters_lines = content.scan(SETTER_REPLACE)
+
+      setters_lines.each do |(full_line, var_name, _, method_name, value)|
+        content.gsub!(full_line, "#{var_name}.set#{method_name.camelize}(#{value})")
+      end
+    end
+
   end
 
 end

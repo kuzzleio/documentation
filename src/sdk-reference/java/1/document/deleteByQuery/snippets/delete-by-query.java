@@ -1,11 +1,14 @@
 try {
-    StringVector deleted = kuzzle.getDocument().deleteByQuery(
-      "nyc-open-data",
-      "yellow-taxi",
-      "{\"query\": {\"term\": {\"capacity\": 7}}}"
-    );
+  StringVector response =
+    kuzzle.getDocument().deleteByQuery("nyc-open-data", "yellow-taxi", "{" +
+      "\"query\": {" +
+        "\"term\": {" +
+          "\"capacity\": 7" +
+        "}" +
+      "}" +
+    "}");
 
-    System.out.println(String.format("Successfully deleted %d documents", deleted.size()));
+  System.out.println("Successfully deleted " + response.size() + " documents");
 } catch (KuzzleException e) {
-    System.err.println(e.getMessage());
+  System.err.println(e.getMessage());
 }

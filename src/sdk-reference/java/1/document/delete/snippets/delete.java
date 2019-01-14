@@ -1,9 +1,10 @@
 try {
-    String id = kuzzle.getDocument().delete("nyc-open-data", "yellow-taxi", "some-id");
+  String id = kuzzle.getDocument().delete(
+    "nyc-open-data",
+    "yellow-taxi",
+    "some-id");
 
-    if (id.equals("some-id")) {
-        System.out.println("Success");
-    }
+  System.out.println("Document " + id + " successfully deleted");
 } catch (KuzzleException e) {
-    System.err.println(e.getMessage());
+  System.err.println(e.getMessage());
 }
