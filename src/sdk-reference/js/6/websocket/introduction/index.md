@@ -9,6 +9,8 @@ order: 0
 
 The WebSocket protocol can be used by an instance of the SDK to communicate with your Kuzzle server.  
 
+It's inherits from [KuzzleEventEmitter]({{ site_base_path }}sdk-reference/js/6/kuzzle-event-emitter).
+
 This protocol allows you to use all the features of Kuzzle, including [real-time notifications]({{ site_base_path }}sdk-reference/js/6/realtime-notifications).
 
 ## Properties
