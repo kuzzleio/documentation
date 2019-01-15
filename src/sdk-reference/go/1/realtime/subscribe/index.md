@@ -6,7 +6,7 @@ description: Subscribe to real-time notifications
 
 # Subscribe
 
-Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/essentials/real-time), sent to you in real-time by Kuzzle.
+Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/essentials/notifications), sent to you in real-time by Kuzzle.
 
 ## Arguments
 
@@ -26,13 +26,13 @@ func (r *Realtime) Subscribe(
 |--------------|---------|-------------|
 | `index` | <pre>string</pre> | Index name    |
 | `collection` | <pre>string</pre> | Collection name    |
-| `filters` | <pre>json.RawMessage</pre> | A set of filters following [Koncorde syntax]({{site_base_path}}koncorde/1/essential/koncorde) |
+| `filters` | <pre>json.RawMessage</pre> | A set of filters following [Koncorde syntax]({{site_base_path}}koncorde/1/terms) |
 | `listener` | <pre>chan<- types.NotificationResult</pre> | Channel receiving the notification |
 | `options` | <pre>types.RoomOptions</pre> | A struct containing subscription options |
 
 ### listener
 
-A channel for [types.NotificationResult]({{site_base_path}}sdk-reference/cpp/1/essentials/realtime-notifications) objects.
+A channel for [types.NotificationResult]({{site_base_path}}sdk-reference/cpp/1/realtime-notifications) objects.
 The channel will receive an object each time a new notifications is received.
 
 ### options

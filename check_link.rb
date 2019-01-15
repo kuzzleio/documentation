@@ -4,7 +4,7 @@ require 'typhoeus'
 require 'optparse'
 
 class LinkChecker
-  INTERNAL_LINK_REGEXP = /\(\{\{\s+site_base_path\s+\}\}([^)>]+)/
+  INTERNAL_LINK_REGEXP = /\(\{\{\s*site_base_path\s*\}\}([^)>]+)/
 
   attr_reader :internal, :external
 
@@ -124,6 +124,11 @@ OptionParser.new do |opt|
   opt.on('--only TYPE') { |o| options[:only] = o }
   opt.on('--output FILE') { |o| options[:file] = o }
 end.parse!
+
+if options[:path].nil?
+  puts "Usage: ruby check_link.rb -p <path>"
+  exit 1
+end
 
 link_checker = LinkChecker.new(options)
 

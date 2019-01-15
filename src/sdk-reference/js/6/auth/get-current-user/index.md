@@ -30,21 +30,7 @@ Additional query options
 
 ## Resolves
 
-A `User` object representing the current user logged with the SDK.
-
-| Property     | Type    | Description                       |
-| ---------- | ------- | --------------------------------- |
-| `id` | <pre>string</pre> | User ID |
-| `content` | <pre>User</pre> | User content |
-
-The `User` object has the following properties:
-
-| Property     | Type    | Description                       |
-| ---------- | ------- | --------------------------------- |
-| `profileIds` | <pre>string[]</pre> | An array containing the profile ids |
-| `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
-| `any` | <pre>any</pre> | Any other information saved with the user |
-
+A [User]({{ site_base_path }}sdk-reference/js/6/user) representing the current user logged with the SDK.
 
 ## Usage
 
