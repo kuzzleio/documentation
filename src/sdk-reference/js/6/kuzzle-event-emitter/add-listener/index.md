@@ -1,7 +1,7 @@
 ---
 layout: sdk.html.hbs
 title: addListener
-description: Returns addListener for an event
+description: Adds a new listener for an event
 ---
 
 # addListener
@@ -12,14 +12,14 @@ When an event is triggered, listeners are triggered in the order in which they w
 ## Signature
 
 ```js
-addListener (eventName);
+addListener (eventName, callback);
 ```
 
 ## Arguments
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `event`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6//events) section of this documentation |
+| `eventName`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6//events) section of this documentation |
 | `callback` | <pre>function</pre> | Function to call every time the event is triggered     |
 
 ## Return
