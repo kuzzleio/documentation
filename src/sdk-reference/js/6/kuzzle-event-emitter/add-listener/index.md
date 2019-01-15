@@ -24,4 +24,8 @@ addListener (eventName);
 
 ## Return
 
-The `Kuzzle` instance.
+The `KuzzleEventEmitter` instance.
+
+## Usage
+
+[snippet=add-listener]
