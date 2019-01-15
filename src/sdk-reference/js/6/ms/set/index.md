@@ -9,13 +9,13 @@ Creates a key holding the provided value, or overwrites it if it already exists.
 
 [[_Redis documentation_]](https://redis.io/commands/set)
 
-## Arguments
+## Signature
 
 ```js
 set(key, value, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

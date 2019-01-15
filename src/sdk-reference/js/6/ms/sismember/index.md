@@ -9,14 +9,14 @@ Checks if a value is a member of a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sismember)
 
-## Arguments
+## Signature
 
 ```js
 sismember(key, value, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

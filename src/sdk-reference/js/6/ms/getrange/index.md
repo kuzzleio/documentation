@@ -9,14 +9,14 @@ Returns a substring of a key's value.
 
 [[_Redis documentation_]](https://redis.io/commands/getrange)
 
-## Arguments
+## Signature
 
 ```js
 getrange(key, start, end, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

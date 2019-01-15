@@ -9,13 +9,13 @@ Sets the list element at `index` with the provided value.
 
 [[_Redis documentation_]](https://redis.io/commands/lset)
 
-## Arguments
+## Signature
 
 ```js
 lset(key, index, value, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

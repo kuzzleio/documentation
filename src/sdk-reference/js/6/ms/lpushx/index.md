@@ -9,14 +9,14 @@ Prepends the specified value to a list, only if the key already exists and if it
 
 [[_Redis documentation_]](https://redis.io/commands/lpushx)
 
-## Arguments
+## Signature
 
 ```js
 lpushx(key, value, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

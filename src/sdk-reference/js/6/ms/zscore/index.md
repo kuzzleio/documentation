@@ -9,13 +9,13 @@ Returns the score of an element in a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zscore)
 
-## Arguments
+## Signature
 
 ```js
 zscore(key, member, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

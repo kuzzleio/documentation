@@ -9,13 +9,13 @@ Adds elements to a [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data
 
 [[_Redis documentation_]](https://redis.io/commands/pfadd)
 
-## Arguments
+## Signature
 
 ```js
 pfadd(key, elements, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

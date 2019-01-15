@@ -10,13 +10,13 @@ Increments the number stored at `key` by the provided integer value. If the key 
 
 [[_Redis documentation_]](https://redis.io/commands/incrby)
 
-## Arguments
+## Signature
 
 ```js
 incrby(key, increment, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

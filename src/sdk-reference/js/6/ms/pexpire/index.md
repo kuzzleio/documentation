@@ -10,13 +10,13 @@ Sets a timeout (in milliseconds) on a key. After the timeout has expired, the ke
 
 [[_Redis documentation_]](https://redis.io/commands/pexpire)
 
-## Arguments
+## Signature
 
 ```js
 pexpire(key, milliseconds, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

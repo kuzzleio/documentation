@@ -9,14 +9,14 @@ Returns the number of fields contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hlen)
 
-## Arguments
+## Signature
 
 ```js
 hlen(key, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

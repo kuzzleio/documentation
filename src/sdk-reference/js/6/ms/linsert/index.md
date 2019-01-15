@@ -9,13 +9,13 @@ Inserts a value in a list, either before or after a pivot value.
 
 [[_Redis documentation_]](https://redis.io/commands/linsert)
 
-## Arguments
+## Signature
 
 ```js
 linsert(key, position, pivot, value, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

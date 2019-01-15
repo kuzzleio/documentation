@@ -10,13 +10,13 @@ Returns the remaining time to live of a key, in seconds.
 [[_Redis documentation_]](https://redis.io/commands/ttl)
 
 
-## Arguments
+## Signature
 
 ```js
 ttl(key, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

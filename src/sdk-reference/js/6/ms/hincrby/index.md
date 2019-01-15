@@ -9,14 +9,14 @@ Increments the number stored in a hash field by the provided integer value.
 
 [[_Redis documentation_]](https://redis.io/commands/hincrby)
 
-## Arguments
+## Signature
 
 ```js
 hincrby(key, field, increment, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

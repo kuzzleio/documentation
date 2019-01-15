@@ -12,13 +12,13 @@ Base method used to send queries to Kuzzle, following the [API Documentation]({{
 This is a low-level method, exposed to allow advanced SDK users to bypass high-level methods.
 </div>
 
-## Arguments
+## Signature
 
 ```javascript
 query (request, [options]);
 ```
 
-<br/>
+## Arguments
 
 | Argument  | Type   | Description            |
 | -------------- | --------- | ------------- |

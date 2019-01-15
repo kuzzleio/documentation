@@ -9,7 +9,7 @@ description: Stops the requests queuing
 Stops the requests queuing.
 Works only in `offline` state, and if the `autoQueue` option is set to false.
 
-## Arguments
+## Signature
 
 ```javascript
 stopQueuing ()

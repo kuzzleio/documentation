@@ -9,14 +9,14 @@ Returns the values of the specified hash's fields.
 
 [[_Redis documentation_]](https://redis.io/commands/hmget)
 
-## Arguments
+## Signature
 
 ```js
 hmget(key, fields, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -9,13 +9,13 @@ Returns elements within a provided interval, in a sorted set where all members h
 
 [[_Redis documentation_]](https://redis.io/commands/zrangebylex)
 
-## Arguments
+## Signature
 
 ```js
 zrangebylex(key, min, max, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

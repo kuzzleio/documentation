@@ -8,7 +8,7 @@ description: Empties the offline request queue
 
 Empties the offline request queue without playing it.
 
-## Arguments
+## Signature
 
 ```javascript
 flushQueue ()

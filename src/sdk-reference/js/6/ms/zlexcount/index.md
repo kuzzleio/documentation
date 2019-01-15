@@ -9,13 +9,13 @@ Counts elements in a sorted set where all members have equal score, using lexico
 
 [[_Redis documentation_]](https://redis.io/commands/zlexcount)
 
-## Arguments
+## Signature
 
 ```js
 zlexcount(key, min, max, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

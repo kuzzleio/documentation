@@ -9,14 +9,14 @@ Removes the first occurences of an element from a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lrem)
 
-## Arguments
+## Signature
 
 ```js
 lrem(key, count, value, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

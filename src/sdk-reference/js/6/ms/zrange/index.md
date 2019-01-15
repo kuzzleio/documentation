@@ -9,13 +9,13 @@ Returns elements depending on their position in the sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zrange)
 
-## Arguments
+## Signature
 
 ```js
 zrange(key, start, stop, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

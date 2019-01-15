@@ -10,14 +10,14 @@ Returns the number of keys in the application database.
 
 [[_Redis documentation_]](https://redis.io/commands/dbsize)
 
-## Arguments
+## Signature
 
 ```js
 dbsize([options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

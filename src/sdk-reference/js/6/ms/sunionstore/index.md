@@ -11,14 +11,14 @@ If the destination key already exists, it is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/sunionstore)
 
-## Arguments
+## Signature
 
 ```js
 sunionstore(dest, sources, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

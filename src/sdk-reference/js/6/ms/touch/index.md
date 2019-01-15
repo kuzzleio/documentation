@@ -9,13 +9,13 @@ Alters the last access time of the provided keys. A key is ignored if it does no
 
 [[_Redis documentation_]](https://redis.io/commands/touch)
 
-## Arguments
+## Signature
 
 ```js
 touch(keys, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -9,14 +9,14 @@ Returns the position of the first bit set to 1 or 0 in a string, or in a substri
 
 [[_Redis documentation_]](https://redis.io/commands/bitpos)
 
-## Arguments
+## Signature
 
 ```js
 bitpos(key, bit, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

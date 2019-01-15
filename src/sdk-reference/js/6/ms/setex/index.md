@@ -9,13 +9,13 @@ Sets a value and a time to live (in seconds) on a key. If the key already exists
 
 [[_Redis documentation_]](https://redis.io/commands/setex)
 
-## Arguments
+## Signature
 
 ```js
 setex(key, value, seconds, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

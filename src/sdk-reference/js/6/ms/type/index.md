@@ -9,13 +9,13 @@ Returns the type of the value held by a key.
 
 [[_Redis documentation_]](https://redis.io/commands/type)
 
-## Arguments
+## Signature
 
 ```js
 type(key, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

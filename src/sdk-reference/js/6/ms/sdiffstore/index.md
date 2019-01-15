@@ -11,14 +11,14 @@ If the destination key already exists, it is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/sdiffstore)
 
-## Arguments
+## Signature
 
 ```js
 sdiffstore(ref, sets, dest, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

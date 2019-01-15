@@ -9,13 +9,13 @@ Merges multiple [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data st
 
 [[_Redis documentation_]](https://redis.io/commands/pfmerge)
 
-## Arguments
+## Signature
 
 ```js
 pfmerge(dest, sources, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

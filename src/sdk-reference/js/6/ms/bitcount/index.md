@@ -9,13 +9,13 @@ Counts the number of set bits (population counting) in a string.
 
 [[_Redis documentation_]](https://redis.io/commands/bitcount)
 
-## Arguments
+## Signature
 
 ```js
 bitcount(key, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -9,13 +9,13 @@ Sets the provided keys to their respective values, only if they do not exist. If
 
 [[_Redis documentation_]](https://redis.io/commands/msetnx)
 
-## Arguments
+## Signature
 
 ```js
 msetnx(entries, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

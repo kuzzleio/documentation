@@ -9,13 +9,13 @@ Returns the current server time.
 
 [[_Redis documentation_]](https://redis.io/commands/time)
 
-## Arguments
+## Signature
 
 ```js
 time([options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

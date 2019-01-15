@@ -11,13 +11,13 @@ The returned distance is expressed in meters by default.
 
 [[_Redis documentation_]](https://redis.io/commands/geodist)
 
-## Arguments
+## Signature
 
 ```js
 geodist(key, geopoint1, geopoint2, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

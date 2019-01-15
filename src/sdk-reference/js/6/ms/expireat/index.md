@@ -10,13 +10,13 @@ Sets an expiration timestamp on a key. After the timestamp has been reached, the
 
 [[_Redis documentation_]](https://redis.io/commands/expireat)
 
-## Arguments
+## Signature
 
 ```js
 expireat(key, timestamp, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

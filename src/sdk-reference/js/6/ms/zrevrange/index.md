@@ -9,13 +9,13 @@ Identical to [zrange]({{ site_base_path }}sdk-reference/js/6/ms/zrange), except 
 
 [[_Redis documentation_]](https://redis.io/commands/zrevrange)
 
-## Arguments
+## Signature
 
 ```js
 zrevrange(key, start, stop, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

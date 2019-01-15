@@ -10,14 +10,14 @@ Decrements the number stored at `key` by a provided integer value. If the key do
 
 [[_Redis documentation_]](https://redis.io/commands/decrby)
 
-## Arguments
+## Signature
 
 ```js
 decrby(key, decrement, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

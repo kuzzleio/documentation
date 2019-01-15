@@ -9,13 +9,13 @@ Trims an existing list so that it will contain only the specified range of eleme
 
 [[_Redis documentation_]](https://redis.io/commands/ltrim)
 
-## Arguments
+## Signature
 
 ```js
 ltrim(key, start, stop, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

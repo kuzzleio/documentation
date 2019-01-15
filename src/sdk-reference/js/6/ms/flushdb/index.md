@@ -9,13 +9,13 @@ Empties the database dedicated to client applications (the reserved space for Ku
 
 [[_Redis documentation_]](https://redis.io/commands/flushdb)
 
-## Arguments
+## Signature
 
 ```js
 flushdb([options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

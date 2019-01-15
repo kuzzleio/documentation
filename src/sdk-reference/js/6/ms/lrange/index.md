@@ -12,13 +12,13 @@ Offsets start at `0`, and the range is inclusive.
 [[_Redis documentation_]](https://redis.io/commands/lrange)
 
 
-## Arguments
+## Signature
 
 ```js
 lrange(key, start, stop, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

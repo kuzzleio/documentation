@@ -9,14 +9,14 @@ Removes members from a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zrem)
 
-## Arguments
+## Signature
 
 ```js
 zrem(key, members, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

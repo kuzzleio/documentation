@@ -14,13 +14,13 @@ The scan ends when the cursor returned by the server is 0.
 
 [[_Redis documentation_]](https://redis.io/commands/scan)
 
-## Arguments
+## Signature
 
 ```js
 scan(cursor, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

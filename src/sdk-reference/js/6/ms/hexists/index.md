@@ -9,14 +9,14 @@ Checks if a field exists in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hexists)
 
-## Arguments
+## Signature
 
 ```js
 hexists(key, field, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

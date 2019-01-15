@@ -9,13 +9,13 @@ Renames a key, only if the new name is not already used.
 
 [[_Redis documentation_]](https://redis.io/commands/renamenx)
 
-## Arguments
+## Signature
 
 ```js
 renamenx(src, dest, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

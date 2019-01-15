@@ -9,13 +9,13 @@ Computes the union of the provided sorted sets, and stores the result in a new s
 
 [[_Redis documentation_]](https://redis.io/commands/zunionstore)
 
-## Arguments
+## Signature
 
 ```js
 zunionstore(dest, sources, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -10,14 +10,14 @@ Sets a field and its value in a hash, only if the field does not already exist.
 
 [[_Redis documentation_]](https://redis.io/commands/hsetnx)
 
-## Arguments
+## Signature
 
 ```js
 hsetnx(key, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

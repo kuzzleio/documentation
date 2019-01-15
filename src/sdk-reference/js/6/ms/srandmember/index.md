@@ -9,13 +9,13 @@ Returns one or more members of a set of unique values, at random.
 
 [[_Redis documentation_]](https://redis.io/commands/srandmember)
 
-## Arguments
+## Signature
 
 ```js
 srandmember(key, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

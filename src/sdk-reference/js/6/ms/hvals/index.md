@@ -10,13 +10,13 @@ Returns all values contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hvals)
 
-## Arguments
+## Signature
 
 ```js
 hvals(key, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

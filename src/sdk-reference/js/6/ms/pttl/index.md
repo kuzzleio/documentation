@@ -10,13 +10,13 @@ Returns the remaining time to live of a key, in milliseconds.
 [[_Redis documentation_]](https://redis.io/commands/pttl)
 
 
-## Arguments
+## Signature
 
 ```js
 pttl(key, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

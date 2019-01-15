@@ -9,13 +9,13 @@ Sets an expiration timestamp (in Epoch-milis) on a key. After the timestamp has 
 
 [[_Redis documentation_]](https://redis.io/commands/pexpireat)
 
-## Arguments
+## Signature
 
 ```js
 pexpireat(key, timestamp, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

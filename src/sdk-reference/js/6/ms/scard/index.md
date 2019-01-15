@@ -9,13 +9,13 @@ Returns the number of members stored in a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/scard)
 
-## Arguments
+## Signature
 
 ```js
 scard(key, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

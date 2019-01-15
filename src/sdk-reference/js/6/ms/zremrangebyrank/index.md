@@ -11,13 +11,13 @@ Positions are 0-based, meaning the first member of the set has a position of 0.
 
 [[_Redis documentation_]](https://redis.io/commands/zremrangebyrank)
 
-## Arguments
+## Signature
 
 ```js
 zremrangebyrank(key, start, stop, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

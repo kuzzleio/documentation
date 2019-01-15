@@ -9,13 +9,13 @@ Removes and returns one or more elements at random from a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/spop)
 
-## Arguments
+## Signature
 
 ```js
 spop(key, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

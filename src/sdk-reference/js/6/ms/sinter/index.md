@@ -9,13 +9,13 @@ Returns the intersection of the provided sets of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sinter)
 
-## Arguments
+## Signature
 
 ```js
 sinter(keys, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

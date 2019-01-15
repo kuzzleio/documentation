@@ -9,14 +9,14 @@ Removes members within a provided range, from a sorted set where all elements ha
 
 [[_Redis documentation_]](https://redis.io/commands/zremrangebylex)
 
-## Arguments
+## Signature
 
 ```js
 zremrangebylex(key, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

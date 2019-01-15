@@ -9,13 +9,13 @@ Returns the position of an element in a sorted set, with scores sorted in ascend
 
 [[_Redis documentation_]](https://redis.io/commands/zrank)
 
-## Arguments
+## Signature
 
 ```js
 zrank(key, member, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

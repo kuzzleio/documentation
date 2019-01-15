@@ -10,14 +10,14 @@ Decrements the number stored at `key` by 1. If the key does not exist, it is set
 
 [[_Redis documentation_]](https://redis.io/commands/decr)
 
-## Arguments
+## Signature
 
 ```js
 decr(key, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

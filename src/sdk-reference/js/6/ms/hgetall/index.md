@@ -10,13 +10,13 @@ Returns all fields and values of a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hgetall)
 
-## Arguments
+## Signature
 
 ```js
 hgetall(key, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

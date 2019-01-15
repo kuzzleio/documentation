@@ -14,14 +14,14 @@ The scan ends when the cursor returned by the server is 0.
 
 [[_Redis documentation_]](https://redis.io/commands/hscan)
 
-## Arguments
+## Signature
 
 ```js
 hscan(key, cursor, [options])
 
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

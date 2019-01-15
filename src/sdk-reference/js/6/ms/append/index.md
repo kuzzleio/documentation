@@ -10,13 +10,13 @@ Appends a value to a key. If the key does not exist, it is created.
 
 [[_Redis documentation_]](https://redis.io/commands/append)
 
-## Arguments
+## Signature
 
 ```js
 append(key, value, [options])
 ```
 
-<br/>
+## Arguments
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
