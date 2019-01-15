@@ -37,20 +37,30 @@ Then, create an `index.html` file with the following structure:
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Kuzzle SDK Playground</title>
+  
+  <!-- If you are coding for Internet Explorer, please uncomment the following line -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/bluebird@3.5.3/js/browser/bluebird.min.js"></script> -->
+
   <script src="node_modules/kuzzle-sdk/dist/kuzzle.js"></script>
 </head>
 <body></body>
 </html>
 ```
 
-Then, add the code below in the `body` tag.  
+<div class="alert alert-info">
+If you are using Internet Explorer (not Edge), you are responsible of installing a Promise polyfill, which enables IE to support
+Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a>.
+Our advice is to use <a href="http://bluebirdjs.com/docs/getting-started.html">Bluebird</a>, as shown in the code example above (refer to the commented lines in the <code>head</code> tag).
+</div>
+
+Then, add the code below in the `body` tag.
 This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol. If an error occurs, it is displayed
 in the console. Once the connection is established, a success message is displayed in the console.
 
 [snippet=load-sdk]
 
 <div class="alert alert-info">
-Replace <code>kuzzle</code> which is the Kuzzle server hostname with <code>localhost</code> or the hostname where your Kuzzle server is running.
+Replace <code>kuzzle</code> with <code>localhost</code> or the hostname where your Kuzzle server is running.
 </div>
 
 Now you have to add the code that will access Kuzzle to create a new index `nyc-open-data` and a new collection `yellow-taxi` 
