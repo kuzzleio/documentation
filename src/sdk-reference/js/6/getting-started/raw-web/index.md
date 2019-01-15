@@ -45,7 +45,7 @@ Then, create an `index.html` file with the following structure:
 
 Then, add the code below in the `body` tag.  
 This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol. If an error occurs, it is displayed
-in the console. Once the connection i established, a success message is displayed in the console.
+in the console. Once the connection is established, a success message is displayed in the console.
 
 [snippet=load-sdk]
 
