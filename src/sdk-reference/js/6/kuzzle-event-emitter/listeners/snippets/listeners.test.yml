@@ -1,0 +1,9 @@
+name: kuzzleEventEmitter#listeners
+description: Returns listeners binded to an event
+hooks:
+  before:
+  after:
+template: eventemitter
+expected: There is 2 listeners binded to the event CONNECTED
+sdk: js
+version: 6
