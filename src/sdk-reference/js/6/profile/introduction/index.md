@@ -9,7 +9,7 @@ order: 0
 
 This class represents a Kuzzle Profile.  
 
-Refer to the [Security guide]({{ site_base_path }}guide/1/essentials/security#defining-profiles-default) for more informations about profiles.
+Refers to the [Security guide]({{ site_base_path }}guide/1/essentials/security#defining-profiles-default) for more informations about profiles.
 
 ## Properties
 
@@ -17,7 +17,7 @@ Available properties.
 
 | Property | Type | Description |
 |--- |--- |--- |
-| `_id` | <pre>string</pre> | User ID (kuid) |
+| `_id` | <pre>string</pre> | Profile ID |
 | `policies` | <pre>object[]</pre> | Array of policies for this profile |
 
 Each policy object can contain the following properties:
