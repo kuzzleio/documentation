@@ -12,8 +12,8 @@ This class represents a Kuzzle User.
 Refer to the [Security guide]({{ site_base_path }}guide/1/essentials/security) for more informations about users.
 
 The following methods returns a `User`:
- - [auth:getCurrentUser]({{ site_base_path }}sdk-reference/js/6/auth/getCurrentUser)
- - [auth:updateSelf]({{ site_base_path }}sdk-reference/js/6/auth/updateSelf)
+ - [auth:getCurrentUser]({{ site_base_path }}sdk-reference/js/6/auth/get-current-user)
+ - [auth:updateSelf]({{ site_base_path }}sdk-reference/js/6/auth/update-self)
 
 ## Properties
 

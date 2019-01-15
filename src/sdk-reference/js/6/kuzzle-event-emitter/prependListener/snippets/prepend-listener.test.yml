@@ -1,0 +1,9 @@
+name: kuzzleEventEmitter#prepend-listener
+description: Prepends a new listener for the given event
+hooks:
+  before:
+  after:
+template: eventemitter
+expected: Successfully prepended 1 new listener
+sdk: js
+version: 6

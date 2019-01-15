@@ -1,18 +1,17 @@
 ---
 layout: sdk.html.hbs
-title: addListener
-description: Adds a new listener for an event
+title: prependOnceListener
+description: Prepends a new once listener for an event
 ---
 
-# addListener
+# prependOnceListener
 
-Adds a listener to an event.  
-When an event is triggered, listeners are triggered in the order in which they were added.
+Prepends an once listener in the listeners for an event.
 
 ## Signature
 
 ```js
-addListener (eventName, callback);
+prependOnceListener (eventName, callback);
 ```
 
 ## Arguments
@@ -20,7 +19,7 @@ addListener (eventName, callback);
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
 | `eventName`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6//events) section of this documentation |
-| `callback` | <pre>function</pre> | Function to call every time the event is triggered     |
+| `callback` | <pre>function</pre> | Function to call when the event is triggered     |
 
 ## Return
 
@@ -28,4 +27,4 @@ The `KuzzleEventEmitter` instance.
 
 ## Usage
 
-[snippet=add-listener]
+[snippet=prepend-once-listener]

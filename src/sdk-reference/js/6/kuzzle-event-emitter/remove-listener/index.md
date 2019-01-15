@@ -1,18 +1,17 @@
 ---
 layout: sdk.html.hbs
-title: addListener
+title: removeListener
 description: Adds a new listener for an event
 ---
 
-# addListener
+# removeListener
 
-Adds a listener to an event.  
-When an event is triggered, listeners are triggered in the order in which they were added.
+Removes a listener to an event.
 
 ## Signature
 
 ```js
-addListener (eventName, callback);
+removeListener (eventName, callback);
 ```
 
 ## Arguments
@@ -20,7 +19,7 @@ addListener (eventName, callback);
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
 | `eventName`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6//events) section of this documentation |
-| `callback` | <pre>function</pre> | Function to call every time the event is triggered     |
+| `callback` | <pre>function</pre> | Callback to remove     |
 
 ## Return
 
@@ -28,4 +27,4 @@ The `KuzzleEventEmitter` instance.
 
 ## Usage
 
-[snippet=add-listener]
+[snippet=remove-listener]

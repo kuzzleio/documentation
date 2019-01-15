@@ -1,18 +1,17 @@
 ---
 layout: sdk.html.hbs
-title: addListener
-description: Adds a new listener for an event
+title: prependListener
+description: Prepends a new listener for an event
 ---
 
-# addListener
+# prependListener
 
-Adds a listener to an event.  
-When an event is triggered, listeners are triggered in the order in which they were added.
+Prepends a listener in the listeners for an event.
 
 ## Signature
 
 ```js
-addListener (eventName, callback);
+prependListener (eventName, callback);
 ```
 
 ## Arguments
@@ -28,4 +27,4 @@ The `KuzzleEventEmitter` instance.
 
 ## Usage
 
-[snippet=add-listener]
+[snippet=prepend-listener]
