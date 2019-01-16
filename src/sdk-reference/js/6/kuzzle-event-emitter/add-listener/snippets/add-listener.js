@@ -1,7 +1,6 @@
 const eventEmitter = new KuzzleEventEmitter();
 
-eventEmitter
-  .addListener('connected', () => console.log('connected'))
-  .addListener('disconnected', () => console.log('disconnected'));
+eventEmitter.addListener('myEvent', () => console.log('Caught event "myEvent"!'));
 
-console.log('Successfully added 2 new listeners');
+// Prints: Caught event "myEvent"!
+eventEmitter.emit('myEvent');

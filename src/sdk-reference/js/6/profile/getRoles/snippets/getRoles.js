@@ -23,7 +23,6 @@ try {
       }
     ]
   */
-  console.log(`Successfully retrieved ${roles.length} roles.`);
 } catch (error) {
   console.error(error.message);
 }

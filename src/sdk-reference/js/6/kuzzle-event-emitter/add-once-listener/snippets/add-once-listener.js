@@ -1,7 +1,11 @@
 const eventEmitter = new KuzzleEventEmitter();
 
-eventEmitter
-  .addOnceListener('connected', () => console.log('connected'))
-  .addOnceListener('disconnected', () => console.log('disconnected'));
+eventEmitter.addOnceListener(
+  'myEvent',
+  () => console.log('Caught event "myEvent"!'));
 
-console.log('Successfully added 2 new once listeners');
+// Prints: Caught event "myEvent"!
+eventEmitter.emit('myEvent');
+
+// Prints nothing: the event has since been removed
+eventEmitter.emit('myEvent');

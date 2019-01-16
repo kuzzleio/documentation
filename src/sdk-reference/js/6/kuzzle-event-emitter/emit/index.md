@@ -1,7 +1,7 @@
 ---
 layout: sdk.html.hbs
 title: emit
-description: Emit an event
+description: Emits an event
 ---
 
 # emit

@@ -19,14 +19,14 @@ The following methods returns a `User`:
 
 Available properties.
 
-| Property | Type | Description | Writable? |
-|--- |--- |--- | :-------: |
-| `_id` | <pre>string</pre> | User ID (kuid) |    No     |
-| `content` | <pre>object</pre> | User internal content |    No     |
+| Property | Type | Description |
+|--- |--- |--- |
+| `_id` | <pre>string</pre> | User ID (kuid) |
+| `content` | <pre>object</pre> | User internal content |
 
 The `content` property is an object that contain generic properties alongside custom defined properties.
 
-| Property | Type | Description | Writable? |
-|--- |--- |--- | :-------: |
-| `profileIds` | <pre>string[]</pre> | Profiles IDs for this user |    No     |
-| `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata) |    No     |
+| Property | Type | Description |
+|--- |--- |--- |
+| `profileIds` | <pre>string[]</pre> | Profiles IDs for this user |
+| `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata) |

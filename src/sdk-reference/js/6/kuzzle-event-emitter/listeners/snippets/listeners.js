@@ -1,8 +1,8 @@
 const eventEmitter = new KuzzleEventEmitter();
 
-eventEmitter.addListener('CONNECTED', () => console.log('connected'));
-eventEmitter.addListener('CONNECTED', () => console.log('connected bis'));
+eventEmitter.addListener('myEvent', () => console.log('Hello'));
+eventEmitter.addListener('myEvent', () => console.log('Hello World'));
 
-const listeners = eventEmitter.listeners('CONNECTED');
+const listeners = eventEmitter.listeners('myEvent');
 
-console.log(`There is ${listeners.length} listeners binded to the event CONNECTED`);
+console.log(`There are ${listeners.length} listeners bound to the event "myEvent"`);

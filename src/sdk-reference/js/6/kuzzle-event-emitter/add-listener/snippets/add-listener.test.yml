@@ -4,6 +4,6 @@ hooks:
   before:
   after:
 template: eventemitter
-expected: Successfully added 2 new listeners
+expected: Caught event "myEvent"!
 sdk: js
 version: 6

@@ -1,11 +1,18 @@
 const eventEmitter = new KuzzleEventEmitter();
 
-eventEmitter
-  .addListener('disconnected', () => console.log('disconnected'))
-  .addListener('disconnected', () => console.log('disconnected'));
+eventEmitter.addListener('myEvent', () => console.log('Caught event "myEvent" (1)'));
+eventEmitter.addListener('myEvent', () => console.log('Caught event "myEvent" (2)'));
 
-eventEmitter.removeAllListeners('disconnected');
+// Prints:
+//   Caught event "myEvent" (1)
+//   Caught event "myEvent" (2)
+eventEmitter.emit('myEvent');
 
-if (eventEmitter.listeners('disconnected').length === 0) {
+eventEmitter.removeAllListeners('myEvent');
+
+// Prints nothing: all events have been removed
+eventEmitter.emit('myEvent');
+
+if (eventEmitter.listeners('myEvent').length === 0) {
   console.log('Successfully removed all listeners');
 }

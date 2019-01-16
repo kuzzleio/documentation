@@ -19,8 +19,6 @@ try {
       }
     ]
   */
-
-  console.log(`Successfully retrieved ${profiles.length} profiles.`);
 } catch (error) {
   console.error(error.message);
 }

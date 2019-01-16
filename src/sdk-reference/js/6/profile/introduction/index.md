@@ -15,14 +15,14 @@ Refers to the [Security guide]({{ site_base_path }}guide/1/essentials/security#d
 
 Available properties.
 
-| Property | Type | Description | Writable? |
-|--- |--- |--- | :-------: |
-| `_id` | <pre>string</pre> | Profile ID |    No     |
-| `policies` | <pre>object[]</pre> | Array of policies for this profile |    No     |
+| Property | Type | Description |
+|--- |--- |--- |
+| `_id` | <pre>string</pre> | Profile ID |
+| `policies` | <pre>object[]</pre> | Array of policies for this profile |
 
 Each policy object can contain the following properties:
 
-| Property | Type | Description | Writable? |
-|--- |--- |--- | :-------: |
-| `roleId` | <pre>string</pre> | Roles IDs for this user |    No     |
-| `restrictedTo` | <pre>object[]</pre> | Array of object containing indexes and collections which the profile is restricted to |    No     |
+| Property | Type | Description |
+|--- |--- |--- |
+| `roleId` | <pre>string</pre> | Roles IDs for this user |
+| `restrictedTo` | <pre>object[]</pre> | Array of object containing indexes and collections which the profile is restricted to |

@@ -15,7 +15,7 @@ Refers to the [Security guide]({{ site_base_path }}guide/1/essentials/security#d
 
 Available properties.
 
-| Property | Type | Description | Writable? |
-|--- |--- |--- | :-------: |
-| `_id` | <pre>string</pre> | Role ID |    No     |
-| `controllers` | <pre>object</pre> | Object defining controllers action available for this role |    No     |
+| Property | Type | Description |
+|--- |--- |--- |
+| `_id` | <pre>string</pre> | Role ID |
+| `controllers` | <pre>object</pre> | Object defining controllers action available for this role |

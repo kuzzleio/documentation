@@ -6,6 +6,7 @@ hooks:
     curl -X POST kuzzle:7512/users/foo/_create -H "Content-Type:application/json" --data '{"content":{"profileIds":["default"]},"credentials":{"local":{"username":"foo","password":"bar"}}}'
   after:
 template: default
-expected: Successfully retrieved 1 roles
+expected:
+  - Profile { _id: \'default\'
 sdk: js
 version: 6
