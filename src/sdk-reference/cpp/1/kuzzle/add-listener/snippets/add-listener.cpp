@@ -5,6 +5,6 @@ kuzzleio::EventListener other_listener = [](const std::string &payload) {
   std::cerr << payload << std::endl;
 };
 
-kuzzle->addListener(CONNECTED, &listener)->addListener(CONNECTED, &other_listener);
+kuzzle->addListener(EVENT_CONNECTED, &listener)->addListener(EVENT_CONNECTED, &other_listener);
 
 std::cout << "Listener successfully added" << std::endl;
