@@ -19,7 +19,7 @@ emit (eventName, ...payload);
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `eventName`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6//events) section of this documentation |
+| `eventName`    | <pre>string</pre> | The name of the event |
 | `payload` | <pre>any</pre> | Payload(s) to send with the event     |
 
 ## Return

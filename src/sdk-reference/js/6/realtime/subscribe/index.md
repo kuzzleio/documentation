@@ -20,7 +20,7 @@ Subscribes by providing a set of filters: messages, document changes and, option
 |--------------|---------|-------------|
 | ``index`` | <pre>string</pre> | Index name    |
 | ``collection`` | <pre>string</pre> | Collection name    |
-| ``filters`` | <pre>object</pre> | Set of filters following [Koncorde syntax]({{site_base_path}}koncorde/1/terms) |
+| ``filters`` | <pre>object</pre> | Set of filters following [Koncorde syntax]({{site_base_path}}koncorde) |
 | ``callback`` | <pre>function</pre> | Callback function to handle notifications |
 | ``options`` | <pre>object</pre> | Query options |
 

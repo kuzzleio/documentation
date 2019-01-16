@@ -4,6 +4,9 @@ hooks:
   before:
   after:
 template: eventemitter
-expected: Successfully prepended 1 new once listener
+expected: 
+  - ^listener2$
+  - ^listener1$
+  - ^listener1$
 sdk: js
 version: 6

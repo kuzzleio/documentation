@@ -6,7 +6,7 @@ description: Prepends a new listener for an event
 
 # prependListener
 
-Prepends a listener in the listeners for an event.
+Adds a listener function to the beginning of the listeners array for an event.
 
 ## Arguments
 
@@ -18,7 +18,7 @@ prependListener (eventName, callback);
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `eventName`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6//events) section of this documentation |
+| `eventName`    | <pre>string</pre> | The name of the event |
 | `callback` | <pre>function</pre> | Function to call every time the event is triggered     |
 
 ## Return

@@ -6,7 +6,7 @@ description: User getProfiles method
 
 # getProfiles
 
-Loads informations about the user profiles.
+Loads information about the user profiles.
 
 ## Arguments
 

@@ -9,11 +9,11 @@ order: 0
 
 This class represents a Kuzzle Profile.  
 
-Refers to the [Security guide]({{ site_base_path }}guide/1/essentials/security#defining-profiles-default) for more informations about profiles.
+Refer to the [Security guide]({{ site_base_path }}guide/1/essentials/security#defining-profiles-default) for more information about profiles.
 
 ## Properties
 
-Available properties.
+Available properties:
 
 | Property | Type | Description |
 |--- |--- |--- |

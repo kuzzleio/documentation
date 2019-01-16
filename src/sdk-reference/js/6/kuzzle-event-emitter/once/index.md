@@ -4,6 +4,6 @@ title: once
 description: Alias for addOnceListener
 ---
 
-# ononce
+# once
 
 Alias for [addOnceListener]({{ site_base_path }}sdk-reference/js/6/kuzzle-event-emitter/add-once-listener).

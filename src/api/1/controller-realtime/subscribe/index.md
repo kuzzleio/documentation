@@ -55,7 +55,7 @@ Due to the synchronous nature of the HTTP protocol, real-time notifications are 
 
 ## Body properties
 
-Subscription filters, following the [Koncorde syntax]({{site_base_path}}koncorde/1/terms)
+Subscription filters, following the [Koncorde syntax]({{site_base_path}}koncorde)
 
 An empty filter subscribes to any change occuring on the selected data index-collection pair.
 

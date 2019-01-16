@@ -6,8 +6,8 @@ description: Adds a new listener for an event
 
 # addListener
 
-Adds a listener to an event.  
-When an event is triggered, listeners are triggered in the order in which they were added.
+Adds a listener function to the end of the listeners array for an event.  
+Whenever an event is triggered, listener functions are called in the order they were registered.
 
 ## Arguments
 
@@ -19,7 +19,7 @@ addListener (eventName, callback);
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `eventName`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6//events) section of this documentation |
+| `eventName`    | <pre>string</pre> | The name of the event |
 | `callback` | <pre>function</pre> | Function to call every time the event is triggered     |
 
 ## Return

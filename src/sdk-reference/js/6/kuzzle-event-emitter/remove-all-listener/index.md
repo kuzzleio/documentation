@@ -1,13 +1,13 @@
 ---
 layout: sdk.html.hbs
 title: removeAllListeners
-description: Adds a new listener for an event
+description: Removes all listener functions, or all listener functions from an event
 ---
 
 # removeAllListeners
 
-Removes all listeners to an event.  
-If no eventName is specified, removes all the listeners for all events.
+Removes all listener functions from an event.  
+If no eventName is specified, removes all listener functions from all events.
 
 ## Arguments
 
@@ -19,7 +19,7 @@ removeAllListeners ([eventName]);
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `eventName`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6//events) section of this documentation |
+| `eventName`    | <pre>string</pre> | Optional name of the event |
 
 ## Return
 
