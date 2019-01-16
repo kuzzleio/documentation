@@ -7,9 +7,9 @@ order: 0
 
 # KuzzleEventEmitter
 
-This is the base class that emulate Node.js `EventEmitter` for both client and server side code.  
+A portable implementation of the Node.js `EventEmitter` interface.
 
-There is several class extending `KuzzleEventEmitter` in the SDK:
+There are several classes extending `KuzzleEventEmitter` in the SDK:
  - [Kuzzle]({{ site_base_path }}sdk-reference/js/6/kuzzle)
  - [WebSocket]({{ site_base_path }}sdk-reference/js/6/websocket)
  - [Http]({{ site_base_path }}sdk-reference/js/6/http)

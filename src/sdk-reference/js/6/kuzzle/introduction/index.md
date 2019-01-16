@@ -7,6 +7,8 @@ order: 0
 
 # Kuzzle
 
+Inherits from: [KuzzleEventEmitter]({{ site_base_path }}sdk-reference/js/6/kuzzle-event-emitter).
+
 The Kuzzle class is the main class of the SDK.  
 Once instantiated, it represents a connection to your Kuzzle server.
 

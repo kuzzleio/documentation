@@ -6,7 +6,7 @@ description: Returns listeners for an event
 
 # listeners
 
-Returns the listeners binded to a specific event.
+Returns the listener functions bound to a specific event.
 
 ## Signature
 

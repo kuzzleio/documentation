@@ -9,7 +9,7 @@ order: 0
 
 This class represents a Kuzzle User.  
 
-Refer to the [Security guide]({{ site_base_path }}guide/1/essentials/security) for more informations about users.
+Refer to the [Security guide]({{ site_base_path }}guide/1/essentials/security) for more information about users.
 
 The following methods return a `User` object:
 
@@ -18,14 +18,14 @@ The following methods return a `User` object:
 
 ## Properties
 
-Available properties.
+Available properties:
 
 | Property | Type | Description | Writable? |
 |--- |--- |--- | :-------: |
 | `_id` | <pre>string</pre> | User ID (kuid) |    No     |
 | `content` | <pre>object</pre> | User internal content |    No     |
 
-The `content` property is an object that contain generic properties alongside custom defined properties.
+The `content` property is an object containing generic properties alongside custom defined properties.
 
 | Property | Type | Description | Writable? |
 |--- |--- |--- | :-------: |

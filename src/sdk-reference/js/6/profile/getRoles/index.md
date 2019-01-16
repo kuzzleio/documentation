@@ -6,7 +6,7 @@ description: Profile getRoles method
 
 # getRoles
 
-Loads informations about the profile roles.
+Loads information about the profile roles.
 
 ## Signature
 

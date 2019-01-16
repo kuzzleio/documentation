@@ -6,9 +6,9 @@ description: Adds a new listener for an event
 
 # addOnceListener
 
-Adds an once listener to an event.  
-The listener will be called once and then removed.  
-When an event is triggered, listeners are triggered in the order in which they were added.
+Adds a **one-time** listener function to an event.  
+The next time the event is triggered, this listener is removed and then invoked.  
+Whenever an event is triggered, listener functions are called in the order they were registered.
 
 ## Signature
 
@@ -20,7 +20,7 @@ addOnceListener (eventName, callback);
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `eventName`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6//events) section of this documentation |
+| `eventName`    | <pre>string</pre> | The name of the event |
 | `callback` | <pre>function</pre> | Function to call when the event is triggered     |
 
 ## Return

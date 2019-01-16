@@ -6,7 +6,8 @@ description: Prepends a new once listener for an event
 
 # prependOnceListener
 
-Prepends an once listener in the listeners for an event.
+Adds a **one-time** listener function for an event to the beginning of the listeners array.  
+The next time that event is triggered, this listener is removed, and then invoked.
 
 ## Signature
 
@@ -18,7 +19,7 @@ prependOnceListener (eventName, callback);
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `eventName`    | <pre>string</pre> | One of the event described in the [Events]({{ site_base_path }}sdk-reference/js/6//events) section of this documentation |
+| `eventName`    | <pre>string</pre> | The name of the event |
 | `callback` | <pre>function</pre> | Function to call when the event is triggered     |
 
 ## Return

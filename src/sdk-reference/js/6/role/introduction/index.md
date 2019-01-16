@@ -9,13 +9,13 @@ order: 0
 
 This class represents a Kuzzle Role.  
 
-Refers to the [Security guide]({{ site_base_path }}guide/1/essentials/security#defining-roles-default) for more informations about roles.
+Refer to the [Security guide]({{ site_base_path }}guide/1/essentials/security#defining-roles-default) for more information about roles.
 
 ## Properties
 
-Available properties.
+Available properties:
 
 | Property | Type | Description | Writable? |
 |--- |--- |--- | :-------: |
 | `_id` | <pre>string</pre> | Role ID |    No     |
-| `controllers` | <pre>object</pre> | Object defining controllers action available for this role |    No     |
+| `controllers` | <pre>object</pre> | Object defining controller actions available for this role |    No     |
