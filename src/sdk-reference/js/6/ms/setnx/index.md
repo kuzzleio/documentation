@@ -9,13 +9,13 @@ Sets a value on a key, only if it does not already exist.
 
 [[_Redis documentation_]](https://redis.io/commands/setnx)
 
-## Signature
+## Arguments
 
 ```js
 setnx(key, value, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

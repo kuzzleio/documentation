@@ -10,13 +10,13 @@ By default, sorting is numeric and elements are compared by their value, interpr
 
 [[_Redis documentation_]](https://redis.io/commands/sort)
 
-## Signature
+## Arguments
 
 ```js
 sort(key, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

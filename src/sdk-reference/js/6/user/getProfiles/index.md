@@ -8,7 +8,7 @@ description: User getProfiles method
 
 Loads informations about the user profiles.
 
-## Signature
+## Arguments
 
 ```js
 getProfiles ();

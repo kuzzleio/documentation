@@ -9,7 +9,7 @@ description: Starts the requests queuing
 Starts the requests queuing.
 Works only in `offline` state, and if the `autoQueue` option is set to false.
 
-## Signature
+## Arguments
 
 ```javascript
 startQueuing ()

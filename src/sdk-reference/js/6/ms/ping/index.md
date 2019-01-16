@@ -9,13 +9,13 @@ Pings the memory storage database.
 
 [[_Redis documentation_]](https://redis.io/commands/ping)
 
-## Signature
+## Arguments
 
 ```js
 ping([options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

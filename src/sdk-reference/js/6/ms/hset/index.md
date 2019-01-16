@@ -13,13 +13,13 @@ If the field already exists, its value is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/hset)
 
-## Signature
+## Arguments
 
 ```js
 hset(key, field, value, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

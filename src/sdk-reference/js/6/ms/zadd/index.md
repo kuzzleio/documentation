@@ -15,13 +15,13 @@ If a member to insert is already in the sorted set, its score is updated and the
 
 [[_Redis documentation_]](https://redis.io/commands/zadd)
 
-## Signature
+## Arguments
 
 ```js
 zadd(key, elements, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

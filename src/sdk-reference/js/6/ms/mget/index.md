@@ -9,13 +9,13 @@ Returns the values of the provided keys.
 
 [[_Redis documentation_]](https://redis.io/commands/mget)
 
-## Signature
+## Arguments
 
 ```js
 mget(keys, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

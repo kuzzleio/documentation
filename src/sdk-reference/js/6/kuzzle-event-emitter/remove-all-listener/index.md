@@ -9,13 +9,13 @@ description: Adds a new listener for an event
 Removes all listeners to an event.  
 If no eventName is specified, removes all the listeners for all events.
 
-## Signature
+## Arguments
 
 ```js
 removeAllListeners ([eventName]);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |

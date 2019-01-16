@@ -8,7 +8,7 @@ description: Profile getRoles method
 
 Loads informations about the profile roles.
 
-## Signature
+## Arguments
 
 ```js
 getRoles ();

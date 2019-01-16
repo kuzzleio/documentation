@@ -9,13 +9,13 @@ Removes the last element of a list and returns it.
 
 [[_Redis documentation_]](https://redis.io/commands/rpop)
 
-## Signature
+## Arguments
 
 ```js
 rpop(key, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

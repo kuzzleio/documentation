@@ -10,13 +10,13 @@ Deletes a list of keys.
 
 [[_Redis documentation_]](https://redis.io/commands/del)
 
-## Signature
+## Arguments
 
 ```js
 del(keys, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

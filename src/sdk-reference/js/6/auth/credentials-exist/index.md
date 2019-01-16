@@ -8,7 +8,7 @@ description: Check that the current user has credentials for the specified strat
 
 Checks that the current authenticated user has credentials for the specified authentication strategy.
 
-## Arguments
+<br/>
 
 ```javascript
 credentialsExist (strategy, [options]);

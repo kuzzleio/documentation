@@ -8,7 +8,7 @@ description: Returns the profile object for the user linked to the json web toke
 
 Returns information about the currently logged in user.
 
-## Arguments
+<br/>
 
 ```javascript
 getCurrentUser ([options])

@@ -8,7 +8,7 @@ description: Remove all documents from collection
 
 Removes all documents from a data collection, while keeping the associated mapping.
 
-## Arguments
+<br/>
 
 ```javascript
 truncate (index, collection, [options])

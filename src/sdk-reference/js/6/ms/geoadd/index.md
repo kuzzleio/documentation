@@ -9,14 +9,14 @@ Adds geospatial points to the specified key.
 
 [[_Redis documentation_]](https://redis.io/commands/geoadd)
 
-## Signature
+## Arguments
 
 ```js
 geoadd(key, geopoints, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

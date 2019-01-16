@@ -10,7 +10,7 @@ Updates the currently logged in user content.
 
 This route cannot update the list of associated security profiles. To change a user's security profiles, the route [security:updateUser]({{ site_base_path }}api/1/controller-security/update-user) must be used instead.
 
-## Arguments
+<br/>
 
 ```javascript
 updateSelf (content, [options])

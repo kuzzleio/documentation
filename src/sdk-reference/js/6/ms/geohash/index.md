@@ -10,14 +10,14 @@ Converts a key's geopoints (see [geoadd]({{ site_base_path }}sdk-reference/js/6/
 
 [[_Redis documentation_]](https://redis.io/commands/geohash)
 
-## Signature
+## Arguments
 
 ```js
 geohash(key, geopoints, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

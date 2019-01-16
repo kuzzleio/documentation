@@ -9,14 +9,14 @@ Returns the number of elements held by a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zcard)
 
-## Signature
+## Arguments
 
 ```js
 zcard(key, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

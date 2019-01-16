@@ -9,13 +9,13 @@ description: Add a listener to an event
 Adds a listener to an event.
 When an event is triggered, listeners are triggered in the order in which they were added.
 
-## Signature
+## Arguments
 
 ```javascript
 addListener (event, callback)
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |

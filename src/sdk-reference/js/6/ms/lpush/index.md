@@ -11,13 +11,13 @@ If the key does not exist, it is created holding an empty list before performing
 
 [[_Redis documentation_]](https://redis.io/commands/lpush)
 
-## Signature
+## Arguments
 
 ```js
 lpush(key, values, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

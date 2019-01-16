@@ -10,13 +10,13 @@ order: 50
 Use this constructor to create a new instance of the SDK.  
 Each instance represent a different connection to a Kuzzle server with specific options.
 
-## Signature
+## Arguments
 
 ```javascript
 Kuzzle(protocol, [options]);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type               | Description                           |
 | ---------- | ------------------ | ------------------------------------- |

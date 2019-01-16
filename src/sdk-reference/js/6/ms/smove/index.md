@@ -9,14 +9,14 @@ Moves a member from a set of unique values to another.
 
 [[_Redis documentation_]](https://redis.io/commands/smove)
 
-## Signature
+## Arguments
 
 ```js
 smove(src, dest, member, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

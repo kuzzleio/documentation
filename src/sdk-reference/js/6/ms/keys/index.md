@@ -9,13 +9,13 @@ Returns all keys matching the provided pattern.
 
 [[_Redis documentation_]](https://redis.io/commands/keys)
 
-## Signature
+## Arguments
 
 ```js
 keys(pattern, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

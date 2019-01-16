@@ -11,14 +11,14 @@ The elements are considered to be ordered from low to high scores.
 
 [[_Redis documentation_]](https://redis.io/commands/zrangebyscore)
 
-## Signature
+## Arguments
 
 ```js
 zrangebyscore(key, min, max, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

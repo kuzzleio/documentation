@@ -10,7 +10,7 @@ Deletes a document.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (and to no longer be available in search).
 
-## Arguments
+<br/>
 
 ```javascript
 delete (index, collection, id, [options])

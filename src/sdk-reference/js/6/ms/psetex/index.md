@@ -9,13 +9,13 @@ Sets a key with the provided value, and an expiration delay expressed in millise
 
 [[_Redis documentation_]](https://redis.io/commands/psetex)
 
-## Signature
+## Arguments
 
 ```js
 psetex(key, value, milliseconds, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

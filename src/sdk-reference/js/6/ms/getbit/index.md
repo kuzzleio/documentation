@@ -9,14 +9,14 @@ Returns the bit value at the provided offset, in the string value stored in a ke
 
 [[_Redis documentation_]](https://redis.io/commands/getbit)
 
-## Signature
+## Arguments
 
 ```js
 getbit(key, offset, options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

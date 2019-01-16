@@ -9,13 +9,13 @@ Returns the union of sets of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sunion)
 
-## Signature
+## Arguments
 
 ```js
 sunion(keys, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

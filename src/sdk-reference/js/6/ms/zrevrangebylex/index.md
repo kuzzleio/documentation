@@ -9,14 +9,14 @@ Identical to [zrangebylex]({{ site_base_path }}api/1/controller-memory-storage/z
 
 [[_Redis documentation_]](https://redis.io/commands/zrevrangebylex)
 
-## Signature
+## Arguments
 
 ```js
 zrevrangebylex(key, min, max, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

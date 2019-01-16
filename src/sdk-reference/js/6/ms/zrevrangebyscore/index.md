@@ -9,14 +9,14 @@ Identical to [zrangebyscore]({{ site_base_path }}api/1/controller-memory-storage
 
 [[_Redis documentation_]](https://redis.io/commands/zrevrangebyscore)
 
-## Signature
+## Arguments
 
 ```js
 zrevrangebyscore(key, min, max, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -9,13 +9,13 @@ Sets a new value for a key, and returns its previously stored value.
 
 [[_Redis documentation_]](https://redis.io/commands/getset)
 
-## Signature
+## Arguments
 
 ```js
 getset(key, value, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

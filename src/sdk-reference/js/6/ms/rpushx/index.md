@@ -9,13 +9,13 @@ Appends a value at the end of a list, only if the destination key already exists
 
 [[_Redis documentation_]](https://redis.io/commands/rpushx)
 
-## Signature
+## Arguments
 
 ```js
 rpushx(key, value, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

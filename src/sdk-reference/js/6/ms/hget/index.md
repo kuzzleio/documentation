@@ -10,14 +10,14 @@ Returns the field's value of a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hget)
 
-## Signature
+## Arguments
 
 ```js
 hget(key, field, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

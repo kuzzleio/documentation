@@ -8,7 +8,7 @@ description: Checks that an administrator account exists.
 
 Checks that an administrator account exists.
 
-## Arguments
+<br/>
 
 ```javascript
 adminExists ([options])

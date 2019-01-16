@@ -8,7 +8,7 @@ description: Creates an index
 
 Creates a new data index.
 
-## Arguments
+<br/>
 
 ```javascript
 create (index, [options])

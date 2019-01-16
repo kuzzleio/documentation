@@ -9,13 +9,13 @@ Removes and returns the first element of a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lpop)
 
-## Signature
+## Arguments
 
 ```js
 lpop(key, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

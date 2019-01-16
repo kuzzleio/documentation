@@ -9,13 +9,13 @@ Sets the provided keys to their respective values. If a key does not exist, it i
 
 [[_Redis documentation_]](https://redis.io/commands/mset)
 
-## Signature
+## Arguments
 
 ```js
 mset(entries, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

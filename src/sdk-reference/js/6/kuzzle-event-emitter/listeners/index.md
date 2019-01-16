@@ -8,7 +8,7 @@ description: Returns listeners for an event
 
 Returns the listeners binded to a specific event.
 
-## Signature
+## Arguments
 
 ```js
 listeners (eventName);

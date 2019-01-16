@@ -12,14 +12,14 @@ If the destination list does not exist, it is created holding an empty list befo
 [[_Redis documentation_]](https://redis.io/commands/rpush)
 
 
-## Signature
+## Arguments
 
 ```js
 rpush(key, values, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

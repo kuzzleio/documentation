@@ -10,13 +10,13 @@ Adds an once listener to an event.
 The listener will be called once and then removed.  
 When an event is triggered, listeners are triggered in the order in which they were added.
 
-## Signature
+## Arguments
 
 ```js
 addOnceListener (eventName, callback);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |

@@ -9,13 +9,13 @@ description: Emit an event
 Emits an event with the specified payload.
 
 
-## Signature
+## Arguments
 
 ```js
 emit (eventName, ...payload);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |

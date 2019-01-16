@@ -9,13 +9,13 @@ Increments the number stored at `key` by the provided float value. If the key do
 
 [[_Redis documentation_]](https://redis.io/commands/incrbyfloat)
 
-## Signature
+## Arguments
 
 ```js
 incrbyfloat(key, increment, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

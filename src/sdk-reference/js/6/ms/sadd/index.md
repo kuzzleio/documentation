@@ -11,13 +11,13 @@ If the destination set does not exist, it is created beforehand.
 
 [[_Redis documentation_]](https://redis.io/commands/sadd)
 
-## Signature
+## Arguments
 
 ```js
 sadd(key, values, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

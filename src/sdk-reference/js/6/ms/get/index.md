@@ -9,13 +9,13 @@ Gets the value of a key.
 
 [[_Redis documentation_]](https://redis.io/commands/get)
 
-## Signature
+## Arguments
 
 ```js
 get(key, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

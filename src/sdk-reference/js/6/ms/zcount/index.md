@@ -9,13 +9,13 @@ Returns the number of elements held by a sorted set with a score within the prov
 
 [[_Redis documentation_]](https://redis.io/commands/zcount)
 
-## Signature
+## Arguments
 
 ```js
 zcount(key, min, max, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

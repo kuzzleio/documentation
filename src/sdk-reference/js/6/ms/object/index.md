@@ -9,13 +9,13 @@ Inspects the low-level properties of a key.
 
 [[_Redis documentation_]](https://redis.io/commands/object)
 
-## Signature
+## Arguments
 
 ```js
 object(key, subcommand, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

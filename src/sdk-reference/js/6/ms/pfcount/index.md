@@ -10,13 +10,13 @@ Returns the probabilistic cardinality of a [HyperLogLog](https://en.wikipedia.or
 
 [[_Redis documentation_]](https://redis.io/commands/pfcount)
 
-## Signature
+## Arguments
 
 ```js
 pfcount(keys, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

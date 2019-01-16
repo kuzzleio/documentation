@@ -11,13 +11,13 @@ If the destination key already exists, it is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/sinterstore)
 
-## Signature
+## Arguments
 
 ```js
 sinterstore(dest, keys, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -10,14 +10,14 @@ Increments the number stored in a hash field by the provided float value.
 
 [[_Redis documentation_]](https://redis.io/commands/hincrbyfloat)
 
-## Signature
+## Arguments
 
 ```js
 hincrbyfloat(key, field, increment, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

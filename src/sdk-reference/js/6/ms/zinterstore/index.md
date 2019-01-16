@@ -9,13 +9,13 @@ Computes the intersection of the provided sorted sets, and stores the result in 
 
 [[_Redis documentation_]](https://redis.io/commands/zinterstore)
 
-## Signature
+## Arguments
 
 ```js
 zinterstore(dest, sources, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

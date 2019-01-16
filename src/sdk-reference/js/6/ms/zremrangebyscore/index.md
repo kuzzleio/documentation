@@ -9,14 +9,14 @@ Removes members from a sorted set, with a score between the provided interval.
 
 [[_Redis documentation_]](https://redis.io/commands/zremrangebylex)
 
-## Signature
+## Arguments
 
 ```js
 zremrangebyscore(key, min, max, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -9,13 +9,13 @@ Returns the length of a value.
 
 [[_Redis documentation_]](https://redis.io/commands/strlen)
 
-## Signature
+## Arguments
 
 ```js
 strlen(key, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

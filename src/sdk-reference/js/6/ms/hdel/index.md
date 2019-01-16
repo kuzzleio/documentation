@@ -9,13 +9,13 @@ Removes fields from a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hdel)
 
-## Signature
+## Arguments
 
 ```js
 hdel(key, fields, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

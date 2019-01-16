@@ -9,13 +9,13 @@ order: 50
 
 Use this constructor to create a new instance of the `WebSocket` protocol with specific options.  
 
-## Signature
+## Arguments
 
 ```javascript
 WebSocket(host, [options]);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type               | Description                           |
 | ---------- | ------------------ | ------------------------------------- |

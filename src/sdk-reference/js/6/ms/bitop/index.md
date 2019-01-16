@@ -9,14 +9,14 @@ Performs a bitwise operation between multiple keys (containing string values) an
 
 [[_Redis documentation_]](https://redis.io/commands/bitop)
 
-## Signature
+## Arguments
 
 ```js
 bitop(key, operation, keys, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

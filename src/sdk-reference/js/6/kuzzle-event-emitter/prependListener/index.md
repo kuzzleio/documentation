@@ -8,13 +8,13 @@ description: Prepends a new listener for an event
 
 Prepends a listener in the listeners for an event.
 
-## Signature
+## Arguments
 
 ```js
 prependListener (eventName, callback);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |

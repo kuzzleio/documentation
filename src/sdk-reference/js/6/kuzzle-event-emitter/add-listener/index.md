@@ -9,13 +9,13 @@ description: Adds a new listener for an event
 Adds a listener to an event.  
 When an event is triggered, listeners are triggered in the order in which they were added.
 
-## Signature
+## Arguments
 
 ```js
 addListener (eventName, callback);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |

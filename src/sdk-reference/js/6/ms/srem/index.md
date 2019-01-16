@@ -9,13 +9,13 @@ Removes members from a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/srem)
 
-## Signature
+## Arguments
 
 ```js
 srem(key, members, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -9,13 +9,13 @@ Returns a key identifier from the memory storage, at random.
 
 [[_Redis documentation_]](https://redis.io/commands/randomkey)
 
-## Signature
+## Arguments
 
 ```js
 randomkey([options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

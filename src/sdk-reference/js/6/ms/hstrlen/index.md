@@ -9,14 +9,14 @@ Returns the string length of a field's value in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hstrlen)
 
-## Signature
+## Arguments
 
 ```js
 hstrlen(key, field, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

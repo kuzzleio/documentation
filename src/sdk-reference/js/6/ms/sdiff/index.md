@@ -9,14 +9,14 @@ Returns the difference between a reference set and a list of other sets.
 
 [[_Redis documentation_]](https://redis.io/commands/sdiff)
 
-## Signature
+## Arguments
 
 ```js
 sdiff(ref, sets, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

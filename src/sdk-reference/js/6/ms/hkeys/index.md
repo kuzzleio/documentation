@@ -9,13 +9,13 @@ Returns all field names contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hkeys)
 
-## Signature
+## Arguments
 
 ```js
 hkeys(key, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

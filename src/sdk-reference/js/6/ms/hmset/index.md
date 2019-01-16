@@ -10,13 +10,13 @@ Sets multiple fields at once in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hmset)
 
-## Signature
+## Arguments
 
 ```js
 hmset(key, entries, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -9,13 +9,13 @@ Returns the element at the provided index in a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lindex)
 
-## Signature
+## Arguments
 
 ```js
 lindex(key, index, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

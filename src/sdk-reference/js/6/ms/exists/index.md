@@ -9,13 +9,13 @@ Checks if the specified keys exist in the database.
 
 [[_Redis documentation_]](https://redis.io/commands/exists)
 
-## Signature
+## Arguments
 
 ```js
 exists(keys, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

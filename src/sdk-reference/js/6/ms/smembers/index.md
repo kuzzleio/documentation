@@ -10,13 +10,13 @@ Returns the members of a set of unique values.
 [[_Redis documentation_]](https://redis.io/commands/smembers)
 
 
-## Signature
+## Arguments
 
 ```js
 smembers(key, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

@@ -10,14 +10,14 @@ Returns the positions of the provided key's members (see [geoadd]({{ site_base_p
 
 [[_Redis documentation_]](https://redis.io/commands/geopos)
 
-## Signature
+## Arguments
 
 ```js
 geopos(key, geopoints, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

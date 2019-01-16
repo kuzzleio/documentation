@@ -9,13 +9,13 @@ Returns the length of a list.
 
 [[_Redis documentation_]](https://redis.io/commands/llen)
 
-## Signature
+## Arguments
 
 ```js
 llen(key, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

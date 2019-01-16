@@ -11,14 +11,14 @@ If the new key name is already used, then it is overwritten.
 
 [[_Redis documentation_]](https://redis.io/commands/rename)
 
-## Signature
+## Arguments
 
 ```js
 rename(src, dest, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

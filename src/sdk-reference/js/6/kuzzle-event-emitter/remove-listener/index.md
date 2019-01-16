@@ -8,13 +8,13 @@ description: Adds a new listener for an event
 
 Removes a listener to an event.
 
-## Signature
+## Arguments
 
 ```js
 removeListener (eventName, callback);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |

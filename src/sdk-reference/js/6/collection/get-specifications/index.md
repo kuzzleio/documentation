@@ -8,7 +8,7 @@ description: Returns the validation specifications
 
 Returns the validation specifications associated to the given index and collection.
 
-## Arguments
+<br/>
 
 ```javascript
 getSpecifications (index, collection, [options])

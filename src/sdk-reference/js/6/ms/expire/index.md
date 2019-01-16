@@ -10,13 +10,13 @@ Sets a timeout (in seconds) on a key. After the timeout has expired, the key is 
 
 [[_Redis documentation_]](https://redis.io/commands/expire)
 
-## Signature
+## Arguments
 
 ```js
 expire(key, seconds, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

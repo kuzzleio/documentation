@@ -9,13 +9,13 @@ Removes the last element of a list, and pushes it back at the start of another l
 
 [[_Redis documentation_]](https://redis.io/commands/rpoplpush)
 
-## Signature
+## Arguments
 
 ```js
 rpoplpush(src, dest, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

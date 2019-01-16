@@ -8,13 +8,13 @@ description: Prepends a new once listener for an event
 
 Prepends an once listener in the listeners for an event.
 
-## Signature
+## Arguments
 
 ```js
 prependOnceListener (eventName, callback);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |

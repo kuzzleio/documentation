@@ -10,14 +10,14 @@ Returns the members (added with [geoadd]({{ site_base_path }}sdk-reference/js/6/
 
 [[_Redis documentation_]](https://redis.io/commands/georadius)
 
-## Signature
+## Arguments
 
 ```js
 georadius(key, lon, lat, dist, unit, [options])
 
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|
