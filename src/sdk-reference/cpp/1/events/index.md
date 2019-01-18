@@ -17,11 +17,11 @@ These callbacks can be added and deleted respectively by the methods [addListene
 
 # Emitted Events
 
-## EVENT_CONNECTED
+## KUZZLE_EVENT_CONNECTED
 
 Triggered when the SDK has successfully connected to Kuzzle.
 
-## EVENT_DISCARDED
+## KUZZLE_EVENT_DISCARDED
 
 Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request too large, ...).
 
@@ -35,11 +35,11 @@ A JSON string representing an object with the following properties:
 | `status` | <pre>int</pre> | Error code |
 | `stack` | <pre>std::string</pre> | Stacktrace (development mode only) |
 
-## EVENT_DISCONNECTED
+## KUZZLE_EVENT_DISCONNECTED
 
 Triggered when the current session has been unexpectedly disconnected.
 
-## EVENT_LOGIN_ATTEMPT
+## KUZZLE_EVENT_LOGIN_ATTEMPT
 
 Triggered when a login attempt completes, either with a success or a failure result.
 
@@ -52,7 +52,7 @@ A JSON string representing an object with the following properties:
 | `success` | <pre>bool</pre> | Indicate if login attempt succeed |
 | `error` | <pre>std::string</pre> | Error message when login fail |
 
-## EVENT_NETWORK_ERROR
+## KUZZLE_EVENT_NETWORK_ERROR
 
 Triggered when the SDK has failed to connect to Kuzzle.  
 This event does not trigger the offline mode.  
@@ -67,7 +67,7 @@ A JSON string representing an object with the following properties:
 | `status` | <pre>int</pre> | Error code |
 | `stack` | <pre>std::string</pre> | Stacktrace (development mode only) |
 
-## EVENT_OFFLINE_QUEUE_POP
+## KUZZLE_EVENT_OFFLINE_QUEUE_POP
 
 Triggered whenever a request is removed from the offline queue.
 
@@ -75,7 +75,7 @@ Triggered whenever a request is removed from the offline queue.
 
 A JSON string representing the [request]({{ site_base_path }}api/1/essentials/query-syntax/) removed from the queue.
 
-## EVENT_OFFLINE_QUEUE_PUSH
+## KUZZLE_EVENT_OFFLINE_QUEUE_PUSH
 
 Triggered whenever a request is added to the offline queue.
 
@@ -87,7 +87,7 @@ A JSON string representing an object with the following properties:
 | ---------- | ------- | ----------------- |
 | `request` | <pre>std::string</pre> | JSON string representing [request]({{ site_base_path }}api/1/essentials/query-syntax/) added to the queue |    
 
-## EVENT_QUERY_ERROR
+## KUZZLE_EVENT_QUERY_ERROR
 
 Triggered whenever Kuzzle responds with an error
 
@@ -100,10 +100,10 @@ A JSON string representing an object with the following properties:
 | `request` | <pre>std::string</pre> | JSON string representing the request that causing an error |    
 | `error` | <pre>std::string</pre> | Error details |    
 
-## EVENT_RECONNECTED
+## KUZZLE_EVENT_RECONNECTED
 
 Triggered when the current session has reconnected to Kuzzle after a disconnection, and only if ``autoReconnect`` is set to ``true``.
 
-## EVENT_TOKEN_EXPIRED
+## KUZZLE_EVENT_TOKEN_EXPIRED
 
 Triggered when Kuzzle rejects a request because the authentication token has expired.
