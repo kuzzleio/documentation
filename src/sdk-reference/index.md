@@ -67,4 +67,9 @@ but we’re working on extending the support to many more.
     <img src="/assets/images/logos/csharp.svg" alt="csharp logo" class="Languages-item-logo">
     <div class="Languages-item-name">C#</div>
   </a>
+  <a href="https://github.com/prijindal/kuzzle_dart" class="Languages-item">
+    <div class="ribbon"><span>ALPHA</span></div>
+    <img src="/assets/images/logos/dart.svg" alt="dart logo" class="Languages-item-logo">
+    <div class="Languages-item-name">Dart</div>
+  </a>
 </div>
