@@ -62,10 +62,11 @@ Promise<Array<object>> offlineQueueLoader()
 
 The returned (or resolved) array must contain objects, each with the following properties:
 
-  - `query` (<pre>object</pre>): object representing the request that is about to be sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/essentials/query-syntax) format
-  - `reject` (<pre>function</pre>): a [Promise.reject](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject) function
-  - `resolve` (<pre>function</pre>): a [Promise.resolve](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve) function
-
+| Property | Type | Description |
+|---|---|---|
+| `query` | <pre>object</pre> | Object representing the request that is about to be sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/essentials/query-syntax) format |
+| `reject` | <pre>function</pre> | A [Promise.reject](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject) function |
+| `resolve` | <pre>function</pre> | A [Promise.resolve](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve) function |
 
 ### queueFilter
 
