@@ -40,6 +40,7 @@ Available properties.
 | `autoQueue`          | <pre>boolean</pre> | Automatically queue all requests during offline mode    |    Yes    |
 | `autoReplay`         | <pre>boolean</pre> | Automatically replay queued requests on a `reconnected` event        |    Yes    |
 | `autoResubscribe`    | <pre>boolean</pre> | Automatically renew all subscriptions on a `reconnected` event       |    Yes    |
+| `eventList`          | <pre>string[]</pre> | List of available SDK events       |    No    |
 | `jwt`                | <pre>string</pre> | Token used in requests for authentication        |    Yes    |
 | `offlineQueue`       | <pre>object[]</pre> | Contains the queued requests during offline mode   |    No     |
 | `offlineQueueLoader` | <pre>function</pre> | Called before dequeuing requests after exiting offline mode,</br> to add items at the beginning of the offline queue  |    Yes    |
