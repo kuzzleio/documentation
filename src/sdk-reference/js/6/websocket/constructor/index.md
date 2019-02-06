@@ -7,7 +7,7 @@ order: 50
 
 # Constructor
 
-Use this constructor to create a new instance of the `WebSocket` protocol with specific options.  
+This constructor creates a new WebSocket connection, using the specified options.  
 
 ## Arguments
 
@@ -28,10 +28,11 @@ WebSocket protocol connection options.
 
 | Property              | Type<br/>(default)  | Description   |
 | -------------- | --------- | ------------- |
-| `port`         | <pre>number</pre><br/>(`7512`) | Kuzzle server port               | 
-| `sslConnection`     | <pre>boolean</pre><br/>(`false`) | Use SSL to connect to Kuzzle server                    |   
 | `autoReconnect`     | <pre>boolean</pre><br/>(`true`) | Automatically reconnect to kuzzle after a `disconnected` event      | 
+| `port`         | <pre>number</pre><br/>(`7512`) | Kuzzle server port               | 
+| `headers` | <pre>object</pre>(`{}`) | Connection HTTP headers (e.g. origin, subprotocols, ...)<br/>**(Not supported by browsers)** |
 | `reconnectionDelay` | <pre>number</pre><br/>(`1000`) | Number of milliseconds between reconnection attempts               |  
+| `sslConnection`     | <pre>boolean</pre><br/>(`false`) | Use SSL to connect to Kuzzle server                    |   
 
 ## Return
 
