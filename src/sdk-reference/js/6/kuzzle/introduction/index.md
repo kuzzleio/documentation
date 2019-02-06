@@ -55,9 +55,9 @@ Available properties.
 The `offlineQueueLoader` property must be set with a function of one of the following formats:
 
 ```js
-Array<object> offlineQueueLoader()
+Object[] offlineQueueLoader()
 
-Promise<Array<object>> offlineQueueLoader()
+Promise<Object[]> offlineQueueLoader()
 ```
 
 The returned (or resolved) array must contain objects, each with the following properties:
