@@ -34,8 +34,8 @@ plateform](https://dl.kuzzle.io/sdk/java/master/index.html). Download
 and add it to your classpath.
 
 <div class="alert alert-info">
-Following examples are made to be execute without any IDE.
-If you're using Eclipse, IntelliJ or another Java IDE. You'll need to add the SDK as a project dependency in your classpath as you would make as usual.
+The following examples are made to be executed without any IDE.
+If you're using Eclipse, IntelliJ or another Java IDE, you need to add the SDK as a project dependency in your classpath.
 </div>
 
 ## First connection
