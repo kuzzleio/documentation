@@ -33,6 +33,11 @@ on our [download
 plateform](https://dl.kuzzle.io/sdk/java/master/index.html). Download
 and add it to your classpath.
 
+<div class="alert alert-info">
+Following examples are made to be execute without any IDE.
+If you're using Eclipse, IntelliJ or another Java IDE. You'll need to add the SDK as a project dependency in your classpath as you would make as usual.
+</div>
+
 ## First connection
 
 Initialize a new Java project, create a `gettingstartedfirstconnection.java` file and start by adding the code below:
@@ -77,7 +82,7 @@ New document added to yellow-taxi collection!
 ```
 
 You can perform other actions such as [delete]({{ site_base_path }}sdk-reference/go/1/document/delete),
-[replace]({{ site_base_path }}sdk-reference/go/1/document/replace) or [search]({{ site_base_path }}sdk-reference/go/1/document/search) documents. There are also other ways to interact with Kuzzle like our [Admin Console]({{ site_base_path }}guide/1/essentials/installing-console/), the [Kuzzle HTTP API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/) or by using your [own protocol](protocols/1/essentials/getting-started/).
+[replace]({{ site_base_path }}sdk-reference/go/1/document/replace) or [search]({{ site_base_path }}sdk-reference/go/1/document/search) documents. There are also other ways to interact with Kuzzle like our [Admin Console]({{ site_base_path }}guide/1/essentials/installing-console/), the [Kuzzle HTTP API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/) or by using your [own protocol]({{ site_base_path }}protocols/1/essentials/getting-started/).
 
 Now you know how to:
 * Store documents in a Kuzzle Server, and access those
