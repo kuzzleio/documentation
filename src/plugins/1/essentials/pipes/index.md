@@ -20,12 +20,12 @@ Pipes can:
 
 ## Usage
 
-Plugins can register pipes by exposing a `pipes` object: keys are listened [events]({{ site_base_path }}plugins/1/events/), and values are either a function name to execute whenever that event is triggered, or an array of function names.
+Plugins can register pipes by exposing a `pipes` object: keys are listened [events]({{ site_base_path }}plugins/1/events/), and values are either a function to execute whenever that event is triggered, or an array of functions.
 
 ```javascript
 this.pipes = {
-  '<kuzzle event to listen>': '<plugin function name to call>',
-  '<another event>': ['list', 'of', 'plugin', 'functions', 'to call']
+  '<kuzzle event to listen>': <function to call>,
+  '<another event>': [list, of, functions, to call]
 };
 ```
 
@@ -58,7 +58,7 @@ module.exports = class PipePlugin {
       "document:afterGet"
      */
     this.pipes = {
-      'document:afterGet': 'restrictUser'
+      'document:afterGet': (...args) => this.restrictUser(...args)
     };
   }
 
