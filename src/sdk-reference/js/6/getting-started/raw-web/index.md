@@ -6,7 +6,7 @@ description: Getting started with Kuzzle in the browser
 
 # Getting Started with Kuzzle in the browser
 
-This tutorial explains you how to use **Kuzzle** with the **Javascript SDK** in the **browser**.  
+This tutorial explains how to use **Kuzzle** with the **Javascript SDK** in a **browser**.  
 
 To follow this tutorial, you must have a Kuzzle Server up and running (you'll need to know the hostname of the machine running it). If this is not already the case, take a look at [how to Run Kuzzle]({{ site_base_path }}guide/1/getting-started/running-kuzzle).
 
