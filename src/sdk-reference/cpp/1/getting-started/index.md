@@ -56,9 +56,10 @@ Create a `my-first-kuzzle-app.cpp` file and with the following source code :
 Build and run :
 
 ``` bash
-$ gcc -o my-first-kuzzle-app my-first-kuzzle-app.cpp -std=c++11 -lstdc++ -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread -Wl,-rpath=${KUZZLE_SDK_PATH}/lib
+$ g++ -o my-first-kuzzle-app my-first-kuzzle-app.cpp -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread -Wl,-rpath=${KUZZLE_SDK_PATH}/lib
 $ ./my-first-kuzzle-app
-Connected to Kuzzle Server
+Connected!
+Server current timestamp: 1549298495451
 ```
 
 ## Create data structure
@@ -72,20 +73,13 @@ Update `my-first-kuzzle-app.cpp` with the following content :
 Build and execute the program with the following commands :
 
 ``` sh
-$ gcc -o my-first-kuzzle-app my-first-kuzzle-app.cpp -std=c++11 -lstdc++ -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread -Wl,-rpath=${KUZZLE_SDK_PATH}/lib
-$ ./my-first-kuzzle-app
+$ g++ -o my-first-kuzzle-app my-first-kuzzle-app.cpp -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread
+$ LD_LIBRARY_PATH=${KUZZLE_SDK_PATH}/lib/ ./my-first-kuzzle-app
 Connected to Kuzzle Server
-Index 'nyc-open-data' and collection 'yellow-taxi' created
+Index nyc-open-data created!
+Collection yellow-taxi created!
 
 ```
-
-<!-- Congratulations, you performed a first connection to Kuzzle with a Go program.
-You are now able to:
-* Load the `Kuzzle Go SDK` from your `GOPATH` directory
-* Instantiate a protocol (here `websocket`) and a Kuzzle SDK instance
-* Connect to a Kuzzle instance running on `localhost`, with the WebSocket protocol
-* Create a data index
-* Create a data collection within an existing index -->
 
 ## Create your first document
 
@@ -105,22 +99,22 @@ Create a `create-document.cpp` file with the following source code :
 Build and run :
 
 ``` bash
-$ gcc -o create-document create-document.cpp -std=c++11 -lstdc++ -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread -Wl,-rpath=${KUZZLE_SDK_PATH}/lib
-$ ./create-document
+$ g++ -o create-document create-document.cpp -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread
+$ LD_LIBRARY_PATH=${KUZZLE_SDK_PATH}/lib/ ./create-document
 Connected to Kuzzle Server
 Document created successfuly
 {"_index":"nyc-open-data","_type":"yellow-taxi","_id":"AWesW0cJYEmXIw2Bonx4","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"created":true,"_source":{"birthday":"1959-06-22","license":"B","name":"Sirkis","_kuzzle_info":{"author":"-1","createdAt":1544784922373,"updatedAt":null,"updater":null,"active":true,"deletedAt":null}},"_meta":{"author":"-1","createdAt":1544784922373,"updatedAt":null,"updater":null,"active":true,"deletedAt":null}}
 ```
 
 You can perform other actions such as [delete]({{ site_base_path }}sdk-reference/go/1/document/delete),
-[replace]({{ site_base_path }}sdk-reference/go/1/document/replace) or [search]({{ site_base_path }}sdk-reference/go/1/document/search) documents. There are also other ways to interact with Kuzzle like our [Admin Console]({{ site_base_path }}guide/1/essentials/installing-console/), the [Kuzzle HTTP API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/) or by using your [own protocol](protocols/1/essentials/getting-started/).
+[replace]({{ site_base_path }}sdk-reference/go/1/document/replace) or [search]({{ site_base_path }}sdk-reference/go/1/document/search) documents. There are also other ways to interact with Kuzzle like our [Admin Console]({{ site_base_path }}guide/1/essentials/installing-console/), the [Kuzzle HTTP API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/) or by using your [own protocol]({{ site_base_path }}protocols/1/essentials/getting-started/).
 
 Now you know how to:
 * Store documents in a Kuzzle server, and access those
 
 ## Subscribe to realtime document notifications (pub/sub)
 
-Time to use realtime with Kuzzle. Create a new file `realtime.go` with the following code:
+Time to use realtime with Kuzzle. Create a new file `realtime.cpp` with the following code:
 
 [snippet=realtime]
 
@@ -128,7 +122,8 @@ This program subscribes to changes made to documents with a `license` field set 
 Run your program:
 
 ```bash
-$ go run realtime.go
+$ g++ -o realtime realtime.cpp -I${KUZZLE_SDK_PATH}/include -L${KUZZLE_SDK_PATH}/lib -lkuzzlesdk -lpthread
+$ LD_LIBRARY_PATH=${KUZZLE_SDK_PATH}/lib/ ./realtime
 Connected!
 Successfully subscribing!
 New document added to yellow-taxi collection!
