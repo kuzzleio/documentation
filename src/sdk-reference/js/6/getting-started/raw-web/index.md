@@ -10,7 +10,7 @@ This tutorial explains how to use **Kuzzle** with the **Javascript SDK** in a **
 
 To follow this tutorial, you must have a Kuzzle Server up and running (you'll need to know the hostname of the machine running it). If this is not already the case, take a look at [how to Run Kuzzle]({{ site_base_path }}guide/1/getting-started/running-kuzzle).
 
-Before proceeding, please make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
+Before proceeding, make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
 
 In this tutorial, you'll learn how to **store** a document and **subscribe** to notifications in Kuzzle using the Javascript SDK.
 
