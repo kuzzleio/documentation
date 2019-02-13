@@ -15,159 +15,191 @@ Let's create a new project folder called `databaseSearch`:
     mkdir databaseSearch
 ```
 
-Now in you `databaseSearch` folder initialize the Node.js App:
+Now install kuzzle JS SDK v6:
 
 
 ```bash
-    npm init
+    npm install kuzzle-sdk@beta
 ```
-
-Give your project a name and set the version and any other details you want to configure.
-
-For this code example we'll need Kuzzle's Javascript SDK. To install it, open the `package.json` file that was generated during the `npm init` and add the following dependency:
-
-
-```javascript
-/*...*/
-"dependencies": {
-    /*...*/
-    "kuzzle-sdk": "5.0.11"
-},
-```
-
-Now install the Kuzzle Javascript SDK by running `npm install` in your `databaseSearch` folder:
-
-```bash
-    npm install
-```
-
-You should now see the `kuzzle-sdk` folder under `node_modules`.
 
 Now the project configuration is complete, we can create an `index.js` file in the `databaseSearch` folder to program our test.
 
 ```bash
     touch index.js
 ```
+## Instanciate Kuzzle
 
-## Connect to Kuzzle
-
-The first thing we need to do is connect to Kuzzle. To do this write the following code:
+The first thing we need to do is instanciate a Kuzzle object. To do this write the following code:
 
 ```Javascript
-var kuzzle  = new Kuzzle("localhost");
+const {
+    Kuzzle,
+    WebSocket
+} = require('kuzzle-sdk');
+
+const kuzzle = new Kuzzle(
+    new WebSocket('localhost')
+);
 ```
 
 Here we assume you have installed Kuzzle on your localhost, if this is not the case replace the `localhost` with the ip or name of the Kuzzle server.
 
-## Create a Document
-
-Now that we have established a connection to Kuzzle, we will create a document in our `planets` collection. To do this, we use the Collection  `createDocumentPromise` method.
-
-In this case we create a JSON with name `Geonosis` and terrain `mountain`:
+All the following snippets must be write in a try catch like this :
 
 ```Javascript
-var planet = {
-    name: 'Geonosis',
-    terrain: 'mountain'
-};
-    
-return kuzzle
-        .collection("planets", "galaxies")
-        .createDocumentPromise("", planet, {refresh: "wait_for"})
-        .then(function(result){
-            /* TODO */
-        });
-});
+const run = async () => {
+    try {
+        /* WRITE HERE THE FOLLOWING SNIPPETS */
+    } catch (error) {
+        console.log(error.message);
+    } finally {
+        kuzzle.disconnect();
+    }
+}
 ```
 
-To ensure that this code is executed only after the Kuzzle connection is established, we can call it after we receive the 'connected' event from the Kuzzle Javascript SDK:
+## Connect to Kuzzle
+
+We need now to connect to Kuzzle :
 
 ```Javascript
-kuzzle.on("connected",function(error){
-    var planet = {
-        name: 'Geonosis',
-        terrain: 'mountain'
-    };
+        await kuzzle.connect();
+```
+
+## Create an Index and a Collection
+
+Now that we have established a connection to Kuzzle, we will create new Index and a new Collection.
+To be sure of the result of our search request, if an index already exists we will delete it: 
+
+```Javascript 
+if (await kuzzle.index.exists('galaxies')) {
+    await kuzzle.index.delete('galaxies');
+}
         
-    return kuzzle
-            .collection("planets", "galaxies")
-            .createDocumentPromise("", planet, {refresh: "wait_for"})
-            .then(function(result){
-                /* TODO */
-            });
-    });
-});
+await kuzzle.index.create('galaxies');
+await kuzzle.collection.create('galaxies', 'planets');
+```
+
+## Create a Document
+
+Now that we have configured our database, we will create two document in our `planets` collection. 
+To do this, we will use the create method, wich take 3 parameters, the index name, the collection name, and an object with the needed properties:
+
+```Javascript
+await kuzzle.document.create(
+    'galaxies',
+    'planets',
+    { terrain: 'mountain' },
+);
+await kuzzle.document.create(
+    'galaxies',
+    'planets',
+    { terrain: 'other' },
+);
+        
+```
+
+To be sure that our search request will find our documents, we need to call the refresh method :
+
+```Javascript
+        await kuzzle.index.refresh('galaxies');
 ```
 
 
 ## Search for Document
 
-Now that the document is created and stored in Kuzzle, let's perform a search that will return this document in the result.
+Now that the documents are created and stored in Kuzzle, let's perform a search that will return the documents that match our query in the result.
 
-First we need to define the search criteria. Here we use the `match` term to find any document that has a `mountain` terrain. For additional terms refer to our [Elasticsearch Cookbook]({{ site_base_path }}guide/1/elasticsearch) or Elasticsearch's own documentation.
-
-We use the Collection `searchPromise` method to search for the document in Kuzzle only after the document is created:
+The search method take also the index and collection names, and an object wich contain our query as 3rd parameter.
 
 ```Javascript
-kuzzle.on("connected",function(error){
-    var planet = {
-        name: 'Geonosis',
-        terrain: 'mountain'
-    };
-        
-    return kuzzle
-            .collection("planets", "galaxies")
-            .createDocumentPromise("", planet, {refresh: "wait_for"})
-            .then(function(result){
-                
-                //Now search for the document
-                return kuzzle
-                    .collection("planets", "galaxies")
-                    .searchPromise({query: {match: {terrain: "mountain"}}})
-                    .then(function(result){
-                        doSomething(result);
-                    });
-            });
-    });
-});
+const results = await kuzzle.document.search(
+            'galaxies',
+            'planets',
+            {
+                query: {
+                    match: {
+                        terrain: 'mountain'
+                    }
+                }
+            }
+        );
+console.log(results.hits.length);
 ```
 
-There you have it, a simple bit of code that connects to Kuzzle, creates a document and then fetches that document.
+There you have it, a simple bit of code that connects to Kuzzle, creates two documents and then print the number of documents that match the mountain terrain property.
 
 ## Run the Test
 
 The full code should look something like this:
 
 ```Javascript
-/* Test Class */
+//Require and instanciate kuzzle
+const {
+    Kuzzle,
+    WebSocket
+} = require('kuzzle-sdk');
 
-//Connect to Kuzzle
-var kuzzle  = new Kuzzle("localhost");
+const kuzzle = new Kuzzle(
+    new WebSocket('localhost')
+);
 
+const run = async () => {
+    try {
+        //Wait for etablished connection to Kuzzle
+        await kuzzle.connect();
 
-//Wait for the connection to establish
-kuzzle.on("connected",function(error){
+        //Delete the galaxies index if exists
+        if (await kuzzle.index.exists('galaxies')) {
+            await kuzzle.index.delete('galaxies');
+        }
+        
+        //Create galaxies index, planets collection and 2 documents 
+        //with different terrain property
+        await kuzzle.index.create('galaxies');
+        await kuzzle.collection.create('galaxies', 'planets');
+        await kuzzle.document.create(
+            'galaxies',
+            'planets',
+            { terrain: 'mountain' },
+        );
+        await kuzzle.document.create(
+            'galaxies',
+            'planets',
+            { terrain: 'other' },
+        );
+        
+        //Wait for index refreshed
+        await kuzzle.index.refresh('galaxies');
 
-    //Create a document
-    var planet = {
-        name: 'Geonosis',
-        terrain: 'mountain'
-    };
+        //Search for documents with mountain as terrain property
+        const results = await kuzzle.document.search(
+            'galaxies',
+            'planets',
+            {
+                query: {
+                    match: {
+                        terrain: 'mountain'
+                    }
+                }
+            }
+        );
 
-    return kuzzle
-            .collection("planets", "galaxies")
-            .createDocumentPromise("", planet, {refresh: "wait_for"})
-            .then(function(result){
+        //If everything's okay, 1 will be printed on stdout
+        console.log(results.hits.length);
+    } catch (error) {
+        console.error(error.message);
+    } finally {
+        //Disconnecting kuzzle
+        kuzzle.disconnect();
+    }
+};
 
-            //Now search for the document
-            return kuzzle
-                    .collection("planets", "galaxies")
-                    .searchPromise({query: {match: {terrain: "mountain"}}})
-                    .then(function(result){
-                        doSomething(result);
-                    });
-    });
-});
+run();
 
 ```
+To run it, just use node :
 
+```bash
+    node index.js
+```
