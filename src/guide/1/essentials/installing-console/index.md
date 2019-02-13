@@ -8,7 +8,7 @@ order: 100
 
 The Kuzzle Admin Console is a web application that lets you manage Kuzzle, including **data**, **real-time notifications** and **security**.
 
-If you don't want to install Kuzzle Admin Console yourself you can use our <a href="http://kuzzle-backoffice.netlify.com/">publicly hosted</a>  Kuzzle Admin Console. Otherwise, grab the source code [here](https://github.com/kuzzleio/kuzzle-backoffice/releases) and install it on your own environment.
+If you don't want to install Kuzzle Admin Console yourself you can use our <a href="http://console.kuzzle.io/">publicly hosted</a>  Kuzzle Admin Console. Otherwise, grab the source code [here](https://github.com/kuzzleio/kuzzle-admin-console/releases) and install it on your own environment.
 
 In both cases the configuration is the same and you'll be able to select which <a href="{{ site_base_path }}guide/1/essentials/installing-console/#connect-to-kuzzle">Kuzzle</a> installation that you want to manage.
 
