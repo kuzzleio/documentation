@@ -3,7 +3,7 @@ description: Load SDK
 hooks:
   before:
   after:
-template: empty
-expected: Successfully connected to Kuzzle!
+template: blank
+expected: Everything is ok
 sdk: js
 version: 6
