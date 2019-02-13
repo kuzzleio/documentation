@@ -1,0 +1,11 @@
+---
+name: dbsearch#search
+description: Create Index collection and documents and apply a search request.
+hooks:
+  before:
+  after: curl -X DELETE kuzzle:7512/index/galaxies
+template: default
+expected: There is 1 document that match.
+
+sdk: js
+version: 6
