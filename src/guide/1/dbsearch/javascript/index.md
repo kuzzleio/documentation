@@ -29,7 +29,7 @@ Now the project configuration is complete, we can create an `index.js` file in t
 ```
 ## Instanciate Kuzzle
 
-The first thing we need to do is instanciate a Kuzzle object. To do this write the following code:
+The first thing we need to do is instanciate a Kuzzle object. To do this implement the following code:
 
 [snippet=load-sdk]
 
@@ -39,14 +39,13 @@ We need now to connect to Kuzzle :
 
 [snippet=connect]
 
-
-
 ## Create an Index, a Collection and some Documents
 
 Now that we have established a connection to Kuzzle, we will create a new Index, a new Collection and two Documents.
 To be sure of the result of our search request, if an index already exists we will delete it: 
 
 [snippet=create]
+
 
 ## Search for Document
 
@@ -55,6 +54,10 @@ Now that the documents are created and stored in Kuzzle, let's perform a search 
 To be sure that our search request will find our documents, we need to call the refresh method before.
 
 [snippet=search]
+
+You're index.js file should now look like this:
+
+[snippet=final]
 
 There you have it, a simple bit of code that connects to Kuzzle, creates two documents and then print the number of documents that match the mountain terrain property.
 

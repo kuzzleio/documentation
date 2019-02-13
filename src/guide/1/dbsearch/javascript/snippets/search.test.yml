@@ -2,9 +2,13 @@
 name: dbsearch#search
 description: Create Index collection and documents and apply a search request.
 hooks:
-  before:
-  after: curl -X DELETE kuzzle:7512/index/galaxies
-template: default
+  before: 
+      curl -XDELETE kuzzle:7512/nyc-open-data
+      curl -XPOST kuzzle:7512/nyc-open-data/_create
+      curl -XPUT kuzzle:7512/nyc-open-data/yellow-taxi
+      curl -H "Content-type: application/json" -XPUT -d "{terrain: 'moutain'}" kuzzle:7512/nyc-open-data/yellow-taxi
+  after:    curl -XDELETE kuzzle:7512/nyc-open-data
+template: catch
 expected: There is 1 document that match.
 
 sdk: js
