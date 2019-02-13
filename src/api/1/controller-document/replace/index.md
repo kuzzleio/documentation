@@ -35,6 +35,8 @@ Body:
   "collection": "<collection>",
   "controller": "document",
   "action": "replace",
+  "_id": "<documentId>",
+  "refresh": "wait_for",
   "body": {
     // new document content
   }
@@ -80,7 +82,7 @@ Returns an object containing updated document information, with the following pr
   "requestId": "<unique request identifier>",
   "result": {
     "_id": "<documentId>",
-    "_source": { 
+    "_source": {
       // new document content
     },
     "_version": 13
