@@ -79,8 +79,8 @@ Check the SDKs handcrafted by the community:
     <div class="Languages-item-name">Dart</div>
   </a>
   <a href="https://github.com/alexandrebouthinon/kuzzle_sdk" class="Languages-item min">
-    <div class="ribbon"><span>WIP</span></div>
     <img src="/assets/images/logos/rust.svg" alt="rust logo" class="Languages-item-logo">
     <div class="Languages-item-name">Rust</div>
   </a>
 </div>
+Do not hesitate to contact us or come on our <a href="https://gitter.im/kuzzleio/kuzzle" target="_blank">gitter chat</a> to add your contribution to this list.
