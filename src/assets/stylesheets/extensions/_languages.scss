@@ -38,6 +38,10 @@
       width: 35%;
       height: 35%;
       margin: 0 16px 25px 0;
+      &.min {
+        width: 20%;
+        height: 20%;
+      }
     }
   }
 
