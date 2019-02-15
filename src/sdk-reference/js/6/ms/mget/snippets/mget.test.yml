@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: "\\[ 'world', 'bar' ]"
+sdk: js
+version: 6

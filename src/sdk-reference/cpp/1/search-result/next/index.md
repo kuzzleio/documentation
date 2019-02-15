@@ -31,7 +31,7 @@ If no policy is applicable, the `next` method will throw an exception.
   </p>
 </div>
 
-### 1. scroll
+## Usage with scroll
 
 **This is the preferred way to get some paginated results**.
 
@@ -41,7 +41,9 @@ The results that are returned from a scroll request reflect the state of the ind
 
 As such, even if some documents are added or deleted from the database between two calls to `next`, the result is garanteed to include all items matching the query at the time the initial `search` was sent and to not get any duplicate between two search pages.
 
-### 2. sort / size
+[snippet=scroll]
+
+## Usage with sort / size
 
 If the initial search is given some `sort` and `size` parameters, the `next` method will retrieve the next items matching the sort.
 
@@ -49,7 +51,7 @@ To avoid too many duplicates, it is advised to provide a sort combination that w
 
 Because this method does not freeze the research between two calls, if some updates are applied to the database between two calls, it is still possible to miss some documents and/or to get some duplicates between search pages.
 
-### 3. from / size
+## Usage with from / size
 
 If the initial search is given some `from` and `size` parameters, the `next` method will increment the `from` parameter to retrieved the next results.
 
@@ -61,10 +63,8 @@ Because this method does not freeze the research between two calls, if some upda
   </p>
 </div>
 
+[snippet=fromsize]
+
 ## Return
 
 A pointer to a new `SearchResult` containing the next results of the search.
-
-## Usage
-
-[snippet=search-result]

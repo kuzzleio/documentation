@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: ^6$
+sdk: js
+version: 6

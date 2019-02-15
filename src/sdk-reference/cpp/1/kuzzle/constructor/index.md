@@ -22,10 +22,20 @@ kuzzleio::Kuzzle(kuzzleio::Protocol* protocol, const options& options);
 
 | Argument  | Type        | Description                     |
 | --------- | ----------- | ------------------------------- |
-| `protocol`    | <pre><a href={{ site_base_path }}sdk-reference/cpp/1/protocol/>Protocol</a></pre> | Network protocol configuration |
-| `options` | <pre>kuzzleio::options\*</pre>   | Kuzzle object configuration |
+| `protocol`    | <pre><a href={{ site_base_path }}sdk-reference/cpp/1/protocol/>Protocol\*</a></pre> | Protocol used by the SDK instance |
+| `options` | <pre>const kuzzleio::options\&</pre>   | Kuzzle object configuration |
+
+### protocol
+
+The protocol used to connect to the Kuzzle instance.  
+It can be one of the following available protocols:
+  - [WebSocket]({{ site_base_path }}sdk-reference/cpp/1/websocket)
+
 
 ### options
+
+Kuzzle SDK instance options.
+
 
 | Option               | Type<br/>(default)               | Description         |
 | -------------------- | ------------------ | ------------------------------------------------------------------ | 
@@ -39,6 +49,13 @@ kuzzleio::Kuzzle(kuzzleio::Protocol* protocol, const options& options);
 | `replay_interval`    | <pre>unsigned long</pre><br/>(`10`) | Delay between each replayed requests, in milliseconds |
 | `reconnection_delay` | <pre>unsigned long</pre><br/>(`10000`) | Number of milliseconds between reconnection attempts |
 | `volatile`           | <pre>std::string</pre><br/>(`"{}"`) | JSON string representing common volatile data, will be sent to all future requests |
+
+**Notes:**
+
+- if `queue_ttl` is set to `0`, requests are kept indefinitely
+- The offline buffer acts like a first-in first-out (FIFO) queue, meaning that if the `queue_max_size` limit is reached, older requests are discarded to make room for new requests
+- if `queue_max_size` is set to `0`, an unlimited number of requests is kept until the buffer is flushed
+- multiple methods allow passing specific `volatile` data. These `volatile` data will be merged with the global Kuzzle `volatile` object when sending the request, with the request specific `volatile` taking priority over the global ones.
 
 ## Return
 

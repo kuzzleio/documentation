@@ -7,3 +7,5 @@ template: default
 expected:
   - "\\[ '(bar|baz)', '(bar|baz)' ]"
   - "\\[ '(foo|qux)', '(foo|qux)' ]"
+sdk: js
+version: 6

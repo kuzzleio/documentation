@@ -14,12 +14,12 @@ Hooks can only listen: the received information cannot be changed. And Kuzzle do
 
 ## Usage
 
-Plugins can register hooks by exposing a `hooks` object: keys are listened [events]({{ site_base_path }}plugins/1/events), and values are either a function name to execute whenever that event is triggered, or an array of function names.
+Plugins can register hooks by exposing a `hooks` object: keys are listened [events]({{ site_base_path }}plugins/1/events), and values are either a function to execute whenever that event is triggered, or an array of functions.
 
 ```javascript
 this.hooks = {
-  '<kuzzle event to listen>': '<plugin function name to call>',
-  '<another event>': ['list', 'of', 'plugin', 'functions', 'to call']
+  '<kuzzle event to listen>': <function to call>,
+  '<another event>': [list, of, functions, to call]
 };
 ```
 
@@ -37,12 +37,12 @@ module.exports = class HookPlugin {
    */
   init (customConfig, context) {
     /*
-      Attaches the plugin function "myFunction" to the Kuzzle event
-      "document:afterCreate", triggered after a successful
+      Calls the plugin function "myFunction" when the Kuzzle event
+      "document:afterCreate" is triggered after a successful
       document creation
      */
     this.hooks = {
-      'document:afterCreate': 'myFunction'
+      'document:afterCreate': (...args) => this.myFunction(...args)
     };
   }
 

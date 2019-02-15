@@ -7,3 +7,5 @@ template: default
 expected:
   - ^9$
   - "\\[ ('[a-i]', ){8}'[a-i]' ]"
+sdk: js
+version: 6

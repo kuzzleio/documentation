@@ -7,17 +7,19 @@ const
   } = require('kuzzle-sdk');
 
 const options = {
-  autoResubscribe: false
+  offlineMode: 'auto',
+  volatile: { username: 'Gordon' }
 };
 
 // Instantiates the SDK with the websocket protocol
 const
   kuzzleWs = new Kuzzle(
-    new WebSocket('kuzzle', options)
+    new WebSocket('kuzzle'),
+    options
   );
 
 // Instantiates the SDK with the http protocol
 const
   kuzzleHttp = new Kuzzle(
-    new Http('kuzzle', options)
+    new Http('kuzzle')
   );

@@ -2,21 +2,18 @@
 layout: sdk.html.hbs
 title: Constructor
 description: Creates a new WebSocket protocol
-order: 0
+order: 50
 ---
 
 # Constructor
 
-The WebSocket protocol can be used by an instance of the SDK to communicate with your Kuzzle server.  
-This protocol allows you to use all the features of Kuzzle, including [real-time notifications]({{ site_base_path }}sdk-reference/js/6/realtime-notifications).
+This constructor creates a new WebSocket connection, using the specified options.  
 
-## Signature
+## Arguments
 
 ```javascript
 WebSocket(host, [options]);
 ```
-
-## Arguments
 
 | Argument   | Type               | Description                           |
 | ---------- | ------------------ | ------------------------------------- |
@@ -29,23 +26,11 @@ WebSocket protocol connection options.
 
 | Property              | Type<br/>(default)  | Description   |
 | -------------- | --------- | ------------- |
-| `port`         | <pre>number</pre><br/>(`7512`) | Kuzzle server port               | 
-| `sslConnection`     | <pre>boolean</pre><br/>(`false`) | Use SSL to connect to Kuzzle server                    |   
 | `autoReconnect`     | <pre>boolean</pre><br/>(`true`) | Automatically reconnect to kuzzle after a `disconnected` event      | 
-| `reconnectionDelay` | <pre>number</pre><br/>(`1000`) | number of milliseconds between reconnection attempts               |  
-
-## Properties
-
-Available properties.
-
-| Property name        | Type     | Description          | Writable? |
-| -------------------- | -------- | --------------------------------------- | :-------: |
-| `autoReconnect`      | <pre>boolean</pre> | Automatically reconnect after a connection loss    |    No     |
-| `reconnectionDelay`  | <pre>number</pre>  | Number of milliseconds between reconnection attempts         |    No     |
-
-**Notes:**
-
-- updates to `autoReconnect` and `reconnectionDelay` properties will only take effect on next `connect` call
+| `port`         | <pre>number</pre><br/>(`7512`) | Kuzzle server port               | 
+| `headers` | <pre>object</pre>(`{}`) | Connection HTTP headers (e.g. origin, subprotocols, ...)<br/>**(Not supported by browsers)** |
+| `reconnectionDelay` | <pre>number</pre><br/>(`1000`) | Number of milliseconds between reconnection attempts               |  
+| `sslConnection`     | <pre>boolean</pre><br/>(`false`) | Use SSL to connect to Kuzzle server                    |   
 
 ## Return
 

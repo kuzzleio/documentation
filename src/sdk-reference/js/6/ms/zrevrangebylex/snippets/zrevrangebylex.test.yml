@@ -5,3 +5,5 @@ hooks:
   after:
 template: default
 expected: "\\[ 'baz', 'bar' ]"
+sdk: js
+version: 6

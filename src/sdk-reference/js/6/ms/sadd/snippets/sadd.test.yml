@@ -8,3 +8,5 @@ expected:
   - ^2$
   - ^1$
   - "\\[ '(foo|bar|baz)', '(foo|bar|baz)', '(foo|bar|baz)' ]"
+sdk: js
+version: 6

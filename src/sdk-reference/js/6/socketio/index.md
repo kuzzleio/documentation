@@ -2,5 +2,5 @@
 layout: sdk.html.hbs
 title: SocketIO
 description: SocketIO protocol documentation
-order: 510
+order: 600
 ---
