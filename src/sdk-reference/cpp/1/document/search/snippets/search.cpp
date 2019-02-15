@@ -15,7 +15,7 @@ try {
   options.from = 0;
   options.size = 2;
 
-  kuzzleio::SearchResult* results = kuzzle->document->search(
+  std::shared_ptr<kuzzleio::SearchResult> results = kuzzle->document->search(
     "nyc-open-data",
     "yellow-taxi",
     R"({
