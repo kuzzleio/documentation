@@ -1,4 +1,4 @@
 ---
 layout: full.html.hbs
-title: log
+title: Log
 ---
