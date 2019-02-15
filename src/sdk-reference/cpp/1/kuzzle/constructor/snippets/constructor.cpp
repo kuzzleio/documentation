@@ -1,8 +1,8 @@
 std::string hostname = "kuzzle";
 kuzzleio::WebSocket* ws = new kuzzleio::WebSocket(hostname);
 
-kuzzleio::options options;
-options.auto_resubscribe = false;
+kuzzleio::Options options;
+options.autoResubscribe(false);
 
 kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(ws, options);
 
