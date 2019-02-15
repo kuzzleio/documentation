@@ -7,3 +7,5 @@ template: default
 expected:
   - "{ cursor: '0', values: \\[ 'key[123]', 'key[123]', 'key[123]' ] }"
 
+sdk: js
+version: 6

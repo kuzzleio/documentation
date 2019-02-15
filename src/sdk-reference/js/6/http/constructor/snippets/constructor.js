@@ -1,12 +1,12 @@
-// Loads the SocketIO protocol
+// Loads the Http protocol
 const
   {
-    SocketIO
+    Http
   } = require('kuzzle-sdk');
 
 const options = {
-  autoReconnect: false
+  sslConnection: false
 };
 
-// Instantiates the SocketIO protocol
-const socketIOProtocol = new SocketIO('kuzzle', options);
+// Instantiates the Http protocol
+const httpProtocol = new Http('kuzzle', options);

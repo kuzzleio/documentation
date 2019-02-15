@@ -37,7 +37,7 @@ const std::string& hits() const;
 ## total
 
 Returns the total number of found documents. 
-Can be greater than the number of documents fetched by the current `SearchResult` instance.
+Can be greater than the number of documents retrieved by the current `SearchResult` instance.
 
 ### Signature
 
@@ -47,7 +47,7 @@ unsigned total() const;
 
 ## fetched
 
-Returns the number of document fetched in the current `SearchResult` instance.
+Returns the number retrieved items so far.  
 
 ### Signature
 
@@ -64,3 +64,7 @@ Returns the identifier to the next page of result.
 ```cpp
 const std::string& scroll_id() const;
 ```
+
+## Usage
+
+[snippet=getters]

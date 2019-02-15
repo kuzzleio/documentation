@@ -1,7 +1,8 @@
 const
   webpack = require('webpack'),
   UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
-  path = require('path');
+  path = require('path'),
+  VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = (opts) => {
   const plugins = [
@@ -9,8 +10,8 @@ module.exports = (opts) => {
       $: 'jquery',
       jQuery: 'jquery',
       algoliasearch: 'algoliasearch',
-      select2: 'select2'
-    })
+    }),
+    new VueLoaderPlugin()
   ];
 
   if (! opts.dev.enabled) {
@@ -29,11 +30,34 @@ module.exports = (opts) => {
       loaders: [
         {
           test: /\.js$/,
-          exclude: [/app\.js$/, /prism\.js$/, /node_modules/],
+          exclude: [/app.js$/, /prism.js$/, /node_modules/],
           loader: 'babel-loader',
           query: {
             presets: ['@babel/preset-env']
           }
+        },
+      ],
+      rules: [
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader'
+        },
+        {
+          test: /\.js$/,
+          loader: 'babel-loader'
+        },
+        {
+          test: /\.sass$/,
+          use: [
+            'vue-style-loader',
+            'css-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                indentedSyntax: true
+              }
+            }
+          ]
         }
       ]
     },
