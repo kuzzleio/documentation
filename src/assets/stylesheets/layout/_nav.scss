@@ -10,6 +10,23 @@
   &--primary {
     .md-nav__item {
       padding-left: 0;
+      i {
+        float: left;
+        margin-top: 4px;
+        font-size: 10px;
+
+        &.fa-caret-down {
+          margin-right: -2px;
+        }
+      }
+
+      span {
+        margin-left: 6px;
+
+        &.no_arrow {
+          margin-left: 9px;
+        }
+      }
     }
   }
 
