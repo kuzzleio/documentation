@@ -11,7 +11,7 @@ order: 100
 
 Returns the protocol instance used internally to communicate with the Kuzzle server.
 
-### Signature
+### Arguments
 
 ```cpp
 Protocol* getProtocol();
@@ -21,7 +21,7 @@ Protocol* getProtocol();
 
 Returns the JWT token currently used to authenticate requests.
 
-### Signature
+### Arguments
 
 ```cpp
 std::string getJwt();
@@ -31,20 +31,10 @@ std::string getJwt();
 
 Returns the JSON string representing volatile data sent with each request.
 
-### Signature
+### Arguments
 
 ```cpp
 std::string getVolatile();
-```
-
-## getListeners
-
-Returns a map containing the listeners registered on [SDK event]({{ site_base_path }}sdk-reference/cpp/1/events).
-
-### Signature
-
-```cpp
-std::map<int, EventListener*> getListeners();
 ```
 
 ## Usage

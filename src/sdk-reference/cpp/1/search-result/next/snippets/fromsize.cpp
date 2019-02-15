@@ -13,7 +13,7 @@ try {
   options.size = 5;
 
   // Retrieve the first 5 documents
-  kuzzleio::SearchResult* results = kuzzle->document->search(
+  std::shared_ptr<kuzzleio::SearchResult> results = kuzzle->document->search(
     "nyc-open-data",
     "yellow-taxi",
     R"({
@@ -26,9 +26,13 @@ try {
     options);
 
   // Retrieve the next 5 documents
-  kuzzleio::SearchResult* next_results = results->next();
+  std::shared_ptr<kuzzleio::SearchResult> next_results = results->next();
 
-  std::cout << "Successfully retrieved " << next_results->fetched() << " documents" << std::endl;
+  std::cout
+    << "Successfully retrieved "
+    << next_results->fetched()
+    << " documents"
+    << std::endl;
 } catch (kuzzleio::KuzzleException& e) {
   std::cerr << e.what() << std::endl;
 }
