@@ -8,7 +8,7 @@ order: 400
 # Geofencing
 
 Geofencing in Koncorde consists in defining forms in the geo-space using geopoints and geodistances within terms like
-[geoBoundingBox]({{ site_base_path}}koncorde/1/terms#geoboundingbox-default), [geoDistance]({{ site_base_path}}koncorde/1/terms#geodistance-default) [geoDistanceRange]({{ site_base_path}}koncorde/1/terms#geodistancerange-default) and [geoPolygon]({{ site_base_path}}koncorde/1/terms#geopolygon-default). In this section, you will find a detailed
+[geoBoundingBox]({{ site_base_path}}koncorde/1/essentials/terms#geoboundingbox-default), [geoDistance]({{ site_base_path}}koncorde/1/essentials/terms#geodistance-default) [geoDistanceRange]({{ site_base_path}}koncorde/1/essentials/terms#geodistancerange-default) and [geoPolygon]({{ site_base_path}}koncorde/1/essentials/terms#geopolygon-default). In this section, you will find a detailed
 explanation about how to specify geopoints and geodistances.
 
 ## Geopoints
@@ -39,7 +39,7 @@ Alternative 2:
 
 ## Geodistances
 
-Distances used in geofencing filters such as [geoDistance]({{ site_base_path }}koncorde/1/terms/#geodistance-default/) or [geoDistanceRange]({{ site_base_path }}koncorde/1/terms/#geodistance-default-range/) can be expressed in various ways.
+Distances used in geofencing filters such as [geoDistance]({{ site_base_path }}koncorde/1/essentials/terms/#geodistance-default/) or [geoDistanceRange]({{ site_base_path }}koncorde/1/essentials/terms/#geodistance-default-range/) can be expressed in various ways.
 
 Accepted units:
 

@@ -77,7 +77,7 @@ Here is a filter, testing for equality on the field `last` in the `name` object:
 
 ## Matching array values
 
-A few keywords, like [exists]({{ site_base_path }}koncorde/1/terms/#exists-default) or [missing]({{ site_base_path }}koncorde/1/terms/#missing-default), allow searching for array values.
+A few keywords, like [exists]({{ site_base_path }}koncorde/1/essentials/terms/#exists-default) or [missing]({{ site_base_path }}koncorde/1/essentials/terms/#missing-default), allow searching for array values.
 
 These values can be accessed with the following syntax: `<array path>[<value>]`  
 Only one array value per `exists`/`missing` keyword can be searched in this manner.
@@ -90,7 +90,7 @@ The array value must be provided using the JSON format:
 * Numbers, booleans and `null` must be used as is. Examples: `foo[3.14]`, `foo[false]`, `foo[null]`
 
 
-Array values can be combined with [nested properties]({{ site_base_path }}koncorde/1/advanced/#testing-nested-fields-default): `nested.array["value"]`
+Array values can be combined with [nested properties]({{ site_base_path }}koncorde/1/essentials/advanced/#testing-nested-fields-default): `nested.array["value"]`
 
 ### Example
 
