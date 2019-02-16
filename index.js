@@ -34,6 +34,8 @@ const include = require('./plugins/include');
 const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
 let filesSave = null;
+const linkcheck = require('metalsmith-linkcheck');
+ 
 
 // configuration
 const msDefaultOpts = require('./config/metalsmith');
@@ -279,11 +281,13 @@ if (options.dev.enabled) {
 }
 
 log(`Building site in '${options.build.path}'`);
-metalsmith.build((error, files) => {
-  if (error) {
-    log(nok + color.yellow(' Ooops...'));
-    console.error(error);
-    process.exit(1);
-  }
-  log(ok + ' Build finished');
-});
+metalsmith
+  .use(linkcheck())
+  .build((error, files) => {
+    if (error) {
+      log(nok + color.yellow(' Ooops...'));
+      console.error(error);
+      process.exit(1);
+    }
+    log(ok + ' Build finished');
+  });
