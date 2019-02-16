@@ -21,7 +21,7 @@ You will learn :
 Before proceeding, please make sure your system meets the following requirements :
 
 * A C++ compiler that supports C++ 11 sush as: **gcc** version 4.5 or higher
-* A running instance of Kuzzle Server (<a href="guide/1/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
+* A running instance of Kuzzle Server (<a href="{{site_base_path}}guide/1/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
 
 </div>
 

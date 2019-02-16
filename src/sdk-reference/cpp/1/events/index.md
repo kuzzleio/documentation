@@ -11,7 +11,7 @@ An event system allows to be notified when the SDK status changes. These events 
 
 Subscription to these events is possible by specifying callbacks that will be executed when a specific event is issued by the SDK instance.  
 
-These callbacks can be added and deleted respectively by the methods [addListener]({{site_base_path }}sdk-reference/cpp/1/kuzzle/add-listener) and [removeListener]({{site_base_path }}sdk-reference/cpp/1/kuzzle/remove-listener).
+These callbacks can be added by the method [addListener]({{site_base_path }}sdk-reference/cpp/1/kuzzle/add-listener).
 
 **Note:** listeners are called in the order of their insertion.
 

@@ -500,7 +500,7 @@ If you want to control how Kuzzle interprets your documents, we recommend that y
 
 Create a mapping by sending a `PUT` request to the `http://localhost:7512/<index name>/<collection name>/_mapping` and setting the mapping in the request body.
 
-Use [this](https://www.elastic.co/guide/1/en/elasticsearch/reference/5.x/mapping.html) syntax when definng a mapping. For example, if we want to create a mapping that will define a field `birthday` as a `date` type, we would send the following JSON in the body:
+Use [this](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html) syntax when definng a mapping. For example, if we want to create a mapping that will define a field `birthday` as a `date` type, we would send the following JSON in the body:
 
 ```json
 {

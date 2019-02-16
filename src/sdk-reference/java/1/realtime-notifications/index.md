@@ -27,7 +27,7 @@ These `io.kuzzle.sdk.NotificationResult` represent [documents changes & messages
 | `scope` | String | `in`: document enters (or stays) in the scope<br/>`out`: document leaves the scope |
 | `timestamp` | BigInteger | Timestamp of the event, in Epoch-millis format |
 | `nType` | String | `document`: the notification type |
-| `volatile` | String | JSON String representing request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
+| `volatile` | String | JSON String representing request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data/) |
 
 The `io.kuzzle.sdk.NotificationContent` object has the following properties for document notifications & messages:
 
@@ -52,7 +52,7 @@ These `io.kuzzle.sdk.NotificationResult` represent [user events]({{ site_base_pa
 | `timestamp` | Number | Timestamp of the event, in Epoch-millis format |
 | `nType` | BigInteger | `user`: the notification type |
 | `user` | String | `in`: a new user has subscribed to the same filters<br/>`out`: a user cancelled a shared subscription |
-| `volatile` | String | JSON String representing request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data//) |
+| `volatile` | String | JSON String representing request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data/) |
 
 The `io.kuzzle.sdk.NotificationContent` object has the following properties for user events:
 
