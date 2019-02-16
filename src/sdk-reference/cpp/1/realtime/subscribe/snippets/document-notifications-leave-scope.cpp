@@ -1,5 +1,5 @@
 kuzzleio::NotificationListener listener =
-  [](const kuzzleio::notification_result *notification) {
+  [](std::shared_ptr<kuzzleio::notification_result> notification) {
     std::cout << "Document moved " << notification->scope << " from the scope" << std::endl;
   };
 
