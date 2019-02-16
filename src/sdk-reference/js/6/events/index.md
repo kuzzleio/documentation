@@ -11,7 +11,7 @@ An event system allows to be notified when the SDK status changes. These events 
 
 Subscription to these events is possible by registering callbacks that will be called when a specific event is issued by the SDK instance.
 
-These callbacks can be added and deleted respectively by the methods [addListener]({{site_base_path }}sdk-reference/js/6/kuzzle/add-listener) and [removeListener]({{site_base_path }}sdk-reference/js/6/kuzzle/remove-listener).
+These callbacks can be added by the methods [addListener]({{site_base_path }}sdk-reference/js/6/kuzzle/add-listener).
 
 **Note:** listeners are called in the order of their insertion.
 
@@ -79,7 +79,7 @@ Triggered whenever a request is added to the offline queue.
 
 | Property   | Type    | Description       |
 | ---------- | ------- | ----------------- |
-| `request` | <pre>object</pre> | [Request]({{ site_base_path }}api/1/essentials/query-syntax//) added to the queue |
+| `request` | <pre>object</pre> | [Request]({{ site_base_path }}api/1/essentials/query-syntax/) added to the queue |
 
 ## queryError
 

@@ -15,7 +15,7 @@ This page shows examples of scripts that **store** documents in Kuzzle, and of s
 Before proceeding, please make sure your system meets the following requirements:
 
 * **Oracle JDK or OpenJDK** version 8 or higher (<a href="https://openjdk.java.net/install/">OpenJDK installation instructions</a>)
-* A running Kuzzle Server (<a href="guide/1/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
+* A running Kuzzle Server (<a href="{{site_base_path}}guide/1/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
 </div>
 
 ## Installation

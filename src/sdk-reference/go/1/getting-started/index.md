@@ -15,7 +15,7 @@ This page shows examples of scripts that **store** documents in Kuzzle, and of s
 Before proceeding, please make sure your system meets the following requirements:
 
 * **Go** version 1.9 or higher (<a href="https://golang.org/doc/install">Go installation instructions</a>)
-* A running Kuzzle server (<a href="guide/1/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
+* A running Kuzzle server (<a href="{{site_base_path}}guide/1/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
 </div>
 
 ## Installation
@@ -73,7 +73,7 @@ New document added to yellow-taxi collection!
 ```
 
 You can perform other actions such as [delete]({{ site_base_path }}sdk-reference/go/1/document/delete),
-[replace]({{ site_base_path }}sdk-reference/go/1/document/replace) or [search]({{ site_base_path }}sdk-reference/go/1/document/search) documents. There are also other ways to interact with Kuzzle like our [Admin Console]({{ site_base_path }}guide/1/essentials/installing-console/), the [Kuzzle HTTP API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/) or by using your [own protocol](protocols/1/essentials/getting-started/).
+[replace]({{ site_base_path }}sdk-reference/go/1/document/replace) or [search]({{ site_base_path }}sdk-reference/go/1/document/search) documents. There are also other ways to interact with Kuzzle like our [Admin Console]({{ site_base_path }}guide/1/essentials/installing-console/), the [Kuzzle HTTP API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/) or by using your [own protocol]({{site_base_path}}protocols/1/essentials/getting-started/).
 
 Now you know how to:
 * Store documents in a Kuzzle server, and access those

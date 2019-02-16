@@ -14,7 +14,7 @@ all the available terms.
 
 <div class="alert alert-info">
 Note that the ability to combine multiple terms together allows to create different filters that have equivalent scope.
-Such filters are optimized by Koncorde, thus <a href="{{ site_base_path }}koncorde/1/advanced#filter-equivalence-default">internally represented by the same ID</a>.
+Such filters are optimized by Koncorde, thus <a href="{{ site_base_path }}koncorde/1/essentials/advanced#filter-equivalence-default">internally represented by the same ID</a>.
 </div>
 
 ## and

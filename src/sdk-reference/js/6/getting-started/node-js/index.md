@@ -111,7 +111,7 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 ## Subscribe to realtime document notifications (pub/sub)
 
-Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the <a href="{{ site_base_path }}sdk-reference/js/6//realtime-notifications/">realtime notifications</a> documentation).
+Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the <a href="{{ site_base_path }}sdk-reference/js/6/realtime-notifications/">realtime notifications</a> documentation).
 
 Let's get started. Create a `subscribe.js` file with the following code:
 
@@ -148,5 +148,5 @@ Now that you're more familiar with Kuzzle, dive even deeper to learn how to leve
 
 * discover what this SDK has to offer by browsing other sections of this documentation
 * learn how to use <a href="{{ site_base_path }}koncorde/1">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
-* learn how to perform a <a href="{{ site_base_path }}sd-reference/js/6/auth/login">basic authentication</a>
+* learn how to perform a <a href="{{ site_base_path }}sdk-reference/js/6/auth/login">basic authentication</a>
 * follow our guide to learn how to <a href="{{ site_base_path }}guide/1/essentials/security/">manage users, and how to set up fine-grained access control</a>
