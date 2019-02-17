@@ -1,5 +1,5 @@
 kuzzleio::NotificationListener listener =
-  [](std::shared_ptr<kuzzleio::notification_result> notification){};
+  [](const std::shared_ptr<kuzzleio::notification_result> &notification){};
 
 try {
   std::string room_id = kuzzle->realtime->subscribe(

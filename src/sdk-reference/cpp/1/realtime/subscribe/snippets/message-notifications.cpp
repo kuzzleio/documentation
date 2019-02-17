@@ -1,5 +1,5 @@
 kuzzleio::NotificationListener listener =
-  [](std::shared_ptr<kuzzleio::notification_result> notification) {
+  [](const std::shared_ptr<kuzzleio::notification_result> &notification) {
     std::cout << "Message notification received" << std::endl;
 
     std::cout << notification->result->content << std::endl;
