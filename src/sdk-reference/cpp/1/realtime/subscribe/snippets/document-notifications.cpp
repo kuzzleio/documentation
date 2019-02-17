@@ -1,5 +1,5 @@
 kuzzleio::NotificationListener listener =
-  [](std::shared_ptr<kuzzleio::notification_result> notification) {
+  [](const std::shared_ptr<kuzzleio::notification_result> &notification) {
     std::string id = notification->result->id;
 
     if (notification->scope == std::string("in")) {
