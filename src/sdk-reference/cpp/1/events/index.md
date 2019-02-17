@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 title: Events
 description: SDK events system
-order: 200
+order: 100
 ---
 
 # Events
