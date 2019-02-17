@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 title: Realtime notifications
 description: List of realtime notifications sent by Kuzzle
-order: 300
+order: 100
 ---
 # Notifications
 

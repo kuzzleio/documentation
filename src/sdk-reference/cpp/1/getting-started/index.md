@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 title: Getting started
 description: Getting started
-order: 100
+order: 99
 separator: essentials
 ---
 
