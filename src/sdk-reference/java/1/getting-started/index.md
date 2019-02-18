@@ -24,7 +24,8 @@ Before proceeding, please make sure your system meets the following requirements
 
 Kuzzle Java SDK is available on Bintray for both
 [amd64](https://bintray.com/kuzzle/maven/kuzzle-sdk-java-amd64) and
-[x86](https://bintray.com/kuzzle/maven/kuzzle-sdk-java-x86) architectures. Add it as a dependency for your project and
+[x86](https://bintray.com/kuzzle/maven/kuzzle-sdk-java-x86) architectures. 
+Add it as a dependency for your project using Maven or Gradle.
 
 ### Manually
 
