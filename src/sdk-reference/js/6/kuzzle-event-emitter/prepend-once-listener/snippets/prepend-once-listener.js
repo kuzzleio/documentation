@@ -1,11 +1,14 @@
 const eventEmitter = new KuzzleEventEmitter();
 
-const listener1 = () => console.log('listener1');
-const listener2 = () => console.log('listener1');
+eventEmitter.addListener('myEvent', () => console.log('listener1'));
 
-eventEmitter.addListener('connected', listener1);
-eventEmitter.prependOnceListener('connected', listener2);
+eventEmitter.prependOnceListener('myEvent', () => console.log('listener2'));
 
-if (eventEmitter.listeners('connected')[0] === listener2) {
-  console.log('Successfully prepended 1 new once listener');
-}
+// Prints:
+//   listener2
+//   listener1
+eventEmitter.emit('myEvent');
+
+// Prints: listener1
+// (the listener function printing "listener2" as since been removed)
+eventEmitter.emit('myEvent');
