@@ -27,7 +27,7 @@ int main(int argc, char * argv[]) {
 
     // Starts an async listener
     kuzzleio::NotificationListener listener =
-      [](const kuzzleio::notification_result *notification) {
+      [](const std::shared_ptr<kuzzleio::notification_result> &notification) {
         const char *id = notification->result->id;
         std::cout << "New created document notification: " << id << std::endl;
       };
