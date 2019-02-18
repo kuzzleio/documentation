@@ -10,20 +10,20 @@ Adds a listener to an event.
 When an event is triggered, listeners are triggered in the order in which they were added.
 Theses listener will receive a `const std::string` as argument. This string is a JSON payload representing the event.
 
-## Signature
+## Arguments
 
 ```cpp
-virtual kuzzleio::Kuzzlekuzzleio::EventEmitter* addListener(
+virtual kuzzleio::KuzzleEventEmitter* addListener(
     kuzzleio::Event event, 
-    kuzzleio::EventListener* listener);
+    kuzzleio::SharedEventListener listener);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type                      | Description            |
 | ---------- | ------------------------- | ------------------------|
-| `event`    | kuzzleio::Event           | An enum representing the listened [event]({{ site_base_path }}sdk-reference/cpp/1/events) |
-| `listener` | kuzzleio::EventListener\* | Pointer to a c++11 lambda   |
+| `event`    | <pre>kuzzleio::Event</pre> | An enum representing the listened [event]({{ site_base_path }}sdk-reference/cpp/1/events) |
+| `listener` | <pre>kuzzleio::SharedEventListener</pre> | Smart pointer to a c++11 lambda   |
 
 ### event
 
@@ -45,8 +45,9 @@ KUZZLE_EVENT_ERROR
 
 ### listener
 
-A c++11 lambda which take a `const std::string`
-`EventListener` is defined as `const std::function<void(const std::string)>`.
+`EventListener` is defined as `const std::function<void(const std::string)>`
+
+`SharedEventListener` is defined as `std::shared_ptr<EventListener>`
 
 ## Return
 

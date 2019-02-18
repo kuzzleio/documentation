@@ -11,10 +11,20 @@ order: 100
 
 Returns a JSON string representing the search [aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations.html).  
 
-### Signature
+### Arguments
 
 ```cpp
-const std::string& aggregations() const;
+char const* aggregations() const;
+```
+
+## fetched
+
+Returns the number retrieved items so far.  
+
+### Arguments
+
+```cpp
+unsigned fetched() const;
 ```
 
 ## hits
@@ -28,10 +38,10 @@ Each object has the following properties:
 | _score | <pre>number</pre> | [Relevance score](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html) |
 | _source | <pre>object</pre> | Document content |
 
-### Signature
+### Arguments
 
 ```cpp
-const std::string& hits() const;
+char const* hits() const;
 ```
 
 ## total
@@ -39,30 +49,20 @@ const std::string& hits() const;
 Returns the total number of found documents. 
 Can be greater than the number of documents retrieved by the current `SearchResult` instance.
 
-### Signature
+### Arguments
 
 ```cpp
 unsigned total() const;
-```
-
-## fetched
-
-Returns the number retrieved items so far.  
-
-### Signature
-
-```cpp
-unsigned fetched() const;
 ```
 
 ## scroll_id
 
 Returns the identifier to the next page of result.
 
-### Signature
+### Arguments
 
 ```cpp
-const std::string& scroll_id() const;
+char const* scroll_id() const;
 ```
 
 ## Usage
