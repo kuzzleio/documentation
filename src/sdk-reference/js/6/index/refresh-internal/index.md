@@ -8,7 +8,7 @@ description: Forces an immediate reindexation of Kuzzle internal storage.
 
 When writing or deleting security and internal documents (users, roles, profiles, configuration, etc.) in Kuzzle, the update needs to be indexed before being reflected in the search index.
 
-The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-reference/index/refresh), on the internal index, making the documents available to search immediately.
+The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-reference/js/6/index/refresh), on the internal index, making the documents available to search immediately.
 
 <div class="alert alert-info">
   A refresh operation comes with some performance costs.

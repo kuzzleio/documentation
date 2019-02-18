@@ -25,7 +25,7 @@ georadius(key, lon, lat, dist, unit, [options])
 | `lon` | <pre>number</pre> | Longitude of the center |
 | `lat` | <pre>number</pre> | Latitude of the center  |
 | `dist` | <pre>number</pre> | Distance from the center |
-| `unit` | <pre>string</pre> | Unit of the distance parameter value.<br:>Allowed values: `m`, `km`, `mi`, `ft` |
+| `unit` | <pre>string</pre> | Unit of the distance parameter value.<br/>Allowed values: `m`, `km`, `mi`, `ft` |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options

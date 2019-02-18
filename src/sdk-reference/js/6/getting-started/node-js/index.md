@@ -2,6 +2,7 @@
 layout: sdk.html.hbs
 title: Node.js
 description: Getting started with Kuzzle and Node.js
+order: 100
 ---
 
 # Getting Started with Kuzzle and Node.js
@@ -34,7 +35,7 @@ If you are performing a clean install you might get some `UNMET PEER DEPENDENCY`
 </div>
 
 Then, create an `init.js` file and start by adding the code below.  
-This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol.  
+This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol.
 
 [snippet=load-sdk]
 
@@ -50,7 +51,7 @@ kuzzle.on('networkError', error => {
 });
 ```
 
-Then, connect the client to your Kuzzle server with the `connect()` method, afterwards you have to add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' that you will use to store data later on.  
+Then, connect the client to your Kuzzle server with the `connect()` method, afterwards you have to add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' that you will use to store data later on.
 
 [snippet=prepare-db]
 
@@ -59,12 +60,13 @@ Your `init.js` file should now look like this:
 [snippet=init]
 
 This code does the following:
-* loads the `Kuzzle SDK` from its NPM package
-* creates an instance of the SDK
-* connects it to Kuzzle running on `kuzzle` (change the hostname if needed) using WebSocket
-* creates the `nyc-open-data` index
-* creates the `yellow-taxi` collection (within the `nyc-open-data` index),
-* disconnects from Kuzzle after the collection is created or if an error occurs
+
+- loads the `Kuzzle SDK` from its NPM package
+- creates an instance of the SDK
+- connects it to Kuzzle running on `kuzzle` (change the hostname if needed) using WebSocket
+- creates the `nyc-open-data` index
+- creates the `yellow-taxi` collection (within the `nyc-open-data` index),
+- disconnects from Kuzzle after the collection is created or if an error occurs
 
 Run the code with Node.js:
 
@@ -89,10 +91,11 @@ Create a `create.js` file with the following code:
 [snippet=create]
 
 This code does the following:
-* creates a new document in the `yellow-taxi` collection, within the `nyc-open-data` index
-* logs a success message to the console if everything went fine
-* logs an error message if any of the previous actions fails
-* disconnects from Kuzzle after the document is created or if an error occurs
+
+- creates a new document in the `yellow-taxi` collection, within the `nyc-open-data` index
+- logs a success message to the console if everything went fine
+- logs an error message if any of the previous actions fails
+- disconnects from Kuzzle after the document is created or if an error occurs
 
 Run the code with Node.js:
 
@@ -111,7 +114,7 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 ## Subscribe to realtime document notifications (pub/sub)
 
-Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the <a href="{{ site_base_path }}sdk-reference/js/6//realtime-notifications/">realtime notifications</a> documentation).
+Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the <a href="{{ site_base_path }}sdk-reference/js/6/realtime-notifications/">realtime notifications</a> documentation).
 
 Let's get started. Create a `subscribe.js` file with the following code:
 
@@ -146,7 +149,7 @@ Congratulations! You have just set up your first pub/sub communication!
 
 Now that you're more familiar with Kuzzle, dive even deeper to learn how to leverage its full capabilities:
 
-* discover what this SDK has to offer by browsing other sections of this documentation
-* learn how to use <a href="{{ site_base_path }}koncorde/1">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
-* learn how to perform a <a href="{{ site_base_path }}sd-reference/js/6/auth/login">basic authentication</a>
-* follow our guide to learn how to <a href="{{ site_base_path }}guide/1/essentials/security/">manage users, and how to set up fine-grained access control</a>
+- discover what this SDK has to offer by browsing other sections of this documentation
+- learn how to use <a href="{{ site_base_path }}koncorde/1">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
+- learn how to perform a <a href="{{ site_base_path }}sdk-reference/js/6/auth/login">basic authentication</a>
+- follow our guide to learn how to <a href="{{ site_base_path }}guide/1/essentials/security/">manage users, and how to set up fine-grained access control</a>

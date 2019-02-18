@@ -47,17 +47,11 @@ jobs:
         - npm install
         - npm run build
 
-    - stage: Build
-      name: "Check deadlinks with VFinder"
-
-      language: node_js
-      node_js:
-        - "8"
-
-      script:
-        - npm install
-        - npm run build
-        - docker run --rm -it -v "$(pwd)":/mnt alexandrebouthinon/vfinder vfinder -d /mnt/build -x /mnt/.ci/vfinder/exceptions.txt
+      after_script:
+        - |
+          if [ -f "src/links_failed.json" ]; then
+            cat src/links_failed.json | jq
+          fi;
 
 # -----------------------------------------------------------------------------
 # Snippets tests
