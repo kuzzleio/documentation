@@ -78,7 +78,7 @@ Check the SDKs handcrafted by the community:
     <img src="/assets/images/logos/dart.svg" alt="dart logo" class="Languages-item-logo">
     <div class="Languages-item-name">Dart</div>
   </a>
-  <a href="https://github.com/alexandrebouthinon/kuzzle_sdk" class="Languages-item min">
+  <a href="https://github.com/alexandrebouthinon/kuzzle-sdk-rust" class="Languages-item min">
     <img src="/assets/images/logos/rust.svg" alt="rust logo" class="Languages-item-logo">
     <div class="Languages-item-name">Rust</div>
   </a>
