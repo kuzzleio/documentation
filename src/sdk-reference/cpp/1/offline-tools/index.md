@@ -2,8 +2,7 @@
 layout: sdk.html.hbs
 title: Offline Tools
 description: Tools to handle the loss of connection to the Kuzzle server
-order: 400
-separator: essentials
+order: 100
 ---
 
 # Offline tools
