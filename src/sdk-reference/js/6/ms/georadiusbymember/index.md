@@ -23,7 +23,7 @@ georadiusbymember(key, geopoint, dist, unit, [options])
 | `key` | <pre>string</pre> | Key |
 | `geopoint` | <pre>string</pre> | Name of the geopoint to use as the center |
 | `dist` | <pre>number</pre> | Distance from the center |
-| `unit` | <pre>string</pre> | Unit of the distance parameter value.<br:>Allowed values: `m`, `km`, `mi`, `ft` |
+| `unit` | <pre>string</pre> | Unit of the distance parameter value.<br/>Allowed values: `m`, `km`, `mi`, `ft` |
 | ``options`` | <pre>object</pre> | Optional query arguments |
 
 ### options

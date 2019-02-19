@@ -34,6 +34,8 @@ const include = require('./plugins/include');
 const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
 let filesSave = null;
+const linkcheck = require('metalsmith-linkcheck');
+ 
 
 // configuration
 const msDefaultOpts = require('./config/metalsmith');
@@ -257,6 +259,7 @@ if (options.build.compress) {
 }
 
 if (options.dev.enabled) {
+  log(`Building site in '${options.build.path}' and serve it`);
   metalsmith
     .use(serve({
       port: 3000,
@@ -275,15 +278,27 @@ if (options.dev.enabled) {
         },
         livereload: true
       })
-    );
+    )
+    .build((error, files) => {
+      if (error) {
+        log(nok + color.yellow(' Ooops...'));
+        console.error(error);
+        process.exit(1);
+      }
+      log(ok + ' Build finished');
+    });
 }
 
-log(`Building site in '${options.build.path}'`);
-metalsmith.build((error, files) => {
-  if (error) {
-    log(nok + color.yellow(' Ooops...'));
-    console.error(error);
-    process.exit(1);
-  }
-  log(ok + ' Build finished');
-});
+if (!options.dev.enabled) {
+  log(`Building site in '${options.build.path}'`);
+  metalsmith
+    .use(linkcheck())
+    .build((error, files) => {
+      if (error) {
+        log(nok + color.yellow(' Ooops...'));
+        console.error(error);
+        process.exit(1);
+      }
+      log(ok + ' Build finished');
+    });
+} 
