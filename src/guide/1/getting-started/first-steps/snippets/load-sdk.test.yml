@@ -1,5 +1,5 @@
 ---
-name: index#load
+name: getting-started-first-steps#load
 description: load kuzzle sdk
 hooks:
   before:

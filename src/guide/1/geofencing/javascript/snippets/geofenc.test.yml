@@ -1,5 +1,5 @@
 ---
-name: index#geofenc
+name: guide-geofencing#geofenc
 description: geofencing
 hooks:
   before: |
@@ -8,7 +8,7 @@ hooks:
   after:  |
     curl -XDELETE kuzzle:7512/myindex
 template: empty
-expected: User has entered Big Ben
+expected: User has left Big Ben
 
 sdk: js
 version: 6

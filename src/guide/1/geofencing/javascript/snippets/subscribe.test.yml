@@ -1,5 +1,5 @@
 ---
-name: index#subscribe
+name: guide-geofencing#subscribe
 description: subscribe
 hooks:
   before: |

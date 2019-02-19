@@ -1,5 +1,5 @@
 ---
-name: index#load
+name: pub-sub#load
 description: load kuzzle sdk
 hooks:
   before:

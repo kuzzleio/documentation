@@ -3,7 +3,6 @@ const {
   Kuzzle,
   WebSocket
 } = require('kuzzle-sdk');
-// instantiate a Kuzzle client
 const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 const message = {message: 'Hello, World!'};
 const run = async () => {

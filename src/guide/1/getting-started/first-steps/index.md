@@ -102,7 +102,7 @@ If you are performing a clean install you might see some `UNMET PEER DEPENDENCY`
 </div>
 
 Then, create an `init.js` file and start by loading the Kuzzle Javascript SDK.
-Next we will instantiate a client that will automatically connect to Kuzzle via websockets. Replace 'kuzzle' with the corresponding server name or ip address, or localhost :
+Next, instantiate a client that automatically connects to Kuzzle via WebSocket. Replace `'kuzzle'` with the corresponding server name or IP address:
 
 [snippet=load-sdk]
 Finally, we will add the code that will access Kuzzle to create a new index 'playground' and a new collection 'mycollection' that we will use to store data later on.
@@ -158,7 +158,7 @@ Run your file in Node.js
 node create.js
 ```
 
-Your console should output the following message:
+Your console should show the following message:
 
 ```bash
 document created
@@ -179,7 +179,7 @@ _You can find more resources about Kuzzle SDK in the [SDK Reference]({{ site_bas
 
 Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the **Room** class definition in the <a href="{{ site_base_path }}sdk-reference">SDK Reference</a>).
 
-Let's get started. Complete your `create.js` file :
+Let's get started. Complete your `create.js` file:
 
   [snippet=subscribe]
 
@@ -189,7 +189,7 @@ Run your file in Node.js
 node create.js
 ```
 
-This will create a new document in Kuzzle which will trigger a [notification]({{ site_base_path }}guide/1/essentials/real-time) :
+This creates a new document in Kuzzle, triggering a [notification]({{ site_base_path }}guide/1/essentials/real-time):
 
 ```bash
 subscribe ok

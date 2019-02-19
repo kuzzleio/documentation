@@ -1,5 +1,5 @@
 ---
-name: index#update
+name: guide-geofencing#update
 description: update document
 hooks:
   before: |

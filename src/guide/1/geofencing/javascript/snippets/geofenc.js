@@ -26,15 +26,15 @@ const hydePark = {
 };
 const newLocation = {location: hydePark};
 const run = async () => {
-  const callback = async (notification) => {
+  const callback = notification => {
     if (notification.scope === 'out') {
-      console.log('User has entered Big Ben');
+      console.log('User has left Big Ben');
       kuzzle.disconnect();
     }
   };
   try {
     await kuzzle.connect();
-    /* Creates a subscription that triggers a notification
+    /* Create a subscription that triggers a notification
     when a user enters the circular area */
     await kuzzle.realtime.subscribe(
       'myindex',
@@ -47,13 +47,13 @@ const run = async () => {
       'myindex',
       'mycollection',
       currentLocation,
-      '326c8f08-63b0-429f-8917-b782d30930e'
+      'ada_lovelace'
     );
     // Update the user's location: now they are outside the circular area
     await kuzzle.document.update(
       'myindex',
       'mycollection',
-      '326c8f08-63b0-429f-8917-b782d30930e',
+      'ada_lovelace',
       newLocation
     );
   } catch (error) {

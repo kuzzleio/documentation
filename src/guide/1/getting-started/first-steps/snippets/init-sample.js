@@ -1,7 +1,7 @@
 try {
-  // create a 'playground' index
+  // Create a 'playground' index
   await kuzzle.index.create('playground');
-  // create a collection named 'mycollection' in playground index
+  // Create a collection named 'mycollection' in playground index
   await kuzzle.collection.create(
     'playground',
     'mycollection'

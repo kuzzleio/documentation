@@ -1,5 +1,5 @@
 ---
-name: index#init-sample
+name: getting-started-first-steps#init-sample
 description: Creates a new index and collection
 hooks:
   before: |

@@ -1,5 +1,5 @@
 ---
-name: index#create
+name: getting-started-first-steps#create
 description: Creates a new document
 hooks:
   before: |

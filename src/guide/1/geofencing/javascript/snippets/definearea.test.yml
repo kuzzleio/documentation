@@ -1,5 +1,5 @@
 ---
-name: index#definearea
+name: guide-geofencing#definearea
 description: declare variables
 hooks:
   before:

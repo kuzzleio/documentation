@@ -1,5 +1,5 @@
 ---
-name: index#init
+name: getting-started-first-steps#init
 description: Creates a new index and collection
 hooks:
   before: |

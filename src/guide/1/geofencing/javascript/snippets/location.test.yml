@@ -1,5 +1,5 @@
 ---
-name: index#location
+name: guide-geofencing#location
 description: location
 hooks:
   before:

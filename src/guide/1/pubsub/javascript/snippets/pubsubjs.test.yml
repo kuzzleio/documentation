@@ -1,5 +1,5 @@
 ---
-name: index#pubsub
+name: pub-sub#pubsub
 description: subscribe and publish
 hooks:
   before: |

@@ -1,5 +1,5 @@
 ---
-name: index#subscribe
+name: getting-started-first-steps#subscribe
 description: subscribe collection
 hooks:
   before: |

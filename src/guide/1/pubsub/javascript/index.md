@@ -14,7 +14,7 @@ Let's create a new project folder called `realtimePubSub`:
     mkdir realtimePubSub
 ```
 
-For this code example we'll need Kuzzle's Javascript SDK. To install it, run:
+For this code example we need Kuzzle's Javascript SDK. To install it, run:
 
 ```bash
     npm install kuzzle-sdk@beta
@@ -31,7 +31,7 @@ The first thing we need to do is connect to Kuzzle. To do this write the followi
 
 [snippet=load-sdk]
 
-Replace the `kuzzle` with the ip or name of the Kuzzle server, or localhost.
+Replace `kuzzle` with the IP address or with the name of the Kuzzle server.
 
 ## Subscribe to Documents with Specific Criteria
 
@@ -47,7 +47,7 @@ We have now programmed the subscription side of the test.
 
 Now let's move on to the publish side of the test. Here we will publish a document that contains the `message` field. When Kuzzle receives this message, it will detect that there is a subscriber listening for such messages and will send it to these subscribers, in this case to our Android App.
 
-We will use the *publish* method that creates a document that contains the value `hello world` in the `message` field.
+We will use the *publish* method that creates a document containing the value `hello world` in the `message` field.
 
 [snippet=publish]
  
@@ -57,7 +57,7 @@ The full code should look something like this:
 
 [snippet=pubsubjs]
 
-Your console should output the following message:
+Your console should show the following message:
 
 ```bash
     hello world

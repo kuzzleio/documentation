@@ -17,13 +17,13 @@ try {
     'myindex',
     'mycollection',
     currentLocation,
-    '326c8f08-63b0-429f-8917-b782d30930e'
+    'ada_lovelace'
   );
   // Update the user's location: now they are outside the circular area
   await kuzzle.document.update(
     'myindex',
     'mycollection',
-    '326c8f08-63b0-429f-8917-b782d30930e',
+    'ada_lovelace',
     newLocation
   );
   console.log('document updated');

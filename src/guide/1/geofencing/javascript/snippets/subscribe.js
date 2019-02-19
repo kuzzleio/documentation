@@ -1,5 +1,5 @@
 const filter = {exists: {field: 'message'}};
-const callback = (notification) => {
+const callback = notification => {
   console.log(notification.result._source.message);
 };
 try {

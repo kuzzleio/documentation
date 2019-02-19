@@ -1,5 +1,5 @@
 ---
-name: index#createdoc
+name: guide-geofencing#createdoc
 description: create document
 hooks:
   before: |

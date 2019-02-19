@@ -14,12 +14,12 @@ const currentLocation = {
   location: bigBen
 };
 try {
-// Create the user's location inside the circular area
+  // Create the user's location inside the circular area
   await kuzzle.document.create(
     'myindex',
     'mycollection',
     currentLocation,
-    '326c8f08-63b0-429f-8917-b782d30930e'
+    'ada_lovelace'
   );
   console.log('document created');
 } catch (error) {
