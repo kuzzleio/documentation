@@ -6,7 +6,7 @@ description: Subscribe to real-time notifications
 
 # subscribe
 
-Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/essentials/notifications), sent to you in real-time by Kuzzle.
+Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/essentials/notifications/), sent to you in real-time by Kuzzle.
 
 ## Signature
 
@@ -31,7 +31,7 @@ std::string subscribe(
 |--------------|---------|-------------|
 | `index` | <pre>const std::string&</pre> | Index name    |
 | `collection` | <pre>const std::string&</pre> | Collection name    |
-| `filters` | <pre>const std::string&</pre> | JSON string representing a set of filters following [Koncorde syntax]({{site_base_path}}koncorde/1/terms/) |
+| `filters` | <pre>const std::string&</pre> | JSON string representing a set of filters following [Koncorde syntax]({{site_base_path}}koncorde/1/essentials/terms/) |
 | `listener` | <pre>kuzzleio::NotificationListener*</pre> | Listener function to handle notifications |
 | `options` | <pre>kuzzleio::room_options*</pre> | Subscription options |
 

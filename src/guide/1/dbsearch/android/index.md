@@ -129,4 +129,3 @@ public void test(){
 }
 ```
 
-Create a test file using your favorite test framework. For a working example of this code refer to `android` folder in our snippet test [github repository](https://github.com/kuzzleio/kuzzle.io-snippet-tests), run the `TestDatabaseSearch` test to execute the code.

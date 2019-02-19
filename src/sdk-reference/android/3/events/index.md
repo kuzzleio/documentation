@@ -1,8 +1,7 @@
 ---
 layout: sdk.html.hbs
 title: Events
-order: 100
-separator: essentials
+order: 200
 ---
 
 # Events

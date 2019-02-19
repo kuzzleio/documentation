@@ -2,7 +2,7 @@
 layout: sdk.html.hbs
 title: Getting started
 description: Java Getting started
-order: 100
+order: 99
 separator: essentials
 ---
 
@@ -15,7 +15,7 @@ This page shows examples of scripts that **store** documents in Kuzzle, and of s
 Before proceeding, please make sure your system meets the following requirements:
 
 * **Oracle JDK or OpenJDK** version 8 or higher (<a href="https://openjdk.java.net/install/">OpenJDK installation instructions</a>)
-* A running Kuzzle Server (<a href="guide/1/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
+* A running Kuzzle Server (<a href="{{site_base_path}}guide/1/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
 </div>
 
 ## Installation
@@ -24,7 +24,8 @@ Before proceeding, please make sure your system meets the following requirements
 
 Kuzzle Java SDK is available on Bintray for both
 [amd64](https://bintray.com/kuzzle/maven/kuzzle-sdk-java-amd64) and
-[x86](https://bintray.com/kuzzle/maven/kuzzle-sdk-java-x86) architectures. Add it as a dependency for your project and
+[x86](https://bintray.com/kuzzle/maven/kuzzle-sdk-java-x86) architectures. 
+Add it as a dependency for your project using Maven or Gradle.
 
 ### Manually
 

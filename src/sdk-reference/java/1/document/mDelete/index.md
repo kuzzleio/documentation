@@ -48,7 +48,7 @@ Additional query options
 
 ## Return
 
-Returns a [io.kuzzle.sdk.StringVector]({{ site_base_path }}sdk-reference/java/1/string-vector) containing the list of the deleted document ids.
+Returns a `io.kuzzle.sdk.StringVector` containing the list of the deleted document ids.
 
 ## Exceptions
 

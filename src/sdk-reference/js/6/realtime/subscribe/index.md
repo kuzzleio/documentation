@@ -20,14 +20,18 @@ Subscribes by providing a set of filters: messages, document changes and, option
 |--------------|---------|-------------|
 | ``index`` | <pre>string</pre> | Index name    |
 | ``collection`` | <pre>string</pre> | Collection name    |
+<<<<<<< HEAD
 | ``filters`` | <pre>object</pre> | Set of filters following [Koncorde syntax]({{site_base_path}}koncorde) |
+=======
+| ``filters`` | <pre>object</pre> | Set of filters following [Koncorde syntax]({{site_base_path}}koncorde/1/) |
+>>>>>>> origin/master
 | ``callback`` | <pre>function</pre> | Callback function to handle notifications |
 | ``options`` | <pre>object</pre> | Query options |
 
 ### callback
 
 Callback function that will be called each time a new notifications is received.
-The callback will receive the [notifications object]({{site_base_path}}sdk-reference/js/6//realtime-notifications) as only argument.
+The callback will receive the [notifications object]({{site_base_path}}sdk-reference/js/6/realtime-notifications) as only argument.
 
 ### options
 

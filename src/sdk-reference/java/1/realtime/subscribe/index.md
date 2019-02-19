@@ -6,7 +6,7 @@ description: Subscribe to real-time notifications
 
 # subscribe
 
-Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/essentials/notifications), sent to you in real-time by Kuzzle.
+Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/essentials/notifications/), sent to you in real-time by Kuzzle.
 
 ## Arguments
 
@@ -32,7 +32,7 @@ public String subscribe(
 |--------------|---------|-------------|
 | `index` | <pre>String</pre> | Index name    |
 | `collection` | <pre>String</pre> | Collection name    |
-| `filters` | <pre>String</pre> | JSON string representing a set of filters following [Koncorde syntax]({{site_base_path}}koncorde) |
+| `filters` | <pre>String</pre> | JSON string representing a set of filters following [Koncorde syntax]({{site_base_path}}koncorde/1/essentials) |
 | `listener` | <pre><a href="{{site_base_path}}sdk-reference/java/1/realtime-notifications">io.kuzzle.sdk.NotificationListener</a></pre> | Listener function to handle notifications |
 | `options` | <pre>io.kuzzle.sdk.RoomOptions</pre> | Subscription options |
 

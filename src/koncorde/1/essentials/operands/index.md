@@ -9,12 +9,12 @@ order: 300
 
 Filters in Koncorde are constituted of terms and operands. In this section, you will find an exhaustive listing of all 
 the available operands. Operands allow you to combine multiple terms together in the same filter.
-You can also refer to the [terms]({{ site_base_path }}koncorde/1/terms) reference to know about
+You can also refer to the [terms]({{ site_base_path }}koncorde/1/essentials/terms) reference to know about
 all the available terms.
 
 <div class="alert alert-info">
 Note that the ability to combine multiple terms together allows to create different filters that have equivalent scope.
-Such filters are optimized by Koncorde, thus <a href="{{ site_base_path }}koncorde/1/advanced#filter-equivalence-default">internally represented by the same ID</a>.
+Such filters are optimized by Koncorde, thus <a href="{{ site_base_path }}koncorde/1/essentials/advanced#filter-equivalence-default">internally represented by the same ID</a>.
 </div>
 
 ## and
