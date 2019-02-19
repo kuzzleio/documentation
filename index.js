@@ -103,7 +103,8 @@ const metalsmith = _metalsmith(__dirname)
     algolia_index: options.algolia.index,
     is_dev: options.dev.enabled,
     sdkVersions: JSON.stringify(sdkVersions),
-    exclude: options.exclude
+    exclude: options.exclude,
+    currentYearCopyright: new Date().getFullYear()
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
