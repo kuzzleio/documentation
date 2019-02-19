@@ -1,11 +1,19 @@
 <div class="ContentFeedback">
   <p>
     <a
-      href="https://github.com/{{
-        gh_repo
-      }}/issues/new?title=Feedback%20about%20page%20'{{ src }}'"
+      href="https://github.com/{{ gh_repo }}/issues/new?title=[{{
+        src
+      }}]&template=bug_report.md"
       target="_blank"
-      >send feedback about this content&nbsp;<i class="fa fa-github"></i
+      >Report an error on this page&nbsp;<i class="fa fa-github"></i
+    ></a>
+    <span class="separator">|</span>
+    <a
+      href="https://github.com/{{ gh_repo }}/issues/new?title=[{{
+        src
+      }}]&template=content_request.md"
+      target="_blank"
+      >Request new content for this page&nbsp;<i class="fa fa-github"></i
     ></a>
   </p>
 </div>
