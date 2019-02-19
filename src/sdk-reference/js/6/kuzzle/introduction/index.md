@@ -50,11 +50,50 @@ Available properties.
 | `replayInterval`     | <pre>number</pre>  | Delay between each replayed requests               |    Yes    |
 | `volatile`           | <pre>object</pre> | Common volatile data, will be sent to all future requests       |    Yes    |
 
-**Notes:**
+### offlineQueueLoader
 
-- multiple methods allow passing specific `volatile` data. These `volatile` data will be merged with the global Kuzzle `volatile` object when sending the request, with the request specific `volatile` taking priority over the global ones.
-- the `queueFilter` property is a function taking an object as an argument. This object is the request sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/essentials/query-syntax) format
-- if `queueTTL` is set to `0`, requests are kept indefinitely
-- The offline buffer acts like a first-in first-out (FIFO) queue, meaning that if the `queueMaxSize` limit is reached, older requests are discarded to make room for new requests
-- if `queueMaxSize` is set to `0`, an unlimited number of requests is kept until the buffer is flushed
-- the `offlineQueueLoader` must be set with a function, taking no argument, and returning an array of objects containing a `query` member with a Kuzzle query to be replayed, and an optional `cb` member with the corresponding callback to invoke with the query result
+The `offlineQueueLoader` property must be set with a function of one of the following formats:
+
+```js
+Object[] offlineQueueLoader()
+
+Promise<Object[]> offlineQueueLoader()
+```
+
+The returned (or resolved) array must contain objects, each with the following properties:
+
+| Property | Type | Description |
+|---|---|---|
+| `query` | <pre>object</pre> | Object representing the request that is about to be sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/essentials/query-syntax) format |
+| `reject` | <pre>function</pre> | A [Promise.reject](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject) function |
+| `resolve` | <pre>function</pre> | A [Promise.resolve](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve) function |
+
+### queueFilter
+
+The `queueFilter` property must be set with a function of the following form:
+
+```js
+boolean queueFilter(request)
+```
+
+The `request` argument is an object representing the request that is about to be sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/essentials/query-syntax) format.
+
+### queueMaxSize
+
+This property defines the size of the offline buffer, which is a first-in first-out (FIFO) queue.
+
+This means that if the `queueMaxSize` limit is reached, older requests are discarded to make room for newer requests.
+
+If `queueMaxSize` is set to a number lower than, or equal to `0`, then an unlimited number of requests is kept in the offline buffer.  
+Note that doing so may lead to a crash due to memory saturation, if there are too many requests held in memory.
+
+### queueTTL
+
+If the `queueTTL` property is set to a number lower than, or equal to `0`, then requests never expire and are kept indefinitely.
+
+### volatile
+
+Multiple methods allow passing specific `volatile` data. 
+
+These `volatile` data will be merged with the global Kuzzle `volatile` object when sending the request, with the request specific `volatile` taking priority over the global ones.
+
