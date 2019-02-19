@@ -85,3 +85,9 @@ When the document update request is sent to Kuzzle, it will detect the change in
 The full code should look something like this:
 
 [snippet=geofenc]
+
+Your console should output the following message:
+
+```bash
+    User has entered Big Ben
+```

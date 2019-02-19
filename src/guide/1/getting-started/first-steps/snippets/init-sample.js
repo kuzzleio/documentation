@@ -1,5 +1,4 @@
 try {
-  await kuzzle.connect();
   // create a 'playground' index
   await kuzzle.index.create('playground');
   // create a collection named 'mycollection' in playground index

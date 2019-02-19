@@ -56,3 +56,9 @@ We will use the *publish* method that creates a document that contains the value
 The full code should look something like this:
 
 [snippet=pubsubjs]
+
+Your console should output the following message:
+
+```bash
+    hello world
+```

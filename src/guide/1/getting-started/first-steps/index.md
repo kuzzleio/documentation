@@ -94,7 +94,7 @@ Create your playground directory and install the [Javascript SDK]({{ site_base_p
 ```bash
 mkdir "kuzzle-playground"
 cd "kuzzle-playground"
-npm install kuzzle-sdk
+npm install kuzzle-sdk@beta
 ```
 
 <div class="alert alert-info">
