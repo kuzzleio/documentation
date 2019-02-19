@@ -121,8 +121,3 @@ func test(){
 
 ```
 
-Create a test file using your favorite test framework. For a working example of this code refer to `go` folder in our snippet test [github repository](https://github.com/kuzzleio/kuzzle.io-snippet-tests). You can run the test using Visual Studio Code (using the launch.json configuration provided in the repository) or simply by executing the following command in the `databaseSearch` folder: 
-
-```bash
-    go run test.go snippet.go
-```

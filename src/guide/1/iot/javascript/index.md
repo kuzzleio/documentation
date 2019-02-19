@@ -140,16 +140,3 @@ client.on('message', function(topic, raw){
 
 
 ```
-
-Create a test file using your favorite test framework. For a working example of this code refer to `javascript` folder in our snippet test [github repository](https://github.com/kuzzleio/kuzzle.io-snippet-tests). You can run the test using Visual Studio Code (using the launch.json configuration provided in the repository) or simply by executing the following command: 
-
-```bash
-    jasmine JASMINE_CONFIG_PATH=spec/runner/run_iot.json
-```
-
-The test script requires `jasmine`. If you don't already have it, you can install it with the following command:
-
-```bash
-    npm install -g jasmine
-```
- 
