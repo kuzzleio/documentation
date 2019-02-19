@@ -5,6 +5,7 @@ services:
     image: kuzzleio/kuzzle
     ports:
       - "7512:7512"
+      - "1883:1883"
     cap_add:
       - SYS_PTRACE
     depends_on:
@@ -15,6 +16,8 @@ services:
       - kuzzle_services__db__client__host=http://elasticsearch:9200
       - kuzzle_services__internalCache__node__host=redis
       - kuzzle_services__memoryStorage__node__host=redis
+      - kuzzle_server__protocols__mqtt__enabled=true
+      - kuzzle_server__protocols__mqtt__developmentMode=false
       - NODE_ENV=production
 
   redis:

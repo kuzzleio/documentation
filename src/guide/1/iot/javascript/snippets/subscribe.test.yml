@@ -1,0 +1,9 @@
+name: guideiot#subscribe
+description: subscribe
+hooks:
+  before:
+  after:
+template: empty
+expected: Success
+sdk: js
+version: 6

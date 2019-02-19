@@ -7,136 +7,104 @@ title: Javascript
 
 For this example we will use Node.js. You will need to install Node.js and NPM.
 
-Let's create a new project folder called `iot`:
+Let's create a new project folder called `iot` and install mqtt module:
 
 
 ```bash
-    mkdir iot
+mkdir iot
+cd iot
+npm install mqtt
 ```
 
-Now in you `iot` folder initialize the Node.js App:
-
+Now the project configuration is complete, we can create a `subscribe.js` and a `publish.js` files in the `iot` folder to program our example.
 
 ```bash
-    npm init
-```
-
-Give your project a name and set the version and any other details you want to configure.
-
-For this code example we'll need the `mqtt` module. To install it, open the `package.json` file that was generated during the `npm init` and add the following dependency:
-
-
-```javascript
-/*...*/
-"dependencies": {
-    /*...*/
-    "mqtt": "2.15.2"
-},
-```
-
-Now install the `mqtt` module by running `npm install` in your `iot` folder:
-
-```bash
-    npm install
-```
-
-You should now see the `kuzzle-sdk` folder under `node_modules`.
-
-Now the project configuration is complete, we can create an `index.js` file in the `iot` folder to program our test.
-
-```bash
-    touch index.js
+touch subscribe.js publish.js 
 ```
 
 ## Connect to Kuzzle
 
-The first thing we need to do is connect to Kuzzle. To do this write the following code:
+In both files, the first thing we need to do is connect to Kuzzle. To do this add the following code:
 
 ```Javascript
-//Get the mqtt module
-var mqtt = require('mqtt');
-//Connect to Kuzzle
-client = mqtt.connect({host: 'localhost'});
+const
+  //Get the mqtt module
+  mqtt = require('mqtt'),
+  //Connect to Kuzzle
+  client = mqtt.connect({host: 'localhost'});
 ```
 
 Here we assume you have installed Kuzzle on your localhost, if this is not the case replace the `localhost` with the ip or name of the Kuzzle server.
 
-## Subscribe to the MQTT Response Topic
+## Publish a Request on the MQTT Request Topic
 
-Now that we have established a connection to Kuzzle, we will subscribe to the Kuzzle "Kuzzle/response" Topic so that the client can listen to responses from Kuzzle:
+Now let's move on to the publish side of the test. Here we will publish a request to Kuzzle through the MQTT Protocol. In this case we will send a Collection Publish request. You can add the following code to your `publish.js` file
 
 ```Javascript
-// Listen for the Kuzzle response
-client.on('message', function(topic, raw){
-    // Parse the message
-    var message = JSON.parse(new Buffer(raw));
-    // If this is a Kuzzle repsponse check the requestId
-    if (topic === 'Kuzzle/response') {
-        // Check if the requestId is the the same as for the request we sent
-        if (message.requestId === 'unique_request_id') {
-            console.log('Received Response: ', message);
-            doSomething(message);
-        }
+// Sending a volatile message
+client.publish('Kuzzle/request', JSON.stringify({
+    index: 'index',
+    collection: 'collection',
+    controller: 'realtime',
+    action: 'publish',
+    requestId: 'some_unique_id',
+    body: { 
+        volatile: 'message' 
     }
+  }));
+```
+
+## Subscribe to the MQTT Response Topic
+
+Now we will subscribe to the Kuzzle "Kuzzle/response" so that the client can listen to published messages.
+You should add a `channels` array to save the subscriptions:
+
+```Javascript
+const channels = [];
+```
+
+We need to know the channel id to subscribe. After published a message we get the channel id as response so you can add the previous code in the `subscribe.js` file.
+After that, you could add the following code to do the subscription:
+
+```Javascript
+// Getting Kuzzle's response
+client.on('message', (topic, raw) => {
+  const message = JSON.parse(Buffer.from(raw));
+  // API results topic
+  if (topic === 'Kuzzle/response') {
+    // Response to our "publish" request
+    if (message.requestId === 'some_unique_id' && message.result !== null && message.result.channel !== null) {
+      channels.push(message.result.channel);
+      client.subscribe(message.result.channel);
+    }
+  }
+  else if (channels.indexOf(topic) !== -1) {
+    // Subscription notification
+    console.log('Notification: ', message);
+  }
 });
 ```
 
 We have now programmed the subscription side of the MQTT transport.
 
-## Publish a Request on the MQTT Request Topic
+## Run the Example
 
-Now let's move on to the publish side of the test. Here we will publish a request to Kuzzle through the MQTT Protocol. In this case we will send a Collection Publish request.
+The full code of your `publish.js` file should look something like this:
 
-```Javascript
-client.on('connect', function() {
-    //Once connected publish a message
-    client.publish('Kuzzle/request', JSON.stringify({
-        index: "myindex",
-        collection: "mycollection",
-        controller: 'realtime',
-        action: 'publish',
-        requestId: 'unique_request_id',
-        body: {volatile: 'message'}
-    }));
-});
+[snippet=publish]
+
+And that of your `subscribe.js` file should look something like this:
+
+[snippet=subscribe]
+
+Now, run the following command in a terminal. The notifications of published messages will appear here.
+
+```bash
+node subscribe.js
 ```
 
-## Run the Test
+Run the following command in another terminal and return to your other terminal to see the notification.
 
-The full code should look something like this:
-
-```Javascript
-/* Test Class */
-
-//Get the mqtt module
-var mqtt = require('mqtt');
-//Connect to Kuzzle
-client = mqtt.connect({host: 'localhost'});
-client.on('connect', function() {
-    //Once connected publish a message
-    client.publish('Kuzzle/request', JSON.stringify({
-        index: "myindex",
-        collection: "mycollection",
-        controller: 'realtime',
-        action: 'publish',
-        requestId: 'unique_request_id',
-        body: {volatile: 'message'}
-    }));
-});
-
-// Listen for the Kuzzle response
-client.on('message', function(topic, raw){
-    // Parse the message
-    var message = JSON.parse(new Buffer(raw));
-    // If this is a Kuzzle repsponse check the requestId
-    if (topic === 'Kuzzle/response') {
-        // Check if the requestId is the the same as for the request we sent
-        if (message.requestId === 'unique_request_id') {
-            console.log('Received Response: ', message);
-            doSomething(message);
-        }
-    }
-});
-
-
+```bash
+node publish.js
 ```
