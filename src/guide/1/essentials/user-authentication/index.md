@@ -19,10 +19,10 @@ Additionally, you can set:
 * [User credentials]({{ site_base_path }}guide/1/essentials/user-authentication/#user-credentials): If no credentials are provided, then the user cannot [login]({{ site_base_path }}api/1/controller-auth/login/)
 * Any number of properties that you want to store in your user object, such as a lastname or a list of hobbies. These properties are stored at the user level and are not linked to any particular authentication strategy.
 
-Let's create a user with username `jondoe` and password `letmein` through the API:
+Let's create a user with username `admin` and password `test` through the API:
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{ "content": { "profileIds": ["default"], "name": "John Doe" }, "credentials": { "local": { "username": "jondoe", "password": "letmein" } } }' http://localhost:7512/users/_create
+curl -X POST -H "Content-Type: application/json" -d '{ "content": { "profileIds": ["default"], "name": "John Doe" }, "credentials": { "local": { "username": "admin", "password": "test" } } }' http://localhost:7512/users/_create
 ```
 
 You should get the following response:
@@ -89,29 +89,13 @@ npm install kuzzle-sdk
 
 Then, let's create a `login.js` file that contains the following code:
 
-```javascript
-const Kuzzle = require('kuzzle-sdk')
-
-var kuzzle = new Kuzzle('localhost', () => {
-  kuzzle
-    .loginPromise('local', {
-      username: 'admin',
-      password: 'test'
-    })
-    .then(() => {
-      console.log('You are now logged in!')
-    })
-    .catch(err => {
-      console.error(err.message)
-    })
-})
-```
+[snippet=login]
 
 This code will:
 
 * load the Kuzzle Node.js SDK
 * connect to the Kuzzle
-* login using username `jondoe` and password `letmein`
+* login using username `admin` and password `test`
 
 Let's try it out! Run the `index.js` using Node.js:
 
