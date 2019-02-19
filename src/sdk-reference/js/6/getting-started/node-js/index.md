@@ -2,6 +2,7 @@
 layout: sdk.html.hbs
 title: Node.js
 description: Getting started with Kuzzle and Node.js
+order: 100
 ---
 
 # Getting Started with Kuzzle and Node.js
@@ -34,7 +35,7 @@ If you are performing a clean install you might get some `UNMET PEER DEPENDENCY`
 </div>
 
 Then, create an `init.js` file and start by adding the code below.  
-This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol.  
+This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol.
 
 [snippet=load-sdk]
 
@@ -50,7 +51,7 @@ kuzzle.on('networkError', error => {
 });
 ```
 
-Then, connect the client to your Kuzzle server with the `connect()` method, afterwards you have to add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' that you will use to store data later on.  
+Then, connect the client to your Kuzzle server with the `connect()` method, afterwards you have to add the code that will access Kuzzle to create a new index 'nyc-open-data' and a new collection 'yellow-taxi' that you will use to store data later on.
 
 [snippet=prepare-db]
 
@@ -59,12 +60,13 @@ Your `init.js` file should now look like this:
 [snippet=init]
 
 This code does the following:
-* loads the `Kuzzle SDK` from its NPM package
-* creates an instance of the SDK
-* connects it to Kuzzle running on `kuzzle` (change the hostname if needed) using WebSocket
-* creates the `nyc-open-data` index
-* creates the `yellow-taxi` collection (within the `nyc-open-data` index),
-* disconnects from Kuzzle after the collection is created or if an error occurs
+
+- loads the `Kuzzle SDK` from its NPM package
+- creates an instance of the SDK
+- connects it to Kuzzle running on `kuzzle` (change the hostname if needed) using WebSocket
+- creates the `nyc-open-data` index
+- creates the `yellow-taxi` collection (within the `nyc-open-data` index),
+- disconnects from Kuzzle after the collection is created or if an error occurs
 
 Run the code with Node.js:
 
@@ -89,10 +91,11 @@ Create a `create.js` file with the following code:
 [snippet=create]
 
 This code does the following:
-* creates a new document in the `yellow-taxi` collection, within the `nyc-open-data` index
-* logs a success message to the console if everything went fine
-* logs an error message if any of the previous actions fails
-* disconnects from Kuzzle after the document is created or if an error occurs
+
+- creates a new document in the `yellow-taxi` collection, within the `nyc-open-data` index
+- logs a success message to the console if everything went fine
+- logs an error message if any of the previous actions fails
+- disconnects from Kuzzle after the document is created or if an error occurs
 
 Run the code with Node.js:
 
