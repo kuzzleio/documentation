@@ -102,7 +102,8 @@ const metalsmith = _metalsmith(__dirname)
     algolia_index: options.algolia.index,
     is_dev: options.dev.enabled,
     sdkVersions: JSON.stringify(sdkVersions),
-    exclude: options.exclude
+    exclude: options.exclude,
+    currentYearCopyright: new Date().getFullYear()
   })
   .source('./src')
   .destination('./build' + options.build.path) // does not work with 'dist' folder ...
@@ -120,10 +121,12 @@ const metalsmith = _metalsmith(__dirname)
 
 metalsmith
   .use(links())
-  .use(ancestry({
-    match: '**/*.md',
-    sortBy: ['order', 'title']
-  }))
+  .use(
+    ancestry({
+      match: '**/*.md',
+      sortBy: ['order', 'title']
+    })
+  )
   // restore ancestry on partial rebuilds
   .use((files, ms, done) => {
     setImmediate(done);
@@ -144,28 +147,33 @@ metalsmith
 if (options.dev.enabled) {
   console.log('= generating map sass files =');
 
-  metalsmith
-    .use(sass({
+  metalsmith.use(
+    sass({
       sourceMap: true,
       sourceMapContents: true
-    }));
-}
-else {
-  metalsmith
-    .use(sass({
+    })
+  );
+} else {
+  metalsmith.use(
+    sass({
       sourceMap: false,
       sourceMapContents: false
-    }));
+    })
+  );
 }
 
 metalsmith
   .use(hljs())
-  .use(hbtmd(handlebars, {
-    pattern: '**/*.md'
-  }))
-  .use(markdown({
-    renderer: newMDRenderer
-  }))
+  .use(
+    hbtmd(handlebars, {
+      pattern: '**/*.md'
+    })
+  )
+  .use(
+    markdown({
+      renderer: newMDRenderer
+    })
+  )
   .use(include())
   .use((files, ms, done) => {
     for (const file of Object.keys(files)) {
@@ -184,18 +192,17 @@ metalsmith
     setImmediate(done);
   })
   .use(metalsmithWebpack(webpackConfig(options)))
-  .use(permalinks({relative: false}));
+  .use(permalinks({ relative: false }));
 
 metalsmith
   .use((files, ms, done) => {
     // automatically add redirection to the last children if the current file
     // isn't the last children (Leaf of the arborescence)
     for (const file of Object.values(files)) {
-      if (file.ancestry && ! file.noredirect) {
+      if (file.ancestry && !file.noredirect) {
         const lastChildren = ancestryHelpers.getLastChildren(file);
         if (lastChildren.path !== file.path) {
-          const
-            href = `/${file.path}`,
+          const href = `/${file.path}`,
             redirect = `/${lastChildren.path}`;
 
           redirectList[href] = redirect;
@@ -205,13 +212,17 @@ metalsmith
     setImmediate(done);
   })
   .use(metalsmithRedirect(redirectList))
-  .use(discoverPartials({
-    directory: 'src/templates/partials',
-    pattern: /\.html$/
-  }))
-  .use(layouts({
-    directory: 'src/templates'
-  }));
+  .use(
+    discoverPartials({
+      directory: 'src/templates/partials',
+      pattern: /\.html$/
+    })
+  )
+  .use(
+    layouts({
+      directory: 'src/templates'
+    })
+  );
 
 if (options.algolia.privateKey) {
   log('Algolia indexing enabled');
@@ -220,7 +231,8 @@ if (options.algolia.privateKey) {
     // the last children of the tree structure (Leaf of the arborescence)
     .use((files, ms, done) => {
       for (const file of Object.values(files)) {
-        if (file.ancestry) { // only content pages (.md) have ancestry object
+        if (file.ancestry) {
+          // only content pages (.md) have ancestry object
           const lastChildren = ancestryHelpers.getLastChildren(file);
           if (lastChildren.path === file.path) {
             file.algolia = true;
@@ -229,13 +241,15 @@ if (options.algolia.privateKey) {
       }
       setImmediate(done);
     })
-    .use(algolia({
-      clearIndex: true,
-      projectId: options.algolia.projectId,
-      privateKey: options.algolia.privateKey,
-      index: options.algolia.index,
-      fileParser: options.algolia.fnFileParser
-    }));
+    .use(
+      algolia({
+        clearIndex: true,
+        projectId: options.algolia.projectId,
+        privateKey: options.algolia.privateKey,
+        index: options.algolia.index,
+        fileParser: options.algolia.fnFileParser
+      })
+    );
 }
 
 if (options.build.compress) {
@@ -243,26 +257,32 @@ if (options.build.compress) {
 
   metalsmith
     .use(inlineSVG())
-    .use(optipng({
-      pattern: '**/*.png',
-      options: ['-o7']
-    }))
+    .use(
+      optipng({
+        pattern: '**/*.png',
+        options: ['-o7']
+      })
+    )
     .use(htmlMin())
     .use(compress())
-    .use(sitemap({
-      hostname: options.build.host,
-      modifiedProperty: 'stats.mtime',
-      omitIndex: true
-    }));
+    .use(
+      sitemap({
+        hostname: options.build.host,
+        modifiedProperty: 'stats.mtime',
+        omitIndex: true
+      })
+    );
 }
 
 if (options.dev.enabled) {
   metalsmith
-    .use(serve({
-      port: 3000,
-      verbose: false,
-      host: 'localhost'
-    }))
+    .use(
+      serve({
+        port: 3000,
+        verbose: false,
+        host: 'localhost'
+      })
+    )
     .use(
       watch({
         paths: {
