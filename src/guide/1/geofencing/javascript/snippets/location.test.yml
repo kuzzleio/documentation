@@ -1,0 +1,11 @@
+---
+name: index#location
+description: location
+hooks:
+  before:
+  after:
+template: empty
+expected: Success
+
+sdk: js
+version: 6

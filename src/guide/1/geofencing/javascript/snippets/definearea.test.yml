@@ -1,0 +1,11 @@
+---
+name: index#definearea
+description: declare variables
+hooks:
+  before:
+  after:
+template: empty
+expected: Success
+
+sdk: js
+version: 6

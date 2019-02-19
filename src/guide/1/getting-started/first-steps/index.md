@@ -101,67 +101,17 @@ npm install kuzzle-sdk
 If you are performing a clean install you might see some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
 </div>
 
-Then, create an `init.js` file and start by adding the code below. This will load the Kuzzle Javascript SDK:
+Then, create an `init.js` file and start by loading the Kuzzle Javascript SDK.
+Next we will instantiate a client that will automatically connect to Kuzzle via websockets. Replace 'kuzzle' with the corresponding server name or ip address, or localhost :
 
-```javascript
-const Kuzzle = require('kuzzle-sdk')
-```
-
-Next we will instantiate a client that will automatically connect to Kuzzle via websockets. If Kuzzle is not running on localhost, replace it with the corresponding server name or ip address. Here we also specify 'playground' as the default index that the client will query:
-
-```javascript
-const kuzzle = new Kuzzle('localhost', {defaultIndex: 'playground'})
-```
-
-Next we will add a listener to detect if there is a problem with our connection to Kuzzle:
-
-```javascript
-kuzzle.on("networkError",function(error){
-  console.error("Network Error:"+error);
-})
-```
-
+[snippet=load-sdk]
 Finally, we will add the code that will access Kuzzle to create a new index 'playground' and a new collection 'mycollection' that we will use to store data later on.
 
-```javascript
-kuzzle
-  .createIndexPromise('playground')
-  .then(() => kuzzle.collection('mycollection').createPromise())
-  .then(() => {
-    console.log('playground/mycollection ready')
-  })  
-  .catch(err => {
-    console.error(err.message)
-  })  
-  .finally(() => kuzzle.disconnect())
-```
+[snippet=init-sample]
 
-Your `init.js` file should now look like this:
+Your `first-step.js` file should now look like this:
 
-```javascript
-// load the Kuzzle SDK module
-const Kuzzle = require('kuzzle-sdk')
-
-// instantiate a Kuzzle client, this will automatically connect to the Kuzzle server
-const kuzzle = new Kuzzle('localhost', {defaultIndex: 'playground'})
-
-// add a listener to detect any connection problems
-kuzzle.on("networkError",function(error){
-  console.error("Network Error:"+error);
-})
-
-// create a 'playground' index and then a collection named 'mycollection' that we can use to store data
-kuzzle
-  .createIndexPromise('playground')
-  .then(() => kuzzle.collection('mycollection').createPromise())
-  .then(() => {
-    console.log('playground/mycollection ready')
-  })  
-  .catch(err => {
-    console.error(err.message)
-  })  
-  .finally(() => kuzzle.disconnect())
-```
+  [snippet=init]
 
 This code does the following:
 * loads the `Kuzzle SDK` from its NPM package
@@ -173,7 +123,7 @@ This code does the following:
 Run your file in Node.js
 
 ```bash
-node init.js
+node first-step.js
 ```
 
 Your console should output the following message:
@@ -192,29 +142,9 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 ### Create your first "Hello World" document
 
-Create a `create.js` file with following code:
+Create a `create.js` file with the following code:
 
-```javascript
-// load the Kuzzle SDK module
-const Kuzzle = require('kuzzle-sdk')
-
-// instantiate a Kuzzle client, this will automatically connect to the Kuzzle server
-const kuzzle = new Kuzzle('localhost', {defaultIndex: 'playground'})
-
-// create an object that contains the message we want to store
-const message = {message: "Hello, World!"}
-
-// create a document in the 'mycollection' collection
-kuzzle.collection('mycollection')
-  .createDocumentPromise(message)
-  .then(res => {
-    console.log('the following document has been successfully created:\n', message)
-  })
-  .catch(err => {
-    console.error(err.message)
-  })
-  .finally(() => kuzzle.disconnect())
-```
+  [snippet=create]
 
 This code does the following:
 * creates a new document containing the message "Hello, World" in `mycollection` within the `playground` index,
@@ -226,6 +156,12 @@ Run your file in Node.js
 
 ```bash
 node create.js
+```
+
+Your console should output the following message:
+
+```bash
+document created
 ```
 
 <div class="alert alert-success">
@@ -241,55 +177,24 @@ _You can find more resources about Kuzzle SDK in the [SDK Reference]({{ site_bas
 
 ### Subscribe to data changes (pub/sub)
 
-Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the **Room** class definition in the <a href="{{ site_base_path }}sdk-reference">SDK Reference</a>).
+Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the **Room** class definition in the <a href="{{ site_base_path }}sdk-reference/room">SDK Reference</a>).
 
-Let's get started. Create a `subscribe.js` file with following code:
+Let's get started. Complete your `create.js` file :
 
-```javascript
-// load the Kuzzle SDK module
-const Kuzzle = require('kuzzle-sdk')
-
-// instantiate a Kuzzle client, this will automatically connect to the Kuzzle server
-const kuzzle = new Kuzzle('localhost', {defaultIndex: 'playground'})
-
-// create a reference to the 'mycollection' collection
-const collection = kuzzle.collection('mycollection')
-
-// define a filter
-const filter = {
-    exists: {
-        field: 'message'
-    }
-}
-
-// create a subscription on the collection matching given filters
-collection.subscribe(filter, (error, result) => {
-    // this function is called each time kuzzle notifies us with a document matching our filters
-    console.log('message received from kuzzle:', result)
-})
-```
+  [snippet=subscribe]
 
 Run your file in Node.js
-
-```bash
-node subscribe.js
-```
-
-Your `subscribe.js` app is now running and monitoring any documents that match the filter, specifically documents that have a `message` field.
-
-Now in another terminal, launch the `create.js` file that we created in the previous section.
 
 ```bash
 node create.js
 ```
 
-This will create a new document in Kuzzle which will trigger a [notification]({{ site_base_path }}guide/1/essentials/real-time) in the `subscribe.js` app. Check the `subscribe.js` terminal to make sure a new log appears every time a document is created using the `create.js` app:
+This will create a new document in Kuzzle which will trigger a [notification]({{ site_base_path }}guide/1/essentials/real-time) :
 
 ```bash
-message received from kuzzle: { status: 200,
-  requestId: '02042a18-927b-43a1-98e3-e1637e2a1447',
-  timestamp: 1515590928775,
-  ...}
+subscribe ok
+document created
+message received from kuzzle: Hello, World!
 ```
 
 <div class="alert alert-success">
