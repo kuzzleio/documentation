@@ -35,7 +35,7 @@ Now you should edit the `docker-compose.yml` file and add the following modifica
 The full code should look something like this:
 
 ```
-version: '2'
+version: '3'
 
 services:
   kuzzle:
