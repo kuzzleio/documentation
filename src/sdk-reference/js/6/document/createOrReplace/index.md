@@ -10,7 +10,7 @@ Creates a new document in the persistent data storage, or replaces its content i
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
 
-## Arguments
+<br/>
 
 ```javascript
 createOrReplace (index, collection, id, document, [options])

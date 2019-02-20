@@ -12,7 +12,7 @@ Deleting credantials, doesn't revoke existing/active JWT tokens.
 
 If the credentials that generated the current JWT are removed, the user will remain logged in until they log out or their session expire. After that, they will no longer be able to log in with the deleted credentials.
 
-## Arguments
+<br/>
 
 ```javascript
 deleteMyCredentials (strategy, [options]);

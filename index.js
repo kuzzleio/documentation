@@ -35,7 +35,6 @@ const saveSrc = require('./plugins/save-src');
 const anchors = require('./plugins/anchors');
 let filesSave = null;
 const linkcheck = require('metalsmith-linkcheck');
- 
 
 // configuration
 const msDefaultOpts = require('./config/metalsmith');
@@ -97,8 +96,8 @@ const metalsmith = _metalsmith(__dirname)
     site_title: 'Kuzzle documentation',
     site_url: options.build.host,
     site_base_path: options.build.path,
-    gh_repo: options.github.repository,
-    gh_branch: options.github.branch,
+    gh_repo: process.env.TRAVIS_REPO_SLUG || 'kuzzleio/documentation-V2',
+    gh_branch: process.env.TRAVIS_BRANCH || 'master',
     algolia_projectId: options.algolia.projectId,
     algolia_publicKey: options.algolia.publicKey,
     algolia_index: options.algolia.index,
@@ -311,14 +310,12 @@ if (options.dev.enabled) {
 
 if (!options.dev.enabled) {
   log(`Building site in '${options.build.path}'`);
-  metalsmith
-    .use(linkcheck())
-    .build((error, files) => {
-      if (error) {
-        log(nok + color.yellow(' Ooops...'));
-        console.error(error);
-        process.exit(1);
-      }
-      log(ok + ' Build finished');
-    });
-} 
+  metalsmith.use(linkcheck()).build((error, files) => {
+    if (error) {
+      log(nok + color.yellow(' Ooops...'));
+      console.error(error);
+      process.exit(1);
+    }
+    log(ok + ' Build finished');
+  });
+}

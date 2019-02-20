@@ -10,7 +10,7 @@ Creates multiple documents.
 
 Throws a partial error (error code 206) if one or more documents creations fail.
 
-## Arguments
+<br/>
 
 ```javascript
 mCreate (index, collection, documents, [options])

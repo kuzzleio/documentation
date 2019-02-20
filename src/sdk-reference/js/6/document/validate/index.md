@@ -12,7 +12,7 @@ Note that if no validation specifications are set for the `<index>`/`<collection
 
 This request does **not** store or publish the document.
 
-## Arguments
+<br/>
 
 ```javascript
 validate (index, collection, document, [options])

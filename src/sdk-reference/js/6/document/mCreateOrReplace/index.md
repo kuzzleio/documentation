@@ -10,7 +10,7 @@ Creates or replaces multiple documents.
 
 Throws a partial error (error code 206) if one or more document creations/replacements fail.
 
-## Arguments
+<br/>
 
 ```javascript
 mCreateOrReplace (index, collection, documents, [options])

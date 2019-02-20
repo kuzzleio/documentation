@@ -10,7 +10,7 @@ Replaces multiple documents.
 
 Throws a partial error (error code 206) if one or more documents can not be replaced.
 
-## Arguments
+<br/>
 
 ```javascript
 mReplace (index, collection, documents, [options])
