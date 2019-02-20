@@ -62,23 +62,16 @@ All the following examples are written in Javascript, therefore using the Javasc
 
 Once our client has started and initialized with the set of TO-DO items it fetched from the persistence layer, we want it to subscribe to the changes happening on them.
 
-```javascript
-kuzzle
-    .collection('todos', 'todo-list')
-    .subscribe({}, (error, notification) => {
-        if (error) {
-            throw new Error(error)
-        }
-        console.log('Something happened and we should do something.', notification)
-    })
-```
+[snippet=subscribe-no-filter]
 
 This code isn't very useful at the moment, but it shows the capability to react to a notification coming from the server.
 
-Here, we call the `subscribe` method on the `todos` collection with two arguments:
+Here, we call the `subscribe` method:
 
-* The first argument represents the _filters_, and in this case there's none, which means that we are subscribing to _all documents changes_ in the collection. Filters enable more fine-grained selection on the data we want to subscribe to and are described in the next example.
-* The second argument is the _callback_, i.e. a function that is called _every time a notification is received_.
+* The first argument is the index.
+* The second argument is the collection we want to subscribe to.
+* The third argument represents the _filters_, and in this case there's none, which means that we are subscribing to _all documents changes_ in the collection. Filters enable more fine-grained selection on the data we want to subscribe to and are described in the next example.
+* The fourth argument is the _callback_, i.e. a function that is called _every time a notification is received_.
 
 Now, imagine this code is executed on Tom's client: when Ann creates the new TO-DO item, Tom receives a notification looking like the following:
 
@@ -130,21 +123,7 @@ Kuzzle ships with a powerful filtering tool named [Koncorde]({{ site_base_path }
 
 In our case, we want to select all the documents that contain the `URGENT` word in the `label` field. The best pick for this case is the [regexp]({{ site_base_path }}koncorde/1/essentials/terms/#regexp-default) filter.
 
-
-```javascript
-kuzzle
-  .collection('todos', 'todo-list')
-  .subscribe({
-    regexp: {
-      label: 'URGENT'
-    }
-  }, (error, notification) => {
-    if (error) {
-        throw new Error(error)
-    }
-    console.log('Something happened and we should do something URGENTLY.', notification)
-  })
-```
+[snippet=subscribe-filter]
 
 This way, Tom will be notified about urgent TO-DO items. Take a look at the [Koncorde Reference]({{ site_base_path }}koncorde/1/) for a comprehensive list of available filters.
 
@@ -167,24 +146,6 @@ This object supports a wide range of options that can be passed directly to its 
 For now, let's concentrate on the question asked at the end of the previous chapter: how do we filter the notifications resulting of our own actions?  
 The option we are looking for is `subscribeToSelf`, which is set to `true` by default.
 
-```javascript
-kuzzle
-  .collection('todos')
-  .subscribe(
-    { // The Filters object
-      regexp: {
-        label: 'URGENT'
-      }
-    },
-    { // The Options object
-      subscribeToSelf: false
-    },
-    (error, notification) => { // The callback
-      if (error) {
-          throw new Error(error)
-      }
-      console.log('Something happened and we should do something URGENTLY.', notification)
-  })
-```
+[snippet=subscribe-options]
 
-In the code right above, we added the extra "options" object as the second argument to avoid subscribing Tom to his own events.
+In the code right above, we added the extra "options" object as the fifth argument to avoid subscribing Tom to his own events.
