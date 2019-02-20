@@ -8,7 +8,7 @@ description: Replace a document
 
 Replaces the content of an existing document.
 
-## Arguments
+<br/>
 
 ```javascript
 replace (index, collection, id, document, [options])

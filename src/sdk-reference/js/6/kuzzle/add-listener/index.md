@@ -6,8 +6,8 @@ description: Add a listener to an event
 
 # addListener
 
-Adds a listener to an event.
-When an event is triggered, listeners are triggered in the order in which they were added.
+Adds a listener function to the end of the listeners array for an event. 
+Whenever an event is triggered, listener functions are called in the order they were registered.
 
 ## Arguments
 

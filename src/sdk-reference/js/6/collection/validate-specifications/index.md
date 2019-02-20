@@ -10,7 +10,7 @@ The validateSpecifications method checks if a validation specification is well f
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
-## Arguments
+<br/>
 
 ```javascript
 validateSpecifications (index, collection, specifications, [options])

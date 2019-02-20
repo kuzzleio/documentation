@@ -18,7 +18,7 @@ Without a refresh after a write request, the documents may not be immediately vi
   we recommend that you avoid using it in production or at least carefully monitor its implications before using it.
 </div>
 
-## Arguments
+<br/>
 
 ```javascript
 getAutoRefresh (index, [options]);

@@ -273,7 +273,7 @@ pm2 "<start|stop|restart>" kuzzlebackend
 ```
 
 <div class="alert alert-success">
-Now that Kuzzlee is up and running you can [install]({{ site_base_path }}guide/1/essentials/installing-console) the <strong>Kuzzle Admin Console</strong>.
+Now that Kuzzle is up and running you can <a href="/guide/1/essentials/installing-console">install</a> the <strong>Kuzzle Admin Console</strong>.
 </div>
 
 ### Troubleshooting

@@ -12,7 +12,7 @@ Throws an error if the document already exists.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document to be indexed (indexed documents are available for `search`).
 
-## Arguments
+<br/>
 
 ```javascript
 create (index, collection, document, [id], [options])

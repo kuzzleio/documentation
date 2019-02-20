@@ -8,7 +8,7 @@ description: Get all authentication strategies registered in Kuzzle.
 
 Gets the exhaustive list of registered authentication strategies.
 
-## Arguments
+<br/>
 
 ```javascript
 getStrategies ([options])

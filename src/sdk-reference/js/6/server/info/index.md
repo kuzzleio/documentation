@@ -8,7 +8,7 @@ description: Returns information about Kuzzle server.
 
 Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
-## Arguments
+<br/>
 
 ```javascript
 info ([options])

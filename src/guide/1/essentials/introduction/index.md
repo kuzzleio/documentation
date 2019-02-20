@@ -12,7 +12,7 @@ Kuzzle is a ready-to-use, **open-source**, **on-premises** suite that allows you
 * **connect your apps** using our available SDKs and multiple protocols.
 * **manage your data** using the built-in pesistence engine.
 * **trigger real-time notifications** using our real-time engine.
-* **manage authentication** using Oauth2 and many other authentication strategies.
+* **manage authentication** using OAuth2 and many other authentication strategies.
 * **customize your backend** using the plugins engine and your own code.
 
 ## Connect your apps
@@ -22,14 +22,14 @@ Kuzzle ships with a set of open-source [SDKs]({{ site_base_path }}sdk-reference)
 - [Javascript](https://github.com/kuzzleio/sdk-javascript) (Node.js & Browsers)
 - [Android](https://github.com/kuzzleio/sdk-android)
 - [PHP](https://github.com/kuzzleio/sdk-php)
-- C (coming soon)
+- [and more]({{ site_base_path }}sdk-reference)...
 
 Additionally, Kuzzle supports a variety of communication protocols:
 
 - HTTP
 - Websocket
 - Socket.io
-- MQTT (via plugin)
+- MQTT
 
 You can interact directly with Kuzzle through its API, read the [Kuzzle API reference]({{ site_base_path }}api/1) for more information.
 

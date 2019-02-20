@@ -10,7 +10,7 @@ Checks a token validity.
 
 This API route does not require the caller to be logged in.
 
-## Arguments
+<br/>
 
 ```javascript
 checkToken (token)

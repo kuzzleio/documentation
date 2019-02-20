@@ -17,7 +17,7 @@ That limit is by default set at 10000 documents, and you can't get over it even 
   </p>
 </div>
 
-## Arguments
+<br/>
 
 ```javascript
 search (index, collection, [query], [options])

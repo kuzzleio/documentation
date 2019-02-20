@@ -16,7 +16,7 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 
 </div>
 
-## Arguments
+<br/>
 
 ```javascript
 refresh (index, [options]);

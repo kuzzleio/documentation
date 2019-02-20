@@ -8,7 +8,7 @@ description: Lists the indexes
 
 Returns the complete list of data indexes.
 
-## Arguments
+<br/>
 
 ```javascript
 list ([options]);
