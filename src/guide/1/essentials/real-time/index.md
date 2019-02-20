@@ -66,7 +66,7 @@ Once our client has started and initialized with the set of TO-DO items it fetch
 
 This code isn't very useful at the moment, but it shows the capability to react to a notification coming from the server.
 
-Here, we call the `subscribe`:
+Here, we call the `subscribe` method:
 
 * The first argument is the index.
 * The second argument is the collection we want to subscribe to.
