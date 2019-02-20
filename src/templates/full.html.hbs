@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {{> head}}
 </head>
@@ -30,10 +31,12 @@
                 <div class="md-content">
                     <article class="md-content__inner md-typeset">
                         {{#if has_section }}
-                            <input id="list-sections"type="hidden" value="{{sections}}">
+                        <input id="list-sections" type="hidden" value="{{sections}}">
                         {{/if}}
 
                         {{{ contents }}}
+
+                        {{> contentFeedback }}
                     </article>
                 </div>
             </div>
@@ -41,9 +44,9 @@
 
         {{> footer }}
     </div>
-    
+
     {{> loadScript }}
-    
+
 </body>
 
 </html>
