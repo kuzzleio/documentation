@@ -1,8 +1,8 @@
 // load the Kuzzle SDK module
-const { Kuzzle } = require('kuzzle-sdk/dist/kuzzle');
+import { Kuzzle, Websocket } from 'kuzzle-sdk';
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle('websocket', { host: 'localhost' });
+const kuzzle = new Kuzzle(new Websocket('localhost'));
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {

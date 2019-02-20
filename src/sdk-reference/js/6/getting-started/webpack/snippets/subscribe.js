@@ -1,8 +1,8 @@
 // load the Kuzzle SDK module
-const { Kuzzle } = require('kuzzle-sdk/dist/kuzzle');
+import { Kuzzle, Websocket } from 'kuzzle-sdk';
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle('websocket', { host: 'localhost' });
+const kuzzle = new Kuzzle(new Websocket('localhost'));
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
@@ -20,16 +20,26 @@ const run = async () => {
     };
 
     // Define a callback
-    const callback = (notification) => {
-      if (notification.type === 'document' && notification.action === 'create') {
+    const callback = notification => {
+      if (
+        notification.type === 'document' &&
+        notification.action === 'create'
+      ) {
         const driver = notification.result._source;
         const driverId = notification.result._id;
-        console.log(`New driver ${driver.name} with id ${driverId} has B license.`);
+        console.log(
+          `New driver ${driver.name} with id ${driverId} has B license.`
+        );
       }
     };
 
     // Subscribes to document notifications with our filter
-    await kuzzle.realtime.subscribe('nyc-open-data', 'yellow-taxi', filter, callback);
+    await kuzzle.realtime.subscribe(
+      'nyc-open-data',
+      'yellow-taxi',
+      filter,
+      callback
+    );
     console.log('Successfully subscribe to document notifications!');
   } catch (error) {
     console.error(error.message);
