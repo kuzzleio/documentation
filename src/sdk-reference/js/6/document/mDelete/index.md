@@ -12,7 +12,7 @@ Throws a partial error (error code 206) if one or more document deletions fail.
 
 The optional parameter `refresh` can be used with the value `wait_for` in order to wait for the document indexation (indexed documents are available for `search`).
 
-## Arguments
+<br/>
 
 ```javascript
 mDelete (index, collection, ids, [options])

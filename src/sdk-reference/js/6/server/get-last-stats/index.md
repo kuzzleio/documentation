@@ -17,7 +17,7 @@ These statistics include:
 * the number of completed requests since the last frame
 * the number of failed requests since the last frame
 
-## Arguments
+<br/>
 
 ```javascript
 getLastStats ([options])

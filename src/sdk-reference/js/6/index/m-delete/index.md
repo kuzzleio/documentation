@@ -8,7 +8,7 @@ description: Deletes multiple indexes
 
 Deletes multiple data indexes.
 
-## Arguments
+<br/>
 
 ```javascript
 mDelete (indexes, [options]);

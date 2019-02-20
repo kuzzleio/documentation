@@ -18,7 +18,7 @@ While forcing the autoRefresh can be convenient on a development or test environ
 we recommend that you avoid using it in production or at least carefully monitor its implications before using it.
 </div>
 
-## Arguments
+<br/>
 
 ```javascript
 setAutoRefresh (index, autoRefresh, [options]);

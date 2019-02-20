@@ -8,7 +8,7 @@ description: Check for index existence
 
 Checks if the given data index exists.
 
-## Arguments
+<br/>
 
 ```javascript
 exists (index, [options]);

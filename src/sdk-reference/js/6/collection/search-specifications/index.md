@@ -17,7 +17,7 @@ That limit is by default set at 10000, and you can't get over it even with the f
   When processing a large number of items (i.e. more than 1000), it is advised to paginate the results using <code>SearchResult.next</code> rather than increasing the size parameter.
 </div>
 
-## Arguments
+<br/>
 
 ```javascript
 searchSpecifications ([body], [options])

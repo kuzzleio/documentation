@@ -8,7 +8,7 @@ description: Update the collection mapping
 
 Updates a data collection mapping.
 
-## Arguments
+<br/>
 
 ```javascript
 updateMapping (index, collection, mapping, [options])

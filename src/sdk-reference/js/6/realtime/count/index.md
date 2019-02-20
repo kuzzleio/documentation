@@ -8,13 +8,13 @@ description: Count subscribers for a subscription room
 
 Returns the number of other connections sharing the same subscription.
 
-## Signature
+## Arguments
 
 ```javascript
 count (roomId, [options])
 ```
 
-## Arguments
+<br/>
 
 | Arguments    | Type    | Description |
 |--------------|---------|-------------|

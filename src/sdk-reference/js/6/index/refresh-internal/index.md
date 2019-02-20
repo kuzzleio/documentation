@@ -17,7 +17,7 @@ The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-refe
   "While a refresh is much lighter than a commit, it still has a performance cost. A manual refresh can be useful when writing tests, but don’t do a manual refresh every time you index a document in production; it will hurt your performance. Instead, your application needs to be aware of the near real-time nature of Elasticsearch and make allowances for it."
 </div>
 
-## Arguments
+<br/>
 
 ```javascript
 refreshInternal (index, [options]);

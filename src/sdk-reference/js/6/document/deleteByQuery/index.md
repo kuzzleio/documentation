@@ -12,7 +12,7 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 
 An empty or null query will match all documents in the collection.
 
-## Arguments
+<br/>
 
 ```javascript
 deleteByQuery (index, collection, [query], [options])

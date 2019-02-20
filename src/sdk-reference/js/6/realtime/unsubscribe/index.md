@@ -8,7 +8,7 @@ description: Removes a subscription
 
 Removes a subscription.
 
-## Arguments
+<br/>
 
 ```javascript
 unsubscribe (roomId, [options])

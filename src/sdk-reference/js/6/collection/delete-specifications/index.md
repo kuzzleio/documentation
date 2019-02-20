@@ -8,7 +8,7 @@ description: Delete validation specifications for a collection
 
 Deletes validation specifications for a data collection.
 
-## Arguments
+<br/>
 
 ```javascript
 deleteSpecifications (index, collection, [options])
