@@ -9,7 +9,7 @@ description: Returns the collection list of an index
 Returns the list of data collections associated to a provided data index.
 The returned list is sorted in alphanumerical order.
 
-## Arguments
+<br/>
 
 ```javascript
 list (index, [options])

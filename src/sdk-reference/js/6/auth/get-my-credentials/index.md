@@ -12,7 +12,7 @@ The returned data depends on the given authentication strategy, and should never
 
 The result can be an empty object.
 
-## Arguments
+<br/>
 
 ```javascript
 getMyCredentials (strategy, [options])

@@ -10,7 +10,7 @@ Revokes the user's authentication token.
 
 If there were any, real-time subscriptions are cancelled.
 
-## Arguments
+<br/>
 
 ```javascript
 logout ()

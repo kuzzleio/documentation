@@ -15,6 +15,8 @@ This constructor creates a new WebSocket connection, using the specified options
 WebSocket(host, [options]);
 ```
 
+<br/>
+
 | Argument   | Type               | Description                           |
 | ---------- | ------------------ | ------------------------------------- |
 | `host` | <pre>string</pre> | Kuzzle server hostname or IP |

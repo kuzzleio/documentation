@@ -10,7 +10,7 @@ Validates the provided credentials against a specified authentication strategy.
 
 This route neither creates nor modifies credentials.
 
-## Arguments
+<br/>
 
 ```javascript
 validateMyCredentials (strategy, [credentials], [options])

@@ -12,7 +12,7 @@ Returns the current Kuzzle configuration.
   This route should only be accessible to administrators, as it might return sensitive information about the backend.
 </div>
 
-## Arguments
+<br/>
 
 ```javascript
 getConfig ([options])

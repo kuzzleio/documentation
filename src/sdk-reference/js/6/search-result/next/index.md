@@ -8,7 +8,7 @@ description: SearchResult next method
 
 Returns a new `SearchResult` object which contain the subsequent results of the search.
 
-## Signature
+## Arguments
 
 ```js
 next();

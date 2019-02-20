@@ -9,13 +9,13 @@ order: 50
 
 Use this constructor to create a new instance of the `Http` protocol with specific options.  
 
-## Signature
+## Arguments
 
 ```javascript
 Http(host, [options]);
 ```
 
-## Arguments
+<br/>
 
 | Argument   | Type               | Description                           |
 | ---------- | ------------------ | ------------------------------------- |

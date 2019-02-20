@@ -8,7 +8,7 @@ description: Returns the current server timestamp, in Epoch-millis format.
 
 Returns the current server timestamp, in Epoch-millis format.
 
-## Arguments
+<br/>
 
 ```javascript
 now ([options]);

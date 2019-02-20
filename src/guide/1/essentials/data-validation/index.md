@@ -53,7 +53,7 @@ For a complete list of validation patterns please refer to our [Validation Patte
 
 ---
 
-## Type Op-defaulttions
+## Type Options
 
 Type Options can be used to provide advanced validation of certain fields. These are only available for some field types.
 

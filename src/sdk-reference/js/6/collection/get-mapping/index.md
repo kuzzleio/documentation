@@ -8,7 +8,7 @@ description: Return collection mapping
 
 Returns a data collection mapping.
 
-## Arguments
+<br/>
 
 ```javascript
 getMapping (index, collection, [options])

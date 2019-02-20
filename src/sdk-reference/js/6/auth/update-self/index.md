@@ -10,7 +10,7 @@ Updates the currently logged in user content.
 
 This route cannot update the list of associated security profiles. To change a user's security profiles, the route [security:updateUser]({{ site_base_path }}api/1/controller-security/update-user) must be used instead.
 
-## Arguments
+<br/>
 
 ```javascript
 updateSelf (content, [options])
@@ -35,20 +35,7 @@ Additional query options
 
 ## Resolves
 
-A User object representing the current user logged with the SDK.
-
-| Property     | Type    | Description                       |
-| ---------- | ------- | --------------------------------- |
-| `id` | <pre>string</pre> | User ID |
-| `content` | <pre>object</pre> | User custom information |
-
-The `User` object has the following properties:
-
-| Property     | Type    | Description                       |
-| ---------- | ------- | --------------------------------- |
-| `profileIds` | <pre>string[]</pre> | List of profile identifiers |
-| `_kuzzle_info` | <pre>object</pre> | [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata/) |
-| `...` | <pre>*</pre> | Any other information are saved as additional user information |
+A [User]({{ site_base_path }}sdk-reference/js/6/user) representing the current user logged with the SDK.
 
 ## Usage
 

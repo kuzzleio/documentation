@@ -10,7 +10,7 @@ Gets multiple documents.
 
 Throws a partial error (error code 206) if one or more document can not be retrieved.
 
-## Arguments
+<br/>
 
 ```javascript
 mGet (index, collection, ids, [options])
