@@ -89,23 +89,7 @@ npm install kuzzle-sdk
 
 Then, let's create a `login.js` file that contains the following code:
 
-```javascript
-const Kuzzle = require('kuzzle-sdk')
-
-var kuzzle = new Kuzzle('localhost', () => {
-  kuzzle
-    .loginPromise('local', {
-      username: 'admin',
-      password: 'test'
-    })
-    .then(() => {
-      console.log('You are now logged in!')
-    })
-    .catch(err => {
-      console.error(err.message)
-    })
-})
-```
+[snippet=login]
 
 This code will:
 
