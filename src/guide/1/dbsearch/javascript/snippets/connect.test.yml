@@ -1,4 +1,4 @@
-name: guidedbsearch#load
+name: guidedbsearch#connect
 description: Load SDK
 hooks:
   before:

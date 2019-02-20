@@ -1,5 +1,5 @@
 ---
-name: dbsearch#search
+name: dbsearch#final
 description: Create Index collection and documents and apply a search request.
 hooks:
   before:

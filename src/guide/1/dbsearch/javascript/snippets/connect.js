@@ -9,5 +9,5 @@ const run = async () => {
     kuzzle.disconnect();
   }
 };
-    
+
 run();

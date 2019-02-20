@@ -1,4 +1,3 @@
----
 name: dbsearch#search
 description: Create Index collection and documents and apply a search request.
 hooks:

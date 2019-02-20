@@ -1,7 +1,5 @@
-const
-  mqtt = require('mqtt'),
-  client = mqtt.connect({host: 'localhost'});
-  
+const mqtt = require('mqtt');
+const client = mqtt.connect({host: 'localhost'});
 // Sending a volatile message
 client.publish('Kuzzle/request', JSON.stringify({
   index: 'index',
