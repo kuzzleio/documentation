@@ -3,7 +3,7 @@ const {
   WebSocket
 } = require('kuzzle-sdk');
 const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
-const credentials = { username: 'admin', password: 'test' };
+const credentials = { username: 'jondoe', password: 'letmein' };
 const run = async () => {
   try {
     await kuzzle.connect();
