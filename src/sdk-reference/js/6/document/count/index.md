@@ -12,7 +12,7 @@ A query can be provided to alter the count result, otherwise returns the total n
 
 Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html) syntax.
 
-## Arguments
+<br/>
 
 ```javascript
 count (index, collection, query, [options]);

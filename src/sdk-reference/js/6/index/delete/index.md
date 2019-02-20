@@ -8,7 +8,7 @@ description: Deletes an index
 
 Deletes a data index.
 
-## Arguments
+<br/>
 
 ```javascript
 delete (index, [options])

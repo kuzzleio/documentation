@@ -8,7 +8,7 @@ description: Authenticate a user
 
 Authenticates a user.
 
-## Arguments
+<br/>
 
 ```javascript
 login (strategy, [credentials], [expiresIn])

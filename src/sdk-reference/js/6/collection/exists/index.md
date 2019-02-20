@@ -8,7 +8,7 @@ description: Check if collection exists
 
 Check if a collection exists in Kuzzle.
 
-## Arguments
+<br/>
 
 ```javascript
 exists (index, collection, [options])

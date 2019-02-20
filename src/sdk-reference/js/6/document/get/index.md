@@ -8,7 +8,7 @@ description: Get a document from kuzzle
 
 Gets a document.
 
-## Arguments
+<br/>
 
 ```javascript
 get (index, collection, id, [options])

@@ -14,7 +14,7 @@ Conflicts may occur if the same document gets updated multiple times within a sh
 
 You can set the `retryOnConflict` optional argument (with a retry count), to tell Kuzzle to retry the failing updates the specified amount of times before rejecting the request with an error.
 
-## Arguments
+<br/>
 
 ```javascript
 mUpdate (index, collection, documents, [options])

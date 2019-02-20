@@ -8,7 +8,7 @@ description: Update the current user's credentials for the specified strategy.
 
 Updates the credentials of the currently logged in user for the specified strategy.
 
-## Arguments
+<br/>
 
 ```javascript
 updateMyCredentials (strategy, credentials, [options])

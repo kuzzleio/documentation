@@ -13,7 +13,7 @@ This route is faster than the `document:m*` routes family (e.g. [document:mCreat
 
 If some documents actions fail, the client will receive a [PartialError]({{ site_base_path }}api/1/essentials/errors/#partialerror) error.
 
-## Arguments
+<br/>
 
 ```javascript
 import (bulkData, [options])

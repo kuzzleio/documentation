@@ -8,7 +8,7 @@ description: Create the current user's credentials for the specified strategy.
 
 Creates new credentials for the specified strategy for the current user.
 
-## Arguments
+<br/>
 
 ```javascript
 createMyCredentials (strategy, credentials, [options])
