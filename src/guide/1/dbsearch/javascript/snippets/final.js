@@ -18,7 +18,7 @@ const run = async () => {
       await kuzzle.index.delete('galaxies');
     }
 
-    // Create galaxies index, planets collection and 2 documents 
+    // Create galaxies index, planets collection and 2 documents
     // with different terrain property
     await kuzzle.index.create('galaxies');
     await kuzzle.collection.create('galaxies', 'planets');
