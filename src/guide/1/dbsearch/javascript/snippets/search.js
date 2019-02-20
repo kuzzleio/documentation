@@ -1,4 +1,4 @@
-//Search for documents with mountain as terrain property
+// Search for documents with mountain as terrain property
 const results = await kuzzle.document.search(
   'galaxies',
   'planets',

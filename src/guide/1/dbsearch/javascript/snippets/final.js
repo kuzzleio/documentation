@@ -1,4 +1,4 @@
-//Require and instanciate kuzzle
+// Require and instanciate kuzzle
 const {
   Kuzzle,
   WebSocket
@@ -10,16 +10,16 @@ const kuzzle = new Kuzzle(
   
 const run = async () => {
   try {
-    //Wait for etablished connection to Kuzzle
+    // Wait for etablished connection to Kuzzle
     await kuzzle.connect();
   
-    //Delete the galaxies index if exists
+    // Delete the galaxies index if exists
     if (await kuzzle.index.exists('galaxies')) {
       await kuzzle.index.delete('galaxies');
     }
           
-    //Create galaxies index, planets collection and 2 documents 
-    //with different terrain property
+    // Create galaxies index, planets collection and 2 documents 
+    // with different terrain property
     await kuzzle.index.create('galaxies');
     await kuzzle.collection.create('galaxies', 'planets');
     await kuzzle.document.create(
@@ -33,10 +33,10 @@ const run = async () => {
       { terrain: 'other' },
     );
           
-    //Wait for index refreshed
+    // Wait for index refreshed
     await kuzzle.index.refresh('galaxies');
   
-    //Search for documents with mountain as terrain property
+    // Search for documents with mountain as terrain property
     const results = await kuzzle.document.search(
       'galaxies',
       'planets',
@@ -53,7 +53,7 @@ const run = async () => {
   } catch (error) {
     console.error(error.message);
   } finally {
-    //Disconnecting kuzzle
+    // Disconnecting kuzzle
     kuzzle.disconnect();
   }
 };
