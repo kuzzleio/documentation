@@ -9,7 +9,7 @@ kuzzle.on('networkError', error => {
   console.error(`Network Error: ${error}`);
 });
 
-export default async () => {
+const doIt = async () => {
   try {
     // Connect to Kuzzle server
     await kuzzle.connect();
@@ -29,3 +29,5 @@ export default async () => {
     kuzzle.disconnect();
   }
 };
+
+export default doIt;

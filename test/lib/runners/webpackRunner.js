@@ -1,13 +1,22 @@
 const BaseRunner = require('./baseRunner'),
   path = require('path'),
-  // webpack is globally installed in the container
-  webpack = require('/usr/local/lib/node_modules/webpack');
+  // webpack and html-webpack-plugin are globally installed in the container
+  webpack = require('/usr/local/lib/node_modules/webpack'),
+  HtmlWebpackPlugin = require('/usr/local/lib/node_modules/html-webpack-plugin');
 
-async function buildWithWebpack(renderedSnippetPath) {
+async function buildWithWebpack(snippet) {
   const config = {
-    entry: path.resolve(__dirname, '..', 'webpack-assets', 'index.js'),
+    entry: snippet.renderedSnippetPath,
     output: {
-      path: path.resolve(__dirname, '..', '..', 'bin', 'sdk-js', 'webpack'),
+      path: path.resolve(
+        __dirname,
+        '..',
+        '..',
+        'bin',
+        'sdk-js',
+        'webpack',
+        snippet.name
+      ),
       filename: 'build.js'
     },
     module: {
@@ -19,11 +28,7 @@ async function buildWithWebpack(renderedSnippetPath) {
       ]
     },
     devtool: 'eval-source-map',
-    plugins: [
-      new webpack.DefinePlugin({
-        SNIPPET: JSON.stringify(renderedSnippetPath)
-      })
-    ]
+    plugins: [new HtmlWebpackPlugin()]
   };
 
   return new Promise((resolve, reject) => {
@@ -56,19 +61,23 @@ module.exports = class WebRunner extends BaseRunner {
     this.lintCommand = './node_modules/.bin/eslint';
     this.lintOptions = ['-c', this.lintConfig];
     this.puppeteerPath = path.join(__dirname, '../scripts/puppeteer.js');
-    this.indexHtmlPath = path.join(
-      __dirname,
-      '..',
-      'webpack-assets',
-      'index.html'
-    );
     this.ext = 'js';
   }
 
   async runSnippet(snippet) {
-    await buildWithWebpack(snippet.renderedSnippetPath);
+    await buildWithWebpack(snippet);
 
-    this.snippetCommand = `node ${this.puppeteerPath} ${this.indexHtmlPath}`;
+    const indexHtmlPath = path.join(
+      __dirname,
+      '..',
+      '..',
+      'bin',
+      'sdk-js',
+      'webpack',
+      snippet.name,
+      'index.html'
+    );
+    this.snippetCommand = `node ${this.puppeteerPath} ${indexHtmlPath}`;
     await super.runSnippet(snippet);
   }
 

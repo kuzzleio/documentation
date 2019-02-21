@@ -1,15 +1,15 @@
 // load the Kuzzle SDK module
-import { Kuzzle, Websocket } from 'kuzzle-sdk';
+import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle(new Websocket('localhost'));
+const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
   console.error(`Network Error: ${error}`);
 });
 
-const run = async () => {
+const doIt = async () => {
   try {
     // Connect to Kuzzle server
     await kuzzle.connect();
@@ -40,10 +40,10 @@ const run = async () => {
       filter,
       callback
     );
-    console.log('Successfully subscribe to document notifications!');
+    console.log('Successfully subscribed to document notifications!');
   } catch (error) {
     console.error(error.message);
   }
 };
 
-run();
+doIt();
