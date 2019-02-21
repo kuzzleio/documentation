@@ -46,7 +46,7 @@ Additional query options
 | Option | Type<br/>(default) | Description |
 | ------ | -------------- | ----------- |
 | `queuable` | <pre>bool</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again  |
-| `refresh` | <pre>const std::string&<br/>(`""`)</pre> | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
+| `refresh` | <pre>const std::string&<br/></pre>(`""`) | If set to `wait_for`, waits for the change to be reflected for `search` (up to 1s) |
 | `retryOnConflict` | <pre>int</pre><br/>(`0`) | The number of times the database layer should retry in case of version conflict |
 
 ## Return
@@ -57,7 +57,6 @@ A JSON string representing an object containing the document creation result.
 | --- | --- | ---
 | _id | <pre>string</pre> | ID of the newly created document
 | _version | <pre>number</pre> | Version of the document in the persistent data storage
-| _source | <pre>object</pre> | JSON string representing the updated document
 | result | <pre>string</pre> | Set to `updated` in case of success
 
 ## Exceptions

@@ -84,28 +84,12 @@ To demonstrate the `local` strategy let's use the Kuzzle Node.js SDK (the proces
 First let's install the Node.js SDK into our folder:
 
 ```bash
-npm install kuzzle-sdk
+npm install kuzzle-sdk@beta
 ```
 
 Then, let's create a `login.js` file that contains the following code:
 
-```javascript
-const Kuzzle = require('kuzzle-sdk')
-
-var kuzzle = new Kuzzle('localhost', () => {
-  kuzzle
-    .loginPromise('local', {
-      username: 'admin',
-      password: 'test'
-    })
-    .then(() => {
-      console.log('You are now logged in!')
-    })
-    .catch(err => {
-      console.error(err.message)
-    })
-})
-```
+[snippet=login]
 
 This code will:
 

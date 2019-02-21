@@ -1,0 +1,14 @@
+---
+name: real-time-notifications#subscribe-filter
+description: subscribe collection with filter
+hooks:
+  before: |
+    curl -XPOST kuzzle:7512/todo-list/_create
+    curl -XPUT kuzzle:7512/todo-list/todos
+  after:  |
+    curl -XDELETE kuzzle:7512/todo-list
+template: default
+expected: subscribe ok
+
+sdk: js
+version: 6
