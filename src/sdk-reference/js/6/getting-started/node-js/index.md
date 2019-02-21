@@ -27,7 +27,7 @@ Create your playground directory and install the Javascript SDK from the command
 ```sh
 mkdir "kuzzle-playground"
 cd "kuzzle-playground"
-npm install kuzzle-sdk@beta
+npm install kuzzle-sdk
 ```
 
 <div class="alert alert-info">
