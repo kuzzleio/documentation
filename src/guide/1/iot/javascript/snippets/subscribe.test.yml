@@ -1,7 +1,7 @@
 name: guideiot#subscribe
 description: subscribe
 hooks:
-  before: npm i mqtt
+  before:
   after:
 template: empty
 expected: Success
