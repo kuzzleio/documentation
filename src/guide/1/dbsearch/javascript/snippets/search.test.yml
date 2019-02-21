@@ -1,14 +1,13 @@
 name: dbsearch#search
-description: Create Index collection and documents and apply a search request.
+description: Searches for matching documents
 hooks:
-  before: | 
+  before: |
     curl -XDELETE kuzzle:7512/nyc-open-data
     curl -XPOST kuzzle:7512/nyc-open-data/_create
     curl -XPUT kuzzle:7512/nyc-open-data/yellow-taxi
-    curl -XPUT  -H "Content-type: application/json" -d '{"terrain": "moutain"}' kuzzle:7512/nyc-open-data/yellow-taxi
-  after: curl -XDELETE kuzzle:7512/nyc-open-data
-template: catch
+    curl -XPUT  -H "Content-type: application/json" -d '{"licence": "B"}' kuzzle:7512/nyc-open-data/yellow-taxi/unique-id?refresh=wait_for
+  after:
+template: default
 expected: There is 1 document that match.
-
 sdk: js
 version: 6

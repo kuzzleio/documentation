@@ -1,5 +1,5 @@
 name: guidedbsearch#load
-description: Load SDK
+description: Loads SDK
 hooks:
   before:
   after:

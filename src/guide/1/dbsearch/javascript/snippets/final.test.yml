@@ -1,11 +1,11 @@
 ---
 name: dbsearch#final
-description: Create Index collection and documents and apply a search request.
+description: Creates Index collection and documents and apply a search request.
 hooks:
   before:
   after:
 template: empty
-expected: Success
-
+expected:
+  - There is 1 document that match.
 sdk: js
 version: 6

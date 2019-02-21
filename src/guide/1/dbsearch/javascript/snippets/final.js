@@ -5,7 +5,8 @@ const {
 } = require('kuzzle-sdk');
 
 const kuzzle = new Kuzzle(
-  new WebSocket('localhost')
+  // Replace 'kuzzle' with your Kuzzle server hostname. (example: 'localhost')
+  new WebSocket('kuzzle')
 );
 
 const run = async () => {
@@ -13,37 +14,37 @@ const run = async () => {
     // Wait for etablished connection to Kuzzle
     await kuzzle.connect();
 
-    // Delete the galaxies index if exists
-    if (await kuzzle.index.exists('galaxies')) {
-      await kuzzle.index.delete('galaxies');
+    // Delete the nyc-open-data index if exists
+    if (await kuzzle.index.exists('nyc-open-data')) {
+      await kuzzle.index.delete('nyc-open-data');
     }
 
-    // Create galaxies index, planets collection and 2 documents
-    // with different terrain property
-    await kuzzle.index.create('galaxies');
-    await kuzzle.collection.create('galaxies', 'planets');
+    // Create nyc-open-data index, yellow-taxi collection and 2 documents
+    // with different licence property
+    await kuzzle.index.create('nyc-open-data');
+    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
     await kuzzle.document.create(
-      'galaxies',
-      'planets',
-      { terrain: 'mountain' }
+      'nyc-open-data',
+      'yellow-taxi',
+      { licence: 'B' }
     );
     await kuzzle.document.create(
-      'galaxies',
-      'planets',
-      { terrain: 'other' }
+      'nyc-open-data',
+      'yellow-taxi',
+      { licence: 'C' }
     );
 
-    // Wait for index refreshed
-    await kuzzle.index.refresh('galaxies');
+    // Wait for document to be indexed by Elasticsearch
+    await kuzzle.index.refresh('nyc-open-data');
 
-    // Search for documents with mountain as terrain property
+    // Search for documents with 'B' as licence property
     const results = await kuzzle.document.search(
-      'galaxies',
-      'planets',
+      'nyc-open-data',
+      'yellow-taxi',
       {
         query: {
           match: {
-            terrain: 'mountain'
+            licence: 'B'
           }
         }
       }

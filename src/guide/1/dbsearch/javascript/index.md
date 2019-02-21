@@ -8,21 +8,21 @@ title: Javascript
 
 For this example we will use Node.js. You will need to install Node.js and NPM.
 
-Let's create a new project folder called `databaseSearch`:
+Let's create a new project folder called `database-search`:
 
 
 ```bash
-    mkdir databaseSearch
+    mkdir database-search
 ```
 
-Now install kuzzle JS SDK v6:
+Now install Kuzzle SDK JS 6:
 
 
 ```bash
-    npm install kuzzle-sdk@beta
+    npm install kuzzle-sdk
 ```
 
-Now the project configuration is complete, we can create an `index.js` file in the `databaseSearch` folder to program our test.
+Now the project configuration is complete, we can create an `index.js` file in the `database-search` folder to program our test.
 
 ```bash
     touch index.js
@@ -35,7 +35,7 @@ The first thing we need to do is instanciate a Kuzzle object. To do this impleme
 
 ## Connect to Kuzzle
 
-We need now to connect to Kuzzle :
+We need now to connect to Kuzzle:
 
 [snippet=connect]
 

@@ -1,5 +1,5 @@
 name: guidedbsearch#connect
-description: Load SDK
+description: Connects SDK
 hooks:
   before:
   after:
