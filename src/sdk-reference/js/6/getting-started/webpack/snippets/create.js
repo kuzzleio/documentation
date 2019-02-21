@@ -2,7 +2,7 @@
 import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle(new WebSocket('localhost'));
+const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
