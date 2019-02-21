@@ -1,7 +1,7 @@
 name: guideiot#publish
-description: publish
+description: Publish message with MQTT
 hooks:
-  before:
+  before: npm i mqtt
   after:
 template: empty
 expected: Success

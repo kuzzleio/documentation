@@ -31,7 +31,7 @@ const
   //Get the mqtt module
   mqtt = require('mqtt'),
   //Connect to Kuzzle
-  client = mqtt.connect({host: 'localhost'});
+  client = mqtt.connect({ host: 'localhost' });
 ```
 
 Here we assume you have installed Kuzzle on your localhost, if this is not the case replace the `localhost` with the ip or name of the Kuzzle server.
@@ -43,20 +43,20 @@ Now let's move on to the publish side of the test. Here we will publish a reques
 ```Javascript
 // Sending a volatile message
 client.publish('Kuzzle/request', JSON.stringify({
-    index: 'index',
-    collection: 'collection',
+    index: 'devices',
+    collection: 'sensors',
     controller: 'realtime',
     action: 'publish',
-    requestId: 'some_unique_id',
+    requestId: 'some-uniq-id',
     body: { 
-        volatile: 'message' 
+      command: 'battery-report' 
     }
   }));
 ```
 
 ## Subscribe to the MQTT Response Topic
 
-Now we will subscribe to the Kuzzle "Kuzzle/response" so that the client can listen to published messages.
+Now we will subscribe to the Kuzzle `Kuzzle/response` so that the client can listen to published messages.
 You should add a `channels` array to save the subscriptions:
 
 ```Javascript
@@ -73,7 +73,7 @@ client.on('message', (topic, raw) => {
   // API results topic
   if (topic === 'Kuzzle/response') {
     // Response to our "publish" request
-    if (message.requestId === 'some_unique_id' && message.result !== null && message.result.channel !== null) {
+    if (message.requestId === 'some-uniq-id' && message.result && message.result.channel) {
       channels.push(message.result.channel);
       client.subscribe(message.result.channel);
     }

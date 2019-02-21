@@ -1,14 +1,17 @@
-const mqtt = require('/usr/local/lib/node_modules/mqtt');
-const client = mqtt.connect({host: 'localhost'});
+const mqtt = require('mqtt');
+const client = mqtt.connect({ host: 'localhost' });
+
 // Sending a volatile message
 try {
   client.publish('Kuzzle/request', JSON.stringify({
-    index: 'index',
-    collection: 'collection',
+    index: 'devices',
+    collection: 'sensors',
     controller: 'realtime',
     action: 'publish',
-    requestId: 'some_unique_id',
-    body: { volatile: 'message' }
+    requestId: 'some-uniq-id',
+    body: {
+      command: 'battery-report'
+    }
   }));
 } catch (error) {
   console.log(error.message);
