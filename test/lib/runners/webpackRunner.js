@@ -53,7 +53,7 @@ async function buildWithWebpack(snippet) {
   });
 }
 
-module.exports = class WebRunner extends BaseRunner {
+module.exports = class WebpackRunner extends BaseRunner {
   constructor(sdk) {
     super(sdk);
 
