@@ -1,8 +1,8 @@
 // load the Kuzzle SDK module
-import { Kuzzle, Websocket } from 'kuzzle-sdk';
+import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle(new Websocket('localhost'));
+const kuzzle = new Kuzzle(new WebSocket('localhost'));
 
 // add a listener to detect any connection problems
 kuzzle.on('networkError', error => {
@@ -21,7 +21,7 @@ export default async () => {
       license: 'B'
     };
 
-    await kuzzle.document.create('nyc-open-data', 'yellow-taxi', null, driver);
+    await kuzzle.document.create('nyc-open-data', 'yellow-taxi', driver);
     console.log('New document successfully created!');
   } catch (error) {
     console.error(error.message);
