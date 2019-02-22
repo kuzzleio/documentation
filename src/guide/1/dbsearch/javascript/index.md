@@ -19,6 +19,7 @@ Now install Kuzzle SDK JS 6:
 
 
 ```bash
+    npm init
     npm install kuzzle-sdk
 ```
 
@@ -55,11 +56,11 @@ To be sure that our search request will find our documents, we need to call the 
 
 [snippet=search]
 
-You're index.js file should now look like this:
+Your index.js file should now look like this:
 
 [snippet=final]
 
-There you have it, a simple bit of code that connects to Kuzzle, creates two documents and then print the number of documents that match the mountain terrain property.
+Here we are, we have a simple bit of code that connects to Kuzzle, creates some documents and then print the number of documents that match a simple search request on the terrain property.
 
 To run it, just use node :
 
