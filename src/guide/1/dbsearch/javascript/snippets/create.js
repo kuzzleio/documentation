@@ -4,7 +4,7 @@ try {
     await kuzzle.index.delete('nyc-open-data');
   }
 
-  // Create a "nyc-open-data" index, a "yellow-taxi" collection 
+  // Create a "nyc-open-data" index, a "yellow-taxi" collection
   // and 2 documents
   // with different licence property values
   await kuzzle.index.create('nyc-open-data');
