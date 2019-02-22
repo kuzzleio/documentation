@@ -13,6 +13,7 @@ Let's create a new project folder called `iot` and install mqtt module:
 ```bash
 mkdir iot
 cd iot
+npm init
 npm install mqtt
 ```
 
