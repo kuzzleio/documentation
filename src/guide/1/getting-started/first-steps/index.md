@@ -105,15 +105,6 @@ _You can find more resources about Kuzzle SDK in the [SDK Reference]({{ site_bas
 ### Subscribe to data changes (pub/sub)
 
 Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the **Room** class definition in the <a href="{{ site_base_path }}sdk-reference">SDK Reference</a>).
-<<<<<<< HEAD
-
-Let's get started. Create a `subscribe.js` file with following code:
-
-```javascript
-// load the Kuzzle SDK module
-const Kuzzle = require('kuzzle-sdk')
-=======
->>>>>>> master
 
 Let's get started. Complete your `create.js` file:
 
