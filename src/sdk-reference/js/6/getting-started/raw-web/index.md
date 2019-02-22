@@ -16,12 +16,11 @@ In this tutorial, you'll learn how to **store** a document and **subscribe** to 
 
 ## Prepare your environment
 
-Create your playground directory and install the Javascript SDK from the command line using npm:
+Create your playground directory:
 
 ```sh
 mkdir "kuzzle-playground"
 cd "kuzzle-playground"
-npm install git://github.com/kuzzleio/sdk-javascript.git#6-beta
 ```
 
 <div class="alert alert-info">
@@ -41,7 +40,7 @@ Then, create an `index.html` file with the following structure:
   <!-- If you are coding for Internet Explorer, please uncomment the following line -->
   <!-- <script src="//cdn.jsdelivr.net/npm/bluebird@3.5.3/js/browser/bluebird.min.js"></script> -->
 
-  <script src="node_modules/kuzzle-sdk/dist/kuzzle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/kuzzle-sdk/dist/kuzzle.min.js"></script>
 </head>
 <body></body>
 </html>
