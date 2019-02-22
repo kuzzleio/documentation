@@ -19,6 +19,7 @@ Now install Kuzzle SDK JS 6:
 
 
 ```bash
+    npm init
     npm install kuzzle-sdk
 ```
 
