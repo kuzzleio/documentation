@@ -13,26 +13,26 @@ Kuzzle comes equipped with a multi-protocol API that can be used to communicate 
 In this code example we will show you how to connect to Kuzzle using MQTT, a widely adopted communication protocol in IoT ecosystems.
 
 
-## Install Kuzzle and enable MQTT Protocol
+## Install Kuzzle and enable the MQTT protocol
 
 First, you need to download Kuzzle. 
 To do that you can follow these [intstructions]({{ site_base_path }}guide/1/getting-started/#running-kuzzle).
 
-In order to enable the MQTT protocol in Kuzzle, we just need to add 3 lines in the docker-compose file. Specifically, we will need to open port `1883` used for MQTT and we will set the values of 2 environement variables.
+In order to enable the MQTT protocol in Kuzzle, we just need to add 3 lines in the docker-compose file. Specifically, we need to open the port `1883`, which is the default for MQTT, and we need to set 2 environment variables.
 
-Now you should edit the `docker-compose.yml` file and add the following modifications:
-  - In the ports section, open the 1883:
+Now, edit the `docker-compose.yml` file and make the following modifications:
+  - In the `ports` section:
   ```
   - "1883:1883"
   ```
-  - In the environment section, set the mqtt protocol enabled and the development mode disabled:
+  - In the environment section, enable the mqtt protocol and disable development mode:
   ```
   - kuzzle_server__protocols__mqtt__enabled=true
-- kuzzle_server__protocols__mqtt__developmentMode=false
+  - kuzzle_server__protocols__mqtt__developmentMode=false
   ```
 
 
-The full code should look something like this:
+The full code should look like this:
 
 ```
 version: '3'
@@ -60,7 +60,7 @@ services:
     image: redis:3.2
 
   elasticsearch:
-    image: kuzzleio/elasticsearch:5.4.1
+    image: kuzzleio/elasticsearch:5.6.10
     ulimits:
       nofile: 65536
     environment:

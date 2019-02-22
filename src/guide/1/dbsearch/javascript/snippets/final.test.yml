@@ -6,6 +6,6 @@ hooks:
   after:
 template: empty
 expected:
-  - There is 1 document that match.
+  - There are 1 matching documents.
 sdk: js
 version: 6

@@ -1,4 +1,4 @@
-// Require and instanciate kuzzle
+// Require and instantiate kuzzle
 const {
   Kuzzle,
   WebSocket
@@ -11,7 +11,7 @@ const kuzzle = new Kuzzle(
 
 const run = async () => {
   try {
-    // Wait for etablished connection to Kuzzle
+    // Wait a connection to Kuzzle to be established
     await kuzzle.connect();
 
     // Delete the nyc-open-data index if exists
@@ -20,7 +20,7 @@ const run = async () => {
     }
 
     // Create nyc-open-data index, yellow-taxi collection and 2 documents
-    // with different licence property
+    // with different licence property values
     await kuzzle.index.create('nyc-open-data');
     await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
     await kuzzle.document.create(
@@ -50,11 +50,11 @@ const run = async () => {
       }
     );
 
-    console.log(`There is ${results.hits.length} document that match.`);
+    console.log(`There are ${results.hits.length} matching documents.`);
   } catch (error) {
     console.error(error.message);
   } finally {
-    // Disconnecting kuzzle
+    // Disconnect from Kuzzle
     kuzzle.disconnect();
   }
 };

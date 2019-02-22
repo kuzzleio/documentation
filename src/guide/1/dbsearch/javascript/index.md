@@ -28,29 +28,29 @@ Now the project configuration is complete, we can create an `index.js` file in t
 ```bash
     touch index.js
 ```
-## Instanciate Kuzzle
+## Instantiate Kuzzle
 
-The first thing we need to do is instanciate a Kuzzle object. To do this implement the following code:
+First, we need to instantiate a new Kuzzle object. To do this implement the following code:
 
 [snippet=load-sdk]
 
 ## Connect to Kuzzle
 
-We need now to connect to Kuzzle:
+We now need to connect to Kuzzle:
 
 [snippet=connect]
 
-## Create an Index, a Collection and some Documents
+## Create an index, a collection and documents
 
-Now that we have established a connection to Kuzzle, we will create a new Index, a new Collection and two Documents.
+Now that we have established a connection to Kuzzle, we will create a new index, a new collection and two documents.
 To be sure of the result of our search request, if an index already exists we will delete it: 
 
 [snippet=create]
 
 
-## Search for Document
+## Search for documents
 
-Now that the documents are created and stored in Kuzzle, let's perform a search that will return the documents that match our query in the result.
+Now that the documents are created and stored in Kuzzle, let's perform a search returning the documents that match our query filters.
 
 To be sure that our search request will find our documents, we need to call the refresh method before.
 
@@ -60,7 +60,7 @@ Your index.js file should now look like this:
 
 [snippet=final]
 
-Here we are, we have a simple bit of code that connects to Kuzzle, creates some documents and then print the number of documents that match a simple search request on the terrain property.
+Here we are, we have a simple bit of code that connects to Kuzzle, creates some documents and then prints the number of documents matching a simple search request on the terrain property.
 
 To run it, just use node :
 
@@ -68,7 +68,7 @@ To run it, just use node :
     node index.js
 ```
 
-By running this code, the console hsould output the following message:
+By running this code, the console should output the following message:
 ```bash
-    There is 1 document that match.
+    There are 1 matching documents.
 ```
