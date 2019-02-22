@@ -1,6 +1,5 @@
 const mqtt = require('mqtt');
 const client = mqtt.connect({ host: 'localhost' });
-const channels = [];
 
 try {
 // Sending a volatile message
@@ -20,16 +19,13 @@ try {
     if (topic === 'Kuzzle/response') {
     // Response to our "publish" request
       if (message.requestId === 'some-uniq-id') {
-        channels.push(message.result.channel);
         client.subscribe(message.result.channel);
       }
-    } else if (channels.indexOf(topic) !== -1) {
-    // Subscription notification
-      console.log('Notification: ', message.result._source.command);
+    } else {
+      // Subscription notification
+      console.log('Notification: ', message);
     }
   });
 } catch (error) {
   console.log(error.message);
-} finally {
-  client.end();
 }

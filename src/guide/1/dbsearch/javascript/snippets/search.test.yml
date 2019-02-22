@@ -8,6 +8,7 @@ hooks:
     curl -XPUT  -H "Content-type: application/json" -d '{"licence": "B"}' kuzzle:7512/nyc-open-data/yellow-taxi/unique-id?refresh=wait_for
   after:
 template: default
-expected: There is 1 document that match.
+expected:
+  - There are 1 matching documents.
 sdk: js
 version: 6

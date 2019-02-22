@@ -14,30 +14,24 @@ const run = async () => {
     // Wait for etablished connection to Kuzzle
     await kuzzle.connect();
 
-    // Delete the nyc-open-data index if exists
-    if (await kuzzle.index.exists('nyc-open-data')) {
-      await kuzzle.index.delete('nyc-open-data');
-    }
-
-    // Create nyc-open-data index, yellow-taxi collection and 2 documents
-    // with different licence property
+    // Create a "nyc-open-data" index, a "yellow-taxi" collection
+    // and 2 documents with different "licence" property values
     await kuzzle.index.create('nyc-open-data');
     await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
     await kuzzle.document.create(
       'nyc-open-data',
       'yellow-taxi',
-      { licence: 'B' }
+      { licence: 'B' },
+      { refresh: 'wait_for' } // Wait for the document to be indexed by Elasticsearch
     );
     await kuzzle.document.create(
       'nyc-open-data',
       'yellow-taxi',
-      { licence: 'C' }
+      { licence: 'C' },
+      { refresh: 'wait_for' } // Wait for the document to be indexed by Elasticsearch
     );
 
-    // Wait for document to be indexed by Elasticsearch
-    await kuzzle.index.refresh('nyc-open-data');
-
-    // Search for documents with 'B' as licence property
+    // Search for documents with "licence" property that include the letter 'B'
     const results = await kuzzle.document.search(
       'nyc-open-data',
       'yellow-taxi',
@@ -50,7 +44,7 @@ const run = async () => {
       }
     );
 
-    console.log(`There is ${results.hits.length} document that match.`);
+    console.log(`There are ${results.hits.length} matching documents.`);
   } catch (error) {
     console.error(error.message);
   } finally {

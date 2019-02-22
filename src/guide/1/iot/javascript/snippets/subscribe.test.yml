@@ -3,7 +3,7 @@ description: subscribe
 hooks:
   before:
   after:
-template: empty
+template: mqtt-end
 expected: Success
 sdk: js
 version: 6

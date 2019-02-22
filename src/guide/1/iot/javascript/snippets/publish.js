@@ -9,6 +9,7 @@ try {
     controller: 'realtime',
     action: 'publish',
     requestId: 'some-uniq-id',
+    _id: 'document-uniq-identifier',
     body: {
       command: 'battery-report'
     }

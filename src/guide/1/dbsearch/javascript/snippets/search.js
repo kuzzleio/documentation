@@ -1,5 +1,5 @@
 try {
-  // Search for documents with B as licence property
+  // Search for documents with "licence" property that include the letter 'B'
   const results = await kuzzle.document.search(
     'nyc-open-data',
     'yellow-taxi',
@@ -12,7 +12,7 @@ try {
     }
   );
 
-  console.log(`There is ${results.hits.length} document that match.`);
+  console.log(`There are ${results.hits.length} matching documents.`);
 } catch (error) {
   console.error(error);
 }

@@ -49,6 +49,7 @@ client.publish('Kuzzle/request', JSON.stringify({
     controller: 'realtime',
     action: 'publish',
     requestId: 'some-uniq-id',
+    _id: 'document-uniq-identifier',
     body: { 
       command: 'battery-report' 
     }
@@ -58,11 +59,6 @@ client.publish('Kuzzle/request', JSON.stringify({
 ## Subscribe to the MQTT Response Topic
 
 Now we will subscribe to the Kuzzle `Kuzzle/response` so that the client can listen to published messages.
-You should add a `channels` array to save the subscriptions:
-
-```Javascript
-const channels = [];
-```
 
 We need to know the channel id to subscribe. After published a message we get the channel id as response so you can add the previous code in the `subscribe.js` file.
 After that, you could add the following code to do the subscription:
@@ -75,11 +71,9 @@ client.on('message', (topic, raw) => {
   if (topic === 'Kuzzle/response') {
     // Response to our "publish" request
     if (message.requestId === 'some-uniq-id' && message.result && message.result.channel) {
-      channels.push(message.result.channel);
       client.subscribe(message.result.channel);
     }
-  }
-  else if (channels.indexOf(topic) !== -1) {
+  } else {
     // Subscription notification
     console.log('Notification: ', message);
   }

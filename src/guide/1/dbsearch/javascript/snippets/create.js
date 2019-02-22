@@ -1,22 +1,19 @@
 try {
-  // Delete the nyc-open-data index if exists
-  if (await kuzzle.index.exists('nyc-open-data')) {
-    await kuzzle.index.delete('nyc-open-data');
-  }
-
-  // Create nyc-open-data index, yellow-taxi collection and 2 documents
-  // with different licence property
+  // Create a "nyc-open-data" index, a "yellow-taxi" collection
+  // and 2 documents with different "licence" property values
   await kuzzle.index.create('nyc-open-data');
   await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
   await kuzzle.document.create(
     'nyc-open-data',
     'yellow-taxi',
-    { licence: 'B' }
+    { licence: 'B' },
+    { refresh: 'wait_for' } // Wait for the document to be indexed by Elasticsearch
   );
   await kuzzle.document.create(
     'nyc-open-data',
     'yellow-taxi',
-    { licence: 'C' }
+    { licence: 'C' },
+    { refresh: 'wait_for' } // Wait for the document to be indexed by Elasticsearch
   );
 
   console.log('New documents successfully created!');

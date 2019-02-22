@@ -43,16 +43,12 @@ We need now to connect to Kuzzle:
 ## Create an Index, a Collection and some Documents
 
 Now that we have established a connection to Kuzzle, we will create a new Index, a new Collection and two Documents.
-To be sure of the result of our search request, if an index already exists we will delete it: 
 
 [snippet=create]
-
 
 ## Search for Document
 
 Now that the documents are created and stored in Kuzzle, let's perform a search that will return the documents that match our query in the result.
-
-To be sure that our search request will find our documents, we need to call the refresh method before.
 
 [snippet=search]
 
