@@ -84,7 +84,7 @@ To demonstrate the `local` strategy let's use the Kuzzle Node.js SDK (the proces
 First let's install the Node.js SDK into our folder:
 
 ```bash
-npm install kuzzle-sdk@beta
+npm install kuzzle-sdk
 ```
 
 Then, let's create a `login.js` file that contains the following code:
