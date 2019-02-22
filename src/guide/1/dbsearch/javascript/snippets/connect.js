@@ -1,11 +1,11 @@
 const run = async () => {
   try {
-    // Wait for etablished connection to Kuzzle
+    // Wait for the  connection to Kuzzle to be established
     await kuzzle.connect();
   } catch (error) {
     console.error(error.message);
   } finally {
-    // Disconnecting kuzzle
+    // Disconnecting from Kuzzle
     kuzzle.disconnect();
   }
 };

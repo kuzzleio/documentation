@@ -1,4 +1,4 @@
-// Require and instanciate kuzzle
+// Require and instantiate kuzzle
 const {
   Kuzzle,
   WebSocket
@@ -11,7 +11,7 @@ const kuzzle = new Kuzzle(
 
 const run = async () => {
   try {
-    // Wait for etablished connection to Kuzzle
+    // Wait a connection to Kuzzle to be established
     await kuzzle.connect();
 
     // Create a "nyc-open-data" index, a "yellow-taxi" collection
@@ -48,7 +48,7 @@ const run = async () => {
   } catch (error) {
     console.error(error.message);
   } finally {
-    // Disconnecting kuzzle
+    // Disconnect from Kuzzle
     kuzzle.disconnect();
   }
 };
