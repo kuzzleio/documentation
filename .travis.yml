@@ -5,7 +5,7 @@ services:
 
 env:
   global:
-  - AWS_S3_BUCKET=docs-v2.kuzzle.io
+  - AWS_S3_BUCKET=docs.kuzzle.io
   - TRAVIS_S3_BUCKET=travis-cache.kuzzle.io
   - REPORT_S3=dl.kuzzle.io
   - AWS_CLOUDFRONT_DISTRIBUTION_ID=E3D6RP0POLCJMM
@@ -204,7 +204,7 @@ jobs:
 # Deployment
 # -----------------------------------------------------------------------------
     - stage: Deployment
-      name: "Deploy to docs-v2.kuzzle.io"
+      name: "Deploy to docs.kuzzle.io"
 
       language: node_js
       node_js:

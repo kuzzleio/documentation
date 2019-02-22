@@ -17,7 +17,7 @@ Let's create a new project folder called `realtimePubSub`:
 For this code example we need Kuzzle's Javascript SDK. To install it, run:
 
 ```bash
-    npm install kuzzle-sdk@beta
+    npm install kuzzle-sdk
 ```
 We can create an `index.js` file in the `realtimePubSub` folder to program our test.
 

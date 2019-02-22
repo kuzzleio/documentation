@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
-title: "> API Events"
+title: "API Events"
 order: 100
 ---
 
