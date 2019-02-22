@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
-title: "> Plugin Events"
+title: "Plugin Events"
 order: 200
 ---
 
