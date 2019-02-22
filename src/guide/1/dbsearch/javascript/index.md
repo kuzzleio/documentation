@@ -56,7 +56,7 @@ To be sure that our search request will find our documents, we need to call the 
 
 [snippet=search]
 
-You're index.js file should now look like this:
+Your index.js file should now look like this:
 
 [snippet=final]
 
