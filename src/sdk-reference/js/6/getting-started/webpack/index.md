@@ -85,7 +85,7 @@ Then, create a `init-kuzzle.js` file and start by adding the code below. This wi
 import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 ```
 
-Next, we instantiate a client that will connect to Kuzzle via Websockets. If Kuzzle is not running on localhost, replace it with the corresponding server name or ip address.
+Next, we instantiate a client that will connect to Kuzzle via WebSocket. If Kuzzle is not running on localhost, replace it with the corresponding server name or IP address.
 
 ```javascript
 const kuzzle = new Kuzzle(new WebSocket('localhost'));
