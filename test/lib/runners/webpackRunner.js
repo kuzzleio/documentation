@@ -46,7 +46,7 @@ async function buildWithWebpack(snippet) {
       }
 
       if (stats.hasWarnings()) {
-        resolve(info.warnings);
+        return resolve(info.warnings);
       }
       resolve(true);
     });
