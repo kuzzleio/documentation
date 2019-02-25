@@ -88,7 +88,7 @@ import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 Next, we instantiate a client that will connect to Kuzzle via Websockets. If Kuzzle is not running on localhost, replace it with the corresponding server name or ip address.
 
 ```javascript
-const kuzzle = new Kuzzle(new Websocket('localhost'));
+const kuzzle = new Kuzzle(new WebSocket('localhost'));
 ```
 
 Next we add a listener to be notified in case of connection error:
