@@ -116,7 +116,7 @@ const run = async () => {
 };
 ```
 
-Finally, we will add the code that will access Kuzzle to create a new index `nyc-open-data` and a new collection
+Finally, we will create a new index `nyc-open-data` and a new collection
 `yellow-taxi` that we will use to store data later on.
 
 ```javascript
