@@ -4,11 +4,18 @@ const // puppeteer is globally installed in the container
 
 const runInBrowser = async snippetPath => {
   let browser;
+
   try {
     browser = await puppeteer.launch({
       dumpio: true,
       args: ['--no-sandbox']
     });
+  } catch (error) {
+    console.error(error);
+    return;
+  }
+
+  try {
     const page = await browser.newPage();
 
     page.on('error', err => {
