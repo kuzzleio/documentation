@@ -147,7 +147,7 @@ This code does the following:
 
 - loads the `kuzzle-sdk` from its NPM package
 - creates an instance of the SDK
-- connects it to Kuzzle running on `localhost` with the `websocket` protocol
+- connects it to Kuzzle running on `localhost` with the `WebSocket` protocol
 - creates the `nyc-open-data` index
 - creates the `yellow-taxi` collection (within the `nyc-open-data` index),
 - disconnects from Kuzzle after the collection is created or if an error occurs
