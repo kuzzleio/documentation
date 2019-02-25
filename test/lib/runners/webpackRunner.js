@@ -42,7 +42,7 @@ async function buildWithWebpack(snippet) {
       const info = stats.toJson();
 
       if (stats.hasErrors()) {
-        reject(info.errors);
+        return reject(info.errors);
       }
 
       if (stats.hasWarnings()) {
