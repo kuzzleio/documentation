@@ -82,7 +82,7 @@ If you are performing a clean install you might see some <code>unmet peer depend
 Then, create a `init-kuzzle.js` file and start by adding the code below. This will load the Kuzzle Javascript SDK:
 
 ```javascript
-import { Kuzzle, Websocket } from 'kuzzle-sdk';
+import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 ```
 
 Next, we instantiate a client that will connect to Kuzzle via Websockets. If Kuzzle is not running on localhost, replace it with the corresponding server name or ip address.
