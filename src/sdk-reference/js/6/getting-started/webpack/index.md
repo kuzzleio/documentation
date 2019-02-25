@@ -91,7 +91,7 @@ Next, we instantiate a client that will connect to Kuzzle via WebSocket. If Kuzz
 const kuzzle = new Kuzzle(new WebSocket('localhost'));
 ```
 
-Next we add a listener to be notified in case of connection error:
+Next we add a listener to be notified in case of a connection error:
 
 ```javascript
 kuzzle.on('networkError', error => {
