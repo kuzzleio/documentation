@@ -18,7 +18,7 @@ Let's create a new project folder called `geofence`:
 For this code example we'll need Kuzzle's Javascript SDK. To install it, run:
 
 ```bash
-    npm install kuzzle-sdk@beta
+    npm install kuzzle-sdk
 ```
 We can create an `index.js` file in the `geofence` folder to program our test.
 
