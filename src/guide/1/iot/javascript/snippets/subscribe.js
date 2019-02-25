@@ -2,7 +2,7 @@ const mqtt = require('mqtt');
 const client = mqtt.connect({ host: 'localhost' });
 
 try {
-// Sending a volatile message
+  // Sending a volatile message
   client.publish('Kuzzle/request', JSON.stringify({
     index: 'devices',
     collection: 'sensors',
@@ -15,6 +15,7 @@ try {
   // Getting Kuzzle's response
   client.on('message', (topic, raw) => {
     const message = JSON.parse(Buffer.from(raw));
+
     // API results topic
     if (topic === 'Kuzzle/response') {
     // Response to our "publish" request
