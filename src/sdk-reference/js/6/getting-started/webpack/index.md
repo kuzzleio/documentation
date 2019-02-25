@@ -72,7 +72,7 @@ Before proceeding, please make sure your system has **Node.js** version 8 or hig
 In your terminal, go to the root of your front-end project using Webpack and type
 
 ```bash
-npm install kuzzle-sdk@beta
+npm install kuzzle-sdk
 ```
 
 <div class="alert alert-info">
