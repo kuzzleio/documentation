@@ -2,7 +2,8 @@
 name: dbsearch#final
 description: Creates Index collection and documents and apply a search request.
 hooks:
-  before:
+  before: |
+    curl -XDELETE kuzzle:7512/nyc-open-data
   after:
 template: empty
 expected:
