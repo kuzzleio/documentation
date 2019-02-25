@@ -100,7 +100,6 @@ kuzzle.on('networkError', error => {
 ```
 
 Then we have to connect our web app to the Kuzzle server with the `connect()` method.
-This method will be wrapped in an `async` function to use the `await` construct.
 
 ```javascript
 const run = async () => {
