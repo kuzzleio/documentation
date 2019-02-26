@@ -42,7 +42,7 @@ We now need to connect to Kuzzle:
 
 ## Create an index, a collection and documents
 
-Now that we have established a connection to Kuzzle, we will create a new Index, a new Collection and two Documents.
+Now that we have established a connection to Kuzzle, we will create a new index, a new collection and two documents.
 
 [snippet=create]
 
