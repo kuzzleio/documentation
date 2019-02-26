@@ -37,7 +37,7 @@ async function buildWithWebpack(snippet) {
         if (err.details) {
           return reject(err.details);
         }
-        reject(err.stack || err);
+        return reject(err.stack || err);
       }
       const info = stats.toJson();
 
