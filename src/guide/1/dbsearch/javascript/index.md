@@ -46,7 +46,7 @@ Now that we have established a connection to Kuzzle, we will create a new index,
 
 [snippet=create]
 
-## Search for Document
+## Search for documents
 
 Now that the documents are created and stored in Kuzzle, let's perform a search returning the documents that match our query filters.
 
