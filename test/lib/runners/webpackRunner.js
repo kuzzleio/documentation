@@ -35,7 +35,7 @@ async function buildWithWebpack(snippet) {
     webpack(config, (err, stats) => {
       if (err) {
         if (err.details) {
-          reject(err.details);
+          return reject(err.details);
         }
         reject(err.stack || err);
       }
