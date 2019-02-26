@@ -59,7 +59,7 @@ client.publish('Kuzzle/request', JSON.stringify({
 
 ## Subscribe to notifications
 
-Now we will subscribe to the Kuzzle `Kuzzle/response` so that the client can listen to published messages.
+Now we will subscribe to the Kuzzle `Kuzzle/response` topic, so that the client can be notified about published messages.
 
 Before continuing this guide, a word about how the MQTT topics are organized by Kuzzle:
 
