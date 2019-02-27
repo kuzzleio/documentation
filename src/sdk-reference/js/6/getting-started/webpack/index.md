@@ -1,6 +1,5 @@
 ---
 layout: full.html.hbs
-algolia: true
 title: Webpack
 description: Getting started with Kuzzle and Webpack
 ---
