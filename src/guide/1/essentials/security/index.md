@@ -57,7 +57,7 @@ A `role` can be defined using a hierarchical JSON object where permissions are o
 The `role` definition is represented as a Javascript object where each key at the root of the object identifies a `controller` by name:
 
 ```js
-var myRoleDefinition = {
+const myRoleDefinition = {
   controllers: {
     < controller|* >: {
       actions: {
@@ -82,7 +82,7 @@ The `action permission` value can be set to either:
 As an example, below is the `role` definition that Kuzzle uses to request authorization from the anonymous user once the administrator account is created and anonymous access is blocked.
 
 ```js
-var anonymousRole = {
+const anonymousRole = {
   controllers: {
     auth: {
       actions: {
@@ -110,7 +110,7 @@ curl -X GET 'http://localhost:7512/?pretty'
 A `profile` definition is a Javascript object that contains an array of policies, each composed of a roleId and an array of restrictions:
 
 ```js
-var myProfileDefinition = {
+const myProfileDefinition = {
   policies: [
     {
       roleId: "< role Id >",
@@ -136,7 +136,7 @@ When applying a role to a profile, the role can be applied to all indexes and co
 For example, if we have a "publisher" role which allows any action on the `document` controller:
 
 ```js
-var publisherRole = {
+const publisherRole = {
   controllers: {
     document: {
       actions: {
@@ -150,13 +150,13 @@ var publisherRole = {
 Then we can declare three different profiles using this same role, each with varying levels of access based on the index and collection:
 
 ```js
-var profile1 = {
+const profile1 = {
   policies: [
     {roleId: 'publisherRole'}
   ]
 };
 
-var profile2 = {
+const profile2 = {
   policies: [
     {
       roleId: 'publisherRole',
@@ -165,7 +165,7 @@ var profile2 = {
   ]
 };
 
-var profile3 = {
+const profile3 = {
   policies: [
     {
       roleId: 'publisherRole',

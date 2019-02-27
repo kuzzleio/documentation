@@ -13,40 +13,29 @@ Kuzzle comes equipped with a multi-protocol API that can be used to communicate 
 In this code example we will show you how to connect to Kuzzle using MQTT, a widely adopted communication protocol in IoT ecosystems.
 
 
-## Install Kuzzle and MQTT Protocol Plugin
+## Install Kuzzle and enable the MQTT protocol
 
-In order to enable the MQTT protocol in Kuzzle, we need to install the Kuzzle MQTT Protocol Plugin. To do this we need a slightly modified version of the Kuzzle installation. Specifically, we will need to open port `1883` used for MQTT and we will want to add a persistent volume to the Kuzzle container where we will install the protocol plugin so that it is not erased if we restart the container.
+First, you need to download Kuzzle. 
+To do that you can follow these [intstructions]({{ site_base_path }}guide/1/getting-started/#running-kuzzle).
 
-There are a few ways to do this, in our example we will create a modified version of Docker Compose file for the Kuzzle stack.
+In order to enable the MQTT protocol in Kuzzle, we just need to add 3 lines in the docker-compose file. Specifically, we need to open the port `1883`, which is the default for MQTT, and we need to set 2 environment variables.
 
-First decide where you want to install the plugin on your local machine. We will install it in our home folder under `/home/kuzzle/protocols`.
-
-Create an `available` folder that will be used to store any protocol we download on our host: 
-
-```bash
-mkdir /home/kuzzle/protocols/available
-```
-
-In the `available` folder clone the MQTT Protocol Plugin:
-
-```bash
-cd /home/kuzzle/protocols/available
-git clone https://github.com/kuzzleio/protocol-mqtt.git
-```
-
-Now create the `enabled` folder, that will be used to store any protocol we wish to enable in our Kuzzle instance. We will use a symbolic link to enable protocols as per these [recommendations]({{ site_base_path }}plugins/1/essentials/getting-started/#prerequisites-default).
-
-```bash
-mkdir /home/kuzzle/protocols/enabled
-```
-
-We will need to configure Kuzzle to use the `/home/kuzzle/protocols` folder from our host machine to load protocol plugins. To do this, we will mount a volume from our host machine into the Kuzzle Docker container.
+Now, edit the `docker-compose.yml` file and make the following modifications:
+  - In the `ports` section:
+  ```
+  - "1883:1883"
+  ```
+  - In the environment section, enable the mqtt protocol and disable development mode:
+  ```
+  - kuzzle_server__protocols__mqtt__enabled=true
+  - kuzzle_server__protocols__mqtt__developmentMode=false
+  ```
 
 
-Create the `docker-compose.yml` file with the following content:
+The full code should look like this:
 
 ```
-version: '2'
+version: '3'
 
 services:
   kuzzle:
@@ -63,45 +52,27 @@ services:
       - kuzzle_services__db__client__host=http://elasticsearch:9200
       - kuzzle_services__internalCache__node__host=redis
       - kuzzle_services__memoryStorage__node__host=redis
+      - kuzzle_server__protocols__mqtt__enabled=true
+      - kuzzle_server__protocols__mqtt__developmentMode=false
       - NODE_ENV=production
-    volumes:
-      - /home/kuzzle/protocols:/var/app/protocols
 
   redis:
     image: redis:3.2
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.1
+    image: kuzzleio/elasticsearch:5.6.10
+    ulimits:
+      nofile: 65536
     environment:
       - cluster.name=kuzzle
-      # disable xpack
-      - xpack.security.enabled=false
-      - xpack.monitoring.enabled=false
-      - xpack.graph.enabled=false
-      - xpack.watcher.enabled=false
-    ports:
-      - "9200:9200"
-      - "9300:9300"
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+
 ```
 
-Note that we have opened port `1883` and mapped the host volume `/home/kuzzle/protocols` to the container volume `/var/app/protocols`.
-
-Now run the stack using the following command (from the same folder as your docker-compose up.yml):
+Now we can run the stack using the following command (from the same folder as your docker-compose.yml):
 
 ```bash
     docker-compose up -d
-```
-
-Now that the Kuzzle stack is running. We want to create a symbolic link to the available protocols folder inside the Kuzzle container:
-
-```bash
-    docker-compose exec kuzzle ln -s /var/app/protocols/available/protocol-mqtt  /var/app/protocols/enabled/protocol-mqtt
-```
-
-Now install the protocol plugin dependencies inside the docker container:
-
-```bash
-    docker-compose exec kuzzle npm install --prefix /var/app/protocols/enabled/protocol-mqtt
 ```
 
 This might take a few minutes. When the dependencies finished installing, restart the Kuzzle container:

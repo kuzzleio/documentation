@@ -123,6 +123,7 @@ Kuzzle ships with a powerful filtering tool named [Koncorde]({{ site_base_path }
 
 In our case, we want to select all the documents that contain the `URGENT` word in the `label` field. The best pick for this case is the [regexp]({{ site_base_path }}koncorde/1/essentials/terms/#regexp-default) filter.
 
+
 [snippet=subscribe-filter]
 
 This way, Tom will be notified about urgent TO-DO items. Take a look at the [Koncorde Reference]({{ site_base_path }}koncorde/1/) for a comprehensive list of available filters.
