@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: mUpdate
 description: Update documents
-order: 200
 ---
 
 # mUpdate

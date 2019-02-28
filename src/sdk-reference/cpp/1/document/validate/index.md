@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: validate
 description: Validate a document
-order: 200
 ---
 
 # validate
