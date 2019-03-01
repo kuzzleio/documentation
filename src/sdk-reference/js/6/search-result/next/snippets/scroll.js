@@ -17,7 +17,7 @@ try {
     size: 5
   };
 
-  const results = await kuzzle.document.search(
+  let results = await kuzzle.document.search(
     'nyc-open-data',
     'yellow-taxi',
     {
@@ -30,39 +30,15 @@ try {
     searchOptions
   );
 
+  // Fetch the next fetch results and push them into the 'documents' array
+  const documents = [];
+
+  while (results) {
+    results.hits.forEach(hit => documents.push(hit._source));
+    results = await results.next();
+  }
+
   console.log(results);
-  /*
-    {
-      "aggregations": undefined,
-      "hits": [
-        {
-          "_index": "nyc-open-data",
-          "_type": "yellow-taxi",
-          "_id": "AWgi6A1POQUM6ucJ3q06",
-          "_score": 0.046520017,
-          "_source": {
-            "category": "suv",
-            "_kuzzle_info": {
-              "author": "-1",
-              "createdAt": 1546773859655,
-              "updatedAt": null,
-              "updater": null,
-              "active": true,
-              "deletedAt": null
-            }
-          }
-        },
-        ...
-      ]
-    },
-    "total": 10,
-    "fetched": 5,
-    "scroll_id": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAAAAqFnQ5NU9sZWFaUTRhd2VHNU5KZzVEQ"
-  */
-
-  const nextResults = await results.next();
-
-  console.log(nextResults);
   /*
     {
       "aggregations": undefined,
@@ -91,7 +67,8 @@ try {
     "fetched": 10,
     "scroll_id": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAAAAqFnQ5NU9sZWFaUTRhd2VHNU5KZzVEQ"
   */
-  console.log(`Successfully retrieved ${nextResults.fetched} documents`);
+
+  console.log(`Successfully retrieved ${documents.length} documents`);
 } catch (error) {
   console.error(error.message);
 }
