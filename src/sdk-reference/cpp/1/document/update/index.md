@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: update
 description: Update a document
-order: 200
 ---
 
 # update
