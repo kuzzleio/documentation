@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: mDelete
 description: Delete a document
-order: 200
 ---
 
 # mDelete
