@@ -5,7 +5,7 @@ title: loadSecurities
 
 # loadSecurities
 
-{{{since "1.6.0"}}}
+{{{since "1.6.6"}}}
 
 Load roles, profiles and users into the storage layer.
 

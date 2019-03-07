@@ -5,7 +5,7 @@ title: loadFixtures
 
 # loadFixtures
 
-{{{since "1.6.0"}}}
+{{{since "1.6.6"}}}
 
 Load fixtures into the storage layer.
 

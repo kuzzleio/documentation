@@ -5,7 +5,7 @@ title: loadMappings
 
 # loadMappings
 
-{{{since "1.6.0"}}}
+{{{since "1.6.6"}}}
 
 Apply mappings to the storage layer.
 
