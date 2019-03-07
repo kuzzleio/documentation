@@ -1,4 +1,4 @@
 ---
 layout: full.html.hbs
-title: Log
+title: "Plugin context: log"
 ---

@@ -1,4 +1,4 @@
 ---
 layout: full.html.hbs
-title: Errors
+title: "Plugin context: errors"
 ---

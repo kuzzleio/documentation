@@ -1,4 +1,4 @@
 ---
 layout: full.html.hbs
-title: Constructors
+title: "Plugin context: constructors"
 ---
