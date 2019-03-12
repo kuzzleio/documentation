@@ -57,7 +57,7 @@ Body:
 
 ### Optional:
 
-* `refresh`: if set to `wait_for`, Kuzzle will not respond until the mappings are loaded
+* `refresh`: if set to `wait_for`, Kuzzle will respond only once the mappings are loaded
 
 ---
 
