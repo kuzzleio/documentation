@@ -15,7 +15,6 @@ Apply mappings to the storage layer.
 * Field definitions follow the [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html) mapping format.
 * If an index or collection does not exist, it will be created automatically.
 * Mappings are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
-* Mappings can be replayed as you want, as long as they do not change in-between.
 
 ---
 
