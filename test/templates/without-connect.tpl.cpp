@@ -13,5 +13,8 @@ int main() {
 
   [snippet-code]
 
+  delete kuzzle;
+  delete ws;
+
   return 0;
 }

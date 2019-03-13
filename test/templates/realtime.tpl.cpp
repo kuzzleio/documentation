@@ -46,5 +46,10 @@ int main() {
   std::cout.rdbuf(cout_original);
   std::cout << cout_copy.str();
 
+  kuzzle->disconnect();
+
+  delete kuzzle;
+  delete ws;
+
   return 0;
 }
