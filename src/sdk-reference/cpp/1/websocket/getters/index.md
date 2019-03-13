@@ -11,7 +11,7 @@ order: 100
 
 Returns the port number used by the protocol instance.
 
-### Signature
+### Arguments
 
 ```cpp
 unsigned int getPort()
@@ -21,7 +21,7 @@ unsigned int getPort()
 
 Returns a boolean indicating is the protocol instance is using SSL or not.
 
-### Signature
+### Arguments
 
 ```cpp
 bool isSslConnection()
