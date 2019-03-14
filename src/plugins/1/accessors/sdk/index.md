@@ -9,19 +9,18 @@ title: sdk
 
 Accessor to the embedded SDK. 
 
-The embedded SDK is a custom version of our [Javascript SDK]({{ site_base_path }}sdk-reference/js/6) that uses a custom protocol plugued directly into Kuzzle core.  
+The embedded SDK is a custom version of our [Javascript SDK]({{ site_base_path }}sdk-reference/js/6) that uses a custom protocol plugged directly into Kuzzle core.  
 
 Plugin developers can use every controllers except the `realtime` controller and also the [query]({{ site_base_path }}sdk-reference/js/6/kuzzle/query/) method of the SDK.
 
 ### Request context
 
-When using the embedded SDK, request made to Kuzzle API didn't have the same context as the original request received by the plugin.  
+By default, when using the embedded SDK, requests made to Kuzzle API don't have the same context as the original request received by the plugin.  
 
-The `request.context.user` property will not be correctly set and thus [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata) will not be properly set when creating or updating documents.
+Typically, the `request.context.user` property is not correctly set and thus [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata) will not be properly set when creating or updating documents.
 
-To avoid this, there is the impersonation method [as()]({{ site_base_path }}plugins/1/accessors/sdk/#as) that take an user in parameter and allow to execute the following request as the provided user.  
-
-This only allows to have metadata properly set, users rights and permissions won't be checked before executing the request.
+To avoid this, we also expose an `as()` method that take an user in parameter and allow to execute the following request as the provided user.  
+This only allows to have metadata properly set. Users rights and permissions won't be checked before executing the request.
 
 When the complete original context is needed to execute your request, plugin developers can use the [accessors.execute]({{ site_base_path }}plugins/1/accessors/execute) method.
 
