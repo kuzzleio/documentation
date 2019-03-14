@@ -35,6 +35,7 @@ const run = async () => {
         } = notification.result;
 
         console.log(`New driver ${driver.name} with id ${driverId} has B license.`);
+        kuzzle.disconnect();
       }
     };
 
@@ -44,8 +45,6 @@ const run = async () => {
     console.log('Successfully subscribed to document notifications!');
   } catch (error) {
     console.error(error.message);
-  } finally {
-    kuzzle.disconnect();
   }
 };
 
