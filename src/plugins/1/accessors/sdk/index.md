@@ -11,23 +11,25 @@ Accessor to the embedded SDK.
 
 The embedded SDK is a custom version of our [Javascript SDK]({{ site_base_path }}sdk-reference/js/6) that uses a custom protocol plugued directly into Kuzzle core.  
 
-You can use every controllers except the `realtime` controller. We also expose the `query` method of the SDK.
+Plugin developers can use every controllers except the `realtime` controller and also the [query]({{ site_base_path }}sdk-reference/js/6/kuzzle/query/) method of the SDK.
 
 ### Request context
 
 When using the embedded SDK, request made to Kuzzle API didn't have the same context as the original request received by the plugin.  
-You won't have the `request.context.user` property correctly set and thus [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata) will not be properly set when creating or updating documents.
 
-To avoid this, we also expose an `as()` method that take an user in parameter and allow to execute the following request as the provided user.  
+The `request.context.user` property will not be correctly set and thus [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata) will not be properly set when creating or updating documents.
+
+To avoid this, there is the impersonation method [as()]({{ site_base_path }}plugins/1/accessors/sdk/#as) that take an user in parameter and allow to execute the following request as the provided user.  
+
 This only allows to have metadata properly set, users rights and permissions won't be checked before executing the request.
 
-If you need the complete original context to execute your request, you can use the [accessors.execute]({{ site_base_path }}plugins/1/accessors/execute) method.
+When the complete original context is needed to execute your request, plugin developers can use the [accessors.execute]({{ site_base_path }}plugins/1/accessors/execute) method.
 
 ---
 
 ## controllers
 
-You can access the following controllers in the embedded SDK:
+The following controllers are available in the embedded SDK:
   - [auth controller]({{ site_base_path }}sdk-reference/js/6/auth)
   - [bulk controller]({{ site_base_path }}sdk-reference/js/6/bulk)
   - [collection controller]({{ site_base_path }}sdk-reference/js/6/collection)
