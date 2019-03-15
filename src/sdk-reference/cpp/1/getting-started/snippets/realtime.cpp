@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <iostream>
 #include <memory>
 #include "websocket.hpp"
@@ -19,19 +20,18 @@ int main(int argc, char * argv[]) {
     exit(1);
   }
 
+  // For the sake of this example only: a simple toggle that is set
+  // to true once a notification is received. This allows us to wait
+  // before exiting the program
+  bool notified = false;
+
   // Create a lambda that will be invoked for each real-time notification
   // received
   kuzzleio::NotificationListener listener =
     [&](const std::shared_ptr<kuzzleio::notification_result> &notification) {
       std::string id = notification->result->id;
       std::cout << "New created document notification: " << id << std::endl;
-
-      // Disconnect and free allocated resources, allowing the
-      // program to exit at the first notification received
-      kuzzle->disconnect();
-
-      delete kuzzle;
-      delete ws;
+      notified = true;
     };
 
   try {
@@ -71,6 +71,18 @@ int main(int argc, char * argv[]) {
     kuzzle->disconnect();
     exit(1);
   }
+
+  // Waiting for a notification before exiting
+  for (unsigned i = 0; i < 10 && !notified; ++i) {
+    sleep(2);
+  }
+
+  // Disconnect and free allocated resources, allowing the
+  // program to exit at the first notification received
+  kuzzle->disconnect();
+
+  delete kuzzle;
+  delete ws;
 
   return 0;
 }
