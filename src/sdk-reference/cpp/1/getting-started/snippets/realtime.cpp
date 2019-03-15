@@ -47,7 +47,7 @@ int main(int argc, char * argv[]) {
 
     // Write a new document. This triggers a notification
     // sent to our subscription.
-    const char *document = R"(
+    std::string document = R"(
       {
         "name": "John",
         "birthday": "1995-11-27",
