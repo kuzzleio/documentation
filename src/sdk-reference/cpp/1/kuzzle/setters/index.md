@@ -25,7 +25,7 @@ Value must be a JSON string representing a JSON object. (eg: `{"username": "Asch
 ### Signature
 
 ```cpp
-Kuzzle* setVolatile(const std::string&);
+Kuzzle* volatiles(const std::string&);
 ```
 
 ## Usage

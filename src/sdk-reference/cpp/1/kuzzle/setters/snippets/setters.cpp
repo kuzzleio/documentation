@@ -3,4 +3,4 @@ kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(
 
 kuzzle->setAutoReplay(true);
 
-kuzzle->setVolatile(R"({ username: "Aschen" })");
+kuzzle->volatiles(R"({ username: "Aschen" })");
