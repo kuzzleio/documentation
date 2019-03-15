@@ -1,4 +1,4 @@
-kuzzleio::WebSocket *protocol = new WebSocket("kuzzle");
+kuzzleio::WebSocket *protocol = new kuzzleio::WebSocket("kuzzle");
 
 unsigned int port = protocol->getPort();
 

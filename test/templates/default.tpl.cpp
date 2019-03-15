@@ -22,5 +22,11 @@ int main() {
   }
 
   [snippet-code]
+
+  kuzzle->disconnect();
+
+  delete kuzzle;
+  delete ws;
+
   return 0;
 }
