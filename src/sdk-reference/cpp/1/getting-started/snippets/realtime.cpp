@@ -30,7 +30,7 @@ int main(int argc, char * argv[]) {
 
   try {
     // Subscribe to notifications for drivers having a "B" driver license.
-    const char *filters = R"(
+   std::string filters = R"(
       {
          "equals": {
            "license": "B"
