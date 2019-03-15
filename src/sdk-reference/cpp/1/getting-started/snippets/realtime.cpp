@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include <iostream>
 #include <memory>
 #include "websocket.hpp"
@@ -23,14 +22,21 @@ int main(int argc, char * argv[]) {
   // Create a lambda that will be invoked for each real-time notification
   // received
   kuzzleio::NotificationListener listener =
-    [](const std::shared_ptr<kuzzleio::notification_result> &notification) {
+    [&](const std::shared_ptr<kuzzleio::notification_result> &notification) {
       std::string id = notification->result->id;
       std::cout << "New created document notification: " << id << std::endl;
+
+      // Disconnect and free allocated resources, allowing the
+      // program to exit at the first notification received
+      kuzzle->disconnect();
+
+      delete kuzzle;
+      delete ws;
     };
 
   try {
     // Subscribe to notifications for drivers having a "B" driver license.
-   std::string filters = R"(
+    std::string filters = R"(
       {
          "equals": {
            "license": "B"
@@ -65,15 +71,6 @@ int main(int argc, char * argv[]) {
     kuzzle->disconnect();
     exit(1);
   }
-
-  // Wait for the notification to be received
-  sleep(2);
-
-  // Disconnect and free allocated resources
-  kuzzle->disconnect();
-
-  delete kuzzle;
-  delete ws;
 
   return 0;
 }
