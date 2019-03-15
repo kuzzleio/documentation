@@ -1,24 +1,24 @@
 kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(
   new kuzzleio::WebSocket("kuzzle"));
 
-std::string jwt_token = kuzzle->getJwt();
+std::string jwt_token = kuzzle->jwt();
 
 kuzzleio::Protocol *protocol = kuzzle->getProtocol();
 
-int max_size = kuzzle->getQueueMaxSize();
+int max_size = kuzzle->queueMaxSize();
 
-int queue_ttl = kuzzle->getQueueTTL();
+int queue_ttl = kuzzle->queueTTL();
 
-int replay_interval = kuzzle->getReplayInterval();
+int replay_interval = kuzzle->replayInterval();
 
-int reconnection_delay = kuzzle->getReconnectionDelay();
+int reconnection_delay = kuzzle->reconnectionDelay();
 
-std::string volatile_data = kuzzle->getVolatile();
+std::string volatile_data = kuzzle->volatiles();
 
-bool auto_queue = kuzzle->isAutoQueue();
+bool auto_queue = kuzzle->autoQueue();
 
-bool auto_reconnect = kuzzle->isAutoReconnect();
+bool auto_reconnect = kuzzle->autoReconnect();
 
-bool auto_replay = kuzzle->isAutoReplay();
+bool auto_replay = kuzzle->autoReplay();
 
-bool auto_resubscribe = kuzzle->isAutoResubscribe();
+bool auto_resubscribe = kuzzle->autoResubscribe();
