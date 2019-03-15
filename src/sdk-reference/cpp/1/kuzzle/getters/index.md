@@ -9,42 +9,42 @@ order: 100
 
 ## autoQueue
 
-Returns true or false if queries are automatically queued during offline mode.
+Returns a boolean telling if queries are automatically queued during offline mode.
 
 ### Arguments
 
 ```cpp
-bool autoQueue();
+bool autoQueue() const noexcept;
 ```
 
 ## autoReconnect
 
-Returns true or false if it will automatically reconnect after a connection loss.
+Returns a boolean telling if it will automatically reconnect after a connection loss.
 
 ### Arguments
 
 ```cpp
-bool autoReconnect();
+bool autoReconnect() const noexcept;
 ```
 
 ## autoReplay
 
-Returns true or false if automatically replay queued requests on a reconnected event.
+Returns a boolean telling if it automatically replays queued requests on a `reconnected` event.
 
 ### Arguments
 
 ```cpp
-bool autoReplay();
+bool autoReplay() const noexcept;
 ```
 
 ## autoResubscribe
 
-Returns true or false if automatically renew all subscriptions on a reconnected event.
+Returns a boolean telling if it automatically renews all subscriptions on a `reconnected` event.
 
 ### Arguments
 
 ```cpp
-bool autoResubscribe();
+bool autoResubscribe() const noexcept;
 ```
 
 ## getProtocol
@@ -59,12 +59,12 @@ Protocol* getProtocol();
 
 ## jwt
 
-Returns the JWT token currently used to authenticate requests.
+Returns the JWT currently used to authenticate requests.
 
 ### Arguments
 
 ```cpp
-std::string jwt();
+const std::string jwt() const noexcept;
 ```
 
 ## queueMaxSize
@@ -74,7 +74,7 @@ Returns the number of maximum requests kept during offline mode.
 ### Arguments
 
 ```cpp
-int queueMaxSize();
+int queueMaxSize() const noexcept;
 ```
 
 ## queueTTL
@@ -84,17 +84,17 @@ Returns the time a queued request is kept during offline mode, in milliseconds.
 ### Arguments
 
 ```cpp
-int queueTTL();
+int queueTTL() const noexcept;
 ```
 
 ## replayInterval
 
-Returns delay between each replayed requests.
+Returns the delay between each replayed requests.
 
 ### Arguments
 
 ```cpp
-int replayInterval();
+int replayInterval() const noexcept;
 ```
 
 ## reconnectionDelay
@@ -104,7 +104,7 @@ Returns the time between each reconnection attempt, in milliseconds.
 ### Arguments
 
 ```cpp
-int reconnectionDelay();
+int reconnectionDelay() const noexcept;
 ```
 
 ## volatiles
@@ -114,7 +114,7 @@ Returns the JSON string representing volatile data sent with each request.
 ### Arguments
 
 ```cpp
-std::string volatiles();
+const std::string& volatiles() const noexcept;
 ```
 
 ## Usage
