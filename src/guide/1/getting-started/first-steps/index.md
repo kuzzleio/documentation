@@ -102,7 +102,7 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 _You can find more resources about Kuzzle SDK in the [SDK Reference]({{ site_base_path }}sdk-reference)._
 
-## Subscribe to data changes (real-time notifications)
+## Subscribe to data changes (pub/sub)
 
 Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the **Room** class definition in the <a href="{{ site_base_path }}sdk-reference">SDK Reference</a>).
 
