@@ -14,7 +14,7 @@ Before proceeding, please make sure your system has these programs installed:
 * **Node.js** version 6 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>)
 * Kuzzle
 
-### Prepare your environment
+## Prepare your environment
 
 Create your playground directory and install the [Javascript SDK]({{ site_base_path }}sdk-reference) from the command line using npm:
 
@@ -67,7 +67,7 @@ Congratulations! You are now ready to say Hello to the World!
 Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
 </div>
 
-### Create your first "Hello World" document
+## Create your first "Hello World" document
 
 Create a `create.js` file with the following code:
 
@@ -102,7 +102,7 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 _You can find more resources about Kuzzle SDK in the [SDK Reference]({{ site_base_path }}sdk-reference)._
 
-### Subscribe to data changes (pub/sub)
+## Subscribe to data changes (pub/sub)
 
 Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the **Room** class definition in the <a href="{{ site_base_path }}sdk-reference">SDK Reference</a>).
 
