@@ -1,47 +1,38 @@
 #include <iostream>
-
 #include "kuzzle.hpp"
 #include "websocket.hpp"
 
-#define K_INDEX_NAME "nyc-open-data"
-#define K_COLLECTION_NAME "yellow-taxi"
-
-
 int main(int argc, char * argv[]) {
-    // Instanciate a Kuzzle client
-    // with a WebSocket connection.
-    // Replace "kuzzle" with
-    // your Kuzzle hostname like "localhost"
-    Kuzzle *kuzzle = new kuzzleio::Kuzzle(new kuzzleio::WebSocket("kuzzle"));
+  // Instantiate a Kuzzle client with a WebSocket connection.
+  // Replace "kuzzle" with your actual Kuzzle hostname (e.g. "localhost")
+  kuzzleio::WebSocket *ws = new kuzzleio::WebSocket("kuzzle");
+  kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(ws);
 
-    try {
-        // Connects to the server.
-        kuzzle->connect();
-        std::cout << "Connected!" << std::endl;
+  try {
+    // Connect to the server.
+    kuzzle->connect();
+    std::cout << "Connected!" << std::endl;
 
-        // Freshly installed Kuzzle servers are empty: we need to create
-        // a new index.
-        kuzzle->index->create(K_INDEX_NAME);
-        std::cout << "Index "
-                  << K_INDEX_NAME
-                  << " created!"
-                  << std::endl;
+    // Freshly installed Kuzzle servers are empty: we first need to create
+    // a data index. The one used in this example is named "nyc-open-data"
+    kuzzle->index->create("nyc-open-data");
+    std::cout << "Index nyc-open-data created!" << std::endl;
 
-        // Creates a collection
-        kuzzle->collection->create(K_INDEX_NAME, K_COLLECTION_NAME);
-        std::cout << "Collection "
-                  << K_COLLECTION_NAME
-                  << " created!"
-                  << std::endl;
-    }
-    catch(KuzzleException e) {
-        std::cerr << e.what() << std::endl;
-        exit(1);
-    }
+    // Create a data collection named "yellow-taxi" in our newly created index
+    kuzzle->collection->create("nyc-open-data", "yellow-taxi");
+    std::cout << "Collection yellow-taxi created!" << std::endl;
+  }
+  catch(kuzzleio::KuzzleException e) {
+    std::cerr << e.what() << std::endl;
+    exit(1);
+  }
 
-    // Disconnects the SDK
-    kuzzle->disconnect();
+  // Disconnect and free allocated resources
+  kuzzle->disconnect();
 
-    return 0;
+  delete kuzzle;
+  delete ws;
+
+  return 0;
 }
 

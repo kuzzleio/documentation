@@ -4,36 +4,37 @@
 #include "kuzzle.hpp"
 
 int main(int argc, char * argv[]) {
-    // Instanciate a Kuzzle client
-    // with a WebSocket connection.
-    // Replace "kuzzle" with
-    // your Kuzzle hostname like "localhost"
-    Kuzzle *kuzzle = new kuzzleio::Kuzzle(new kuzzleio::WebSocket("kuzzle"));
+  // Instantiate a Kuzzle client with a WebSocket connection.
+  // Replace "kuzzle" with your actual Kuzzle hostname (e.g. "localhost")
+  kuzzleio::WebSocket * ws = new kuzzleio::WebSocket("kuzzle");
+  kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(ws);
 
-    try {
-        // Connects to the server.
-        kuzzle->connect();
-        std::cout << "Connected!" << std::endl;
-    }
-    catch(KuzzleException &e) {
-        std::cerr << e.what() << std::endl;
-        exit(1);
-    }
+  try {
+    // Connect to the server.
+    kuzzle->connect();
+    std::cout << "Connected!" << std::endl;
+  }
+  catch(kuzzleio::KuzzleException &e) {
+    std::cerr << e.what() << std::endl;
+    exit(1);
+  }
 
-    try {
-        // Get server current date as UNIX timestamp.
-        std::cout << "Server current timestamp: "
-                  << kuzzle->server->now()
-                  << std::endl;
-    }
-    catch(KuzzleException &e) {
-        std::cerr << e.what() << std::endl;
-        kuzzle->disconnect();
-        exit(1);
-    }
-
-    // Disconnects the SDK.
+  try {
+    // Get the server current date as a UNIX timestamp.
+    std::cout << "Server current timestamp: "
+    << kuzzle->server->now()
+    << std::endl;
+  }
+  catch(kuzzleio::KuzzleException &e) {
+    std::cerr << e.what() << std::endl;
     kuzzle->disconnect();
+    exit(1);
+  }
 
-    return 0;
+  // Disconnect and free resources
+  kuzzle->disconnect();
+  delete kuzzle;
+  delete ws;
+
+  return 0;
 }
