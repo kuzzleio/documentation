@@ -1,72 +1,88 @@
 #include <unistd.h>
-
 #include <iostream>
-
+#include <memory>
 #include "websocket.hpp"
 #include "kuzzle.hpp"
 
-#define K_INDEX_NAME "nyc-open-data"
-#define K_COLLECTION_NAME "yellow-taxi"
-
 int main(int argc, char * argv[]) {
-    // Instanciate a Kuzzle client
-    // with a WebSocket connection.
-    // Replace "kuzzle" with
-    // your Kuzzle hostname like "localhost"
-    Kuzzle *kuzzle = new kuzzleio::Kuzzle(new kuzzleio::WebSocket("kuzzle"));
+  // Instantiate a Kuzzle client with a WebSocket connection.
+  // Replace "kuzzle" with your actual Kuzzle hostname (e.g. "localhost")
+  kuzzleio::WebSocket *ws = new kuzzleio::WebSocket("kuzzle");
+  kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(ws);
 
-    try {
-        // Connects to the server.
-        kuzzle->connect();
-        std::cout << "Connected!" << std::endl;
-    }
-    catch(KuzzleException &e) {
-        std::cerr << e.what() << std::endl;
-        exit(1);
-    }
+  try {
+    // Connect to the server.
+    kuzzle->connect();
+    std::cout << "Connected!" << std::endl;
+  }
+  catch(kuzzleio::KuzzleException &e) {
+    std::cerr << e.what() << std::endl;
+    exit(1);
+  }
 
-    // Starts an async listener
-    kuzzleio::NotificationListener listener =
-      [](const std::shared_ptr<kuzzleio::notification_result> &notification) {
-        const char *id = notification->result->id;
-        std::cout << "New created document notification: " << id << std::endl;
-      };
+  // For the sake of this example only: a simple toggle that is set
+  // to true once a notification is received. This allows us to wait
+  // before exiting the program
+  bool notified = false;
 
-    try {
-      // Subscribes to notifications for drivers having a "B" driver license.
-      const char *filters = R"(
-        {
-           "equals": {
-             "license": "B"
-           }
-        }
-      )";
+  // Create a lambda that will be invoked for each real-time notification
+  // received
+  kuzzleio::NotificationListener listener =
+    [&](const std::shared_ptr<kuzzleio::notification_result> &notification) {
+      std::string id = notification->result->id;
+      std::cout << "New created document notification: " << id << std::endl;
+      notified = true;
+    };
 
-      // Sends the subscription
-      kuzzle->realtime->subscribe(K_INDEX_NAME, K_COLLECTION_NAME, filters, &listener);
-      std::cout << "Successfully subscribed!" << std::endl;
+  try {
+    // Subscribe to notifications for drivers having a "B" driver license.
+    std::string filters = R"(
+      {
+         "equals": {
+           "license": "B"
+         }
+      }
+    )";
 
-      // Writes a new document. This triggers a notification
-      // sent to our subscription.
-      const char *document = R"(
-        {
-          "name": "John",
-          "birthday": "1995-11-27",
-          "license": "B"
-        }
-      )";
+    kuzzle->realtime->subscribe(
+        "nyc-open-data",
+        "yellow-taxi",
+        filters,
+        &listener);
+    std::cout << "Successfully subscribed!" << std::endl;
 
-      kuzzle->document->create(K_INDEX_NAME, K_COLLECTION_NAME, "some-id", document);
-      // Wait for notification
-      sleep(2);
-    } catch (kuzzleio::KuzzleException &e) {
-      std::cerr << e.what() << std::endl;
-      kuzzle->disconnect();
-      exit(1);
-    }
+    // Write a new document. This triggers a notification
+    // sent to our subscription.
+    std::string document = R"(
+      {
+        "name": "John",
+        "birthday": "1995-11-27",
+        "license": "B"
+      }
+    )";
 
-    // Disconnects the SDK.
+    kuzzle->document->create(
+        "nyc-open-data",
+        "yellow-taxi",
+        "some-id",
+        document);
+  } catch (kuzzleio::KuzzleException &e) {
+    std::cerr << e.what() << std::endl;
     kuzzle->disconnect();
+    exit(1);
+  }
 
-    return 0;
+  // Waiting for a notification before exiting
+  for (unsigned i = 0; i < 10 && !notified; ++i) {
+    sleep(2);
+  }
+
+  // Disconnect and free allocated resources, allowing the
+  // program to exit at the first notification received
+  kuzzle->disconnect();
+
+  delete kuzzle;
+  delete ws;
+
+  return 0;
 }
