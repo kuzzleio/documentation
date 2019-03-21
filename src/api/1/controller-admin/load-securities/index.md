@@ -9,7 +9,7 @@ title: loadSecurities
 
 Load roles, profiles and users into the storage layer.
 
-The roles, profiles and users definition follow the same structure as in the body parameter of the API:
+The roles, profiles and users definitions follow the same structure as in the body parameter of these corresponding API routes:
 
  - [createRole]({{ site_base_path }}api/1/controller-security/create-role)
  - [createProfile]({{ site_base_path }}api/1/controller-security/create-profile)
