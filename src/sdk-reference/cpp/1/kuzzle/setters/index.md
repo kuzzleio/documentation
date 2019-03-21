@@ -7,17 +7,17 @@ order: 200
 
 # Kuzzle class setters
 
-## setAutoReplay
+## autoReplay
 
 Set the value for the auto-replay flag which allow to play queued request after a successfull auto-reconnection.
 
 ### Signature
 
 ```cpp
-Kuzzle* setAutoReplay(bool);
+Kuzzle* autoReplay(bool);
 ```
 
-## setVolatile
+## volatiles
 
 Set the value of the global [volatile data]({{ site_base_path }}sdk-reference/cpp/1/kuzzle/introduction#volatile-data-default).  
 Value must be a JSON string representing a JSON object. (eg: `{"username": "Aschen"}`)
@@ -25,7 +25,7 @@ Value must be a JSON string representing a JSON object. (eg: `{"username": "Asch
 ### Signature
 
 ```cpp
-Kuzzle* setVolatile(const std::string&);
+Kuzzle* volatiles(const std::string&);
 ```
 
 ## Usage
