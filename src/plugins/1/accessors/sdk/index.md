@@ -11,7 +11,8 @@ Accessor to the embedded SDK.
 
 The embedded SDK is a custom version of our [Javascript SDK]({{ site_base_path }}sdk-reference/js/6) that uses a custom protocol plugged directly into Kuzzle core.  
 
-Plugin developers can use every controllers except the `realtime` controller and also the [query]({{ site_base_path }}sdk-reference/js/6/kuzzle/query/) method of the SDK.
+All the documented controllers can be used, except the `realtime` one.  
+Also, the low-level [query]({{ site_base_path }}sdk-reference/js/6/kuzzle/query/) method is available for use.
 
 ### Request context
 
