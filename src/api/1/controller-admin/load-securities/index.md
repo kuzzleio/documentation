@@ -5,7 +5,7 @@ title: loadSecurities
 
 # loadSecurities
 
-{{{since "1.6.6"}}}
+{{{since "1.7.0"}}}
 
 Load roles, profiles and users into the storage layer.
 
@@ -17,7 +17,7 @@ The roles, profiles and users definition follow the same structure as in the bod
 
 **Notes:**
 
-* The file can contain any number of roles, profiles and users.
+* The body can contain any number of roles, profiles and users.
 * If a role, profile or user already exists, it will be replaced.
 * Fixtures are loaded sequentially, first the roles, then the profiles and finally the users. If a failure occurs, Kuzzle immediately interrupts the sequence.
 
@@ -61,7 +61,23 @@ Body:
 {
   "controller": "admin",
   "action": "loadSecurities",
-  "body": <securities>
+  "body": {
+    "roles": {
+      "role-id": {
+        /* role definition */
+      }
+    },
+    "profiles": {
+      "profile-id": {
+        /* profile definition */
+      }
+    },
+    "users": {
+      "user-id": {
+        /* user definition */
+      }
+    }
+  }
 }
 ```
 

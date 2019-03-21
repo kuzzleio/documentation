@@ -5,7 +5,7 @@ title: loadMappings
 
 # loadMappings
 
-{{{since "1.6.6"}}}
+{{{since "1.7.0"}}}
 
 Apply mappings to the storage layer.
 
@@ -30,8 +30,8 @@ Body:
 
 ```js
 {
-  "index": {
-    "collection": {
+  "index-name": {
+    "collection-name": {
       "properties": {
         "field1": {},
         "field2": {},
@@ -49,7 +49,17 @@ Body:
 {
   "controller": "admin",
   "action": "loadMappings",
-  "body": <fixtures>
+  "body": {
+    "index-name": {
+      "collection-name": {
+        "properties": {
+          "field1": {},
+          "field2": {},
+          "field...": {}
+        }
+      }
+    }
+  }
 }
 ```
 

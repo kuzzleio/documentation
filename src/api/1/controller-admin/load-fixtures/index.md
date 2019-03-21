@@ -5,7 +5,7 @@ title: loadFixtures
 
 # loadFixtures
 
-{{{since "1.6.6"}}}
+{{{since "1.7.0"}}}
 
 Load fixtures into the storage layer.
 
@@ -30,9 +30,9 @@ Body:
 
 ```js
 {
-  "index": {
-    "collection": [
-      {"<command>": {}},
+  "index-name": {
+    "collection-name": [
+      {"create": { "_id": "uniq-id-123456" }},
       {"field": "value", "field2": "value", "field...", "value"}
     ]
   }
@@ -47,7 +47,14 @@ Body:
 {
   "controller": "admin",
   "action": "loadFixtures",
-  "body": <fixtures>
+  "body": {
+    "index-name": {
+      "collection-name": [
+        {"create": { "_id": "uniq-id-123456" }},
+        {"field": "value", "field2": "value", "field...", "value"}
+      ]
+    }
+  }
 }
 ```
 

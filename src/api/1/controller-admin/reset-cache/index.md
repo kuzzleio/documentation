@@ -38,10 +38,6 @@ Method: POST
   * `internalCache` : used by Kuzzle to cache internal data, such as authentication tokens, documents followed by real-time subscriptions, active paginated search queries, API usage statistics or cluster state
   * `memoryStorage` : memory cache managed by Kuzzle's [memoryStorage]({{ site_base_path }}api/1/controller-memory-storage/) API
 
-### Optional:
-
-* `refresh`: if set to `wait_for`, Kuzzle will not respond until the cache is cleared
-
 ---
 
 ## Response

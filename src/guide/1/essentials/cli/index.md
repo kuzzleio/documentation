@@ -14,6 +14,7 @@ Kuzzle ships with a [Command line interface](https://en.wikipedia.org/wiki/Comma
 * Reset Kuzzle internal data _(use with caution!)_
 * Reset user created indexes _(use with caution!)_
 * Reset users, roles and profiles _(use with caution!)_
+* Load mappings, fixtures, roles, profiles and users
 * Clear Kuzzle cache
 * Diagnose the Kuzzle installation
 
@@ -37,6 +38,9 @@ To get a list of commands and options run the CLI:
 #     shutdown                   gracefully exits after processing remaining requests
 #     start [options]            start a Kuzzle instance
 #     dump                       create a dump of current state of kuzzle
+#     loadMappings <file>        load database mappings into Kuzzle
+#     loadFixtures <file>        load database fixtures into Kuzzle
+#     loadSecurities <file>      load roles, profiles and users into Kuzzle
 #
 #   Options:
 #
@@ -416,3 +420,122 @@ The roles, profiles and users definition follow the same structure as in the bod
 	}
 }
 ```
+
+---
+
+## loadMappings
+
+{{{since "1.6.6"}}}
+
+```bash
+./bin/kuzzle loadMappings <file>
+
+# [✔] Mappings have been successfully loaded
+```
+
+The `loadMappings` command apply mappings directly into the storage layer.
+
+### Mappings file example
+
+```js
+{
+  "index-name": {
+    "collection-name": {
+      "properties": {
+        "field1": { "type": "keyword" },
+        "field2": { "type": "integer" },
+        "field...": { "type": "..." }
+      }
+    }
+  }
+}
+```
+
+**Notes:**
+
+* The mapping can contain any number of index and collection configurations.
+* Field definitions follow the [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html) mapping format.
+* If an index or collection does not exist, it will be created automatically.
+* Mappings are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
+
+---
+
+## loadFixtures
+
+{{{since "1.6.6"}}}
+
+```bash
+./bin/kuzzle loadFixtures <file>
+
+# [✔] Fixtures have been successfully loaded
+```
+
+The `loadFixtures` command load fixtures directly into the storage layer.
+
+### Fixtures file example
+
+```js
+{
+  "index-name": {
+    "collection-name": [
+      {"create": { "_id": "uniq-id-123456" }},
+      {"field": "value", "field2": "value", "field...", "value"}
+    ]
+  }
+}
+```
+
+**Notes:**
+
+* The fixtures can contain any number of index and collection configurations.
+* Each collection contains an array of data to load, just like the [bulk:import API]({{ site_base_path }}api/1/controller-bulk/import/).
+* If an index or collection does not exist, the load will fail.
+* Fixtures are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
+
+---
+
+## loadSecurities
+
+{{{since "1.6.6"}}}
+
+```bash
+./bin/kuzzle loadSecurities <file>
+
+# [✔] Securities have been successfully loaded
+```
+
+The `loadSecurities` command load roles, profiles and users directly into the storage layer.
+
+The roles, profiles and users definition follow the same structure as in the body parameter of the API:
+
+ - [createRole]({{ site_base_path }}api/1/controller-security/create-role)
+ - [createProfile]({{ site_base_path }}api/1/controller-security/create-profile)
+ - [createUser]({{ site_base_path }}api/1/controller-security/create-user)
+
+### Securities file example
+
+```js
+{
+  "roles": {
+    "role-id": {
+      /* role definition */
+    }
+  },
+  "profiles": {
+    "profile-id": {
+      /* profile definition */
+    }
+  },
+  "users": {
+    "user-id": {
+      /* user definition */
+    }
+  }
+}
+```
+
+**Notes:**
+
+* The file can contain any number of roles, profiles and users.
+* If a role, profile or user already exists, it will be replaced.
+* Fixtures are loaded sequentially, first the roles, then the profiles and finally the users. If a failure occurs, Kuzzle immediately interrupts the sequence.
