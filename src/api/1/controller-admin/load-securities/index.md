@@ -9,7 +9,7 @@ title: loadSecurities
 
 Load roles, profiles and users into the storage layer.
 
-The roles, profiles and users definition follow the same structure as in the body parameter of the API:
+The roles, profiles and users definitions follow the same structure as in the body parameter of these corresponding API routes:
 
  - [createRole]({{ site_base_path }}api/1/controller-security/create-role)
  - [createProfile]({{ site_base_path }}api/1/controller-security/create-profile)
@@ -19,7 +19,7 @@ The roles, profiles and users definition follow the same structure as in the bod
 
 * The body can contain any number of roles, profiles and users.
 * If a role, profile or user already exists, it will be replaced.
-* Fixtures are loaded sequentially, first the roles, then the profiles and finally the users. If a failure occurs, Kuzzle immediately interrupts the sequence.
+* Fixtures are loaded sequentially: first the roles, then the profiles and finally the users. If a failure occurs, Kuzzle immediately interrupts the sequence, without rollbacking what has already been loaded.
 
 ---
 
