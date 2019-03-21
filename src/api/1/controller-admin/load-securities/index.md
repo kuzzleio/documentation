@@ -19,7 +19,7 @@ The roles, profiles and users definitions follow the same structure as in the bo
 
 * The file can contain any number of roles, profiles and users.
 * If a role, profile or user already exists, it will be replaced.
-* Fixtures are loaded sequentially, first the roles, then the profiles and finally the users. If a failure occurs, Kuzzle immediately interrupts the sequence.
+* Fixtures are loaded sequentially: first the roles, then the profiles and finally the users. If a failure occurs, Kuzzle immediately interrupts the sequence, without rollbacking what has already been loaded.
 
 ---
 
