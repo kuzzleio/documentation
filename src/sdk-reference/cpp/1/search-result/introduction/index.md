@@ -8,7 +8,7 @@ order: 0
 # SearchResult
 
 The class is used to retrieve the subsequent paginated results of a search query.  
-The following methods returns a `SearchResult`:
+The following methods returns a `SearchResult` instance:
   - [document:search]({{ site_base_path }}sdk-reference/cpp/1/document/search)
 
 ## Public class definition
