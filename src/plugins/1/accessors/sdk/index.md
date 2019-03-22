@@ -16,12 +16,11 @@ Also, the low-level [query]({{ site_base_path }}sdk-reference/js/6/kuzzle/query/
 
 ### Request context
 
-By default, when using the embedded SDK, requests made to Kuzzle API don't have the same context as the original request received by the plugin.  
+By default, when using the embedded SDK, requests made to Kuzzle API don't have the same context as the original request received by the plugin.
 
-Typically, the `request.context.user` property is not correctly set and thus [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata) will not be properly set when creating or updating documents.
+Typically, the `request.context.user` property is not set and thus [Kuzzle metadata]({{ site_base_path }}guide/1/essentials/document-metadata) will not be set when creating or updating documents.
 
-To avoid this, we also expose an `as()` method that take an user in parameter and allow to execute the following request as the provided user.  
-This only allows to have metadata properly set. Users rights and permissions won't be checked before executing the request.
+It is possible to use the same user context as the original request with the embedded SDK, for this purpose it is necessary to use the [as()[{{ site_base_path }}plugins/1/accessors/sdk/#as] impersonation method.
 
 When the complete original context is needed to execute your request, plugin developers can use the [accessors.execute]({{ site_base_path }}plugins/1/accessors/execute) method.
 
@@ -30,18 +29,18 @@ When the complete original context is needed to execute your request, plugin dev
 ## controllers
 
 The following controllers are available in the embedded SDK:
-  - [auth controller]({{ site_base_path }}sdk-reference/js/6/auth)
-  - [bulk controller]({{ site_base_path }}sdk-reference/js/6/bulk)
-  - [collection controller]({{ site_base_path }}sdk-reference/js/6/collection)
-  - [document controller]({{ site_base_path }}sdk-reference/js/6/document)
-  - [index controller]({{ site_base_path }}sdk-reference/js/6/index)
-  - [memoryStorage (ms) controller]({{ site_base_path }}sdk-reference/js/6/ms)
-  - [security controller]({{ site_base_path }}sdk-reference/js/6/security)
-  - [server controller]({{ site_base_path }}sdk-reference/js/6/server)
+  - [auth]({{ site_base_path }}sdk-reference/js/6/auth)
+  - [bulk]({{ site_base_path }}sdk-reference/js/6/bulk)
+  - [collection]({{ site_base_path }}sdk-reference/js/6/collection)
+  - [document]({{ site_base_path }}sdk-reference/js/6/document)
+  - [index]({{ site_base_path }}sdk-reference/js/6/index)
+  - [memoryStorage (ms)]({{ site_base_path }}sdk-reference/js/6/ms)
+  - [security]({{ site_base_path }}sdk-reference/js/6/security)
+  - [server]({{ site_base_path }}sdk-reference/js/6/server)
 
 ### Example
 
-```js
+```javascript
 async myAwesomePipe (request) {
   await this.context.accessors.sdk.document.create(
     'nyc-open-data',
@@ -66,7 +65,7 @@ This can be useful to call plugins custom controller action.
 
 ### Example
 
-```js
+```javascript
 async myAwesomePipe (request) {
   await this.context.accessors.sdk.query({
     controller: 'custom-plugin/derbyController',
@@ -89,7 +88,7 @@ Execute the following query as the original request user.
 
 ### Arguments
 
-```js
+```javascript
 as(user)
 ```
 
@@ -101,7 +100,7 @@ as(user)
 
 ### Example
 
-```js
+```javascript
 async myAwesomePipe (request) {
   await this.context.accessors.sdk.as(request.context.user).document.create(
     'nyc-open-data',

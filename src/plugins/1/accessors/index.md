@@ -1,4 +1,5 @@
 ---
 layout: full.html.hbs
-title: "Plugin context: accessors"
+title: Accessors
+separator: Plugin context
 ---
