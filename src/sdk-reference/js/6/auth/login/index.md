@@ -8,6 +8,8 @@ description: Authenticate a user
 
 Authenticates a user.
 
+If this action is successful, all further requests emitted by this SDK instance will be in the name of the authenticated user, until either the authenticated token expires, the [logout]({{ site_base_path }}sdk-reference/js/6/auth/logout) action is called, or the [jwt]({{ site_base_path }}sdk-reference/js/6/kuzzle/introduction/#properties) property is manually unset.
+
 <br/>
 
 ```javascript
