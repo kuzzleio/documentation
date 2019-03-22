@@ -115,7 +115,7 @@ async myAwesomePipe (request) {
 
 **Notes:**
 
-* The created document will have the `author` metadata property set to the user ID that makes the original query.
+* The created document will have the `author` metadata property set to the impersonated user ID.
 
 ### Return
 
