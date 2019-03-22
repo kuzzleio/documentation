@@ -1,5 +1,5 @@
-kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(
-  new kuzzleio::WebSocket("kuzzle"));
+kuzzleio::WebSocket *ws = new kuzzleio::WebSocket("kuzzle");
+kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(ws);
 
 std::string jwt_token = kuzzle->jwt();
 
