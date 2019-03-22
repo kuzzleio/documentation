@@ -27,7 +27,7 @@ The best way to start developing a plugin is to use one of our boilerplates.
 These boilerplates contain a Kuzzle stack that reloads itself whenever a plugin change is detected, making them handy tools for plugin development.
 
 2 boilerplates are available:
- - [kuzzle-core-plugin-boilerplate](https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate): contain a simple example of all plugin functionnalities
+ - [kuzzle-core-plugin-boilerplate](https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate): contains a simple example of all plugin functionnalities
  - [kuzzle-plugin-advanced-boilerplate](https://github.com/kuzzleio/kuzzle-plugin-advanced-boilerplate): production boilerplate with better separation of concerns
 
 Just clone one of these repositories to start developing a Kuzzle plugin:
