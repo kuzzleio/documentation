@@ -1,6 +1,6 @@
 kuzzleio::Kuzzle *kuzzle = new kuzzleio::Kuzzle(
   new kuzzleio::WebSocket("kuzzle"));
 
-kuzzle->setAutoReplay(true);
+kuzzle->autoReplay(true);
 
-kuzzle->setVolatile(R"({ username: "Aschen" })");
+kuzzle->volatiles(R"({ username: "Aschen" })");

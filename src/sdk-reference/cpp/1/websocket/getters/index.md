@@ -19,7 +19,7 @@ unsigned int getPort()
 
 ## isSslConnection
 
-Returns a boolean indicating is the protocol instance is using SSL or not.
+Returns a boolean indicating if the protocol instance is using SSL or not.
 
 ### Arguments
 

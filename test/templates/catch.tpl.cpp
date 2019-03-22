@@ -24,5 +24,11 @@ int main() {
   } catch (kuzzleio::KuzzleException &e) {
     std::cout << "Success" << std::endl;
   }
+
+  kuzzle->disconnect();
+
+  delete kuzzle;
+  delete ws;
+
   return 0;
 }
