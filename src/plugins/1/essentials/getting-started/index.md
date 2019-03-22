@@ -30,7 +30,7 @@ These boilerplates contain a Kuzzle stack that reloads itself whenever a plugin 
  - [kuzzle-core-plugin-boilerplate](https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate): contains a simple example of all plugin functionnalities
  - [kuzzle-plugin-advanced-boilerplate](https://github.com/kuzzleio/kuzzle-plugin-advanced-boilerplate): production boilerplate with better separation of concerns
 
-Just clone one of these repositories to start developing a Kuzzle plugin:
+Clone one of these repositories to start developing a Kuzzle plugin:
 
 ```bash
 git clone https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate
