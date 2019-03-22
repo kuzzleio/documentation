@@ -24,7 +24,7 @@ A single plugin can implement as many of those interfaces as necessary.
 
 The best way to start developing a plugin is to use a boilerplate.
 
-We provide a boilerplate that contain a Kuzzle stack specially designed for plugin development:
+We provide a boilerplate that contain a Kuzzle stack that reloads itself whenever a plugin change is detected, making it a handy tool for plugin development.
  - [kuzzle-core-plugin-boilerplate](https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate)
 
 Clone this repository to start developing a Kuzzle plugin:
