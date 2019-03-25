@@ -10,7 +10,7 @@ Refreshes a valid, non-expired authentication token.
 
 If this action is successful, all further requests emitted by this SDK instance will use the refreshed authentication token.
 
-<br/>
+## Arguments
 
 ```javascript
 refreshToken ([options])
@@ -31,6 +31,10 @@ Additional query options
 | -------------- | --------- | ------------- |
 | `expiresIn` | <pre>string</pre> | Expiration time in [ms library](https://www.npmjs.com/package/ms) format. (e.g. `2h`) |
 | `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
+
+### expiresIn
+
+The default value for the `expiresIn` option is defined at server level, in Kuzzle's [configuration file]({{ site_base_map }}guide/1/essentials/configuration/).
 
 ## Resolves
 
