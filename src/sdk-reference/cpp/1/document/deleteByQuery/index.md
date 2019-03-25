@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: deleteByQuery
 description: Delete documents matching query
-order: 200
 ---
 
 # deleteByQuery

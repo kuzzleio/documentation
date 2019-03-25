@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: replace
 description: Replace a document
-order: 200
 ---
 
 # replace

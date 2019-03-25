@@ -2,7 +2,6 @@
 layout: sdk.html.hbs
 title: mCreateOrReplace
 description: Create or replace documents in kuzzle
-order: 200
 ---
 
 # mCreateOrReplace

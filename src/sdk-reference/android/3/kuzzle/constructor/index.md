@@ -44,7 +44,7 @@ This is the main entry point to communicate with Kuzzle. Every other object inhe
 | ``queueMaxSize`` | integer | Number of maximum requests kept during offline mode | ``500`` |
 | ``replayInterval`` | integer | Delay between each replayed requests, in milliseconds | ``10`` |
 | ``reconnectionDelay`` | integer | number of milliseconds between reconnection attempts | ``1000`` |
-| ``sslConnection`` | boolean | Switch Kuzzle connection to SSL mode | ``false`` |
+| ``ssl`` | boolean | Switch Kuzzle connection to SSL mode | ``false`` |
 
 **Notes:**
 
@@ -72,7 +72,7 @@ This is the main entry point to communicate with Kuzzle. Every other object inhe
 | ``queueTTL`` | integer | Time a queued request is kept during offline mode, in milliseconds | Yes |
 | ``replayInterval`` | integer | Delay between each replayed requests | Yes |
 | ``reconnectionDelay`` | integer | Number of milliseconds between reconnection attempts | No |
-| ``sslConnection`` | boolean | Connect to Kuzzle using SSL | No |
+| ``ssl`` | boolean | Connect to Kuzzle using SSL | No |
 | ``volatile`` | JSON object | Common volatile data, will be sent to all future requests | Yes |
 **Notes:**
 
