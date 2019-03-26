@@ -10,7 +10,7 @@ order: 400
 The Kuzzle SDK provides a set of properties that help your application to be resilient to the loss of network connection
 during its lifespan. 
 
-## Kuzzle SDK properties
+## Contructor options and properties
 
 These properties can be set in the `options` object when [instantiating a new SDK]({{ site_base_path }}sdk-reference/js/6/kuzzle/constructor/#arguments).  
 
@@ -74,7 +74,7 @@ A writable `Function` called by the SDK before playing the requests in the `offl
 and returns an array of `Request` that are added on top of the `offlineQueue`. Use it to inject new requests to be played
 before the queue.
 
-## Kuzzle SDK methods
+## Methods
 
 ### [startQueuing()]({{ site_base_path }}sdk-reference/js/6/kuzzle/start-queuing/)
 

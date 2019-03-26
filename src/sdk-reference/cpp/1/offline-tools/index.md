@@ -10,7 +10,7 @@ order: 100
 The Kuzzle SDK provides a set of options and methods that help your application to be resilient to the loss of network connection
 during its lifespan.   
 
-## Kuzzle SDK constructor options
+## Constructor options
 
 These options must be set in the `kuzzleio::options` object when [instantiating a new SDK]({{ site_base_path }}sdk-reference/cpp/1/kuzzle/constructor/#arguments).
 
@@ -57,7 +57,7 @@ A `boolean` telling the SDK whether to automatically renew or not all subscripti
 
 Default value: `true`
 
-## Kuzzle SDK methods
+## Methods
 
 ### [startQueuing()]({{ site_base_path }}sdk-reference/cpp/1/kuzzle/start-queuing/)
 
