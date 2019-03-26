@@ -18,7 +18,7 @@ Neither Kuzzle internal indexes nor Plugin indexes are deleted.
 ### HTTP
 
 ```http
-URL: http://kuzzle:7512/admin/_resetDatabase
+URL: http://kuzzle:7512/admin/_resetDatabase[?refresh=wait_for]
 Method: POST
 ```
 
@@ -31,6 +31,12 @@ Method: POST
   "action": "resetDatabase"
 }
 ```
+
+## Arguments
+
+### Optional:
+
+* `refresh`: if set to `wait_for`, Kuzzle will not respond until indexes are deleted
 
 ---
 
