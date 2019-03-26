@@ -6,6 +6,8 @@ description: Refresh an authentication token
 
 # refreshToken
 
+{{{since "6.1.0"}}}
+
 Refreshes a valid, non-expired authentication token.
 
 If this action is successful, all further requests emitted by this SDK instance will use the refreshed authentication token.
