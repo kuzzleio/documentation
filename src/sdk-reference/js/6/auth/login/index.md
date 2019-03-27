@@ -8,7 +8,9 @@ description: Authenticate a user
 
 Authenticates a user.
 
-<br/>
+If this action is successful, all further requests emitted by this SDK instance will be in the name of the authenticated user, until either the authenticated token expires, the [logout]({{ site_base_path }}sdk-reference/js/6/auth/logout) action is called, or the [jwt]({{ site_base_path }}sdk-reference/js/6/kuzzle/introduction/#properties) property is manually unset.
+
+## Arguments
 
 ```javascript
 login (strategy, [credentials], [expiresIn])
@@ -22,7 +24,7 @@ login (strategy, [credentials], [expiresIn])
 | ``credentials`` | <pre>object</pre> | Credentials for the strategy |
 | ``expiresIn`` | <pre>string</pre> | Expiration time in [ms library](https://www.npmjs.com/package/ms) format. (e.g. `2h`) |
 
-#### strategy
+### strategy
 
 The name of the [authentication strategy]({{ site_base_path }}guide/1/kuzzle-depth/authentication) used to log the user in.
 
@@ -30,6 +32,10 @@ Depending on the chosen authentication strategy, additional credential arguments
 The API request example in this page provides the necessary arguments for the [`local` authentication plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local).
 
 Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/essentials/strategies/) documentation to get the list of additional arguments to provide.
+
+### expiresIn
+
+The default value for the `expiresIn` option is defined at server level, in Kuzzle's [configuration file]({{ site_base_map }}guide/1/essentials/configuration).
 
 ## Resolves
 
