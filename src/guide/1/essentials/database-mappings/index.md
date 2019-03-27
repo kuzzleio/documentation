@@ -6,12 +6,12 @@ order: 400
 
 # Database mappings
 
-With Elasticsearch, it is possible to define mappings for collections. These mappings allow you to configure the way Elasticsearch will handle these collections.
+With Elasticsearch, it is possible to define mappings for collections. These mappings allows you to configure the way Elasticsearch will handle these collections.
 
 There are 3 root fields for mapping configuration:
- - `dynamic`: dynamic mapping policy against new fields
- - `_meta`: collection metadata
- - `properties`: collection types definition
+ - [properties]({{ site_base_path}}guide/1/essentials/database-mappings/#properties-types-definition): collection types definition
+ - [dynamic]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy): dynamic mapping policy against new fields
+ - [_meta]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata): collection metadata
 
 The following API methods can be used to modify these mappings:
  - [collection:create]({{ site_base_path }}api/1/controller-collection/create/)
@@ -23,7 +23,7 @@ The following API methods can be used to modify these mappings:
 
 The definition of the types of fields that will be inserted in a collection allows Elasticsearch to optimize the indexing of your data for future searches.  
 
-Especially when searching on special fields such as `date` or `geo_shape` types.
+Especially when searching on fields with special types such as `date` or `geo_shape`.
 
 <div class="alert alert-warning">
 Once a type has been defined for a field, it is not possible to modify it later.
@@ -113,7 +113,7 @@ If you want a `strict` dynamic policy for your entire collection, you have to de
   "properties": {
     "driver": {
       "dynamic": "false"
-      "properties": // allow insertion of new fields in the driver
+      "properties": // allow insertion of new fields in the driver nested field
     }
   }
 }

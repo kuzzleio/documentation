@@ -8,7 +8,7 @@ description: Update the collection mapping
 
 Updates a collection mapping.
 
-{{{since Kuzzle "1.7.1"}}}
+{{{since "Kuzzle 1.7.1"}}}
 
 You can define the collection [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) by setting the `dynamic` field to the desired value.
 
