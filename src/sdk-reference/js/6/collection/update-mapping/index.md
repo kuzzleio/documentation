@@ -35,7 +35,7 @@ An object representing the data mapping of the collection.
 
 ```js
 const mapping = {
-  dynamic: 'false',
+  dynamic: '[true|false|strict]',
   _meta: {
     field: 'value'
   },
@@ -50,7 +50,7 @@ const mapping = {
 };
 ```
 
-More informations about collection mapping: {{ site_base_path}}guide/1/essentials/database-mappings
+More information about collection mapping: {{ site_base_path}}guide/1/essentials/database-mappings
 
 ### options
 

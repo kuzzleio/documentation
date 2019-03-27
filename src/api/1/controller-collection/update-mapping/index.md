@@ -29,7 +29,7 @@ Body:
 
 ```js
 {
-  "dynamic": "false",
+  "dynamic": "[true|false|strict]",
   "_meta": {
     "field": "value"
   },
@@ -57,7 +57,7 @@ Body:
   "controller": "collection",
   "action": "updateMapping",
   "body": {
-    "dynamic": "false",
+  "dynamic": "[true|false|strict]",
     "_meta": {
       "field": "value"
     },
@@ -90,7 +90,7 @@ Body:
 
 ### Optional:
 
-* `dynamic`: [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) for new fields
+* `dynamic`: [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) for new fields. Allowed values: `true` (default), `false`, `strict`
 * `_meta`: [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) stored next to the collection
 * `properties`: object describing the data mapping to associate to the new collection, using [Elasticsearch types definitions format]({{ site_base_path}}guide/1/essentials/database-mappings/#properties-types-definition)
 

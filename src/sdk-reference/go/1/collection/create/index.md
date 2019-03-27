@@ -43,7 +43,7 @@ A `json.RawMessage` containing the representation of the collection mapping.
 
 ```json
 {
-  "dynamic": "false",
+  "dynamic": "[true|false|strict]",
   "_meta": {
     "field": "value"
   },
@@ -58,7 +58,7 @@ A `json.RawMessage` containing the representation of the collection mapping.
 }
 ```
 
-More informations about collection mapping: {{ site_base_path}}guide/1/essentials/database-mappings
+More information about collection mapping: {{ site_base_path}}guide/1/essentials/database-mappings
 
 ### options
 

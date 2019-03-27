@@ -6,7 +6,7 @@ order: 400
 
 # Database mappings
 
-With Elasticsearch, it is possible to define mappings for collections. These mappings allows you to configure the way Elasticsearch will handle these collections.
+With Elasticsearch, it is possible to define mappings for collections. These mappings allow you to configure the way Elasticsearch will handle these collections.
 
 There are 3 root fields for mapping configuration:
  - [properties]({{ site_base_path}}guide/1/essentials/database-mappings/#properties-types-definition): collection types definition
@@ -21,7 +21,7 @@ The following API methods can be used to modify these mappings:
 
 ## Properties types definition
 
-The definition of the types of fields that will be inserted in a collection allows Elasticsearch to optimize the indexing of your data for future searches.  
+The field type definitions that will be inserted in a collection allow Elasticsearch to index your data for future searches.  
 
 Especially when searching on fields with special types such as `date` or `geo_shape`.
 
@@ -77,7 +77,7 @@ curl -X POST -d '{"category":"limousine","distance":120990,"position":{"lat":27.
 <div class="alert alert-warning">
 Because of the way Elasticsearch manages collections, mappings are shared between indexes.
 <br/>
-This means that if I have an index <code>nyc-open-data</code>, two collections <code>yellow-taxi</code> and <code>green-taxi</code> and a field <code>name</code> with type <code>keyword</code> in the collection <code>yellow-taxi</code>, I couldn't have a field <code>name</code> with a different type in the collection <code>green-taxi</code>.
+This means that if I have an index <code>nyc-open-data</code>, two collections <code>yellow-taxi</code> and <code>green-taxi</code> and a field <code>name</code> with type <code>keyword</code> in the collection <code>yellow-taxi</code>, then I can't have a field <code>name</code> with a different type in the collection <code>green-taxi</code>.
 </div>
 
 ---
