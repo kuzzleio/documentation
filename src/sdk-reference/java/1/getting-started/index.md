@@ -45,7 +45,7 @@ Initialize a new Java project, create a `gettingstartedfirstconnection.java` fil
 
 [snippet=firstconnection]
 
-This program initializes the Kuzzle Server storage by creating a index, and a collection inside it
+This program initializes the Kuzzle Server storage by creating an index, and a collection inside it
 Run the program with the following command:
 
 ```bash
@@ -59,7 +59,7 @@ Collection yellow-taxi created!
 Congratulations, you performed your first connection to Kuzzle Server via a Java program.
 You now know how to:
 * Instantiate Kuzzle SDK and connect to Kuzzle Server using a specific protocol (here `websocket`)
-* Create a index
+* Create an index
 * Create a collection within an existing index
 
 ## Create your first document

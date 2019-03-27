@@ -226,7 +226,7 @@ metalsmith
   );
 
 if (options.algolia.privateKey) {
-  log('Algolia indexing enabled');
+  log('Algolian indexing enabled');
   metalsmith
     // Add algolia metas automatically only on
     // the last children of the tree structure (Leaf of the arborescence)

@@ -35,7 +35,7 @@ Then create a `init.go` file and start by adding the code below:
 
 [snippet=init]
 
-This program initializes the Kuzzle server storage by creating a index, and a collection inside it
+This program initializes the Kuzzle server storage by creating an index, and a collection inside it
 Run the program with the following command:
 
 ```bash
@@ -50,7 +50,7 @@ You are now able to:
 * Load the `Kuzzle Go SDK` from your `GOPATH` directory
 * Instantiate a protocol (here `websocket`) and a Kuzzle SDK instance
 * Connect to a Kuzzle instance running on `localhost`, with the WebSocket protocol
-* Create a index
+* Create an index
 * Create a collection within an existing index
 
 ## Create your first document
