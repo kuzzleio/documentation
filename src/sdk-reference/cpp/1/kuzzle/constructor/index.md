@@ -44,7 +44,7 @@ Kuzzle SDK instance options.
 | `auto_replay`        | <pre>bool</pre><br/>(`false`)  | Automatically replay queued requests on a `EVENT_RECONNECTED` event |
 | `auto_resubscribe`   | <pre>bool</pre><br/>(`true`)  | Automatically renew all subscriptions on a `EVENT_RECONNECTED` event |
 | `offline_mode`       | <pre>enum Mode</pre><br/>(`MANUAL`) | Offline mode configuration. `MANUAL` or `AUTO` |
-| `queue_ttl`          | <pre>unsigned</pre><br/>(`120000`) | Time a queued request is kept during offline mode, in milliseconds |
+| `queue_ttl`          | <pre>unsigned int</pre><br/>(`120000`) | Time a queued request is kept during offline mode, in milliseconds |
 | `queue_max_size`     | <pre>unsigned long</pre><br/>(`500`) | Number of maximum requests kept during offline mode |
 | `replay_interval`    | <pre>unsigned long</pre><br/>(`10`) | Delay between each replayed requests, in milliseconds |
 | `reconnection_delay` | <pre>unsigned long</pre><br/>(`10000`) | Number of milliseconds between reconnection attempts |

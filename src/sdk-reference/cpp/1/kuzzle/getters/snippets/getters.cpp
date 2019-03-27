@@ -5,13 +5,13 @@ std::string jwt_token = kuzzle->jwt();
 
 kuzzleio::Protocol *protocol = kuzzle->getProtocol();
 
-int max_size = kuzzle->queueMaxSize();
+unsigned long max_size = kuzzle->queueMaxSize();
 
-int queue_ttl = kuzzle->queueTTL();
+unsigned int queue_ttl = kuzzle->queueTTL();
 
-int replay_interval = kuzzle->replayInterval();
+unsigned long replay_interval = kuzzle->replayInterval();
 
-int reconnection_delay = kuzzle->reconnectionDelay();
+unsigned long reconnection_delay = kuzzle->reconnectionDelay();
 
 std::string volatile_data = kuzzle->volatiles();
 
