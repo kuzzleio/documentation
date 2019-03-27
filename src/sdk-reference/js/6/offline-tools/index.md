@@ -87,7 +87,7 @@ Sends to Kuzzle all the requests in the `offlineQueue`. Works only if the SDK is
 
 ### [startQueuing()]({{ site_base_path }}sdk-reference/js/6/kuzzle/start-queuing/)
 
-Starts queuing requests when in `offline` state. Request will be put in the `offlineQueue` instead of being discarded, until `stopQueuing` is called.
+Starts queuing requests when in `offline` state. Requests will be put in the `offlineQueue` array instead of being discarded, until `stopQueuing` is called.
 Works only in `offline` state when the `autoQueue` option is set to `false`. Call `playQueue` to send to Kuzzle the
 requests in the queue, once the SDK state passes to `online`. Call `flushQueue` to empty the queue without sending the requests.
 
