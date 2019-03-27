@@ -8,9 +8,8 @@ order: 0
 # SearchResult
 
 The class is used to retrieve the subsequent paginated results of a search query.  
-The following methods returns a `SearchResult` or a `SpecificationSearchResult` (which acts the same):
- - [document:search]({{ site_base_path }}sdk-reference/cpp/1/document/search)
- - [collection:searchSpecifications]({{ site_base_path }}sdk-reference/cpp/1/collection/search-specifications)
+The following methods returns a `SearchResult` instance:
+  - [document:search]({{ site_base_path }}sdk-reference/cpp/1/document/search)
 
 ## Public class definition
 
@@ -18,19 +17,14 @@ The following methods returns a `SearchResult` or a `SpecificationSearchResult` 
 namespace kuzzleio {
     class SearchResult {
         public:
-            SearchResult* next() const;
+            std::shared_ptr<SearchResult> next() const;
 
             // Getters
+            char const* aggregations() const;
+            char const* hits() const;
+            char const* scroll_id() const;
             size_t total() const;
             size_t fetched() const;
-            const std::string& aggregations() const;
-            const std::string& hits() const;
-            const std::string& scroll_id() const;
-    };
-
-    class SpecificationSearchResult : public SearchResult {
-        public:
-            SpecificationSearchResult* next() const;
     };
 }
 ```

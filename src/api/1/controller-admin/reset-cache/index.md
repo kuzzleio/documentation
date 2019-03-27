@@ -24,6 +24,8 @@ Method: POST
 
 ```js
 {
+  "controller": "admin",
+  "action": "resetCache",
   "database": "internalCache"
 }
 ```

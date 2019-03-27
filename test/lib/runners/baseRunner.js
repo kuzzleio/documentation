@@ -45,7 +45,8 @@ module.exports = class BaseRunner {
         if (error) {
           const res = {
             code: 'ERR_ASSERTION',
-            actual: error.actual || error
+            actual: error.actual || error,
+            output: stdout
           };
 
           reject(new TestResult(res));
