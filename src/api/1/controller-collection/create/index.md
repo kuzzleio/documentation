@@ -11,23 +11,15 @@ Creates a new [collection]({{ site_base_path }}guide/1/essentials/persisted), in
 
 {{{since "1.3.0"}}}
 
-You can also provide an optional body with a data mapping that allow you to exploit the full capabilities of our persistent data storage layer.
+You can also provide an optional body with a [collection mapping]({{ site_base_path }}guide/1/essentials/database-mappings) that allow you to exploit the full capabilities of our persistent data storage layer.
 
 This method will only update the mapping when the collection already exists.
 
 {{{since "1.7.1"}}}
 
-For each collection, you can set the policy against new fields that are not referenced in the collection mapping
-The value of this configuration will change the way Elasticsearch manages the creation of new fields that are not declared in the collection mapping.
-  - "true": Stores the document and updates the collection mapping with the inferred type
-  - "false": Stores the document and does not update the collection mapping (fields are not indexed)
-  - "strict": Rejects the document
-  
-See https://www.elastic.co/guide/en/elasticsearch/guide/current/dynamic-mapping.html
+You can define the collection [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) by setting the `dynamic` field to the desired value.
 
-_meta => nepalea: { liaa: 'meh ry' }
-
-dynamic
+You can define [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) within the `_meta` root field.
 
 ---
 
@@ -43,6 +35,10 @@ Body:
 
 ```js
 {
+  "dynamic": "false",
+  "_meta": {
+    "field": "value"
+  },
   "properties": {
     "field1": { 
       "type": "integer"
@@ -51,8 +47,8 @@ Body:
       "type": "keyword"
     },
     "field3": {
-        "type":   "date",
-        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+      "type":   "date",
+      "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
     }
   }
 }
@@ -68,6 +64,10 @@ Body:
   "controller": "collection",
   "action": "create",
   "body": {
+    "dynamic": "false",
+    "_meta": {
+      "field": "value"
+    },
     "properties": {
       "field1": { 
         "type": "integer"
@@ -76,8 +76,8 @@ Body:
         "type": "keyword"
       },
       "field3": {
-          "type":   "date",
-          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+        "type":   "date",
+        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
       }
     }
   }
@@ -88,8 +88,8 @@ Body:
 
 ## Arguments
 
-* `collection`: data collection to create
-* `index`: data index that will host the new data collection
+* `collection`: name of the collection to create
+* `index`: index that will host the new collection
 
 ---
 
@@ -97,7 +97,9 @@ Body:
 
 ### Optional:
 
-* `properties`: object describing the data mapping to associate to the new collection, using [Elasticsearch mapping format](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
+* `dynamic`: [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) for new fields
+* `_meta`: [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) stored next to the collection
+* `properties`: object describing the data mapping to associate to the new collection, using [Elasticsearch types definitions format]({{ site_base_path}}guide/1/essentials/database-mappings/#properties-types-definition)
 
 ---
 

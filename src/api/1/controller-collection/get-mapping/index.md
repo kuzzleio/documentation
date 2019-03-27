@@ -7,7 +7,11 @@ title: getMapping
 
 {{{since "1.0.0"}}}
 
-Returns a data collection mapping.
+Returns the collection mapping.
+
+{{{since "1.7.1"}}}
+
+Also returns the collection [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) and [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata).
 
 ---
 
@@ -36,8 +40,8 @@ Method: GET
 
 ## Arguments
 
-* `collection`: data collection
-* `index`: data index
+* `collection`: collection name
+* `index`: index name
 
 ---
 
@@ -47,13 +51,17 @@ Returns a mapping object with the following structure:
 
 ```
 <index>
-   |- mappings
-         |- <collection>
-               |- properties
-                     |- mapping for field 1
-                     |- mapping for field 2
-                     |- ...
-                     |- mapping for field n
+  |- mappings
+    |- <collection>
+      |- dynamic
+      |- _meta
+        |- metadata 1
+        |- metadata 1
+      |- properties
+        |- mapping for field 1
+        |- mapping for field 2
+        |- ...
+        |- mapping for field n
 ```
 
 ### Example:
@@ -71,16 +79,16 @@ Returns a mapping object with the following structure:
     "<index>": {
       "mappings": {
         "<collection>": {
+          "dynamic": "true",
+          "_meta": {
+            "metadata1": "value1"
+          },
           "properties": {
-            "field1": { 
-              "type": "integer"
-            },
-            "field2": {
-              "type": "keyword"
-            },
+            "field1": { "type": "integer" },
+            "field2": { "type": "keyword" },
             "field3": {
-                "type":   "date",
-                "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+              "type":   "date",
+              "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
             }
           }
         }

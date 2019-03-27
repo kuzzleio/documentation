@@ -43,7 +43,7 @@ If I want the following document to be correctly indexed:
     "lon": 85.328467
   },
   "driver": {
-    "name": "liia"
+    "name": "liia mhe ry"
   }
 }
 ```
@@ -71,7 +71,7 @@ This mapping is then passed in the body to the methods [collection:create]({{ si
 curl -X PUT -d '{"properties":{"category":{"type":"keyword"},"distance":{"type":"integer"},"position":{"type":"geo_point"},"driver":{"properties":{"name":{"type":"keyword"}}}}}' -H "Content-Type: application/json" "http://localhost:7512/nyc-open-data/yellow-taxi?pretty"
 
 # Then create the desired document
-curl -X POST -d '{"category":"limousine","distance":120990,"position":{"lat":27.7304,"lon":85.328467},"driver":{"name":"liia"}}' -H "Content-Type: application/json" "http://localhost:7512/nyc-open-data/yellow-taxi/_create?pretty"
+curl -X POST -d '{"category":"limousine","distance":120990,"position":{"lat":27.7304,"lon":85.328467},"driver":{"name":"liia meh ry"}}' -H "Content-Type: application/json" "http://localhost:7512/nyc-open-data/yellow-taxi/_create?pretty"
 ```
 
 <div class="alert alert-warning">
@@ -139,19 +139,21 @@ These metadata are ignored by Elasticsearch, they can contain any type of inform
 
 Refer to Elasticsearch documentation for more informations: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping-meta-field.html
 
+These metadata can be retrieved with the [collection:getMapping]({{ site_base_path }}api/1/controller-collection/get-mapping/) API method.
+
 ### Example
 
 ```javascript
 {
   "_meta": {
-    "driversPerimeter": "Panipokhari"
+    "area": "Panipokhari"
   }
 }
 ```
 <br/>
 ```bash
 # Add collection metadata
-curl -X PUT -d '{ "_meta": { "driversPerimeter": "Panipokhari" } }' -H "Content-Type: application/json"  "http://localhost:7512/nyc-open-data/yellow-taxi/_mapping?pretty"
+curl -X PUT -d '{ "_meta": { "area": "Panipokhari" } }' -H "Content-Type: application/json"  "http://localhost:7512/nyc-open-data/yellow-taxi/_mapping?pretty"
 
 # Retrieve it
 curl -X GET -H "Content-Type: application/json"  "http://localhost:7512/nyc-open-data/yellow-taxi/_mapping?pretty"
