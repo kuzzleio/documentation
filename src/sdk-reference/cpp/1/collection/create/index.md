@@ -53,7 +53,7 @@ void create(
 
 ### mapping
 
-A JSON string representing the collection data mapping.
+A JSON string representing the collection mapping.
 
 ```json
 {
