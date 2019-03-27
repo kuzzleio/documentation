@@ -84,7 +84,7 @@ You should receive the following response:
 }
 ```
 
-**Note:**  we have just created a new collection without specifying any mappings. As a result, the database layer will automatically create a mapping that assigns a best guess data type to any new field it detects in input documents. Since these mappings cannot be changed once they are created, we strongly recommend that you [**create your own mappings**]({{ site_base_path }}guide/1/essentials/persisted/#mappings) as soon as the collection has been created. For the purpose of this tutorial, we will continue without defining our own mappings.
+**Note:**  we have just created a new collection without specifying any mappings. As a result, the database layer will automatically create a mapping that assigns a best guess data type to any new field it detects in input documents. Since these mappings cannot be changed once they are created, we strongly recommend that you [**create your own mappings**]({{ site_base_path }}guide/1/essentials/database-mappings) as soon as the collection has been created. For the purpose of this tutorial, we will continue without defining our own mappings.
 
 ---
 
@@ -489,56 +489,6 @@ You should receive the following response (with your own `_id` values):
   }
 }
 ```
-
----
-
-## Mappings
-
-Kuzzle uses Elasticsearch as a persistent document store, which uses mappings to assign a type to a document field. These mappings are attached to a `collection` (aka `type` in Elasticsearch terminology) and are automatically inferred from input documents if no mappings are preconfigured.
-
-If you want to control how Kuzzle interprets your documents, we recommend that you configure your own mappings using our mappings creation endpoint.
-
-Create a mapping by sending a `PUT` request to the `http://localhost:7512/<index name>/<collection name>/_mapping` and setting the mapping in the request body.
-
-Use [this](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html) syntax when definng a mapping. For example, if we want to create a mapping that will define a field `birthday` as a `date` type, we would send the following JSON in the body:
-
-```json
-{
-  "properties": {
-    "birthday": {
-      "type": "date"
-    }
-  }
-}
-```
-
-Let's try it:
-
-```bash
- curl -X PUT -H "Content-Type: application/json" -d '{"properties":{"birthday":{"type": "date"}}}' http://localhost:7512/myindex/mycollection/_mapping
-```
-
-You should receive the following response:
-
-```json
-{
-  "requestId": "<random unique request id>",
-  "status": 200,
-  "error": null,
-  "controller": "collection",
-  "action": "updateMapping",
-  "collection": "mycollection",
-  "index": "myindex",
-  "volatile": null,
-  "result": {
-    "acknowledged": true
-  }
-}
-```
-
-Here we have now defined the type `date` for the field labeled `birthday` in our `mycollection` collection. Defining types in this way can be especially useful when dealing with specific types (`date`, `geo_shape`, etc.), full-text search, or complex data structures.
-
-Please note that the mappings of a collection cannot be updated once they are created, this is true whether you create the rules yourself using our API or whether Elasticsearch generates the rules automatically based on the input documents it processes. Because of this, you should almost always define mappings when you first create your collections and before creating any documents.
 
 ---
 
