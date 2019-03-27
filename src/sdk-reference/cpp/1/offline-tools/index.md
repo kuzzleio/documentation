@@ -7,7 +7,7 @@ order: 100
 
 # Offline tools
 
-The Kuzzle SDK provides a set of options and methods that help your application to be resilient to the loss of network connection
+The Kuzzle SDK provides a set of options and methods that helps your application to be resilient to the loss of network connection
 during its lifespan.   
 
 ## Constructor options

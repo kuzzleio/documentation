@@ -6,7 +6,7 @@ order: 1000
 
 # Signal Handling
 
-Kuzzle handles certain Unix signals which fall into the following three categories:
+Kuzzle handles certain Unix signals which fit into the following three categories:
 
  * Abnormal termination
  * Normal termination
@@ -22,7 +22,7 @@ Unix signal names:
  * `SIGPIPE`
 
  These signals are the result of a critical error and will force Kuzzle to shutdown.
- When one of the aforementioned Unix signals is detected, Kuzzle will first generate a [dump report]({{ site_base_path }}guide/1/essentials/cli#dump) and then shutdown.
+ When one of the aforementioned Unix signals is detected, Kuzzle will first generate a [dump report]({{ site_base_path }}guide/1/essentials/cli#dump) then shutdown.
 
 ## Normal termination  
 
@@ -31,7 +31,7 @@ Unix signal names:
  * `SIGINT`
 
  These signals are the result of a request to terminate gracefully.
- When one of the aforementioned Unix signals is detected, Kuzzle will refuse new requests, exit the cluster, finish the current request queue and then shutdown.
+ When one of the aforementioned Unix signals is detected, Kuzzle will refuse new requests, exit the cluster, finish the current request queue then shutdown.
 
 ## Dump report
 
