@@ -37,7 +37,7 @@ Method: GET
 
 ## Arguments
 
-* `index`: data index
+* `index`: index name
 
 ---
 

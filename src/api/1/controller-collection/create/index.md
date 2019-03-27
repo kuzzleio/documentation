@@ -74,8 +74,8 @@ Body:
 
 ## Arguments
 
-* `collection`: data collection to create
-* `index`: data index that will host the new data collection
+* `collection`: collection name to create
+* `index`: index name that will host the new collection
 
 ---
 

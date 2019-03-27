@@ -6,7 +6,7 @@ description: Collection:truncate
   
 
 # truncate
-Truncate the data collection, removing all stored documents but keeping all associated mappings.
+Truncate the collection, removing all stored documents but keeping all associated mappings.
 
 This method is a lot faster than removing all documents using multiple delete requests.
 

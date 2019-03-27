@@ -6,7 +6,7 @@ description: Update the collection mapping
 
 # updateMapping
 
-Updates a data collection mapping.
+Updates a collection mapping.
 
 <br/>
 

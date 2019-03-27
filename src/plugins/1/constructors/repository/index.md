@@ -7,9 +7,9 @@ title: Repository
 
 {{{since "1.0.0"}}}
 
-Provides access to a data collection inside the plugin's dedicated and secure storage.
+Provides access to a collection inside the plugin's dedicated and secure storage.
 
-If this is not already the case, the data collection must first be created, using the [storage]({{ site_base_path }}plugins/1/accessors/storage) accessor.
+If this is not already the case, the collection must first be created, using the [storage]({{ site_base_path }}plugins/1/accessors/storage) accessor.
 
 ---
 
@@ -23,7 +23,7 @@ new context.Repository(collection, [ObjectConstructor])
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `collection` | <pre>string</pre> | The repository's data collection to link to this class instance
+| `collection` | <pre>string</pre> | The repository's collection to link to this class instance
 | `ObjectConstructor` | <pre>object</pre> | If an `ObjectConstructor` class is provided, fetched data will be returned as instances of that class, instead of plain objects |
 
 ---
@@ -72,7 +72,7 @@ try {
   /*
    * Outputs:
    * { _index: '%<plugin name>',
-   *   _type: '<data collection>',
+   *   _type: '<collection>',
    *   _id: '<a unique id>',
    *   _version: 1,
    *   result: 'created',
@@ -136,7 +136,7 @@ try {
   /*
    * Outputs:
    * { _index: '%<plugin name>',
-   *   _type: '<data collection>',
+   *   _type: '<collection>',
    *   _id: '<a unique id>',
    *   _version: 3,
    *   result: 'created',
@@ -196,7 +196,7 @@ try {
    * Outputs:
    *  { found: true,
    *    _index: '%<plugin name>',
-   *    _type: '<data collection>',
+   *    _type: '<collection>',
    *    _id: 'someDocumentId',
    *    _version: 3,
    *    result: 'deleted',
@@ -308,7 +308,7 @@ try {
   /*
    * Outputs:
    * { _index: '%<plugin name>',
-   *   _type: '<data collection>',
+   *   _type: '<collection>',
    *   _id: '<a unique id>',
    *   _version: 3,
    *   _shards: { total: 2, successful: 1, failed: 0 },
@@ -442,7 +442,7 @@ try {
   /*
    * Outputs:
    * { _index: '%<plugin name>',
-   *   _type: '<data collection>',
+   *   _type: '<collection>',
    *   _id: '<a unique id>',
    *   _version: 1,
    *   result: 'updated',

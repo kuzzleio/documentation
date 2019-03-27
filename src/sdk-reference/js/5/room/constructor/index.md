@@ -36,7 +36,7 @@ The `Room` object is the result of a subscription request, allowing you to manip
 
 | Property name | Type | Description | get/set |
 |--------------|--------|-----------------------------------|---------|
-| ``collection`` | string | The subscribed data collection | get |
+| ``collection`` | string | The subscribed collection | get |
 | ``filters`` | JSON object | The current set of filters of this room | get/set |
 | ``headers`` | JSON Object | Common headers for all sent documents. | get/set |
 | ``volatile`` | JSON Object | Additional information passed to notifications to other users | get/set |

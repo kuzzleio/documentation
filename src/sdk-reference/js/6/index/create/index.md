@@ -6,7 +6,7 @@ description: Creates an index
 
 # create
 
-Creates a new data index.
+Creates a new index.
 
 <br/>
 

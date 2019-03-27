@@ -6,7 +6,7 @@ description: Deletes an index
 
 # delete
 
-Deletes a data index.
+Deletes a index.
 
 <br/>
 

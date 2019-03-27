@@ -35,7 +35,7 @@ Method: DELETE
 
 ## Arguments
 
-* `index`: index name to delete
+* `index`: index name name to delete
 
 ---
 

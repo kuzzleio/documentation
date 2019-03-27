@@ -6,7 +6,7 @@ description: Kuzzle:listCollections
   
 
 # listCollections
-Returns the list of known data collections contained in a specified index.
+Returns the list of known collections contained in a specified index.
 
 ---
 

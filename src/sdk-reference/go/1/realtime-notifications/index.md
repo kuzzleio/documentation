@@ -15,9 +15,9 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | Property | Type |Description       |
 |--------------------|------|------------------|
 | `Action` | string | API controller's action  |
-| `Collection` | string | Data collection |
+| `Collection` | string | Collection |
 | `Controller` | string | API controller  |
-| `Index` | string | Data index |
+| `Index` | string | Index |
 | `Protocol` | string | Network protocol used to modify the document |
 | `Result` | *types.NotificationResult | Notification content |
 | `RoomId` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
@@ -40,9 +40,9 @@ These notifications represent [user events]({{ site_base_path }}api/1/essentials
 | Property | Type |Description       |
 |--------------------|------|------------------|
 | `Action` | string | API controller's action  |
-| `Collection` | string | Data collection |
+| `Collection` | string | Collection |
 | `Controller` | string | API controller  |
-| `Index` | string | Data index |
+| `Index` | string | Index |
 | `Protocol` | string | Network protocol used by the entering/leaving user |
 | `Result` | *types.NotificationResult | Notification content |
 | `RoomId` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
