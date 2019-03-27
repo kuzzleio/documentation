@@ -280,7 +280,7 @@ if (options.dev.enabled) {
   metalsmith
     .use(
       serve({
-        port: 3000,
+        port: parseInt(process.env.PORT) || 3000,
         verbose: false,
         host: 'localhost'
       })

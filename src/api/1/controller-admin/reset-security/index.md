@@ -17,7 +17,7 @@ Then resets `anonymous`, `default` and `admin` profiles and roles to default val
 ### HTTP
 
 ```http
-URL: http://kuzzle:7512/admin/_resetSecurity
+URL: http://kuzzle:7512/admin/_resetSecurity[?refresh=wait_for]
 Method: POST
 ```
 
@@ -30,6 +30,11 @@ Method: POST
   "action": "resetSecurity"
 }
 ```
+## Arguments
+
+### Optional:
+
+* `refresh`: if set to `wait_for`, Kuzzle will not respond until roles, profiles and users are deleted
 
 ---
 
