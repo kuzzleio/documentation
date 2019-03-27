@@ -8,29 +8,24 @@ description: Authenticate a user
 
 Authenticates a user.
 
-## Signature
-
-```java
-String login(
-  String,
-  String,
-  int
-);
-String login(
-  String,
-  String
-);
-```
+If this action is successful, all further requests emitted by this SDK instance will be in the name of the authenticated user, until either the authenticated token expires, the [logout]({{ site_base_path }}sdk-reference/java/1/auth/logout) action is called, or the [jwt]({{ site_base_path }}sdk-reference/java/1/kuzzle/introduction/#properties) property is manually unset.
 
 ## Arguments
 
-| Arguments    | Type    | Description | Required
-|--------------|---------|-------------|----------
-| ``strategy`` | String | the name of the strategy to use    | yes
-| ``credentials`` | String | the json credentials | yes
-| ``expiresIn`` | int | expiration time in milliseconds | no
+```java
+String login(String strategy, String credentials, int expiresIn);
+String login(String strategy, String credentials);
+```
 
-#### ***strategy***
+<br/>
+
+| Arguments    | Type    | Description |
+|--------------|---------|-------------|
+| `strategy` | <pre>String</pre> | Name of the strategy to use |
+| `credentials` | <pre>String</pre> | Credentials for that strategy |
+| `expiresIn` | <pre>int</pre> | Token expiration time, in milliseconds |
+
+### strategy
 
 The name of the authentication [strategy]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#authentication) used to log the user in.
 
@@ -38,6 +33,10 @@ Depending on the chosen authentication `strategy`, additional [credential argume
 The API request example in this page provides the necessary arguments for the [`local` authentication plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local).
 
 Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/essentials/strategies/) documentation to get the list of additional arguments to provide.
+
+### expiresIn
+
+The default value for the `expiresIn` option is defined at server level, in Kuzzle's [configuration file]({{ site_base_map }}guide/1/essentials/configuration).
 
 ## Return
 
