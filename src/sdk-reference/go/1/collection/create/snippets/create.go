@@ -1,4 +1,4 @@
-mapping := json.RawMessage(`{"properties":{"license": {"type": "keyword"}}}`)
+mapping := json.RawMessage(`{ "dynamic": "false","_meta": { "area": "Panipokhari" }, "properties":{"license": {"type": "keyword"}}}`)
 err := kuzzle.Collection.Create("nyc-open-data", "yellow-taxi", mapping, nil)
 
 if err != nil {
