@@ -6,7 +6,7 @@ description: Returns the collection list of an index
 
 # list
 
-Returns the list of data collections associated to a provided data index.
+Returns the list of collections associated to a provided index.
 The returned list is sorted in alphanumerical order.
 
 <br/>

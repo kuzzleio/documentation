@@ -7,7 +7,7 @@ title: getMapping
 
 {{{since "1.0.0"}}}
 
-Returns a data collection mapping.
+Returns a collection mapping.
 
 ---
 
@@ -36,8 +36,8 @@ Method: GET
 
 ## Arguments
 
-* `collection`: data collection
-* `index`: data index
+* `collection`: collection name
+* `index`: index name
 
 ---
 

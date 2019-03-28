@@ -27,7 +27,7 @@ Kuzzle handles two types of documents: realtime messages and stored documents. D
 
 | Property name | Type | Description | get/set |
 |--------------|--------|-----------------------------------|---------|
-| ``collection`` | string | The data collection associated to this document | get |
+| ``collection`` | string | The collection associated to this document | get |
 | ``content`` | JSON Object | The content of the document | get/set |
 | ``headers`` | JSON Object | Common headers for all sent documents. | get/set |
 | ``id`` | string | Unique document identifier | get/set |

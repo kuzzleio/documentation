@@ -34,7 +34,7 @@ Method: GET
 
 ## Arguments
 
-* `index`: index name to test for existence
+* `index`: index name name to test for existence
 
 ---
 

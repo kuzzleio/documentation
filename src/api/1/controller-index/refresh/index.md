@@ -40,7 +40,7 @@ Method: POST
 
 ## Arguments
 
-* `index`: data index to refresh
+* `index`: index name to refresh
 
 ---
 

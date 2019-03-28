@@ -47,8 +47,8 @@ Each right is an object with the following properties:
 
 * `controller`: API controller
 * `action`: controller's action
-* `index`: authorized or denied data index
-* `collection`: authorized or denied data collection
+* `index`: authorized or denied index
+* `collection`: authorized or denied collection
 * `value`: one of the following value: `denied`, `allowed`, or `conditional`
 
 ```javascript

@@ -34,9 +34,9 @@ The `data` object can contain the following properties:
 | `_id` | <pre>string</pre> | Resource unique identifier |
 | `action` | <pre>string</pre> | Invoked API controller's action |
 | `body` | <pre>object</pre> | Request specific data (document content, search queries, ...) |
-| `collection` | <pre>string</pre> | Data collection |
+| `collection` | <pre>string</pre> | Collection |
 | `controller` | <pre>string</pre> | Invoked API controller |
-| `index` | <pre>string</pre> | Data index |
+| `index` | <pre>string</pre> | Index |
 | `jwt` | <pre>string</pre> |  Authentication token |
 | `volatile` | <pre>object</pre> | Request [volatile data]({{ site_base_path }}api/1/essentials/volatile-data/) |
 | `...` | <pre>*</pre> | Unrecognized properties are considered request specific, and stored in the `args` object property |
@@ -62,5 +62,5 @@ The `resource` property contains resources information:
 | Properties | Type | Description |
 |-----------|------|-------------|
 | `_id` | <pre>string</pre> | Resource unique identifier |
-| `collection` | <pre>string</pre> | Data collection |
-| `index` | <pre>string</pre> | Data index |
+| `collection` | <pre>string</pre> | Collection |
+| `index` | <pre>string</pre> | Index |

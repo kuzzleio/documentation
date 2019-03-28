@@ -14,11 +14,11 @@ int main(int argc, char * argv[]) {
     std::cout << "Connected!" << std::endl;
 
     // Freshly installed Kuzzle servers are empty: we first need to create
-    // a data index. The one used in this example is named "nyc-open-data"
+    // an index. The one used in this example is named "nyc-open-data"
     kuzzle->index->create("nyc-open-data");
     std::cout << "Index nyc-open-data created!" << std::endl;
 
-    // Create a data collection named "yellow-taxi" in our newly created index
+    // Create a collection named "yellow-taxi" in our newly created index
     kuzzle->collection->create("nyc-open-data", "yellow-taxi");
     std::cout << "Collection yellow-taxi created!" << std::endl;
   }
@@ -35,4 +35,3 @@ int main(int argc, char * argv[]) {
 
   return 0;
 }
-

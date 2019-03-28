@@ -36,9 +36,9 @@ Method: DELETE
 
 ## Arguments
 
-* `collection`: data collection
+* `collection`: collection name
 * `documentId`: document unique identifier
-* `index`: data index
+* `index`: index name
 
 ### Optional:
 

@@ -7,7 +7,7 @@ title: updateMapping
 
 {{{since "1.0.0"}}}
 
-Updates a data collection mapping.
+Updates a collection mapping.
 
 ---
 
@@ -68,8 +68,8 @@ Body:
 
 ## Arguments
 
-* `collection`: data collection
-* `index`: data index
+* `collection`: collection name
+* `index`: index name
 
 ---
 
