@@ -143,7 +143,7 @@ The detail of each failure can be retrieved in the `errors` property of the erro
 
 A `PreconditionError` error is thrown if Kuzzle was not able to process the request due to an invalid state.
 
-For instance, this error can be generated when trying to create a document on a non-existing data index.
+For instance, this error can be generated when trying to create a document on a non-existing index.
 
 ---
 

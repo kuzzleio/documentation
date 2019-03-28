@@ -30,7 +30,7 @@ bootstrap(collections)
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `collections` | <pre>object</pre> | List of data collection to create, with their corresponding [data mapping]({{ site_base_path }}guide/1/essentials/persisted/#document-mapping) |
+| `collections` | <pre>object</pre> | List of collection to create, with their corresponding [data mapping]({{ site_base_path }}guide/1/essentials/persisted/#document-mapping) |
 
 ### Return
 
@@ -67,7 +67,7 @@ try {
 
 {{{since "1.0.0"}}}
 
-Creates a data collection in the plugin storage.
+Creates a collection in the plugin storage.
 
 Can be called any number of times as long as the mapping is not modified. 
 
@@ -81,8 +81,8 @@ createCollection(collection, mapping)
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `collection` | <pre>string</pre> | Data collection name |
-| `mapping` | <pre>object</pre> | Data collection [mapping]({{ site_base_path }}guide/1/essentials/persisted/#document-mapping) |
+| `collection` | <pre>string</pre> | Collection name |
+| `mapping` | <pre>object</pre> | Collection [mapping]({{ site_base_path }}guide/1/essentials/persisted/#document-mapping) |
 
 
 ### Return

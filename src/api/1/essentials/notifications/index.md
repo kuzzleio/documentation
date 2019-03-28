@@ -32,9 +32,9 @@ A document notification contains the following fields:
 | Property | Type |Description       |
 |--------------------|------|------------------|
 | `action` | string | API controller's action  |
-| `collection` | string | Data collection |
+| `collection` | string | Collection |
 | `controller` | string | API controller  |
-| `index` | string | Data index |
+| `index` | string | Index |
 | `protocol` | string | Network protocol used to modify the document |
 | `result` | object | Notification content |
 | `room` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
@@ -97,9 +97,9 @@ These notifications are sent only if the `users` argument is set to any other va
 | Property | Type |Description       |
 |--------------------|------|------------------|
 | `action` | string | API controller's action  |
-| `collection` | string | Data collection |
+| `collection` | string | Collection |
 | `controller` | string | API controller  |
-| `index` | string | Data index |
+| `index` | string | Index |
 | `protocol` | string | Network protocol used by the entering/leaving user |
 | `result` | object | Notification content |
 | `room` | string | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |

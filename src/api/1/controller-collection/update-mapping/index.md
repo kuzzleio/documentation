@@ -81,7 +81,7 @@ Body:
 
 ## Arguments
 
-* `collection`: name of the collection to create
+* `collection`: name of the collection to update
 * `index`: index that will host the new collection
 
 ---

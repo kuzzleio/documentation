@@ -8,8 +8,10 @@ description: Authenticate a user
 
 Authenticates a user.
 
+If this action is successful, all further requests emitted by this SDK instance will be in the name of the authenticated user, until either the authenticated token expires, the [logout]({{ site_base_path }}sdk-reference/cpp/1/auth/logout) action is called, or the [jwt]({{ site_base_path }}sdk-reference/cpp/1/kuzzle/introduction/#properties) property is manually unset.
 
-## Signature
+
+## Arguments
 
 ```cpp
 std::string login(const std::string& strategy, const std::string& credentials);
@@ -20,16 +22,15 @@ std::string login(
     int expiresIn);
 ```
 
-
-## Arguments
+<br/>
 
 | Arguments     | Type    | Description | 
 |---------------|---------|----------------------------------|
 | `strategy`    | <pre>const std::string&</pre>  | Strategy to use  |
 | `credentials` | <pre>const std::string&</pre>  | JSON string representing the credentials             |
-| `expiresIn`   | <pre>int</pre>     | Expiration time in milliseconds  |
+| `expiresIn`   | <pre>int</pre>     | Expiration time, in milliseconds  |
 
-#### ***strategy***
+### strategy
 
 The name of the authentication [strategy]({{ site_base_path }}guide/1/kuzzle-depth/authentication/#authentication) used to log the user in.
 
@@ -37,6 +38,12 @@ Depending on the chosen authentication `strategy`, additional [credential argume
 The API request example on this page provides the necessary arguments for the [`local` authentication plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local).
 
 Check the appropriate [authentication plugin]({{ site_base_path }}plugins/1/essentials/strategies/) documentation to get the list of additional arguments to provide.
+
+
+### expiresIn
+
+The default value for the `expiresIn` option is defined at server level, in Kuzzle's [configuration file]({{ site_base_map }}guide/1/essentials/configuration).
+
 
 ## Return
 

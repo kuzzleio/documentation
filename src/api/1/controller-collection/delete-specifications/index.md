@@ -7,9 +7,9 @@ title: deleteSpecifications
 
 {{{since "1.0.0"}}}
 
-Deletes validation specifications for a data collection.
+Deletes validation specifications for a collection.
 
-The request succeeds even if no specification exist for that data collection.
+The request succeeds even if no specification exist for that collection.
 
 ***Note:***  an empty specification is implicitly applied to all collections. In a way, "no specification set" means "all documents are valid". 
 
@@ -39,8 +39,8 @@ Method: DELETE
 
 ## Arguments
 
-* `collection`: data collection
-* `index`: data index
+* `collection`: collection name
+* `index`: index name
 
 ---
 
