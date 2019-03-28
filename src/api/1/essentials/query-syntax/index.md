@@ -89,8 +89,8 @@ Additionally, a few other parameters are very commonly found in API queries:
 
 * `_id`: unique identifier (e.g. document ID, user kuid, memory storage key, ...)
 * `body`: query content (e.g. document content, message content, mappings, ...)
-* `collection`: data collection
-* `index`: data index
+* `collection`: collection name
+* `index`: index name
 
 ### Other parameters
 

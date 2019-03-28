@@ -18,9 +18,9 @@ These `io.kuzzle.sdk.NotificationResult` represent [documents changes & messages
 | Property | Type |Description       |
 |--------------------|------|------------------|
 | `action` | String | API controller's action  |
-| `collection` | String | Data collection |
+| `collection` | String | Collection |
 | `controller` | String | API controller  |
-| `index` | String | Data index |
+| `index` | String | Index |
 | `protocol` | String | Network protocol used to modify the document |
 | `result` | io.kuzzle.sdk.NotificationContent | Notification content |
 | `roomId` | String | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
@@ -43,9 +43,9 @@ These `io.kuzzle.sdk.NotificationResult` represent [user events]({{ site_base_pa
 | Property | Type |Description       |
 |--------------------|------|------------------|
 | `action` | String | API controller's action  |
-| `collection` | String | Data collection |
+| `collection` | String | Collection |
 | `controller` | String | API controller  |
-| `index` | String | Data index |
+| `index` | String | Index |
 | `protocol` | String | Network protocol used by the entering/leaving user |
 | `result` | io.kuzzle.sdk.NotificationContent | Notification content |
 | `roomId` | String | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |

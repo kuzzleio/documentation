@@ -6,7 +6,7 @@ description: Deletes an index
 
 # delete_
 
-Deletes an entire data index from Kuzzle.
+Deletes an entire index from Kuzzle.
 
 ## Signature
 

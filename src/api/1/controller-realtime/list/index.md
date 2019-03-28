@@ -38,8 +38,8 @@ Returns an object with the following structure:
 
 ```js
 {
-  "<data index>": {
-    "<data collection>": {
+  "<index>": {
+    "<collection>": {
       "<subscription identifier": <number of active connections>
     }
   }

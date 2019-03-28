@@ -16,9 +16,9 @@ These notifications represent [documents changes & messages]({{ site_base_path }
 | Property | Type |Description       |
 |--------------------|------|------------------|
 | `action` | <pre>string</pre> | API controller's action  |
-| `collection` | <pre>string</pre> | Data collection |
+| `collection` | <pre>string</pre> | Collection |
 | `controller` | <pre>string</pre> | API controller  |
-| `index` | <pre>string</pre> | Data index |
+| `index` | <pre>string</pre> | Index |
 | `protocol` | <pre>string</pre> | Network protocol used to modify the document |
 | `result` | <pre>object</pre> | Notification content |
 | `room` | <pre>string</pre> | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |
@@ -41,9 +41,9 @@ These notifications represent [user events]({{ site_base_path }}api/1/essentials
 | Property | Type |Description       |
 |--------------------|------|------------------|
 | `action` | <pre>string</pre> | API controller's action  |
-| `collection` | <pre>string</pre> | Data collection |
+| `collection` | <pre>string</pre> | Collection |
 | `controller` | <pre>string</pre> | API controller  |
-| `index` | <pre>string</pre> | Data index |
+| `index` | <pre>string</pre> | Index |
 | `protocol` | <pre>string</pre> | Network protocol used by the entering/leaving user |
 | `result` | <pre>object</pre> | Notification content |
 | `room` | <pre>string</pre> | Subscription channel identifier. Can be used to link a notification to its corresponding subscription |

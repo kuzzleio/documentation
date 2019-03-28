@@ -36,8 +36,8 @@ Method: GET
 
 ## Arguments
 
-* `collection`: data collection
-* `index`: data index
+* `collection`: collection name
+* `index`: index name
 
 ---
 
@@ -45,8 +45,8 @@ Method: GET
 
 Returns a specifications object with the following properties:
 
-* `collection`: specified data collection
-* `index`: specified data index
+* `collection`: specified collection
+* `index`: specified index
 * `validation`: specifications description
 
 ```js

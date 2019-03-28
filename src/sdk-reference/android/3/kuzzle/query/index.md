@@ -35,7 +35,7 @@ Refer to Kuzzle's API Reference <a href="{{ site_base_path }}api/1">here</a>
 | ``controller`` | string | API Controller argument | required |
 | ``action`` | string | API Controller action | required |
 | ``index`` | string | Index concerned by the action | optional |
-| ``collection`` | string | Data collection concerned by the action | optional |
+| ``collection`` | string | Collection concerned by the action | optional |
 
 ---
 

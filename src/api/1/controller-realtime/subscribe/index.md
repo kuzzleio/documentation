@@ -42,8 +42,8 @@ Due to the synchronous nature of the HTTP protocol, real-time notifications are 
 
 ## Arguments
 
-* `collection`: watched data collection
-* `index`: watched data index
+* `collection`: watched collection
+* `index`: watched index
 
 ### Optional:
 
@@ -58,7 +58,7 @@ Due to the synchronous nature of the HTTP protocol, real-time notifications are 
 
 Subscription filters, following the [Koncorde syntax]({{site_base_path}}koncorde/1/)
 
-An empty filter subscribes to any change occuring on the selected data index-collection pair.
+An empty filter subscribes to any change occuring on the selected index-collection pair.
 
 ---
 

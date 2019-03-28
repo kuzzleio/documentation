@@ -7,7 +7,7 @@ title: list
 
 {{{since "1.0.0"}}}
 
-Returns the list of data collections associated to a provided data index.
+Returns the list of collections associated to a provided index.
 
 The returned list is sorted in alphanumerical order.  
 
@@ -41,8 +41,8 @@ Method: GET
 ## Arguments
 
 
-* `collection`: data collection
-* `index`: data index
+* `collection`: collection name
+* `index`: index name
 
 ### Optional:
 
@@ -55,8 +55,8 @@ Method: GET
 
 Returns an array of objects, each one of those describing a collection, using the following properties:
 
-* `name`: data collection name
-* `type`: data collection type (either `stored` or `realtime`)
+* `name`: collection name
+* `type`: collection type (either `stored` or `realtime`)
 
 Example:
 

@@ -46,9 +46,9 @@ Body:
 
 ## Arguments
 
-* `collection`: data collection
+* `collection`: collection name
 * `documentId`: unique identifier of the document to create or replace
-* `index`: data index
+* `index`: index name
 
 ### Optional:
 

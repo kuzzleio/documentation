@@ -29,7 +29,7 @@ int main(int argc, char * argv[]) {
 
   try {
     // Store the document in the "yellow-taxi" collection, itself in the
-    // "nyc-open-data" data index
+    // "nyc-open-data" index
     std::string response = kuzzle->document->create(
         "nyc-open-data",
         "yellow-taxi",
