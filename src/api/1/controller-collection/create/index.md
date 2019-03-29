@@ -11,7 +11,7 @@ Creates a new [collection]({{ site_base_path }}guide/1/essentials/persisted), in
 
 {{{since "1.3.0"}}}
 
-You can also provide an optional body with a [collection mapping]({{ site_base_path }}guide/1/essentials/database-mappings) that allow you to exploit the full capabilities of our persistent data storage layer.
+You can also provide an optional body with a [collection mapping]({{ site_base_path }}guide/1/essentials/database-mappings) allowing you to exploit the full capabilities of our persistent data storage layer.
 
 This method will only update the mapping when the collection already exists.
 
@@ -35,7 +35,7 @@ Body:
 
 ```js
 {
-  "dynamic": "false",
+  "dynamic": "[false|true|strict]",
   "_meta": {
     "field": "value"
   },
@@ -64,7 +64,7 @@ Body:
   "controller": "collection",
   "action": "create",
   "body": {
-    "dynamic": "false",
+    "dynamic": "[false|true|strict]",
     "_meta": {
       "field": "value"
     },
@@ -97,7 +97,7 @@ Body:
 
 ### Optional:
 
-* `dynamic`: [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) for new fields
+* `dynamic`: [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) for new fields. Allowed values: `true` (default), `false`, `strict`
 * `_meta`: [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) stored next to the collection
 * `properties`: object describing the data mapping to associate to the new collection, using [Elasticsearch types definitions format]({{ site_base_path}}guide/1/essentials/database-mappings/#properties-types-definition)
 

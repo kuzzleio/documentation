@@ -6,7 +6,7 @@ description: Collection:search
   
 
 # search
-Executes a search on the data collection.
+Executes a search on the collection.
 
 <div class="alert alert-info">
 There is a small delay between the time a document is created and its availability in our search layer (usually a couple of seconds). That means that a document that was just created might not be returned by this function at first.

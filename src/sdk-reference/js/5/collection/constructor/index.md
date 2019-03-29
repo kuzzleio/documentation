@@ -7,9 +7,9 @@ order: 1
   
 
 # Collection
-In Kuzzle, you manipulate documents and subscriptions, both related to data collections.
+In Kuzzle, you manipulate documents and subscriptions, both related to collections.
 
-A data collection is a set of data managed by Kuzzle. It acts like a data table for persistent documents, or like a room for pub/sub messages.
+A collection is a set of data managed by Kuzzle. It acts like a data table for persistent documents, or like a room for pub/sub messages.
 
 ---
 
@@ -18,8 +18,8 @@ A data collection is a set of data managed by Kuzzle. It acts like a data table 
 | Arguments | Type | Description |
 |---------------|---------|----------------------------------------|
 | ``kuzzle`` | object | Kuzzle object |
-| ``collection`` | string | The name of the data collection you want to manipulate |
-| ``index`` | string | Name of the index containing the data collection |
+| ``collection`` | string | The name of the collection you want to manipulate |
+| ``index`` | string | Name of the index containing the collection |
 
 **Note:** We recommend you instantiate a Collection object by calling [Kuzzle.collection]({{ site_base_path }}sdk-reference/js/5/kuzzle/collection) rather than using the constructor directly
 
@@ -29,8 +29,8 @@ A data collection is a set of data managed by Kuzzle. It acts like a data table 
 
 | Property name | Type | Description | get/set |
 |--------------|--------|-----------------------------------|---------|
-| ``collection`` | string | The name of the data collection handled by this instance | get |
-| ``index`` | object | Name of the index containing the data collection | get |
+| ``collection`` | string | The name of the collection handled by this instance | get |
+| ``index`` | object | Name of the index containing the collection | get |
 | ``headers`` | object | Headers for all sent documents. | get/set |
 | ``kuzzle`` | object | linked Kuzzle instance | get |
 

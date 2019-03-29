@@ -35,7 +35,7 @@ An object representing the data mapping of the collection.
 
 ```js
 const mapping = {
-  dynamic: 'false',
+  dynamic: '[true|false|strict]',
   _meta: {
     field: 'value'
   },

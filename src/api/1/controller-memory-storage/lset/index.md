@@ -54,7 +54,7 @@ Body:
 
 ## Body properties
 
-* `index`: index of the list. Lists are 0-indexed. If negative, it goes backward from the end of the list
+* `index`: index name of the list. Lists are 0-indexed. If negative, it goes backward from the end of the list
 * `value`: the new value to set
 
 ---

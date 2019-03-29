@@ -43,7 +43,7 @@ A `json.RawMessage` containing the representation of the collection mapping.
 
 ```json
 {
-  "dynamic": "false",
+  "dynamic": "[true|false|strict]",
   "_meta": {
     "field": "value"
   },

@@ -23,6 +23,6 @@ The provided `room` object has the following properties:
 
 | Properties | Type | Description |
 |-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
 | `roomId` | <pre>string</pre> | The new room unique identifier |

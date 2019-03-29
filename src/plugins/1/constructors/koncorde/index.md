@@ -33,8 +33,8 @@ exists(index, collection)
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
 
 ### Return
 
@@ -58,8 +58,8 @@ getFilterIds(index, collection)
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
 
 ### Return
 
@@ -85,8 +85,8 @@ normalize(index, collection, filters)
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
 | `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}koncorde/1) format |
 
 ### Return
@@ -95,9 +95,9 @@ The `normalize` function returns a promise resolving to an object with the follo
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `collection` | <pre>string</pre> | Data collection name |
+| `collection` | <pre>string</pre> | Collection name |
 | `id` | <pre>string</pre> | The filter unique identifier |
-| `index` | <pre>string</pre> | Data index name |
+| `index` | <pre>string</pre> | Index name |
 | `normalized` | <pre>object[]</pre> | Normalized/optimized version of the supplied filters |
 
 ---
@@ -120,8 +120,8 @@ register(index, collection, filters)
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
 | `filters` | <pre>object</pre> | Filters, in [Koncorde]({{ site_base_path }}koncorde/1) format |
 
 ### Return
@@ -202,8 +202,8 @@ test(index, collection, data, [documentId])
 
 | Arguments | Type | Description |
 |-----------|------|-------------|
-| `index` | <pre>string</pre> | Data index name |
-| `collection` | <pre>string</pre> | Data collection name |
+| `index` | <pre>string</pre> | Index name |
+| `collection` | <pre>string</pre> | Collection name |
 | `data` | <pre>object</pre> | Data to test |
 | `documentId` | <pre>string</pre> | Document unique identifier |
 

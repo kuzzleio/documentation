@@ -39,8 +39,8 @@ Method: GET
 
 ## Arguments
 
-* `collection`: data collection
-* `index`: data index
+* `collection`: collection name
+* `index`: index name
 * `scrollId`: cursor unique identifier, obtained by either a search or a scroll query
 
 ### Optional:

@@ -9,7 +9,7 @@ order: 300
 With Kuzzle, you don't [subscribe]({{ site_base_path }}sdk-reference/android/3/collection/subscribe) to a room or a topic but, instead, you subscribe to documents.  
 This means, that when you want to subscribe you must provide a set of filter definitions, using [Koncorde]({{ site_base_path }}koncorde/1), that tell Kuzzle what documents should trigger a notification. Then, any time a document matches the defined filters, Kuzzle will send a notification to the subscriber.
 
-You can also provide an empty set of filters, which will tell Kuzzle that you want to listen to any change occurring on a data collection, emulating the behavior of a traditional topic.
+You can also provide an empty set of filters, which will tell Kuzzle that you want to listen to any change occurring on a collection, emulating the behavior of a traditional topic.
 
 To subscribe, you must provide a callback that will be called each time a new notification is received.
 

@@ -39,7 +39,7 @@ Method: GET
 ## Argument
 
 * `_id`: list key identifier
-* `index`: index of the list. Lists are 0-indexed. If negative, it goes backward from the end of the list
+* `index`: index name of the list. Lists are 0-indexed. If negative, it goes backward from the end of the list
 
 ---
 
