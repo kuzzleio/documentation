@@ -58,7 +58,7 @@ A `json.RawMessage` containing the representation of the collection mapping.
 }
 ```
 
-More informations about collection mapping: {{ site_base_path}}guide/1/essentials/database-mappings
+More informations about collection mapping [here]({{ site_base_path}}guide/1/essentials/database-mappings)
 
 ### options
 

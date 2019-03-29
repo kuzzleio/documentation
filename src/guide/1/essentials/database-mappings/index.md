@@ -4,7 +4,7 @@ title: Define database mapping
 order: 400
 ---
 
-# Database mappings
+# Database mappings for collections
 
 With Elasticsearch, it is possible to define mappings for collections. These mappings allows you to configure the way Elasticsearch will handle these collections.
 
@@ -136,6 +136,12 @@ curl -X POST -d '{"language":"nepali"}' -H "Content-Type: application/json" "htt
 
 Elasticsearch allows the definition of metadata that is stored next to the collections in the root field `_meta`.  
 These metadata are ignored by Elasticsearch, they can contain any type of information specific to your application.
+
+<div class="alert alert-warning">
+Unlike the properties types definition, new collection metadata are not merged with the old one.
+<br/>
+If you set the <code>_meta</code> field in your request, the old value will be overwritten.
+</div>
 
 Refer to Elasticsearch documentation for more informations: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping-meta-field.html
 
