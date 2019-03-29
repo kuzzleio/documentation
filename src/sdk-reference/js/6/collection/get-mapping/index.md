@@ -6,7 +6,7 @@ description: Return collection mapping
 
 # getMapping
 
-Returns a collection mapping.
+Returns the collection mapping.
 
 <br/>
 

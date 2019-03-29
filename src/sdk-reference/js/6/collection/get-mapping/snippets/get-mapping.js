@@ -3,6 +3,10 @@ try {
   console.log(mapping);
   /*
     {
+      dynamic: 'false',
+      _meta: {
+        area: 'Panipokhari
+      },
       properties: {
         license: { type: 'keyword' },
         driver: {

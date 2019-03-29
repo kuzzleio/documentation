@@ -8,10 +8,17 @@ description: Create a new collection
 
 Creates a new [collection]({{ site_base_path }}guide/1/essentials/persisted) in Kuzzle via the persistence engine, in the provided index.
 
-You can also provide an optional data mapping that allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
+{{{since "Kuzzle 1.3.0"}}}
 
-This method will only update the mapping if the collection already exists.
+You can also provide an optional body with a [collection mapping]({{ site_base_path }}guide/1/essentials/database-mappings) that allow you to exploit the full capabilities of our persistent data storage layer.
+
+This method will only update the mapping when the collection already exists.
+
+{{{since "Kuzzle 1.7.1"}}}
+
+You can define the collection [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) by setting the `dynamic` field to the desired value.
+
+You can define [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) within the `_meta` root field.
 
 <br/>
 
@@ -25,16 +32,19 @@ create (index, collection, [mapping], [options])
 |--------------|---------|-------------|
 | ``index`` | <pre>string</pre> | Index name    |
 | ``collection`` | <pre>string</pre> | Collection name    |
-| ``mapping`` | <pre>object</pre> | Describes the data mapping to associate to the new collection, using Elasticsearch [mapping format](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)    |
+| ``mapping`` | <pre>object</pre> | Describes the collection mapping   |
 | ``options`` | <pre>object</pre> | Query options    |
 
 ### mapping
 
 An object representing the data mapping of the collection.
 
-The mapping must have a root field `properties` that contain the mapping definition:
 ```js
 const mapping = {
+  dynamic: '[true|false|strict]',
+  _meta: {
+    field: 'value'
+  },
   properties: {
     field1: { type: 'text' },
     field2: {
@@ -46,7 +56,7 @@ const mapping = {
 };
 ```
 
-You can see the full list of Elasticsearch mapping types [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
+More informations about database mappings [here]({{ site_base_path}}guide/1/essentials/database-mappings)
 
 ### options
 
