@@ -50,7 +50,7 @@ const mapping = {
 };
 ```
 
-More informations about collection mapping [here]({{ site_base_path}}guide/1/essentials/database-mappings)
+More informations about database mappings [here]({{ site_base_path}}guide/1/essentials/database-mappings)
 
 ### options
 

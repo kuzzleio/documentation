@@ -1,10 +1,10 @@
 ---
 layout: full.html.hbs
-title: Define database mapping
+title: Define database mappings
 order: 400
 ---
 
-# Database mappings for collections
+# Database mappings
 
 With Elasticsearch, it is possible to define mappings for collections. These mappings allow you to configure the way Elasticsearch will handle these collections.
 
