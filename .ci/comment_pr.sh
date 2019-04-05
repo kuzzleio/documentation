@@ -12,7 +12,7 @@ echo '{"prId": "'"$TRAVIS_PULL_REQUEST"'", "cppv1": "'"$cppv1"'", "javav1": "'"$
 docker run --rm -it -v "$(pwd)":/mnt alexandrebouthinon/kuttlefish kuttlefish \
         -template /mnt/.ci/comment.html \
         -data /mnt/.ci/data.json \
-        -repo documentation-v2 \
+        -repo documentation \
         -owner kuzzleio \
         -token $GH_TOKEN\
         -id $TRAVIS_PULL_REQUEST
