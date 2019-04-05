@@ -54,20 +54,20 @@ All `roles` and `profiles` can be edited in the [Kuzzle Admin Console]({{ site_b
 
 A `role` can be defined using a hierarchical JSON object where permissions are outlined by `controller` and `action`.
 
-The `role` definition is represented as a Javascript object where each key at the root of the object identifies a `controller` by name:
+The `role` definition is represented as a JSON object where each key at the root of the object identifies a `controller` by name.
 
 ```js
-const myRoleDefinition = {
-  controllers: {
-    < controller|* >: {
-      actions: {
-        < action|* >: < action permission|* >,
-        < action|* >: < action permission|* >,
-        ...
+{
+  "controllers": {
+    "<controller name|*>": {
+      "actions": {
+        "<action name|*>": true, // accepted values: [true|false|object]
+        "<action name|*>": false,
+        // ...
       }
     }
   }
-};
+}
 ```
 
 The `controllers` and `actions` properties can be set to a specific value or to the wildcard value "&#42;".
@@ -82,17 +82,17 @@ The `action permission` value can be set to either:
 As an example, below is the `role` definition that Kuzzle uses to request authorization from the anonymous user once the administrator account is created and anonymous access is blocked.
 
 ```js
-const anonymousRole = {
-  controllers: {
-    auth: {
-      actions: {
-        login: true,
-        checkToken: true,
-        getCurrentUser: true
+{
+  "controllers": {
+    "auth": {
+      "actions": {
+        "login": true,
+        "checkToken": true,
+        "getCurrentUser": true
       }
     }
   }
-};
+}
 ```
 
 In the above `role` definition, anonymous users can perform the `login`, `checkToken` and `getCurrentUser` actions of the `auth` controller.
@@ -107,26 +107,32 @@ curl -X GET 'http://localhost:7512/?pretty'
 
 ## Defining Profiles
 
-A `profile` definition is a Javascript object that contains an array of policies, each composed of a roleId and an array of restrictions:
+A `profile` definition is a JSON object that contains an array of policies, each composed of a roleId and an array of restrictions:
 
 ```js
-const myProfileDefinition = {
-  policies: [
+{
+  "policies": [
     {
-      roleId: "< role Id >",
-      restrictedTo: [
+      "roleId": "<role identifier>",
+      "restrictedTo": [
         {
-          index: "< some index >",
-          collections: [
-            "< a collection >",
-            "< another collection >"
+          "index": "<an authorized index name>",
+          "collections": [
+            "<authorized collection 1>",
+            "<authorized collection 2>",
+            "<...>"
           ]
         },
-        ...
+        {
+          "index": "<another index name>"
+          // All collections are allowed
+        }
       ]  
     },
-    <another role>,
-    ...
+    {
+      "roleId": "<another role identifier>"
+      // That role is applied to all indexes and collections
+    }
   ]
 };
 ```
@@ -136,55 +142,57 @@ When applying a role to a profile, the role can be applied to all indexes and co
 For example, if we have a "publisher" role which allows any action on the `document` controller:
 
 ```js
-const publisherRole = {
-  controllers: {
-    document: {
-      actions: {
-        '*': true
+{
+  "controllers": {
+    "document": {
+      "actions": {
+        "*": true
       }
     }
   }
-};
+}
 ```
 
 Then we can declare three different profiles using this same role, each with varying levels of access based on the index and collection:
 
-```js
-const profile1 = {
-  policies: [
-    {roleId: 'publisherRole'}
-  ]
-};
+* Applies the publisher role to all indexes and collections
 
-const profile2 = {
-  policies: [
+```js
+{
+  "policies": [
+    {"roleId": "publisherRole"}
+  ]
+}
+```
+
+* Applies the publisher role only to the index "index1" and all its collections
+
+```js
+{
+  "policies": [
     {
-      roleId: 'publisherRole',
-      restrictedTo: [{index: 'index1'}]
+      "roleId": "publisherRole",
+      "restrictedTo": [{"index": "index1"}]
     }
   ]
-};
+}
+````
 
-const profile3 = {
-  policies: [
+* Applies the publisher role only to the collections "foo" and "bar" in the index "index1", and then to the index "index2" and all its collections
+
+```js
+{
+  "policies": [
     {
-      roleId: 'publisherRole',
-      restrictedTo: [
-        {index: 'index1', collections: ['foo', 'bar']},
-        {index: 'index2'}
+      "roleId": "publisherRole",
+      "restrictedTo": [
+        {"index": "index1", "collections": ["foo", "bar"]},
+        {"index": "index2"}
       ]
     }
   ]
-};
+}
 ```
-
-These three profiles will provide the following restrictions:
-
-* users with `profile1` are allowed to use all `document` controller actions on all indexes and collections.
-* users with `profile2` are only allowed to use `document` controller actions on collections stored in index `index1`.
-* users with `profile3` are only allowed to use `document` controller actions on:
-  * all collections stored in index `index2`
-  * collections `foo` and `bar` stored in index `index1`.
 
 ---
 
