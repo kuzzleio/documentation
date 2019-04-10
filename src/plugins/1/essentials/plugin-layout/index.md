@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
-title: Getting Started
+title: Plugin Layout
 description: how to create a custom plugin
 order: 0
 ---
@@ -11,10 +11,10 @@ Kuzzle can be customized and extended using plugins.
 
 This chapter explains how to install and configure a plugin. The other chapters in this section cover the four plugin interfaces exposed by Kuzzle:
 
-* [Hooks](../hooks)
-* [Pipes](../pipes)
-* [Controllers](../controllers)
-* [Authentication Strategies](../strategies)
+- [Hooks](../hooks)
+- [Pipes](../pipes)
+- [Controllers](../controllers)
+- [Authentication Strategies](../strategies)
 
 A single plugin can implement as many of those interfaces as necessary.
 
@@ -25,7 +25,8 @@ A single plugin can implement as many of those interfaces as necessary.
 The best way to start developing a plugin is to use a boilerplate.
 
 We provide a boilerplate that contain a Kuzzle stack that reloads itself whenever a plugin change is detected, making it a handy tool for plugin development.
- - [kuzzle-core-plugin-boilerplate](https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate)
+
+- [kuzzle-core-plugin-boilerplate](https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate)
 
 Clone this repository to start developing a Kuzzle plugin:
 
@@ -34,7 +35,7 @@ git clone https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate
 cd kuzzle-core-plugin-boilerplate
 docker-compose -f docker/docker-compose.yml up
 // Kuzzle stack with the plugin is ready
-// Edit the file lib/index.js, 
+// Edit the file lib/index.js,
 // the Kuzzle stack will automaticaly restart to include your modifications
 ```
 
@@ -52,11 +53,11 @@ Kuzzle loads plugins as [Node.js modules](https://nodejs.org/dist/latest-v8.x/do
 
 This means that a plugin directory must contain either:
 
-* an `index.js` file 
+- an `index.js` file
 
 and/or:
 
-* a valid [package.json](https://docs.npmjs.com/files/package.json) file. If the plugin's entrypoint is not the root `index.js` file, then the [main](https://docs.npmjs.com/files/package.json#main) property must be filled
+- a valid [package.json](https://docs.npmjs.com/files/package.json) file. If the plugin's entrypoint is not the root `index.js` file, then the [main](https://docs.npmjs.com/files/package.json#main) property must be filled
 
 ### manifest.json
 
@@ -64,8 +65,8 @@ Kuzzle needs a few information to make your plugin work properly. These informat
 
 The following properties can be defined in this `manifest.json` file:
 
-* `name` (**required**): plugin unique identifier. Names can only contain lowercase letters, numbers, hyphens and underscores. 
-* `kuzzleVersion`: a non-empty string describing a [semver range](https://www.npmjs.com/package/semver#ranges), limiting the range of Kuzzle versions supported by this plugin. If not set, a warning is displayed on the console, and Kuzzle assumes that the plugin is only compatible with Kuzzle v1.x
+- `name` (**required**): plugin unique identifier. Names can only contain lowercase letters, numbers, hyphens and underscores.
+- `kuzzleVersion`: a non-empty string describing a [semver range](https://www.npmjs.com/package/semver#ranges), limiting the range of Kuzzle versions supported by this plugin. If not set, a warning is displayed on the console, and Kuzzle assumes that the plugin is only compatible with Kuzzle v1.x
 
 {{{deprecated "1.5.0"}}} Kuzzle still allows plugins to be loaded without a <code>manifest.json</code> file, for backward compatibility reasons, falling back to the <a href=https://docs.npmjs.com/files/package.json#name>package.json</a> file to retrieve the plugin's name. This will change in next major releases of Kuzzle.
 
@@ -80,14 +81,14 @@ The `init` method is called once during startup, and it is used to initialize th
 ### Arguments
 
 ```js
-init (config, context)
+init(config, context);
 ```
 
 <br/>
 
-| Arguments | Type | Description |
-|-----------|------|-------------|
-| `config` | <pre>object</pre> | Contains the custom plugin configuration (see the [configuration](#configuration-default) chapter) |
+| Arguments | Type              | Description                                                                                                                                                             |
+| --------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `config`  | <pre>object</pre> | Contains the custom plugin configuration (see the [configuration](#configuration-default) chapter)                                                                      |
 | `context` | <pre>object</pre> | The plugin context, exposing various accessors, constructors, and helpers. The other sections of this documentation detail the interfaces made available by this object |
 
 ### Return
@@ -104,7 +105,7 @@ If a promise is returned and rejected, or if the `init` function throws an error
 
 When Kuzzle calls the plugin `init` method, it passes the plugin's custom configuration to it.
 
-Custom configuration parameters are specified for each plugin in the `plugins` object of the Kuzzle [configuration file]({{ site_base_path }}guide/1/essentials/configuration). 
+Custom configuration parameters are specified for each plugin in the `plugins` object of the Kuzzle [configuration file]({{ site_base_path }}guide/1/essentials/configuration).
 
 For example:
 
