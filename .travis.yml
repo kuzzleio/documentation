@@ -45,6 +45,7 @@ jobs:
 
       script:
         - npm install
+        - npm run lint
         - npm run build
 
       after_script:
@@ -64,7 +65,7 @@ jobs:
         - "8"
 
       before_install:
-        - docker pull kuzzleio/documentation-v2:js
+        - docker pull kuzzleio/documentation:js
         - sysctl -w vm.max_map_count=262144
 
       script:
@@ -75,8 +76,8 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/js/5/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
           fi;
 
@@ -88,7 +89,7 @@ jobs:
         - "8"
 
       before_install:
-        - docker pull kuzzleio/documentation-v2:js
+        - docker pull kuzzleio/documentation:js
         - sysctl -w vm.max_map_count=262144
 
       script:
@@ -99,8 +100,8 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/js/6/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
           fi;
 
@@ -112,7 +113,7 @@ jobs:
         - "8"
 
       before_install:
-        - docker pull kuzzleio/documentation-v2:go
+        - docker pull kuzzleio/documentation:go
         - sysctl -w vm.max_map_count=262144
 
       script:
@@ -123,8 +124,8 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/go/1/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
           fi;
 
@@ -136,7 +137,7 @@ jobs:
         - "8"
 
       before_install:
-        - docker pull kuzzleio/documentation-v2:java
+        - docker pull kuzzleio/documentation:java
         - sysctl -w vm.max_map_count=262144
 
       script:
@@ -147,8 +148,8 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/java/1/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
           fi;
 
@@ -160,7 +161,7 @@ jobs:
         - "8"
 
       before_install:
-        - docker pull kuzzleio/documentation-v2:cpp
+        - docker pull kuzzleio/documentation:cpp
         - sysctl -w vm.max_map_count=262144
 
       script:
@@ -171,8 +172,8 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/cpp/1/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
           fi;
 
@@ -184,7 +185,7 @@ jobs:
         - "8"
 
       before_install:
-        - docker pull kuzzleio/documentation-v2:csharp
+        - docker pull kuzzleio/documentation:csharp
         - sysctl -w vm.max_map_count=262144
 
       script:
@@ -195,8 +196,8 @@ jobs:
         - |
           if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
             mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/csharp/1/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation-v2/$TRAVIS_BUILD_NUMBER . && cd -
+            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
+            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
             bash ./.ci/comment_pr.sh
           fi;
 
