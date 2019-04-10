@@ -77,7 +77,7 @@ When `controller` is declared within a Plugin, its name must be prefixed with th
 The `action permission` value can be set to either:
 
 - a boolean. If `true`, the `role` allows the given action.
-- an object describing a dynamic right definition. For more information check out the [advanced roles documentation]({{ site_base_path }}guide/1/kuzzle-depth/roles-definitions)).
+- {{{deprecated "1.4.0"}}} an object describing a dynamic right definition. For more information check out the <a href="{{ site_base_path }}guide/1/kuzzle-depth/roles-definitions">advanced roles documentation</a>.
 
 As an example, below is the `role` definition that Kuzzle uses to request authorization from the anonymous user once the administrator account is created and anonymous access is blocked.
 
@@ -113,25 +113,27 @@ A `profile` definition is a JSON object that contains an array of policies, each
 {
   "policies": [
     {
-      "roleId": "<role identifier>",
+      // Applied to all indexes and collections
+      "roleId": "<role identifier>"
+    },
+    {
+      // Restricted to a list of indexes or to a list of collections
+      "roleId": "<another role identifier>",
       "restrictedTo": [
         {
+          // All collections of this index are allowed
+          "index": "<another index name>"
+        },
+        {
+          // Only the specified list of collections are allowed
           "index": "<an authorized index name>",
           "collections": [
             "<authorized collection 1>",
             "<authorized collection 2>",
             "<...>"
           ]
-        },
-        {
-          "index": "<another index name>"
-          // All collections are allowed
         }
       ]  
-    },
-    {
-      "roleId": "<another role identifier>"
-      // That role is applied to all indexes and collections
     }
   ]
 };
@@ -205,6 +207,6 @@ For instance, suppose you have a chat application and you want the users to only
 
 There are multiple ways of adding a business logic layer on top of the standard Kuzzle security one:
 
-* {{{deprecated "1.4.0"}}} Using [Permission Closures]({{ site_base_path }}guide/1/kuzzle-depth/roles-definitions), you can add functions directly into role definitions
-* If all you need is to make sure that submitted documents follow a strict set of formatting rules, you can add [document validators]({{ site_base_path }}guide/1/datavalidation/)
 * With a [Pipe Plugin]({{ site_base_path }}plugins/1/essentials/pipes), you can listen to one or multiple [API events]({{ site_base_path }}plugins/1/events/), and decide whether you accept a query or document according to your business rules
+* If all you need is to make sure that submitted documents follow a strict set of formatting rules, you can add [document validators]({{ site_base_path }}guide/1/datavalidation/)
+* {{{deprecated "1.4.0"}}} Using <a href="{{ site_base_path }}guide/1/kuzzle-depth/roles-definitions">Permission Closures</a>, you can add functions directly into role definitions
