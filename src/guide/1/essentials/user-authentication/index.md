@@ -30,7 +30,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 You should get the following response:
 
-```json
+```js
 {
   "requestId": "<random unique request id>",
   "status": 200,
@@ -120,7 +120,7 @@ In Kuzzle, a user's credentials are composed of a list of authentication strateg
 
 For instance, if a user registered on Kuzzle with both facebook and twitter authentication strategies, then their credentials would look like this:
 
-```json
+```js
 {
   "facebook": {
     "kuid": "<Kuzzle Unique User Identifier>",
