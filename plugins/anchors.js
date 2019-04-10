@@ -7,7 +7,7 @@ module.exports = {
       $ = cheerio.load(data.contents.toString());
 
     $('h1, h2').each((i, el) => {
-      id = `${$(el)
+      const id = `${$(el)
         .text()
         .replace(/&.*?/g, '')
         .replace(/\s+/g, '-')

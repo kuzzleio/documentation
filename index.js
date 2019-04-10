@@ -96,7 +96,7 @@ const metalsmith = _metalsmith(__dirname)
     site_title: 'Kuzzle documentation',
     site_url: options.build.host,
     site_base_path: options.build.path,
-    gh_repo: process.env.TRAVIS_REPO_SLUG || 'kuzzleio/documentation-V2',
+    gh_repo: process.env.TRAVIS_REPO_SLUG || 'kuzzleio/documentation',
     gh_branch: process.env.TRAVIS_BRANCH || 'master',
     algolia_projectId: options.algolia.projectId,
     algolia_publicKey: options.algolia.publicKey,

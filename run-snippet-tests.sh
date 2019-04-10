@@ -65,19 +65,19 @@ echo "SDK: $SDK version $SDK_VERSION"
 
 case $SDK in
   js)
-    docker run -it --name runner_js --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:js $SDK $SDK_VERSION $TESTS_PATH
+    docker run -it --name runner_js --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation:js $SDK $SDK_VERSION $TESTS_PATH
   ;;
   go)
-    docker run -it --name runner_go --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app -v "$(pwd)"/test/bin:/go/src/github.com/kuzzleio/go-test kuzzleio/documentation-v2:go $SDK $SDK_VERSION $TESTS_PATH
+    docker run -it --name runner_go --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app -v "$(pwd)"/test/bin:/go/src/github.com/kuzzleio/go-test kuzzleio/documentation:go $SDK $SDK_VERSION $TESTS_PATH
   ;;
   cpp)
-    docker run -it --name runner_cpp --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:cpp $SDK $SDK_VERSION $TESTS_PATH
+    docker run -it --name runner_cpp --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation:cpp $SDK $SDK_VERSION $TESTS_PATH
   ;;
   java)
-    docker run -it --name runner_java --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:java $SDK $SDK_VERSION $TESTS_PATH
+    docker run -it --name runner_java --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation:java $SDK $SDK_VERSION $TESTS_PATH
   ;;
   csharp)
-    docker run -it --name runner_csharp --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation-v2:csharp $SDK $SDK_VERSION $TESTS_PATH
+    docker run -it --name runner_csharp --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$SDK" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation:csharp $SDK $SDK_VERSION $TESTS_PATH
   ;;
   *)
     echo "$SDK is not a valid sdk"
