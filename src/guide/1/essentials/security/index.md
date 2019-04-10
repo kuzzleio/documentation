@@ -33,7 +33,7 @@ This means that:
 
 ## User Permissions
 
-User-level permissions control what data a specific user or set of users has access to, and what actions they can perform on that data.
+User-level permissions control what API actions can be executed and, optionally, restrict those to targeted data indexes and collections.
 
 ### Users, Profiles and Roles
 
