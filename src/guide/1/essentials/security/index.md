@@ -33,7 +33,7 @@ This means that:
 
 ## User Permissions
 
-User-level permissions control what data a specific user or set of users has access to, and what actions they can perform on that data.
+User-level permissions control what API actions can be executed and, optionally, restrict those to targeted data indexes and collections.
 
 ### Users, Profiles and Roles
 
@@ -54,20 +54,20 @@ All `roles` and `profiles` can be edited in the [Kuzzle Admin Console]({{ site_b
 
 A `role` can be defined using a hierarchical JSON object where permissions are outlined by `controller` and `action`.
 
-The `role` definition is represented as a Javascript object where each key at the root of the object identifies a `controller` by name:
+The `role` definition is represented as a JSON object where each key at the root of the object identifies a `controller` by name.
 
 ```js
-const myRoleDefinition = {
-  controllers: {
-    < controller|* >: {
-      actions: {
-        < action|* >: < action permission|* >,
-        < action|* >: < action permission|* >,
-        ...
+{
+  "controllers": {
+    "<controller name|*>": {
+      "actions": {
+        "<action name|*>": true, // accepted values: [true|false|object]
+        "<action name|*>": false,
+        // ...
       }
     }
   }
-};
+}
 ```
 
 The `controllers` and `actions` properties can be set to a specific value or to the wildcard value "&#42;".
@@ -77,22 +77,22 @@ When `controller` is declared within a Plugin, its name must be prefixed with th
 The `action permission` value can be set to either:
 
 - a boolean. If `true`, the `role` allows the given action.
-- an object describing a dynamic right definition. For more information check out the [advanced roles documentation]({{ site_base_path }}guide/1/kuzzle-depth/roles-definitions)).
+- {{{deprecated "1.4.0"}}} an object describing a dynamic right definition. For more information check out the <a href="{{ site_base_path }}guide/1/kuzzle-depth/roles-definitions">advanced roles documentation</a>.
 
 As an example, below is the `role` definition that Kuzzle uses to request authorization from the anonymous user once the administrator account is created and anonymous access is blocked.
 
 ```js
-const anonymousRole = {
-  controllers: {
-    auth: {
-      actions: {
-        login: true,
-        checkToken: true,
-        getCurrentUser: true
+{
+  "controllers": {
+    "auth": {
+      "actions": {
+        "login": true,
+        "checkToken": true,
+        "getCurrentUser": true
       }
     }
   }
-};
+}
 ```
 
 In the above `role` definition, anonymous users can perform the `login`, `checkToken` and `getCurrentUser` actions of the `auth` controller.
@@ -107,26 +107,34 @@ curl -X GET 'http://localhost:7512/?pretty'
 
 ## Defining Profiles
 
-A `profile` definition is a Javascript object that contains an array of policies, each composed of a roleId and an array of restrictions:
+A `profile` definition is a JSON object that contains an array of policies, each composed of a roleId and an array of restrictions:
 
 ```js
-const myProfileDefinition = {
-  policies: [
+{
+  "policies": [
     {
-      roleId: "< role Id >",
-      restrictedTo: [
-        {
-          index: "< some index >",
-          collections: [
-            "< a collection >",
-            "< another collection >"
-          ]
-        },
-        ...
-      ]  
+      // Applied to all indexes and collections
+      "roleId": "<role identifier>"
     },
-    <another role>,
-    ...
+    {
+      // Restricted to a list of indexes or to a list of collections
+      "roleId": "<another role identifier>",
+      "restrictedTo": [
+        {
+          // All collections of this index are allowed
+          "index": "<another index name>"
+        },
+        {
+          // Only the specified list of collections are allowed
+          "index": "<an authorized index name>",
+          "collections": [
+            "<authorized collection 1>",
+            "<authorized collection 2>",
+            "<...>"
+          ]
+        }
+      ]  
+    }
   ]
 };
 ```
@@ -136,55 +144,57 @@ When applying a role to a profile, the role can be applied to all indexes and co
 For example, if we have a "publisher" role which allows any action on the `document` controller:
 
 ```js
-const publisherRole = {
-  controllers: {
-    document: {
-      actions: {
-        '*': true
+{
+  "controllers": {
+    "document": {
+      "actions": {
+        "*": true
       }
     }
   }
-};
+}
 ```
 
 Then we can declare three different profiles using this same role, each with varying levels of access based on the index and collection:
 
-```js
-const profile1 = {
-  policies: [
-    {roleId: 'publisherRole'}
-  ]
-};
+* Applies the publisher role to all indexes and collections
 
-const profile2 = {
-  policies: [
+```js
+{
+  "policies": [
+    {"roleId": "publisherRole"}
+  ]
+}
+```
+
+* Applies the publisher role only to the index "index1" and all its collections
+
+```js
+{
+  "policies": [
     {
-      roleId: 'publisherRole',
-      restrictedTo: [{index: 'index1'}]
+      "roleId": "publisherRole",
+      "restrictedTo": [{"index": "index1"}]
     }
   ]
-};
+}
+````
 
-const profile3 = {
-  policies: [
+* Applies the publisher role only to the collections "foo" and "bar" in the index "index1", and then to the index "index2" and all its collections
+
+```js
+{
+  "policies": [
     {
-      roleId: 'publisherRole',
-      restrictedTo: [
-        {index: 'index1', collections: ['foo', 'bar']},
-        {index: 'index2'}
+      "roleId": "publisherRole",
+      "restrictedTo": [
+        {"index": "index1", "collections": ["foo", "bar"]},
+        {"index": "index2"}
       ]
     }
   ]
-};
+}
 ```
-
-These three profiles will provide the following restrictions:
-
-* users with `profile1` are allowed to use all `document` controller actions on all indexes and collections.
-* users with `profile2` are only allowed to use `document` controller actions on collections stored in index `index1`.
-* users with `profile3` are only allowed to use `document` controller actions on:
-  * all collections stored in index `index2`
-  * collections `foo` and `bar` stored in index `index1`.
 
 ---
 
@@ -197,6 +207,6 @@ For instance, suppose you have a chat application and you want the users to only
 
 There are multiple ways of adding a business logic layer on top of the standard Kuzzle security one:
 
-* {{{deprecated "1.4.0"}}} Using [Permission Closures]({{ site_base_path }}guide/1/kuzzle-depth/roles-definitions), you can add functions directly into role definitions
-* If all you need is to make sure that submitted documents follow a strict set of formatting rules, you can add [document validators]({{ site_base_path }}guide/1/datavalidation/)
 * With a [Pipe Plugin]({{ site_base_path }}plugins/1/essentials/pipes), you can listen to one or multiple [API events]({{ site_base_path }}plugins/1/events/), and decide whether you accept a query or document according to your business rules
+* If all you need is to make sure that submitted documents follow a strict set of formatting rules, you can add [document validators]({{ site_base_path }}guide/1/datavalidation/)
+* {{{deprecated "1.4.0"}}} Using <a href="{{ site_base_path }}guide/1/kuzzle-depth/roles-definitions">Permission Closures</a>, you can add functions directly into role definitions
