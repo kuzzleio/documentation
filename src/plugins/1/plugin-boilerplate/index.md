@@ -5,7 +5,7 @@ description: how to create a custom plugin
 order: 0
 ---
 
-## Plugin Boilerplate
+# Plugin Boilerplate
 
 The best way to start developing a plugin is to use a boilerplate.
 

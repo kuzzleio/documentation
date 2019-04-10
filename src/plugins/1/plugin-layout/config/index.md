@@ -1,11 +1,11 @@
 ---
 layout: full.html.hbs
-title: Config
+title: Configuration
 description: how to create a custom plugin
 order: 0
 ---
 
-## Configuration
+# Configuration
 
 When Kuzzle calls the plugin `init` method, it passes the plugin's custom configuration to it.
 

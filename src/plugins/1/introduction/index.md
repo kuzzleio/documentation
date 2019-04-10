@@ -5,7 +5,7 @@ description: how to create a custom plugin
 order: 0
 ---
 
-## Introduction
+# Introduction
 
 Kuzzle can be customized and extended using plugins.
 
