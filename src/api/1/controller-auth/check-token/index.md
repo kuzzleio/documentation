@@ -7,9 +7,7 @@ title: checkToken
 
 {{{since "1.0.0"}}}
 
-Checks a JWT validity.
-
-This API route does not require the caller to be logged in.
+Checks the validity of an authentication token.
 
 ---
 
@@ -23,7 +21,7 @@ Method: POST
 Body:  
 ```
 
-```js
+```json
 {
   "token": "<the JWT to check>"
 }
@@ -31,7 +29,7 @@ Body:
 
 ### Other protocols
 
-```js
+```json
 {
   "controller": "auth",
   "action": "checkToken",
@@ -45,7 +43,7 @@ Body:
 
 ## Body properties
 
-* `token`: the JWT to be tested
+* `token`: the authentication token to be tested
 
 ---
 
@@ -59,7 +57,7 @@ The returned result contains the following properties:
 
 Example:
 
-```js
+```json
 {
   "status": 200,
   "error": null,

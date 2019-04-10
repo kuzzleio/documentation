@@ -8,8 +8,6 @@ description: Checks a JWT's validity.
 
 Checks a token validity.
 
-This API route does not require the caller to be logged in.
-
 <br/>
 
 ```javascript
