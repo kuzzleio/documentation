@@ -29,30 +29,39 @@ this.hooks = {
 
 ```javascript
 module.exports = class HookPlugin {
-  constructor () {}
+  constructor() {}
 
   /*
    Required plugin initialization function
    (see the "Plugin prerequisites" section)
    */
-  init (customConfig, context) {
+  init(customConfig, context) {
     /*
-      Calls the plugin function "myFunction" when the Kuzzle event
-      "document:afterCreate" is triggered after a successful
-      document creation
+      Calls the plugin functions when the Kuzzle events
+      are
      */
     this.hooks = {
-      'document:afterCreate': (...args) => this.myFunction(...args)
+      'core:kuzzleStart': (...args) => this.myFunctionOnStart(...args),
+      'document:afterCreate': (...args) => this.myFunctionOnCreate(...args)
     };
   }
 
   /*
-   Called whenever the "document:afterCreate" event 
+   Called when the "core:kuzzleStart" event 
    is triggered
    */
-  myFunction (request, event) {
+  myFunctionOnStart(request, event) {
+    console.log(`Event ${event} triggered`);
+    console.log('Kuzzle is ready to process user requests');
+  }
+
+  /*
+  Called whenever the "document:afterCreate" event 
+  is triggered
+  */
+  myFunctionOnCreate(request, event) {
     console.log(`Event ${event} triggered`);
     console.log(`Document created: ${request.result._id}`);
   }
-}
+};
 ```
