@@ -6,7 +6,7 @@ try {
   const localCredentials = await kuzzle.auth.getMyCredentials('local');
   console.log(localCredentials);
   /*
-    {  username: 'foo', kuid: 'foo' }
+    {  username: 'foo', kuid: '<user unique identifier>' }
   */
 
   console.log('Success');
