@@ -24,18 +24,24 @@ docker-compose -f docker/docker-compose.yml up
 // the Kuzzle stack will automaticaly restart to include your modifications
 ```
 
-The provided `docker-compose` launches a Kuzzle stack with the `pm2` module :
-<br>It allows hot reload by watching the plugin's files.
-<br>You can find its configuration file next to the `docker-compose` inside the docker folder.
+The provided `docker-compose` launches a Kuzzle stack with the `pm2` module, you can:
 
-The main Plugin class is defined in the `index.js`.
-<br>You can start edit `hooks`, `pipes`, `controllers` and `strategies`.
+- Enable hot reload by watching the plugin's files.
+- Configure it using the file next to the `docker-compose` inside the docker folder.
+
+The main Plugin class is defined in the `index.js`. You can start edit it adding:
+
+- [Hooks](../hooks)
+- [Pipes](../pipes)
+- [Controllers](../controllers)
+- [Authentication Strategies](../strategies)
 
 Since the `init` function is the very first to be called, it's loading the `configuration` and the `context`.
-<br>More information [here](https://docs.kuzzle.io/plugins/1/plugin-layout/init-function/).
+You can now write your own functions and your own routes as described inside the `index.js`. You can also write unit tests if you're a see `steps.js`.
 
-You can now write your own functions and your own routes as described inside the `index.js`.
-
-Also, you can write unit tests : see `steps.js`.
-
+<div class="alert alert-info">
+You can find more information about the <code>init</code> function <a href="https://docs.kuzzle.io/plugins/1/plugin-layout/init-function/"> here</a>.
+</div>
+<div class="alert alert-success">
 You have now everything you need to start writing your own Kuzzle plugin.
+</div>
