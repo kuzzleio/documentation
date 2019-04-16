@@ -14,7 +14,7 @@ during its lifespan.
 
 These properties can be set in the `options` object when [instantiating a new SDK]({{ site_base_path }}sdk-reference/js/6/kuzzle/constructor/#arguments).  
 
-Some of them are also [writable properties]({{ site_base_path }}sdk-reference/js/6/kuzzle/introduction/#properties) available after SDK instantiation.
+Some of them are also [writable properties]({{ site_base_path }}sdk-reference/js/6/kuzzle/properties) available after SDK instantiation.
 
 ### autoQueue
 
