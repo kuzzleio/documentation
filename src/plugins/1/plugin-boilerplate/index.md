@@ -39,5 +39,3 @@ You can now write your own functions and your own routes as described inside the
 Also, you can write unit tests : see `steps.js`.
 
 You have now everything you need to start writing your own Kuzzle plugin.
-
----

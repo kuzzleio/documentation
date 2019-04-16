@@ -1,5 +1,5 @@
 ---
 layout: full.html.hbs
 title: Strategies
-order: 500
+order: 0
 ---

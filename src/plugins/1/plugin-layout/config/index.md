@@ -2,7 +2,7 @@
 layout: full.html.hbs
 title: Configuration
 description: how to create a custom plugin
-order: 0
+order: 1
 ---
 
 # Configuration

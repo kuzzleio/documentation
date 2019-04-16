@@ -47,15 +47,6 @@ module.exports = class HookPlugin {
   }
 
   /*
-   Called when the "core:kuzzleStart" event 
-   is triggered
-   */
-  myFunctionOnStart(request, event) {
-    console.log(`Event ${event} triggered`);
-    console.log('Kuzzle is ready to process user requests');
-  }
-
-  /*
   Called whenever the "document:afterCreate" event 
   is triggered
   */

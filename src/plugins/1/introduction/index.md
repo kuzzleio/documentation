@@ -17,5 +17,3 @@ This chapter explains how to install and configure a plugin. The other chapters 
 - [Authentication Strategies](../strategies)
 
 A single plugin can implement as many of those interfaces as necessary.
-
----

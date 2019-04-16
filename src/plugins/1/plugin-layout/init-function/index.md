@@ -2,7 +2,7 @@
 layout: full.html.hbs
 title: init function
 description: how to create a custom plugin
-order: 0
+order: 2
 ---
 
 # init function
@@ -31,5 +31,3 @@ The `init` function can optionally return a promise. If it does, Kuzzle waits fo
 If a promise is returned, it must be resolved within the configured timeout (see `plugins.common.initTimeout` in Kuzzle's [configuration]({{ site_base_path }}guide/1/essentials/configuration/))
 
 If a promise is returned and rejected, or if the `init` function throws an error, Kuzzle aborts its start sequence and shuts down.
-
----
