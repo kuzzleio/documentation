@@ -31,10 +31,10 @@ The provided `docker-compose` launches a Kuzzle stack with the `pm2` module, you
 
 The main Plugin class is defined in the `index.js`. You can start edit it adding:
 
-- [Hooks](../hooks)
-- [Pipes](../pipes)
-- [Controllers](../controllers)
-- [Authentication Strategies](../strategies)
+- [Hooks]({{ site_base_path }}plugins/1/essentials/hooks/)
+- [Pipes]({{ site_base_path }}plugins/1/essentials/pipes/)
+- [Controllers]({{ site_base_path }}plugins/1/essentials/controllers/)
+- [Authentication Strategies]({{ site_base_path }}plugins/1/strategies/overview/)
 
 Since the `init` function is the very first to be called, it's loading the `configuration` and the `context`.
 You can now write your own functions and your own routes as described inside the `index.js`. You can also write unit tests if you're a see `steps.js`.
