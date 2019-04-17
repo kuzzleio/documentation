@@ -1,8 +1,8 @@
 ---
 layout: full.html.hbs
-title: Plugin Boilerplate
+title: Getting started
 description: how to create a custom plugin
-order: 0
+order: 1
 ---
 
 # Plugin Boilerplate
