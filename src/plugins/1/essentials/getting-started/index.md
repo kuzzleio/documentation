@@ -40,7 +40,7 @@ Since the `init` function is the very first to be called, it's loading the `conf
 You can now write your own functions and your own routes as described inside the `index.js`. You can also write unit tests if you're a see `steps.js`.
 
 <div class="alert alert-info">
-You can find more information about the <code>init</code> function <a href="https://docs.kuzzle.io/plugins/1/plugin-layout/init-function/"> here</a>.
+You can find more information about the <code>init</code> function <a href="{{ site_base_path }}plugins/1/plugin-layout/init-function/"> here</a>.
 </div>
 <div class="alert alert-success">
 You have now everything you need to start writing your own Kuzzle plugin.
