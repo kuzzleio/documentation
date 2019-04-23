@@ -21,9 +21,9 @@ This controller can then be added to the SDK with the [Kuzzle.useController]({{ 
 
 ## Constructor
 
-The constructor of a custom controller will be called by passing the SDK instance to it. It must call the parent constructor with this instance of the SDK and its name as defined in the API.  
+The constructor of a custom SDK controller will be called by passing the SDK instance to it. It must call the parent constructor with this instance of the SDK and its name as defined in the API.  
 
-So if my plugin is named `nyc-open-data-taxi` (name defined in the [manifest.json]({{ site_base_path }}plugins/1/essentials/getting-started/#prerequisites) file) and I have extended the API with the following controller:
+So if my plugin is named `nyc-open-data-plugin` (name defined in the [manifest.json]({{ site_base_path }}plugins/1/essentials/getting-started/#prerequisites) file) and I have extended the API with the following controller:
 
 ```javascript
 this.controllers = {
