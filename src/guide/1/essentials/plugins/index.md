@@ -12,8 +12,8 @@ For example, imagine you are developing a mobile application that accesses a **t
 
 Kuzzle's **[Plugin Engine]({{ site_base_path }}plugins/1)** is a powerful feature that ensures that Kuzzle meets any project requirement:
 
-* select from a set of prebuilt plugins (such as the [OAuth2 Authentication Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth) or the [MQTT Protocol](https://github.com/kuzzleio/protocol-mqtt)).
-* [create your own plugin]({{ site_base_path }}plugins/1/essentials) to meet your specific requirements.
+- select from a set of prebuilt plugins (such as the [OAuth2 Authentication Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth) or the [MQTT Protocol](https://github.com/kuzzleio/protocol-mqtt)).
+- [create your own plugin]({{ site_base_path }}plugins/1/essentials) to meet your specific requirements.
 
 ---
 
@@ -21,22 +21,22 @@ Kuzzle's **[Plugin Engine]({{ site_base_path }}plugins/1)** is a powerful featur
 
 Plugins are used to extend Kuzzle's functionalities. They are loaded into Kuzzle during startup and share its execution thread. A plugin can implement one or multiple of the following interfaces:
 
-[Hooks]({{ site_base_path }}plugins/1/essentials/hooks): adds asynchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is sent to the listeners and Kuzzle continues its process without waiting for the listener to complete.
+[Hooks]({{ site_base_path }}plugins/1/hooks): adds asynchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is sent to the listeners and Kuzzle continues its process without waiting for the listener to complete.
 
-  _Example - "Write a log to a third-party logging service every time a document is deleted"_. The [Logger Plugin](https://github.com/kuzzleio/kuzzle-plugin-logger) (shipped with Kuzzle) uses this feature to log all the data-related events.
+_Example - "Write a log to a third-party logging service every time a document is deleted"_. The [Logger Plugin](https://github.com/kuzzleio/kuzzle-plugin-logger) (shipped with Kuzzle) uses this feature to log all the data-related events.
 
-[Pipes]({{ site_base_path }}plugins/1/essentials/pipes): adds synchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is passed synchronously to listeners, each modifying the input data and returning the result to the next listener. Kuzzle waits until the last listener completes and returns its data. If any  listener returns an error, it will interrupt the Kuzzle lifecycle, and the thrown error will be used as a response by Kuzzle.
+[Pipes]({{ site_base_path }}plugins/1/pipes): adds synchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is passed synchronously to listeners, each modifying the input data and returning the result to the next listener. Kuzzle waits until the last listener completes and returns its data. If any listener returns an error, it will interrupt the Kuzzle lifecycle, and the thrown error will be used as a response by Kuzzle.
 
-  _Example - "Compare the ordered quantity with the available stock and return an error if the amount of ordered items exceeds the amount in stock"_.
+_Example - "Compare the ordered quantity with the available stock and return an error if the amount of ordered items exceeds the amount in stock"_.
 
-[Controllers]({{ site_base_path }}plugins/1/essentials/controllers): extends Kuzzle API.
+[Controllers]({{ site_base_path }}plugins/1/controllers): extends Kuzzle API.
 
-  _Example - "Expose a `checkout` API endpoint that handles a third-party payment process"_.
+_Example - "Expose a `checkout` API endpoint that handles a third-party payment process"_.
 
 [Strategies]({{ site_base_path }}plugins/1/essentials/strategies): add an authentication strategy to identify and authenticate users.
 
-  _Example - "Enable OAuth based authentication in Kuzzle"_
-  Kuzzle ships with the [Local Strategy Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local) and thanks to PassportJS, more than 300 authentication strategies are readily available.
+_Example - "Enable OAuth based authentication in Kuzzle"_
+Kuzzle ships with the [Local Strategy Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local) and thanks to PassportJS, more than 300 authentication strategies are readily available.
 
 ## Protocols
 
@@ -61,9 +61,7 @@ Prior to loading the plugin into Kuzzle, you will need to load all of the plugin
 
 To demonstrate, we are going to install the [**Plugin Boilerplate**](https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate), a plugin example that uses all features available to a plugin.
 
-
 Go to the Kuzzle installation folder and type:
-
 
 ```bash
 # Open plugins/available folder
@@ -105,13 +103,8 @@ Once Kuzzle has restarted, check the server information at `http://localhost:751
               "document:beforeUpdate",
               "core:overload"
             ],
-            "pipes": [
-              "document:beforeCreate",
-              "realtime:beforePublish"
-            ],
-            "controllers": [
-              "kuzzle-core-plugin-boilerplate/myNewController"
-            ],
+            "pipes": ["document:beforeCreate", "realtime:beforePublish"],
+            "controllers": ["kuzzle-core-plugin-boilerplate/myNewController"],
             "routes": [
               {
                 "verb": "get",
@@ -126,9 +119,7 @@ Once Kuzzle has restarted, check the server information at `http://localhost:751
                 "action": "myNewAction"
               }
             ],
-            "strategies": [
-              "dummy"
-            ]
+            "strategies": ["dummy"]
           }
         }
       }
@@ -138,12 +129,12 @@ Once Kuzzle has restarted, check the server information at `http://localhost:751
 ```
 
 Note that the plugin description above contains a property for each plugin component:
+
 - `hooks` asynchronous operations that depend on data-related events
 - `pipes` synchronous operations that depend on data-related events
 - `controllers` list of exposed actions in the API
 - `routes` list of exposed actions in the **REST** API
 - `strategies` list of exposed authentication strategies
-
 
 ---
 
@@ -179,6 +170,7 @@ ln -s ../available/protocol-mqtt .
 To get more insight into how plugins work, please refer to the [Plugin Reference]({{ site_base_path }}plugins/1).
 
 Here is a list of official plugins:
+
 - [**kuzzle-plugin-auth-passport-local**](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local): authentication Plugin shipped with Kuzzle
 - [**kuzzle-plugin-logger**](https://github.com/kuzzleio/kuzzle-plugin-logger): plugin shipped with Kuzzle
 - [**kuzzle-plugin-auth-passport-oauth**](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth): authentication plugin

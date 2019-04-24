@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
-title: Hooks
+title: Documentation
 order: 200
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
-title: Pipes
+title: Documentation
 order: 300
 ---
 

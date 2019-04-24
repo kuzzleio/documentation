@@ -31,9 +31,9 @@ The provided `docker-compose.yml` file launches a Kuzzle stack with the `pm2` mo
 
 The main Plugin class is defined in the `index.js`. You can start edit it adding:
 
-- [Hooks]({{ site_base_path }}plugins/1/essentials/hooks/)
-- [Pipes]({{ site_base_path }}plugins/1/essentials/pipes/)
-- [Controllers]({{ site_base_path }}plugins/1/essentials/controllers/)
+- [Hooks]({{ site_base_path }}plugins/1/hooks/)
+- [Pipes]({{ site_base_path }}plugins/1/pipes/)
+- [Controllers]({{ site_base_path }}plugins/1/controllers/)
 - [Authentication Strategies]({{ site_base_path }}plugins/1/strategies/overview/)
 
 We need to provide the `configuration` and the `context` to plugins. In that purpose, plugins must have an `init` function which will have them as parameters : this `init` function is the very first one to be called by Kuzzle and is mandatory to start a plugin. You can now write your own functions and your own routes as described inside the `index.js`. You can also write unit tests : see `steps.js`.
