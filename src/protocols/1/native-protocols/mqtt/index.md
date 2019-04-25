@@ -44,7 +44,7 @@ example:
 
 ### Sending an API request and getting the response
 
-By default, the MQTT protocol listens to the ``Kuzzle/request`` MQTT topic (see [configuration](#configuration)) for requests to the [Kuzzle API](https://docs.kuzzle.io/api/1/essentials/connecting-to-kuzzle/).
+By default, the MQTT protocol listens to the ``Kuzzle/request`` MQTT topic (see [configuration](#configuration)) for requests to the [Kuzzle API]({{ site_base_path }}api/1/essentials/connecting-to-kuzzle/).
 
 It then forwards Kuzzle response to the ``Kuzzle/response`` MQTT topic, **and only to the client who made the initial request**.
 
