@@ -8,7 +8,7 @@ description: Wrapper around the Kuzzle.query method
 
 Base method used to send queries to a Kuzzle controller, following the [API Documentation]({{ site_base_path }}api/1).  
 
-This method inject the controller name into the the request and follow it to the original [Kuzzle.query]({{ site_base_path }}sdk-reference/js/6/kuzzle/query) method.
+This method injects the controller name into the the request and forwards it to the original [Kuzzle.query]({{ site_base_path }}sdk-reference/js/6/kuzzle/query) method.
 
 ## Arguments
 
@@ -20,7 +20,7 @@ query (request, [options]);
 
 | Argument  | Type   | Description            |
 | -------------- | --------- | ------------- |
-| `request` | <pre>object</pre> | API request options    |
+| `request` | <pre>object</pre> | API request  |
 | `options` | <pre>object</pre> | Optional query options |
 
 ### request
@@ -30,7 +30,7 @@ The following properties are the most common.
 
 | Property     | Type   | Description                               |
 | -------------- | --------- | ------------- |
-| `action`     | <pre>string</pre> | Action name (mandatory)                   |
+| `action`     | <pre>string</pre> | Action name (required)                   |
 | `controller` | <pre>string</pre> | Controller name                           |
 | `body`       | <pre>object</pre> | Query body for this action                |
 | `index`      | <pre>string</pre> | Index name for this action                |
@@ -47,7 +47,7 @@ Additional query options
 
 | Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolves
 
