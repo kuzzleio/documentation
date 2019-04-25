@@ -17,7 +17,7 @@ The protocol can be configured via the [kuzzlerc configuration file]({{ site_bas
 
 | Option | Type | Description | Default |
 |---|---|---|---|
-| ``enabled`` | <pre>boolean</pre> | Enables/Disables the MQTT protocol support | ``false`` |
+| ``enabled`` | <pre>boolean</pre> | Enable/Disable the MQTT protocol support | ``false`` |
 | ``allowPubSub`` | <pre>boolean</pre> | Allow MQTT pub/sub capabilities or restrict to Kuzzle requests only | ``false`` |
 | ``developmentMode`` | <pre>boolean</pre> | Switches ``responseTopic`` back to a regular public topic | ``false`` |
 | ``disconnectDelay`` | <pre>integer</pre> | Delay in ms to apply between a disconnection notification is received and the connection is actually removed | 250 |
