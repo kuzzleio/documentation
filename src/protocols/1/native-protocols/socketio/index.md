@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
-title: SocketIO
+title: Socket.IO
 order: 0
 ---
 # Socket.IO
