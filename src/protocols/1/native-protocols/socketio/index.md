@@ -7,7 +7,7 @@ order: 0
 
 ## Configuration
 
-The protocol can be configured via [Kuzzle'rc configuration]({{ site_base_path }}guide/1/essentials/configuration/), under ``server > protocols > socketio`` section.
+The protocol can be configured via the [kuzzlerc configuration file]({{ site_base_path }}guide/1/essentials/configuration/), under the ``server > protocols > socketio`` section.
 
 | Option | Type | Description | Default |
 |---|---|---|---|
