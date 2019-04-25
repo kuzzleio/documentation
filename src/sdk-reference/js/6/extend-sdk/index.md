@@ -9,15 +9,15 @@ order: 410
 
 It is possible to extend the SDK's functionality by adding new controllers.  
 
-These controllers generally correspond to [custom controllers created in a plugin]({{ site_base_path }}plugins/1/essentials/controllers) but not necessarily. Thus, it is possible to use the actions of its plugin in the SDK in the same way as the other actions of the Kuzzle API.  
+These controllers correspond to [custom controllers created in a plugin]({{ site_base_path }}plugins/1/essentials/controllers). Thus, it is possible to use the actions of a core plugin in the SDK in the same way as the other actions of the Kuzzle API.  
 
 ## Define a custom SDK controller
 
 A custom SDK controller is a class inheriting from the [BaseController]({{ site_base_path }}sdk-reference/js/6/base-controller) class and defining methods that correspond to API actions.  
 
-This class is exposed alongside the other class of the SDK module.  
+This base class is exposed alongside the other classes of the SDK module.  
 
-This controller can then be added to the SDK with the [Kuzzle.useController]({{ site_base_path }}sdk-reference/js/6/kuzzle/use-controller) method.
+After defining your new controller based on `BaseController`, you can add it to the SDK with the [Kuzzle.useController]({{ site_base_path }}sdk-reference/js/6/kuzzle/use-controller) method.
 
 ## Constructor
 
@@ -93,6 +93,8 @@ const
 const kuzzle = new Kuzzle(new WebSocket('localhost'));
 
 kuzzle.useController(TaxiController, 'taxi');
+
+await kuzzle.connect();
 
 await kuzzle.taxi.startDuty('lia meh ry');
 ```

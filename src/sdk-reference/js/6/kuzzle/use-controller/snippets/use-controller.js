@@ -4,7 +4,9 @@ class TaxiController extends BaseController {
   }
 
   enroll () {
-    return 'Success';
+    return this.query({
+      action: 'enroll'
+    });
   }
 }
 
