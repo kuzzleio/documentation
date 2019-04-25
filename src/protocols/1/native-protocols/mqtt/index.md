@@ -157,7 +157,7 @@ Subscription attempts to the ``requestTopic`` topic (defaults to ``Kuzzle/reques
 The MQTT ``Kuzzle/response`` topic is by default a special topic that acts as a private channel. Each client receives its own responses only, offering a simple first security layer.
 
 While this behavior is urgently recommended in production, it can bring a small drawback when testing and developing applications: it does not allow using most CLI tools.  
-Many CLI tools, such as Mosquitto offter two separate binaries, one for subscribing and one for publishing. These act as two different clients and the subscriber won't receive any response sent to the publisher by default.
+Many CLI tools, such as Mosquitto offer two separate binaries, one for subscribing and one for publishing. These act as two different clients and the subscriber won't receive any response sent to the publisher by default.
 
 To use these tools, one can enable the **development mode**, in which ``Kuzzle/response`` will act as a regular public topic.
 
