@@ -17,27 +17,26 @@ The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-refe
   "While a refresh is much lighter than a commit, it still has a performance cost. A manual refresh can be useful when writing tests, but don’t do a manual refresh every time you index a document in production; it will hurt your performance. Instead, your application needs to be aware of the near real-time nature of Elasticsearch and make allowances for it."
 </div>
 
-## Signature
-
-```java
-void refreshInternal() throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
-void refreshInternal(io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
-```
-
 ## Arguments
 
-| Arguments | Type         | Description       | Required |
-| --------- | ------------ | ----------------- | -------- |
-| `index`   | String       | Index name        | yes      |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
+```java
+void refreshInternal() throws io.kuzzle.sdk.KuzzleException;
+void refreshInternal(io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.KuzzleException;
+```
 
-### **Options**
+<br/>
 
-Additional query options
+| Arguments | Type         | Description       |
+| --------- | ------------ | ----------------- |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options | 
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+### options
+
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 
