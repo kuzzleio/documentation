@@ -3,7 +3,7 @@ layout: full.html.hbs
 title: SocketIO
 order: 0
 ---
-# Socket IO
+# Socket.IO
 
 ## Configuration
 
