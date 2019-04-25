@@ -42,7 +42,7 @@ module.exports = class HookPlugin {
      */
     this.hooks = {
       'core:kuzzleStart': this.myFunctionOnStart.bind(this),
-      'document:afterCreate': (...args) => this.myFunctionOnCreate(...args)
+      'document:afterCreate': this.myFunctionOnCreate.bind(this)
     };
   }
 
