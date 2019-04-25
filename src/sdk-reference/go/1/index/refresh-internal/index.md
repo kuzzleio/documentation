@@ -17,26 +17,25 @@ The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-refe
   "While a refresh is much lighter than a commit, it still has a performance cost. A manual refresh can be useful when writing tests, but don’t do a manual refresh every time you index a document in production; it will hurt your performance. Instead, your application needs to be aware of the near real-time nature of Elasticsearch and make allowances for it."
 </div>
 
-## Signature
-
-```go
-RefreshInternal(index string, options types.QueryOptions) error
-```
-
 ## Arguments
 
-| Arguments | Type         | Description                           | Required |
-| --------- | ------------ | ------------------------------------- | -------- |
-| `index`   | string       | Index name                            | yes      |
-| `options` | QueryOptions | Query options | no       |
+```go
+RefreshInternal(options types.QueryOptions) error
+```
 
-### **Options**
+<br/>
 
-Additional query options
+| Arguments | Type         | Description   |
+| --------- | ------------ | ------------- |
+| `options` | <pre>QueryOptions</pre> | Query options |
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+### options
+
+The `options` arguments can contain the following option properties:
+
+| Option     | Type (default) | Description                       |
+| ---------- | -------------- | --------------------------------- |
+| `queuable` | <pre>bool (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Return
 
