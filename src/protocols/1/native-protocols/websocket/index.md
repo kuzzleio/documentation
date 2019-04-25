@@ -11,7 +11,7 @@ The protocol can be configured via the [kuzzlerc configuration file]({{ site_bas
 
 | Option | Type | Description | Default |
 |---|---|---|---|
-| ``enabled`` | <pre>boolean</pre> | Enables/Disables WebSocket protocol support | ``true`` |
+| ``enabled`` | <pre>boolean</pre> | Enable/Disable WebSocket protocol support | ``true`` |
 
 ### Configure listening port
 
