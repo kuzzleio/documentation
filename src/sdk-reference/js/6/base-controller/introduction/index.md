@@ -9,4 +9,4 @@ order: 0
 
 Base class for a [custom SDK controller]({{ site_base_path }}sdk-reference/js/6/extend-sdk/#define-a-custom-sdk-controller).  
 
-Custom SDK controllers must extends the `BaseController` class to by added to the SDK with the [Kuzzle.useController]({{ site_base_path }}sdk-reference/js/6/kuzzle/use-controller) method.
+Custom SDK controllers have to extend the `BaseController` class to be added with the [Kuzzle.useController]({{ site_base_path }}sdk-reference/js/6/kuzzle/use-controller) method.

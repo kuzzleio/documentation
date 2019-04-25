@@ -9,7 +9,7 @@ description: Adds a new controller to the SDK
 Adds a new controller to the SDK. 
 
 *See also:* 
-  - *[Extends the SDK]({{ site_base_path }}sdk-reference/js/6/extend-sdk)*
+  - *[Extend the SDK]({{ site_base_path }}sdk-reference/js/6/extend-sdk)*
 
 ## Arguments
 
@@ -21,7 +21,7 @@ useController (ControllerClass, accessor);
 
 | Argument  | Type   | Description            |
 | -------------- | --------- | ------------- |
-| `ControllerClass` | <pre>Class</pre> | Controller class. Must inherits from [BaseController]({{ site_base_path }}sdk-reference/js/6/base-controller)    |
+| `ControllerClass` | <pre>Class</pre> | Controller class. Must inherit from [BaseController]({{ site_base_path }}sdk-reference/js/6/base-controller)    |
 | `accessor` | <pre>string</pre> | Accessor name for the controller in the Kuzzle object |
 
 ## Returns
