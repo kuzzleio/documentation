@@ -17,22 +17,21 @@ The `refreshInternal` action forces a [refresh]({{ ../site_base_path }}/sdk-refe
   "While a refresh is much lighter than a commit, it still has a performance cost. A manual refresh can be useful when writing tests, but don’t do a manual refresh every time you index a document in production; it will hurt your performance. Instead, your application needs to be aware of the near real-time nature of Elasticsearch and make allowances for it."
 </div>
 
-<br/>
+## Arguments
 
 ```javascript
-refreshInternal (index, [options]);
+refreshInternal ([options]);
 ```
 
 <br/>
 
 | Arguments | Type   | Description                         |
 | --------- | ------ | ----------------------------------- |
-| `index`   | <pre>string</pre> | Index name |
 | `options` | <pre>object</pre> | Query options |
 
 ### options
 
-Additional query options
+The `options` arguments can contain the following option properties:
 
 | Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
