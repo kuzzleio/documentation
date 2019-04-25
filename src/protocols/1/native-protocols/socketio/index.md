@@ -11,7 +11,7 @@ The protocol can be configured via [Kuzzle'rc configuration]({{ site_base_path }
 
 | Option | Type | Description | Default |
 |---|---|---|---|
-| ``enabled`` | <pre>boolean</pre> | Enables/Disables SocketIO protocol support | ``true`` |
+| ``enabled`` | <pre>boolean</pre> | Enable/Disable Socket.IO protocol support | ``true`` |
 | ``origins`` | <pre>string</pre> | Value of Access-Control-Allow-Origin header to answer the upgrade request | ``*:*`` |
 
 ### Configure listening port
