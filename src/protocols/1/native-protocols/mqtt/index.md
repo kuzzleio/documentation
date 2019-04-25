@@ -13,7 +13,7 @@ By default, the MQTT protocol is disabled in Kuzzle configuration.
 
 ## Configuration
 
-The protocol can be configured via [Kuzzle'rc configuration]({{ site_base_path }}guide/1/essentials/configuration/), under ``server > protocols > mqtt`` section.
+The protocol can be configured via the [kuzzlerc configuration file]({{ site_base_path }}guide/1/essentials/configuration/), under the ``server > protocols > mqtt`` section.
 
 | Option | Type | Description | Default |
 |---|---|---|---|
