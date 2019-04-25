@@ -82,7 +82,7 @@ class Logger {
         console.log(red('        CODE    :'), result.code);
         console.log(red('        FILE    :'), result.file);
         if (result.code === 'ERR_ASSERTION') {
-          if (result.output.length > 0) {
+          if (result.output && result.output.length > 0) {
             console.log(red('        OUTPUT  :'), result.output);
           }
           console.log(red('        EXPECTED:'), result.expected || snippet.expected);
