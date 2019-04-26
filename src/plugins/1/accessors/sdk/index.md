@@ -60,6 +60,8 @@ async myAwesomePipe (request) {
 
 ## query
 
+{{{since "1.6.0"}}}
+
 Accessor to the [query method]({{ site_base_path }}sdk-reference/js/6/kuzzle/query).  
 This can be useful to call plugins custom controller action.
 
@@ -83,6 +85,8 @@ async myAwesomePipe (request) {
 ---
 
 ## as
+
+{{{since "1.7.0"}}}
 
 Execute the following query as the original request user.
 
