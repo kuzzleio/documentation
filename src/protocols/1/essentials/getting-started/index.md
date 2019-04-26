@@ -6,7 +6,7 @@ order: 0
 
 # Getting Started
 
-Kuzzle has native support for the following network protocols: HTTP, Websocket and Socket.io.
+Kuzzle has native support for the following network protocols: [HTTP]({{ site_base_path }}protocols/1/native-protocols/http), [MQTT]({{ site_base_path }}protocols/1/native-protocols/mqtt) (disabled by default), [Websocket]({{ site_base_path }}protocols/1/native-protocols/websocket) and [Socket.io]({{ site_base_path }}protocols/1/native-protocols/socketio).
 
 However, any number of protocols can be implemented, adding new network capabilities.
 
@@ -17,8 +17,6 @@ Protocols are provided with objects to interact with Kuzzle:
 
 * [EntryPoint]({{ site_base_path }}protocols/1/entrypoint): base communication layer (declare user connections, forward API requests, ...)
 * [context]({{ site_base_path }}protocols/1/context): utilities and object constructors not directly related to network communications
-
-Protocol implementation example: [MQTT](https://github.com/kuzzleio/protocol-mqtt)
 
 ---
 
