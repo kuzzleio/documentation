@@ -1,6 +1,6 @@
 ---
 layout: full.html.hbs
-title: Controllers
+title: Documentation
 order: 400
 ---
 
@@ -8,7 +8,7 @@ order: 400
 
 Kuzzle's API is divided into controllers, each exposing executable actions (see [API reference]({{ site_base_path }}api/1/essentials/query-syntax)).
 
-Plugins can extend Kuzzle's API by adding new controllers to it. 
+Plugins can extend Kuzzle's API by adding new controllers to it.
 
 [Security access]({{ site_base_path }}guide/1/essentials/security/) to plugin controllers must be given (or denied), using the exact same way as with native API controllers.
 
@@ -21,7 +21,7 @@ To avoid naming conflicts, Kuzzle prefixes plugin controllers names with the plu
 ### HTTP
 
 ```http
-URL: http://<server>:<port>/_plugin/<plugin name>/<url defined by the plugin>/<resources> 
+URL: http://<server>:<port>/_plugin/<plugin name>/<url defined by the plugin>/<resources>
 Method: <verb defined by the plugin>
 ```
 
@@ -53,16 +53,17 @@ Kuzzle normalizes [queries]({{ site_base_path }}api/1/essentials/query-syntax) i
 
 Quick summary of how queries are normalized:
 
-* HTTP:
-  * dynamic arguments provided in the URL, and query string arguments are stored in `request.input.args`
-  * the body content is made available in `request.input.body`
-  * if the URL contains an `index`, a `collection` or a `_id` argument, it will be stored in `request.input.resource`
-  * request headers can be found in `request.context.connection.misc.headers`
+- HTTP:
 
-* Other protocols:
-  * the `body` property is stored in `request.input.body`
-  * these root properties are available in `request.input.resource`: `index`, `collection`, `_id`
-  * any other properties at the root of the query object will be stored in `request.input.args`
+  - dynamic arguments provided in the URL, and query string arguments are stored in `request.input.args`
+  - the body content is made available in `request.input.body`
+  - if the URL contains an `index`, a `collection` or a `_id` argument, it will be stored in `request.input.resource`
+  - request headers can be found in `request.context.connection.misc.headers`
+
+- Other protocols:
+  - the `body` property is stored in `request.input.body`
+  - these root properties are available in `request.input.resource`: `index`, `collection`, `_id`
+  - any other properties at the root of the query object will be stored in `request.input.args`
 
 ---
 
@@ -78,7 +79,7 @@ Read more about these automatic controller events [here]({{ site_base_path }}plu
 
 ```javascript
 module.exports = class ControllerPlugin {
-  constructor () {
+  constructor() {
     /*
       Adds a new "newController" controller to Kuzzle's API.
 
@@ -128,8 +129,18 @@ module.exports = class ControllerPlugin {
       property
      */
     this.routes = [
-      {verb: 'get', url: '/foo/:name', controller: 'newController', action: 'myAction'},
-      {verb: 'post', url: '/bar', controller: 'newController', action: 'myOtherAction'}
+      {
+        verb: 'get',
+        url: '/foo/:name',
+        controller: 'newController',
+        action: 'myAction'
+      },
+      {
+        verb: 'post',
+        url: '/bar',
+        controller: 'newController',
+        action: 'myOtherAction'
+      }
     ];
   }
 
@@ -137,7 +148,7 @@ module.exports = class ControllerPlugin {
     Required plugin initialization function
     (see the "Plugin prerequisites" section)
    */
-  init (customConfig, context) {
+  init(customConfig, context) {
     // plugin initialization
   }
 
@@ -148,17 +159,20 @@ module.exports = class ControllerPlugin {
     This result can be of any JS type (scalar, object, array), and
     will be used to build a response to send to the requesting client
    */
-  actionFunction (request) {
+  actionFunction(request) {
     // do action
 
     // optional: set network specific headers
     if (request.context.protocol === 'http') {
       // expires in 1h
-      request.response.setHeader('expires', new Date(Date.now() + 3600000).toUTCString());
+      request.response.setHeader(
+        'expires',
+        new Date(Date.now() + 3600000).toUTCString()
+      );
     }
 
     // Resolve with the result content. For instance:
-    return Promise.resolve({acknowledge: true});
+    return Promise.resolve({ acknowledge: true });
   }
 
   /*
@@ -168,9 +182,9 @@ module.exports = class ControllerPlugin {
     This result can be of any JS type (scalar, object, array), and
     will be used to build a response to send to the requesting client
    */
-  otherActionFunction (request) {
+  otherActionFunction(request) {
     // do action
     return Promise.resolve(/* result content */);
   }
-}
+};
 ```
