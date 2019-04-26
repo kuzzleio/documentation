@@ -12,6 +12,7 @@ The protocol can be configured via the [kuzzlerc configuration file]({{ site_bas
 | Option | Type | Description | Default |
 |---|---|---|---|
 | ``enabled`` | <pre>boolean</pre> | Enable/Disable WebSocket protocol support | ``true`` |
+| ``heartbeat`` | <pre>integer</pre> | The time, in milliseconds, between the server's PING requests. Setting this value to ``0`` disables PING/PONG requests entirely. | ``60000`` |
 
 ### Configure listening port
 
