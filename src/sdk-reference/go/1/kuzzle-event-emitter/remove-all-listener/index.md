@@ -21,7 +21,7 @@ RemoveAllListeners(event int)
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `event`    | <pre>int</pre> | Event constant from the `kuzzle.event` package |
+| `event`    | <pre>int</pre> | Event constant from the `event` package |
 
 ## Usage
 

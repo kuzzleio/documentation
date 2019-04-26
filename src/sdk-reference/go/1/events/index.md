@@ -13,7 +13,7 @@ The API for interacting with events is described by our [KuzzleEventEmitter]({{ 
 
 # Emitted Events
 
-The following event identifiers are constants declared in the `kuzzle.event` package.
+The following event identifiers are constants declared in the `event` package.
 
 ## Connected
 

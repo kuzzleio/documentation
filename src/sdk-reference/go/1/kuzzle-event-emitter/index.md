@@ -1,6 +1,6 @@
 ---
 layout: sdk.html.hbs
 title: KuzzleEventEmitter
-description: KuzzleEventEmitter class documentation
-order: 510
+description: KuzzleEventEmitter interface documentation
+order: 400
 ---

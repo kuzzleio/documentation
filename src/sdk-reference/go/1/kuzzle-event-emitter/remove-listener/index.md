@@ -18,7 +18,7 @@ RemoveListener(event int, channel chan<- interface{})
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `event`    | <pre>int</pre> | Event constant from the `kuzzle.event` package |
+| `event`    | <pre>int</pre> | Event constant from the `event` package |
 | `channel` | <pre>channel</pre> | Channel to unregister |
 
 ## Usage
