@@ -5,8 +5,6 @@ title: mGet
 
 # mGet
 
-{{{since "1.0.0"}}}
-
 Gets multiple documents.
 
 ---

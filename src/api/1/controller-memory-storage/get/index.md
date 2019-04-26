@@ -5,8 +5,6 @@ title: get
 
 # get
 
-{{{since "1.0.0"}}}
-
 Gets the value of a key.
 
 [[_Redis documentation_]](https://redis.io/commands/get)

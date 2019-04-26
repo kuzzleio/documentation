@@ -5,8 +5,6 @@ title: getRole
 
 # getRole
 
-{{{since "1.0.0"}}}
-
 Gets a security role.
 
 ---

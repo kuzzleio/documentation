@@ -5,8 +5,6 @@ title: list
 
 # list
 
-{{{since "1.0.0"}}}
-
 Returns the list of collections associated to a provided index.
 
 The returned list is sorted in alphanumerical order.  

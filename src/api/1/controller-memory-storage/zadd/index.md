@@ -5,8 +5,6 @@ title: zadd
 
 # zadd
 
-{{{since "1.0.0"}}}
-
 Adds elements to a sorted set. 
 
 If the key does not exist, it is created, holding an empty sorted set. 

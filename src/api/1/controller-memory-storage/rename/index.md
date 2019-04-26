@@ -5,8 +5,6 @@ title: rename
 
 # rename
 
-{{{since "1.0.0"}}}
-
 Renames a key.
 
 If the new key name is already used, then it is overwritten.

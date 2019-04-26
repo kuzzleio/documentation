@@ -5,8 +5,6 @@ title: newConnection
 
 # newConnection
 
-{{{since "1.0.0"}}}
-
 Declares a new client connection to Kuzzle.
 
 ---

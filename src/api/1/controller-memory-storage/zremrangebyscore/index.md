@@ -5,8 +5,6 @@ title: zremrangebyscore
 
 # zremrangebyscore
 
-{{{since "1.0.0"}}}
-
 Removes members from a sorted set, with a score between the provided interval.
 
 [[_Redis documentation_]](https://redis.io/commands/zremrangebylex)

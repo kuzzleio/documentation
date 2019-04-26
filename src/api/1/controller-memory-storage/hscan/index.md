@@ -5,8 +5,6 @@ title: hscan
 
 # hscan
 
-{{{since "1.0.0"}}}
-
 Iterates incrementally over fields contained in a hash, using a cursor.
 
 An iteration starts when the cursor is set to 0.  

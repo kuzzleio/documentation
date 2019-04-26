@@ -5,8 +5,6 @@ title: Request
 
 # Request
 
-{{{since "1.0.0"}}}
-
 Object representation of a Kuzzle [API call]({{ site_base_path }}api/1/essentials/query-syntax), to be used with the [entryPoint.execute]({{ site_base_path }}protocols/1/entrypoint/execute) function.
 
 That object is continuously updated to reflect the current state of the request, during its entire lifecycle.
@@ -75,15 +73,11 @@ Writable:
 
 ## clearError
 
-{{{since "1.0.0"}}}
-
 Clears the error: sets the `error` property to `null`, and the request status to `200`.
 
 ---
 
 ## serialize
-
-{{{since "1.0.0"}}}
 
 Serializes the request into into a pair of objects that can be sent across the network.
 
@@ -97,8 +91,6 @@ const bar = new context.Request(foo.data, foo.options);
 ---
 
 ## setError
-
-{{{since "1.0.0"}}}
 
 Adds an error to the request.
 
@@ -123,8 +115,6 @@ Otherwise, the provided error is embedded into a [InternalError]({{ site_base_pa
 ---
 
 ## setResult
-
-{{{since "1.0.0"}}}
 
 Sets the request result.
 

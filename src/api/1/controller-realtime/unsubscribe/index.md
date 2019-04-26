@@ -6,8 +6,6 @@ title: unsubscribe
 
 # unsubscribe
 
-{{{since "1.0.0"}}}
-
 Removes a subscription.
 
 ---

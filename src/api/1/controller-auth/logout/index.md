@@ -5,8 +5,6 @@ title: logout
 
 # logout
 
-{{{since "1.0.0"}}}
-
 Revokes the provided authentication token.
 
 If there were any, real-time subscriptions are cancelled.

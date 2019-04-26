@@ -11,8 +11,6 @@ The `context.errors` object regroups all error objects, used in request response
 
 ## KuzzleError
 
-{{{since "1.0.0"}}}
-
 Inherits from the standard Javascript `Error` object: abstract class inherited by all Kuzzle error objects.
 
 This class should only be used to create new Kuzzle error objects.
@@ -28,8 +26,6 @@ This class should only be used to create new Kuzzle error objects.
 ---
 
 ## BadRequestError
-
-{{{since "1.0.0"}}}
 
 Invalid request syntax.
 
@@ -47,8 +43,6 @@ const err = new context.errors.BadRequestError('error message');
 
 ## ExternalServiceError
 
-{{{since "1.0.0"}}}
-
 External service failure.
 
 ### Status Code
@@ -64,8 +58,6 @@ const err = new context.errors.ExternalServiceError('error message');
 ---
 
 ## ForbiddenError
-
-{{{since "1.0.0"}}}
 
 Unauthorized access to a resource.
 
@@ -83,8 +75,6 @@ const err = new context.errors.ForbiddenError('error message');
 
 ## GatewayTimeoutError
 
-{{{since "1.0.0"}}}
-
 Timeout error.
 
 ### Status code
@@ -101,8 +91,6 @@ const err = new context.errors.GatewayTimeoutError('error message');
 
 ## InternalError
 
-{{{since "1.0.0"}}}
-
 Unexpected error. Should be reserved for Kuzzle's use only.
 
 ### Status Code
@@ -118,8 +106,6 @@ const err = new context.errors.InternalError('error message');
 ---
 
 ## NotFoundError
-
-{{{since "1.0.0"}}}
 
 Resource not found.
 
@@ -155,8 +141,6 @@ const err = new context.errors.ParseError('error message');
 
 ## PartialError
 
-{{{since "1.0.0"}}}
-
 Partial request success.
 
 ### Constructor
@@ -189,8 +173,6 @@ const err = new context.errors.PartialError('error message', [
 
 ## PluginImplementationError
 
-{{{since "1.0.0"}}}
-
 Unexpected plugin failure.
 
 ### Status Code
@@ -206,8 +188,6 @@ const err = new context.errors.PluginImplementationError('error message');
 ---
 
 ## PreconditionError
-
-{{{since "1.0.0"}}}
 
 Unmet request prerequisites.
 
@@ -225,8 +205,6 @@ const err = new context.errors.PreconditionError('error message');
 
 ## ServiceUnavailableError
 
-{{{since "1.0.0"}}}
-
 Temporarily unable to respond.
 
 ### Status Code
@@ -243,8 +221,6 @@ const err = new context.errors.ServiceUnavailableError('error message');
 
 ## SizeLimitError
 
-{{{since "1.0.0"}}}
-
 Request exceeds the maximum limits.
 
 ### Status Code
@@ -260,8 +236,6 @@ const err = new context.errors.SizeLimitError('error message');
 ---
 
 ## UnauthorizedError
-
-{{{since "1.0.0"}}}
 
 Authentication failed.
 

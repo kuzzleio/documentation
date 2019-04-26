@@ -5,8 +5,6 @@ title: decrby
 
 # decrby
 
-{{{since "1.0.0"}}}
-
 Decrements the number stored at `key` by a provided integer value. If the key does not exist, it is set to 0 before performing the operation.
 
 [[_Redis documentation_]](https://redis.io/commands/decrby)

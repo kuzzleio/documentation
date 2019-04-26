@@ -5,8 +5,6 @@ title: type
 
 # type
 
-{{{since "1.0.0"}}}
-
 Returns the type of the value held by a key.
 
 [[_Redis documentation_]](https://redis.io/commands/type)

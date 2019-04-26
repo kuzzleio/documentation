@@ -6,8 +6,6 @@ order: 10
 
 # KuzzleError
 
-{{{since "1.0.0"}}}
-
 Inherits from the standard Javascript `Error` object: abstract class inherited by all Kuzzle error objects.
 
 This class should only be used to create new Kuzzle error objects.

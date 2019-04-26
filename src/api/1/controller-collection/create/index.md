@@ -5,8 +5,6 @@ title: create
 
 # create
 
-{{{since "1.0.0"}}}
-
 Creates a new [collection]({{ site_base_path }}guide/1/essentials/persisted), in the provided `index`.  
 
 {{{since "1.3.0"}}}

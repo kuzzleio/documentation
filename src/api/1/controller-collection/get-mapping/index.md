@@ -5,8 +5,6 @@ title: getMapping
 
 # getMapping
 
-{{{since "1.0.0"}}}
-
 Returns the collection mapping.
 
 {{{since "1.7.1"}}}

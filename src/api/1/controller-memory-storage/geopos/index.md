@@ -5,8 +5,6 @@ title: geopos
 
 # geopos
 
-{{{since "1.0.0"}}}
-
 Returns the position (`[longitude, latitude]`) of the provided key's members (see [geoadd]({{ site_base_path }}api/1/controller-memory-storage/geoadd/)).  
 
 [[_Redis documentation_]](https://redis.io/commands/geopos)

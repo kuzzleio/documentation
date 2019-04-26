@@ -5,8 +5,6 @@ title: updateMyCredentials
 
 # updateMyCredentials
 
-{{{since "1.0.0"}}}
-
 Updates the credentials of the currently logged in user.
 
 ---

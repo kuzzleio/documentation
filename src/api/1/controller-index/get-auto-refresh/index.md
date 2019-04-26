@@ -5,8 +5,6 @@ title: getAutoRefresh
 
 # getAutoRefresh
 
-{{{since "1.0.0"}}}
-
 Returns the current `autoRefresh` status for the given index.
 
 The `autoRefresh` flag, when set to true, forces Kuzzle to perform a

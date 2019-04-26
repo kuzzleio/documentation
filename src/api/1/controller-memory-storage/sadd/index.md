@@ -5,8 +5,6 @@ title: sadd
 
 # sadd
 
-{{{since "1.0.0"}}}
-
 Adds members to a set of unique values stored at `key`. 
 
 If the destination set does not exist, it is created beforehand.

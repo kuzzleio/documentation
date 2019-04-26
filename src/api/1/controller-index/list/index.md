@@ -5,8 +5,6 @@ title: list
 
 # list
 
-{{{since "1.0.0"}}}
-
 Returns the complete list of indexes.
 
 ---

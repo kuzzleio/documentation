@@ -27,8 +27,6 @@ All Kuzzle requests can return one of the following errors:
 
 ### BadRequestError
 
-{{{since "1.0.0"}}}
-
 **status**: 400
 
 A `BadRequestError` error is thrown if Kuzzle was unable to process the action due to a malformed request, or if required parameters are missing.
@@ -36,8 +34,6 @@ A `BadRequestError` error is thrown if Kuzzle was unable to process the action d
 ---
 
 ### ExternalServiceError
-
-{{{since "1.0.0"}}}
 
 **status**: 500
 
@@ -47,8 +43,6 @@ An `ExternalServiceError` error is thrown if Kuzzle was unable to process the ac
 
 ### ForbiddenError
 
-{{{since "1.0.0"}}}
-
 **status**: 403
 
 A `ForbiddenError` error is thrown if the current authenticated user is not authorized to perform the requested action.
@@ -56,8 +50,6 @@ A `ForbiddenError` error is thrown if the current authenticated user is not auth
 ---
 
 ### GatewayTimeoutError
-
-{{{since "1.0.0"}}}
 
 **status**: 504
 
@@ -71,8 +63,6 @@ The Client Application will have to determine if the process was completed.
 
 ### InternalError
 
-{{{since "1.0.0"}}}
-
 **status**: 500
 
 An `InternalError` error is thrown if Kuzzle encountered an unexpected error.
@@ -81,8 +71,6 @@ An `InternalError` error is thrown if Kuzzle encountered an unexpected error.
 
 ### PluginImplementationError
 
-{{{since "1.0.0"}}}
-
 **status**: 500
 
 A `PluginImplementationError` error is a generic error thrown by Kuzzle on a [plugin]({{ site_base_path }}plugins/1) failure.
@@ -90,8 +78,6 @@ A `PluginImplementationError` error is a generic error thrown by Kuzzle on a [pl
 ---
 
 ### ServiceUnavailableError
-
-{{{since "1.0.0"}}}
 
 **status**: 503
 
@@ -106,8 +92,6 @@ Check controllers documentation.
 
 ### NotFoundError
 
-{{{since "1.0.0"}}}
-
 **status**: 404
 
 A `NotFoundError` error is thrown if the requested resource could not be found (e.g. a document is requested with a non-existing id).
@@ -115,8 +99,6 @@ A `NotFoundError` error is thrown if the requested resource could not be found (
 ---
 
 ### PartialError
-
-{{{since "1.0.0"}}}
 
 **status**: 206
 
@@ -137,8 +119,6 @@ The detail of each failure can be retrieved in the `errors` property of the erro
 
 ### PreconditionError
 
-{{{since "1.0.0"}}}
-
 **status**: 412
 
 A `PreconditionError` error is thrown if Kuzzle was not able to process the request due to an invalid state.
@@ -149,8 +129,6 @@ For instance, this error can be generated when trying to create a document on a 
 
 ### SizeLimitError
 
-{{{since "1.0.0"}}}
-
 **status**: 413
 
 A `SizeLimitError` error is thrown by Kuzzle if the request size exceeds the limits defined in the [configuration]({{ site_base_path }}guide/1/essentials/configuration).
@@ -158,8 +136,6 @@ A `SizeLimitError` error is thrown by Kuzzle if the request size exceeds the lim
 ---
 
 ### UnauthorizedError
-
-{{{since "1.0.0"}}}
 
 **status**: 401
 

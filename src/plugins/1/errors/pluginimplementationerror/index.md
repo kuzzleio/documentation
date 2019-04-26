@@ -5,8 +5,6 @@ title: PluginImplementationError
 
 # PluginImplementationError
 
-{{{since "1.0.0"}}}
-
 Unexpected plugin failure.
 
 ## Status Code

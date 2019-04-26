@@ -5,8 +5,6 @@ title: UnauthorizedError
 
 # UnauthorizedError
 
-{{{since "1.0.0"}}}
-
 Authentication failed.
 
 ## Status Code

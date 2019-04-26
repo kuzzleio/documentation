@@ -5,8 +5,6 @@ title: ClientConnection
 
 # ClientConnection
 
-{{{since "1.0.0"}}}
-
 The `ClientConnection` class must be instantiated whenever a new client connection is created, and that instance must be provided to the [entryPoint.newConnection]({{ site_base_path }}protocols/1/entrypoint/newconnection) method.
 
 ---

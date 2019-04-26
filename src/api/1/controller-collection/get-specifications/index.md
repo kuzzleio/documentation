@@ -5,8 +5,6 @@ title: getSpecifications
 
 # getSpecifications
 
-{{{since "1.0.0"}}}
-
 Returns the validation specifications associated to the given index and collection.
 
 ---

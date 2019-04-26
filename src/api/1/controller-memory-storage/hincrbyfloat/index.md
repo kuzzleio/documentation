@@ -5,8 +5,6 @@ title: hincrbyfloat
 
 # hincrbyfloat
 
-{{{since "1.0.0"}}}
-
 Increments the number stored in a hash field by the provided float value.
 
 [[_Redis documentation_]](https://redis.io/commands/hincrbyfloat)

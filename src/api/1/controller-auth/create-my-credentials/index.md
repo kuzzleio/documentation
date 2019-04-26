@@ -5,8 +5,6 @@ title: createMyCredentials
 
 # createMyCredentials
 
-{{{since "1.0.0"}}}
-
 Creates new credentials for the current user.
 
 ---

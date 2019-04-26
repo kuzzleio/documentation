@@ -5,8 +5,6 @@ title: create
 
 # create
 
-{{{since "1.0.0"}}}
-
 Creates a new document in the persistent data storage.
 
 Returns an error if the document already exists.

@@ -5,8 +5,6 @@ title: sdiff
 
 # sdiff
 
-{{{since "1.0.0"}}}
-
 Returns the difference between a reference set and a list of other sets.
 
 [[_Redis documentation_]](https://redis.io/commands/sdiff)

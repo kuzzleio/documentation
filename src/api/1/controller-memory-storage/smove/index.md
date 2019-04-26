@@ -5,8 +5,6 @@ title: smove
 
 # smove
 
-{{{since "1.0.0"}}}
-
 Moves a member from a set of unique values to another.
 
 [[_Redis documentation_]](https://redis.io/commands/smove)

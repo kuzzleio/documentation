@@ -5,8 +5,6 @@ title: mUpdate
 
 # mUpdate
 
-{{{since "1.0.0"}}}
-
 Updates multiple documents.
 
 ---

@@ -5,8 +5,6 @@ title: lrange
 
 # lrange
 
-{{{since "1.0.0"}}}
-
 Returns the list elements between the `start` and `stop` positions.
 
 Offsets start at `0`, and the range is inclusive.

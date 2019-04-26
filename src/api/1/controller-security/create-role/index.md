@@ -5,8 +5,6 @@ title: createRole
 
 # createRole
 
-{{{since "1.0.0"}}}
-
 Creates a new role.
 
 ---

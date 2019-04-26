@@ -5,8 +5,6 @@ title: zscan
 
 # zscan
 
-{{{since "1.0.0"}}}
-
 Iterates incrementally over members contained in a sorted set, using a cursor.
 
 An iteration starts when the cursor is set to 0.  

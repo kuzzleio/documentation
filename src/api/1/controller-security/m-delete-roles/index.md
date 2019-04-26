@@ -5,8 +5,6 @@ title: mDeleteRoles
 
 # mDeleteRoles
 
-{{{since "1.0.0"}}}
-
 Deletes multiple security roles.
 
 ---

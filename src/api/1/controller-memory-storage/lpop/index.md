@@ -5,8 +5,6 @@ title: lpop
 
 # lpop
 
-{{{since "1.0.0"}}}
-
 Removes and returns the first element of a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lpop)

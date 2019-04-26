@@ -6,8 +6,6 @@ description: Checks that an administrator account exists.
 
 # adminExists
 
-{{{since "1.0.0"}}}
-
 Checks that an administrator account exists.
 
 ## Arguments

@@ -5,8 +5,6 @@ title: hmset
 
 # hmset
 
-{{{since "1.0.0"}}}
-
 Sets multiple fields at once in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hmset)

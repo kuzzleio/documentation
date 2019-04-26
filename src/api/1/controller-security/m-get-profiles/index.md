@@ -5,8 +5,6 @@ title: mGetProfiles
 
 # mGetProfiles
 
-{{{since "1.0.0"}}}
-
 Gets multiple security profiles.
 
 ---

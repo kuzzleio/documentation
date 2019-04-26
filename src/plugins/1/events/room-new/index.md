@@ -5,8 +5,6 @@ title: room:new
 
 # room:new
 
-{{{since "1.0.0"}}}
-
 | Arguments | Type | Description |
 |-----------|------|-------------|
 | `room` | <pre>object</pre> | Joined room information |

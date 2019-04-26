@@ -5,8 +5,6 @@ title: updateProfile
 
 # updateProfile
 
-{{{since "1.0.0"}}}
-
 Updates a security profile definition.
 
 ---

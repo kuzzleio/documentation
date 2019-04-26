@@ -5,8 +5,6 @@ title: scroll
 
 # scroll
 
-{{{since "1.0.0"}}}
-
 Moves a search cursor forward.
 
 A search cursor is created by a [search]({{ site_base_path }}api/1/controller-document/search/) API call, with a `scroll` value provided.

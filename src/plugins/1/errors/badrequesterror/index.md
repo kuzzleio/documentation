@@ -5,8 +5,6 @@ title: BadRequestError
 
 # BadRequestError
 
-{{{since "1.0.0"}}}
-
 Invalid request syntax.
 
 ## Status code

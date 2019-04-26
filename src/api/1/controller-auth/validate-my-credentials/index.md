@@ -5,8 +5,6 @@ title: validateMyCredentials
 
 # validateMyCredentials
 
-{{{since "1.0.0"}}}
-
 Validates the provided credentials against a specified authentication strategy. 
 
 This route neither creates nor modifies credentials. 

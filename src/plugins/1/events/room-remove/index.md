@@ -5,8 +5,6 @@ title: room:remove
 
 # room:remove
 
-{{{since "1.0.0"}}}
-
 | Arguments | Type | Description |
 |-----------|------|-------------|
 | `roomId` | <pre>string</pre> | Room unique identifier |

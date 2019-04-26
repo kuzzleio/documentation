@@ -5,8 +5,6 @@ title: request:onUnauthorized
 
 # request:onUnauthorized
 
-{{{since "1.0.0"}}}
-
 | Arguments | Type | Description |
 |-----------|------|-------------|
 | `request` | <pre><a href={{ site_base_path }}plugins/1/constructors/request>Request</a></pre> | The normalized API request |

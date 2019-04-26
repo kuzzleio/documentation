@@ -5,8 +5,6 @@ title: hmget
 
 # hmget
 
-{{{since "1.0.0"}}}
-
 Returns the values of the specified hash's fields.
 
 [[_Redis documentation_]](https://redis.io/commands/hmget)

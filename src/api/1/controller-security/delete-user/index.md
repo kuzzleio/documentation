@@ -6,8 +6,6 @@ title: deleteUser
 
 # deleteUser
 
-{{{since "1.0.0"}}}
-
 Deletes a user and all their associate credentials.
 
 ---

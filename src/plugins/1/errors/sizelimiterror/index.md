@@ -5,8 +5,6 @@ title: SizeLimitError
 
 # SizeLimitError
 
-{{{since "1.0.0"}}}
-
 Request exceeds the maximum limits.
 
 ## Status Code

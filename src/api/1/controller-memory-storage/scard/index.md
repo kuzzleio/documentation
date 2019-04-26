@@ -5,8 +5,6 @@ title: scard
 
 # scard
 
-{{{since "1.0.0"}}}
-
 Returns the number of members stored in a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/scard)

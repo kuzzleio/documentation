@@ -5,8 +5,6 @@ title: getMyRights
 
 # getMyRights
 
-{{{since "1.0.0"}}}
-
 Returns the exhaustive list of granted or denied rights for the currently logged in user.
 
 ---

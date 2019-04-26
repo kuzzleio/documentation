@@ -5,8 +5,6 @@ title: mDelete
 
 # mDelete
 
-{{{since "1.0.0"}}}
-
 Deletes multiple indexes.
 
 ---

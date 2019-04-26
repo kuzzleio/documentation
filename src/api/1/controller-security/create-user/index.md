@@ -5,8 +5,6 @@ title: createUser
 
 # createUser
 
-{{{since "1.0.0"}}}
-
 Creates a new user.
 
 The body contains the user data and must have the following properties:

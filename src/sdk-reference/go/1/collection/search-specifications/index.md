@@ -6,8 +6,6 @@ description: Searches collection specifications
 
 # searchSpecifications
 
-{{{since "1.0.0"}}}
-
 Searches collection specifications.
 
 There is a limit to how many items can be returned by a single search query.

@@ -5,8 +5,6 @@ title: execute
 
 # execute
 
-{{{since "1.0.0"}}}
-
 Executes a Kuzzle's [API action]({{ site_base_path }}api/1/).
 
 The `execute` function main usage is to forward users API requests to Kuzzle.

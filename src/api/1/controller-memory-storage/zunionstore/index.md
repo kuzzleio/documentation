@@ -5,8 +5,6 @@ title: zunionstore
 
 # zunionstore
 
-{{{since "1.0.0"}}}
-
 Computes the union of the provided sorted sets, and stores the result in a new sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zunionstore)

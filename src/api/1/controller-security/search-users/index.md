@@ -5,8 +5,6 @@ title: searchUsers
 
 # searchUsers
 
-{{{since "1.0.0"}}}
-
 Searches users.
 
 ---
