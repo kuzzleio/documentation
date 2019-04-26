@@ -7,23 +7,22 @@ title: trigger
 
 Triggers a custom event.
 
-This allows interactions with other plugins using [hooks]({{ site_base_path }}plugins/1/essentials/hooks/) or [pipes]({{ site_base_path }}plugins/1/essentials/pipes/).
+This allows interactions with other plugins using [hooks]({{ site_base_path }}plugins/1/hooks/) or [pipes]({{ site_base_path }}plugins/1/pipes/).
 
 ## Arguments
 
 ```js
-trigger(event, [payload])
+trigger(event, [payload]);
 ```
 
 <br/>
 
-| Arguments | Type | Description |
-|-----------|------|-------------|
-| `event` | <pre>string</pre> | Custom event name |
-| `payload` | <pre>object</pre> | Event payload |
+| Arguments | Type              | Description       |
+| --------- | ----------------- | ----------------- |
+| `event`   | <pre>string</pre> | Custom event name |
+| `payload` | <pre>object</pre> | Event payload     |
 
-
-**Note:** the triggered event is renamed using the following format:<br/>`plugin-<plugin name>:<event>`. 
+**Note:** the triggered event is renamed using the following format:<br/>`plugin-<plugin name>:<event>`.
 
 ## Example
 
@@ -35,13 +34,13 @@ context.accessors.trigger('someEvent', {
 
 // Listening plugin
 class ListeningPlugin {
-  constructor () {
+  constructor() {
     this.hooks = {
       'plugin-some-plugin:someEvent': 'someEventListener'
     };
   }
 
-  someEventListener (payload) {
+  someEventListener(payload) {
     this.doSomething(payload);
   }
 }

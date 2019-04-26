@@ -1,5 +1,5 @@
 ---
 layout: full.html.hbs
-title: Events
-order: 6
+title: Strategies
+order: 5
 ---
