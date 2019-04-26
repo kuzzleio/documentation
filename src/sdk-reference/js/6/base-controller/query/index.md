@@ -1,16 +1,14 @@
 ---
 layout: sdk.html.hbs
 title: query
-description: Base method to send API query to Kuzzle
+description: Wrapper around the Kuzzle.query method
 ---
 
 # query
 
-Base method used to send queries to Kuzzle, following the [API Documentation]({{ site_base_path }}api/1).
+Base method used to send queries to a Kuzzle controller, following the [API Documentation]({{ site_base_path }}api/1).  
 
-<div class="alert alert-warning">
-This is a low-level method, exposed to allow advanced SDK users to bypass high-level methods.
-</div>
+This method injects the controller name into the the request and forwards it to the original [Kuzzle.query]({{ site_base_path }}sdk-reference/js/6/kuzzle/query) method.
 
 ## Arguments
 
@@ -32,13 +30,16 @@ The following properties are the most common.
 
 | Property     | Type   | Description                               |
 | -------------- | --------- | ------------- |
-| `controller` | <pre>string</pre> | Controller name (mandatory)               |
-| `action`     | <pre>string</pre> | Action name (mandatory)                   |
+| `action`     | <pre>string</pre> | Action name (required)                   |
+| `controller` | <pre>string</pre> | Controller name                           |
 | `body`       | <pre>object</pre> | Query body for this action                |
 | `index`      | <pre>string</pre> | Index name for this action                |
 | `collection` | <pre>string</pre> | Collection name for this action           |
 | `_id`        | <pre>string</pre> | id for this action                        |
 | `volatile`   | <pre>object</pre> | Additional information to send to Kuzzle |
+
+**Note:**
+ - If the `controller` property is not set, the controller [name property]({{ site_base_path }}sdk-reference/js/6/base-controller/properties) will be used
 
 ### options
 
@@ -46,12 +47,8 @@ Additional query options
 
 | Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
-| `queuable` | <pre>boolean</pre><br/>(`true`) | Make this request queuable or not |
+| `queuable` | <pre>boolean</pre><br/>(`true`) | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Resolves
 
 Resolve to the raw Kuzzle API response. See the [API Documentation]({{ site_base_path }}api/1).
-
-## Usage
-
-[snippet=query]
