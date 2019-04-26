@@ -14,7 +14,7 @@
   kuzzle.on('networkError', error => {
     console.error('Network Error: ', error);
   });
-  kuzzle.addListener('connected', () => {
+  kuzzle.on('connected', () => {
     console.log('Successfully connected to Kuzzle');
   });
 

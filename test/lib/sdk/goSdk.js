@@ -15,7 +15,7 @@ class GoSdk {
   }
 
   async get() {
-    await execute('git', ['clone', '-b', getVersionPath(this), this.repository]);
+    await execute('git', ['clone', '-b', 'fix-previous-connection-detection', this.repository]);
     await execute('mv', ['sdk-go', this.sdkDir]);
     await execute('go', ['get', './...'], { cwd: this.sdkDir });
   }
