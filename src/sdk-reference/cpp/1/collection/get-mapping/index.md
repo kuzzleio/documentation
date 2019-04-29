@@ -37,7 +37,7 @@ Additional query options
 
 ## Return
 
-A JSON string representing the collection data mapping.
+A JSON string representing the collection mapping.
 
 ## Usage
 

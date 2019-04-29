@@ -6,9 +6,13 @@ description: Update the collection mapping
 
 # updateMapping
 
-Update the collection mapping.  
-Mapping allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
+Updates a collection mapping.
+
+{{{since "Kuzzle 1.7.1"}}}
+
+You can define the collection [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) by setting the `dynamic` field to the desired value.
+
+You can define [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) within the `_meta` root field.
 
 ## Signature
 
@@ -22,16 +26,19 @@ UpdateMapping(index string, collection string, mapping json.RawMessage, options 
 |--------------|---------|-------------|----------
 | ``index`` | string | Index name    | yes  |
 | ``collection`` | string | Collection name    | yes  |
-| ``mapping`` | json.RawMessage | Collection data mapping in JSON format  | yes  |
+| ``mapping`` | json.RawMessage | Collection mapping in JSON format  | yes  |
 | `options` | QueryOptions | Query options | no       |
 
-### **mapping**
+### mapping
 
-An string containing the JSON representation of the collection data mapping.  
+A `json.RawMessage` containing the representation of the collection mapping.  
 
-The mapping must have a root field `properties` that contain the mapping definition:
 ```json
 {
+  "dynamic": "[true|false|strict]",
+  "_meta": {
+    "field": "value"
+  },
   "properties": {
     "field1": { "type": "text" },
     "field2": {
@@ -43,9 +50,9 @@ The mapping must have a root field `properties` that contain the mapping definit
 }
 ```
 
-You can see the full list of Elasticsearch mapping types [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html).
+More informations about database mappings [here]({{ site_base_path}}guide/1/essentials/database-mappings)
 
-### **options**
+### options
 
 Additional query options
 

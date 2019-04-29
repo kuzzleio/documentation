@@ -1,7 +1,7 @@
 ---
 layout: full.html.hbs
 title: Essentials
-description: Introduction to the plugin engine
-order: 0
 separator: Plugins
+description: how to create a custom plugin
+order: 0
 ---
