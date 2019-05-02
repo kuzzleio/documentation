@@ -6,8 +6,6 @@ title: getProfileRights
 
 # getProfileRights
 
-{{{since "1.0.0"}}}
-
 Gets the detailed rights configured by a security profile.
 
 ---

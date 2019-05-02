@@ -5,8 +5,6 @@ title: geoadd
 
 # geoadd
 
-{{{since "1.0.0"}}}
-
 Adds geospatial points to the specified key.
 
 [[_Redis documentation_]](https://redis.io/commands/geoadd)

@@ -6,8 +6,6 @@ description: Returns the current Kuzzle configuration.
 
 # GetConfig
 
-{{{since "1.0.0"}}}
-
 Returns the current Kuzzle configuration.
 
 <div class="alert alert-warning">

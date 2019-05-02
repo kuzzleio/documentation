@@ -5,8 +5,6 @@ title: mReplace
 
 # mReplace
 
-{{{since "1.0.0"}}}
-
 Replaces multiple documents.
 
 ---

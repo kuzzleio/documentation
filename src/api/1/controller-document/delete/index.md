@@ -5,8 +5,6 @@ title: delete
 
 # delete
 
-{{{since "1.0.0"}}}
-
 Deletes a document.
 
 ---

@@ -5,8 +5,6 @@ title: lindex
 
 # lindex
 
-{{{since "1.0.0"}}}
-
 Returns the element at the provided index in a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lindex)

@@ -5,8 +5,6 @@ title: validate
 
 # validate
 
-{{{since "1.0.0"}}}
-
 Validates data against existing validation rules. 
 
 Documents are always valid if no validation rules are defined on the provided index and collection.

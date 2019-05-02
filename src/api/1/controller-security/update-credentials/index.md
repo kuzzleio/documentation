@@ -5,8 +5,6 @@ title: updateCredentials
 
 # updateCredentials
 
-{{{since "1.0.0"}}}
-
 Updates a user credentials for the specified authentication strategy.
 
 ---

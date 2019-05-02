@@ -5,8 +5,6 @@ title: mCreate
 
 # mCreate
 
-{{{since "1.0.0"}}}
-
 Creates multiple documents. 
 
 If a document identifier already exists, the creation fails for that document.

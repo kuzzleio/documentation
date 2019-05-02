@@ -5,8 +5,6 @@ title: PreconditionError
 
 # PreconditionError
 
-{{{since "1.0.0"}}}
-
 Unmet request prerequisites.
 
 ## Status Code

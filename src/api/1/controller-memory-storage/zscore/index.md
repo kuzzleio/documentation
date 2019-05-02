@@ -5,8 +5,6 @@ title: zscore
 
 # zscore
 
-{{{since "1.0.0"}}}
-
 Returns the score of an element in a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zscore)

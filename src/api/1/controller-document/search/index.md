@@ -5,8 +5,6 @@ title: search
 
 # search
 
-{{{since "1.0.0"}}}
-
 Searches documents.
 
 There is a limit to how many documents can be returned by a single search query.  

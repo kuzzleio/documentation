@@ -5,8 +5,6 @@ title: lpushx
 
 # lpushx
 
-{{{since "1.0.0"}}}
-
 Prepends the specified value to a list, only if the key already exists and if it holds a list.
 
 [[_Redis documentation_]](https://redis.io/commands/lpushx)

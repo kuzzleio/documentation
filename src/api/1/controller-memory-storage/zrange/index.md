@@ -5,8 +5,6 @@ title: zrange
 
 # zrange
 
-{{{since "1.0.0"}}}
-
 Returns elements depending on their position in the sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zrange)

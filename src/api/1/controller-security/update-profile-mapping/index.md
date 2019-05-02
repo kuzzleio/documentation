@@ -5,8 +5,6 @@ title: updateProfileMapping
 
 # updateProfileMapping
 
-{{{since "1.0.0"}}}
-
 Updates the internal profile storage mapping.
 
 ---

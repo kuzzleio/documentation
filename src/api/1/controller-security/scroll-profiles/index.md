@@ -5,8 +5,6 @@ title: scrollProfiles
 
 # scrollProfiles
 
-{{{since "1.0.0"}}}
-
 Moves a result set cursor forward, created by a [searchProfiles]({{ site_base_path }}api/1/controller-security/search-profiles) query with the `scroll` argument provided.
 
 Results returned by a `scrollProfiles` request reflect the state of the index at the time of the initial search request, like a fixed snapshot. Subsequent changes to documents do not affect the scroll results.

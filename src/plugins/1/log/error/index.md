@@ -6,8 +6,6 @@ order: 0
 
 # error
 
-{{{since "1.0.0"}}}
-
 ## Priority
 
 `0` (highest priority)

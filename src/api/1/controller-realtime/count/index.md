@@ -5,8 +5,6 @@ title: count
 
 # count
 
-{{{since "1.0.0"}}}
-
 Returns the number of other connections sharing the same subscription.
 
 ---

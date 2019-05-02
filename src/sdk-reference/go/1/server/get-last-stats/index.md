@@ -6,8 +6,6 @@ description: Returns the most recent statistics snapshot.
 
 # GetLastStats
 
-{{{since "1.0.0"}}}
-
 Returns the most recent statistics snapshot.
 By default, snapshots are made every 10 seconds and they are stored for 1 hour.
 

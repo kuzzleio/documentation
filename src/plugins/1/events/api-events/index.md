@@ -6,8 +6,6 @@ order: 100
 
 # API Events
 
-{{{since "1.0.0"}}}
-
 All API actions, without exception, trigger two of these three events: 
 
 * before the action starts

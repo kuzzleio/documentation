@@ -5,8 +5,6 @@ title: bitcount
 
 # bitcount
 
-{{{since "1.0.0"}}}
-
 Counts the number of set bits (population counting) in a string.  
 
 [[_Redis documentation_]](https://redis.io/commands/bitcount)

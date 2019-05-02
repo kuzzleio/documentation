@@ -5,8 +5,6 @@ description: Returns statistics snapshots within a provided timestamp range.
 ---
 
 # getStats
-{{{since "1.0.0"}}}
-
 Returns statistics snapshots within a provided timestamp range.
 By default, snapshots are made every 10 seconds and they are stored for 1 hour.
 

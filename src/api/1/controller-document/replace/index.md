@@ -5,8 +5,6 @@ title: replace
 
 # replace
 
-{{{since "1.0.0"}}}
-
 Replaces the content of an existing document.
 
 ---

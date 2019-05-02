@@ -5,8 +5,6 @@ title: hvals
 
 # hvals
 
-{{{since "1.0.0"}}}
-
 Returns all values contained in a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hvals)

@@ -5,8 +5,6 @@ title: lpush
 
 # lpush
 
-{{{since "1.0.0"}}}
-
 Prepends the specified values to a list. 
 
 If the key does not exist, it is created holding an empty list before performing the operation.

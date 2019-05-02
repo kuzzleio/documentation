@@ -5,8 +5,6 @@ title: truncate
 
 # truncate
 
-{{{since "1.0.0"}}}
-
 Empties a collection by removing all its documents, while keeping any associated mapping.  
 
 ---

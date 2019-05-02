@@ -5,8 +5,6 @@ title: srem
 
 # srem
 
-{{{since "1.0.0"}}}
-
 Removes members from a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/srem)

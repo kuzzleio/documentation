@@ -5,8 +5,6 @@ title: subscribe
 
 # subscribe
 
-{{{since "1.0.0"}}}
-
 Subscribes by providing a set of filters: messages, document changes and, optionally, user events matching the provided filters will generate [real-time notifications]({{site_base_path}}api/1/essentials), sent to you in real-time by Kuzzle.
 
 

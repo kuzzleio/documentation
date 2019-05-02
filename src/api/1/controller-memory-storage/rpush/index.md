@@ -5,8 +5,6 @@ title: rpush
 
 # rpush
 
-{{{since "1.0.0"}}}
-
 Appends values at the end of a list. 
 
 If the destination list does not exist, it is created holding an empty list before performing the operation.

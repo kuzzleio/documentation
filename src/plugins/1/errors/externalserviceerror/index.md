@@ -5,8 +5,6 @@ title: ExternalServiceError
 
 # ExternalServiceError
 
-{{{since "1.0.0"}}}
-
 External service failure.
 
 ## Status Code

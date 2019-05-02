@@ -6,8 +6,6 @@ title: hdel
 
 # hdel
 
-{{{since "1.0.0"}}}
-
 Removes fields from a hash.
 
 [[_Redis documentation_]](https://redis.io/commands/hdel)

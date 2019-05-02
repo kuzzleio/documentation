@@ -5,8 +5,6 @@ title: ltrim
 
 # ltrim
 
-{{{since "1.0.0"}}}
-
 Trims an existing list so that it will contain only the specified range of elements specified.
 
 [[_Redis documentation_]](https://redis.io/commands/ltrim)

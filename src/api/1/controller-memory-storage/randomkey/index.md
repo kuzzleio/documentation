@@ -5,8 +5,6 @@ title: randomkey
 
 # randomkey
 
-{{{since "1.0.0"}}}
-
 Returns a key identifier from the memory storage, at random.
 
 [[_Redis documentation_]](https://redis.io/commands/randomkey)

@@ -5,8 +5,6 @@ title: auth:strategyAuthenticated
 
 # auth:strategyAuthenticated
 
-{{{since "1.0.0"}}}
-
 | Arguments | Type | Description |
 |-----------|------|-------------|
 | `strategy` | <pre>string</pre> | [Authentication strategy]({{ site_base_path }}guide/1/essentials/user-authentication/#authentication-strategies-default) name |

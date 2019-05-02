@@ -5,8 +5,6 @@ title: updateUserMapping
 
 # updateUserMapping
 
-{{{since "1.0.0"}}}
-
 Updates the internal user storage mapping.
 
 

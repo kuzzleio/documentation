@@ -5,8 +5,6 @@ title: removeConnection
 
 # removeConnection 
 
-{{{since "1.0.0"}}}
-
 Removes a client connection from Kuzzle.
 
 ---

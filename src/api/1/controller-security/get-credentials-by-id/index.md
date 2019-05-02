@@ -6,8 +6,6 @@ title: getCredentialsById
 
 # getCredentialsById
 
-{{{since "1.0.0"}}}
-
 Gets credential information for the user identified by the strategy's unique user identifier `userId`.
 
 The returned `result` object will vary depending on the strategy (see the [getById plugin function]({{ site_base_path }}plugins/1/essentials/strategies/#optional-getbyid-default)), and it can be empty.

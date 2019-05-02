@@ -5,8 +5,6 @@ title: getAllStats
 
 # getAllStats
 
-{{{since "1.0.0"}}}
-
 Gets all stored internal statistic snapshots.
 
 ---

@@ -5,8 +5,6 @@ title: refreshInternal
 
 # refreshInternal
 
-{{{since "1.0.0"}}}
-
 Forces an immediate [reindexation](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-refresh.html) of Kuzzle internal storage.
 
 When writing or deleting security documents in Kuzzle (users, profiles, roles, and so on), the changes need to be indexed before being reflected in the search results.  

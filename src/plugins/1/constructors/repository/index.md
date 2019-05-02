@@ -5,8 +5,6 @@ title: Repository
 
 # Repository
 
-{{{since "1.0.0"}}}
-
 Provides access to a collection inside the plugin's dedicated and secure storage.
 
 If this is not already the case, the collection must first be created, using the [storage]({{ site_base_path }}plugins/1/accessors/storage) accessor.
@@ -29,8 +27,6 @@ new context.Repository(collection, [ObjectConstructor])
 ---
 
 ## create
-
-{{{since "1.0.0"}}}
 
 Creates a document.
 
@@ -94,8 +90,6 @@ try {
 
 ## createOrReplace
 
-{{{since "1.0.0"}}}
-
 Creates or replaces a document.
 
 ### Arguments
@@ -158,8 +152,6 @@ try {
 
 ## delete
 
-{{{since "1.0.0"}}}
-
 Deletes a document.
 
 ### Arguments
@@ -213,8 +205,6 @@ try {
 
 ## get
 
-{{{since "1.0.0"}}}
-
 Gets a document.
 
 ### Arguments
@@ -239,8 +229,6 @@ If an `ObjectConstructor` argument was provided to the repository constructor, t
 
 ## mGet
 
-{{{since "1.0.0"}}}
-
 Gets multiple documents.
 
 ### Arguments
@@ -264,8 +252,6 @@ If an `ObjectConstructor` argument was provided to the repository constructor, t
 ---
 
 ## replace
-
-{{{since "1.0.0"}}}
 
 Replaces the content of a document.
 
@@ -328,8 +314,6 @@ try {
 ---
 
 ## search
-
-{{{since "1.0.0"}}}
 
 Searches documents.
 
@@ -398,8 +382,6 @@ The `scroll` function returns a promise resolving to a search result object, wit
 ---
 
 ## update
-
-{{{since "1.0.0"}}}
 
 Updates parts of a document's content.
 

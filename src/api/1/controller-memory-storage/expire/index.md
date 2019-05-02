@@ -6,8 +6,6 @@ title: expire
 
 # expire
 
-{{{since "1.0.0"}}}
-
 Sets a timeout (in seconds) on a key. After the timeout has expired, the key is automatically deleted.
 
 [[_Redis documentation_]](https://redis.io/commands/expire)

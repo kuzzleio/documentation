@@ -5,8 +5,6 @@ title: publish
 
 # publish
 
-{{{since "1.0.0"}}}
-
 Sends a real-time message to Kuzzle. The message will be dispatched to all clients with subscriptions matching the index, the collection and the message content.
 
 A `_kuzzle_info` object will be added to the message content, with the following properties:

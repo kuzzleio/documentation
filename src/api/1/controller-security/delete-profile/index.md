@@ -6,8 +6,6 @@ title: deleteProfile
 
 # deleteProfile
 
-{{{since "1.0.0"}}}
-
 Deletes a security profile.
 
 An error is returned if the profile is still in use.

@@ -5,8 +5,6 @@ title: zrangebyscore
 
 # zrangebyscore
 
-{{{since "1.0.0"}}}
-
 Returns all sorted set elements with a score within a provided range.
 
 The elements are considered to be ordered from low to high scores.

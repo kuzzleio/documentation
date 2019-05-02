@@ -5,8 +5,6 @@ title: setAutoRefresh
 
 # setAutoRefresh
 
-{{{since "1.0.0"}}}
-
 Changes the `autoRefresh` configuration of an index.
 
 The `autoRefresh` flag, when set to true, tells Kuzzle to perform an immediate

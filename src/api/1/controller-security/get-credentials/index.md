@@ -6,8 +6,6 @@ title: getCredentials
 
 # getCredentials
 
-{{{since "1.0.0"}}}
-
 Gets a user's credential information for the specified authentication strategy.
 
 The returned content depends on the authentication strategy, but it should never include sensitive information.

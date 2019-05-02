@@ -5,8 +5,6 @@ title: scan
 
 # scan
 
-{{{since "1.0.0"}}}
-
 Iterates incrementally over the set of keys in the database using a cursor.
 
 An iteration starts when the cursor is set to 0.  

@@ -5,8 +5,6 @@ title: deleteRole
 
 # deleteRole
 
-{{{since "1.0.0"}}}
-
 Deletes a security role.
 
 An error is returned if the role is still in use.

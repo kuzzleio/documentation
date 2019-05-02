@@ -5,8 +5,6 @@ title: renamenx
 
 # renamenx
 
-{{{since "1.0.0"}}}
-
 Renames a key, only if the new name is not already used.
 
 [[_Redis documentation_]](https://redis.io/commands/renamenx)

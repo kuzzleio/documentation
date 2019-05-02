@@ -15,8 +15,6 @@ The only way documents stored in this space can be accessed using Kuzzle is if t
 
 ## bootstrap
 
-{{{since "1.0.0"}}}
-
 Initializes the plugin storage. 
 
 Can be called any number of times as long as identical mappings are provided.
@@ -64,8 +62,6 @@ try {
 ---
 
 ## createCollection
-
-{{{since "1.0.0"}}}
 
 Creates a collection in the plugin storage.
 

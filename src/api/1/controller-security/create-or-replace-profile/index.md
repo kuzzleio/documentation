@@ -5,8 +5,6 @@ title: createOrReplaceProfile
 
 # createOrReplaceProfile
 
-{{{since "1.0.0"}}}
-
 Creates a new profile or, if the provided profile identifier already exists, replaces it.
 
 ---

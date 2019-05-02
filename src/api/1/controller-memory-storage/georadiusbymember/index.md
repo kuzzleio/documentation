@@ -5,8 +5,6 @@ title: georadiusbymember
 
 # georadiusbymember
 
-{{{since "1.0.0"}}}
-
 Returns the members (added with [geoadd]({{ site_base_path }}api/1/controller-memory-storage/geoadd/)) of a given key inside the provided geospatial radius, centered around one of a key's member.
 
 [[_Redis documentation_]](https://redis.io/commands/georadiusbymember)

@@ -5,8 +5,6 @@ title: zremrangebyrank
 
 # zremrangebyrank
 
-{{{since "1.0.0"}}}
-
 Removes members from a sorted set, with their position in the set within a provided index range.
 
 Positions are 0-based, meaning the first member of the set has a position of 0.

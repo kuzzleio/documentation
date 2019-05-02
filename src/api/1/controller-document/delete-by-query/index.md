@@ -5,8 +5,6 @@ title: deleteByQuery
 
 # deleteByQuery
 
-{{{since "1.0.0"}}}
-
 Deletes documents matching the provided search query.
 
 ---

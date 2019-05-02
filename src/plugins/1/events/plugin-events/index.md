@@ -6,8 +6,6 @@ order: 200
 
 # Plugin Events
 
-{{{since "1.0.0"}}}
-
 Plugins can [add new controllers]({{ site_base_path }}plugins/1/essentials/controllers) to the Kuzzle API. 
 
 These new controllers and actions behave exactly like [native API actions]({{ site_base_path }}plugins/1/events/api-events/).  

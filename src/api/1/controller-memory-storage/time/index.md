@@ -5,8 +5,6 @@ title: time
 
 # time
 
-{{{since "1.0.0"}}}
-
 Returns the current server time.
 
 [[_Redis documentation_]](https://redis.io/commands/time)

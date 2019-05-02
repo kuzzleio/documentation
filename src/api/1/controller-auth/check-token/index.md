@@ -5,8 +5,6 @@ title: checkToken
 
 # checkToken
 
-{{{since "1.0.0"}}}
-
 Checks the validity of an authentication token.
 
 ---

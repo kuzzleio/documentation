@@ -5,8 +5,6 @@ title: createCredentials
 
 # createCredentials
 
-{{{since "1.0.0"}}}
-
 Creates authentication credentials for a user.
 
 ---

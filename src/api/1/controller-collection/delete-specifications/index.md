@@ -5,8 +5,6 @@ title: deleteSpecifications
 
 # deleteSpecifications
 
-{{{since "1.0.0"}}}
-
 Deletes validation specifications for a collection.
 
 The request succeeds even if no specification exist for that collection.

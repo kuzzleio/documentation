@@ -19,8 +19,6 @@ This class constructor takes no argument.
 
 ## exists
 
-{{{since "1.0.0"}}}
-
 Returns a boolean telling whether filters exist for an index-collection pair.
 
 ### Arguments
@@ -43,8 +41,6 @@ The `exists` function returns a boolean telling whether at least one filter exis
 ---
 
 ## getFilterIds
-
-{{{since "1.0.0"}}}
 
 Retrieves the list of filter identifiers registered on an index-collection pair.
 
@@ -104,8 +100,6 @@ The `normalize` function returns a promise resolving to an object with the follo
 
 ## register
 
-{{{since "1.0.0"}}}
-
 Registers a filter to this Koncorde instance. 
 
 This method is equivalent to executing [normalize](#normalize-default) + [store](#store-default).
@@ -136,8 +130,6 @@ The `register` functions returns a promise, resolving to an object with the foll
 ---
 
 ## remove
-
-{{{since "1.0.0"}}}
 
 Removes a filter.
 
@@ -189,8 +181,6 @@ The `store` function returns an object with the following attributes:
 
 ## test
 
-{{{since "1.0.0"}}}
-
 Tests data and returns the matching filter identifiers.
 
 ### Arguments
@@ -214,8 +204,6 @@ The `test` function returns an array of strings, which is the exhaustive list of
 ---
 
 ## validate
-
-{{{since "1.0.0"}}}
 
 Validates the provided filters without storing them.
 

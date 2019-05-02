@@ -5,8 +5,6 @@ title: trigger
 
 # trigger
 
-{{{since "1.0.0"}}}
-
 Triggers a custom event.
 
 This allows interactions with other plugins using [hooks]({{ site_base_path }}plugins/1/hooks/) or [pipes]({{ site_base_path }}plugins/1/pipes/).

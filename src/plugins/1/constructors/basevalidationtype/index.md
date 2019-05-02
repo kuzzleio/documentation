@@ -5,8 +5,6 @@ title: BaseValidationType
 
 # BaseValidationType
 
-{{{since "1.0.0"}}}
-
 Abstract class, used to create custom validation types (see the [validation]({{ site_base_path }}plugins/1/accessors/validation) accessor).
 
 ---

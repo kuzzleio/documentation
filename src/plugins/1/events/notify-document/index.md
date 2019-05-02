@@ -5,8 +5,6 @@ title: notify:document
 
 # notify:document
 
-{{{since "1.0.0"}}}
-
 | Arguments | Type | Description |
 |-----------|------|-------------|
 | `message` | <pre><a href={{ site_base_path }}api/1/essentials/notifications/>Notification</a></pre> | The normalized real-time notification |

@@ -6,8 +6,6 @@ title: getProfile
 
 # getProfile
 
-{{{since "1.0.0"}}}
-
 Gets a security profile.
 
 ---

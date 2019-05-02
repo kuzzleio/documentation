@@ -5,8 +5,6 @@ title: flushdb
 
 # flushdb
 
-{{{since "1.0.0"}}}
-
 Empties the database dedicated to client applications (the reserved space for Kuzzle is unaffected).
 
 [[_Redis documentation_]](https://redis.io/commands/flushdb)

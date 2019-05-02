@@ -5,8 +5,6 @@ title: searchRoles
 
 # searchRoles
 
-{{{since "1.0.0"}}}
-
 Searches security roles, optionally returning only those allowing access to the provided controllers.
 
 ---

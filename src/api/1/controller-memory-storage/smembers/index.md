@@ -5,8 +5,6 @@ title: smembers
 
 # smembers
 
-{{{since "1.0.0"}}}
-
 Returns the members of a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/smembers)

@@ -5,8 +5,6 @@ title: core:overload
 
 # core:overload
 
-{{{since "1.0.0"}}}
-
 | Arguments | Type | Description |
 |-----------|------|-------------|
 | `fill` | <pre>number</pre> | Request buffer fill percentage |

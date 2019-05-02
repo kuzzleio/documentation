@@ -5,8 +5,6 @@ title: getMyCredentials
 
 # getMyCredentials
 
-{{{since "1.0.0"}}}
-
 Returns credential information for the currently logged in user.
 
 The data returned will depend on the specified authentication strategy, and they should not include any sensitive information.

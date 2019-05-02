@@ -5,8 +5,6 @@ title: updateRoleMapping
 
 # updateRoleMapping
 
-{{{since "1.0.0"}}}
-
 Updates the internal role storage mapping.
 
 ---

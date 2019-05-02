@@ -5,8 +5,6 @@ title: dbsize
 
 # dbsize
 
-{{{since "1.0.0"}}}
-
 Returns the number of keys in the application database.
 
 [[_Redis documentation_]](https://redis.io/commands/dbsize)

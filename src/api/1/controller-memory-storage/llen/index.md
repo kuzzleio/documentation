@@ -5,8 +5,6 @@ title: llen
 
 # llen
 
-{{{since "1.0.0"}}}
-
 Returns the length of a list.
 
 [[_Redis documentation_]](https://redis.io/commands/llen)

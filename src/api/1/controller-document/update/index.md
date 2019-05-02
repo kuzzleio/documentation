@@ -5,8 +5,6 @@ title: update
 
 # update
 
-{{{since "1.0.0"}}}
-
 Updates a document content.
 
 ---

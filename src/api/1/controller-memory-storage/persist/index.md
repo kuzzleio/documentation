@@ -5,8 +5,6 @@ title: persist
 
 # persist
 
-{{{since "1.0.0"}}}
-
 Removes the expiration delay or timestamp from a key, making it persistent.
 
 [[_Redis documentation_]](https://redis.io/commands/persist)

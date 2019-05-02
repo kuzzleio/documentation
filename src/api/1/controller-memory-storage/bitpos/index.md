@@ -5,8 +5,6 @@ title: bitpos
 
 # bitpos
 
-{{{since "1.0.0"}}}
-
 Returns the position of the first bit set to 1 or 0 in a string, or in a substring.
 
 [[_Redis documentation_]](https://redis.io/commands/bitpos)

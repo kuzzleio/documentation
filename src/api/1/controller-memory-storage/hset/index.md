@@ -5,8 +5,6 @@ title: hset
 
 # hset
 
-{{{since "1.0.0"}}}
-
 Sets a field and its value in a hash. 
 
 If the key does not exist, a new key holding a hash is created. 
