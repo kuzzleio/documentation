@@ -66,8 +66,7 @@ module.exports = {
     return new SafeString(title);
   },
 
-  since: version => `<p class="since">Added in v${version}</p>`,
+  since: version => `<p class="since">Added in ${version}</p>`,
 
-  deprecated: version => `<p class="deprecated">Deprecated since v${version}</p>`
+  deprecated: version => `<p class="deprecated">Deprecated since ${version}</p>`
 };
-

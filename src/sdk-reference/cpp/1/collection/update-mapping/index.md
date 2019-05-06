@@ -6,9 +6,13 @@ description: Update the collection mapping
 
 # updateMapping
 
-Update the collection mapping.
-Mapping allow you to exploit the full capabilities of our
-persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html)).
+Updates a collection mapping.
+
+{{{since "Kuzzle 1.7.1"}}}
+
+You can define the collection [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) by setting the `dynamic` field to the desired value.
+
+You can define [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) within the `_meta` root field.
 
 ## Signature
 
@@ -31,16 +35,19 @@ void updateMapping(
 |--------------|---------|-------------|
 | `index` | <pre>const std::string&</pre> | Index name    | 
 | `collection` | <pre>const std::string&</pre> | Collection name    |
-| `mapping` | <pre>const std::string*</pre> | JSON string representing the collection data mapping |
+| `mapping` | <pre>const std::string*</pre> | JSON string representing the collection mapping |
 | `options` | <pre>kuzzleio::query_options\*</pre> |  Query options  |
 
 ### mapping
 
-A JSON string representing the collection data mapping.
+A JSON string representing the collection mapping.
 
-The mapping must have a root field `properties` that contain the mapping definition:
 ```json
 {
+  "dynamic": "[true|false|strict]",
+  "_meta": {
+    "field": "value"
+  },
   "properties": {
     "field1": { "type": "text" },
     "field2": {
@@ -52,7 +59,8 @@ The mapping must have a root field `properties` that contain the mapping definit
 }
 ```
 
-You can see the full list of Elasticsearch mapping types [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
+More informations about database mappings [here]({{ site_base_path}}guide/1/essentials/database-mappings).
+
 
 ### options
 

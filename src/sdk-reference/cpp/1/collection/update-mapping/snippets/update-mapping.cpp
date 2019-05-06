@@ -1,5 +1,9 @@
 try {
   std::string mapping = R"({
+    "dynamic": "false",
+    "_meta": {
+      "area": "Panipokhari"
+    },
     "properties": {
       "plate": { "type": "keyword" }
     }
