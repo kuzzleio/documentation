@@ -31,26 +31,7 @@ If you want a super admin role, you would do as follow :
   }
 }
 ```
-
-For an example, if you want your it to be a document writer, you can define it as follow :
-
-```js
-{
-  "controllers": {
-    "document": {
-      "actions": {
-        "create": true,
-        "createOrReplace": true,
-        "replace": true,
-        "update": true,
-        "delete": true
-      }
-    }
-  }
-}
-```
-
-Another example for an admin console role would be :
+For an example, for an admin console role with minimum rights to connect would be :
 
 ```js
 {
