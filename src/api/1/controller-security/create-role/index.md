@@ -55,9 +55,12 @@ Another example for an admin console role would be :
 ```js
 {
   "controllers": {
-    "security": {
+    "auth": {
       "actions": {
-        "*": true
+        "login": true,
+        "checkToken": true,
+        "getCurrentUser": true,
+        "getMyRights": true
       }
     }
   }
