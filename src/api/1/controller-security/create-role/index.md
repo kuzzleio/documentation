@@ -19,12 +19,31 @@ Method: POST
 Body:
 ```
 
+If you want a super admin role, you would do as follow :
 ```js
 {
   "controllers": {
     "*": {
       "actions": {
         "*": true
+      }
+    }
+  }
+}
+```
+
+For an example, if you want your it to be a document writer, you can define it as follow :
+
+```js
+{
+  "controllers": {
+    "document": {
+      "actions": {
+        "create": true,
+        "createOrReplace": true,
+        "replace": true,
+        "update": true,
+        "delete": true
       }
     }
   }
