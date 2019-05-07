@@ -50,6 +50,20 @@ For an example, if you want your it to be a document writer, you can define it a
 }
 ```
 
+Another example for an admin console role would be :
+
+```js
+{
+  "controllers": {
+    "security": {
+      "actions": {
+        "*": true
+      }
+    }
+  }
+}
+```
+
 ### Other protocols
 
 ```js
