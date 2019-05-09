@@ -16,7 +16,9 @@ const countIndent = (string, pos) => {
   let count = 0;
   let idx = pos - 1;
   const char = string[idx];
-  for (; string[idx] === ' ' || string[idx] === '\t'; count += 1, idx -= 1);
+  for (; string[idx] === ' ' || string[idx] === '\t'; idx -= 1) {
+    count += 1;
+  }
   return {
     char,
     count
