@@ -26,11 +26,11 @@ yarn add kuzzle-sdk redux redux-saga react-redux
 
 We have to create our Redux store architecture, like this:
 
-- src/
-  - state/
-    - actions.js
-    - reducers.js
-    - sagas.js
+src
+└── state
+├── actions.js
+├── reducers.js
+└── sagas.js
 
 _src/state/actions.js_ contains an empty object for the moment:
 
@@ -357,7 +357,7 @@ class App extends Component {
 
   async _initialize() {
     // ..
-    [[(snippet = search)]];
+    [[snippet=search]]
     if (res.total > 0) {
       this.props.setMessages(res.hits.map(hit => hit._source));
     }
@@ -397,7 +397,7 @@ class App extends Component {
   }
 
   _subscribeToNewMessages() {
-    [[(snippet = subscribe)]];
+    [[snippet=subscribe]]
   }
   // ...
 }
