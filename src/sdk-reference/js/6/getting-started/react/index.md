@@ -418,3 +418,5 @@ Now that you're more familiar with Kuzzle with React, you can:
 - learn how to use [Koncorde]({{ site_base_path }}koncorde/1/essentials/introduction/) to create incredibly fine-grained and blazing-fast subscriptions
 - learn how to perform a [basic authentication]({{ site_base_path }}sdk-reference/js/6/auth/login/)
 - follow our guide to learn how to [manage users, and how to set up fine-grained access control]({{ site_base_path }}guide/1/essentials/security/)
+
+To help you starting a new project with Kuzzle and React, you can start with the [**Kuzzle, React and Redux boilerplate**](https://github.com/kuzzleio/kuzzle-react-redux-boilerplate).
