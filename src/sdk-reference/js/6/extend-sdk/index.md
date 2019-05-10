@@ -7,6 +7,8 @@ order: 410
 
 # Extend the SDK with a custom SDK controller
 
+{{{since "6.1.1"}}}
+
 It is possible to extend the SDK's API by adding new controllers.  
 
 These controllers correspond to [custom controllers created in a plugin]({{ site_base_path }}plugins/1/essentials/controllers). Thus, it is possible to use the actions of a core plugin in the SDK in the same way as the other actions of the Kuzzle API.  
