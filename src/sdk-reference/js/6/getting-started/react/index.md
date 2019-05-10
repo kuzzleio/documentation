@@ -147,11 +147,9 @@ export default connect(
 
 At this step, if you run `yarn start` at the root of your app, then you should see 'Hello, world!' in your browser.
 
-## Heart of the subject
+## Display futur messages
 
 Boilerplate is over, let's code our app! It will consist of an input to write some text and save it in Kuzzle. The app will also display all the created messages. It looks like a chat.
-
-### Display futur messages
 
 First, let's edit some files to store the messages on the client and display them with React.
 
@@ -228,7 +226,7 @@ messages: [
 ],
 ```
 
-### Create our first message
+## Create our first message
 
 When we click on the submit button of our input, we want to create a document in Kuzzle representing the message.
 
@@ -321,7 +319,7 @@ export default connect(
 
 You're thinking inevitably "Ok, it's cool but, I can't see the message on the interface?"... Don't worry.
 
-### Load all messages
+## Load all messages
 
 We have to load the messages in Kuzzle in app loading, so we need a Redux action to put an array of messages in the Redux state.
 
@@ -360,7 +358,7 @@ class App extends Component {
 
   async _initialize() {
     // ..
-    [[snippet=search]]
+    [[(snippet = search)]];
     if (res.total > 0) {
       this.props.setMessages(res.hits.map(hit => hit._source));
     }
@@ -382,7 +380,7 @@ export default connect(
 Now if you load your app, you should see previously sent messages!
 Of course, if we send a message it doesn't appear until we reload... Don't worry.
 
-### Subscription to message creation
+## Subscription to message creation
 
 In order to see messages appearing directly in our app, we have to subscribe to realtime document notifications (pub/sub).
 
@@ -400,7 +398,7 @@ class App extends Component {
   }
 
   _subscribeToNewMessages() {
-    [[snippet=subscribe]]
+    [[(snippet = subscribe)]];
   }
   // ...
 }
