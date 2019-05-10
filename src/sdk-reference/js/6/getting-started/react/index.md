@@ -24,7 +24,7 @@ cd kuzzle-playground
 yarn add kuzzle-sdk redux redux-saga react-redux
 ```
 
-We have to create our Redux store architecture, like this:
+We have to create our Redux store architecture (more details on [Redux documentation](https://redux.js.org/introduction/getting-started)), like this:
 
 src
 └── state
@@ -54,7 +54,7 @@ export default function reducers(state = initialState, action) {
 }
 ```
 
-_src/state/sagas.js_ contains a generator function where we will put our sagas function later:
+_src/state/sagas.js_ contains a generator function where we will put our sagas function later (more details on [Redux-saga documentation](https://redux-saga.js.org/)):
 
 ```javascript
 export default function*() {}
