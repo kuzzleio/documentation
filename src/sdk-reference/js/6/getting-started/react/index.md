@@ -11,7 +11,6 @@ This section deals with **Kuzzle** (+ **Javascript SDK**) and **React** (with **
 ## Requirements
 
 - **Node.js** >= 8.0.0 ([install here](https://nodejs.org/en/download/))
-- **Yarn** ([install here](https://yarnpkg.com/fr/docs/install))
 - **Create React App** ([install here](https://github.com/facebook/create-react-app))
 - **Running Kuzzle Stack** ([instructions here]({{ site_base_path }}guide/1/getting-started/running-kuzzle/))
 
