@@ -219,10 +219,14 @@ export default connect(
 At this step we could test our app by putting some random messages in our `initialState` in _src/state/reducers.js_, and then look in the browser if the messages are displayed.
 
 ```javascript
-messages: [
-  { text: 'Hello, world!' },
-  { text: '42' },
-],
+const initialState = {
+  messages: [
+    { text: 'Hello, world!' },
+    { text: '42' },
+  ],
+};
+
+// ...
 ```
 
 ## Create our first message
