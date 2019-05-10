@@ -5,9 +5,10 @@ this.props = {
 
 /* snippet:start */
 kuzzle.realtime.subscribe('chat', 'messages', {}, notif => {
-  if (notif.type === 'document' && notif.action === 'create') {
-    const { _source: message } = notif.result;
-    this.props.setMessages([message]);
+  if (!(notif.type === 'document' && notif.action === 'create')) {
+    return;
   }
+  const { _source: message } = notif.result;
+  this.props.setMessages([message]);
 });
 /* snippet:end */
