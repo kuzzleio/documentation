@@ -26,11 +26,13 @@ yarn add kuzzle-sdk redux redux-saga react-redux
 
 We have to create our Redux store architecture (more details on [Redux documentation](https://redux.js.org/introduction/getting-started)), like this:
 
-src\
-└── state\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── actions.js\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── reducers.js\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── sagas.js
+```bash
+src
+└── state
+    ├── actions.js
+    ├── reducers.js
+    └── sagas.js
+```
 
 _src/state/actions.js_ contains an empty object for the moment:
 
