@@ -25,7 +25,7 @@ After defining your new controller based on `BaseController`, you can add it to 
 
 The constructor of a custom SDK controller will be called by passing the SDK instance to it. It must call the parent constructor with this instance of the SDK and its name as defined in the API.  
 
-For instance, if there is a plugin named `nyc-open-data-taxi`, extending Kuzzle's API with the following controller:
+For instance, if there is a plugin named `nyc-open-data-plugin`, extending Kuzzle's API with the following controller:
 
 ```javascript
 this.controllers = {
