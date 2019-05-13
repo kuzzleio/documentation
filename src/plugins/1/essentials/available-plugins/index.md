@@ -1,7 +1,6 @@
 ---
 layout: full.html.hbs
-title: Examples
-description: Plugin examples
+title: Available plugins
 order: 0
 ---
 
