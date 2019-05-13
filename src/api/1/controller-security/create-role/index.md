@@ -19,29 +19,12 @@ Method: POST
 Body:
 ```
 
-If you want a super admin role, you would do as follow :
 ```js
 {
   "controllers": {
     "*": {
       "actions": {
         "*": true
-      }
-    }
-  }
-}
-```
-For an example, for an admin console role with minimum rights to connect would be :
-
-```js
-{
-  "controllers": {
-    "auth": {
-      "actions": {
-        "login": true,
-        "checkToken": true,
-        "getCurrentUser": true,
-        "getMyRights": true
       }
     }
   }

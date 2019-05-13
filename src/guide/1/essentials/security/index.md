@@ -79,7 +79,7 @@ The `action permission` value can be set to either:
 - a boolean. If `true`, the `role` allows the given action.
 - {{{deprecated "1.4.0"}}} an object describing a dynamic right definition. For more information check out the <a href="{{ site_base_path }}guide/1/kuzzle-depth/roles-definitions">advanced roles documentation</a>.
 
-As an example, below is the `role` definition that Kuzzle uses to request authorization from the anonymous user once the administrator account is created and anonymous access is blocked.
+As an example, below is the `role` definition for minimum rights on admin console :
 
 ```js
 {
@@ -88,14 +88,15 @@ As an example, below is the `role` definition that Kuzzle uses to request author
       "actions": {
         "login": true,
         "checkToken": true,
-        "getCurrentUser": true
+        "getCurrentUser": true,
+        "getMyRights": true
       }
     }
   }
 }
 ```
 
-In the above `role` definition, anonymous users can perform the `login`, `checkToken` and `getCurrentUser` actions of the `auth` controller.
+In the above `role` definition, anonymous users can perform the `login`, `checkToken`, `getCurrentUser` and `getMyRights` actions of the `auth` controller.
 
 For a list of available controllers and actions from Kuzzle's API by sending a `GET` request as follows:
 
