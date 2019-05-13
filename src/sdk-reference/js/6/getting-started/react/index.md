@@ -220,10 +220,7 @@ At this step we could test our app by putting some random messages in our `initi
 
 ```javascript
 const initialState = {
-  messages: [
-    { text: 'Hello, world!' },
-    { text: '42' },
-  ],
+  messages: [{ text: 'Hello, world!' }, { text: '42' }]
 };
 
 // ...
@@ -362,8 +359,8 @@ class App extends Component {
   async _initialize() {
     // ..
     [[snippet=search]]
-    if (res.total > 0) {
-      this.props.setMessages(res.hits.map(hit => hit._source));
+    if (results.total > 0) {
+      this.props.setMessages(results.hits.map(hit => hit._source));
     }
   }
   // ...
