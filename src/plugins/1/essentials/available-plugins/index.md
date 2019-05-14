@@ -18,7 +18,7 @@ Below you’ll find the ones we officialy released.
   </a>
   <a href="https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth" class="Tiles-item">
     <img src="/assets/images/logos/passport.svg" alt="auth passport oauth logo" class="Tiles-item-logo">
-    <div class="Tiles-item-name">Auth passport oauth</div>
+    <div class="Tiles-item-name">Auth passport 0Auth</div>
   </a>
   <a href="https://github.com/kuzzleio/kuzzle-plugin-cluster" class="Tiles-item">
     <img src="/assets/images/logos/cluster.svg" alt="auth passport local logo" class="Tiles-item-logo">
