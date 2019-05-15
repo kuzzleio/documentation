@@ -7,6 +7,8 @@ order: 410
 
 # Extend the SDK with a custom SDK controller
 
+{{{since "6.1.1"}}}
+
 It is possible to extend the SDK's API by adding new controllers.  
 
 These controllers correspond to [custom controllers created in a plugin]({{ site_base_path }}plugins/1/essentials/controllers). Thus, it is possible to use the actions of a core plugin in the SDK in the same way as the other actions of the Kuzzle API.  
@@ -23,7 +25,7 @@ After defining your new controller based on `BaseController`, you can add it to 
 
 The constructor of a custom SDK controller will be called by passing the SDK instance to it. It must call the parent constructor with this instance of the SDK and its name as defined in the API.  
 
-For instance, if there is a plugin named `nyc-open-data-taxi`, extending Kuzzle's API with the following controller:
+For instance, if there is a plugin named `nyc-open-data-plugin`, extending Kuzzle's API with the following controller:
 
 ```javascript
 this.controllers = {
