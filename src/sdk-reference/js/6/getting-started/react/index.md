@@ -232,7 +232,7 @@ const initialState = {
 
 When we click on the submit button of our input, we want to create a document in Kuzzle representing the message.
 
-First, we have to assure that index and collection are already created in our Kuzzle backend. Just add these lines in the `_initialize` method of our `App` component, after the `kuzzle.connect()` call:
+First, we have to ensure that index and collection are already created in our Kuzzle backend. Just add these lines in the `_initialize` method of our `App` component, after the `kuzzle.connect()` call:
 
 ```javascript
 async _initialize() {
