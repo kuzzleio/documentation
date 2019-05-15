@@ -218,7 +218,7 @@ export default connect(
 )(App);
 ```
 
-At this step we could test our app by putting some random messages in our `initialState` in _src/state/reducers.js_, and then look in the browser if the messages are displayed.
+At this step we can test our app by putting some random messages in our `initialState` in _src/state/reducers.js_, and then look in the browser if the messages are displayed.
 
 ```javascript
 const initialState = {
