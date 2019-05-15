@@ -10,7 +10,6 @@ order: 0
 
 Below you’ll find the ones we officialy released.
 
-<br>
 <div class="Tiles">
   <a href="https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local" class="Tiles-item">
     <img src="/assets/images/logos/passport.svg" alt="auth passport local logo" class="Tiles-item-logo">
