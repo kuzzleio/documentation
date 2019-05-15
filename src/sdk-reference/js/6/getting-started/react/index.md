@@ -319,7 +319,7 @@ export default connect(
 )(App);
 ```
 
-You're thinking inevitably "Ok, it's cool but, I can't see the message on the interface?"... Don't worry.
+You're probably thinking  "Ok, it's cool but, I can't see the message on the interface?"... Don't worry.
 
 ## Load all messages
 
