@@ -241,7 +241,7 @@ async _initialize() {
 }
 ```
 
-Now we can create our Redux action `sendMessage` who take a string and create the document in Kuzzle.
+Now we can create our Redux action `sendMessage` which takes a string and creates the document in Kuzzle.
 
 Let's begin with our action function, in _src/state/actions.js_:
 
