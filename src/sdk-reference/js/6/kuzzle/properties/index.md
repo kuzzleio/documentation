@@ -11,6 +11,16 @@ order: 100
 | -------------------- | -------- | ---------------------|
 | `offlineQueue` | <pre>object[]</pre> | Contains the queued requests during offline mode   |
 | `protocol` | <pre>Protocol</pre> | Protocol used by the SDK |
+| `connected` | <pre>boolean</pre> | Returns `true` if the SDK is actually connected to a Kuzzle server. |
+| `authenticated` | <pre>boolean</pre> | Returns `true` if the SDK has a valid hold token |
+
+### connected
+
+The `connected` property is just a wrapper around the underlaying protocol `connected` property.
+See the associated documentation:
+ - [Http.connected]({{ site_base_path }}sdk-reference/js/6/http/properties)
+ - [WebSocket.connected]({{ site_base_path }}sdk-reference/js/6/websocket/properties)
+ - [SocketIO.connected]({{ site_base_path }}sdk-reference/js/6/socketio/properties)
 
 # Writable properties
 
@@ -61,7 +71,7 @@ This property defines the size of the offline buffer, which is a first-in first-
 
 This means that if the `queueMaxSize` limit is reached, older requests are discarded to make room for newer requests.
 
-If `queueMaxSize` is set to a number lower than, or equal to `0`, then an unlimited number of requests is kept in the offline buffer.  
+If `queueMaxSize` is set to a number lower than, or equal to `0`, then an unlimited number of requests is kept in the offline buffer.
 Note that doing so may lead to a crash due to memory saturation, if there are too many requests held in memory.
 
 ### queueTTL
@@ -70,7 +80,6 @@ If the `queueTTL` property is set to a number lower than, or equal to `0`, then 
 
 ### volatile
 
-Multiple methods allow passing specific `volatile` data. 
+Multiple methods allow passing specific `volatile` data.
 
 These `volatile` data will be merged with the global Kuzzle `volatile` object when sending the request, with the request specific `volatile` taking priority over the global ones.
-
