@@ -388,7 +388,7 @@ In order to see messages appearing directly in our app, we have to subscribe to 
 
 Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the [realtime notifications]({{ site_base_path }}sdk-reference/js/6/realtime-notifications/) documentation).
 
-So, for our app, we just have to subscript and call the previously created `setMessages` action to put message in the Redux state.
+We now just have to subscribe to the `messages` collection and call the previously created `setMessages` action to push messages to the Redux state.
 In _src/App.js_:
 
 ```javascript
