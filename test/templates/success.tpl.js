@@ -23,10 +23,10 @@ kuzzle.on('networkError', error => {
   }
   try {
     [snippet-code]
+    console.log('Success');
   } catch (e) {
     console.log(e);
   } finally {
-    console.log('Success');
     kuzzle.disconnect();
   }
 })();
