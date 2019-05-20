@@ -40,7 +40,7 @@ Below you’ll find the ones we officialy released.
     <div class="Tiles-item-name">Probe listener</div>
   </a>
   <a href="https://github.com/kuzzleio/kuzzle-plugin-s3" class="Tiles-item">
-    <img src="/assets/images/logos/plugin-s3.svg" alt="plugin s3 logo" class="Tiles-item-logo">
-    <div class="Tiles-item-name">Plugin S3</div>
+    <img src="/assets/images/logos/plugin-s3.svg" alt="amazon s3 logo" class="Tiles-item-logo">
+    <div class="Tiles-item-name">Amazon S3</div>
   </a>
 </div>
