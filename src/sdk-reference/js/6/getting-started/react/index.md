@@ -218,7 +218,7 @@ export default connect(
 )(App);
 ```
 
-At this step we could test our app by putting some random messages in our `initialState` in _src/state/reducers.js_, and then look in the browser if the messages are displayed.
+At this step we can test our app by putting some random messages in our `initialState` in _src/state/reducers.js_, and then look in the browser if the messages are displayed.
 
 ```javascript
 const initialState = {
@@ -232,7 +232,7 @@ const initialState = {
 
 When we click on the submit button of our input, we want to create a document in Kuzzle representing the message.
 
-First, we have to assure that index and collection are already created in our Kuzzle backend. Just add these lines in the `_initialize` method of our `App` component, after the `kuzzle.connect()` call:
+First, we have to ensure that index and collection are already created in our Kuzzle backend. Just add these lines in the `_initialize` method of our `App` component, after the `kuzzle.connect()` call:
 
 ```javascript
 async _initialize() {
@@ -241,7 +241,7 @@ async _initialize() {
 }
 ```
 
-Now we can create our Redux action `sendMessage` who take a string and create the document in Kuzzle.
+Now we can create our Redux action `sendMessage` which takes a string and creates the document in Kuzzle.
 
 Let's begin with our action function, in _src/state/actions.js_:
 
@@ -319,7 +319,7 @@ export default connect(
 )(App);
 ```
 
-You're thinking inevitably "Ok, it's cool but, I can't see the message on the interface?"... Don't worry.
+You're probably thinking  "Ok, it's cool but, I can't see the message on the interface?"... Don't worry.
 
 ## Load all messages
 
@@ -388,7 +388,7 @@ In order to see messages appearing directly in our app, we have to subscribe to 
 
 Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the [realtime notifications]({{ site_base_path }}sdk-reference/js/6/realtime-notifications/) documentation).
 
-So, for our app, we just have to subscript and call the previously created `setMessages` action to put message in the Redux state.
+We now just have to subscribe to the `messages` collection and call the previously created `setMessages` action to push messages to the Redux state.
 In _src/App.js_:
 
 ```javascript
