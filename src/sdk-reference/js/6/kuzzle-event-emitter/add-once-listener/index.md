@@ -1,7 +1,7 @@
 ---
 layout: sdk.html.hbs
 title: addOnceListener
-description: Adds a new listener for an event
+description: Adds a one-time listener for an event
 ---
 
 # addOnceListener

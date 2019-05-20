@@ -7,70 +7,68 @@ order: 100
 
 # Events
 
-An event system allows to be notified when the SDK status changes. These events are issued by the [Kuzzle SDK object]({{site_base_path }}sdk-reference/go/1/kuzzle).
+An event system allows to be notified when the SDK status changes. These events are issued by the [Kuzzle]({{site_base_path }}sdk-reference/go/1/kuzzle) interface.
 
-Subscription to these events is possible by passing a channel that will receive data when a specific event is issued by the SDK instance.  
-
-These channels can be added by the method [addListener]({{site_base_path }}sdk-reference/go/1/kuzzle/add-listener).
-
-**Note:** channels receive data in the order of their insertion.
+The API for interacting with events is described by our [KuzzleEventEmitter]({{ site_base_path }}sdk-reference/go/1/kuzzle-event-emitter) interface documentation.
 
 # Emitted Events
 
-## connected
+The following event identifiers are constants declared in the `event` package.
+
+## Connected
 
 Triggered when the SDK has successfully connected to Kuzzle.
 
-## discarded
+## Discarded
 
 Triggered when Kuzzle rejects a request (e.g. request can't be parsed, request too large, ...).
 
 **Channel signature:** `chan<- *types.KuzzleResponse)`
 
-## disconnected
+## Disconnected
 
 Triggered when the current session has been unexpectedly disconnected.
 
 **Channel signature:** `chan<- interface{}` (will receive nil)
 
-## loginAttempt
+## LoginAttempt
 
 Triggered when a login attempt completes, either with a success or a failure result.
 
 **Channel signature:** `chan<- *types.LoginAttempt`
 
-## networkError
+## NetworkError
 
 Triggered when the SDK has failed to connect to Kuzzle.  
 This event does not trigger the offline mode.  
 
 **Channel signature:** `chan<- error`
 
-## offlineQueuePop
+## OfflineQueuePop
 
 Triggered whenever a request is removed from the offline queue.
 
 **Channel signature:** `chan<- *types.QueryObject`
 
-## offlineQueuePush
+## OfflineQueuePush
 
 Triggered whenever a request is added to the offline queue.
 
 **Channel signature:** `chan<- *types.QueryObject`
 
-## queryError
+## QueryError
 
 Triggered whenever Kuzzle responds with an error
 
 **Channel signature:** `chan<- *types.QueryObject`
 
-## reconnected
+## Reconnected
 
 Triggered when the current session has reconnected to Kuzzle after a disconnection, and only if ``AutoReconnect`` is set to ``true``.
 
 **Channel signature:** `chan<- interface{}` (will receive nil)
 
-## tokenExpired
+## TokenExpired
 
 Triggered when Kuzzle rejects a request because the authentication token has expired.
 

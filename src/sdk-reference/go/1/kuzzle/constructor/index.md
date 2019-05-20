@@ -8,7 +8,9 @@ order: 100
 # Constructor
 
 This is the main entry point to communicate with Kuzzle.  
-Each instance represent a connection to Kuzzle with specific options.
+Each instance represents a connection to Kuzzle with specific options.
+
+This interface implements the [KuzzleEventEmitter]({{ site_base_path }}sdk-reference/go/1/kuzzle-event-emitter) interface.
 
 ## Signature
 
