@@ -58,6 +58,8 @@ Body:
 
 ## Body properties
 
+{{{since "1.8.0"}}}
+
 The provided body must have the following structure:
 
 ```json
