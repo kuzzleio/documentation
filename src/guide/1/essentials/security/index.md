@@ -88,14 +88,15 @@ As an example, below is the `role` definition that Kuzzle uses to request author
       "actions": {
         "login": true,
         "checkToken": true,
-        "getCurrentUser": true
+        "getCurrentUser": true,
+        "getMyRights": true
       }
     }
   }
 }
 ```
 
-In the above `role` definition, anonymous users can perform the `login`, `checkToken` and `getCurrentUser` actions of the `auth` controller.
+In the above `role` definition, anonymous users can perform the [login]({{ site_base_path }}api/1/controller-auth/login/), [checkToken]({{ site_base_path }}api/1/controller-auth/check-token/), [getCurrentUser]({{ site_base_path }}api/1/controller-auth/get-current-user/) and [getMyRights]({{ site_base_path }}api/1/controller-auth/get-my-rights/) actions of the `auth` controller.
 
 For a list of available controllers and actions from Kuzzle's API by sending a `GET` request as follows:
 
