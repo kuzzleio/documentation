@@ -14,6 +14,8 @@ When the validation specification is not formatted correctly, a detailed error m
 
 ## Query Syntax
 
+{{{since "1.8.0"}}}
+
 ### HTTP
 
 ```http
