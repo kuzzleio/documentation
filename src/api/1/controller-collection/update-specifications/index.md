@@ -12,9 +12,64 @@ The updateSpecifications method allows you to create or update the validation sp
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
+## Query Syntax
+
+### HTTP
+
+```http
+URL: http://kuzzle:7512/<index>/<collection>/_specifications
+Method: PUT  
+Body:
+```
+
+```js
+{
+  "strict": <boolean>,
+  "fields": {
+    // ... specification for each field
+  }
+}
+```
+
+### Other protocols
+
+```js
+{
+  "controller": "collection",
+  "action": "updateSpecifications",
+  "index": "myindex",
+  "collection": "mycollection",
+
+  "body": {
+    "strict": <boolean>,
+    "fields": {
+      // ... specification for each field
+    }
+  }
+  
+}
+```
+
+---
+
+## Body properties
+
+The provided body must have the following structure:
+
+```json
+{
+  "strict": <boolean>,
+  "fields": {
+    // field validation rules
+  }
+}
+```
+
 ---
 
 ## Query Syntax
+
+{{{deprecated "1.8.0"}}}
 
 ### HTTP
 
@@ -60,6 +115,8 @@ Body:
 ---
 
 ## Body properties
+
+{{{deprecated "1.8.0"}}}
 
 The provided body must have the following structure:
 

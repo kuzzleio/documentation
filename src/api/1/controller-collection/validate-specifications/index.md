@@ -19,6 +19,63 @@ When the validation specification is not formatted correctly, a detailed error m
 ### HTTP
 
 ```http
+URL: http://kuzzle:7512/<index>/<collection>/_validateSpecifications
+Method: POST  
+Body:
+```
+
+```js
+{
+  "strict": <boolean>,
+  "fields": {
+    // specification
+  }
+}
+```
+
+### Other protocols
+
+```js
+{
+  "controller": "collection",
+  "action": "validateSpecifications",
+  "index": "myindex",
+  "collection": "mycollection",
+
+  "body": {
+    "strict": <boolean>,
+    "fields": {
+      // ...
+    }
+  }
+
+}
+```
+
+---
+
+## Body properties
+
+The provided body must have the following structure:
+
+```json
+{
+  "strict": <boolean>,
+  "fields": {
+    // field validation rules
+  }
+}
+```
+
+---
+
+## Query Syntax
+
+{{{deprecated "1.8.0"}}}
+
+### HTTP
+
+```http
 URL: http://kuzzle:7512/_validateSpecifications
 Method: POST  
 Body:
@@ -61,6 +118,8 @@ Body:
 ---
 
 ## Body properties
+
+{{{deprecated "1.8.0"}}}
 
 The provided body must have the following structure:
 
