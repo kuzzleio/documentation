@@ -1,6 +1,6 @@
 ---
 type: page
-order: 10
+
 code: true
 title: resetCache
 ---

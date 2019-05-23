@@ -1,6 +1,6 @@
 ---
 type: page
-order: 30
+
 code: true
 title: resetKuzzleData
 ---
