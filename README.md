@@ -1,116 +1,171 @@
-# Documentation
+# Kuzzle Documentation
 
-## Usage
+Our documentation is a statically generated website. The content is stored in a bunch of Markdown files built by [VuePress](https://vuepress.vuejs.org/).
 
-> install dependencies
+## Start a development server
 
-`npm install`
+```sh
+npm run dev
+```
 
-> index documentation content to algolia
+## Generate a production build
 
-`node index.js --algolia-private-key <key>`
+```sh
+npm run build
+```
 
-> index documentation content to algolia matching version configured in config/versions.json
+## Index documentation content to Algolia
 
-`node index.js --build-path /v/edge --algolia-private-key <key>`
+```sh
+ALGOLIA_WRITE_KEY=<write_key_here> npm run build
+```
 
-> build the documentation in production mode matching version configured in config/versions.json
+Algolia can be configured via the following environment variables
 
-`node index.js --build-host http://docs.kuzzle.io --build-path /v/edge --build-compress`
-
-> bind a webserver on 3000 with livereload and watch enabled
-
-`npm run dev`
+* `ALGOLIA_APP_ID` - The Algolia application ID.
+* `ALGOLIA_SEARCH_KEY` - The search key associated to the Algolia index.
+* `ALGOLIA_INDEX` - The Algolia index associated to the documentation.
+* `ALGOLIA_WRITE_KEY` - The write key associated to the Algolia index.
 
 ---
 
-## File organization
+## Content organization
 
-Here is an overview of the files structure:
+VuePress generates the documentation based on how the files are organized in the filesystem. For example, the URL of each page is direclty infered by its filesystem path relative to `src/`. Also, the left sidebar generation is based on the filesystem location of the files and their [frontmatter](https://v1.vuepress.vuejs.org/guide/frontmatter.html#front-matter) contents.
 
-- `src/`: documentation entry point
-- `src/<section>/` (for instance: `src/guide/`, entry point of the Guide documentation section)
-- `src/<section>/<subsection>/` (for instance: `src/guide/1/essentials/`)
-- `src/<section>/<subsection>/<article>.md` (for instance: `src/guide/1/essentials/installing-kuzzle.md`)
-
-For the SDKs:
-
-- `src/sdk-reference/<language>/<version>/<controller>/<action>`
-
-Though there is no real limit to the directories depth, to keep the documentation homogeneous and readable, no additional subdirectories should be added.
-
-## Documentation pages
-
-Pages are listed as subdirectories in `src/`.
-For instance: `src/guide/`.
-
-Each page directory must contain an `index.md` file, with the following headers:
+A page is defined by a directory (e.g. `src/core/1/api/api-reference/controller-admin/dump/`) containing an `index.md` file. This file must have a frontmatter with the following form:
 
 ```
 ---
-layout: category-childrens.html
+type: [root|branch|page]
+code: [true|false]
 title: <Name used in the section list>
-order: <(optional, integer)>
+order: <Integer> (optional)
 description: <(optional) Text appearing under the section name in the section list>
+nosidebar: <Boolean> (optional)
 ---
 ```
 
-To add alert box just put in your markdown :
+:warning: **No other fields are allowed in the frontmatter**
 
-```html
-  <div class="alert alert-info">
-    lorem ipsum
-  </div>
+### `type` (required)
+
+Defines how this page behaves in the generation of the sidebar. It is also used by other components (like Algolia indexation). Can be the following values:
+
+* `root` - The page is the root of the generation of an entire sidebar (e.g. `src/code/1/api/`);
+* `branch` - The page is a branch of the sidebar and generally has no content but has children (e.g. `src/code/1/api/api-reference`, `src/code/1/api/api-reference/controller-admin/`);
+* `page` - The page is a "leaf" in the sidebar tree: it has no children and has content. It is indexed to Algolia.
+
+#### `code` (required)
+
+A Boolean field defining whether the name of the page must be displayed in monospace typeface in the menu because it indicates the name of a function, a controller or a piece of code in general (e.g. `src/code/1/api/api-reference/controller-admin/`).
+
+#### `title` (required)
+
+A String field holding the text to display in the sidebar.
+
+#### `description` (optional)
+
+A String field holding a detailed description of the page. Currently used nowhere (I guess).
+
+#### `order` (optional)
+
+An Integer field indicating how to sort this page in the sidebar. If absent, the page is sorted alphabetically based on the `title` field.
+
+#### `nosidebar` (optional, default: true)
+
+A Boolean field indicating whether the left sidebar should be displayed for the page or not.
+
+### Frontmatter Linter
+
+The build toolchain runs a linter on the frontmatters. If some frontmatters are invalid, the linter makes the build fail and shows the errors to standard output and dumps them to `frontmatter-errors.js`. Some errors can be automatically fixed: at the end of its report, the linter shows the command to execute to launch the auto-fixer:
+
+```sh
+$(npm bin)/frontmatter-fix -e frontmatter-errors.js
 ```
 
-supported classes are : `alert-infos`, `alert-success`, `alert-warning`
+You can learn more about the linter by looking at its [official repository](https://github.com/xbill82/vuepress-frontmatter-lint).
 
-## Adding code example
+## Custom containers
 
-It's possible to add code example (for each languages supported for SDKs) in markdown, before doing that, you have to create a directory `snippets` at the same level of the page you are editing. In this directory put all your code example files.
+You can create alert/info boxes in your markdown with the following syntax:
 
-EX: `createDocument.js` / `createDocument.go` / `...`
-
-Now in markdown just add `[snippet=createDocument]` where you want. When metalsmith will build, the snippet tag will be remplaced by the code in each code example files.
-
-## Override markdown
-
-Because each languages supported for SDKs can have specifications, It's possible to override markdown.
-Like snippet, create a subfolder `sections` and put markdown files in it.
-
-EX: `createDocument_js.md` / `createDocument_go.md` / `createDocument_default.md` / `...`
-
-Please note that `_language` is important for build process in metalsmith.
-
-Now you can add this tag in your markdown to allow metalsmith to override parts of markdown : `[section=createDocument]`
-
-## Configuration files
-
-### Metalsmith general configuration
-
-Metalsmith itself is configured using the `config/metalsmith.json` file.
-
-By default all directories under `src/` are consumed by metalsmith. The `exclude` configuration allows to skip some directories. This is especially useful when preparing future major versions.
-
-Example: preventing the JS SDK version 6 to be included in the documentation
-
-```json
-{
-  "exclude": [
-    "**/sdk-reference/js/6"
-  ]
-}
+```markdown
+::: info
+  lorem ipsum
+:::
 ```
 
-### API versions description
+Supported containers are : `info`, `success`, `warning`
 
-See `config/versions.json`
+## Code snippets
 
-## Writing tests
+You can [import code snippets from file](https://v1.vuepress.vuejs.org/guide/markdown.html#import-code-snippets), as supported by VuePress, with the following syntax in your Markdown:
 
-To test snippets, you have to create a YAML configuration file, named after the snippet file to be tested.
+```markdown
+<<< @/filepath
+```
 
-Example: a YAML file named `create.test.yml` used to test the `create.js` snippet file:
+We extended this feature by making it support relative paths. For example, if you have the following files:
+
+```
+- /core/1/guide/guides/getting-started/first/steps/
+  |
+  +- snippets/
+  |  |
+  |  +- create.js
+  |
+  +- index.md
+```
+
+In your `index.md` file, you can import the `create.js` snippet by writing
+
+```
+<<< ./snippets/create.js
+```
+## Testing code snippets
+
+Because we want our documentation to be bullet-proof, we created a snippet testing tool.
+
+To locally test your snippets, first run a Kuzzle stack:
+
+```sh
+bash .ci/start_kuzzle.sh
+```
+
+Then you can run snippets for any language:
+
+```bash
+# Execute all snippets under the repertory 'src/sdk-reference/js/6'
+bash run-snippet-tests.sh -n -s js -v 6 -p src/sdk-reference/js/6
+# Execute all snippets for the controller index in SDK CPP 1
+bash run-snippet-tests.sh -n -s cpp -v 1 -p src/sdk-reference/cpp/1/index
+```
+
+If you want to avoid downloading the SDK each time you run a snippet, you can use the following variable:
+
+```bash
+export DEV_MODE=true
+# The following command will download the cpp SDK only if it does not already exist
+bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
+```
+
+### Writing tests
+
+To make a snippet testable, simply create a YML file called `<snippet-name>.test.yml` along with the snippet file, like the following:
+
+```
+- /core/1/guide/guides/getting-started/first/steps/
+  |
+  +- snippets/
+  |  |
+  |  +- create.js
+  |  +- create.test.yml
+  |
+  +- index.md
+```
+
+The `create.test.yml` file of this example would look as follows:
 
 ```yaml
 name: Create document
@@ -122,7 +177,13 @@ template: default
 expect: document created successfully
 ```
 
-Templates are located in `test/templates` and you have to put the `[snippet-code]` tag to automatically inject snippet in the template when tests are launched.
+### Snippet templates
+
+Since code snippets often lack of support and cannot be executed as-is, we use templates to recreate the context of a snippet. 
+
+Templates are located in `test/templates`.
+
+A template is a code file containing a special `[snippet-code]` tag that is parsed by the test runner: the runner replaces this tag with the actual code of the snippet. This way, the snipped is injected in its context and can be effectively tested.
 
 Example of a default template for the Javascript SDK:
 
@@ -148,30 +209,6 @@ kuzzle
 
 You can add your own template, just respect the naming rule : `template_name.tpl.ext`
 
-## Testing the snippets locally
-
-You can test the snippets locally by using the script `run-snippet-tests.sh`.
-This script looks recursively for snippets to test, using the path provided as an argument.
-You must at least have a sdk language and version in the provided path: `src/sdk-reference/<language>/<version>[/path/to/snippets]`
-
-First, you have to run a Kuzzle stack with the following script: `bash .ci/start_kuzzle.sh`
-
-Then you can run snippets for any language:
-
-```bash
-# Execute all snippets under the repertory 'src/sdk-reference/js/6'
-bash run-snippet-tests.sh -n -s js -v 6 -p src/sdk-reference/js/6
-# Execute all snippets for the controller index in SDK CPP 1
-bash run-snippet-tests.sh -n -s cpp -v 1 -p src/sdk-reference/cpp/1/index
-```
-
-If you want to avoid downloading the SDK each time you run a snippet, you can use the following variable:
-
-```bash
-export DEV_MODE=true
-# The following command will download the cpp SDK only if it does not already exist
-bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
-```
 
 ## Scaffolding tool
 
