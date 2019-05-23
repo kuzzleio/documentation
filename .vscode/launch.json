@@ -1,0 +1,29 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Frontmatter Fix Tool",
+      "program": "${workspaceFolder}/src/.vuepress/validate-frontmatter/fix.js",
+      "args": ["-e", "frontmatter-errors.json", "-d", "src", "-y"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug VuePress",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "debug"],
+      // "localRoot": "${workspaceFolder}/src/.vuepress/",
+      "env": {
+        "ALGOLIA_WRITE_KEY": "1"
+      },
+      // "remoteRoot": "/",
+      "port": 9229
+    }
+  ]
+}

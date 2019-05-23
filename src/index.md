@@ -1,8 +1,9 @@
 ---
-title: Home
-layout: full.html.hbs
+code: false
+type: root
+order: 0
+title: Kuzzle Documentation
+description: Kuzzle Documentation
 ---
 
-# Introduction
-
-Here is the text for your landing page for your docs.
+<RedirectToFirstChild />

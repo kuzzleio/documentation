@@ -1,9 +1,0 @@
-name: gettingstarted#reactinit
-description: Creates an index and a collection
-hooks:
-  before: curl -X DELETE kuzzle:7512/chat
-  after:
-template: success
-expected: Success
-sdk: js
-version: 6
