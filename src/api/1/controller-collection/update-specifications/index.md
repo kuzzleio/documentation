@@ -54,25 +54,6 @@ Body:
 
 ---
 
-## Body properties
-
-{{{since "1.8.0"}}}
-
-The provided body must have the following structure:
-
-```json
-{
-  "strict": <boolean>,
-  "fields": {
-    // field validation rules
-  }
-}
-```
-
----
-
-## Query Syntax
-
 {{{deprecated "1.8.0"}}}
 
 ### HTTP
@@ -96,6 +77,44 @@ Body:
 }
 ```
 
+---
+
+## Body properties
+
+{{{since "1.8.0"}}}
+
+The provided body must have the following structure:
+
+```json
+{
+  "strict": <boolean>,
+  "fields": {
+    // field validation rules
+  }
+}
+```
+
+---
+
+{{{deprecated "1.8.0"}}}
+
+The provided body must have the following structure:
+
+```json
+{
+  "<index>": {
+    "<collection>": {
+      "strict": <boolean>,
+      "fields": {
+        // field validation rules
+      }
+    }
+  }
+}
+```
+
+---
+
 ### Other protocols
 
 ```js
@@ -113,27 +132,6 @@ Body:
     }
   }
 
-}
-```
-
----
-
-## Body properties
-
-{{{deprecated "1.8.0"}}}
-
-The provided body must have the following structure:
-
-```json
-{
-  "<index>": {
-    "<collection>": {
-      "strict": <boolean>,
-      "fields": {
-        // field validation rules
-      }
-    }
-  }
 }
 ```
 
