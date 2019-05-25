@@ -37,7 +37,7 @@ The `Result` property has the following structure for document notifications & m
 
 ## User
 
-These notifications represent [user events](/core/1/api/essentials/notifications#user-events-default).
+These notifications represent [user events](/core/1/api/essentials/notifications#user-notification-default).
 
 | Property     | Type                       | Description                                                                                           |
 | ------------ | -------------------------- | ----------------------------------------------------------------------------------------------------- |
