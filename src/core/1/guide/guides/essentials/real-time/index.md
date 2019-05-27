@@ -15,6 +15,11 @@ Kuzzle offers 2 different ways to make real time:
  - volatile Pub/Sub system
  - real-time database notifications
 
+ ::: info
+You can bypass notification triggering by using [bulk:write](/core/1/api/api-reference/bulk-controller/write) or [bulk:mWrite](/core/1/api/api-reference/bulk-controller/m-write) actions.
+:::
+
+
 ### wscat
 
 This guide provides examples that use the Kuzzle API directly through a command line WebSocket client: [wscat](https://github.com/websockets/wscat).
