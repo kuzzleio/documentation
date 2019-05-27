@@ -1,0 +1,102 @@
+---
+code: true
+type: page
+title: write
+---
+
+# write
+
+<SinceBadge version="1.8.0" />
+
+Create or replace a document directly into the storage engine.
+
+This is a low level route intended to bypass Kuzzle actions on document creation, notably:
+  - check [document validity](/core/1/guide/guides/essentials/data-validation),
+  - adding [kuzzle metadata](/core/1/guide/guides/essentials/document-metadata),
+  - triggering [realtime notifications](/core/1/guide/guides/essentials/real-time).
+
+---
+
+## Query Syntax
+
+### HTTP
+
+```http
+URL: http://kuzzle:7512/<index>/<collection>/_write[?refresh=wait_for][&notify]
+URL(2): http://kuzzle:7512/<index>/<collection>/<documentId>/_write[?refresh=wait_for][&notify]
+Method: POST
+Body:
+```
+
+```js
+{
+  // document content
+}
+```
+
+### Other protocols
+
+```js
+{
+  "index": "<index>",
+  "collection": "<collection>",
+  "controller": "bulk",
+  "action": "write",
+
+  "_id": "<documentId>",
+  "notify": "<boolean>",
+  "body": {
+    // document content
+  }
+}
+```
+
+---
+
+## Arguments
+
+- `collection`: data collection
+- `index`: data index
+
+### Optional:
+
+- `documentId`: set the document unique ID to the provided value, instead of auto-generating a random ID
+- `notify`: if set to true, Kuzzle will trigger realtime notifications
+- `refresh`: if set to `wait_for`, Kuzzle will not respond until the newly created document is indexed
+
+---
+
+## Body properties
+
+Document content to create.
+
+---
+
+## Response
+
+Returns an object with the following properties:
+
+- `_id`: created document unique identifier
+- `_source`: document content
+- `_version`: version of the created document (should be `1`)
+- `created`: a boolean telling if a new document has been created
+
+```javascript
+{
+  "status": 200,
+  "error": null,
+  "index": "<index>",
+  "collection": "<collection>",
+  "controller": "bulk",
+  "action": "write",
+  "requestId": "<unique request identifier>",
+  "result": {
+    "_id": "<documentId>",
+    "_version": 1,
+    "created": true,
+    "_source": {
+      // ...
+    },
+  }
+}
+```

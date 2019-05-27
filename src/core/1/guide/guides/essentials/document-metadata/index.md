@@ -9,6 +9,10 @@ order: 450
 
 Whenever a document gets created, updated or deleted, Kuzzle will add or update the document's metadata. This metadata provides information about the document's lifecycle.
 
+::: info
+You can bypass metadata automatic creation by using [bulk:write](/core/1/api/api-reference/bulk-controller/write) or [bulk:mWrite](/core/1/api/api-reference/bulk-controller/m-write) actions.
+:::
+
 ---
 
 ## Overview
@@ -78,7 +82,7 @@ Here is an example of a Kuzzle response, containing a document's `_id` and `_sou
 
 ## How metadata are physically stored
 
-Documents metadata are managed by Kuzzle and cannot be changed using the API.  
+Documents metadata are managed by Kuzzle and cannot be changed using the API.
 Metadata are stored in the `_kuzzle_info` field of each document in Elasticsearch.
 
 Elasticsearch might contain documents that don't have metadata. This can be the case for documents that were not inserted through Kuzzle. Such documents will automatically obtain metadata when they are updated through Kuzzle.
