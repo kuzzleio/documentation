@@ -6,8 +6,6 @@ title: import
 
 # import
 
-
-
 Creates, updates or deletes large amounts of documents as fast as possible.
 
 This route is faster than the `document:m*` routes family (e.g. [document:mCreate](/core/1/api/api-reference/controller-document/m-create/)), but no real-time notifications will be generated, even if some of the documents in the import match subscription filters.
@@ -78,12 +76,14 @@ The body must contain a `bulkData` array, detailing the bulk operations to perfo
 
 ## Response
 
-Returns a `items` array containing the list of executed queries result, in the same order than in the query.
+Returns an object containing 2 properties:
+  - `items`: array containing the list of executed queries result, in the same order than in the query
+  - `errors`: boolean indicating if some error occured during the bulk
 
 Each query result contains the following properties:
 
 - `_id`: document unique identifier
-- `status`: HTTP status code for that query
+- `status`: HTTP status code for that query. `201` (created) or `206` (partial error)
 
 ```javascript
 {
@@ -99,19 +99,19 @@ Each query result contains the following properties:
       {
         "create": {
           "_id": "<documentId>",
-          "status": 200
+          "status": 201
         }
       },
       {
         "create": {
           "_id": "<documentId>",
-          "status": 200
+          "status": 201
         }
       },
       {
         "create": {
           "_id": "<documentId>",
-          "status": 200
+          "status": 201
         }
       }
     ]
