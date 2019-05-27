@@ -148,10 +148,10 @@ function sortPagesByOrderAndTitle(p1, p2) {
   const o1 = get(p1, 'frontmatter.order', null);
   const o2 = get(p2, 'frontmatter.order', null);
 
-  if ((o1 === null || typeof o1 === 'undefined') && o2) {
+  if ((o1 === null || typeof o1 === 'undefined') && !isNaN(o2)) {
     return 1;
   }
-  if ((o2 === null || typeof o2 === 'undefined') && o1) {
+  if ((o2 === null || typeof o2 === 'undefined') && !isNaN(o1)) {
     return -1;
   }
   if (o1 === o2) {
