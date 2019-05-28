@@ -47,7 +47,7 @@ Subscription to a room is done via the [realtime:subscribe](/core/1/api/api-refe
  - subscription filters contained in the `body` of the request.
 
 ::: info
-For using Kuzzle in Pub/Sub mode only, the index and collection do not need to physically exist in the database (e.g. be created in Kuzzle via the <a href="/core/1/api/api-reference/controller-index/create">index:create</a> and <a href="/core/1/api/api-reference/controller-collection/create">collection:create</a> methods of the API).
+In order to use Kuzzle in Pub/Sub mode only, the index and collection do not need to physically exist in the database (e.g. be created in Kuzzle via the <a href="/core/1/api/api-reference/controller-index/create">index:create</a> and <a href="/core/1/api/api-reference/controller-collection/create">collection:create</a> methods of the API).
 <br/>
 These information are only used to define an ephemeral room between several customers.
 :::
