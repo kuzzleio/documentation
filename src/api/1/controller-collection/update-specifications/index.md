@@ -77,6 +77,26 @@ Body:
 }
 ```
 
+### Other protocols
+
+```js
+{
+  "controller": "collection",
+  "action": "updateSpecifications",
+  "body": {
+    "myindex": {
+      "mycollection": {
+        "strict": <boolean>,
+        "fields": {
+          // ... specification for each field
+        }
+      }
+    }
+  }
+
+}
+```
+
 ---
 
 ## Body properties
@@ -110,28 +130,6 @@ The provided body must have the following structure:
       }
     }
   }
-}
-```
-
----
-
-### Other protocols
-
-```js
-{
-  "controller": "collection",
-  "action": "updateSpecifications",
-  "body": {
-    "myindex": {
-      "mycollection": {
-        "strict": <boolean>,
-        "fields": {
-          // ... specification for each field
-        }
-      }
-    }
-  }
-
 }
 ```
 
