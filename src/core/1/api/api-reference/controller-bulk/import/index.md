@@ -29,12 +29,13 @@ Body:
 ```js
 {
   "bulkData": [
-    {"create": {}},
-    {"a": "document", "with": "any", "number": "of fields"},
-    {"create": {}},
-    {"another": "document"},
-    {"create": {}},
-    {"and": {"another": "one"}}
+    { "index": {} },
+    { "new": "document", "with": "any", "number": "of fields" },
+    { "create": {"_id": "foobar"} },
+    { "another": "document", "with": "a preset id" },
+    { "delete": {"_id": "existing_document_identifier"} },
+    { "update": {"_id": "another_document"} },
+    { "doc": {"partial": "update"}, "upsert": {"if": "document doesn't exist"} }
   ]
 }
 ```
@@ -47,15 +48,15 @@ Body:
   "collection": "<collection>",
   "controller": "bulk",
   "action": "import",
-
   "body": {
     "bulkData": [
-      {"create": {}},
-      {"a": "document", "with": "any", "number": "of fields"},
-      {"create": {}},
-      {"another": "document"},
-      {"create": {}},
-      {"and": {"another": "one"}}
+      { "index": {} },
+      { "new": "document", "with": "any", "number": "of fields" },
+      { "create": {"_id": "foobar"} },
+      { "another": "document", "with": "a preset id" },
+      { "delete": {"_id": "existing_document_identifier"} },
+      { "update": {"_id": "another_document"} },
+      { "doc": {"partial": "update"}, "upsert": {"if": "document doesn't exist"} }
     ]
   }
 }
@@ -97,21 +98,34 @@ Each query result contains the following properties:
   "result": {
     "items": [
       {
-        "create": {
-          "_id": "<documentId>",
-          "status": 200
+        "index": {
+          "_id": "<randomly generated identifier>",
+          "_version": 1,
+          "result": "created",
+          "created": true
         }
       },
       {
         "create": {
-          "_id": "<documentId>",
-          "status": 200
+          "_id": "foobar",
+          "_version": 1,
+          "result": "created",
+          "created": true
         }
       },
       {
-        "create": {
-          "_id": "<documentId>",
-          "status": 200
+        "delete": {
+          "found": true,
+          "_id": "existing_document_identifier",
+          "_version": 2,
+          "result": "deleted"
+        }
+      },
+      {
+        "update": {
+          "_id": "another_document",
+          "_version": 1,
+          "result": "created"
         }
       }
     ]
