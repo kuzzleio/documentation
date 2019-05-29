@@ -1,5 +1,5 @@
 ---
-code: true
+code: false
 type: page
 title: Introduction
 description: KuzzleEventEmitter class

@@ -66,8 +66,8 @@ Body:
 
 ## Arguments
 
-- `collection`: data collection
-- `index`: data index
+- `collection`: collection name
+- `index`: index name
 
 ---
 

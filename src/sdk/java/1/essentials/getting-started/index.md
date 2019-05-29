@@ -46,7 +46,7 @@ Initialize a new Java project, create a `gettingstartedfirstconnection.java` fil
 
 <<< ./snippets/firstconnection.java
 
-This program initializes the Kuzzle Server storage by creating a data index, and a data collection inside it
+This program initializes the Kuzzle Server storage by creating a index, and a collection inside it
 Run the program with the following command:
 
 ```bash
@@ -61,8 +61,8 @@ Congratulations, you performed your first connection to Kuzzle Server via a Java
 You now know how to:
 
 - Instantiate Kuzzle SDK and connect to Kuzzle Server using a specific protocol (here `websocket`)
-- Create a data index
-- Create a data collection within an existing index
+- Create a index
+- Create a collection within an existing index
 
 ## Create your first document
 
@@ -70,8 +70,8 @@ Now that you successfully connected to your Kuzzle Server instance, and created 
 
 Here is how Kuzzle structures its storage space:
 
-- data indexes contain data collections
-- data collections contain documents
+- indexes contain collections
+- collections contain documents
   Create a `gettingstartedstorage.java` file in the playground and add this code:
 
 <<< ./snippets/document.java

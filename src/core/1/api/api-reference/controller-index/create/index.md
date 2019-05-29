@@ -8,7 +8,7 @@ title: create
 
 
 
-Creates a new [data index](/core/1/guide/guides/essentials/persisted/) in Kuzzle.
+Creates a new [index](/core/1/guide/guides/essentials/persisted/) in Kuzzle.
 
 ---
 

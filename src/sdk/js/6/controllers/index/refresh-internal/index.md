@@ -19,22 +19,21 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 
 </div>
 
-<br/>
+## Arguments
 
 ```javascript
-refreshInternal(index, [options]);
+refreshInternal([options]);
 ```
 
 <br/>
 
 | Arguments | Type              | Description   |
 | --------- | ----------------- | ------------- |
-| `index`   | <pre>string</pre> | Index name    |
 | `options` | <pre>object</pre> | Query options |
 
 ### options
 
-Additional query options
+The `options` arguments can contain the following option properties:
 
 | Property   | Type<br/>(default)              | Description                                                                  |
 | ---------- | ------------------------------- | ---------------------------------------------------------------------------- |
