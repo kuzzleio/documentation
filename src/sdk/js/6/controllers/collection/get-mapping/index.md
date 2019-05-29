@@ -35,31 +35,6 @@ Additional query options
 
 Resolves to an `object` representing the collection mapping.
 
-Example :
-```js
-{
-  "<index>": {             // The provided <index>
-    "mappings": {
-      "<collection>": {    // The provided <collection>
-        // The actual mapping of the collection starts here:
-        "properties": {
-          "field1": {
-            "type": "integer"
-          },
-          "field2": {
-            "type": "keyword"
-          },
-          "field3": {
-              "type":   "date",
-              "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
-          }
-        }
-      }
-    }
-  }
-}
-```
-
 ## Usage
 
 <<< ./snippets/get-mapping.js
