@@ -208,6 +208,6 @@ For instance, suppose you have a chat application and you want the users to only
 
 There are multiple ways of adding a business logic layer on top of the standard Kuzzle security one:
 
-* With a [Pipe Plugin]({{ site_base_path }}plugins/1/essentials/pipes), you can listen to one or multiple [API events]({{ site_base_path }}plugins/1/events/), and decide whether you accept a query or document according to your business rules (you can see an example on [Github](https://github.com/kuzzleio/kuzzle-plugin-sample-custom-policies))
-* If all you need is to make sure that submitted documents follow a strict set of formatting rules, you can add [document validators]({{ site_base_path }}guide/1/datavalidation/)
-* <DeprecatedBadge version="1.4.0" /> Using <a href="{{ site_base_path }}guide/1/kuzzle-depth/roles-definitions">Permission Closures</a>, you can add functions directly into role definitions
+* With a [Pipe Plugin](/core/1/plugins/plugins/essentials/pipes), you can listen to one or multiple [API events](/core/1/plugins/plugins/events/), and decide whether you accept a query or document according to your business rules (you can see an example on [Github](https://github.com/kuzzleio/kuzzle-plugin-sample-custom-policies))
+* If all you need is to make sure that submitted documents follow a strict set of formatting rules, you can add [document validators](/core/1/guide/cookbooks/datavalidation/)
+* <DeprecatedBadge version="1.4.0" /> Using <a href="/core/1/guide/guides/kuzzle-depth/roles-definitions">Permission Closures</a>, you can add functions directly into role definitions
