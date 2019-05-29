@@ -68,8 +68,8 @@ The provided body must have the following structure:
 
 ```json
 {
-  "<data index>": {
-    "<data collection>": {
+  "<index>": {
+    "<collection>": {
       "strict": <boolean>,
       "fields": {
         // field validation rules

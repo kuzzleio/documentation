@@ -8,7 +8,7 @@ title: list
 
 
 
-Returns the complete list of data indexes.
+Returns the complete list of indexes.
 
 ---
 

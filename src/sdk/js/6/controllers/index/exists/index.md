@@ -7,7 +7,7 @@ description: Check for index existence
 
 # exists
 
-Checks if the given data index exists.
+Checks if the given index exists.
 
 <br/>
 

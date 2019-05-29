@@ -7,7 +7,7 @@ description: Refresh an authentication token
 
 # refreshToken
 
-{{{since "6.1.0"}}}
+<SinceBadge version="6.1.0" />
 
 Refreshes a valid, non-expired authentication token.
 
