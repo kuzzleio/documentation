@@ -6,22 +6,16 @@ try {
     "nyc-open-data": {
       "mappings": {
         "yellow-taxi": {
-          "dynamic": "false",
-          "_meta": {
-            "area": "Panipokhari"
+          dynamic: 'false',
+          _meta: {
+            area: 'Panipokhari
           },
-          "properties": {
-            "license": {
-              "type": "keyword"
-            },
-            "driver": {
-              "properties": {
-                "name": {
-                  "type": "keyword"
-                },
-                "curriculum": {
-                  "type": "text"
-                }
+          properties: {
+            license: { type: 'keyword' },
+            driver: {
+              properties: {
+                name: { type: 'keyword' },
+                curriculum: { type: 'text' }
               }
             }
           }

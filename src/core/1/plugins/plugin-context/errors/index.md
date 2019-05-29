@@ -1,5 +1,5 @@
 ---
 code: true
 type: branch
-title: Errors
+title: errors
 ---
