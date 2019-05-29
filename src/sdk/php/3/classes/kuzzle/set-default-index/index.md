@@ -7,7 +7,7 @@ description: Kuzzle:setDefaultIndex
 
 # setDefaultIndex
 
-Set the default data index. Has the same effect than the `defaultIndex` constructor option.
+Set the default index. Has the same effect than the `defaultIndex` constructor option.
 
 ---
 
