@@ -51,7 +51,7 @@ fs.inotify.max_user_watches=524288
 
 ## Manual install on an existing Kuzzle installation
 
-To add cluster capabilities to an existing Kuzzle installation, the cluster plugin must be installed by following the [Plugin Install Guide]({{ site_base_path }}/guide/1/essentials/plugins/#installing-a-plugin).
+To add cluster capabilities to an existing Kuzzle installation, the cluster plugin must be installed by following the [Plugin Install Guide](/core/1/guide/guides/essentials/plugins/#installing-a-plugin).
 
 <div class="alert alert-info">
 If you are running Kuzzle in a Docker container, you will need to access the running container's shell and then the Kuzzle installation folder inside the container.
@@ -75,9 +75,9 @@ ln -s ../available/kuzzle-plugin-cluster
 ### Cluster plugin configuration
 
 * The cluster plugin requires a privileged context from Kuzzle. This context is granted by Kuzzle via the global configuration.
-* The cluster plugin registers a few [pipes]({{ site_base_path }}plugins/1/pipes), and some of them may exceed the default pipe timeouts. 
+* The cluster plugin registers a few [pipes](/core/1/plugins/plugins/pipes/), and some of them may exceed the default pipe timeouts. 
 
-Add the following to your kuzzlerc configuration file (see our [Kuzzle configuration guide]({{ site_base_path }}guide/1/essentials/configuration/)):
+Add the following to your kuzzlerc configuration file (see our [Kuzzle configuration guide](/core/1/guide/guides/essentials/configuration/)):
 
 ```js
 "plugins": {
@@ -97,7 +97,7 @@ Once the plugin installed and configured, you can start as many Kuzzle instances
 
 ## Extended API
 
-The cluster plugin adds an [API controller]({{ site_base_path }}plugins/1/controllers) named `cluster`, with the following actions defined:
+The cluster plugin adds an [API controller](/core/1/plugins/plugins/controllers) named `cluster`, with the following actions defined:
 
 ### health
 
@@ -220,7 +220,7 @@ GET http://<host>:<port>/_plugin/cluster/status
 Kuzzle nodes are synchronized by maintaining their state in the Redis server instance.  
 What this means is that, as long as Kuzzle nodes connect to the same Redis instance, they see each others and they work together.
 
-Check our [Kuzzle configuration guide]({{ site_base_path }}guide/1/essentials/configuration/) to know how to make Kuzzle connect to specific Redis instances.
+Check our [Kuzzle configuration guide](/core/1/guide/guides/essentials/configuration/) to know how to make Kuzzle connect to specific Redis instances.
 
 ### Load Balancing
 

@@ -11,10 +11,10 @@ Our prepackaged multi-feature backend solution will meet basic project requireme
 
 For example, imagine you are developing a mobile application that accesses a **third-party payment platform**, such as Braintree, through its third-party's API. For **security** reasons, you will want to avoid accessing the third-party's API directly from the mobile device. Also, you will not want users to purchase more items than are currently in stock, so your backend will need to **monitor** what has been purchased. To achieve all this, you will want to develop a custom Plugin that lets Kuzzle communicate directly with the third-party payment platform.
 
-Kuzzle's **[Plugin Engine]({{ site_base_path }}plugins/1)** is a powerful feature that ensures that Kuzzle meets any project requirement:
+Kuzzle's **[Plugin Engine](/core/1/guide/guides/essentials/introduction/)** is a powerful feature that ensures that Kuzzle meets any project requirement:
 
 - select from a set of prebuilt plugins (such as the [OAuth2 Authentication Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth) or the [Cluster Plugin](https://github.com/kuzzleio/kuzzle-plugin-cluster)).
-- [create your own plugin]({{ site_base_path }}plugins/1/essentials) to meet your specific requirements.
+- [create your own plugin](/core/1/guide/guides/essentials/introduction/) to meet your specific requirements.
 
 ---
 
@@ -22,26 +22,26 @@ Kuzzle's **[Plugin Engine]({{ site_base_path }}plugins/1)** is a powerful featur
 
 Plugins are used to extend Kuzzle's functionalities. They are loaded into Kuzzle during startup and share its execution thread. A plugin can implement one or multiple of the following interfaces:
 
-[Hooks]({{ site_base_path }}plugins/1/hooks): adds asynchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is sent to the listeners and Kuzzle continues its process without waiting for the listener to complete.
+[Hooks](/core/1/plugins/plugins/hooks/): adds asynchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is sent to the listeners and Kuzzle continues its process without waiting for the listener to complete.
 
 _Example - "Write a log to a third-party logging service every time a document is deleted"_. The [Logger Plugin](https://github.com/kuzzleio/kuzzle-plugin-logger) (shipped with Kuzzle) uses this feature to log all the data-related events.
 
-[Pipes]({{ site_base_path }}plugins/1/pipes): adds synchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is passed synchronously to listeners, each modifying the input data and returning the result to the next listener. Kuzzle waits until the last listener completes and returns its data. If any listener returns an error, it will interrupt the Kuzzle lifecycle, and the thrown error will be used as a response by Kuzzle.
+[Pipes](/core/1/plugins/plugins/pipes/): adds synchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is passed synchronously to listeners, each modifying the input data and returning the result to the next listener. Kuzzle waits until the last listener completes and returns its data. If any listener returns an error, it will interrupt the Kuzzle lifecycle, and the thrown error will be used as a response by Kuzzle.
 
 _Example - "Compare the ordered quantity with the available stock and return an error if the amount of ordered items exceeds the amount in stock"_.
 
-[Controllers]({{ site_base_path }}plugins/1/controllers): extends Kuzzle API.
+[Controllers](/core/1/plugins/plugins/controllers): extends Kuzzle API.
 
 _Example - "Expose a `checkout` API endpoint that handles a third-party payment process"_.
 
-[Strategies]({{ site_base_path }}plugins/1/essentials/strategies): add an authentication strategy to identify and authenticate users.
+[Strategies](/core/1/plugins/plugins/strategies): add an authentication strategy to identify and authenticate users.
 
 _Example - "Enable OAuth based authentication in Kuzzle"_
 Kuzzle ships with the [Local Strategy Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local) and thanks to PassportJS, more than 300 authentication strategies are readily available.
 
 ## Protocols
 
-[Protocols]({{ site_base_path }}protocols/1) add extended networking capabilities to your Kuzzle installation. These are useful if you need to handle other, even proprietary transport protocols.
+[Protocols](/core/1/protocols/protocols/essentials/getting-started) add extended networking capabilities to your Kuzzle installation. These are useful if you need to handle other, even proprietary transport protocols.
 
 ---
 
@@ -157,19 +157,3 @@ ln -s ../available/<protocol_dir>
 
 # Restart Kuzzle to reload protocols
 ```
-
----
-
-## Going Further
-
-To get more insight into how plugins work, please refer to the [Plugin Reference]({{ site_base_path }}plugins/1).
-
-Official plugins:
-
-- [**boilerplate**](https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate): boilerplate code to easily get started with plugin development
-- [**logger**](https://github.com/kuzzleio/kuzzle-plugin-logger): log plugin, shipped with Kuzzle
-- [**auth-local**](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local): add support for login/password authentication , shipped with Kuzzle
-- [**auth-oauth**](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth): add support for OAuth authentications
-- [**cluster**](https://github.com/kuzzleio/kuzzle-plugin-cluster): add clustering capabilities (more information in our [scalability]({{ site_base_path }}guide/1/kuzzle-depth/scalability/) guide)
-- [**s3**](https://github.com/kuzzleio/kuzzle-plugin-s3): Amazon S3 plugin
-- [**probe**](https://github.com/kuzzleio/kuzzle-plugin-probe): add data quality measurement capabilities
