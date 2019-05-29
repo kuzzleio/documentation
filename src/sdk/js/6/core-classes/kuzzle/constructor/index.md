@@ -1,14 +1,14 @@
 ---
 code: true
 type: page
-title: Constructor
+title: constructor
 description: Creates a new Kuzzle object connected to the backend
 order: 50
 ---
 
 # Constructor
 
-Use this constructor to create a new instance of the SDK.  
+Use this constructor to create a new instance of the SDK.
 Each instance represent a different connection to a Kuzzle server with specific options.
 
 ## Arguments
@@ -26,7 +26,7 @@ Kuzzle(protocol, [options]);
 
 ### protocol
 
-The protocol used to connect to the Kuzzle instance.  
+The protocol used to connect to the Kuzzle instance.
 It can be one of the following available protocols:
 
 - [WebSocket](/sdk/js/6/websocket)
