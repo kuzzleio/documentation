@@ -8,9 +8,9 @@ title: count
 
 
 
-Counts documents in a data collection.
+Counts documents in a collection.
 
-A query can be provided to alter the count result, otherwise returns the total number of documents in the data collection.
+A query can be provided to alter the count result, otherwise returns the total number of documents in the collection.
 
 ---
 
@@ -53,8 +53,8 @@ Body:
 
 ## Arguments
 
-- `collection`: data collection
-- `index`: data index
+- `collection`: collection name
+- `index`: index name
 
 ### Optional:
 

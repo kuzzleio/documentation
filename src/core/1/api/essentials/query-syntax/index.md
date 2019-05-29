@@ -33,7 +33,7 @@ Body contents can be sent in the following formats:
 - `application/json`: raw JSON
 - `multipart/form-data`: HTML forms; both field-value pairs and field-files pairs can be sent that way
 
-If a HTML form is sent that way, the resulting body content will be translated into a JSON object, with as many keys as the provided form fields.  
+If a HTML form is sent that way, the resulting body content will be translated into a JSON object, with as many keys as the provided form fields.
 If the form field holds a file, then the corresponding JSON key will refer to an object instead of a mere value, with the following properties:
 
 - `filename`: file's name
@@ -90,10 +90,10 @@ Additionally, a few other parameters are very commonly found in API queries:
 
 - `_id`: unique identifier (e.g. document ID, user kuid, memory storage key, ...)
 - `body`: query content (e.g. document content, message content, mappings, ...)
-- `collection`: data collection
-- `index`: data index
+- `collection`: collection name
+- `index`: index name
 
 ### Other parameters
 
-Kuzzle does not enforce a fixed list of parameters. Rather, API actions freely design the parameters list they need, and Kuzzle internal structures reflect that freedom.  
+Kuzzle does not enforce a fixed list of parameters. Rather, API actions freely design the parameters list they need, and Kuzzle internal structures reflect that freedom.
 This principle is especially useful, as it allows plugins to set their own list of required and optional parameters, without constraint.
