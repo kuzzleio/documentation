@@ -7,7 +7,7 @@ description: CollectionMapping:apply
 
 # apply
 
-Applies the new mapping to the data collection.
+Applies the new mapping to the collection.
 
 ---
 

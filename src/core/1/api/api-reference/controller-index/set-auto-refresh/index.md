@@ -49,7 +49,7 @@ Method: POST
 
 ## Arguments
 
-- `index`: data index to configure
+- `index`: index name to configure
 
 ---
 

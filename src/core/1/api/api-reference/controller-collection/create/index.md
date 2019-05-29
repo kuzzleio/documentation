@@ -6,15 +6,19 @@ title: create
 
 # create
 
-
-
-Creates a new [collection](/core/1/guide/guides/essentials/persisted/), in the provided `index`.
+Creates a new [collection](/core/1/guide/guides/essentials/persisted), in the provided `index`.
 
 <SinceBadge version="1.3.0" />
 
-You can also provide an optional body with a data mapping that allow you to exploit the full capabilities of our persistent data storage layer.
+You can also provide an optional body with a [collection mapping](/core/1/guide/guides/essentials/database-mappings) allowing you to exploit the full capabilities of our persistent data storage layer.
 
-This method will only update the mapping if the collection already exists.
+This method will only update the mapping when the collection already exists.
+
+<SinceBadge version="1.7.1" />
+
+You can define the collection [dynamic mapping policy](/core/1/guide/guides/essentials/database-mappings/#dynamic-mapping-policy) by setting the `dynamic` field to the desired value.
+
+You can define [collection additional metadata](/core/1/guide/guides/essentials/database-mappings/#collection-metadata) within the `_meta` root field.
 
 ---
 
@@ -30,6 +34,10 @@ Body:
 
 ```js
 {
+  "dynamic": "[false|true|strict]",
+  "_meta": {
+    "field": "value"
+  },
   "properties": {
     "field1": {
       "type": "integer"
@@ -38,8 +46,8 @@ Body:
       "type": "keyword"
     },
     "field3": {
-        "type":   "date",
-        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+      "type":   "date",
+      "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
     }
   }
 }
@@ -54,6 +62,10 @@ Body:
   "controller": "collection",
   "action": "create",
   "body": {
+    "dynamic": "[false|true|strict]",
+    "_meta": {
+      "field": "value"
+    },
     "properties": {
       "field1": {
         "type": "integer"
@@ -62,8 +74,8 @@ Body:
         "type": "keyword"
       },
       "field3": {
-          "type":   "date",
-          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+        "type":   "date",
+        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
       }
     }
   }
@@ -74,8 +86,8 @@ Body:
 
 ## Arguments
 
-- `collection`: data collection to create
-- `index`: data index that will host the new data collection
+- `collection`: name of the collection to create
+- `index`: index name
 
 ---
 
@@ -83,7 +95,9 @@ Body:
 
 ### Optional:
 
-- `properties`: object describing the data mapping to associate to the new collection, using [Elasticsearch mapping format](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
+* `dynamic`: [dynamic mapping policy](/core/1/guide/guides/essentials/database-mappings/#dynamic-mapping-policy) for new fields. Allowed values: `true` (default), `false`, `strict`
+* `_meta`: [collection additional metadata](/core/1/guide/guides/essentials/database-mappings/#collection-metadata) stored next to the collection
+* `properties`: object describing the data mapping to associate to the new collection, using [Elasticsearch types definitions format](/core/1/guide/guides/essentials/database-mappings/#properties-types-definition)
 
 ---
 
