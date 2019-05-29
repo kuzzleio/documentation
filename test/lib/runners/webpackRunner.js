@@ -6,7 +6,10 @@ const BaseRunner = require('./baseRunner'),
 
 async function buildWithWebpack(snippet) {
   const config = {
-    entry: snippet.renderedSnippetPath,
+    entry: [
+      '/usr/local/lib/node_modules/@babel/polyfill',
+      snippet.renderedSnippetPath
+    ],
     output: {
       path: path.resolve(
         __dirname,
