@@ -95,9 +95,9 @@ Body:
 
 ### Optional:
 
-* `dynamic`: [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) for new fields. Allowed values: `true` (default), `false`, `strict`
-* `_meta`: [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) stored next to the collection
-* `properties`: object describing the data mapping to associate to the new collection, using [Elasticsearch types definitions format]({{ site_base_path}}guide/1/essentials/database-mappings/#properties-types-definition)
+* `dynamic`: [dynamic mapping policy](/core/1/guide/guides/essentials/database-mappings/#dynamic-mapping-policy) for new fields. Allowed values: `true` (default), `false`, `strict`
+* `_meta`: [collection additional metadata](/core/1/guide/guides/essentials/database-mappings/#collection-metadata) stored next to the collection
+* `properties`: object describing the data mapping to associate to the new collection, using [Elasticsearch types definitions format](/core/1/guide/guides/essentials/database-mappings/#properties-types-definition)
 
 ---
 

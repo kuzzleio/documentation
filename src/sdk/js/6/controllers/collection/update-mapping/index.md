@@ -7,11 +7,11 @@ description: Update the collection mapping
 
 # updateMapping
 
-{{{since "1.7.1"}}}
+<SinceBadge version="1.7.1" />
 
-You can define the collection [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) by setting the `dynamic` field to the desired value.
+You can define the collection [dynamic mapping policy](/core/1/guide/guides/essentials/database-mappings/#dynamic-mapping-policy) by setting the `dynamic` field to the desired value.
 
-You can define [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) within the `_meta` root field.
+You can define [collection additional metadata](/core/1/guide/guides/essentials/database-mappings/#collection-metadata) within the `_meta` root field.
 
 <br/>
 
