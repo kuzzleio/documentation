@@ -11,7 +11,7 @@ Authenticates a user.
 
 If this action is successful, then the [jwt](/sdk/js/6/core-classes/kuzzle/properties) property of this class instance is set to the new authentication token.
 
-All further requests emitted by this SDK instance will be on behalf of the authenticated user, until either the authenticated token expires, the [logout]({{ site_base_path }}sdk-reference/js/6/auth/logout) action is called, or the `jwt` property is manually set to another value.
+All further requests emitted by this SDK instance will be on behalf of the authenticated user, until either the authenticated token expires, the [logout](/sdk/js/6/controllers/auth/logout) action is called, or the `jwt` property is manually set to another value.
 
 <br/>
 
