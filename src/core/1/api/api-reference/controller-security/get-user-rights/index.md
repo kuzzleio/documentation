@@ -45,8 +45,8 @@ Returns a `hits` array of objects. Each object is a security right granted or de
 
 - `controller`: impacted Kuzzle controller
 - `action`: impacted controller action
-- `index`: data index
-- `collection`: data collection
+- `index`: index name
+- `collection`: collection name
 - `value`: tell if access is `allowed` or `denied`. If closures have been configured on the detailed scope, the value is `conditional`.
 
 ```javascript

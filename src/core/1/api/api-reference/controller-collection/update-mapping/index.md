@@ -6,9 +6,13 @@ title: updateMapping
 
 # updateMapping
 
+Updates a collection mapping.
 
+{{{since "1.7.1"}}}
 
-Updates a data collection mapping.
+You can define the collection [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) by setting the `dynamic` field to the desired value.
+
+You can define [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) within the `_meta` root field.
 
 ---
 
@@ -24,6 +28,10 @@ Body:
 
 ```js
 {
+  "dynamic": "[true|false|strict]",
+  "_meta": {
+    "field": "value"
+  },
   "properties": {
     "field1": {
       "type": "integer"
@@ -32,8 +40,8 @@ Body:
       "type": "keyword"
     },
     "field3": {
-        "type":   "date",
-        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+      "type":   "date",
+      "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
     }
   }
 }
@@ -47,8 +55,11 @@ Body:
   "collection": "<collection>",
   "controller": "collection",
   "action": "updateMapping",
-
   "body": {
+  "dynamic": "[true|false|strict]",
+    "_meta": {
+      "field": "value"
+    },
     "properties": {
       "field1": {
         "type": "integer"
@@ -57,8 +68,8 @@ Body:
         "type": "keyword"
       },
       "field3": {
-          "type":   "date",
-          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+        "type":   "date",
+        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
       }
     }
   }
@@ -69,14 +80,16 @@ Body:
 
 ## Arguments
 
-- `collection`: data collection
-- `index`: data index
+- `collection`: collection name
+- `index`: index name
 
 ---
 
 ## Body properties
 
-- `properties`: object describing the data mapping to associate to the new collection, using [Elasticsearch mapping format](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
+* `dynamic`: [dynamic mapping policy]({{ site_base_path}}guide/1/essentials/database-mappings/#dynamic-mapping-policy) for new fields. Allowed values: `true` (default), `false`, `strict`
+* `_meta`: [collection additional metadata]({{ site_base_path}}guide/1/essentials/database-mappings/#collection-metadata) stored next to the collection
+* `properties`: object describing the data mapping to associate to the new collection, using [Elasticsearch types definitions format]({{ site_base_path}}guide/1/essentials/database-mappings/#properties-types-definition)
 
 ---
 
