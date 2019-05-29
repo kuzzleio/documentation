@@ -48,9 +48,9 @@ Body:
 
 ## Arguments
 
-- `collection`: data collection
+- `collection`: collection name
 - `documentId`: unique ID of the document to replace
-- `index`: data index
+- `index`: index name
 
 ### Optional:
 

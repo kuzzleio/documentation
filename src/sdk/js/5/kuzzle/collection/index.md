@@ -15,8 +15,8 @@ Instantiates a new [Collection](/sdk/js/5/collection) object.
 
 | Arguments    | Type   | Description                                            |
 | ------------ | ------ | ------------------------------------------------------ |
-| `collection` | string | The name of the data collection you want to manipulate |
-| `index`      | string | The name of the index containing the data collection   |
+| `collection` | string | The name of the collection you want to manipulate |
+| `index`      | string | The name of the index containing the collection   |
 
 If no `index` is provided, the factory will take the default index set in the main Kuzzle SDK instance. If no default index has been set, an error is thrown.
 

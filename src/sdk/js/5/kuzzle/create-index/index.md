@@ -7,7 +7,7 @@ description: Kuzzle:createIndex
 
 # createIndex
 
-Create a new empty data index, with no associated mapping.
+Create a new empty index, with no associated mapping.
 
 ---
 

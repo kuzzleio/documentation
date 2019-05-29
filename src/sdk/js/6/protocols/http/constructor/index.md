@@ -1,7 +1,7 @@
 ---
 code: true
 type: page
-title: Constructor
+title: constructor
 description: Creates a new Http protocol
 order: 50
 ---
