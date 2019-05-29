@@ -7,7 +7,7 @@ description: Collection:subscribe
 
 # subscribe
 
-Subscribes to this data collection with a set of filters.
+Subscribes to this collection with a set of filters.
 
 The provided callback will be called everytime a [notification](/sdk/android/3/essentials/notifications/) is received from Kuzzle.
 
@@ -40,7 +40,7 @@ See the [Room object](/sdk/android/3/controllers/room/) documentation for more i
 
 ## Return Value
 
-Returns an object exposing the following method:  
+Returns an object exposing the following method:
  `onDone(callback)`
 
 The `callback` argument is called when the subscription ends, either successfully or with an error.

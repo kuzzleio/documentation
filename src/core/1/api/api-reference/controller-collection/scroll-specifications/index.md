@@ -38,8 +38,8 @@ Method: GET
 
 ## Arguments
 
-- `collection`: data collection
-- `index`: data index
+- `collection`: collection name
+- `index`: index name
 - `scrollId`: cursor identifier, obtained with (/core/1/api/api-reference/controller-collection/search-specifications/)
 
 ### Optional:
