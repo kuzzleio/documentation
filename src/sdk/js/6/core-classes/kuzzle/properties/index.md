@@ -42,7 +42,7 @@ The returned (or resolved) array must contain objects, each with the following p
 
 | Property | Type | Description |
 |---|---|---|
-| `query` | <pre>object</pre> | Object representing the request that is about to be sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/essentials/query-syntax) format |
+| `query` | <pre>object</pre> | Object representing the request that is about to be sent to Kuzzle, following the [Kuzzle API](/core/1/api/essentials/query-syntax) format |
 | `reject` | <pre>function</pre> | A [Promise.reject](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject) function |
 | `resolve` | <pre>function</pre> | A [Promise.resolve](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve) function |
 
@@ -54,7 +54,7 @@ The `queueFilter` property must be set with a function of the following form:
 boolean queueFilter(request)
 ```
 
-The `request` argument is an object representing the request that is about to be sent to Kuzzle, following the [Kuzzle API]({{ site_base_path }}api/1/essentials/query-syntax) format.
+The `request` argument is an object representing the request that is about to be sent to Kuzzle, following the [Kuzzle API](/core/1/api/essentials/query-syntax) format.
 
 ### queueMaxSize
 
