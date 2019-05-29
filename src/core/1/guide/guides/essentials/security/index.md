@@ -55,7 +55,7 @@ All `roles` and `profiles` can be edited in the [Kuzzle Admin Console](/core/1/g
 
 A `role` can be defined using a hierarchical JSON object where permissions are outlined by `controller` and `action`.
 
-The `role` definition is represented as a Javascript object where each key at the root of the object identifies a `controller` by name:
+The `role` definition is represented as a JSON object where each key at the root of the object identifies a `controller` by name.
 
 ```js
 {
