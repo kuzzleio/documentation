@@ -5,43 +5,46 @@ title: refreshToken
 description: Refresh an authentication token
 ---
 
- # refreshToken
+# refreshToken
 
 <SinceBadge version="6.1.0" />
 
- Refreshes a valid, non-expired authentication token.
+Refreshes a valid, non-expired authentication token.
 
- If this action is successful, all further requests emitted by this SDK instance will use the refreshed authentication token.
+If this action is successful, then the [jwt](/sdk/js/6/core-classes/kuzzle/properties) property of this class instance is set to the new authentication token.
 
- ## Arguments
+All further requests emitted by this SDK instance will be on behalf of the authenticated user, until either the authenticated token expires, the [logout](/core/sdk/js/6/auth/logout) action is called, or the `jwt` property is manually set to another value.
 
- ```javascript
+
+## Arguments
+
+```javascript
 refreshToken ([options])
 ```
 
- <br/>
+<br/>
 
- | Arguments    | Type    | Description |
+| Arguments    | Type    | Description |
 |--------------|---------|-------------|
 | `options`  | <pre>object</pre> | Query options |
 
 
- ### options
+### options
 
- Additional query options
+Additional query options
 
 | Property     | Type<br/>(default)    | Description   |
 | -------------- | --------- | ------------- |
 | `expiresIn` | <pre>string</pre> | Expiration time in [ms library](https://www.npmjs.com/package/ms) format. (e.g. `2h`) |
 | `queuable` | <pre>boolean</pre><br/>(`true`)| If true, queues the request during downtime, until connected to Kuzzle again |
 
- ### expiresIn
+### expiresIn
 
- The default value for the `expiresIn` option is defined at server level, in Kuzzle's [configuration file](/core/1/guide/guides/essentials/configuration/).
+The default value for the `expiresIn` option is defined at server level, in Kuzzle's [configuration file](/core/1/guide/guides/essentials/configuration/).
 
- ## Resolves
+## Resolves
 
- The `refreshToken` action resolves to a token object with the following properties:
+The `refreshToken` action resolves to a token object with the following properties:
 
 | Property   | Type    | Description  |
 |--------------|---------|-------------|
@@ -50,6 +53,6 @@ refreshToken ([options])
 | `jwt` | <pre>string</pre> | Authentication token |
 | `ttl` | <pre>number</pre> | Time to live of the authentication token, in milliseconds |
 
- ## Usage
+## Usage
 
- <<< ./snippets/refreshToken.js
+<<< ./snippets/refreshToken

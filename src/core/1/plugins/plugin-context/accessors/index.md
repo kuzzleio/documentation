@@ -1,5 +1,5 @@
 ---
 code: true
 type: branch
-title: Accessors
+title: accessors
 ---
