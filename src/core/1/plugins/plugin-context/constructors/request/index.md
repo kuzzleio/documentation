@@ -20,7 +20,7 @@ For more information about this object, refer to its [technical documentation](h
 
 Network protocol specific headers can be added to the response. If the protocol supports it, these headers are forwarded in the response sent to the client.
 
-As Kuzzle supports the HTTP protocol natively, the Request object handles HTTP headers special cases.  
+As Kuzzle supports the HTTP protocol natively, the Request object handles HTTP headers special cases.
 Other network protocols headers are stored in raw format, and protocols have to handle
 their own specific headers manually.
 
@@ -132,7 +132,7 @@ setError(error);
 
 If a `KuzzleError` object is provided, the request's status attribute is set to the error one.
 
-Otherwise, the provided error is embedded into a [InternalError](/core/1/plugins/errors/internalerror) object, and the request status is set to 500.
+Otherwise, the provided error is embedded into a [InternalError](/core/1/plugins/plugin-context/errors/internalerror) object, and the request status is set to 500.
 
 ---
 

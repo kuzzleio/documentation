@@ -10,7 +10,7 @@ title: Repository
 
 Provides access to a collection inside the plugin's dedicated and secure storage.
 
-If this is not already the case, the collection must first be created, using the [storage](/core/1/plugins/accessors/storage) accessor.
+If this is not already the case, the collection must first be created, using the [storage](/core/1/plugins/plugin-context/accessors/storage) accessor.
 
 ---
 

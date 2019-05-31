@@ -29,7 +29,7 @@ execute(request, [callback]);
 
 ## Return
 
-The `execute` function resolves to an updated Request object, with its [response part](/core/1/plugins/constructors/request) set.
+The `execute` function resolves to an updated Request object, with its [response part](/core/1/plugins/plugin-context/constructors/request) set.
 
 How the response is returned depends whether a callback argument is provided:
 
