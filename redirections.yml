@@ -1,82 +1,35 @@
 ---
 redirections:
-  # legacy
-  - from: api-documentation
-    to: core/1/api
-  - from: sdk-reference/essentials
-    to: sdk
-  - from: elasticsearch-cookbook/bool-query
-    to: core/1/guide/cookbooks/elasticsearch/bool-query
-  - from: guide/getting-started
-    to: core/1/guide/guides/getting-started
-  - from: guide/essentials/installing-kuzzle
-    to: core/1/guide/guides/essentials/installing-kuzzle
-  - from: guide/essentials/installing-console
-    to: core/1/guide/guides/essentials/installing-console
-  - from: guide/code-examples/geofencing/javascript
-    to: core/1/guide/code-examples/geofencing/javascript
-  - from: guide/essentials
-    to: core/1/guide/guides/essentials
-  - from: sdk-reference/collection
-    to: sdk
-  - from: elasticsearch-cookbook/useful-commands
-    to: core/1/guide/cookbooks/elasticsearch/useful-commands
-  - from: guide/code-examples/dbsearch/javascript
-    to: core/1/guide/code-examples/dbsearch/javascript
-  - from: guide/essentials/plugins
-    to: core/1/plugins/plugins/essentials/available-plugins
-  - from: guide/kuzzle-depth
-    to: core/1/guide/guides/kuzzle-depth
-  - from: plugins-reference/plugins-features
-    to: core/1/plugins/plugins/essentials/getting-started
-  - from: sdk-reference/essentials/events
-    to: sdk/js/6/essentials/events
-  - from: sdk-reference/essentials/notifications
-    to: sdk/js/6/essentials/realtime-notifications
-  - from: elasticsearch-cookbook/basic-queries
-    to: core/1/guide/cookbooks/elasticsearch/basic-queries
-  - from: guide/essentials/real-time
-    to: core/1/guide/guides/essentials/real-time
-  - from: sdk-reference/collection/search
-    to: sdk
-  - from: sdk-reference/kuzzle
-    to: sdk
-  - from: api-documentation/query-syntax
-    to: core/1/api/essentials/query-syntax
-  - from: kuzzle-events/plugin-events
-    to: core/1/plugins/plugins/events
-  - from: sdk-reference/kuzzle/login
-    to: sdk/js/6/controllers/auth/login
-  - from: sdk-reference/memory-storage/pfadd
-    to: sdk/js/6/controllers/ms/pfadd
-
-  # protocols methods
-  - from: protocols/1/essentials/broadcast
-    to: core/1/protocols/methods/broadcast
-  - from: protocols/1/essentials/disconnect
-    to: core/1/protocols/methods/disconnect
-  - from: protocols/1/essentials/init
-    to: core/1/protocols/methods/init
-  - from: protocols/1/essentials/joinchannel
-    to: core/1/protocols/methods/joinchannel
-  - from: protocols/1/essentials/leavechannel
-    to: core/1/protocols/methods/leavechannel
-  - from: protocols/1/essentials/notify
-    to: core/1/protocols/methods/notify
-
-  # plugins: essentials -> dedicated section
-  - from: plugins/1/essentials/strategies
-    to: core/1/plugins/plugins/strategies/overview
-  - from: plugins/1/essentials/pipes
-    to: core/1/plugins/plugins/pipes
-  - from: plugins/1/plugin-layout/init-function
-    to: core/1/plugins/plugins/manual-setup/init-function
-  - from: plugins/1/essentials/controllers
-    to: core/1/plugins/plugins/controllers
-
   # API
-  - from: api/1/controller-(.+)
-    to: core/1/api/controllers/$1
+  - from: api/1/controller-admin
+    to: core/1/api/controllers/admin
+
+  - from: api/1/controller-auth
+    to: core/1/api/controllers/auth
+
+  - from: api/1/controller-bulk
+    to: core/1/api/controllers/bulk
+
+  - from: api/1/controller-collection
+    to: core/1/api/controllers/collection
+
+  - from: api/1/controller-document
+    to: core/1/api/controllers/document
+
+  - from: api/1/controller-index
+    to: core/1/api/controllers/index
+
+  - from: api/1/controller-memory-storage
+    to: core/1/api/controllers/memory-storage
+
+  - from: api/1/controller-realtime
+    to: core/1/api/controllers/realtime
+
+  - from: api/1/controller-security
+    to: core/1/api/controllers/security
+
+  - from: api/1/controller-server
+    to: core/1/api/controllers/server
 
   - from: api/1/essentials
     to: core/1/api/essentials
@@ -323,14 +276,8 @@ redirections:
     to: sdk/java/1/core-classes/search-result
 
   # Java 1 protocols
-  - from: sdk-reference/java/1/http
-    to: sdk/java/1/protocols/http
-
-  - from: sdk-reference/java/1/websocket
+  - from: sdk-reference/java/1/protocol/websocket
     to: sdk/java/1/protocols/websocket
-
-  - from: sdk-reference/java/1/socketio
-    to: sdk/java/1/protocols/socketio
 
   # Java 1 controllers
   - from: sdk-reference/java/1/auth
@@ -378,14 +325,8 @@ redirections:
     to: sdk/go/1/core-structs/kuzzle-event-emitter
 
   # Go 1 protocols
-  - from: sdk-reference/go/1/http
-    to: sdk/go/1/protocols/http
-
-  - from: sdk-reference/go/1/websocket
+  - from: sdk-reference/go/1/protocols/websocket
     to: sdk/go/1/protocols/websocket
-
-  - from: sdk-reference/go/1/socketio
-    to: sdk/go/1/protocols/socketio
 
   # Go 1 controllers
   - from: sdk-reference/go/1/auth
@@ -508,3 +449,91 @@ redirections:
 
   - from: sdk-reference/android/3/user
     to: sdk/android/3/core-classes/user
+
+  # PHP 3 essentials
+  - from: sdk-reference/php/3/handling-errors
+    to: sdk/php/3/essentials/error-handling
+
+  - from: sdk-reference/php/3/events
+    to: sdk/php/3/essentials/events
+
+  # PHP 3 core classes
+  - from: sdk-reference/php/3/collection
+    to: sdk/php/3/core-classes/collection
+
+  - from: sdk-reference/php/3/collection-mapping
+    to: sdk/php/3/core-classes/collection-mapping
+
+  - from: sdk-reference/php/3/document
+    to: sdk/php/3/core-classes/document
+
+  - from: sdk-reference/php/3/kuzzle
+    to: sdk/php/3/core-classes/kuzzle
+
+  - from: sdk-reference/php/3/memory-storage
+    to: sdk/php/3/core-classes/memory-storage
+
+  - from: sdk-reference/php/3/profile
+    to: sdk/php/3/core-classes/profile
+
+  - from: sdk-reference/php/3/role
+    to: sdk/php/3/core-classes/role
+
+  - from: sdk-reference/php/3/search-result
+    to: sdk/php/3/core-classes/search-result
+
+  - from: sdk-reference/php/3/security
+    to: sdk/php/3/core-classes/security
+
+  - from: sdk-reference/php/3/user
+    to: sdk/php/3/core-classes/user
+
+redirectionslegacy:
+  - from: api-documentation
+    to: core/1/api
+  - from: sdk-reference/essentials
+    to: sdk
+  - from: elasticsearch-cookbook/bool-query
+    to: core/1/guide/cookbooks/elasticsearch/bool-query
+  - from: guide/getting-started
+    to: core/1/guide/guides/getting-started
+  - from: guide/essentials/installing-kuzzle
+    to: core/1/guide/guides/essentials/installing-kuzzle
+  - from: guide/essentials/installing-console
+    to: core/1/guide/guides/essentials/installing-console
+  - from: guide/code-examples/geofencing/javascript
+    to: core/1/guide/code-examples/geofencing/javascript
+  - from: guide/essentials
+    to: core/1/guide/guides/essentials
+  - from: sdk-reference/collection
+    to: sdk
+  - from: elasticsearch-cookbook/useful-commands
+    to: core/1/guide/cookbooks/elasticsearch/useful-commands
+  - from: guide/code-examples/dbsearch/javascript
+    to: core/1/guide/code-examples/dbsearch/javascript
+  - from: guide/essentials/plugins
+    to: core/1/plugins/plugins/essentials/available-plugins
+  - from: guide/kuzzle-depth
+    to: core/1/guide/guides/kuzzle-depth
+  - from: plugins-reference/plugins-features
+    to: core/1/plugins/plugins/essentials/getting-started
+  - from: sdk-reference/essentials/events
+    to: sdk/js/6/essentials/events
+  - from: sdk-reference/essentials/notifications
+    to: sdk/js/6/essentials/realtime-notifications
+  - from: elasticsearch-cookbook/basic-queries
+    to: core/1/guide/cookbooks/elasticsearch/basic-queries
+  - from: guide/essentials/real-time
+    to: core/1/guide/guides/essentials/real-time
+  - from: sdk-reference/collection/search
+    to: sdk
+  - from: sdk-reference/kuzzle
+    to: sdk
+  - from: api-documentation/query-syntax
+    to: core/1/api/essentials/query-syntax
+  - from: kuzzle-events/plugin-events
+    to: core/1/plugins/plugins/events
+  - from: sdk-reference/kuzzle/login
+    to: sdk/js/6/controllers/auth/login
+  - from: sdk-reference/memory-storage/pfadd
+    to: sdk/js/6/controllers/ms/pfadd
