@@ -10,9 +10,9 @@ In this section we are going to focus on how requests are processed by Kuzzle. W
 
 Kuzzle has two main modes of communication:
 
-- **Synchronous**: Clients send requests to the Kuzzle server, which processes the data using the [Document Controller](/core/1/api/controller-document) and then sends a response back to the client.
+- **Synchronous**: Clients send requests to the Kuzzle server, which processes the data using the [Document Controller](/core/1/api/controllers/document) and then sends a response back to the client.
 
-- **Asynchronous**: Clients subscribe to the Kuzzle server via the [Real-time/Subscribe](/core/1/api/controllers/realtime/publish/) API action and receive data asynchronously as a result of a [Real-time/Publish](/core/1/api/controllers/realtime/publish/) API action or a [Document Controller](/core/1/api/controller-document) event.
+- **Asynchronous**: Clients subscribe to the Kuzzle server via the [Real-time/Subscribe](/core/1/api/controllers/realtime/publish/) API action and receive data asynchronously as a result of a [Real-time/Publish](/core/1/api/controllers/realtime/publish/) API action or a [Document Controller](/core/1/api/controllers/document) event.
 
 These modes of communication are generally independant from the transport protocol. For example, a synchronous request can be made via HTTP or Websockets.
 
