@@ -2,7 +2,7 @@
 code: false
 type: page
 title: Available plugins
-order: 0
+order: 2
 ---
 
 # Plugins list
