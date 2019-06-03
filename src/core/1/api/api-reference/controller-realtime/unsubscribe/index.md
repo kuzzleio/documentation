@@ -46,8 +46,8 @@ Returns the removed subscription identifier.
 {
   "status": 200,
   "error": null,
-  "index": "<data index>",
-  "collection": "<data collection>",
+  "index": "<index>",
+  "collection": "<collection>",
   "controller": "realtime",
   "action": "unsubscribe",
   "volatile": {}, // subscription volatile data
