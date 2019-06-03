@@ -6,7 +6,6 @@ require 'optparse'
 
 class LinkChecker
   INTERNAL_LINK_REGEXP = /\[[\.\w\s\-]+\]\(([\w\/\-\#]*)\)/
-  # INTERNAL_LINK_REGEXP = /\(\{\{\s*site_base_path\s*\}\}([^)>]+)/
 
   attr_reader :internal, :external
 
@@ -29,7 +28,7 @@ class LinkChecker
 
       scan_internal_links(file_path, content) unless @only == 'external'
 
-      # scan_external_links(file_path, content) unless @only == 'internal'
+      scan_external_links(file_path, content) unless @only == 'internal'
     end
 
     puts "Checking #{@hydra.queued_requests.count} external links.."
@@ -38,21 +37,8 @@ class LinkChecker
 
   def report_stdout
     puts "Found #{@internal.count} uniq internal dead links:\n"
-    # @internal.each do |link, pages|
-    #   puts "  - #{link} found on #{pages.count} pages:"
-    #   pages.each do |page|
-    #     puts "    -> #{page}"
-    #   end
-    #   puts ""
-    # end
 
-    # puts "Found #{@external.count} uniq external dead links:\n"
-    # @external.each do |link, pages|
-    #   puts "  - #{link} found on #{pages.count} pages:"
-    #   pages.each do |page|
-    #     puts "    -> #{page}"
-    #   end
-    # end
+    puts "Found #{@external.count} uniq external dead links:\n"
   end
 
   def report_json
@@ -79,8 +65,9 @@ class LinkChecker
       next if File.exists?(full_path)
 
       @internal ||= []
-      @internal << full_path# << file_path.gsub(/\/\//, '/')
+      @internal << full_path
     end
+
     @internal.uniq!
   end
 
