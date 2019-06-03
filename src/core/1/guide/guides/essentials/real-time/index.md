@@ -277,7 +277,7 @@ It is also possible to combine [terms](/core/1/koncorde/essentials/terms) betwee
 
 Each subscription filter define a scope. All documents in the collection can be either inside or outside this scope.
 
-Once a customer has subscribed to notifications with filters, he will receive notifications each time a document enters or exits the set defined by the filters.
+Once a customer has subscribed to notifications with filters, he will receive notifications each time a document enters or exits the scope defined by the filters.
 
 ![subscription-filter-scope](./subscription-filter-scope.png)
 
