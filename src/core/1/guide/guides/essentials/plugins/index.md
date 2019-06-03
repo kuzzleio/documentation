@@ -66,7 +66,7 @@ Go to the Kuzzle installation folder and type:
 cd <kuzzle directory>/plugins/available
 
 # Download Plugin to plugins/available folder
-git clone git@github.com:kuzzleio/kuzzle-core-plugin-boilerplate
+git clone https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate.git
 
 # Install the Plugin dependencies
 cd kuzzle-core-plugin-boilerplate

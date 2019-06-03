@@ -16,10 +16,11 @@ This guide covers how clustering capabilities can be added to Kuzzle.
 
 This chapter shows how to quickly create a Kuzzle cluster stack for development purposes. If you already have an existing Kuzzle server running, you may want to read the manual install chapter instead.
 
-<div class="alert alert-info">
-This development stack is for demonstration and test purposes only and should not be used as-is on production.<br/>
+::: info
+This development stack is for demonstration and test purposes only and should not be used as-is on production.  
+
 Notably, this stack only starts Kuzzle in cluster mode: Elasticsearch and Redis are not clustered.
-</div>
+:::
 
 Install and run: 
 
@@ -53,9 +54,9 @@ fs.inotify.max_user_watches=524288
 
 To add cluster capabilities to an existing Kuzzle installation, the cluster plugin must be installed by following the [Plugin Install Guide](/core/1/guide/guides/essentials/plugins/#installing-a-plugin).
 
-<div class="alert alert-info">
+::: info
 If you are running Kuzzle in a Docker container, you will need to access the running container's shell and then the Kuzzle installation folder inside the container.
-</div>
+:::
 
 To install the cluster plugin, follow these steps:
 
