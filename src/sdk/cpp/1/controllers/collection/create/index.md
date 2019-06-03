@@ -63,7 +63,7 @@ The mapping must have a root field `properties` that contain the mapping definit
 }
 ```
 
-You can see the full list of Elasticsearch mapping types [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html).
+More informations about database mappings [here](/core/1/guide/guides/essentials/database-mappings).
 
 ### options
 
