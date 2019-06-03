@@ -36,14 +36,14 @@ Method: GET
 
 ## Arguments
 
-- `collection`: data collection
-- `index`: data index
+- `collection`: collection name
+- `index`: index name
 
 ---
 
 ## Response
 
-Returns a boolean telling whether the provided data collection exists:
+Returns a boolean telling whether the provided collection exists:
 
 ```js
 {
