@@ -20,7 +20,7 @@ For more information about this object, refer to its [technical documentation](h
 
 Network protocol specific headers can be added to the response. If the protocol supports it, these headers are forwarded in the response sent to the client.
 
-As Kuzzle supports the HTTP protocol natively, the Request object handles HTTP headers special cases.
+As Kuzzle supports the HTTP protocol natively, the Request object handles HTTP headers special cases.  
 Other network protocols headers are stored in raw format, and protocols have to handle
 their own specific headers manually.
 
@@ -177,7 +177,6 @@ async sendPdf (request) {
     headers: {
       'Content-Length': file.length.toString(),
       'Content-Type': 'application/pdf',
-      'Content-Encoding': 'deflate',
       'Content-Disposition': `attachment; filename="file.pdf"`,
       'Cache-Control': 'no-cache'
     }
