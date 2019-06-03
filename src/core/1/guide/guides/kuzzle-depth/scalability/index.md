@@ -25,7 +25,7 @@ Notably, this stack only starts Kuzzle in cluster mode: Elasticsearch and Redis 
 Install and run: 
 
 ```bash
-git clone git@github.com:kuzzleio/kuzzle-plugin-cluster
+git clone https://github.com/kuzzleio/kuzzle-plugin-cluster.git
 cd kuzzle-plugin-cluster
 docker-compose -p cluster up --scale kuzzle=3
 ```
@@ -63,7 +63,7 @@ To install the cluster plugin, follow these steps:
 ```bash
 cd <kuzzle directory>/plugins/available
 
-git clone git@github.com:kuzzleio/kuzzle-plugin-cluster 
+git clone https://github.com/kuzzleio/kuzzle-plugin-cluster.git
 
 cd kuzzle-plugin-cluster
 npm install # add --unsafe-perm if installing from inside a docker container
