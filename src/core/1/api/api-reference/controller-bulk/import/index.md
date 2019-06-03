@@ -78,7 +78,7 @@ The body must contain a `bulkData` array, detailing the bulk operations to perfo
 
 Returns an object containing 2 properties:
   - `items`: array containing the list of executed queries result, in the same order than in the query
-  - `errors`: boolean indicating if some error occured during the bulk
+  - `errors`: boolean indicating if some error occured during the import
 
 Each query result contains the following properties:
 
