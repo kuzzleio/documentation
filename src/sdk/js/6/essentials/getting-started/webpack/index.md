@@ -173,7 +173,7 @@ New document successfully created!
 
 <div class="alert alert-success">
     You have now successfully stored your first document into Kuzzle. Click
-    <a href="/core/1/guides/essentials/installing-console/">here</a> to see how you can use the
+    <a href="/core/1/guides/essentials/admin-console/">here</a> to see how you can use the
     <strong><a href="http://console.kuzzle.io/">Kuzzle Admin Console</a></strong> to browse your collection and
     confirm that your document was saved.
 </div>

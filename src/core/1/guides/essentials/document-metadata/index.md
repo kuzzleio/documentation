@@ -13,6 +13,8 @@ Whenever a document gets created, updated or deleted, Kuzzle will add or update 
 
 ## Overview
 
+<DeprecatedBadge version="1.3.0" />
+
 Metadata can be viewed in the document's `_meta` field and contains the following properties:
 
 <SinceBadge version="1.3.0" />

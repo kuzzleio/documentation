@@ -107,7 +107,7 @@ Document created successfuly
 ```
 
 You can perform other actions such as [delete](/sdk/go/1/controllers/document/delete/),
-[replace](/sdk/go/1/controllers/document/replace/) or [search](/sdk/go/1/controllers/document/search/) documents. There are also other ways to interact with Kuzzle like our [Admin Console](/core/1/guides/essentials/installing-console/), the [Kuzzle HTTP API](/core/1/api/essentials/connecting-to-kuzzle/) or by using your [own protocol](/core/1/protocols/essentials/getting-started/).
+[replace](/sdk/go/1/controllers/document/replace/) or [search](/sdk/go/1/controllers/document/search/) documents. There are also other ways to interact with Kuzzle like our [Admin Console](/core/1/guides/essentials/admin-console/), the [Kuzzle HTTP API](/core/1/api/essentials/connecting-to-kuzzle/) or by using your [own protocol](/core/1/protocols/essentials/getting-started/).
 
 Now you know how to:
 

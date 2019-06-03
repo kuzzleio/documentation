@@ -105,7 +105,7 @@ node create.js
 ```
 
 <div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guides/essentials/installing-console/">here</a> to see how you can use the
+You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guides/essentials/admin-console/">here</a> to see how you can use the
    <a href="http://console.kuzzle.io" target="_blank"><strong>Kuzzle Admin Console</strong></a> to browse your collection and confirm that your document was saved.
 </div>
 

@@ -119,7 +119,7 @@ New document successfully created!
 ```
 
 <div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guides/essentials/installing-console/">here</a> to see how you can use the <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
+You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guides/essentials/admin-console/">here</a> to see how you can use the <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
 </div>
 
 <div class="alert alert-info">

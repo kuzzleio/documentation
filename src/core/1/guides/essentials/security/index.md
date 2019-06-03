@@ -15,7 +15,7 @@ Kuzzle provides a full set of functionalities to configure fine-grained permissi
 
 When Kuzzle is first installed there is no administrator account and anonymous users (i.e. unauthenticated users) have administrative privileges.
 
-To secure your Kuzzle installation you will need to create an administrator account by either using the [Kuzzle Admin Console](/core/1/guides/essentials/installing-console/#create-an-admin-account) or using the [CLI](/core/1/guides/essentials/cli/#createfirstadmin) tool.
+To secure your Kuzzle installation you will need to create an administrator account by either using the [Kuzzle Admin Console](/core/1/guides/essentials/admin-console/#create-an-admin-account) or using the [CLI](/core/1/guides/essentials/cli/#createfirstadmin) tool.
 
 Once the administrator account is created, you can remove anonymous access rights and properly secure your installation. You can then use the Kuzzle Admin Console or Kuzzle API to create new users and assign them permissions.
 
@@ -47,7 +47,7 @@ A `profile` is linked to a set of `roles`, and each `role` defines a set of perm
 
 ![Users, Profiles and Roles](profiles-roles.png)
 
-All `roles` and `profiles` can be edited in the [Kuzzle Admin Console](/core/1/guides/essentials/installing-console/).
+All `roles` and `profiles` can be edited in the [Kuzzle Admin Console](/core/1/guides/essentials/admin-console/).
 
 ---
 

@@ -69,6 +69,6 @@ If you want to run Kuzzle automatically at startup there are a few scripts in `$
 Now that Kuzzle is up and running, you can start playing around with it:
 
 - install and learn a [Kuzzle SDK](/sdk/) to power-up one of your projects
-- install [Kuzzle Admin Console](/core/1/guides/essentials/installing-console/), a handy way to manage data and security in your Kuzzle installation
+- install [Kuzzle Admin Console](/core/1/guides/essentials/admin-console/), a handy way to manage data and security in your Kuzzle installation
 - explore the [Kuzzle API](/core/1/api) documentation
 - install Kuzzle [without Docker](/core/1/guides/essentials/installing-kuzzle/#manual-installation)

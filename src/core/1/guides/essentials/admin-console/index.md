@@ -11,7 +11,7 @@ The Kuzzle Admin Console is a web application that lets you manage Kuzzle, inclu
 
 If you don't want to install Kuzzle Admin Console yourself you can use our <a href="http://console.kuzzle.io/">publicly hosted</a> Kuzzle Admin Console. Otherwise, grab the source code [here](https://github.com/kuzzleio/kuzzle-admin-console/releases) and install it on your own environment.
 
-In both cases the configuration is the same and you'll be able to select which [Kuzzle](/core/1/guides/essentials/installing-console/#connect-to-kuzzle) installation you want to manage.
+In both cases the configuration is the same and you'll be able to select which [Kuzzle](/core/1/guides/essentials/admin-console/#connect-to-kuzzle) installation you want to manage.
 
 <div class="alert alert-info">
 Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
@@ -19,9 +19,9 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 ## Connect to Kuzzle
 
-The Kuzzle Admin Console automatically searches for Kuzzle on `localhost:7512` and will be prompt you to introduce your own host and port if it is not detected.
+The Kuzzle Admin Console automatically searches for Kuzzle on `ws://localhost:7512` and prompts you to introduce your own host and port if it is unable to connect to that URL.
 
-At any time, you can reconfigure Kuzzle Admin Console to connect to any Kuzzle installation by clicking on the **"Choose Environment"** dropdown menu and then selecting **"Create new"**. This feature allows you to manage multiple Kuzzle installations on a single Kuzzle Admin Console.
+At any time, you can reconfigure the Kuzzle Admin Console to connect to any Kuzzle installation by clicking the **"Choose Environment"** dropdown menu and then selecting **"Create new"**. This feature allows you to manage multiple Kuzzle installations on a single Kuzzle Admin Console.
 
 ![Kuzzle Admin Console is trying to connect to Kuzzle](kuzbo-connecting.png)
 
