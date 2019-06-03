@@ -11,12 +11,12 @@ Kuzzle includes his own real-time engine for sending notifications to clients co
 
 Real-time capabilities requires the use of a persistent communication protocol such as WebSocket or MQTT.
 
-Kuzzle offers 2 different ways to make real time:
+Kuzzle offers 2 different ways of doing real-time:
  - volatile Pub/Sub system
  - real-time database notifications
 
  ::: info
-You can bypass notification triggering by using [bulk:write](/core/1/api/api-reference/bulk-controller/write) or [bulk:mWrite](/core/1/api/api-reference/bulk-controller/m-write) actions.
+You can bypass notifications from being triggered by using actions from the [bulk controller](/core/1/api/api-reference/bulk-controller).
 :::
 
 
@@ -32,7 +32,7 @@ It is of course possible to send the payloads provided with a different WebSocke
 
 ## Pub/Sub
 
-Kuzzle's real-time engine allows you to do Pub/Sub in dedicated communication channels called room.
+Kuzzle's real-time engine allows you to do Pub/Sub in dedicated communication channels called rooms.
 
 The process is as follows:
  - a customer subscribes to a particular room,
@@ -41,13 +41,13 @@ The process is as follows:
 
 ![kuzzle-pub-sub](./pub-sub.png)
 
-Subscription to a room is done via the [realtime:subscribe](/core/1/api/api-reference/controller-realtime/subscribe) method, it takes 3 parameters that will be used to define a specific room:
+Subscription to a room is done via the [realtime:subscribe](/core/1/api/api-reference/controller-realtime/subscribe) method. It takes 3 parameters, used to describe a specific room:
  - name of an index,
  - name of a collection,
  - subscription filters contained in the `body` of the request.
 
 ::: info
-In order to use Kuzzle in Pub/Sub mode only, the index and collection do not need to physically exist in the database (e.g. be created in Kuzzle via the <a href="/core/1/api/api-reference/controller-index/create">index:create</a> and <a href="/core/1/api/api-reference/controller-collection/create">collection:create</a> methods of the API).
+In order to use Kuzzle in Pub/Sub mode only, the index and collection do not need to physically exist in the database (e.g. created in Kuzzle via the <a href="/core/1/api/api-reference/controller-index/create">index:create</a> and <a href="/core/1/api/api-reference/controller-collection/create">collection:create</a> methods of the API).
 <br/>
 These information are only used to define an ephemeral room between several customers.
 :::
@@ -135,14 +135,14 @@ Customers subscribing to this channel will receive the following notification:
 More information about the [Document Notification format](/core/1/api/essentials/notifications/#documents-changes-messages)
 
 ::: warning
-Messages published with the <a href="/core/1/api/api-reference/controller-realtime/publish">realtime:publish</a> method are not persistent in the database.
+Messages published with the <a href="/core/1/api/api-reference/controller-realtime/publish">realtime:publish</a> method are not persisted in the database.
 :::
 
 ## Database notifications
 
 Kuzzle's real-time engine allows you to subscribe to notifications corresponding to changes in the database.
 
-Subscription to a database changes is done via the [realtime:subscribe](/core/1/api/api-reference/controller-realtime/subscribe) method, it takes 3 parameters:
+Subscription to a database changes is done via the [realtime:subscribe](/core/1/api/api-reference/controller-realtime/subscribe) method, taking 3 parameters:
  - name of the index,
  - name of the collection you want to watch,
  - subscription filters contained in the `body` of the request.
@@ -151,7 +151,7 @@ Subscription to a database changes is done via the [realtime:subscribe](/core/1/
 The specified index and collection must exist in the database to receive database notifications.
 :::
 
-When changes occur on this collection (eg: document creation, modification or deletion), Kuzzle will send notifications to notify the different subscribers.
+When changes occur on this collection (eg: document creation, modification or deletion), Kuzzle will send notifications to the corresponding subscribers.
 
 ```json
  {
@@ -275,9 +275,9 @@ It is also possible to combine [terms](/core/1/koncorde/essentials/terms) betwee
 }
 ```
 
-Each subscription filter define a scope. All documents in the collection can be either inside or outside this scope.
+Each subscription filter defines a scope. All documents in the collection can be either inside or outside this scope.
 
-Once a customer has subscribed to notifications with filters, he will receive notifications each time a document enters or exits the scope defined by the filters.
+Once a customer has subscribed to notifications with filters, they will receive notifications each time a document enters or exits the scope defined by the filters.
 
 ![subscription-filter-scope](./subscription-filter-scope.png)
 
@@ -368,7 +368,7 @@ This parameter can take 4 values:
    "collection": "yellow-taxi",
    "body": {
    },
-   "user": "all" // Receive notification when user enter or exit the room
+   "user": "all" // Receive notification when a user enters or exits the room
  }
 ```
 
