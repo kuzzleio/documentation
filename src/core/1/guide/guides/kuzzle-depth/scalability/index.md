@@ -218,8 +218,10 @@ GET http://<host>:<port>/_plugin/cluster/status
 
 ### Auto-discovery and Synchronization
 
-Kuzzle nodes are synchronized by maintaining their state in the Redis server instance.  
-What this means is that, as long as Kuzzle nodes connect to the same Redis instance, they see each others and they work together.
+Kuzzle nodes are synchronized by maintaining their state in a [Redis](https://redis.io/) server instance, and they constantly exchange information using the [0mq](http://zeromq.org/) messaging library.
+
+What this means is that, to scale horizontally, all a Kuzzle node needs is a reachable Redis instance, and to be able to connect to other nodes.  
+When these conditions are met, a Kuzzle node with the cluster plugin installed only needs to be started to automatically synchronize its state and to work together with the other nodes.
 
 Check our [Kuzzle configuration guide](/core/1/guide/guides/essentials/configuration/) to know how to make Kuzzle connect to specific Redis instances.
 
