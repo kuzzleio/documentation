@@ -243,7 +243,7 @@ These filters are specified only on the client side and do not require server-si
 They are sent in the body of the request [realtime:subscribe](/core/1/api/api-reference/controller-realtime/subscribe)
 :::
 
-A filter is composed of [term](/core/1/koncorde/essentials/terms) can be composed with [operands](/core/1/koncorde/essentials/operands).
+A filter is composed of [term](/core/1/koncorde/essentials/terms) that can be composed with [operands](/core/1/koncorde/essentials/operands).
 
 For example if I want to receive only drivers with the `B` license:
 ```json
