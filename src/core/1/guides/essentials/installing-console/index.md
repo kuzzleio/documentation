@@ -21,7 +21,7 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 The Kuzzle Admin Console automatically searches for Kuzzle on `ws://localhost:7512` and prompts you to introduce your own host and port if it is unable to connect to that URL.
 
-At any time, you can reconfigure Kuzzle Admin Console to connect to any Kuzzle installation by clicking on the **"Choose Environment"** dropdown menu and then selecting **"Create new"**. This feature allows you to manage multiple Kuzzle installations on a single Kuzzle Admin Console.
+At any time, you can reconfigure the Kuzzle Admin Console to connect to any Kuzzle installation by clicking the **"Choose Environment"** dropdown menu and then selecting **"Create new"**. This feature allows you to manage multiple Kuzzle installations on a single Kuzzle Admin Console.
 
 ![Kuzzle Admin Console is trying to connect to Kuzzle](kuzbo-connecting.png)
 
