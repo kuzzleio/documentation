@@ -9,12 +9,12 @@ title: mWrite
 <SinceBadge version="1.8.0" />
 
 
-Creates or replaces multiple documents directly into the storage engine.
+Create or replace multiple documents directly into the storage engine.
 
 This is a low level route intended to bypass Kuzzle actions on document creation, notably:
   - check [document validity](/core/1/guide/guides/essentials/data-validation),
-  - adding [kuzzle metadata](/core/1/guide/guides/essentials/document-metadata),
-  - triggering [realtime notifications](/core/1/guide/guides/essentials/real-time).
+  - add [kuzzle metadata](/core/1/guide/guides/essentials/document-metadata),
+  - trigger [realtime notifications](/core/1/guide/guides/essentials/real-time) (unless asked otherwise)
 
 ---
 
@@ -109,7 +109,7 @@ Each created document is an object with the following properties:
 - `_version`: version number of the document
 - `created`: a boolean telling whether a document is created
 
-If one or more document creations fail, the response status is set to `206`, and the `error` object contain a [partial error](/core/1/api/essentials/errors/#partialerror) error.
+If one or more document creations fail, the response status is set to `206`, and the `error` object contains a [partial error](/core/1/api/essentials/errors/#partialerror) error.
 
 ### Example
 

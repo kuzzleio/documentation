@@ -7,7 +7,7 @@ order: 450
 
 # Document Metadata
 
-Whenever a document gets created, updated or deleted, Kuzzle will add or update the document's metadata. This metadata provides information about the document's lifecycle.
+Whenever a document is created, updated or deleted, Kuzzle will add or update the document's metadata. This metadata provides information about the document's lifecycle.
 
 ::: info
 You can bypass metadata automatic creation by using [bulk:write](/core/1/api/api-reference/bulk-controller/write) or [bulk:mWrite](/core/1/api/api-reference/bulk-controller/m-write) actions.
