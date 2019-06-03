@@ -5,7 +5,7 @@ require 'typhoeus'
 require 'optparse'
 
 class LinkChecker
-  INTERNAL_LINK_REGEXP = /\[[\w\s\-]+\]\(([\w\/\-\#]*)\)/
+  INTERNAL_LINK_REGEXP = /\[[\.\w\s\-]+\]\(([\w\/\-\#]*)\)/
   # INTERNAL_LINK_REGEXP = /\(\{\{\s*site_base_path\s*\}\}([^)>]+)/
 
   attr_reader :internal, :external

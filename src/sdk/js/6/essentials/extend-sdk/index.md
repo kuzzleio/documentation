@@ -20,7 +20,7 @@ A custom SDK controller is a class inheriting from the [BaseController](/sdk/js/
 
 This base class is exposed alongside the other classes of the SDK module.
 
-After defining your new controller based on `BaseController`, you can add it to the SDK with the [Kuzzle.useController](/sdk-reference/js/6/core-classes/kuzzle/use-controller) method.
+After defining your new controller based on `BaseController`, you can add it to the SDK with the [Kuzzle.useController](/sdk/js/6/core-classes/kuzzle/use-controller) method.
 
 ## Constructor
 
@@ -82,7 +82,7 @@ class TaxiController extends BaseController {
 
 ## Add a custom SDK controller to the SDK
 
-Once you have defined your custom SDK controller, you can add it to the SDK with the [Kuzzle.useController](/sdk-reference/js/6/core-classes/kuzzle/use-controller) method.
+Once you have defined your custom SDK controller, you can add it to the SDK with the [Kuzzle.useController](/sdk/js/6/core-classes/kuzzle/use-controller) method.
 
 
 You can then use the actions of your plugins in the same way as the rest of the Kuzzle API by taking advantage of authentication, offline mode management, etc.

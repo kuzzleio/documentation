@@ -136,10 +136,10 @@ bash .ci/start_kuzzle.sh
 Then you can run snippets for any language:
 
 ```bash
-# Execute all snippets under the repertory 'src/sdk-reference/js/6'
-bash run-snippet-tests.sh -n -s js -v 6 -p src/sdk-reference/js/6
+# Execute all snippets under the repertory 'src/sdk/js/6'
+bash run-snippet-tests.sh -n -s js -v 6 -p src/sdk/js/6
 # Execute all snippets for the controller index in SDK CPP 1
-bash run-snippet-tests.sh -n -s cpp -v 1 -p src/sdk-reference/cpp/1/index
+bash run-snippet-tests.sh -n -s cpp -v 1 -p src/sdk/cpp/1/controllers/index
 ```
 
 If you want to avoid downloading the SDK each time you run a snippet, you can use the following variable:
@@ -147,7 +147,7 @@ If you want to avoid downloading the SDK each time you run a snippet, you can us
 ```bash
 export DEV_MODE=true
 # The following command will download the cpp SDK only if it does not already exist
-bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
+bash run-snippet-tests.sh -n -p src/sdk/cpp/1/controllers/index
 ```
 
 ### Writing tests
@@ -226,7 +226,7 @@ Example:
 
 ```bash
 # Create the files documenting the action 'list' of the controller 'document' for the SDK JS 6
-./scaffolding/scaffold generate src/sdk-reference/js/6/controllers/collection/list
+./scaffolding/scaffold generate src/sdk/js/6/controllers/collection/list
 ```
 
 ### Copy an existing action from another SDK
@@ -237,5 +237,5 @@ This command extracts information from an existing action in another SDK and gen
 Example:
 ```bash
 # Copy information from SDK JS 6 to SDK CPP 1
-./scaffolding/scaffold copy src/sdk-reference/js/6/controllers/collection/list src/sdk-reference/cpp/1/collection/list
+./scaffolding/scaffold copy src/sdk/js/6/controllers/collection/list src/sdk/cpp/1/controllers/collection/list
 ```
