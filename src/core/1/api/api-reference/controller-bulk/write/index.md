@@ -22,8 +22,7 @@ This is a low level route intended to bypass Kuzzle actions on document creation
 ### HTTP
 
 ```http
-URL: http://kuzzle:7512/<index>/<collection>/_write[?refresh=wait_for][&notify]
-URL(2): http://kuzzle:7512/<index>/<collection>/<documentId>/_write[?refresh=wait_for][&notify]
+URL: http://kuzzle:7512/<index>/<collection>/_write[?refresh=wait_for][&notify][&_id=<document ID>]
 Method: POST
 Body:
 ```
