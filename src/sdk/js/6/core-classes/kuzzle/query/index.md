@@ -23,7 +23,7 @@ query(request, [options]);
 
 | Argument  | Type              | Description            |
 | --------- | ----------------- | ---------------------- |
-| `request` | <pre>object</pre> | API request options    |
+| `request` | <pre>object</pre> | API request    |
 | `options` | <pre>object</pre> | Optional query options |
 
 ### request

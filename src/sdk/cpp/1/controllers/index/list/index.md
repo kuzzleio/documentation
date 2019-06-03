@@ -7,7 +7,7 @@ description: List the indexes
 
 # list
 
-Get the complete list of data indexes handled by Kuzzle.
+Get the complete list of indexes handled by Kuzzle.
 
 ## Signature
 

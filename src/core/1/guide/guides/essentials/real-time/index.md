@@ -15,7 +15,7 @@ Kuzzle features highly customizable notifications thanks to its **real-time engi
 
 Imagine you are developing a collaborative TO-DO application like [this](https://github.com/kuzzleio/demo/tree/master/todolist) one. All the TO-DO items are persisted in Kuzzle (in a collection called `todos`) so, once clients start, they fetch every available TO-DO items via a simple document search.
 
-But imagine that one of the users (let's call her Ann), adds a new TO-DO item. In order for other users (let's call them Tom and Matt) to display these new item, they need to perform a new document search on the corresponding data collection. They will not see the new items until they refresh (or restart) their application.
+But imagine that one of the users (let's call her Ann), adds a new TO-DO item. In order for other users (let's call them Tom and Matt) to display these new item, they need to perform a new document search on the corresponding collection. They will not see the new items until they refresh (or restart) their application.
 
 This cannot be called a "modern" application: it rather looks like an old-school, refresh-ish, one. Like the early '90s. Today, such a user-experience wouldn't be satisfying at all.
 
@@ -26,7 +26,7 @@ A more interesting user-experience would be that clients display the new TO-DO i
 
 The second solution is exactly what we are looking for and Kuzzle ships it natively. We can call it **pub/sub**, **notifications** or **live subscriptions** and it is often used to solve use-cases like this one, where things need to be kept _in sync_ between clients and the back-end server.
 
-Getting back to our example, our collaborative TO-DO list clients only need to subscribe to the TO-DO data collection (right after the first document search), in order to be notified _in real-time_ about new TO-DO items. This way, once Ann creates her new item, Tom and Matt can see it immediately on their screen.
+Getting back to our example, our collaborative TO-DO list clients only need to subscribe to the TO-DO collection (right after the first document search), in order to be notified _in real-time_ about new TO-DO items. This way, once Ann creates her new item, Tom and Matt can see it immediately on their screen.
 
 ---
 
@@ -141,10 +141,10 @@ The last point may seem a little bit inconvenient. What if Tom does not want to 
 
 The `subscribe` method can be called with an extra argument, which is an object containing a set of options to be passed to the subscription Room.
 
-We just introduced a new concept here, the Room. A Room is a class representing a single subscription and its constructor is called internally by the `subscribe` method.  
+We just introduced a new concept here, the Room. A Room is a class representing a single subscription and its constructor is called internally by the `subscribe` method.
 This object supports a wide range of options that can be passed directly to its [constructor](/sdk/js/5/room/), allowing to configure the kind of notifications we want to receive.
 
-For now, let's concentrate on the question asked at the end of the previous chapter: how do we filter the notifications resulting of our own actions?  
+For now, let's concentrate on the question asked at the end of the previous chapter: how do we filter the notifications resulting of our own actions?
 The option we are looking for is `subscribeToSelf`, which is set to `true` by default.
 
 <<< ./snippets/subscribe-options.js

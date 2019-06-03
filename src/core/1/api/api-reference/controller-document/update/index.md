@@ -47,9 +47,9 @@ Body:
 
 ## Arguments
 
-- `collection`: data collection
+- `collection`: collection name
 - `documentId`: unique identifier of the document to update
-- `index`: data index
+- `index`: index name
 
 ### Optional:
 

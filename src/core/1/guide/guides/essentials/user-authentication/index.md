@@ -20,15 +20,18 @@ Additionally, you can set:
 - [User credentials](/core/1/guide/guides/essentials/user-authentication/#user-credentials): If no credentials are provided, then the user cannot [login](/core/1/api/api-reference/controller-auth/login/)
 - Any number of properties that you want to store in your user object, such as a lastname or a list of hobbies. These properties are stored at the user level and are not linked to any particular authentication strategy.
 
-Let's create a user with username `jondoe` and password `letmein` through the API:
+Let's create a user with username `johndoe` and password `letmein` using the HTTP API:
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{ "content": { "profileIds": ["default"], "name": "John Doe" }, "credentials": { "local": { "username": "jondoe", "password": "letmein" } } }' http://localhost:7512/users/_create
+curl -X POST -H "Content-Type: application/json" -d '{
+  "content": { "profileIds": ["default"], "fullname": "John Doe" },
+  "credentials": { "local": { "username": "johndoe", "password": "letmein" } }
+}' http://localhost:7512/users/_create
 ```
 
 You should get the following response:
 
-```json
+```js
 {
   "requestId": "<random unique request id>",
   "status": 200,
@@ -92,7 +95,7 @@ This code will:
 
 - load the Kuzzle Node.js SDK
 - connect to the Kuzzle
-- login using username `jondoe` and password `letmein`
+- login using username `johndoe` and password `letmein`
 
 Let's try it out! Run the `index.js` using Node.js:
 
@@ -114,7 +117,7 @@ In Kuzzle, a user's credentials are composed of a list of authentication strateg
 
 For instance, if a user registered on Kuzzle with both facebook and twitter authentication strategies, then their credentials would look like this:
 
-```json
+```js
 {
   "facebook": {
     "kuid": "<Kuzzle Unique User Identifier>",

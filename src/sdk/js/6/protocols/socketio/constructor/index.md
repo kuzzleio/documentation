@@ -1,7 +1,7 @@
 ---
 code: true
 type: page
-title: Constructor
+title: constructor
 description: Creates a new SocketIO protocol
 order: 50
 ---
