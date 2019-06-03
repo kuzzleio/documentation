@@ -7,7 +7,7 @@ description: Collection:getMapping
 
 # getMapping
 
-Retrieves the current mapping of this collection as a [CollectionMapping](/sdk/android/3/controllers/collection/-mapping/) object.
+Retrieves the current mapping of this collection as a [CollectionMapping](/sdk/android/3/core-classes/collection-mapping/) object.
 
 ---
 
@@ -30,7 +30,7 @@ Retrieves the current mapping of this collection as a [CollectionMapping](/sdk/a
 
 ## Callback Response
 
-Returns a [CollectionMapping](/sdk/android/3/controllers/collection/-mapping/) object.
+Returns a [CollectionMapping](/sdk/android/3/core-classes/collection-mapping/) object.
 
 ## Usage
 

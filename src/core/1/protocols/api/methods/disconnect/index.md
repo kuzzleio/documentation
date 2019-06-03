@@ -20,7 +20,7 @@ disconnect(connectionId);
 
 | Arguments      | Type              | Description                                                                                                                           |
 | -------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `connectionId` | <pre>string</pre> | Connection unique identifier, previously registered by the protocol using [newConnection](/core/1/protocols/entrypoint/newconnection) |
+| `connectionId` | <pre>string</pre> | Connection unique identifier, previously registered by the protocol using [newConnection](/core/1/protocols/api/entrypoint/newconnection) |
 
 ---
 

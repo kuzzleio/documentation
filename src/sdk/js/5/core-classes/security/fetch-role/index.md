@@ -31,7 +31,7 @@ Fetches a single stored role using its unique ID.
 
 ## Callback Response
 
-Returns a [Role](/sdk/js/5/role) object.
+Returns a [Role](/sdk/js/5/core-classes/role) object.
 
 ## Usage
 

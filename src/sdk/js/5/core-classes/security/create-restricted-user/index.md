@@ -7,7 +7,7 @@ description: Security:createRestrictedUser
 
 # createRestrictedUser
 
-Create a new restricted user in Kuzzle.  
+Create a new restricted user in Kuzzle.
 This function allows anonymous users to create a "restricted" user with predefined rights.
 
 <div class="alert alert-info">
@@ -39,7 +39,7 @@ That means that a user that was just created may not be returned by the <code>se
 
 ## Callback response
 
-Resolves to a [User](/sdk/js/5/user) object.
+Resolves to a [User](/sdk/js/5/core-classes/user) object.
 
 ## Usage
 

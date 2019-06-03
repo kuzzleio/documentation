@@ -19,7 +19,7 @@ Also, the low-level [query](/sdk/js/6/core-classes/kuzzle/query/) method is avai
 
 By default, when using the embedded SDK, requests made to Kuzzle API don't have the same context as the original request received by the plugin.
 
-Typically, the `request.context.user` property is not set and thus [Kuzzle metadata](/core/1/guide/guides/essentials/document-metadata/) will not be set when creating or updating documents.
+Typically, the `request.context.user` property is not set and thus [Kuzzle metadata](/core/1/guides/essentials/document-metadata/) will not be set when creating or updating documents.
 
 It is possible to use the same user context as the original request with the embedded SDK, for this purpose it is necessary to use the [as()](/core/1/plugins/plugin-context/accessors/sdk/#as) impersonation method.
 
@@ -31,14 +31,14 @@ When the complete original context is needed to execute your request, plugin dev
 
 The following controllers are available in the embedded SDK:
 
-- [auth](/sdk/js/6/auth)
-- [bulk](/sdk/js/6/bulk)
-- [collection](/sdk/js/6/collection)
-- [document](/sdk/js/6/document)
-- [index](/sdk/js/6/index)
+- [auth](/sdk/js/6/controllers/auth)
+- [bulk](/sdk/js/6/controllers/bulk)
+- [collection](/sdk/js/6/controllers/collection)
+- [document](/sdk/js/6/controllers/document)
+- [index](/sdk/js/6/controllers/index)
 - [memoryStorage (ms)](/sdk/js/6/ms)
-- [security](/sdk/js/6/security)
-- [server](/sdk/js/6/server)
+- [security](/core/1/api/controllers/security)
+- [server](/sdk/js/6/controllers/server)
 
 ### Example
 

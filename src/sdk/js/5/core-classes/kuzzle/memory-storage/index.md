@@ -7,4 +7,4 @@ description: Kuzzle:memoryStorage
 
 ## memoryStorage
 
-A [MemoryStorage](/sdk/js/5/memory-storage) singleton.
+A [MemoryStorage](/sdk/js/5/core-classes/memory-storage) singleton.

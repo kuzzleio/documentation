@@ -54,7 +54,7 @@ But, how does this work in Kuzzle? **How do we select the data that we want to s
 Let's dive into the implementation of the Collaborative TO-DO list application.
 
 <div class="alert alert-info">
-All the following examples are written in Javascript, therefore using the Javascript Kuzzle SDK. If this is not your usual development language, take a look at the different flavors of the `subscribe` method in the [/sdk/js/5/collection/subscribe](SDK Reference)).
+All the following examples are written in Javascript, therefore using the Javascript Kuzzle SDK. If this is not your usual development language, take a look at the different flavors of the `subscribe` method in the [/sdk/js/5/core-classes/collection/subscribe](SDK Reference)).
 </div>
 
 ---
@@ -142,7 +142,7 @@ The last point may seem a little bit inconvenient. What if Tom does not want to 
 The `subscribe` method can be called with an extra argument, which is an object containing a set of options to be passed to the subscription Room.
 
 We just introduced a new concept here, the Room. A Room is a class representing a single subscription and its constructor is called internally by the `subscribe` method.
-This object supports a wide range of options that can be passed directly to its [constructor](/sdk/js/5/room/), allowing to configure the kind of notifications we want to receive.
+This object supports a wide range of options that can be passed directly to its [constructor](/sdk/js/5/core-classes/room/), allowing to configure the kind of notifications we want to receive.
 
 For now, let's concentrate on the question asked at the end of the previous chapter: how do we filter the notifications resulting of our own actions?
 The option we are looking for is `subscribeToSelf`, which is set to `true` by default.

@@ -25,7 +25,7 @@ The provided callback will be called everytime a [notification](/sdk/android/3/e
 
 ## Options
 
-Options are directly passed to the [Room](/sdk/android/3/controllers/room/) object constructor.
+Options are directly passed to the [Room](/sdk/android/3/core-classes/room/) object constructor.
 
 ---
 

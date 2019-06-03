@@ -7,7 +7,7 @@ description: User:create
 
 # create
 
-Create the user in Kuzzle. Credentials can be created during the process by using [setCredentials](/sdk/android/3/controllers/user/set-credentials/) beforehand.
+Create the user in Kuzzle. Credentials can be created during the process by using [setCredentials](/sdk/android/3/core-classes/user/set-credentials/) beforehand.
 
 ---
 

@@ -7,7 +7,7 @@ description: MemoryStorage:pfcount
 
 # pfcount
 
-Returns the probabilistic cardinality of a [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data structure, or of the merged HyperLogLog structures if more than 1 is provided (see [pfadd](/sdk/js/5/memory-storage/pfadd)).
+Returns the probabilistic cardinality of a [HyperLogLog](https://en.wikipedia.org/wiki/HyperLogLog) data structure, or of the merged HyperLogLog structures if more than 1 is provided (see [pfadd](/sdk/js/5/core-classes/memory-storage/pfadd)).
 
 [[_Redis documentation_]](https://redis.io/commands/pfcount)
 

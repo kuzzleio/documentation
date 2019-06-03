@@ -9,7 +9,7 @@ order: 200
 
 
 
-Plugins can [add new controllers](/core/1/plugins/essentials/controllers) to the Kuzzle API.
+Plugins can [add new controllers](/core/1/plugins/guides/controllers) to the Kuzzle API.
 
 These new controllers and actions behave exactly like [native API actions](/core/1/plugins/guides/events/api-events/).
 All calls to plugins API actions trigger two of these three events:
@@ -24,7 +24,7 @@ All calls to plugins API actions trigger two of these three events:
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
+| `request` | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | The normalized API request |
 
 A `before` event is triggered before a plugin API request starts.
 
@@ -50,7 +50,7 @@ The `before` event name is built using the following template:
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
+| `request` | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | The normalized API request |
 
 An `after` event is triggered after a plugin API request succeeds.
 
@@ -76,7 +76,7 @@ The `after` event name is built using the following template:
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
+| `request` | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | The normalized API request |
 
 An `error` event is triggered after a plugin API request fails.
 

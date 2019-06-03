@@ -26,7 +26,7 @@ Updating a user will have no impact until the <code>create</code> or <code>repla
 
 | Arguments  | Type                     | Description                                                   |
 | ---------- | ------------------------ | ------------------------------------------------------------- |
-| `profiles` | array of Profile objects | An array of instantiated [Profile](/sdk/js/5/profile) objects |
+| `profiles` | array of Profile objects | An array of instantiated [Profile](/sdk/js/5/core-classes/profile) objects |
 
 ---
 

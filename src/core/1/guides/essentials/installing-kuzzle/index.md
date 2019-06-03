@@ -87,9 +87,9 @@ Our AMI is stored on AWS Marketplace. It's set up with:
 - Elasticsearch (**v5.4.1**).
 - Redis (**v3.2.12**).
 
-Go to the marketplace and type **kuzzle** in the search form.  
-Choose your Amazon EC2 instance type (the minimal requirement is a **t2-medium**).  
-Recover the public IP or the hostname provided by AWS before you proceed.  
+Go to the marketplace and type **kuzzle** in the search form.
+Choose your Amazon EC2 instance type (the minimal requirement is a **t2-medium**).
+Recover the public IP or the hostname provided by AWS before you proceed.
 Check that Kuzzle is up and running with following HTTP request:
 
 ```sh
@@ -109,7 +109,7 @@ $ curl 'http://yourInstanceIpOrHostname:7512?pretty'
 }
 ```
 
-You should see information about your Kuzzle Server.  
+You should see information about your Kuzzle Server.
 If not, wait a few minutes and retry the request.
 
 ### Connect with default credentials
@@ -126,7 +126,7 @@ Associated password is your unique instance ID. You can get it from the EC2 AWS 
 In this section we will perform a manual installation of Kuzzle on a Linux distribution. We choose Linux because all Kuzzle components work natively on it.
 
 ::: info
-By default, Kuzzle expects all the components to be running on localhost but you can [change](/core/1/guide/guides/essentials/configuration/)'ll be able to select which <a :href="`${$site.base}core/1/guide/guides/essentials/installing-console/#connect-to-kuzzle`">Kuzzle</a> installation that you want to manage. this behavior.
+By default, Kuzzle expects all the components to be running on localhost but you can [change](/core/1/guides/essentials/configuration/)'ll be able to select which <a :href="`${$site.base}core/1/guides/essentials/installing-console/#connect-to-kuzzle`">Kuzzle</a> installation that you want to manage. this behavior.
 :::
 
 We will run Kuzzle using [pm2](http://pm2.keymetrics.io/), a process management tool used to monitor Node.js applications.
@@ -200,7 +200,7 @@ done
 
 Kuzzle uses Elasticsearch and Redis as a persistent and key-value store, respectively. If you are running these components on the same machine as your Kuzzle installation then no additional configuration is needed. If; however, you are running them on another host, you will need to create or update the `.kuzzlerc` file in your installation folder.
 
-Please refer to the [configuration section](/core/1/guide/guides/essentials/configuration/) for more details.
+Please refer to the [configuration section](/core/1/guides/essentials/configuration/) for more details.
 
 ### Setup PM2
 
@@ -276,7 +276,7 @@ pm2 "<start|stop|restart>" kuzzlebackend
 ```
 
 ::: success
-Now that Kuzzle is up and running you can [install](/core/1/guide/guides/essentials/installing-console/) the <strong>Kuzzle Admin Console</strong>.
+Now that Kuzzle is up and running you can [install](/core/1/guides/essentials/installing-console/) the <strong>Kuzzle Admin Console</strong>.
 :::
 
 ### Troubleshooting
@@ -327,7 +327,7 @@ Elasticsearch WARNING: 2018-01-12T13:36:34Z
   No living connections
 ```
 
-If you see the following message and your Elasticsearch installation uses a security layer, configure the Elasticsearch client options in the `.kuzzlerc` file. For more information click [here](/core/1/guide/guides/essentials/configuration/).
+If you see the following message and your Elasticsearch installation uses a security layer, configure the Elasticsearch client options in the `.kuzzlerc` file. For more information click [here](/core/1/guides/essentials/configuration/).
 
 ```
 [ℹ] Starting Kuzzle server
@@ -353,7 +353,7 @@ If you see the following message make sure that you have installed Redis and tha
     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
 ```
 
-If you see the following message when running `pm2 logs`, then make sure that your `pm2.conf.yml` file was created correctly.  
+If you see the following message when running `pm2 logs`, then make sure that your `pm2.conf.yml` file was created correctly.
 To recreate that file:
 
 - delete the current version from pm2: `pm2 delete kuzzlebackend`
@@ -381,5 +381,5 @@ Once your Kuzzle instance is up and running, dive even deeper to learn how to le
 
 - take a look at the [SDK Reference](/sdk)
 - learn how to use [Koncorde](/core/1/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
-- follow our guide to learn how to [implement basic authentication](/core/1/guide/guides/essentials/user-authentication/#local-strategy).
-- follow our guide to learn how to [implement manage users and setup fine-grained access control](/core/1/guide/guides/essentials/security/).
+- follow our guide to learn how to [implement basic authentication](/core/1/guides/essentials/user-authentication/#local-strategy).
+- follow our guide to learn how to [implement manage users and setup fine-grained access control](/core/1/guides/essentials/security/).

@@ -22,7 +22,7 @@ A collection is a set of data managed by Kuzzle. It acts like a data table for p
 | `collection` | string | The name of the collection you want to manipulate |
 | `index`      | string | Name of the index containing the collection       |
 
-**Note:** We recommend you instantiate a Collection object by calling [Kuzzle.collection](/sdk/js/5/kuzzle/collection) rather than using the constructor directly
+**Note:** We recommend you instantiate a Collection object by calling [Kuzzle.collection](/sdk/js/5/core-classes/kuzzle/collection) rather than using the constructor directly
 
 ---
 

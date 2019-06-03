@@ -31,7 +31,7 @@ Fetches a single stored user using its unique ID.
 
 ## Callback Response
 
-Returns a [User](/sdk/android/3/controllers/user/) object.
+Returns a [User](/sdk/android/3/core-classes/user/) object.
 
 ## Usage
 

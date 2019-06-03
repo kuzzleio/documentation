@@ -11,15 +11,15 @@ The `methods` part of the `strategies` object can contain the following properti
 
 | Arguments       | Type              | Description                                                                                                                        |
 | --------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `create`        | <pre>string</pre> | The name of the exposed [create](/core/1/plugins/essentials/strategies/#create-default) function                                   |
-| `delete`        | <pre>string</pre> | The name of the exposed [delete](/core/1/plugins/essentials/strategies/#delete-default) function                                   |
-| `exists`        | <pre>string</pre> | The name of the exposed [exists](/core/1/plugins/essentials/strategies/#exists-default) function                                   |
-| `update`        | <pre>string</pre> | The name of the exposed [update](/core/1/plugins/essentials/strategies/#update-default) function                                   |
-| `validate`      | <pre>string</pre> | The name of the exposed [validate](/core/1/plugins/essentials/strategies/#update-default) function                                 |
-| `verify`        | <pre>string</pre> | The name of the exposed [verify](/core/1/plugins/essentials/strategies/#verify-default) function                                   |
-| `afterRegister` | <pre>string</pre> | (optional) The name of the exposed [afterRegister](/core/1/plugins/essentials/strategies/#optional-afterregister-default) function |
-| `getById`       | <pre>string</pre> | (optional) The name of the exposed [getById](/core/1/plugins/essentials/strategies/#optional-getbyid-default) function             |
-| `getInfo`       | <pre>string</pre> | (optional) The name of the exposed [getInfo](/core/1/plugins/essentials/strategies/#optional-getinfo-default) function             |
+| `create`        | <pre>string</pre> | The name of the exposed [create](/core/1/plugins/guides/strategies/#create-default) function                                   |
+| `delete`        | <pre>string</pre> | The name of the exposed [delete](/core/1/plugins/guides/strategies/#delete-default) function                                   |
+| `exists`        | <pre>string</pre> | The name of the exposed [exists](/core/1/plugins/guides/strategies/#exists-default) function                                   |
+| `update`        | <pre>string</pre> | The name of the exposed [update](/core/1/plugins/guides/strategies/#update-default) function                                   |
+| `validate`      | <pre>string</pre> | The name of the exposed [validate](/core/1/plugins/guides/strategies/#update-default) function                                 |
+| `verify`        | <pre>string</pre> | The name of the exposed [verify](/core/1/plugins/guides/strategies/#verify-default) function                                   |
+| `afterRegister` | <pre>string</pre> | (optional) The name of the exposed [afterRegister](/core/1/plugins/guides/strategies/#optional-afterregister-default) function |
+| `getById`       | <pre>string</pre> | (optional) The name of the exposed [getById](/core/1/plugins/guides/strategies/#optional-getbyid-default) function             |
+| `getInfo`       | <pre>string</pre> | (optional) The name of the exposed [getInfo](/core/1/plugins/guides/strategies/#optional-getinfo-default) function             |
 
 Even though each strategy must declare its own set of properties, the same strategy method can be used by multiple strategies.
 
@@ -43,9 +43,9 @@ create(request, credentials, kuid, strategy);
 
 | Arguments     | Type                                                           | Description                                                                                      |
 | ------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `request`     | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | API request asking for the credentials creation                                                  |
+| `request`     | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | API request asking for the credentials creation                                                  |
 | `credentials` | <pre>object</pre>                                              | New credentials to create, already validated by this strategy's [validate](#validate) function   |
-| `kuid`        | <pre>string</pre>                                              | User's [kuid](/core/1/guide/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid) |
+| `kuid`        | <pre>string</pre>                                              | User's [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid) |
 | `strategy`    | <pre>string</pre>                                              | Authentication strategy used by these credentials                                                |
 
 ### Returned value
@@ -70,8 +70,8 @@ delete (request, kuid, strategy);
 
 | Arguments  | Type                                                           | Description                                                                                      |
 | ---------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `request`  | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | API request asking for the credentials deletion                                                  |
-| `kuid`     | <pre>string</pre>                                              | User's [kuid](/core/1/guide/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid) |
+| `request`  | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | API request asking for the credentials deletion                                                  |
+| `kuid`     | <pre>string</pre>                                              | User's [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid) |
 | `strategy` | <pre>string</pre>                                              | Authentication strategy name                                                                     |
 
 ### Returned value
@@ -94,8 +94,8 @@ exists(request, kuid, strategy);
 
 | Arguments  | Type                                                           | Description                                                                                      |
 | ---------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `request`  | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | Source API request                                                                               |
-| `kuid`     | <pre>string</pre>                                              | User's [kuid](/core/1/guide/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid) |
+| `request`  | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | Source API request                                                                               |
+| `kuid`     | <pre>string</pre>                                              | User's [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid) |
 | `strategy` | <pre>string</pre>                                              | Authentication strategy name                                                                     |
 
 ### Returned value
@@ -118,9 +118,9 @@ update(request, credentials, kuid, strategy);
 
 | Arguments     | Type                                                           | Description                                                                                            |
 | ------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `request`     | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | Source API request                                                                                     |
+| `request`     | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | Source API request                                                                                     |
 | `credentials` | <pre>object</pre>                                              | Updated credentials.<br/>Those are already validated by this strategy's [validate](#validate) function |
-| `kuid`        | <pre>string</pre>                                              | User's [kuid](/core/1/guide/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)       |
+| `kuid`        | <pre>string</pre>                                              | User's [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)       |
 | `strategy`    | <pre>string</pre>                                              | Authentication strategy name                                                                           |
 
 ### Returned value
@@ -145,9 +145,9 @@ validate(request, credentials, kuid, strategy, isUpdate);
 
 | Arguments     | Type                                                           | Description                                                                                                                                                                                 |
 | ------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`     | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | Source API request                                                                                                                                                                          |
+| `request`     | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | Source API request                                                                                                                                                                          |
 | `credentials` | <pre>object</pre>                                              | Credentials to validate                                                                                                                                                                     |
-| `kuid`        | <pre>string</pre>                                              | User's [kuid](/core/1/guide/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)                                                                                            |
+| `kuid`        | <pre>string</pre>                                              | User's [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)                                                                                            |
 | `strategy`    | <pre>string</pre>                                              | Authentication strategy name                                                                                                                                                                |
 | `isUpdate`    | <pre>boolean</pre>                                             | Tells whether the request is a credentials update. In the case of an update, the `credentials` object may only contain changes to be applied, instead of a complete credentials description |
 
@@ -185,7 +185,7 @@ The `payload` object has the following properties:
 
 | Properties | Type                                                           | Description                                                                     |
 | ---------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `original` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | Source API login request                                                        |
+| `original` | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | Source API login request                                                        |
 | `query`    | <pre>object</pre>                                              | Direct link to `original.input.args`, containing the optional request arguments |
 | `body`     | <pre>object</pre>                                              | Direct link to `original.input.body`, containing the request body content       |
 
@@ -197,7 +197,7 @@ The `verify` function must return a promise, resolving to an object with the fol
 
 | Properties | Type              | Description                                                                                                                                                                                              |
 | ---------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `kuid`     | <pre>string</pre> | If the authentication succeeds, this property must be set to the user's [kuid](/core/1/guide/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid). Otherwise, this must be set to `null` |
+| `kuid`     | <pre>string</pre> | If the authentication succeeds, this property must be set to the user's [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid). Otherwise, this must be set to `null` |
 | `message`  | <pre>string</pre> | If `kuid` is set to `null` (authentication failed), this optional property can be set with a rejection reason                                                                                            |
 
 <div class="alert alert-info">A failed authentication is not an error. The returned promise should only be rejected if an actual error occurs.</div>
@@ -224,7 +224,7 @@ afterRegister(strategyInstance);
 
 ## (optional) getById
 
-The `getById` function returns credentials information using the authentication strategy's user identifier (which may not be the [kuid](/core/1/guide/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)).
+The `getById` function returns credentials information using the authentication strategy's user identifier (which may not be the [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid)).
 
 If this function is not implemented, an empty object is returned by Kuzzle instead.
 
@@ -240,7 +240,7 @@ getById(request, id, strategy);
 
 | Arguments  | Type                                                           | Description                                        |
 | ---------- | -------------------------------------------------------------- | -------------------------------------------------- |
-| `request`  | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The API request asking for credentials information |
+| `request`  | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | The API request asking for credentials information |
 | `id`       | <pre>string</pre>                                              | Strategy's user identifier                         |
 | `strategy` | <pre>string</pre>                                              | Authentication strategy name                       |
 
@@ -268,8 +268,8 @@ getInfo(request, kuid, strategy);
 
 | Arguments  | Type                                                           | Description                                                                                      |
 | ---------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `request`  | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The API request asking for credentials information                                               |
-| `kuid`     | <pre>string</pre>                                              | User's [kuid](/core/1/guide/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid) |
+| `request`  | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | The API request asking for credentials information                                               |
+| `kuid`     | <pre>string</pre>                                              | User's [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid) |
 | `strategy` | <pre>string</pre>                                              | Authentication strategy name                                                                     |
 
 ### Returned value

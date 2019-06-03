@@ -16,7 +16,7 @@ Instantiates a new `Role` object, which defines a set of right policies.
 
 | Arguments  | Type        | Description                                           |
 | ---------- | ----------- | ----------------------------------------------------- |
-| `Security` | Security    | An instantiated [Security](/sdk/js/5/security) object |
+| `Security` | Security    | An instantiated [Security](/sdk/js/5/core-classes/security) object |
 | `id`       | string      | Unique role identifier                                |
 | `content`  | JSON Object | Role content                                          |
 | `meta`     | JSON Object | Role metadata                                         |

@@ -15,7 +15,7 @@ Create a new empty index, with no associated mapping.
 
 | Arguments  | Type        | Description                                                                                          |
 | ---------- | ----------- | ---------------------------------------------------------------------------------------------------- |
-| `index`    | string      | Optional index to query. If no set, defaults to [Kuzzle.defaultIndex](/sdk/php/3/kuzzle/#properties) |
+| `index`    | string      | Optional index to query. If no set, defaults to [Kuzzle.defaultIndex](/sdk/php/3/core-classes/kuzzle/#properties) |
 | `options`  | JSON object | Optional parameters                                                                                  |
 | `callback` | function    | Callback handling the response                                                                       |
 

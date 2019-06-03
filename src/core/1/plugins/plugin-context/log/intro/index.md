@@ -13,7 +13,7 @@ Each plugin receives its own context instance, provided to the plugin's [init fu
 
 This section documents the `context.log` object, exposing functions used to send messages to Kuzzle's logging system.
 
-Log levels are assigned to each exposed log function, corresponding to the log priority.  
+Log levels are assigned to each exposed log function, corresponding to the log priority.
 The lower the log level, the higher its priority.
 
-Levels above the threshold configued in the `logs` section of Kuzzle's [configuration file](/core/1/guide/guides/essentials/configuration/) are ignored.
+Levels above the threshold configued in the `logs` section of Kuzzle's [configuration file](/core/1/guides/essentials/configuration/) are ignored.

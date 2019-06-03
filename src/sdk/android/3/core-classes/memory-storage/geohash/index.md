@@ -7,7 +7,7 @@ description: MemoryStorage:geohash
 
 # geohash
 
-Returns a valid [geohash](https://en.wikipedia.org/wiki/Geohash) for the provided key's members (see [geoadd](/sdk/android/3/controllers/memory-storage/geoadd/)).
+Returns a valid [geohash](https://en.wikipedia.org/wiki/Geohash) for the provided key's members (see [geoadd](/sdk/android/3/core-classes/memory-storage/geoadd/)).
 
 [[_Redis documentation_]](https://redis.io/commands/geohash)
 

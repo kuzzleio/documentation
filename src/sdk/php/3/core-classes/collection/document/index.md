@@ -22,7 +22,7 @@ Creates a new [Document](/sdk/php/3/core-classes/document/) object, using its co
 
 ## Return Value
 
-Returns the newly created [Document](/sdk/php/3/document) object.
+Returns the newly created [Document](/sdk/php/3/core-classes/document) object.
 
 ## Usage
 

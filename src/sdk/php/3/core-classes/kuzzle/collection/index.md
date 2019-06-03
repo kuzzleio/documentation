@@ -7,7 +7,7 @@ description: Kuzzle:collection
 
 # collection
 
-Instantiates a new [Collection](/sdk/php/3/collection) object.
+Instantiates a new [Collection](/sdk/php/3/core-classes/collection) object.
 
 ---
 
@@ -26,7 +26,7 @@ The `index` argument takes precedence over the default index.
 
 ## Return Value
 
-Returns a [Collection](/sdk/php/3/collection) object.
+Returns a [Collection](/sdk/php/3/core-classes/collection) object.
 
 ## Usage
 

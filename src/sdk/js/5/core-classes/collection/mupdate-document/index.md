@@ -7,7 +7,7 @@ description: Collection:mupdateDocument
 
 # mUpdateDocument
 
-Update the provided [Documents](/sdk/js/5/document/).
+Update the provided [Documents](/sdk/js/5/core-classes/document/).
 
 ---
 
@@ -15,7 +15,7 @@ Update the provided [Documents](/sdk/js/5/document/).
 
 | Arguments   | Type        | Description                                         |
 | ----------- | ----------- | --------------------------------------------------- |
-| `documents` | Document[]  | Array of [Documents](/sdk/js/5/document/) to update |
+| `documents` | Document[]  | Array of [Documents](/sdk/js/5/core-classes/document/) to update |
 | `options`   | JSON Object | Optional parameters                                 |
 | `callback`  | function    | Optional callback                                   |
 

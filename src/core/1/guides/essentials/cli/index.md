@@ -18,8 +18,8 @@ Kuzzle ships with a [Command line interface](https://en.wikipedia.org/wiki/Comma
 - Clear Kuzzle cache
 - Diagnose the Kuzzle installation
 
-The CLI is located in the `bin` folder of your Kuzzle installation.  
-If you have already created an admin, you will need to provide your login information to the CLI.  
+The CLI is located in the `bin` folder of your Kuzzle installation.
+If you have already created an admin, you will need to provide your login information to the CLI.
 To get a list of commands and options run the CLI:
 
 ```bash
@@ -65,7 +65,7 @@ The `createFirstAdmin` command lets you create an administrator to manage securi
 
 <div class="alert alert-info">NB: This command can only be run interactively</div>
 
-This call the action [security#createFirstAdmin](/core/1/api/api-reference/controller-security/create-first-admin/)
+This call the action [security#createFirstAdmin](/core/1/api/controllers/security/create-first-admin/)
 
 ---
 
@@ -77,7 +77,7 @@ This call the action [security#createFirstAdmin](/core/1/api/api-reference/contr
 
 Kuzzle uses Redis to store frequently accessed internal data. Use this command if you need to clear this data (cache).
 
-This call the action [admin#resetCache](/core/1/api/api-reference/controller-admin/reset-cache/)
+This call the action [admin#resetCache](/core/1/api/controllers/admin/reset-cache/)
 
 ---
 
@@ -105,7 +105,7 @@ The `dump` command creates a snapshot of the state of Kuzzle, including:
 
 The generated directory can be used to feed a crash report to the support team.
 
-This call the action [admin#dump](/core/1/api/api-reference/controller-admin/reset-security/)
+This call the action [admin#dump](/core/1/api/controllers/admin/reset-security/)
 
 ---
 
@@ -133,7 +133,7 @@ Asynchronously start the following sequence in Kuzzle, in this order:
 
 This action has no impact on Plugin and Document storage.
 
-This call the action [admin#resetKuzzleData](/core/1/api/api-reference/controller-admin/reset-kuzzle-data/)
+This call the action [admin#resetKuzzleData](/core/1/api/controllers/admin/reset-kuzzle-data/)
 
 ---
 
@@ -156,7 +156,7 @@ This call the action [admin#resetKuzzleData](/core/1/api/api-reference/controlle
 
 The `resetSecurity` command deletes all created users, profiles and roles and reset the default roles and profiles : `anonymous`, `admin` and `default`.
 
-This call the action [admin#resetSecurity](/core/1/api/api-reference/controller-admin/reset-security/)
+This call the action [admin#resetSecurity](/core/1/api/controllers/admin/reset-security/)
 
 ---
 
@@ -179,7 +179,7 @@ This call the action [admin#resetSecurity](/core/1/api/api-reference/controller-
 
 The `resetDatabase` delete all indexes created by users. This does not include Kuzzle's internal index.
 
-This call the action [admin#resetDatabase](/core/1/api/api-reference/controller-admin/reset-database/)
+This call the action [admin#resetDatabase](/core/1/api/controllers/admin/reset-database/)
 
 Note: this command has no impact on any plugins stored data, or on any Kuzzle stored documents.
 
@@ -196,7 +196,7 @@ Note: this command has no impact on any plugins stored data, or on any Kuzzle st
 
 The `shutdown` command lets you stop a Kuzzle instance after any remaining requests are processed, ensuring that no unnecessary `Service Unavailable` errors are returned to connected clients.
 
-This call the action [admin#shutdown](/core/1/api/api-reference/controller-admin/shutdown/)
+This call the action [admin#shutdown](/core/1/api/controllers/admin/shutdown/)
 
 ---
 
@@ -294,7 +294,7 @@ The file must be a JSON file with the following structure:
 **Notes:**
 
 - The file can contain any number of index and collection configurations.
-- Each collection contains an array of data to load, just like the [bulk:import API](/core/1/api/api-reference/controller-bulk/import/).
+- Each collection contains an array of data to load, just like the [bulk:import API](/core/1/api/controllers/bulk/import/).
 - If an index or collection does not exist, the load will fail.
 - Fixtures are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
 
@@ -342,9 +342,9 @@ The file must be a JSON file with the following structure:
 
 The roles, profiles and users definition follow the same structure as in the body parameter of the API:
 
-- [createRole](/core/1/api/api-reference/controller-security/create-role/)
-- [createProfile](/core/1/api/api-reference/controller-security/create-profile/)
-- [createUser](/core/1/api/api-reference/controller-security/create-user/)
+- [createRole](/core/1/api/controllers/security/create-role/)
+- [createProfile](/core/1/api/controllers/security/create-profile/)
+- [createUser](/core/1/api/controllers/security/create-user/)
 
 **Notes:**
 

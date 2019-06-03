@@ -7,4 +7,4 @@ description: Kuzzle:memoryStorage
 
 ## memoryStorage
 
-A [MemoryStorage](/sdk/php/3/memory-storage) singleton.
+A [MemoryStorage](/sdk/php/3/core-classes/memory-storage) singleton.

@@ -46,7 +46,7 @@ This defines a circular boundary centered around [Big Ben](https://www.google.co
 
 Note that we use the field name `location` to store the geopoint we are centered around. This means that Kuzzle will monitor the field named `location` for position changes, and so any user location document sent to Kuzzle must also contain this field.
 
-Now the App must request a subscription to the geographical boundary defined in our JSONObject. To ensure that the App only receives a message when the `location` changes from inside the boundary to outside the boundary, we need to set the subscription scope to `out`, for more scope options click [here](/sdk/js/5/collection/subscribe/).
+Now the App must request a subscription to the geographical boundary defined in our JSONObject. To ensure that the App only receives a message when the `location` changes from inside the boundary to outside the boundary, we need to set the subscription scope to `out`, for more scope options click [here](/sdk/js/5/core-classes/collection/subscribe/).
 
 Let's use the _subscribe_ method :
 

@@ -8,7 +8,7 @@ title: ClientConnection
 
 
 
-The `ClientConnection` class must be instantiated whenever a new client connection is created, and that instance must be provided to the [entryPoint.newConnection](/core/1/protocols/entrypoint/newconnection) method.
+The `ClientConnection` class must be instantiated whenever a new client connection is created, and that instance must be provided to the [entryPoint.newConnection](/core/1/protocols/api/entrypoint/newconnection) method.
 
 ---
 

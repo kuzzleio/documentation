@@ -21,7 +21,7 @@ All API actions, without exception, trigger two of these three events:
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
+| `request` | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | The normalized API request |
 
 A `before` event is triggered before an API request starts.
 
@@ -38,8 +38,8 @@ The `before` event name is built using the following template:
 
 | API action                                                                                   | After event name                 |
 | -------------------------------------------------------------------------------------------- | -------------------------------- |
-| [auth:login](/core/1/api/api-reference/controller-auth/login/)                               | `auth:beforeLogin`               |
-| [document:createOrReplace](/core/1/api/api-reference/controller-document/create-or-replace/) | `document:beforeCreateOrReplace` |
+| [auth:login](/core/1/api/controllers/auth/login/)                               | `auth:beforeLogin`               |
+| [document:createOrReplace](/core/1/api/controllers/document/create-or-replace/) | `document:beforeCreateOrReplace` |
 
 ---
 
@@ -47,7 +47,7 @@ The `before` event name is built using the following template:
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
+| `request` | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | The normalized API request |
 
 An `after` event is triggered after an API request succeeds.
 
@@ -64,8 +64,8 @@ The `after` event name is built using the following template:
 
 | API action                                                                                   | After event name                |
 | -------------------------------------------------------------------------------------------- | ------------------------------- |
-| [auth:login](/core/1/api/api-reference/controller-auth/login/)                               | `auth:afterLogin`               |
-| [document:createOrReplace](/core/1/api/api-reference/controller-document/create-or-replace/) | `document:afterCreateOrReplace` |
+| [auth:login](/core/1/api/controllers/auth/login/)                               | `auth:afterLogin`               |
+| [document:createOrReplace](/core/1/api/controllers/document/create-or-replace/) | `document:afterCreateOrReplace` |
 
 ---
 
@@ -73,7 +73,7 @@ The `after` event name is built using the following template:
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
+| `request` | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | The normalized API request |
 
 An `error` event is triggered after an API request fails.
 
@@ -90,5 +90,5 @@ The `error` event name is built using the following template:
 
 | API action                                                                                   | After event name                |
 | -------------------------------------------------------------------------------------------- | ------------------------------- |
-| [auth:login](/core/1/api/api-reference/controller-auth/login/)                               | `auth:errorLogin`               |
-| [document:createOrReplace](/core/1/api/api-reference/controller-document/create-or-replace/) | `document:errorCreateOrReplace` |
+| [auth:login](/core/1/api/controllers/auth/login/)                               | `auth:errorLogin`               |
+| [document:createOrReplace](/core/1/api/controllers/document/create-or-replace/) | `document:errorCreateOrReplace` |

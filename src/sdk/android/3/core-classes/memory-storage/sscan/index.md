@@ -7,7 +7,7 @@ description: MemoryStorage:sscan
 
 # sscan
 
-Identical to [scan](/sdk/android/3/controllers/memory-storage/scan/), except that `sscan` iterates the members held by a set of unique values.
+Identical to [scan](/sdk/android/3/core-classes/memory-storage/scan/), except that `sscan` iterates the members held by a set of unique values.
 
 [[_Redis documentation_]](https://redis.io/commands/sscan)
 

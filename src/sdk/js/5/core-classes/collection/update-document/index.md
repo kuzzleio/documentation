@@ -7,7 +7,7 @@ description: Collection:updateDocument
 
 # updateDocument
 
-Update parts of a document, by replacing some fields or adding new ones.  
+Update parts of a document, by replacing some fields or adding new ones.
 Note that you cannot remove fields this way: missing fields will simply be left unchanged.
 
 ---
@@ -42,7 +42,7 @@ Returns the `Collection` object to allow chaining.
 
 ## Callback Response
 
-Returns an up-to-date [Document](/sdk/js/5/document/) object.
+Returns an up-to-date [Document](/sdk/js/5/core-classes/document/) object.
 
 ## Usage
 

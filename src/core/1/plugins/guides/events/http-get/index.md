@@ -10,6 +10,6 @@ title: http:get
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
+| `request` | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | The normalized API request |
 
 Triggered whenever a request has been submitted through HTTP GET methods.

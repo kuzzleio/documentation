@@ -7,7 +7,7 @@ description: Collection:mcreateDocument
 
 # mCreateDocument
 
-Create the input [Documents](/sdk/js/5/document/).
+Create the input [Documents](/sdk/js/5/core-classes/document/).
 
 ---
 
@@ -15,7 +15,7 @@ Create the input [Documents](/sdk/js/5/document/).
 
 | Arguments   | Type        | Description                                        |
 | ----------- | ----------- | -------------------------------------------------- |
-| `documents` | Document[]  | Array of [Document](/sdk/js/5/document/) to create |
+| `documents` | Document[]  | Array of [Document](/sdk/js/5/core-classes/document/) to create |
 | `options`   | JSON Object | Optional parameters                                |
 | `callback`  | function    | Optional callback                                  |
 

@@ -15,11 +15,11 @@ This is the case, for instance, with the `local` authentication strategy.
 
 If the request succeeds but there is no token, then it means that the chosen strategy is a two-steps authentication method, such as the OAUTH strategy. In that case, the `loginAttempt` event is **not** fired. To complete the login, the `setJwtToken` method must be called either with a token or with an appropriate Kuzzle response.
 
-If the login attempt fails, the `loginAttempt` event is fired with the following response:  
+If the login attempt fails, the `loginAttempt` event is fired with the following response:
 `{ success: false, error: 'error message' }`
 
 <div class="alert alert-info">
-This method is non-queuable, meaning that during offline mode, it will be discarded and the callback will be called with an error. <a href="/core/1/guide/guides/essentials/user-authentication/#local-strategy">Learn more.</a>
+This method is non-queuable, meaning that during offline mode, it will be discarded and the callback will be called with an error. <a href="/core/1/guides/essentials/user-authentication/#local-strategy">Learn more.</a>
 </div>
 
 ---

@@ -7,7 +7,7 @@ description: MemoryStorage:geohash
 
 # geohash
 
-Returns a valid [geohash](https://en.wikipedia.org/wiki/Geohash) for the provided key's members (see [geoadd](/sdk/js/5/memory-storage/geoadd)).
+Returns a valid [geohash](https://en.wikipedia.org/wiki/Geohash) for the provided key's members (see [geoadd](/sdk/js/5/core-classes/memory-storage/geoadd)).
 
 [[_Redis documentation_]](https://redis.io/commands/geohash)
 

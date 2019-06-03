@@ -39,7 +39,7 @@ Returns the `Security` object to allow chaining.
 
 ## Callback Response
 
-Returns an updated [Role](/sdk/js/5/role) object.
+Returns an updated [Role](/sdk/js/5/core-classes/role) object.
 
 ## Usage
 

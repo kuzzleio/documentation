@@ -8,9 +8,9 @@ title: getMapping
 
 Returns a collection mapping.
 
-{{{/core/1/guide/guides/essentials/database-mappings "1.7.1"}}}
+{{{/core/1/guides/essentials/database-mappings "1.7.1"}}}
 
-Also returns the collection [dynamic mapping policy](/core/1/guide/guides/essentials/database-mappings/#dynamic-mapping-policy) and [collection additional metadata](/core/1/guide/guides/essentials/database-mappings/#collection-metadata).
+Also returns the collection [dynamic mapping policy](/core/1/guides/essentials/database-mappings/#dynamic-mapping-policy) and [collection additional metadata](/core/1/guides/essentials/database-mappings/#collection-metadata).
 
 ---
 

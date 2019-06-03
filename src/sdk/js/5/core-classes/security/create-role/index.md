@@ -38,7 +38,7 @@ That means that a role that was just created may not be returned by the <code>se
 
 ## Callback Response
 
-Returns a [Role](/sdk/js/5/role) object.
+Returns a [Role](/sdk/js/5/core-classes/role) object.
 
 ## Usage
 

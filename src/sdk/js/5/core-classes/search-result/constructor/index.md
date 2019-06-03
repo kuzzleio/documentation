@@ -8,7 +8,7 @@ order: 1
 
 # Constructor
 
-This object can only be instantiated internally by this SDK, and is an easy-to-use representation of a paginated result from a [search](/sdk/js/5/collection/search) or a [scroll](/sdk/js/5/collection/scroll) request.
+This object can only be instantiated internally by this SDK, and is an easy-to-use representation of a paginated result from a [search](/sdk/js/5/core-classes/collection/search) or a [scroll](/sdk/js/5/core-classes/collection/scroll) request.
 
 ---
 

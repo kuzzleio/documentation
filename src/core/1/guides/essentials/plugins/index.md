@@ -11,7 +11,7 @@ Our prepackaged multi-feature backend solution will meet basic project requireme
 
 For example, imagine you are developing a mobile application that accesses a **third-party payment platform**, such as Braintree, through its third-party's API. For **security** reasons, you will want to avoid accessing the third-party's API directly from the mobile device. Also, you will not want users to purchase more items than are currently in stock, so your backend will need to **monitor** what has been purchased. To achieve all this, you will want to develop a custom Plugin that lets Kuzzle communicate directly with the third-party payment platform.
 
-Kuzzle's **[Plugin Engine](/plugins/1)** is a powerful feature that ensures that Kuzzle meets any project requirement:
+Kuzzle's **[Plugin Engine](/core/1/plugins)** is a powerful feature that ensures that Kuzzle meets any project requirement:
 
 - select from a set of prebuilt plugins (such as the [OAuth2 Authentication Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth) or the [MQTT Protocol](https://github.com/kuzzleio/protocol-mqtt)).
 - [create your own plugin](/core/1/plugins/essentials) to meet your specific requirements.
@@ -22,19 +22,19 @@ Kuzzle's **[Plugin Engine](/plugins/1)** is a powerful feature that ensures that
 
 Plugins are used to extend Kuzzle's functionalities. They are loaded into Kuzzle during startup and share its execution thread. A plugin can implement one or multiple of the following interfaces:
 
-[Hooks](/core/1/plugins/essentials/hooks): adds asynchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is sent to the listeners and Kuzzle continues its process without waiting for the listener to complete.
+[Hooks](/core/1/plugins/guides/hooks/): adds asynchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is sent to the listeners and Kuzzle continues its process without waiting for the listener to complete.
 
 _Example - "Write a log to a third-party logging service every time a document is deleted"_. The [Logger Plugin](https://github.com/kuzzleio/kuzzle-plugin-logger) (shipped with Kuzzle) uses this feature to log all the data-related events.
 
-[Pipes](/core/1/plugins/essentials/pipes): adds synchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is passed synchronously to listeners, each modifying the input data and returning the result to the next listener. Kuzzle waits until the last listener completes and returns its data. If any listener returns an error, it will interrupt the Kuzzle lifecycle, and the thrown error will be used as a response by Kuzzle.
+[Pipes](/core/1/plugins/guides/pipes): adds synchronous listeners that perform operations triggered by data events. When a listened event occurs, the data is passed synchronously to listeners, each modifying the input data and returning the result to the next listener. Kuzzle waits until the last listener completes and returns its data. If any listener returns an error, it will interrupt the Kuzzle lifecycle, and the thrown error will be used as a response by Kuzzle.
 
 _Example - "Compare the ordered quantity with the available stock and return an error if the amount of ordered items exceeds the amount in stock"_.
 
-[Controllers](/core/1/plugins/essentials/controllers): extends Kuzzle API.
+[Controllers](/core/1/plugins/guides/controllers): extends Kuzzle API.
 
 _Example - "Expose a `checkout` API endpoint that handles a third-party payment process"_.
 
-[Strategies](/core/1/plugins/essentials/strategies): add an authentication strategy to identify and authenticate users.
+[Strategies](/core/1/plugins/guides/strategies): add an authentication strategy to identify and authenticate users.
 
 _Example - "Enable OAuth based authentication in Kuzzle"_
 Kuzzle ships with the [Local Strategy Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local) and thanks to PassportJS, more than 300 authentication strategies are readily available.
@@ -168,7 +168,7 @@ ln -s ../available/protocol-mqtt .
 
 ## Going Further
 
-To get more insight into how plugins work, please refer to the [Plugin Reference](/plugins/1).
+To get more insight into how plugins work, please refer to the [Plugin Reference](/core/1/plugins).
 
 Here is a list of official plugins:
 

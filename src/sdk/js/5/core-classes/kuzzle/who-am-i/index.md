@@ -21,7 +21,7 @@ Returns informations about the user who is currently loggedin.
 
 ## Callback Response
 
-Returns an instantiated [User](/sdk/js/5/user) object.
+Returns an instantiated [User](/sdk/js/5/core-classes/user) object.
 
 ## Usage
 

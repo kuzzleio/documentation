@@ -8,7 +8,7 @@ order: 1
 
 # Constructors
 
-## Instantiates a new User object, which is a representation of a Kuzzle user and is linked to a security [Profile](/sdk/android/3/controllers/profile/).
+## Instantiates a new User object, which is a representation of a Kuzzle user and is linked to a security [Profile](/sdk/android/3/core-classes/profile/).
 
 ## User(Security, id, content, [meta])
 

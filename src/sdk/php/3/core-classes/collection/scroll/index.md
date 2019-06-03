@@ -15,7 +15,7 @@ There is a small delay between the time a document is created and its availabili
 </div>
 
 <div class="alert alert-info">
-  To get more information about scroll sessions, please refer to the <a href="/core/1/api/api-reference/controller-document/search/">API reference documentation</a>.
+  To get more information about scroll sessions, please refer to the <a href="/core/1/api/controllers/document/search/">API reference documentation</a>.
 </div>
 
 ---
@@ -41,7 +41,7 @@ There is a small delay between the time a document is created and its availabili
 
 ## Callback Response
 
-Returns an instantiated [SearchResult](/sdk/php/3/search-result) object.
+Returns an instantiated [SearchResult](/sdk/php/3/core-classes/search-result) object.
 
 ---
 

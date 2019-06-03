@@ -31,7 +31,7 @@ Fetches a single stored profile using its unique ID.
 
 ## Callback Response
 
-Returns a security [Profile](/sdk/js/5/profile) object.
+Returns a security [Profile](/sdk/js/5/core-classes/profile) object.
 
 ## Usage
 

@@ -15,7 +15,7 @@ By default, the MQTT protocol is disabled in Kuzzle configuration.
 
 ## Configuration
 
-The protocol can be configured via the [kuzzlerc configuration file](/core/1/guide/guides/essentials/configuration/), under the `server > protocols > mqtt` section.
+The protocol can be configured via the [kuzzlerc configuration file](/core/1/guides/essentials/configuration/), under the `server > protocols > mqtt` section.
 
 | Option            | Type               | Description                                                                                                                                                                                                                             | Default             |
 | ----------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
@@ -88,7 +88,7 @@ client.on('message', (topic, raw) => {
 
 ### Using Kuzzle subscriptions
 
-Kuzzle allows to [subscribe](https://docs.kuzzle.io/core/1/api/api-reference/controller-realtime/subscribe/) to messages and events using advanced filters.
+Kuzzle allows to [subscribe](https://docs.kuzzle.io/core/1/api/controllers/realtime/subscribe/) to messages and events using advanced filters.
 
 Each time a subscription is sent, a dedicated MQTT topic is created, named after the `channel` property issued by Kuzzle.
 
@@ -162,7 +162,7 @@ Subscription attempts to the `requestTopic` topic (defaults to `Kuzzle/request`)
 
 The MQTT `Kuzzle/response` topic is by default a special topic that acts as a private channel. Each client receives its own responses only, offering a simple first security layer.
 
-While this behavior is urgently recommended in production, it can bring a small drawback when testing and developing applications: it does not allow using most CLI tools.  
+While this behavior is urgently recommended in production, it can bring a small drawback when testing and developing applications: it does not allow using most CLI tools.
 Many CLI tools, such as Mosquitto offer two separate binaries, one for subscribing and one for publishing. These act as two different clients and the subscriber won't receive any response sent to the publisher by default.
 
 To use these tools, one can enable the **development mode**, in which `Kuzzle/response` will act as a regular public topic.

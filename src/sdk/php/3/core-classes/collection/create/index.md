@@ -7,7 +7,7 @@ description: Collection:create
 
 # create
 
-Creates a new [collection](/core/1/guide/guides/essentials/persisted/) in Kuzzle via the persistence engine, in the provided `index`.
+Creates a new [collection](/core/1/guides/essentials/persisted/) in Kuzzle via the persistence engine, in the provided `index`.
 
 <SinceBadge version="1.3.0" />
 

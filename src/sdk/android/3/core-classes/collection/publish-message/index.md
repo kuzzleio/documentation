@@ -15,7 +15,7 @@ Publish a real-time message.
 
 | Arguments  | Type        | Description                                             |
 | ---------- | ----------- | ------------------------------------------------------- |
-| `Document` | object      | [Document](/sdk/android/3/controllers/document/) object |
+| `Document` | object      | [Document](/sdk/android/3/core-classes/document/) object |
 | `options`  | JSON Object | Optional parameters                                     |
 | `callback` | function    | Optional callback                                       |
 

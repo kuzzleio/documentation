@@ -12,14 +12,14 @@ Kuzzle uses [Passport.js](http://Passportjs.org/) to support numerous authentica
 - SAML: for authentication using providers such as OneLogin and for supporting single sign-on.
 - Local: for authentication using a user's username and password managed in your own domain.
 
-In the diagram below, we highlighted components of Kuzzle's server [architecture](/core/1/guide/kuzzle-depth) that are used in the authentication process:
+In the diagram below, we highlighted components of Kuzzle's server [architecture](/core/1/guides/kuzzle-depth) that are used in the authentication process:
 
 ![read_scenario_http_overview](./Authentication_Overview.png)
 
 - The Auth Controller: to manage the authentication process.
 - The Passport Wrapper: to interface between Kuzzle and the Passport.js library.
 - The User and Token [Repositories](https://github.com/kuzzleio/kuzzle/tree/master/lib/api/core/models/repositories): to store user data.
-- The Auth Strategy: to identify and validate a user's credential using a [dedicated plugin](/core/1/plugins/essentials/strategies).
+- The Auth Strategy: to identify and validate a user's credential using a [dedicated plugin](/core/1/plugins/guides/strategies).
 
 ---
 
@@ -194,6 +194,6 @@ Location: http://< kuzzle >/_login/github?code=OAUTH2_CODE
 
 ## Additional Authentication Strategies
 
-Kuzzle can implement any strategy supported by Passport.js. For more information, please refer to the [Plugins Reference](/core/1/plugins/essentials/strategies).
+Kuzzle can implement any strategy supported by Passport.js. For more information, please refer to the [Plugins Reference](/core/1/plugins/guides/strategies).
 
 ---

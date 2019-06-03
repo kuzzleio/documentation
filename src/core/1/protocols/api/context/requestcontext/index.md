@@ -8,7 +8,7 @@ title: RequestContext
 
 Connection context.
 
-This is the class used to build the `context` property of any [Request](/core/1/protocols/context/request) object.
+This is the class used to build the `context` property of any [Request](/core/1/protocols/api/context/request) object.
 
 Technical information: [github repository](https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#modelsrequestcontext)
 
@@ -32,7 +32,7 @@ The `options` object can contain the following properties:
 
 | Properties   | Type                                                                               | Description                      |
 | ------------ | ---------------------------------------------------------------------------------- | -------------------------------- |
-| `connection` | <pre><a href=/core/1/protocols/context/clientconnection>ClientConnection</a></pre> | Connection information           |
+| `connection` | <pre><a href=/core/1/protocols/api/context/clientconnection>ClientConnection</a></pre> | Connection information           |
 | `token`      | <pre>string</pre>                                                                  | Authorization token              |
 | `user`       | <pre>object</pre>                                                                  | Kuzzle internal user information |
 
@@ -42,6 +42,6 @@ The `options` object can contain the following properties:
 
 | Properties   | Type                                                                               | Description                      |
 | ------------ | ---------------------------------------------------------------------------------- | -------------------------------- |
-| `connection` | <pre><a href=/core/1/protocols/context/clientconnection>ClientConnection</a></pre> | Connection information           |
+| `connection` | <pre><a href=/core/1/protocols/api/context/clientconnection>ClientConnection</a></pre> | Connection information           |
 | `token`      | <pre>string</pre>                                                                  | Authorization token              |
 | `user`       | <pre>object</pre>                                                                  | Kuzzle internal user information |

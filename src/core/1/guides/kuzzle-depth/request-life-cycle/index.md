@@ -12,7 +12,7 @@ Kuzzle has two main modes of communication:
 
 - **Synchronous**: Clients send requests to the Kuzzle server, which processes the data using the [Document Controller](/core/1/api/controller-document) and then sends a response back to the client.
 
-- **Asynchronous**: Clients subscribe to the Kuzzle server via the [Real-time/Subscribe](/core/1/api/api-reference/controller-realtime/publish/) API action and receive data asynchronously as a result of a [Real-time/Publish](/core/1/api/api-reference/controller-realtime/publish/) API action or a [Document Controller](/core/1/api/controller-document) event.
+- **Asynchronous**: Clients subscribe to the Kuzzle server via the [Real-time/Subscribe](/core/1/api/controllers/realtime/publish/) API action and receive data asynchronously as a result of a [Real-time/Publish](/core/1/api/controllers/realtime/publish/) API action or a [Document Controller](/core/1/api/controller-document) event.
 
 These modes of communication are generally independant from the transport protocol. For example, a synchronous request can be made via HTTP or Websockets.
 
@@ -28,7 +28,7 @@ Depending on the transport protocol used to communicate with the Kuzzle server, 
 
 ### Synchronous Request using HTTP Protocol
 
-In the diagram below, we highlighted the components of Kuzzle's server [architecture](/core/1/guide/kuzzle-depth) that are used in a read request using HTTP:
+In the diagram below, we highlighted the components of Kuzzle's server [architecture](/core/1/guides/kuzzle-depth) that are used in a read request using HTTP:
 
 ![read_scenario_http_overview](Synchronous_Request_HTTP_Protocol_Overview.png)
 
@@ -86,7 +86,7 @@ The following diagram shows how a request flows between the client application, 
 
 ### Synchronous Request using Websocket Protocol
 
-In the diagram below, we highlighted the components of Kuzzle's server [architecture](/core/1/guide/kuzzle-depth) that are used in a read request using Websockets:
+In the diagram below, we highlighted the components of Kuzzle's server [architecture](/core/1/guides/kuzzle-depth) that are used in a read request using Websockets:
 
 ![read_scenario_websocket_overview](Synchronous_Request_Websocket_Protocol_Overview.png)
 
@@ -170,7 +170,7 @@ In an asynchronous request, Kuzzle server will receive a request over one channe
 
 This form of communication is generally referred to as publish/subscribe, because on the one side a client is **subscribing** to a channel and on the other side a client is **publishing** to a channel.
 
-This subsection describes the life-cycle of real-time notifications which implement the [Publish/Subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) pattern. In the diagram below, we highlighted the components of Kuzzle's server [architecture](/core/1/guide/kuzzle-depth) that are used in this pattern:
+This subsection describes the life-cycle of real-time notifications which implement the [Publish/Subscribe](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) pattern. In the diagram below, we highlighted the components of Kuzzle's server [architecture](/core/1/guides/kuzzle-depth) that are used in this pattern:
 ![pubsub_overview](Asynchronous_Communication_Overview.png)
 
 #### Subscribing to a Channel
@@ -179,7 +179,7 @@ The following diagram shows how a client can subscribe to a channel.
 
 ![pubsub_scenario_details1](Asynchronous_Communication_Subscription.png)
 
-- The client application opens a socket (or MQ) connection, sends a subscription request (see the [API Documentation](/core/1/api/api-reference/controller-realtime/subscribe/)), and then listens for the `< requestId >` event on the socket. The subscription request is a message that contains a filter description that defines which events should trigger a response. For instance, the following filter will trigger a response anytime content is posted to the `users` collection that contains the field `hobby` with value `computer` (see the [Koncorde Reference](/core/1/koncorde/) for more details):
+- The client application opens a socket (or MQ) connection, sends a subscription request (see the [API Documentation](/core/1/api/controllers/realtime/subscribe/)), and then listens for the `< requestId >` event on the socket. The subscription request is a message that contains a filter description that defines which events should trigger a response. For instance, the following filter will trigger a response anytime content is posted to the `users` collection that contains the field `hobby` with value `computer` (see the [Koncorde Reference](/core/1/koncorde/) for more details):
 
 ```javascript
 {
@@ -249,7 +249,7 @@ The following diagram shows how a client can subscribe to a channel.
 
 #### Publishing to a Channel Directly
 
-The following diagram shows how the Kuzzle server triggers a response as a result of a publish request made using the [Real-time/Publish](/core/1/api/api-reference/controller-realtime/publish/) action.
+The following diagram shows how the Kuzzle server triggers a response as a result of a publish request made using the [Real-time/Publish](/core/1/api/controllers/realtime/publish/) action.
 
 ![pubsub_scenario_details2](Asynchronous_Communication_Publishing_Directly.png)
 

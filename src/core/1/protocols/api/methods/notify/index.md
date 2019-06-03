@@ -15,7 +15,7 @@ Asks the protocol to send data to a specific connection, on some of its [channel
 `notify(channels, connectionId, payload)`
 
 - `channels` | <pre>string[]</pre> | list of channels
-- `connectionId` | <pre>string</pre> | connection unique identifier, previously registered by the protocol using [newConnection](/core/1/protocols/entrypoint/newconnection)
+- `connectionId` | <pre>string</pre> | connection unique identifier, previously registered by the protocol using [newConnection](/core/1/protocols/api/entrypoint/newconnection)
 - `payload` | <pre>object</pre> | data payload
 
 ---

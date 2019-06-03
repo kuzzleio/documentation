@@ -8,7 +8,7 @@ description: Kuzzle:refreshIndex
 # refreshIndex
 
 When writing or deleting documents in Kuzzle, the update needs to be indexed before being reflected
-in the search index.  
+in the search index.
 By default, this operation can take up to 1 second.
 
 Given an index, the `refresh` action forces a [`refresh`](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docs-refresh.html),
@@ -29,7 +29,7 @@ on it, making the documents visible to search immediately.
 
 | Argument   | Type        | Description                                                                                                    |
 | ---------- | ----------- | -------------------------------------------------------------------------------------------------------------- |
-| `index`    | string      | _Optional_. The index to refresh. If not set, defaults to [kuzzle.defaultIndex](/sdk/js/5/kuzzle/#properties). |
+| `index`    | string      | _Optional_. The index to refresh. If not set, defaults to [kuzzle.defaultIndex](/sdk/js/5/core-classes/kuzzle/#properties). |
 | `options`  | JSON object | Optional parameters                                                                                            |
 | `callback` | function    | _Optional_. Callback handling the response.                                                                    |
 

@@ -7,7 +7,7 @@ description: Security:profile
 
 # profile
 
-Instantiate a new security [Profile](/sdk/php/3/profile) object.
+Instantiate a new security [Profile](/sdk/php/3/core-classes/profile) object.
 
 ---
 
@@ -22,7 +22,7 @@ Instantiate a new security [Profile](/sdk/php/3/profile) object.
 
 ## Return Value
 
-Returns the new security [Profile](/sdk/php/3/profile) object.
+Returns the new security [Profile](/sdk/php/3/core-classes/profile) object.
 
 ## Usage
 

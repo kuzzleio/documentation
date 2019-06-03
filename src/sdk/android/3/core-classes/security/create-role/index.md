@@ -38,7 +38,7 @@ That means that a role that was just created may not be returned by the <code>se
 
 ## Callback Response
 
-Returns a [Role](/sdk/android/3/controllers/role/) object.
+Returns a [Role](/sdk/android/3/core-classes/role/) object.
 
 ## Usage
 

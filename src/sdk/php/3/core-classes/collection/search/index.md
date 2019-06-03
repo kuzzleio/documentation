@@ -45,14 +45,14 @@ See [`SearchResult.fetchNext`](/sdk/php/3/core-classes/search-result/fetch-next/
 | `size`     | number  | Provide the maximum number of results of the request (used to paginate results)                                                                                                                                   | `10`        |
 
 <div class="alert alert-info">
-  To get more information about scroll sessions, please refer to the <a href="/core/1/api/api-reference/controller-document/search/">API reference documentation</a>.
+  To get more information about scroll sessions, please refer to the <a href="/core/1/api/controllers/document/search/">API reference documentation</a>.
 </div>
 
 ---
 
 ## Callback Response
 
-Returns an instance of [SearchResult](/sdk/php/3/search-result).
+Returns an instance of [SearchResult](/sdk/php/3/core-classes/search-result).
 
 ## Usage
 

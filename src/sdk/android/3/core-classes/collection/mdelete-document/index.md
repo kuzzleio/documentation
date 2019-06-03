@@ -7,7 +7,7 @@ description: Collection:mdeleteDocument
 
 # mDeleteDocument
 
-Delete multiple [Documents](/sdk/android/3/controllers/document/) according to the input IDs.
+Delete multiple [Documents](/sdk/android/3/core-classes/document/) according to the input IDs.
 
 ---
 

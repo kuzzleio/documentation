@@ -25,7 +25,7 @@ Kuzzle automatically generates document ids and indexes them. The generated id i
 
 ## Creating an Index
 
-We will start off by [**creating a new index**](/core/1/api/api-reference/controller-index/create/) which we will use to store a collection.
+We will start off by [**creating a new index**](/core/1/api/controllers/index/create/) which we will use to store a collection.
 
 To create a new index, send a `POST` request to the following API endpoint and leave the request body empty: `http://localhost:7512/<index name>/_create`.
 
@@ -56,7 +56,7 @@ You should receive the following response:
 
 ## Creating a Collection
 
-Next, we will [**create a new collection**](/core/1/api/api-reference/controller-collection/create/), which we will use to store documents.
+Next, we will [**create a new collection**](/core/1/api/controllers/collection/create/), which we will use to store documents.
 
 To create a collection, send a `PUT` request to the following API endpoint and leave the request body empty: `http://localhost:7512/<index name>/<colletion name>`.
 
@@ -84,13 +84,13 @@ You should receive the following response:
 }
 ```
 
-**Note:** we have just created a new collection without specifying any mappings. As a result, the database layer will automatically create a mapping that assigns a best guess data type to any new field it detects in input documents. Since these mappings cannot be changed once they are created, we strongly recommend that you [**create your own mappings**](/core/1/guide/guides/essentials/database-mappings) as soon as the collection has been created. For the purpose of this tutorial, we will continue without defining our own mappings.
+**Note:** we have just created a new collection without specifying any mappings. As a result, the database layer will automatically create a mapping that assigns a best guess data type to any new field it detects in input documents. Since these mappings cannot be changed once they are created, we strongly recommend that you [**create your own mappings**](/core/1/guides/essentials/database-mappings) as soon as the collection has been created. For the purpose of this tutorial, we will continue without defining our own mappings.
 
 ---
 
 ## Browse Collections
 
-To browse the [**list of collections**](/core/1/api/api-reference/controller-collection/list/) in a given index you can send a `GET` request to the following API endpoint: `http://localhost:7512/<index name>/_list`.
+To browse the [**list of collections**](/core/1/api/controllers/collection/list/) in a given index you can send a `GET` request to the following API endpoint: `http://localhost:7512/<index name>/_list`.
 
 Let's get the list of collections in the `myindex` index:
 
@@ -124,7 +124,7 @@ You should receive the following response:
 ```
 
 The `result` field in the response contains an array of `collections`, each with its own `name` and a `type`.
-Note that the `mycollection`'s type is `stored`, which means it is a persistant store. The `type` allows us to distinguish between persistant store collections and temporary store collections, such as those used for [real-time messaging](/core/1/guide/guides/essentials/real-time/).
+Note that the `mycollection`'s type is `stored`, which means it is a persistant store. The `type` allows us to distinguish between persistant store collections and temporary store collections, such as those used for [real-time messaging](/core/1/guides/essentials/real-time/).
 
 ---
 
@@ -134,7 +134,7 @@ Kuzzle ships with a full data [CRUD](https://en.wikipedia.org/wiki/Create,_read,
 
 ### CREATE
 
-We can [**create a new document**](/core/1/api/api-reference/controller-document/create/) by sending a `POST` request to the following API endpoint and setting the document contents in the request body: `http://localhost:7512/<index name>/<collection name>/_create`.
+We can [**create a new document**](/core/1/api/controllers/document/create/) by sending a `POST` request to the following API endpoint and setting the document contents in the request body: `http://localhost:7512/<index name>/<collection name>/_create`.
 
 Let's create a new document in the `mycollection` collection of the `myindex` index:
 
@@ -190,11 +190,11 @@ You should receive the following response (with your own `_id` value):
 }
 ```
 
-Note that the document contains the auto-generated id `AVkDBl3YsT6qHI7MxLz0`. Take some time to examine the content of the [response](/core/1/guide/guides/essentials/request-and-response-format/#status-codes) message as it contains useful information, like the name of the controller, the action performed in the request, and of course the object we just created in the `source` field.
+Note that the document contains the auto-generated id `AVkDBl3YsT6qHI7MxLz0`. Take some time to examine the content of the [response](/core/1/guides/essentials/request-and-response-format/#status-codes) message as it contains useful information, like the name of the controller, the action performed in the request, and of course the object we just created in the `source` field.
 
 ### READ
 
-We can [**read a document**](/core/1/api/api-reference/controller-document/get/) by sending a `GET` request to `http://localhost:7512/<index name>/<collection name>/<document id>`.
+We can [**read a document**](/core/1/api/controllers/document/get/) by sending a `GET` request to `http://localhost:7512/<index name>/<collection name>/<document id>`.
 
 Let's read the document we just created in the `mycollection` collection of the `myindex` index:
 
@@ -235,7 +235,7 @@ You should receive the following response (with your own `_id` value):
 
 ### UPDATE
 
-We can [**update a document**](/core/1/api/api-reference/controller-document/update/) by sending a `PUT` request to the following API endpoint and setting the document's updated contents in the request body: `http://localhost:7512/<index name>/<collection name>/<document id>/_update`.
+We can [**update a document**](/core/1/api/controllers/document/update/) by sending a `PUT` request to the following API endpoint and setting the document's updated contents in the request body: `http://localhost:7512/<index name>/<collection name>/<document id>/_update`.
 
 Let's update the document we just created, with id `AVkDBl3YsT6qHI7MxLz0`, in the `mycollection` collection of the `myindex` index:
 
@@ -273,7 +273,7 @@ You should receive the following response (with your own `_id` value):
 
 ### DELETE
 
-We can [**delete a document**](/core/1/api/api-reference/controller-document/delete/) by sending a `DELETE` request to the following API endpoint with no request body: `http://localhost:7512/<index name>/<collection name>/<document id>`.
+We can [**delete a document**](/core/1/api/controllers/document/delete/) by sending a `DELETE` request to the following API endpoint with no request body: `http://localhost:7512/<index name>/<collection name>/<document id>`.
 
 Let's delete the document we just created in the `mycollection` collection of the `myindex` index:
 
@@ -312,9 +312,9 @@ You should receive the following response (with your own `_id` value):
 
 ## Document Search
 
-One thing that Elasticsearch is _really_ good at doing is... Searching! Thanks to its powerful query DSL it can create extremely precise search queries. We wrote an [Elasticsearch Cookbook](/core/1/guide/elasticsearch) to help you understand how it works in detail, but let's take a look at a couple of simple examples, just to get started.
+One thing that Elasticsearch is _really_ good at doing is... Searching! Thanks to its powerful query DSL it can create extremely precise search queries. We wrote an [Elasticsearch Cookbook](/core/1/guides/cookbooks/elasticsearch) to help you understand how it works in detail, but let's take a look at a couple of simple examples, just to get started.
 
-Say we want to [**find**](/core/1/api/api-reference/controller-document/search/) all documents in the `mycollection` collection. Whe can do this by sending a `POST` request to `http://localhost:7512/<index name>/<collection name>/_search` and setting any search filters in the request body.
+Say we want to [**find**](/core/1/api/controllers/document/search/) all documents in the `mycollection` collection. Whe can do this by sending a `POST` request to `http://localhost:7512/<index name>/<collection name>/_search` and setting any search filters in the request body.
 
 As an example, let's create some documents in the `mycollection` collection of the `myindex` index and then search for them:
 
@@ -487,6 +487,6 @@ You should receive the following response (with your own `_id` values):
 
 ## What Now?
 
-- Read our [Elasticsearch Cookbook](/core/1/guide/elasticsearch) to learn more about how querying works in Kuzzle
-- Use [document metadata](/core/1/guide/guides/essentials/document-metadata/) to find or recover documents
-- Keep track of data changes using [Real-time Notifications](/core/1/guide/guides/essentials/real-time/)
+- Read our [Elasticsearch Cookbook](/core/1/guides/cookbooks/elasticsearch) to learn more about how querying works in Kuzzle
+- Use [document metadata](/core/1/guides/essentials/document-metadata/) to find or recover documents
+- Keep track of data changes using [Real-time Notifications](/core/1/guides/essentials/real-time/)

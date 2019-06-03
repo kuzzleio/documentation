@@ -42,7 +42,7 @@ Refer to Kuzzle's API Reference <a href="/core/1/api">here</a>
 
 ## query
 
-## `query` is a JSON object containing arguments specific to the query, such as a `body` property, a JWT hash, a document `_id`, or generic query options (such as `from` or `size` for [search queries](/core/1/api/api-reference/controller-document/search/))
+## `query` is a JSON object containing arguments specific to the query, such as a `body` property, a JWT hash, a document `_id`, or generic query options (such as `from` or `size` for [search queries](/core/1/api/controllers/document/search/))
 
 ## Options
 

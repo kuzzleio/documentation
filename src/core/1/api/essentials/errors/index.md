@@ -86,7 +86,7 @@ An `InternalError` error is thrown if Kuzzle encountered an unexpected error.
 
 **status**: 500
 
-A `PluginImplementationError` error is a generic error thrown by Kuzzle on a [plugin](/plugins/1) failure.
+A `PluginImplementationError` error is a generic error thrown by Kuzzle on a [plugin](/core/1/plugins) failure.
 
 ---
 
@@ -154,7 +154,7 @@ For instance, this error can be generated when trying to create a document on a 
 
 **status**: 413
 
-A `SizeLimitError` error is thrown by Kuzzle if the request size exceeds the limits defined in the [configuration](/core/1/guide/guides/essentials/configuration/).
+A `SizeLimitError` error is thrown by Kuzzle if the request size exceeds the limits defined in the [configuration](/core/1/guides/essentials/configuration/).
 
 ---
 

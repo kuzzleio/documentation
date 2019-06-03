@@ -11,15 +11,15 @@ One common requirement when you are managing data is to perform **data validatio
 
 A common example is **email validation**. Let's say you have developed a registration page where you request a user's name and email and you want to ensure that the email they provide is valid.
 
-With Kuzzle, instead of programming the validation logic yourself, you can pick from a set of predefined [validation patterns](/core/1/guide/datavalidation). Validations are defined in a validation schema which determines what pattern is linked to what field, every time Kuzzle receives input data, it checks this validation schema and returns an error if a validation pattern fails. The validation schema can be configured in the `validation` field of the [configuration file](/core/1/guide/guides/essentials/configuration/).
+With Kuzzle, instead of programming the validation logic yourself, you can pick from a set of predefined [validation patterns](/core/1/guides/cookbooks/datavalidation). Validations are defined in a validation schema which determines what pattern is linked to what field, every time Kuzzle receives input data, it checks this validation schema and returns an error if a validation pattern fails. The validation schema can be configured in the `validation` field of the [configuration file](/core/1/guides/essentials/configuration/).
 
-For a detailed look at data validation, please refer to our [Data Validation Reference](/core/1/guide/datavalidation).
+For a detailed look at data validation, please refer to our [Data Validation Reference](/core/1/guides/cookbooks/datavalidation).
 
 ---
 
 ## Basic Validation
 
-A validation schema is defined using a [hierarchical](/core/1/guide/datavalidation) structure that contains a set of rules within an index, collection, and document field.
+A validation schema is defined using a [hierarchical](/core/1/guides/cookbooks/datavalidation) structure that contains a set of rules within an index, collection, and document field.
 
 For example, below is a validation schema for the `onlineshop` index and `products` collection that defines the validation pattern for field `price` and field `productDescription`:
 
@@ -50,7 +50,7 @@ Let's take a look at what this validation schema does:
 - It ensures that `price` exists and is a `Number`.
 - It ensures that `productDescription` is a `String` and has a value when none is provided.
 
-For a complete list of validation patterns please refer to our [Validation Patterns Reference](/core/1/guide/datavalidation).
+For a complete list of validation patterns please refer to our [Validation Patterns Reference](/core/1/guides/cookbooks/datavalidation).
 
 ---
 
@@ -86,7 +86,7 @@ Below is an example of how the `range` type option is used to ensure that the fi
 }
 ```
 
-For more information regarding Type Options, please refer to [this](/core/1/guide/cookbooks/datavalidation//#field-typeoptions-default) section of the Data Validation Reference.
+For more information regarding Type Options, please refer to [this](/core/1/guides/cookbooks/datavalidation#field-typeoptions-default) section of the Data Validation Reference.
 
 ---
 

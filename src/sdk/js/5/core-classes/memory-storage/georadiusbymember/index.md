@@ -25,7 +25,7 @@ description: MemoryStorage:georadiusbymember
 ]
 ```
 
-Returns the members (added with [geoadd](/sdk/js/5/memory-storage/geoadd)) of a given key inside the provided geospatial radius, centered around one of a key's member.
+Returns the members (added with [geoadd](/sdk/js/5/core-classes/memory-storage/geoadd)) of a given key inside the provided geospatial radius, centered around one of a key's member.
 [[_Redis documentation_]](https://redis.io/commands/georadiusbymember)
 
 ---

@@ -34,7 +34,7 @@ The provided callback will be called everytime a [notification](/sdk/js/5/essent
 | `users`           | string      | Filter notifications fired upon a user entering the room (user: `in`), leaving the room (user: `out`), or both (user: `all`). Setting this variable to `none` prevents receiving these notifications                                                                                                                                                          | `none`  |
 
 The `options` object is directly passed to the Room constructor.
-See the [Room object](/sdk/js/5/room/) documentation for more information about these options and notifications.
+See the [Room object](/sdk/js/5/core-classes/room/) documentation for more information about these options and notifications.
 
 ---
 

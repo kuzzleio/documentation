@@ -13,7 +13,7 @@ You can specify the validation specification in the Kuzzle configuration file un
 
 Validation specifications are always attached to the collection of an index.
 
-The API offers several actions to perform on validation specifications, allowing you to read, update, delete or validate them. Please refer to the [API documentation](/core/1/api/api-reference/controller-collection/update-specifications/) for more information.
+The API offers several actions to perform on validation specifications, allowing you to read, update, delete or validate them. Please refer to the [API documentation](/core/1/api/controllers/collection/update-specifications/) for more information.
 
 A validation specification is composed of three properties:
 

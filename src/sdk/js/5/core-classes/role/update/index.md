@@ -15,11 +15,11 @@ Updates the role object in Kuzzle.
     In other words, you always need to provide the complete role definition in the <code>updateContent</code> object.
   </p>
   <p>
-    This method has the same effect as calling <a href="/sdk/js/5/role/set-content"><code>setContent</code></a> followed by the <a href="/sdk/js/5/role/save"><code>save</code></a> method.
+    This method has the same effect as calling <a href="/sdk/js/5/core-classes/role/set-content"><code>setContent</code></a> followed by the <a href="/sdk/js/5/core-classes/role/save"><code>save</code></a> method.
   </p>
 </div>
 
-To get more information about Kuzzle permissions, please refer to our [permissions guide](/core/1/guide/guides/essentials/security/#user-permissions).
+To get more information about Kuzzle permissions, please refer to our [permissions guide](/core/1/guides/essentials/security/#user-permissions).
 
 ---
 

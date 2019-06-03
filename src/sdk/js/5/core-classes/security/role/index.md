@@ -7,7 +7,7 @@ description: Security:role
 
 # role
 
-Instantiate a new [Role](/sdk/js/5/role) object.
+Instantiate a new [Role](/sdk/js/5/core-classes/role) object.
 
 ---
 
@@ -22,7 +22,7 @@ Instantiate a new [Role](/sdk/js/5/role) object.
 
 ## Return Value
 
-Returns the new [Role](/sdk/js/5/role) object.
+Returns the new [Role](/sdk/js/5/core-classes/role) object.
 
 ## Usage
 

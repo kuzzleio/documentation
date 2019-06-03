@@ -33,7 +33,7 @@ Algolia can be configured via the following environment variables
 
 VuePress generates the documentation based on how the files are organized in the filesystem. For example, the URL of each page is direclty infered by its filesystem path relative to `src/`. Also, the left sidebar generation is based on the filesystem location of the files and their [frontmatter](https://v1.vuepress.vuejs.org/guide/frontmatter.html#front-matter) contents.
 
-A page is defined by a directory (e.g. `src/core/1/api/api-reference/controller-admin/dump/`) containing an `index.md` file. This file must have a frontmatter with the following form:
+A page is defined by a directory (e.g. `src/core/1/api/controllers/admin/dump/`) containing an `index.md` file. This file must have a frontmatter with the following form:
 
 ```
 ---
@@ -53,12 +53,12 @@ nosidebar: <Boolean> (optional)
 Defines how this page behaves in the generation of the sidebar. It is also used by other components (like Algolia indexation). Can be the following values:
 
 * `root` - The page is the root of the generation of an entire sidebar (e.g. `src/code/1/api/`);
-* `branch` - The page is a branch of the sidebar and generally has no content but has children (e.g. `src/code/1/api/api-reference`, `src/code/1/api/api-reference/controller-admin/`);
+* `branch` - The page is a branch of the sidebar and generally has no content but has children (e.g. `src/code/1/api/api-reference`, `src/code/1/api/controllers/admin/`);
 * `page` - The page is a "leaf" in the sidebar tree: it has no children and has content. It is indexed to Algolia.
 
 #### `code` (required)
 
-A Boolean field defining whether the name of the page must be displayed in monospace typeface in the menu because it indicates the name of a function, a controller or a piece of code in general (e.g. `src/code/1/api/api-reference/controller-admin/`).
+A Boolean field defining whether the name of the page must be displayed in monospace typeface in the menu because it indicates the name of a function, a controller or a piece of code in general (e.g. `src/code/1/api/controllers/admin/`).
 
 #### `title` (required)
 
@@ -109,7 +109,7 @@ You can [import code snippets from file](https://v1.vuepress.vuejs.org/guide/mar
 We extended this feature by making it support relative paths. For example, if you have the following files:
 
 ```
-- /core/1/guide/guides/getting-started/first/steps/
+- /core/1/guides/getting-started/first/steps/
   |
   +- snippets/
   |  |
@@ -155,7 +155,7 @@ bash run-snippet-tests.sh -n -p src/sdk-reference/cpp/1/index
 To make a snippet testable, simply create a YML file called `<snippet-name>.test.yml` along with the snippet file, like the following:
 
 ```
-- /core/1/guide/guides/getting-started/first/steps/
+- /core/1/guides/getting-started/first/steps/
   |
   +- snippets/
   |  |
@@ -179,7 +179,7 @@ expect: document created successfully
 
 ### Snippet templates
 
-Since code snippets often lack of support and cannot be executed as-is, we use templates to recreate the context of a snippet. 
+Since code snippets often lack of support and cannot be executed as-is, we use templates to recreate the context of a snippet.
 
 Templates are located in `test/templates`.
 
@@ -226,7 +226,7 @@ Example:
 
 ```bash
 # Create the files documenting the action 'list' of the controller 'document' for the SDK JS 6
-./scaffolding/scaffold generate src/sdk-reference/js/6/collection/list
+./scaffolding/scaffold generate src/sdk-reference/js/6/controllers/collection/list
 ```
 
 ### Copy an existing action from another SDK
@@ -237,5 +237,5 @@ This command extracts information from an existing action in another SDK and gen
 Example:
 ```bash
 # Copy information from SDK JS 6 to SDK CPP 1
-./scaffolding/scaffold copy src/sdk-reference/js/6/collection/list src/sdk-reference/cpp/1/collection/list
+./scaffolding/scaffold copy src/sdk-reference/js/6/controllers/collection/list src/sdk-reference/cpp/1/collection/list
 ```

@@ -7,7 +7,7 @@ description: MemoryStorage:geodist
 
 # geodist
 
-Returns the distance between two geospatial members of a key (see [geoadd](/sdk/android/3/controllers/memory-storage/geoadd/)).  
+Returns the distance between two geospatial members of a key (see [geoadd](/sdk/android/3/core-classes/memory-storage/geoadd/)).
 The returned distance is expressed in meters by default.
 
 [[_Redis documentation_]](https://redis.io/commands/geodist)

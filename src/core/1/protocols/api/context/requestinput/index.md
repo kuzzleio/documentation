@@ -8,7 +8,7 @@ title: RequestInput
 
 Request input, normalizing a [Kuzzle API call](/core/1/api/essentials/query-syntax/#other-protocols-default) in JSON format.
 
-This is the class used to build the `input` property of any [Request](/core/1/protocols/context/request) object.
+This is the class used to build the `input` property of any [Request](/core/1/protocols/api/context/request) object.
 
 Technical information: [github repository](https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#modelsrequestinput)
 

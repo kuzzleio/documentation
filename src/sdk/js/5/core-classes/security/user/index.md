@@ -7,7 +7,7 @@ description: Security:user
 
 # user
 
-Instantiates a new [User](/sdk/js/5/user) object.
+Instantiates a new [User](/sdk/js/5/core-classes/user) object.
 
 ---
 
@@ -22,7 +22,7 @@ Instantiates a new [User](/sdk/js/5/user) object.
 
 ## Return value
 
-Returns the new [User](/sdk/js/5/user) object.
+Returns the new [User](/sdk/js/5/core-classes/user) object.
 
 ## Usage
 

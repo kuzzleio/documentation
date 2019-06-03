@@ -96,7 +96,7 @@ document created
 ```
 
 <div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click core/1/guide/guides/essentials/installing-console/">here</a> to see how you can use the
+You have now successfully stored your first document into Kuzzle. Click core/1/guides/essentials/installing-console/">here</a> to see how you can use the
   <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
 </div>
 
@@ -120,7 +120,7 @@ Run your file in Node.js
 node create.js
 ```
 
-This creates a new document in Kuzzle, triggering a [notification](/core/1/guide/guides/essentials/real-time/):
+This creates a new document in Kuzzle, triggering a [notification](/core/1/guides/essentials/real-time/):
 
 ```bash
 subscribe ok
@@ -142,5 +142,5 @@ Now that you're more familiar with Kuzzle, dive even deeper to learn how to leve
 
 - take a look at the [/sdk](SDK Reference)
 - learn how to use [/core/1/koncorde](Koncorde) to create incredibly fine-grained and blazing-fast subscriptions
-- follow our guide to learn how to implement [/core/1/guide/guides/essentials/user-authentication/#local-strategy](basic authentication)
-- follow our guide to learn how to implement [/core/1/guide/guides/essentials/security/](manage users and setup fine-grained access control)
+- follow our guide to learn how to implement [/core/1/guides/essentials/user-authentication/#local-strategy](basic authentication)
+- follow our guide to learn how to implement [/core/1/guides/essentials/security/](manage users and setup fine-grained access control)

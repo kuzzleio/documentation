@@ -7,7 +7,7 @@ description: MemoryStorage:zscan
 
 # zscan
 
-Identical to [scan](/sdk/android/3/controllers/memory-storage/scan/), except that `zscan` iterates the members held by a sorted set.
+Identical to [scan](/sdk/android/3/core-classes/memory-storage/scan/), except that `zscan` iterates the members held by a sorted set.
 
 [[_Redis documentation_]](https://redis.io/commands/zscan)
 

@@ -27,7 +27,7 @@ Updating a user will have no impact until the <a href="/sdk/php/3/core-classes/u
 
 | Arguments | Type    | Description                                          |
 | --------- | ------- | ---------------------------------------------------- |
-| `profile` | Profile | An instantiated [Profile](/sdk/php/3/profile) object |
+| `profile` | Profile | An instantiated [Profile](/sdk/php/3/core-classes/profile) object |
 
 ---
 

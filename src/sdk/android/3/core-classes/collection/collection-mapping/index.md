@@ -7,7 +7,7 @@ description: Collection:collectionMapping
 
 # collectionMapping
 
-Creates a new [CollectionMapping](/sdk/android/3/controllers/collection/-mapping/) object, using its constructor.
+Creates a new [CollectionMapping](/sdk/android/3/core-classes/collection-mapping/) object, using its constructor.
 
 ---
 
@@ -21,7 +21,7 @@ Creates a new [CollectionMapping](/sdk/android/3/controllers/collection/-mapping
 
 ## Return Value
 
-Returns the newly created [CollectionMapping](/sdk/android/3/controllers/collection/-mapping/) object.
+Returns the newly created [CollectionMapping](/sdk/android/3/core-classes/collection-mapping/) object.
 
 ## Usage
 

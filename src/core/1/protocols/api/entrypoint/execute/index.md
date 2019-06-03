@@ -24,14 +24,14 @@ execute(request, [callback]);
 
 | Arguments  | Type                                                             | Description                                                                                              |
 | ---------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`  | <pre><a href=/core/1/protocols/context/request>Request</a></pre> | The API query to execute                                                                                 |
+| `request`  | <pre><a href=/core/1/protocols/api/context/request>Request</a></pre> | The API query to execute                                                                                 |
 | `callback` | <pre>function</pre>                                              | Callback to call with the API execution result.<br/>If not provided, `execute` returns a promise instead |
 
 ---
 
 ## Return
 
-The `execute` function resolves to an updated Request object, with its [response part](/core/1/protocols/context/request) set.
+The `execute` function resolves to an updated Request object, with its [response part](/core/1/protocols/api/context/request) set.
 
 How the response is returned depends whether a callback argument is provided:
 

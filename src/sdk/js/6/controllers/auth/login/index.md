@@ -29,7 +29,7 @@ login(strategy, [credentials], [expiresIn]);
 
 ### strategy
 
-The name of the [authentication strategy](/core/1/guide/guides/kuzzle-depth/authentication/) used to log the user in.
+The name of the [authentication strategy](/core/1/guides/kuzzle-depth/authentication/) used to log the user in.
 
 Depending on the chosen authentication strategy, additional credential arguments may be required.
 The API request example in this page provides the necessary arguments for the [`local` authentication plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local).
@@ -38,7 +38,7 @@ Check the appropriate [authentication plugin](/core/1/plugins/plugins/guides/str
 
 ### expiresIn
 
- The default value for the `expiresIn` option is defined at server level, in Kuzzle's [configuration file](/core/1/guide/guides/essentials/configuration/).
+ The default value for the `expiresIn` option is defined at server level, in Kuzzle's [configuration file](/core/1/guides/essentials/configuration/).
 
 ## Resolves
 

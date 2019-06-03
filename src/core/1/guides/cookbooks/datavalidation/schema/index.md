@@ -10,7 +10,7 @@ order: 0
 
 When a collection is created, its specification is empty. As a result, any document will be valid.
 
-In order to update the specification, you can use the [updateSpecifications](/core/1/api/api-reference/controller-collection/update-specifications/) action.
+In order to update the specification, you can use the [updateSpecifications](/core/1/api/controllers/collection/update-specifications/) action.
 
 Here is an example of a full specification:
 

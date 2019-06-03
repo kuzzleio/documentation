@@ -24,7 +24,7 @@ _Offline mode_ refers to the time between a `disconnected` and a `reconnected` e
 
 ## Subscriptions
 
-A subscription opens a permanent pipe between the client and Kuzzle. Whenever a real-time message or a modified document matches a subscription filter, a notification is sent by Kuzzle to the client (for instance, see the [Collection.subscribe](/sdk/android/3/controllers/collection/subscribe/) method).
+A subscription opens a permanent pipe between the client and Kuzzle. Whenever a real-time message or a modified document matches a subscription filter, a notification is sent by Kuzzle to the client (for instance, see the [Collection.subscribe](/sdk/android/3/core-classes/collection/subscribe/) method).
 
 While in offline mode, the Kuzzle SDK client maintains all subscriptions configurations and, by default, when Kuzzle SDK client reconnects, all subscriptions are renewed. This behavior can be changed by setting the `autoResubscribe` to `false`, in which case, each subscription will have to be renewed manually using the `Room.renew` method.
 

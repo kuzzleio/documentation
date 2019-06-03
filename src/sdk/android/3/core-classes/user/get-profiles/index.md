@@ -7,7 +7,7 @@ description: User:getProfiles
 
 # getProfiles
 
-Gets the security [Profile](/sdk/android/3/controllers/profile/) instances linked to the user from Kuzzle's API.
+Gets the security [Profile](/sdk/android/3/core-classes/profile/) instances linked to the user from Kuzzle's API.
 
 ---
 
@@ -30,7 +30,7 @@ Gets the security [Profile](/sdk/android/3/controllers/profile/) instances linke
 
 ## Callback Response
 
-Returns an array of security [Profile](/sdk/android/3/controllers/profile/) objects.
+Returns an array of security [Profile](/sdk/android/3/core-classes/profile/) objects.
 
 ## Usage
 

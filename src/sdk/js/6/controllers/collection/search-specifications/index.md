@@ -63,7 +63,7 @@ const body = {
 
 ## Resolves
 
-Resolve to a [SpecificationsSearchResult](/sdk/js/6/search-result).
+Resolve to a [SpecificationsSearchResult](/sdk/js/6/core-classes/search-result).
 
 ## Usage
 
