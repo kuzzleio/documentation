@@ -7,7 +7,6 @@ const BaseRunner = require('./baseRunner'),
 async function buildWithWebpack(snippet) {
   const config = {
     entry: [
-      '/usr/local/lib/node_modules/@babel/polyfill',
       snippet.renderedSnippetPath
     ],
     output: {
@@ -26,7 +25,17 @@ async function buildWithWebpack(snippet) {
       rules: [
         {
           test: /\.js$/,
-          loader: 'babel-loader'
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', {
+                  targets: { chrome: 58 }
+                }]
+              ],
+            }
+          }
         }
       ]
     },
