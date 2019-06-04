@@ -21,7 +21,7 @@ Returns informations about the user who is currently loggedin.
 
 ## Callback Response
 
-Returns an instantiated [User](/sdk/android/3/controllers/user/) object.
+Returns an instantiated [User](/sdk/android/3/core-classes/user/) object.
 
 ## Usage
 

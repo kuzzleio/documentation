@@ -10,6 +10,6 @@ title: Dsl
 
 Instantiates a new [Koncorde](/core/1/koncorde) engine.
 
-This constructor is still present for backward compatibility only: it is now named [Koncorde](/core/1/plugins/constructors/koncorde).
+This constructor is still present for backward compatibility only: it is now named [Koncorde](/core/1/plugins/plugin-context/constructors/koncorde).
 
 ---

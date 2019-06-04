@@ -8,7 +8,7 @@ order: 0
 
 # Kuzzle
 
-Inherits from: [KuzzleEventEmitter](/sdk/js/6/kuzzle-event-emitter).
+Inherits from: [KuzzleEventEmitter](/sdk/js/6/core-classes/kuzzle-event-emitter).
 
 The Kuzzle class is the main class of the SDK.
 Once instantiated, it represents a connection to your Kuzzle server.
@@ -16,7 +16,7 @@ Once instantiated, it represents a connection to your Kuzzle server.
 It gives access to the different features of the SDKs:
 
 - access to the available controllers
-- [SDK events](/sdk/cpp/1/events) handling
+- [SDK events](/sdk/cpp/1/essentials/events) handling
 - resilience to connection loss
 - network request queue management
 
@@ -26,9 +26,9 @@ Each instance of the class communicates with the Kuzzle server through a class r
 
 The following protocols are available in the SDK JS 6:
 
-- [WebSocket](/sdk/js/6/websocket)
-- [Http](/sdk/js/6/http)
-- [SocketIO](/sdk/js/6/socketio)
+- [WebSocket](/sdk/js/6/protocols/websocket)
+- [Http](/sdk/js/6/protocols/http)
+- [SocketIO](/sdk/js/6/protocols/socketio)
 
 ## Volatile data
 

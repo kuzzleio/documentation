@@ -45,7 +45,7 @@ The mapping must have a root field `properties` that contain the mapping definit
 }
 ```
 
-More informations about database mappings [here](/core/1/guide/guides/essentials/database-mappings).
+More informations about database mappings [here](/core/1/guides/essentials/database-mappings).
 
 ### **options**
 
