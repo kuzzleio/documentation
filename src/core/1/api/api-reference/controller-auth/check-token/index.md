@@ -6,11 +6,7 @@ title: checkToken
 
 # checkToken
 
-
-
-Checks a JWT validity.
-
-This API route does not require the caller to be logged in.
+Checks the validity of an authentication token.
 
 ---
 
@@ -46,7 +42,7 @@ Body:
 
 ## Body properties
 
-- `token`: the JWT to be tested
+- `token`: the authentication token to be tested
 
 ---
 

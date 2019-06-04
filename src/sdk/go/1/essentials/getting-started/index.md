@@ -35,7 +35,7 @@ Then create a `init.go` file and start by adding the code below:
 
 <<< ./snippets/init.go
 
-This program initializes the Kuzzle server storage by creating a data index, and a data collection inside it
+This program initializes the Kuzzle server storage by creating a index, and a collection inside it
 Run the program with the following command:
 
 ```bash
@@ -51,8 +51,8 @@ You are now able to:
 - Load the `Kuzzle Go SDK` from your `GOPATH` directory
 - Instantiate a protocol (here `websocket`) and a Kuzzle SDK instance
 - Connect to a Kuzzle instance running on `localhost`, with the WebSocket protocol
-- Create a data index
-- Create a data collection within an existing index
+- Create a index
+- Create a collection within an existing index
 
 ## Create your first document
 
@@ -60,8 +60,8 @@ Now that you successfully connected to your Kuzzle server with the Go SDK, and c
 
 Here is how Kuzzle structures its storage space:
 
-- data indexes contain data collections
-- data collections contain documents
+- indexes contain collections
+- collections contain documents
   Create a `document.go` file in the playground and add this code:
 
 <<< ./snippets/document.go
