@@ -3,6 +3,7 @@ code: false
 type: page
 title: Browser (Vanilla)
 description: Getting started with Kuzzle in the browser
+order: 100
 ---
 
 # Getting Started with Kuzzle in the browser

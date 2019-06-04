@@ -3,7 +3,7 @@ code: false
 type: page
 title: Node.js
 description: Getting started with Kuzzle and Node.js
-order: 100
+order: 0
 ---
 
 # Getting Started with Kuzzle and Node.js
