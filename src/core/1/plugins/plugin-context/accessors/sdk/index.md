@@ -12,18 +12,18 @@ Accessor to the embedded SDK.
 
 The embedded SDK is a custom version of our [Javascript SDK](/sdk/js/6) that uses a custom protocol plugged directly into Kuzzle core.
 
-All the documented controllers can be used, except the `realtime` one.  
+All the documented controllers can be used, except the `realtime` one.
 Also, the low-level [query](/sdk/js/6/core-classes/kuzzle/query/) method is available for use.
 
 ### Request context
 
 By default, when using the embedded SDK, requests made to Kuzzle API don't have the same context as the original request received by the plugin.
 
-Typically, the `request.context.user` property is not set and thus [Kuzzle metadata](/core/1/guide/guides/essentials/document-metadata/) will not be set when creating or updating documents.
+Typically, the `request.context.user` property is not set and thus [Kuzzle metadata](/core/1/guides/essentials/document-metadata/) will not be set when creating or updating documents.
 
-It is possible to use the same user context as the original request with the embedded SDK, for this purpose it is necessary to use the [as()](/core/1/plugins/accessors/sdk/#as) impersonation method.
+It is possible to use the same user context as the original request with the embedded SDK, for this purpose it is necessary to use the [as()](/core/1/plugins/plugin-context/accessors/sdk/#as) impersonation method.
 
-When the complete original context is needed to execute your request, plugin developers can use the [accessors.execute](/core/1/plugins/accessors/execute) method.
+When the complete original context is needed to execute your request, plugin developers can use the [accessors.execute](/core/1/plugins/plugin-context/accessors/execute) method.
 
 ---
 
@@ -31,14 +31,14 @@ When the complete original context is needed to execute your request, plugin dev
 
 The following controllers are available in the embedded SDK:
 
-- [auth](/sdk/js/6/auth)
-- [bulk](/sdk/js/6/bulk)
-- [collection](/sdk/js/6/collection)
-- [document](/sdk/js/6/document)
-- [index](/sdk/js/6/index)
+- [auth](/sdk/js/6/controllers/auth)
+- [bulk](/sdk/js/6/controllers/bulk)
+- [collection](/sdk/js/6/controllers/collection)
+- [document](/sdk/js/6/controllers/document)
+- [index](/sdk/js/6/controllers/index)
 - [memoryStorage (ms)](/sdk/js/6/ms)
-- [security](/sdk/js/6/security)
-- [server](/sdk/js/6/server)
+- [security](/core/1/api/controllers/security)
+- [server](/sdk/js/6/controllers/server)
 
 ### Example
 
@@ -64,7 +64,7 @@ async myAwesomePipe (request) {
 
 <SinceBadge version="1.6.0" />
 
-Accessor to the [query method](/sdk/js/6/core-classes/kuzzle/query/).  
+Accessor to the [query method](/sdk/js/6/core-classes/kuzzle/query/).
 This can be useful to call plugins custom controller action.
 
 ### Example

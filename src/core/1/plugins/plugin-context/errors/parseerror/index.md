@@ -8,7 +8,7 @@ title: ParseError
 
  / <DeprecatedBadge version="1.4.1" />
 
-Parse error. Use [BadRequestError](/core/1/plugins/errors/badrequesterror) instead.
+Parse error. Use [BadRequestError](/core/1/plugins/plugin-context/errors/badrequesterror) instead.
 
 ## Status Code
 

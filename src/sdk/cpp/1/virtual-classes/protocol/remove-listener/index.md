@@ -24,7 +24,7 @@ virtual void removeListener(kuzzleio::Event event, kuzzleio::EventListener* list
 
 ### event
 
-One of the following [event](/sdk/cpp/1/events):
+One of the following [event](/sdk/cpp/1/essentials/events):
 
 ```cpp
 EVENT_CONNECTED,
