@@ -30,7 +30,7 @@ UpdateSpecifications(index string, collection string, specifications json.RawMes
 
 A JSON representation of the specifications.
 
-The JSON must follow the [Specification Structure](/core/1/guide/datavalidation):
+The JSON must follow the [Specification Structure](/core/1/guides/cookbooks/datavalidation):
 
 ```json
 {
@@ -51,7 +51,7 @@ Additional query options
 
 ## Return
 
-Return a JSON representation of the specifications.  
+Return a JSON representation of the specifications.
 Return an error with a global description of errors.
 
 ## Usage
