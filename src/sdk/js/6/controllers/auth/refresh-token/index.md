@@ -55,4 +55,4 @@ The `refreshToken` action resolves to a token object with the following properti
 
 ## Usage
 
-<<< ./snippets/refreshToken
+<<< ./snippets/refreshToken.js

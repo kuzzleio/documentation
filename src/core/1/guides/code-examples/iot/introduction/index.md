@@ -15,7 +15,7 @@ In this code example we will show you how to connect to Kuzzle using MQTT, a wid
 ## Install Kuzzle and enable the MQTT protocol
 
 First, you need to download Kuzzle.
-To do that you can follow these [intstructions](/core/1/guides/getting-started//#running-kuzzle).
+To do that you can follow these [instructions](/core/1/guides/getting-started//#running-kuzzle).
 
 In order to enable the MQTT protocol in Kuzzle, we just need to add 3 lines in the docker-compose file. Specifically, we need to open the port `1883`, which is the default for MQTT, and we need to set 2 environment variables.
 
@@ -29,14 +29,14 @@ Now, edit the `docker-compose.yml` file and make the following modifications:
 
 - In the environment section, enable the mqtt protocol and disable development mode:
 
-```
+```yaml
 - kuzzle_server__protocols__mqtt__enabled=true
 - kuzzle_server__protocols__mqtt__developmentMode=false
 ```
 
 The full code should look like this:
 
-```
+```yaml
 version: '3'
 
 services:
@@ -74,13 +74,13 @@ services:
 Now we can run the stack using the following command (from the same folder as your docker-compose.yml):
 
 ```bash
-    docker-compose up -d
+docker-compose up -d
 ```
 
 This might take a few minutes. When the dependencies finished installing, restart the Kuzzle container:
 
 ```bash
-    docker-compose restart kuzzle
+docker-compose restart kuzzle
 ```
 
 Now your MQTT protocol should be up and running!
@@ -97,4 +97,4 @@ Before we get started on the App, there are a few basics you need to know:
 
 - Firstly, a subscription is done at the collection level. This means that Kuzzle will only monitor changes to documents in the specified collection.
 
-- Secondly, we are using the MQTT Protocol as a transport layer to access the Kuzzle API. This means that the full Kuzzle API is available through this transport, but that the mechanism for handling requests and responses differs from that of the websocket transport. This is most evident for the Publish/Subscribe methods of the Kuzzle API. We need to distinguish between the subscription to the "Kuzzle/Response" MQTT topic, used only to communicate with the Kuzzle API, and a subscription to a Kuzzle Collection, used for pub/sub in the context of an application. To create a subscription to a Kuzzle Collection via the MQTT protocol, first we must publish a request to Kuzzle on the "Request" topic with action set to "subscribe", then we will receive a response on the "Kuzzle/response" MQTT topic that contains the name of the MQTT topic that we need to subscribe to. Once the response is received on the "Kuzzle/response" MQTT topic, we can then subscribe to the MQTT topic specified is response's topic field to listen for messages.
+- Secondly, we are using the MQTT Protocol as a transport layer to access the Kuzzle API. This means that the full Kuzzle API is available through this transport, but that the mechanism for handling requests and responses differs from that of the websocket transport. This is most obvious for the Publish/Subscribe methods of the Kuzzle API. We need to distinguish between the subscription to the "Kuzzle/Response" MQTT topic, used only to communicate with the Kuzzle API, and a subscription to a Kuzzle Collection, used for pub/sub in the context of an application. To create a subscription to a Kuzzle Collection via the MQTT protocol, first we must publish a request to Kuzzle on the "Request" topic with action set to "subscribe", then we will receive a response on the "Kuzzle/response" MQTT topic that contains the name of the MQTT topic that we need to subscribe to. Once the response is received on the "Kuzzle/response" MQTT topic, we can then subscribe to the MQTT topic specified is response's topic field to listen for messages.

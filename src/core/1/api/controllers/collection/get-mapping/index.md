@@ -8,7 +8,7 @@ title: getMapping
 
 Returns a collection mapping.
 
-{{{/core/1/guides/essentials/database-mappings "1.7.1"}}}
+<SinceBadge version="1.7.1" />
 
 Also returns the collection [dynamic mapping policy](/core/1/guides/essentials/database-mappings/#dynamic-mapping-policy) and [collection additional metadata](/core/1/guides/essentials/database-mappings/#collection-metadata).
 
@@ -47,7 +47,7 @@ Method: GET
 
 Returns a mapping object with the following structure:
 
-```
+```shell
 <index>
   |- mappings
     |- <collection>

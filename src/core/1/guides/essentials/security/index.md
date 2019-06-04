@@ -45,7 +45,7 @@ The `profiles` themselves are made up of different groups of permissions, these 
 
 A `profile` is linked to a set of `roles`, and each `role` defines a set of permissions. For example, in the diagram below, the _editor_ profile is has all permissions, the _contributor_ has a subset of the permissions, and the _default_ profile has only default permissions:
 
-![Users, Profiles and Roles](profiles-roles.png)
+![Users, Profiles and Roles](./profiles-roles.png)
 
 All `roles` and `profiles` can be edited in the [Kuzzle Admin Console](/core/1/guides/essentials/admin-console/).
 

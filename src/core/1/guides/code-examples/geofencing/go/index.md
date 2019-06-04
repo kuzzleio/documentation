@@ -2,6 +2,7 @@
 code: false
 type: page
 title: Go
+order: 200
 ---
 
 ## Geofencing with Go

@@ -3,7 +3,7 @@ code: false
 type: page
 title: Properties
 description: SearchResult class properties
-order: 10
+order: 100
 ---
 
 # Properties
