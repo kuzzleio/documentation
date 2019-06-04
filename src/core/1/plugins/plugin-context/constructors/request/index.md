@@ -164,3 +164,24 @@ The `options` argument accepts the following parameters:
 | `headers` | <pre>object (null)</pre>   | Network specific headers. Shortcut to the [response](https://github.com/kuzzleio/kuzzle-common-objects#requestresponse) header functions                      |
 | `raw`     | <pre>boolean (false)</pre> | If `true`, instead of a standard [kuzzle response](/core/1/api/essentials/kuzzle-response), the result is sent as is to the client, without being interpreted |
 | `status`  | <pre>integer (200)</pre>   | Request status                                                                                                                                                |
+### Example
+
+Send a PDF
+
+```js
+async sendPdf (request) {
+  const file = fs.readFileSync('./file.pdf');
+
+  request.setResult(null, {
+    raw: true,
+    headers: {
+      'Content-Length': file.length.toString(),
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': `attachment; filename="file.pdf"`,
+      'Cache-Control': 'no-cache'
+    }
+  );
+
+  return file;
+}
+```
