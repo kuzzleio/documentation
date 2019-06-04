@@ -9,7 +9,7 @@ description: Getting started with Kuzzle in the browser
 
 This tutorial explains how to use **Kuzzle** with the **Javascript SDK** in a **browser**.
 
-To follow this tutorial, you must have a Kuzzle Server up and running (you'll need to know the hostname of the machine running it). If this is not already the case, take a look at [how to run Kuzzle](/core/1/guide/guides/getting-started/running-kuzzle/).
+To follow this tutorial, you must have a Kuzzle Server up and running (you'll need to know the hostname of the machine running it). If this is not already the case, take a look at [how to run Kuzzle](/core/1/guides/getting-started/running-kuzzle/).
 
 Before proceeding, make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
 
@@ -57,7 +57,7 @@ Then, add the code below in the `body` tag.
 This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol. If an error occurs, it is displayed
 in the console. Once the connection is established, a success message is displayed in the console.
 
-<<< ./snippets/load-sdk.js
+<<< ./snippets/load-sdk.html
 
 <div class="alert alert-info">
 Replace <code>kuzzle</code> with <code>localhost</code> or the hostname where your Kuzzle server is running.
@@ -66,7 +66,7 @@ Replace <code>kuzzle</code> with <code>localhost</code> or the hostname where yo
 Now you have to add the code that will access Kuzzle to create a new index `nyc-open-data` and a new collection `yellow-taxi`
 that you will use to store data later on. Make sure the code inside your `body` tag looks like the following:
 
-<<< ./snippets/prepare-db.js
+<<< ./snippets/prepare-db.html
 
 Now, let's take a look at what your script is doing:
 
@@ -99,7 +99,7 @@ the <code>nyc-open-data</code> index as it already exists.
 Create a `create.html` file with the same structure as `index.html` (see above).
 And, right like before, add some code to the `body` tag:
 
-<<< ./snippets/create.js
+<<< ./snippets/create.html
 
 This code does the following:
 
@@ -119,7 +119,7 @@ New document successfully created!
 ```
 
 <div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guide/guides/essentials/installing-console/">here</a> to see how you can use the <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
+You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guides/essentials/admin-console/">here</a> to see how you can use the <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
 </div>
 
 <div class="alert alert-info">
@@ -132,7 +132,7 @@ Kuzzle provides pub/sub features that can be used to trigger real-time notificat
 
 Let's get started. Create a `subscribe.html` file (same structure as above) with the following code in the `body` tag:
 
-<<< ./snippets/subscribe.js
+<<< ./snippets/subscribe.html
 
 Run this code by opening the `subscribe.html` file in a new tab, leaving the previous one (showing `create.html`) open.
 The console should output the following message:
@@ -163,4 +163,4 @@ Now that you're more familiar with Kuzzle, dive even deeper to learn how to leve
 - discover what this SDK has to offer by browsing other sections of this documentation
 - learn how to use <a href="/core/1/koncorde">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
 - learn how to perform a <a href="/sdk/js/6/controllers/auth/login">basic authentication</a>
-- follow our guide to learn how to <a href="/core/1/guide/guides/essentials/security/">manage users, and how to set up fine-grained access control</a>
+- follow our guide to learn how to <a href="/core/1/guides/essentials/security/">manage users, and how to set up fine-grained access control</a>

@@ -54,7 +54,7 @@ An empty body matches all documents in the queried collection.
 
 ## Resolves
 
-Resolves to a [SearchResult](/sdk/js/6/search-result) object.
+Resolves to a [SearchResult](/sdk/js/6/core-classes/search-result) object.
 
 ## Usage
 

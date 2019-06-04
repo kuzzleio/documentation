@@ -39,7 +39,7 @@ kuzzleio::validation_response* validateSpecifications(
 
 A JSON string representing the specifications the specifications.
 
-The JSON must follow the [Specification Structure](/core/1/guide/datavalidation):
+The JSON must follow the [Specification Structure](/core/1/guides/cookbooks/datavalidation):
 
 ```json
 {

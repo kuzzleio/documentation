@@ -21,7 +21,7 @@ new context.error.PartialError(message, failures);
 | Arguments  | Type                                                               | Description                |
 | ---------- | ------------------------------------------------------------------ | -------------------------- |
 | `message`  | <pre>string</pre>                                                  | Error message              |
-| `failures` | <pre><a href=/plugins/1/errors/kuzzleerror>KuzzleError[]</a></pre> | List of encountered errors |
+| `failures` | <pre><a href=/core/1/plugins/errors/kuzzleerror>KuzzleError[]</a></pre> | List of encountered errors |
 
 ## Status Code
 

@@ -12,7 +12,7 @@ We will walk you through creating scripts that can **store** documents in Kuzzle
 
 ## Running Kuzzle
 
-Before going through this tutorial, you should have a Kuzzle server running. Please refer to the [Running Kuzzle Tutorial](https://docs.kuzzle.io/core/1/guide/guides/getting-started/running-kuzzle/) if you don't have one yet.
+Before going through this tutorial, you should have a Kuzzle server running. Please refer to the [Running Kuzzle Tutorial](https://docs.kuzzle.io/core/1/guides/getting-started/running-kuzzle/) if you don't have one yet.
 
 ## Fun with the SDK
 
@@ -173,8 +173,8 @@ New document successfully created!
 
 <div class="alert alert-success">
     You have now successfully stored your first document into Kuzzle. Click
-    <a href="/core/1/guide/guides/essentials/installing-console/">here</a> to see how you can use the
-    <strong><a href="http://console.kuzzle.io/">Kuzzle Admin Console</a></strong> to browse your collection and 
+    <a href="/core/1/guides/essentials/admin-console/">here</a> to see how you can use the
+    <strong><a href="http://console.kuzzle.io/">Kuzzle Admin Console</a></strong> to browse your collection and
     confirm that your document was saved.
 </div>
 
@@ -229,5 +229,5 @@ Now that you're more familiar with Kuzzle, dive even deeper to learn how to leve
 
 - take a look at the <a href="/sdk/js/6">SDK Reference</a>
 - learn how to use <a href="/core/1/koncorde">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
-- follow our guide to learn how to implement <a href="/core/1/guide/guides/essentials/user-authentication/#local-strategy">basic authentication</a>
-- follow our guide to learn how to implement <a href="/core/1/guide/guides/essentials/security/">manage users and setup fine-grained access control</a>
+- follow our guide to learn how to implement <a href="/core/1/guides/essentials/user-authentication/#local-strategy">basic authentication</a>
+- follow our guide to learn how to implement <a href="/core/1/guides/essentials/security/">manage users and setup fine-grained access control</a>
