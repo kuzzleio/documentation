@@ -34,7 +34,7 @@
     "read-yaml": "^1.1.0",
     "sanitize-filename": "^1.6.1",
     "sass-loader": "^7.1.0",
-    "vuepress": "1.0.0-alpha.47",
+    "vuepress": "1.0.0-beta.1",
     "vuepress-plugin-container": "^2.0.1",
     "vuepress-validate-frontmatter": "^2.0.10",
     "yaml": "^1.5.1"
