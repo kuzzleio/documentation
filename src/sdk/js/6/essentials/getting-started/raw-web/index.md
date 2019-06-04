@@ -9,7 +9,7 @@ description: Getting started with Kuzzle in the browser
 
 This tutorial explains how to use **Kuzzle** with the **Javascript SDK** in a **browser**.
 
-To follow this tutorial, you must have a Kuzzle Server up and running (you'll need to know the hostname of the machine running it). If this is not already the case, take a look at [how to run Kuzzle](/core/1/guide/guides/getting-started/running-kuzzle/).
+To follow this tutorial, you must have a Kuzzle Server up and running (you'll need to know the hostname of the machine running it). If this is not already the case, take a look at [how to run Kuzzle](/core/1/guides/getting-started/running-kuzzle/).
 
 Before proceeding, make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
 
@@ -119,7 +119,7 @@ New document successfully created!
 ```
 
 <div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guide/guides/essentials/installing-console/">here</a> to see how you can use the <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
+You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guides/essentials/admin-console/">here</a> to see how you can use the <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
 </div>
 
 <div class="alert alert-info">
@@ -163,4 +163,4 @@ Now that you're more familiar with Kuzzle, dive even deeper to learn how to leve
 - discover what this SDK has to offer by browsing other sections of this documentation
 - learn how to use <a href="/core/1/koncorde">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
 - learn how to perform a <a href="/sdk/js/6/controllers/auth/login">basic authentication</a>
-- follow our guide to learn how to <a href="/core/1/guide/guides/essentials/security/">manage users, and how to set up fine-grained access control</a>
+- follow our guide to learn how to <a href="/core/1/guides/essentials/security/">manage users, and how to set up fine-grained access control</a>

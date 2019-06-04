@@ -7,7 +7,7 @@ description: Create a new collection
 
 # create
 
-Creates a new [collection](/core/1/guide/guides/essentials/persisted/) in Kuzzle via the persistence engine, in the provided `index`.
+Creates a new [collection](/core/1/guides/essentials/persisted/) in Kuzzle via the persistence engine, in the provided `index`.
 You can also provide an optional data mapping that allow you to exploit the full capabilities of our
 persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
 
@@ -63,7 +63,7 @@ The mapping must have a root field `properties` that contain the mapping definit
 }
 ```
 
-More informations about database mappings [here](/core/1/guide/guides/essentials/database-mappings).
+More informations about database mappings [here](/core/1/guides/essentials/database-mappings).
 
 ### options
 
@@ -75,7 +75,7 @@ Additional query options
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error](/sdk/cpp/1/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error](/sdk/cpp/1/essentials/error-handling).
 
 ## Usage
 

@@ -8,7 +8,7 @@ order: 100
 
 # Events
 
-An event system allows to be notified when the SDK status changes. These events are issued by the [Kuzzle SDK object](/sdk/cpp/1/kuzzle).
+An event system allows to be notified when the SDK status changes. These events are issued by the [Kuzzle SDK object](/sdk/cpp/1/core-classes/kuzzle).
 
 Subscription to these events is possible by specifying callbacks that will be executed when a specific event is issued by the SDK instance.
 
@@ -55,7 +55,7 @@ A JSON string representing an object with the following properties:
 
 ## KUZZLE_EVENT_NETWORK_ERROR
 
-Triggered when the SDK has failed to connect to Kuzzle.  
+Triggered when the SDK has failed to connect to Kuzzle.
 This event does not trigger the offline mode.
 
 **Callback arguments**

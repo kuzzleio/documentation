@@ -39,7 +39,7 @@ std::string subscribe(
 ### listener
 
 Listener function that will be called each time a new notifications is received.
-The listener will receive a [const kuzzleio::notification_result\*](/sdk/cpp/1/realtime-notifications) as only argument.
+The listener will receive a [const kuzzleio::notification_result\*](/sdk/cpp/1/essentials/realtime-notifications) as only argument.
 
 ### options
 
@@ -58,7 +58,7 @@ The room ID.
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error](/sdk/cpp/1/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error](/sdk/cpp/1/essentials/error-handling).
 
 ## Usage
 

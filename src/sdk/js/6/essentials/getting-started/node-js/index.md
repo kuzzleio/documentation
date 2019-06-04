@@ -8,12 +8,12 @@ order: 100
 
 # Getting Started with Kuzzle and Node.js
 
-This tutorial explains you how to use **Kuzzle** with **Node.js** and the **Javascript SDK**.  
+This tutorial explains you how to use **Kuzzle** with **Node.js** and the **Javascript SDK**.
 It will walk you through creating scripts that can **store** documents in Kuzzle and subscribe to **notifications** about document creations.
 
 You are going to write an application that **stores** documents in Kuzzle Server and subscribe to **real time notifications** for each created document.
 
-To follow this tutorial, you must have a Kuzzle Server up and running. Follow these instructions if this is not already the case: [Running Kuzzle](/core/1/guide/guides/getting-started/running-kuzzle/).
+To follow this tutorial, you must have a Kuzzle Server up and running. Follow these instructions if this is not already the case: [Running Kuzzle](/core/1/guides/getting-started/running-kuzzle/).
 
 ## Explore the SDK
 
@@ -35,7 +35,7 @@ npm install kuzzle-sdk
 If you are performing a clean install you might get some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
 </div>
 
-Then, create an `init.js` file and start by adding the code below.  
+Then, create an `init.js` file and start by adding the code below.
 This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol.
 
 <<< ./snippets/load-sdk.js
@@ -105,7 +105,7 @@ node create.js
 ```
 
 <div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guide/guides/essentials/installing-console/">here</a> to see how you can use the
+You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guides/essentials/admin-console/">here</a> to see how you can use the
    <a href="http://console.kuzzle.io" target="_blank"><strong>Kuzzle Admin Console</strong></a> to browse your collection and confirm that your document was saved.
 </div>
 
@@ -135,7 +135,7 @@ Now in another terminal, launch the `create.js` file from the previous section.
 node create.js
 ```
 
-This creates a new document in Kuzzle which, in turn, triggers a [document notification](/core/1/api/essentials/notifications/#documents-changes-messages-default) sent to the `subscribe.js` program.  
+This creates a new document in Kuzzle which, in turn, triggers a [document notification](/core/1/api/essentials/notifications/#documents-changes-messages-default) sent to the `subscribe.js` program.
 Check the `subscribe.js` terminal: a new message is printed everytime a document is created using the `create.js` code.
 
 ```bash
@@ -153,4 +153,4 @@ Now that you're more familiar with Kuzzle, dive even deeper to learn how to leve
 - discover what this SDK has to offer by browsing other sections of this documentation
 - learn how to use <a href="/core/1/koncorde">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
 - learn how to perform a <a href="/sdk/js/6/controllers/auth/login">basic authentication</a>
-- follow our guide to learn how to <a href="/core/1/guide/guides/essentials/security/">manage users, and how to set up fine-grained access control</a>
+- follow our guide to learn how to <a href="/core/1/guides/essentials/security/">manage users, and how to set up fine-grained access control</a>

@@ -54,7 +54,7 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a [types.SearchResult](/sdk/go/1/search-result) struct
+Returns a [types.SearchResult](/sdk/go/1/core-structs/search-result) struct
 
 ## Usage
 

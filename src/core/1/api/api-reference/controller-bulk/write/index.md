@@ -11,9 +11,9 @@ title: write
 Create or replace a document directly into the storage engine.
 
 This is a low level route intended to bypass Kuzzle actions on document creation, notably:
-  - check [document validity](/core/1/guide/guides/essentials/data-validation),
-  - add [kuzzle metadata](/core/1/guide/guides/essentials/document-metadata),
-  - trigger [realtime notifications](/core/1/guide/guides/essentials/real-time) (unless asked otherwise).
+  - check [document validity](/core/1/guides/essentials/data-validation),
+  - add [kuzzle metadata](/core/1/guides/essentials/document-metadata),
+  - trigger [realtime notifications](/core/1/guides/essentials/real-time) (unless asked otherwise).
 
 ---
 

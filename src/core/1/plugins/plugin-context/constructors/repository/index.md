@@ -10,7 +10,7 @@ title: Repository
 
 Provides access to a collection inside the plugin's dedicated and secure storage.
 
-If this is not already the case, the collection must first be created, using the [storage](/core/1/plugins/accessors/storage) accessor.
+If this is not already the case, the collection must first be created, using the [storage](/core/1/plugins/plugin-context/accessors/storage) accessor.
 
 ---
 
@@ -346,7 +346,7 @@ search(query, [options]);
 
 | Arguments | Type              | Description                                                                                            |
 | --------- | ----------------- | ------------------------------------------------------------------------------------------------------ |
-| `query`   | <pre>object</pre> | Search query, using Elasticsearch [query format](/core/1/guide/cookbooks/elasticsearch/basic-queries/) |
+| `query`   | <pre>object</pre> | Search query, using Elasticsearch [query format](/core/1/guides/cookbooks/elasticsearch/basic-queries/) |
 | `options` | <pre>object</pre> | Optional arguments                                                                                     |
 
 #### options

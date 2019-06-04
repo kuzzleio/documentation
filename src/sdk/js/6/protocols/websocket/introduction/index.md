@@ -8,7 +8,7 @@ order: 0
 
 # WebSocket
 
-Inherits from: [KuzzleEventEmitter](/sdk/js/6/kuzzle-event-emitter)
+Inherits from: [KuzzleEventEmitter](/sdk/js/6/core-classes/kuzzle-event-emitter)
 
 The WebSocket protocol can be used by an instance of the SDK to communicate with your Kuzzle server.
 
