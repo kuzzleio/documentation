@@ -22,14 +22,14 @@ execute(request, [callback]);
 
 | Arguments  | Type                                                           | Description                                    |
 | ---------- | -------------------------------------------------------------- | ---------------------------------------------- |
-| `request`  | <a href=/plugins/1/constructors/request><pre>Request</pre></a> | The API query to execute                       |
+| `request`  | <a href=/core/1/plugins/constructors/request><pre>Request</pre></a> | The API query to execute                       |
 | `callback` | <pre>function</pre>                                            | Callback to call with the API execution result |
 
 ---
 
 ## Return
 
-The `execute` function resolves to an updated Request object, with its [response part](/core/1/plugins/constructors/request) set.
+The `execute` function resolves to an updated Request object, with its [response part](/core/1/plugins/plugin-context/constructors/request) set.
 
 How the response is returned depends whether a callback argument is provided:
 

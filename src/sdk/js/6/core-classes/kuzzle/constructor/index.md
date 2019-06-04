@@ -29,9 +29,9 @@ Kuzzle(protocol, [options]);
 The protocol used to connect to the Kuzzle instance.
 It can be one of the following available protocols:
 
-- [WebSocket](/sdk/js/6/websocket)
-- [Http](/sdk/js/6/http)
-- [SocketIO](/sdk/js/6/socketio)
+- [WebSocket](/sdk/js/6/protocols/websocket)
+- [Http](/sdk/js/6/protocols/http)
+- [SocketIO](/sdk/js/6/protocols/socketio)
 
 ### options
 

@@ -39,7 +39,7 @@ Additional query options
 
 ## Return
 
-Returns the most recent statistics snapshot as a `json.RawMessage` or a `KuzzleError`. See how to [handle error](/sdk/go/1/error-handling).
+Returns the most recent statistics snapshot as a `json.RawMessage` or a `KuzzleError`. See how to [handle error](/sdk/go/1/essentials/error-handling).
 
 ## Return
 
