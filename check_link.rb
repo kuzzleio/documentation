@@ -37,6 +37,8 @@ class LinkChecker
 
   def report_stdout
     puts "Found #{@internal.count} uniq internal dead links:\n"
+    puts @internal
+    puts
 
     puts "Found #{@external.count} uniq external dead links:\n"
   end
