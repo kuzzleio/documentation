@@ -1,11 +1,13 @@
 language: node_js
-node_js: 10
+node_js:
+  - "10"
 
 services:
   - docker
 
 env:
   global:
+    - NODE_ENV=production
     - AWS_S3_BUCKET=docs-next.kuzzle.io
     - TRAVIS_S3_BUCKET=travis-cache.kuzzle.io
     - REPORT_S3=dl.kuzzle.io
@@ -37,12 +39,18 @@ stages:
 jobs:
   include:
 
+    # -------------------------------------------------------------------------
+    # Build
+    # -------------------------------------------------------------------------
     - stage: Build
       name: Build
 
+      before_script:
+        - mkdir -p /tmp/vue/cache /tmp/vue/tmp
+
       script:
         - npm install
-        - npm run build
+        - node --max-old-space-size=7168 ./node_modules/.bin/vuepress build src -c /tmp/vue/cache -t /tmp/vue/tmp
 
 
     # -------------------------------------------------------------------------
@@ -50,10 +58,6 @@ jobs:
     # -------------------------------------------------------------------------
     - stage: Tests
       name: Kuzzle SDK JS - v5
-
-      language: node_js
-      node_js:
-        - '8'
 
       before_install:
         - docker pull kuzzleio/documentation:js
@@ -76,10 +80,6 @@ jobs:
     - stage: Tests
       name: Kuzzle SDK JS - v6
 
-      language: node_js
-      node_js:
-        - '8'
-
       before_install:
         - docker pull kuzzleio/documentation:js
         - sysctl -w vm.max_map_count=262144
@@ -100,10 +100,6 @@ jobs:
 
     - stage: Tests
       name: Kuzzle SDK Go - v1
-
-      language: node_js
-      node_js:
-        - '8'
 
       before_install:
         - docker pull kuzzleio/documentation:go
@@ -126,10 +122,6 @@ jobs:
     - stage: Tests
       name: Kuzzle SDK Java - v1
 
-      language: node_js
-      node_js:
-        - '8'
-
       before_install:
         - docker pull kuzzleio/documentation:java
         - sysctl -w vm.max_map_count=262144
@@ -151,10 +143,6 @@ jobs:
     - stage: Tests
       name: Kuzzle SDK C++ - v1
 
-      language: node_js
-      node_js:
-        - '8'
-
       before_install:
         - docker pull kuzzleio/documentation:cpp
         - sysctl -w vm.max_map_count=262144
@@ -175,10 +163,6 @@ jobs:
 
     - stage: Tests
       name: Kuzzle SDK C# - v1
-
-      language: node_js
-      node_js:
-        - '8'
 
       before_install:
         - docker pull kuzzleio/documentation:csharp
@@ -203,13 +187,12 @@ jobs:
     - stage: Deployment
       name: Deploy to docs.kuzzle.io
 
-      language: node_js
-      node_js:
-        - '8'
+      before_script:
+        - mkdir -p /tmp/vue/cache /tmp/vue/tmp
 
       script:
         - npm install
-        - npm run build
+        - node -max-old-space-size=7168 ./node_modules/.bin/vuepress build src -c /tmp/vue/cache -t /tmp/vue/tmp
 
       deploy:
         provider: script
