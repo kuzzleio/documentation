@@ -8,7 +8,7 @@ order: 100
 
 # Notifications
 
-The [Realtime.subscribe](/sdk/java/1/controllers/realtime/subscribe/) method takes a `io.kuzzle.sdk.NotificationListener` event listener (implements the `EventListener` interface).  
+The [Realtime.subscribe](/sdk/java/1/controllers/realtime/subscribe/) method takes a `io.kuzzle.sdk.NotificationListener` event listener (implements the `EventListener` interface).
 That listener is fed with a `io.kuzzle.sdk.NotificationResult` object, whose content depends on the type of notification.
 
 Properties can be accessed with usual getters and setters.
@@ -40,7 +40,7 @@ The `io.kuzzle.sdk.NotificationContent` object has the following properties for 
 
 ## User
 
-These `io.kuzzle.sdk.NotificationResult` represent [user events](/core/1/api/essentials/notifications#user-events-default).
+These `io.kuzzle.sdk.NotificationResult` represent [user events](/core/1/api/essentials/notifications#user-notification-default).
 
 | Property     | Type                              | Description                                                                                           |
 | ------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------- |

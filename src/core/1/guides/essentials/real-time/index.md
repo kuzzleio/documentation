@@ -1,152 +1,493 @@
 ---
 code: false
 type: page
-title: Real-time Notifications
+title: Real-time Engine
 order: 600
 ---
 
-# Real-time Notifications
+# Real-time Engine
 
-Kuzzle features highly customizable notifications thanks to its **real-time engine** which lets you configure live subscriptions to any dataset. These live subscriptions are a great way to **track** changes in specific subsets of data.
+Kuzzle includes his own real-time engine for sending notifications to clients connected through the API.
 
----
+Real-time capabilities requires the use of a persistent communication protocol such as WebSocket or MQTT.
 
-## Introduction
+Kuzzle offers 2 different ways of doing real-time:
+ - volatile Pub/Sub system
+ - real-time database notifications
 
-Imagine you are developing a collaborative TO-DO application like [this](https://github.com/kuzzleio/demo/tree/master/todolist) one. All the TO-DO items are persisted in Kuzzle (in a collection called `todos`) so, once clients start, they fetch every available TO-DO items via a simple document search.
+ ::: info
+You can bypass notifications from being triggered by using actions from the [bulk controller](/core/1/api/controllers/bulk).
+:::
 
-But imagine that one of the users (let's call her Ann), adds a new TO-DO item. In order for other users (let's call them Tom and Matt) to display these new item, they need to perform a new document search on the corresponding collection. They will not see the new items until they refresh (or restart) their application.
 
-This cannot be called a "modern" application: it rather looks like an old-school, refresh-ish, one. Like the early '90s. Today, such a user-experience wouldn't be satisfying at all.
+### wscat
 
-A more interesting user-experience would be that clients display the new TO-DO item _as soon as it is created_. How can we achieve that?
+This guide provides examples that use the Kuzzle API directly through a command line WebSocket client: [wscat](https://github.com/websockets/wscat).
 
-- By implementing a long-polling mechanism in the clients. Every, say, one second, the clients perform a document search and update their list of TO-DO items. Doesn't look like a great idea (performances would be rather bad, for example)
-- By providing notifications to subscribed clients, allowing them to receive these new items automatically, as soon as they are saved in the system
+To install it you can type the following command: `npm install -g wscat`.
 
-The second solution is exactly what we are looking for and Kuzzle ships it natively. We can call it **pub/sub**, **notifications** or **live subscriptions** and it is often used to solve use-cases like this one, where things need to be kept _in sync_ between clients and the back-end server.
+The sample requests are to be sent directly to wscat after connecting to your Kuzzle server with the command `wscat --connect localhost:7512`.
 
-Getting back to our example, our collaborative TO-DO list clients only need to subscribe to the TO-DO collection (right after the first document search), in order to be notified _in real-time_ about new TO-DO items. This way, once Ann creates her new item, Tom and Matt can see it immediately on their screen.
+It is of course possible to send the payloads provided with a different WebSocket client than wscat.
 
----
+## Pub/Sub
 
-## Concepts
+Kuzzle's real-time engine allows you to do Pub/Sub in dedicated communication channels called rooms.
 
-Real-time notifications are triggered by the [pub/sub mechanism](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) embedded in Kuzzle and follow the [Observer/Observable pattern](https://en.wikipedia.org/wiki/Observer_pattern), in which Kuzzle is the Observable and the client is the Observer.
+The process is as follows:
+ - a customer subscribes to a particular room,
+ - a second customer posts a message in this room,
+ - the customer subscribing to the room receives a notification.
 
-They are is possible only when the communication happens in a **persistent-connection**-oriented protocol (like Websockets or MQTT) and therefore not with HTTP.
+![kuzzle-pub-sub](./pub-sub.png)
 
-Clients can subscribe to many types of notifications. Below are some examples:
+Subscription to a room is done via the [realtime:subscribe](/core/1/api/controllers/realtime/subscribe) method. It takes 3 parameters, used to describe a specific room:
+ - name of an index,
+ - name of a collection,
+ - subscription filters contained in the `body` of the request.
 
-1. **new documents** being created in a given collection (e.g. Ann creates a new TO-DO item);
-2. **documents being deleted** from a given collection (e.g. Tom deletes a TO-DO item);
-3. **changes happening** on any document within a collection (e.g. Matt checks an item as "done");
-4. **changes happening on a given set of documents** (e.g. clients must play a sound every time an item containing the word "URGENT" is created).
+::: info
+In order to use Kuzzle in Pub/Sub mode only, the index and collection do not need to physically exist in the database (e.g. created in Kuzzle via the <a href="/core/1/api/controllers/index/create">index:create</a> and <a href="/core/1/api/controllers/collection/create">collection:create</a> methods of the API).
+<br/>
+These information are only used to define an ephemeral room between several customers.
+:::
 
-The scope of possibilities is huge. Take a look at the [Notifications section](/core/1/api/essentials/notifications) in the API Reference for more details.
+```json
+ {
+   "controller": "realtime",
+   "action": "subscribe",
+   "index": "nyc-open-data",
+   "collection": "yellow-taxi",
+   "body": {
+     // subscription filters
+   }
+ }
+```
 
----
+Payload to send with wscat:
+```json
+{"controller":"realtime","action":"subscribe","index":"nyc-open-data","collection":"yellow-taxi","body":{}}
+```
 
-## Examples
+Then clients wishing to post messages in this room must use the [realtime:publish](/core/1/api/controllers/realtime/publish) method by specifying the same parameters:
 
-But, how does this work in Kuzzle? **How do we select the data that we want to subscribe to?**
+```json
+ {
+   "controller": "realtime",
+   "action": "publish",
+   "index": "nyc-open-data",
+   "collection": "yellow-taxi",
+   "body": {
+     "name": "Manwë",
+     "licence": "B",
+     "car": "berline",
+     "position": {
+        "lat": 43.6073913,
+        "lon": 3.9109057
+     }
+   }
+ }
+```
 
-Let's dive into the implementation of the Collaborative TO-DO list application.
+Payload to send with wscat in another terminal:
+```json
+{"controller":"realtime","action":"publish","index":"nyc-open-data","collection":"yellow-taxi","body":{"name":"Manwë","licence":"B","car":"berline","position":{"lat":43.6073913,"lon":3.9109057}}}
+```
 
-<div class="alert alert-info">
-All the following examples are written in Javascript, therefore using the Javascript Kuzzle SDK. If this is not your usual development language, take a look at the different flavors of the `subscribe` method in the [/sdk/js/5/core-classes/collection/subscribe](SDK Reference)).
-</div>
+Customers subscribing to this channel will receive the following notification:
 
----
+<details><summary>Click to expand</summary>
+<pre>
+{
+  "status": 200,
+  "requestId": "644bc890-9c14-4a8f-afcc-afef444fd6f7",
+  "timestamp": 1558690506519,
+  "volatile": null,
+  "index": "nyc-open-data",
+  "collection": "yellow-taxi",
+  "controller": "realtime",  // Controller who trigger the notification
+  "action": "publish",       // Action who trigger the notification
+  "protocol": "websocket",
+  "scope": "in",
+  "result": {
+    "_source": {
+      // Content of the published document
+      "name": "Manwë",
+      "licence": "B",
+      "car": "berline",
+      "position": {
+        "lat": 43.6073913,
+        "lon": 3.9109057
+      },
+      "_kuzzle_info": {
+        "author": "-1",
+        "createdAt": 1558690506527
+      }
+    },
+    "_id": null
+  },
+  "type": "document", // Notification is of type document
+  "room": "54ffaa49fe470879bed9b0697468bb21-89c22fbf000567a2ed2e7886ed0c51e3"
+}
+</pre>
+</details>
 
-### The basic subscription
+More information about the [Document Notification format](/core/1/api/essentials/notifications/#documents-changes-messages)
 
-Once our client has started and initialized with the set of TO-DO items it fetched from the persistence layer, we want it to subscribe to the changes happening on them.
+::: warning
+Messages published with the <a href="/core/1/api/controllers/realtime/publish">realtime:publish</a> method are not persisted in the database.
+:::
 
-<<< ./snippets/subscribe-no-filter.js
+## Database notifications
 
-This code isn't very useful at the moment, but it shows the capability to react to a notification coming from the server.
+Kuzzle's real-time engine allows you to subscribe to notifications corresponding to changes in the database.
 
-Here, we call the `subscribe` method:
+Subscription to a database changes is done via the [realtime:subscribe](/core/1/api/controllers/realtime/subscribe) method, taking 3 parameters:
+ - name of the index,
+ - name of the collection you want to watch,
+ - subscription filters contained in the `body` of the request.
 
-- The first argument is the index.
-- The second argument is the collection we want to subscribe to.
-- The third argument represents the _filters_, and in this case there's none, which means that we are subscribing to _all documents changes_ in the collection. Filters enable more fine-grained selection on the data we want to subscribe to and are described in the next example.
-- The fourth argument is the _callback_, i.e. a function that is called _every time a notification is received_.
+::: info
+The specified index and collection must exist in the database to receive database notifications.
+:::
 
-Now, imagine this code is executed on Tom's client: when Ann creates the new TO-DO item, Tom receives a notification looking like the following:
+When changes occur on this collection (eg: document creation, modification or deletion), Kuzzle will send notifications to the corresponding subscribers.
+
+```json
+ {
+   "controller": "realtime",
+   "action": "subscribe",
+   "index": "nyc-open-data",
+   "collection": "yellow-taxi",
+   "body": {
+     // subscription filters
+   }
+ }
+```
+
+Payload to send with wscat:
+```json
+{"controller":"realtime","action":"subscribe","index":"nyc-open-data","collection":"yellow-taxi","body":{}}
+```
+
+For example, creating a document with the [document:create](/core/1/api/controllers/document/create) method corresponds to a change in the database, so customers subscribing to notifications in this collection will be notified.
 
 ```json
 {
-  "status": 200,
-  "type": "document",
-  "index": "todo-list",
-  "collection": "todos",
   "controller": "document",
   "action": "create",
-  "state": "done",
-  "scope": "in",
-  "volatile": {},
-  "requestId": "<request unique identifier>",
-  "result": {
-    "_id": "<document unique identifier>",
-    "_source": {
-      "label": "The new item Ann just created!",
-      "checked": "false"
-    },
-    "_meta": {
-      "author": "ann",
-      "createdAt": 1497866996975,
-      "updatedAt": null,
-      "updater": null,
-      "active": true,
-      "deletedAt": null
-    }
+  "index": "nyc-open-data",
+  "collection": "yellow-taxi",
+  "body": {
+    "name": "Morgoth",
+    "car": "limousine",
+    "licence": "B"
   }
 }
 ```
 
-The Notification bears some useful information about what just happened:
+<details><summary>Payload to send with wscat in another terminal</summary>
+<pre>
+{"controller":"document","action":"create","index":"nyc-open-data","collection":"yellow-taxi","body":{"name":"Morgoth","licence":"B","car":"limousine"}}
+</pre>
+</details>
 
-- the `controller` and `action` attributes show _what_ has happened;
-- the `index` and `collection` attributes show _where_ it happened;
-- the `result` shows _the consequence_ of what just happened (in this case, the newly created document).
+Customers subscribing to the changes in this collection will receive the following notification:
 
-We won't analyze the other attributes for the moment. Take a look at the [Notifications section of the API Reference](/core/1/api/essentials/notifications) for a comprehensive list of available notification properties.
+<details><summary>Click to expand</summary>
+<pre>
+{
+  "status": 200,
+  "requestId": "556e8499-8edc-488c-ab7c-2f6aa9d12acd",
+  "timestamp": 1558781280054,
+  "volatile": null,
+  "index": "nyc-open-data",
+  "collection": "yellow-taxi",
+  "controller": "document",  // Controller who trigger the notification
+  "action": "create",        // Action who trigger the notification
+  "protocol": "websocket",
+  "scope": "in",
+  "result": {
+    "_source": {
+      // Content of the created document
+      "name": "Morgoth",
+      "licence": "B",
+      "car": "limousine",
+      "_kuzzle_info": {
+        "author": "-1",
+        "createdAt": 1558781280058,
+        "updatedAt": null,
+        "updater": null,
+        "active": true,
+        "deletedAt": null
+      }
+    },
+    "_id": "AWrumr8-njeq4FJZaOmC"
+  },
+  "type": "document",  // Notification is of type document
+  "room": "54ffaa49fe470879bed9b0697468bb21-89c22fbf000567a2ed2e7886ed0c51e3"
+}
+```
+</pre>
+</details>
 
-This subscription is very handy and will notify Tom about the events 1, 2 and 3 of the list above (the `controller`, `action` and `result` will vary depending on the case). But what about the event number 4? How does Tom subscribe to items that only contain the word `URGENT` in their `label` field? Looks like a job for [Koncorde](/core/1/koncorde/).
+More information about the [Document Notification format](/core/1/api/essentials/notifications/#documents-changes-messages)
 
----
+## Subscription filters
 
-### Subscription with filters
+When a customer subscribes to real-time notifications, whether in Pub/Sub or Database Notification, he can specify a set of subscription filters.
+These filters allow the customer to tell Kuzzle exactly which documents they are interested in and only receive notifications about them.
 
-Kuzzle ships with a powerful filtering tool named [Koncorde](/core/1/koncorde/). It enables you to perform fine-grained selections on the documents you want to subscribe to.
+::: info
+These filters are specified only on the client side and do not require server-side implementation.
+They are sent in the body of the request [realtime:subscribe](/core/1/api/controllers/realtime/subscribe)
+:::
 
-In our case, we want to select all the documents that contain the `URGENT` word in the `label` field. The best pick for this case is the [regexp](/core/1/koncorde/essentials/terms/#regexp-default) filter.
+A filter is composed of [term](/core/1/koncorde/essentials/terms) that can be composed with [operands](/core/1/koncorde/essentials/operands).
 
-<<< ./snippets/subscribe-filter.js
+For example if I want to receive only drivers with the `B` license:
+```json
+{
+  "controller": "realtime",
+  "action": "subscribe",
+  "index": "nyc-open-data",
+  "collection": "yellow-taxi",
+  "body": {
+    "equals": { "licence": "B" }
+  }
+}
+```
 
-This way, Tom will be notified about urgent TO-DO items. Take a look at the [Koncorde Reference](/core/1/koncorde/) for a comprehensive list of available filters.
+It is also possible to combine [terms](/core/1/koncorde/essentials/terms) between them with [operands](/core/1/koncorde/essentials/operands) to refine my filter:
 
-There are a few things that deserve to be noticed here:
+```json
+{
+  "controller": "realtime",
+  "action": "subscribe",
+  "index": "nyc-open-data",
+  "collection": "yellow-taxi",
+  "body": {
+    "and": [
+      { "equals": { "licence": "B" } },
+      { "equals": { "car": "berline" } }
+    ]
+  }
+}
+```
 
-- Tom will be notified either if somebody creates, updates or deletes a document containing the word `URGENT`;
-- Tom will be notified even if he performs the actions himself (e.g. he is notified right after having created a new TO-DO item).
+Each subscription filter defines a scope. All documents in the collection can be either inside or outside this scope.
 
-The last point may seem a little bit inconvenient. What if Tom does not want to receive notifications when the event come from his own actions? Keep reading, the solution is right below.
+Once a customer has subscribed to notifications with filters, they will receive notifications each time a document enters or exits the scope defined by the filters.
 
----
+![subscription-filter-scope](./subscription-filter-scope.png)
 
-### Subscription with options
+This information is contained in the `scope` field of the notifications:
 
-The `subscribe` method can be called with an extra argument, which is an object containing a set of options to be passed to the subscription Room.
+<details><summary>Click to expand</summary>
+<pre>
+{
+  "status": 200,
+  "requestId": "556e8499-8edc-488c-ab7c-2f6aa9d12acd",
+  "timestamp": 1558781280054,
+  "volatile": null,
+  "index": "nyc-open-data",
+  "collection": "yellow-taxi",
+  "controller": "document",
+  "action": "create",
+  "protocol": "websocket",
+  "scope": "in",           // Notification about a document entering the scope
+  "result": {
+    "_source": {
+      "name": "Manwë",
+      "licence": "B",
+      "car": "berline",
+      "_kuzzle_info": {
+        "author": "-1",
+        "createdAt": 1558781280058,
+        "updatedAt": null,
+        "updater": null,
+        "active": true,
+        "deletedAt": null
+      }
+    },
+    "_id": "AWrumr8-njeq4FJZaOmC"
+  },
+  "type": "document",
+  "room": "54ffaa49fe470879bed9b0697468bb21-89c22fbf000567a2ed2e7886ed0c51e3"
+}
+</pre>
+</details>
 
-We just introduced a new concept here, the Room. A Room is a class representing a single subscription and its constructor is called internally by the `subscribe` method.
-This object supports a wide range of options that can be passed directly to its [constructor](/sdk/js/5/core-classes/room/), allowing to configure the kind of notifications we want to receive.
+## Subscription options
 
-For now, let's concentrate on the question asked at the end of the previous chapter: how do we filter the notifications resulting of our own actions?
-The option we are looking for is `subscribeToSelf`, which is set to `true` by default.
+In addition to filters, it is possible to specify options to the [realtime:subscribe](/core/1/api/controllers/realtime/subscribe) method to refine the notifications received or add context information to the notifications that will be sent.
 
-<<< ./snippets/subscribe-options.js
+### scope
 
-In the code right above, we added the extra "options" object as the fifth argument to avoid subscribing Tom to his own events.
+The [scope](/core/1/api/controllers/realtime/subscribe/#arguments) option allows you to specify whether you want to receive notifications regarding documents entering or leaving the scope only.
+
+This parameter can take 3 values:
+ - `in`: receive only notifications about documents entering the scope
+ - `out`: receive only notifications about documents exiting the scope
+ - `all`: (default) receive everything
+
+For example, to be informed of taxis arriving at central park:
+```json
+{
+  "controller": "realtime",
+  "action": "subscribe",
+  "index": "nyc-open-data",
+  "collection": "yellow-taxi",
+  "body": {
+    "geoBoundingBox": {
+      "position": {
+        "topLeft": { "lat": 40.759507, "lon": -73.985384 },
+        "bottomRight": { "lat": 40.758372, "lon": -73.984591 }
+      }
+    }
+  },
+  "scope": "in" // Only documents entering the scope
+}
+```
+
+### users
+
+The [users](/core/1/api/controllers/realtime/subscribe/#arguments) option allows you to receive additional notifications when another client joins or leaves the same room.
+
+This parameter can take 4 values:
+ - `in`: only receive notifications when a customer joins the room
+ - `out`: only receive notifications when a customer leaves the room
+ - `all`: receive everything
+ - `none`: (default) receive nothing
+
+```json
+ {
+   "controller": "realtime",
+   "action": "subscribe",
+   "index": "nyc-open-data",
+   "collection": "yellow-taxi",
+   "body": {
+   },
+   "user": "all" // Receive notification when a user enters or exits the room
+ }
+```
+
+Payload to send with wscat:
+```json
+{"controller":"realtime","action":"subscribe","index":"nyc-open-data","collection":"yellow-taxi","body":{},"users":"all"}
+```
+
+If a second customer subscribes to the same notifications, then the customer will receive the following notification:
+
+<details><summary>Click to expand</summary>
+<pre>
+{
+  "status": 200,
+  "timestamp": 1558792881867,
+  "volatile": null,
+  "index": "nyc-open-data",
+  "collection": "yellow-taxi",
+  "controller": "realtime",
+  "action": "subscribe",
+  "protocol": "websocket",
+  "user": "in",   // User entering the room
+  "result": {
+    "count": 2    // Users subscribed to the room
+  },
+  "type": "user", // Notification about a user
+  "room": "54ffaa49fe470879bed9b0697468bb21-24f5ac19056dbab464867c9515f8dbc5"
+}
+</pre>
+</details>
+
+More information about the [User Notification format](/core/1/api/essentials/notifications/#user-notification)
+
+### volatile data
+
+[Volatile data](/core/1/api/essentials/volatile-data/) are metadata that can be added to each request made to the Kuzzle API.
+
+When a request containing volatile data triggers a real-time notification, these volatile data are included in the notification that will be sent to the subscribing customers.
+
+For example, if a customer subscribes to the following notifications:
+
+```json
+ {
+   "controller": "realtime",
+   "action": "subscribe",
+   "index": "nyc-open-data",
+   "collection": "yellow-taxi",
+   "body": {
+     // subscription filters
+   }
+ }
+```
+
+Payload to send with wscat:
+```json
+{"controller":"realtime","action":"subscribe","index":"nyc-open-data","collection":"yellow-taxi","body":{}}
+```
+
+If another client publishes a message in the room specifying volatile data:
+
+```json
+ {
+   "controller": "realtime",
+   "action": "publish",
+   "index": "nyc-open-data",
+   "collection": "yellow-taxi",
+   "body": {
+     "name": "Ulmo",
+     "licence": "B"
+   },
+   "volatile": {
+     "senderName": "Eru Ilúvatar"
+   }
+ }
+```
+
+Payload to send with wscat in another terminal:
+```json
+{"controller":"realtime","action":"publish","index":"nyc-open-data","collection":"yellow-taxi","body":{"name":"Manwë","licence":"B","car":"berline","position":{"lat":43.6073913,"lon":3.9109057}},"volatile":{"senderName":"Eru Ilúvatar"}}
+```
+
+Each customer who subscribes to the room will receive the following notification:
+
+<details><summary>Click to expand</summary>
+<pre>
+{
+  "status": 200,
+  "requestId": "644bc890-9c14-4a8f-afcc-afef444fd6f7",
+  "timestamp": 1558690506519,
+  "volatile": {
+     "senderName": "Eru Ilúvatar" // Volatile data included in the notification
+   },
+  "index": "nyc-open-data",
+  "collection": "yellow-taxi",
+  "controller": "realtime",
+  "action": "publish",
+  "protocol": "websocket",
+  "scope": "in",
+  "result": {
+    "_source": {
+      "name": "Ulmo",
+      "licence": "B",
+      "_kuzzle_info": {
+        "author": "-1",
+        "createdAt": 1558690506527
+      }
+    },
+    "_id": null
+  },
+  "type": "document",
+  "room": "54ffaa49fe470879bed9b0697468bb21-89c22fbf000567a2ed2e7886ed0c51e3"
+}
+</pre>
+</details>
+
+## Where do we go from here?
+
+Now that you're more familiar with Kuzzle, dive even deeper to learn how to leverage its full capabilities:
+
+- take a look at the available [SDKs](/sdk)
+- learn how to use [Koncorde](/core/1/koncorde/essentials/introduction/) to create fine-grained subscription filters
+- follow our guide to learn how to [manage users and setup fine-grained access control](/core/1/guides/essentials/security/)

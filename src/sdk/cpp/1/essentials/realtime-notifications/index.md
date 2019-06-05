@@ -8,7 +8,7 @@ order: 100
 
 # Notifications
 
-The [realtime:subscribe](/sdk/cpp/1/controllers/realtime/) method takes a listener of type `kuzzleio::NotificationListener`.  
+The [realtime:subscribe](/sdk/cpp/1/controllers/realtime/) method takes a listener of type `kuzzleio::NotificationListener`.
 That listener is called with a `const kuzzleio::notification_result*` argument, pointing to an object whose content depends on the type of notification received.
 
 ## Document & messages
@@ -38,7 +38,7 @@ The `kuzzleio::notification_content` struct has the following properties for doc
 
 ## User
 
-These `kuzzleio::notification_result` represent [user events](/core/1/api/essentials/notifications#user-events-default).
+These `kuzzleio::notification_result` represent [user events](/core/1/api/essentials/notifications#user-notification-default).
 
 | Property     | Type                                        | Description                                                                                           |
 | ------------ | ------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
