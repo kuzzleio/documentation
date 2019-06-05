@@ -20,7 +20,7 @@ For more information about this object, refer to its [technical documentation](h
 
 Network protocol specific headers can be added to the response. If the protocol supports it, these headers are forwarded in the response sent to the client.
 
-As Kuzzle supports the HTTP protocol natively, the Request object handles HTTP headers special cases.  
+As Kuzzle supports the HTTP protocol natively, the Request object handles HTTP headers special cases.
 Other network protocols headers are stored in raw format, and protocols have to handle
 their own specific headers manually.
 
@@ -58,7 +58,7 @@ The `options` argument accepts the following parameters:
 | -------------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `connection`   | <pre>object</pre>                                           | <SinceBadge version="1.4.1" /> Connection information (see the <a href=https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#requestcontextconnection-object-format>connection</a> object documentation) |
 | `connectionId` | <pre>string</pre>                                           | <DeprecatedBadge version="1.4.1" /> Connection unique identifier                                                                                                                                                           |
-| `error`        | <pre><a href=/plugins/1/errors>KuzzleError</a>, Error</pre> | Sets the request response with the provided error                                                                                                                                                                          |
+| `error`        | <pre><a href=/core/1/plugins/errors>KuzzleError</a>, Error</pre> | Sets the request response with the provided error                                                                                                                                                                          |
 | `requestId`    | <pre>string</pre>                                           | User-defined request identifier                                                                                                                                                                                            |
 | `result`       | <pre>\*</pre>                                               | Sets the request response with the provided result, and the request status is set to `200`                                                                                                                                 |
 | `status`       | <pre>integer</pre>                                          | Request status, following the [HTTP error code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) standard                                                                                                          |
@@ -72,7 +72,7 @@ Read-only:
 | Property    | Type                                                                                                                               | Description                                                           |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | `context`   | <pre><a href=https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#modelsrequestcontext>RequestContext</a></pre> | General request information (logged user, network information, ...)   |
-| `error`     | <pre><a href=/plugins/1/errors>KuzzleError</a></pre>                                                                               | Request error                                                         |
+| `error`     | <pre><a href=/core/1/plugins/errors>KuzzleError</a></pre>                                                                               | Request error                                                         |
 | `input`     | <pre><a href=https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#modelsrequestinput>RequestInput</a></pre>     | Input request representation                                          |
 | `response`  | <pre><a href=https://github.com/kuzzleio/kuzzle-common-objects#requestresponse>RequestResponse</a></pre>                           | Serialized [request response](/core/1/api/essentials/kuzzle-response) |
 | `result`    | <pre>\*</pre>                                                                                                                      | Request result                                                        |
@@ -128,11 +128,11 @@ setError(error);
 
 | Arguments | Type                                                 | Description   |
 | --------- | ---------------------------------------------------- | ------------- |
-| `error`   | <pre><a href=/plugins/1/errors>KuzzleError</a></pre> | Request error |
+| `error`   | <pre><a href=/core/1/plugins/errors>KuzzleError</a></pre> | Request error |
 
 If a `KuzzleError` object is provided, the request's status attribute is set to the error one.
 
-Otherwise, the provided error is embedded into a [InternalError](/core/1/plugins/errors/internalerror) object, and the request status is set to 500.
+Otherwise, the provided error is embedded into a [InternalError](/core/1/plugins/plugin-context/errors/internalerror) object, and the request status is set to 500.
 
 ---
 
@@ -164,3 +164,24 @@ The `options` argument accepts the following parameters:
 | `headers` | <pre>object (null)</pre>   | Network specific headers. Shortcut to the [response](https://github.com/kuzzleio/kuzzle-common-objects#requestresponse) header functions                      |
 | `raw`     | <pre>boolean (false)</pre> | If `true`, instead of a standard [kuzzle response](/core/1/api/essentials/kuzzle-response), the result is sent as is to the client, without being interpreted |
 | `status`  | <pre>integer (200)</pre>   | Request status                                                                                                                                                |
+### Example
+
+Send a PDF
+
+```js
+async sendPdf (request) {
+  const file = fs.readFileSync('./file.pdf');
+
+  request.setResult(null, {
+    raw: true,
+    headers: {
+      'Content-Length': file.length.toString(),
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': `attachment; filename="file.pdf"`,
+      'Cache-Control': 'no-cache'
+    }
+  );
+
+  return file;
+}
+```

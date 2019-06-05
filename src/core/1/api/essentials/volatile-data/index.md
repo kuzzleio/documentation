@@ -26,7 +26,7 @@ Lastly, if a query triggers [document notifications](/core/1/api/essentials/noti
 
 ### Example:
 
-The following [document:update](/core/1/api/api-reference/controller-document/update/) query:
+The following [document:update](/core/1/api/controllers/document/update/) query:
 
 ```javascript
 {

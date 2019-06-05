@@ -7,7 +7,7 @@ description: Deletes an index
 
 # delete\_
 
-Deletes an entire data index from Kuzzle.
+Deletes an entire index from Kuzzle.
 
 ## Signature
 
@@ -34,7 +34,7 @@ Additional query options
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error](/sdk/cpp/1/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error](/sdk/cpp/1/essentials/error-handling).
 
 ## Usage
 
