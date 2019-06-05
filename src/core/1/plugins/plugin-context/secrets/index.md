@@ -6,6 +6,8 @@ title: secrets
 
 # secrets
 
+<SinceBadge version="1.8.0" />
+
 Secrets contained in the [Vault](/core/1/guides/essentials/secrets-vault) and loaded at Kuzzle startup.
 
 They have the same format as in the JSON file:

@@ -7,6 +7,8 @@ order: 700
 
 # Secrets Vault
 
+<SinceBadge version="1.8.0" />
+
 When you develop an application with Kuzzle, you may need to use secrets such as API keys or authentication information.  
 
 Of course, it is out of the question to version these secrets in clear with the rest of your source code.  
