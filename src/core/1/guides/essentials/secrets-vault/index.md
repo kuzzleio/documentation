@@ -87,4 +87,4 @@ Kuzzle start is interrupted if:
 
 Once Kuzzle has successfully loaded the file containing the secrets, he will expose its content to all the plugins.  
 
-Secrets are accessible in the property `context.secrets`.  
+Secrets are accessible in the property [context.secrets](/core/1/plugins/plugin-context/secrets).  
