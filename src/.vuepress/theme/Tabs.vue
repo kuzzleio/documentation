@@ -5,19 +5,11 @@
       <ul class="md-tabs__list">
         <li class="md-tabs__item">
           <a
-            :class="{'md-tabs__link--active': $route.path.match('/guide/')}"
-            :href="generateLink('/core/1/guide/')"
+            :class="{'md-tabs__link--active': $route.path.match('/guides/')}"
+            :href="generateLink('/core/1/guides/')"
             title="Guide"
             class="md-tabs__link"
           >Guides</a>
-        </li>
-        <li class="md-tabs__item">
-          <a
-            :class="{'md-tabs__link--active': $route.path.match('/sdk/')}"
-            href="/sdk/"
-            title="SDK"
-            class="md-tabs__link"
-          >SDK</a>
         </li>
         <li class="md-tabs__item">
           <a
@@ -26,6 +18,14 @@
             title="API"
             class="md-tabs__link"
           >API</a>
+        </li>
+        <li class="md-tabs__item">
+          <a
+            :class="{'md-tabs__link--active': $route.path.match('/sdk/')}"
+            href="/sdk/"
+            title="SDK"
+            class="md-tabs__link"
+          >SDK</a>
         </li>
         <li class="md-tabs__item">
           <a

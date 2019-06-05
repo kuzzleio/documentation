@@ -39,7 +39,7 @@ std::string updateSpecifications(
 
 A JSON string representing the specifications.
 
-The JSON must follow the [Specification Structure](/core/1/guide/cookbooks/datavalidation/schema/):
+The JSON must follow the [Specification Structure](/core/1/guides/cookbooks/datavalidation/schema/):
 
 ```json
 {

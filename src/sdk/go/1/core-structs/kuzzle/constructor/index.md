@@ -8,10 +8,10 @@ order: 100
 
 # Constructor
 
-This is the main entry point to communicate with Kuzzle.  
+This is the main entry point to communicate with Kuzzle.
 Each instance represents a connection to Kuzzle with specific options.
 
-This interface implements the [KuzzleEventEmitter](/sdk-reference/go/1/kuzzle-event-emitter) interface
+This interface implements the [KuzzleEventEmitter](/sdk/go/1/core-structs/kuzzle-event-emitter) interface
 
 ## Signature
 
@@ -27,7 +27,7 @@ NewKuzzle(protocol connection.Connection) (*Kuzzle, error)
 
 ### **protocol**
 
-A [Protocol](/sdk/go/1/core-structs/protocols/) is a structure implementing the `connection.Connection` interface.
+A [Protocol](/sdk/go/1/protocols/) is a structure implementing the `connection.Connection` interface.
 The available protocols are:
 
 - `websocket.Websocket`
@@ -40,7 +40,7 @@ It takes the following arguments:
 | `host`    | string        | Kuzzle hostname to connect to   | yes      |
 | `options` | types.Options | Kuzzle connection configuration | yes      |
 
-The `options` parameter of the protocol constructor has the following properties.  
+The `options` parameter of the protocol constructor has the following properties.
 You can use standard getter/setter to use these properties.
 
 | Option              | Type         | Description                                                        | Default        | Required |
@@ -60,7 +60,7 @@ You can use standard getter/setter to use these properties.
 
 ## Getter & Setter
 
-These properties of the Kuzzle struct can be writable.  
+These properties of the Kuzzle struct can be writable.
 For example, you can read the `volatile` property via `getVolatile()` and set it via `setVolatile()`.
 
 | Property name        | Type               | Description                                                                                                               | Availability |
@@ -94,12 +94,12 @@ For example, you can read the `volatile` property via `getVolatile()` and set it
 
 ## Return
 
-A `Kuzzle` struct and an [error struct](/sdk/go/1/error-handling).  
+A `Kuzzle` struct and an [error struct](/sdk/go/1/essentials/error-handling).
 The `error` struct is nil if everything was ok.
 
 ## Usage
 
-In a first step, you have to create a new `connection.Connection` and pass it to the constructor.  
+In a first step, you have to create a new `connection.Connection` and pass it to the constructor.
 By now the only connection available is `websocket.Websocket`.
 
 <<< ./snippets/constructor.go

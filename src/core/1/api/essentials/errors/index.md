@@ -86,7 +86,7 @@ An `InternalError` error is thrown if Kuzzle encountered an unexpected error.
 
 **status**: 500
 
-A `PluginImplementationError` error is a generic error thrown by Kuzzle on a [plugin](/plugins/1) failure.
+A `PluginImplementationError` error is a generic error thrown by Kuzzle on a [plugin](/core/1/plugins) failure.
 
 ---
 
@@ -102,7 +102,7 @@ A `ServiceUnavailableError` error can be sent by Kuzzle if it overloaded and can
 
 ## Specific errors
 
-These errors are specific to controller actions.  
+These errors are specific to controller actions.
 Check controllers documentation.
 
 ### NotFoundError
@@ -144,7 +144,7 @@ The detail of each failure can be retrieved in the `errors` property of the erro
 
 A `PreconditionError` error is thrown if Kuzzle was not able to process the request due to an invalid state.
 
-For instance, this error can be generated when trying to create a document on a non-existing data index.
+For instance, this error can be generated when trying to create a document on a non-existing index.
 
 ---
 
@@ -154,7 +154,7 @@ For instance, this error can be generated when trying to create a document on a 
 
 **status**: 413
 
-A `SizeLimitError` error is thrown by Kuzzle if the request size exceeds the limits defined in the [configuration](/core/1/guide/guides/essentials/configuration/).
+A `SizeLimitError` error is thrown by Kuzzle if the request size exceeds the limits defined in the [configuration](/core/1/guides/essentials/configuration/).
 
 ---
 

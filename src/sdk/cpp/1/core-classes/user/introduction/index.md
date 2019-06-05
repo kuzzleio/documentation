@@ -8,7 +8,7 @@ order: 0
 
 # User
 
-The `User` class is the SDK representation of a Kuzzle [user](/core/1/guide/guides/essentials/user-authentication/#creating-users-default).
+The `User` class is the SDK representation of a Kuzzle [user](/core/1/guides/essentials/user-authentication/#creating-users-default).
 
 Instances of the `User` class are returned by the following methods:
 

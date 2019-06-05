@@ -50,7 +50,7 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a [io.kuzzle.sdk.SearchResult](/sdk/java/1/search-result) object.
+Returns a [io.kuzzle.sdk.SearchResult](/sdk/java/1/core-classes/search-result) object.
 
 ## Exceptions
 
