@@ -17,7 +17,7 @@ order: 10
 
 ### connected
 
-The `connected` property is just a wrapper around the underlaying protocol `connected` property.
+The `connected` property wrapps the underlaying protocol `connected` property.
 See the associated documentation:
  - [Http.connected](/sdk/js/6/protocols/http/properties)
  - [WebSocket.connected](/sdk/js/6/protocols/websocket/properties)
