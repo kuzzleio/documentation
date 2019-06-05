@@ -17,7 +17,7 @@
         birthday: '1959-06-22',
         license: 'B'
       };
-      return kuzzle.document.on('nyc-open-data', 'yellow-taxi', driver);
+      return kuzzle.document.create('nyc-open-data', 'yellow-taxi', driver);
     })
     .then(() => {
       console.log('New document successfully created!');

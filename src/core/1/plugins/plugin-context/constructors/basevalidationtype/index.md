@@ -8,7 +8,7 @@ title: BaseValidationType
 
 
 
-Abstract class, used to create custom validation types (see the [validation](/core/1/plugins/accessors/validation) accessor).
+Abstract class, used to create custom validation types (see the [validation](/core/1/plugins/plugin-context/accessors/validation) accessor).
 
 ---
 
@@ -76,4 +76,4 @@ validateFieldSpecification(opts);
 
 The `validateFieldSpecification` returns a copy of the `opts` object, updated with interpreted values.
 
-If the provided options are not valid, this function is expected to throw a [KuzzleError](/core/1/plugins/errors) error.
+If the provided options are not valid, this function is expected to throw a [KuzzleError](/core/1/plugins/plugin-context/errors) error.

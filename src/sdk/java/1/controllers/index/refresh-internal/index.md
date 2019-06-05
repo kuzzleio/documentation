@@ -19,27 +19,26 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 
 </div>
 
-## Signature
-
-```java
-void refreshInternal() throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
-void refreshInternal(io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.BadRequestException, io.kuzzle.sdk.ForbiddenException, io.kuzzle.sdk.GatewayTimeoutException, io.kuzzle.sdk.InternalException, io.kuzzle.sdk.ServiceUnavailableException;
-```
-
 ## Arguments
 
-| Arguments | Type                       | Description       | Required |
-| --------- | -------------------------- | ----------------- | -------- |
-| `index`   | String                     | Index name        | yes      |
-| `options` | io.kuzzle.sdk.QueryOptions | The query options | no       |
+```java
+void refreshInternal() throws io.kuzzle.sdk.KuzzleException;
+void refreshInternal(io.kuzzle.sdk.QueryOptions options) throws io.kuzzle.sdk.KuzzleException;
+```
 
-### **Options**
+<br/>
 
-Additional query options
+| Arguments | Type         | Description       |
+| --------- | ------------ | ----------------- |
+| `options` | <pre>io.kuzzle.sdk.QueryOptions</pre> | Query options | 
 
-| Option     | Type    | Description                       | Default |
-| ---------- | ------- | --------------------------------- | ------- |
-| `queuable` | boolean | Make this request queuable or not | `true`  |
+### Options
+
+The `options` arguments can contain the following option properties:
+
+| Property   | Type (default)   | Description                       |
+| ---------- | ------- | --------------------------------- |
+| `queuable` | <pre>boolean (true)</pre> | If true, queues the request during downtime, until connected to Kuzzle again |
 
 ## Exceptions
 

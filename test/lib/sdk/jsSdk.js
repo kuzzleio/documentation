@@ -13,7 +13,7 @@ class JsSdk {
   }
 
   async get() {
-    await execute('npm', ['install', '--no-save', this.npmPackage]);
+    await execute('npm', ['install', '--no-save', this.npmPackage, 'mqtt']);
   }
 
   exists() {

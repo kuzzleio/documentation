@@ -23,7 +23,7 @@ virtual kuzzleio::KuzzleEventEmitter* addListener(
 
 | Argument   | Type                                     | Description                                                  |
 | ---------- | ---------------------------------------- | ------------------------------------------------------------ |
-| `event`    | <pre>kuzzleio::Event</pre>               | An enum representing the listened [event](/sdk/cpp/1/events) |
+| `event`    | <pre>kuzzleio::Event</pre>               | An enum representing the listened [event](/sdk/cpp/1/essentials/events) |
 | `listener` | <pre>kuzzleio::SharedEventListener</pre> | Smart pointer to a c++11 lambda                              |
 
 ### event

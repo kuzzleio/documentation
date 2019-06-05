@@ -6,7 +6,7 @@ title: validation
 
 # validation
 
-Accessor to the [data validation API](/core/1/guide/datavalidation)
+Accessor to the [data validation API](/core/1/guides/cookbooks/datavalidation)
 
 ---
 
@@ -26,7 +26,7 @@ addType(Type);
 
 | Arguments | Type              | Description                                                                                                   |
 | --------- | ----------------- | ------------------------------------------------------------------------------------------------------------- |
-| `Type`    | <pre>object</pre> | A class implementing the abstract [BaseValidationType](/core/1/plugins/constructors/basevalidationtype) class |
+| `Type`    | <pre>object</pre> | A class implementing the abstract [BaseValidationType](/core/1/plugins/plugin-context/constructors/basevalidationtype) class |
 
 ---
 
@@ -46,7 +46,7 @@ validate(request, [verbose]);
 
 | Arguments | Type                                                           | Description                                                                                         |
 | --------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `request` | <a href=/plugins/1/constructors/request><pre>Request</pre></a> | Request object with a non-empty body content                                                        |
+| `request` | <a href=/core/1/plugins/constructors/request><pre>Request</pre></a> | Request object with a non-empty body content                                                        |
 | `verbose` | <pre>boolean</pre>                                             | If true, returns an exhaustive validation report, instead of failing at the first error encountered |
 
 ### Return
