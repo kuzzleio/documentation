@@ -6,7 +6,7 @@ title: join
 
 # join
 
-
+<DeprecatedBadge version="1.8.0" />
 
 Joins a previously created subscription.
 
