@@ -15,7 +15,7 @@ Kuzzle allows you to listen to multiple events with a single listener thanks to 
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
+| `*` | `*` | Depends on the event type |
 
 You can use wildcards to replace only the name of an event.
 
