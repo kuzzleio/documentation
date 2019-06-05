@@ -60,7 +60,7 @@ The encryption of a secret file is done by means of the CLI with the following c
 [✔] Secrets successfully encrypted: config/secrets.enc.json
 ```
 
-The file `config/secreys.enc.json` can be added safely to the project repository.
+The file `config/secrets.enc.json` can be added safely to the project repository.
 
 To decrypt a previously encrypted file, use the following command:
 
@@ -69,6 +69,10 @@ To decrypt a previously encrypted file, use the following command:
 [ℹ] Decrypting secrets...
 [✔] Secrets successfully encrypted: config/secrets.json
 ```
+
+::: info
+You can also specify the vault key in the `KUZZLE_VAULT_KEY` environment variable.
+:::
 
 ## Load encrypted secrets at startup
 
@@ -89,4 +93,4 @@ Kuzzle start is interrupted if:
 
 Once Kuzzle has successfully loaded the file containing the secrets, he will expose its content to all the plugins.  
 
-Secrets are accessible in the property [context.secrets](/core/1/plugins/plugin-context/secrets).  
+Secrets are accessible in the [secrets](/core/1/plugins/plugin-context/secrets) property of the plugin context.  
