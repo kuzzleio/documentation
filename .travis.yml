@@ -23,7 +23,7 @@ env:
 stages:
   - name: Tests
   - name: Deployment
-    if: type != pull_request AND branch ~= master|3-dev
+    if: type != pull_request AND branch =~ ^master|3-dev$
 
 jobs:
   include:
