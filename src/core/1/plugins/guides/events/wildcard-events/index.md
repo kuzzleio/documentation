@@ -11,32 +11,13 @@ Kuzzle allows you to listen to multiple events with a single listener thanks to 
 
 ---
 
-## Single wildcard
-
-| Arguments | Type                                                           | Description                |
-| --------- | -------------------------------------------------------------- | -------------------------- |
-| `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
-
-With a single wildcard you can listen to all the events triggered by Kuzzle.
-
-#### Example
-
-```javascript
-this.pipes = 
-  // listener function will be triggered at each event
-  '*': <function to call> 
-};
-```
-
----
-
 ## Name wildcard
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
 
-You can also use wildcards to replace only the name of an event.
+You can use wildcards to replace only the name of an event.
 
 ### Naming Template
 
@@ -44,7 +25,7 @@ The event name is built using the following template:
 
 `<controller>:*`
 
-- `controller`: API controller name
+- `controller`: controller name
 
 #### Example
 
