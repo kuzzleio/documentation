@@ -10,8 +10,18 @@ order: 10
 
 | Property name        | Type     | Description          |
 | -------------------- | -------- | ---------------------|
+| `authenticated` | <pre>boolean</pre> | Returns `true` if the SDK has a valid hold token |
+| `connected` | <pre>boolean</pre> | Returns `true` if the SDK is actually connected to a Kuzzle server. |
 | `offlineQueue` | <pre>object[]</pre> | Contains the queued requests during offline mode   |
 | `protocol` | <pre>Protocol</pre> | Protocol used by the SDK |
+
+### connected
+
+The `connected` property is just a wrapper around the underlaying protocol `connected` property.
+See the associated documentation:
+ - [Http.connected](/sdk/js/6/protocols/http/properties)
+ - [WebSocket.connected](/sdk/js/6/protocols/websocket/properties)
+ - [SocketIO.connected](/sdk/js/6/protocols/socketio/properties)
 
 # Writable properties
 
