@@ -13,8 +13,8 @@ For example, imagine you are developing a mobile application that accesses a **t
 
 Kuzzle's **[Plugin Engine](/core/1/plugins)** is a powerful feature that ensures that Kuzzle meets any project requirement:
 
-- select from a set of prebuilt plugins (such as the [OAuth2 Authentication Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth) or the [MQTT Protocol](https://github.com/kuzzleio/protocol-mqtt)).
-- [create your own plugin](/core/1/plugins/essentials) to meet your specific requirements.
+- select from a set of prebuilt plugins (such as the [OAuth2 Authentication Plugin](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth) or the [Cluster Plugin](https://github.com/kuzzleio/kuzzle-plugin-cluster)).
+- [create your own plugin](/core/1/guides/essentials/introduction/) to meet your specific requirements.
 
 ---
 
@@ -41,10 +41,7 @@ Kuzzle ships with the [Local Strategy Plugin](https://github.com/kuzzleio/kuzzle
 
 ## Protocols
 
-[Protocols](/core/1/protocols) add extended networking capabilities to your Kuzzle installation. These are useful if you need to handle other, even proprietary transport protocols.
-
-_Example - "Allow Kuzzle to interact with XMPP-oriented services"_
-Kuzzle ships with the [MQTT Protocol](https://github.com/kuzzleio/protocol-mqtt).
+[Protocols](/core/1/protocols/essentials/getting-started) add extended networking capabilities to your Kuzzle installation. These are useful if you need to handle other, even proprietary transport protocols.
 
 ---
 
@@ -66,7 +63,7 @@ Go to the Kuzzle installation folder and type:
 
 ```bash
 # Open plugins/available folder
-cd plugins/available
+cd <kuzzle directory>/plugins/available
 
 # Download Plugin to plugins/available folder
 git clone https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate.git
@@ -75,13 +72,11 @@ git clone https://github.com/kuzzleio/kuzzle-core-plugin-boilerplate.git
 cd kuzzle-core-plugin-boilerplate
 npm install # add --unsafe-perm if installing from inside a docker container
 
-# Open plugins/enabled folder
+# Enable the installed plugin. Delete this link to disable it
 cd ../../enabled
+ln -s ../available/kuzzle-core-plugin-boilerplate
 
-# Creata the symbolic link from the enabled folder to the available folder
-ln -s ../available/kuzzle-core-plugin-boilerplate .
-
-# Restart Kuzzle to reload Plugins
+# Restart Kuzzle to reload plugins
 ```
 
 ---
@@ -143,36 +138,23 @@ Note that the plugin description above contains a property for each plugin compo
 
 The steps to install a new protocol are exactly the same than for plugins, except that you have to use the `protocols/` directory, instead of the `plugins/` one.
 
-For instance, to install the MQTT protocol:
+To install a protocol:
 
 ```bash
 # In Kuzzle's directory:
 cd protocols/available
 
-git clone https://github.com/kuzzleio/protocol-mqtt.git
+# copy the protocol folder into the current directory
+cp -r <protocol_dir> .
 
 # Install the protocol's dependencies
-cd protocol-mqtt
+cd <protocol_dir>
 npm install # add --unsafe-perm if installing from inside a docker container
 
-# Open plugins/enabled folder
+# Enable the installed plugin. Delete this link to disable it
 cd ../../enabled
-
-# Creata the symbolic link from the enabled folder to the available folder
-ln -s ../available/protocol-mqtt .
+ln -s ../available/<protocol_dir>
 
 # Restart Kuzzle to reload protocols
 ```
 
----
-
-## Going Further
-
-To get more insight into how plugins work, please refer to the [Plugin Reference](/core/1/plugins).
-
-Here is a list of official plugins:
-
-- [**kuzzle-plugin-auth-passport-local**](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local): authentication Plugin shipped with Kuzzle
-- [**kuzzle-plugin-logger**](https://github.com/kuzzleio/kuzzle-plugin-logger): plugin shipped with Kuzzle
-- [**kuzzle-plugin-auth-passport-oauth**](https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth): authentication plugin
-- [**protocol-mqtt**](https://github.com/kuzzleio/protocol-mqtt): MQTT network protocol
