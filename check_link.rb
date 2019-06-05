@@ -5,7 +5,10 @@ require 'typhoeus'
 require 'optparse'
 
 class LinkChecker
-  INTERNAL_LINK_REGEXP = /\[[\.\w\s\-]+\]\(([\w\/\-\#]*)\)/
+  INTERNAL_LINK_REGEXPS = [
+    /\[[\.\w\s\-]+\]\(([\w\/\-\#]*)\)/,
+    /<a href="([\/core|\/sdk][\w\/\-\#]*)">/
+  ]
 
   attr_reader :internal, :external
 
@@ -50,24 +53,26 @@ class LinkChecker
   private
 
   def scan_internal_links(file_path, content)
-    match = content.scan(INTERNAL_LINK_REGEXP)
-    match.each do |(relative_path)|
-      # Remove anchor
-      relative_path.gsub!(/#[\w-]+/, '')
+    INTERNAL_LINK_REGEXPS.each do |regexp|
+      match = content.scan(regexp)
+      match.each do |(relative_path)|
+        # Remove anchor
+        relative_path.gsub!(/#[\w-]+/, '')
 
-      if relative_path.end_with?('.png')
-        full_path = "src/#{relative_path}"
-      else
-        full_path = "src/#{relative_path}/index.md"
+        if relative_path.end_with?('.png')
+          full_path = "src/#{relative_path}"
+        else
+          full_path = "src/#{relative_path}/index.md"
+        end
+
+        # Remove double //
+        full_path.gsub!(/\/\//, '/')
+
+        next if File.exists?(full_path)
+
+        @internal ||= []
+        @internal << full_path
       end
-
-      # Remove double //
-      full_path.gsub!(/\/\//, '/')
-
-      next if File.exists?(full_path)
-
-      @internal ||= []
-      @internal << full_path
     end
 
     @internal.uniq!
