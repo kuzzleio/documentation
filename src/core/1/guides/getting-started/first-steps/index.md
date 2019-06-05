@@ -20,8 +20,8 @@ Before proceeding, please make sure your system has these programs installed:
 Create your playground directory and install the [Javascript SDK](/sdk) from the command line using npm:
 
 ```bash
-mkdir toto "kuzzle-playground"
-cd "kuzzle-playground"
+mkdir kuzzle-playground
+cd kuzzle-playground
 npm install kuzzle-sdk
 ```
 
