@@ -76,8 +76,8 @@ There is one special case, where volatile data are stored by Kuzzle for a later 
 
 Volatile data passed to a new subscription query are used two times by Kuzzle:
 
-- if the new subscription triggers [user notifications](/core/1/api/essentials/notifications#user-events-default), its volatile data are included into those
-- if that subscription is cancelled, whether because of a call to [realtime:unsubscribe](/core/1/api/controllers/realtime/unsubscribe/), or after the user disconnects: the volatile data provided **at the time of the subscription** are once again copied into user notifications triggered by that event
+- if the new subscription triggers [user notifications](/core/1/api/essentials/notifications#user-notification-default), its volatile data are included into those
+- if that subscription is cancelled, whether because of a call to [realtime:unsubscribe](/core/1/api/api-reference/controller-realtime/unsubscribe/), or after the user disconnects: the volatile data provided **at the time of the subscription** are once again copied into user notifications triggered by that event
 
 This allows other real-time subscribers to get context information about a user joining or leaving the same subscription as them.
 
