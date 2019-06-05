@@ -3,6 +3,7 @@ type: page
 code: false
 title: Webpack
 description: Getting started with Kuzzle and Webpack
+order: 200
 ---
 
 # Getting Started with Kuzzle and Webpack
