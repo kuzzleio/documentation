@@ -7,7 +7,7 @@ description: List the indexes
 
 # list
 
-Get the complete list of data indexes handled by Kuzzle.
+Get the complete list of indexes handled by Kuzzle.
 
 ## Signature
 
@@ -37,7 +37,7 @@ A vector of string containing the list of indexes present in Kuzzle
 
 ## Exceptions
 
-Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error](/sdk/cpp/1/error-handling).
+Throws a `kuzzleio::KuzzleException` if there is an error. See how to [handle error](/sdk/cpp/1/essentials/error-handling).
 
 ## Usage
 
