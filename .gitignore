@@ -10,3 +10,4 @@ test/bin/*
 dead_links.json
 links_failed.json
 .links_checked.json
+.vscode

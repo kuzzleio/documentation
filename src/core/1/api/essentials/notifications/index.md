@@ -83,9 +83,9 @@ The `result` object is the notification content, and it has the following struct
 
 ---
 
-## User events
+## User Notification
 
-User notifications about users are triggered by the following events:
+User notifications are triggered by the following events:
 
 - A user subscribes to the same room
 - A user leaves that room
@@ -138,7 +138,7 @@ The `result` object is the notification content, and it has the following struct
 
 ---
 
-## Server events
+## Server Notification
 
 Server notifications are triggered by global events, and they are sent to all of a client's subscriptions at the same time.
 
