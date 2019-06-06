@@ -1,65 +1,38 @@
-sudo: required
+language: node_js
+node_js:
+  - "10"
 
 services:
   - docker
 
 env:
   global:
-    - AWS_S3_BUCKET=docs-next.kuzzle.io
-    - TRAVIS_S3_BUCKET=travis-cache.kuzzle.io
-    - REPORT_S3=dl.kuzzle.io
-    - AWS_CLOUDFRONT_DISTRIBUTION_ID=E2ZCCEK9GRB49U
+    - NODE_ENV=production
+    - AWS_S3_BUCKET_PROD=docs.kuzzle.io
+    - AWS_S3_BUCKET_NEXT=docs-next.kuzzle.io
+    - AWS_CLOUDFRONT_DISTRIBUTION_ID_PROD=E3D6RP0POLCJMM
+    - AWS_CLOUDFRONT_DISTRIBUTION_ID_NEXT=E2ZCCEK9GRB49U
+    - AWS_DEFAULT_REGION=us-west-2
     # ALGOLIA_WRITE_KEY
     - secure: mwbfknkwzXmtGObr9pclB9z930GSuLydJiac1/o/m53oNkL1YqUOFmCsfZ8XFmQCIpqWVWMnKmoXgTXvSOx551IBYakGDkil/O988pmX7/Z2r4n6ONvWbj1oCciCsH6zsZ4u28R0cZ6ELiZXdiSjz+bjRtbS70lOxVHZAp9HFPBXymIa6ala683l1uMejDfDFtCc0zi7Qi69TLxj+x7ggroUhWbzg5P2J0RfnpYy+KifMcbz1hmhqNTJpvGRmYBHf6GFgcOCc78z14Aay8IVQjdVMBA3AgnqhquS97PQis+gsHRpKn5rCSj4jncTz+Xa3xfz52tZ5ElsyZSi9Qio4k3GOK/SCocjS+gbr3qdVc1BOPBkhYmwkgYVFnzKx+T+87zqnZ809SdhQa1K3pXblMenjYVPGLxt242yPwNlQfdLAbmTaahmzWTfEgSzCoqjy6EcdwFHwUC/pqCBBfSlNKKfqLIfwgR/4b5j4o2F+GjKk64qnii3uVkGShuT15tB6vAvqbLrUr2/dWQC4ORXgyZqYxuGvQVmgJ8zVqQFcC16U+eVQQYqshfInwLVcU9RFrLj37ekiEgFkklV2dggVr3gVTEEPZPlkpMHn1kP/69VkMcEyP48DBHJ8Qi26EFaH7bviuXehnK9f9HzhqC3t/q8NLr/w07izHu9yzlS9V8=
-    # AWS_DEFAULT_REGION
-    - secure: "KROyGh8p/Mpo/zukQW8KlRHwNIQHtGimgznZDdbHvY8Khl673FJ1808E26GmscEKiDo/D57VaGSvyOdtMpuXSStU0/DOGjg3yMGmmuV5CGMMkczmDrllIC8THfs1H6Q4HAVmK+uL/jfbQ0df7zW3Y5zqAjSWcM6OlBzKGH8ViBitL1WSQQmnCDxgzGfYVJeCxp5LTLWIXUW6GN4EDG+Je+GQtz7wPkoaHhcc6ptj/wRM9E6SCWOs6Ds0pcHt2OdwulZK/eHr4gQWGrevycL56pa/OsvudeyXmdcsHZye1G2VczwNsK0wyopgV3dkZ0+UwWeusCsieNqlcgmdvIN+o0gZkosmh1Q0UT45M6HomReViRAQUBMqtxYIEwPagLmhQ7PWOfDOUpku4nqOTqtSo7UzTkPTCkrwq4k9a4shOrugIkkCzAWB3myML2eEcbb7Rbf7W8fvPf9/kw0XFgFRpi3+R2/C9vzip3Tri2XSsaxS9Uodbt+ctcbzEaobHHh30nDAy/UhLXIg3kbEa254JfZ9ryhR+DzNfJ8U8Rff/BoGdjovAdLJXb6i6zUtbi4tEGz1qZhfj3rhxk7pE2WWATyJMnwH7dgOcKi2cHLol65mu9lLftq+d+EpNgCuhF0jmmBDW0D4aPyebwNaQAG5Kw0RjwvIkSPp78Rhpgy3iQE="
     # AWS_ACCESS_KEY_ID
-    - secure: "JMrU3t0gjQigsenQYEI/+pEodzH8F8LXbkUoM3qh0PNPvKRSUO40xB1u26NWdKgFjXZe6p5rxCRBGqERK+DChZzXoxFwr2OrWmC8qypOrW2eGiDBs8j+3QlVLLTaMxtZQfnSvc9dTt9S7bCv3vCJWE73uqnGsi32+PATwZ+dB9HU2xpOdzRb43rDjPRa5hJzGbAQmMrpkYqbe99fHrK36FOEa74Dxog4A2EnHjuvz9hSTO5nK5O3eLolf0yJM63Vbt7Y8x41fMmsqv8WNWKWyiEovhVEbS+ejIN+pqpiOR2hEwqJSQ4iJgk0mK2mFSoBbjmRqW5fy/ZuZMXz6QQw9tHNkZivy0l3hEs3vqT+lTNYBCMQB+hCKkQwsWlhTMpFgVQ8jHu4KJFHec64k4J7dUHA7brGQwMwfjeLnm+R3rsRLTe3iudrANRfiOj6gSRqrrcH/NvOZansOnTTjE9x0SFhUcudOndyJP61ZSf9Qhvoezb0I2iZxjHwgvBLNNDksH5f0LR0UdW/6RELyuMCfKeX8FgnzVGN6e38wX8c9Ut5hnWeioRaSIJJHRrToahGaL+IWh7z1rGQmS5ejaVJbTKbTHBcqxd4HRElFiN7UGnVT2/IXDV9CxLKK80Ajhaya5PyxtsudBo0iGW9OcLoM0yVj74vD16xXpjtZGwn0f8="
+    - secure: "SjFK79g6LMKIllQ+mV/Rs8H/sO5yrnVxurxUJZgol+o5xuWWgCbFScvvQ2gz4yjRpg2Esl6LtbQNaXsdhReIyfl5PNkcxQ7Ij8PDGYvvWVo0vUNgRFulp725feeZqwE03edUP9OEDe70UWSD9UZyXdeCIaXOUgNLEl0tg3iOk/AOn76J5n57cnx8VOuHyIftCA2L0qQUb7smBC3eVEL3upHz8y4eePWO3wgIZLnYSAqI5XZaL4ZHeXQmkQsjL4KcC4X2zHnphe2Y/u9JLalGB1R7WKqGY9LbN6KiF6Lx1Lo+jJ844IIH1LQ4geGrqEhQvz93eNI6mE0DacmToGKwL8l0Wbz4GZsTtgVQ1SJ9g0/38u9QPBmqbd9bwSGE35G+wfJ1CUFpkxWbzwX/5QmWLEMl6ActlfjebqJ7UqRNGGyIi8I+vOMAsb2VHnWXnlmP4WBkUmbOO4UH01VTDRNz49k7iaeRlkW/oY+qtD/w4osb5+FCqUAvxifoOPc82FLOYb/0EOCFICt02c5wWJxRRIS4i2pPT2ABsdO1oRe1uS/zMI2n4ZMtpMUMnMNFpALBDwle16g7sLhzVgqWDS3HWodMlDUjtup9CXeeFuAS783qjtu53TGj4/tWXLZdp6Jv+5AE0cs0G0qzpuGiFh5Hh+bZf1VYRoix4wa05jek95Y="
     # AWS_SECRET_ACCESS_KEY
-    - secure: "ZGuDhj5oR/Yj5InhOS6nmT0xTGK20ZiCVyoYJ9NZRJcP40jWTa2spuUyzXNXYGuLREoKYqqgHGRMQGJDdnfEDgci3sbgxsI+PdsEnxbiECvVW8XN8c2fN0OX5uvQ8yeJcrWKeXuxvXN7V+Pzh7jxTTlDpHQxtyyZjjPkdZDBM3SedBkvYYuKkyQzK9aJ9gKsBgbmMyvrbVHbg5lHKKl4F1SdHQyy7/YIx4XOprG4xkxeY1me3Zm/sfc3/KBzkbD6IDUVAnRrBR0Iim9qUfXvWSby9XjS74eyqkep1oA6Zl+Xu11MvGO3LS4uy26pzrJ8aeR771cfGG3KdRh0wGUjymgzXY30V2KJQXWoZE7qYs9TiBSDoGNvi0tiAXDJC82Z7sNg369WOIP9rTrZ9toUyFdX29oUVDCds5Ez5ooYahJWizZhwICiAgSIUWrkNY5qmcb/r/kbm9Mbdrvzlbc1TnJGeYo/wZkeQwr8nNrLNGu7FBlT4e1CoJvIcAz18X3P/uwASSqfM4WRQMRWKKIxdzCA6LKWLan6A5CV0iaM0lAYYTL7/fNLULrU6e37vha2G3WNrW1nFqZ0lJCTD5lX8heSu/BkejV7y1d+oIYjsOvJ+AwhKeut6HQ2beILxi5QEcmmmj+WE+r5FdMljV76r5SrW2hg70YStQRZOBmpykY="
-
-addons:
-  apt:
-    packages:
-      - python
-      - python-pip
-
-install:
-  - pip install awscli --upgrade --user
+    - secure: "K1Hf0b0hgRRkIbudmJZCz96ZeObzRJsC4hUZ7N1aolAKkqRcb1HeKkWwD6Ql/kp2shnQ+QQhPVDlvJSDORJ1D+vZlDiYn8fYSjgcXLC1yfkzXkbezLQGZdyTGjpRyyv2vRt1JHtvLIXLrAg4INWyR2mQR/vW8lMdJkVcXnGu+CIdvncnQfYD6axVqWmqCgElEtCOZ3RUxxm2CHSqy7Caf9hF217lxAHORW6QEtfu86WvRoiIX08W9BQpNKvbdafiu0myVTnZUkn+w0ZhTGaS+nTd7AmIbPw8wQsRbm7ex9BTR4PpZMQOE/Aqtm5T7kEbpMK+oXRKIv2Y40YKTDaC27NQl12fZ0ORR6Gttm9DqXXACW8G5F87FkYJUSC8vo8UJFJSJhAKtzsqJRY5rIAr/tSFGwtxhhE4XV2eFC25zaNJsRXhzTyDB+OF9O0EUS2YgEZVfr3cxmUIDimKOsKP918zbjvBtLrZ1KJEs/1yR05J423CZ64T0RzLJ7HATzLt7Wo/nlzij73UglntxZlXWkhmZUGkT/UeNvTE+aPbfam+BWI2Y5v3qrxvtZ9IyOhSIVAsxi+/siRjv256pJnFLgpoGX8hH6rRP0TC3ri+8Sv/xV9ZxiUgUHhOhkUB57Uv1zHEOLR23vMRU1o8y4oA16bckc2SJ3SWrFXKT4qujgI="
 
 stages:
-  - name: Build
   - name: Tests
   - name: Deployment
-    if: type != pull_request AND branch = master
+    if: type != pull_request AND branch =~ ^master|3-dev$
 
 jobs:
   include:
-
-    # - stage: Lint
-    #   name: Lint and check for dead links
-    #   language: node_js
-    #   node_js:
-    #   - '8'
-    #   script:
-    #   - npm install
-    #   - npm run lint
-    #   - npm run build
-    #   after_script:
-    #   - |
-    #     if [ -f "src/links_failed.json" ]; then
-    #       cat src/links_failed.json | jq
-    #     fi;
 
     # -------------------------------------------------------------------------
     # Snippets tests
     # -------------------------------------------------------------------------
     - stage: Tests
       name: Kuzzle SDK JS - v5
-
-      language: node_js
-      node_js:
-        - '8'
 
       before_install:
         - docker pull kuzzleio/documentation:js
@@ -69,22 +42,9 @@ jobs:
         - npm install
         - bash ./run-snippet-tests.sh -p src -s js -v 5
 
-      after_script:
-        - |
-          if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-            mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/js/5/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
-            bash ./.ci/comment_pr.sh
-          fi;
-
 
     - stage: Tests
       name: Kuzzle SDK JS - v6
-
-      language: node_js
-      node_js:
-        - '8'
 
       before_install:
         - docker pull kuzzleio/documentation:js
@@ -94,22 +54,9 @@ jobs:
         - npm install
         - bash ./run-snippet-tests.sh -p src -s js -v 6
 
-      after_script:
-        - |
-          if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-            mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/js/6/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
-            bash ./.ci/comment_pr.sh
-          fi;
-
 
     - stage: Tests
       name: Kuzzle SDK Go - v1
-
-      language: node_js
-      node_js:
-        - '8'
 
       before_install:
         - docker pull kuzzleio/documentation:go
@@ -119,22 +66,9 @@ jobs:
         - npm install
         - bash ./run-snippet-tests.sh -p src -s go -v 1
 
-      after_script:
-        - |
-          if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-            mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/go/1/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
-            bash ./.ci/comment_pr.sh
-          fi;
-
 
     - stage: Tests
       name: Kuzzle SDK Java - v1
-
-      language: node_js
-      node_js:
-        - '8'
 
       before_install:
         - docker pull kuzzleio/documentation:java
@@ -144,22 +78,9 @@ jobs:
         - npm install
         - bash ./run-snippet-tests.sh -p src -s java -v 1
 
-      after_script:
-        - |
-          if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-            mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/java/1/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
-            bash ./.ci/comment_pr.sh
-          fi;
-
 
     - stage: Tests
       name: Kuzzle SDK C++ - v1
-
-      language: node_js
-      node_js:
-        - '8'
 
       before_install:
         - docker pull kuzzleio/documentation:cpp
@@ -169,22 +90,9 @@ jobs:
         - npm install
         - bash ./run-snippet-tests.sh -p src -s cpp -v 1
 
-      after_script:
-        - |
-          if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-            mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/cpp/1/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
-            bash ./.ci/comment_pr.sh
-          fi;
-
 
     - stage: Tests
       name: Kuzzle SDK C# - v1
-
-      language: node_js
-      node_js:
-        - '8'
 
       before_install:
         - docker pull kuzzleio/documentation:csharp
@@ -194,24 +102,21 @@ jobs:
         - npm install
         - bash ./run-snippet-tests.sh -p src -s csharp -v 1
 
-      after_script:
-        - |
-          if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-            mv reports/index.html reports/report.html && aws s3 cp reports/ s3://$REPORT_S3/reports/$TRAVIS_PULL_REQUEST/csharp/1/ --recursive --exclude "*.gitkeep"
-            cd .ci && aws s3 cp . s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER --recursive --exclude "*.sh" --exclude "*.html" --exclude "*.yml" --exclude ".gitignore" && cd -
-            cd .ci && aws s3 sync s3://$TRAVIS_S3_BUCKET/documentation/$TRAVIS_BUILD_NUMBER . && cd -
-            bash ./.ci/comment_pr.sh
-          fi;
-
     # -------------------------------------------------------------------------
-    # Deployment
+    # Deployment - next
     # -------------------------------------------------------------------------
     - stage: Deployment
-      name: Deploy to docs.kuzzle.io
+      name: Deploy to next-docs.kuzzle.io
+      if: branch = 3-dev
 
-      language: node_js
-      node_js:
-        - '8'
+      addons:
+        apt:
+          packages:
+            - python
+            - python-pip
+
+      install:
+        - pip install awscli --upgrade --user
 
       script:
         - npm install
@@ -219,11 +124,40 @@ jobs:
 
       deploy:
         provider: script
-        script: "~/.local/bin/aws s3 sync src/.vuepress/dist s3://$AWS_S3_BUCKET --delete"
+        script: aws s3 sync src/.vuepress/dist s3://$AWS_S3_BUCKET_NEXT --delete
+        skip_cleanup: true
+        on:
+          branch: 3-dev
+
+      after_deploy:
+        - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID_NEXT --paths '/*'
+
+    # -------------------------------------------------------------------------
+    # Deployment - production
+    # -------------------------------------------------------------------------
+    - stage: Deployment
+      name: Deploy to docs.kuzzle.io
+      if: branch = master
+
+      addons:
+        apt:
+          packages:
+            - python
+            - python-pip
+
+      install:
+        - pip install awscli --upgrade --user
+
+      script:
+        - npm install
+        - npm run build
+
+      deploy:
+        provider: script
+        script: aws s3 sync src/.vuepress/dist s3://$AWS_S3_BUCKET_PROD --delete
         skip_cleanup: true
         on:
           branch: master
 
       after_deploy:
-        - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID
-          --paths "/*"
+        - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID_PROD --paths '/*'
