@@ -11,7 +11,7 @@ order: 700
 
 When you develop an application with Kuzzle, you may need to use secrets such as API keys or authentication information.  
 
-Of course, it is out of the question to version these secrets in clear with the rest of your source code.  
+Of course, it is unacceptable to version these secrets in cleartext with the rest of your source code.  
 
 However, it is still practical to be able to share these secrets with the rest of your team, or to add them to the repository for automated production. 
 
@@ -20,7 +20,7 @@ Kuzzle offers a secure storage system for these secrets, the operation is as fol
   - manual encryption of this file with a password,
   - adding the encrypted file to the repository,
   - automatic decryption of the file when Kuzzle starts,
-  - exposure of secrets in the context of plugins.
+  - exposing the secrets in the context of plugins.
 
 Thus, the only secret that it is necessary to communicate to the rest of his team is the encryption password of this file.
 
@@ -52,7 +52,7 @@ Once encrypted, the file will be the following:
 
 ## Encrypt and decrypt with the CLI
 
-The encryption of a secret file is done by means of the CLI with the following command:
+The encryption of a secret file is done using the CLI with the following command:
 
 ```bash
 ./bin/kuzzle encryptSecrets config/secrets.json --vault-key strongpassword
