@@ -34,7 +34,7 @@ try {
   */
   const successfulImport = response.items.filter(item => item.create.status === 201);
 
-  console.log(`Successfully imported ${successfulImport} documents`);
+  console.log(`Successfully imported ${successfulImport.length} documents`);
 } catch (error) {
   console.error(error.message);
 }
