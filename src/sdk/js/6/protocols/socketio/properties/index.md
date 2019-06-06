@@ -10,7 +10,7 @@ order: 10
 
 | Property name        | Type     | Description          |
 | -------------------- | -------- | ---------------------|
-| `autoReconnect` | <pre>boolean</pre> | Automatically reconnect after a connection loss |
+| `autoReconnect` | <pre>boolean</pre> | Automatically reconnects after a connection loss |
 | `connected`  | <pre>boolean</pre>  | Returns `true` if the socket is open |
 | `host`  | <pre>string</pre>  | Kuzzle server host |
 | `port`  | <pre>number</pre>  | Kuzzle server port |
