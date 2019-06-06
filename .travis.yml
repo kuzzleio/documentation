@@ -29,6 +29,7 @@ install:
 
 stages:
   - name: Build
+  - name: Lint
   - name: Tests
   - name: Deployment
     if: type != pull_request AND branch = master
@@ -36,20 +37,12 @@ stages:
 jobs:
   include:
 
-    # - stage: Lint
-    #   name: Lint and check for dead links
-    #   language: node_js
-    #   node_js:
-    #   - '8'
-    #   script:
-    #   - npm install
-    #   - npm run lint
-    #   - npm run build
-    #   after_script:
-    #   - |
-    #     if [ -f "src/links_failed.json" ]; then
-    #       cat src/links_failed.json | jq
-    #     fi;
+    - stage: Lint
+      name: Lint and check for dead links
+      language: ruby
+      script:
+      - gem install typhoeus
+      - ruby check_link.rb -p src/
 
     # -------------------------------------------------------------------------
     # Snippets tests

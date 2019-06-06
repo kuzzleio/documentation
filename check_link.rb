@@ -1,4 +1,3 @@
-require 'byebug'
 require 'json'
 require 'uri'
 require 'typhoeus'
@@ -55,6 +54,11 @@ class LinkChecker
 
   def report_json
     File.write(@json_file, JSON.pretty_generate({ external: @external.to_a, internal: @internal.to_a }))
+  end
+
+  def exit_code
+    return 1 if @internal.count > 0 || @external.count > 0
+    return 0
   end
 
   private
@@ -135,3 +139,5 @@ link_checker.run
 
 link_checker.report_stdout
 link_checker.report_json
+
+exit link_checker.exit_code
