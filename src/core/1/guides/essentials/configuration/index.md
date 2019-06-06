@@ -47,7 +47,7 @@ export kuzzle_services__db__host="<DB_HOST>"
 Environment variables are particularly handy when running Kuzzle in a **Docker** container. Using **Docker Compose**, they can easily be configured in the `environment` section of the `docker-compose.yml` file. For example, here's how we pass environment variables to Kuzzle in our default docker-compose file:
 
 ```yaml
-version: '2'
+version: '3'
 
 services:
   kuzzle:
@@ -64,17 +64,15 @@ services:
       - NODE_ENV=production
 
   redis:
-    image: redis:3.2
+    image: redis:5
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.1
+    image: kuzzleio/elasticsearch:5.6.10
+    ulimits:
+      nofile: 65536
     environment:
       - cluster.name=kuzzle
-      # disable xpack
-      - xpack.security.enabled=false
-      - xpack.monitoring.enabled=false
-      - xpack.graph.enabled=false
-      - xpack.watcher.enabled=false
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
 ```
 
 <div class="alert alert-info">
