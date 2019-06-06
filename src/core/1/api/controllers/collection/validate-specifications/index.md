@@ -6,8 +6,6 @@ title: validateSpecifications
 
 # validateSpecifications
 
-
-
 You can specify validation specifications in order to enforce your own rules over documents and real-time messages.
 Whenever a document is stored or updated, or a message is published, Kuzzle applies these specifications to check if the new data complies to the defined rules. If not, the document or message will be rejected and the request will return an error message.
 
@@ -19,11 +17,53 @@ When the validation specification is not formatted correctly, a detailed error m
 
 ## Query Syntax
 
+<SinceBadge version="1.8.0" />
+
+### HTTP
+
+```http
+URL: http://kuzzle:7512/<index>/<collection>/_validateSpecifications
+Method: POST  
+Body:
+```
+
+```js
+{
+  "strict": <boolean>,
+  "fields": {
+    // specification
+  }
+}
+```
+
+### Other protocols
+
+```js
+{
+  "controller": "collection",
+  "action": "validateSpecifications",
+  "index": "myindex",
+  "collection": "mycollection",
+
+  "body": {
+    "strict": <boolean>,
+    "fields": {
+      // ...
+    }
+  }
+
+}
+```
+
+---
+
+<DeprecatedBadge version="1.8.0" />
+
 ### HTTP
 
 ```http
 URL: http://kuzzle:7512/_validateSpecifications
-Method: POST
+Method: POST  
 Body:
 ```
 
@@ -65,6 +105,23 @@ Body:
 
 ## Body properties
 
+<SinceBadge version="1.8.0" />
+
+The provided body must have the following structure:
+
+```json
+{
+  "strict": <boolean>,
+  "fields": {
+    // field validation rules
+  }
+}
+```
+
+---
+
+<DeprecatedBadge version="1.8.0" />
+
 The provided body must have the following structure:
 
 ```json
@@ -86,9 +143,9 @@ The provided body must have the following structure:
 
 Returns an object with the following properties:
 
-- `valid`: a boolean telling whether the provided specifications are valid
-- `details`: the exhaustive list of rejections and their reasons. Only present if the document is invalid
-- `description`: global error description. Only present if the document is invalid
+* `valid`: a boolean telling whether the provided specifications are valid
+* `details`: the exhaustive list of rejections and their reasons. Only present if the document is invalid
+* `description`: global error description. Only present if the document is invalid
 
 Example:
 
