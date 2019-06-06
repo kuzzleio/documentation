@@ -3,11 +3,12 @@ require 'json'
 require 'uri'
 require 'typhoeus'
 require 'optparse'
+require 'set'
 
 class LinkChecker
   INTERNAL_LINK_REGEXPS = [
-    /\[[\.\w\s\-]+\]\(([\w\/\-\#]*)\)/,
-    /<a href="([\/core|\/sdk][\w\/\-\#]*)">/
+    /\[[:\.\w\s\-]+\]\((\/[\w\/\-\#]*)\)/,
+    /<a href="(\/[\w\/\-\#]*)">/
   ]
 
   attr_reader :internal, :external
@@ -19,8 +20,8 @@ class LinkChecker
 
     @hydra = Typhoeus::Hydra.new(max_concurrency: 200)
 
-    @internal = []
-    @external = {}
+    @internal = Set.new
+    @external = Set.new
   end
 
   def run
@@ -40,14 +41,14 @@ class LinkChecker
 
   def report_stdout
     puts "Found #{@internal.count} uniq internal dead links:\n"
-    puts @internal
+    puts @internal.to_a
     puts
 
     puts "Found #{@external.count} uniq external dead links:\n"
   end
 
   def report_json
-    File.write(@json_file, JSON.pretty_generate({ external: @external, internal: @internal }))
+    File.write(@json_file, JSON.pretty_generate({ external: @external.to_a, internal: @internal.to_a }))
   end
 
   private
@@ -59,10 +60,10 @@ class LinkChecker
         # Remove anchor
         relative_path.gsub!(/#[\w-]+/, '')
 
-        if relative_path.end_with?('.png')
-          full_path = "src/#{relative_path}"
-        else
+        if relative_path.end_with?('/')
           full_path = "src/#{relative_path}/index.md"
+        else
+          full_path = "src/#{relative_path}"
         end
 
         # Remove double //
@@ -70,18 +71,15 @@ class LinkChecker
 
         next if File.exists?(full_path)
 
-        @internal ||= []
         @internal << full_path
       end
     end
-
-    @internal.uniq!
   end
 
   def scan_external_links(file_path, content)
     external_links = URI.extract(content, ['http', 'https'])
     external_links.keep_if do |external_link|
-      !external_link.start_with?('http://kuzzle') &&
+      !external_link.start_with?('http://kuzzle:7512') &&
         !external_link.start_with?('http://localhost') &&
         !external_link.start_with?('http://<')
     end.each do |external_link|
@@ -92,8 +90,7 @@ class LinkChecker
 
       request.on_complete do |response|
         if response.code != 200
-          @external[external_link] ||= []
-          @external[external_link] << file_path.gsub(/\/\//, '/')
+          @external << external_link
         end
       end
 
