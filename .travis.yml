@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "11"
+  - "10"
 
 services:
   - docker
@@ -27,12 +27,6 @@ stages:
 
 jobs:
   include:
-    - stage: Build
-      name: Build
-
-      script:
-        - npm install
-        - npm run build
 
     # -------------------------------------------------------------------------
     # Snippets tests
