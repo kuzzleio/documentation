@@ -11,6 +11,12 @@ class LinkChecker
     /<a href="(\/[\w\/\-\#]*)">/
   ]
 
+  IGNORED_EXTERNAL_LINKS = [
+    'http://kuzzle:7512',
+    'http://localhost',
+    'http://<'
+  ]
+
   attr_reader :internal, :external
 
   def initialize(options)
@@ -78,10 +84,9 @@ class LinkChecker
 
   def scan_external_links(file_path, content)
     external_links = URI.extract(content, ['http', 'https'])
-    external_links.keep_if do |external_link|
-      !external_link.start_with?('http://kuzzle:7512') &&
-        !external_link.start_with?('http://localhost') &&
-        !external_link.start_with?('http://<')
+
+    external_links.delete_if do |external_link|
+      external_link.start_with?(*IGNORED_EXTERNAL_LINKS)
     end.each do |external_link|
       # Remove markdown parenthesis and other garbage
       external_link.gsub!(/[\)][\.:,]*/, '')
