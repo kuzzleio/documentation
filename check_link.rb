@@ -13,7 +13,16 @@ class LinkChecker
   IGNORED_EXTERNAL_LINKS = [
     'http://kuzzle:7512',
     'http://localhost',
-    'http://<'
+    'http://<',
+    'http://elasticsearch',
+    'http:head',
+    'http:options',
+    'http:post',
+    'http:put',
+    'http:get',
+    'http:delete',
+    'http:patch',
+    'http://...'
   ]
 
   attr_reader :internal, :external
@@ -50,6 +59,8 @@ class LinkChecker
     puts
 
     puts "Found #{@external.count} uniq external dead links:\n"
+    puts @internal.to_a
+    puts
   end
 
   def report_json
@@ -90,7 +101,8 @@ class LinkChecker
     external_links = URI.extract(content, ['http', 'https'])
 
     external_links.delete_if do |external_link|
-      external_link.start_with?(*IGNORED_EXTERNAL_LINKS)
+      external_link.start_with?(*IGNORED_EXTERNAL_LINKS) ||
+      external_link == 'http://'
     end.each do |external_link|
       # Remove markdown parenthesis and other garbage
       external_link.gsub!(/[\)][\.:,]*/, '')
