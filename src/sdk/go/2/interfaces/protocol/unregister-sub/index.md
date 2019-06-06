@@ -1,23 +1,23 @@
 ---
 code: true
 type: page
-title: unregisterSub
+title: UnregisterSub
 description: Removes a subscription's notifications listener.
 ---
 
-# unregisterSub
+# UnregisterSub
 
 Removes a subscription's notifications listener.
 
 ## Signature
 
 ```cpp
-virtual void unregisterSub(const std::string&) = 0;
+UnregisterSub(roomId string)
 ```
 
 ## Arguments
 
 | Argument  | Type                          | Description                    |
 | --------- | ----------------------------- | ------------------------------ |
-| `room_id` | <pre>const std::string&</pre> | Subscription unique identifier |
+| `roomId` | <pre>string</pre> | Subscription unique identifier |
 
