@@ -6,7 +6,7 @@ require 'optparse'
 
 class LinkChecker
   INTERNAL_LINK_REGEXPS = [
-    /\[[\.\w\s\-]+\]\(([\w\/\-\#]*)\)/,
+    /\[[\.\w\s\-]+\]\((\/[\w\/\-\#]*)\)/,
     /<a href="([\/core|\/sdk][\w\/\-\#]*)">/
   ]
 
