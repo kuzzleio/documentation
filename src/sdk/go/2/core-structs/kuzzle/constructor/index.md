@@ -16,18 +16,18 @@ This interface implements the [KuzzleEventEmitter](/sdk/go/1/core-structs/kuzzle
 ## Signature
 
 ```go
-NewKuzzle(protocol connection.Connection) (*Kuzzle, error)
+NewKuzzle(protocol protocol.Protocol) (*Kuzzle, error)
 ```
 
 ## Arguments
 
 | Argument   | Type                  | Description                           | Required |
 | ---------- | --------------------- | ------------------------------------- | -------- |
-| `protocol` | connection.Connection | The protocol used by the SDK instance | yes      |
+| `protocol` | protocol.Protocol | The protocol used by the SDK instance | yes      |
 
 ### **protocol**
 
-A [Protocol](/sdk/go/1/protocols/) is a structure implementing the `connection.Connection` interface.
+A [Protocol](sdk/go/2/interfaces/protocol/) is a structure implementing the `protocol.Protocol` interface.
 The available protocols are:
 
 - `websocket.Websocket`
@@ -99,7 +99,7 @@ The `error` struct is nil if everything was ok.
 
 ## Usage
 
-In a first step, you have to create a new `connection.Connection` and pass it to the constructor.
+In a first step, you have to create a new `protocol.Protocol` and pass it to the constructor.
 By now the only connection available is `websocket.Websocket`.
 
 <<< ./snippets/constructor.go
