@@ -1,13 +1,12 @@
 ---
 code: false
-type: page
-title: Available plugins
-order: 2
+type: root
+order: 3
+title: Plugins
+nosidebar: true
 ---
 
-# Plugins list
-
-### **Select the plugin you want to use**
+# Official Plugins 
 
 Below you’ll find the ones we officialy released.
 
@@ -40,7 +39,7 @@ Below you’ll find the ones we officialy released.
     <img src="/logos/probe.svg" alt="probe listener logo" class="Tiles-item-logo">
     <div class="Tiles-item-name">Probe listener</div>
   </a>
-  <a href="/plugins/s3" class="Tiles-item">
+  <a href="https://github.com/kuzzleio/kuzzle-plugin-s3" class="Tiles-item">
     <img src="/logos/plugin-s3.svg" alt="amazon s3 logo" class="Tiles-item-logo">
     <div class="Tiles-item-name">Amazon S3</div>
   </a>
