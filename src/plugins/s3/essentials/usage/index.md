@@ -33,7 +33,7 @@ This behavior prevent users from filling the S3 bucket with useless files.
 }
 ```
 
-## Upload the file to the URL
+## Upload the file to the Presigned URL
 
 Send a PUT request to the `uploadUrl` URL with the body set to the file's content and a `Content-Type` header corresponding to the file mime type.  
 

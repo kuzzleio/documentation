@@ -16,7 +16,7 @@ ln -s ../available/kuzzle-plugin-s3 plugins/enabled/kuzzle-plugin-s3
 
 Then go to your plugin directory and run the following command `npm install`.
 
-You can now restart Kuzzle and check http://localhost:7512, you should see the plugin name under the key `serverInfo.kuzzle.plugins.s3`.
+You can now restart Kuzzle and check [http://localhost:7512](http://localhost:7512), you should see the plugin name under the key `serverInfo.kuzzle.plugins.s3`.
 
 ## Plugin configuration
 
@@ -25,17 +25,18 @@ Your access key must have the following rights: `PutObject` and `DeleteObject`.
 
 Then in your `kuzzlerc` file, you can change the following configuration variable:
 
+  - `bucketName`: AWS S3 bucket
+  - `region`: AWS S3 region
+  - `signedUrlTTL`: TTL in ms before Presigned URL expire or the uploaded file is deleted
+  - `redisPrefix`: Redis key prefix
+
 ```js
 {
   "plugins": {
     "s3": {
-      // AWS S3 bucket
       "bucketName": "your-s3-bucket",
-      // AWS S3 region
       "region": "eu-west-3",
-      // TTL in ms before Presigned URL expire or the uploaded file is deleted
       "signedUrlTTL": 1200000,
-      // Redis key prefix
       "redisPrefix": "s3Plugin/uploads"
     }
   }
