@@ -9,7 +9,7 @@ title: Usage
 
 The plugin allows user to request an URL to directly send a file to Amazon S3.  
 
-Once the file has been uploaded, it has to be validated otherwise the uploaded file is automaticcaly removed after a configurable TTL.  
+Once the file has been uploaded, it has to be validated otherwise the uploaded file is automaticaly removed after a configurable TTL.  
 
 This behavior prevent users from filling the S3 bucket with useless files.  
 
