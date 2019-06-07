@@ -65,7 +65,7 @@ An empty body matches all documents in the queried collection.
 
 ## Return
 
-Returns a [kuzzleio::SearchResult](/sdk/cpp/1/search-result) instance.
+Returns a [kuzzleio::SearchResult](/sdk/cpp/1/core-classes/search-result) instance.
 
 ## Exceptions
 
