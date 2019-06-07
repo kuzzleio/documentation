@@ -1,6 +1,6 @@
 ---
 code: false
 type: branch
-order: 0
-title: Essentials
+order: 1
+title: Kuzzle Plugin S3
 ---
