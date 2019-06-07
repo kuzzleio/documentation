@@ -36,7 +36,7 @@ The following diagram shows how a request flows between the client application, 
 
 ![read_scenario_http_details](./Synchronous_Request_HTTP_Protocol_Sequence.png)
 
-- The HTTP client will request a document by making an HTTP GET request. For instance, to retrieve a document with `_id` equal to `739c26bc-7a09-469a-803d-623c4045b0cb` in the `users` collection, the client will perform the following request: `GET http://kuzzlebackend:7512/myindex/users/739c26bc-7a09-469a-803d-623c4045b0cb`.
+- The HTTP client will request a document by making an HTTP GET request. For instance, to retrieve a document with `_id` equal to `739c26bc-7a09-469a-803d-623c4045b0cb` in the `users` collection, the client will perform the following request: `GET http://kuzzle:7512/myindex/users/739c26bc-7a09-469a-803d-623c4045b0cb`.
 
 - The _Entry Point_ receives the message and passes it on to the _HTTP Router_.
 

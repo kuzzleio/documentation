@@ -93,7 +93,8 @@ Recover the public IP or the hostname provided by AWS before you proceed.
 Check that Kuzzle is up and running with following HTTP request:
 
 ```sh
-$ curl 'http://yourInstanceIpOrHostname:7512?pretty'
+# Replace kuzzle with your instance hostname or IP
+$ curl 'http://kuzzle:7512?pretty'
 {
   "requestId": "9b07a095-7143-49a5-9079-a34e937fdf3e",
   "status": 200,
