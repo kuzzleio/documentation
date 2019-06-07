@@ -11,7 +11,7 @@ The Kuzzle **configuration** is stored in a [kuzzlerc file](https://github.com/k
 
 Kuzzle uses [rc](https://github.com/dominictarr/rc) to **override** its default configuration by either:
 
-- loading parameters from a `.kuzzlerc` file ([sample file](https://github.com/kuzzleio/kuzzle/blob/master/.kuzzlerc.sample));
+- loading parameters from a `.kuzzlerc` file ([sample file](https://github.com/kuzzleio/kuzzle/blob/master/.kuzzlerc.sample)) ;
 - loading parameters from environment variables with a `kuzzle_` prefix.
 
 ### Example 1: configuring Kuzzle using a custom `.kuzzlerc` file
