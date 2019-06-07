@@ -66,6 +66,7 @@ class LinkChecker
   end
 
   def report_json
+    puts "JSON report available at #{@json_file}"
     File.write(@json_file, JSON.pretty_generate({ external: @external.to_a, internal: @internal.to_a }))
   end
 
