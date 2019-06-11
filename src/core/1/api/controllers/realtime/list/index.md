@@ -48,7 +48,7 @@ Returns an object with the following structure:
 
 ### Example
 
-```javascript
+```js
 {
   "error": null,
   "status": 200,

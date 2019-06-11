@@ -64,7 +64,7 @@ Returns a mapping object with the following structure:
 
 ### Example:
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

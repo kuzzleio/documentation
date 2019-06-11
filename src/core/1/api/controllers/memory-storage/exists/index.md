@@ -45,7 +45,7 @@ Method: GET
 
 Returns the number of existing keys.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

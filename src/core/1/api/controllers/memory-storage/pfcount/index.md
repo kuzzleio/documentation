@@ -45,7 +45,7 @@ Method: GET
 
 Returns the probabilistic cardinality.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

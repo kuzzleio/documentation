@@ -54,7 +54,7 @@ Method: GET
 
 Returns the position of the first bit found matching the searched value.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

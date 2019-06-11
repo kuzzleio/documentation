@@ -21,7 +21,7 @@ Without a refresh after a write request, the documents may not be immediately vi
 
 <br/>
 
-```javascript
+```js
 getAutoRefresh(index, [options]);
 ```
 

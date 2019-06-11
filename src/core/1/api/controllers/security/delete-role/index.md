@@ -49,7 +49,7 @@ Method: DELETE
 
 Returns the deleted role identifier.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

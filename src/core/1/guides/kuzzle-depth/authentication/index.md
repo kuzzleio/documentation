@@ -39,7 +39,7 @@ The Local Authentication Strategy, implemented in the [Passport Local Plugin](ht
 
 - The Client Application calls the `login` action of the _Auth Controller_:
 
-```javascript
+```js
 {
   "controller": "auth",
   "action": "login",
@@ -65,7 +65,7 @@ The Local Authentication Strategy, implemented in the [Passport Local Plugin](ht
 
 - The JWT Token is then sent back to the Client Application and should be used in subsequent requests to Kuzzle's API. Below is an example response after the authentication process is complete:
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,
@@ -101,7 +101,7 @@ The authentication flow has two steps: first we request the Authentication Provi
 
 - The user calls the `login` action of the _Auth Controller_:
 
-```javascript
+```js
 {
   "controller": "auth",
   "action": "login",
@@ -115,7 +115,7 @@ The authentication flow has two steps: first we request the Authentication Provi
 
 - The _Passport Wrapper_ intercepts the HTTP redirect response and formats the response for the client:
 
-```javascript
+```js
 {
   "headers":
   {
@@ -128,7 +128,7 @@ The authentication flow has two steps: first we request the Authentication Provi
 
 - The _Auth Controller_ sends the response, which includes the Authentication Provider's URL, to the client:
 
-```javascript
+```js
 {
   "status": 302
   "error": null,
@@ -165,7 +165,7 @@ Location: http://< kuzzle >/_login/github?code=OAUTH2_CODE
   * If the request is made over HTTP the Authorization Code is sent as a query parameter in the request URL: `curl http://< kuzzle >/_login/github?code=OAUTH2_CODE`
   * If the request is made over Websocket the Authorization Code is sent as a parameter in the body of the message:
 
-```javascript
+```js
 {
   "controller": "auth",
   "action": "login",

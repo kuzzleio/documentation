@@ -47,7 +47,7 @@ Method: GET
 
 Returns the field's value.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

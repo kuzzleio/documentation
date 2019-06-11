@@ -51,7 +51,7 @@ The `min` and `max` values are inclusive by default. To change this behavior, ch
 
 Returns the number of elements in the sorted set included in the provided range.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

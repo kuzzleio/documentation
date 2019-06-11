@@ -51,7 +51,7 @@ Returns credentials information (depend on the authentication strategy).
 
 ### Example with the "local" authentication strategy:
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

@@ -52,7 +52,7 @@ Each right is an object with the following properties:
 - `collection`: authorized or denied collection
 - `value`: one of the following value: `denied`, `allowed`, or `conditional`
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

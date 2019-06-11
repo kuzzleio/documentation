@@ -41,19 +41,19 @@ If you are performing a clean install you might see some <code>unmet peer depend
 
 Then, create a `init-kuzzle.js` file and start by adding the code below. This will load the Kuzzle Javascript SDK:
 
-```javascript
+```js
 import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 ```
 
 Next, we instantiate a client that will connect to Kuzzle via WebSocket. If Kuzzle is not running on localhost, replace it with the corresponding server name or IP address.
 
-```javascript
+```js
 const kuzzle = new Kuzzle(new WebSocket('localhost'));
 ```
 
 Next we add a listener to be notified in case of a connection error:
 
-```javascript
+```js
 kuzzle.on('networkError', error => {
   console.error(`Network Error: ${error}`);
 });
@@ -61,7 +61,7 @@ kuzzle.on('networkError', error => {
 
 Then we have to connect our web app to the Kuzzle server with the `connect()` method.
 
-```javascript
+```js
 const run = async () => {
   try {
     // Connect to Kuzzle server
@@ -79,7 +79,7 @@ const run = async () => {
 Finally, we will create a new index `nyc-open-data` and a new collection
 `yellow-taxi` that we will use to store data later on.
 
-```javascript
+```js
 const run = async () => {
   try {
     // Connect to Kuzzle server
@@ -114,7 +114,7 @@ This code does the following:
 Now, to have your script up and running, require it somewhere in your application
 (e.g. your main entry point) and launch it.
 
-```javascript
+```js
 require('../path/to/init-kuzzle.js');
 ```
 
@@ -155,7 +155,7 @@ To activate this code, create a button somewhere in your page like the following
 
 Then, associate it to the `create` function by adding this code to your application
 
-```javascript
+```js
 const create = require('../path/to/create.js');
 
 // This is the most "vanilla" way to call a function in reaction to a click,
@@ -203,7 +203,7 @@ This code does the following:
 You can execute this code in the same page as before or in another page of your app. Whatever option you choose, to
 execute the code, you just need to require it in your page
 
-```javascript
+```js
 require('../path/to/subscribe.js');
 ```
 

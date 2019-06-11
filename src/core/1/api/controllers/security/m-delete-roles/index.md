@@ -60,7 +60,7 @@ Body:
 
 Returns an array of successfully deleted roles.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

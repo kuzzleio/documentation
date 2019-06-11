@@ -36,7 +36,7 @@ Method: GET
 
 The result is an array of available strategy names:
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

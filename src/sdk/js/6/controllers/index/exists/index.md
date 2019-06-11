@@ -11,7 +11,7 @@ Checks if the given index exists.
 
 <br/>
 
-```javascript
+```js
 exists(index, [options]);
 ```
 

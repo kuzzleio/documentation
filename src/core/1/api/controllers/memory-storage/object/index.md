@@ -47,7 +47,7 @@ Method: GET
 
 If `subcommand` is set to `refcount` or `idletime`, then an integer is returned:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,
@@ -62,7 +62,7 @@ If `subcommand` is set to `refcount` or `idletime`, then an integer is returned:
 
 If `subcommand` is set to `encoding`, then a string is returned:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

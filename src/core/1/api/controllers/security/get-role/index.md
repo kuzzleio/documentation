@@ -46,7 +46,7 @@ Returns the queried role:
 - `_id`: role identifier
 - `_source`: role description
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,
