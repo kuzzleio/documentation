@@ -26,7 +26,7 @@ init (config, context) {
   console.log(context.secrets);
   // {
   //   aws: {
-  //     keyId: 'aws key id'
+  //     keyId: 'decrypted aws key id'
   //   }
   // }
 }

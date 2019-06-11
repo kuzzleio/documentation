@@ -22,11 +22,11 @@ Kuzzle offers a secure storage system for these secrets, the operation is as fol
   - automatic decryption of the file when Kuzzle starts,
   - exposing the secrets in the context of plugins.
 
-Thus, the only secret that it is necessary to communicate to the rest of his team is the encryption password of this file.
+Thus, the only secret that it is necessary to communicate to the rest of a team is the encryption password for this file.
 
 ## Secrets file format
 
-The secrets file is in JSON format. Each string value will be encrypted but the key names will remain the same.
+The secrets file is in JSON format. String values are encrypted but the key names remain the same.
 
 ```js
 /* config/secrets.json */
@@ -38,7 +38,7 @@ The secrets file is in JSON format. Each string value will be encrypted but the 
 }
 ```
 
-Once encrypted, the file will be the following:
+Once encrypted, the file looks like the following:
 
 ```js
 /* config/secrets.enc.json */
@@ -76,21 +76,21 @@ You can also specify the vault key in the `KUZZLE_VAULT_KEY` environment variabl
 
 ## Load encrypted secrets at startup
 
-Kuzzle will try to decrypt the provided file in one of the following ways in order of priority:
-  - in the command `./bin/kuzzle start --secrets-file /var/secrets.enc.json`
+Kuzzle will try to decrypt the provided file using the following locations, in that order of priority:
+  - in the command line: `./bin/kuzzle start --secrets-file /var/secrets.enc.json`
   - in an environment variable `export KUZZLE_SECRETS_FILE=/var/secrets.enc.json`
   - the default one present at the location `<kuzzle dir>/config/secrets.enc.json`
 
-The decryption key must be provided in one of the following ways, always in order of priority:
-  - in the command `./bin/kuzzle start --vault-key verystrongpassword`
+The decryption key must be provided in one of the following ways, in order of priority as well:
+  - in the command line: `./bin/kuzzle start --vault-key verystrongpassword`
   - in an environment variable `export KUZZLE_VAULT_KEY=verystrongpassword`
 
-Kuzzle start is interrupted if:
+Kuzzle start sequence ends in failure if:
   - a decryption key is provided and Kuzzle cannot find a file
   - Kuzzle finds a file and no decryption key is provided
 
-## Access secrets in plugin
+## Accessing secrets in plugin
 
-Once Kuzzle has successfully loaded the file containing the secrets, he will expose its content to all the plugins.  
+Once Kuzzle has successfully loaded the file containing the secrets, it exposes its decrypted content to all plugins.  
 
 Secrets are accessible in the [secrets](/core/1/plugins/plugin-context/secrets) property of the plugin context.  
