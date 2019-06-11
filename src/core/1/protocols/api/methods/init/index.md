@@ -22,8 +22,8 @@ init(entryPoint, context);
 
 | Arguments    | Type                                                           | Description                                                                              |
 | ------------ | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `entryPoint` | <pre><a href=/core/1/protocols/api/entrypoint>EntryPoint</a></pre> | Provides an interface to protocol related methods                                        |
-| `context`    | <pre><a href=/core/1/protocols/api/context/>context</a></pre>       | Generic interface exposing objects and methods not directly related to the network layer |
+| `entryPoint` | [`EntryPoint`](/core/1/protocols/api/entrypoint) | Provides an interface to protocol related methods                                        |
+| `context`    | [`context`](/core/1/protocols/api/context/)       | Generic interface exposing objects and methods not directly related to the network layer |
 
 ---
 
