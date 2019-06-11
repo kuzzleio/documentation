@@ -171,7 +171,7 @@ new context.error.PartialError(message, errors);
 | Arguments  | Type                                                                                       | Description                |
 | ---------- | ------------------------------------------------------------------------------------------ | -------------------------- |
 | `message`  | <pre>string</pre>                                                                          | Error message              |
-| `failures` | <pre><a href=/core/1/protocols/api/context/errors/#kuzzleerror-default>KuzzleError[]</a></pre> | List of encountered errors |
+| `failures` | [`KuzzleError[]`](/core/1/protocols/api/context/errors/#kuzzleerror-default) | List of encountered errors |
 
 ### Status Code
 
