@@ -59,7 +59,7 @@ services:
       - NODE_ENV=production
 
   redis:
-    image: redis:3.2
+    image: redis:5
 
   elasticsearch:
     image: kuzzleio/elasticsearch:5.6.10
