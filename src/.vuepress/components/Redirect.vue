@@ -11,7 +11,7 @@ export default {
     }
   },
   mounted() {
-    window.location = this.to;
+    this.$router.replace(this.to)
   }
 };
 </script>
