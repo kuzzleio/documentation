@@ -10,7 +10,7 @@ description: Profile:addPolicy
 Adds a role to the security profile.
 
 <div class="alert alert-info">
-Updating a security profile will have no impact until the <a href="/sdk/android/3/core-classes/profile/save/">save</a> method is called
+Updating a security profile will have no impact until the [save](/sdk/android/3/core-classes/profile/save/) method is called
 </div>
 
 ---
