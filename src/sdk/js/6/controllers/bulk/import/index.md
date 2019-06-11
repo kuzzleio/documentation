@@ -75,7 +75,7 @@ Each object has the following structure:
 {
   "<action>": {
     _id: "another-id",
-    status: 200
+    status: 201
   }
 }
 ```
