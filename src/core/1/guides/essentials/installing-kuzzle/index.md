@@ -127,7 +127,7 @@ Associated password is your unique instance ID. You can get it from the EC2 AWS 
 In this section we will perform a manual installation of Kuzzle on a Linux distribution. We choose Linux because all Kuzzle components work natively on it.
 
 ::: info
-By default, Kuzzle expects all the components to be running on localhost but you can [change](/core/1/guides/essentials/configuration/)'ll be able to select which <a :href="`${$site.base}core/1/guides/essentials/admin-console/#connect-to-kuzzle`">Kuzzle</a> installation that you want to manage. this behavior.
+By default, Kuzzle expects all the components to be running on localhost but you can [change](/core/1/guides/essentials/configuration/)'ll be able to select which [Kuzzle](/core/1/guides/essentials/admin-console/#connect-to-kuzzle) installation that you want to manage. this behavior.
 :::
 
 We will run Kuzzle using [pm2](http://pm2.keymetrics.io/), a process management tool used to monitor Node.js applications.

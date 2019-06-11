@@ -210,4 +210,4 @@ There are multiple ways of adding a business logic layer on top of the standard 
 
 * With a [Pipe Plugin](/core/1/plugins/guides/pipes), you can listen to one or multiple [API events](/core/1/plugins/guides/events/), and decide whether you accept a query or document according to your business rules (you can see an example on [Github](https://github.com/kuzzleio/kuzzle-plugin-sample-custom-policies))
 * If all you need is to make sure that submitted documents follow a strict set of formatting rules, you can add [document validators](/core/1/guides/cookbooks/datavalidation/)
-* <DeprecatedBadge version="1.4.0" /> Using <a href="/core/1/guides/kuzzle-depth/roles-definitions">Permission Closures</a>, you can add functions directly into role definitions
+* <DeprecatedBadge version="1.4.0" /> Using [Permission Closures](/core/1/guides/kuzzle-depth/roles-definitions), you can add functions directly into role definitions

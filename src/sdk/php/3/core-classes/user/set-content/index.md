@@ -10,7 +10,7 @@ description: User:setContent
 Replaces the content of User.
 
 <div class="alert alert-info">
-Updating a user will have no impact until the <a href="/sdk/php/3/core-classes/user/create/"><code>create</code></a> or <a href="/sdk/php/3/core-classes/user/replace/"><code>replace</code></a> method is called
+Updating a user will have no impact until the [`create`](/sdk/php/3/core-classes/user/create/) or [`replace`](/sdk/php/3/core-classes/user/replace/) method is called
 </div>
 
 ---
