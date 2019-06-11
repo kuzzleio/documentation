@@ -47,7 +47,7 @@ Subscription to a room is done via the [realtime:subscribe](/core/1/api/controll
  - subscription filters contained in the `body` of the request.
 
 ::: info
-In order to use Kuzzle in Pub/Sub mode only, the index and collection do not need to physically exist in the database (e.g. created in Kuzzle via the <a href="/core/1/api/controllers/index/create">index:create</a> and <a href="/core/1/api/controllers/collection/create">collection:create</a> methods of the API).
+In order to use Kuzzle in Pub/Sub mode only, the index and collection do not need to physically exist in the database (e.g. created in Kuzzle via the [index:create](/core/1/api/controllers/index/create) and [collection:create](/core/1/api/controllers/collection/create) methods of the API).
 <br/>
 These information are only used to define an ephemeral room between several customers.
 :::
@@ -135,7 +135,7 @@ Customers subscribing to this channel will receive the following notification:
 More information about the [Document Notification format](/core/1/api/essentials/notifications/#documents-changes-messages)
 
 ::: warning
-Messages published with the <a href="/core/1/api/controllers/realtime/publish">realtime:publish</a> method are not persisted in the database.
+Messages published with the [realtime:publish](/core/1/api/controllers/realtime/publish) method are not persisted in the database.
 :::
 
 ## Database notifications

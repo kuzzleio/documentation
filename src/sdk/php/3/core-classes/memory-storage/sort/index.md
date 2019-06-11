@@ -11,7 +11,7 @@ Sorts and returns elements contained in a list, a set of unique values or a sort
 By default, sorting is numeric and elements are compared by their value interpreted as double precision floating point number.
 
 <div class="alert alert-info"
-While Kuzzle's API supports the "store" option for this command, Kuzzle SDK methods do not. To sort and store in the same process, use the <a href="/sdk/php/3/core-classes/kuzzle/query/">query method</a>
+While Kuzzle's API supports the "store" option for this command, Kuzzle SDK methods do not. To sort and store in the same process, use the [query method](/sdk/php/3/core-classes/kuzzle/query/)
 </div>
 
 [[_Redis documentation_]](https://redis.io/commands/sort)

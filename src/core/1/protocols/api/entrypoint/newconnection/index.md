@@ -22,7 +22,7 @@ newConnection(connection);
 
 | Arguments    | Type                                                                               | Description         |
 | ------------ | ---------------------------------------------------------------------------------- | ------------------- |
-| `connection` | <pre><a href=/core/1/protocols/api/context/clientconnection>ClientConnection</a></pre> | New user connection |
+| `connection` | [`ClientConnection`](/core/1/protocols/api/context/clientconnection) | New user connection |
 
 ---
 

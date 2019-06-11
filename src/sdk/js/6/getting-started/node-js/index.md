@@ -105,7 +105,7 @@ node create.js
 ```
 
 <div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click <a href="/core/1/guides/essentials/admin-console/">here</a> to see how you can use the
+You have now successfully stored your first document into Kuzzle. Click [here](/core/1/guides/essentials/admin-console/) to see how you can use the
    <a href="http://console.kuzzle.io" target="_blank"><strong>Kuzzle Admin Console</strong></a> to browse your collection and confirm that your document was saved.
 </div>
 
@@ -115,7 +115,7 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 ## Subscribe to realtime document notifications (pub/sub)
 
-Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the <a href="/sdk/js/6/essentials/realtime-notifications/">realtime notifications</a> documentation).
+Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the [realtime notifications](/sdk/js/6/essentials/realtime-notifications/) documentation).
 
 Let's get started. Create a `subscribe.js` file with the following code:
 
@@ -151,6 +151,6 @@ Congratulations! You have just set up your first pub/sub communication!
 Now that you're more familiar with Kuzzle, dive even deeper to learn how to leverage its full capabilities:
 
 - discover what this SDK has to offer by browsing other sections of this documentation
-- learn how to use <a href="/core/1/koncorde">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
-- learn how to perform a <a href="/sdk/js/6/controllers/auth/login">basic authentication</a>
-- follow our guide to learn how to <a href="/core/1/guides/essentials/security/">manage users, and how to set up fine-grained access control</a>
+- learn how to use [Koncorde](/core/1/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+- learn how to perform a [basic authentication](/sdk/js/6/controllers/auth/login)
+- follow our guide to learn how to [manage users, and how to set up fine-grained access control](/core/1/guides/essentials/security/)

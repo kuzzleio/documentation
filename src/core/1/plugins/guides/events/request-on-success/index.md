@@ -10,7 +10,7 @@ title: request:onSuccess
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| `request` | <pre><a href=/core/1/plugins/constructors/request>Request</a></pre> | The normalized API request |
+| `request` | [`Request`](/core/1/plugins/constructors/request) | The normalized API request |
 
 Triggered whenever a request execution succeeds.
 

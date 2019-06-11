@@ -23,7 +23,7 @@ kuzzleio::Kuzzle(kuzzleio::Protocol* protocol, const options& options);
 
 | Argument   | Type                                                                   | Description                       |
 | ---------- | ---------------------------------------------------------------------- | --------------------------------- |
-| `protocol` | <pre><a href=/sdk/cpp/1/virtual-classes/protocol/>Protocol\*</a></pre> | Protocol used by the SDK instance |
+| `protocol` | [`Protocol\*`](/sdk/cpp/1/virtual-classes/protocol/) | Protocol used by the SDK instance |
 | `options`  | <pre>const kuzzleio::options\&</pre>                                   | Kuzzle object configuration       |
 
 ### protocol
