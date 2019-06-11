@@ -488,52 +488,75 @@ redirections:
   - from: sdk-reference/php/3/user
     to: sdk/php/3/core-classes/user
 
-redirectionslegacy:
+  # Legacy (doc v1)
   - from: api-documentation
     to: core/1/api
+
   - from: sdk-reference/essentials
     to: sdk
+
   - from: elasticsearch-cookbook/bool-query
-    to: core/1/guide/cookbooks/elasticsearch/bool-query
+    to: core/1/guides/cookbooks/elasticsearch/bool-query
+
   - from: guide/getting-started
-    to: core/1/guide/guides/getting-started
+    to: core/1/guides/getting-started
+
   - from: guide/essentials/installing-kuzzle
-    to: core/1/guide/guides/essentials/installing-kuzzle
+    to: core/1/guides/essentials/installing-kuzzle
+
   - from: guide/essentials/installing-console
-    to: core/1/guide/guides/essentials/installing-console
+    to: core/1/guides/essentials/admin-console
+
   - from: guide/code-examples/geofencing/javascript
-    to: core/1/guide/code-examples/geofencing/javascript
+    to: core/1/guides/code-examples/geofencing/javascript
+
   - from: guide/essentials
-    to: core/1/guide/guides/essentials
+    to: core/1/guides/essentials
+
   - from: sdk-reference/collection
     to: sdk
+
   - from: elasticsearch-cookbook/useful-commands
-    to: core/1/guide/cookbooks/elasticsearch/useful-commands
+    to: core/1/guides/cookbooks/elasticsearch/useful-commands
+
   - from: guide/code-examples/dbsearch/javascript
-    to: core/1/guide/code-examples/dbsearch/javascript
+    to: core/1/guides/code-examples/dbsearch/javascript
+
   - from: guide/essentials/plugins
-    to: core/1/plugins/plugins/essentials/available-plugins
+    to: core/1/plugins/essentials/available-plugins
+
   - from: guide/kuzzle-depth
-    to: core/1/guide/guides/kuzzle-depth
+    to: core/1/guides/kuzzle-depth
+
   - from: plugins-reference/plugins-features
-    to: core/1/plugins/plugins/essentials/getting-started
+    to: core/1/plugins/essentials/getting-started
+
   - from: sdk-reference/essentials/events
     to: sdk/js/6/essentials/events
+
   - from: sdk-reference/essentials/notifications
     to: sdk/js/6/essentials/realtime-notifications
+
   - from: elasticsearch-cookbook/basic-queries
-    to: core/1/guide/cookbooks/elasticsearch/basic-queries
+    to: core/1/guides/cookbooks/elasticsearch/basic-queries
+
   - from: guide/essentials/real-time
-    to: core/1/guide/guides/essentials/real-time
+    to: core/1/guides/essentials/real-time
+
   - from: sdk-reference/collection/search
     to: sdk
+
   - from: sdk-reference/kuzzle
     to: sdk
+
   - from: api-documentation/query-syntax
     to: core/1/api/essentials/query-syntax
+
   - from: kuzzle-events/plugin-events
-    to: core/1/plugins/plugins/events
+    to: core/1/plugins/guides/events
+
   - from: sdk-reference/kuzzle/login
     to: sdk/js/6/controllers/auth/login
+
   - from: sdk-reference/memory-storage/pfadd
     to: sdk/js/6/controllers/ms/pfadd

@@ -17,7 +17,7 @@ Kuzzle allows you to listen to multiple events with a single listener thanks to 
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | `*` | `*` | Depends on the event type |
 
-You can use wildcards to replace only the name of an event.
+You can catch all the actions of a controller by using a wildcard instead of the action name.
 
 ### Naming Template
 

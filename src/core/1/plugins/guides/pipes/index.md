@@ -14,7 +14,7 @@ Pipes can:
 - Decide to abort a task. If a pipe throws an error, Kuzzle interrupts the task, and forwards a standardized version of the thrown error to the originating user
 - Change the received information. Kuzzle will use the updated information upon resuming the task
 
-<div class="alert alert-warning">If a pipe takes too long to respond, Kuzzle will eventually abort the entire task with a <a href="/core/1/plugins/errors/gatewaytimeouterror">GatewayTimeout</a> error. The timeout value can be changed in the <a href="/core/1/guides/essentials/configuration/">configuration files.</a></div>
+<div class="alert alert-warning">If a pipe takes too long to respond, Kuzzle will eventually abort the entire task with a <a href="/core/1/plugins/plugin-context/errors/gatewaytimeouterror">GatewayTimeout</a> error. The timeout value can be changed in the <a href="/core/1/guides/essentials/configuration/">configuration files.</a></div>
 
 ---
 
