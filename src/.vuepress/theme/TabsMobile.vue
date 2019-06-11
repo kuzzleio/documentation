@@ -14,7 +14,7 @@
       <div class="md-source__repository">Guides</div>
     </router-link>
     <router-link
-      :to="{path:generateLink('/core/1/api/')}"
+      :to="{path: generateLink('/core/1/api/')}"
       title="API"
       class="md-source"
       data-md-state="done"
@@ -53,12 +53,19 @@
 </template>
 
 <script>
+import { getValidLinkByRootPath } from '../util.js';
 import sdkList from '../sdk.json';
+
 export default {
   data() {
     return {
       sdkList
     };
+  },
+   methods: {
+    generateLink(path) {
+      return getValidLinkByRootPath(path, this.$site.pages);
+    }
   }
 };
 </script>
