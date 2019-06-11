@@ -23,10 +23,10 @@
 
               <div v-for="item__2 in getPageChildren(item__1)">
                 <li class="md-nav__item">
-                  <a
+                  <router-link
                     class="md-nav__link"
                     :class="{'md-nav__link--active': $page.path === item__2.path, 'md-nav__item--code': item__2.frontmatter.code == true}"
-                    :href="getFirstValidChild(item__2).path"
+                    :to="{path: getFirstValidChild(item__2).path}"
                   >
                     <div v-if="getPageChildren(item__2).length">
                       <i
@@ -40,7 +40,7 @@
                     <div v-else>
                       <span class="no_arrow">{{item__2.title}}</span>
                     </div>
-                  </a>
+                  </router-link>
                 </li>
 
                 <ul
@@ -49,24 +49,24 @@
                 >
                   <div v-for="item__3 of getPageChildren(item__2)" class="md-nav__item">
                     <li v-if="$page.path === item__3.path">
-                      <a
+                      <router-link
                         class="md-nav__link--active"
                         :class="{'md-nav__item--code': item__3.frontmatter.code}"
-                        :href="`${item__3.path}`"
+                        :to="{path: item__3.path}"
                         :title="item__3.title"
                       >
                         <span class="no_arrow">{{item__3.title}}</span>
-                      </a>
+                      </router-link>
                     </li>
                     <li v-else>
-                      <a
-                        :href="`${item__3.path}`"
+                      <router-link
+                        :to="{path: item__3.path}"
                         :title="item__3.title"
                         class="md-nav__link"
                         :class="{'md-nav__item--code': item__3.frontmatter.code}"
                       >
                         <span class="no_arrow">{{item__3.title}}</span>
-                      </a>
+                      </router-link>
                     </li>
                   </div>
                 </ul>

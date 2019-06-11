@@ -22,7 +22,7 @@ execute(request, [callback]);
 
 | Arguments  | Type                                                           | Description                                    |
 | ---------- | -------------------------------------------------------------- | ---------------------------------------------- |
-| `request`  | <a href=/core/1/plugins/constructors/request><pre>Request</pre></a> | The API query to execute                       |
+| `request`  | [`Request`](/core/1/plugins/constructors/request) | The API query to execute                       |
 | `callback` | <pre>function</pre>                                            | Callback to call with the API execution result |
 
 ---

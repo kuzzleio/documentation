@@ -24,7 +24,7 @@ execute(request, [callback]);
 
 | Arguments  | Type                                                             | Description                                                                                              |
 | ---------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`  | <pre><a href=/core/1/protocols/api/context/request>Request</a></pre> | The API query to execute                                                                                 |
+| `request`  | [`Request`](/core/1/protocols/api/context/request) | The API query to execute                                                                                 |
 | `callback` | <pre>function</pre>                                              | Callback to call with the API execution result.<br/>If not provided, `execute` returns a promise instead |
 
 ---
