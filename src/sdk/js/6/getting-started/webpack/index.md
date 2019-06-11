@@ -13,7 +13,7 @@ We will walk you through creating scripts that can **store** documents in Kuzzle
 
 ## Running Kuzzle
 
-Before going through this tutorial, you should have a Kuzzle server running. Please refer to the [Running Kuzzle Tutorial](https://docs.kuzzle.io/core/1/guides/getting-started/running-kuzzle/) if you don't have one yet.
+Before going through this tutorial, you should have a Kuzzle server running. Please refer to the [Running Kuzzle Tutorial](/core/1/guides/getting-started/running-kuzzle/) if you don't have one yet.
 
 ## Fun with the SDK
 
