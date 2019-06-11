@@ -7,7 +7,10 @@ title: validate
 # validate
 
 Validate and persist a previsously uploaded file.  
+
+::: warning
 Without a call to the action, every file uploaded on a Presigned URL will be deleted after a TTL.
+:::
 
 ---
 

@@ -40,7 +40,7 @@ Method: DELETE
 
 ## Response
 
-Returns a boolean indicating that the file is deleted from S3.
+Returns a boolean indicating that the file has been deleted from S3.
 
 ```js
 {
