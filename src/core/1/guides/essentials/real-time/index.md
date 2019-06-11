@@ -186,11 +186,10 @@ For example, creating a document with the [document:create](/core/1/api/controll
 }
 ```
 
-<details><summary>Payload to send with wscat in another terminal</summary>
-<pre>
+Payload to send with wscat in another terminal:
+```json
 {"controller":"document","action":"create","index":"nyc-open-data","collection":"yellow-taxi","body":{"name":"Morgoth","licence":"B","car":"limousine"}}
-</pre>
-</details>
+```
 
 Customers subscribing to the changes in this collection will receive the following notification:
 
