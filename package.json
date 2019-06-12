@@ -16,6 +16,7 @@
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@vuepress/plugin-google-analytics": "^1.0.0-alpha.47",
+    "@vuepress/shared-utils": "^1.0.1",
     "algoliasearch": "^3.32.1",
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.3",
