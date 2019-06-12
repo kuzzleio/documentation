@@ -56,7 +56,7 @@ Due to the synchronous nature of the HTTP protocol, real-time notifications are 
 
 ## Body properties
 
-Subscription filters, following the [Koncorde syntax](/core/1/koncorde/)
+Subscription filters, following the [Koncorde syntax](/core/1/guides/cookbooks/realtime-api/)
 
 An empty filter subscribes to any change occuring on the selected index-collection pair.
 

@@ -8,7 +8,7 @@ order: 200
 
 # The `validators` property
 
-The `validators` property is an array of [Koncorde filters](/core/1/koncorde/#FIXME). Each filter has to match in order for the document to be valid.
+The `validators` property is an array of [Koncorde filters](/core/1/guides/cookbooks/realtime-api/#FIXME). Each filter has to match in order for the document to be valid.
 
 <div class="alert alert-warning">You have to be careful with fields that are empty or undefined.</div>
 
