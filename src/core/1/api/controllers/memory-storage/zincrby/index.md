@@ -64,7 +64,7 @@ Body:
 
 Returns the updated member's score value.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

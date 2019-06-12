@@ -15,7 +15,7 @@ All further requests emitted by this SDK instance will be on behalf of the authe
 
 ## Arguments
 
-```javascript
+```js
 login(strategy, [credentials], [expiresIn]);
 ```
 

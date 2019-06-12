@@ -86,7 +86,7 @@ Each query result contains the following properties:
   - `_id`: document unique identifier
   - `status`: HTTP status code for that query. `201` (created) or `206` (partial error)
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

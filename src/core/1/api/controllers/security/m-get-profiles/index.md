@@ -55,7 +55,7 @@ Returns a `hits` array of objects. Each object is a profile description, with th
 - `_id`: profile unique identifier
 - `_source`: profile description
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

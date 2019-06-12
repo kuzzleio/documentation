@@ -19,7 +19,7 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 
 <br/>
 
-```javascript
+```js
 refresh(index, [options]);
 ```
 

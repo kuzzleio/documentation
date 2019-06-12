@@ -38,7 +38,7 @@ Method: POST
 
 Returns `1`.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

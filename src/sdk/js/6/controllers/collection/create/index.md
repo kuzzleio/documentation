@@ -16,7 +16,7 @@ This method will only update the mapping if the collection already exists.
 
 <br/>
 
-```javascript
+```js
 create(index, collection, [mapping], [options]);
 ```
 

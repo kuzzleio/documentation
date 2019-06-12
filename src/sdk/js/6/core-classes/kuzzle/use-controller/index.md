@@ -14,7 +14,7 @@ Adds a new controller to the SDK.
 
 ## Arguments
 
-```javascript
+```js
 useController (ControllerClass, accessor);
 ```
 

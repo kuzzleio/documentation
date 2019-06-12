@@ -61,7 +61,7 @@ Body:
 
 Returns the number of removed members.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

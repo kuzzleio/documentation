@@ -32,7 +32,7 @@ equals: {
 
 Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper'
@@ -45,7 +45,7 @@ Given the following documents:
 
 The following filter validates the first document:
 
-```javascript
+```js
 {
   equals: {
     firstName: 'Grace';
@@ -77,7 +77,7 @@ The following syntax is deprecated since Koncorde 1.2, and supported for backwar
 
 Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -95,7 +95,7 @@ Given the following documents:
 
 The following filter validates the first document:
 
-```javascript
+```js
 {
   exists: 'alive';
 }
@@ -103,7 +103,7 @@ The following filter validates the first document:
 
 And this filter validates the second document:
 
-```javascript
+```js
 {
   exists: 'hobby["algorithm"]';
 }
@@ -141,7 +141,7 @@ All syntaxes below are accepted, as they describe the same bounding box, with th
 - top-left corner of latitude `43.5810609` and longitude `3.8433703`
 - bottom-right corner of latitude `43.6331979` and longitude `3.9282093`
 
-```javascript
+```js
 {
   point: {
     top: 43.5810609,
@@ -152,7 +152,7 @@ All syntaxes below are accepted, as they describe the same bounding box, with th
 }
 ```
 
-```javascript
+```js
 {
   point: {
     topLeft: { lat: 43.5810609, lon: 3.8433703 },
@@ -161,7 +161,7 @@ All syntaxes below are accepted, as they describe the same bounding box, with th
 }
 ```
 
-```javascript
+```js
 {
   point: {
     top_left: "43.5810609, 3.8433703",
@@ -174,7 +174,7 @@ All syntaxes below are accepted, as they describe the same bounding box, with th
 
 Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -195,7 +195,7 @@ Given the following documents:
 
 The following filter will match the second document only:
 
-```javascript
+```js
 {
   geoBoundingBox: {
     location: {
@@ -238,7 +238,7 @@ geoDistanceRange: {
 
 Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -259,7 +259,7 @@ Given the following documents:
 
 The following filter will match the second document only:
 
-```javascript
+```js
 {
   geoDistanceRange: {
     location: [51.5029017, -0.1606903],
@@ -297,7 +297,7 @@ geoDistance: {
 
 Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -318,7 +318,7 @@ Given the following documents:
 
 The following filter will match the second document only:
 
-```javascript
+```js
 {
   geoDistance: {
     location: {
@@ -358,7 +358,7 @@ geoPolygon: {
 
 Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -379,7 +379,7 @@ Given the following documents:
 
 The following filter will match the second document only:
 
-```javascript
+```js
 {
   geoPolygon: {
     location: {
@@ -409,7 +409,7 @@ This filter returns only documents having their unique document ID listed in the
 
 Given the following documents:
 
-```javascript
+```js
 {
   _id: 'a',
   firstName: 'Grace',
@@ -429,7 +429,7 @@ Given the following documents:
 
 The following filter validates first document:
 
-```javascript
+```js
 {
   ids: {
     values: ['a'];
@@ -466,7 +466,7 @@ The following syntax is deprecated since Koncorde 1.2, and supported for backwar
 
 Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -484,7 +484,7 @@ Given the following documents:
 
 The following filter validates the second document:
 
-```javascript
+```js
 {
   missing: 'alive';
 }
@@ -492,7 +492,7 @@ The following filter validates the second document:
 
 And this filter validates the first document:
 
-```javascript
+```js
 {
   missing: 'hobbies["algorithm"]';
 }
@@ -530,7 +530,7 @@ range: {
 
 Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -556,7 +556,7 @@ Given the following documents:
 
 The following filter validates the last two documents:
 
-```javascript
+```js
 {
   range: {
     age: {
@@ -576,7 +576,7 @@ The `regexp` filter matches attributes using [PCREs](https://en.wikipedia.org/wi
 
 A `regexp` filter has the following structure, splitting the usual `/pattern/flags` into two parts:
 
-```javascript
+```js
 regexp: {
   <field name>: {
     value: '<search pattern>',
@@ -587,7 +587,7 @@ regexp: {
 
 If you don't need any modifier flag, then you may also use the following simplified form:
 
-```javascript
+```js
   regexp: {
     <field name>: '<search pattern>'
   }
@@ -597,7 +597,7 @@ If you don't need any modifier flag, then you may also use the following simplif
 
 Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper'
@@ -610,7 +610,7 @@ Given the following documents:
 
 The following filter validates the first document:
 
-```javascript
+```js
 {
   regexp: {
     firstName: {

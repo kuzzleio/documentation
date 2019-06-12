@@ -61,7 +61,7 @@ By default, `min` and `max` are inclusive. Check the full Redis documentation fo
 
 By default, returns the list of elements in the provided score range:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,
@@ -80,7 +80,7 @@ By default, returns the list of elements in the provided score range:
 
 If the `withscores` option is provided, then the returned array alternates elements with their score:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

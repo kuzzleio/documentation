@@ -27,7 +27,7 @@ Method: GET
 
 ### Other protocols
 
-```javascript
+```js
 {
   "controller": "ms",
   "action": "geodist",
@@ -56,7 +56,7 @@ Method: GET
 
 Returns the calculated distance.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

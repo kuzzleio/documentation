@@ -36,7 +36,7 @@ Method: GET
 
 Returns an `exists` boolean telling whether an administrator account exists.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

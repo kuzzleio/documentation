@@ -49,7 +49,7 @@ If the form field holds a file, then the corresponding JSON key will refer to an
 
 Queries made to Kuzzle must be encoded using JSON, and have the following format:
 
-```javascript
+```js
 {
   // required by all queries
   "controller": "<controller>",

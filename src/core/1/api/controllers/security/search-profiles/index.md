@@ -79,7 +79,7 @@ Returns an object with the following properties:
   - `_source`: profile definition
 - `total`: total number of profiles found. Depending on pagination options, this can be greater than the actual number of profiles in a single result page
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

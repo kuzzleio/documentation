@@ -75,7 +75,7 @@ Returns an object with the following properties:
   - `_source`: role definition
 - `total`: total number of roles found. Depending on pagination options, this can be greater than the actual number of roles in a single result page
 
-```javascript
+```js
 {
   "action": "searchRoles",
   "controller": "security",

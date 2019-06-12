@@ -46,7 +46,7 @@ Returns the queried profile information:
 - `_id`: profile identifier
 - `_source`: profile content
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

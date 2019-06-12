@@ -149,7 +149,7 @@ Returns an object with the following properties:
 
 Example:
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

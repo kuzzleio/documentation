@@ -51,7 +51,7 @@ Method: DELETE
 
 Returns an `_id` property with the deleted document unique ID.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

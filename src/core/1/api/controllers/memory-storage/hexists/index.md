@@ -47,7 +47,7 @@ Method: GET
 
 Returns either `0` (the field does not exist), or `1` (the field exist).
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,
