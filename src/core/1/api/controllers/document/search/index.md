@@ -109,7 +109,7 @@ Returns a paginated search result set, with the following properties:
 - `scrollId`: identifier to the next page of result. Present only if the `scroll` argument has been set
 - `total`: total number of found documents. Can be greater than the number of documents in a result page, meaning that other matches than the one retrieved are available
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

@@ -11,7 +11,7 @@ Subscribes by providing a set of filters: messages, document changes and, option
 
 <br/>
 
-```javascript
+```js
 subscribe(index, collection, filters, callback, [options]);
 ```
 

@@ -45,7 +45,7 @@ Method: DELETE
 
 Returns a confirmation that the collection is being emptied:
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

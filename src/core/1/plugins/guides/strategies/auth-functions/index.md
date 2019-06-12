@@ -280,7 +280,7 @@ The `getInfo` function must return a promise, resolving to an object containing 
 
 ## Example
 
-```javascript
+```js
 module.exports = class AuthenticationPlugin {
   constructor() {}
 

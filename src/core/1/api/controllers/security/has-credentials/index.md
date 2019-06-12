@@ -45,7 +45,7 @@ Method: GET
 
 Returns a boolean telling whether the user can log in using the provided authentication strategy.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

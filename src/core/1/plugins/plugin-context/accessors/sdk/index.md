@@ -46,7 +46,7 @@ The following controllers are available in the embedded SDK:
 
 ### Example
 
-```javascript
+```js
 async myAwesomePipe (request) {
   await this.context.accessors.sdk.document.create(
     'nyc-open-data',
@@ -73,7 +73,7 @@ This can be useful to call plugins custom controller action.
 
 ### Example
 
-```javascript
+```js
 async myAwesomePipe (request) {
   await this.context.accessors.sdk.query({
     controller: 'custom-plugin/derbyController',
@@ -98,7 +98,7 @@ Execute the following query as the original request user.
 
 ### Arguments
 
-```javascript
+```js
 as(user);
 ```
 
@@ -110,7 +110,7 @@ as(user);
 
 ### Example
 
-```javascript
+```js
 async myAwesomePipe (request) {
   await this.context.accessors.sdk.as(request.context.user).document.create(
     'nyc-open-data',

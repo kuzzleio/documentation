@@ -63,7 +63,7 @@ Method: POST
 
 Returns an object confirming the new value of the `autoRefresh` index property.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

@@ -38,7 +38,7 @@ Method: GET
 
 Returns the number of found keys.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

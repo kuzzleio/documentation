@@ -64,7 +64,7 @@ Body:
 
 Returns the updated value for the incremented hash field.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

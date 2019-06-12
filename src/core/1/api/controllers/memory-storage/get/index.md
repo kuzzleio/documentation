@@ -45,7 +45,7 @@ Method: GET
 
 Returns the queried key's value. If the key doesn't exist, `get` returns `null`.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

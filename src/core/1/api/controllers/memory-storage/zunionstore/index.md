@@ -24,7 +24,7 @@ Method: POST
 Body:
 ```
 
-```javascript
+```js
 {
   "keys": ["key1", "key2", "..."],
   // optional
@@ -70,7 +70,7 @@ Body:
 
 Returns the number of members added to the destination sorted set.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

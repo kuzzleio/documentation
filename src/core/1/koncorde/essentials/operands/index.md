@@ -26,7 +26,7 @@ The `and` filter takes an array of filter objects, combining them with AND opera
 
 ### Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -43,7 +43,7 @@ The `and` filter takes an array of filter objects, combining them with AND opera
 
 ### The following filter validates the first document:
 
-```javascript
+```js
 {
   and: [
     {
@@ -77,7 +77,7 @@ Each one of these attributes are an array of filter objects.
 
 ### Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -103,7 +103,7 @@ Each one of these attributes are an array of filter objects.
 
 ### The following filter validates the second document:
 
-```javascript
+```js
 {
   bool: {
     must : [
@@ -152,7 +152,7 @@ The `not` filter omits the matching data.
 
 ### Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -169,7 +169,7 @@ The `not` filter omits the matching data.
 
 ### The following filter validates the first document:
 
-```javascript
+```js
 {
   not: {
     equals: {
@@ -187,7 +187,7 @@ The `or` filter takes an array containing filter objects, combining them using O
 
 ### Given the following documents:
 
-```javascript
+```js
 {
   firstName: 'Grace',
   lastName: 'Hopper',
@@ -210,7 +210,7 @@ The `or` filter takes an array containing filter objects, combining them using O
 
 ### The following filter validates the first two documents:
 
-```javascript
+```js
 {
   or: [
     {

@@ -36,7 +36,7 @@ Method: GET
 
 Returns an object with a property per authentication strategy, pointing to an array of accepted field names.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

@@ -38,7 +38,7 @@ Method: GET
 
 Returns one of the database key, at random.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

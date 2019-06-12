@@ -101,7 +101,7 @@ Body:
 
 Returns the updated profile identifier and version number.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

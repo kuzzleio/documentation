@@ -47,7 +47,7 @@ Method: GET
 
 Returns the index of the found member in the sorted set, or `null` if the member is not found.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

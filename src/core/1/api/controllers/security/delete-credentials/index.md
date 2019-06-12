@@ -45,7 +45,7 @@ Method: DELETE
 
 Returns an acknowledgement.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

@@ -110,7 +110,7 @@ If one or more document changes fail, the response status is set to `206`, and t
 
 ### Example
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

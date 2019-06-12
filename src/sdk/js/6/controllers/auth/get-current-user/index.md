@@ -11,7 +11,7 @@ Returns information about the currently logged in user.
 
 <br/>
 
-```javascript
+```js
 getCurrentUser([options]);
 ```
 

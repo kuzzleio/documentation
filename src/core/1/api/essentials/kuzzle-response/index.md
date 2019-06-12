@@ -27,7 +27,7 @@ A Kuzzle Response is a JSON object with the following format:
 
 This is a response from a successful real-time subscription:
 
-```javascript
+```js
 {
   "requestId": "32dfbe90-34e1-43c0-a857-25b715b28a1b",
   "status": 200,
@@ -47,7 +47,7 @@ This is a response from a successful real-time subscription:
 
 And this is an error, obtained by trying to fetch a non-existing document:
 
-```javascript
+```js
 {
   "requestId": "b1e9ed17-1910-4356-b9a2-15e177c949f1",
   "status": 404,

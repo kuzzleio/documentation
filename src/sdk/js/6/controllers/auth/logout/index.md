@@ -15,7 +15,7 @@ If this action is successful, then the [jwt](/sdk/js/6/core-classes/kuzzle/prope
 
 <br/>
 
-```javascript
+```js
 logout();
 ```
 

@@ -51,7 +51,7 @@ Method: GET
 
 If `count` is not set or equal to `1`, returns the member as a string:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,
@@ -66,7 +66,7 @@ If `count` is not set or equal to `1`, returns the member as a string:
 
 If the absolute count value is greater than `1`, then an array of random members is returned instead:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

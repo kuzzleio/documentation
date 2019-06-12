@@ -11,7 +11,7 @@ Any access to a Kuzzle resource must be made through a [request](https://github.
 
 Let's take a look at the structure of the `Request` object.
 
-```javascript
+```js
 Request {
     // members
     status,     // {integer}        The status of the transaction (matches HTTP codes)
@@ -40,7 +40,7 @@ Let's take a look at the attributes of this object.
 
 The `input` field contains all the parameters that express the request from the client. It has the following structure:
 
-```javascript
+```js
 RequestInput {
     // members
     args,           // {Object}     Parametric arguments (e.g. for REST, taken from the query string)
@@ -65,7 +65,7 @@ RequestInput {
 
 The `context` attribute contains information about the state of the connection at the moment the request is sent. It has the following structure:
 
-```javascript
+```js
 RequestContext {
     connection {    // Network connection information
       id,           // {scalar}     Unique identifier of the user connection

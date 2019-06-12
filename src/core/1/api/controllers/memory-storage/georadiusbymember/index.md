@@ -62,7 +62,7 @@ The response format depends on the passed options.
 
 Without neither `withcoord` nor `withdist`, the response consists only of a list of points names:
 
-```javascript
+```js
 {
  "requestId": "<unique request identifier>",
  "status": 200,

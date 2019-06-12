@@ -108,7 +108,7 @@ Given the following document:
 
 Here is a filter, testing whether the value `compiler` is listed in the array `hobbies`:
 
-```javascript
+```js
 {
     "exists": 'name.hobbies["compiler"]'
 }
