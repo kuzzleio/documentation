@@ -31,8 +31,8 @@ The event name is built using the following template:
 
 ```javascript
 this.pipes = 
-  // listener function will trigger at each
-  // events triggered in the document namespace
+  // the listener function is executed every time an
+  // event is triggered by the "document" controller
   'document:*': <function to call> 
 };
 ```
@@ -60,8 +60,8 @@ The event name is built using the following template:
 
 ```javascript
 this.pipes = 
-  // listener function will trigger after each
-  // events triggered in the document namespace
+  // the listener function is executed after every successful
+  // API action performed by the "document" controller
   'document:after*': <function to call>
 };
 ```
