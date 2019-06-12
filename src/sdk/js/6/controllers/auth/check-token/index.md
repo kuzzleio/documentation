@@ -21,7 +21,7 @@ checkToken([token]);
 
 | Property | Type              | Description |
 | -------- | ----------------- | ----------- |
-| `token`  | <pre>string</pre> | JWT token   |
+| `token`  | <pre>string</pre> | Optional JWT token   |
 
 ## Resolves
 
