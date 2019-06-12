@@ -7,12 +7,14 @@ description: Checks a JWT's validity.
 
 # checkToken
 
-Checks a token validity.
+Checks a token validity.  
+
+If not token is passed in parameter, the SDK will check his internal authentication token.
 
 <br/>
 
 ```js
-checkToken(token);
+checkToken([token]);
 ```
 
 <br/>
