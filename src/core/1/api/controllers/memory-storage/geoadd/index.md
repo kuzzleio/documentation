@@ -86,7 +86,7 @@ Body:
 
 Returns the number of points added to the key.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

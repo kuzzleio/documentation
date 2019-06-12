@@ -28,7 +28,7 @@ Lastly, if a query triggers [document notifications](/core/1/api/essentials/noti
 
 The following [document:update](/core/1/api/controllers/document/update/) query:
 
-```javascript
+```js
 {
   "index": "foo",
   "collection": "bar",
@@ -46,7 +46,7 @@ The following [document:update](/core/1/api/controllers/document/update/) query:
 
 Can trigger the following document notification, sent to real-time subscribers:
 
-```javascript
+```js
 {
   "index": "foo",
   "collection": "bar",
@@ -85,7 +85,7 @@ This allows other real-time subscribers to get context information about a user 
 
 Here is a new subscription query, with volatile data provided:
 
-```javascript
+```js
 {
   "index": "foo",
   "collection": "bar",
@@ -105,7 +105,7 @@ Here is a new subscription query, with volatile data provided:
 
 If other users subscribed to the same filter, they will receive the following user notification:
 
-```javascript
+```js
 {
   "type": "user",
   "index": "foo",
@@ -125,7 +125,7 @@ If other users subscribed to the same filter, they will receive the following us
 
 Now, if that user disconnects (either on purpose or unexpectedly), the following notification is sent to the remaining users sharing that filter:
 
-```javascript
+```js
 {
   "type": "user",
   "index": "foo",

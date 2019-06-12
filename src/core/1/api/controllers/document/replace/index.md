@@ -72,7 +72,7 @@ Returns an object containing updated document information, with the following pr
 - `_source`: new document content
 - `_version`: updated document version number
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

@@ -45,7 +45,7 @@ Method: GET
 
 Returns one of the following: `hash`, `list`, `string`, `set`, `zset`.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

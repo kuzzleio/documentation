@@ -45,7 +45,7 @@ Method: GET
 
 Returns the length of the list.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

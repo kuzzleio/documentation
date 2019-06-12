@@ -38,7 +38,7 @@ Method: GET
 
 Returns a `"PONG"` response.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

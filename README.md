@@ -187,7 +187,7 @@ A template is a code file containing a special `[snippet-code]` tag that is pars
 
 Example of a default template for the Javascript SDK:
 
-```javascript
+```js
 // load the Kuzzle SDK module
 const { Kuzzle } = require('kuzzle-sdk');
 

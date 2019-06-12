@@ -65,7 +65,7 @@ Returns the authentication strategy response.
 
 ### Example for the "local" authentication strategy:
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

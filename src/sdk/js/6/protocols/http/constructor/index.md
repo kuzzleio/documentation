@@ -12,7 +12,7 @@ Use this constructor to create a new instance of the `Http` protocol with specif
 
 ## Arguments
 
-```javascript
+```js
 Http(host, [options]);
 ```
 

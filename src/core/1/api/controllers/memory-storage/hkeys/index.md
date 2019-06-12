@@ -45,7 +45,7 @@ Method: GET
 
 Returns an array of hash field names.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

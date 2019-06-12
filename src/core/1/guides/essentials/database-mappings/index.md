@@ -35,7 +35,7 @@ Refer to the Elasticsearch documentation for an exhaustive list of available typ
 ### Example
 
 If I want the following document to be correctly indexed:
-```javascript
+```js
 {
   "category": "limousine",
   "distance": 120990,
@@ -50,7 +50,7 @@ If I want the following document to be correctly indexed:
 ```
 
 The following mapping must first be defined:
-```javascript
+```js
 {
   "properties": {
     "category": { "type": "keyword" },
@@ -108,7 +108,7 @@ It is also possible to specify a different dynamic mapping policy for nested fie
 
 If you want a `strict` dynamic policy for your entire collection, you have to define it in root level but you can have a different policy for nested types:
 
-```javascript
+```js
 {
   "dynamic": "strict"
   "properties": {
@@ -150,7 +150,7 @@ These metadata can be retrieved with the [collection:getMapping](/core/1/api/con
 
 ### Example
 
-```javascript
+```js
 {
   "_meta": {
     "area": "Panipokhari"

@@ -63,7 +63,7 @@ Body:
 
 Returns the updated list length.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

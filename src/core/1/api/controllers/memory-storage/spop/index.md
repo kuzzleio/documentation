@@ -65,7 +65,7 @@ Body:
 
 If `count` is not set or equal to `1`, returns the removed element as a string:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,
@@ -80,7 +80,7 @@ If `count` is not set or equal to `1`, returns the removed element as a string:
 
 If multiple elements are removed (`count > 1`), an array of removed elements is returned instead:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

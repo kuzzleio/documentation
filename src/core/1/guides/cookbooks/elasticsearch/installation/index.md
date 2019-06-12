@@ -57,7 +57,7 @@ curl -g -X GET "http://localhost:9200/"
 
 You should receive a reply similar to the one below. Note that this cookbook assumes that your Elasticsearch `version.number` is above **5.0**:
 
-```javascript
+```js
 {
     "cluster_name": "elasticsearch",
     "cluster_uuid": "AyJUa63UTlqQgHV9I9UzXQ",

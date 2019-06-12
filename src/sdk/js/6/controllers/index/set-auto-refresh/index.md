@@ -21,7 +21,7 @@ we recommend that you avoid using it in production or at least carefully monitor
 
 <br/>
 
-```javascript
+```js
 setAutoRefresh(index, autoRefresh, [options]);
 ```
 

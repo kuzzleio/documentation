@@ -75,7 +75,7 @@ We have now programmed the subscription side of the MQTT transport.
 
 Now let's move on to the publish side of the test. Here we will publish a request to Kuzzle through the MQTT Protocol. In this case we will send a Collection Publish request.
 
-```Javascript
+```js
 //Publish a message to Kuzzle
 payload := []byte(`{"index": "myindex", "collection": "mycollection", "controller": "realtime", "action": "publish", "requestId": "unique_request_id", "body": {"volatile": "message"}}`)
 

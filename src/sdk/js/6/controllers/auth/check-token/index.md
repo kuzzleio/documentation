@@ -11,7 +11,7 @@ Checks a token validity.
 
 <br/>
 
-```javascript
+```js
 checkToken(token);
 ```
 

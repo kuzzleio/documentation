@@ -42,7 +42,7 @@ Returns the last statistic snapshot, with the following properties:
 - `ongoingRequests`: requests underway, per network protocol
 - `timestamp`: snapshot timestamp, in Epoch-millis format
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

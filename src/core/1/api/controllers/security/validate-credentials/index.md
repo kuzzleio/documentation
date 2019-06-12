@@ -65,7 +65,7 @@ The properties that can be sent to validate credentials depend entirely of the a
 
 Returns a boolean telling whether credentials are valid.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

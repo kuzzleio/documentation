@@ -104,7 +104,7 @@ If one or more document creations fail, the response status is set to `206`, and
 
 ### Example
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

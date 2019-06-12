@@ -20,7 +20,7 @@ That limit is by default set at 10000 documents, and you can't get over it even 
 
 <br/>
 
-```javascript
+```js
 search(index, collection, [query], [options]);
 ```
 

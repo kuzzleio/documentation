@@ -54,7 +54,7 @@ Body:
 
 Returns the number of altered keys.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

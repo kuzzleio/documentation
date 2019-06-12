@@ -71,7 +71,7 @@ Returns information about the updated documents:
 - `_id`: document unique identifier
 - `_version`: updated document version
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

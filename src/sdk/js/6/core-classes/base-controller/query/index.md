@@ -13,7 +13,7 @@ This method injects the controller name into the the request and forwards it to 
 
 ## Arguments
 
-```javascript
+```js
 query (request, [options]);
 ```
 
