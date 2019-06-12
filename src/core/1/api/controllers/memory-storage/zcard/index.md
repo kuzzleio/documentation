@@ -45,7 +45,7 @@ Method: GET
 
 Returns the number of members in the sorted set.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

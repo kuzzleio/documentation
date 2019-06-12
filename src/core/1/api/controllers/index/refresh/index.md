@@ -48,7 +48,7 @@ Method: POST
 
 Returns an object detailing the status of the forced refresh.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

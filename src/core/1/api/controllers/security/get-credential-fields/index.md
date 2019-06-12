@@ -45,7 +45,7 @@ Returns an array of accepted field names.
 
 ### Example with the "local" authentication strategy:
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

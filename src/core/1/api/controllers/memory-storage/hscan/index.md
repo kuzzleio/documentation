@@ -65,7 +65,7 @@ Returns an array containing the following two elements:
 
 Example:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

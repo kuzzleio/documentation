@@ -11,7 +11,7 @@ Deletes multiple indexes.
 
 <br/>
 
-```javascript
+```js
 mDelete(indexes, [options]);
 ```
 

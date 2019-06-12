@@ -66,7 +66,7 @@ Body:
 
 Returns the number of elements stored in the resulting set.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

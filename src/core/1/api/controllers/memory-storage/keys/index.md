@@ -45,7 +45,7 @@ Method: GET
 
 Returns the list of matching keys.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

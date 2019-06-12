@@ -55,7 +55,7 @@ The order of responses is not guaranteed to be the same than the order of reques
 
 Example using [MQTT Node module](https://www.npmjs.com/package/mqtt): _to use a CLI client, you will need to enable development mode. Please refer to [the dedicated section below](#development-mode) for instruction and examples_
 
-```javascript
+```js
 const mqtt = require('mqtt'),
   client = mqtt.connect({ host: 'localhost' });
 
@@ -100,7 +100,7 @@ Here are the steps to perform a Kuzzle subscription using MQTT:
 
 Example using [MQTT Node module](https://www.npmjs.com/package/mqtt):
 
-```javascript
+```js
 const mqtt = require('mqtt'),
   client = mqtt.connect({ host: 'localhost' }),
   channels = [];

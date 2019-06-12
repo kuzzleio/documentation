@@ -46,7 +46,7 @@ Replace 'kuzzle' which is the Kuzzle server hostname with 'localhost' or the hos
 
 Next, add a listener to be notified in case of a connection error:
 
-```javascript
+```js
 kuzzle.on('networkError', error => {
   console.error('Network Error: ', error);
 });

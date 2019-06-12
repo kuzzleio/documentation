@@ -11,7 +11,7 @@ Removes all documents from a collection, while keeping the associated mapping.
 
 <br/>
 
-```javascript
+```js
 truncate(index, collection, [options]);
 ```
 

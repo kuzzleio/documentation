@@ -59,7 +59,7 @@ Body:
 
 Returns the number of members stored in the destination set.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

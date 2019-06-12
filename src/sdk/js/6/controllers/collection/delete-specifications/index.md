@@ -11,7 +11,7 @@ Deletes validation specifications for a collection.
 
 <br/>
 
-```javascript
+```js
 deleteSpecifications(index, collection, [options]);
 ```
 
