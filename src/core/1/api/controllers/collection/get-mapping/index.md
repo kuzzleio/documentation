@@ -47,7 +47,7 @@ Method: GET
 
 Returns a mapping object with the following structure:
 
-```shell
+```
 <index>
   |- mappings
     |- <collection>
