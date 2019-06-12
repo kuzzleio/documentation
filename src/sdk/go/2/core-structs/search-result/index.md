@@ -49,7 +49,7 @@ If no policy is applicable, the `next` method will throw an exception.
 
 **This is the preferred way to get some paginated results**.
 
-If the original search is given a `scroll` parameter, the `Next` method will use a cursor to paginate results.
+If the original search is given a `scroll` parameter, the `next` method will use a cursor to paginate results.
 
 The results that are returned from a scroll request reflect the state of the index at the time the initial `search` request was performed, like a snapshot in time.
 

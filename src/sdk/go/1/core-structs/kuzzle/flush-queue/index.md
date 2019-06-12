@@ -5,11 +5,11 @@ title: flushQueue
 description: Empties the offline request queue
 ---
 
-# flushQueue
+# FlushQueue
 
 Empties the offline request queue without playing it.
 
-## Signature
+## Arguments
 
 ```go
 FlushQueue()
