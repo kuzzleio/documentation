@@ -74,7 +74,7 @@ Returns the user replacement status:
 - `_id`: new user kuid
 - `_source`: new user content and attributed profiles
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

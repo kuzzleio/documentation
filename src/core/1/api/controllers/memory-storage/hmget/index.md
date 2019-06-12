@@ -47,7 +47,7 @@ Method: GET
 
 Returns the list of requested field values, in the same order than in the query.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

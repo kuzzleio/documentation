@@ -36,7 +36,7 @@ Method: GET
 
 Returns a `now` property containing the server timestamp, in Epoch-millis format.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

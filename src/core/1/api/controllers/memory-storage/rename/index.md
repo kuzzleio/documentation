@@ -63,7 +63,7 @@ Body:
 
 Returns an acknowledgement.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

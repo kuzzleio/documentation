@@ -11,7 +11,7 @@ Creates a new index.
 
 <br/>
 
-```javascript
+```js
 create(index, [options]);
 ```
 

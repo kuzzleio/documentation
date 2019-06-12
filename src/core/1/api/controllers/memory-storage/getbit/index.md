@@ -47,7 +47,7 @@ Method: GET
 
 Returns the bit at the provided offset. The returned value can be either `0` or `1`.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

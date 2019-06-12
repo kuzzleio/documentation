@@ -11,7 +11,7 @@ Returns the complete list of indexes.
 
 <br/>
 
-```javascript
+```js
 list([options]);
 ```
 

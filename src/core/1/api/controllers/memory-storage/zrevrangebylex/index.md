@@ -57,7 +57,7 @@ The `min` and `max` values are inclusive by default. To change this behavior, ch
 
 Returns an array of matched elements.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

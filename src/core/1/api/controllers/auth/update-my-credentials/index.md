@@ -31,7 +31,7 @@ Body:
 
 ### Other protocols
 
-```javascript
+```js
 {
   "controller": "auth",
   "action": "updateMyCredentials",

@@ -80,7 +80,7 @@ Returns an object with the following properties:
 - `_version`: version of the created document (should be `1`)
 - `created`: a boolean telling if a new document has been created
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

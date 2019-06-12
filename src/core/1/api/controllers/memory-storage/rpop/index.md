@@ -45,7 +45,7 @@ Method: POST
 
 Returns the removed element.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

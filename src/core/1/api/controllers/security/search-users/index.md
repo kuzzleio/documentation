@@ -111,7 +111,7 @@ Returns an object with the following properties:
   - `_source`: user definition
 - `total`: total number of users found. Depending on pagination options, this can be greater than the actual number of users in a single result page
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

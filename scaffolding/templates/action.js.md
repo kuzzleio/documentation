@@ -8,7 +8,7 @@ description:
 
 ## Arguments
 
-```javascript
+```js
 <%= _.camelCase(action) %>()
 ```
 

@@ -45,7 +45,7 @@ Method: GET
 
 Returns a string length.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

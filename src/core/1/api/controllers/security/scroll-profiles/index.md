@@ -56,7 +56,7 @@ Returns a paginated search result set, with the following properties:
 - `scrollId`: identifier to the next page of result. Can be different than the previous one(s)
 - `total`: total number of found profiles. Usually greater than the number of profiles in a result page
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,
