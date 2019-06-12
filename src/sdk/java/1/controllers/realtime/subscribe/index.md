@@ -33,7 +33,7 @@ public String subscribe(
 | ------------ | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | `index`      | <pre>String</pre>                                                                                          | Index name                                                                                         |
 | `collection` | <pre>String</pre>                                                                                          | Collection name                                                                                    |
-| `filters`    | <pre>String</pre>                                                                                          | JSON string representing a set of filters following [Koncorde syntax](/core/1/koncorde/essentials) |
+| `filters`    | <pre>String</pre>                                                                                          | JSON string representing a set of filters following [Koncorde syntax](/core/1/guides/cookbooks/realtime-api/) |
 | `listener`   | <pre><a href="/sdk/java/1/essentials/realtime-notifications/">io.kuzzle.sdk.NotificationListener</a></pre> | Listener function to handle notifications                                                          |
 | `options`    | <pre>io.kuzzle.sdk.RoomOptions</pre>                                                                       | Subscription options                                                                               |
 

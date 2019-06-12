@@ -5,7 +5,7 @@
       <ul class="md-tabs__list">
         <li class="md-tabs__item">
           <a
-            :class="{'md-tabs__link--active': $route.path.match('/guides/')}"
+            :class="{'md-tabs__link--active': $route.path.match('/core/1/guides/')}"
             :href="generateLink('/core/1/guides/')"
             title="Guide"
             class="md-tabs__link"
@@ -42,22 +42,6 @@
             title="Protocols"
             class="md-tabs__link"
           >Protocols</a>
-        </li>
-        <li class="md-tabs__item">
-          <a
-            :class="{'md-tabs__link--active': $route.path.match('/core/1/koncorde/')}"
-            :href="generateLink('/core/1/koncorde/')"
-            title="Koncorde"
-            class="md-tabs__link"
-          >Koncorde</a>
-        </li>
-        <li class="md-tabs__item">
-          <a
-            :class="{'md-tabs__link--active': $route.path.match('/official-plugins/')}"
-            href="/official-plugins/"
-            title="Official Plugins"
-            class="md-tabs__link"
-          >Official Plugins</a>
         </li>
       </ul>
     </div>
