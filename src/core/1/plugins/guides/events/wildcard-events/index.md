@@ -45,7 +45,7 @@ this.pipes =
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | `request` | <pre><a href=/plugins/1/constructors/request>Request</a></pre> | The normalized API request |
 
-Wildcards permit listenening templated events.
+Wildcards permit listening templated events.
 
 ### Naming Template
 
