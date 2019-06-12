@@ -61,7 +61,7 @@ Body:
 
 Returns the incremented key value.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

@@ -63,7 +63,7 @@ Body:
 
 Returns either `0` (command failed), or `1` (command succeeded).
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

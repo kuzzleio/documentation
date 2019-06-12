@@ -11,7 +11,7 @@ Deletes a index.
 
 <br/>
 
-```javascript
+```js
 delete (index, [options]);
 ```
 

@@ -42,7 +42,7 @@ The following diagram shows how a request flows between the client application, 
 
 - The _HTTP Router_ creates a [Request Input](https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#modelsrequestinput) object and sends it to the _Funnel_. The `Request Input` will look like this:
 
-```javascript
+```js
 {
   "controller": "document",
   "action": "get",
@@ -60,7 +60,7 @@ The following diagram shows how a request flows between the client application, 
 
 - The _Persistence Engine_ retrieves the data from the document store (Elasticsearch) and returns a document to the _Document Controller_ which looks like this:
 
-```javascript
+```js
 {
   "_index": "myindex",
   "_type": "users",
@@ -96,7 +96,7 @@ The following diagram shows how a request flows between the client application, 
 
 - The client application opens a websocket connection to Kuzzle server and sends a request message. For example, to retrieve a document with `_id` equal to `739c26bc-7a09-469a-803d-623c4045b0cb` in the `users` collection, the client application will send the following message:
 
-```javascript
+```js
 {
   "requestId": "ed4faaff-253a-464f-a6b3-387af9d8483d",
   "index": "myindex",
@@ -110,7 +110,7 @@ The following diagram shows how a request flows between the client application, 
  <br/>
 * The client application then listens to the `< requestId >` event on the socket. For example:
 
-```javascript
+```js
 this.socket.once('ed4faaff-253a-464f-a6b3-387af9d8483d', function(response) {
   callback(response);
 });
@@ -119,7 +119,7 @@ this.socket.once('ed4faaff-253a-464f-a6b3-387af9d8483d', function(response) {
  <br/>
 * The *Entry Point* receives the message and creates a [Request Input](https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#modelsrequestinput) object which it passes to the *Funnel*. The `Request Input` looks like this:
 
-```javascript
+```js
 {
   "controller": "read",
   "action": "get",
@@ -137,7 +137,7 @@ this.socket.once('ed4faaff-253a-464f-a6b3-387af9d8483d', function(response) {
 
 - The _Persistence Engine_ retrieves the data from the document store (Elasticsearch) and returns a document to the _Document Controller_ which looks like this:
 
-```javascript
+```js
 {
   "_index": "myindex",
   "_type": "users",
@@ -181,7 +181,7 @@ The following diagram shows how a client can subscribe to a channel.
 
 - The client application opens a socket (or MQ) connection, sends a subscription request (see the [API Documentation](/core/1/api/controllers/realtime/subscribe/)), and then listens for the `< requestId >` event on the socket. The subscription request is a message that contains a filter description that defines which events should trigger a response. For instance, the following filter will trigger a response anytime content is posted to the `users` collection that contains the field `hobby` with value `computer` (see the [Koncorde Reference](/core/1/koncorde/) for more details):
 
-```javascript
+```js
 {
   "controller": "realtime",
   "action": "subscribe",
@@ -199,7 +199,7 @@ The following diagram shows how a client can subscribe to a channel.
  <br/>
 * The Kuzzle server receives the message and the *Entry Point* creates a [Request Input](https://github.com/kuzzleio/kuzzle-common-objects/blob/master/README.md#modelsrequestinput) object with the following format:
 
-```javascript
+```js
 {
   "controller": "realtime",
   "action": "subscribe",
@@ -227,7 +227,7 @@ The following diagram shows how a client can subscribe to a channel.
 
 - The _Entry Point_ then returns a response to the client, which includes a `< requestId >` and the `channel` ID, and looks like this:
 
-```javascript
+```js
 {
   "requestId": "ed4faaff-253a-464f-a6b3-387af9d8483d",
   "status": 200,

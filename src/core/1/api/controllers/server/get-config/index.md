@@ -38,7 +38,7 @@ Method: GET
 
 Returns the complete Kuzzle configuration, in JSON format.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

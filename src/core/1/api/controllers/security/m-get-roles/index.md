@@ -55,7 +55,7 @@ Returns a `hits` array of objects. Each object is a role description, with the f
 - `_id`: role unique identifier
 - `_source`: role description
 
-```javascript
+```js
 {
   "status": 200,
   "action": "mGetRoles",

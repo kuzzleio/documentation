@@ -47,7 +47,7 @@ Method: GET
 
 Returns the stored value at the provided list index.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

@@ -77,7 +77,7 @@ Body:
 
 Returns the updated role identifier and version number.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

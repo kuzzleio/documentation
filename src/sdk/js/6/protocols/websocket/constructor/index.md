@@ -12,7 +12,7 @@ This constructor creates a new WebSocket connection, using the specified options
 
 ## Arguments
 
-```javascript
+```js
 WebSocket(host, [options]);
 ```
 

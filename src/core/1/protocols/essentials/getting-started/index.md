@@ -104,7 +104,7 @@ The custom configuration can be found in the EntryPoint object provided to the `
 
 ## Protocol example
 
-```javascript
+```js
 module.exports = class MyProtocol {
   constructor () {
     this.context = null;

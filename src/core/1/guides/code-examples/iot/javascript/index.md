@@ -27,7 +27,7 @@ touch subscribe.js publish.js
 
 In both files, the first thing we need to do is to connect to Kuzzle. To do this add the following code:
 
-```javascript
+```js
 const mqtt = require('mqtt'),
   //Connect to Kuzzle
   client = mqtt.connect({ host: 'localhost' });
@@ -41,7 +41,7 @@ Now let's move on to the publish side of the test. Here we will publish a messag
 
 To do so, add the following code to your `publish.js` file:
 
-```Javascript
+```js
 // Sending a volatile message
 client.publish('Kuzzle/request', JSON.stringify({
     index: 'devices',
@@ -69,7 +69,7 @@ Before continuing this guide, a word about how the MQTT topics are organized by 
 3. Real-time notifications topic: when you send a real-time subscription to Kuzzle, it sends back a response with a `channel` identifier (a "channel" is a real-time subscription ID), and it also creates a MQTT topic named after that identifier. To receive real-time notifications, you have then to subscribe to this new, dedicated topic.
    Now that's out of the way, let's add a listener handler, for both our API responses and for real-time notifications:
 
-```Javascript
+```js
 // Getting Kuzzle's response
 client.on('message', (topic, raw) => {
   const message = JSON.parse(Buffer.from(raw));

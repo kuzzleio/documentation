@@ -47,7 +47,7 @@ Method: GET
 
 Returns an array of differences.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

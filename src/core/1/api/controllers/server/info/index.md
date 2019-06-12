@@ -40,7 +40,7 @@ Returns a serverInfo object with the following properties:
 - `kuzzle`: kuzzle information about its API, active plugins, and system information
 - `services`: description and status of external services (e.g. Redis, Elasticsearch, ...)
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

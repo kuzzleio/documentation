@@ -52,7 +52,7 @@ Method: GET
 
 Returns the number of set bits.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

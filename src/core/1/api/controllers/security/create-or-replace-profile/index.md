@@ -106,7 +106,7 @@ Returns an object with the new profile modification status:
 - `created`: if `true`, the profile has been created. Otherwise, it has been replaced
 - `version`: updated version number of the profile
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

@@ -55,7 +55,7 @@ Method: GET
 
 By default, returns the list of elements in the provided index range:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,
@@ -74,7 +74,7 @@ By default, returns the list of elements in the provided index range:
 
 If the `withscores` option is provided, then the returned array alternates elements with their score:
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,
