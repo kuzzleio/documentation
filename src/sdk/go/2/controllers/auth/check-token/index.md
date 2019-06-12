@@ -27,7 +27,7 @@ A TokenValidity struct which contains:
 | ----------- | ------- | --------------------------------- |
 | Valid       | boolean | Tell if the token is valid or not |
 | State       |  string | Explain why the token is invalid  |
-|  Expires_at | int     | Tells when the token expires      |
+|  `Expires_at` | <pre>int</pre>     | Token expiration timestamp     |
 
 ## Usage
 
