@@ -15,7 +15,7 @@ Kuzzle uses the [ElasticSearch Query DSL](https://www.elastic.co/guide/en/elasti
 
 <br/>
 
-```javascript
+```js
 count(index, collection, query, [options]);
 ```
 

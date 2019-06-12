@@ -26,7 +26,7 @@ With Permission Closures, instead of hard-coding the permission boolean value, w
 
 For example, here is a role definition that limits access to documents such that a document can only be modified by its owner:
 
-```javascript
+```js
 {
   "controllers": {
     "document": {
@@ -62,7 +62,7 @@ The permission function is executed in a sandbox with a limited context. It is d
 
 The permission function has the following signature:
 
-```javascript
+```js
 /**
  * @param {Request} $request              The current action request.
  * @param {string} $currentUserId         The current user kuid. Shortcut to request.context.token.userId
@@ -92,7 +92,7 @@ Documents fetched from the storage layer are stored in the `args` object as defi
 
 Each `args` object will look like:
 
-```javascript
+```js
 {
   "content": {}, // the document itself
   "id": "<document id>"
@@ -120,7 +120,7 @@ There are a set of predefined variables which are automatically accessible in a 
 
 We define the Fetch Definition in a `args` object with the following structure:
 
-```javascript
+```js
 {
   "args": {
     "<some variable>": {
@@ -146,7 +146,7 @@ You can define one or more variables inside the `args` object and, for each vari
 
 The `get` action type fetches a document by its id. For example:
 
-```javascript
+```js
 {
   "args": {
     "currentDocument": {
@@ -179,7 +179,7 @@ In the `args` object above, we declare the following Fetch Definition:
 
 The `mget` action type accepts a list of document ids and returns the list of matching documents.
 
-```javascript
+```js
 {
   "args": {
     "myDocuments": {
@@ -201,7 +201,7 @@ In the `args` object, we declare a multi-valued Fetch Definition. Notice how the
 
 These documents are then accessed in the Permission Function as follows:
 
-```javascript
+```js
 args.myDocuments = [
   {
     id: "id_1", content: {name: "Document 1", description: "Cum sociis natoque penatibus et magnis dis parturient montes"},
@@ -217,7 +217,7 @@ args.myDocuments = [
 
 The `search` action type performs a search on the persistence layer and returns the resulting documents. It is a typical [document search](/core/1/guides/essentials/persisted/#document-search). For example:
 
-```javascript
+```js
 {
   "args": {
     "myDocuments": {
@@ -239,7 +239,7 @@ The `search` action type performs a search on the persistence layer and returns 
 
 The search results are available in the Permission Function as an array of documents fetched from `myIndex`/`myCollection`, for which the `name` attribute matches the `name` attribute of the request:
 
-```javascript
+```js
 args.myDocuments = [
   { id: "id_1", content: {name: "foo", description: "Cum sociis natoque penatibus et magnis dis parturient montes"}},
   { id: "id_2", content: {name: "foo bar", description: "nascetur ridiculus mus. Nulla nunc velit"}},

@@ -17,7 +17,7 @@ Hooks can only listen: the received information cannot be changed. And Kuzzle do
 
 Plugins can register hooks by exposing a `hooks` object: keys are listened [events](/core/1/plugins/guides/events), and values are either a function to execute whenever that event is triggered, or an array of functions.
 
-```javascript
+```js
 this.hooks = {
   '<kuzzle event to listen>': <function to call>,
   '<another event>': [list, of, functions, to call]
@@ -28,7 +28,7 @@ this.hooks = {
 
 ## Example
 
-```javascript
+```js
 module.exports = class HookPlugin {
   constructor() {}
 

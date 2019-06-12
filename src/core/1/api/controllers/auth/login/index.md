@@ -22,7 +22,7 @@ Method: POST
 Body:
 ```
 
-```javascript
+```js
 {
   "username": "<username>",
   "password": "<password>"
@@ -77,7 +77,7 @@ The result contains the following properties:
 - `expiresAt`: token expiration date, in Epoch-millis (UTC)
 - `ttl`: token time to live, in milliseconds
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

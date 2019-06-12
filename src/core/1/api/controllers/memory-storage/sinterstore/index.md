@@ -59,7 +59,7 @@ Body:
 
 Returns the number of values stored in the destination key.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

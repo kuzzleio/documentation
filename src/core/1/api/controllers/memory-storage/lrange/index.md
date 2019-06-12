@@ -53,7 +53,7 @@ The arguments `start` and `stop` can be negative. In that case, the offset is ca
 
 Returns an array of list elements.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

@@ -45,7 +45,7 @@ Method: GET
 
 Returns the result of the union between the provided sets.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

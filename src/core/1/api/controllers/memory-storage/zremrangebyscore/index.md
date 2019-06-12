@@ -66,7 +66,7 @@ The `min` and `max` values are inclusive, but this behavior can be changed (see 
 
 Returns the number of removed elements.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

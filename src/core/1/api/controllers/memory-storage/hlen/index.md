@@ -45,7 +45,7 @@ Method: GET
 
 Returns the number of fields stored in a hash.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

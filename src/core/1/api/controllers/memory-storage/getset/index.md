@@ -61,7 +61,7 @@ Body:
 
 Returns the previously stored value.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

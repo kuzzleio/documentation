@@ -15,7 +15,7 @@ You can define [collection additional metadata](/core/1/guides/essentials/databa
 
 <br/>
 
-```javascript
+```js
 updateMapping(index, collection, mapping, [options]);
 ```
 
@@ -34,7 +34,7 @@ An object representing the collection data mapping.
 
 This object must have a root field `properties` that contain the mapping definition:
 
-```javascript
+```js
 const mapping = {
   properties: {
     field1: { type: 'text' },

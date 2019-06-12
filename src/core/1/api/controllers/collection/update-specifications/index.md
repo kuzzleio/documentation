@@ -140,7 +140,7 @@ The provided body must have the following structure:
 
 The returned result contains the updated specification:
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

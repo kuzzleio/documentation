@@ -80,7 +80,7 @@ Returns the role creation/replacement status:
 - `created`: if true, the role has been created. Otherwise, it has been replaced
 - `version`: updated role version number
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

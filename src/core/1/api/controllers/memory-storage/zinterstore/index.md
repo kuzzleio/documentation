@@ -70,7 +70,7 @@ Body:
 
 Returns the number of members added to the destination sorted set.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

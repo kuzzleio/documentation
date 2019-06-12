@@ -91,7 +91,7 @@ Returns the restricted user creation status:
 - `created`: always true
 - `version`: always 1
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

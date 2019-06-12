@@ -44,7 +44,7 @@ Returns a statistic objects with the following properties:
   - `timestamp`: snapshot timestamp, in Epoch-millis format
 - `total`: total number of available snapshots
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

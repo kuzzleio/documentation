@@ -28,7 +28,7 @@ Method: <verb defined by the plugin>
 
 ### Other protocols
 
-```javascript
+```js
 {
   "controller": "<plugin name>/<added controller name>",
   "action": "<action of the added controller>",
@@ -78,7 +78,7 @@ Read more about these automatic controller events [here](/core/1/plugins/guides/
 
 ## Example
 
-```javascript
+```js
 module.exports = class ControllerPlugin {
   constructor() {
     /*

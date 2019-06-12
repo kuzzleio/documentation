@@ -45,7 +45,7 @@ Method: GET
 
 Returns an array of intersected values.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

@@ -21,7 +21,7 @@ From [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch
 
 ## Arguments
 
-```javascript
+```js
 refreshInternal([options]);
 ```
 

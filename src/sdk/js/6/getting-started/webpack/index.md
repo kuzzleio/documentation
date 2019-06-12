@@ -41,19 +41,19 @@ If you are performing a clean install you might see some <code>unmet peer depend
 
 Then, create a `init-kuzzle.js` file and start by adding the code below. This will load the Kuzzle Javascript SDK:
 
-```javascript
+```js
 import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 ```
 
 Next, we instantiate a client that will connect to Kuzzle via WebSocket. If Kuzzle is not running on localhost, replace it with the corresponding server name or IP address.
 
-```javascript
+```js
 const kuzzle = new Kuzzle(new WebSocket('localhost'));
 ```
 
 Next we add a listener to be notified in case of a connection error:
 
-```javascript
+```js
 kuzzle.on('networkError', error => {
   console.error(`Network Error: ${error}`);
 });
@@ -61,7 +61,7 @@ kuzzle.on('networkError', error => {
 
 Then we have to connect our web app to the Kuzzle server with the `connect()` method.
 
-```javascript
+```js
 const run = async () => {
   try {
     // Connect to Kuzzle server
@@ -79,7 +79,7 @@ const run = async () => {
 Finally, we will create a new index `nyc-open-data` and a new collection
 `yellow-taxi` that we will use to store data later on.
 
-```javascript
+```js
 const run = async () => {
   try {
     // Connect to Kuzzle server
@@ -114,7 +114,7 @@ This code does the following:
 Now, to have your script up and running, require it somewhere in your application
 (e.g. your main entry point) and launch it.
 
-```javascript
+```js
 require('../path/to/init-kuzzle.js');
 ```
 
@@ -155,7 +155,7 @@ To activate this code, create a button somewhere in your page like the following
 
 Then, associate it to the `create` function by adding this code to your application
 
-```javascript
+```js
 const create = require('../path/to/create.js');
 
 // This is the most "vanilla" way to call a function in reaction to a click,
@@ -174,7 +174,7 @@ New document successfully created!
 
 <div class="alert alert-success">
     You have now successfully stored your first document into Kuzzle. Click
-    <a href="/core/1/guides/essentials/admin-console/">here</a> to see how you can use the
+    [here](/core/1/guides/essentials/admin-console/) to see how you can use the
     <strong><a href="http://console.kuzzle.io/">Kuzzle Admin Console</a></strong> to browse your collection and
     confirm that your document was saved.
 </div>
@@ -185,7 +185,7 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 ## Subscribe to realtime document notifications (pub/sub)
 
-Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the <a href="/sdk/js/6/essentials/realtime-notifications/">realtime notifications</a> documentation).
+Kuzzle provides pub/sub features that can be used to trigger real-time notifications based on the state of your data (for a deep-dive on notifications check out the [realtime notifications](/sdk/js/6/essentials/realtime-notifications/) documentation).
 
 Let's get started. Create a `subscribe.js` file with following code:
 
@@ -203,7 +203,7 @@ This code does the following:
 You can execute this code in the same page as before or in another page of your app. Whatever option you choose, to
 execute the code, you just need to require it in your page
 
-```javascript
+```js
 require('../path/to/subscribe.js');
 ```
 
@@ -228,7 +228,7 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 
 Now that you're more familiar with Kuzzle, dive even deeper to learn how to leverage its full capabilities:
 
-- take a look at the <a href="/sdk/js/6">SDK Reference</a>
-- learn how to use <a href="/core/1/koncorde">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
-- follow our guide to learn how to implement <a href="/core/1/guides/essentials/user-authentication/#local-strategy">basic authentication</a>
-- follow our guide to learn how to implement <a href="/core/1/guides/essentials/security/">manage users and setup fine-grained access control</a>
+- take a look at the [SDK Reference](/sdk/js/6)
+- learn how to use [Koncorde](/core/1/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+- follow our guide to learn how to implement [basic authentication](/core/1/guides/essentials/user-authentication/#local-strategy)
+- follow our guide to learn how to implement [manage users and setup fine-grained access control](/core/1/guides/essentials/security/)

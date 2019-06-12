@@ -57,7 +57,7 @@ Body:
 
 Returns the popped/pushed element.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

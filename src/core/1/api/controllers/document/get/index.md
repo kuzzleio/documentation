@@ -56,7 +56,7 @@ Returns an object with the following properties:
 - `_source`: document content
 - `_version`: version of the created document (should be `1`)
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

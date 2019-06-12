@@ -45,7 +45,7 @@ Method: GET
 
 Returns the remaining TTL, in milliseconds.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,
