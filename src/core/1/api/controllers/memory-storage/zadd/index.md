@@ -84,7 +84,7 @@ Body:
 
 Returns the number of added elements.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

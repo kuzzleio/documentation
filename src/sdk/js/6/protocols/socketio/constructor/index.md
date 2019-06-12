@@ -12,7 +12,7 @@ Use this constructor to create a new instance of the `SocketIO` protocol with sp
 
 ## Arguments
 
-```javascript
+```js
 SocketIO(host, [options]);
 ```
 

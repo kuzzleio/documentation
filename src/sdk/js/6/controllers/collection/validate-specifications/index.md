@@ -13,7 +13,7 @@ When the validation specification is not formatted correctly, a detailed error m
 
 <br/>
 
-```javascript
+```js
 validateSpecifications(index, collection, specifications, [options]);
 ```
 

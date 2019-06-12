@@ -12,7 +12,7 @@ The returned list is sorted in alphanumerical order.
 
 <br/>
 
-```javascript
+```js
 list(index, [options]);
 ```
 

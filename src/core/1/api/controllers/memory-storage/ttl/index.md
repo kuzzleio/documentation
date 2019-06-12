@@ -45,7 +45,7 @@ Method: GET
 
 Returns the remaining key TTL, in seconds, or a negative value if the key does not exist or if it is persistent.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

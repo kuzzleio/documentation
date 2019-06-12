@@ -81,7 +81,7 @@ Now, let's take a look at what your script is doing:
 Run this code by opening the `index.html` file in your favorite browser.
 The console should output the following message:
 
-```plaintext
+```
 Successfully connected to Kuzzle
 nyc-open-data/yellow-taxi ready!
 ```

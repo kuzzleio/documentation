@@ -87,7 +87,7 @@ Returns information about the newly created administrator:
 - `_id`: administrator kuid
 - `_source`: administrator user document, contains all properties set in the `content` body argument, but also the list of attributed `profileIds`. That list is initialized with the `admin` profile
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

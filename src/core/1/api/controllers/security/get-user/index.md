@@ -46,7 +46,7 @@ Returns the user information:
 - `_id`: user kuid
 - `_source`: user description
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

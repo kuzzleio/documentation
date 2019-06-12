@@ -63,7 +63,7 @@ Body:
 
 Returns the number of elements successfully added to the set.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

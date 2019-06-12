@@ -68,7 +68,7 @@ Returns an object with the following properties:
 - `errorMessages`: the exhaustive list of violated validation rules. Present only if `valid` is false
 - `valid`: a boolean telling whether the provided pass all validation rules
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

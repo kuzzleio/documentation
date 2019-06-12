@@ -26,7 +26,7 @@ The constructor of a custom SDK controller will be called by passing the SDK ins
 
 For instance, if there is a plugin named `nyc-open-data-plugin`, extending Kuzzle's API with the following controller:
 
-```javascript
+```js
 this.controllers = {
   taxi: {
     startDuty: request => this.startDuty(request)
@@ -36,7 +36,7 @@ this.controllers = {
 
 Then the constructor of the custom SDK controller must specify its name as follows (see [how to query a custom API route](/core/1/plugins/guides/controllers/#querying-plugins-controllers) documentation):
 
-```javascript
+```js
 const { BaseController } = require('kuzzle-sdk');
 
 class TaxiController extends BaseController {
@@ -56,7 +56,7 @@ These methods have to use the [BaseController.query](/sdk/js/6/core-classes/base
 
 Extending the previous example, we now have:
 
-```javascript
+```js
 const { BaseController } = require('kuzzle-sdk');
 
 class TaxiController extends BaseController {
@@ -85,7 +85,7 @@ Once you have defined your custom SDK controller, you can add it to the SDK with
 
 You can then use the actions of your plugins in the same way as the rest of the Kuzzle API by taking advantage of authentication, offline mode management, etc.
 
-```javascript
+```js
 const
   TaxiController = require('./taxiController'),
   { Kuzzle, WebSocket } = require('kuzzle-sdk');

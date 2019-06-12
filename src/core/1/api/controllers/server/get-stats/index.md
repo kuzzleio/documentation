@@ -46,7 +46,7 @@ Returns the found statistic snapshots in the following format:
   - `timestamp`: snapshot timestamp, in Epoch-millis format
 - `total`: total number of available snapshots
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

@@ -57,7 +57,7 @@ Body:
 
 Returns the update user kuid and version number.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

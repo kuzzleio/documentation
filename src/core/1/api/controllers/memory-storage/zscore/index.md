@@ -47,7 +47,7 @@ Method: GET
 
 Returns the member score.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,
