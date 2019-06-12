@@ -6,7 +6,7 @@ title: refreshToken
 
 # refreshToken
 
-{{{since "1.7.0"}}}
+<SinceBadge version="1.7.0"/>
 
 Refreshes an authentication token:
 
@@ -41,9 +41,9 @@ Method: POST
 
 ### Optional:
 
-* `expiresIn`: set the expiration duration (default: depends on [Kuzzle configuration file]({{ site_base_path }}guide/1/essentials/configuration/))
-  * if a raw number is provided (not enclosed between quotes), then the expiration delay is in milliseconds. Example: `86400000`
-  * if this value is a string, then its content is parsed by the [ms](https://www.npmjs.com/package/ms) library. Examples: `"6d"`, `"10h"`
+* `expiresIn`: set the expiration duration (default: depends on [Kuzzle configuration file](/core/1/guides/essentials/configuration/))
+* if a raw number is provided (not enclosed between quotes), then the expiration delay is in milliseconds. Example: `86400000`
+* if this value is a string, then its content is parsed by the [ms](https://www.npmjs.com/package/ms) library. Examples: `"6d"`, `"10h"`
 
 ---
 
@@ -51,8 +51,8 @@ Method: POST
 
 The result contains the following properties:
 
-* `_id`: user's [kuid]({{ site_base_path }}guide/1/kuzzle-depth/authentication#the-kuzzle-user-identifier) 
-* `jwt`: encrypted JSON Web Token, that must then be sent in the [requests headers]({{ site_base_path }}api/1/essentials/query-syntax/#http-default) or in the [query]({{ site_base_path }}api/1/essentials/query-syntax/#other-protocols-default)
+* `_id`: user's [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier) 
+* `jwt`: encrypted JSON Web Token, that must then be sent in the [requests headers](core/1/api/essentials/query-syntax/#http-default) or in the [query](core/1/api/essentials/query-syntax/#other-protocols-default)
 * `expiresAt`: new token expiration date, in Epoch-millis (UTC)
 * `ttl`: new token time to live, in milliseconds
 
