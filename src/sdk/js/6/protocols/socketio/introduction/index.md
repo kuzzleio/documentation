@@ -13,6 +13,6 @@ This protocol allows you to use all the features of Kuzzle, including [real-time
 
 <div class="alert alert-info">
   <p>
-  The SocketIO protocol is used for websocket compatibility with older browsers. It is preferable to use the <a href="/sdk/js/6/protocols/websocket">WebSocket</a> protocol when possible.
+  The SocketIO protocol is used for websocket compatibility with older browsers. It is preferable to use the [WebSocket](/sdk/js/6/protocols/websocket) protocol when possible.
   </p>
 </div>

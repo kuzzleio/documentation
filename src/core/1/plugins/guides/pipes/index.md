@@ -14,7 +14,7 @@ Pipes can:
 - Decide to abort a task. If a pipe throws an error, Kuzzle interrupts the task, and forwards a standardized version of the thrown error to the originating user
 - Change the received information. Kuzzle will use the updated information upon resuming the task
 
-<div class="alert alert-warning">If a pipe takes too long to respond, Kuzzle will eventually abort the entire task with a <a href="/core/1/plugins/errors/gatewaytimeouterror">GatewayTimeout</a> error. The timeout value can be changed in the <a href="/core/1/guides/essentials/configuration/">configuration files.</a></div>
+<div class="alert alert-warning">If a pipe takes too long to respond, Kuzzle will eventually abort the entire task with a [GatewayTimeout](/core/1/plugins/plugin-context/errors/gatewaytimeouterror) error. The timeout value can be changed in the [configuration files.](/core/1/guides/essentials/configuration/)</div>
 
 ---
 
@@ -36,7 +36,7 @@ Pipes must notify Kuzzle about their completion by one of these two means:
 - by calling the `callback(error, request)` function received as their last argument (leave the `error` null if the pipe executed successfully)
 - by returning a promise, resolved (or rejected) with a valid [Request](/core/1/guides/essentials/request-and-response-format/) upon the completion of the pipe
 
-<div class="alert alert-warning">You must either call the callback with a valid <a href="/core/1/guides/essentials/request-and-response-format/">Request</a> or return a promise resolving to one.</div>
+<div class="alert alert-warning">You must either call the callback with a valid [Request](/core/1/guides/essentials/request-and-response-format/) or return a promise resolving to one.</div>
 
 If a pipe throws an error, it is advised to throw one of the available [KuzzleError](/core/1/plugins/plugin-context/errors/kuzzleerror) object. Otherwise, Kuzzle will reject the task with a `PluginImplementationError` error.
 

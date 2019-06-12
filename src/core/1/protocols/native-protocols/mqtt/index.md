@@ -88,7 +88,7 @@ client.on('message', (topic, raw) => {
 
 ### Using Kuzzle subscriptions
 
-Kuzzle allows to [subscribe](https://docs.kuzzle.io/core/1/api/controllers/realtime/subscribe/) to messages and events using advanced filters.
+Kuzzle allows to [subscribe](/core/1/api/controllers/realtime/subscribe/) to messages and events using advanced filters.
 
 Each time a subscription is sent, a dedicated MQTT topic is created, named after the `channel` property issued by Kuzzle.
 

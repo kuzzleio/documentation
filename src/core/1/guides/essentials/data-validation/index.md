@@ -16,7 +16,7 @@ With Kuzzle, instead of programming the validation logic yourself, you can pick 
 For a detailed look at data validation, please refer to our [Data Validation Reference](/core/1/guides/cookbooks/datavalidation).
 
 ::: info
-You can bypass data validation by using [bulk:write](/core/1/api/api-reference/bulk-controller/write) or [bulk:mWrite](/core/1/api/api-reference/bulk-controller/m-write) actions.
+You can bypass data validation by using [bulk:write](/core/1/api/controllers/bulk/write) or [bulk:mWrite](/core/1/api/controllers/bulk/m-write) actions.
 :::
 
 ---

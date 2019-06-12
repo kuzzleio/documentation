@@ -7,6 +7,7 @@ module.exports = {
   title: siteTitle,
   description: siteDescription,
   base: process.env.SITE_BASE || '/',
+  shouldPrefetch: () => false,
   head: [
     [
       'meta',

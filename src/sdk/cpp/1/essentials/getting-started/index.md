@@ -21,7 +21,7 @@ You will learn :
 Before proceeding, please make sure your system meets the following requirements :
 
 - A C++ compiler that supports C++ 11 sush as: **gcc** version 4.5 or higher
-- A running instance of Kuzzle Server (<a href="/core/1/guides/essentials/installing-kuzzle/">Kuzzle installation guide</a>)
+- A running instance of Kuzzle Server ([Kuzzle installation guide](/core/1/guides/essentials/installing-kuzzle/))
 
 </div>
 
@@ -145,6 +145,6 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 Now that you're more familiar with the Go SDK, you can dive even deeper to learn how to leverage its full capabilities:
 
 - discover what this SDK has to offer by browsing other sections of this documentation
-- learn how to use <a href="/core/1/koncorde">Koncorde</a> to create incredibly fine-grained and blazing-fast subscriptions
-- follow our guide to learn how to perform <a href="/core/1/guides/essentials/user-authentication/#local-strategy">basic authentication</a>
-- follow our guide to learn how to <a href="/core/1/guides/essentials/security/">manage users and how to set up fine-grained access control</a>
+- learn how to use [Koncorde](/core/1/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+- follow our guide to learn how to perform [basic authentication](/core/1/guides/essentials/user-authentication/#local-strategy)
+- follow our guide to learn how to [manage users and how to set up fine-grained access control](/core/1/guides/essentials/security/)
