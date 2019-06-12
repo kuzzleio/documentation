@@ -9,13 +9,11 @@ description: Updates the current user object in Kuzzle.
 
 Updates the current user object in Kuzzle.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) UpdateSelf(data json.RawMessage, options types.QueryOptions) (*security.User, error)
 ```
-
-## Arguments
 
 | Arguments | Type         | Description                                  |
 | --------- | ------------ | -------------------------------------------- |

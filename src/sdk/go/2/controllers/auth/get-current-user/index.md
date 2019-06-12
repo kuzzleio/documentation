@@ -9,7 +9,7 @@ description: Returns the profile object for the user linked to the `JSON Web Tok
 
 Returns the profile object for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) GetCurrentUser() (*security.User, error)

@@ -9,13 +9,11 @@ description: Get all authentication strategies registered in Kuzzle.
 
 Get all authentication strategies registered in Kuzzle.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) GetStrategies(options types.QueryOptions) ([]string, error)
 ```
-
-## Arguments
 
 | Arguments | Type            | Description                                                       |
 | --------- | --------------- | ----------------------------------------------------------------- |

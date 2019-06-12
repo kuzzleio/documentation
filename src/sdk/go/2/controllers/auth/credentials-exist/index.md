@@ -9,13 +9,11 @@ description: Check that the current user has credentials for the specified strat
 
 Check that the current user has credentials for the specified strategy.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) CredentialsExist(strategy string, options types.QueryOptions) (bool, error)
 ```
-
-## Arguments
 
 | Arguments  | Type         | Description                          | Required |
 | ---------- | ------------ | ------------------------------------ | -------- |

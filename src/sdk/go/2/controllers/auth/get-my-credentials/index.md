@@ -8,13 +8,11 @@ title: GetMyCredentials
 
 Returns the current user's credential information for the specified `<strategy>`. The data returned will depend on the specified strategy. The result can be an empty object.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) GetMyCredentials(strategy string, options types.QueryOptions) (json.RawMessage, error)
 ```
-
-## Arguments
 
 | Arguments  | Type         | Description                                  | Required |
 | ---------- | ------------ | -------------------------------------------- | -------- |

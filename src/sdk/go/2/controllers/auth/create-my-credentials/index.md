@@ -9,7 +9,7 @@ description: Create the current user's credentials for the specified `<strategy>
 
 Create the current user's credentials for the specified `<strategy>`.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) CreateMyCredentials(strategy string, credentials json.RawMessage, options types.QueryOptions) (json.RawMessage, error)

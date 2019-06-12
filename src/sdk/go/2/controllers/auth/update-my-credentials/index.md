@@ -9,13 +9,11 @@ description: Update the current user's credentials for the specified strategy.
 
 Update the current user's credentials for the specified `<strategy>`. The credentials to send will depend on the authentication plugin and the authentication strategy.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) UpdateMyCredentials(strategy string, credentials json.RawMessage, options types.QueryOptions) (json.RawMessage, error)
 ```
-
-## Arguments
 
 | Arguments     | Type            | Description                                  |
 | ------------- | --------------- | -------------------------------------------- |

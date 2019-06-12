@@ -9,13 +9,11 @@ description: Returns the rights for the user linked to the `JSON Web Token`.
 
 Returns the rights for the user linked to the `JSON Web Token`, provided in the query or the `Authorization` header.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) GetMyRights(options types.QueryOptions) ([]*types.UserRights, error)
 ```
-
-## Arguments
 
 | Arguments | Type         | Description                                  | Required |
 | --------- | ------------ | -------------------------------------------- | -------- |

@@ -2,20 +2,18 @@
 code: true
 type: page
 title: CheckToken
-description: Checks a JWT Token's validity.
+description: Checks the validity of an authentication token.
 ---
 
 # CheckToken
 
-Checks a JWT Token's validity.
+Checks the validity of an authentication token.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) CheckToken(token string) (*TokenValidity, error)
 ```
-
-## Arguments
 
 | Arguments | Type   | Description | Required |
 | --------- | ------ | ----------- | -------- |
