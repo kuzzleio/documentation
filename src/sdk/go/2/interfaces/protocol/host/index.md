@@ -7,7 +7,7 @@ description: Return the host on which we are connected.
 
 # Host
 
-Return the host on which we are connected.
+Returns the host on which we are connected.
 
 ## Arguments
 

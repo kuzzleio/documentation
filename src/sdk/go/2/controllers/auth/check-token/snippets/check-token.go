@@ -6,7 +6,7 @@ if err != nil {
   log.Fatal(err)
 } else {
 	if res.Valid != true {
-		log.Fatal("Token not valid")
+		log.Fatal("Invalid token")
 	}
   fmt.Println("Success")
 }

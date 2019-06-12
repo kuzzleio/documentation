@@ -2,12 +2,12 @@
 code: true
 type: page
 title: IsReady
-description: Return whether or not the socket is connected.
+description: Returns whether or not the socket is connected.
 ---
 
 # IsReady
 
-Return whether or not the socket is connected.
+Returns whether or not the socket is connected.
 
 ## Arguments
 

@@ -2,12 +2,12 @@
 code: true
 type: page
 title: SslConnection
-description: Return whether or not we are connected through SSL.
+description: Returns whether or not we are connected through SSL.
 ---
 
 # Prt
 
-Return whether or not we are connected through SSL.
+Returns whether or not we are connected through SSL.
 
 ## Arguments
 

@@ -2,12 +2,12 @@
 code: true
 type: page
 title: Port
-description: Return the port on which we are connected.
+description: Returns the port on which we are connected.
 ---
 
 # Port
 
-Return the port on which we are connected.
+Returns the port on which we are connected.
 
 ## Arguments
 

@@ -7,7 +7,8 @@ description: Connect to kuzzle instance.
 
 # Connect
 
-Connect to kuzzle instance.
+Connects to kuzzle instance.
+
 ## Arguments
 
 ```go

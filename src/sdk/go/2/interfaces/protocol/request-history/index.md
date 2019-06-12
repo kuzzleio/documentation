@@ -2,12 +2,12 @@
 code: true
 type: page
 title: RequestHistory
-description: Get the requests history
+description: Gets the requests history
 ---
 
 # RequestHistory
 
-Get the requests history.
+Gets the requests history.
 
 ## Arguments
 
