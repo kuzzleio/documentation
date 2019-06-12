@@ -2,26 +2,24 @@
 code: true
 type: page
 title: getMapping
-description: Return collection mapping
+description: Returns collection mapping
 ---
 
-# getMapping
+# GetMapping
 
 Returns the mapping for the given `collection`.
 
-## Signature
+## Arguments
 
 ```go
 GetMapping(index string, collection string, options types.QueryOptions) (json.RawMessage, error)
 ```
 
-## Arguments
-
-| Arguments    | Type               | Description     | Required |
-| ------------ | ------------------ | --------------- | -------- |
-| `index`      | string             | Index name      | yes      |
-| `collection` | string             | Collection name | yes      |
-| `options`    | types.QueryOptions | Query options   | no       |
+| Arguments    | Type               | Description     |
+| ------------ | ------------------ | --------------- |
+| `index`      | <pre>string</pre>             | Index name      |
+| `collection` | <pre>string</pre>             | Collection name |
+| `options`    | <pre>types.QueryOptions</pre> | Query options   |
 
 ### **options**
 
@@ -29,7 +27,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

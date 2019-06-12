@@ -2,7 +2,7 @@
 code: true
 type: page
 title: Subscribe
-description: Subscribe to real-time notifications
+description: Subscribes to real-time notifications
 ---
 
 # Subscribe

@@ -2,24 +2,22 @@
 code: true
 type: page
 title: list
-description: List the indexes
+description: Lists the indexes
 ---
 
 # List
 
-Get the complete list of indexes handled by Kuzzle.
+Gets the complete list of indexes handled by Kuzzle.
 
-## Signature
+## Arguments
 
 ```go
 List(options types.QueryOptions) ([]string, error)
 ```
 
-## Arguments
-
 | Arguments | Type         | Description   |
 | --------- | ------------ | ------------- |
-| `options` | QueryOptions | Query options |
+| `options` | <pre>QueryOptions</pre> | Query options |
 
 ### **Options**
 
@@ -27,7 +25,7 @@ Additional query options
 
 | Option     | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

@@ -2,7 +2,7 @@
 code: true
 type: page
 title: mUpdate
-description: Update documents
+description: Updates documents
 ---
 
 # MUpdate

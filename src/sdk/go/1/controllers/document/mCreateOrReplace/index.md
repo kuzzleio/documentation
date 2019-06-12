@@ -2,7 +2,7 @@
 code: true
 type: page
 title: mCreateOrReplace
-description: Create or replace documents in kuzzle
+description: Creates or replaces documents in kuzzle
 ---
 
 # MCreateOrReplace
