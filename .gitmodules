@@ -1,0 +1,3 @@
+[submodule ".sdk-repos/sdk-javascript"]
+	path = .sdk-repos/sdk-javascript
+	url = git@github.com:kuzzleio/sdk-javascript.git
