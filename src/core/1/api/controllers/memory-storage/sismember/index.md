@@ -47,7 +47,7 @@ Method: GET
 
 Returns either `1` (member belongs to the set), or `0`.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

@@ -85,7 +85,7 @@ Returns an object containing the following properties:
 
 Example:
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

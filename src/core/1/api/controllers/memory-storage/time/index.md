@@ -43,7 +43,7 @@ Returns the time as a two items array:
 
 ### Example
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

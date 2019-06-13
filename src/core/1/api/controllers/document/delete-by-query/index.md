@@ -65,7 +65,7 @@ Body:
 
 Returns a `hits` array containing the list of deleted document identifiers.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

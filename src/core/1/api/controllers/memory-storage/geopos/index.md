@@ -47,7 +47,7 @@ Method: GET
 
 Returns the members positions (`[longitude, latitude]`), in the same order than the one provided in the query.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

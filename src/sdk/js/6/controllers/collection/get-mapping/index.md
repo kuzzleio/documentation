@@ -11,7 +11,7 @@ Returns the collection mapping.
 
 <br/>
 
-```javascript
+```js
 getMapping(index, collection, [options]);
 ```
 

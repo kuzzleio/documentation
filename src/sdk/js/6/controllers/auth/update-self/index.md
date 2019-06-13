@@ -13,7 +13,7 @@ This route cannot update the list of associated security profiles. To change a u
 
 <br/>
 
-```javascript
+```js
 updateSelf(content, [options]);
 ```
 

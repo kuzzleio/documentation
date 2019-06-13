@@ -13,7 +13,7 @@ Each instance represent a different connection to a Kuzzle server with specific 
 
 ## Arguments
 
-```javascript
+```js
 Kuzzle(protocol, [options]);
 ```
 

@@ -47,7 +47,7 @@ Method: DELETE
 
 Returns the deleted kuid.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

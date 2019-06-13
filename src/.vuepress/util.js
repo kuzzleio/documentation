@@ -145,16 +145,16 @@ function groupPagesByPath(pages) {
 }
 
 function sortPagesByOrderAndTitle(p1, p2) {
-  const o1 = get(p1, 'frontmatter.order', null);
-  const o2 = get(p2, 'frontmatter.order', null);
+  const o1 = +get(p1, 'frontmatter.order', NaN);
+  const o2 = +get(p2, 'frontmatter.order', NaN);
 
-  if ((o1 === null || typeof o1 === 'undefined') && o2) {
+  if (isNaN(o1) && !isNaN(o2)) {
     return 1;
   }
-  if ((o2 === null || typeof o2 === 'undefined') && o1) {
+  if (isNaN(o2) && !isNaN(o1)) {
     return -1;
   }
-  if (o1 === o2) {
+  if (isNaN(o1) || o1 === o2) {
     return p1.title < p2.title ? -1 : 1;
   }
 

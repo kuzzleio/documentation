@@ -51,7 +51,7 @@ The arguments `start` and `end` can be negative. In that case, the offset is cal
 
 Returns the calculated substring.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

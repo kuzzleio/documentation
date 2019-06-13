@@ -68,7 +68,7 @@ Message content.
 
 Returns the sent message.
 
-```javascript
+```js
 {
   "error": null,
   "status": 200,

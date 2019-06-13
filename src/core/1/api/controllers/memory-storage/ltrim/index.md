@@ -66,7 +66,7 @@ The arguments `start` and `stop` can be negative. In that case, the index is cal
 
 Returns an acknowledgement.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

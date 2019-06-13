@@ -66,7 +66,7 @@ The `min` and `max` interval are inclusive. See the [Redis documentation](https:
 
 Returns the number of removed members.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

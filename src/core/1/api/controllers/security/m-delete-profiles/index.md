@@ -60,7 +60,7 @@ Body:
 
 Returns an array of successfully deleted profiles.
 
-```javascript
+```js
 {
   "status": 200,
   "error": null,

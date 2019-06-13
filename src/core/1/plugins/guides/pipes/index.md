@@ -22,7 +22,7 @@ Pipes can:
 
 Plugins can register pipes by exposing a `pipes` object: keys are listened [events](/core/1/plugins/guides/events/), and values are either a function to execute whenever that event is triggered, or an array of functions.
 
-```javascript
+```js
 this.pipes = {
   '<kuzzle event to listen>': <function to call>,
   '<another event>': [list, of, functions, to call]
@@ -44,7 +44,7 @@ If a pipe throws an error, it is advised to throw one of the available [KuzzleEr
 
 ## Example
 
-```javascript
+```js
 module.exports = class PipePlugin {
   constructor() {}
 

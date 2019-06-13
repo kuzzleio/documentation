@@ -51,7 +51,7 @@ By default, the provided min and max values are inclusive. This behavior can be 
 
 Returns the number of elements within the specified range.
 
-```javascript
+```js
 {
   "requestId": "<unique request identifier>",
   "status": 200,

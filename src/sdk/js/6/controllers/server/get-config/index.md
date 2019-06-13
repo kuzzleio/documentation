@@ -15,7 +15,7 @@ Returns the current Kuzzle configuration.
 
 <br/>
 
-```javascript
+```js
 getConfig([options]);
 ```
 
