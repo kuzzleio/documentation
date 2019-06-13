@@ -44,6 +44,8 @@ import ContentFeedback from './ContentFeedback.vue';
 import Footer from './Footer.vue';
 import sdkList from '../sdk.json';
 
+const { getFirstValidChild } = require('../util.js');
+
 export default {
   components: { Header, Sidebar, TOC, ContentFeedback, Footer },
   data() {
@@ -141,6 +143,10 @@ export default {
     }
   },
   mounted() {
+    if (this.$page.frontmatter.type !== 'page') {
+      this.$router.replace(getFirstValidChild(this.$page, this.$site.pages));
+      return;
+    }
     // TODO condition isSupported()
     const copy = new Clipboard('.md-clipboard', {
       target: trigger => {
