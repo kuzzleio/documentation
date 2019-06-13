@@ -16,16 +16,17 @@
       <li
         class="selector-list-item"
         v-for="item in items"
-        :key="item.language + item.version"
         v-show="isListShowed"
+        :key="item.language + item.version"
+        @click="toggleList()"
       >
-        <a
+        <router-link
           class="selector-list-item-link"
-          :href="generateLink(`/sdk-reference/${item.language}/${item.version}/`)"
+          :to="{path: generateLink(`/sdk/${item.language}/${item.version}/`)}"
         >
           <img class="selector-list-item-icon" :src="item.icon" :alt="item.language">
           <span class="selector-list-item-name">{{ item.name }}</span>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -66,7 +67,7 @@ export default {
       const el = this.$refs.selector,
         target = e.target;
 
-      if (el !== target && !el.contains(target)) {
+      if (el && el !== target && !el.contains(target)) {
         this.isListShowed = false;
       }
     }
