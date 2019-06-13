@@ -25,11 +25,12 @@ stages:
   - name: Lint
   - name: Tests
   - name: Deployment
-    if: type != pull_request AND branch =~ ^master|3-dev$
+    if: type != pull_request AND branch =~ /^master|[0-9]+-dev$/
 
 jobs:
   include:
     - stage: Lint
+      if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
       name: Lint and check for dead links
       language: ruby
       script:
@@ -40,6 +41,7 @@ jobs:
     # Snippets tests
     # -------------------------------------------------------------------------
     - stage: Tests
+      if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
       name: Kuzzle SDK JS - v5
 
       before_install:
@@ -52,6 +54,7 @@ jobs:
 
 
     - stage: Tests
+      if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
       name: Kuzzle SDK JS - v6
 
       before_install:
@@ -64,6 +67,7 @@ jobs:
 
 
     - stage: Tests
+      if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
       name: Kuzzle SDK Go - v1
 
       before_install:
@@ -100,6 +104,7 @@ jobs:
 
 
     - stage: Tests
+      if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
       name: Kuzzle SDK C# - v1
 
       before_install:
@@ -115,7 +120,7 @@ jobs:
     # -------------------------------------------------------------------------
     - stage: Deployment
       name: Deploy to next-docs.kuzzle.io
-      if: branch = 3-dev
+      if: branch =~ /[0-9]+-dev$/
 
       addons:
         apt:
@@ -145,7 +150,7 @@ jobs:
     # -------------------------------------------------------------------------
     - stage: Deployment
       name: Deploy to docs.kuzzle.io
-      if: branch = master
+      if: branch = master AND (tag IS present)
 
       addons:
         apt:
