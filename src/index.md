@@ -6,4 +6,4 @@ title: Kuzzle Documentation
 description: Kuzzle Documentation
 ---
 
-<RedirectToFirstChild />
+
