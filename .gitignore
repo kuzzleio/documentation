@@ -1,11 +1,13 @@
 /.idea
-/.vscode
-build/*
-/node_modules
+node_modules
+dist
+algolia-records.json
+frontmatter-errors.json
+frontmatter-fixes.json
 test/bin/*
 /reports/*.json
 /reports/failed/*.*
-libs/
 dead_links.json
 links_failed.json
 .links_checked.json
+.vscode

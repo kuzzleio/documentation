@@ -2,9 +2,28 @@ require 'json'
 require 'uri'
 require 'typhoeus'
 require 'optparse'
+require 'set'
 
 class LinkChecker
-  INTERNAL_LINK_REGEXP = /\(\{\{\s*site_base_path\s*\}\}([^)>]+)/
+  INTERNAL_LINK_REGEXPS = [
+    /\[[:\.\w\s\-]+\]\((\/[\w\/\-\#]*)\)/,
+    /<a href="(\/[\w\/\-\#]*)">/
+  ]
+
+  IGNORED_EXTERNAL_LINKS = [
+    'http://kuzzle:7512',
+    'http://localhost',
+    'http://<',
+    'http://elasticsearch',
+    'http:head',
+    'http:options',
+    'http:post',
+    'http:put',
+    'http:get',
+    'http:delete',
+    'http:patch',
+    'http://...'
+  ]
 
   attr_reader :internal, :external
 
@@ -15,8 +34,8 @@ class LinkChecker
 
     @hydra = Typhoeus::Hydra.new(max_concurrency: 200)
 
-    @internal = {}
-    @external = {}
+    @internal = Set.new
+    @external = Set.new
   end
 
   def run
@@ -36,57 +55,54 @@ class LinkChecker
 
   def report_stdout
     puts "Found #{@internal.count} uniq internal dead links:\n"
-    @internal.each do |link, pages|
-      puts "  - #{link} found on #{pages.count} pages:"
-      pages.each do |page|
-        puts "    -> #{page}"
-      end
-      puts ""
-    end
+    puts @internal.to_a
+    puts
 
     puts "Found #{@external.count} uniq external dead links:\n"
-    @external.each do |link, pages|
-      puts "  - #{link} found on #{pages.count} pages:"
-      pages.each do |page|
-        puts "    -> #{page}"
-      end
-    end
+    puts @internal.to_a
+    puts
   end
 
   def report_json
-    File.write(@json_file, JSON.pretty_generate({ external: @external, internal: @internal }))
+    File.write(@json_file, JSON.pretty_generate({ external: @external.to_a, internal: @internal.to_a }))
+  end
+
+  def exit_code
+    return 1 if @internal.count > 0 || @external.count > 0
+    return 0
   end
 
   private
 
   def scan_internal_links(file_path, content)
-    match = content.scan(INTERNAL_LINK_REGEXP)
-    match.each do |(relative_path)|
-      # Remove anchor
-      relative_path.gsub!(/#[\w-]+/, '')
+    INTERNAL_LINK_REGEXPS.each do |regexp|
+      match = content.scan(regexp)
+      match.each do |(relative_path)|
+        # Remove anchor
+        relative_path.gsub!(/#[\w-]+/, '')
 
-      if relative_path.end_with?('.png')
-        full_path = "src/#{relative_path}"
-      else
-        full_path = "src/#{relative_path}/index.md"
+        if relative_path.end_with?('/')
+          full_path = "src/#{relative_path}/index.md"
+        else
+          full_path = "src/#{relative_path}"
+        end
+
+        # Remove double //
+        full_path.gsub!(/\/\//, '/')
+
+        next if File.exists?(full_path)
+
+        @internal << full_path
       end
-
-      # Remove double //
-      full_path.gsub!(/\/\//, '/')
-
-      next if File.exists?(full_path)
-
-      @internal[full_path] ||= []
-      @internal[full_path] << file_path.gsub(/\/\//, '/')
     end
   end
 
   def scan_external_links(file_path, content)
     external_links = URI.extract(content, ['http', 'https'])
-    external_links.keep_if do |external_link|
-      !external_link.start_with?('http://kuzzle') &&
-        !external_link.start_with?('http://localhost') &&
-        !external_link.start_with?('http://<')
+
+    external_links.delete_if do |external_link|
+      external_link.start_with?(*IGNORED_EXTERNAL_LINKS) ||
+      external_link == 'http://'
     end.each do |external_link|
       # Remove markdown parenthesis and other garbage
       external_link.gsub!(/[\)][\.:,]*/, '')
@@ -95,8 +111,7 @@ class LinkChecker
 
       request.on_complete do |response|
         if response.code != 200
-          @external[external_link] ||= []
-          @external[external_link] << file_path.gsub(/\/\//, '/')
+          @external << external_link
         end
       end
 
@@ -136,3 +151,5 @@ link_checker.run
 
 link_checker.report_stdout
 link_checker.report_json
+
+exit link_checker.exit_code
