@@ -12,7 +12,7 @@
           <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
-                <div v-if="$route.path.match('/sdk-reference/')" class="selector-container">
+                <div v-if="$route.path.match(/^\/sdk\//)" class="selector-container">
                   <SDKSelector :items="sdkList"/>
                 </div>
                 <TOC/>

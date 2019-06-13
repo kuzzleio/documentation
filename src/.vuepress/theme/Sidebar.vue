@@ -126,7 +126,7 @@ export default {
     // If you find a better way to determine when the page has finished rendering,
     // you're my hero.
     setTimeout(() => {
-      if (!this.isInViewport(activeLink)) {
+      if (activeLink && !this.isInViewport(activeLink)) {
         this.$refs.scrollwrap.scrollTop = activeLink.offsetTop - 50;
       }
     }, 500);

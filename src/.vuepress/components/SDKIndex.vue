@@ -4,7 +4,7 @@
       <img src="/logos/javascript.svg" alt="js logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Javascript</div>
     </router-link>
-    <router-link :to="{path: generateLink('/sdk/go/1/')}" class="Tiles-item">
+    <router-link :to="{path: generateLink('/sdk/go/2/')}" class="Tiles-item">
       <div class="ribbon">
         <span>BETA</span>
       </div>
