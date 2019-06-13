@@ -1,6 +1,3 @@
-[submodule ".sdk-repos/sdk-javascript"]
-	path = .sdk-repos/sdk-javascript
-	url = git@github.com:kuzzleio/sdk-javascript.git
 [submodule ".sdk-repos/sdk-javascript-v5"]
 	path = .sdk-repos/sdk-javascript-v5
 	url = git@github.com:kuzzleio/sdk-javascript.git
