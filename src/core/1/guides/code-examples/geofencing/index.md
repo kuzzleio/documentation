@@ -6,4 +6,4 @@ order: 500
 description: Geofencing Code Examples
 ---
 
-<RedirectToFirstChild />
+

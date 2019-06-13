@@ -5,4 +5,4 @@ title: Kuzzle in Depth
 order: 500
 ---
 
-<RedirectToFirstChild />
+
