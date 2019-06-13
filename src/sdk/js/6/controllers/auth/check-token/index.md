@@ -9,7 +9,7 @@ description: Checks a JWT's validity.
 
 Checks a token validity.  
 
-If not token is passed in parameter, the SDK will check his internal authentication token.
+If no token is provided, the SDK checks its internal authentication token.
 
 <br/>
 
@@ -21,7 +21,7 @@ checkToken([token]);
 
 | Property | Type              | Description |
 | -------- | ----------------- | ----------- |
-| `token`  | <pre>string</pre> | Optional JWT token   |
+| `token`  | <pre>string</pre> | Optional authentication token   |
 
 ## Resolves
 
