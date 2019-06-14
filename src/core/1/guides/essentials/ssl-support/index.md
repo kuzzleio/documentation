@@ -32,7 +32,7 @@ First of all you need to obtain an SSL certificate for a domain. There are two w
 
 To obtain a self-signed certificate, you can follow the instructions given here: [https://www.selfsignedcertificate.com/](https://www.selfsignedcertificate.com/)
 
-To obtain a recognized certificate, you can use Let's Encrypt: [https://certbot.eff.org/lets-encrypt](https://certbot.eff.org/lets-encrypt)
+To obtain a recognized certificate, you can use Let's Encrypt: [https://certbot.eff.org/](https://certbot.eff.org)
 
 No matter how you get your certificate, at the end you must have two files: a `.crt` and a `.key`.
 
@@ -44,16 +44,11 @@ This reverse proxy will listen for incoming connections on port `4443` and then 
 After installing Nginx, we will create a `kuzzle.conf` file containing the reverse proxy configuration:
 
 ```
-
 map $http_upgrade $connection_upgrade {           
   default upgrade;
   '' close;
 }
                    
-upstream kuzzle {
-  server localhost:7512;
-}
-                     
 server {
   listen 4443;
                           
@@ -65,7 +60,7 @@ server {
   error_page  497 https://$host:17512$request_uri;
              
   location / {
-    proxy_pass http://kuzzle;
+    proxy_pass http://localhost:7512;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection $connection_upgrade;
