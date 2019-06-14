@@ -9,10 +9,11 @@ description: User:setCredentials
 
 Sets the user's credentials.
 
-<div class="alert alert-info">
-  Updating user credentials will have no impact until the [`create`](/sdk/android/3/core-classes/user/create/) method is called.<br />
-  The credentials to send depend on the authentication plugin and the strategy you want to create credentials for.
-</div>
+:::info
+Updating user credentials will have no impact until the [create](/sdk/android/3/core-classes/user/create/) method is called.  
+The credentials to send depend on the authentication plugin and the strategy you want to create credentials for.
+:::
+
 ---
 
 ## setCredentials(credentials)

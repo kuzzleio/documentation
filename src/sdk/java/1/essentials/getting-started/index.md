@@ -19,6 +19,11 @@ Before proceeding, please make sure your system meets the following requirements
 
 :::
 
+
+::: info
+Having trouble? Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzzle)!
+:::
+
 ## Installation
 
 ### Maven and Gradle
@@ -118,10 +123,6 @@ Now, you know how to:
 
 - Create realtime filters
 - Subscribe to notifications
-
-::: info
-Having trouble? Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzzle) ! We're happy to help.
-:::
 
 ## Where do we go from here?
 

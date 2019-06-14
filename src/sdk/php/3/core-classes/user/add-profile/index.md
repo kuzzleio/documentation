@@ -9,9 +9,9 @@ description: User:addProfile
 
 Replaces the security profile associated with the user.
 
-<div class="alert alert-info">
-Updating a user will have no impact until the [`create`](/sdk/php/3/core-classes/user/create/) or [`replace`](/sdk/php/3/core-classes/user/replace/) method is called
-</div>
+:::info
+Updating a user will have no impact until the [create](/sdk/php/3/core-classes/user/create/) or [replace](/sdk/php/3/core-classes/user/replace/) method is called
+:::
 
 ---
 

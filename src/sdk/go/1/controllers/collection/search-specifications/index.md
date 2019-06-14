@@ -14,9 +14,9 @@ Searches collection specifications.
 There is a limit to how many items can be returned by a single search query.
 That limit is by default set at 10000, and you can't get over it even with the from and size pagination options.
 
-<div class="alert alert-info">
-  When processing a large number of items (i.e. more than 1000), it is advised to paginate the results using <code>SearchResult.next</code> rather than increasing the size parameter.
-</div>
+:::info
+When processing a large number of items (i.e. more than 1000), it is advised to paginate the results using [SearchResult.next](/sdk/go/1/core-structs/search-result/#methods) rather than increasing the size parameter.
+:::
 
 ## Arguments
 

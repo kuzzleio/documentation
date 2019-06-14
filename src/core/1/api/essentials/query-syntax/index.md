@@ -45,7 +45,9 @@ If the form field holds a file, then the corresponding JSON key will refer to an
 
 ## Other protocols
 
-<div class="alert alert-info">Kuzzle's extensible protocol system allows communication in virtually any format. This documentation section describes the format that must be used to pass queries to Kuzzle itself, either directly by users (for instance, our <a href="https://github.com/kuzzleio/protocol-mqtt">MQTT protocol</a>), or indirectly, translated by the custom protocol layer.</div>
+:::info
+Kuzzle's extensible protocol system allows communication in virtually any format. This documentation section describes the format that must be used to pass queries to Kuzzle itself, either directly by users (for instance, using the embedded WebSocket or MQTT protocols), or indirectly, translated by the custom protocol layer.
+:::
 
 Queries made to Kuzzle must be encoded using JSON, and have the following format:
 

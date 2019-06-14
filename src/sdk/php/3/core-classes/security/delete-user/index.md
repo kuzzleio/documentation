@@ -9,10 +9,10 @@ description: Security:deleteUser
 
 Delete the provided user.
 
-<div class="alert alert-info">
+:::info
 There is a small delay between the time a user is deleted and it being reflected in the search layer (usually a couple of seconds).
-That means that a user that has just been deleted may still be returned by the <code>searchUsers</code> function at first.
-</div>
+That means that a user that has just been deleted might still be returned by the [searchUsers](/sdk/php/3/core-classes/security/search-users/) function.
+:::
 
 ---
 
