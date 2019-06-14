@@ -59,7 +59,7 @@ class LinkChecker
     puts
 
     puts "Found #{@external.count} uniq external dead links:\n"
-    puts @internal.to_a
+    puts @external.to_a
     puts
   end
 
