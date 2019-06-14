@@ -1,0 +1,10 @@
+---
+name: sslsupport#js6
+description: Pass sslConnection to WebSocket constructor
+hooks:
+  before:
+  after:
+template: empty
+expected: Success
+sdk: js
+version: 6

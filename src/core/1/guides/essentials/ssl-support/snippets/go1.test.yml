@@ -1,0 +1,10 @@
+---
+name: sslsupport#go1
+description: Pass sslConnection to WebSocket constructor
+hooks:
+  before:
+  after:
+template: blank
+expected: Everything is ok
+sdk: go
+version: 1
