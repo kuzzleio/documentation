@@ -66,6 +66,9 @@ redirections:
   - from: koncorde/1/essentials
     to: core/1/koncorde/essentials
 
+  - from: koncorde
+    to: core/1/koncorde/essentials
+
   # Plugin essentials
   - from: plugins/1/essentials/available-plugins
     to: core/1/plugins/essentials/available-plugins
@@ -128,7 +131,7 @@ redirections:
 
   # JS 6 essentials
   - from: sdk-reference/js/6/getting-started
-    to: sdk/js/6/essentials/getting-started
+    to: sdk/js/6/getting-started
 
   - from: sdk-reference/js/6/error-handling
     to: sdk/js/6/essentials/error-handling
