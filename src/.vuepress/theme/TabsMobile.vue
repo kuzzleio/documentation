@@ -1,9 +1,10 @@
 <template>
-  <div class="md-nav__source mobile-only">
+  <div class="md-nav__source mobile-only md-nav__mobile-color">
     <div v-if="$route.path.match('sdk-reference')" class="selector-container">
       <SDKSelector :items="sdkList"/>
     </div>
 
+    <p class="md-nav__mobile-group-name">Use</p>
     <router-link
       :to="{path: generateLink('/core/1/guides/')}"
       title="Guides"
@@ -40,6 +41,16 @@
     >
       <div class="md-source__repository">Plugins</div>
     </router-link>
+    <p class="md-nav__mobile-group-name">Extend</p>
+    <router-link
+      :to="{path: generateLink('/core/1/protocols/')}"
+      title="Plugins"
+      class="md-source"
+      data-md-state="done"
+      style="display:inline-block;"
+    >
+      <div class="md-source__repository"> Write Plugins</div>
+    </router-link>
     <router-link
       :to="{path: generateLink('/core/1/protocols/')}"
       title="Protocols"
@@ -47,7 +58,7 @@
       data-md-state="done"
       style="display:inline-block;"
     >
-      <div class="md-source__repository">Protocols</div>
+      <div class="md-source__repository"> Write Protocols</div>
     </router-link>
   </div>
 </template>
