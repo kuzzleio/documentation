@@ -54,20 +54,20 @@
           <p class="md-tabs__group-name">Extend</p>
           <ul class="md-tabs__group-items">
             <li class="md-tabs__item">
-              <a
+              <router-link 
                 :class="{'md-tabs__link--active': $route.path.match('/core/1/plugins/')}"
-                :href="generateLink('/core/1/plugins/')"
+                :to="generateLink('/core/1/plugins/')"
                 title="Plugins"
                 class="md-tabs__link"
-              >Write Plugins</a>
+              >Write Plugins</router-link>
             </li>
             <li class="md-tabs__item">
-              <a
+              <router-link 
                 :class="{'md-tabs__link--active': $route.path.match('/core/1/protocols/')}"
-                :href="generateLink('/core/1/protocols/')"
+                :to="generateLink('/core/1/protocols/')"
                 title="Protocols"
                 class="md-tabs__link"
-              >Write Protocols</a>
+              >Write Protocols</router-link>
             </li>
           </ul>
         </li>
