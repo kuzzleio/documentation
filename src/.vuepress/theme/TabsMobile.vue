@@ -41,6 +41,15 @@
     >
       <div class="md-source__repository">Plugins</div>
     </router-link>
+        <router-link
+      :to="{path: generateLink('/core/1/koncorde/')}"
+      title="Koncorde"
+      class="md-source"
+      data-md-state="done"
+      style="display:inline-block;"
+    >
+      <div class="md-source__repository">Koncorde</div>
+    </router-link>
     <p class="md-nav__mobile-group-name">Extend</p>
     <router-link
       :to="{path: generateLink('/core/1/protocols/')}"
