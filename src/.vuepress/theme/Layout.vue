@@ -85,7 +85,8 @@ export default {
         path: this.$route.path
       });
     },
-    onWindowResize() {
+    computeContentHeight() {
+      console.debug('computeContentHeight');
       this.setContainerPadding();
       setTimeout(() => {
         this.computeSidebarHeight();
@@ -143,10 +144,10 @@ export default {
     }
   },
   mounted() {
-    if (this.$page.frontmatter.type !== 'page') {
-      this.$router.replace(getFirstValidChild(this.$page, this.$site.pages));
-      return;
-    }
+    this.$router.afterEach(this.computeContentHeight);
+    window.addEventListener('resize', this.computeContentHeight);
+    window.addEventListener('scroll', this.computeSidebarHeight);
+
     // TODO condition isSupported()
     const copy = new Clipboard('.md-clipboard', {
       target: trigger => {
@@ -156,9 +157,11 @@ export default {
 
     copy.on('success', this.onCodeCopied);
 
-    window.addEventListener('resize', this.onWindowResize);
-    window.addEventListener('scroll', this.computeSidebarHeight);
-    this.onWindowResize();
+    if (this.$page.frontmatter.type !== 'page') {
+      this.$router.replace(getFirstValidChild(this.$page, this.$site.pages));
+    }
+
+    this.computeContentHeight();
   }
 };
 </script>
