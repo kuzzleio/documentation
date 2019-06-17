@@ -48,6 +48,71 @@ In order to create a new controller, the plugin must expose the following proper
 
 ---
 
+## Return a response
+
+By default, Kuzzle wrap the value returned by the function associated with the controller's action into the `result` property of the [Kuzzle Response](/core/1/api/essentials/kuzzle-response/).  
+
+Considere the following action:
+```js
+async init (config, context) {
+  this.controllers = {
+    myController: {
+      saySomething: 'saySomething'
+    }
+  }
+};
+
+async saySomething (request) {
+  return {
+    foo: 'bar'
+  };
+}
+```
+
+When this action is successfully called, the following answer will be returned by Kuzzle:
+
+```json
+{
+  "requestId": "32dfbe90-34e1-43c0-a857-25b715b28a1b",
+  "status": 200,
+  "error": null,
+  "controller": "myPlugin/myController",
+  "action": "saySomething",
+  "volatile": null,
+  "result":
+  {
+    "foo": "bar"
+  }
+}
+```
+However, it is possible to tell Kuzzle not to wrap the returned value in a Kuzzle Response and send it as it is.  
+To do this, use the [Request.setResult](/core/1/plugins/plugin-context/constructors/request/#setresult) method by specifying the `raw: true` option.
+
+For example, to return an arbitrary JSON:
+```js
+async saySomething (request) {
+  const json = JSON.stringify({ foo: 'bar' });
+
+  request.setResult(null, {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    raw: true
+  });
+
+  return json;
+}
+```
+
+When this action is successfully called, the following answer will be returned by Kuzzle:
+
+```json
+{
+  "foo": "bar"
+}
+```
+
+
 ## Query normalization
 
 Kuzzle normalizes [queries](/core/1/api/essentials/query-syntax) into [Request](/core/1/plugins/plugin-context/constructors/request) objects.
