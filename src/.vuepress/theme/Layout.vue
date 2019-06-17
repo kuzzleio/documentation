@@ -86,7 +86,6 @@ export default {
       });
     },
     computeContentHeight() {
-      console.debug('computeContentHeight');
       this.setContainerPadding();
       setTimeout(() => {
         this.computeSidebarHeight();
@@ -145,8 +144,8 @@ export default {
   },
   mounted() {
     this.$router.afterEach(this.computeContentHeight);
-    window.addEventListener('resize', this.computeContentHeight);
-    window.addEventListener('scroll', this.computeSidebarHeight);
+    window.addEventListener('resize', this.computeContentHeight.bind(this));
+    window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
 
     // TODO condition isSupported()
     const copy = new Clipboard('.md-clipboard', {
