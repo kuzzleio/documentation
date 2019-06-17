@@ -56,7 +56,7 @@
                   :title="result.title"
                   :data-rt="idx === highlightedResult ? 'active' : ''"
                 >
-                  <article class="md-search-result__article">
+                  <article class="md-search-result__article" @click="reset">
                     <h1 class="md-search-result__title">
                       {{ result.title }}
                       <span
@@ -147,7 +147,9 @@ export default {
         return;
       }
 
-      algolia.search(query, (err, content) => {
+      algolia.search({query, attributesToRetrieve: [
+        'tags', 'title', 'path'
+      ]}, (err, content) => {
         if (err) {
           console.error(err);
           this.results = [];
