@@ -64,7 +64,7 @@ redirections:
 
   # Koncorde
   - from: koncorde
-    to: core/1/koncore
+    to: core/1/koncorde
 
   # Plugin essentials
   - from: plugins/1/essentials/available-plugins
