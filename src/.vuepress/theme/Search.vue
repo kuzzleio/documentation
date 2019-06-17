@@ -152,7 +152,14 @@ export default {
           console.error(err);
           this.results = [];
         }
-        this.results = content.hits.sort(this.sortByTags);
+        this.results = content
+          .hits
+          .map(r => {
+            return Object.assign({
+              tags: r.path.split('/').filter(t => t !== '')
+            }, r)
+          })
+          .sort(this.sortByTags);
       });
     },
     sortByTags(a, b) {
@@ -162,6 +169,9 @@ export default {
       return Math.sign(scoreB - scoreA);
     },
     getTagsScore(tags) {
+      if (!tags) {
+        return 0;
+      }
       let score = 0;
       for (const tag of Object.values(tags)) {
         if (this.currentTags.includes(tag)) {
