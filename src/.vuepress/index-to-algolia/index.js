@@ -99,6 +99,7 @@ function extractTags(path) {
 
   return path
     .split('/')
+    .filter(t => t !== '')
     .slice(start, end)
     .map(tag => {
       if (tag === 'sdk-reference') {

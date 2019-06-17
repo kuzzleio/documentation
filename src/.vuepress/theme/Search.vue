@@ -154,11 +154,6 @@ export default {
         }
         this.results = content
           .hits
-          .map(r => {
-            return Object.assign({
-              tags: r.path.split('/').filter(t => t !== '')
-            }, r)
-          })
           .sort(this.sortByTags);
       });
     },
