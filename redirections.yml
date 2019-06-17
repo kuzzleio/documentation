@@ -63,7 +63,7 @@ redirections:
     to: core/1/guides/code-examples/pubsub
 
   # Koncorde
-  - from: koncorde/1/essentials
+  - from: koncorde
     to: core/1/guides/cookboks/realtime-api
 
   # Plugin essentials
