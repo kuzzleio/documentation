@@ -6,4 +6,4 @@ title: Guides
 description: Kuzzle v1.x Guides
 ---
 
-<RedirectToFirstChild />
+

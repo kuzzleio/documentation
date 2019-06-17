@@ -6,4 +6,4 @@ order: 600
 description: IoT Code Examples
 ---
 
-<RedirectToFirstChild />
+

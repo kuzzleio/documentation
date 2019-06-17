@@ -12,7 +12,7 @@
           <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
-                <div v-if="$route.path.match('/sdk-reference/')" class="selector-container">
+                <div v-if="$route.path.match(/^\/sdk\//)" class="selector-container">
                   <SDKSelector :items="sdkList"/>
                 </div>
                 <TOC/>
@@ -43,6 +43,8 @@ import TOC from './TOC.vue';
 import ContentFeedback from './ContentFeedback.vue';
 import Footer from './Footer.vue';
 import sdkList from '../sdk.json';
+
+const { getFirstValidChild } = require('../util.js');
 
 export default {
   components: { Header, Sidebar, TOC, ContentFeedback, Footer },
@@ -141,6 +143,10 @@ export default {
     }
   },
   mounted() {
+    if (this.$page.frontmatter.type !== 'page') {
+      this.$router.replace(getFirstValidChild(this.$page, this.$site.pages));
+      return;
+    }
     // TODO condition isSupported()
     const copy = new Clipboard('.md-clipboard', {
       target: trigger => {
