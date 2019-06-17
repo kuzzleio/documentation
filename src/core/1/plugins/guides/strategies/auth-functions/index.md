@@ -11,15 +11,15 @@ The `methods` part of the `strategies` object can contain the following properti
 
 | Arguments       | Type              | Description                                                                                                                        |
 | --------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `create`        | <pre>string</pre> | The name of the exposed [create](/core/1/plugins/guides/strategies/#create-default) function                                   |
-| `delete`        | <pre>string</pre> | The name of the exposed [delete](/core/1/plugins/guides/strategies/#delete-default) function                                   |
-| `exists`        | <pre>string</pre> | The name of the exposed [exists](/core/1/plugins/guides/strategies/#exists-default) function                                   |
-| `update`        | <pre>string</pre> | The name of the exposed [update](/core/1/plugins/guides/strategies/#update-default) function                                   |
-| `validate`      | <pre>string</pre> | The name of the exposed [validate](/core/1/plugins/guides/strategies/#update-default) function                                 |
-| `verify`        | <pre>string</pre> | The name of the exposed [verify](/core/1/plugins/guides/strategies/#verify-default) function                                   |
-| `afterRegister` | <pre>string</pre> | (optional) The name of the exposed [afterRegister](/core/1/plugins/guides/strategies/#optional-afterregister-default) function |
-| `getById`       | <pre>string</pre> | (optional) The name of the exposed [getById](/core/1/plugins/guides/strategies/#optional-getbyid-default) function             |
-| `getInfo`       | <pre>string</pre> | (optional) The name of the exposed [getInfo](/core/1/plugins/guides/strategies/#optional-getinfo-default) function             |
+| `create`        | <pre>string</pre> | The name of the exposed [create](/core/1/plugins/guides/strategies/auth-functions/#create) function                                   |
+| `delete`        | <pre>string</pre> | The name of the exposed [delete](/core/1/plugins/guides/strategies/auth-functions/#delete) function                                   |
+| `exists`        | <pre>string</pre> | The name of the exposed [exists](/core/1/plugins/guides/strategies/auth-functions/#exists) function                                   |
+| `update`        | <pre>string</pre> | The name of the exposed [update](/core/1/plugins/guides/strategies/auth-functions/#update) function                                   |
+| `validate`      | <pre>string</pre> | The name of the exposed [validate](/core/1/plugins/guides/strategies/auth-functions/#update) function                                 |
+| `verify`        | <pre>string</pre> | The name of the exposed [verify](/core/1/plugins/guides/strategies/auth-functions/#verify) function                                   |
+| `afterRegister` | <pre>string</pre> | (optional) The name of the exposed [afterRegister](/core/1/plugins/guides/strategies/auth-functions/#optional-afterregister) function |
+| `getById`       | <pre>string</pre> | (optional) The name of the exposed [getById](/core/1/plugins/guides/strategies/auth-functions/#optional-getbyid) function             |
+| `getInfo`       | <pre>string</pre> | (optional) The name of the exposed [getInfo](/core/1/plugins/guides/strategies/auth-functions/#optional-getinfo) function             |
 
 Even though each strategy must declare its own set of properties, the same strategy method can be used by multiple strategies.
 
