@@ -59,7 +59,7 @@ class LinkChecker
     puts
 
     puts "Found #{@external.count} uniq external dead links:\n"
-    puts @internal.to_a
+    puts @external.to_a
     puts
   end
 
@@ -104,8 +104,8 @@ class LinkChecker
       external_link.start_with?(*IGNORED_EXTERNAL_LINKS) ||
       external_link == 'http://'
     end.each do |external_link|
-      # Remove markdown parenthesis and other garbage
-      external_link.gsub!(/[\)][\.:,]*/, '')
+      # Remove markdown closing parenthesis and everything following it
+      external_link.gsub!(/[\)].*/, '')
 
       request = Typhoeus::Request.new(external_link, followlocation: true)
 

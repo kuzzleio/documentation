@@ -15,9 +15,9 @@ Specifies if an action is allowed, denied or conditional based on the rights pro
 
 An action is defined as a pair of action and controller (mandatory), plus an index and a collection(optional).
 
-<div class="alert alert-info">
-You can get the rights from Kuzzle by using [`Security.getUserRights`](/sdk/android/3/core-classes/security/get-user-rights/) and [`Kuzzle.getMyRights`](/sdk/android/3/core-classes/kuzzle/get-my-rights).
-</div>
+:::info
+You can get the rights from Kuzzle by using [Security.getUserRights](/sdk/android/3/core-classes/security/get-user-rights/) and [Kuzzle.getMyRights](/sdk/android/3/core-classes/kuzzle/get-my-rights).
+:::
 
 ---
 

@@ -13,10 +13,10 @@ the available operands. Operands allow you to combine multiple terms together in
 You can also refer to the [terms](/core/1/koncorde/essentials/terms) reference to know about
 all the available terms.
 
-<div class="alert alert-info">
+:::info
 Note that the ability to combine multiple terms together allows to create different filters that have equivalent scope.
 Such filters are optimized by Koncorde, thus [internally represented by the same ID](/core/1/koncorde/essentials/advanced#filter-equivalence-default).
-</div>
+:::
 
 ## and
 
