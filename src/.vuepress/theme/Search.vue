@@ -50,13 +50,13 @@
                 :key="result.path"
                 class="md-search-result__item"
               >
-                <a
-                  :href="'/' + result.path"
-                  :title="result.title"
+                <router-link
                   class="md-search-result__link"
+                  :to="{path: result.path}"
+                  :title="result.title"
                   :data-rt="idx === highlightedResult ? 'active' : ''"
                 >
-                  <article class="md-search-result__article">
+                  <article class="md-search-result__article" @click="reset">
                     <h1 class="md-search-result__title">
                       {{ result.title }}
                       <span
@@ -70,7 +70,7 @@
                       v-html="result._highlightResult.content.value"
                     ></p>
                   </article>
-                </a>
+                </router-link>
               </li>
             </ol>
           </div>
@@ -147,12 +147,16 @@ export default {
         return;
       }
 
-      algolia.search(query, (err, content) => {
+      algolia.search({query, attributesToRetrieve: [
+        'tags', 'title', 'path'
+      ]}, (err, content) => {
         if (err) {
           console.error(err);
           this.results = [];
         }
-        this.results = content.hits.sort(this.sortByTags);
+        this.results = content
+          .hits
+          .sort(this.sortByTags);
       });
     },
     sortByTags(a, b) {
@@ -162,6 +166,9 @@ export default {
       return Math.sign(scoreB - scoreA);
     },
     getTagsScore(tags) {
+      if (!tags) {
+        return 0;
+      }
       let score = 0;
       for (const tag of Object.values(tags)) {
         if (this.currentTags.includes(tag)) {
