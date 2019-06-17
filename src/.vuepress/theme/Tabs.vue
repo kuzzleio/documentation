@@ -33,19 +33,11 @@
             <li class="md-tabs__item">
               <!-- link to Official plugins page -->
               <router-link
-                :class="{'md-tabs__link--active': $route.path.match('/plugins/')}"
-                :to="{path: generateLink('/core/1/plugins/')}"
+                :class="{'md-tabs__link--active': $route.path.match('/official-plugins/')}"
+                :to="{path: '/official-plugins/'}"
                 title="Plugins"
                 class="md-tabs__link"
               >Plugins</router-link>
-            </li>
-            <li class="md-tabs__item">
-              <router-link
-                :class="{'md-tabs__link--active': $route.path.match('/koncorde/')}"
-                :to="{path: generateLink('/core/1/koncorde/')}"
-                title="Koncorde"
-                class="md-tabs__link"
-              >Koncorde</router-link>
             </li>
           </ul>
         </li>
@@ -54,7 +46,7 @@
           <p class="md-tabs__group-name">Extend</p>
           <ul class="md-tabs__group-items">
             <li class="md-tabs__item">
-              <router-link 
+              <router-link
                 :class="{'md-tabs__link--active': $route.path.match('/core/1/plugins/')}"
                 :to="generateLink('/core/1/plugins/')"
                 title="Plugins"
@@ -62,7 +54,7 @@
               >Write Plugins</router-link>
             </li>
             <li class="md-tabs__item">
-              <router-link 
+              <router-link
                 :class="{'md-tabs__link--active': $route.path.match('/core/1/protocols/')}"
                 :to="generateLink('/core/1/protocols/')"
                 title="Protocols"

@@ -22,7 +22,9 @@ class LinkChecker
     'http:get',
     'http:delete',
     'http:patch',
-    'http://...'
+    'http://...',
+    'https://s3.eu-west-3.amazonaws.com',
+    'http://s3.amazonaws.com/doc/2006-03-01'
   ]
 
   attr_reader :internal, :external
@@ -32,7 +34,7 @@ class LinkChecker
     @only = options[:only] || ''
     @json_file = options[:file] || './dead_links.json'
 
-    @hydra = Typhoeus::Hydra.new(max_concurrency: 200)
+    @hydra = Typhoeus::Hydra.new(max_concurrency: 100)
 
     @internal = Set.new
     @external = Set.new
@@ -59,11 +61,12 @@ class LinkChecker
     puts
 
     puts "Found #{@external.count} uniq external dead links:\n"
-    puts @internal.to_a
+    puts @external.to_a
     puts
   end
 
   def report_json
+    puts "JSON report available at #{@json_file}"
     File.write(@json_file, JSON.pretty_generate({ external: @external.to_a, internal: @internal.to_a }))
   end
 

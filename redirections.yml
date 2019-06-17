@@ -64,7 +64,7 @@ redirections:
 
   # Koncorde
   - from: koncorde/1/essentials
-    to: core/1/koncorde/essentials
+    to: core/1/guides/cookboks/realtime-api
 
   # Plugin essentials
   - from: plugins/1/essentials/available-plugins
