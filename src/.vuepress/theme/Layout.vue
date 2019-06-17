@@ -9,7 +9,7 @@
           <!-- Main navigation -->
           <Sidebar ref="sidebar" v-if="!$page.frontmatter.nosidebar" :sidebar-open="sidebarOpen"/>
           <!-- Table of contents -->
-          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+          <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
                 <div v-if="$route.path.match(/^\/sdk\//)" class="selector-container">
@@ -140,6 +140,7 @@ export default {
       }
 
       this.$refs.sidebar.$el.style = `height: ${sidebarHeight}px`;
+      this.$refs.toc.style = `height: ${sidebarHeight}px`;
     }
   },
   mounted() {
