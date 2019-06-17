@@ -50,10 +50,10 @@
                 :key="result.path"
                 class="md-search-result__item"
               >
-                <a
-                  :href="'/' + result.path"
-                  :title="result.title"
+                <router-link
                   class="md-search-result__link"
+                  :to="{path: result.path}"
+                  :title="result.title"
                   :data-rt="idx === highlightedResult ? 'active' : ''"
                 >
                   <article class="md-search-result__article">
@@ -70,7 +70,7 @@
                       v-html="result._highlightResult.content.value"
                     ></p>
                   </article>
-                </a>
+                </router-link>
               </li>
             </ol>
           </div>
