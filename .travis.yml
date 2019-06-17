@@ -24,8 +24,9 @@ stages:
   - name: Build
   - name: Lint
   - name: Tests
+    if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
   - name: Deployment
-    if: type != pull_request AND branch =~ /^master|[0-9]+-dev$/
+    if: type != pull_request AND branch =~ /^master|3-dev$/
 
 jobs:
   include:
@@ -41,7 +42,6 @@ jobs:
     # Snippets tests
     # -------------------------------------------------------------------------
     - stage: Tests
-      if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
       name: Kuzzle SDK JS - v5
 
       before_install:
@@ -54,7 +54,6 @@ jobs:
 
 
     - stage: Tests
-      if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
       name: Kuzzle SDK JS - v6
 
       before_install:
@@ -67,7 +66,6 @@ jobs:
 
 
     - stage: Tests
-      if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
       name: Kuzzle SDK Go - v1
 
       before_install:
@@ -104,7 +102,6 @@ jobs:
 
 
     - stage: Tests
-      if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
       name: Kuzzle SDK C# - v1
 
       before_install:
@@ -120,7 +117,7 @@ jobs:
     # -------------------------------------------------------------------------
     - stage: Deployment
       name: Deploy to next-docs.kuzzle.io
-      if: branch =~ /[0-9]+-dev$/
+      if: branch = 3-dev
 
       addons:
         apt:
