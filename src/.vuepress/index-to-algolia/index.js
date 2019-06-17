@@ -51,6 +51,7 @@ module.exports = (options, ctx) => ({
 });
 
 function enrichRecordsWithContent(records, outDir, write = false) {
+  console.log(`[Algolia] Enriching ${records.length} records...`);
   records.forEach(record => {
     const generatedFilePath = resolve(
       outDir,
@@ -78,6 +79,8 @@ function pushRecords(records, algoliaOptions) {
   if (!algoliaOptions.writeKey) {
     throw new Error('Please provide a valid Algolia Write Key');
   }
+
+  console.log(`[Algolia] Pushing ${records.length} records...`);
 
   const client = algolia(algoliaOptions.appId, algoliaOptions.writeKey);
   const index = client.initIndex(algoliaOptions.index);
