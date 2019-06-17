@@ -17,4 +17,4 @@ Returns the `Kuzzle` SDK object to allow chaining.
 
 ## Usage
 
-<<< ./snippets/set-default-index-1.php
+<<< ./snippets/set-index-1.php

@@ -147,7 +147,7 @@ The code in the `subscribe.html` page is now running endlessly, waiting for noti
 
 Now go back to the other tab and reload `create.html`.
 
-This creates a new document in Kuzzle which, in turn, triggers a [document notification](/core/1/api/essentials/notifications/#documents-changes-messages-default) sent to the `subscribe.html` tab. Check the `subscribe.html` tab: a new message is printed everytime a document is created using the `create.html` code.
+This creates a new document in Kuzzle which, in turn, triggers a [document notification](/core/1/api/essentials/notifications/#documents-changes-messages) sent to the `subscribe.html` tab. Check the `subscribe.html` tab: a new message is printed everytime a document is created using the `create.html` code.
 
 ```
 New driver Sirkis with id AWccRe3-DfukVhSzMdUo has B license.

@@ -135,7 +135,7 @@ Now in another terminal, launch the `create.js` file from the previous section.
 node create.js
 ```
 
-This creates a new document in Kuzzle which, in turn, triggers a [document notification](/core/1/api/essentials/notifications/#documents-changes-messages-default) sent to the `subscribe.js` program.
+This creates a new document in Kuzzle which, in turn, triggers a [document notification](/core/1/api/essentials/notifications/#documents-changes-messages) sent to the `subscribe.js` program.
 Check the `subscribe.js` terminal: a new message is printed everytime a document is created using the `create.js` code.
 
 ```bash
