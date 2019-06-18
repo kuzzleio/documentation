@@ -9,6 +9,11 @@ order: 250
 
 Kuzzle allows you to listen to multiple events with a single listener thanks to wildcards (`*`).
 
+::: info
+Wildcard events are triggered after standard events and more specific wildcard are triggered before more generic wildcard.  
+Example: After document creation you will have `document:afterCreate` then `document:after*` and finally `document:*`
+:::
+
 ---
 
 ## Name wildcard
