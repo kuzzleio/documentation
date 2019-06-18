@@ -41,7 +41,6 @@
             </li>
           </ul>
         </li>
-        <li class="md-tabs__separator"></li>
         <li class="md-tabs__group">
           <p class="md-tabs__group-name">Extend</p>
           <ul class="md-tabs__group-items">

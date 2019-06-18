@@ -32,20 +32,10 @@
     overflow-x: hidden;
   }
 
-  // List separator
-  &__separator {
-    height: 3rem;
-    border-style: solid;
-    border-width: 0 0 0 2px;
-    border-color: rgba(255, 255, 255, 0.3);
-    display: inline-block;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
   // List group
   &__group {
     display: inline-block;
+    margin-right: 4rem;
   }
 
   // List name of group of items
