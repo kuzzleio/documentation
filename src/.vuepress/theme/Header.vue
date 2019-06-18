@@ -31,11 +31,13 @@
           <!-- Header title -->
           <div class="md-flex__cell md-flex__cell--stretch">
             <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-              <span class="md-header-nav__topic">Kuzzle Documentation</span>
+              <span class="md-header-nav__topic">Kuzzle</span>
               <span class="md-header-nav__topic">{{ $page.title }}</span>
             </div>
           </div>
-
+           <div class="md-flex__cell md-flex__cell--stretch md-flex__cell--menu">
+            <Tabs/>
+          </div>
           <!-- Button to open search dialogue -->
           <div class="md-flex__cell md-flex__cell--shrink">
             <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
@@ -60,7 +62,6 @@
           </div>-->
         </div>
       </nav>
-      <Tabs/>
     </header>
   </div>
 </template>
