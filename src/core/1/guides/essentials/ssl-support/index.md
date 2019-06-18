@@ -68,10 +68,10 @@ server {
 }
 ```
 
-This configuration file must be saved in the `/etc/nginx/site-availables` folder, then to activate it it is necessary to create a symbolic link to the `/etc/nginx/site-enabled` folder:
+This configuration file must be saved in the `/etc/nginx/site-available` folder, then to activate it it is necessary to create a symbolic link to the `/etc/nginx/site-enabled` folder:
 
 ```bash
-ln -s /etc/nginx/site-availables/kuzzle.conf /etc/nginx/site-enabled/kuzzle.conf
+ln -s /etc/nginx/site-available/kuzzle.conf /etc/nginx/site-enabled/kuzzle.conf
 ```
 
 Then we reload the configuration of Nginx: `systemctl reload nginx.service`
