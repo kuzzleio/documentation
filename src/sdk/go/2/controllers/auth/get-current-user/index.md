@@ -21,8 +21,8 @@ A pointer to security.User object containing:
 
 | Property     | Type                   | Description                         |
 | ------------ | ---------------------- | ----------------------------------- |
-| `Id`         | string                 | The user ID                         |
-| `Content`    | map[string]interface{} | The user content                    |
+| `Id`         | <pre>string</pre>                 | The user ID                         |
+| `Content`    | <pre>map[string]interface{}</pre> | The user content                    |
 | `ProfileIds` | <pre>[]string</pre>    | An array containing the profile ids |
 
 ## Usage

@@ -2,7 +2,7 @@
 code: true
 type: page
 title: search
-description: Search documents
+description: Searches documents
 ---
 
 # Search

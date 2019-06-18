@@ -9,18 +9,16 @@ description: Deletes an index
 
 Deletes an entire index from Kuzzle.
 
-## Signature
+## Arguments
 
 ```go
 Delete(index string, options types.QueryOptions) error
 ```
 
-## Arguments
-
-| Arguments | Type         | Description   | Required |
-| --------- | ------------ | ------------- | -------- |
-| `index`   | string       | Index name    | yes      |
-| `options` | QueryOptions | Query options | no       |
+| Arguments | Type         | Description   |
+| --------- | ------------ | ------------- |
+| `index`   | <pre>string</pre>       | Index name    |
+| `options` | <pre>QueryOptions</pre> | Query options |
 
 ### **Options**
 
@@ -28,7 +26,7 @@ Additional query options
 
 | Option     | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

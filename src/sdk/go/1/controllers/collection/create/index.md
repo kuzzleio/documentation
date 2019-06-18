@@ -2,10 +2,10 @@
 code: true
 type: page
 title: create
-description: Create a new collection
+description: Creates a new collection
 ---
 
-# create
+# Create
 
 Creates a new [collection](/core/1/guides/essentials/persisted/) in Kuzzle via the persistence engine, in the provided `index`.
 You can also provide an optional data mapping that allow you to exploit the full capabilities of our
@@ -13,20 +13,18 @@ persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/e
 
 This method will only update the mapping if the collection already exists.
 
-## Signature
+## Arguments
 
 ```go
 Create(index string, collection string, mapping json.RawMessage, options types.QueryOptions) error
 ```
 
-## Arguments
-
-| Arguments    | Type            | Description                            | Required |
-| ------------ | --------------- | -------------------------------------- | -------- |
-| `index`      | string          | Index name                             | yes      |
-| `collection` | string          | Collection name                        | yes      |
-| `mapping`    | json.RawMessage | Collection data mapping in JSON format | no       |
-| `options`    | QueryOptions    | Query options                          | no       |
+| Arguments    | Type            | Description
+| ------------ | --------------- | -------------------------------------- |
+| `index`      | <pre>string</pre>          | Index name                             |
+| `collection` | <pre>string</pre>          | Collection name                        |
+| `mapping`    | <pre>json.RawMessage</pre> | Collection data mapping in JSON format |
+| `options`    | <pre>QueryOptions</pre>    | Query options                          |
 
 ### **mapping**
 
@@ -55,7 +53,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 
