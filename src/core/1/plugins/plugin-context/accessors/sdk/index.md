@@ -15,6 +15,10 @@ The embedded SDK is a custom version of our [Javascript SDK](/sdk/js/6) that use
 All the documented controllers can be used, except the `realtime` one.
 Also, the low-level [query](/sdk/js/6/core-classes/kuzzle/query/) method is available for use.
 
+::: info
+The embedded SDK methods do not trigger [API events](/core/1/plugins/guides/events/api-events) or [request:on* events](/core/1/plugins/guides/events/request-on-authorized).
+:::
+
 ### Request context
 
 By default, when using the embedded SDK, requests made to Kuzzle API don't have the same context as the original request received by the plugin.

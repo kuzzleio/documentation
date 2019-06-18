@@ -22,7 +22,9 @@ class LinkChecker
     'http:get',
     'http:delete',
     'http:patch',
-    'http://...'
+    'http://...',
+    'https://s3.eu-west-3.amazonaws.com',
+    'http://s3.amazonaws.com/doc/2006-03-01'
   ]
 
   attr_reader :internal, :external
@@ -32,7 +34,7 @@ class LinkChecker
     @only = options[:only] || ''
     @json_file = options[:file] || './dead_links.json'
 
-    @hydra = Typhoeus::Hydra.new(max_concurrency: 200)
+    @hydra = Typhoeus::Hydra.new(max_concurrency: 100)
 
     @internal = Set.new
     @external = Set.new
@@ -48,7 +50,6 @@ class LinkChecker
 
       scan_external_links(file_path, content) unless @only == 'internal'
     end
-
     puts "Checking #{@hydra.queued_requests.count} external links.."
     @hydra.run
   end
@@ -64,6 +65,7 @@ class LinkChecker
   end
 
   def report_json
+    puts "JSON report available at #{@json_file}"
     File.write(@json_file, JSON.pretty_generate({ external: @external.to_a, internal: @internal.to_a }))
   end
 
@@ -107,16 +109,27 @@ class LinkChecker
       # Remove markdown parenthesis and other garbage
       external_link.gsub!(/[\)][\.:,]*/, '')
 
-      request = Typhoeus::Request.new(external_link, followlocation: true)
-
-      request.on_complete do |response|
-        if response.code != 200
-          @external << external_link
-        end
+      check_external_link(external_link) do |dead_link|
+        @external << dead_link
       end
-
-      @hydra.queue(request)
     end
+  end
+
+  def check_external_link(link, try = 3, &block)
+    request = Typhoeus::Request.new(link, followlocation: true)
+
+    request.on_complete do |response|
+      next if response.code == 200
+
+      # After 3 retry, the link is really dead
+      if try == 0
+        yield link
+      else
+        check_external_link(link, try - 1, &block)
+      end
+    end
+
+    @hydra.queue(request)
   end
 
   def each_dir(start, &block)

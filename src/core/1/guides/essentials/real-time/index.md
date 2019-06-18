@@ -242,7 +242,7 @@ These filters are specified only on the client side and do not require server-si
 They are sent in the body of the request [realtime:subscribe](/core/1/api/controllers/realtime/subscribe)
 :::
 
-A filter is composed of [term](/core/1/koncorde/essentials/terms) that can be composed with [operands](/core/1/koncorde/essentials/operands).
+A filter is composed of [term](/core/1/guides/cookbooks/realtime-api//terms) that can be composed with [operands](/core/1/guides/cookbooks/realtime-api//operands).
 
 For example if I want to receive only drivers with the `B` license:
 ```json
@@ -257,7 +257,7 @@ For example if I want to receive only drivers with the `B` license:
 }
 ```
 
-It is also possible to combine [terms](/core/1/koncorde/essentials/terms) between them with [operands](/core/1/koncorde/essentials/operands) to refine my filter:
+It is also possible to combine [terms](/core/1/guides/cookbooks/realtime-api//terms) between them with [operands](/core/1/guides/cookbooks/realtime-api//operands) to refine my filter:
 
 ```json
 {
@@ -488,5 +488,5 @@ Each customer who subscribes to the room will receive the following notification
 Now that you're more familiar with Kuzzle, dive even deeper to learn how to leverage its full capabilities:
 
 - take a look at the available [SDKs](/sdk)
-- learn how to use [Koncorde](/core/1/koncorde/essentials/introduction/) to create fine-grained subscription filters
+- learn how to use [Koncorde](/core/1/guides/cookbooks/realtime-api//introduction/) to create fine-grained subscription filters
 - follow our guide to learn how to [manage users and setup fine-grained access control](/core/1/guides/essentials/security/)
