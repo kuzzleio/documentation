@@ -234,7 +234,7 @@ module.exports = {
       permalinkSymbol: ''
     },
     extendMarkdown: md => {
-      md.use(require('./markdown/relative-snippet'));
+      md.use(require('./markdown/code-snippet'));
       md.use(require('./markdown/copy-paste-snippet-btn'));
     }
   },
