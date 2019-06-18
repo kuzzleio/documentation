@@ -2,12 +2,12 @@
 code: true
 type: page
 title: CredentialsExist
-description: Check that the current user has credentials for the specified strategy
+description: Checks that the current user has credentials for the specified strategy
 ---
 
 # CredentialsExist
 
-Check that the current user has credentials for the specified strategy.
+Checks that the current user has credentials for the specified strategy.
 
 ## Arguments
 
@@ -17,8 +17,8 @@ func (a *Auth) CredentialsExist(strategy string, options types.QueryOptions) (bo
 
 | Arguments  | Type         | Description                          | Required |
 | ---------- | ------------ | ------------------------------------ | -------- |
-| `strategy` | string       | Strategy to use                      | yes      |
-| `options`  | QueryOptions | A structure containing query options | yes      |
+| `strategy` | <pre>string</pre>       | Strategy to use                      | yes      |
+| `options`  | <pre>QueryOptions</pre> | A structure containing query options | yes      |
 
 ### **Options**
 
@@ -26,7 +26,7 @@ Additional query options
 
 | Property   | Type    | Description                       | Default |
 | ---------- | ------- | --------------------------------- | ------- |
-| `Queuable` | boolean | Make this request queuable or not | `true`  |
+| `Queuable` | <pre>boolean</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

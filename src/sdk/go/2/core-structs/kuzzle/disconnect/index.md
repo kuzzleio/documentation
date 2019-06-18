@@ -2,16 +2,16 @@
 code: true
 type: page
 title: disconnect
-description: Disconnect the SDK
+description: Disconnects the SDK
 ---
 
-# disconnect
+# Disconnect
 
 Closes the current connection to Kuzzle.
 The SDK is now in `offline` state.
 A call to `disconnect()` will not trigger a `disconnected` event. This event is only triggered on unexpected disconnection.
 
-## Signature
+## Arguments
 
 ```go
 Disconnect() error

@@ -5,8 +5,8 @@ res, err := kuzzle.Auth.CheckToken(jwt)
 if err != nil {
   log.Fatal(err)
 } else {
-	if res.Valid != true {
-		log.Fatal("Token not valid")
-	}
+  if res.Valid != true {
+    log.Fatal("Invalid token")
+  }
   fmt.Println("Success")
 }

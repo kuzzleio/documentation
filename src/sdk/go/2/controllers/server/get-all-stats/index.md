@@ -7,8 +7,6 @@ description: Gets all stored internal statistic snapshots.
 
 # GetAllStats
 
-
-
 Gets all stored internal statistic snapshots.
 By default, snapshots are made every 10 seconds and they are stored for 1 hour.
 
@@ -25,9 +23,9 @@ These statistics include:
 func (s *Server) GetAllStats(options types.QueryOptions) (json.RawMessage, error)
 ```
 
-| Arguments | Type               | Description                         | Required |
-| --------- | ------------------ | ----------------------------------- | -------- |
-| `options` | types.QueryOptions | An object containing query options. | no       |
+| Arguments | Type               | Description                         |
+| --------- | ------------------ | ----------------------------------- |
+| `options` | <pre>types.QueryOptions</pre> | An object containing query options. |
 
 ### **Options**
 
@@ -35,7 +33,7 @@ Additional query options
 
 | Option     | Type | Description                                                                  | Default |
 | ---------- | ---- | ---------------------------------------------------------------------------- | ------- |
-| `Queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| `Queuable` | <pre>bool</pre> | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 
