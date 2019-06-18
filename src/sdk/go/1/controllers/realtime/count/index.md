@@ -2,7 +2,7 @@
 code: true
 type: page
 title: Count
-description: Count subscribers for a subscription room
+description: Counts subscribers for a subscription room
 ---
 
 # Count

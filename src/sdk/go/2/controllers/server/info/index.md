@@ -7,8 +7,6 @@ description: Returns information about Kuzzle server.
 
 # Info
 
-
-
 Returns information about Kuzzle: available API (base + extended), plugins, external services (Redis, Elasticsearch, ...), servers, etc.
 
 ## Arguments
@@ -17,9 +15,9 @@ Returns information about Kuzzle: available API (base + extended), plugins, exte
 func (s* Server) Info(options types.QueryOptions) (json.RawMessage, error)
 ```
 
-| Arguments | Type               | Description                         | Required |
-| --------- | ------------------ | ----------------------------------- | -------- |
-| `options` | types.QueryOptions | An object containing query options. | no       |
+| Arguments | Type               | Description                         |
+| --------- | ------------------ | ----------------------------------- |
+| `options` | <pre>types.QueryOptions</pre> | An object containing query options. |
 
 ### **Options**
 
@@ -27,7 +25,7 @@ Additional query options
 
 | Option     | Type | Description                                                                  | Default |
 | ---------- | ---- | ---------------------------------------------------------------------------- | ------- |
-| `Queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| `Queuable` | <pre>bool</pre> | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 

@@ -2,27 +2,25 @@
 code: true
 type: page
 title: truncate
-description: Remove all documents from collection
+description: Removes all documents from collection
 ---
 
-# truncate
+# Truncate
 
-Remove all documents from a collection while keeping the associated mapping.  
+Removes all documents from a collection while keeping the associated mapping.  
 It is faster than deleting all documents from a collection.
 
-## Signature
+## Arguments
 
 ```go
 Truncate(index string, collection string, options types.QueryOptions) error
 ```
 
-## Arguments
-
-| Arguments    | Type               | Description     | Required |
-| ------------ | ------------------ | --------------- | -------- |
-| `index`      | string             | Index name      | yes      |
-| `collection` | string             | Collection name | yes      |
-| `options`    | types.QueryOptions | Query options   | no       |
+| Arguments    | Type               | Description     |
+| ------------ | ------------------ | --------------- |
+| `index`      | <pre>string</pre>             | Index name      |
+| `collection` | <pre>string</pre>             | Collection name |
+| `options`    | <pre>types.QueryOptions</pre> | Query options   |
 
 ### **options**
 
@@ -30,7 +28,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

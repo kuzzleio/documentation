@@ -2,7 +2,7 @@
 code: true
 type: page
 title: mDelete
-description: Delete documents
+description: Deletes documents
 ---
 
 # MDelete
