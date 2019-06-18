@@ -229,6 +229,6 @@ Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzz
 Now that you're more familiar with Kuzzle, dive even deeper to learn how to leverage its full capabilities:
 
 - take a look at the [SDK Reference](/sdk/js/6)
-- learn how to use [Koncorde](/core/1/koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+- learn how to use [Koncorde](/core/1/guides/cookbooks/realtime-api) to create incredibly fine-grained and blazing-fast subscriptions
 - follow our guide to learn how to implement [basic authentication](/core/1/guides/essentials/user-authentication/#local-strategy)
 - follow our guide to learn how to implement [manage users and setup fine-grained access control](/core/1/guides/essentials/security/)

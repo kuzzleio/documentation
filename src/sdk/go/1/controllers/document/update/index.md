@@ -2,7 +2,7 @@
 code: true
 type: page
 title: update
-description: Update a document
+description: Updates a document
 ---
 
 # Update

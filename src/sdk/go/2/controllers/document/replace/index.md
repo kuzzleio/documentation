@@ -2,7 +2,7 @@
 code: true
 type: page
 title: replace
-description: Replace a document
+description: Replaces a document
 ---
 
 # Replace

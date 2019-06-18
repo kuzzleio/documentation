@@ -9,18 +9,16 @@ description: Deletes multiple indexes
 
 Deletes multiple indexes at once.
 
-## Signature
+## Arguments
 
 ```go
 MDelete(indexes []string, options types.QueryOptions) ([]string, error)
 ```
 
-## Arguments
-
-| Arguments | Type         | Description                                   | Required |
-| --------- | ------------ | --------------------------------------------- | -------- |
-| `indexes` | Array        | An array of strings containing indexes names. | yes      |
-| `options` | QueryOptions | Query options                                 | no       |
+| Arguments | Type         | Description                                   |
+| --------- | ------------ | --------------------------------------------- |
+| `indexes` | <pre>Array</pre>        | An array of strings containing indexes names. |
+| `options` | <pre>QueryOptions</pre> | Query options                                 |
 
 ### **Options**
 
@@ -28,7 +26,7 @@ Additional query options
 
 | Option     | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

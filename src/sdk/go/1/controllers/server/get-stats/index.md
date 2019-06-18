@@ -7,8 +7,6 @@ description: Returns statistics snapshots within a provided timestamp range.
 
 # GetStats
 
-
-
 Returns statistics snapshots within a provided timestamp range.
 By default, snapshots are made every 10 seconds and they are stored for 1 hour.
 
@@ -29,11 +27,11 @@ func (s *Server) GetStats(
 ) (json.RawMessage, error)
 ```
 
-| Arguments   | Type               | Description                                                     | Required |
-| ----------- | ------------------ | --------------------------------------------------------------- | -------- |
-| `startTime` | time.Time          | begining of statistics frame set (timestamp or datetime format) | yes      |
-| `stopTime`  | time.Time          | end of statistics frame set (timestamp or datetime format)      | yes      |
-| `options`   | types.QueryOptions | An object containing query options.                             | no       |
+| Arguments   | Type               | Description                                                     |
+| ----------- | ------------------ | --------------------------------------------------------------- |
+| `startTime` | <pre>time.Time</pre>          | begining of statistics frame set (timestamp or datetime format) |
+| `stopTime`  | <pre>time.Time</pre>          | end of statistics frame set (timestamp or datetime format)      |
+| `options`   | <pre>types.QueryOptions</pre> | An object containing query options.                             |
 
 ### **Options**
 
@@ -41,7 +39,7 @@ Additional query options
 
 | Option     | Type | Description                                                                  | Default |
 | ---------- | ---- | ---------------------------------------------------------------------------- | ------- |
-| `Queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| `Queuable` | <pre>bool</pre> | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 

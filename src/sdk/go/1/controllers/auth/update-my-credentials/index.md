@@ -2,26 +2,24 @@
 code: true
 type: page
 title: UpdateMyCredentials
-description: Update the current user's credentials for the specified strategy.
+description: Updates the current user's credentials for the specified strategy.
 ---
 
 # UpdateMyCredentials
 
-Update the current user's credentials for the specified `<strategy>`. The credentials to send will depend on the authentication plugin and the authentication strategy.
+Updates the current user's credentials for the specified `<strategy>`. The credentials to send will depend on the authentication plugin and the authentication strategy.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) UpdateMyCredentials(strategy string, credentials json.RawMessage, options types.QueryOptions) (json.RawMessage, error)
 ```
 
-## Arguments
-
 | Arguments     | Type            | Description                                  |
 | ------------- | --------------- | -------------------------------------------- |
-| `strategy`    | string          | the strategy to use                          |
-| `credentials` | json.RawMessage | the new credentials                          |
-| `options`     | QueryOptions    | QueryOptions object containing query options |
+| `strategy`    | <pre>string</pre>          | the strategy to use                          |
+| `credentials` | <pre>json.RawMessage</pre> | the new credentials                          |
+| `options`     | <pre>QueryOptions</pre>    | QueryOptions object containing query options |
 
 ### **Options**
 
@@ -29,7 +27,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `Queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

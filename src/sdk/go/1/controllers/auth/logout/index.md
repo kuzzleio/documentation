@@ -9,7 +9,7 @@ description: Revokes the user's token & unsubscribe them from registered rooms.
 
 Revokes the user's token & unsubscribe them from registered rooms.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) Logout() error
