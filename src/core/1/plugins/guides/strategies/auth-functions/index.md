@@ -52,7 +52,9 @@ create(request, credentials, kuid, strategy);
 
 The `create` function must return a promise, resolving to an object. The content of that object depends on this authentication strategy; usually a feedback about the created credentials is expected. That object can be left empty.
 
-<div class="alert alert-warning">The object resolved by the promise is directly forwarded to the originating user. For security reasons, it must only contain <strong>non sensitive</strong> information.</div>
+:::warning
+The object resolved by the promise is directly forwarded to the originating user. For security reasons, it must only contain *non sensitive* information.
+:::
 
 ---
 
@@ -127,7 +129,9 @@ update(request, credentials, kuid, strategy);
 
 The `update` function must return a promise, resolving to an object. The content of that object depends on this authentication strategy; usually a feedback about the updated credentials is expected. That object can be left empty.
 
-<div class="alert alert-warning">The object resolved by the promise is directly forwarded to the originating user. For security reasons, it must only contain <strong>non sensitive</strong> information.</div>
+:::warning
+The object resolved by the promise is directly forwarded to the originating user. For security reasons, it must only contain *non sensitive* information.
+:::
 
 ---
 
@@ -200,7 +204,9 @@ The `verify` function must return a promise, resolving to an object with the fol
 | `kuid`     | <pre>string</pre> | If the authentication succeeds, this property must be set to the user's [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier-kuid). Otherwise, this must be set to `null` |
 | `message`  | <pre>string</pre> | If `kuid` is set to `null` (authentication failed), this optional property can be set with a rejection reason                                                                                            |
 
-<div class="alert alert-info">A failed authentication is not an error. The returned promise should only be rejected if an actual error occurs.</div>
+:::info
+A failed authentication is not an error. The returned promise should only be rejected if an actual error occurs.
+:::
 
 ---
 
@@ -228,7 +234,9 @@ The `getById` function returns credentials information using the authentication 
 
 If this function is not implemented, an empty object is returned by Kuzzle instead.
 
-<div class="alert alert-warning">The returned information can be forwarded to users. For security reasons, it must only contain <strong>non sensitive</strong> information.</div>
+:::warning
+The returned information can be forwarded to users. For security reasons, it must only contain *non sensitive* information.
+:::
 
 ### Arguments
 
@@ -256,7 +264,9 @@ The `getInfo` function returns information about a user's credentials.
 
 If this function is not implemented, an empty object is returned by Kuzzle instead.
 
-<div class="alert alert-warning">The returned information can be forwarded to users. For security reasons, it must only contain <strong>non sensitive</strong> information.</div>
+:::warning
+The returned information can be forwarded to users. For security reasons, it must only contain *non sensitive* information.
+:::
 
 ### Arguments
 

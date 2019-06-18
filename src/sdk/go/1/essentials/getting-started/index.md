@@ -18,6 +18,10 @@ Before proceeding, please make sure your system meets the following requirements
 - A running Kuzzle server ([Kuzzle installation guide](/core/1/guides/essentials/installing-kuzzle/))</li>
   :::
 
+::: info
+Having trouble? Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzzle)!
+:::
+
 ## Installation
 
 To easily install the Go SDK:
@@ -102,10 +106,6 @@ Now, you know how to:
 
 - Create realtime filters
 - Subscribe to notifications
-
-::: info
-Having trouble? Get in touch with us on [Gitter!](https://gitter.im/kuzzleio/kuzzle) We're happy to help.
-:::
 
 ## Where do we go from here?
 

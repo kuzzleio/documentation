@@ -82,9 +82,9 @@ Removes an authentication strategy, preventing new authentications from using it
 
 In a cluster environment, the new strategy is automatically removed from all server nodes.
 
-<div class="alert alert-warning">
+:::warning
 Authentication tokens previously created using that strategy ARE NOT invalidated after using this method.
-</div>
+:::
 
 ### Arguments
 

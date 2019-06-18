@@ -15,11 +15,16 @@ You are going to write an application that **stores** documents in Kuzzle Server
 
 To follow this tutorial, you must have a Kuzzle Server up and running. Follow these instructions if this is not already the case: [Running Kuzzle](/core/1/guides/getting-started/running-kuzzle/).
 
+
+:::info
+Having trouble? Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzzle)!
+:::
+
 ## Explore the SDK
 
 It's time to get started with the [Kuzzle Javascript SDK](/sdk/js/6). This section, explains you how to store a document and subscribe to notifications in Kuzzle using the Javascript SDK.
 
-Before proceeding, please make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
+Before proceeding, please make sure your system has **Node.js** version 8 or higher ([download page](https://nodejs.org/en/download/)) installed.
 
 ## Prepare your environment
 
@@ -31,18 +36,18 @@ cd "kuzzle-playground"
 npm install kuzzle-sdk
 ```
 
-<div class="alert alert-info">
+:::info
 If you are performing a clean install you might get some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
-</div>
+:::
 
 Then, create an `init.js` file and start by adding the code below.
 This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol.
 
 <<< ./snippets/load-sdk.js
 
-<div class="alert alert-info">
-Replace 'kuzzle' which is the Kuzzle server hostname with 'localhost' or the hostname where your Kuzzle server is running.
-</div>
+:::info
+Replace 'kuzzle' which is the Kuzzle server hostname with 'localhost' or with the host name where your Kuzzle server is running.
+:::
 
 Next, add a listener to be notified in case of a connection error:
 
@@ -81,9 +86,9 @@ The console should output the following message:
 nyc-open-data/yellow-taxi ready!
 ```
 
-<div class="alert alert-success">
+:::success
 Congratulations! You are now ready to say Hello to the World!
-</div>
+:::
 
 ## Create your first "Hello World" document
 
@@ -104,14 +109,10 @@ Run the code with Node.js:
 node create.js
 ```
 
-<div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click [here](/core/1/guides/essentials/admin-console/) to see how you can use the
-   <a href="http://console.kuzzle.io" target="_blank"><strong>Kuzzle Admin Console</strong></a> to browse your collection and confirm that your document was saved.
-</div>
+:::success
+You have now successfully stored your first document into Kuzzle. You can now open an [Admin Console](http://console.kuzzle.io) to browse your collection and confirm that your document was saved.
+:::
 
-<div class="alert alert-info">
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</div>
 
 ## Subscribe to realtime document notifications (pub/sub)
 
@@ -142,9 +143,9 @@ Check the `subscribe.js` terminal: a new message is printed everytime a document
 New driver Sirkis with id AWccRe3-DfukVhSzMdUo has B license.
 ```
 
-<div class="alert alert-success">
+:::success
 Congratulations! You have just set up your first pub/sub communication!
-</div>
+:::
 
 ## Where do we go from here?
 

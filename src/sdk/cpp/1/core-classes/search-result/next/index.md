@@ -23,14 +23,11 @@ Depending on the arguments given to the initial search, the `next` method will p
 
 If no policy is applicable, the `next` method throws an exception.
 
-<div class="alert alert-info">
-  <p>
-  When processing a large number of documents (i.e. more than 1000), it is advised to use a <code>scroll</code> cursor.
-  </p>
-  <p>
-  It is also the only method that guarantees that all matching documents will be retrieved, without duplicates.
-  </p>
-</div>
+:::info
+When processing a large number of documents (i.e. more than 1000), it is advised to use a scroll cursor (see the [scroll search option](/sdk/cpp/1/controllers/document/search/#arguments)).
+
+It is also the only method that guarantees that all matching documents will be retrieved, without duplicates.
+:::
 
 ## Usage with scroll
 
@@ -58,11 +55,9 @@ If the initial search is given `from` and `size` parameters, the `next` method w
 
 Because this method does not freeze the research between two calls, if updates are applied to the database between two calls, it is possible to miss documents and/or to get duplicates between search pages.
 
-<div class="alert alert-info">
-  <p>
-    NB: It is not possible to retrieve more than 10000 items using this method. Beyond that limit, any call to <code>next</code> will throw an Exception.
-  </p>
-</div>
+:::info
+It is not possible to retrieve more than 10000 items using this method. Beyond that limit, any call to `next` will throw an Exception.
+:::
 
 <<< ./snippets/fromsize.cpp
 

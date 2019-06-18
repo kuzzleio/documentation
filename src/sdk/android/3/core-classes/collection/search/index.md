@@ -9,9 +9,9 @@ description: Collection:search
 
 Executes a search on the collection.
 
-<div class="alert alert-info">
-There is a small delay between the time a document is created and its availability in our search layer (usually a couple of seconds). That means that a document that was just created might not be returned by this function at first.
-</div>
+:::info
+There is a small delay between the time a document is created and its availability in our search layer (usually a couple of seconds). That means that a document that was just created might not be returned immediately by this function.
+:::
 
 ## Processing large data sets
 
@@ -44,9 +44,9 @@ See [`SearchResult.fetchNext`](/sdk/android/3/core-classes/search-result/fetch-n
 | `scroll`   | string  | Start a scroll session, with a time to live equals to this parameter's value following the [Elastisearch time format](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/common-options.html#time-units) | `undefined` |
 | `size`     | number  | Provide the maximum number of results of the request (used to paginate results)                                                                                                                                   | `10`        |
 
-<div class="alert alert-info">
-  To get more information about scroll sessions, please refer to the [API reference documentation](/core/1/api/controllers/document/search/).
-</div>
+:::info
+To get more information about scroll sessions, please refer to the [API reference documentation](/core/1/api/controllers/document/search/).
+:::
 
 ---
 
