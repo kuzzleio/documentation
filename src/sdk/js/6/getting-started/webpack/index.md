@@ -154,7 +154,7 @@ confirm that your document was saved.
 :::
 
 ::: info
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
+Having trouble? Get in touch with us on [Gitter!](https://gitter.im/kuzzleio/kuzzle) We're happy to help.
 :::
 
 ## Subscribe to realtime document notifications (pub/sub)
