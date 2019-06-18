@@ -17,7 +17,7 @@ The provided callback will be called everytime a [notification](/sdk/android/3/e
 
 | Arguments  | Type        | Description                                                                 |
 | ---------- | ----------- | --------------------------------------------------------------------------- |
-| `filters`  | JSON Object | [Koncorde Filters](/core/1/koncorde)                                        |
+| `filters`  | JSON Object | [Koncorde Filters](/core/1/guides/cookbooks/realtime-api)                                        |
 | `options`  | object      | (Optional) Subscription configuration. Passed to the Room constructor.      |
 | `callback` | function    | Callback to call every time a notification is received on this subscription |
 
