@@ -5,12 +5,12 @@ title: startQueuing
 description: Starts the requests queuing
 ---
 
-# startQueuing
+# StartQueuing
 
 Starts the requests queuing.  
 Works only in `offline` state, and if the `autoQueue` option is set to false.
 
-## Signature
+## Arguments
 
 ```go
 StartQueuing()

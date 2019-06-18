@@ -17,7 +17,7 @@ func (a *Auth) GetMyRights(options types.QueryOptions) ([]*types.UserRights, err
 
 | Arguments | Type         | Description                                  | Required |
 | --------- | ------------ | -------------------------------------------- | -------- |
-| `options` | QueryOptions | QueryOptions object containing query options | yes      |
+| `options` | <pre>QueryOptions</pre> | QueryOptions object containing query options | yes      |
 
 ### **Options**
 
@@ -25,7 +25,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `Queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 
@@ -33,11 +33,11 @@ A pointer to an array of UserRight object containing:
 
 | Property      | Type   | Description                               |
 | ------------- | ------ | ----------------------------------------- |
-| `Controller`  | string | Controller on wich the rights are applied |
-| `Action`      | string | Action on wich the rights are applied     |
-| `Index`       | string | Index on wich the rights are applied      |
-|  `Collection` | string | Collection on wich the rights are applied |
-|  `Value`      | string | Rights (`allowed|denied|conditional`)     |
+| `Controller`  | <pre>string</pre> | Controller on wich the rights are applied |
+| `Action`      | <pre>string</pre> | Action on wich the rights are applied     |
+| `Index`       | <pre>string</pre> | Index on wich the rights are applied      |
+|  `Collection` | <pre>string</pre> | Collection on wich the rights are applied |
+|  `Value`      | <pre>string</pre> | Rights (`allowed|denied|conditional`)     |
 
 and an error or `nil`
 

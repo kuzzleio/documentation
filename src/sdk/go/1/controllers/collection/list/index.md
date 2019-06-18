@@ -5,23 +5,21 @@ title: list
 description: Returns the collection list of an index
 ---
 
-# list
+# List
 
 Returns the complete list of realtime and stored collections in requested index sorted by name in alphanumerical order.
 The `from` and `size` arguments allow pagination. They are returned in the response if provided.
 
-## Signature
+## Arguments
 
 ```go
 List(index string, options types.QueryOptions) (json.RawMessage, error)
 ```
 
-## Arguments
-
-| Arguments | Type               | Description                        | Required |
-| --------- | ------------------ | ---------------------------------- | -------- |
-| `index`   | string             | Index name                         | yes      |
-| `options` | types.QueryOptions | An object containing query options | no       |
+| Arguments | Type               | Description                        |
+| --------- | ------------------ | ---------------------------------- |
+| `index`   | <pre>string</pre>             | Index name                         |
+| `options` | <pre>types.QueryOptions</pre> | An object containing query options |
 
 ### **options**
 
@@ -29,9 +27,9 @@ Additional query options
 
 | Property   | Type | Description                        | Default |
 | ---------- | ---- | ---------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not  | `true`  |
-| `from`     | int  | Offset of the first result         | `0`     |
-| `size`     | int  | Maximum number of returned results | `10`    |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not  | `true`  |
+| `from`     | <pre>int</pre>  | Offset of the first result         | `0`     |
+| `size`     | <pre>int</pre>  | Maximum number of returned results | `10`    |
 
 ## Return
 

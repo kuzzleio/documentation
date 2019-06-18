@@ -2,29 +2,27 @@
 code: true
 type: page
 title: updateSpecifications
-description: Update the validation specifications
+description: Updates the validation specifications
 ---
 
-# updateSpecifications
+# UpdateSpecifications
 
 The updateSpecifications method allows you to create or update the validation specifications for one or more index/collection pairs.
 
 When the validation specification is not formatted correctly, a detailed error message is returned to help you to debug.
 
-## Signature
+## Arguments
 
 ```go
 UpdateSpecifications(index string, collection string, specifications json.RawMessage, options types.QueryOptions) (json.RawMessage, error)
 ```
 
-## Arguments
-
-| Arguments        | Type            | Description                   | Required |
-| ---------------- | --------------- | ----------------------------- | -------- |
-| `index`          | string          | Index name                    | yes      |
-| `collection`     | string          | Collection name               | yes      |
-| `specifications` | json.RawMessage | Specifications in JSON format | yes      |
-| `options`        | QueryOptions    | Query options                 | no       |
+| Arguments        | Type            | Description                   |
+| ---------------- | --------------- | ----------------------------- |
+| `index`          | <pre>string</pre>          | Index name                    |
+| `collection`     | <pre>string</pre>          | Collection name               |
+| `specifications` | <pre>json.RawMessage</pre> | Specifications in JSON format |
+| `options`        | <pre>QueryOptions</pre>    | Query options                 |
 
 ### **specifications**
 
@@ -47,7 +45,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

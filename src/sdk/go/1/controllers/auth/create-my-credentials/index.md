@@ -2,14 +2,14 @@
 code: true
 type: page
 title: CreateMyCredentials
-description: Create the current user's credentials for the specified `<strategy>`.
+description: Creates the current user's credentials for the specified `<strategy>`.
 ---
 
 # CreateMyCredentials
 
-Create the current user's credentials for the specified `<strategy>`.
+Creates the current user's credentials for the specified `<strategy>`.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) CreateMyCredentials(strategy string, credentials json.RawMessage, options types.QueryOptions) (json.RawMessage, error)
@@ -17,9 +17,9 @@ func (a *Auth) CreateMyCredentials(strategy string, credentials json.RawMessage,
 
 | Arguments     | Type            | Description                                  |
 | ------------- | --------------- | -------------------------------------------- |
-| `strategy`    | string          | the strategy to use                          |
-| `credentials` | json.RawMessage | the new credentials                          |
-| `options`     | QueryOptions    | QueryOptions object containing query options |
+| `strategy`    | <pre>string</pre>          | the strategy to use                          |
+| `credentials` | <pre>json.RawMessage</pre> | the new credentials                          |
+| `options`     | <pre>QueryOptions</pre>    | QueryOptions object containing query options |
 
 ### **Options**
 
@@ -27,7 +27,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `Queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

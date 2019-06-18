@@ -5,7 +5,7 @@ title: query
 description: Base method to send API query to Kuzzle
 ---
 
-# query
+# Query
 
 Base method used to send queries to Kuzzle, following the [API Documentation](/core/1/api).
 
@@ -13,34 +13,32 @@ Base method used to send queries to Kuzzle, following the [API Documentation](/c
 This is a low-level method, exposed to allow advanced SDK users to bypass high-level methods.
 </div>
 
-## Signature
+## Arguments
 
 ```go
 Query(request *types.KuzzleRequest, options types.QueryOptions, responseChannel chan<- *types.KuzzleResponse)
 ```
 
-## Arguments
-
-| Argument          | Type                          | Description                           | Required |
-| ----------------- | ----------------------------- | ------------------------------------- | -------- |
-| `request`         | \*types.KuzzleRequest         | API request options                   | yes      |
-| `options`         | types.QueryOptions            | Additional query options              | yes      |
-| `responseChannel` | chan<- \*types.KuzzleResponse | A channel to receive the API response | yes      |
+| Argument          | Type                          | Description                           |
+| ----------------- | ----------------------------- | ------------------------------------- |
+| `request`         | <pre>\*types.KuzzleRequest</pre>         | API request options                   |
+| `options`         | <pre>types.QueryOptions</pre>            | Additional query options              |
+| `responseChannel` | <pre>chan<- \*types.KuzzleResponse</pre> | A channel to receive the API response |
 
 ### **request**
 
 Properties required for the Kuzzle API can be set in the [KuzzleRequest](https://github.com/kuzzleio/sdk-go/blob/master/types/kuzzle_request.go).
 The following properties are the most common.
 
-| Property     | Type         | Description                              | Required |
-| ------------ | ------------ | ---------------------------------------- | -------- |
-| `Controller` | string       | Controller name                          | yes      |
-| `Action`     | string       | Action name                              | yes      |
-| `Body`       | interface{}  | Query body for this action               | no       |
-| `Index`      | string       | Index name for this action               | no       |
-| `Collection` | string       | Collection name for this action          | no       |
-| `Id`         | string       | id for this action                       | no       |
-| `Volatile`   | VolatileData | Additional information to send to Kuzzle | no       |
+| Property     | Type         | Description                              |
+| ------------ | ------------ | ---------------------------------------- |
+| `Controller` | <pre>string</pre>       | Controller name                          |
+| `Action`     | <pre>string</pre>       | Action name                              |
+| `Body`       | <pre>interface{}</pre>  | Query body for this action               |
+| `Index`      | <pre>string</pre>       | Index name for this action               |
+| `Collection` | <pre>string</pre>       | Collection name for this action          |
+| `Id`         | <pre>string</pre>       | id for this action                       |
+| `Volatile`   | <pre>VolatileData</pre> | Additional information to send to Kuzzle |
 
 ### **options**
 
@@ -50,7 +48,7 @@ The following properties are the most common.
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `Queuable` | bool | Make this request queuable or not | true    |
+| `Queuable` | <pre>bool</pre> | Make this request queuable or not | true    |
 
 ### **responseChannel**
 

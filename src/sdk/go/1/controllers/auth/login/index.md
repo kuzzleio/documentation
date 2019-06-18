@@ -2,7 +2,7 @@
 code: true
 type: page
 title: Login
-description: Authenticate a user
+description: Authenticates a user
 ---
 
 # Login
@@ -25,7 +25,7 @@ func (a *Auth) Login(
 | ------------- | ------ | -------------------------------- | -------- |
 | `strategy`    | <pre>string</pre> | Name of the strategy to use  | yes      |
 | `credentials` | <pre>string</pre> |  Credentials for that strategy            |  yes     |
-| `expiresIn`   | int    |  Expiration time, in milliseconds |  no      |
+| `expiresIn`   | <pre>int</pre>    |  Expiration time, in milliseconds |  no      |
 
 #### strategy
 
