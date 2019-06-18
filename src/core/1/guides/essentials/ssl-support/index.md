@@ -14,7 +14,7 @@ This guide is inspired by this blog article: [https://blog.kuzzle.io/secure-kuzz
 It is possible to access Kuzzle securely with SSL.  
 To do this it is necessary to use a reverse proxy to add the encryption layer.  
 
-The purpose of this guide is to explain the steps necessary to secure all communications between Kuzzle and customers.  
+The purpose of this guide is to explain the steps necessary to secure all communications between Kuzzle and clients.  
 
 ::: info
 This guide can be used in both production and development environments.
@@ -28,11 +28,11 @@ The first step is to be able to communicate with the Kuzzle API through an SSL c
 
 First of all you need to obtain an SSL certificate for a domain. There are two ways to do this:
   - obtain a self-signed certificate (development only)
-  - obtain a certificate recognized by a certification authority
+  - obtain a certificate issued by a certification authority
 
 To obtain a self-signed certificate, you can follow the instructions given here: [https://www.selfsignedcertificate.com/](https://www.selfsignedcertificate.com/)
 
-To obtain a recognized certificate, you can use Let's Encrypt: [https://certbot.eff.org/](https://certbot.eff.org)
+To obtain a certificate from a third-party authority, you can use Let's Encrypt: [https://certbot.eff.org/](https://certbot.eff.org)
 
 No matter how you get your certificate, at the end you must have two files: a `.crt` and a `.key`.
 
@@ -81,7 +81,7 @@ Kuzzle is now available in SSL on port `4443`.
 ## Admin Console
 
 The Admin Console uses a WebSocket connection to connect to the Kuzzle API.  
-For security reasons, it is necessary to access a SSL-secured version to connect to a Kuzzle in SSL.
+For security reasons, browsers will prevent you to connect to Kuzzle via SSL using an Admin Console instance served by a non-secured protocol.
 
 For the Public Console Admin, simply access the HTTPS/SSL version of the console: [https://console.kuzzle.io](https://console.kuzzle.io)
 
@@ -95,7 +95,7 @@ When creating a new connection to Kuzzle, you must check the `Use SSL` box to en
 
 SDKs also support secure connections to Kuzzle.  
 
-When instantiating the SDK, an additional parameter can be entered to indicate that you want to connect to Kuzzle via SSL.
+When instantiating the SDK, an additional parameter must be provided to indicate that you want to connect to Kuzzle via SSL.
 
 ### SDK Javascript 6
 
