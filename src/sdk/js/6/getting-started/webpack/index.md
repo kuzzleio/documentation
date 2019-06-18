@@ -103,7 +103,7 @@ Congratulations! You are now ready to say Hello to the World!
 :::
 
 ::: info
-Having trouble? Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzzle)! We're happy to help.
+Having trouble? Get in touch with us on [Gitter!](https://gitter.im/kuzzleio/kuzzle) We're happy to help.
 :::
 
 ## Create your first document
