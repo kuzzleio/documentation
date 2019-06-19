@@ -47,9 +47,9 @@ Kuzzle ships with the [Local Strategy Plugin](https://github.com/kuzzleio/kuzzle
 
 ## Installing a Plugin
 
-<div class="alert alert-info">
+:::info
 If you are running Kuzzle in a Docker container, you will need to access the running container's shell and then the Kuzzle installation folder inside the container.
-</div>
+:::
 
 To install a plugin, you need to make it accessible in the `plugins/enabled` folder of your Kuzzle installation.
 

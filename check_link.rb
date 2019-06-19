@@ -107,8 +107,8 @@ class LinkChecker
       external_link == 'http://' ||
       external_link == 'https://'
     end.each do |external_link|
-      # Remove markdown parenthesis and other garbage
-      external_link.gsub!(/[\)][\.:,]*/, '')
+      # Remove markdown closing parenthesis and everything following it
+      external_link.gsub!(/[\)].*/, '')
 
       check_external_link(external_link) do |dead_link|
         @external << dead_link

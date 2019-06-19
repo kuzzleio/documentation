@@ -9,9 +9,9 @@ description: CollectionMapping:set
 
 Adds or updates a field mapping.
 
-<div class="alert alert-info">
-Changes made by this function won't be applied until you call the <code>apply</code> method
-</div>
+:::info
+Changes made by this function won't be applied until you call the `apply` method
+:::
 
 ---
 

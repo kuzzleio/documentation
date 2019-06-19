@@ -9,10 +9,11 @@ description: Security:createRole
 
 Create a new role in Kuzzle.
 
-<div class="alert alert-info">
+:::info
 There is a small delay between role creation and its availability in our search layer (usually a couple of seconds).
-That means that a role that was just created may not be returned by the <code>searchRole</code> function at first.
-</div>
+That means that a role that was just created may not be returned immediately by the [searchRoles](/sdk/php/3/core-classes/security/search-roles/) function.
+:::
+
 ---
 
 ## createRole(id, content, [options], callback)

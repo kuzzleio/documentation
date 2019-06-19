@@ -14,7 +14,9 @@ title: core:auth:strategyAdded
 
 Triggered whenever a plugin [dynamically registers](/core/1/plugins/plugin-context/accessors/strategies/) an authentication strategy.
 
-<div class="alert alert-info">Pipes cannot listen to that event, only hooks can.</div>
+:::info
+Pipes cannot listen to that event, only hooks can.
+:::
 
 ---
 
