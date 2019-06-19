@@ -50,7 +50,7 @@ In order to create a new controller, the plugin must expose the following proper
 
 ## Return a response
 
-By default, Kuzzle wraps the value returned by the function associated with the controller's action into the `result` property of the [Kuzzle Response](/core/1/api/essentials/kuzzle-response/).  
+By default, Kuzzle wraps a controller action's result in a [Kuzzle Response](/core/1/api/essentials/kuzzle-response/) object.  
 
 Consider the following action:
 ```js
