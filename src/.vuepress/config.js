@@ -273,7 +273,9 @@ module.exports = {
             algoliaIndex: process.env.ALGOLIA_INDEX || 'kuzzle-documentation'
           }
         ]
-      : {},
+      : {
+        write: true
+      },
     [
       require('vuepress-validate-frontmatter'),
       // require('./validate-frontmatter/index'),

@@ -9,10 +9,10 @@ description: Security:deleteProfile
 
 Delete the provided profile.
 
-<div class="alert alert-info">
+:::info
 There is a small delay between the time a profile is deleted and it being reflected in the search layer (usually a couple of seconds).
-That means that a profile that was just deleted may still be returned by the <code>searchProfiles</code> function at first.
-</div>
+That means that a profile that was just deleted might still be returned by the [searchProfiles](/sdk/php/3/core-classes/security/search-profiles/) function.
+:::
 
 ---
 

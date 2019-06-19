@@ -11,6 +11,10 @@ order: 200
 In this tutorial you will learn how to install, run and use **Kuzzle** with the **Javascript SDK** in the browser using **Webpack**.
 We will walk you through creating scripts that can **store** documents in Kuzzle and subscribe to **notifications** for each new document created.
 
+:::info
+Having trouble? Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzzle)!
+:::
+
 ## Running Kuzzle
 
 Before going through this tutorial, you should have a Kuzzle server running. Please refer to the [Running Kuzzle Tutorial](/core/1/guides/getting-started/running-kuzzle/) if you don't have one yet.
@@ -35,8 +39,8 @@ In your terminal, go to the root of your front-end project using Webpack and typ
 npm install kuzzle-sdk
 ```
 
-::: info
-If you are performing a clean install you might see some `unmet peer dependency` warnings, these are safe to ignore as they refer to optional dependencies.
+:::info
+If you are performing a clean install you might see some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
 :::
 
 Then, create a `init-kuzzle.js` file and start by adding the code below. This will load the Kuzzle Javascript SDK:

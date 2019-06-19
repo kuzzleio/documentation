@@ -63,8 +63,6 @@ When Kuzzle runs for the first time, no users are defined and the anonymous user
 
 The `createFirstAdmin` command lets you create an administrator to manage security.
 
-<div class="alert alert-info">NB: This command can only be run interactively</div>
-
 This call the action [security#createFirstAdmin](/core/1/api/controllers/security/create-first-admin/)
 
 ---
