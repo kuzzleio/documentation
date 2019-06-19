@@ -5,26 +5,24 @@ title: updateMapping
 description: Update the collection mapping
 ---
 
-# updateMapping
+# UpdateMapping
 
 Update the collection mapping.
 Mapping allow you to exploit the full capabilities of our
 persistent data storage layer, [ElasticSearch](https://www.elastic.co/products/elasticsearch) (check here the [mapping capabilities of ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/mapping.html)).
 
-## Signature
+## Arguments
 
 ```go
 UpdateMapping(index string, collection string, mapping json.RawMessage, options types.QueryOptions) error
 ```
 
-## Arguments
-
-| Arguments    | Type            | Description                            | Required |
-| ------------ | --------------- | -------------------------------------- | -------- |
-| `index`      | string          | Index name                             | yes      |
-| `collection` | string          | Collection name                        | yes      |
-| `mapping`    | json.RawMessage | Collection data mapping in JSON format | yes      |
-| `options`    | QueryOptions    | Query options                          | no       |
+| Arguments    | Type            | Description                            |
+| ------------ | --------------- | -------------------------------------- |
+| `index`      | <pre>string</pre>          | Index name                             |
+| `collection` | <pre>string</pre>          | Collection name                        |
+| `mapping`    | <pre>json.RawMessage</pre> | Collection data mapping in JSON format |
+| `options`    | <pre>QueryOptions</pre>    | Query options                          |
 
 ### **mapping**
 
@@ -53,7 +51,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

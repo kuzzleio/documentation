@@ -11,7 +11,7 @@ Removes a channel from an event.
 
 ## Arguments
 
-```js
+```go
 RemoveListener(event int, channel chan<- interface{})
 ```
 
@@ -19,8 +19,8 @@ RemoveListener(event int, channel chan<- interface{})
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `event`    | `int` | Event constant from the `event` package |
-| `channel` | `channel` | Channel to unregister |
+| `event`    | <pre>int</pre> | Event constant from the `event` package |
+| `channel` | <pre>channel</pre> | Channel to unregister |
 
 ## Usage
 

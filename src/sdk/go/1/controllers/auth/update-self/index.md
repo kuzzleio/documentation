@@ -9,18 +9,16 @@ description: Updates the current user object in Kuzzle.
 
 Updates the current user object in Kuzzle.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) UpdateSelf(data json.RawMessage, options types.QueryOptions) (*security.User, error)
 ```
 
-## Arguments
-
 | Arguments | Type         | Description                                  |
 | --------- | ------------ | -------------------------------------------- |
-| `content` | string       | the new credentials                          |
-| `options` | QueryOptions | QueryOptions object containing query options |
+| `content` | <pre>string</pre>       | the new credentials                          |
+| `options` | <pre>QueryOptions</pre> | QueryOptions object containing query options |
 
 ### **Options**
 
@@ -28,7 +26,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `Queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

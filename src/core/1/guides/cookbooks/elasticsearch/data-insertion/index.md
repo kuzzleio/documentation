@@ -17,11 +17,11 @@ We use the `?pretty` keyword to get human-readable outputs from our requests.
 We will provide Elasticsearch with a mapping (RDBM: schema) for the data we want to index.
 Here we create a new document `type` (RDBM: table) called `blogpost` with 6 fields (RDBM: columns).
 
-<div class="alert alert-warning">
-  The mapping is not mandatory, but if you don't define it before pushing data to Elasticsearch,
-  Elasticsearch will infer the mapping for each field based on its content.
-  Once defined, the field type cannot be changed.
-</div>
+:::warning
+The mapping is not mandatory, but if you don't define it before pushing data to Elasticsearch,
+Elasticsearch will infer the mapping for each field based on its content.
+Once defined, the field type cannot be changed.
+:::
 
 ```bash
 curl -g -X PUT "http://localhost:9200/example/?pretty" -d '{

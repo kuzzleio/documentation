@@ -18,4 +18,6 @@ The requests buffer is configurable through the `limits` parameters in the [Kuzz
 
 Requests submitted while the request buffer is completely filled (i.e. the payload is equal to `100`) are rejected with a [ServiceUnavailableError](/core/1/api/essentials/errors/#common-errors-default) (code `503`)
 
-<div class="alert alert-info">Pipes cannot listen to that event, only hooks can.</div>
+:::info
+Pipes cannot listen to that event, only hooks can.
+:::

@@ -12,9 +12,13 @@ This tutorial explains how to use **Kuzzle** with the **Javascript SDK** in a **
 
 To follow this tutorial, you must have a Kuzzle Server up and running (you'll need to know the hostname of the machine running it). If this is not already the case, take a look at [how to run Kuzzle](/core/1/guides/getting-started/running-kuzzle/).
 
-Before proceeding, make sure your system has **Node.js** version 8 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>) installed.
+Before proceeding, make sure your system has **Node.js** version 8 or higher ([download page](https://nodejs.org/en/download/)) installed.
 
 In this tutorial, you'll learn how to **store** a document and **subscribe** to notifications in Kuzzle using the Javascript SDK.
+
+:::info
+Having trouble? Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzzle)!
+:::
 
 ## Prepare your environment
 
@@ -25,9 +29,9 @@ mkdir "kuzzle-playground"
 cd "kuzzle-playground"
 ```
 
-<div class="alert alert-info">
-If you are performing a clean install you might get some <code>UNMET PEER DEPENDENCY</code> warnings, these are safe to ignore as they refer to optional dependencies.
-</div>
+:::info
+If you are performing a clean install you might get some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
+:::
 
 Then, create an `index.html` file with the following structure:
 
@@ -48,11 +52,11 @@ Then, create an `index.html` file with the following structure:
 </html>
 ```
 
-<div class="alert alert-info">
+:::info
 If you are using Internet Explorer (not Edge), you are responsible of installing a Promise polyfill, which enables IE to support
-Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a>.
-Our advice is to use <a href="http://bluebirdjs.com/docs/getting-started.html">Bluebird</a>, as shown in the code example above (refer to the commented lines in the <code>head</code> tag).
-</div>
+Javascript [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).  
+Our advice is to use [Bluebird](http://bluebirdjs.com/docs/getting-started.html), as shown in the code example above (refer to the commented lines in the `head` tag).
+:::
 
 Then, add the code below in the `body` tag.
 This loads the SDK and connects it to a Kuzzle instance using the WebSocket protocol. If an error occurs, it is displayed
@@ -60,9 +64,9 @@ in the console. Once the connection is established, a success message is display
 
 <<< ./snippets/load-sdk.html
 
-<div class="alert alert-info">
-Replace <code>kuzzle</code> with <code>localhost</code> or the hostname where your Kuzzle server is running.
-</div>
+:::info
+Replace `kuzzle` with <code>localhost</code> or with the host name where your Kuzzle server is running.
+:::
 
 Now you have to add the code that will access Kuzzle to create a new index `nyc-open-data` and a new collection `yellow-taxi`
 that you will use to store data later on. Make sure the code inside your `body` tag looks like the following:
@@ -86,14 +90,14 @@ Successfully connected to Kuzzle
 nyc-open-data/yellow-taxi ready!
 ```
 
-<div class="alert alert-success">
+:::success
 Congratulations! You are now ready to say Hello to the World!
-</div>
+:::
 
-<div class="alert alert-info">
+:::info
 If you reload the page, you should see an error in the console. This is OK, since Kuzzle is just refusing to create
-the <code>nyc-open-data</code> index as it already exists.
-</div>
+the `nyc-open-data` index as it already exists.
+:::
 
 ## Create your first "Hello World" document
 
@@ -119,13 +123,10 @@ Successfully connected to Kuzzle
 New document successfully created!
 ```
 
-<div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click [here](/core/1/guides/essentials/admin-console/) to see how you can use the <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
-</div>
+:::success
+You have now successfully stored your first document into Kuzzle. Check our [Admin Console Guide](/core/1/guides/essentials/admin-console/) to see how to browse your collection and confirm that your document was saved.
+:::
 
-<div class="alert alert-info">
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</div>
 
 ## Subscribe to realtime document notifications (pub/sub)
 
@@ -153,9 +154,9 @@ This creates a new document in Kuzzle which, in turn, triggers a [document notif
 New driver Sirkis with id AWccRe3-DfukVhSzMdUo has B license.
 ```
 
-<div class="alert alert-success">
+:::success
 Congratulations! You have just set up your first pub/sub communication!
-</div>
+:::
 
 ## Where do we go from here?
 

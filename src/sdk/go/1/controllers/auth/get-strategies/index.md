@@ -2,24 +2,22 @@
 code: true
 type: page
 title: GetStrategies
-description: Get all authentication strategies registered in Kuzzle.
+description: Gets all authentication strategies registered in Kuzzle.
 ---
 
 # GetStrategies
 
-Get all authentication strategies registered in Kuzzle.
+Gets all authentication strategies registered in Kuzzle.
 
-## Signature
+## Arguments
 
 ```go
 func (a *Auth) GetStrategies(options types.QueryOptions) ([]string, error)
 ```
 
-## Arguments
-
 | Arguments | Type            | Description                                                       |
 | --------- | --------------- | ----------------------------------------------------------------- |
-| `options` | query_options\* | A pointer to a `kuzzleio::query_options` containing query options |
+| `options` | <pre>query_options\*</pre> | A pointer to a `kuzzleio::query_options` containing query options |
 
 ### **Options**
 
@@ -27,7 +25,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `Queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

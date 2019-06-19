@@ -2,25 +2,23 @@
 code: true
 type: page
 title: exists
-description: Check for index existence
+description: Checks for index existence
 ---
 
 # Exists
 
 Checks if the given index exists in Kuzzle.
 
-## Signature
+## Arguments
 
 ```go
 Exists(index string, options types.QueryOptions) (bool, error)
 ```
 
-## Arguments
-
-| Arguments | Type         | Description   | Required |
-| --------- | ------------ | ------------- | -------- |
-| `index`   | string       | Index name    | yes      |
-| `options` | QueryOptions | Query options | no       |
+| Arguments | Type         | Description   |
+| --------- | ------------ | ------------- |
+| `index`   | <pre>string</pre>       | Index name    |
+| `options` | <pre>QueryOptions</pre> | Query options |
 
 ### **Options**
 
@@ -28,7 +26,7 @@ Additional query options
 
 | Option     | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

@@ -2,6 +2,8 @@ const { readFileSync, writeFileSync } = require('fs');
 const { resolve } = require('path');
 const cheerio = require('cheerio');
 const algolia = require('algoliasearch');
+const c = require('chalk');
+
 const { findRootNode, getParentNode } = require('./util.js');
 const records = [];
 
@@ -42,7 +44,7 @@ module.exports = (options, ctx) => ({
 
   async generated(pagePaths) {
     enrichRecordsWithContent(records, ctx.outDir, true);
-    pushRecords(records, {
+    await pushRecords(records, {
       appId: options.algoliaAppId,
       writeKey: options.algoliaWriteKey,
       index: options.algoliaIndex
@@ -51,6 +53,7 @@ module.exports = (options, ctx) => ({
 });
 
 function enrichRecordsWithContent(records, outDir, write = false) {
+  console.log(`${c.blue('Algolia')} Enriching ${records.length} records...`);
   records.forEach(record => {
     const generatedFilePath = resolve(
       outDir,
@@ -74,19 +77,23 @@ function enrichRecordsWithContent(records, outDir, write = false) {
   }
 }
 
-function pushRecords(records, algoliaOptions) {
+async function pushRecords(records, algoliaOptions) {
   if (!algoliaOptions.writeKey) {
     throw new Error('Please provide a valid Algolia Write Key');
   }
 
+  console.log(`${c.blue('Algolia')} Pushing ${records.length} records...`);
+
   const client = algolia(algoliaOptions.appId, algoliaOptions.writeKey);
   const index = client.initIndex(algoliaOptions.index);
+
+  await index.clearIndex()
 
   index.addObjects(records, (err, content) => {
     if (err) {
       return console.error(err);
     }
-    console.log('Successfully added records to Algolia!');
+    console.log(`${c.blue('Algolia')} Successfully pushed records!`);
   });
 }
 
@@ -96,6 +103,7 @@ function extractTags(path) {
 
   return path
     .split('/')
+    .filter(t => t !== '')
     .slice(start, end)
     .map(tag => {
       if (tag === 'sdk-reference') {

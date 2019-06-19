@@ -9,9 +9,9 @@ description: Role:setContent
 
 Replaces the content of the `Role` object.
 
-<div class="alert alert-info">
+:::info
 Updating a role content will have no impact until the [save](/sdk/android/3/core-classes/role/save/) method is called
-</div>
+:::
 
 ---
 

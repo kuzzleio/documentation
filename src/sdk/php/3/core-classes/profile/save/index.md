@@ -9,9 +9,9 @@ description: Profile:save
 
 Creates or replaces the profile in Kuzzle.
 
-<div class="alert alert-warning">
+:::warning
 Saving the object will return an error if the linked roles have not been previously created in Kuzzle.
-</div>
+:::
 
 ---
 
