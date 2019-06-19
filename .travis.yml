@@ -147,7 +147,7 @@ jobs:
     # -------------------------------------------------------------------------
     - stage: Deployment
       name: Deploy to docs.kuzzle.io
-      if: branch = master AND (tag IS present)
+      if: branch = master
 
       addons:
         apt:
