@@ -21,7 +21,6 @@ env:
     - secure: "K1Hf0b0hgRRkIbudmJZCz96ZeObzRJsC4hUZ7N1aolAKkqRcb1HeKkWwD6Ql/kp2shnQ+QQhPVDlvJSDORJ1D+vZlDiYn8fYSjgcXLC1yfkzXkbezLQGZdyTGjpRyyv2vRt1JHtvLIXLrAg4INWyR2mQR/vW8lMdJkVcXnGu+CIdvncnQfYD6axVqWmqCgElEtCOZ3RUxxm2CHSqy7Caf9hF217lxAHORW6QEtfu86WvRoiIX08W9BQpNKvbdafiu0myVTnZUkn+w0ZhTGaS+nTd7AmIbPw8wQsRbm7ex9BTR4PpZMQOE/Aqtm5T7kEbpMK+oXRKIv2Y40YKTDaC27NQl12fZ0ORR6Gttm9DqXXACW8G5F87FkYJUSC8vo8UJFJSJhAKtzsqJRY5rIAr/tSFGwtxhhE4XV2eFC25zaNJsRXhzTyDB+OF9O0EUS2YgEZVfr3cxmUIDimKOsKP918zbjvBtLrZ1KJEs/1yR05J423CZ64T0RzLJ7HATzLt7Wo/nlzij73UglntxZlXWkhmZUGkT/UeNvTE+aPbfam+BWI2Y5v3qrxvtZ9IyOhSIVAsxi+/siRjv256pJnFLgpoGX8hH6rRP0TC3ri+8Sv/xV9ZxiUgUHhOhkUB57Uv1zHEOLR23vMRU1o8y4oA16bckc2SJ3SWrFXKT4qujgI="
 
 stages:
-  - name: Build
   - name: Lint
   - name: Tests
     if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
@@ -77,30 +76,6 @@ jobs:
         - bash ./run-snippet-tests.sh -p src -s go -v 1
 
 
-    # - stage: Tests
-    #   name: Kuzzle SDK Java - v1
-
-    #   before_install:
-    #     - docker pull kuzzleio/documentation:java
-    #     - sysctl -w vm.max_map_count=262144
-
-    #   script:
-    #     - npm install
-    #     - bash ./run-snippet-tests.sh -p src -s java -v 1
-
-
-    # - stage: Tests
-    #   name: Kuzzle SDK C++ - v1
-
-    #   before_install:
-    #     - docker pull kuzzleio/documentation:cpp
-    #     - sysctl -w vm.max_map_count=262144
-
-    #   script:
-    #     - npm install
-    #     - bash ./run-snippet-tests.sh -p src -s cpp -v 1
-
-
     - stage: Tests
       name: Kuzzle SDK C# - v1
 
@@ -147,7 +122,7 @@ jobs:
     # -------------------------------------------------------------------------
     - stage: Deployment
       name: Deploy to docs.kuzzle.io
-      if: branch = master AND (tag IS present)
+      if: branch = master
 
       addons:
         apt:
