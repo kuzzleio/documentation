@@ -23,14 +23,14 @@ env:
 stages:
   - name: Lint
   - name: Tests
-    if: type = pull_request OR type = push AND branch =~ /^master|[0-9]+-dev$/
+    if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
   - name: Deployment
     if: type != pull_request AND branch =~ /^master|3-dev$/
 
 jobs:
   include:
     - stage: Lint
-      if: type = pull_request OR type = push AND branch =~ /^master|[0-9]+-dev$/
+      if: type = pull_request OR (type = push AND branch =~ /^master|[0-9]+-dev$/)
       name: Lint and check for dead links
       language: ruby
       script:
