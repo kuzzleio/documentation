@@ -8,7 +8,7 @@
           type="text"
           class="md-search__input"
           name="query"
-          placeholder="Search (ctrl+alt+S)"
+          placeholder="Search (s)"
           autocapitalize="off"
           autocorrect="off"
           autocomplete="off"
@@ -132,11 +132,7 @@ export default {
     initializeHotkey() {
       // TODO MacOS version
       window.addEventListener('keyup', event => {
-        if (
-          event.altKey === true &&
-          event.ctrlKey === true &&
-          event.key === 's'
-        ) {
+        if (event.key === 's') {
           this.$refs.searchInput.focus();
         }
       });

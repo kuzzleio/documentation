@@ -9,14 +9,14 @@
             <li class="md-tabs__item">
               <router-link
                 :to="{path: generateLink('/core/1/guides/')}"
-                :class="{'md-tabs__link--active': $route.path.match('/guides/')}"
+                :class="{'md-tabs__link--active': $route.path.match('/core/1/guides/')}"
                 title="Guide"
                 class="md-tabs__link"
               >Guides</router-link>
             </li>
             <li class="md-tabs__item">
               <router-link
-                :class="{'md-tabs__link--active': $route.path.match('/api/')}"
+                :class="{'md-tabs__link--active': $route.path.match('/core/1/api/')}"
                 :to="{path: generateLink('/core/1/api/')}"
                 title="API"
                 class="md-tabs__link"
@@ -72,6 +72,9 @@ import { getValidLinkByRootPath } from '../util.js';
 
 export default {
   methods: {
+    startWith (str, start) {
+      return str.indexOf(start) === 0;
+    },
     generateLink(path) {
       return getValidLinkByRootPath(path, this.$site.pages);
     }
