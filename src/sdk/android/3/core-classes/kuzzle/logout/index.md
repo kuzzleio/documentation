@@ -9,9 +9,9 @@ description: Kuzzle:logout
 
 Logs the user out.
 
-<div class="alert alert-info">
+:::info
 This method is non-queuable, meaning that during offline mode, it will be discarded and the callback will be called with an error.
-</div>
+:::
 
 ---
 

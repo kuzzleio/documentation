@@ -98,9 +98,9 @@ For more information regarding Type Options, please refer to [this](/core/1/guid
 
 If the basic validation functionality doesn't meet your requirements, you can take advantage of [Koncorde](/core/1/guides/cookbooks/realtime-api) to create complex validation specifications.
 
-<div class="alert alert-info">
+:::info
 Koncorde is the same component used to create real-time subscriptions.
-</div>
+:::
 
 The idea is simple: use Koncorde to specify a filter that can be used to validate documents. For example, here we ensure that at least one of the fields `price` or `vatPrice` exists by placing a filter in the `validators` field of the validation schema:
 

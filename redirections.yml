@@ -552,6 +552,9 @@ redirections:
   - from: sdk-reference/kuzzle
     to: sdk
 
+  - from: sdk-reference
+    to: sdk
+
   - from: api-documentation/query-syntax
     to: core/1/api/essentials/query-syntax
 

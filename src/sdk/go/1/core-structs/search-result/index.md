@@ -28,7 +28,7 @@ The `SearchResult` struct exposes an unique `Next` method, which returns a new `
 Next() (*SearchResult, error)
 ```
 
-## Behaviour of the next method
+## Behavior of the next method
 
 In order to be able to compute the next search page, some initial conditions must be met.
 
@@ -36,14 +36,11 @@ Depending on the arguments given to the initial search, thhe `Next` method will 
 
 If no policy is applicable, the `next` method will throw an exception.
 
-<div class="alert alert-info">
-  <p>
-  When processing a large number of documents (i.e. more than 1000), it is advised to use a <code>scroll</code> cursor.
-  </p>
-  <p>
-  It is also the only method that garantees all matching documents will be retrieved and no duplicates will be included.
-  </p>
-</div>
+:::info
+When processing a large number of documents (i.e. more than 1000), it is advised to use a scroll cursor.
+
+It is also the only method that garantees all matching documents will be retrieved and no duplicates will be included.
+:::
 
 ### 1. scroll
 
@@ -69,11 +66,9 @@ If the initial search is given some `from` and `size` parameters, the `Next` met
 
 Because this method does not freeze the research between two calls, if some updates are applied to the database between two calls, it is possible to miss some documents and/or to get some duplicates between search pages.
 
-<div class="alert alert-info">
-  <p>
-    NB: It is not possible to retrieve more than 10000 items using this method. Above that limit, any call to <code>Next</code> will return an error
-  </p>
-</div>
+:::info
+It is not possible to retrieve more than 10000 items using this method. Above that limit, any call to `Next` will return an error
+:::
 
 ## Usage
 
