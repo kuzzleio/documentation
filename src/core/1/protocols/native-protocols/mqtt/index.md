@@ -7,9 +7,9 @@ order: 0
 
 # MQTT
 
-<div class="alert alert-warning">
-By default, the MQTT protocol is disabled in Kuzzle configuration.
-</div
+:::warning
+By default, the MQTT protocol is disabled in the Kuzzle configuration.
+:::
 
 ---
 
@@ -148,9 +148,9 @@ If `allowPubSub` is set to `false`, clients can only publish to the `requestTopi
 
 If `allowPubSub` is set to `true`, clients are only forbidden to publish to the `responseTopic` topic (defaults to `Kuzzle/response`).
 
-<div class="alert alert-warning">
-    Wildcards subcriptions are not allowed
-</div
+:::warning
+Wildcards subcriptions are not allowed
+:::
 
 If a client tries to publich to an unauthorized topic, his connection will immediately be shut down by the server.
 
@@ -167,9 +167,9 @@ Many CLI tools, such as Mosquitto offer two separate binaries, one for subscribi
 
 To use these tools, one can enable the **development mode**, in which `Kuzzle/response` will act as a regular public topic.
 
-<div class="alert alert-warning">
-    Do not use development mode in production!
-</div
+:::warning
+Do not use development mode in production!
+:::
 
 To enable development mode, you will need to **both** set `NODE_ENV` environment variable to `development` and set the mqtt protocol `developmentMode` to `true`:
 

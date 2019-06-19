@@ -2,7 +2,7 @@
 code: true
 type: page
 title: mGet
-description: Get multiple documents
+description: Gets multiple documents
 ---
 
 # MGet

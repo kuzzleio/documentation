@@ -17,8 +17,8 @@ func (a *Auth) UpdateSelf(data json.RawMessage, options types.QueryOptions) (*se
 
 | Arguments | Type         | Description                                  |
 | --------- | ------------ | -------------------------------------------- |
-| `content` | string       | the new credentials                          |
-| `options` | QueryOptions | QueryOptions object containing query options |
+| `content` | <pre>string</pre>       | the new credentials                          |
+| `options` | <pre>QueryOptions</pre> | QueryOptions object containing query options |
 
 ### **Options**
 
@@ -26,7 +26,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `Queuable` | bool | Make this request queuable or not | `true`  |
+| `Queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

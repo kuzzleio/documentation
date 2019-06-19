@@ -9,10 +9,10 @@ description: Security:createUser
 
 Create a new user in Kuzzle.
 
-<div class="alert alert-info">
-There is a small delay between user creation and its availability in our search layer (usually a couple of seconds).
-That means that a user that was just created may not be returned by the <code>searchUsers</code> function at first.
-</div>
+:::info
+There is a small delay between user creation and its availability in our search layer (usually a couple of seconds).  
+That means that a user that was just created might not be returned immediately by the `searchUsers` function.
+:::
 
 ---
 

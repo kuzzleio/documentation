@@ -9,10 +9,10 @@ description: Kuzzle:query
 
 Base method used to send queries to Kuzzle, following the [API Documentation](/core/1/api).
 
-<div class="alert alert-warning">
-This is a low-level method, exposed to allow advanced SDK users to bypass high-level methods.<br/>
-Refer to Kuzzle's API Reference [here](/core/1/api)
-</div>
+:::warning
+This is a low-level method, exposed to allow advanced SDK users to bypass high-level methods.  
+Refer to Kuzzle's [API Reference](/core/1/api)
+:::
 
 ---
 

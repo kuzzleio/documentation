@@ -9,10 +9,10 @@ description: Security:deleteRole
 
 Delete the provided role.
 
-<div class="alert alert-info">
+:::info
 There is a small delay between the time a role is deleted and it being reflected in the search layer (usually a couple of seconds).
-That means that a role that was just deleted may still be returned by the <code>searchRoles</code> function at first.
-</div>
+That means that a role that was just deleted might still be returned by the [searchRoles](/sdk/php/3/core-classes/security/search-roles/) function.
+:::
 
 ---
 

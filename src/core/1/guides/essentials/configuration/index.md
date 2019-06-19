@@ -75,6 +75,6 @@ services:
       - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
 ```
 
-<div class="alert alert-info">
-  For an exhaustive list of configuration parameters, please refer to the <a href="https://github.com/kuzzleio/kuzzle/blob/master/.kuzzlerc.sample">sample</a> kuzzlerc file.
-</div>
+:::info
+For an exhaustive list of configuration parameters, please refer to the [kuzzlerc sample file](https://github.com/kuzzleio/kuzzle/blob/master/.kuzzlerc.sample).
+:::

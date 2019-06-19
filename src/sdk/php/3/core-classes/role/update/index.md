@@ -9,15 +9,13 @@ description: Role:update
 
 Updates the role object in Kuzzle.
 
-<div class="alert alert-warning">
-  <p>
-    Unlike a regular document update, this method will replace the whole role definition under the indexes node with the <code>updateContent</code> parameter.<br>
-    In other words, you always need to provide the complete role definition in the <code>updateContent</code> object.
-  </p>
-  <p>
-    This method has the same effect as calling [`setContent`](/sdk/php/3/core-classes/role/set-content/) followed by the [`save`](/sdk/php/3/core-classes/role/save/) method.
-  </p>
-</div>
+:::warning
+Unlike a regular document update, this method will replace the whole role definition under the indexes node with the `updateContent` parameter.
+
+In other words, you always need to provide the complete role definition.
+
+This method has the same effect as calling [setContent](/sdk/php/3/core-classes/role/set-content/) followed by the [save](/sdk/php/3/core-classes/role/save/) method.
+:::
 
 To get more information about Kuzzle permissions, please refer to our [permissions guide](/core/1/guides/essentials/security/#user-permissions).
 
