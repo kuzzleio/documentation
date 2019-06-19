@@ -22,10 +22,10 @@ ALGOLIA_WRITE_KEY=<write_key_here> npm run build
 
 Algolia can be configured via the following environment variables
 
-* `ALGOLIA_APP_ID` - The Algolia application ID.
-* `ALGOLIA_SEARCH_KEY` - The search key associated to the Algolia index.
-* `ALGOLIA_INDEX` - The Algolia index associated to the documentation.
-* `ALGOLIA_WRITE_KEY` - The write key associated to the Algolia index.
+- `ALGOLIA_APP_ID` - The Algolia application ID.
+- `ALGOLIA_SEARCH_KEY` - The search key associated to the Algolia index.
+- `ALGOLIA_INDEX` - The Algolia index associated to the documentation.
+- `ALGOLIA_WRITE_KEY` - The write key associated to the Algolia index.
 
 ---
 
@@ -52,9 +52,9 @@ nosidebar: <Boolean> (optional)
 
 Defines how this page behaves in the generation of the sidebar. It is also used by other components (like Algolia indexation). Can be the following values:
 
-* `root` - The page is the root of the generation of an entire sidebar (e.g. `src/code/1/api/`);
-* `branch` - The page is a branch of the sidebar and generally has no content but has children (e.g. `src/code/1/api/api-reference`, `src/code/1/api/controllers/admin/`);
-* `page` - The page is a "leaf" in the sidebar tree: it has no children and has content. It is indexed to Algolia.
+- `root` - The page is the root of the generation of an entire sidebar (e.g. `src/code/1/api/`);
+- `branch` - The page is a branch of the sidebar and generally has no content but has children (e.g. `src/code/1/api/api-reference`, `src/code/1/api/controllers/admin/`);
+- `page` - The page is a "leaf" in the sidebar tree: it has no children and has content. It is indexed to Algolia.
 
 #### `code` (required)
 
@@ -92,13 +92,13 @@ You can create alert/info boxes in your markdown with the following syntax:
 
 ```markdown
 ::: info
-  lorem ipsum
+lorem ipsum
 :::
 ```
 
 Supported containers are : `info`, `success`, `warning`
 
-## Code snippets
+## Code snippet import
 
 You can [import code snippets from file](https://v1.vuepress.vuejs.org/guide/markdown.html#import-code-snippets), as supported by VuePress, with the following syntax in your Markdown:
 
@@ -123,6 +123,134 @@ In your `index.md` file, you can import the `create.js` snippet by writing
 ```
 <<< ./snippets/create.js
 ```
+
+### Partial code snippet extraction
+
+You can also use special tags to import specific parts of your snippet file. For instance, say your snippet file is like the following:
+
+```javascript
+// load the Kuzzle SDK module
+import { Kuzzle, WebSocket } from 'kuzzle-sdk';
+
+// instantiate a Kuzzle client
+const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
+
+// add a listener to detect any connection problems
+kuzzle.on('networkError', error => {
+  console.error(`Network Error: ${error}`);
+});
+
+const run = async () => {
+  try {
+    // Connect to Kuzzle server
+    await kuzzle.connect();
+
+    // Create an index
+    await kuzzle.index.create('nyc-open-data');
+
+    // Create a collection
+    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
+    console.log('nyc-open-data/yellow-taxi ready!');
+  } catch (error) {
+    console.error(error.message);
+  } finally {
+    kuzzle.disconnect();
+  }
+};
+
+run();
+```
+
+But you only want to import the code of the `run` function. You can use the special `snippet:start` and `snippet:end` comments for this purpose:
+
+```javascript
+// load the Kuzzle SDK module
+import { Kuzzle, WebSocket } from 'kuzzle-sdk';
+
+// instantiate a Kuzzle client
+const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
+
+// add a listener to detect any connection problems
+kuzzle.on('networkError', error => {
+  console.error(`Network Error: ${error}`);
+});
+
+/* snippet:start */
+const run = async () => {
+  try {
+    // Connect to Kuzzle server
+    await kuzzle.connect();
+
+    // Create an index
+    await kuzzle.index.create('nyc-open-data');
+
+    // Create a collection
+    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
+    console.log('nyc-open-data/yellow-taxi ready!');
+  } catch (error) {
+    console.error(error.message);
+  } finally {
+    kuzzle.disconnect();
+  }
+};
+/* snippet:end */
+
+run();
+```
+
+This way, only the code between the tags will be included in the MD file.
+
+Snippet tags can also bear an ID, so that you can have many of them inside your snippet file, like
+
+```javascript
+// load the Kuzzle SDK module
+import { Kuzzle, WebSocket } from 'kuzzle-sdk';
+
+// instantiate a Kuzzle client
+/* snippet:start:1 */
+const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
+/* snippet:end */
+
+// add a listener to detect any connection problems
+kuzzle.on('networkError', error => {
+  console.error(`Network Error: ${error}`);
+});
+
+/* snippet:start:2 */
+const run = async () => {
+  try {
+    // Connect to Kuzzle server
+    await kuzzle.connect();
+
+    // Create an index
+    await kuzzle.index.create('nyc-open-data');
+
+    // Create a collection
+    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
+    console.log('nyc-open-data/yellow-taxi ready!');
+  } catch (error) {
+    console.error(error.message);
+  } finally {
+    kuzzle.disconnect();
+  }
+};
+/* snippet:end */
+
+run();
+```
+
+This way, you can select which snippet you want to include by using the following syntax in you MD file
+
+```
+<<< ./snippets/create.js:1
+```
+
+The code above will include only
+
+```javascript
+const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
+```
+
 ## Testing code snippets
 
 Because we want our documentation to be bullet-proof, we created a snippet testing tool.
@@ -200,7 +328,7 @@ const kuzzle = new Kuzzle('websocket', {
 kuzzle
   .connect()
   .then(() => {
-    return [snippet-code];
+    return [snippet - code];
   })
   .then(() => {
     kuzzle.disconnect();
@@ -208,7 +336,6 @@ kuzzle
 ```
 
 You can add your own template, just respect the naming rule : `template_name.tpl.ext`
-
 
 ## Scaffolding tool
 
@@ -218,9 +345,9 @@ You can use the scaffolding tool to initialize a new SDK controller action docum
 
 This tool takes the path of your new action as an argument and creates the following files:
 
-  - `<language>/<version>/<controller>/<action>/index.md`: controller action documentation
-  - `<language>/<version>/<controller>/<action>/snippets/<action>.test.yml`: configuration file for the snippet
-  - `<language>/<version>/<controller>/<action>/snippets/<action>.<language>`: snippet file
+- `<language>/<version>/<controller>/<action>/index.md`: controller action documentation
+- `<language>/<version>/<controller>/<action>/snippets/<action>.test.yml`: configuration file for the snippet
+- `<language>/<version>/<controller>/<action>/snippets/<action>.<language>`: snippet file
 
 Example:
 
@@ -235,6 +362,7 @@ You can also copy an action from another SDK to save time.
 This command extracts information from an existing action in another SDK and generates the correct files for another SDK.
 
 Example:
+
 ```bash
 # Copy information from SDK JS 6 to SDK CPP 1
 ./scaffolding/scaffold copy src/sdk/js/6/controllers/collection/list src/sdk/cpp/1/controllers/collection/list
