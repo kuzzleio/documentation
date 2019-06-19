@@ -93,62 +93,6 @@ When creating a new connection to Kuzzle, you must check the `Use SSL` box to en
 
 ## SDKs
 
-SDKs also support secure connections to Kuzzle.  
+All our SDKs also support secure connections to Kuzzle.  
 
-When instantiating the SDK, an additional parameter must be provided to indicate that you want to connect to Kuzzle via SSL.
-
-### SDK Javascript 6
-
-For the Javascript 6 SDK, you must pass the option `sslConnection: true` to the protocol constructor. Example with the [WebSocket protocol](/sdk/js/6/protocols/websocket/constructor/#arguments):
-
-<<< ./snippets/js6.js
-
-### SDK Go 1
-
-For the Javascript 6 SDK, use the `SetSslConnection(true)` method on the option structure passed to the protocol constructor.
-
-<<< ./snippets/go1.go
-
-### SDK PHP 3
-
-For the PHP SDK 3, you must pass the `sslConnection: true` option to the [SDK constructor](/sdk/php/3/core-classes/kuzzle/constructor#options).
-
-```php
-<?php
-use \Kuzzle\Kuzzle;
-
-// Instantiate the SDK
-$kuzzle = new Kuzzle('localhost', [
-  'port' => 7512,
-  // Use secure SSL connection to Kuzzle 
-  'sslConnection' => true
-]);
-```
-
-### SDK Android 3
-
-For the Android 3 SDK, you must pass the `sslConnection: true` option to the [SDK constructor](/sdk/android/3/core-classes/kuzzle/constructor/#options).
-
-```java
-
-import io.kuzzle.sdk.core.Kuzzle;
-import io.kuzzle.sdk.core.Options;
-
-Options options = new Options();
-
-options.setPort(7512).
-  .setSslConnection(true); // Use secure SSL connection to Kuzzle
-
-// Instantiate the SDK
-Kuzzle kuzzle = new Kuzzle("localhost", options, new ResponseListener<Void>() {
- @Override
- public void onSuccess(Void object) {
-   // invoked once connected, object contains the kuzzle instance
- }
-
- @Override
- public void onError(JSONObject error) {
-   // Handle connection error
- }
-});
-```
+Please refer to the corresponding [SDK documentation](/sdk).
