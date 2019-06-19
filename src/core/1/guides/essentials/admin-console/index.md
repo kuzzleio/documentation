@@ -9,13 +9,13 @@ order: 100
 
 The Kuzzle Admin Console is a web application that lets you manage Kuzzle, including **data**, **real-time notifications** and **security**.
 
-If you don't want to install Kuzzle Admin Console yourself you can use our <a href="http://console.kuzzle.io/">publicly hosted</a> Kuzzle Admin Console. Otherwise, grab the source code [here](https://github.com/kuzzleio/kuzzle-admin-console/releases) and install it on your own environment.
+If you don't want to install Kuzzle Admin Console yourself you can use our [pubicly hosted](http://console.kuzzle.io/) Admin Console. Otherwise, grab the [source code](https://github.com/kuzzleio/kuzzle-admin-console) and install it on your  environment.
 
 In both cases the configuration is the same and you'll be able to select which [Kuzzle](/core/1/guides/essentials/admin-console/#connect-to-kuzzle) installation you want to manage.
 
-<div class="alert alert-info">
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</div>
+:::info
+Having trouble? Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzzle)!
+:::
 
 ## Connect to Kuzzle
 
@@ -27,11 +27,9 @@ At any time, you can reconfigure the Kuzzle Admin Console to connect to any Kuzz
 
 To create a connection to Kuzzle, provide its **name** (e.g. "Development" or "My First Kuzzle"), **address** (or hostname) and **port**. Optionally, select a **color** to identify the connection (e.g. red could be used to identify production environments).
 
-<div class="alert alert-success">Your Kuzzle Admin Console is now connected to Kuzzle.</div>
-
-<div class="alert alert-info">
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</div>
+:::success
+Your Kuzzle Admin Console is now connected to Kuzzle.
+:::
 
 ## Create an Admin Account
 
@@ -41,8 +39,6 @@ At this point Kuzzle is not secure and any `anonymous` user has full access. The
 
 Once the Admin Account credentials have been created, use them to login.
 
-<div class="alert alert-success">You can now manage Kuzzle via the Kuzzle Admin Console.</div>
-
-<div class="alert alert-info">
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</div>
+:::success
+You can now manage Kuzzle via the Kuzzle Admin Console.
+:::

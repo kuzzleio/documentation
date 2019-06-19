@@ -27,9 +27,9 @@ description: Kuzzle:checkToken
 
 Checks the validity of a JSON Web Token.
 
-<div class="alert alert-info">
+:::info
 This method is non-queuable, meaning that during offline mode, it will be discarded and the callback return an error.
-</div>
+:::
 
 ---
 

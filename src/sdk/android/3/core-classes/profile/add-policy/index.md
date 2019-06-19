@@ -9,9 +9,9 @@ description: Profile:addPolicy
 
 Adds a role to the security profile.
 
-<div class="alert alert-info">
+:::info
 Updating a security profile will have no impact until the [save](/sdk/android/3/core-classes/profile/save/) method is called
-</div>
+:::
 
 ---
 

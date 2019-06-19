@@ -50,9 +50,8 @@ Congratulations! You have completed the Kuzzle installation, it will now accept 
 ::: info
 Having trouble?
 
-- Get in touch with us on [Gitter!](https://gitter.im/kuzzleio/kuzzle) We're happy to help.
-- Try one of [these](/core/1/guides/essentials/installing-kuzzle/) alternative installation methods.
-
+- Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzzle)
+- Try one of [these](/core/1/guides/essentials/installing-kuzzle/) alternative installation methods
 :::
 
 #### Helper scripts for systemd
