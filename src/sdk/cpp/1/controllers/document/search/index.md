@@ -12,11 +12,9 @@ Searches documents.
 There is a limit to how many documents can be returned by a single search query.
 That limit is by default set at 10000 documents, and you can't get over it even with the from and size pagination options.
 
-<div class="alert alert-info">
-  <p>
-  When processing a large number of documents (i.e. more than 1000), it is advised to paginate the results using <code>SearchResult.next</code> rather than increasing the size parameter.
-  </p>
-</div>
+:::info
+When processing a large number of documents (i.e. more than 1000), it is advised to paginate the results using [SearchResult.next](/sdk/cpp/1/core-classes/search-result/next/) rather than increasing the size parameter.
+:::
 
 ## Arguments
 

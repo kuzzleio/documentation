@@ -12,8 +12,12 @@ It's time to play with the [Kuzzle JS SDK](/sdk). In this section, we will learn
 
 Before proceeding, please make sure your system has these programs installed:
 
-- **Node.js** version 6 or higher (<a href="https://nodejs.org/en/download/">instructions here</a>)
+- **Node.js** version 6 or higher ([download page](https://nodejs.org/en/download/))
 - Kuzzle
+
+:::info
+Having trouble? Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzzle)!
+:::
 
 ## Prepare your environment
 
@@ -25,9 +29,9 @@ cd kuzzle-playground
 npm install kuzzle-sdk
 ```
 
-<div class="alert alert-info">
+:::info
 If you are performing a clean install you might see some `UNMET PEER DEPENDENCY` warnings, these are safe to ignore as they refer to optional dependencies.
-</div>
+:::
 
 Then, create an `init.js` file and start by loading the Kuzzle Javascript SDK.
 Next, instantiate a client that automatically connects to Kuzzle via WebSocket. Replace `'kuzzle'` with the corresponding server name or IP address:
@@ -62,13 +66,9 @@ Your console should output the following message:
 playground/mycollection ready
 ```
 
-<div class="alert alert-success">
+:::success
 Congratulations! You are now ready to say Hello to the World!
-</div>
-
-<div class="alert alert-info">
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</div>
+:::
 
 ## Create your first "Hello World" document
 
@@ -95,14 +95,9 @@ Your console should show the following message:
 document created
 ```
 
-<div class="alert alert-success">
-You have now successfully stored your first document into Kuzzle. Click core/1/guides/essentials/admin-console/">here</a> to see how you can use the
-  <strong>Kuzzle Admin Console</strong> to browse your collection and confirm that your document was saved.
-</div>
-
-<div class="alert alert-info">
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</div>
+:::success
+You have now successfully stored your first document into Kuzzle. Check the [Admin Console Guide](/core/1/guides/essentials/admin-console/) to see how to browse your collection and confirm that your document was saved.
+:::
 
 _You can find more resources about Kuzzle SDK in the [SDK Reference](/sdk)._
 
@@ -128,19 +123,15 @@ document created
 message received from kuzzle: Hello, World!
 ```
 
-<div class="alert alert-success">
+:::success
 Congratulations! You have just choreographed your first pub/sub pattern!
-</div>
-
-<div class="alert alert-info">
-Having trouble? Get in touch with us on <a href="https://gitter.im/kuzzleio/kuzzle">Gitter!</a> We're happy to help.
-</div>
+:::
 
 ## Where do we go from here?
 
 Now that you're more familiar with Kuzzle, dive even deeper to learn how to leverage its full capabilities:
 
 - take a look at the [/sdk](SDK Reference)
-- learn how to use [/core/1/koncorde](Koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+- learn how to use [/core/1/guides/cookbooks/realtime-api](Koncorde) to create incredibly fine-grained and blazing-fast subscriptions
 - follow our guide to learn how to implement [/core/1/guides/essentials/user-authentication/#local-strategy](basic authentication)
 - follow our guide to learn how to implement [/core/1/guides/essentials/security/](manage users and setup fine-grained access control)

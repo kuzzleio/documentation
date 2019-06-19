@@ -2,7 +2,7 @@
 code: true
 type: page
 title: create
-description: Create a new document
+description: Creates a new document
 ---
 
 # Create

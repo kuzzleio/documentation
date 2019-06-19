@@ -96,11 +96,11 @@ For more information regarding Type Options, please refer to [this](/core/1/guid
 
 ## Advanced Validation
 
-If the basic validation functionality doesn't meet your requirements, you can take advantage of [Koncorde](/core/1/koncorde) to create complex validation specifications.
+If the basic validation functionality doesn't meet your requirements, you can take advantage of [Koncorde](/core/1/guides/cookbooks/realtime-api) to create complex validation specifications.
 
-<div class="alert alert-info">
+:::info
 Koncorde is the same component used to create real-time subscriptions.
-</div>
+:::
 
 The idea is simple: use Koncorde to specify a filter that can be used to validate documents. For example, here we ensure that at least one of the fields `price` or `vatPrice` exists by placing a filter in the `validators` field of the validation schema:
 
@@ -154,4 +154,4 @@ The idea is simple: use Koncorde to specify a filter that can be used to validat
 }
 ```
 
-In the example above, we used both the `exists` operator and the `or` operator to build our validation rule. For more information take a look at our [Koncorde Reference](/core/1/koncorde/essentials/terms/#exists-default).
+In the example above, we used both the `exists` operator and the `or` operator to build our validation rule. For more information take a look at our [Koncorde Reference](/core/1/guides/cookbooks/realtime-api//terms/#exists-default).

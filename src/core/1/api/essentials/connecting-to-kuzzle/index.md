@@ -100,9 +100,9 @@ Kuzzle {
 
 By default, the MQTT plugin protocol listens on port 1883.
 
-<div class="alert alert-info">
-    The examples given in this documentation use the CLI client from the mqtt node.js
-    library that is shipped in the Kuzzle Docker image.<br />
-    To test them out yourself you will need to enter into the container shell once your docker compose stack is up and running:<br />
-    <code>docker exec -ti kuzzle_kuzzle_1 bash</code>
-</div>
+:::info
+The examples given in this documentation use the CLI client from the mqtt node.js
+library that is shipped in the Kuzzle Docker image.  
+To test them out yourself you will need to enter into the container shell once your docker compose stack is up and running:  
+`docker exec -ti kuzzle_kuzzle_1 bash`
+:::

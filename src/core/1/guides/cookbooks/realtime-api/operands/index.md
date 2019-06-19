@@ -10,17 +10,15 @@ order: 300
 
 Filters in Koncorde are constituted of terms and operands. In this section, you will find an exhaustive listing of all
 the available operands. Operands allow you to combine multiple terms together in the same filter.
-You can also refer to the [terms](/core/1/koncorde/essentials/terms) reference to know about
+You can also refer to the [terms](/core/1/guides/cookbooks/realtime-api//terms) reference to know about
 all the available terms.
 
-<div class="alert alert-info">
+::: info
 Note that the ability to combine multiple terms together allows to create different filters that have equivalent scope.
-Such filters are optimized by Koncorde, thus [internally represented by the same ID](/core/1/koncorde/essentials/advanced#filter-equivalence-default).
-</div>
+Such filters are optimized by Koncorde, thus [internally represented by the same ID](/core/1/guides/cookbooks/realtime-api/advanced#filter-equivalence-default).
+:::
 
 ## and
-
-
 
 The `and` filter takes an array of filter objects, combining them with AND operands.
 
@@ -61,8 +59,6 @@ The `and` filter takes an array of filter objects, combining them with AND opera
 ```
 
 ## bool
-
-
 
 Returns documents matching a combination of filters.
 
@@ -146,8 +142,6 @@ Each one of these attributes are an array of filter objects.
 
 ## not
 
-
-
 The `not` filter omits the matching data.
 
 ### Given the following documents:
@@ -180,8 +174,6 @@ The `not` filter omits the matching data.
 ```
 
 ## or
-
-
 
 The `or` filter takes an array containing filter objects, combining them using OR operands.
 

@@ -2,26 +2,24 @@
 code: true
 type: page
 title: exists
-description: Check if collection exists
+description: Checks if collection exists
 ---
 
-# exists
+# Exists
 
-Check if a collection exists in Kuzzle.
+Checks if a collection exists in Kuzzle.
 
-## Signature
+## Arguments
 
 ```go
 Exists(index string, collection string, options types.QueryOptions) (bool, error)
 ```
 
-## Arguments
-
-| Arguments    | Type               | Description                        | Required |
-| ------------ | ------------------ | ---------------------------------- | -------- |
-| `index`      | string             | Index name                         | yes      |
-| `collection` | string             | Collection name                    | yes      |
-| `options`    | types.QueryOptions | An object containing query options | no       |
+| Arguments    | Type               | Description
+| ------------ | ------------------ | ---------------------------------- |
+| `index`      | <pre>string</pre>             | Index name                         |
+| `collection` | <pre>string</pre>             | Collection name                    |
+| `options`    | <pre>types.QueryOptions</pre> | An object containing query options |
 
 ### **options**
 
@@ -29,7 +27,7 @@ Additional query options
 
 | Property   | Type | Description                       | Default |
 | ---------- | ---- | --------------------------------- | ------- |
-| `queuable` | bool | Make this request queuable or not | `true`  |
+| `queuable` | <pre>bool</pre> | Make this request queuable or not | `true`  |
 
 ## Return
 

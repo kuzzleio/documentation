@@ -7,13 +7,11 @@ description: Returns the current Kuzzle configuration.
 
 # GetConfig
 
-
-
 Returns the current Kuzzle configuration.
 
-<div class="alert alert-warning">
-  This route should only be accessible to administrators, as it might return sensitive information about the backend.
-</div>
+:::warning
+This route should only be accessible to administrators, as it might return sensitive information about the backend.
+:::
 
 ## Arguments
 
@@ -21,9 +19,9 @@ Returns the current Kuzzle configuration.
 func (s *Server) GetConfig(options types.QueryOptions) (json.RawMessage, error)
 ```
 
-| Arguments | Type               | Description                         | Required |
-| --------- | ------------------ | ----------------------------------- | -------- |
-| `options` | types.QueryOptions | An object containing query options. | no       |
+| Arguments | Type               | Description                         |
+| --------- | ------------------ | ----------------------------------- |
+| `options` | <pre>types.QueryOptions</pre> | An object containing query options. |
 
 ### **Options**
 
@@ -31,7 +29,7 @@ Additional query options
 
 | Option     | Type | Description                                                                  | Default |
 | ---------- | ---- | ---------------------------------------------------------------------------- | ------- |
-| `Queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| `Queuable` | <pre>bool</pre> | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 

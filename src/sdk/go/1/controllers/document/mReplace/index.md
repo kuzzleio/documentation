@@ -2,7 +2,7 @@
 code: true
 type: page
 title: mReplace
-description: Replace documents
+description: Replaces documents
 ---
 
 # MReplace
