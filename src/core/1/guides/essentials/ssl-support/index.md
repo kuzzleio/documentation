@@ -76,7 +76,7 @@ ln -s /etc/nginx/site-available/kuzzle.conf /etc/nginx/site-enabled/kuzzle.conf
 
 Then we reload the configuration of Nginx: `systemctl reload nginx.service`
 
-Kuzzle is now available in SSL on port `4443`.
+Kuzzle can now be accessed using SSL, on port `4443`.
 
 ## Admin Console
 
