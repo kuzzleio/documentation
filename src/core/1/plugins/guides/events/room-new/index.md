@@ -14,7 +14,9 @@ title: room:new
 
 Triggered whenever a new [subscription](/core/1/api/controllers/realtime/subscribe/) is created.
 
-<div class="alert alert-info">Pipes cannot listen to that event, only hooks can.</div>
+:::info
+Pipes cannot listen to that event, only hooks can.
+:::
 
 ---
 

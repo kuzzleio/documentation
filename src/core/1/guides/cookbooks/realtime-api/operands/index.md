@@ -20,8 +20,6 @@ Such filters are optimized by Koncorde, thus [internally represented by the same
 
 ## and
 
-
-
 The `and` filter takes an array of filter objects, combining them with AND operands.
 
 ### Given the following documents:
@@ -61,8 +59,6 @@ The `and` filter takes an array of filter objects, combining them with AND opera
 ```
 
 ## bool
-
-
 
 Returns documents matching a combination of filters.
 
@@ -146,8 +142,6 @@ Each one of these attributes are an array of filter objects.
 
 ## not
 
-
-
 The `not` filter omits the matching data.
 
 ### Given the following documents:
@@ -180,8 +174,6 @@ The `not` filter omits the matching data.
 ```
 
 ## or
-
-
 
 The `or` filter takes an array containing filter objects, combining them using OR operands.
 
