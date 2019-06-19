@@ -22,7 +22,7 @@ init(config, context);
 
 | Arguments | Type              | Description                                                                                                                                                             |
 | --------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `config`  | <pre>object</pre> | Contains the custom plugin configuration (see the [configuration](#configuration-default) chapter)                                                                      |
+| `config`  | <pre>object</pre> | Contains the custom plugin configuration (see the [configuration](#configuration) chapter)                                                                      |
 | `context` | <pre>object</pre> | The plugin context, exposing various accessors, constructors, and helpers. The other sections of this documentation detail the interfaces made available by this object |
 
 ## Return

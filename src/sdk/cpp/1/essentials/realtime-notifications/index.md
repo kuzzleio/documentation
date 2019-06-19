@@ -13,7 +13,7 @@ That listener is called with a `const kuzzleio::notification_result*` argument, 
 
 ## Document & messages
 
-These `kuzzleio::notification_result` represent [documents changes & messages](/core/1/api/essentials/notifications#documents-changes-messages-default).
+These `kuzzleio::notification_result` represent [documents changes & messages](/core/1/api/essentials/notifications#documents-changes-messages).
 
 | Property     | Type                                        | Description                                                                                           |
 | ------------ | ------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -38,7 +38,7 @@ The `kuzzleio::notification_content` struct has the following properties for doc
 
 ## User
 
-These `kuzzleio::notification_result` represent [user events](/core/1/api/essentials/notifications#user-notification-default).
+These `kuzzleio::notification_result` represent [user events](/core/1/api/essentials/notifications#user-notification).
 
 | Property     | Type                                        | Description                                                                                           |
 | ------------ | ------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
