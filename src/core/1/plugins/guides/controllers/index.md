@@ -87,19 +87,15 @@ When this action is successfully called, the following answer will be returned b
 ```
 
 However, it is possible to tell Kuzzle not to wrap the returned value in a Kuzzle Response and send it as it is.  
-To do this, use the [Request.setResult](/core/1/plugins/plugin-context/constructors/request/#setresult) method by specifying the `raw: true` option.
+To do this, the `raw` property of the response object must be set to `true`.  
 
 For example, to return an arbitrary JSON:
 ```js
 async saySomething (request) {
   const json = JSON.stringify({ foo: 'bar' });
 
-  request.setResult(null, {
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    raw: true
-  });
+  request.response.raw = true;
+  request.response.headers['Content-Type'] = 'application/json';
 
   return json;
 }
