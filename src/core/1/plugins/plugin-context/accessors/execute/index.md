@@ -41,12 +41,12 @@ How the response is returned depends whether a callback argument is provided:
 ## Example
 
 ```js
-const request = new context.constructors.Request({
-  index: 'index',
-  collection: 'collection',
+let request = new context.constructors.Request({
   controller: 'document',
   action: 'get',
-  _id: 'documentID'
+  index: 'nyc-open-data',
+  collection: 'yellow-taxi',
+  _id: 'AWaCRnfbiSV6vMG7iV_K'
 });
 
 try {
