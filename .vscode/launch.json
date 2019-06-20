@@ -16,6 +16,7 @@
       "type": "node",
       "request": "launch",
       "name": "Debug VuePress",
+      "console": "integratedTerminal",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run-script", "debug"],
       // "localRoot": "${workspaceFolder}/src/.vuepress/",
