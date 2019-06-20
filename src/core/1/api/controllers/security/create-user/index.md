@@ -6,8 +6,6 @@ title: createUser
 
 # createUser
 
-
-
 Creates a new user.
 
 The body contains the user data and must have the following properties:
@@ -48,7 +46,6 @@ Body:
 {
   "controller": "security",
   "action": "createUser",
-  "_id": "<kuid>",
   "body": {
     "content": {
       "profileIds": ["<profileId>"],
@@ -62,7 +59,11 @@ Body:
         password: "foobar"
       }
     }
-  }
+  },
+
+  // optional arguments
+  "_id": "<kuid>",
+  "refresh": "wait_for"
 }
 ```
 
@@ -73,6 +74,7 @@ Body:
 ### Optional:
 
 - `_id`: user [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier). An error is returned if the provided identifier already exists. If not provided, a random kuid is automatically generated.
+- `refresh`: if set to `wait_for`, Kuzzle will not respond until the newly created user is indexed
 
 ---
 
