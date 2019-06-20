@@ -9,8 +9,9 @@ COPY . /var/app
 
 RUN set -eux \
   \
-  && npm install
-  && npm run dev
+  && npm install \
+  && npm i node-sass \
+  && npm run build
 
-CMD ["tail", "-f", "/dev/null"]
-
+ENTRYPOINT ["npm", "run"]
+CMD ["dev"]
