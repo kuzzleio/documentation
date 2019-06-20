@@ -32,7 +32,7 @@ First of all you need to obtain an SSL certificate for a domain. There are two w
 
 To obtain a self-signed certificate, you can follow the instructions given here: [https://www.selfsignedcertificate.com/](https://www.selfsignedcertificate.com/)
 
-To obtain a certificate from a third-party authority, you can use Let's Encrypt: [https://certbot.eff.org/](https://certbot.eff.org)
+To obtain a certificate from a third-party authority, you can use Certbot: [https://certbot.eff.org/](https://certbot.eff.org)
 
 No matter how you get your certificate, at the end you must have two files: a `.crt` and a `.key`.
 
@@ -57,7 +57,7 @@ server {
   ssl_certificate /path/to/your/ssl/cert/localhost.crt;
   ssl_certificate_key /path/to/your/ssl/key/localhost.key;
                                                  
-  error_page  497 https://$host:17512$request_uri;
+  error_code 497 https://$host$request_uri;
              
   location / {
     proxy_pass http://localhost:7512;
@@ -67,6 +67,11 @@ server {
   }
 }
 ```
+
+::: info
+The steps below are specific for debian like distribution.  
+For other distribution, please refere to Nginx documentation.  
+:::
 
 This configuration file must be saved in the `/etc/nginx/site-available` folder, then to activate it it is necessary to create a symbolic link to the `/etc/nginx/site-enabled` folder:
 
