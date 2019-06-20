@@ -104,7 +104,8 @@ class LinkChecker
 
     external_links.delete_if do |external_link|
       external_link.start_with?(*IGNORED_EXTERNAL_LINKS) ||
-      external_link == 'http://'
+      external_link == 'http://' ||
+      external_link == 'https://'
     end.each do |external_link|
       # Remove markdown closing parenthesis and everything following it
       external_link.gsub!(/[\)].*/, '')
