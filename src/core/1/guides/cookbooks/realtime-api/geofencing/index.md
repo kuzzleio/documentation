@@ -9,7 +9,7 @@ order: 400
 # Geofencing
 
 Geofencing in Koncorde consists in defining forms in the geo-space using geopoints and geodistances within terms like
-[geoBoundingBox](/core/1/koncorde/essentials/terms#geoboundingbox), [geoDistance](/core/1/koncorde/essentials/terms#geodistance) [geoDistanceRange](/core/1/koncorde/essentials/terms#geodistancerange) and [geoPolygon](/core/1/koncorde/essentials/terms#geopolygon). In this section, you will find a detailed
+[geoBoundingBox](/core/1/guides/cookbooks/realtime-api/terms#geoboundingbox), [geoDistance](/core/1/guides/cookbooks/realtime-api/terms#geodistance), [geoDistanceRange](/core/1/guides/cookbooks/realtime-api/terms#geodistancerange) and [geoPolygon](/core/1/guides/cookbooks/realtime-api/terms#geopolygon). In this section, you will find a detailed
 explanation about how to specify geopoints and geodistances.
 
 ## Geopoints
@@ -39,7 +39,7 @@ Alternative 2:
 
 ## Geodistances
 
-Distances used in geofencing filters such as [geoDistance](/core/1/koncorde/essentials/terms/#geodistance/) or [geoDistanceRange](/core/1/koncorde/essentials/terms/#geodistance-range/) can be expressed in various ways.
+Distances used in geofencing filters such as [geoDistance](/core/1/guides/cookbooks/realtime-api/terms/#geodistance/) or [geoDistanceRange](/core/1/guides/cookbooks/realtime-api/terms/#geodistance-range/) can be expressed in various ways.
 
 Accepted units:
 

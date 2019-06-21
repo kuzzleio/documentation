@@ -10,12 +10,12 @@ order: 300
 
 Filters in Koncorde are constituted of terms and operands. In this section, you will find an exhaustive listing of all
 the available operands. Operands allow you to combine multiple terms together in the same filter.
-You can also refer to the [terms](/core/1/guides/cookbooks/realtime-api//terms) reference to know about
+You can also refer to the [terms](/core/1/guides/cookbooks/realtime-api/terms) reference to know about
 all the available terms.
 
 ::: info
 Note that the ability to combine multiple terms together allows to create different filters that have equivalent scope.
-Such filters are optimized by Koncorde, thus [internally represented by the same ID](/core/1/koncorde/essentials/advanced#filter-equivalence).
+Such filters are optimized by Koncorde, thus [internally represented by the same ID](/core/1/guides/cookbooks/realtime-api/advanced#filter-equivalence).
 :::
 
 ## and
