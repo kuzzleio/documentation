@@ -74,7 +74,7 @@ The `getFilterIds` function returns an array of strings, containing the exhausti
 
 Normalizes filters without storing them.
 
-The result can be directly used with the [store](#store-default) function.
+The result can be directly used with the [store](#store) function.
 
 ### Arguments
 
@@ -109,7 +109,7 @@ The `normalize` function returns a promise resolving to an object with the follo
 
 Registers a filter to this Koncorde instance.
 
-This method is equivalent to executing [normalize](#normalize-default) + [store](#store-default).
+This method is equivalent to executing [normalize](#normalize) + [store](#store).
 
 ### Arguments
 
@@ -152,7 +152,7 @@ remove(filterId);
 
 | Arguments  | Type              | Description                                                                                                     |
 | ---------- | ----------------- | --------------------------------------------------------------------------------------------------------------- |
-| `filterId` | <pre>string</pre> | Filter unique identifier, obtained either with [normalize](#normalize-default) or [register](#register-default) |
+| `filterId` | <pre>string</pre> | Filter unique identifier, obtained either with [normalize](#normalize) or [register](#register) |
 
 ### Return
 
@@ -164,7 +164,7 @@ The `remove` function returns a promise, resolved once the filter has been compl
 
 <SinceBadge version="1.1.0" />
 
-Stores filters, normalized with the [normalize](#normalize-default)) function.
+Stores filters, normalized with the [normalize](#normalize)) function.
 
 ### Arguments
 

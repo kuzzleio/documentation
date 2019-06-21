@@ -15,7 +15,7 @@ Properties can be accessed with usual getters and setters.
 
 ## Document & messages
 
-These `io.kuzzle.sdk.NotificationResult` represent [documents changes & messages](/core/1/api/essentials/notifications#documents-changes-messages-default).
+These `io.kuzzle.sdk.NotificationResult` represent [documents changes & messages](/core/1/api/essentials/notifications#documents-changes-messages).
 
 | Property     | Type                              | Description                                                                                           |
 | ------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ The `io.kuzzle.sdk.NotificationContent` object has the following properties for 
 
 ## User
 
-These `io.kuzzle.sdk.NotificationResult` represent [user events](/core/1/api/essentials/notifications#user-notification-default).
+These `io.kuzzle.sdk.NotificationResult` represent [user events](/core/1/api/essentials/notifications#user-notification).
 
 | Property     | Type                              | Description                                                                                           |
 | ------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------- |

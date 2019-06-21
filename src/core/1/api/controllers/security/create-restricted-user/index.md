@@ -6,8 +6,6 @@ title: createRestrictedUser
 
 # createRestrictedUser
 
-
-
 Creates a new user in Kuzzle, with a preset list of security profiles.
 
 The list of security profiles attributed to restricted users is fixed, and must be configured in the [Kuzzle configuration file](/core/1/guides/essentials/configuration/).
@@ -49,7 +47,6 @@ Body:
 {
   "controller": "security",
   "action": "createRestrictedUser",
-  "_id": "<kuid>",
   "body": {
     "content": {
       "fullname": "John Doe"
@@ -61,7 +58,11 @@ Body:
         password: "foobar"
       }
     }
-  }
+  },
+
+  // optional arguments
+  "_id": "<kuid>",
+  "refresh": "wait_for"
 }
 ```
 
@@ -72,6 +73,7 @@ Body:
 ### Optional:
 
 - `_id`: user [kuid](/core/1/guides/kuzzle-depth/authentication/#the-kuzzle-user-identifier). An error is returned if the provided identifier already exists. If not provided, a random kuid is automatically generated.
+- `refresh`: if set to `wait_for`, Kuzzle will not respond until the newly created user is indexed
 
 ---
 
