@@ -20,7 +20,7 @@ const std::string& content() const;
 
 ## id
 
-Returns the user's unique identifier (or [kuid](/core/1/guides/essentials/user-authentication/#kuzzle-user-identifier-kuid-default)).
+Returns the user's unique identifier (or [kuid](/core/1/guides/essentials/user-authentication/#kuzzle-user-identifier-kuid)).
 
 ### Signature
 
