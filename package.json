@@ -1,5 +1,5 @@
 {
-  "name": "vuepress-poc",
+  "name": "kuzzleio-documentation",
   "version": "3.0.2",
   "description": "",
   "main": "index.js",
@@ -11,8 +11,12 @@
     "snippet-test": "bash run-all-snippet-tests.sh",
     "test": "npm run --silent lint && npm run snippet-test"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kuzzleio/documentation.git"
+  },
+  "author": "The Kuzzle Team <support@kuzzle.io>",
+  "license": "Apache-2.0",
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@vuepress/plugin-google-analytics": "^1.0.0-alpha.47",
