@@ -14,7 +14,7 @@ This guide covers how clustering capabilities can be added to Kuzzle.
 
 ## Kuzzle Cluster features
 
-Kuzzle uses a cluster in masterless mode to ensure maximum resilience.  
+Kuzzle uses a cluster in [masterless mode](https://www.wikiwand.com/en/Shared-nothing_architecture) to ensure maximum resilience.  
 Each node in the cluster handles part of the load of requests received by the application.  
 
 ### High Availability
@@ -34,7 +34,7 @@ This allows to control the hosting costs during scalability due to temporary eve
 Kuzzle uses Elasticsearch as a database and Redis for communication between nodes as well as as a cache for performance.  
 Both software have native cluster modes allowing them to scale to handle an increasing load of users and requests.  
 
-The scaling of the Elasticsearch and Redis clusters are independent of Kuzzle. Each can scale differently depending on the needs.  
+The scaling of the [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html) and [Redis](https://redis.io/topics/cluster-tutorial) clusters are independent of Kuzzle. Each can scale differently depending on the needs.  
 
 An application that greatly requires the write/read database can afford a larger Elasticsearch cluster, while an application that makes intensive use of real time will increase the size of its Kuzzle and Redis clusters.
 
