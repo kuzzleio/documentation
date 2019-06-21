@@ -8,7 +8,7 @@ title: Scalability
 
 Kuzzle can scale horizontally, provided our [official Cluster Plugin](https://github.com/kuzzleio/kuzzle-plugin-cluster) is installed.  
 
-This guide covers how clustering capabilities can be added to Kuzzle.
+This guide covers Kuzzle Cluster features and how clustering capabilities can be added to Kuzzle.
 
 ---
 
