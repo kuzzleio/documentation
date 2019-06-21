@@ -29,6 +29,15 @@ If the load becomes heavier, just start additional servers, they will be automat
 On the contrary, if the load decreases, just stop servers, the rest of the nodes will handle the remaining load.  
 This allows to control the hosting costs during scalability due to temporary events.  
 
+### Complete cluster environment
+
+Kuzzle uses Elasticsearch as a database and Redis for communication between nodes as well as as a cache for performance.  
+Both software have native cluster modes allowing them to scale to handle an increasing load of users and requests.  
+
+The scaling of the Elasticsearch and Redis clusters are independent of Kuzzle. Each can scale differently depending on the needs.  
+
+An application that greatly requires the write/read database can afford a larger Elasticsearch cluster, while an application that makes intensive use of real time will increase the size of its Kuzzle and Redis clusters.
+
 ## Quick start
 
 This chapter shows how to quickly create a Kuzzle cluster stack for development purposes. If you already have an existing Kuzzle server running, you may want to read the manual install chapter instead.
