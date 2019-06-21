@@ -90,7 +90,7 @@ Below is an example of how the `range` type option is used to ensure that the fi
 }
 ```
 
-For more information regarding Type Options, please refer to [this](/core/1/guides/cookbooks/datavalidation#field-typeoptions-default) section of the Data Validation Reference.
+For more information regarding Type Options, please refer to [this](/core/1/guides/cookbooks/datavalidation#field-typeoptions) section of the Data Validation Reference.
 
 ---
 
@@ -154,4 +154,4 @@ The idea is simple: use Koncorde to specify a filter that can be used to validat
 }
 ```
 
-In the example above, we used both the `exists` operator and the `or` operator to build our validation rule. For more information take a look at our [Koncorde Reference](/core/1/guides/cookbooks/realtime-api//terms/#exists-default).
+In the example above, we used both the `exists` operator and the `or` operator to build our validation rule. For more information take a look at our [Koncorde Reference](/core/1/koncorde/essentials/terms/#exists).

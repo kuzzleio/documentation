@@ -10,12 +10,12 @@ title: auth:strategyAuthenticated
 
 | Arguments  | Type              | Description                                                                                                            |
 | ---------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `strategy` | <pre>string</pre> | [Authentication strategy](/core/1/guides/essentials/user-authentication/#authentication-strategies-default) name |
+| `strategy` | <pre>string</pre> | [Authentication strategy](/core/1/guides/essentials/user-authentication/#authentication-strategies) name |
 | `user`     | <pre>object</pre> | Authenticated user properties                                                                                          |
 
 This event is triggered after a successful user authentication, but before a token is generated.
 
-It is also triggered before the [auth:afterLogin](/core/1/plugins/guides/events/api-events/#after-default) event.
+It is also triggered before the [auth:afterLogin](/core/1/plugins/guides/events/api-events/#after) event.
 
 ---
 

@@ -2,6 +2,6 @@
 code: false
 type: branch
 order: 0
-title: Plugins
+title: Guides
 description: Kuzzle Plugins guides
 ---
