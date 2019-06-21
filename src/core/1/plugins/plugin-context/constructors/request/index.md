@@ -46,7 +46,7 @@ new Request(data, [options]);
 
 | Arguments | Type                                              | Description                                                                                        |
 | --------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request` | <a href="#request-default"><pre>Request</pre></a> | A source request to inherit from                                                                   |
+| `request` | <a href="#request"><pre>Request</pre></a> | A source request to inherit from                                                                   |
 | `data`    | <pre>object</pre>                                 | API call, following the same format than non-HTTP [API calls](/core/1/api/essentials/query-syntax) |
 | `options` | <pre>object</pre>                                 | Additional request context                                                                         |
 

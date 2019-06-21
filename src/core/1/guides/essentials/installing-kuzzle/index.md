@@ -30,8 +30,6 @@ Before launching Kuzzle using Docker containers, ensure that your system meets t
 - **Docker v1.10+**, see [instructions here](https://docs.docker.com/engine/installation/)
 - **Docker Compose v1.8+**, see [instructions here](https://docs.docker.com/compose/install/)
 
-To install docker, you need to download the docker-compose file:
-
 ::: info
 Before starting the docker stack, you need to increase the maximum amount of virtual memory in order to run Elasticsearch, which is part of our stack (see why [here](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/_maximum_map_count_check.html)):
 
@@ -45,9 +43,16 @@ To make this configuration permanent, you need to update your `/etc/sysctl.conf`
 echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 ```
 
+On MacOS, Docker is running inside a Linux VM, so you need to apply these settings to it instead of your own system.  
+The following command lets you access the VM used by Docker:
+
+```bash
+screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
+```
 :::
 
-Now, we can start the docker stack:
+
+To start a kuzzle-in-docker stack:
 
 ```bash
 mkdir kuzzle-docker
