@@ -9,8 +9,7 @@ COPY . /var/app
 
 RUN set -eux \
   \
-  && npm install \
-  && npm i node-sass
+  && npm install
 
 ENTRYPOINT ["npm", "run"]
 CMD ["dev"]
