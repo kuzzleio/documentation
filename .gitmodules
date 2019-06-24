@@ -3,4 +3,4 @@
 	url = https://github.com/kuzzleio/sdk-javascript.git
 [submodule ".plugin-repos/kuzzle-plugin-s3-v1"]
 	path = .plugin-repos/kuzzle-plugin-s3-v1
-	url = git@github.com:kuzzleio/kuzzle-plugin-s3.git
+	url = https://github.com/kuzzleio/kuzzle-plugin-s3.git
