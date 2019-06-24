@@ -52,19 +52,21 @@ module.exports = function snippet(md, options = {}) {
 
     // Extract filename
     const filename = rawPath.split(/[{:\s]/).shift();
+
+    // By default, import the whole file contents
     let content = fs.existsSync(filename)
       ? fs.readFileSync(filename).toString()
       : 'Not found: ' + filename;
 
-    // Extract snippet from file content
+    // Extract snippet from file content, if matches snippet:* tags
     const match = SNIPPET_EXTRACT.exec(content);
-    if (match && match[3]) {
-      content = match[3];
+    if (match && match[1]) {
+      content = match[1];
     }
 
     // Delete snippet extraction tags (if any)
-    content = content.replace(/\/\*( *)snippet:start(:\d+)?( *)\*\/\n/g, '');
-    content = content.replace(/\/\*( *)snippet:end( *)\*\/\n/g, '');
+    content = content.replace(/.*snippet:start(:\d+)?.*\n/g, '');
+    content = content.replace(/.*snippet:end.*\n/g, '');
 
     // Extract meta (line highlight)
     const meta = rawPath.replace(filename, '');
@@ -85,12 +87,13 @@ module.exports = function snippet(md, options = {}) {
 };
 
 function generateSnippetRegex(snippetId) {
+  // if no snippet id is specfied, exclude all snippets that have an ID
   if (!snippetId) {
-    snippetId = '';
+    snippetId = '[^:^0-9]';
   }
 
   return new RegExp(
-    `\\/\*( *)snippet:start${snippetId}( *)\\*\\/\\n?((.|\\n)*?)\\/\\*( *)snippet:end( *)\\*\\/`,
+    `^.*snippet:start${snippetId}.*$\\n((.|\\n)*?)^.*snippet:end.*$\\n`,
     'gm'
   );
 }
