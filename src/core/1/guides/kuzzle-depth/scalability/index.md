@@ -19,7 +19,7 @@ Each node in the cluster handles part of the load of requests received by the ap
 
 ### High Availability
 
-A Kuzzle cluster shares the processing of requests and this dispatching of real-time notifications.  
+A Kuzzle cluster shares the processing of requests and the dispatching of real-time notifications.  
 From 2 nodes onwards, even if a problem causes a service interruption on a server, the availability of the application will not be affected.  
 
 ### Scaling without service interruption
