@@ -18,7 +18,7 @@
       <img src="/logos/cpp.svg" alt="c++ logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">C++</div>
     </router-link>
-    <router-link :to="{path: generateLink('/sdk/java/1/')}" class="Tiles-item">
+    <router-link :to="{path: generateLink('/sdk/java/2/')}" class="Tiles-item">
       <div class="ribbon">
         <span>BETA</span>
       </div>
