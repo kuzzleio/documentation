@@ -7,27 +7,13 @@ const
 module.exports = class CsharpRunner extends BaseRunner {
   constructor(sdk) {
     super(sdk);
-    this.compileOptions = [`-r:/app/${this.sdk.sdkDir}/kuzzlesdk-0.0.1.dll`];
     this.lintCommand = 'echo "none"';
     this.lintOptions = [];
-    this.executablePath = '';
     this.ext = 'cs';
   }
 
   async runSnippet(snippet) {
-    this.executablePath = `${snippet.renderedSnippetPath.split('.')[0]}.exe`;
-    process.env.LD_LIBRARY_PATH = `./${this.sdk.sdkDir}/`;
-    this.snippetCommand = `mono ${this.executablePath}`;
-
-    try {
-      await execute('mcs', this.compileOptions.concat([`-out:${this.executablePath}`, snippet.renderedSnippetPath]));
-    } catch (e) {
-      const res = {
-        code: 'COMPILATION_FAIL',
-        actual: e.message
-      };
-      throw new TestResult(res);
-    }
+    this.snippetCommand = `dotnet script ${snippet.renderedSnippetPath}`;
 
     await super.runSnippet(snippet);
   }
@@ -39,6 +25,5 @@ module.exports = class CsharpRunner extends BaseRunner {
 
   clean(snippet) {
     super.clean(snippet);
-    fs.unlinkSync(this.executablePath);
   }
 };

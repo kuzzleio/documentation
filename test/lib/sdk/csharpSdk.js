@@ -10,33 +10,19 @@ class CsharpSdk {
     this.name = 'csharp';
     this.version = version;
     this.versionPath = getVersionPath(this);
-    this.sdkCsharpArchive = 'kuzzlesdk-csharp-experimental-amd64.tar.gz';
-    this.sdkDir = 'test/bin/';
-    this.archiveDir = 'kuzzle-csharp-sdk';
-    this.sdkCsharpBucket = `https://dl.kuzzle.io/sdk/csharp/${this.versionPath}/${this.sdkCsharpArchive}`;
-    this.sdkFiles = [
-      'kuzzlesdk-0.0.1.dll',
-      'libkuzzle-wrapper-csharp.dll',
-      'libkuzzlesdk.so'
-    ];
+    this.sdkDir = 'test/bin/csharp-sdk';
+    this.sdkCsharpRepo = `https://github.com/kuzzleio/sdk-csharp`;
   }
 
   async get() {
-    this.sdkFiles.forEach(async file => {
-      await execute('rm', ['-f' ,`${this.archiveDir}/${file}`], { cwd: this.sdkDir });
-    });
-    await execute('curl', ['-o', this.sdkCsharpArchive, this.sdkCsharpBucket], { cwd: this.sdkDir });
-    await execute('tar', ['-xf', this.sdkCsharpArchive], { cwd: this.sdkDir });
-    this.sdkFiles.forEach(async file => {
-      await execute('mv', [`${this.archiveDir}/${file}`, '.'], { cwd: this.sdkDir });
-    });
-    await execute('rm', ['-r', this.archiveDir, this.sdkCsharpArchive], { cwd: this.sdkDir });
+    await execute('rm', ['-rf', this.sdkDir]);
+    await execute('git', ['clone', '--single-branch', '--branch', this.versionPath, this.sdkCsharpRepo, this.sdkDir]);
+    await execute('dotnet', ['build', 'test/bin/csharp-sdk']);
+    await execute('mv', ['test/bin/csharp-sdk/Kuzzle/bin/Debug/netstandard2.0/Kuzzle.dll', 'test/bin/Kuzzle.dll']);
   }
 
   exists() {
-    return this.sdkFiles.map(file => {
-      return fs.existsSync(`${this.sdkDir}/${file}`);
-    }).filter(fileExists => fileExists).length === this.sdkFiles.length;
+    return fs.existsSync(this.sdkDir);
   }
 }
 

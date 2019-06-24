@@ -1,13 +1,12 @@
-using Kuzzleio;
+#r "Kuzzle.dll"
 using System;
+using KuzzleSdk;
+using KuzzleSdk.API;
+using KuzzleSdk.Protocol;
+using System.Threading.Tasks;
 
-public class Example {
-  static void Main() {
-    WebSocket ws = new WebSocket("kuzzle");
-    Kuzzle k = new Kuzzle(ws);
+KuzzleSdk.Kuzzle kuzzle = new KuzzleSdk.Kuzzle(new WebSocket("kuzzle"));
 
-    k.connect();
+await kuzzle.ConnectAsync();
 
-    [snippet-code]
-  }
-}
+[snippet-code]

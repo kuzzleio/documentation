@@ -95,10 +95,11 @@ class Logger {
           console.log(red('        ERROR   :'), result.actual);
         }
 
+        const snippetPath = snippet.ext === 'cs' ? 'test/bin/csharptests' : 'test/bin';
         console.log(
           blue(`[${this.sdk.name}] `),
           'Check linter error:',
-          `cat -n test/bin/${snippet.name.toLowerCase()}.${snippet.runner.ext} | less`
+          `cat -n ${snippetPath}/${snippet.name.toLowerCase()}.${snippet.runner.ext} | less`
         );
 
         console.log(

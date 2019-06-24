@@ -34,11 +34,11 @@ class Snippet {
     this.expected = this.testDefinition.expected;
     this.template = this.testDefinition.template;
     this.hooks = this.testDefinition.hooks;
-    
+
     const
       runnerName = `${this.testDefinition.runner || this.sdk.name}Runner`,
       Runner = require(`./runners/${runnerName}`);
-    
+
     this.runner = new Runner(this.sdk);
 
     this.templateFile = `${TEMPLATES_DIR}${this.template}.tpl.${this.runner.ext}`;
@@ -129,7 +129,7 @@ class Snippet {
       case 'js':
         return `node test/bin/${name}.js`;
       case 'csharp':
-        return `LD_LIBRARY_PATH=./test/bin/ mono ./test/bin/${name}.exe`;
+        return `dotnet script test/bin/${name}.cs`;
       default:
         return `Unknown sdk name ${this.sdk.name}`;
     }
