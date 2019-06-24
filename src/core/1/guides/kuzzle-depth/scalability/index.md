@@ -14,7 +14,7 @@ This guide covers Kuzzle Cluster features and how clustering capabilities can be
 
 ## Kuzzle Cluster features
 
-Kuzzle uses a cluster in [masterless mode](https://www.wikiwand.com/en/Shared-nothing_architecture) to ensure maximum resilience.  
+Kuzzle uses a cluster in [masterless mode](https://en.wikipedia.org/wiki/Shared-nothing_architecture) to ensure maximum resilience.  
 Each node in the cluster handles part of the load of requests received by the application.  
 
 ### High Availability
