@@ -8,7 +8,7 @@ order: 0
 
 # UserRight
 
-The `UserRight` class is the SDK representation of a single [user's right](/core/1/guides/essentials/user-authentication/#creating-users-default).
+The `UserRight` class is the SDK representation of a single [user's right](/core/1/guides/essentials/user-authentication/#creating-users).
 
 Instances of the `UserRight` class are returned by the followings methods:
 

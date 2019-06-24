@@ -12,7 +12,7 @@ The [Realtime.Subscribe](/sdk/go/1/controllers/realtime/subscribe/) method takes
 
 ## Document & messages
 
-These notifications represent [documents changes & messages](/core/1/api/essentials/notifications#documents-changes-messages-default).
+These notifications represent [documents changes & messages](/core/1/api/essentials/notifications#documents-changes-messages).
 
 | Property     | Type                       | Description                                                                                           |
 | ------------ | -------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ The `Result` property has the following structure for document notifications & m
 
 ## User
 
-These notifications represent [user events](/core/1/api/essentials/notifications#user-notification-default).
+These notifications represent [user events](/core/1/api/essentials/notifications#user-notification).
 
 | Property     | Type                       | Description                                                                                           |
 | ------------ | -------------------------- | ----------------------------------------------------------------------------------------------------- |

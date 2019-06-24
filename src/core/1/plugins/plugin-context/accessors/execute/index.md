@@ -52,10 +52,10 @@ const request = new context.constructors.Request({
 });
 
 try {
-  // "request" is the updated Request object
-  // The API response is accessed through "request.response"
-  request = await context.accessors.execute(request);
+  // Mutates the provided Request object by updating the response part of
+  // it (accessible through the "request.response" property).
+  await context.accessors.execute(request);
 } catch (error) {
-  // "error" is a KuzzleError object
+  // "error" is an object inheriting the KuzzleError class
 }
 ```
