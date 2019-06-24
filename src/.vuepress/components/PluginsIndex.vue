@@ -28,7 +28,7 @@
       <img src="/logos/probe.svg" alt="probe listener logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Probe listener</div>
     </a>
-    <router-link :to="{path: '/official-plugins/s3'}" class="Tiles-item">
+    <router-link :to="{path: '/official-plugins/s3/1'}" class="Tiles-item">
       <img src="/logos/plugin-s3.svg" alt="amazon s3 logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Amazon S3</div>
     </router-link>
