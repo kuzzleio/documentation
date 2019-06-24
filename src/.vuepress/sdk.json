@@ -24,9 +24,21 @@
     "icon": "/logos/go.svg"
   },
   {
+    "language": "go",
+    "name": "Golang 2.x",
+    "version": "2",
+    "icon": "/logos/go.svg"
+  },
+  {
     "language": "java",
     "name": "Java 1.x",
     "version": "1",
+    "icon": "/logos/java.svg"
+  },
+  {
+    "language": "java",
+    "name": "Java 2.x",
+    "version": "2",
     "icon": "/logos/java.svg"
   },
   {
