@@ -1,0 +1,2 @@
+
+String jwtToken = kuzzle.getJwtToken();
