@@ -431,7 +431,7 @@ The roles, profiles and users definition follow the same structure as in the bod
 
 ## loadMappings
 
-{{{since "1.6.6"}}}
+<SinceBadge version="1.6.6" />
 
 ```bash
 ./bin/kuzzle loadMappings <file>
@@ -439,7 +439,7 @@ The roles, profiles and users definition follow the same structure as in the bod
 # [✔] Mappings have been successfully loaded
 ```
 
-The `loadMappings` command apply mappings directly into the storage layer.
+The `loadMappings` command applies mappings directly into the storage layer.
 
 ### Mappings file example
 
@@ -476,7 +476,7 @@ The `loadMappings` command apply mappings directly into the storage layer.
 # [✔] Fixtures have been successfully loaded
 ```
 
-The `loadFixtures` command load fixtures directly into the storage layer.
+The `loadFixtures` command loads fixtures directly into the storage layer.
 
 ### Fixtures file example
 
@@ -494,7 +494,7 @@ The `loadFixtures` command load fixtures directly into the storage layer.
 **Notes:**
 
 * The fixtures can contain any number of index and collection configurations.
-* Each collection contains an array of data to load, just like the [bulk:import API]({{ site_base_path }}api/1/controller-bulk/import/).
+* Each collection contains an array of data to load, just like the [bulk:import API](/api/1/controller-bulk/import/).
 * If an index or collection does not exist, the load will fail.
 * Fixtures are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
 
@@ -502,7 +502,7 @@ The `loadFixtures` command load fixtures directly into the storage layer.
 
 ## loadSecurities
 
-{{{since "1.6.6"}}}
+<SinceBadge version="1.6.6" />
 
 ```bash
 ./bin/kuzzle loadSecurities <file>
@@ -510,7 +510,7 @@ The `loadFixtures` command load fixtures directly into the storage layer.
 # [✔] Securities have been successfully loaded
 ```
 
-The `loadSecurities` command load roles, profiles and users directly into the storage layer.
+The `loadSecurities` command loads roles, profiles and users directly into the storage layer.
 
 The roles, profiles and users definition follow the same structure as in the body parameter of the API:
 
@@ -548,7 +548,7 @@ The roles, profiles and users definition follow the same structure as in the bod
 
 ## encryptSecrets
 
-{{{since "1.8.0"}}}
+<SinceBadge version="1.8.0" />
 
 ```bash
 ./bin/kuzzle encryptSecrets [file] [options]
@@ -569,7 +569,7 @@ See also [Secrets Vault](/core/1/guides/essentials/secrets-vault)
 
 ## decryptSecrets
 
-{{{since "1.8.0"}}}
+<SinceBadge version="1.8.0" />
 
 ```bash
 ./bin/kuzzle decryptSecrets [file] [options]
