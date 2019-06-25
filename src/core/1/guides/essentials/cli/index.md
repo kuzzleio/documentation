@@ -561,7 +561,7 @@ Options:
 
 Encrypt the provided `file` with the provided `vaultKey`.  
 The `vaultKey` can be either provided in the command line or in the `KUZZLE_VAULT_KEY` environment variable.  
-The `file` can be provided in the command line, through the `KUZZLE_CLEAR_SECRETS_FILE` environment variable or in the default secrets file in `<kuzzle dir>/config/secrets.json`.
+The `file` can be provided in the command line or in the default secrets file in `<kuzzle dir>/config/secrets.json`.
 
 ::: info
 See also [Secrets Vault](/core/1/guides/essentials/secrets-vault)
