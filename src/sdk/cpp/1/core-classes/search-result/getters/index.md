@@ -10,7 +10,7 @@ order: 100
 
 ## aggregations
 
-Returns a JSON string representing the search [aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations.html).
+Returns a JSON string representing the search [aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-aggregations.html).
 
 ### Arguments
 

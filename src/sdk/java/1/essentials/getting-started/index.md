@@ -26,16 +26,7 @@ Having trouble? Get in touch with us on [Gitter](https://gitter.im/kuzzleio/kuzz
 
 ## Installation
 
-### Maven and Gradle
-
-Kuzzle Java SDK is available on Bintray for both
-[amd64](https://bintray.com/kuzzle/maven/kuzzle-sdk-java-amd64) and
-[x86](https://bintray.com/kuzzle/maven/kuzzle-sdk-java-x86) architectures.
-Add it as a dependency for your project using Maven or Gradle.
-
-### Manually
-
-If you do not use a project manager, you can find the SDK JARs directly
+You can find the SDK JARs directly
 on our [download
 plateform](https://dl.kuzzle.io/sdk/java/master/index.html). Download
 and add it to your classpath.
