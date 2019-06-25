@@ -3,11 +3,13 @@ module.exports = md => {
   md.renderer.rules.fence = (...args) => {
     const [tokens, idx] = args;
     const rawCode = fence(...args);
-    const codeWithButton = rawCode.replace(
-      '<!--afterbegin-->',
-      `${renderButton(idx)}<!--afterbegin-->`
-    );
-    return codeWithButton;
+    return rawCode
+      .replace(
+        '<!--beforebegin-->',
+        '<!--beforebegin--><div class="code-block">'
+      )
+      .replace('<!--afterend-->', '</div><!--afterend-->')
+      .replace('<!--afterbegin-->', `${renderButton(idx)}<!--afterbegin-->`);
   };
 };
 
