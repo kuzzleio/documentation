@@ -24,9 +24,11 @@ There are 4 hierarchical levels in data storage:
 An index brings together several collections, which in turn contains several documents, each of which is composed of several fields.  
 ![database organization](./database-organization.png)
 
-### Comparison with SQL database
+### Comparison with a relational database
 
-We can compare the organization of NoSQL data storage with a traditional SQL database such as PostgreSQL for example.
+Even if Elasticsearch is not, strictly speaking, a database, the way it stores data is very similar to that of document-oriented databases.  
+
+If you're more familiar with the way relational databases store data, here is how it compares:
 
 | Elasticsearch (NoSQL) | Postgres (SQL) |
 | --------------------- | -------------- | 
@@ -35,14 +37,14 @@ We can compare the organization of NoSQL data storage with a traditional SQL dat
 | document | line |
 | field | column |
 
-Elaticsearch has 3 major differences compared to a traditional SQL database:
-  - the unique identifier of the documents (`_id`) is stored outside the content of the documents,
-  - no advanced joint system,
+Comparing document-oriented storages with relational databases would require a more thorough analysis, but for the purposes of this guide, we shall reduce the list of differences to the following 3 items:
+  - Documents are identified with a unique identifier, which is stored separately from the content of documents (compared to primary/foreign keys, stored alongside the data they identify),
+  - no advanced join system,
   - a default delay between writing a document and its availability via the method [document:search](/core/1/api/controllers/document/search).
 
-All these differences should be taken into account when modeling your [database](/core/1/guides/essentials/database-mappings) and your application.  
+All these differences should be taken into account when modeling your [data model](/core/1/guides/essentials/database-mappings) and your application.  
 
-## Create indexes and collections
+## Creating indexes and collections
 
 The creation of indexes and collections is done through the API via the methods [index:create](/core/1/api/controllers/index/create) and [collection:create](/core/1/api/controllers/collection/create).  
 
@@ -104,17 +106,17 @@ curl -X PUT localhost:7512/nyc-open-data/yellow-taxi?pretty
 It is also possible to define in advance a set of indexes and collections, then load them at the start of Kuzzle (option [--mappings]((/core/1/guides/essentials/cli/#start)), via the [CLI](/core/1/guides/essentials/cli/#loadMappings) or with the API method [admin:loadMappings] (/core/1/api/controllers/admin/loadmappings)
 :::
 
-## Write documents
+## Writing documents
 
-The Kuzzle API offers several methods to create, modify or delete documents in the database.  
+The Kuzzle API offers several methods to create, modify or delete documents in its storage space.  
 
-Each of these methods has its own specificities, we can distinguish two main families of methods, those acting on a document and those acting on multiple documents (AKA `m*` methods).
+Each of these methods has its own specificities, we can distinguish two main families of methods: those acting on a document and those acting on multiple documents.
 
 Methods acting on a single document:
   - [document:create](/core/1/api/controllers/document/create): creates a new document
-  - [document:createOrReplace](/core/1/api/controllers/document/create): creates a new document or replace an existing document
+  - [document:createOrReplace](/core/1/api/controllers/document/create): creates a new document or replaces an existing one
   - [document:delete](/core/1/api/controllers/document/delete): deletes a document
-  - [document:replace](/core/1/api/controllers/document/replace): replaces an existing docucment by a new one
+  - [document:replace](/core/1/api/controllers/document/replace): replaces an existing document
   - [document:update](/core/1/api/controllers/document/update): updates fields in an existing document
 
 Methods acting on multiple documents
@@ -126,7 +128,7 @@ Methods acting on multiple documents
   - [document:mUpdate](/core/1/api/controllers/document/m-update): updates fields of multiple documents
 
 ::: info 
-The [bulk controller](/core/1/api/controllers/bulk) also has low-level methods for writing documents to the database.
+The [bulk controller](/core/1/api/controllers/bulk) features low-level methods for injecting documents in collections.
 :::
 
 For example, to create a new document in our index:
@@ -135,7 +137,7 @@ For example, to create a new document in our index:
 curl -X POST -H "Content-Type: application/json" -d '{ "driver": "liia", "arriveAt": "2019-07-26"  }' http://localhost:7512/nyc-open-data/yellow-taxi/document-uniq-id/_create?pretty
 ```
 
-<details><summary>Click to see Kuzzle API answer</summary>
+<details><summary>Click to see Kuzzle's answer</summary>
 <pre>
 {
   "requestId": "e146e2a5-ff5b-4b6f-a603-8cde43f353fe",
@@ -170,13 +172,13 @@ curl -X POST -H "Content-Type: application/json" -d '{ "driver": "liia", "arrive
 </pre>
 </details>
 
-Using the [document:update] method (/core/1/api/controllers/document/update) allows us to add a new field while keeping the old ones:
+Using the [document:update](/core/1/api/controllers/document/update) method allows us to add a new field while keeping the old ones:
 
 ```bash
 curl -X PUT -H "Content-Type: application/json" -d '{ "car": "rickshaw"  }' http://localhost:7512/nyc-open-data/yellow-taxi/document-uniq-id/_update?pretty
 ```
 
-<details><summary>Click to see Kuzzle API answer</summary>
+<details><summary>Click to see Kuzzle's answer</summary>
 <pre>
 {
   "requestId": "1be6c9e6-2626-4f85-ad64-d1cc248c7bee",
@@ -198,23 +200,23 @@ curl -X PUT -H "Content-Type: application/json" -d '{ "car": "rickshaw"  }' http
 </pre>
 </details>
 
-## Read documents
+## Reading documents
 
 There are two ways to retrieve documents:
   - using the document unique identifiers,
   - by performing a search with an Elasticsearch query.
 
-### Get documents
+### Getting documents
 
 To retrieve a document when you know its unique identifier, you have to use the [document:get](/core/1/api/controllers/document/get) or the [document:mGet](/core/1/api/controllers/document/m-get) method.
 
-For example, to retrieve the documents we created previously:
+For example, to retrieve the documents we created in the previous examples:
 
 ```bash
 curl http://localhost:7512/nyc-open-data/yellow-taxi/document-uniq-id?pretty
 ```
 
-<details><summary>Click to see Kuzzle API answer</summary>
+<details><summary>Click to see Kuzzle's answer</summary>
 <pre>
 {
   "requestId": "62af64c8-5dc6-48c1-942b-2604bf97686e",
@@ -249,9 +251,9 @@ curl http://localhost:7512/nyc-open-data/yellow-taxi/document-uniq-id?pretty
 </pre>
 </details>
 
-### Search documents
+### Searching documents
 
-The document search is performed using the [Elasticsearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html).  
+Searching documents is performed using the [Elasticsearch Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl.html).  
 As Elasticsearch is an indexing engine designed for document search, it offers a wide range of advanced search options like [geo queries](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/geo-queries.html), [full text queries](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/full-text-queries.html), [aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/search-aggregations.html), and more.  
 
 Requests must be made through Kuzzle using the [document:search](/core/1/api/controllers/document/search) method.
@@ -280,7 +282,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ```
 
-<details><summary>Click to see Kuzzle API answer</summary>
+<details><summary>Click to see Kuzzle's answer</summary>
 <pre>
 {
   "requestId": "836768a4-0b46-447a-b4c5-8932101f24de",
@@ -377,7 +379,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ## What Now?
 
-- Exploit the full capabilites of Elasticsearch with [Database Mappings](/core/1/guides/essentials/database-mappings)
+- Exploit the full capabilites of Elasticsearch with [Data Mappings](/core/1/guides/essentials/database-mappings)
 - Read our [Elasticsearch Cookbook](/core/1/guides/cookbooks/elasticsearch) to learn more about how querying works in Kuzzle
 - Use [document metadata](/core/1/guides/essentials/document-metadata/) to find or recover documents
 - Keep track of data changes using [Real-time Notifications](/core/1/guides/essentials/real-time/)
