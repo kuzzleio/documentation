@@ -1,11 +1,138 @@
 ---
 code: false
 type: page
-title: Working with Persistent Data
+title: Store and access your data
 order: 400
 ---
 
-# Working with Persistent Data
+# Store and access your data
+
+Kuzzle utilise Elasticsearch en tant que base de données NoSQL orientée document.  
+L'ensemble des documents, que ce soit les documents internes de type `User`, `Profil` ou `Role` ou les documents des utilisateurs, est stocké dans des indexes Elasticsearch.  
+Les capacités de stockage de Kuzzle sont donc directement liées aux capacités et aux limites d'Elasticsearch.  
+
+## Database organization
+
+Il y a 4 niveaux hiérarchiques dans le stockage des données: 
+  - indexes
+  - collections
+  - documents
+  - champs
+
+Un index rassemble plusieurs collections, qui elle même contient plusieurs documents qui sont chacun composés de plusieurs champs.  
+![database organization](./database-organization.png)
+
+### Comparison with SQL database
+
+On peut comparer l'organisation du stockage des données NoSQL avec une base SQL traditionnelle comme PostgreSQL par exemple.
+
+| Elasticsearch (NoSQL) | Postgres (SQL) |
+| --------------------- | -------------- | 
+| index | database | 
+| collection | table |
+| document | line |
+| field | column |
+
+Elaticsearch présente 3 différences majeures par rapport à une base de données SQL classique:
+  - l'identifiant unique des documents (`_id`) est stocké en dehors du contenu des documents,
+  - pas de système de jointures avancé,
+  - un délai présent par défaut entre l'écriture d'un document et sa disponibilité via la méthode [document:search](/core/1/api/controllers/document/search).
+
+Toute ces différences devront être prises en considération lors de la modélisation de vos [mappings de données](/core/1/guides/database-mappings).  
+
+### Create indexes and collections
+
+La création d'indexes et de collections se fait au travers de l'API via les méthodes [index:create](/core/1/api/controllers/index/create) et [collection:create](/core/1/api/controllers/collection/create).  
+
+Par exemple, pour créer un index `nyc-open-data`:
+
+```bash
+curl -X POST localhost:7512/nyc-open-data/_create?pretty
+```
+
+<details><summary>Click to see Kuzzle API answer</summary>
+<pre>
+{
+  "requestId": "e9ab8d1a-ea1a-4fdd-ad50-07c82245d88c",
+  "status": 200,
+  "error": null,
+  "controller": "index",
+  "action": "create",
+  "collection": null,
+  "index": "nyc-open-data",
+  "volatile": null,
+  "result": {
+    "acknowledged": true,
+    "shards_acknowledged": true,
+    "index": "nyc-open-data"
+  }
+}
+</pre>
+</details>
+
+Puis une collection `yellow-taxi` dans cet index:
+
+::: warning
+Il est conseillé de spécifier un [mapping de données](/core/1/guides/database-mappings) lors de la création d'une collection afin que celles-ci soient correctement indexées par Elasticsearch.
+:::
+
+```bash
+curl -X PUT localhost:7512/nyc-open-data/yellow-taxi?pretty
+```
+
+<details><summary>Click to see Kuzzle API answer</summary>
+<pre>
+{
+  "requestId": "1d5b7afe-9d81-4c0e-92bc-aa57b24c35eb",
+  "status": 200,
+  "error": null,
+  "controller": "collection",
+  "action": "create",
+  "collection": "yellow-taxi",
+  "index": "nyc-open-data",
+  "volatile": null,
+  "result": {
+    "acknowledged": true
+  }
+}
+</pre>
+</details>
+
+::: info
+Il est également possible de définir à l'avance un ensemble d'indexes et de collections, puis de les charger au démarrage de Kuzzle soit via la [CLI]() soit via la méthode d'API [admin:loadMappings](/core/1/api/controllers/admin/load-mappings)
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Kuzzle relies on [Elasticsearch](https://www.elastic.co/) to store and fetch persistent data.
 
