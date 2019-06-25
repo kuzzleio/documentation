@@ -274,11 +274,11 @@ module.exports = {
           }
         ]
       : {
-        write: true
-      },
+          write: true
+        },
     [
-      require('vuepress-validate-frontmatter'),
-      // require('./validate-frontmatter/index'),
+      require('vuepress-frontmatter-lint'),
+      // require('../../../vuepress-validate-frontmatter/index'),
       {
         dumpToFile: true,
         abortBuild: true,

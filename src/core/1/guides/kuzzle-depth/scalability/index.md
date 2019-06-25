@@ -6,11 +6,37 @@ title: Scalability
 
 # Scalability
 
-Kuzzle can scale horizontally, provided our [official Cluster Plugin](https://github.com/kuzzleio/kuzzle-plugin-cluster) is installed.
+Kuzzle can scale horizontally, provided our [official Cluster Plugin](https://github.com/kuzzleio/kuzzle-plugin-cluster) is installed.  
 
-This guide covers how clustering capabilities can be added to Kuzzle.
+This guide covers Kuzzle Cluster features and how clustering capabilities can be added to Kuzzle.
 
 ---
+
+## Kuzzle Cluster features
+
+Kuzzle uses a cluster in [masterless mode](https://en.wikipedia.org/wiki/Shared-nothing_architecture) to ensure maximum resilience.  
+Each node in the cluster handles part of the load of requests received by the application.  
+
+### High Availability
+
+A Kuzzle cluster shares the processing of requests and the dispatching of real-time notifications.  
+From 2 nodes onwards, even if a problem causes a service interruption on a server, the availability of the application will not be affected.  
+
+### Scaling without service interruption
+
+Masterless mode allows you to add and remove nodes without service interruption.  
+If the load becomes heavier, just start additional servers, they will be automatically integrated into the cluster for request processing.  
+On the contrary, if the load decreases, just stop servers, the rest of the nodes will handle the remaining load.  
+This allows to control the hosting costs during scalability due to temporary events.  
+
+### Complete cluster environment
+
+Kuzzle uses Elasticsearch as a database and Redis for communication between nodes as well as as a cache for performance.  
+Both software have native cluster modes allowing them to scale to handle an increasing load of users and requests.  
+
+The scaling of the [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html) and [Redis](https://redis.io/topics/cluster-tutorial) clusters are independent of Kuzzle. Each can scale differently depending on the needs.  
+
+An application that greatly requires the write/read database can afford a larger Elasticsearch cluster, while an application that makes intensive use of real time will increase the size of its Kuzzle and Redis clusters.
 
 ## Quick start
 
