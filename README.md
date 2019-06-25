@@ -336,7 +336,7 @@ const kuzzle = new Kuzzle('websocket', {
 kuzzle
   .connect()
   .then(() => {
-    return [snippet - code];
+    return [snippet-code];
   })
   .then(() => {
     kuzzle.disconnect();
