@@ -580,7 +580,7 @@ Options:
       --noint                    non interactive mode
 ```
 
-Decrypt the provided `file` with the provided `vaultKey`.  
+Decrypts the provided `file` with the provided `vaultKey`.  
 The `vaultKey` can be either provided in the command line or in the `KUZZLE_VAULT_KEY` environment variable.  
 The `file` can be provided in the command line, through the `KUZZLE_SECRETS_FILE` environment variable or in the default secrets file in `<kuzzle dir>/config/secrets.enc.json`.
 
