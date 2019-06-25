@@ -32,7 +32,7 @@ class LinkChecker
     @only = options[:only] || ''
     @json_file = options[:file] || './dead_links.json'
 
-    @hydra = Typhoeus::Hydra.new(max_concurrency: 200)
+    @hydra = Typhoeus::Hydra.new(max_concurrency: HYDRA_MAX_CONCURRENCY || 200)
 
     @internal = Set.new
     @external = Set.new
