@@ -36,7 +36,7 @@ jobs:
       language: ruby
       script:
       - gem install typhoeus
-      - ruby check_link.rb -p src/
+      - HYDRA_MAX_CONCURRENCY=50 ruby check_link.rb -p src/
 
     # -------------------------------------------------------------------------
     # Snippets tests
