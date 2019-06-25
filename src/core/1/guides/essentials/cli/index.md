@@ -494,7 +494,7 @@ The `loadFixtures` command loads fixtures directly into the storage layer.
 **Notes:**
 
 * The fixtures can contain any number of index and collection configurations.
-* Each collection contains an array of data to load, just like the [bulk:import API](/api/1/controller-bulk/import/).
+* Each collection contains an array of data to load, just like the [bulk:import](/core/1/api/controllers/bulk/import) method.
 * If an index or collection does not exist, the load will fail.
 * Fixtures are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
 
@@ -514,9 +514,9 @@ The `loadSecurities` command loads roles, profiles and users directly into the s
 
 The roles, profiles and users definition follow the same structure as in the body parameter of the API:
 
- - [createRole]({{ site_base_path }}api/1/controller-security/create-role)
- - [createProfile]({{ site_base_path }}api/1/controller-security/create-profile)
- - [createUser]({{ site_base_path }}api/1/controller-security/create-user)
+ - [security:createRole](/core/1/api/controllers/security/create-role)
+ - [security:createProfile](/core/1/api/controllers/security/create-profile)
+ - [security:createUser](/core/1/api/controllers/security/create-user)
 
 ### Securities file example
 
