@@ -68,7 +68,10 @@ redirections:
 
   # Plugin essentials
   - from: plugins/1/essentials/available-plugins
-    to: core/1/plugins/essentials/available-plugins
+    to: officials-plugins
+    
+  - from: core/1/plugins/essentials/available-plugins
+    to: officials-plugins    
 
   - from: plugins/1/essentials/getting-started
     to: core/1/plugins/essentials/getting-started
@@ -523,7 +526,7 @@ redirections:
     to: core/1/guides/code-examples/dbsearch/javascript
 
   - from: guide/essentials/plugins
-    to: core/1/plugins/essentials/available-plugins
+    to: core/1/plugins/essentials/
 
   - from: guide/kuzzle-depth
     to: core/1/guides/kuzzle-depth
