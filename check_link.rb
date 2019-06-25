@@ -111,6 +111,7 @@ class LinkChecker
 
       request.on_complete do |response|
         if response.code != 200
+          puts external_link, response.code
           @external << external_link
         end
       end
