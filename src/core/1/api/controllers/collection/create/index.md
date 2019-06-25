@@ -6,7 +6,7 @@ title: create
 
 # create
 
-Creates a new [collection](/core/1/guides/essentials/persisted), in the provided `index`.
+Creates a new [collection](/core/1/guides/essentials/store-access-data), in the provided `index`.
 
 <SinceBadge version="1.3.0" />
 

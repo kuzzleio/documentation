@@ -62,6 +62,9 @@ redirections:
   - from: guide/1/pubsub
     to: core/1/guides/code-examples/pubsub
 
+  - from: core/1/guides/essentials/persisted
+    to: core/1/guides/essentials/store-access-data
+
   # Koncorde
   - from: koncorde
     to: core/1/koncorde
