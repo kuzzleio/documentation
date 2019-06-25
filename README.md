@@ -251,6 +251,14 @@ The code above will include only
 const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 ```
 
+### Forcing snippet language
+
+In some cases, you might want to force the snippet language, e.g. when importing a partial script from a `.vue` file: in this case, the automatic syntax detection would try to highlight some Javascript code as a VueJS template, which is obviously not what you want.
+
+To force the language highlight, you can use the following syntax
+
+<<< ./snippets/create.vue:1[js]
+
 ## Testing code snippets
 
 Because we want our documentation to be bullet-proof, we created a snippet testing tool.

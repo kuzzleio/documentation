@@ -47,11 +47,27 @@ module.exports = function snippet(md, options = {}) {
       rawPath = rawPath.replace(snippetId, '');
     }
 
+    let highlights = rawPath.match(/{.*}/);
+    if (highlights && highlights[0]) {
+      highlights = highlights[0];
+      rawPath = rawPath.replace(highlights, '');
+    }
+
+    let language = rawPath.match(/\[([a-z]*)\]/);
+    if (language && language[0]) {
+      rawPath = rawPath.replace(language[0], '');
+      if (language[1]) {
+        language = language[1];
+      } else {
+        language = null;
+      }
+    }
+
     // Generate snippet-extraction RegExp
     const SNIPPET_EXTRACT = generateSnippetRegex(snippetId);
 
     // Extract filename
-    const filename = rawPath.split(/[{:\s]/).shift();
+    const filename = rawPath.split(/[\[{:\s]/).shift();
 
     // By default, import the whole file contents
     let content = fs.existsSync(filename)
@@ -69,13 +85,16 @@ module.exports = function snippet(md, options = {}) {
     content = content.replace(/.*snippet:end.*\n/g, '');
 
     // Extract meta (line highlight)
-    const meta = rawPath.replace(filename, '');
+    const fileExtension = filename.split('.').pop();
+    const meta = `${language ? language : fileExtension}${
+      highlights ? highlights : ''
+    }`;
 
     state.line = startLine + 1;
 
     // Create token
     const token = state.push('fence', 'code', 0);
-    token.info = filename.split('.').pop() + meta;
+    token.info = meta;
     token.content = content;
     token.markup = '```';
     token.map = [startLine, startLine + 1];
