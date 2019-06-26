@@ -1,0 +1,305 @@
+---
+type: page
+code: false
+title: Generic Events
+order: 150
+---
+
+# Generic Events
+
+Some actions in the document controller triggers generic events. Generic events are used to apply modifications on the documents in the request or result of these actions.
+
+Generic "before" events (`generic:document:before*`) are triggered **before** the regular `document:before*` event.  
+Generic "after" events (`generic:document:after*`) are triggered **after** the regular `document:after*` event.
+
+All the pipes triggered by generic events have the same signature and should return the array of the updated documents from parameters.
+
+```javascript
+class PipePlugin {
+
+  init(customConfig, context) {
+    this.pipes = {
+      'generic:document:<event>': async (documents, request) => {
+        // some random change on documents
+
+        return documents;
+      }
+    };
+  }
+
+}
+```
+
+---
+
+## Event: 'generic:document:beforeWrite'
+
+| Arguments | Type                                                           | Description                |
+| --------- | -------------------------------------------------------------- | -------------------------- |
+| documents | `Array` | Array of documents (containing a document's `_id` and `_source` fields) |
+| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+
+`generic:document:beforeWrite` generic events allows to intercept before all the actions related to document writing.
+
+### Example
+
+```javascript
+class PipePlugin {
+
+  init(customConfig, context) {
+    this.pipes = {
+      'generic:document:beforeWrite': async documents => {
+        // some random change
+        documents[0]._source.foo = 'bar';
+
+        return documents;
+      }
+    };
+  }
+
+}
+```
+
+### Associated controller actions:
+- [`document:create`](/core/1/api/controllers/document/create/)
+- [`document:createOrReplace`](/core/1/api/controllers/document/create-or-replace/)
+- [`document:mCreate`](/core/1/api/controllers/document/m-create/)
+- [`document:mCreateOrReplace`](/core/1/api/controllers/document/m-create-or-replace/)
+- [`document:mReplace`](/core/1/api/controllers/document/m-replace/)
+- [`document:replace`](/core/1/api/controllers/document/replace/)
+
+## Event: 'generic:document:afterWrite'
+
+| Arguments | Type                                                           | Description                |
+| --------- | -------------------------------------------------------------- | -------------------------- |
+| documents | `Array` | Array of documents (containing a document's `_id` and `_source` fields) |
+| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+
+`generic:document:afterWrite` generic events allows to intercept after all the actions related to document writing.
+
+### Example
+
+```javascript
+class PipePlugin {
+
+  init(customConfig, context) {
+    this.pipes = {
+      'generic:document:afterWrite': async documents => {
+        // some random change
+        documents[0]._source.foo = 'bar';
+
+        return documents;
+      }
+    };
+  }
+
+}
+```
+
+### Associated controller actions:
+- [`document:create`](/core/1/api/controllers/document/create/)
+- [`document:createOrReplace`](/core/1/api/controllers/document/create-or-replace/)
+- [`document:mCreate`](/core/1/api/controllers/document/m-create/)
+- [`document:mCreateOrReplace`](/core/1/api/controllers/document/m-create-or-replace/)
+- [`document:mReplace`](/core/1/api/controllers/document/m-replace/)
+- [`document:replace`](/core/1/api/controllers/document/replace/)
+
+
+## Event: 'generic:document:beforeUpdate'
+
+| Arguments | Type                                                           | Description                |
+| --------- | -------------------------------------------------------------- | -------------------------- |
+| documents | `Array` | Array of documents (containing a document's `_id` and `_source` fields) |
+| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+
+`generic:document:beforeUpdate` generic events allows to intercept before all the actions related to document updating.
+
+### Example
+
+```javascript
+class PipePlugin {
+
+  init(customConfig, context) {
+    this.pipes = {
+      'generic:document:beforeUpdate': async documents => {
+        // some random change
+        documents[0]._source.foo = 'bar';
+
+        return documents;
+      }
+    };
+  }
+
+}
+```
+
+### Associated controller actions:
+- [`document:update`](/core/1/api/controllers/document/update/)
+- [`document:mUpdate`](/core/1/api/controllers/document/m-update/)
+
+
+## Event: 'generic:document:afterUpdate'
+
+| Arguments | Type                                                           | Description                |
+| --------- | -------------------------------------------------------------- | -------------------------- |
+| documents | `Array` | Array of documents (containing a document's `_id` and `_source` fields) |
+| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+
+`generic:document:afterUpdate` generic events allows to intercept after all the actions related to document updating.
+
+### Example
+
+```javascript
+class PipePlugin {
+
+  init(customConfig, context) {
+    this.pipes = {
+      'generic:document:afterUpdate': async documents => {
+        // some random change
+        documents[0]._source.foo = 'bar';
+
+        return documents;
+      }
+    };
+  }
+
+}
+```
+
+### Associated controller actions:
+- [`document:update`](/core/1/api/controllers/document/update/)
+- [`document:mUpdate`](/core/1/api/controllers/document/m-update/)
+
+
+## Event: 'generic:document:beforeDelete'
+
+| Arguments | Type                                                           | Description                |
+| --------- | -------------------------------------------------------------- | -------------------------- |
+| documents | `Array` | Array of documents (containing document's `_id`) |
+| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+
+`generic:document:beforeDelete` generic events allows to intercept before all the actions related to document deleting.
+
+### Example
+
+```javascript
+class PipePlugin {
+
+  init(customConfig, context) {
+    this.pipes = {
+      'generic:document:beforeDelete': async documents => {
+        // some random change
+        documents[0]._id += 'foo';
+
+        return documents;
+      }
+    };
+  }
+
+}
+```
+
+### Associated controller actions:
+- [`document:delete`](/core/1/api/controllers/document/delete/)
+- [`document:mDelete`](/core/1/api/controllers/document/m-delete/)
+
+
+## Event: 'generic:document:afterDelete'
+
+| Arguments | Type                                                           | Description                |
+| --------- | -------------------------------------------------------------- | -------------------------- |
+| documents | `Array` | Array of documents (containing document's `_id`) |
+| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+
+`generic:document:afterDelete` generic events allows to intercept after all the actions related to document deleting.
+
+### Example
+
+```javascript
+class PipePlugin {
+
+  init(customConfig, context) {
+    this.pipes = {
+      'generic:document:afterDelete': async documents => {
+        // some random change
+        documents[0]._id += 'foo';
+
+        return documents;
+      }
+    };
+  }
+
+}
+```
+
+### Associated controller actions:
+- [`document:delete`](/core/1/api/controllers/document/delete/)
+- [`document:mDelete`](/core/1/api/controllers/document/m-delete/)
+- [`document:deleteByQuery`](/core/1/api/controllers/document/delete-by-query/)
+
+
+## Event: 'generic:document:beforeGet'
+
+| Arguments | Type                                                           | Description                |
+| --------- | -------------------------------------------------------------- | -------------------------- |
+| documents | `Array` | Array of documents (containing document's `_id`) |
+| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+
+`generic:document:beforeGet` generic events allows to intercept before all the actions related to document getting.
+
+### Example
+
+```javascript
+class PipePlugin {
+
+  init(customConfig, context) {
+    this.pipes = {
+      'generic:document:beforeGet': async documents => {
+        // some random change
+        documents[0]._id += 'foo';
+
+        return documents;
+      }
+    };
+  }
+
+}
+```
+
+### Associated controller actions:
+- [`document:get`](/core/1/api/controllers/document/get/)
+- [`document:mGet`](/core/1/api/controllers/document/m-get/)
+
+
+## Event: 'generic:document:afterGet'
+
+| Arguments | Type                                                           | Description                |
+| --------- | -------------------------------------------------------------- | -------------------------- |
+| documents | `Array` | Array of documents (containing document's `_id`) |
+| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+
+`generic:document:afterGet` generic events allows to intercept after all the actions related to document getting.
+
+### Example
+
+```javascript
+class PipePlugin {
+
+  init(customConfig, context) {
+    this.pipes = {
+      'generic:document:beforeGet': async documents => {
+        // some random change
+        documents[0]._id += 'foo';
+
+        return documents;
+      }
+    };
+  }
+
+}
+```
+
+### Associated controller actions:
+- [`document:get`](/core/1/api/controllers/document/get/)
+- [`document:mGet`](/core/1/api/controllers/document/m-get/)
+- [`document:search`](/core/1/api/controllers/document/search/)
