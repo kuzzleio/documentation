@@ -7,13 +7,13 @@ order: 350
 
 # Store and access your data
 
-Kuzzle uses [Elasticsearch](https://www.elastic.co/products/elasticsearch) as a document-oriented NoSQL database.  
+Kuzzle uses [Elasticsearch](https://www.elastic.co/products/elasticsearch) as a document-oriented storage.  
 
 All documents, whether internal documents such as `User`, `Profile` or `Role` or user documents, are stored in Elasticsearch indexes.  
 
 Kuzzle's storage capacities are therefore directly linked to Elasticsearch's capacities and limits.  
 
-## Database organization
+## Data storage organization
 
 There are 4 hierarchical levels in data storage: 
   - indexes
@@ -22,7 +22,7 @@ There are 4 hierarchical levels in data storage:
   - fields
 
 An index brings together several collections, which in turn contains several documents, each of which is composed of several fields.  
-![database organization](./database-organization.png)
+![data storage organization](./data-storage-organization.png)
 
 ### Comparison with a relational database
 
@@ -30,7 +30,7 @@ Even if Elasticsearch is not, strictly speaking, a database, the way it stores d
 
 If you're more familiar with the way relational databases store data, here is how it compares:
 
-| Elasticsearch (NoSQL) | Postgres (SQL) |
+| Document-oriented storage | Relational databases storage |
 | --------------------- | -------------- | 
 | index | database | 
 | collection | table |
@@ -40,7 +40,7 @@ If you're more familiar with the way relational databases store data, here is ho
 Comparing document-oriented storages with relational databases would require a more thorough analysis, but for the purposes of this guide, we shall reduce the list of differences to the following 3 items:
   - Documents are identified with a unique identifier, which is stored separately from the content of documents (compared to primary/foreign keys, stored alongside the data they identify),
   - no advanced join system,
-  - a default delay between writing a document and its availability via the method [document:search](/core/1/api/controllers/document/search).
+  - a [typed mapping system](/core/1/guides/essentials/database-mappings/#properties-types-definition) to define how Elasticsearch should index the fields.
 
 All these differences should be taken into account when modeling your [data model](/core/1/guides/essentials/database-mappings) and your application.  
 
@@ -261,7 +261,7 @@ Requests must be made through Kuzzle using the [document:search](/core/1/api/con
 ::: warning
 When a document is created or modified, its latest version is not immediately available in the results of a search.  
 First, you have to wait until Elasticsearch has finished updating its index.  
-It is possible to force the waiting time for the index update with the parameter `refresh=wait_for` or by forcing it for each writing at the index level with[index:setAutoRefresh](/core/1/api/controllers/index/set-auto-refresh).
+It is possible to makes Elasticsearch wait for the indexation before sending the answer by setting `refresh=wait_for`. It's also possible to wait indexation after every requests before sending the answer with [index:setAutoRefresh](/core/1/api/controllers/index/set-auto-refresh).
 ::: 
 
 For example, to retrieve documents between the ages of 25 and 28:
