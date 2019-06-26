@@ -95,6 +95,9 @@ redirections:
   - from: plugins/1/strategies
     to: core/1/plugins/guides/strategies
 
+  - from: core/1/plugins/essentials/getting-started/adding-authentication-strategy
+    to: core/1/plugins/guides/strategies
+
   # Plugin context
   - from: plugins/1/accessors
     to: core/1/plugins/plugin-context/accessors
