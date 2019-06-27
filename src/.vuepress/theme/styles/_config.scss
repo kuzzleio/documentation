@@ -66,7 +66,8 @@ $md-icon-padding: $ms-base * 0.5;
 $md-icon-margin: $ms-base * 0.25;
 
 // Code blocks
-$md-code-background: #002835;
+$md-code-background: $md-color-blue;
+$md-code-background-highlighted: #02171f;
 $md-code-color: #c2c6cf;
 
 // Keystrokes

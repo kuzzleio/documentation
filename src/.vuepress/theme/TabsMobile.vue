@@ -41,15 +41,6 @@
     >
       <div class="md-source__repository">Plugins</div>
     </router-link>
-        <router-link
-      :to="{path: generateLink('/core/1/koncorde/')}"
-      title="Koncorde"
-      class="md-source"
-      data-md-state="done"
-      style="display:inline-block;"
-    >
-      <div class="md-source__repository">Koncorde</div>
-    </router-link>
     <p class="md-nav__mobile-group-name">Extend</p>
     <router-link
       :to="{path: generateLink('/core/1/protocols/')}"
@@ -58,7 +49,7 @@
       data-md-state="done"
       style="display:inline-block;"
     >
-      <div class="md-source__repository"> Write Plugins</div>
+      <div class="md-source__repository">Write Plugins</div>
     </router-link>
     <router-link
       :to="{path: generateLink('/core/1/protocols/')}"
@@ -67,7 +58,7 @@
       data-md-state="done"
       style="display:inline-block;"
     >
-      <div class="md-source__repository"> Write Protocols</div>
+      <div class="md-source__repository">Write Protocols</div>
     </router-link>
   </div>
 </template>
@@ -82,7 +73,7 @@ export default {
       sdkList
     };
   },
-   methods: {
+  methods: {
     generateLink(path) {
       return getValidLinkByRootPath(path, this.$site.pages);
     }
