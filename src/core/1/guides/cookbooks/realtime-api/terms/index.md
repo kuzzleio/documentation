@@ -15,8 +15,6 @@ with other terms in the same filter using the [operands](/core/1/guides/cookbook
 
 ## equals
 
-
-
 Matches attributes using strict equality.  
 The tested attribute must be a scalar (number, string or boolean), and of the same type than the provided filter value.
 
@@ -54,8 +52,6 @@ The following filter validates the first document:
 ```
 
 ## exists
-
-
 
 Test for the existence of a key in an object, or of a scalar in an array.
 
@@ -111,11 +107,9 @@ And this filter validates the second document:
 
 ## geoBoundingBox
 
-
-
 Filter documents containing a geographical point confined within a bounding box:
 
-![Illustration of geoBoundingBox](/assets/images/geolocation/geoBoundingBox.png)
+![Illustration of geoBoundingBox](/geolocation/geoBoundingBox.png)
 
 A bounding box is a 2D box that can be defined using either of the following formats:
 
@@ -210,11 +204,9 @@ The following filter will match the second document only:
 
 ## geoDistanceRange
 
-
-
 Filter documents containing a geographical point, whose position is within a distance range from a given point of origin:
 
-![Illustration of geoDistanceRange](/assets/images/geolocation/geoDistanceRange.png)
+![Illustration of geoDistanceRange](/geolocation/geoDistanceRange.png)
 
 A `geoDistanceRange` filter contains the following properties:
 
@@ -271,11 +263,9 @@ The following filter will match the second document only:
 
 ## geoDistance
 
-
-
 Filter documents containing a geographical point, whose position is within a distance radius centered around a provided point of origin:
 
-![Illustration of geoDistance](/assets/images/geolocation/geoDistance.png)
+![Illustration of geoDistance](/geolocation/geoDistance.png)
 
 A `geoDistance` filter contains the following properties:
 
@@ -332,11 +322,9 @@ The following filter will match the second document only:
 
 ## geoPolygon
 
-
-
 Filter documents containing a geographical point, confined within a polygon that has an arbitrary number of sides:
 
-![Illustration of geoPolygon](/assets/images/geolocation/geoPolygon.png)
+![Illustration of geoPolygon](/geolocation/geoPolygon.png)
 
 A `geoPolygon` filter is described using a `points` array, containing an arbitrary number of [geopoints](/core/1/guides/cookbooks/realtime-api/geofencing/#geopoints/) (at least 3).
 
@@ -397,8 +385,6 @@ The following filter will match the second document only:
 
 ## ids
 
-
-
 This filter returns only documents having their unique document ID listed in the provided list.
 
 ### Syntax
@@ -438,8 +424,6 @@ The following filter validates first document:
 ```
 
 ## missing
-
-
 
 A filter matching documents either with a missing field in an object, or with a missing value in an array.
 
@@ -499,8 +483,6 @@ And this filter validates the first document:
 ```
 
 ## range
-
-
 
 Filters documents with number attributes within a provided interval.
 
@@ -567,8 +549,6 @@ The following filter validates the last two documents:
 ```
 
 ## regexp
-
-
 
 The `regexp` filter matches attributes using [PCREs](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions).
 
