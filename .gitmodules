@@ -4,3 +4,6 @@
 [submodule ".plugin-repos/kuzzle-plugin-s3-v1"]
 	path = .plugin-repos/kuzzle-plugin-s3-v1
 	url = https://github.com/kuzzleio/kuzzle-plugin-s3.git
+[submodule ".sdk-repos/sdk-php-v3"]
+	path = .sdk-repos/sdk-php-v3
+	url = https://github.com/kuzzleio/sdk-php.git
