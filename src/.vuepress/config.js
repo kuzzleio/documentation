@@ -306,7 +306,10 @@ module.exports = {
             type: Boolean,
             required: true
           }
-        }
+        },
+        exclude: [
+          '/sdk/js/6/getting-started/vuejs/without-vuex/src/**/*'
+        ]
       }
     ],
     [
