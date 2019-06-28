@@ -4,6 +4,7 @@ set -e
 
 START_KUZZLE=1
 INTERACTIVE=0
+EXIT=0
 
 show_help() {
   echo "Possible options are"
@@ -74,22 +75,28 @@ case $LANG in
     show_test_header
     cd .sdk-repos/sdk-$LANG-v$SDK_VERSION
     npm run doc-testing
+    EXIT=$?
+    docker-compose -f .ci/doc/docker-compose.yml down
   ;;
   go)
     show_test_header
     docker run -it --name runner_go --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$LANG" --network ci_default --link kuzzle -v "$(pwd)":/app -v "$(pwd)"/test/bin:/go/src/github.com/kuzzleio/go-test kuzzleio/documentation:go $LANG $SDK_VERSION $TESTS_PATH
+    EXIT=$?
   ;;
   cpp)
     show_test_header
     docker run -it --name runner_cpp --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$LANG" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation:cpp $LANG $SDK_VERSION $TESTS_PATH
+    EXIT=$?
   ;;
   java)
     show_test_header
     docker run -it --name runner_java --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$LANG" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation:java $LANG $SDK_VERSION $TESTS_PATH
+    EXIT=$?
   ;;
   csharp)
     show_test_header
     docker run -it --name runner_csharp --rm -e DEV_MODE="$DEV_MODE" -e SDK_VERSION="$SDK_VERSION" -e LANGUAGE="$LANG" --network ci_default --link kuzzle -v "$(pwd)":/app kuzzleio/documentation:csharp $LANG $SDK_VERSION $TESTS_PATH
+    EXIT=$?
   ;;
   *)
     echo "$LANG is not a valid sdk"
@@ -105,3 +112,5 @@ fi
 if [ $INTERACTIVE -eq 1 ]; then
   node test/lib/helpers/reports.js
 fi
+
+exit $EXIT
