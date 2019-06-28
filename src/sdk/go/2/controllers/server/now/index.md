@@ -7,8 +7,6 @@ description: Returns the current server timestamp, in Epoch-millis
 
 # Now
 
-
-
 Returns the current server timestamp, in Epoch-millis format.
 
 ## Arguments
@@ -19,7 +17,7 @@ func (s *Server) Now(options types.QueryOptions) (int64, error)
 
 | Arguments | Type               | Description    |
 | --------- | ------------------ | -------------- |
-| `options` | types.QueryOptions | Query options. |
+| `options` | <pre>types.QueryOptions</pre> | Query options. |
 
 ### **Options**
 
@@ -27,7 +25,7 @@ Additional query options
 
 | Option     | Type | Description                                                                  | Default |
 | ---------- | ---- | ---------------------------------------------------------------------------- | ------- |
-| `Queuable` | bool | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
+| `Queuable` | <pre>bool</pre> | If true, queues the request during downtime, until connected to Kuzzle again | `true`  |
 
 ## Return
 

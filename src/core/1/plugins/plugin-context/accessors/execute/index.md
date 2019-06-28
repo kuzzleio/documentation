@@ -8,6 +8,10 @@ title: execute
 
 Executes a Kuzzle's [API action](/core/1/api/).
 
+::: info
+This methods does not trigger [API events](/core/1/plugins/guides/events/api-events) or [request:on* events](/core/1/plugins/guides/events/request-on-authorized).
+:::
+
 ---
 
 ## Arguments

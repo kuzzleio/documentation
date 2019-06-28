@@ -5,9 +5,7 @@ title: searchSpecifications
 description: Searches collection specifications
 ---
 
-# searchSpecifications
-
-
+# SearchSpecifications
 
 Searches collection specifications.
 

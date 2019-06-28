@@ -1,6 +1,6 @@
 {
-  "name": "vuepress-poc",
-  "version": "3.0.2",
+  "name": "kuzzleio-documentation",
+  "version": "3.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,12 @@
     "snippet-test": "bash run-all-snippet-tests.sh",
     "test": "npm run --silent lint && npm run snippet-test"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kuzzleio/documentation.git"
+  },
+  "author": "The Kuzzle Team <support@kuzzle.io>",
+  "license": "Apache-2.0",
   "dependencies": {
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@vuepress/plugin-google-analytics": "^1.0.1",
@@ -26,6 +30,7 @@
     "docsearch.js": "^2.6.3",
     "eslint": "^5.16.0",
     "expose-loader": "^0.7.5",
+    "fix-indents": "^0.1.2092",
     "indent-string": "^4.0.0",
     "js-cookie": "^2.2.0",
     "lunr": "^2.3.6",
@@ -37,7 +42,7 @@
     "sass-loader": "^7.1.0",
     "vuepress": "1.0.1",
     "vuepress-plugin-container": "^2.0.1",
-    "vuepress-validate-frontmatter": "^2.0.10",
+    "vuepress-frontmatter-lint": "^2.1.2",
     "yaml": "^1.6.0"
   },
   "devDependencies": {

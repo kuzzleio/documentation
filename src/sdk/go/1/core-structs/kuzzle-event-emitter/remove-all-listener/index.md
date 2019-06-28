@@ -14,7 +14,7 @@ Channels removed this way are **not** closed.
 
 ## Arguments
 
-```js
+```go
 RemoveAllListeners(event int)
 ```
 
@@ -22,7 +22,7 @@ RemoveAllListeners(event int)
 
 | Argument   | Type     | Description      |
 | ---------- | -------- | -------- |
-| `event`    | `int` | Event constant from the `event` package |
+| `event`    | <pre>int</pre> | Event constant from the `event` package |
 
 ## Usage
 

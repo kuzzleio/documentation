@@ -40,7 +40,7 @@ Next, instantiate a client that automatically connects to Kuzzle via WebSocket. 
 
 Finally, we will add the code that will access Kuzzle to create a new index 'playground' and a new collection 'mycollection' that we will use to store data later on.
 
-<<< ./snippets/init-sample.js
+<<< ./snippets/init-sample.js{3,5,6,7,8}
 
 Your `first-step.js` file should now look like this:
 
@@ -132,6 +132,6 @@ Congratulations! You have just choreographed your first pub/sub pattern!
 Now that you're more familiar with Kuzzle, dive even deeper to learn how to leverage its full capabilities:
 
 - take a look at the [/sdk](SDK Reference)
-- learn how to use [/core/1/koncorde](Koncorde) to create incredibly fine-grained and blazing-fast subscriptions
+- learn how to use [/core/1/guides/cookbooks/realtime-api](Koncorde) to create incredibly fine-grained and blazing-fast subscriptions
 - follow our guide to learn how to implement [/core/1/guides/essentials/user-authentication/#local-strategy](basic authentication)
 - follow our guide to learn how to implement [/core/1/guides/essentials/security/](manage users and setup fine-grained access control)

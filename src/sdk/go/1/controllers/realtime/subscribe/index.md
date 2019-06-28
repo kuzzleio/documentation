@@ -2,7 +2,7 @@
 code: true
 type: page
 title: Subscribe
-description: Subscribe to real-time notifications
+description: Subscribes to real-time notifications
 ---
 
 # Subscribe
@@ -27,7 +27,7 @@ func (r *Realtime) Subscribe(
 | ------------ | ------------------------------------------ | --------------------------------------------------------------- |
 | `index`      | <pre>string</pre>                          | Index name                                                      |
 | `collection` | <pre>string</pre>                          | Collection name                                                 |
-| `filters`    | <pre>json.RawMessage</pre>                 | A set of filters following [Koncorde syntax](/core/1/koncorde/) |
+| `filters`    | <pre>json.RawMessage</pre>                 | A set of filters following [Koncorde syntax](/core/1/guides/cookbooks/realtime-api/) |
 | `listener`   | <pre>chan<- types.NotificationResult</pre> | Channel receiving the notification                              |
 | `options`    | <pre>types.RoomOptions</pre>               | A struct containing subscription options                        |
 

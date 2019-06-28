@@ -67,11 +67,14 @@ redirections:
 
   # Koncorde
   - from: koncorde
-    to: core/1/koncorde
+    to: core/1/guides/cookboks/realtime-api
 
   # Plugin essentials
   - from: plugins/1/essentials/available-plugins
-    to: core/1/plugins/essentials/available-plugins
+    to: officials-plugins
+    
+  - from: core/1/plugins/essentials/available-plugins
+    to: officials-plugins    
 
   - from: plugins/1/essentials/getting-started
     to: core/1/plugins/essentials/getting-started
@@ -96,6 +99,9 @@ redirections:
     to: core/1/plugins/guides/pipes
 
   - from: plugins/1/strategies
+    to: core/1/plugins/guides/strategies
+
+  - from: core/1/plugins/essentials/getting-started/adding-authentication-strategy
     to: core/1/plugins/guides/strategies
 
   # Plugin context
@@ -131,7 +137,7 @@ redirections:
 
   # JS 6 essentials
   - from: sdk-reference/js/6/getting-started
-    to: sdk/js/6/essentials/getting-started
+    to: sdk/js/6/getting-started
 
   - from: sdk-reference/js/6/error-handling
     to: sdk/js/6/essentials/error-handling
@@ -526,7 +532,7 @@ redirections:
     to: core/1/guides/code-examples/dbsearch/javascript
 
   - from: guide/essentials/plugins
-    to: core/1/plugins/essentials/available-plugins
+    to: core/1/plugins/essentials/
 
   - from: guide/kuzzle-depth
     to: core/1/guides/kuzzle-depth

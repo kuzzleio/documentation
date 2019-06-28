@@ -56,7 +56,7 @@ kbd {
     font-weight: 300;
     letter-spacing: -0.01em;
     line-height: 1.3;
-    
+
     code {
       font-size: ms(3);
     }
@@ -147,9 +147,33 @@ kbd {
   }
 
   // Code blocks
-  pre > code{
-    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+  .code-block {
     background-color: $md-code-background;
+    border-radius: 0.2rem;
+
+    div[class*='language-'] {
+      position: relative;
+
+      .highlight-lines {
+        position: absolute;
+        padding: 1.05rem 0rem;
+      }
+    }
+  }
+
+  .highlight-lines {
+    width: 100%;
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+    font-size: 1.4rem;
+    line-height: 23px;
+
+    .highlighted {
+      background-color: $md-code-background-highlighted;
+    }
+  }
+
+  pre > code {
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
     font-size: 1.4rem;
     direction: ltr;
     color: white;
@@ -158,13 +182,12 @@ kbd {
       white-space: pre-wrap;
     }
   }
-  
+
   // Inline code blocks, correct relative ems for smaller font size
   code {
     $correct: 1 / 0.85;
     padding: 3px;
     border-radius: 0.2rem;
-    background-color: $md-code-background-inline;
     color: black;
     font-weight: normal;
     // Remove box-shadows for print
@@ -197,7 +220,6 @@ kbd {
       margin: 0;
       padding: 1.05rem 1.2rem;
       padding-bottom: 5px;
-      background-color: $md-code-background;
       font-size: inherit;
       box-shadow: none;
       box-decoration-break: none;

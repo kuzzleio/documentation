@@ -8,7 +8,7 @@ title: Koncorde
 
 <SinceBadge version="1.6.0" />
 
-Instantiates a new [Koncorde](/core/1/koncorde) engine.
+Instantiates a new [Koncorde](/core/1/guides/cookbooks/realtime-api) engine.
 
 ---
 
@@ -88,7 +88,7 @@ normalize(index, collection, filters);
 | ------------ | ----------------- | ----------------------------------------------- |
 | `index`      | <pre>string</pre> | Index name                                      |
 | `collection` | <pre>string</pre> | Collection name                                 |
-| `filters`    | <pre>object</pre> | Filters, in [Koncorde](/core/1/koncorde) format |
+| `filters`    | <pre>object</pre> | Filters, in [Koncorde](/core/1/guides/cookbooks/realtime-api) format |
 
 ### Return
 
@@ -123,7 +123,7 @@ register(index, collection, filters);
 | ------------ | ----------------- | ----------------------------------------------- |
 | `index`      | <pre>string</pre> | Index name                                      |
 | `collection` | <pre>string</pre> | Collection name                                 |
-| `filters`    | <pre>object</pre> | Filters, in [Koncorde](/core/1/koncorde) format |
+| `filters`    | <pre>object</pre> | Filters, in [Koncorde](/core/1/guides/cookbooks/realtime-api) format |
 
 ### Return
 
@@ -232,7 +232,7 @@ validate(filters);
 
 | Arguments | Type              | Description                                     |
 | --------- | ----------------- | ----------------------------------------------- |
-| `filters` | <pre>object</pre> | Filters, in [Koncorde](/core/1/koncorde) format |
+| `filters` | <pre>object</pre> | Filters, in [Koncorde](/core/1/guides/cookbooks/realtime-api) format |
 
 ### Return
 
