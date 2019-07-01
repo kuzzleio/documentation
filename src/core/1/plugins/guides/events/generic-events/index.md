@@ -19,7 +19,7 @@ class PipePlugin {
 
   init(customConfig, context) {
     this.pipes = {
-      'generic:document:<event>': async (documents, request) => {
+      'generic:document:<event>': (documents, request) => {
         // some random change on documents
 
         return documents;
@@ -32,12 +32,12 @@ class PipePlugin {
 
 ---
 
-## Event: 'generic:document:beforeWrite'
+## generic:document:beforeWrite
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | documents | `Array` | Array of documents (containing a document's `_id` and `_source` fields) |
-| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+| request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
 `generic:document:beforeWrite` generic events allows to intercept before all the actions related to document writing.
 
@@ -48,7 +48,7 @@ class PipePlugin {
 
   init(customConfig, context) {
     this.pipes = {
-      'generic:document:beforeWrite': async documents => {
+      'generic:document:beforeWrite': documents => {
         // some random change
         documents[0]._source.foo = 'bar';
 
@@ -61,19 +61,19 @@ class PipePlugin {
 ```
 
 ### Associated controller actions:
-- [`document:create`](/core/1/api/controllers/document/create/)
-- [`document:createOrReplace`](/core/1/api/controllers/document/create-or-replace/)
-- [`document:mCreate`](/core/1/api/controllers/document/m-create/)
-- [`document:mCreateOrReplace`](/core/1/api/controllers/document/m-create-or-replace/)
-- [`document:mReplace`](/core/1/api/controllers/document/m-replace/)
-- [`document:replace`](/core/1/api/controllers/document/replace/)
+- [document:create](/core/1/api/controllers/document/create/)
+- [document:createOrReplace](/core/1/api/controllers/document/create-or-replace/)
+- [document:mCreate](/core/1/api/controllers/document/m-create/)
+- [document:mCreateOrReplace](/core/1/api/controllers/document/m-create-or-replace/)
+- [document:mReplace](/core/1/api/controllers/document/m-replace/)
+- [document:replace](/core/1/api/controllers/document/replace/)
 
-## Event: 'generic:document:afterWrite'
+## generic:document:afterWrite
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | documents | `Array` | Array of documents (containing a document's `_id` and `_source` fields) |
-| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+| request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
 `generic:document:afterWrite` generic events allows to intercept after all the actions related to document writing.
 
@@ -84,7 +84,7 @@ class PipePlugin {
 
   init(customConfig, context) {
     this.pipes = {
-      'generic:document:afterWrite': async documents => {
+      'generic:document:afterWrite': documents => {
         // some random change
         documents[0]._source.foo = 'bar';
 
@@ -97,20 +97,20 @@ class PipePlugin {
 ```
 
 ### Associated controller actions:
-- [`document:create`](/core/1/api/controllers/document/create/)
-- [`document:createOrReplace`](/core/1/api/controllers/document/create-or-replace/)
-- [`document:mCreate`](/core/1/api/controllers/document/m-create/)
-- [`document:mCreateOrReplace`](/core/1/api/controllers/document/m-create-or-replace/)
-- [`document:mReplace`](/core/1/api/controllers/document/m-replace/)
-- [`document:replace`](/core/1/api/controllers/document/replace/)
+- [document:create](/core/1/api/controllers/document/create/)
+- [document:createOrReplace](/core/1/api/controllers/document/create-or-replace/)
+- [document:mCreate](/core/1/api/controllers/document/m-create/)
+- [document:mCreateOrReplace](/core/1/api/controllers/document/m-create-or-replace/)
+- [document:mReplace](/core/1/api/controllers/document/m-replace/)
+- [document:replace](/core/1/api/controllers/document/replace/)
 
 
-## Event: 'generic:document:beforeUpdate'
+## generic:document:beforeUpdate
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | documents | `Array` | Array of documents (containing a document's `_id` and `_source` fields) |
-| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+| request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
 `generic:document:beforeUpdate` generic events allows to intercept before all the actions related to document updating.
 
@@ -121,7 +121,7 @@ class PipePlugin {
 
   init(customConfig, context) {
     this.pipes = {
-      'generic:document:beforeUpdate': async documents => {
+      'generic:document:beforeUpdate': documents => {
         // some random change
         documents[0]._source.foo = 'bar';
 
@@ -134,16 +134,16 @@ class PipePlugin {
 ```
 
 ### Associated controller actions:
-- [`document:update`](/core/1/api/controllers/document/update/)
-- [`document:mUpdate`](/core/1/api/controllers/document/m-update/)
+- [document:update](/core/1/api/controllers/document/update/)
+- [document:mUpdate](/core/1/api/controllers/document/m-update/)
 
 
-## Event: 'generic:document:afterUpdate'
+## generic:document:afterUpdate
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | documents | `Array` | Array of documents (containing a document's `_id` and `_source` fields) |
-| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+| request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
 `generic:document:afterUpdate` generic events allows to intercept after all the actions related to document updating.
 
@@ -154,7 +154,7 @@ class PipePlugin {
 
   init(customConfig, context) {
     this.pipes = {
-      'generic:document:afterUpdate': async documents => {
+      'generic:document:afterUpdate': documents => {
         // some random change
         documents[0]._source.foo = 'bar';
 
@@ -167,16 +167,16 @@ class PipePlugin {
 ```
 
 ### Associated controller actions:
-- [`document:update`](/core/1/api/controllers/document/update/)
-- [`document:mUpdate`](/core/1/api/controllers/document/m-update/)
+- [document:update](/core/1/api/controllers/document/update/)
+- [document:mUpdate](/core/1/api/controllers/document/m-update/)
 
 
-## Event: 'generic:document:beforeDelete'
+## generic:document:beforeDelete
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | documents | `Array` | Array of documents (containing document's `_id`) |
-| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+| request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
 `generic:document:beforeDelete` generic events allows to intercept before all the actions related to document deleting.
 
@@ -187,7 +187,7 @@ class PipePlugin {
 
   init(customConfig, context) {
     this.pipes = {
-      'generic:document:beforeDelete': async documents => {
+      'generic:document:beforeDelete': documents => {
         // some random change
         documents[0]._id += 'foo';
 
@@ -200,16 +200,16 @@ class PipePlugin {
 ```
 
 ### Associated controller actions:
-- [`document:delete`](/core/1/api/controllers/document/delete/)
-- [`document:mDelete`](/core/1/api/controllers/document/m-delete/)
+- [document:delete](/core/1/api/controllers/document/delete/)
+- [document:mDelete](/core/1/api/controllers/document/m-delete/)
 
 
-## Event: 'generic:document:afterDelete'
+## generic:document:afterDelete
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | documents | `Array` | Array of documents (containing document's `_id`) |
-| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+| request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
 `generic:document:afterDelete` generic events allows to intercept after all the actions related to document deleting.
 
@@ -220,7 +220,7 @@ class PipePlugin {
 
   init(customConfig, context) {
     this.pipes = {
-      'generic:document:afterDelete': async documents => {
+      'generic:document:afterDelete': documents => {
         // some random change
         documents[0]._id += 'foo';
 
@@ -233,17 +233,17 @@ class PipePlugin {
 ```
 
 ### Associated controller actions:
-- [`document:delete`](/core/1/api/controllers/document/delete/)
-- [`document:mDelete`](/core/1/api/controllers/document/m-delete/)
-- [`document:deleteByQuery`](/core/1/api/controllers/document/delete-by-query/)
+- [document:delete](/core/1/api/controllers/document/delete/)
+- [document:mDelete](/core/1/api/controllers/document/m-delete/)
+- [document:deleteByQuery](/core/1/api/controllers/document/delete-by-query/)
 
 
-## Event: 'generic:document:beforeGet'
+## generic:document:beforeGet
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | documents | `Array` | Array of documents (containing document's `_id`) |
-| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+| request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
 `generic:document:beforeGet` generic events allows to intercept before all the actions related to document getting.
 
@@ -254,7 +254,7 @@ class PipePlugin {
 
   init(customConfig, context) {
     this.pipes = {
-      'generic:document:beforeGet': async documents => {
+      'generic:document:beforeGet': documents => {
         // some random change
         documents[0]._id += 'foo';
 
@@ -267,16 +267,16 @@ class PipePlugin {
 ```
 
 ### Associated controller actions:
-- [`document:get`](/core/1/api/controllers/document/get/)
-- [`document:mGet`](/core/1/api/controllers/document/m-get/)
+- [document:get](/core/1/api/controllers/document/get/)
+- [document:mGet](/core/1/api/controllers/document/m-get/)
 
 
-## Event: 'generic:document:afterGet'
+## generic:document:afterGet
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
 | documents | `Array` | Array of documents (containing document's `_id`) |
-| request | [`Request`](/core/1/plugins/plugin-context/constructors/request/#request) | The normalized API request |
+| request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
 `generic:document:afterGet` generic events allows to intercept after all the actions related to document getting.
 
@@ -287,7 +287,7 @@ class PipePlugin {
 
   init(customConfig, context) {
     this.pipes = {
-      'generic:document:beforeGet': async documents => {
+      'generic:document:beforeGet': documents => {
         // some random change
         documents[0]._id += 'foo';
 
@@ -300,6 +300,6 @@ class PipePlugin {
 ```
 
 ### Associated controller actions:
-- [`document:get`](/core/1/api/controllers/document/get/)
-- [`document:mGet`](/core/1/api/controllers/document/m-get/)
-- [`document:search`](/core/1/api/controllers/document/search/)
+- [document:get](/core/1/api/controllers/document/get/)
+- [document:mGet](/core/1/api/controllers/document/m-get/)
+- [document:search](/core/1/api/controllers/document/search/)
