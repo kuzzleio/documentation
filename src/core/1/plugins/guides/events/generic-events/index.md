@@ -178,7 +178,7 @@ class PipePlugin {
 | documents | `Array` | Array of documents (containing document `_id`) |
 | request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
-`generic:document:beforeDelete` generic events allows to intercept before all the actions related to document deleting.
+`generic:document:beforeDelete` generic events allow to intercept the Request lifecycle before all the actions related to document deleting.
 
 ### Example
 
