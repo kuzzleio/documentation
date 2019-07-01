@@ -215,7 +215,7 @@ args.myDocuments = [
 
 ##### SEARCH
 
-The `search` action type performs a search on the persistence layer and returns the resulting documents. It is a typical [document search](/core/1/guides/essentials/persisted/#document-search). For example:
+The `search` action type performs a search on the persistence layer and returns the resulting documents. It is a typical [document search](/core/1/guides/essentials/store-access-data/#document-search). For example:
 
 ```js
 {
