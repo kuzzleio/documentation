@@ -242,7 +242,7 @@ class PipePlugin {
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| documents | `Array` | Array of documents (containing document's `_id`) |
+| documents | `Array` | Array of documents (containing document `_id`) |
 | request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
 `generic:document:beforeGet` generic events allows to intercept before all the actions related to document getting.
