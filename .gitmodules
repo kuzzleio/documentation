@@ -7,6 +7,9 @@
 [submodule ".sdk-repos/sdk-android-v3"]
 	path = .sdk-repos/sdk-android-v3
 	url = https://github.com/kuzzleio/sdk-android.git
+[submodule ".sdk-repos/sdk-javascript-v6"]
+	path = .sdk-repos/sdk-javascript-v6
+	url = https://github.com/kuzzleio/sdk-javascript.git
 [submodule ".sdk-repos/sdk-php-v3"]
 	path = .sdk-repos/sdk-php-v3
 	url = https://github.com/kuzzleio/sdk-php.git
