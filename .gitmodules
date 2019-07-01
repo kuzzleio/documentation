@@ -7,6 +7,9 @@
 [submodule ".sdk-repos/sdk-javascript-v6"]
 	path = .sdk-repos/sdk-javascript-v6
 	url = https://github.com/kuzzleio/sdk-javascript.git
+[submodule ".sdk-repos/sdk-php-v3"]
+	path = .sdk-repos/sdk-php-v3
+	url = https://github.com/kuzzleio/sdk-php.git
 [submodule ".plugin-repos/kuzzle-plugin-cloudinary-v1"]
 	path = .plugin-repos/kuzzle-plugin-cloudinary-v1
 	url = https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
