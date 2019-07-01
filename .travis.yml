@@ -34,6 +34,7 @@ jobs:
       name: Lint and check for dead links
       language: ruby
       script:
+        - git submodule update --init
         - gem install typhoeus
         - HYDRA_MAX_CONCURRENCY=50 ruby check_link.rb -p src/
 
