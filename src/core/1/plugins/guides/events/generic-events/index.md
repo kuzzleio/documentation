@@ -145,7 +145,7 @@ class PipePlugin {
 | documents | `Array` | Array of documents (containing a document `_id` and `_source` fields) |
 | request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
-`generic:document:afterUpdate` generic events allows to intercept after all the actions related to document updating.
+`generic:document:afterUpdate` generic events allos to intercept the Request lifecycle after all the actions related to document updating.
 
 ### Example
 
