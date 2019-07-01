@@ -15,7 +15,9 @@ Kuzzle ships with a [Command line interface](https://en.wikipedia.org/wiki/Comma
 - Reset Kuzzle internal data _(use with caution!)_
 - Reset user created indexes _(use with caution!)_
 - Reset users, roles and profiles _(use with caution!)_
+
 * Load mappings, fixtures, roles, profiles and users
+
 - Clear Kuzzle cache
 - Diagnose the Kuzzle installation
 
@@ -459,16 +461,16 @@ The `loadMappings` command applies mappings directly into the storage layer.
 
 **Notes:**
 
-* The mapping can contain any number of index and collection configurations.
-* Field definitions follow the [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html) mapping format.
-* If an index or collection does not exist, it will be created automatically.
-* Mappings are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
+- The mapping can contain any number of index and collection configurations.
+- Field definitions follow the [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/mapping.html) mapping format.
+- If an index or collection does not exist, it will be created automatically.
+- Mappings are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
 
 ---
 
 ## loadFixtures
 
-{{{since "1.6.6"}}}
+<SinceBadge version="1.6.6" />
 
 ```bash
 ./bin/kuzzle loadFixtures <file>
@@ -493,10 +495,10 @@ The `loadFixtures` command loads fixtures directly into the storage layer.
 
 **Notes:**
 
-* The fixtures can contain any number of index and collection configurations.
-* Each collection contains an array of data to load, just like the [bulk:import](/core/1/api/controllers/bulk/import) method.
-* If an index or collection does not exist, the load will fail.
-* Fixtures are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
+- The fixtures can contain any number of index and collection configurations.
+- Each collection contains an array of data to load, just like the [bulk:import](/core/1/api/controllers/bulk/import) method.
+- If an index or collection does not exist, the load will fail.
+- Fixtures are loaded sequentially, one index/collection pair at a time. If a failure occurs, Kuzzle immediately interrupts the sequence.
 
 ---
 
@@ -514,9 +516,9 @@ The `loadSecurities` command loads roles, profiles and users directly into the s
 
 The roles, profiles and users definition follow the same structure as in the body parameter of the API:
 
- - [security:createRole](/core/1/api/controllers/security/create-role)
- - [security:createProfile](/core/1/api/controllers/security/create-profile)
- - [security:createUser](/core/1/api/controllers/security/create-user)
+- [security:createRole](/core/1/api/controllers/security/create-role)
+- [security:createProfile](/core/1/api/controllers/security/create-profile)
+- [security:createUser](/core/1/api/controllers/security/create-user)
 
 ### Securities file example
 
@@ -542,9 +544,9 @@ The roles, profiles and users definition follow the same structure as in the bod
 
 **Notes:**
 
-* The file can contain any number of roles, profiles and users.
-* If a role, profile or user already exists, it will be replaced.
-* Fixtures are loaded sequentially, first the roles, then the profiles and finally the users. If a failure occurs, Kuzzle immediately interrupts the sequence.
+- The file can contain any number of roles, profiles and users.
+- If a role, profile or user already exists, it will be replaced.
+- Fixtures are loaded sequentially, first the roles, then the profiles and finally the users. If a failure occurs, Kuzzle immediately interrupts the sequence.
 
 ## encryptSecrets
 

@@ -34,8 +34,9 @@ jobs:
       name: Lint and check for dead links
       language: ruby
       script:
-      - gem install typhoeus
-      - HYDRA_MAX_CONCURRENCY=50 ruby check_link.rb -p src/
+        - git submodule update --init
+        - gem install typhoeus
+        - HYDRA_MAX_CONCURRENCY=50 ruby check_link.rb -p src/
 
     # -------------------------------------------------------------------------
     # Snippets tests
@@ -91,7 +92,7 @@ jobs:
 
       script:
         - npm install
-        - npm run build
+        - ALGOLIA_INDEX=kuzzle-documentation-next npm run build
 
       deploy:
         provider: script

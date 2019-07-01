@@ -8,7 +8,7 @@ title: delete
 
 
 
-Deletes an [index](/core/1/guides/essentials/persisted/).
+Deletes an [index](/core/1/guides/essentials/store-access-data/).
 
 ---
 

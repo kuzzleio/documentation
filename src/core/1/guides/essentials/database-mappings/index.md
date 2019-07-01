@@ -170,7 +170,7 @@ curl -X GET -H "Content-Type: application/json"  "http://localhost:7512/nyc-open
 
 ## What Now?
 
-* Learn to work with [Persistent Data](/core/1/guides/essentials/persisted)
+* Learn to work with [Persistent Data](/core/1/guides/essentials/store-access-data)
 * Read our [Elasticsearch Cookbook](/core/1/guides/cookbooks/elasticsearch) to learn more about how querying works in Kuzzle
 * Use [document metadata](/core/1/guides/essentials/document-metadata) to find or recover documents
 * Keep track of data changes using [Real-time Notifications](/core/1/guides/essentials/real-time)

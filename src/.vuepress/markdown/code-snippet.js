@@ -1,4 +1,5 @@
 const { fs, path } = require('@vuepress/shared-utils');
+const fixIndents = require('fix-indents');
 
 module.exports = function snippet(md, options = {}) {
   const root = options.root || process.cwd();
@@ -47,12 +48,14 @@ module.exports = function snippet(md, options = {}) {
       rawPath = rawPath.replace(snippetId, '');
     }
 
+    // Extract line highligts (if present)
     let highlights = rawPath.match(/{.*}/);
     if (highlights && highlights[0]) {
       highlights = highlights[0];
       rawPath = rawPath.replace(highlights, '');
     }
 
+    // Extract language highlighting (if present)
     let language = rawPath.match(/\[([a-z]*)\]/);
     if (language && language[0]) {
       rawPath = rawPath.replace(language[0], '');
@@ -83,6 +86,11 @@ module.exports = function snippet(md, options = {}) {
     // Delete snippet extraction tags (if any)
     content = content.replace(/.*snippet:start(:\d+)?.*\n/g, '');
     content = content.replace(/.*snippet:end.*\n/g, '');
+
+    // Fix indentation in code content
+    content = fixIndents(content, {
+      countSpaces: 2
+    });
 
     // Extract meta (line highlight)
     const fileExtension = filename.split('.').pop();

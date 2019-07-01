@@ -40,7 +40,7 @@ Next, instantiate a client that automatically connects to Kuzzle via WebSocket. 
 
 Finally, we will add the code that will access Kuzzle to create a new index 'playground' and a new collection 'mycollection' that we will use to store data later on.
 
-<<< ./snippets/init-sample.js
+<<< ./snippets/init-sample.js{3,5,6,7,8}
 
 Your `first-step.js` file should now look like this:
 
