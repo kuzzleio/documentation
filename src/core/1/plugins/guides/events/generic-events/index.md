@@ -211,7 +211,7 @@ class PipePlugin {
 | documents | `Array` | Array of documents (containing document's `_id`) |
 | request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
-`generic:document:afterDelete` generic events allows to intercept after all the actions related to document deleting.
+`generic:document:afterDelete` generic events allow to intercept the Request lifecycle after all the actions related to document deleting.
 
 ### Example
 
