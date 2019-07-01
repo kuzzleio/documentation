@@ -7,7 +7,7 @@ order: 150
 
 # Generic Events
 
-Some actions in the document controller triggers generic events. Generic events are used to apply modifications on the documents in the request or result of these actions.
+Some actions in the document controller trigger generic events. Generic events are used to apply modifications on the documents in the request or result of these actions.
 
 Generic "before" events (`generic:document:before*`) are triggered **before** the regular `document:before*` event.  
 Generic "after" events (`generic:document:after*`) are triggered **after** the regular `document:after*` event.
