@@ -112,7 +112,7 @@ class PipePlugin {
 | documents | `Array` | Array of documents (containing a document's `_id` and `_source` fields) |
 | request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
-`generic:document:beforeUpdate` generic events allows to intercept before all the actions related to document updating.
+`generic:document:beforeUpdate` generic events allow to intercept the Request lifecycle before all the actions related to document updating.
 
 ### Example
 
