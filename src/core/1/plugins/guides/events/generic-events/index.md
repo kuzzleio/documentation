@@ -72,7 +72,7 @@ class PipePlugin {
 
 | Arguments | Type                                                           | Description                |
 | --------- | -------------------------------------------------------------- | -------------------------- |
-| documents | `Array` | Array of documents (containing a document's `_id` and `_source` fields) |
+| documents | `Array` | Array of documents (containing a document `_id` and `_source` fields) |
 | request | `Request` | [Kuzzle API Request](/core/1/plugins/plugin-context/constructors/request/#request) |
 
 `generic:document:afterWrite` generic events allows to intercept after all the actions related to document writing.
