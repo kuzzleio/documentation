@@ -190,6 +190,7 @@ kbd {
     border-radius: 0.2rem;
     color: black;
     font-weight: normal;
+    background-color: $md-code-background-inline;
     // Remove box-shadows for print
     @media print {
       box-shadow: none;
@@ -216,6 +217,7 @@ kbd {
 
     // Actual container with code, overflowing
     > code {
+      background-color: transparent;
       display: block;
       margin: 0;
       padding: 1.05rem 1.2rem;
