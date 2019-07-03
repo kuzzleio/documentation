@@ -8,4 +8,4 @@ description: This is an example
 
 # example
 
-<<< ./snippets/example.cs
+<<< ./snippets/example.cs[csharp]
