@@ -16,3 +16,6 @@
 [submodule ".plugin-repos/kuzzle-plugin-cloudinary-v1"]
 	path = .plugin-repos/kuzzle-plugin-cloudinary-v1
 	url = https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
+[submodule ".api-repos/api-koncorde-v1"]
+  path = .api-repos/api-koncorde-v1
+  url = https://github.com/kuzzleio/koncorde.git
