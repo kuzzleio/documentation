@@ -1,13 +1,13 @@
 <template>
   <div class="md-layout">
     <div class="overlay" :class="{hidden: !sidebarOpen}" @click="closeSidebar"></div>
-    <Header ref="header" @sidebar-open="openSidebar"/>
+    <Header ref="header" @sidebar-open="openSidebar" :links="links"/>
     <div ref="container" class="md-container">
       <!-- Main container -->
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           <!-- Main navigation -->
-          <Sidebar ref="sidebar" v-if="!$page.frontmatter.nosidebar" :sidebar-open="sidebarOpen"/>
+          <Sidebar ref="sidebar" v-if="!$page.frontmatter.nosidebar" :sidebar-open="sidebarOpen" :links="links"/>
           <!-- Table of contents -->
           <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
@@ -51,7 +51,43 @@ export default {
   data() {
     return {
       sidebarOpen: false,
-      sdkList
+      sdkList,
+      links: {
+        use: [
+          {
+            path: '/core/1/guides/',
+            generateLink: true,
+            label: 'Guides'
+          },
+          {
+            path: '/core/1/api/',
+            generateLink: true,
+            label: 'API'
+          },
+          {
+            path: '/sdk/',
+            generateLink: false,
+            label: 'SDK'
+          },
+          {
+            path: '/official-plugins/',
+            generateLink: false,
+            label: 'Plugins'
+          }
+        ],
+        extend: [
+          {
+            path: '/core/1/plugins/',
+            generateLink: true,
+            label: 'Write Plugins'
+          },
+          {
+            path: '/core/1/protocols/',
+            generateLink: true,
+            label: 'Write Protocols'
+          }
+        ]
+      }
     };
   },
   methods: {

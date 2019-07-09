@@ -36,7 +36,7 @@
             </div>
           </div>
            <div class="md-flex__cell md-flex__cell--stretch md-flex__cell--menu">
-            <Tabs/>
+            <Tabs :links="links"/>
           </div>
           <!-- Button to open search dialogue -->
           <div class="md-flex__cell md-flex__cell--shrink">
@@ -75,6 +75,7 @@ export default {
     Search,
     Tabs
   },
+  props: ['links'],
   name: 'Header',
   data() {
     return {

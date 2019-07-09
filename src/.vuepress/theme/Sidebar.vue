@@ -14,7 +14,7 @@
             <span>Kuzzle Documentation</span>
           </label>
 
-          <TabsMobile/>
+          <TabsMobile :links="links"/>
 
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
@@ -88,6 +88,10 @@ export default {
     TabsMobile
   },
   props: {
+    links: {
+      type: Object,
+      default: null
+    },
     sidebarOpen: {
       type: Boolean,
       default: false

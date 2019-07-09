@@ -3,62 +3,16 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-        <li class="md-tabs__group">
+        <li class="md-tabs__group" v-for="part of links">
           <p class="md-tabs__group-name">Use</p>
           <ul class="md-tabs__group-items">
-            <li class="md-tabs__item">
+            <li class="md-tabs__item" v-for="link of part">
               <router-link
-                :to="{path: generateLink('/core/1/guides/')}"
-                :class="{'md-tabs__link--active': $route.path.match('/core/1/guides/')}"
-                title="Guide"
+                :to="{path: link.generateLink? generateLink(link.path): link.path}"
+                :class="{'md-tabs__link--active': $route.path.match(link.path)}"
+                :title="link.label"
                 class="md-tabs__link"
-              >Guides</router-link>
-            </li>
-            <li class="md-tabs__item">
-              <router-link
-                :class="{'md-tabs__link--active': $route.path.match('/core/1/api/')}"
-                :to="{path: generateLink('/core/1/api/')}"
-                title="API"
-                class="md-tabs__link"
-              >API</router-link>
-            </li>
-            <li class="md-tabs__item">
-              <router-link
-                :class="{'md-tabs__link--active': $route.path.match('/sdk/')}"
-                :to="{path: '/sdk/'}"
-                title="SDK"
-                class="md-tabs__link"
-              >SDK</router-link>
-            </li>
-            <li class="md-tabs__item">
-              <!-- link to Official plugins page -->
-              <router-link
-                :class="{'md-tabs__link--active': $route.path.match('/official-plugins/')}"
-                :to="{path: '/official-plugins/'}"
-                title="Plugins"
-                class="md-tabs__link"
-              >Plugins</router-link>
-            </li>
-          </ul>
-        </li>
-        <li class="md-tabs__group">
-          <p class="md-tabs__group-name">Extend</p>
-          <ul class="md-tabs__group-items">
-            <li class="md-tabs__item">
-              <router-link
-                :class="{'md-tabs__link--active': $route.path.match('/core/1/plugins/')}"
-                :to="generateLink('/core/1/plugins/')"
-                title="Plugins"
-                class="md-tabs__link"
-              >Write Plugins</router-link>
-            </li>
-            <li class="md-tabs__item">
-              <router-link
-                :class="{'md-tabs__link--active': $route.path.match('/core/1/protocols/')}"
-                :to="generateLink('/core/1/protocols/')"
-                title="Protocols"
-                class="md-tabs__link"
-              >Write Protocols</router-link>
+              >{{ link.label }}</router-link>
             </li>
           </ul>
         </li>
@@ -71,8 +25,9 @@
 import { getValidLinkByRootPath } from '../util.js';
 
 export default {
+  props: ['links'],
   methods: {
-    startWith (str, start) {
+    startWith(str, start) {
       return str.indexOf(start) === 0;
     },
     generateLink(path) {
