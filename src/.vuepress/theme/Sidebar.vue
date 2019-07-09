@@ -13,9 +13,8 @@
             </span>
             <span>Kuzzle Documentation</span>
           </label>
-
           <TabsMobile/>
-
+          <SDKSelector v-if="$route.path.match(/^\/sdk\//)" :items="sdkList"/>
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
             <div v-for="item__1 in getPageChildren(root)">
@@ -82,8 +81,14 @@
 <script>
 import TabsMobile from './TabsMobile.vue';
 import { getPageChildren, getFirstValidChild, findRootNode } from '../util.js';
+import sdkList from '../sdk.json';
 
 export default {
+  data() {
+    return {
+      sdkList
+    }
+  },
   components: {
     TabsMobile
   },

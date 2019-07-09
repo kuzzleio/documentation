@@ -12,7 +12,7 @@
       >{{ currentLanguage ? currentLanguage.name : 'Select an SDK' }}</span>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
-    <ul class="selector-list">
+    <ul :class="`selector-list ${isListShowed? 'selector-list-opened': ''}` ">
       <li
         class="selector-list-item"
         v-for="item in items"
@@ -103,10 +103,13 @@ export default {
 .selector-list
   position: absolute
   width: 80%
+  overflow-y: scroll
   background-color: white
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
   padding: 0
   margin-top: 4px
+  &-opened
+    height: 200px
   &-item
     width: 100%
     list-style-type: none
