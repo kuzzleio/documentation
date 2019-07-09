@@ -14,7 +14,7 @@
             <span>Kuzzle Documentation</span>
           </label>
 
-          <TabsMobile :links="links" @closeSidebar="closeSidebar"/>
+          <TabsMobile :links="links" @closeSidebar="$emit('closeSidebar')"/>
 
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
@@ -43,7 +43,6 @@
                     </div>
                   </router-link>
                 </li>
-
                 <ul
                   v-if="$page.path.includes(item__2.path) && getPageChildren(item__2).length"
                   class="md-nav__list sub-menu"
@@ -55,6 +54,7 @@
                         :class="{'md-nav__item--code': item__3.frontmatter.code}"
                         :to="{path: item__3.path}"
                         :title="item__3.title"
+                        @click.native="$emit('closeSidebar')"
                       >
                         <span class="no_arrow">{{item__3.title}}</span>
                       </router-link>
@@ -64,6 +64,7 @@
                         :to="{path: item__3.path}"
                         :title="item__3.title"
                         class="md-nav__link"
+                        @click.native="$emit('closeSidebar')"
                         :class="{'md-nav__item--code': item__3.frontmatter.code}"
                       >
                         <span class="no_arrow">{{item__3.title}}</span>
@@ -104,9 +105,6 @@ export default {
     }
   },
   methods: {
-    closeSidebar() {
-      this.$emit('closeSidebar');
-    },
     getPageChildren(page) {
       return getPageChildren(page, this.$site.pages);
     },
