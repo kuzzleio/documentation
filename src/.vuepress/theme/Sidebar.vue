@@ -14,7 +14,7 @@
             <span>Kuzzle Documentation</span>
           </label>
 
-          <TabsMobile :links="links"/>
+          <TabsMobile :links="links" @closeSidebar="closeSidebar"/>
 
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
@@ -25,6 +25,7 @@
                 <li class="md-nav__item">
                   <router-link
                     class="md-nav__link"
+                    @click.native="!getPageChildren(item__2).length? $emit('closeSidebar'): null"
                     :class="{'md-nav__link--active': $page.path === item__2.path, 'md-nav__item--code': item__2.frontmatter.code == true}"
                     :to="{path: getFirstValidChild(item__2).path}"
                   >
@@ -103,6 +104,9 @@ export default {
     }
   },
   methods: {
+    closeSidebar() {
+      this.$emit('closeSidebar');
+    },
     getPageChildren(page) {
       return getPageChildren(page, this.$site.pages);
     },

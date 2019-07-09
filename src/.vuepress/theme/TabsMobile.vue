@@ -12,6 +12,7 @@
         class="md-source"
         data-md-state="done"
         style="display:inline-block;"
+        @click.native="$emit('closeSidebar')"
       >
         <div class="md-source__repository">{{ link.label }} </div>
       </router-link>
