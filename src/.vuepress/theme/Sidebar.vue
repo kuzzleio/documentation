@@ -22,7 +22,7 @@
               <li class="md-nav__separator">{{item__1.frontmatter.title}}</li>
 
               <div v-for="item__2 in getPageChildren(item__1)">
-                <li class="md-nav__item">
+                <li class="md-nav__item md-nav-title">
                   <div
                     class="md-nav__link"
                     @click="openOrRedirect(item__2)"
@@ -44,10 +44,11 @@
                 </li>
 
                 <ul
-                  v-if="openedSubmenu.includes(item__2.title) && getPageChildren(item__2).length"
                   class="md-nav__list sub-menu"
+                  :class="openedSubmenu.includes(item__2.title)? 'displaySubmenu': ''"
+                  :id="item__2.title"
                 >
-                  <div v-for="item__3 of getPageChildren(item__2)" class="md-nav__item">
+                  <div v-for="item__3 of getPageChildren(item__2)" class="md-nav__item" :id="item__3.title">
                     <li v-if="$page.path === item__3.path">
                       <router-link
                         class="md-nav__link--active"
@@ -93,10 +94,10 @@ export default {
       default: false
     }
   },
-    data() {
+  data() {
     return {
       openedSubmenu: ''
-    }
+    };
   },
   computed: {
     root() {
@@ -105,11 +106,21 @@ export default {
   },
   methods: {
     openOrRedirect(item__2) {
-      if (this.getPageChildren(item__2).length) {
-        this.openedSubmenu = this.openedSubmenu === item__2.title? '': item__2.title;
+      const childs = this.getPageChildren(item__2);
+      if (childs.length) {
+        if (this.openedSubmenu) {
+          document.getElementById(this.openedSubmenu).style.height = '0px';
+        }
+        if (this.openedSubmenu !== item__2.title) {
+          const size = document.getElementById(childs[0].title).offsetHeight;
+          document.getElementById(item__2.title).style.height = `${childs.length *
+            size}px`;
+        }
+        this.openedSubmenu =
+          this.openedSubmenu === item__2.title ? '' : item__2.title;
         return;
       }
-      this.$router.push(item__2.path)
+      this.$router.push(item__2.path);
     },
     getPageChildren(page) {
       return getPageChildren(page, this.$site.pages);
