@@ -9,12 +9,12 @@
         <nav class="md-nav md-nav--primary" data-md-level="0">
           <label class="md-nav__title md-nav__title--site mobile-only" for="drawer">
             <span class="md-nav__button md-logo">
-              <img src="/logo-min.png" width="48" height="48">
+              <img src="/logo-min.png" width="48" height="48" />
             </span>
             <span>Kuzzle Documentation</span>
           </label>
 
-          <TabsMobile/>
+          <TabsMobile />
 
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
@@ -25,7 +25,7 @@
                 <li class="md-nav__item md-nav-title">
                   <div
                     class="md-nav__link"
-                    @click="openOrRedirect(item__2)"
+                    @click="openOrRedirect(item__1, item__2)"
                     :class="{'md-nav__link--active': $page.path === item__2.path, 'md-nav__item--code': item__2.frontmatter.code == true}"
                   >
                     <div v-if="getPageChildren(item__2).length">
@@ -45,10 +45,14 @@
 
                 <ul
                   class="md-nav__list sub-menu"
-                  :class="openedSubmenu.includes(item__2.title)? 'displaySubmenu': ''"
-                  :id="item__2.title"
+                  :class="openedSubmenu.includes(getId([item__1.title, item__2.title]))? 'displaySubmenu': ''"
+                  :id="getId([item__1.title, item__2.title])"
                 >
-                  <div v-for="item__3 of getPageChildren(item__2)" class="md-nav__item" :id="item__3.title">
+                  <div
+                    v-for="item__3 of getPageChildren(item__2)"
+                    class="md-nav__item"
+                    :id="getId([item__1.title, item__2.title, item__3.title])"
+                  >
                     <li v-if="$page.path === item__3.path">
                       <router-link
                         class="md-nav__link--active"
@@ -105,22 +109,43 @@ export default {
     }
   },
   methods: {
-    openOrRedirect(item__2) {
+    getId(itemsTitle) {
+      return itemsTitle.reduce(
+        (id, item) => id + '_' + this.sanitize(item),
+        ''
+      );
+    },
+    sanitize(str) {
+      return str.replace(/ /g, '_');
+    },
+    openOrRedirect(item__1, item__2) {
       const childs = this.getPageChildren(item__2);
-      if (childs.length) {
-        if (this.openedSubmenu) {
-          document.getElementById(this.openedSubmenu).style.height = '0px';
-        }
-        if (this.openedSubmenu !== item__2.title) {
-          const size = document.getElementById(childs[0].title).offsetHeight;
-          document.getElementById(item__2.title).style.height = `${childs.length *
-            size}px`;
-        }
-        this.openedSubmenu =
-          this.openedSubmenu === item__2.title ? '' : item__2.title;
+
+      if (!childs.length) {
+        this.$router.push(item__2.path);
         return;
       }
-      this.$router.push(item__2.path);
+
+      if (this.openedSubmenu) {
+        const openedSubmenuId = this.sanitize(this.openedSubmenu);
+        document.getElementById(openedSubmenuId).style.height = '0px';
+      }
+
+      const item2Id = this.getId([item__1.title, item__2.title]);
+      const item3Id = this.getId([
+        item__1.title,
+        item__2.title,
+        childs[0].title
+      ]);
+
+      if (this.openedSubmenu !== item2Id) {
+        const childSize = document.getElementById(item3Id).offsetHeight;
+        const menuHeight = `${childs.length * childSize}px`;
+        document.getElementById(item2Id).style.height = menuHeight;
+      }
+
+      this.openedSubmenu = this.openedSubmenu === item2Id ? '' : item2Id;
+      return;
     },
     getPageChildren(page) {
       return getPageChildren(page, this.$site.pages);
