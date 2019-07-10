@@ -24,7 +24,7 @@
             <label
               class="md-icon md-icon--menu md-header-nav__button"
               for="drawer"
-              @click="$emit('sidebar-open')"
+              @click="$emit('openSidebar')"
             ></label>
           </div>
 

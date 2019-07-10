@@ -1,7 +1,7 @@
 <template>
   <div class="md-layout">
     <div class="overlay" :class="{hidden: !sidebarOpen}" @click="closeSidebar"></div>
-    <Header ref="header" @sidebar-open="openSidebar" :links="links"/>
+    <Header ref="header" @openSidebar="openSidebar" :links="links"/>
     <div ref="container" class="md-container">
       <!-- Main container -->
       <main class="md-main">
