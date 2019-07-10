@@ -7,7 +7,7 @@
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           <!-- Main navigation -->
-          <Sidebar ref="sidebar" v-if="!$page.frontmatter.nosidebar" :sidebar-open="sidebarOpen" @closeSidebar="closeSidebar" :links="links"/>
+          <Sidebar ref="sidebar" v-if="!$page.frontmatter.nosidebar" :sidebarOpen="sidebarOpen" @closeSidebar="closeSidebar" :links="links"/>
           <!-- Table of contents -->
           <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
