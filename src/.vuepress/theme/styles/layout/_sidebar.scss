@@ -16,6 +16,11 @@ $md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container'
   padding: 2.4rem 0;
   overflow: hidden;
 
+  &--selector {
+    @include break-from-device(tablet landscape) {
+      display: none;
+    }
+  }
   // Hide for print
   @media print {
     display: none;
