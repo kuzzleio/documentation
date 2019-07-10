@@ -23,14 +23,14 @@
 
               <div v-for="item__2 in getPageChildren(item__1)">
                 <li class="md-nav__item">
-                  <router-link
+                  <div
                     class="md-nav__link"
+                    @click="openOrRedirect(item__2)"
                     :class="{'md-nav__link--active': $page.path === item__2.path, 'md-nav__item--code': item__2.frontmatter.code == true}"
-                    :to="{path: getFirstValidChild(item__2).path}"
                   >
                     <div v-if="getPageChildren(item__2).length">
                       <i
-                        v-if="$page.path.includes(item__2.path)"
+                        v-if="openedSubmenu.includes(item__2.title)"
                         class="fa fa-caret-down"
                         aria-hidden="true"
                       ></i>
@@ -40,11 +40,11 @@
                     <div v-else>
                       <span class="no_arrow">{{item__2.title}}</span>
                     </div>
-                  </router-link>
+                  </div>
                 </li>
 
                 <ul
-                  v-if="$page.path.includes(item__2.path) && getPageChildren(item__2).length"
+                  v-if="openedSubmenu.includes(item__2.title) && getPageChildren(item__2).length"
                   class="md-nav__list sub-menu"
                 >
                   <div v-for="item__3 of getPageChildren(item__2)" class="md-nav__item">
@@ -93,12 +93,24 @@ export default {
       default: false
     }
   },
+    data() {
+    return {
+      openedSubmenu: ''
+    }
+  },
   computed: {
     root() {
       return findRootNode(this.$page, this.$site.pages);
     }
   },
   methods: {
+    openOrRedirect(item__2) {
+      if (this.getPageChildren(item__2).length) {
+        this.openedSubmenu = this.openedSubmenu === item__2.title? '': item__2.title;
+        return;
+      }
+      this.$router.push(item__2.path)
+    },
     getPageChildren(page) {
       return getPageChildren(page, this.$site.pages);
     },
