@@ -109,7 +109,7 @@ export default {
   padding: 0
   margin-top: 4px
   &-closed
-   display: none
+    display: none
   &-opened
     height: 200px
   &-item
