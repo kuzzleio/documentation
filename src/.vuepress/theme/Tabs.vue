@@ -8,7 +8,7 @@
           <ul class="md-tabs__group-items">
             <li class="md-tabs__item" v-for="link of part">
               <router-link
-                :to="{path: link.generateLink? generateLink(link.path): link.path}"
+                :to="getPath(link)"
                 :class="{'md-tabs__link--active': $route.path.match(link.path)}"
                 :title="link.label"
                 class="md-tabs__link"
@@ -27,6 +27,9 @@ import { getValidLinkByRootPath } from '../util.js';
 export default {
   props: ['links'],
   methods: {
+    getPath(link) {
+      return {path: link.generateLink? this.generateLink(link.path): link.path};
+    },
     startWith(str, start) {
       return str.indexOf(start) === 0;
     },

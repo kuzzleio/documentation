@@ -9,12 +9,12 @@
         <nav class="md-nav md-nav--primary" data-md-level="0">
           <label class="md-nav__title md-nav__title--site mobile-only" for="drawer">
             <span class="md-nav__button md-logo">
-              <img src="/logo-min.png" width="48" height="48">
+              <img src="/logo-min.png" width="48" height="48" />
             </span>
             <span>Kuzzle Documentation</span>
           </label>
 
-          <TabsMobile :links="links" @closeSidebar="$emit('closeSidebar')"/>
+          <TabsMobile :links="links" @closeSidebar="$emit('closeSidebar')" />
 
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
@@ -25,7 +25,7 @@
                 <li class="md-nav__item">
                   <router-link
                     class="md-nav__link"
-                    @click.native="!getPageChildren(item__2).length? $emit('closeSidebar'): null"
+                    @click.native="closeSidebar(item__2)"
                     :class="{'md-nav__link--active': $page.path === item__2.path, 'md-nav__item--code': item__2.frontmatter.code == true}"
                     :to="{path: getFirstValidChild(item__2).path}"
                   >
@@ -105,6 +105,11 @@ export default {
     }
   },
   methods: {
+    closeSidebar(item) {
+      if (!this.getPageChildren(item).length) {
+        this.$emit('closeSidebar');
+      }
+    },
     getPageChildren(page) {
       return getPageChildren(page, this.$site.pages);
     },

@@ -7,7 +7,7 @@
       <p class="md-nav__mobile-group-name">{{ part }}</p>
       <router-link
         v-for="link of links[part]"
-        :to="{path: link.generateLink? generateLink(link.path): link.path}"
+        :to="getPath(link)"
         :title="link.label"
         class="md-source"
         data-md-state="done"
@@ -32,6 +32,9 @@ export default {
     };
   },
   methods: {
+    getPath(link) {
+      return {path: link.generateLink? this.generateLink(link.path): link.path};
+    },
     generateLink(path) {
       return getValidLinkByRootPath(path, this.$site.pages);
     }
