@@ -1,9 +1,5 @@
 <template>
   <div class="md-nav__source mobile-only md-nav__mobile-color">
-    <div v-if="$route.path.match('sdk-reference')" class="selector-container">
-      <SDKSelector :items="sdkList"/>
-    </div>
-
     <p class="md-nav__mobile-group-name">Use</p>
     <router-link
       :to="{path: generateLink('/core/1/guides/')}"
