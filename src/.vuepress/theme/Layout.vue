@@ -43,6 +43,7 @@ import TOC from './TOC.vue';
 import ContentFeedback from './ContentFeedback.vue';
 import Footer from './Footer.vue';
 import sdkList from '../sdk.json';
+import links from '../links.json'
 
 const { getFirstValidChild } = require('../util.js');
 
@@ -52,42 +53,7 @@ export default {
     return {
       sidebarOpen: false,
       sdkList,
-      links: {
-        use: [
-          {
-            path: '/core/1/guides/',
-            generateLink: true,
-            label: 'Guides'
-          },
-          {
-            path: '/core/1/api/',
-            generateLink: true,
-            label: 'API'
-          },
-          {
-            path: '/sdk/',
-            generateLink: false,
-            label: 'SDK'
-          },
-          {
-            path: '/official-plugins/',
-            generateLink: false,
-            label: 'Plugins'
-          }
-        ],
-        extend: [
-          {
-            path: '/core/1/plugins/',
-            generateLink: true,
-            label: 'Write Plugins'
-          },
-          {
-            path: '/core/1/protocols/',
-            generateLink: true,
-            label: 'Write Protocols'
-          }
-        ]
-      }
+      links
     };
   },
   methods: {
