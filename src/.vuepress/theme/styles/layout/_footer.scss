@@ -96,6 +96,36 @@
     font-size: 1.5rem;
   }
 }
+.md-footer-external {
+  background-color: $clr-grey-300;
+  width: 100%;
+  padding: 0.4rem;
+  text-align: center;
+  margin: 0px;
+  list-style-type: disc outside;
+  
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 2rem;
+    width: 192px;
+    &__title {
+      color: $clr-black;
+      font-weight: bold;
+    }
+    &__img {
+      display: block;
+      height: 64px;
+      width: 64px;
+      margin: auto;
+    }
+    &__description {
+      display: block;
+      word-wrap: break-word;
+      color: $clr-grey-600;
+    }
+  }
+}
 
 // Non-navigational information
 .md-footer-meta {
