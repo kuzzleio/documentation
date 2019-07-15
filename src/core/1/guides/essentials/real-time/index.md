@@ -242,7 +242,7 @@ These filters are specified only on the client side and do not require server-si
 They are sent in the body of the request [realtime:subscribe](/core/1/api/controllers/realtime/subscribe)
 :::
 
-A filter is composed of [term](/core/1/guides/cookbooks/realtime-api//terms) that can be composed with [operands](/core/1/guides/cookbooks/realtime-api//operands).
+A filter is composed of [term](/core/1/guides/cookbooks/realtime-api/terms) that can be composed with [operands](/core/1/guides/cookbooks/realtime-api/operands).
 
 For example if I want to receive only drivers with the `B` license:
 ```json
@@ -257,7 +257,7 @@ For example if I want to receive only drivers with the `B` license:
 }
 ```
 
-It is also possible to combine [terms](/core/1/guides/cookbooks/realtime-api//terms) between them with [operands](/core/1/guides/cookbooks/realtime-api//operands) to refine my filter:
+It is also possible to combine [terms](/core/1/guides/cookbooks/realtime-api/terms) between them with [operands](/core/1/guides/cookbooks/realtime-api/operands) to refine my filter:
 
 ```json
 {

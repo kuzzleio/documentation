@@ -32,7 +32,7 @@ std::string subscribe(
 | ------------ | ------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | `index`      | <pre>const std::string&</pre>               | Index name                                                                                                |
 | `collection` | <pre>const std::string&</pre>               | Collection name                                                                                           |
-| `filters`    | <pre>const std::string&</pre>               | JSON string representing a set of filters following [Koncorde syntax](/core/1/guides/cookbooks/realtime-api//terms/) |
+| `filters`    | <pre>const std::string&</pre>               | JSON string representing a set of filters following [Koncorde syntax](/core/1/guides/cookbooks/realtime-api/terms/) |
 | `listener`   | <pre>kuzzleio::NotificationListener\*</pre> | Listener function to handle notifications                                                                 |
 | `options`    | <pre>kuzzleio::room_options\*</pre>         | Subscription options                                                                                      |
 

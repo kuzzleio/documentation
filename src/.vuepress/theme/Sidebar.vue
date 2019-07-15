@@ -84,8 +84,14 @@
 <script>
 import TabsMobile from './TabsMobile.vue';
 import { getPageChildren, getFirstValidChild, findRootNode } from '../util.js';
+import sdkList from '../sdk.json';
 
 export default {
+  data() {
+    return {
+      sdkList
+    };
+  },
   components: {
     TabsMobile
   },
@@ -145,5 +151,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+
 </style>
