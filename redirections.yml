@@ -69,12 +69,15 @@ redirections:
   - from: koncorde
     to: core/1/guides/cookboks/realtime-api
 
+  - from: core/1/koncorde/essentials
+    to: core/1/guides/cookboks/realtime-api
+
   # Plugin essentials
   - from: plugins/1/essentials/available-plugins
     to: officials-plugins
-    
+
   - from: core/1/plugins/essentials/available-plugins
-    to: officials-plugins    
+    to: officials-plugins
 
   - from: plugins/1/essentials/getting-started
     to: core/1/plugins/essentials/getting-started
