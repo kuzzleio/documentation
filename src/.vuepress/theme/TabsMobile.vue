@@ -23,9 +23,9 @@
 <script>
 import { getValidLinkByRootPath } from '../util.js';
 import sdkList from '../sdk.json';
+import links from '../links.json';
 
 export default {
-  props: ['links'],
   data() {
     return {
       sdkList

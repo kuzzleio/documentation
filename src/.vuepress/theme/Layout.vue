@@ -1,35 +1,40 @@
 <template>
   <div class="md-layout">
     <div class="overlay" :class="{hidden: !sidebarOpen}" @click="closeSidebar"></div>
-    <Header ref="header" @openSidebar="openSidebar" :links="links"/>
+    <Header ref="header" @openSidebar="openSidebar" />
     <div ref="container" class="md-container">
       <!-- Main container -->
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           <!-- Main navigation -->
-          <Sidebar ref="sidebar" v-if="!$page.frontmatter.nosidebar" :sidebarOpen="sidebarOpen" @closeSidebar="closeSidebar" :links="links"/>
+          <Sidebar
+            ref="sidebar"
+            v-if="!$page.frontmatter.nosidebar"
+            :sidebarOpen="sidebarOpen"
+            @closeSidebar="closeSidebar"
+          />
           <!-- Table of contents -->
           <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
                 <div v-if="$route.path.match(/^\/sdk\//)" class="selector-container">
-                  <SDKSelector :items="sdkList"/>
+                  <SDKSelector :items="sdkList" />
                 </div>
-                <TOC/>
+                <TOC />
               </div>
             </div>
           </div>
           <!-- Content -->
           <div class="md-content">
             <article class="md-content__inner md-typeset">
-              <Content/>
-              <ContentFeedback/>
+              <Content />
+              <ContentFeedback />
             </article>
           </div>
         </div>
       </main>
 
-      <Footer ref="footer"/>
+      <Footer ref="footer" />
     </div>
   </div>
 </template>
@@ -43,7 +48,6 @@ import TOC from './TOC.vue';
 import ContentFeedback from './ContentFeedback.vue';
 import Footer from './Footer.vue';
 import sdkList from '../sdk.json';
-import links from '../links.json'
 
 const { getFirstValidChild } = require('../util.js');
 
@@ -52,8 +56,7 @@ export default {
   data() {
     return {
       sidebarOpen: false,
-      sdkList,
-      links
+      sdkList
     };
   },
   methods: {

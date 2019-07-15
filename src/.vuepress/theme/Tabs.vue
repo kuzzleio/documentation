@@ -23,9 +23,9 @@
 
 <script>
 import { getValidLinkByRootPath } from '../util.js';
+import links from '../links.json';
 
 export default {
-  props: ['links'],
   methods: {
     getPath(link) {
       return {path: link.generateLink? this.generateLink(link.path): link.path};

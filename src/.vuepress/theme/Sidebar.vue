@@ -13,7 +13,7 @@
             </span>
             <span>Kuzzle Documentation</span>
           </label>
-          <TabsMobile :links="links" @closeSidebar="$emit('closeSidebar')" />
+          <TabsMobile @closeSidebar="$emit('closeSidebar')" />
           <SDKSelector class="md-sidebar--selector" v-if="$route.path.match(/^\/sdk\//)" :items="sdkList" />
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
@@ -95,10 +95,6 @@ export default {
     TabsMobile
   },
   props: {
-    links: {
-      type: Object,
-      default: null
-    },
     sidebarOpen: {
       type: Boolean,
       default: false
