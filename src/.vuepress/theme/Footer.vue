@@ -41,7 +41,7 @@
         <div class="md-footer-copyright">
           <div class="md-footer-copyright__highlight">&copy;{{ currentYearCopyright }} - Kuzzle.io</div>
           <a
-            href="https://gitrub.com/kuzzleio/documentation/blob/master/LICENSE.md"
+            href="https://github.com/kuzzleio/documentation/blob/master/LICENSE.md"
           >Apache 2.0 License</a>
         </div>
 
