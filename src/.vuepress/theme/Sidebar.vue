@@ -89,11 +89,6 @@ import { getPageChildren, getFirstValidChild, findRootNode } from '../util.js';
 import sdkList from '../sdk.json';
 
 export default {
-  data() {
-    return {
-      sdkList
-    };
-  },
   components: {
     TabsMobile
   },
@@ -105,7 +100,8 @@ export default {
   },
   data() {
     return {
-      openedSubmenu: ''
+      openedSubmenu: '',      
+      sdkList
     };
   },
   computed: {
