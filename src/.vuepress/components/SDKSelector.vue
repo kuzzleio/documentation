@@ -1,21 +1,19 @@
 <template>
-  <div class="selector" ref="selector">
+  <div class="selector" ref="selector" v-if="filteredItems.length">
     <div class="selector-selectedItem" @click="toggleList()">
       <img
         v-if="currentLanguage"
         class="selector-selectedItem-icon"
         :src="currentLanguage.icon"
         :alt="currentLanguage.language"
-      >
-      <span
-        class="selector-selectedItem-name"
-      >{{ currentLanguage ? currentLanguage.name : 'Select an SDK' }}</span>
+      />
+      <span class="selector-selectedItem-name">{{ getSpan }}</span>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
     <ul :class="`selector-list selector-list-${isListShowed? 'opened': 'closed'}` ">
       <li
         class="selector-list-item"
-        v-for="item in items"
+        v-for="item in filteredItems"
         v-show="isListShowed"
         :key="item.language + item.version"
         @click="toggleList()"
@@ -24,7 +22,7 @@
           class="selector-list-item-link"
           :to="{path: generateLink(`/sdk/${item.language}/${item.version}/`)}"
         >
-          <img class="selector-list-item-icon" :src="item.icon" :alt="item.language">
+          <img class="selector-list-item-icon" :src="item.icon" :alt="item.language" />
           <span class="selector-list-item-name">{{ item.name }}</span>
         </router-link>
       </li>
@@ -37,7 +35,11 @@ const { getValidLinkByRootPath } = require('../util.js');
 
 export default {
   props: {
-    items: Array
+    items: Array,
+    method: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {
@@ -45,6 +47,24 @@ export default {
     };
   },
   computed: {
+    filteredItems() {
+      if (this.method === '') {
+        return this.items;
+      }
+      console.log(this.items)
+      console.log(this.items.filter(item =>
+        this.generateLink(`/sdk/${item.language}/${item.version}/`)
+      ));
+      return this.items.filter(item =>
+        this.generateLink(`/sdk/${item.language}/${item.version}/`)
+      );
+    },
+    getSpan() {
+      if (this.method !== '') {
+        return 'Check an SDK method';
+      }
+      return this.currentLanguage ? this.currentLanguage.name : 'Select an SDK';
+    },
     currentLanguage() {
       const language = this.$route.path.split('/')[2],
         version = this.$route.path.split('/')[3];
@@ -58,7 +78,7 @@ export default {
   },
   methods: {
     generateLink(path) {
-      return getValidLinkByRootPath(path, this.$site.pages);
+      return getValidLinkByRootPath(path + this.method, this.$site.pages);
     },
     toggleList: function() {
       this.isListShowed = !this.isListShowed;

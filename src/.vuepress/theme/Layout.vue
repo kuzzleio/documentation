@@ -1,35 +1,41 @@
 <template>
   <div class="md-layout">
     <div class="overlay" :class="{hidden: !sidebarOpen}" @click="closeSidebar"></div>
-    <Header ref="header" @sidebar-open="openSidebar"/>
+    <Header ref="header" @sidebar-open="openSidebar" />
     <div ref="container" class="md-container">
       <!-- Main container -->
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           <!-- Main navigation -->
-          <Sidebar ref="sidebar" v-if="!$page.frontmatter.nosidebar" :sidebar-open="sidebarOpen"/>
+          <Sidebar ref="sidebar" v-if="!$page.frontmatter.nosidebar" :sidebar-open="sidebarOpen" />
           <!-- Table of contents -->
           <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
                 <div v-if="$route.path.match(/^\/sdk\//)" class="selector-container">
-                  <SDKSelector :items="sdkList"/>
+                  <SDKSelector :items="sdkList" />
                 </div>
-                <TOC/>
+                <div
+                  v-if="$route.path.match(/\/core\/1\/api\/controllers\//)"
+                  class="selector-container"
+                >
+                  <SDKSelector :items="sdkList" :method="getMethod" />
+                </div>
+                <TOC />
               </div>
             </div>
           </div>
           <!-- Content -->
           <div class="md-content">
             <article class="md-content__inner md-typeset">
-              <Content/>
-              <ContentFeedback/>
+              <Content />
+              <ContentFeedback />
             </article>
           </div>
         </div>
       </main>
 
-      <Footer ref="footer"/>
+      <Footer ref="footer" />
     </div>
   </div>
 </template>
@@ -53,6 +59,11 @@ export default {
       sidebarOpen: false,
       sdkList
     };
+  },
+  computed: {
+    getMethod() {
+      return this.$route.path.split('api/')[1];
+    }
   },
   methods: {
     openSidebar() {
