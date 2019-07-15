@@ -13,8 +13,12 @@
             </span>
             <span>Kuzzle Documentation</span>
           </label>
-          <TabsMobile/>
-          <SDKSelector class="md-sidebar--selector" v-if="$route.path.match(/^\/sdk\//)" :items="sdkList" />
+          <TabsMobile />
+          <SDKSelector
+            class="md-sidebar--selector"
+            v-if="$route.path.match(/^\/sdk\//)"
+            :items="sdkList"
+          />
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
             <div v-for="item__1 in getPageChildren(root)">
@@ -44,7 +48,7 @@
 
                 <ul
                   class="md-nav__list sub-menu"
-                  :class="openedSubmenu.includes(getId([item__1.title, item__2.title]))? 'displaySubmenu': ''"
+                  :class="subMenuClass(item__1, item__2)"
                   :id="getId([item__1.title, item__2.title])"
                 >
                   <div
@@ -100,7 +104,7 @@ export default {
   },
   data() {
     return {
-      openedSubmenu: '',      
+      openedSubmenu: '',
       sdkList
     };
   },
@@ -110,6 +114,13 @@ export default {
     }
   },
   methods: {
+    subMenuClass(item__1, item__2) {
+      return this.openedSubmenu.includes(
+        this.getId([item__1.title, item__2.title])
+      )
+        ? 'displaySubmenu'
+        : '';
+    },
     getId(itemsTitle) {
       return itemsTitle.reduce(
         (id, item) => id + '_' + this.sanitize(item),
@@ -184,5 +195,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>
