@@ -3,10 +3,10 @@
     <div v-if="$route.path.match('sdk-reference')" class="selector-container">
       <SDKSelector :items="sdkList" />
     </div>
-    <div v-for="part of Object.keys(links)">
+    <div v-for="part of Object.keys(getLinks)">
       <p class="md-nav__mobile-group-name">{{ part }}</p>
       <router-link
-        v-for="link of links[part]"
+        v-for="link of getLinks[part]"
         :to="getPath(link)"
         :title="link.label"
         class="md-source"
@@ -26,6 +26,11 @@ import sdkList from '../sdk.json';
 import links from '../links.json';
 
 export default {
+  computed: {
+    getLinks() {
+      return links;
+    }
+  },
   data() {
     return {
       sdkList
