@@ -97,7 +97,7 @@
   }
 }
 .md-footer-external {
-  background-color: $clr-grey-300;
+  background-color: $clr-grey-200;
   width: 100%;
   padding: 0.4rem;
   text-align: center;
@@ -112,6 +112,7 @@
     &__title {
       color: $clr-black;
       font-weight: bold;
+      padding-top: 1rem;
     }
     &__img {
       display: block;

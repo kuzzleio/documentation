@@ -15,7 +15,7 @@
         >
           <img class="md-footer-external__link__img" src="/logos/logo-stack-overflow.svg" />
           <div class="md-footer-external__link__title">Stack Overflow</div>
-          <div class="md-footer-external__link__description">Ask a question (use the "Kuzzle" tag)</div>
+          <div class="md-footer-external__link__description">Ask a question</div>
         </a>
       </li>
       <li class="md-footer-external__link">
@@ -31,7 +31,7 @@
         <a href="https://www.youtube.com/channel/UCHcEzVQoH10YSyxc7jD3SMw" target="_blank">
           <img class="md-footer-external__link__img" src="/logos/logo-youtube.svg" />
           <div class="md-footer-external__link__title">Youtube</div>
-          <div class="md-footer-external__link__description">Checkout out our tutorial videos</div>
+          <div class="md-footer-external__link__description">Check out our tutorial videos</div>
         </a>
       </li>
     </ul>
