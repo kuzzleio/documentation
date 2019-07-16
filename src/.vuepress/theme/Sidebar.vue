@@ -21,16 +21,15 @@
               <li class="md-nav__separator">{{item__1.frontmatter.title}}</li>
 
               <div v-for="item__2 in getPageChildren(item__1)">
-                <li class="md-nav__item">
-                  <router-link
+                <li class="md-nav__item md-nav-title">
+                  <div
                     class="md-nav__link"
-                    @click.native="closeSidebar(item__2)"
+                    @click="openOrRedirect(item__1, item__2)"
                     :class="{'md-nav__link--active': $page.path === item__2.path, 'md-nav__item--code': item__2.frontmatter.code == true}"
-                    :to="{path: getFirstValidChild(item__2).path}"
                   >
                     <div v-if="getPageChildren(item__2).length">
                       <i
-                        v-if="$page.path.includes(item__2.path)"
+                        v-if="openedSubmenu.includes(item__2.title)"
                         class="fa fa-caret-down"
                         aria-hidden="true"
                       ></i>
@@ -40,13 +39,18 @@
                     <div v-else>
                       <span class="no_arrow">{{item__2.title}}</span>
                     </div>
-                  </router-link>
+                  </div>
                 </li>
                 <ul
-                  v-if="$page.path.includes(item__2.path) && getPageChildren(item__2).length"
                   class="md-nav__list sub-menu"
+                  :class="subMenuClass(item__1, item__2)"
+                  :id="getId([item__1.title, item__2.title])"
                 >
-                  <div v-for="item__3 of getPageChildren(item__2)" class="md-nav__item">
+                  <div
+                    v-for="item__3 of getPageChildren(item__2)"
+                    class="md-nav__item"
+                    :id="getId([item__1.title, item__2.title, item__3.title])"
+                  >
                     <li v-if="$page.path === item__3.path">
                       <router-link
                         class="md-nav__link--active"
@@ -86,11 +90,6 @@ import { getPageChildren, getFirstValidChild, findRootNode } from '../util.js';
 import sdkList from '../sdk.json';
 
 export default {
-  data() {
-    return {
-      sdkList
-    };
-  },
   components: {
     TabsMobile
   },
@@ -100,6 +99,12 @@ export default {
       default: false
     }
   },
+  data() {
+    return {
+      openedSubmenu: '',
+      sdkList
+    };
+  },
   computed: {
     root() {
       return findRootNode(this.$page, this.$site.pages);
@@ -107,9 +112,53 @@ export default {
   },
   methods: {
     closeSidebar(item) {
-      if (!this.getPageChildren(item).length) {
-        this.$emit('closeSidebar');
+      this.$emit('closeSidebar');
+    },
+    subMenuClass(item__1, item__2) {
+      return this.openedSubmenu.includes(
+        this.getId([item__1.title, item__2.title])
+      )
+        ? 'displaySubmenu'
+        : '';
+    },
+    getId(itemsTitle) {
+      return itemsTitle.reduce(
+        (id, item) => id + '_' + this.sanitize(item),
+        ''
+      );
+    },
+    sanitize(str) {
+      return str.replace(/ /g, '_');
+    },
+    openOrRedirect(item__1, item__2) {
+      const childs = this.getPageChildren(item__2);
+
+      if (!childs.length) {
+        this.closeSidebar();
+        this.$router.push(item__2.path);
+        return;
       }
+
+      if (this.openedSubmenu) {
+        const openedSubmenuId = this.sanitize(this.openedSubmenu);
+        document.getElementById(openedSubmenuId).style.height = '0px';
+      }
+
+      const item2Id = this.getId([item__1.title, item__2.title]);
+      const item3Id = this.getId([
+        item__1.title,
+        item__2.title,
+        childs[0].title
+      ]);
+
+      if (this.openedSubmenu !== item2Id) {
+        const childSize = document.getElementById(item3Id).offsetHeight;
+        const menuHeight = `${childs.length * childSize}px`;
+        document.getElementById(item2Id).style.height = menuHeight;
+      }
+
+      this.openedSubmenu = this.openedSubmenu === item2Id ? '' : item2Id;
+      return;
     },
     getPageChildren(page) {
       return getPageChildren(page, this.$site.pages);
@@ -147,5 +196,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>
