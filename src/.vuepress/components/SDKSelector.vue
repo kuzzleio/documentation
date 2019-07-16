@@ -51,17 +51,13 @@ export default {
       if (this.method === '') {
         return this.items;
       }
-      console.log(this.items)
-      console.log(this.items.filter(item =>
-        this.generateLink(`/sdk/${item.language}/${item.version}/`)
-      ));
       return this.items.filter(item =>
         this.generateLink(`/sdk/${item.language}/${item.version}/`)
       );
     },
     getSpan() {
       if (this.method !== '') {
-        return 'Check an SDK method';
+        return 'Go to SDK method';
       }
       return this.currentLanguage ? this.currentLanguage.name : 'Select an SDK';
     },
