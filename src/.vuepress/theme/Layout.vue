@@ -9,7 +9,6 @@
           <!-- Main navigation -->
           <Sidebar
             ref="sidebar"
-            v-if="!$page.frontmatter.nosidebar"
             :sidebarOpen="sidebarOpen"
             @closeSidebar="closeSidebar"
           />
