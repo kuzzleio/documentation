@@ -1,5 +1,41 @@
 <template>
   <footer class="md-footer">
+    <ul class="md-footer-external md-typeset">
+      <li class="md-footer-external__link">
+        <a href="https://github.com/kuzzleio/" target="_blank">
+          <img class="md-footer-external__link__img" src="/logos/logo-github.svg" />
+          <div class="md-footer-external__link__title">Github</div>
+          <div class="md-footer-external__link__description">Contribute to Kuzzle projects</div>
+        </a>
+      </li>
+      <li class="md-footer-external__link">
+          <!-- Link with kuzzle tag : "https://stackoverflow.com/questions/ask?guided=false&tags=Kuzzle&title=[Kuzzle]" -->
+        <a
+          href="https://stackoverflow.com/questions/ask?guided=false&title=[Kuzzle]"
+          target="_blank"
+        >
+          <img class="md-footer-external__link__img" src="/logos/logo-stack-overflow.svg" />
+          <div class="md-footer-external__link__title">Stack Overflow</div>
+          <div class="md-footer-external__link__description">Ask a question</div>
+        </a>
+      </li>
+      <li class="md-footer-external__link">
+        <a href="https://gitter.im/kuzzleio/kuzzle" target="_blank">
+          <img class="md-footer-external__link__img" src="/logos/logo-gitter.svg" />
+          <div class="md-footer-external__link__title">Gitter</div>
+          <div
+            class="md-footer-external__link__description"
+          >Chat with the community and Kuzzle developers</div>
+        </a>
+      </li>
+      <li class="md-footer-external__link">
+        <a href="https://www.youtube.com/channel/UCHcEzVQoH10YSyxc7jD3SMw" target="_blank">
+          <img class="md-footer-external__link__img" src="/logos/logo-youtube.svg" />
+          <div class="md-footer-external__link__title">Youtube</div>
+          <div class="md-footer-external__link__description">Check out our tutorial videos</div>
+        </a>
+      </li>
+    </ul>
     <div class="md-footer-meta md-typeset">
       <div class="md-footer-meta__inner md-grid">
         <div class="md-footer-copyright">
@@ -11,16 +47,6 @@
 
         <div class="md-footer-social">
           <a href="https://kuzzle.io" class="md-footer-social__link fa fa-globe" target="_blank"></a>
-          <a
-            href="https://gitter.im/kuzzleio/kuzzle"
-            class="md-footer-social__link fa fa-commenting"
-            target="_blank"
-          ></a>
-          <a
-            href="https://github.com/kuzzleio/"
-            class="md-footer-social__link fa fa-github-alt"
-            target="_blank"
-          ></a>
           <a
             href="https://twitter.com/kuzzleio"
             class="md-footer-social__link fa fa-twitter"
