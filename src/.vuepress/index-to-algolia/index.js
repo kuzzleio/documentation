@@ -67,7 +67,7 @@ function enrichRecordsWithContent(records, outDir, write = false) {
     const content = $('.md-content');
 
     // remove useless content
-    $('h1, pre, .md-clipboard__message, .ContentFeedback', content).remove();
+    $('h1, pre, .md-clipboard__message', content).remove();
 
     record.content = content.text();
   });

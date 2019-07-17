@@ -26,8 +26,7 @@
           <!-- Content -->
           <div class="md-content">
             <article class="md-content__inner md-typeset">
-              <Content />
-              <ContentFeedback />
+              <Content/>
             </article>
           </div>
         </div>
@@ -44,14 +43,13 @@ import Clipboard from 'clipboard';
 import Header from './Header.vue';
 import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
-import ContentFeedback from './ContentFeedback.vue';
 import Footer from './Footer.vue';
 import sdkList from '../sdk.json';
 
 const { getFirstValidChild } = require('../util.js');
 
 export default {
-  components: { Header, Sidebar, TOC, ContentFeedback, Footer },
+  components: { Header, Sidebar, TOC, Footer },
   data() {
     return {
       sidebarOpen: false,
