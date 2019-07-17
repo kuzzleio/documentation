@@ -1,5 +1,11 @@
 [
   {
+    "language": "api",
+    "name": "API 1.x",
+    "version": "1",
+    "icon": "/logo-57x57.png"
+  },
+  {
     "language": "js",
     "name": "Javascript 6.x",
     "version": "6",

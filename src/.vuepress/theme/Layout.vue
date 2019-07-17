@@ -12,14 +12,8 @@
           <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
-                <div v-if="$route.path.match(/^\/sdk\//)" class="selector-container">
+                <div v-if="$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/)" class="selector-container">
                   <SDKSelector :items="sdkList" />
-                </div>
-                <div
-                  v-if="$route.path.match(/\/core\/1\/api\/controllers\//)"
-                  class="selector-container"
-                >
-                  <SDKSelector :items="sdkList" :method="getMethod" />
                 </div>
                 <TOC />
               </div>
@@ -59,11 +53,6 @@ export default {
       sidebarOpen: false,
       sdkList
     };
-  },
-  computed: {
-    getMethod() {
-      return this.$route.path.split('api/')[1];
-    }
   },
   methods: {
     openSidebar() {
