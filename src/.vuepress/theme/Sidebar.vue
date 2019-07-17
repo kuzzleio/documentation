@@ -33,7 +33,7 @@
                   >
                     <div v-if="getPageChildren(item__2).length">
                       <i
-                        v-if="openedSubmenu.includes(item__2.title)"
+                        v-if="openedSubmenu === item__2.title"
                         class="fa fa-caret-down"
                         aria-hidden="true"
                       ></i>
@@ -115,9 +115,7 @@ export default {
   },
   methods: {
     subMenuClass(item__1, item__2) {
-      return this.openedSubmenu.includes(
-        this.getId([item__1.title, item__2.title])
-      )
+      return this.openedSubmenu === this.getId([item__1.title, item__2.title])
         ? 'displaySubmenu'
         : '';
     },
