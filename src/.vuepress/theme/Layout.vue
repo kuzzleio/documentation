@@ -12,7 +12,7 @@
           <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
-                <div v-if="$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/)" class="selector-container">
+                <div v-if="sdkOrApiPage" class="selector-container">
                   <SDKSelector :items="sdkList" />
                 </div>
                 <TOC />
@@ -53,6 +53,11 @@ export default {
       sidebarOpen: false,
       sdkList
     };
+  },
+  computed: {
+    sdkOrApiPage() {
+      return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
+    }
   },
   methods: {
     openSidebar() {

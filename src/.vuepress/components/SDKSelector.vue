@@ -7,14 +7,14 @@
         :src="currentLanguage.icon"
         :alt="currentLanguage.language"
       />
-      <span class="selector-selectedItem-name">{{ this.currentLanguage ? this.currentLanguage.name : 'Select an SDK' }}</span>
+      <span class="selector-selectedItem-name">{{ getCurrentSpan }}</span>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
     <ul :class="`selector-list selector-list-${isListShowed? 'opened': 'closed'}` ">
       <li
-        :class="`${item.language === 'api'? '': 'selector-list-item' } ${item.langage !== 'api' && generateLink(item)? '': 'disabled'} `"
         v-for="item in filteredItems"
         :key="item.language + item.version"
+        :class="getItemClass(item)"
         @click="toggleList()"
       >
         <router-link
@@ -49,6 +49,9 @@ export default {
     };
   },
   computed: {
+    getCurrentSpan() {
+      return this.currentLanguage ? this.currentLanguage.name : 'Select an SDK';
+    },
     filteredItems() {
       return this.items.filter(
         item => !this.$route.path.includes(item.language)
@@ -70,9 +73,23 @@ export default {
     }
   },
   methods: {
+    getItemClass(item) {
+      let itemClass;
+      if (item.language === 'api') {
+        itemClass = '';
+      } else if (this.generateLink(item)) {
+        itemClass = 'selector-list-item';
+      } else {
+        itemClass = 'selector-list-item disabled';
+      }
+
+      // let itemClass = item.language === 'api'? '': 'selector-list-item';
+      // itemClass += item.langage !== 'api' && this.generateLink(item)? '': 'disabled';
+      return itemClass;
+    },
     getSpan(item) {
       if (this.$route.path.match(/\/sdk\//) && item.language === 'api') {
-        return 'See API doc'
+        return 'See API doc';
       }
       return item.name;
     },
