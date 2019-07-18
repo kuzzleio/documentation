@@ -24,7 +24,7 @@
             <label
               class="md-icon md-icon--menu md-header-nav__button"
               for="drawer"
-              @click="$emit('sidebar-open')"
+              @click="$emit('openSidebar')"
             ></label>
           </div>
 
@@ -36,7 +36,7 @@
             </div>
           </div>
            <div class="md-flex__cell md-flex__cell--stretch md-flex__cell--menu">
-            <Tabs/>
+            <Tabs />
           </div>
           <!-- Button to open search dialogue -->
           <div class="md-flex__cell md-flex__cell--shrink">

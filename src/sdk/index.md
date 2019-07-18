@@ -3,7 +3,6 @@ code: false
 type: root
 order: 3
 title: SDKs
-nosidebar: true
 ---
 
 # SDKs Reference

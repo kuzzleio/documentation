@@ -13,7 +13,7 @@
             </span>
             <span>Kuzzle Documentation</span>
           </label>
-          <TabsMobile/>
+          <TabsMobile @closeSidebar="$emit('closeSidebar')" />
           <SDKSelector class="md-sidebar--selector" v-if="sdkOrApiPage" :items="sdkList" />
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
@@ -29,7 +29,7 @@
                   >
                     <div v-if="getPageChildren(item__2).length">
                       <i
-                        v-if="openedSubmenu.includes(item__2.title)"
+                        v-if="openedSubmenu === item__2.title"
                         class="fa fa-caret-down"
                         aria-hidden="true"
                       ></i>
@@ -41,7 +41,6 @@
                     </div>
                   </div>
                 </li>
-
                 <ul
                   class="md-nav__list sub-menu"
                   :class="subMenuClass(item__1, item__2)"
@@ -58,6 +57,7 @@
                         :class="{'md-nav__item--code': item__3.frontmatter.code}"
                         :to="{path: item__3.path}"
                         :title="item__3.title"
+                        @click.native="$emit('closeSidebar')"
                       >
                         <span class="no_arrow">{{item__3.title}}</span>
                       </router-link>
@@ -67,6 +67,7 @@
                         :to="{path: item__3.path}"
                         :title="item__3.title"
                         class="md-nav__link"
+                        @click.native="$emit('closeSidebar')"
                         :class="{'md-nav__item--code': item__3.frontmatter.code}"
                       >
                         <span class="no_arrow">{{item__3.title}}</span>
@@ -104,6 +105,15 @@ export default {
       sdkList
     };
   },
+  watch: {
+    '$route.path': function(path) {
+      if (!path.includes(this.openedSubmenu)) {
+        const openedSubmenuId = this.sanitize(this.openedSubmenu);
+        document.getElementById(openedSubmenuId).style.height = '0px';
+        this.openedSubmenu = '';
+      }
+    }
+  },
   computed: {
     sdkOrApiPage() {
       return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
@@ -113,10 +123,11 @@ export default {
     }
   },
   methods: {
+    closeSidebar(item) {
+      this.$emit('closeSidebar');
+    },
     subMenuClass(item__1, item__2) {
-      return this.openedSubmenu.includes(
-        this.getId([item__1.title, item__2.title])
-      )
+      return this.openedSubmenu === this.getId([item__1.title, item__2.title])
         ? 'displaySubmenu'
         : '';
     },
@@ -133,6 +144,7 @@ export default {
       const childs = this.getPageChildren(item__2);
 
       if (!childs.length) {
+        this.closeSidebar();
         this.$router.push(item__2.path);
         return;
       }
