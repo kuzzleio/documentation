@@ -13,12 +13,8 @@
             </span>
             <span>Kuzzle Documentation</span>
           </label>
-          <TabsMobile />
-          <SDKSelector
-            class="md-sidebar--selector"
-            v-if="$route.path.match(/^\/sdk\//)"
-            :items="sdkList"
-          />
+          <TabsMobile @closeSidebar="$emit('closeSidebar')" />
+          <SDKSelector class="md-sidebar--selector" v-if="$route.path.match(/^\/sdk\//)" :items="sdkList" />
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
             <div v-for="item__1 in getPageChildren(root)">
@@ -45,7 +41,6 @@
                     </div>
                   </div>
                 </li>
-
                 <ul
                   class="md-nav__list sub-menu"
                   :class="subMenuClass(item__1, item__2)"
@@ -62,6 +57,7 @@
                         :class="{'md-nav__item--code': item__3.frontmatter.code}"
                         :to="{path: item__3.path}"
                         :title="item__3.title"
+                        @click.native="$emit('closeSidebar')"
                       >
                         <span class="no_arrow">{{item__3.title}}</span>
                       </router-link>
@@ -71,6 +67,7 @@
                         :to="{path: item__3.path}"
                         :title="item__3.title"
                         class="md-nav__link"
+                        @click.native="$emit('closeSidebar')"
                         :class="{'md-nav__item--code': item__3.frontmatter.code}"
                       >
                         <span class="no_arrow">{{item__3.title}}</span>
@@ -114,6 +111,9 @@ export default {
     }
   },
   methods: {
+    closeSidebar(item) {
+      this.$emit('closeSidebar');
+    },
     subMenuClass(item__1, item__2) {
       return this.openedSubmenu === this.getId([item__1.title, item__2.title])
         ? 'displaySubmenu'
@@ -132,6 +132,7 @@ export default {
       const childs = this.getPageChildren(item__2);
 
       if (!childs.length) {
+        this.closeSidebar();
         this.$router.push(item__2.path);
         return;
       }

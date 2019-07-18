@@ -3,7 +3,6 @@ code: false
 type: page
 order: 3
 title: Official Plugins
-nosidebar: true
 ---
 
 # Official Plugins 
