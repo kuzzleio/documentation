@@ -1,31 +1,35 @@
 <template>
-  <div class="selector" ref="selector">
+  <div class="selector" ref="selector" v-if="filteredItems.length">
     <div class="selector-selectedItem" @click="toggleList()">
       <img
         v-if="currentLanguage"
         class="selector-selectedItem-icon"
         :src="currentLanguage.icon"
         :alt="currentLanguage.language"
-      >
-      <span
-        class="selector-selectedItem-name"
-      >{{ currentLanguage ? currentLanguage.name : 'Select an SDK' }}</span>
+      />
+      <span class="selector-selectedItem-name">{{ getCurrentSpan }}</span>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
     <ul :class="`selector-list selector-list-${isListShowed? 'opened': 'closed'}` ">
       <li
-        class="selector-list-item"
-        v-for="item in items"
-        v-show="isListShowed"
+        v-for="item in filteredItems"
         :key="item.language + item.version"
+        :class="getItemClass(item)"
         @click="toggleList()"
       >
         <router-link
-          class="selector-list-item-link"
-          :to="{path: generateLink(`/sdk/${item.language}/${item.version}/`)}"
+          :class="`selector-list-item-link ${item.language === 'api'? 'api': ''}`"
+          :to="{path: generateLink(item)}"
         >
-          <img class="selector-list-item-icon" :src="item.icon" :alt="item.language">
-          <span class="selector-list-item-name">{{ item.name }}</span>
+          <img
+            v-if="item.language !== 'api'"
+            class="selector-list-item-icon"
+            :src="item.icon"
+            :alt="item.language"
+          />
+          <span
+            :class="`selector-list-item-name${item.language === 'api'? '-api': ''}`"
+          >{{ getSpan(item) }}</span>
         </router-link>
       </li>
     </ul>
@@ -45,19 +49,61 @@ export default {
     };
   },
   computed: {
+    getCurrentSpan() {
+      return this.currentLanguage ? this.currentLanguage.name : 'Select an SDK';
+    },
+    filteredItems() {
+      return this.items.filter(
+        item => !this.$route.path.includes(item.language)
+      );
+    },
     currentLanguage() {
-      const language = this.$route.path.split('/')[2],
+      let language, version;
+      if (this.$route.path.match(/\/api\//)) {
+        language = 'api';
+        version = '1';
+      } else {
+        language = this.$route.path.split('/')[2];
         version = this.$route.path.split('/')[3];
-
+      }
       const lang = this.items.find(el => {
         return el.language === language && el.version === version;
       });
-
       return lang || null;
     }
   },
   methods: {
-    generateLink(path) {
+    getItemClass(item) {
+      let itemClass;
+      if (item.language === 'api') {
+        itemClass = '';
+      } else if (this.generateLink(item)) {
+        itemClass = 'selector-list-item';
+      } else {
+        itemClass = 'selector-list-item disabled';
+      }
+
+      // let itemClass = item.language === 'api'? '': 'selector-list-item';
+      // itemClass += item.langage !== 'api' && this.generateLink(item)? '': 'disabled';
+      return itemClass;
+    },
+    getSpan(item) {
+      if (this.$route.path.match(/\/sdk\//) && item.language === 'api') {
+        return 'See API doc';
+      }
+      return item.name;
+    },
+    generateLink(item) {
+      let method = '';
+      let path = '';
+      if (this.$route.path.includes('controllers')) {
+        method = `controllers/${this.$route.path.split('controllers/')[1]}`;
+      }
+      if (item.language === 'api') {
+        path = `/core/1/api/${method}`;
+      } else {
+        path = `/sdk/${item.language}/${item.version}/${method}`;
+      }
       return getValidLinkByRootPath(path, this.$site.pages);
     },
     toggleList: function() {
@@ -79,54 +125,4 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.selector
-  width: 80%
-  height: 40px
-  font-size: 15px
-  margin-bottom: 16px
-  cursor: pointer
-  &-selectedItem
-    border-bottom: 1px solid rgba(233,78,119,0.3)
-    padding: 10px 10px 5px
-    &-icon
-      position: relative
-      top: 4px
-      width: 22px
-      height: 22px
-      margin-right: 8px
-    i
-      float: right
-      top: 10px
-      position: relative
-      color: #55595c
-
-.selector-list
-  position: absolute
-  width: 80%
-  overflow-y: scroll
-  background-color: white
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
-  padding: 0
-  margin-top: 4px
-  &-closed
-    display: none
-  &-opened
-    height: 200px
-  &-item
-    width: 100%
-    list-style-type: none
-    &-link
-      display: block
-      width: 100%
-      height: 100%
-      padding: 12px
-    &-icon
-      position: relative
-      top: 4px
-      width: 22px
-      height: 22px
-      margin-right: 8px
-    &:hover
-      background-color: #ddd
-
 </style>

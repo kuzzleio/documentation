@@ -14,7 +14,7 @@
             <span>Kuzzle Documentation</span>
           </label>
           <TabsMobile @closeSidebar="$emit('closeSidebar')" />
-          <SDKSelector class="md-sidebar--selector" v-if="$route.path.match(/^\/sdk\//)" :items="sdkList" />
+          <SDKSelector class="md-sidebar--selector" v-if="sdkOrApiPage" :items="sdkList" />
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
             <div v-for="item__1 in getPageChildren(root)">
@@ -105,7 +105,19 @@ export default {
       sdkList
     };
   },
+  watch: {
+    '$route.path': function(path) {
+      if (!path.includes(this.openedSubmenu)) {
+        const openedSubmenuId = this.sanitize(this.openedSubmenu);
+        document.getElementById(openedSubmenuId).style.height = '0px';
+        this.openedSubmenu = '';
+      }
+    }
+  },
   computed: {
+    sdkOrApiPage() {
+      return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
+    },
     root() {
       return findRootNode(this.$page, this.$site.pages);
     }
