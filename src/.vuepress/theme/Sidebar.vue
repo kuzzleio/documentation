@@ -17,7 +17,7 @@
           <SDKSelector class="md-sidebar--selector" v-if="sdkOrApiPage" :items="sdkList" />
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
-            <div v-for="item__1 in getPageChildren(root)">
+            <div v-for="item__1 in getPageChildren(root)" class="md-nav__item-container">
               <li class="md-nav__separator">{{item__1.frontmatter.title}}</li>
 
               <div v-for="item__2 in getPageChildren(item__1)">
