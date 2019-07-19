@@ -1,0 +1,2 @@
+
+kuzzle.stopQueuing();
