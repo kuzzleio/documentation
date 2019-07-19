@@ -4,9 +4,6 @@
 [submodule ".plugin-repos/kuzzle-plugin-s3-v1"]
 	path = .repos/plugin/kuzzle-plugin-s3-1
 	url = https://github.com/kuzzleio/kuzzle-plugin-s3.git
-[submodule ".sdk-repos/sdk-android-v3"]
-	path = .repos/sdk/sdk-android-3
-	url = https://github.com/kuzzleio/sdk-android.git
 [submodule ".sdk-repos/sdk-javascript-v6"]
 	path = .repos/sdk/sdk-javascript-6
 	url = https://github.com/kuzzleio/sdk-javascript.git

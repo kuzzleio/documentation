@@ -1,2 +1,0 @@
-
-kuzzle.refreshIndex("myIndex");
