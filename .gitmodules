@@ -36,3 +36,6 @@
 [submodule ".repos/kuzzle-1"]
 	path = .repos/kuzzle-1
 	url = https://github.com/kuzzleio/kuzzle
+[submodule ".repos/sdk/sdk-android-3"]
+	path = .repos/sdk/sdk-android-3
+	url = https://github.com/kuzzleio/sdk-android
