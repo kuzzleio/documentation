@@ -3,10 +3,10 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-        <li class="md-tabs__group" v-for="part of getLinks">
-          <p class="md-tabs__group-name">Use</p>
+        <li class="md-tabs__group" v-for="part of Object.keys(getLinks)">
+          <p class="md-tabs__group-name">{{ part }}</p>
           <ul class="md-tabs__group-items">
-            <li class="md-tabs__item" v-for="link of part">
+            <li class="md-tabs__item" v-for="link of getLinks[part]">
               <router-link
                 :to="getPath(link)"
                 :class="{'md-tabs__link--active': $route.path.match(link.path)}"
