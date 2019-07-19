@@ -1,9 +1,0 @@
-name: realtime#unsubscribe
-description: Removes a subscription
-hooks:
-  before:
-  after:
-template: default
-expected: Successfully unsubscribed
-sdk: cpp
-version: 1

@@ -1,9 +1,0 @@
-name: kuzzle#constructor
-description: Create a new Kuzzle instance connected to Kuzzle
-hooks:
-  before:
-  after:
-template: blank
-expected: New SDK instance successfully created
-sdk: cpp
-version: 1

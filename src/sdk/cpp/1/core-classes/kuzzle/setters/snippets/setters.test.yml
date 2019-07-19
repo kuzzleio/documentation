@@ -1,9 +1,0 @@
-name: kuzzle#setters
-description: Kuzzle class setters
-hooks:
-  before:
-  after:
-template: blank
-expected: Snippet success
-sdk: cpp
-version: 1

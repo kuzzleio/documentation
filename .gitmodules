@@ -16,3 +16,23 @@
 [submodule ".plugin-repos/kuzzle-plugin-cloudinary-v1"]
   path = .plugin-repos/kuzzle-plugin-cloudinary-v1
   url = https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
+[submodule ".sdk-repos/sdk-cpp-1"]
+	path = .sdk-repos/sdk-cpp-1
+	url = https://github.com/kuzzleio/sdk-cpp
+[submodule ".sdk-repos/sdk-csharp-1"]
+	path = .sdk-repos/sdk-csharp-1
+	url = https://github.com/kuzzleio/sdk-csharp
+[submodule ".sdk-repos/sdk-go-1"]
+	path = .sdk-repos/sdk-go-1
+	url = https://github.com/kuzzleio/sdk-go
+	branch = 1-stable
+[submodule ".sdk-repos/sdk-go-2"]
+	path = .sdk-repos/sdk-go-2
+	url = https://github.com/kuzzleio/sdk-go
+[submodule ".sdk-repos/sdk-java-1"]
+	path = .sdk-repos/sdk-java-1
+	url = https://github.com/kuzzleio/sdk-java
+	branch = 1-stable
+[submodule ".sdk-repos/sdk-java-2"]
+	path = .sdk-repos/sdk-java-2
+	url = https://github.com/kuzzleio/sdk-java

@@ -1,9 +1,0 @@
-name: kuzzle#stopQueuing
-description: Stops the requests queuing
-hooks:
-  before:
-  after:
-template: without-connect
-expected: Kuzzle will not auto queue next requests
-sdk: cpp
-version: 1
