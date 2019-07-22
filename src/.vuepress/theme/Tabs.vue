@@ -3,10 +3,10 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-        <li class="md-tabs__group" v-for="part of getLinks">
-          <p class="md-tabs__group-name">Use</p>
+        <li class="md-tabs__group" v-for="([part, links]) of headerEntries">
+          <p class="md-tabs__group-name">{{ part }}</p>
           <ul class="md-tabs__group-items">
-            <li class="md-tabs__item" v-for="link of part">
+            <li class="md-tabs__item" v-for="link of links">
               <a
                 :href="getPath(link)"
                 :class="{'md-tabs__link--active': $route.path.match(link.path)}"
@@ -22,20 +22,19 @@
 </template>
 
 <script>
+
 import { getValidLinkByRootPath } from "../util.js";
-import links from "../links.json";
+import headerEntries from "../header-entries.json";
 
 export default {
   computed: {
-    getLinks() {
-      return links;
+    headerEntries() {
+      return Object.entries(headerEntries)
     }
   },
   methods: {
     getPath(link) {
-      return {
-        path: link.generateLink ? this.generateLink(link.path) : link.path
-      };
+      return link.generateLink ? this.generateLink(link.path) : link.path;
     },
     startWith(str, start) {
       return str.indexOf(start) === 0;

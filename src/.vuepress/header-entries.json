@@ -1,5 +1,5 @@
 {
-    "use": [
+    "Use": [
         {
             "path": "/core/1/guides/",
             "generateLink": true,
@@ -21,7 +21,7 @@
             "label": "Plugins"
         }
     ],
-    "extend": [
+    "Extend": [
         {
             "path": "/core/1/plugins/",
             "generateLink": true,

@@ -3,10 +3,10 @@
     <div v-if="$route.path.match('sdk-reference')" class="selector-container">
       <SDKSelector :items="sdkList" />
     </div>
-    <div v-for="part of Object.keys(getLinks)">
+    <div v-for="([part, links]) of headerEntries">
       <p class="md-nav__mobile-group-name">{{ part }}</p>
       <a
-        v-for="link of getLinks[part]"
+        v-for="link of links"
         :href="getPath(link)"
         :title="link.label"
         class="md-source"
@@ -23,12 +23,12 @@
 <script>
 import { getValidLinkByRootPath } from '../util.js';
 import sdkList from '../sdk.json';
-import links from '../links.json';
+import headerEntries from "../header-entries.json";
 
 export default {
   computed: {
-    getLinks() {
-      return links;
+    headerEntries() {
+      return Object.entries(headerEntries)
     }
   },
   data() {
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     getPath(link) {
-      return {path: link.generateLink? this.generateLink(link.path): link.path};
+      return link.generateLink? this.generateLink(link.path): link.path;
     },
     generateLink(path) {
       return getValidLinkByRootPath(path, this.$site.pages);
