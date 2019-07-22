@@ -37,7 +37,6 @@
 </template>
 
 <script>
-const { getValidLinkByRootPath } = require('../util.js');
 
 export default {
   props: {
@@ -102,7 +101,7 @@ export default {
       } else {
         path = `/sdk/${item.language}/${item.version}/${method}`;
       }
-      return getValidLinkByRootPath(path, this.$site.pages);
+      return path;
     },
     toggleList: function() {
       this.isListShowed = !this.isListShowed;
