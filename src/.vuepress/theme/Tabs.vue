@@ -8,7 +8,7 @@
           <ul class="md-tabs__group-items">
             <li class="md-tabs__item" v-for="link of links">
               <a
-                :href="getPath(link)"
+                :href="link.path"
                 :class="{'md-tabs__link--active': $route.path.match(link.path)}"
                 :title="link.label"
                 class="md-tabs__link"
@@ -33,9 +33,6 @@ export default {
     }
   },
   methods: {
-    getPath(link) {
-      return link.generateLink ? this.generateLink(link.path) : link.path;
-    },
     startWith(str, start) {
       return str.indexOf(start) === 0;
     },
