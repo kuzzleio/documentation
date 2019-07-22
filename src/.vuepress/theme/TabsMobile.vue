@@ -5,9 +5,9 @@
     </div>
     <div v-for="part of Object.keys(getLinks)">
       <p class="md-nav__mobile-group-name">{{ part }}</p>
-      <router-link
+      <a
         v-for="link of getLinks[part]"
-        :to="getPath(link)"
+        :href="getPath(link)"
         :title="link.label"
         class="md-source"
         data-md-state="done"
@@ -15,7 +15,7 @@
         @click.native="$emit('closeSidebar')"
       >
         <div class="md-source__repository">{{ link.label }} </div>
-      </router-link>
+      </a>
     </div>
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     getPath(link) {
-      return {path: link.generateLink? this.generateLink(link.path): link.path};
+      return `https://docs.kuzzle.io${link.path}`;
     },
     generateLink(path) {
       return getValidLinkByRootPath(path, this.$site.pages);

@@ -7,12 +7,12 @@
           <p class="md-tabs__group-name">Use</p>
           <ul class="md-tabs__group-items">
             <li class="md-tabs__item" v-for="link of part">
-              <router-link
-                :to="getPath(link)"
+              <a
+                :href="getPath(link)"
                 :class="{'md-tabs__link--active': $route.path.match(link.path)}"
                 :title="link.label"
                 class="md-tabs__link"
-              >{{ link.label }}</router-link>
+              >{{ link.label }}</a>
             </li>
           </ul>
         </li>
@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import { getValidLinkByRootPath } from '../util.js';
-import links from '../links.json';
+import { getValidLinkByRootPath } from "../util.js";
+import links from "../links.json";
 
 export default {
   computed: {
@@ -33,9 +33,7 @@ export default {
   },
   methods: {
     getPath(link) {
-      return {
-        path: link.generateLink ? this.generateLink(link.path) : link.path
-      };
+      return `https://docs.kuzzle.io${link.path}`;
     },
     startWith(str, start) {
       return str.indexOf(start) === 0;

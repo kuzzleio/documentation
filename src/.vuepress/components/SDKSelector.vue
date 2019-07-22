@@ -17,9 +17,9 @@
         :class="getItemClass(item)"
         @click="toggleList()"
       >
-        <router-link
+        <a
           :class="`selector-list-item-link ${item.language === 'api'? 'api': ''}`"
-          :to="{path: generateLink(item)}"
+          :href="generateLink(item)"
         >
           <img
             v-if="item.language !== 'api'"
@@ -30,7 +30,7 @@
           <span
             :class="`selector-list-item-name${item.language === 'api'? '-api': ''}`"
           >{{ getSpan(item) }}</span>
-        </router-link>
+        </a>
       </li>
     </ul>
   </div>
@@ -104,7 +104,8 @@ export default {
       } else {
         path = `/sdk/${item.language}/${item.version}/${method}`;
       }
-      return getValidLinkByRootPath(path, this.$site.pages);
+      return `https://docs.kuzzle.io${path}`;
+      // return getValidLinkByRootPath(path, this.$site.pages);
     },
     toggleList: function() {
       this.isListShowed = !this.isListShowed;
