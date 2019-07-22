@@ -99,12 +99,16 @@
 
     & > .md-nav__item-container {
       margin-bottom: 24px;
+
+      @include break-to-device(tablet) {
+        margin-bottom: 0px;
+      }
     }
   }
 
   &__separator {
     margin-top: 22px;
-    margin-bottom: 22px;
+    margin-bottom: 12px;
     padding-bottom: 4px;
     width: 90%;
     border-bottom: 1px solid rgba(233, 78, 119, 0.3);
@@ -228,6 +232,7 @@
     padding: 0 0 0 10px;
     margin-bottom: -5px;
     color: white;
+    text-transform: capitalize;
   }
 
   // Repository containing source
