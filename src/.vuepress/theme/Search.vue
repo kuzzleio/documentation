@@ -50,9 +50,9 @@
                 :key="result.path"
                 class="md-search-result__item"
               >
-                <router-link
+                <a
                   class="md-search-result__link"
-                  :to="{path: result.path}"
+                  :href="result.path"
                   :title="result.title"
                   :data-rt="idx === highlightedResult ? 'active' : ''"
                 >
@@ -70,7 +70,7 @@
                       v-html="result._highlightResult.content.value"
                     ></p>
                   </article>
-                </router-link>
+                </a>
               </li>
             </ol>
           </div>
@@ -183,10 +183,7 @@ export default {
       if (!this.results || !this.results[this.highlightedResult]) {
         return;
       }
-      this.$router.push({
-        path: '/' + this.results[this.highlightedResult].path,
-        query: {}
-      });
+      window.location.href = `${this.results[this.highlightedResult].path}`;
       this.reset();
     }
   },

@@ -17,9 +17,9 @@
         :class="getItemClass(item)"
         @click="toggleList()"
       >
-        <router-link
+        <a
           :class="`selector-list-item-link ${item.language === 'api'? 'api': ''}`"
-          :to="{path: generateLink(item)}"
+          :href="generateLink(item)"
         >
           <img
             v-if="item.language !== 'api'"
@@ -30,7 +30,7 @@
           <span
             :class="`selector-list-item-name${item.language === 'api'? '-api': ''}`"
           >{{ getSpan(item) }}</span>
-        </router-link>
+        </a>
       </li>
     </ul>
   </div>
@@ -83,8 +83,6 @@ export default {
         itemClass = 'selector-list-item disabled';
       }
 
-      // let itemClass = item.language === 'api'? '': 'selector-list-item';
-      // itemClass += item.langage !== 'api' && this.generateLink(item)? '': 'disabled';
       return itemClass;
     },
     getSpan(item) {
