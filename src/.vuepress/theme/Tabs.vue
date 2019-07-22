@@ -3,7 +3,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-        <li class="md-tabs__group" v-for="part of Object.keys(getLinks)">
+        <li class="md-tabs__group" v-for="group of Object.keys(getLinks)">
           <p class="md-tabs__group-name">{{ part }}</p>
           <ul class="md-tabs__group-items">
             <li class="md-tabs__item" v-for="link of getLinks[part]">
