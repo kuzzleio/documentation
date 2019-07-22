@@ -29,7 +29,7 @@
       <img src="/logos/android.svg" alt="android logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Android</div>
     </a>
-    <a href="https://github.com/kuzzleio/sdk-csharp" class="Tiles-item">
+    <a href="/sdk/csharp/1" class="Tiles-item">
       <div class="ribbon">
         <span>BETA</span>
       </div>
