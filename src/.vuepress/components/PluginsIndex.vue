@@ -8,6 +8,10 @@
       <img src="/logos/plugin-cloudinary.svg" alt="cloudinary logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Cloudinary</div>
     </a>
+    <a href="https://github.com/kuzzleio/kuzzle-plugin-prometheus" class="Tiles-item">
+      <img src="/logos/plugin-prometheus.svg" alt="prometheus logo" class="Tiles-item-logo">
+      <div class="Tiles-item-name">Prometheus</div>
+    </a>
     <a href="https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local" class="Tiles-item">
       <img src="/logos/passport.svg" alt="auth passport local logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Auth passport local</div>

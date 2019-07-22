@@ -49,3 +49,7 @@
 - url: https://github.com/kuzzleio/sdk-android.git
   branch: master
   destination: ./sdk/sdk-android-3
+
+- url: https://github.com/kuzzleio/kuzzle-plugin-multi-tenancy.git
+  branch: master
+  destination: ./plugin/kuzzle-plugin-multi-tenancy-1
