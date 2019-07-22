@@ -29,59 +29,59 @@ jobs:
     # -------------------------------------------------------------------------
     # Deployment - next
     # -------------------------------------------------------------------------
-    - stage: Deployment
-      name: Deploy to next-docs.kuzzle.io
-      if: branch = 3-dev
+    # - stage: Deployment
+    #   name: Deploy to next-docs.kuzzle.io
+    #   if: branch = 3-dev
 
-      addons:
-        apt:
-          packages:
-            - python
-            - python-pip
+    #   addons:
+    #     apt:
+    #       packages:
+    #         - python
+    #         - python-pip
 
-      install:
-        - pip install awscli --upgrade --user
+    #   install:
+    #     - pip install awscli --upgrade --user
 
-      script:
-        - npm install
-        - ALGOLIA_INDEX=kuzzle-documentation-next npm run build
+    #   script:
+    #     - npm install
+    #     - ALGOLIA_INDEX=kuzzle-documentation-next npm run build
 
-      deploy:
-        provider: script
-        script: aws s3 sync src/.vuepress/dist s3://$AWS_S3_BUCKET_NEXT --delete
-        skip_cleanup: true
-        on:
-          branch: 3-dev
+    #   deploy:
+    #     provider: script
+    #     script: aws s3 sync src/.vuepress/dist s3://$AWS_S3_BUCKET_NEXT --delete
+    #     skip_cleanup: true
+    #     on:
+    #       branch: 3-dev
 
-      after_deploy:
-        - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID_NEXT --paths '/*'
+    #   after_deploy:
+    #     - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID_NEXT --paths '/*'
 
     # -------------------------------------------------------------------------
     # Deployment - production
     # -------------------------------------------------------------------------
-    - stage: Deployment
-      name: Deploy to docs.kuzzle.io
-      if: branch = master
+    # - stage: Deployment
+    #   name: Deploy to docs.kuzzle.io
+    #   if: branch = master
 
-      addons:
-        apt:
-          packages:
-            - python
-            - python-pip
+    #   addons:
+    #     apt:
+    #       packages:
+    #         - python
+    #         - python-pip
 
-      install:
-        - pip install awscli --upgrade --user
+    #   install:
+    #     - pip install awscli --upgrade --user
 
-      script:
-        - npm install
-        - npm run build
+    #   script:
+    #     - npm install
+    #     - npm run build
 
-      deploy:
-        provider: script
-        script: aws s3 sync src/.vuepress/dist s3://$AWS_S3_BUCKET_PROD --delete
-        skip_cleanup: true
-        on:
-          branch: master
+    #   deploy:
+    #     provider: script
+    #     script: aws s3 sync src/.vuepress/dist s3://$AWS_S3_BUCKET_PROD --delete
+    #     skip_cleanup: true
+    #     on:
+    #       branch: master
 
-      after_deploy:
-        - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID_PROD --paths '/*'
+    #   after_deploy:
+    #     - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID_PROD --paths '/*'
