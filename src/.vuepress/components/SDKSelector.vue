@@ -83,8 +83,6 @@ export default {
         itemClass = 'selector-list-item disabled';
       }
 
-      // let itemClass = item.language === 'api'? '': 'selector-list-item';
-      // itemClass += item.langage !== 'api' && this.generateLink(item)? '': 'disabled';
       return itemClass;
     },
     getSpan(item) {
@@ -104,8 +102,7 @@ export default {
       } else {
         path = `/sdk/${item.language}/${item.version}/${method}`;
       }
-      return `https://docs.kuzzle.io${path}`;
-      // return getValidLinkByRootPath(path, this.$site.pages);
+      return getValidLinkByRootPath(path, this.$site.pages);
     },
     toggleList: function() {
       this.isListShowed = !this.isListShowed;

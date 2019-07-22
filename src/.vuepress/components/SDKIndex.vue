@@ -78,8 +78,7 @@ const { getValidLinkByRootPath } = require('../util.js');
 export default {
   methods: {
     generateLink(path) {
-      return `https://docs.kuzzle.io${path}`;
-      // return getValidLinkByRootPath(path, this.$site.pages);
+      return getValidLinkByRootPath(path, this.$site.pages);
     }
   }
 };

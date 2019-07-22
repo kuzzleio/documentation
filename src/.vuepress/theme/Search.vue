@@ -52,7 +52,7 @@
               >
                 <a
                   class="md-search-result__link"
-                  :href="`https://docs.kuzzle.io${result.path}`"
+                  :href="result.path"
                   :title="result.title"
                   :data-rt="idx === highlightedResult ? 'active' : ''"
                 >
@@ -183,11 +183,7 @@ export default {
       if (!this.results || !this.results[this.highlightedResult]) {
         return;
       }
-      window.location.href = `http://docs.kuzzle.io${this.results[this.highlightedResult].path}`;
-      // this.$router.push({
-      //   path: '/' + this.results[this.highlightedResult].path,
-      //   query: {}
-      // });
+      window.location.href = `${this.results[this.highlightedResult].path}`;
       this.reset();
     }
   },

@@ -33,7 +33,9 @@ export default {
   },
   methods: {
     getPath(link) {
-      return `https://docs.kuzzle.io${link.path}`;
+      return {
+        path: link.generateLink ? this.generateLink(link.path) : link.path
+      };
     },
     startWith(str, start) {
       return str.indexOf(start) === 0;

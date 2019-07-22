@@ -28,11 +28,11 @@
       <img src="/logos/probe.svg" alt="probe listener logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Probe listener</div>
     </a>
-    <a :href="'https://docs.kuzzle.io/official-plugins/s3/1'" class="Tiles-item">
+    <a :href="'/official-plugins/s3/1'" class="Tiles-item">
       <img src="/logos/plugin-s3.svg" alt="amazon s3 logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Amazon S3</div>
     </a>
-    <a :href="'https://docs.kuzzle.io/official-plugins/cloudinary/1'" class="Tiles-item">
+    <a :href="'/official-plugins/cloudinary/1'" class="Tiles-item">
       <img src="/logos/plugin-cloudinary.svg" alt="cloudinary logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Cloudinary</div>
     </a>
