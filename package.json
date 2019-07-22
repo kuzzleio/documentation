@@ -7,6 +7,7 @@
     "dev": "vuepress dev src --no-clear-screen",
     "build": "vuepress build src",
     "debug": "node --nolazy --inspect-brk=9229 ./node_modules/.bin/vuepress dev src",
+    "prepare": "ruby .repos/repositories.rb clone",
     "dead-links": "ruby .ci/dead-links.rb -p src/"
   },
   "repository": {

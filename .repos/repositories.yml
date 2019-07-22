@@ -11,7 +11,7 @@
   destination: ./plugin/kuzzle-plugin-s3-1
 
 - url: https://github.com/kuzzleio/sdk-php.git
-  branch: 3-stable
+  branch: master
   destination: ./sdk/sdk-php-3
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
@@ -42,10 +42,10 @@
   branch: master
   destination: ./sdk/sdk-java-2
 
-- url: https://github.com/kuzzleio/kuzzle
+- url: https://github.com/kuzzleio/kuzzle.git
   branch: master
   destination: ./kuzzle-1
 
-- url: https://github.com/kuzzleio/sdk-android
+- url: https://github.com/kuzzleio/sdk-android.git
   branch: master
   destination: ./sdk/sdk-android-3
