@@ -16,7 +16,7 @@
             <article class="md-content__inner md-typeset">
               <h1>404 Page not found</h1>
               <blockquote>{{ getMsg() }}</blockquote>
-              <a href="/">Take me home.</a>
+              <a :href="generateHomeLink('/')">Take me home.</a>
             </article>
           </div>
         </div>
