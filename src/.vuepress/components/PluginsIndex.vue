@@ -1,5 +1,13 @@
 <template>
   <div class="Tiles">
+    <a href="/official-plugins/s3/1" class="Tiles-item">
+      <img src="/logos/plugin-s3.svg" alt="amazon s3 logo" class="Tiles-item-logo">
+      <div class="Tiles-item-name">Amazon S3</div>
+    </a>
+    <a href="/official-plugins/cloudinary/1" class="Tiles-item">
+      <img src="/logos/plugin-cloudinary.svg" alt="cloudinary logo" class="Tiles-item-logo">
+      <div class="Tiles-item-name">Cloudinary</div>
+    </a>
     <a href="https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local" class="Tiles-item">
       <img src="/logos/passport.svg" alt="auth passport local logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Auth passport local</div>
@@ -27,14 +35,6 @@
     <a href="https://github.com/kuzzleio/kuzzle-plugin-probe-listener" class="Tiles-item">
       <img src="/logos/probe.svg" alt="probe listener logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Probe listener</div>
-    </a>
-    <a :href="'/official-plugins/s3/1'" class="Tiles-item">
-      <img src="/logos/plugin-s3.svg" alt="amazon s3 logo" class="Tiles-item-logo">
-      <div class="Tiles-item-name">Amazon S3</div>
-    </a>
-    <a :href="'/official-plugins/cloudinary/1'" class="Tiles-item">
-      <img src="/logos/plugin-cloudinary.svg" alt="cloudinary logo" class="Tiles-item-logo">
-      <div class="Tiles-item-name">Cloudinary</div>
     </a>
   </div>
 </template>
