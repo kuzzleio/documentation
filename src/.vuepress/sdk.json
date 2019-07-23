@@ -58,5 +58,11 @@
     "name": "PHP 3.x",
     "version": "3",
     "icon": "/logos/php.svg"
+  },
+  {
+    "language": "csharp",
+    "name": "C# 1.x",
+    "version": "1",
+    "icon": "/logos/csharp.svg"
   }
 ]

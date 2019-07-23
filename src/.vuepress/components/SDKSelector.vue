@@ -53,7 +53,7 @@ export default {
     },
     filteredItems() {
       return this.items.filter(
-        item => !this.$route.path.includes(item.language)
+        item => !this.$route.path.includes(`${item.language}/${item.version}`)
       );
     },
     currentLanguage() {
@@ -93,13 +93,17 @@ export default {
     generateLink(item) {
       let method = '';
       let path = '';
+      const oldSDK = ['js5', 'php3', 'java2', 'android3'];
       if (this.$route.path.includes('controllers')) {
         method = `controllers/${this.$route.path.split('controllers/')[1]}`;
       }
       if (item.language === 'api') {
-        path = `/core/1/api/${method}`;
+        path = `/core/1/api/`;
       } else {
-        path = `/sdk/${item.language}/${item.version}/${method}`;
+        path = `/sdk/${item.language}/${item.version}/`;
+      }
+      if (!oldSDK.includes(`${item.language}${item.version}`)) {
+        path += method;
       }
       return path;
     },
