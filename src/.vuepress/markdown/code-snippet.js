@@ -3,6 +3,8 @@ const fixIndents = require('fix-indents');
 
 module.exports = function snippet(md, options = {}) {
   const root = options.root || process.cwd();
+  const docDir = process.env.DOC_DIR || 'src';
+
   function parser(state, startLine, endLine, silent) {
     const CH = '<'.charCodeAt(0);
     const pos = state.bMarks[startLine] + state.tShift[startLine];
@@ -37,7 +39,7 @@ module.exports = function snippet(md, options = {}) {
     if (/^\./.exec(sourcePath)) {
       rawPath = sourcePath.replace(
         /^\./,
-        path.dirname(path.normalize(`${root}/src/${state.env.relativePath}`))
+        path.dirname(path.normalize(`${root}/${docDir}/${state.env.relativePath}`))
       );
     }
 
@@ -73,9 +75,14 @@ module.exports = function snippet(md, options = {}) {
     const filename = rawPath.split(/[\[{:\s]/).shift();
 
     // By default, import the whole file contents
-    let content = fs.existsSync(filename)
+    const fileExists = fs.existsSync(filename);
+    let content = fileExists
       ? fs.readFileSync(filename).toString()
       : 'Not found: ' + filename;
+
+    if (state.env.relativePath && ! fileExists) {
+      console.error(`Cannot find snippet at ${filename}. Did you correctly set DOC_DIR ?`)
+    }
 
     // Extract snippet from file content, if matches snippet:* tags
     const match = SNIPPET_EXTRACT.exec(content);
