@@ -233,7 +233,7 @@ export default {
     if (this.$route.path.match(/\/sdk\//) && item__1.title === 'API reference') {
       item__1 = this.getPageChildren(this.root).find(el => el.title === 'Controllers');
       item__2 = this.getPageChildren(item__1).find(el => el.title === item__2.title);
-      item__2 = item__2 ? item__2 : JSON.parse(localStorage.getItem('item__2'));
+      item__2 = item__2 || JSON.parse(localStorage.getItem('item__2'));
     } else if (this.$route.path.match(/\/core\/1\/api\//) && item__1.title === 'Controllers') {
       item__1 = this.getPageChildren(this.root).find(el => el.title === 'API reference');
       item__2 = this.getPageChildren(item__1).find(el => el.title === item__2.title);
