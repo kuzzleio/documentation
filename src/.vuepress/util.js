@@ -7,11 +7,13 @@ const endingSlashRE = /\/$/;
 const outboundRE = /^(https?:|mailto:|tel:)/;
 
 export function setItemLocalStorage(key, item) {
-  localStorage.setItem(key, JSON.stringify(item));
+  const storeItem = typeof item === 'object' ? JSON.stringify(item) : item;
+  localStorage.setItem(key, storeItem);
 }
 
 export function getItemLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
+  const item = localStorage.getItem(key);
+  return typeof item === 'string' ? JSON.parse(item) : item;
 }
 
 function normalize(path) {

@@ -86,7 +86,13 @@
 
 <script>
 import TabsMobile from './TabsMobile.vue';
-import { getPageChildren, getFirstValidChild, findRootNode, setItemLocalStorage, getItemLocalStorage } from '../util.js';
+import {
+  getPageChildren,
+  getFirstValidChild,
+  findRootNode,
+  setItemLocalStorage,
+  getItemLocalStorage
+} from '../util.js';
 import sdkList from '../sdk.json';
 
 export default {
@@ -106,6 +112,11 @@ export default {
     };
   },
   computed: {
+    oldSDK() {
+      return sdkList
+        .filter(sdk => !sdk.newArchitecture)
+        .map(sdk => `${sdk.language}${sdk.version}`);
+    },
     sdkOrApiPage() {
       return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
     },
@@ -180,7 +191,7 @@ export default {
         this.setOpenedSubmenu(item__1, item__2);
       }
     },
-    
+
     getPageChildren(page) {
       return getPageChildren(page, this.$site.pages);
     },
@@ -215,12 +226,11 @@ export default {
 
     let item__1 = getItemLocalStorage('item__1');
     let item__2 = getItemLocalStorage('item__2');
-    const oldSDK = ['js5', 'php3', 'java2', 'android3'];
-    
-    if (this.$route.path.match(/\/sdk\//) ) {
+
+    if (this.$route.path.match(/\/sdk\//)) {
       const path = this.$route.path.split('sdk')[1].split('/');
-      const sdk = path[1]+path[2];
-      if (oldSDK.includes(sdk)) {
+      const sdk = path[1] + path[2];
+      if (this.oldSDK.includes(sdk)) {
         return;
       }
     }
@@ -230,13 +240,27 @@ export default {
     }
 
     // Hack for link sdk/controllers/** to api/api_reference/**
-    if (this.$route.path.match(/\/sdk\//) && item__1.title === 'API reference') {
-      item__1 = this.getPageChildren(this.root).find(el => el.title === 'Controllers');
-      item__2 = this.getPageChildren(item__1).find(el => el.title === item__2.title);
+    if (
+      this.$route.path.match(/\/sdk\//) &&
+      item__1.title === 'API reference'
+    ) {
+      item__1 = this.getPageChildren(this.root).find(
+        el => el.title === 'Controllers'
+      );
+      item__2 = this.getPageChildren(item__1).find(
+        el => el.title === item__2.title
+      );
       item__2 = item__2 || getItemLocalStorage('item__2');
-    } else if (this.$route.path.match(/\/core\/1\/api\//) && item__1.title === 'Controllers') {
-      item__1 = this.getPageChildren(this.root).find(el => el.title === 'API reference');
-      item__2 = this.getPageChildren(item__1).find(el => el.title === item__2.title);
+    } else if (
+      this.$route.path.match(/\/core\/1\/api\//) &&
+      item__1.title === 'Controllers'
+    ) {
+      item__1 = this.getPageChildren(this.root).find(
+        el => el.title === 'API reference'
+      );
+      item__2 = this.getPageChildren(item__1).find(
+        el => el.title === item__2.title
+      );
     }
     this.openOrCloseOrRedirect(item__1, item__2);
   }

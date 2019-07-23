@@ -58,7 +58,11 @@ export default {
   },
   computed: {
     sdkOrApiPage() {
-      return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
+      const sdkOrApiRegExp = new RegExp(/(^\/sdk\/|\/core\/1\/api\/)/);
+      return (
+        this.$route.path.match(sdkOrApiRegExp) ||
+        this.$site.base.match(sdkOrApiRegExp)
+      );
     }
   },
   methods: {

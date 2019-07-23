@@ -48,6 +48,11 @@ export default {
     };
   },
   computed: {
+    oldSDK() {
+      return this.items
+        .filter(sdk => !sdk.newArchitecture)
+        .map(sdk => `${sdk.language}${sdk.version}`);
+    },
     getCurrentSpan() {
       return this.currentLanguage ? this.currentLanguage.name : 'Select an SDK';
     },
@@ -93,7 +98,6 @@ export default {
     generateLink(item) {
       let method = '';
       let path = '';
-      const oldSDK = ['js5', 'php3', 'java2', 'android3'];
       if (this.$route.path.includes('controllers')) {
         method = `controllers/${this.$route.path.split('controllers/')[1]}`;
       }
@@ -102,7 +106,7 @@ export default {
       } else {
         path = `/sdk/${item.language}/${item.version}/`;
       }
-      if (!oldSDK.includes(`${item.language}${item.version}`)) {
+      if (!this.oldSDK.includes(`${item.language}${item.version}`)) {
         path += method;
       }
       return path;
