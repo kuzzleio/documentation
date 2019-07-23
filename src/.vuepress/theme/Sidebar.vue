@@ -114,9 +114,15 @@ export default {
     }
   },
   methods: {
+    setItemLocalStorage(key, item) {
+      localStorage.setItem(key, JSON.stringify(item));
+    },
+    getItemLocalStorage(key) {
+      return JSON.parse(localStorage.getItem(key));
+    },
     setOpenedSubmenu(item__1, item__2) {
-      localStorage.setItem('item__1', JSON.stringify(item__1));
-      localStorage.setItem('item__2', JSON.stringify(item__2));
+      this.setItemLocalStorage('item__1', item__1);
+      this.setItemLocalStorage('item__2', item__2);
       this.openedSubmenu = this.getId([item__1.title, item__2.title]);
     },
     unsetOpenedSubmenu() {
@@ -213,8 +219,8 @@ export default {
       }
     }, 500);
 
-    let item__1 = JSON.parse(localStorage.getItem('item__1'));
-    let item__2 = JSON.parse(localStorage.getItem('item__2'));
+    let item__1 = this.getItemLocalStorage('item__1');
+    let item__2 = this.getItemLocalStorage('item__2');
     const oldSDK = ['js5', 'php3', 'java2', 'android3'];
     
     if (this.$route.path.match(/\/sdk\//) ) {
@@ -233,7 +239,7 @@ export default {
     if (this.$route.path.match(/\/sdk\//) && item__1.title === 'API reference') {
       item__1 = this.getPageChildren(this.root).find(el => el.title === 'Controllers');
       item__2 = this.getPageChildren(item__1).find(el => el.title === item__2.title);
-      item__2 = item__2 || JSON.parse(localStorage.getItem('item__2'));
+      item__2 = item__2 || this.getItemLocalStorage('item__2');
     } else if (this.$route.path.match(/\/core\/1\/api\//) && item__1.title === 'Controllers') {
       item__1 = this.getPageChildren(this.root).find(el => el.title === 'API reference');
       item__2 = this.getPageChildren(item__1).find(el => el.title === item__2.title);
