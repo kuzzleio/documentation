@@ -8,7 +8,10 @@
     "build": "vuepress build src",
     "debug": "node --nolazy --inspect-brk=9229 ./node_modules/.bin/vuepress dev src",
     "clone-repos": "ruby .repos/repositories.rb clone",
-    "dead-links": "ruby .ci/dead-links.rb -p src/"
+    "dead-links": "ruby .ci/dead-links.rb -p src/",
+    "upload": "aws s3 sync src/.vuepress/dist s3://$S3_BUCKET",
+    "cloudfront": "aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'",
+    "deploy": "npm run upload && npm run cloudfront"
   },
   "repository": {
     "type": "git",

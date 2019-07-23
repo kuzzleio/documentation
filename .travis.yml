@@ -8,10 +8,10 @@ services:
 env:
   global:
     - NODE_ENV=production
-    - AWS_S3_BUCKET_PROD=docs.kuzzle.io
-    - AWS_S3_BUCKET_NEXT=docs-next.kuzzle.io
-    - AWS_CLOUDFRONT_DISTRIBUTION_ID_PROD=E3D6RP0POLCJMM
-    - AWS_CLOUDFRONT_DISTRIBUTION_ID_NEXT=E2ZCCEK9GRB49U
+    - S3_BUCKET_PROD=docs.kuzzle.io
+    - S3_BUCKET_NEXT=docs-next.kuzzle.io
+    - CLOUDFRONT_PROD=E3D6RP0POLCJMM
+    - CLOUDFRONT_NEXT=E2ZCCEK9GRB49U
     - AWS_DEFAULT_REGION=us-west-2
     # ALGOLIA_WRITE_KEY
     - secure: mwbfknkwzXmtGObr9pclB9z930GSuLydJiac1/o/m53oNkL1YqUOFmCsfZ8XFmQCIpqWVWMnKmoXgTXvSOx551IBYakGDkil/O988pmX7/Z2r4n6ONvWbj1oCciCsH6zsZ4u28R0cZ6ELiZXdiSjz+bjRtbS70lOxVHZAp9HFPBXymIa6ala683l1uMejDfDFtCc0zi7Qi69TLxj+x7ggroUhWbzg5P2J0RfnpYy+KifMcbz1hmhqNTJpvGRmYBHf6GFgcOCc78z14Aay8IVQjdVMBA3AgnqhquS97PQis+gsHRpKn5rCSj4jncTz+Xa3xfz52tZ5ElsyZSi9Qio4k3GOK/SCocjS+gbr3qdVc1BOPBkhYmwkgYVFnzKx+T+87zqnZ809SdhQa1K3pXblMenjYVPGLxt242yPwNlQfdLAbmTaahmzWTfEgSzCoqjy6EcdwFHwUC/pqCBBfSlNKKfqLIfwgR/4b5j4o2F+GjKk64qnii3uVkGShuT15tB6vAvqbLrUr2/dWQC4ORXgyZqYxuGvQVmgJ8zVqQFcC16U+eVQQYqshfInwLVcU9RFrLj37ekiEgFkklV2dggVr3gVTEEPZPlkpMHn1kP/69VkMcEyP48DBHJ8Qi26EFaH7bviuXehnK9f9HzhqC3t/q8NLr/w07izHu9yzlS9V8=
@@ -27,61 +27,34 @@ stages:
 jobs:
   include:
     # -------------------------------------------------------------------------
-    # Deployment - next
-    # -------------------------------------------------------------------------
-    # - stage: Deployment
-    #   name: Deploy to next-docs.kuzzle.io
-    #   if: branch = 3-dev
-
-    #   addons:
-    #     apt:
-    #       packages:
-    #         - python
-    #         - python-pip
-
-    #   install:
-    #     - pip install awscli --upgrade --user
-
-    #   script:
-    #     - npm install
-    #     - ALGOLIA_INDEX=kuzzle-documentation-next npm run build
-
-    #   deploy:
-    #     provider: script
-    #     script: aws s3 sync src/.vuepress/dist s3://$AWS_S3_BUCKET_NEXT --delete
-    #     skip_cleanup: true
-    #     on:
-    #       branch: 3-dev
-
-    #   after_deploy:
-    #     - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID_NEXT --paths '/*'
-
-    # -------------------------------------------------------------------------
     # Deployment - production
     # -------------------------------------------------------------------------
-    # - stage: Deployment
-    #   name: Deploy to docs.kuzzle.io
-    #   if: branch = master
+    - stage: Deployment
+      name: Deploy to docs.kuzzle.io and next-docs.kuzzle.io
+      if: branch = master
 
-    #   addons:
-    #     apt:
-    #       packages:
-    #         - python
-    #         - python-pip
+      addons:
+        apt:
+          packages:
+            - python
+            - python-pip
 
-    #   install:
-    #     - pip install awscli --upgrade --user
+      install:
+        - pip install awscli --upgrade --user
 
-    #   script:
-    #     - npm install
-    #     - npm run build
+      script:
+        - npm install
+        - npm run build
 
-    #   deploy:
-    #     provider: script
-    #     script: aws s3 sync src/.vuepress/dist s3://$AWS_S3_BUCKET_PROD --delete
-    #     skip_cleanup: true
-    #     on:
-    #       branch: master
+      deploy:
+        provider: script
+        script:
+          # - S3_BUCKET=$S3_BUCKET_PROD npm run upload
+          - S3_BUCKET=$S3_BUCKET_NEXT npm run upload
+        skip_cleanup: true
+        on:
+          branch: master
 
-    #   after_deploy:
-    #     - aws cloudfront create-invalidation --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID_PROD --paths '/*'
+      after_deploy:
+        # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run cloudfront
+        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run cloudfront
