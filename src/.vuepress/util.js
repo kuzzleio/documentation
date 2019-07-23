@@ -6,6 +6,14 @@ const extRE = /\.(md|html)$/;
 const endingSlashRE = /\/$/;
 const outboundRE = /^(https?:|mailto:|tel:)/;
 
+export function setItemLocalStorage(key, item) {
+  localStorage.setItem(key, JSON.stringify(item));
+}
+
+export function getItemLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+
 function normalize(path) {
   return decodeURI(path)
     .replace(hashRE, '')
