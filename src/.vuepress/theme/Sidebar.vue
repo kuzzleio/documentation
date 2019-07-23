@@ -214,15 +214,20 @@ export default {
     }
   },
   mounted() {
-    const activeLink = this.$el.querySelector('.md-nav__link--active');
-    // !Dis is a ugli ack
-    // If you find a better way to determine when the page has finished rendering,
-    // you're my hero.
-    setTimeout(() => {
-      if (activeLink && !this.isInViewport(activeLink)) {
-        this.$refs.scrollwrap.scrollTop = activeLink.offsetTop - 50;
+    // I'm a hero
+    this.$nextTick(function() {
+      const activeLink = this.$el.querySelector('.md-nav__link--active');
+      let parent = this.$el.querySelector('.md-nav__link--active');
+      let scroll = 0;
+      while (!parent.className.includes('md-sidebar')) {
+        scroll += parent.offsetTop;
+        parent = parent.offsetParent;
       }
-    }, 500);
+      scroll += parent.firstChild.offsetTop;
+      if (activeLink && !this.isInViewport(activeLink)) {
+        this.$refs.scrollwrap.scrollTop = scroll;
+      }
+    });
 
     let item__1 = getItemLocalStorage('item__1');
     let item__2 = getItemLocalStorage('item__2');
