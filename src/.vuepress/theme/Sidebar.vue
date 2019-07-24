@@ -253,11 +253,11 @@ export default {
     }
     this.openOrCloseOrRedirect(item__1, item__2);
     document.onreadystatechange = () => {
-      if (document.readyState == 'complete') {
+      if (document.readyState === 'complete') {
         const activeLink = this.$el.querySelector('.md-nav__link--active');
         if (activeLink && !this.isInViewport(activeLink)) {
-          let activeDiv = activeLink.parentElement.parentElement;
-          let scroll =
+          const activeDiv = activeLink.parentElement.parentElement;
+          const scroll =
             activeDiv.offsetTop + activeDiv.offsetParent.offsetTop - 50;
           this.$refs.scrollwrap.scrollTop = scroll;
         }
