@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { getOldSDK } from '../util.js';
 
 export default {
   props: {
@@ -49,9 +50,7 @@ export default {
   },
   computed: {
     oldSDK() {
-      return this.items
-        .filter(sdk => !sdk.newArchitecture)
-        .map(sdk => `${sdk.language}${sdk.version}`);
+      return getOldSDK(this.items);
     },
     getCurrentSpan() {
       return this.currentLanguage ? this.currentLanguage.name : 'Select an SDK';

@@ -91,7 +91,8 @@ import {
   getFirstValidChild,
   findRootNode,
   setItemLocalStorage,
-  getItemLocalStorage
+  getItemLocalStorage,
+  getOldSDK
 } from '../util.js';
 import sdkList from '../sdk.json';
 
@@ -113,9 +114,7 @@ export default {
   },
   computed: {
     oldSDK() {
-      return sdkList
-        .filter(sdk => !sdk.newArchitecture)
-        .map(sdk => `${sdk.language}${sdk.version}`);
+      return getOldSDK(this.sdkList);
     },
     sdkOrApiPage() {
       return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);

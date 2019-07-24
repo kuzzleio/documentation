@@ -6,6 +6,12 @@ const extRE = /\.(md|html)$/;
 const endingSlashRE = /\/$/;
 const outboundRE = /^(https?:|mailto:|tel:)/;
 
+export function getOldSDK(sdkList) {
+  return sdkList
+    .filter(sdk => !sdk.newArchitecture)
+    .map(sdk => `${sdk.language}${sdk.version}`);
+}
+
 export function setItemLocalStorage(key, item) {
   const storeItem = typeof item === 'object' ? JSON.stringify(item) : item;
   localStorage.setItem(key, storeItem);
