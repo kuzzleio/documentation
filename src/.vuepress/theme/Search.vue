@@ -183,7 +183,7 @@ export default {
       if (!this.results || !this.results[this.highlightedResult]) {
         return;
       }
-      window.location.href = `${this.results[this.highlightedResult].path}`;
+      this.$router.push(this.results[this.highlightedResult].path);
       this.reset();
     }
   },

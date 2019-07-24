@@ -214,21 +214,6 @@ export default {
     }
   },
   mounted() {
-    // I'm a hero
-    this.$nextTick(function() {
-      const activeLink = this.$el.querySelector('.md-nav__link--active');
-      let parent = this.$el.querySelector('.md-nav__link--active');
-      let scroll = 0;
-      while (!parent.className.includes('md-sidebar')) {
-        scroll += parent.offsetTop;
-        parent = parent.offsetParent;
-      }
-      scroll += parent.firstChild.offsetTop;
-      if (activeLink && !this.isInViewport(activeLink)) {
-        this.$refs.scrollwrap.scrollTop = scroll;
-      }
-    });
-
     let item__1 = getItemLocalStorage('item__1');
     let item__2 = getItemLocalStorage('item__2');
 
@@ -268,6 +253,17 @@ export default {
       );
     }
     this.openOrCloseOrRedirect(item__1, item__2);
+    document.onreadystatechange = () => {
+      if (document.readyState == 'complete') {
+        const activeLink = this.$el.querySelector('.md-nav__link--active');
+        if (activeLink && !this.isInViewport(activeLink)) {
+          let activeDiv = activeLink.parentElement.parentElement;
+          let scroll =
+            activeDiv.offsetTop + activeDiv.offsetParent.offsetTop - 50;
+          this.$refs.scrollwrap.scrollTop = scroll;
+        }
+      }
+    };
   }
 };
 </script>
