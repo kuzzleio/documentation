@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev src --no-clear-screen",
-    "build": "vuepress build src",
+    "doc-dev": "vuepress dev src --no-clear-screen",
+    "doc-build": "vuepress build src",
     "debug": "node --nolazy --inspect-brk=9229 ./node_modules/.bin/vuepress dev src",
-    "lint": "eslint --max-warnings=0 ./test/lib/**/*.js ./test/test/**/*.js",
-    "snippet-test": "bash run-all-snippet-tests.sh",
-    "test": "npm run --silent lint && npm run snippet-test"
+    "clone-repos": "ruby .repos/repositories.rb clone",
+    "dead-links": "ruby .ci/dead-links.rb -p src/",
+    "doc-upload": "aws s3 sync src/.vuepress/dist s3://$S3_BUCKET",
+    "doc-cloudfront": "aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'",
+    "doc-deploy": "npm run upload && npm run cloudfront"
   },
   "repository": {
     "type": "git",

@@ -23,12 +23,12 @@
 <script>
 import { getValidLinkByRootPath } from '../util.js';
 import sdkList from '../sdk.json';
-import links from '../links.json';
+import headerEntries from "../header-entries.json";
 
 export default {
   computed: {
-    getLinks() {
-      return links;
+    headerEntries() {
+      return Object.entries(headerEntries)
     }
   },
   data() {

@@ -24,12 +24,12 @@
                 <li class="md-nav__item md-nav-title">
                   <div
                     class="md-nav__link"
-                    @click="openOrRedirect(item__1, item__2)"
+                    @click="openOrCloseOrRedirect(item__1, item__2)"
                     :class="{'md-nav__link--active': $page.path === item__2.path, 'md-nav__item--code': item__2.frontmatter.code == true}"
                   >
                     <div v-if="getPageChildren(item__2).length">
                       <i
-                        v-if="openedSubmenu === item__2.title"
+                        v-if="openedSubmenu === getId([item__1.title, item__2.title])"
                         class="fa fa-caret-down"
                         aria-hidden="true"
                       ></i>
@@ -86,7 +86,14 @@
 
 <script>
 import TabsMobile from './TabsMobile.vue';
-import { getPageChildren, getFirstValidChild, findRootNode } from '../util.js';
+import {
+  getPageChildren,
+  getFirstValidChild,
+  findRootNode,
+  setItemLocalStorage,
+  getItemLocalStorage,
+  getOldSDK
+} from '../util.js';
 import sdkList from '../sdk.json';
 
 export default {
@@ -105,16 +112,10 @@ export default {
       sdkList
     };
   },
-  watch: {
-    '$route.path': function(path) {
-      if (!path.includes(this.openedSubmenu)) {
-        const openedSubmenuId = this.sanitize(this.openedSubmenu);
-        document.getElementById(openedSubmenuId).style.height = '0px';
-        this.openedSubmenu = '';
-      }
-    }
-  },
   computed: {
+    oldSDK() {
+      return getOldSDK(this.sdkList);
+    },
     sdkOrApiPage() {
       return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
     },
@@ -123,6 +124,40 @@ export default {
     }
   },
   methods: {
+    setOpenedSubmenu(item__1, item__2) {
+      setItemLocalStorage('item__1', item__1);
+      setItemLocalStorage('item__2', item__2);
+      this.openedSubmenu = this.getId([item__1.title, item__2.title]);
+    },
+    unsetOpenedSubmenu() {
+      localStorage.setItem('item__1', null);
+      localStorage.setItem('item__2', null);
+      this.openedSubmenu = '';
+    },
+    closeSubmenu() {
+      if (this.openedSubmenu !== '') {
+        const openedSubmenuId = this.sanitize(this.openedSubmenu);
+        document.getElementById(openedSubmenuId).style.height = '0px';
+      }
+    },
+    redirect(item__2) {
+      this.closeSidebar();
+      this.unsetOpenedSubmenu();
+      this.$router.push(item__2.path);
+    },
+    openSubmenu(item__1, item__2) {
+      const childs = this.getPageChildren(item__2);
+      const item2Id = this.getId([item__1.title, item__2.title]);
+      const item3Id = this.getId([
+        item__1.title,
+        item__2.title,
+        childs[0].title
+      ]);
+
+      const childSize = document.getElementById(item3Id).offsetHeight;
+      const menuHeight = `${childs.length * childSize}px`;
+      document.getElementById(item2Id).style.height = menuHeight;
+    },
     closeSidebar(item) {
       this.$emit('closeSidebar');
     },
@@ -140,36 +175,22 @@ export default {
     sanitize(str) {
       return str.replace(/ /g, '_');
     },
-    openOrRedirect(item__1, item__2) {
+    openOrCloseOrRedirect(item__1, item__2) {
       const childs = this.getPageChildren(item__2);
+      const clickedSubmenuId = this.getId([item__1.title, item__2.title]);
 
       if (!childs.length) {
-        this.closeSidebar();
-        this.$router.push(item__2.path);
-        return;
+        this.redirect(item__2);
+      } else if (this.openedSubmenu === clickedSubmenuId) {
+        this.closeSubmenu();
+        this.unsetOpenedSubmenu();
+      } else if (document.getElementById(clickedSubmenuId)) {
+        this.closeSubmenu();
+        this.openSubmenu(item__1, item__2);
+        this.setOpenedSubmenu(item__1, item__2);
       }
-
-      if (this.openedSubmenu) {
-        const openedSubmenuId = this.sanitize(this.openedSubmenu);
-        document.getElementById(openedSubmenuId).style.height = '0px';
-      }
-
-      const item2Id = this.getId([item__1.title, item__2.title]);
-      const item3Id = this.getId([
-        item__1.title,
-        item__2.title,
-        childs[0].title
-      ]);
-
-      if (this.openedSubmenu !== item2Id) {
-        const childSize = document.getElementById(item3Id).offsetHeight;
-        const menuHeight = `${childs.length * childSize}px`;
-        document.getElementById(item2Id).style.height = menuHeight;
-      }
-
-      this.openedSubmenu = this.openedSubmenu === item2Id ? '' : item2Id;
-      return;
     },
+
     getPageChildren(page) {
       return getPageChildren(page, this.$site.pages);
     },
@@ -192,15 +213,56 @@ export default {
     }
   },
   mounted() {
-    const activeLink = this.$el.querySelector('.md-nav__link--active');
-    // !Dis is a ugli ack
-    // If you find a better way to determine when the page has finished rendering,
-    // you're my hero.
-    setTimeout(() => {
-      if (activeLink && !this.isInViewport(activeLink)) {
-        this.$refs.scrollwrap.scrollTop = activeLink.offsetTop - 50;
+    let item__1 = getItemLocalStorage('item__1');
+    let item__2 = getItemLocalStorage('item__2');
+
+    if (this.$route.path.match(/\/sdk\//)) {
+      const path = this.$route.path.split('sdk')[1].split('/');
+      const sdk = path[1] + path[2];
+      if (this.oldSDK.includes(sdk)) {
+        return;
       }
-    }, 500);
+    }
+
+    if (!item__1 || !item__2) {
+      return;
+    }
+
+    // Hack for link sdk/controllers/** to api/api_reference/**
+    if (
+      this.$route.path.match(/\/sdk\//) &&
+      item__1.title === 'API reference'
+    ) {
+      item__1 = this.getPageChildren(this.root).find(
+        el => el.title === 'Controllers'
+      );
+      item__2 = this.getPageChildren(item__1).find(
+        el => el.title === item__2.title
+      );
+      item__2 = item__2 || getItemLocalStorage('item__2');
+    } else if (
+      this.$route.path.match(/\/core\/1\/api\//) &&
+      item__1.title === 'Controllers'
+    ) {
+      item__1 = this.getPageChildren(this.root).find(
+        el => el.title === 'API reference'
+      );
+      item__2 = this.getPageChildren(item__1).find(
+        el => el.title === item__2.title
+      );
+    }
+    this.openOrCloseOrRedirect(item__1, item__2);
+    document.onreadystatechange = () => {
+      if (document.readyState === 'complete') {
+        const activeLink = this.$el.querySelector('.md-nav__link--active');
+        if (activeLink && !this.isInViewport(activeLink)) {
+          const activeDiv = activeLink.parentElement.parentElement;
+          const scroll =
+            activeDiv.offsetTop + activeDiv.offsetParent.offsetTop - 50;
+          this.$refs.scrollwrap.scrollTop = scroll;
+        }
+      }
+    };
   }
 };
 </script>

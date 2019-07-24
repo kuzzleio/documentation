@@ -1,9 +1,0 @@
-name: kuzzle#playQueue
-description: Play the requests queued
-hooks:
-  before:
-  after:
-template: without-connect
-expected: Offline queue successfully played
-sdk: cpp
-version: 1

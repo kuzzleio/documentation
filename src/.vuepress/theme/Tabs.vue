@@ -12,7 +12,7 @@
                 :class="{'md-tabs__link--active': $route.path.match(link.path)}"
                 :title="link.label"
                 class="md-tabs__link"
-              >{{ link.label }}</router-link>
+              >{{ link.label }}</a>
             </li>
           </ul>
         </li>
@@ -22,21 +22,17 @@
 </template>
 
 <script>
-import { getValidLinkByRootPath } from '../util.js';
-import links from '../links.json';
+
+import { getValidLinkByRootPath } from "../util.js";
+import headerEntries from "../header-entries.json";
 
 export default {
   computed: {
-    getLinks() {
-      return links;
+    headerEntries() {
+      return Object.entries(headerEntries)
     }
   },
   methods: {
-    getPath(link) {
-      return {
-        path: link.generateLink ? this.generateLink(link.path) : link.path
-      };
-    },
     startWith(str, start) {
       return str.indexOf(start) === 0;
     },

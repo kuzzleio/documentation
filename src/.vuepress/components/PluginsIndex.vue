@@ -1,5 +1,17 @@
 <template>
   <div class="Tiles">
+    <a href="/official-plugins/s3/1" class="Tiles-item">
+      <img src="/logos/plugin-s3.svg" alt="amazon s3 logo" class="Tiles-item-logo">
+      <div class="Tiles-item-name">Amazon S3</div>
+    </a>
+    <a href="/official-plugins/cloudinary/1" class="Tiles-item">
+      <img src="/logos/plugin-cloudinary.svg" alt="cloudinary logo" class="Tiles-item-logo">
+      <div class="Tiles-item-name">Cloudinary</div>
+    </a>
+    <a href="https://github.com/kuzzleio/kuzzle-plugin-prometheus" class="Tiles-item">
+      <img src="/logos/plugin-prometheus.svg" alt="prometheus logo" class="Tiles-item-logo">
+      <div class="Tiles-item-name">Prometheus</div>
+    </a>
     <a href="https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local" class="Tiles-item">
       <img src="/logos/passport.svg" alt="auth passport local logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Auth passport local</div>
@@ -28,14 +40,13 @@
       <img src="/logos/probe.svg" alt="probe listener logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Probe listener</div>
     </a>
-    <router-link :to="{path: '/official-plugins/s3/1'}" class="Tiles-item">
-      <img src="/logos/plugin-s3.svg" alt="amazon s3 logo" class="Tiles-item-logo">
-      <div class="Tiles-item-name">Amazon S3</div>
-    </router-link>
-    <router-link :to="{path: '/official-plugins/cloudinary/1'}" class="Tiles-item">
-      <img src="/logos/plugin-cloudinary.svg" alt="cloudinary logo" class="Tiles-item-logo">
-      <div class="Tiles-item-name">Cloudinary</div>
-    </router-link>
+    <a href="/official-plugins/multi-tenancy/1" class="Tiles-item">
+      <div class="ribbon">
+        <span>BETA</span>
+      </div>
+      <img src="/logos/plugin-multi-tenancy.svg" alt="multi tenancy logo" class="Tiles-item-logo">
+      <div class="Tiles-item-name">Multi Tenancy</div>
+    </a>
   </div>
 </template>
 

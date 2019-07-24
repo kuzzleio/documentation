@@ -1,9 +1,0 @@
-name: server#adminExists
-description: Checks that an administrator account exists.
-hooks:
-  before:
-  after:
-template: default
-expected: Admin user does not exists
-sdk: cpp
-version: 1

@@ -1,9 +1,0 @@
-name: index#exists
-description: Test if an index exists
-hooks:
-  before: curl -X POST kuzzle:7512/nyc-open-data/_create
-  after:
-template: default
-expected: Index exists in Kuzzle
-sdk: cpp
-version: 1

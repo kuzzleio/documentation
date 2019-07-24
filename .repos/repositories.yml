@@ -1,0 +1,55 @@
+- url: https://github.com/kuzzleio/sdk-javascript.git
+  branch: 5-stable
+  destination: ./sdk/sdk-javascript-5
+
+- url: https://github.com/kuzzleio/sdk-javascript.git
+  branch: master
+  destination: ./sdk/sdk-javascript-6
+
+- url: https://github.com/kuzzleio/kuzzle-plugin-s3.git
+  branch: master
+  destination: ./plugin/kuzzle-plugin-s3-1
+
+- url: https://github.com/kuzzleio/sdk-php.git
+  branch: master
+  destination: ./sdk/sdk-php-3
+
+- url: https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
+  branch: master
+  destination: ./plugin/kuzzle-plugin-cloudinary-1
+
+- url: https://github.com/kuzzleio/sdk-cpp.git
+  branch: master
+  destination: ./sdk/sdk-cpp-1
+
+- url: https://github.com/kuzzleio/sdk-csharp.git
+  branch: master
+  destination: ./sdk/sdk-csharp-1
+
+- url: https://github.com/kuzzleio/sdk-go.git
+  branch: 1-stable
+  destination: ./sdk/sdk-go-1
+
+- url: https://github.com/kuzzleio/sdk-go.git
+  branch: master
+  destination: ./sdk/sdk-go-2
+
+- url: https://github.com/kuzzleio/sdk-java.git
+  branch: 1-stable
+  destination: ./sdk/sdk-java-1
+
+- url: https://github.com/kuzzleio/sdk-java.git
+  branch: master
+  destination: ./sdk/sdk-java-2
+
+- url: https://github.com/kuzzleio/kuzzle.git
+  branch: master
+  destination: ./kuzzle-1
+
+- url: https://github.com/kuzzleio/sdk-android.git
+  branch: master
+  destination: ./sdk/sdk-android-3
+
+- url: https://github.com/kuzzleio/kuzzle-plugin-multi-tenancy.git
+  branch: master
+  destination: ./plugin/kuzzle-plugin-multi-tenancy-1

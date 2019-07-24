@@ -18,9 +18,9 @@
         :class="getItemClass(item)"
         @click="toggleList()"
       >
-        <router-link
+        <a
           :class="`selector-list-item-link ${item.language === 'api'? 'api': ''}`"
-          :to="{path: generateLink(item)}"
+          :href="generateLink(item)"
         >
           <img
             v-if="item.language !== 'api'"
@@ -31,14 +31,14 @@
           <span
             :class="`selector-list-item-name${item.language === 'api'? '-api': ''}`"
           >{{ getSpan(item) }}</span>
-        </router-link>
+        </a>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-const { getValidLinkByRootPath } = require('../util.js');
+import { getOldSDK } from '../util.js';
 
 export default {
   props: {
@@ -50,12 +50,15 @@ export default {
     };
   },
   computed: {
+    oldSDK() {
+      return getOldSDK(this.items);
+    },
     getCurrentSpan() {
       return this.currentLanguage ? this.currentLanguage.name : 'Select an SDK';
     },
     filteredItems() {
       return this.items.filter(
-        item => !this.$route.path.includes(item.language)
+        item => !this.$route.path.includes(`${item.language}/${item.version}`)
       );
     },
     currentLanguage() {
@@ -84,8 +87,6 @@ export default {
         itemClass = 'selector-list-item disabled';
       }
 
-      // let itemClass = item.language === 'api'? '': 'selector-list-item';
-      // itemClass += item.langage !== 'api' && this.generateLink(item)? '': 'disabled';
       return itemClass;
     },
     getSpan(item) {
@@ -101,11 +102,14 @@ export default {
         method = `controllers/${this.$route.path.split('controllers/')[1]}`;
       }
       if (item.language === 'api') {
-        path = `/core/1/api/${method}`;
+        path = '/core/1/api/';
       } else {
-        path = `/sdk/${item.language}/${item.version}/${method}`;
+        path = `/sdk/${item.language}/${item.version}/`;
       }
-      return getValidLinkByRootPath(path, this.$site.pages);
+      if (!this.oldSDK.includes(`${item.language}${item.version}`)) {
+        path += method;
+      }
+      return path;
     },
     toggleList: function() {
       this.isListShowed = !this.isListShowed;
