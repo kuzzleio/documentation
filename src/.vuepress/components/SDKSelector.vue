@@ -102,7 +102,7 @@ export default {
         method = `controllers/${this.$route.path.split('controllers/')[1]}`;
       }
       if (item.language === 'api') {
-        path = `/core/1/api/`;
+        path = '/core/1/api/';
       } else {
         path = `/sdk/${item.language}/${item.version}/`;
       }
