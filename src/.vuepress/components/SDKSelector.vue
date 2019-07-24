@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { getOldSDK } from '../util.js';
 
 export default {
   props: {
@@ -48,12 +49,15 @@ export default {
     };
   },
   computed: {
+    oldSDK() {
+      return getOldSDK(this.items);
+    },
     getCurrentSpan() {
       return this.currentLanguage ? this.currentLanguage.name : 'Select an SDK';
     },
     filteredItems() {
       return this.items.filter(
-        item => !this.$route.path.includes(item.language)
+        item => !this.$route.path.includes(`${item.language}/${item.version}`)
       );
     },
     currentLanguage() {
@@ -97,9 +101,12 @@ export default {
         method = `controllers/${this.$route.path.split('controllers/')[1]}`;
       }
       if (item.language === 'api') {
-        path = `/core/1/api/${method}`;
+        path = '/core/1/api/';
       } else {
-        path = `/sdk/${item.language}/${item.version}/${method}`;
+        path = `/sdk/${item.language}/${item.version}/`;
+      }
+      if (!this.oldSDK.includes(`${item.language}${item.version}`)) {
+        path += method;
       }
       return path;
     },

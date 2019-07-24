@@ -1,6 +1,6 @@
 <template>
   <div class="md-layout">
-    <Header ref="header"/>
+    <Header ref="header" />
     <div ref="container" class="md-container">
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -21,7 +21,7 @@
           </div>
         </div>
       </main>
-      <Footer ref="footer"/>
+      <Footer ref="footer" />
     </div>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default {
     },
     generateHomeLink(path) {
       const rootPage = getNodeByPath(path, this.$site.pages);
-      return getFirstValidChild(rootPage, this.$site.pages);
+      return getFirstValidChild(rootPage, this.$site.pages).path;
     },
     setContainerPadding() {
       const padding = this.$refs.header.$el.querySelector('header')
