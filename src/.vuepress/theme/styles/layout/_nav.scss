@@ -12,7 +12,7 @@
       position: sticky;
       background-color: white;
       top: 0px;
-      z-index:10;
+      z-index: 10;
     }
 
     .md-nav__item {
@@ -83,13 +83,12 @@
     padding: 0;
     list-style: none;
 
-
     .sub-menu:not(.no-parent) {
       padding-left: 16px;
       transform: scaleY(0);
       transform-origin: 50% 0;
-      transition:transform 0.2s linear, height 0.2s linear, opacity 0.2s linear;
-      opacity:0;
+      transition: transform 0.2s linear, height 0.2s linear, opacity 0.2s linear;
+      opacity: 0;
       height: 0px;
     }
 
@@ -97,11 +96,19 @@
       opacity: 1 !important;
       transform: scaleY(1) !important;
     }
+
+    & > .md-nav__item-container {
+      margin-bottom: 24px;
+
+      @include break-to-device(tablet) {
+        margin-bottom: 0px;
+      }
+    }
   }
 
   &__separator {
     margin-top: 22px;
-    margin-bottom: 22px;
+    margin-bottom: 12px;
     padding-bottom: 4px;
     width: 90%;
     border-bottom: 1px solid rgba(233, 78, 119, 0.3);
@@ -221,12 +228,14 @@
 
   &__mobile-group-name {
     font-weight: 700;
-    font-size: 1.3rem; 
-    opacity: 0.5; 
-    padding: 0 0 0 10px; 
-    margin-bottom: -5px; color:white;
+    font-size: 1.3rem;
+    opacity: 0.5;
+    padding: 0 0 0 10px;
+    margin-bottom: -5px;
+    color: white;
+    text-transform: capitalize;
   }
-  
+
   // Repository containing source
   // &__source {
   //   display: none;

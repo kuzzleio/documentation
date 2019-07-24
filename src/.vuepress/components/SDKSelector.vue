@@ -7,6 +7,7 @@
         :src="currentLanguage.icon"
         :alt="currentLanguage.language"
       />
+      <img v-else class="selector-selectedItem-icon" src="/logo-57x57.png" alt="Kuzzle logo" />
       <span class="selector-selectedItem-name">{{ getCurrentSpan }}</span>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
