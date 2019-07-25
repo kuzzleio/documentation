@@ -3,11 +3,11 @@
     <div v-if="$route.path.match('sdk-reference')" class="selector-container">
       <SDKSelector :items="sdkList" />
     </div>
-    <div v-for="group of Object.keys(getLinks)">
-      <p class="md-nav__mobile-group-name">{{ group }}</p>
-      <router-link
-        v-for="link of getLinks[group]"
-        :to="getPath(link)"
+    <div v-for="([part, links]) of headerEntries">
+      <p class="md-nav__mobile-group-name">{{ part }}</p>
+      <a
+        v-for="link of links"
+        :href="link.path"
         :title="link.label"
         class="md-source"
         data-md-state="done"
@@ -15,7 +15,7 @@
         @click.native="$emit('closeSidebar')"
       >
         <div class="md-source__repository">{{ link.label }}</div>
-      </router-link>
+      </a>
     </div>
   </div>
 </template>
@@ -37,11 +37,6 @@ export default {
     };
   },
   methods: {
-    getPath(link) {
-      return {
-        path: link.generateLink ? this.generateLink(link.path) : link.path
-      };
-    },
     generateLink(path) {
       return getValidLinkByRootPath(path, this.$site.pages);
     }
