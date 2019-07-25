@@ -52,7 +52,7 @@ jobs:
         - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run doc-cloudfront
 
     - stage: Deployment
-      name: Deploy Kuzzle, js to docs.kuzzle.io and next-docs.kuzzle.io
+      name: Deploy to docs.kuzzle.io and next-docs.kuzzle.io
       if: type = push AND branch = master
       language: node_js
       node_js: '10'
@@ -66,6 +66,7 @@ jobs:
             - python-pip
 
       install:
+        - npm install
         - pip install awscli --upgrade --user
 
       script:
@@ -78,7 +79,7 @@ jobs:
         - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run doc-cloudfront
 
     - stage: Deployment
-      name: Deploy c#, cpp, java, android to docs.kuzzle.io and next-docs.kuzzle.io
+      name: Deploy to docs.kuzzle.io and next-docs.kuzzle.io
       if: type = push AND branch = master
       language: node_js
       node_js: '10'
@@ -92,6 +93,7 @@ jobs:
             - python-pip
 
       install:
+        - npm install
         - pip install awscli --upgrade --user
 
       script:
@@ -104,7 +106,7 @@ jobs:
         - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run doc-cloudfront
 
     - stage: Deployment
-      name: Deploy cloudinary, s3, go, php to docs.kuzzle.io and next-docs.kuzzle.io
+      name: Deploy to docs.kuzzle.io and next-docs.kuzzle.io
       if: type = push AND branch = master
       language: node_js
       node_js: '10'
@@ -118,6 +120,7 @@ jobs:
             - python-pip
 
       install:
+        - npm install
         - pip install awscli --upgrade --user
 
       script:
