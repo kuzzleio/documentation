@@ -14,7 +14,7 @@
   stable: master
   dev: 1-dev
   destination: ./plugin/kuzzle-plugin-s3-1
-  name: kuzzle-plugin-s3-1
+  name: plugin-s3-1
 
 - url: https://github.com/kuzzleio/sdk-php.git
   stable: master
@@ -26,7 +26,7 @@
   stable: master
   dev: 1-dev
   destination: ./plugin/kuzzle-plugin-cloudinary-1
-  name: kuzzle-plugin-cloudinary-1
+  name: plugin-cloudinary-1
 
 - url: https://github.com/kuzzleio/sdk-cpp.git
   stable: master
@@ -80,4 +80,4 @@
   stable: master
   dev: 1-dev
   destination: ./plugin/kuzzle-plugin-multi-tenancy-1
-  name: kuzzle-plugin-multi-tenancy-1
+  name: plugin-multi-tenancy-1

@@ -20,7 +20,7 @@ const getRepositories = (argv) => {
     .filter(repo => repositoryNames.length === 0 || repositoryNames.includes(repo.name));
 
   if (repositories.length === 0) {
-    cout.error(`Unknown repository ${repositoryName}.`);
+    cout.error(`Unknown repository ${repositoryNames.join(',')}.`);
     process.exit(1);
   }
 
@@ -35,15 +35,16 @@ const execute = (command, message) => {
   cout.notice(message);
 
   return new Promise(resolve => {
-    exec(cmd, (error, stdout, stderr) => {
+    exec(cmd, { maxBuffer: 1024 * 500 }, (error, stdout, stderr) => {
       if (error) {
-        console.error(stderr);
         console.error(stdout);
+        console.error(stderr);
+        console.error(error);
         cout.error(cmd);
 
         process.exitCode = 1;
 
-        return resolve(error);
+        return resolve();
       }
 
       cout.ok(message);
@@ -125,6 +126,8 @@ const removeRepository = async (argv) => {
   await Promise.all(promises);
 }
 
+
+
 const argv = require('yargs').argv;
 
 switch (process.argv[2]) {
@@ -151,5 +154,3 @@ switch (process.argv[2]) {
     process.exit(1);
     break;
 }
-
-// process.exit(returnStatus);
