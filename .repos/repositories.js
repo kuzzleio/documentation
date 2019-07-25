@@ -40,6 +40,9 @@ const execute = (command, message) => {
         console.error(stderr);
         console.error(stdout);
         cout.error(cmd);
+
+        process.exitCode = 1;
+
         return resolve(error);
       }
 
@@ -148,3 +151,5 @@ switch (process.argv[2]) {
     process.exit(1);
     break;
 }
+
+// process.exit(returnStatus);
