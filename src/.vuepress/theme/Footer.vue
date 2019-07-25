@@ -9,9 +9,8 @@
         </a>
       </li>
       <li class="md-footer-external__link">
-          <!-- Link with kuzzle tag : "https://stackoverflow.com/questions/ask?guided=false&tags=Kuzzle&title=[Kuzzle]" -->
         <a
-          href="https://stackoverflow.com/questions/ask?guided=false&title=[Kuzzle]"
+          href="https://stackoverflow.com/questions/ask?guided=false&tags=Kuzzle&title=[Kuzzle]"
           target="_blank"
         >
           <img class="md-footer-external__link__img" src="/logos/logo-stack-overflow.svg" />
