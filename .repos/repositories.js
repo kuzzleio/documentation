@@ -9,7 +9,7 @@ const currentDir = require('path').dirname(require.main.filename);
 const getRepositories = (argv) => {
   let repositoryNames = [];
 
-  if (process.env.REPOSITORIES) {
+  if (process.env.REPOSITORIES && process.env.REPOSITORIES.length > 0) {
     repositoryNames = process.env.REPOSITORIES.split(',');
   } else if (argv.repo) {
     repositoryNames = argv.repo;
@@ -50,9 +50,15 @@ const execute = (command, message) => {
 }
 
 const cloneRepository = async (argv) => {
-  const
-    branch = argv.branch || 'stable',
-    promises = [];
+  let branch = 'stable';
+
+  if (process.env.BRANCH && process.env.BRANCH.length > 0) {
+    branch = process.env.BRANCH;
+  } else if (argv.branch) {
+    branch = argv.branch;
+  }
+
+  const promises = [];
 
   if (!['dev', 'stable'].includes(branch)) {
     cout.warn('--branch option can be "dev" or "stable"');

@@ -51,67 +51,24 @@ jobs:
         # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run doc-cloudfront
         - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run doc-cloudfront
 
-    - stage: Deployment
-      name: Deploy to docs.kuzzle.io and next-docs.kuzzle.io
+    - stage: Doc Deployment
       if: type = push AND branch = master
       language: node_js
       node_js: '10'
       env:
-        - REPOSITORIES=kuzzle-1,sdk-javascript-5,sdk-javascript-6
-
-      addons:
-        apt:
-          packages:
-            - python
-            - python-pip
-
-      install:
-        - npm install
-        - pip install awscli --upgrade --user
-
-      script:
-        - npm run repositories -- clone
-        - npm run repositories -- run "npm run doc-prepare" --async
-        - npm run repositories -- run "npm run doc-build" --async
-        # - S3_BUCKET=$S3_BUCKET_PROD npm run repositories -- run "npm run doc-upload" --async
-        - S3_BUCKET=$S3_BUCKET_NEXT npm run repositories -- run "npm run doc-upload" --async
-        # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run doc-cloudfront
-        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run doc-cloudfront
-
-    - stage: Deployment
-      name: Deploy to docs.kuzzle.io and next-docs.kuzzle.io
-      if: type = push AND branch = master
-      language: node_js
-      node_js: '10'
-      env:
-        - REPOSITORIES=sdk-csharp-1,sdk-cpp-1,sdk-java-1,sdk-java-2,sdk-android-3
-
-      addons:
-        apt:
-          packages:
-            - python
-            - python-pip
-
-      install:
-        - npm install
-        - pip install awscli --upgrade --user
-
-      script:
-        - npm run repositories -- clone
-        - npm run repositories -- run "npm run doc-prepare" --async
-        - npm run repositories -- run "npm run doc-build" --async
-        # - S3_BUCKET=$S3_BUCKET_PROD npm run repositories -- run "npm run doc-upload" --async
-        - S3_BUCKET=$S3_BUCKET_NEXT npm run repositories -- run "npm run doc-upload" --async
-        # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run doc-cloudfront
-        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run doc-cloudfront
-
-    - stage: Deployment
-      name: Deploy to docs.kuzzle.io and next-docs.kuzzle.io
-      if: type = push AND branch = master
-      language: node_js
-      node_js: '10'
-      env:
-        - REPOSITORIES=plugin-cloudinary-1,plugin-s3-1,sdk-go-1,sdk-go-2,sdk-php-3
+        - REPOSITORIES=kuzzle-1
+        - REPOSITORIES=sdk-javascript-5
+        - REPOSITORIES=sdk-javascript-6
+        - REPOSITORIES=sdk-csharp-1
+        - REPOSITORIES=sdk-cpp-1
+        - REPOSITORIES=sdk-java-1
+        - REPOSITORIES=sdk-java-2
+        - REPOSITORIES=sdk-android-3
+        - REPOSITORIES=plugin-cloudinary-1
+        - REPOSITORIES=plugin-s3-1
+        - REPOSITORIES=sdk-go-1
+        - REPOSITORIES=sdk-go-2
+        - REPOSITORIES=sdk-php-3
 
       addons:
         apt:
