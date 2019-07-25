@@ -8,8 +8,26 @@ def each_repository
   end
 end
 
-def clone_repos
+def clone_repos(branch = 'stable')
   each_repository do |repository|
+    clone_command = """
+git clone \
+--depth 10 \
+--single-branch \
+--branch #{repository[branch]} \
+#{repository['url']} \
+#{__dir__}/#{repository['destination']}
+    """
+
+    puts clone_command
+    system clone_command
+  end
+end
+
+def clone_repo(repo)
+  each_repository do |repository|
+    next unless repository['destination'].end_with?(repo)
+
     clone_command = """
 git clone \
 --depth 10 \
@@ -20,7 +38,19 @@ git clone \
     """
 
     puts clone_command
-    `#{clone_command}`
+    system clone_command
+  end
+end
+
+def command_repos(cmd)
+  each_repository do |repository|
+    command = """
+cd #{__dir__}/#{repository['destination']} && \
+#{cmd}
+  """
+
+    puts command
+    system command
   end
 end
 
@@ -32,7 +62,7 @@ cd #{__dir__}/#{repository['destination']} \
     """
 
     puts update_command
-    `#{update_command}`
+    system update_command
   end
 end
 
@@ -41,17 +71,24 @@ def remove_repos
     remove_command = "rm -rf #{__dir__}/#{repository['destination']}"
 
     puts remove_command
-    `#{remove_command}`
+    system remove_command
   end
 end
 
 case ARGV[0]
+when 'command'
+  command = ARGV[1]
+  command_repos(command)
+when 'clone-single'
+  repo = ARGV[1]
+  clone_repo(repo)
 when 'clone'
-  clone_repos
+  branch = ARGV[1]
+  clone_repos(branch)
 when 'update'
   update_repos
 when 'remove'
   remove_repos
 else
-  puts 'Invalid command. Use "clone", "update" or "remove".'
+  puts 'Invalid command. Use "clone", "clone-single", "update" or "remove".'
 end
