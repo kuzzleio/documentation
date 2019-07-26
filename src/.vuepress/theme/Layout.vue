@@ -1,5 +1,6 @@
 <template>
   <div class="md-layout">
+    <div class="overlayLoading" v-if="isLoading" />
     <div class="overlay" :class="{hidden: !sidebarOpen}" @click="closeSidebar"></div>
     <Header ref="header" @openSidebar="openSidebar" />
     <div ref="container" class="md-container">
@@ -53,12 +54,13 @@ export default {
   data() {
     return {
       sidebarOpen: false,
-      sdkList
+      sdkList,
+      isLoading: true
     };
   },
   computed: {
     sdkOrApiPage() {
-      const sdkOrApiRegExp = new RegExp(/(^\/sdk\/|\/core\/1\/api\/)/);
+      const sdkOrApiRegExp = new RegExp(/(^\/sdk\/|\/api\/)/);
       return (
         this.$route.path.match(sdkOrApiRegExp) ||
         this.$site.base.match(sdkOrApiRegExp)
@@ -155,6 +157,11 @@ export default {
     }
   },
   mounted() {
+    document.onreadystatechange = () => {
+      if (document.readyState === 'complete') {
+        this.isLoading = false;
+      }
+    };
     this.$router.afterEach(this.computeContentHeight);
     window.addEventListener('resize', this.computeContentHeight.bind(this));
     window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
