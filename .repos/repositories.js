@@ -163,6 +163,18 @@ switch (process.argv[2]) {
     removeRepository(argv);
     break;
 
+  case 'prepare':
+    commandRepository('npm run doc-prepare', argv);
+    break
+
+  case 'build':
+    commandRepository('npm run doc-build', argv);
+    break
+
+  case 'dev':
+    commandRepository('npm run doc-dev', argv);
+    break
+
   case 'devServer':
     devServer(argv);
     break;

@@ -15,6 +15,13 @@ module.exports = {
   head: [
     [
       'meta',
+      {
+        name: 'Doc-Version',
+        content: '/sdk/js/6@eeeeef'
+      }
+    ],
+    [
+      'meta',
       { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' }
     ],
     ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' }],
@@ -267,7 +274,6 @@ module.exports = {
     ]
   },
   plugins: [
-    require('./generate-version-file/index.js'),
     require('./meta-tags-plugin/index.js'),
     process.env.ALGOLIA_WRITE_KEY
       ? [
