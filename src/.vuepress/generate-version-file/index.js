@@ -56,7 +56,8 @@ title: Kuzzle Documentation Version
 const generateVersionFile = async () => {
   const site = process.env.SITE_BASE || '/';
   const commit = await execute(`cd ${repoDir} && git rev-parse HEAD`);
-  const repository = require(`${repoDir}/package.json`).repository.url;
+  const package = require(`${repoDir}/package.json`);
+  const repository = package.repository ? package.repository.url : package.name;
 
   const content = getVersionFileContent(site, repository, commit.replace('\n', ''));
 

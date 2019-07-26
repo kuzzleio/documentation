@@ -10,3 +10,5 @@ dead_links.json
 .repos/kuzzle-1
 .repos/plugin
 .repos/sdk
+
+version.md
