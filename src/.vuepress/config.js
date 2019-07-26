@@ -1,11 +1,10 @@
+const { execSync } = require('child_process');
 const webpack = require('webpack');
 
 const siteTitle = 'Kuzzle Docs';
 const siteDescription = 'Kuzzle Documentation';
 
-// const generateVersionFile = require('./generateVersionFile');
-
-// generateVersionFile();
+const versionString = require('./getVersionString');
 
 module.exports = {
   title: siteTitle,
@@ -17,7 +16,7 @@ module.exports = {
       'meta',
       {
         name: 'Doc-Version',
-        content: '/sdk/js/6@eeeeef'
+        content: versionString
       }
     ],
     [
