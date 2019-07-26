@@ -30,6 +30,7 @@ const currentDir = __dirname;
 let docDir = path.resolve(`${currentDir}/../..`);
 // This variable is set if we are inside a sub-site build
 if (process.env.DOC_DIR) {
+  console.log('sub dir')
   docDir = path.resolve(`${currentDir}/../../../../${process.env.DOC_DIR}`);
 }
 
@@ -38,9 +39,6 @@ let repoDir = path.resolve(`${currentDir}/../../..`);
 if (process.env.DOC_DIR) {
   repoDir = path.resolve(`${currentDir}/../../../../..`);
 }
-
-console.log(`Doc dir ${docDir}`);
-console.log(`Repo dir ${repoDir}`);
 
 const versionFilePath = `${docDir}/version.md`;
 const getVersionFileContent = (site, repository, commit) => `---
@@ -61,6 +59,8 @@ const generateVersionFile = async () => {
   const repository = package.repository ? package.repository.url : package.name;
 
   const content = getVersionFileContent(site, repository, commit.replace('\n', ''));
+
+  console.log(`Write version file at ${versionFilePath}`);
 
   fs.writeFileSync(versionFilePath, content);
 };
