@@ -1,5 +1,6 @@
 const
   { exec } = require('child_process'),
+  path = require('path'),
   fs = require('fs');
 
 const execute = command => {
@@ -26,16 +27,16 @@ const execute = command => {
 
 const currentDir = __dirname;
 
-let docDir = `${currentDir}/../..`;
+let docDir = path.resolve(`${currentDir}/../..`);
 // This variable is set if we are inside a sub-site build
 if (process.env.DOC_DIR) {
-  docDir = `${currentDir}/../../../../${process.env.DOC_DIR}`;
+  docDir = path.resolve(`${currentDir}/../../../../${process.env.DOC_DIR}`);
 }
 
-let repoDir = `${currentDir}/../../..`;
+let repoDir = path.resolve(`${currentDir}/../../..`);
 // This variable is set if we are inside a sub-site build
 if (process.env.DOC_DIR) {
-  repoDir = `${currentDir}/../../../../..`;
+  repoDir = path.resolve(`${currentDir}/../../../../..`);
 }
 
 console.log(`Doc dir ${docDir}`);
