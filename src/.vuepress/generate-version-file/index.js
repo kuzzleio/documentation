@@ -35,7 +35,7 @@ if (process.env.DOC_DIR) {
 let repoDir = `${currentDir}/../../..`;
 // This variable is set if we are inside a sub-site build
 if (process.env.DOC_DIR) {
-  repoDir = `${currentDir}/../../../../${process.env.DOC_DIR}`;
+  repoDir = `${currentDir}/../../../../..`;
 }
 
 console.log(`Doc dir ${docDir}`);
