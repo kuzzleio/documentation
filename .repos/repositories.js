@@ -46,7 +46,7 @@ const execute = (command, message) => {
 
         return resolve();
       }
-      console.log(stdout)
+
       cout.ok(message);
       resolve();
     })
