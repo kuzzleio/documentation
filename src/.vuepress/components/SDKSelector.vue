@@ -67,8 +67,8 @@ export default {
         language = 'api';
         version = '1';
       } else {
-        language = this.$route.path.split('/')[2];
-        version = this.$route.path.split('/')[3];
+        language = this.$site.base.split('/')[1];
+        version = this.$site.base.split('/')[2];
       }
       const lang = this.items.find(el => {
         return el.language === language && el.version === version;
