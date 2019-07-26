@@ -3,6 +3,10 @@ const webpack = require('webpack');
 const siteTitle = 'Kuzzle Docs';
 const siteDescription = 'Kuzzle Documentation';
 
+// const generateVersionFile = require('./generateVersionFile');
+
+// generateVersionFile();
+
 module.exports = {
   title: siteTitle,
   description: siteDescription,
@@ -263,6 +267,7 @@ module.exports = {
     ]
   },
   plugins: [
+    require('./generate-version-file/index.js'),
     require('./meta-tags-plugin/index.js'),
     process.env.ALGOLIA_WRITE_KEY
       ? [
