@@ -56,11 +56,15 @@ class LinkChecker
 
   def report_stdout
     puts "Found #{@internal.count} uniq internal dead links:\n"
-    puts @internal.to_a
+    @internal.each do |(link, file)|
+      puts "#{link} in #{file}"
+    end
     puts
 
     puts "Found #{@external.count} uniq external dead links:\n"
-    puts @external.to_a
+    @external.each do |(link, file)|
+      puts "#{link} in #{file}"
+    end
     puts
   end
 
@@ -94,7 +98,7 @@ class LinkChecker
 
         next if File.exists?(full_path)
 
-        @internal << full_path
+        @internal << [full_path, file_path]
       end
     end
   end
@@ -110,8 +114,8 @@ class LinkChecker
       # Remove markdown closing parenthesis and everything following it
       external_link.gsub!(/[\)].*/, '')
 
-      check_external_link(external_link) do |dead_link, status|
-        @external << "#{dead_link} -> #{status}"
+      check_external_link(external_link) do |dead_link|
+        @external << ["#{dead_link} -> #{status}", file_path]
       end
     end
   end
