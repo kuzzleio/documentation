@@ -49,9 +49,9 @@ const execute = (command, message) => {
 
       cout.ok(message);
       resolve();
-    })
-  })
-}
+    });
+  });
+};
 
 const cloneRepository = async (argv) => {
   let branch = 'stable';
