@@ -126,7 +126,21 @@ const removeRepository = async (argv) => {
   await Promise.all(promises);
 }
 
+const devServer = async (argv) => {
+  for (const repository of getRepositories(argv)) {
+    const
+      message = `Link build from repository ${repository.name}`,
+      linkTarget = `../../../../.repos/${repository.destination}/doc/framework/src/.vuepress/dist`,
+      linkName = `${currentDir}/../src/.vuepress/dist${repository.base_url}`,
+      command = `rm -f ${linkName} && ln -s ${linkTarget} ${linkName}`;
 
+    await execute(command, message);
+  }
+
+  await execute(
+    `cd ${currentDir}/../src/.vuepress/dist && python -m SimpleHTTPServer 8000`,
+    'Run local dev server on http://localhost:8000');
+};
 
 const argv = require('yargs').argv;
 
@@ -147,6 +161,10 @@ switch (process.argv[2]) {
 
   case 'remove':
     removeRepository(argv);
+    break;
+
+  case 'devServer':
+    devServer(argv);
     break;
 
   default:

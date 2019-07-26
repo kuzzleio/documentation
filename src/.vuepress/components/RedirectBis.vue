@@ -11,7 +11,7 @@ export default {
     }
   },
   mounted() {
-    this.$router.push(this.to)
+    window.location.pathname = this.to
   }
 };
 </script>

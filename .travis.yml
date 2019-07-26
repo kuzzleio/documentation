@@ -51,19 +51,6 @@ jobs:
         # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run doc-cloudfront
         - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run doc-cloudfront
 
-        # - REPOSITORIES=sdk-csharp-1,sdk-cpp-1,sdk-java-1,sdk-java-2,sdk-android-3
-        # - BRANCH=dev
-        # - S3_BUCKET=$S3_BUCKET_NEXT
-        # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT
-
-        # - REPOSITORIES=plugin-cloudinary-1,plugin-s3-1,sdk-go-1,sdk-go-2,sdk-php-3
-        # - BRANCH=dev
-        # - S3_BUCKET=$S3_BUCKET_NEXT
-        # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT
-
-        # - S3_BUCKET=$S3_BUCKET_PROD npm run repositories -- run "npm run doc-upload" --async
-        # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run doc-cloudfront
-
     - stage: Doc Deployment
       name: Deploy doc to next-docs.kuzzle.io
       if: type = push AND branch = master

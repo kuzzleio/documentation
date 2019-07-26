@@ -1,9 +1,5 @@
 const clc = require('cli-color');
 
-function noop(str) {
-  return str;
-}
-
 class ColorOutput {
   constructor () {
 
