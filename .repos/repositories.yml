@@ -1,3 +1,10 @@
+- url: https://github.com/kuzzleio/kuzzle-how-to.git
+  stable: add-doc-folder
+  dev: add-doc-folder
+  destination: kuzzle-how-to
+  name: kuzzle-how-to
+  base_url: kuzzle-how-to/
+
 - url: https://github.com/kuzzleio/sdk-javascript.git
   stable: 5-stable
   dev: 5-dev
