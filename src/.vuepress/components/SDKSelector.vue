@@ -98,17 +98,17 @@ export default {
     generateLink(item) {
       let method = '';
       let path = '';
-      if (this.$route.path.includes('controllers')) {
-        method = `controllers/${this.$route.path.split('controllers/')[1]}`;
-      }
+      // if (this.$route.path.includes('controllers')) {
+      //   method = `controllers/${this.$route.path.split('controllers/')[1]}`;
+      // }
       if (item.language === 'api') {
         path = '/core/1/api/';
       } else {
         path = `/sdk/${item.language}/${item.version}/`;
       }
-      if (!this.oldSDK.includes(`${item.language}${item.version}`)) {
-        path += method;
-      }
+      // if (!this.oldSDK.includes(`${item.language}${item.version}`)) {
+      //   path += method;
+      // }
       return path;
     },
     toggleList: function() {
