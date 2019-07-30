@@ -5,5 +5,3 @@ order: 0
 title: Kuzzle Documentation
 description: Kuzzle Documentation
 ---
-
-
