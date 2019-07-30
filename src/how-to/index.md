@@ -9,7 +9,7 @@ title: How to
 
 ### **Select the how to you want to read**
 
-Below you’ll find the ones we currently written,
+Below you’ll find the ones we currently written.
 
 <br>
 
