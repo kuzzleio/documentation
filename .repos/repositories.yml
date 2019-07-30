@@ -1,5 +1,5 @@
 - url: https://github.com/kuzzleio/kuzzle-how-to.git
-  stable: add-doc-folder
+  stable: master
   dev: add-doc-folder
   destination: kuzzle-how-to
   name: kuzzle-how-to
