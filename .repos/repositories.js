@@ -54,7 +54,7 @@ const execute = (command, message) => {
 };
 
 const cloneRepository = async (argv) => {
-  let branch = 'dev';
+  let branch = 'stable';
 
   if (process.env.BRANCH && process.env.BRANCH.length > 0) {
     branch = process.env.BRANCH;
