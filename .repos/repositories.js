@@ -60,7 +60,7 @@ const cloneRepository = async (argv) => {
     branch = process.env.BRANCH;
   } else if (argv.branch) {
     branch = argv.branch;
-  } else if (process.env.TRAVIS_BRANCH && process.env.TRAVIS_BRANCH > 0) {
+  } else if (process.env.TRAVIS_BRANCH && process.env.TRAVIS_BRANCH.length > 0) {
     branch = process.env.TRAVIS_BRANCH.match(/^master|[0-9]+-stable$/)
       ? 'stable'
       : 'dev';
