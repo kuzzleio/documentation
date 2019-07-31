@@ -7,10 +7,16 @@ title: How to
 
 # Kuzzle How to
 
-### **Select the how to you want to read**
-
-Below you’ll find the ones we currently written.
+### Some How to's about **IOT**
 
 <br>
 
-<HowToIndex />
+<IOTHowToIndex />
+
+<br>
+
+### Some How to's about **MANAGING DATA**
+
+<br>
+
+<OTHERSHowToIndex />
