@@ -24,10 +24,11 @@
                 <li class="md-nav__item md-nav-title">
                   <div
                     class="md-nav__link"
-                    @click="openOrCloseOrRedirect(item__1, item__2)"
                     :class="{'md-nav__link--active': $page.path === item__2.path, 'md-nav__item--code': item__2.frontmatter.code == true}"
                   >
-                    <div v-if="getPageChildren(item__2).length">
+                    <div v-if="getPageChildren(item__2).length"
+                      @click="openOrCloseOrRedirect(item__1, item__2)"
+                    >
                       <i
                         v-if="openedSubmenu === getId([item__1.title, item__2.title])"
                         class="fa fa-caret-down"
@@ -36,9 +37,12 @@
                       <i v-else class="fa fa-caret-right" aria-hidden="true"></i>
                       <span>{{item__2.title}}</span>
                     </div>
-                    <div v-else>
-                      <span class="no_arrow">{{item__2.title}}</span>
-                    </div>
+                    <router-link v-else
+                      :to="item__2.path"
+                      @click.native="closeSidebar"
+                    >
+                      <a class="no_arrow">{{item__2.title}}</a>
+                    </router-link>
                   </div>
                 </li>
                 <ul
@@ -59,7 +63,7 @@
                         :title="item__3.title"
                         @click.native="$emit('closeSidebar')"
                       >
-                        <span class="no_arrow">{{item__3.title}}</span>
+                        <a class="no_arrow">{{item__3.title}}</a>
                       </router-link>
                     </li>
                     <li v-else>
@@ -70,7 +74,7 @@
                         @click.native="$emit('closeSidebar')"
                         :class="{'md-nav__item--code': item__3.frontmatter.code}"
                       >
-                        <span class="no_arrow">{{item__3.title}}</span>
+                        <a class="no_arrow">{{item__3.title}}</a>
                       </router-link>
                     </li>
                   </div>
