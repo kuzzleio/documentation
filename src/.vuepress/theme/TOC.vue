@@ -26,7 +26,7 @@ export default {
   methods: {
     getPath(header) {
       const baseUrl = this.$site.base.slice(0, -1);
-      return `${baseUrl}${header}`;
+      return `${baseUrl}${header.path}`;
     }
   }
 };
