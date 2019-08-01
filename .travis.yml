@@ -41,6 +41,8 @@ jobs:
         - echo $CLOUDFRONT_PROD
         - echo $S3_BUCKET_NEXT
         - echo $CLOUDFRONT_NEXT
+        - S3_BUCKET=$S3_BUCKET_PROD echo $S3_BUCKET
+        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD echo $CLOUDFRONT_PROD
         - npm install
         - npm run doc-build
 
@@ -48,7 +50,7 @@ jobs:
         provider: script
         script:
           - S3_BUCKET=$S3_BUCKET_NEXT npm run doc-upload
-          # - S3_BUCKET=$S3_BUCKET_PROD npm run doc-upload
+          - S3_BUCKET=$S3_BUCKET_PROD npm run doc-upload
         skip_cleanup: true
 
       after_deploy:
