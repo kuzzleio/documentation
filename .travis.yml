@@ -39,6 +39,8 @@ jobs:
       script:
         - npm install
         - npm run doc-build
+        - echo $S3_BUCKET_PROD
+        - echo $CLOUDFRONT_PROD
 
       deploy:
         provider: script
