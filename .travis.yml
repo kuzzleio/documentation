@@ -37,10 +37,12 @@ jobs:
         - pip install awscli --upgrade --user
 
       script:
-        - npm install
-        - npm run doc-build
         - echo $S3_BUCKET_PROD
         - echo $CLOUDFRONT_PROD
+        - echo $S3_BUCKET_NEXT
+        - echo $CLOUDFRONT_NEXT
+        - npm install
+        - npm run doc-build
 
       deploy:
         provider: script
