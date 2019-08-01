@@ -43,13 +43,13 @@ jobs:
       deploy:
         provider: script
         script:
-          - S3_BUCKET=$S3_BUCKET_PROD npm run doc-upload
           - S3_BUCKET=$S3_BUCKET_NEXT npm run doc-upload
+          # - S3_BUCKET=$S3_BUCKET_PROD npm run doc-upload
         skip_cleanup: true
 
       after_deploy:
-        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run doc-cloudfront
         - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run doc-cloudfront
+        # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run doc-cloudfront
 
     - stage: Doc Deployment
       name: Deploy doc to next-docs.kuzzle.io
