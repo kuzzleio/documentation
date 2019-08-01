@@ -42,20 +42,24 @@ jobs:
         - echo $S3_BUCKET_NEXT
         - echo $CLOUDFRONT_NEXT
         - S3_BUCKET=$S3_BUCKET_PROD echo $S3_BUCKET
-        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD echo $CLOUDFRONT_PROD
+        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD echo $CLOUDFRONT_DISTRIBUTION_ID
         - npm install
         - npm run doc-build
 
       deploy:
         provider: script
         script:
-          - S3_BUCKET=$S3_BUCKET_NEXT npm run doc-upload
-          - S3_BUCKET=$S3_BUCKET_PROD npm run doc-upload
+          - export S3_BUCKET=$S3_BUCKET_NEXT
+          - npm run doc-upload
+          - export S3_BUCKET=$S3_BUCKET_PROD
+          - npm run doc-upload
         skip_cleanup: true
 
       after_deploy:
-        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run doc-cloudfront
-        # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run doc-cloudfront
+        - export CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT
+        - npm run doc-cloudfront
+        - export CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
+        - npm run doc-cloudfront
 
     - stage: Doc Deployment
       name: Deploy doc to next-docs.kuzzle.io
