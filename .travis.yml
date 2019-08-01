@@ -43,12 +43,12 @@ jobs:
       deploy:
         provider: script
         script:
-          # - S3_BUCKET=$S3_BUCKET_PROD npm run doc-upload
+          - S3_BUCKET=$S3_BUCKET_PROD npm run doc-upload
           - S3_BUCKET=$S3_BUCKET_NEXT npm run doc-upload
         skip_cleanup: true
 
       after_deploy:
-        # - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run doc-cloudfront
+        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD npm run doc-cloudfront
         - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_NEXT npm run doc-cloudfront
 
     - stage: Doc Deployment
@@ -76,6 +76,10 @@ jobs:
         - npm run repositories -- clone
         - npm run repositories -- run "npm run doc-prepare" --async
         - npm run repositories -- run "npm run doc-build" --async
+        - npm run repositories -- run "npm run doc-upload" --async
+        - npm run doc-cloudfront
+        # Deploy prod
+        - export S3_BUCKET=$S3_BUCKET_PROD CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
         - npm run repositories -- run "npm run doc-upload" --async
         - npm run doc-cloudfront
 
@@ -106,6 +110,10 @@ jobs:
         - npm run repositories -- run "npm run doc-build" --async
         - npm run repositories -- run "npm run doc-upload" --async
         - npm run doc-cloudfront
+        # Deploy prod
+        - export S3_BUCKET=$S3_BUCKET_PROD CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
+        - npm run repositories -- run "npm run doc-upload" --async
+        - npm run doc-cloudfront
 
     - stage: Doc Deployment
       name: Deploy doc to next-docs.kuzzle.io
@@ -132,5 +140,9 @@ jobs:
         - npm run repositories -- clone
         - npm run repositories -- run "npm run doc-prepare" --async
         - npm run repositories -- run "npm run doc-build" --async
+        - npm run repositories -- run "npm run doc-upload" --async
+        - npm run doc-cloudfront
+        # Deploy prod
+        - export S3_BUCKET=$S3_BUCKET_PROD CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
         - npm run repositories -- run "npm run doc-upload" --async
         - npm run doc-cloudfront
