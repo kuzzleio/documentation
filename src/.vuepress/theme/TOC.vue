@@ -7,7 +7,7 @@
           <a :title="$page.title" class="md-nav__link">{{$page.title}}</a>
         </li>
         <li v-for="header of headers" class="md-nav__item">
-          <a :href="header.path" :title="header.title" class="md-nav__link">{{header.title}}</a>
+          <a :href="getPath(header)" :title="header.title" class="md-nav__link">{{header.title}}</a>
         </li>
       </ul>
     </nav>
@@ -21,6 +21,12 @@ export default {
   computed: {
     headers() {
       return resolveHeaders(this.$page)[0].children || [];
+    }
+  },
+  methods: {
+    getPath(header) {
+      const baseUrl = this.$site.base.slice(0, -1);
+      return `${baseUrl}${header.path}`;
     }
   }
 };

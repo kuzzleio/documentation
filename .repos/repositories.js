@@ -134,10 +134,11 @@ const devServer = async (argv) => {
   for (const repository of getRepositories(argv)) {
     const
       message = `Link build from repository ${repository.name}`,
-      linkTarget = `../../../../.repos/${repository.destination}/doc/framework/src/.vuepress/dist`,
+      linkTarget = `${currentDir}/${repository.destination}/doc/framework/src/.vuepress/dist/`,
       linkName = `${currentDir}/../src/.vuepress/dist${repository.base_url}`,
-      command = `rm -f ${linkName} && ln -s ${linkTarget} ${linkName}`;
+      command = `rm -rf ${linkName} && ln -s ${linkTarget} ${linkName}`;
 
+    await execute(`mkdir -p ${currentDir}/../src/.vuepress/dist${repository.base_url}`, 'Creating subfolders');
     await execute(command, message);
   }
 
