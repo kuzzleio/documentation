@@ -114,7 +114,7 @@ class LinkChecker
       # Remove markdown closing parenthesis and everything following it
       external_link.gsub!(/[\)].*/, '')
 
-      check_external_link(external_link) do |dead_link|
+      check_external_link(external_link) do |dead_link, status|
         @external << ["#{dead_link} -> #{status}", file_path]
       end
     end
