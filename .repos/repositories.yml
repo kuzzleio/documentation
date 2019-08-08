@@ -95,3 +95,10 @@
   destination: plugin/kuzzle-plugin-multi-tenancy-1
   name: plugin-multi-tenancy-1
   base_url: /official-plugins/multi-tenancy/1
+
+- url: https://github.com/kuzzleio/kuzzle.git
+  stable: 2-stable
+  dev: 2-dev
+  destination: kuzzle-2
+  name: kuzzle-2
+  base_url: /core/2
