@@ -64,6 +64,9 @@ export default {
     }
   },
   mounted() {
+    // We need to change the title of page 404
+    // to follow dead links with google analytics
+    document.title = 'Page not found | Kuzzle Docs'
     this.setContainerPadding();
   }
 };
