@@ -30,12 +30,6 @@ jobs:
         - pip install awscli --upgrade --user
 
       script:
-        - echo $S3_BUCKET_PROD
-        - echo $CLOUDFRONT_PROD
-        - echo $S3_BUCKET_NEXT
-        - echo $CLOUDFRONT_NEXT
-        - S3_BUCKET=$S3_BUCKET_PROD echo $S3_BUCKET
-        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD echo $CLOUDFRONT_DISTRIBUTION_ID
         - npm install
         - npm run doc-build
         # Deploy
@@ -48,8 +42,10 @@ jobs:
         - export CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
         - npm run doc-cloudfront
 
+    # kuzzle-1, sdk-javascript-5, sdk-javascript-6
+
     - stage: Doc Deployment
-      name: Deploy doc to next-docs.kuzzle.io
+      name: Deploy kuzzle-1, sdk-javascript-5, sdk-javascript-6 to next-docs.kuzzle.io
       if: type = push AND branch = master
       language: node_js
       node_js: '10'
@@ -75,13 +71,39 @@ jobs:
         - npm run repositories -- run "npm run doc-build" --async
         - npm run repositories -- run "npm run doc-upload" --async
         - npm run doc-cloudfront
-        # Deploy prod
-        - export S3_BUCKET=$S3_BUCKET_PROD CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
+
+    - stage: Doc Deployment
+      name: Deploy kuzzle-1, sdk-javascript-5, sdk-javascript-6 to docs.kuzzle.io
+      if: type = push AND branch = master
+      language: node_js
+      node_js: '10'
+      env:
+        - REPOSITORIES=kuzzle-1,sdk-javascript-5,sdk-javascript-6
+        - BRANCH=stable
+        - S3_BUCKET=$S3_BUCKET_PROD
+        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
+
+      addons:
+        apt:
+          packages:
+            - python
+            - python-pip
+
+      install:
+        - npm install
+        - pip install awscli --upgrade --user
+
+      script:
+        - npm run repositories -- clone
+        - npm run repositories -- run "npm run doc-prepare" --async
+        - npm run repositories -- run "npm run doc-build" --async
         - npm run repositories -- run "npm run doc-upload" --async
         - npm run doc-cloudfront
 
+    # sdk-csharp-1, sdk-cpp-1, sdk-java-1, sdk-java-2, sdk-android-3
+
     - stage: Doc Deployment
-      name: Deploy doc to next-docs.kuzzle.io
+      name: Deploy sdk-csharp-1, sdk-cpp-1, sdk-java-1, sdk-java-2, sdk-android-3 to next-docs.kuzzle.io
       if: type = push AND branch = master
       language: node_js
       node_js: '10'
@@ -107,13 +129,39 @@ jobs:
         - npm run repositories -- run "npm run doc-build" --async
         - npm run repositories -- run "npm run doc-upload" --async
         - npm run doc-cloudfront
-        # Deploy prod
-        - export S3_BUCKET=$S3_BUCKET_PROD CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
+
+    - stage: Doc Deployment
+      name: Deploy sdk-csharp-1, sdk-cpp-1, sdk-java-1, sdk-java-2, sdk-android-3 to docs.kuzzle.io
+      if: type = push AND branch = master
+      language: node_js
+      node_js: '10'
+      env:
+        - REPOSITORIES=sdk-csharp-1,sdk-cpp-1,sdk-java-1,sdk-java-2,sdk-android-3
+        - BRANCH=stable
+        - S3_BUCKET=$S3_BUCKET_PROD
+        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
+
+      addons:
+        apt:
+          packages:
+            - python
+            - python-pip
+
+      install:
+        - npm install
+        - pip install awscli --upgrade --user
+
+      script:
+        - npm run repositories -- clone
+        - npm run repositories -- run "npm run doc-prepare" --async
+        - npm run repositories -- run "npm run doc-build" --async
         - npm run repositories -- run "npm run doc-upload" --async
         - npm run doc-cloudfront
 
+    # plugin-cloudinary-1, plugin-s3-1, sdk-go-1, sdk-go-2, sdk-php-3
+
     - stage: Doc Deployment
-      name: Deploy doc to next-docs.kuzzle.io
+      name: Deploy plugin-cloudinary-1, plugin-s3-1, sdk-go-1, sdk-go-2, sdk-php-3 to next-docs.kuzzle.io
       if: type = push AND branch = master
       language: node_js
       node_js: '10'
@@ -139,7 +187,31 @@ jobs:
         - npm run repositories -- run "npm run doc-build" --async
         - npm run repositories -- run "npm run doc-upload" --async
         - npm run doc-cloudfront
-        # Deploy prod
-        - export S3_BUCKET=$S3_BUCKET_PROD CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
+
+    - stage: Doc Deployment
+      name: Deploy plugin-cloudinary-1, plugin-s3-1, sdk-go-1, sdk-go-2, sdk-php-3 to docs.kuzzle.io
+      if: type = push AND branch = master
+      language: node_js
+      node_js: '10'
+      env:
+        - REPOSITORIES=plugin-cloudinary-1,plugin-s3-1,sdk-go-1,sdk-go-2,sdk-php-3
+        - BRANCH=stable
+        - S3_BUCKET=$S3_BUCKET_PROD
+        - CLOUDFRONT_DISTRIBUTION_ID=$CLOUDFRONT_PROD
+
+      addons:
+        apt:
+          packages:
+            - python
+            - python-pip
+
+      install:
+        - npm install
+        - pip install awscli --upgrade --user
+
+      script:
+        - npm run repositories -- clone
+        - npm run repositories -- run "npm run doc-prepare" --async
+        - npm run repositories -- run "npm run doc-build" --async
         - npm run repositories -- run "npm run doc-upload" --async
         - npm run doc-cloudfront
