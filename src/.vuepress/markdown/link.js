@@ -13,8 +13,6 @@ module.exports = (configuration) => {
 
     md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
     const { base } = configuration;
-    const startsWithBaseRE = new RegExp(`^${base}.*`)
-    const internalRE = /(\/|\.md|\.html)(#.*)?$/
     const { relativePath } = env
       const token = tokens[idx]
       const hrefIndex = token.attrIndex('href')
@@ -22,14 +20,13 @@ module.exports = (configuration) => {
         const link = token.attrs[hrefIndex]
         const href = link[1]
         const isExternal = /^https?:/.test(href)
-        const isInternal = internalRE.test(href)
-        const startsWithBaseURL = startsWithBaseRE.test(href)
+        const startsWithBaseURL = href.startsWith(base)
         
         if (isExternal) {
           hasOpenExternalLink = true
           token.attrSet('target', '_blank')
           token.attrSet('rel', 'noopener noreferrer')
-        } else if (isInternal && startsWithBaseURL) {
+        } else if (startsWithBaseURL) {
           hasOpenRouterLink = true
           tokens[idx] = toRouterLink(token, link, relativePath, base)
         }
@@ -90,10 +87,8 @@ module.exports = (configuration) => {
   }
 }
 
-const beginningSlashRE = /^\.\//
-
 function ensureBeginningDotSlash(path) {
-  if (beginningSlashRE.test(path)) {
+  if (path.startsWith('./')) {
     return path
   }
   return './' + path
