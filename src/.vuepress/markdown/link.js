@@ -12,8 +12,8 @@ module.exports = (configuration) => {
     let hasOpenExternalLink = false
 
     md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
-    const { base } = configuration;
-    const { relativePath } = env
+      const { base } = configuration
+      const { relativePath } = env
       const token = tokens[idx]
       const hrefIndex = token.attrIndex('href')
       if (hrefIndex >= 0) {
