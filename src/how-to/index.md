@@ -7,7 +7,7 @@ title: How to
 
 # Kuzzle How to
 
-### Some How to's about **IOT**
+### **IOT**
 
 <br>
 
@@ -15,7 +15,7 @@ title: How to
 
 <br>
 
-### Some How to's about **MANAGING DATA**
+### **MANAGING DATA**
 
 <br>
 
