@@ -56,7 +56,7 @@ module.exports = (configuration) => {
       } else {
         to = to
           .replace(/\.md$/, '.html')
-          .replace(/\.md(#.*)$/, '.html$1')
+          .replace(/\.md\/?(#.*)$/, '.html$1')
       }
 
       // markdown-it encodes the uri
