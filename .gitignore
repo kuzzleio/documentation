@@ -8,6 +8,7 @@ dead_links.json
 .vscode
 
 .repos/kuzzle-1
+.repos/kuzzle-2
 .repos/plugin
 .repos/sdk
 
