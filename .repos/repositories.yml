@@ -75,6 +75,13 @@
   name: sdk-java-2
   base_url: /sdk/java/2
 
+- url: https://github.com/kuzzleio/sdk-java.git
+  stable: 3-stable
+  dev: 3-dev
+  destination: sdk/sdk-java-3
+  name: sdk-java-3
+  base_url: /sdk/java/3
+
 - url: https://github.com/kuzzleio/kuzzle.git
   stable: master
   dev: 1-dev
