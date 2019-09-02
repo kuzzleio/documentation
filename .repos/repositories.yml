@@ -82,6 +82,13 @@
   name: sdk-java-2
   base_url: /sdk/java/2
 
+- url: https://github.com/kuzzleio/sdk-java.git
+  stable: 3-stable
+  dev: 3-dev
+  destination: sdk/sdk-java-3
+  name: sdk-java-3
+  base_url: /sdk/java/3
+
 - url: https://github.com/kuzzleio/kuzzle.git
   stable: master
   dev: 1-dev
@@ -102,3 +109,10 @@
   destination: plugin/kuzzle-plugin-multi-tenancy-1
   name: plugin-multi-tenancy-1
   base_url: /official-plugins/multi-tenancy/1
+
+- url: https://github.com/kuzzleio/kuzzle.git
+  stable: 2-stable
+  dev: 2-dev
+  destination: kuzzle-2
+  name: kuzzle-2
+  base_url: /core/2

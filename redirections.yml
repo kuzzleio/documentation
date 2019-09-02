@@ -67,10 +67,10 @@ redirections:
 
   # Koncorde
   - from: koncorde
-    to: core/1/guides/cookboks/realtime-api
+    to: core/1/guides/cookbooks/realtime-api
 
   - from: core/1/koncorde/essentials
-    to: core/1/guides/cookboks/realtime-api
+    to: core/1/guides/cookbooks/realtime-api
 
   # Plugin essentials
   - from: plugins/1/essentials/available-plugins
