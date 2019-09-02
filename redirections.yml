@@ -1,6 +1,21 @@
 ---
 redirections:
   # API
+  - from: core/1/api/controllers/bulk/mWrite
+    to: core/1/api/controllers/bulk/m-write
+
+  - from: core/1/api/controller-document
+    to: core/1/api/controllers/document
+
+  - from: core/1/api/controller-auth
+    to: core/1/api/controllers/auth
+
+  - from: core/1/api/controller-admin
+    to: core/1/api/controllers/admin
+
+  - from: core/1/api/connecting-to-kuzzle
+    to: core/1/api/essentials/connecting-to-kuzzle
+
   - from: api/1/controller-admin
     to: core/1/api/controllers/admin
 
@@ -66,6 +81,9 @@ redirections:
     to: core/1/guides/essentials/store-access-data
 
   # Koncorde
+  - from: koncorde/1/essentials
+    to: core/1/guides/cookbooks/realtime-api
+
   - from: koncorde
     to: core/1/guides/cookbooks/realtime-api
 
@@ -74,10 +92,10 @@ redirections:
 
   # Plugin essentials
   - from: plugins/1/essentials/available-plugins
-    to: officials-plugins
+    to: official-plugins
 
   - from: core/1/plugins/essentials/available-plugins
-    to: officials-plugins
+    to: official-plugins
 
   - from: plugins/1/essentials/getting-started
     to: core/1/plugins/essentials/getting-started
@@ -119,6 +137,11 @@ redirections:
 
   - from: plugins/1/log
     to: core/1/plugins/plugin-context/log
+
+  # Plugin reference
+  - from: plugins-reference/plugins-creation-prerequisites/
+    to: core/1/plugins/guides/manual-setup/prerequisites/
+
 
   # Protocols essentials
   - from: protocols/1/essentials/getting-started
@@ -501,6 +524,12 @@ redirections:
     to: sdk/php/3/core-classes/user
 
   # Legacy (doc v1)
+  - from: sdk-reference/essentials/offline-first
+    to: sdk/js/6/essentials/offline-tools/
+
+  - from: api/1
+    to: core/1/api
+
   - from: api-documentation
     to: core/1/api
 
@@ -527,6 +556,9 @@ redirections:
 
   - from: sdk-reference/collection
     to: sdk
+
+  - from: sdk-reference/collection/subscribe
+    to: core/1/api/controllers/realtime/subscribe/
 
   - from: elasticsearch-cookbook/useful-commands
     to: core/1/guides/cookbooks/elasticsearch/useful-commands
@@ -600,3 +632,16 @@ redirections:
 
   - from: plugins/1/plugin-layout/init-function/
   - to: core/1/plugins/essentials/getting-started/#init-function
+
+# Koncorde (kuzzle-dsl)
+  - from: kuzzle-dsl/terms/missing
+    to: core/1/guides/cookbooks/realtime-api/terms/#missing
+
+  - from: kuzzle-dsl/terms/exists
+    to: core/1/guides/cookbooks/realtime-api/terms/#exists
+
+  - from: kuzzle-dsl/essentials/koncorde/
+    to: core/1/guides/cookbooks/realtime-api/introduction
+
+  - from: kuzzle-dsl/essentials/arrayvalues/
+    to: core/1/guides/cookbooks/realtime-api/advanced/#matching-array-values
