@@ -11,7 +11,7 @@ title: How to
 
 <br>
 
-<IOTHowToIndex />
+<IotHowToIndex />
 
 <br>
 
@@ -19,4 +19,4 @@ title: How to
 
 <br>
 
-<OTHERSHowToIndex />
+<OthersHowToIndex />
