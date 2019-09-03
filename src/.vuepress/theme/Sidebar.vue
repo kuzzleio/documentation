@@ -87,15 +87,15 @@
 </template>
 
 <script>
-import TabsMobile from "./TabsMobile.vue";
+import TabsMobile from './TabsMobile.vue';
 import {
   getPageChildren,
   findRootNode,
   setItemLocalStorage,
   getItemLocalStorage,
   getNodeByPath,
-} from "../util.js";
-import sdkList from "../sdk.json";
+} from '../util.js';
+import sdkList from '../sdk.json';
 
 export default {
   components: {
@@ -109,7 +109,7 @@ export default {
   },
   data() {
     return {
-      openedSubmenu: "",
+      openedSubmenu: '',
       sdkList
     };
   },
@@ -123,24 +123,24 @@ export default {
   },
   methods: {
     setOpenedSubmenu(item__1, item__2) {
-      setItemLocalStorage("item__1", item__1);
-      setItemLocalStorage("item__2", item__2);
+      setItemLocalStorage('item__1', item__1);
+      setItemLocalStorage('item__2', item__2);
       this.openedSubmenu = this.getId([item__1.title, item__2.title]);
     },
     unsetOpenedSubmenu() {
-      localStorage.setItem("item__1", null);
-      localStorage.setItem("item__2", null);
-      this.openedSubmenu = "";
+      localStorage.setItem('item__1', null);
+      localStorage.setItem('item__2', null);
+      this.openedSubmenu = '';
     },
     closeSubmenu() {
-      if (this.openedSubmenu === "") {
+      if (this.openedSubmenu === '') {
         return;
       }
       const openedSubmenuId = this.sanitize(this.openedSubmenu);
       if (!document.getElementById(openedSubmenuId)) {
         return;
       }
-      document.getElementById(openedSubmenuId).style.height = "0px";
+      document.getElementById(openedSubmenuId).style.height = '0px';
     },
     redirect(item__2) {
       this.closeSidebar();
@@ -166,21 +166,21 @@ export default {
       document.getElementById(item2Id).style.height = menuHeight;
     },
     closeSidebar(item) {
-      this.$emit("closeSidebar");
+      this.$emit('closeSidebar');
     },
     subMenuClass(item__1, item__2) {
       return this.openedSubmenu === this.getId([item__1.title, item__2.title])
-        ? "displaySubmenu"
-        : "";
+        ? 'displaySubmenu'
+        : '';
     },
     getId(itemsTitle) {
       return itemsTitle.reduce(
-        (id, item) => id + "_" + this.sanitize(item),
-        ""
+        (id, item) => id + '_' + this.sanitize(item),
+        ''
       );
     },
     sanitize(str) {
-      return str.replace(/ /g, "_");
+      return str.replace(/ /g, '_');
     },
     handleSubmenuClick(item__1, item__2) {
       const childs = this.getPageChildren(item__2);
@@ -218,9 +218,9 @@ export default {
   },
   mounted() {
     let path = this.$route.path;
-    const splitted = path.split("/");
-    const secondPath = path.replace(`${splitted[splitted.length - 2]}/`, "");
-    const thirdPath = secondPath.replace(`${splitted[splitted.length - 3]}/`, "");
+    const splitted = path.split('/');
+    const secondPath = path.replace(`${splitted[splitted.length - 2]}/`, '');
+    const thirdPath = secondPath.replace(`${splitted[splitted.length - 3]}/`, '');
     const node2 = getNodeByPath(secondPath, this.$site.pages);
     const node3 = getNodeByPath(thirdPath, this.$site.pages);
     item__2 = node2;
@@ -232,8 +232,8 @@ export default {
     this.openSubmenu(item__1, item__2);
     this.setOpenedSubmenu(item__1, item__2);
     document.onreadystatechange = () => {
-      if (document.readyState === "complete") {
-        const activeLink = this.$el.querySelector(".md-nav__link--active");
+      if (document.readyState === 'complete') {
+        const activeLink = this.$el.querySelector('.md-nav__link--active');
         if (activeLink && !this.isInViewport(activeLink)) {
           const activeDiv = activeLink.parentElement.parentElement;
           const scroll =
@@ -246,5 +246,5 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang='scss'>
 </style>
