@@ -219,12 +219,10 @@ export default {
   mounted() {
     let path = this.$route.path;
     const splitted = path.split('/');
-    const secondPath = path.replace(`${splitted[splitted.length - 2]}/`, '');
-    const thirdPath = secondPath.replace(`${splitted[splitted.length - 3]}/`, '');
-    const node2 = getNodeByPath(secondPath, this.$site.pages);
-    const node3 = getNodeByPath(thirdPath, this.$site.pages);
-    item__2 = node2;
-    item__1 = node3;
+    const item__1Path = secondPath.replace(`${splitted[splitted.length - 3]}/`, '');
+    const item__2Path = path.replace(`${splitted[splitted.length - 2]}/`, '');
+    const item__1 = getNodeByPath(item__1Path, this.$site.pages);
+    const item__2 = getNodeByPath(item__2Path, this.$site.pages);
     if (!item__1 || !item__2) {
       return;
     }
@@ -246,5 +244,5 @@ export default {
 };
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 </style>
