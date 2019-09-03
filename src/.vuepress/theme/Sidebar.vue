@@ -94,7 +94,6 @@ import {
   setItemLocalStorage,
   getItemLocalStorage,
   getNodeByPath,
-  getOldSDK
 } from "../util.js";
 import sdkList from "../sdk.json";
 
@@ -115,9 +114,6 @@ export default {
     };
   },
   computed: {
-    oldSDK() {
-      return getOldSDK(this.sdkList);
-    },
     sdkOrApiPage() {
       return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
     },
