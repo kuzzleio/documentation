@@ -19,6 +19,11 @@
             "path": "/official-plugins/",
             "generateLink": false,
             "label": "Plugins"
+        },
+        {
+            "path": "/how-to/",
+            "generateLink": false,
+            "label": "How to"
         }
     ],
     "Extend": [
