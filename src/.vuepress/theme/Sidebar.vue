@@ -214,32 +214,41 @@ export default {
           (window.innerWidth || document.documentElement.clientWidth) &&
         rect.top < (window.innerHeight || document.documentElement.clientHeight)
       );
+    },
+    openCurrentSubmenu() {
+      let path = this.$route.path;
+      const splitted = path.split('/');
+      const item__2Path = path.replace(`${splitted[splitted.length - 2]}/`, '');
+      const item__1Path = item__2Path.replace(
+        `${splitted[splitted.length - 3]}/`,
+        ''
+      );
+      const item__1 = getNodeByPath(item__1Path, this.$site.pages);
+      const item__2 = getNodeByPath(item__2Path, this.$site.pages);
+      if (!item__1 || !item__2) {
+        return;
+      }
+      this.closeSubmenu();
+      this.openSubmenu(item__1, item__2);
+      this.setOpenedSubmenu(item__1, item__2);
+    },
+    scrollToActiveItem() {
+      document.onreadystatechange = () => {
+        if (document.readyState === 'complete') {
+          const activeLink = this.$el.querySelector('.md-nav__link--active');
+          if (activeLink && !this.isInViewport(activeLink)) {
+            const activeDiv = activeLink.parentElement.parentElement;
+            const scroll =
+              activeDiv.offsetTop + activeDiv.offsetParent.offsetTop - 50;
+            this.$refs.scrollwrap.scrollTop = scroll;
+          }
+        }
+      };
     }
   },
   mounted() {
-    let path = this.$route.path;
-    const splitted = path.split('/');
-    const item__1Path = secondPath.replace(`${splitted[splitted.length - 3]}/`, '');
-    const item__2Path = path.replace(`${splitted[splitted.length - 2]}/`, '');
-    const item__1 = getNodeByPath(item__1Path, this.$site.pages);
-    const item__2 = getNodeByPath(item__2Path, this.$site.pages);
-    if (!item__1 || !item__2) {
-      return;
-    }
-    this.closeSubmenu();
-    this.openSubmenu(item__1, item__2);
-    this.setOpenedSubmenu(item__1, item__2);
-    document.onreadystatechange = () => {
-      if (document.readyState === 'complete') {
-        const activeLink = this.$el.querySelector('.md-nav__link--active');
-        if (activeLink && !this.isInViewport(activeLink)) {
-          const activeDiv = activeLink.parentElement.parentElement;
-          const scroll =
-            activeDiv.offsetTop + activeDiv.offsetParent.offsetTop - 50;
-          this.$refs.scrollwrap.scrollTop = scroll;
-        }
-      }
-    };
+    this.openCurrentSubmenu();
+    this.scrollToActiveItem();
   }
 };
 </script>
