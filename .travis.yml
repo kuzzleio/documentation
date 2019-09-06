@@ -164,6 +164,13 @@ jobs:
       <<: *doc-deploy-content
       name: plugin-multi-tenancy-1
 
+    # ----------------------------
+    # Plugin Multi Tenancy v1
+    # ----------------------------
+    - <<: *doc-deploy-base
+      <<: *doc-deploy-content
+      name: kuzzle-how-to
+
 stages:
   - name: Deployments
     if: type = push AND branch =~ /(master|develop)/
