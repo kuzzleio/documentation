@@ -1,3 +1,10 @@
+- url: https://github.com/kuzzleio/kuzzle-how-to.git
+  stable: master
+  dev: master
+  destination: kuzzle-how-to
+  name: kuzzle-how-to
+  base_url: how-to/1
+
 - url: https://github.com/kuzzleio/sdk-javascript.git
   stable: 5-stable
   dev: 5-dev
