@@ -1,7 +1,7 @@
 <template>
   <div class="md-nav__source mobile-only md-nav__mobile-color">
     <div v-if="$route.path.match('sdk-reference')" class="selector-container">
-      <SDKSelector :items="sdkList" />
+      <SDKSelector :items="sdkList" :kuzzleMajor="kuzzleMajor" />
     </div>
     <div v-for="([part, links]) of headerEntries">
       <p class="md-nav__mobile-group-name">{{ part }}</p>
@@ -22,24 +22,34 @@
 
 <script>
 import { getValidLinkByRootPath } from '../util.js';
-import sdkList from '../sdk.json';
+import sdks from '../sdk.json';
 import headerEntries from "../header-entries.json";
 
+const { getItemLocalStorage } = require('../util.js');
+
 export default {
+  data () {
+    return {
+      kuzzleMajor: '1'
+    }
+  },
   computed: {
     headerEntries() {
       return Object.entries(headerEntries)
     }
   },
-  data() {
-    return {
-      sdkList
-    };
+  computed: {
+    sdkList() {
+      return sdks[this.kuzzleMajor] || []
+    }
   },
   methods: {
     generateLink(path) {
       return getValidLinkByRootPath(path, this.$site.pages);
     }
+  },
+  mounted () {
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor')
   }
 };
 </script>

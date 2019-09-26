@@ -16,7 +16,7 @@
             ref="sidebar"
             :sidebarOpen="sidebarOpen"
             @closeSidebar="closeSidebar"
-          />
+            :kuzzleMajor="kuzzleMajor" />
           <!-- Table of contents -->
           <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
@@ -49,7 +49,7 @@ import Header from './Header.vue';
 import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
 import Footer from './Footer.vue';
-import sdkList from '../sdk.json';
+import sdks from '../sdk.json';
 
 const { getFirstValidChild, setItemLocalStorage, getItemLocalStorage } = require('../util.js');
 
@@ -71,7 +71,7 @@ export default {
       );
     },
     sdkList() {
-      return sdkList[this.kuzzleMajor]
+      return sdks[this.kuzzleMajor] || []
     }
   },
   methods: {

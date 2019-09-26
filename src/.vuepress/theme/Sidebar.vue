@@ -95,7 +95,7 @@ import {
   getItemLocalStorage,
   getNodeByPath,
 } from '../util.js';
-import sdkList from '../sdk.json';
+import sdks from '../sdk.json';
 
 export default {
   components: {
@@ -110,7 +110,7 @@ export default {
   data() {
     return {
       openedSubmenu: '',
-      sdkList
+      kuzzleMajor: '1'
     };
   },
   computed: {
@@ -119,6 +119,9 @@ export default {
     },
     root() {
       return findRootNode(this.$page, this.$site.pages);
+    },
+    sdkList () {
+      return sdks[this.kuzzleMajor] || []
     }
   },
   methods: {
