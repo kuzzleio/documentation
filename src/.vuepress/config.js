@@ -1,4 +1,3 @@
-const { execSync } = require('child_process');
 const webpack = require('webpack');
 
 const siteTitle = 'Kuzzle Docs';

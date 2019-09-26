@@ -42,7 +42,8 @@ import { getOldSDK } from '../util.js';
 
 export default {
   props: {
-    items: Array
+    items: Array,
+    kuzzleMajor: String
   },
   data() {
     return {
@@ -102,7 +103,7 @@ export default {
       //   method = `controllers/${this.$route.path.split('controllers/')[1]}`;
       // }
       if (item.language === 'api') {
-        path = '/core/1/api/';
+        path = `/core/${this.kuzzleMajor}/api/`;
       } else {
         path = `/sdk/${item.language}/${item.version}/`;
       }

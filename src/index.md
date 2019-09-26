@@ -1,9 +1,9 @@
 ---
 code: false
-type: page
+type: root
 order: 0
 title: Kuzzle Documentation
 description: Kuzzle Documentation
 ---
 
-<Home kuzzleMajor=1 />
+<Home />

@@ -8,7 +8,7 @@
 
     <h2>Learn more about Kuzzle now</h2>
     <div class="Tiles">
-      <a :href="getPath('/getting-started/running-kuzzle/')" class="Tiles-item medium">
+      <a :href="getPath('/guides/getting-started/running-kuzzle/')" class="Tiles-item medium">
         <img src="/logos/rocket.svg" alt="Running Kuzzle logo" class="Tiles-item-logo">
         <div class="Tiles-item-name">Running Kuzzle</div>
       </a>
@@ -42,8 +42,20 @@
 
 <script>
 
+import { setItemLocalStorage, getItemLocalStorage } from '../util'
+
 export default {
-  props: ['kuzzleMajor'],
+  data () {
+    return {
+      kuzzleMajor: '1'
+    }
+  },
+  mounted () {
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '1'
+
+    document.addEventListener('kuzzle-major-1', () => this.kuzzleMajor = '1')
+    document.addEventListener('kuzzle-major-2', () => this.kuzzleMajor = '2')
+  },
   methods: {
     getPath (path) {
       return `/core/${this.kuzzleMajor}${path}`

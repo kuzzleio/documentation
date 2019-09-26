@@ -26,9 +26,10 @@ import { getValidLinkByRootPath } from "../util.js";
 import headerEntries from "../header-entries.json";
 
 export default {
+  props: ['kuzzleMajor'],
   computed: {
     headerEntries() {
-      return Object.entries(headerEntries);
+      return Object.entries(headerEntries[this.kuzzleMajor]);
     }
   },
   methods: {

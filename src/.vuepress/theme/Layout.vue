@@ -2,7 +2,11 @@
   <div class="md-layout">
     <div class="overlayLoading" v-if="isLoading" />
     <div class="overlay" :class="{hidden: !sidebarOpen}" @click="closeSidebar"></div>
-    <Header ref="header" @openSidebar="openSidebar" />
+    <Header
+      ref="header"
+      @openSidebar="openSidebar"
+      @kuzzle-major-changed="changeKuzzleMajor" />
+
     <div ref="container" class="md-container">
       <!-- Main container -->
       <main class="md-main">
@@ -18,7 +22,7 @@
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
                 <div v-if="sdkOrApiPage" class="selector-container">
-                  <SDKSelector :items="sdkList" />
+                  <SDKSelector :items="sdkList" :kuzzzleMajor="kuzzleMajor" />
                 </div>
                 <TOC />
               </div>
@@ -47,14 +51,14 @@ import TOC from './TOC.vue';
 import Footer from './Footer.vue';
 import sdkList from '../sdk.json';
 
-const { getFirstValidChild } = require('../util.js');
+const { getFirstValidChild, setItemLocalStorage, getItemLocalStorage } = require('../util.js');
 
 export default {
   components: { Header, Sidebar, TOC, Footer },
   data() {
     return {
       sidebarOpen: false,
-      sdkList,
+      kuzzleMajor: '1',
       isLoading: true
     };
   },
@@ -65,9 +69,21 @@ export default {
         this.$route.path.match(sdkOrApiRegExp) ||
         this.$site.base.match(sdkOrApiRegExp)
       );
+    },
+    sdkList() {
+      return sdkList[this.kuzzleMajor]
     }
   },
   methods: {
+    changeKuzzleMajor (kuzzleMajor) {
+      this.kuzzleMajor = kuzzleMajor
+      setItemLocalStorage('kuzzleMajor', this.kuzzleMajor)
+      this.$router.push('/')
+
+      // Update the Home component because it's rendered in the index.md root file
+      const event = new Event(`kuzzle-major-${this.kuzzleMajor}`)
+      document.dispatchEvent(event)
+    },
     openSidebar() {
       this.sidebarOpen = true;
     },
@@ -162,6 +178,7 @@ export default {
         this.isLoading = false;
       }
     };
+
     this.$router.afterEach(this.computeContentHeight);
     window.addEventListener('resize', this.computeContentHeight.bind(this));
     window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
@@ -175,11 +192,13 @@ export default {
 
     copy.on('success', this.onCodeCopied);
 
-    if (this.$page.frontmatter.type !== 'page') {
+    if (this.$page.path !== '/' && this.$page.frontmatter.type !== 'page') {
       this.$router.replace(getFirstValidChild(this.$page, this.$site.pages));
     }
 
     this.computeContentHeight();
+
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '1'
   }
 };
 </script>
