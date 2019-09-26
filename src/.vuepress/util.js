@@ -252,7 +252,7 @@ export const getPageChildren = (page, pages) => {
 };
 
 export const findRootNode = (node, nodes) => {
-  if (node.frontmatter.type === 'root') {
+  if (node.frontmatter.type === 'root' || node.path === '/') {
     return node;
   }
   const parent = getParentNode(node, nodes);
