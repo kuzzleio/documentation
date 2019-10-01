@@ -56,7 +56,7 @@
 
 - url: https://github.com/kuzzleio/sdk-csharp.git
   stable: master
-  dev: 0-dev
+  dev: 1-dev
   destination: sdk/sdk-csharp-1
   name: sdk-csharp-1
   base_url: /sdk/csharp/1
