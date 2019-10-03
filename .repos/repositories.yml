@@ -27,11 +27,18 @@
   base_url: /sdk/js/7
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-s3.git
-  stable: master
+  stable: 1-stable
   dev: 1-dev
   destination: plugin/kuzzle-plugin-s3-1
   name: plugin-s3-1
   base_url: /official-plugins/s3/1
+
+- url: https://github.com/kuzzleio/kuzzle-plugin-s3.git
+  stable: master
+  dev: 2-dev
+  destination: plugin/kuzzle-plugin-s3-2
+  name: plugin-s3-2
+  base_url: /official-plugins/s3/2
 
 - url: https://github.com/kuzzleio/sdk-php.git
   stable: master
