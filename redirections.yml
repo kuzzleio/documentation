@@ -635,13 +635,13 @@ redirections:
 
 # Koncorde (kuzzle-dsl)
   - from: kuzzle-dsl/terms/missing
-    to: core/1/guides/cookbooks/realtime-api/terms/#missing
+    to: core/1/guides/cookbooks/realtime-api/terms#missing
 
   - from: kuzzle-dsl/terms/exists
-    to: core/1/guides/cookbooks/realtime-api/terms/#exists
+    to: core/1/guides/cookbooks/realtime-api/terms#exists
 
   - from: kuzzle-dsl/essentials/koncorde/
     to: core/1/guides/cookbooks/realtime-api/introduction
 
   - from: kuzzle-dsl/essentials/arrayvalues/
-    to: core/1/guides/cookbooks/realtime-api/advanced/#matching-array-values
+    to: core/1/guides/cookbooks/realtime-api/advanced#matching-array-values
