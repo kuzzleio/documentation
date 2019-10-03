@@ -1,3 +1,10 @@
+- url: https://github.com/kuzzleio/kuzzle-how-to.git
+  stable: master
+  dev: master
+  destination: kuzzle-how-to
+  name: kuzzle-how-to
+  base_url: how-to/1
+
 - url: https://github.com/kuzzleio/sdk-javascript.git
   stable: 5-stable
   dev: 5-dev
@@ -6,11 +13,18 @@
   base_url: /sdk/js/5
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
-  stable: master
+  stable: 6-stable
   dev: 6-dev
   destination: sdk/sdk-javascript-6
   name: sdk-javascript-6
   base_url: /sdk/js/6
+
+- url: https://github.com/kuzzleio/sdk-javascript.git
+  stable: master
+  dev: 7-dev
+  destination: sdk/sdk-javascript-7
+  name: sdk-javascript-7
+  base_url: /sdk/js/7
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-s3.git
   stable: master
@@ -42,7 +56,7 @@
 
 - url: https://github.com/kuzzleio/sdk-csharp.git
   stable: master
-  dev: 0-dev
+  dev: 1-dev
   destination: sdk/sdk-csharp-1
   name: sdk-csharp-1
   base_url: /sdk/csharp/1

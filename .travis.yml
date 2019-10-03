@@ -163,6 +163,12 @@ jobs:
     - <<: *doc-deploy-base
       <<: *doc-deploy-content
       name: plugin-multi-tenancy-1
+      
+    # Kuzzle How To
+    # ----------------------------
+    - <<: *doc-deploy-base
+      <<: *doc-deploy-content
+      name: kuzzle-how-to
 
 stages:
   - name: Deployments

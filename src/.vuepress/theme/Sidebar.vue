@@ -26,8 +26,9 @@
                     class="md-nav__link"
                     :class="{'md-nav__link--active': $page.path === item__2.path, 'md-nav__item--code': item__2.frontmatter.code == true}"
                   >
-                    <div v-if="getPageChildren(item__2).length"
-                      @click="openOrCloseOrRedirect(item__1, item__2)"
+                    <div
+                      v-if="getPageChildren(item__2).length"
+                      @click="handleSubmenuClick(item__1, item__2)"
                     >
                       <i
                         v-if="openedSubmenu === getId([item__1.title, item__2.title])"
@@ -37,10 +38,7 @@
                       <i v-else class="fa fa-caret-right" aria-hidden="true"></i>
                       <span>{{item__2.title}}</span>
                     </div>
-                    <router-link v-else
-                      :to="item__2.path"
-                      @click.native="closeSidebar"
-                    >
+                    <router-link v-else :to="item__2.path" @click.native="closeSidebar">
                       <a class="no_arrow">{{item__2.title}}</a>
                     </router-link>
                   </div>
@@ -92,11 +90,10 @@
 import TabsMobile from './TabsMobile.vue';
 import {
   getPageChildren,
-  getFirstValidChild,
   findRootNode,
   setItemLocalStorage,
   getItemLocalStorage,
-  getOldSDK
+  getNodeByPath,
 } from '../util.js';
 import sdkList from '../sdk.json';
 
@@ -117,9 +114,6 @@ export default {
     };
   },
   computed: {
-    oldSDK() {
-      return getOldSDK(this.sdkList);
-    },
     sdkOrApiPage() {
       return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
     },
@@ -139,10 +133,14 @@ export default {
       this.openedSubmenu = '';
     },
     closeSubmenu() {
-      if (this.openedSubmenu !== '') {
-        const openedSubmenuId = this.sanitize(this.openedSubmenu);
-        document.getElementById(openedSubmenuId).style.height = '0px';
+      if (this.openedSubmenu === '') {
+        return;
       }
+      const openedSubmenuId = this.sanitize(this.openedSubmenu);
+      if (!document.getElementById(openedSubmenuId)) {
+        return;
+      }
+      document.getElementById(openedSubmenuId).style.height = '0px';
     },
     redirect(item__2) {
       this.closeSidebar();
@@ -151,13 +149,18 @@ export default {
     },
     openSubmenu(item__1, item__2) {
       const childs = this.getPageChildren(item__2);
+      if (!childs) {
+        return;
+      }
       const item2Id = this.getId([item__1.title, item__2.title]);
       const item3Id = this.getId([
         item__1.title,
         item__2.title,
         childs[0].title
       ]);
-
+      if (!document.getElementById(item3Id)) {
+        return;
+      }
       const childSize = document.getElementById(item3Id).offsetHeight;
       const menuHeight = `${childs.length * childSize}px`;
       document.getElementById(item2Id).style.height = menuHeight;
@@ -179,7 +182,7 @@ export default {
     sanitize(str) {
       return str.replace(/ /g, '_');
     },
-    openOrCloseOrRedirect(item__1, item__2) {
+    handleSubmenuClick(item__1, item__2) {
       const childs = this.getPageChildren(item__2);
       const clickedSubmenuId = this.getId([item__1.title, item__2.title]);
 
@@ -198,9 +201,6 @@ export default {
     getPageChildren(page) {
       return getPageChildren(page, this.$site.pages);
     },
-    getFirstValidChild(page) {
-      return getFirstValidChild(page, this.$site.pages);
-    },
     /**
      * @param {Element} target
      */
@@ -214,59 +214,41 @@ export default {
           (window.innerWidth || document.documentElement.clientWidth) &&
         rect.top < (window.innerHeight || document.documentElement.clientHeight)
       );
+    },
+    openCurrentSubmenu() {
+      let path = this.$route.path;
+      const splitted = path.split('/');
+      const item__2Path = path.replace(`${splitted[splitted.length - 2]}/`, '');
+      const item__1Path = item__2Path.replace(
+        `${splitted[splitted.length - 3]}/`,
+        ''
+      );
+      const item__1 = getNodeByPath(item__1Path, this.$site.pages);
+      const item__2 = getNodeByPath(item__2Path, this.$site.pages);
+      if (!item__1 || !item__2) {
+        return;
+      }
+      this.closeSubmenu();
+      this.openSubmenu(item__1, item__2);
+      this.setOpenedSubmenu(item__1, item__2);
+    },
+    scrollToActiveItem() {
+      document.onreadystatechange = () => {
+        if (document.readyState === 'complete') {
+          const activeLink = this.$el.querySelector('.md-nav__link--active');
+          if (activeLink && !this.isInViewport(activeLink)) {
+            const activeDiv = activeLink.parentElement.parentElement;
+            const scroll =
+              activeDiv.offsetTop + activeDiv.offsetParent.offsetTop - 50;
+            this.$refs.scrollwrap.scrollTop = scroll;
+          }
+        }
+      };
     }
   },
   mounted() {
-    let item__1 = getItemLocalStorage('item__1');
-    let item__2 = getItemLocalStorage('item__2');
-
-    if (this.$route.path.match(/\/sdk\//)) {
-      const path = this.$route.path.split('sdk')[1].split('/');
-      const sdk = path[1] + path[2];
-      if (this.oldSDK.includes(sdk)) {
-        return;
-      }
-    }
-
-    if (!item__1 || !item__2) {
-      return;
-    }
-
-    // Hack for link sdk/controllers/** to api/api_reference/**
-    if (
-      this.$route.path.match(/\/sdk\//) &&
-      item__1.title === 'API reference'
-    ) {
-      item__1 = this.getPageChildren(this.root).find(
-        el => el.title === 'Controllers'
-      );
-      item__2 = this.getPageChildren(item__1).find(
-        el => el.title === item__2.title
-      );
-      item__2 = item__2 || getItemLocalStorage('item__2');
-    } else if (
-      this.$route.path.match(/\/core\/1\/api\//) &&
-      item__1.title === 'Controllers'
-    ) {
-      item__1 = this.getPageChildren(this.root).find(
-        el => el.title === 'API reference'
-      );
-      item__2 = this.getPageChildren(item__1).find(
-        el => el.title === item__2.title
-      );
-    }
-    this.openOrCloseOrRedirect(item__1, item__2);
-    document.onreadystatechange = () => {
-      if (document.readyState === 'complete') {
-        const activeLink = this.$el.querySelector('.md-nav__link--active');
-        if (activeLink && !this.isInViewport(activeLink)) {
-          const activeDiv = activeLink.parentElement.parentElement;
-          const scroll =
-            activeDiv.offsetTop + activeDiv.offsetParent.offsetTop - 50;
-          this.$refs.scrollwrap.scrollTop = scroll;
-        }
-      }
-    };
+    this.openCurrentSubmenu();
+    this.scrollToActiveItem();
   }
 };
 </script>

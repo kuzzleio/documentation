@@ -6,10 +6,12 @@ const siteDescription = 'Kuzzle Documentation';
 
 const versionString = require('./getVersionString');
 
+const base = process.env.SITE_BASE || '/';
+
 module.exports = {
   title: siteTitle,
   description: siteDescription,
-  base: process.env.SITE_BASE || '/',
+  base,
   shouldPrefetch: () => false,
   head: [
     [

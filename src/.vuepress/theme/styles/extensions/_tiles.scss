@@ -1,7 +1,7 @@
 .Tiles {
   &-item {
-    width: 21%;
-    height: 21%;
+    width: 170px;
+    height: 170px;
     display: inline-block;
     margin: 0 3% 3% 0;
     padding: 15px 5px 5px 5px;
@@ -15,6 +15,11 @@
     &.min {
       width: 11%;
       height: 11%;
+    }
+
+    &.medium {
+      width: 140px;
+      height: 120px;
     }
   }
 
