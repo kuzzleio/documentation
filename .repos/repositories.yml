@@ -48,11 +48,18 @@
   base_url: /sdk/php/3
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
-  stable: master
+  stable: 1-stable
   dev: 1-dev
   destination: plugin/kuzzle-plugin-cloudinary-1
   name: plugin-cloudinary-1
   base_url: /official-plugins/cloudinary/1
+
+- url: https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
+  stable: master
+  dev: 2-dev
+  destination: plugin/kuzzle-plugin-cloudinary-2
+  name: plugin-cloudinary-2
+  base_url: /official-plugins/cloudinary/2
 
 - url: https://github.com/kuzzleio/sdk-cpp.git
   stable: master
@@ -110,6 +117,13 @@
   name: kuzzle-1
   base_url: /core/1
 
+- url: https://github.com/kuzzleio/kuzzle.git
+  stable: 2-stable
+  dev: 2-dev
+  destination: kuzzle-2
+  name: kuzzle-2
+  base_url: /core/2
+
 - url: https://github.com/kuzzleio/sdk-android.git
   stable: master
   dev: 3-dev
@@ -123,10 +137,3 @@
   destination: plugin/kuzzle-plugin-multi-tenancy-1
   name: plugin-multi-tenancy-1
   base_url: /official-plugins/multi-tenancy/1
-
-- url: https://github.com/kuzzleio/kuzzle.git
-  stable: 2-stable
-  dev: 2-dev
-  destination: kuzzle-2
-  name: kuzzle-2
-  base_url: /core/2
