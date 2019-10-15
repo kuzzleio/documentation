@@ -130,13 +130,6 @@ jobs:
       name: sdk-java-2
 
     # ----------------------------
-    # SDK Java v3
-    # ----------------------------
-    - <<: *doc-deploy-base
-      <<: *doc-deploy-content
-      name: sdk-java-3
-
-    # ----------------------------
     # SDK Android v3
     # ----------------------------
     - <<: *doc-deploy-base
