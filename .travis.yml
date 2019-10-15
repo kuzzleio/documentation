@@ -67,11 +67,18 @@ jobs:
       name: framework
 
     # ----------------------------
-    # Kuzzle
+    # Kuzzle v1
     # ----------------------------
     - <<: *doc-deploy-base
       <<: *doc-deploy-content
       name: kuzzle-1
+
+    # ----------------------------
+    # Kuzzle v2
+    # ----------------------------
+    - <<: *doc-deploy-base
+      <<: *doc-deploy-content
+      name: kuzzle-2
 
     # ----------------------------
     # SDK JS v5
@@ -86,6 +93,13 @@ jobs:
     - <<: *doc-deploy-base
       <<: *doc-deploy-content
       name: sdk-javascript-6
+
+    # ----------------------------
+    # SDK JS v7
+    # ----------------------------
+    - <<: *doc-deploy-base
+      <<: *doc-deploy-content
+      name: sdk-javascript-7
 
     # ----------------------------
     # SDK C# v1
@@ -114,6 +128,13 @@ jobs:
     - <<: *doc-deploy-base
       <<: *doc-deploy-content
       name: sdk-java-2
+
+    # ----------------------------
+    # SDK Java v3
+    # ----------------------------
+    - <<: *doc-deploy-base
+      <<: *doc-deploy-content
+      name: sdk-java-3
 
     # ----------------------------
     # SDK Android v3

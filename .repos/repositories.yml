@@ -103,23 +103,16 @@
   name: kuzzle-1
   base_url: /core/1
 
-- url: https://github.com/kuzzleio/sdk-android.git
-  stable: master
-  dev: 3-dev
-  destination: sdk/sdk-android-3
-  name: sdk-android-3
-  base_url: /sdk/android/3
-
-- url: https://github.com/kuzzleio/kuzzle-plugin-multi-tenancy.git
-  stable: master
-  dev: 1-dev
-  destination: plugin/kuzzle-plugin-multi-tenancy-1
-  name: plugin-multi-tenancy-1
-  base_url: /official-plugins/multi-tenancy/1
-
 - url: https://github.com/kuzzleio/kuzzle.git
   stable: 2-stable
   dev: 2-dev
   destination: kuzzle-2
   name: kuzzle-2
   base_url: /core/2
+
+- url: https://github.com/kuzzleio/sdk-android.git
+  stable: master
+  dev: 3-dev
+  destination: sdk/sdk-android-3
+  name: sdk-android-3
+  base_url: /sdk/android/3
