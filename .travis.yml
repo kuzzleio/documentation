@@ -74,13 +74,6 @@ jobs:
       name: kuzzle-1
 
     # ----------------------------
-    # Kuzzle
-    # ----------------------------
-    # - <<: *doc-deploy-base
-    #   <<: *doc-deploy-content
-    #   name: kuzzle-2
-
-    # ----------------------------
     # SDK JS v5
     # ----------------------------
     - <<: *doc-deploy-base
