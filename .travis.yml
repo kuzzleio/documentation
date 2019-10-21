@@ -74,6 +74,13 @@ jobs:
       name: kuzzle-1
 
     # ----------------------------
+    # Kuzzle
+    # ----------------------------
+    # - <<: *doc-deploy-base
+    #   <<: *doc-deploy-content
+    #   name: kuzzle-2
+
+    # ----------------------------
     # SDK JS v5
     # ----------------------------
     - <<: *doc-deploy-base
@@ -163,7 +170,7 @@ jobs:
     - <<: *doc-deploy-base
       <<: *doc-deploy-content
       name: plugin-multi-tenancy-1
-      
+
     # Kuzzle How To
     # ----------------------------
     - <<: *doc-deploy-base
