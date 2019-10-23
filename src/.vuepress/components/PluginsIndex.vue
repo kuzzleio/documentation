@@ -40,13 +40,6 @@
       <img src="/logos/probe.svg" alt="probe listener logo" class="Tiles-item-logo">
       <div class="Tiles-item-name">Probe listener</div>
     </a>
-    <a href="/official-plugins/multi-tenancy/1" class="Tiles-item">
-      <div class="ribbon">
-        <span>BETA</span>
-      </div>
-      <img src="/logos/plugin-multi-tenancy.svg" alt="multi tenancy logo" class="Tiles-item-logo">
-      <div class="Tiles-item-name">Multi Tenancy</div>
-    </a>
   </div>
 </template>
 
