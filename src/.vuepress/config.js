@@ -247,7 +247,6 @@ module.exports = {
     extendMarkdown: md => {
       md.use(require('./markdown/code-snippet'));
       md.use(require('./markdown/copy-paste-snippet-btn'));
-      md.use(require('./markdown/link')({ base }));
     }
   },
   configureWebpack: {
