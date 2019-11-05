@@ -13,14 +13,14 @@
   base_url: /sdk/js/5
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
-  stable: 6-stable
+  stable: master
   dev: 6-dev
   destination: sdk/sdk-javascript-6
   name: sdk-javascript-6
   base_url: /sdk/js/6
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
-  stable: master
+  stable: 7-beta
   dev: 7-dev
   destination: sdk/sdk-javascript-7
   name: sdk-javascript-7
@@ -118,7 +118,7 @@
   base_url: /core/1
 
 - url: https://github.com/kuzzleio/kuzzle.git
-  stable: 2-stable
+  stable: 2-beta
   dev: 2-dev
   destination: kuzzle-2
   name: kuzzle-2
