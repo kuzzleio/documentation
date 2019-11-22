@@ -69,11 +69,18 @@
   base_url: /sdk/cpp/1
 
 - url: https://github.com/kuzzleio/sdk-csharp.git
-  stable: master
+  stable: 1-stable
   dev: 1-dev
   destination: sdk/sdk-csharp-1
   name: sdk-csharp-1
   base_url: /sdk/csharp/1
+
+# - url: https://github.com/kuzzleio/sdk-csharp.git
+#   stable: master
+#   dev: 2-dev
+#   destination: sdk/sdk-csharp-2
+#   name: sdk-csharp-2
+#   base_url: /sdk/csharp/2
 
 - url: https://github.com/kuzzleio/sdk-go.git
   stable: 1-stable
