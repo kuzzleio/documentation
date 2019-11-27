@@ -82,10 +82,6 @@ export default {
       // the sub-application (kuzzle, sdj-js, etc), the root path will change
       // ("/core/2", "/sdk/js/7", etc)
       document.location = `${document.location.protocol}//${document.location.hostname}`;
-
-      // // Update the Home component because it's rendered in the index.md root file
-      // const event = new Event(`kuzzle-major-${this.kuzzleMajor}`)
-      // document.dispatchEvent(event)
     },
     openSidebar() {
       this.sidebarOpen = true;
