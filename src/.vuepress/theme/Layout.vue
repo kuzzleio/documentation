@@ -78,12 +78,14 @@ export default {
     changeKuzzleMajor (kuzzleMajor) {
       this.kuzzleMajor = kuzzleMajor
       setItemLocalStorage('kuzzleMajor', this.kuzzleMajor)
-      console.log(`major changed to ${kuzzleMajor}`)
-      this.$router.push('/')
+      // We can't use the Vue router to push the "/" route because depending on
+      // the sub-application (kuzzle, sdj-js, etc), the root path will change
+      // ("/core/2", "/sdk/js/7", etc)
+      document.location = `${document.location.protocol}//${document.location.hostname}`;
 
-      // Update the Home component because it's rendered in the index.md root file
-      const event = new Event(`kuzzle-major-${this.kuzzleMajor}`)
-      document.dispatchEvent(event)
+      // // Update the Home component because it's rendered in the index.md root file
+      // const event = new Event(`kuzzle-major-${this.kuzzleMajor}`)
+      // document.dispatchEvent(event)
     },
     openSidebar() {
       this.sidebarOpen = true;
