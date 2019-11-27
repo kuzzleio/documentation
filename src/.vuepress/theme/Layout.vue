@@ -78,6 +78,7 @@ export default {
     changeKuzzleMajor (kuzzleMajor) {
       this.kuzzleMajor = kuzzleMajor
       setItemLocalStorage('kuzzleMajor', this.kuzzleMajor)
+      console.log(`major changed to ${kuzzleMajor}`)
       this.$router.push('/')
 
       // Update the Home component because it's rendered in the index.md root file

@@ -90,11 +90,11 @@ export default {
       algoliaAppId: ALGOLIA_APP_ID,
       algoliaSearchKey: ALGOLIA_SEARCH_KEY,
       algoliaIndexName: ALGOLIA_INDEX,
-      kuzzleMajor: '1'
+      kuzzleMajor: '2'
     };
   },
   mounted () {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '1'
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2'
   },
   methods: {
     toggleSearchTrigger(toggle) {
