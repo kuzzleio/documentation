@@ -23,7 +23,7 @@
 <script>
 import { getValidLinkByRootPath } from '../util.js';
 import sdks from '../sdk.json';
-import headerEntries from "../header-entries.json";
+import headerEntriesJson from "../header-entries.json";
 
 const { getItemLocalStorage } = require('../util.js');
 
@@ -34,13 +34,11 @@ export default {
     }
   },
   computed: {
-    headerEntries() {
-      return Object.entries(headerEntries)
-    }
-  },
-  computed: {
     sdkList() {
       return sdks[this.kuzzleMajor] || []
+    },
+    headerEntries() {
+      return Object.entries(headerEntriesJson)
     }
   },
   methods: {
