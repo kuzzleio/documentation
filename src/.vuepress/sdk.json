@@ -91,6 +91,13 @@
       "version": "7",
       "icon": "/logos/js.svg",
       "newArchitecture": true
+    },
+    {
+      "language": "csharp",
+      "name": "C# 2.x",
+      "version": "2",
+      "icon": "/logos/csharp.svg",
+      "newArchitecture": true
     }
   ]
 }

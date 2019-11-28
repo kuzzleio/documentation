@@ -14,7 +14,7 @@
             <span>Kuzzle Documentation</span>
           </label>
           <TabsMobile @closeSidebar="$emit('closeSidebar')" />
-          <SDKSelector class="md-sidebar--selector" v-if="sdkOrApiPage" :items="sdkList" />
+          <SDKSelector class="md-sidebar--selector" v-if="sdkOrApiPage" :items="sdkList" :kuzzleMajor="kuzzleMajor"/>
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
             <div v-for="item__1 in getPageChildren(root)" class="md-nav__item-container">
@@ -110,7 +110,7 @@ export default {
   data() {
     return {
       openedSubmenu: '',
-      kuzzleMajor: '1'
+      kuzzleMajor: '2'
     };
   },
   computed: {
@@ -252,6 +252,7 @@ export default {
   mounted() {
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2'
   }
 };
 </script>

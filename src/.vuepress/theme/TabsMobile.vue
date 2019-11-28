@@ -30,7 +30,7 @@ const { getItemLocalStorage } = require('../util.js');
 export default {
   data () {
     return {
-      kuzzleMajor: '1'
+      kuzzleMajor: '2'
     }
   },
   computed: {

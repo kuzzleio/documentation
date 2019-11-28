@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       sidebarOpen: false,
-      kuzzleMajor: '1',
+      kuzzleMajor: '2',
       isLoading: true
     };
   },
@@ -197,7 +197,7 @@ export default {
 
     this.computeContentHeight();
 
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '1'
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2'
   }
 };
 </script>

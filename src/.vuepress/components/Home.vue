@@ -42,7 +42,7 @@
 
 <script>
 
-import { setItemLocalStorage, getItemLocalStorage } from '../util'
+import { getItemLocalStorage } from '../util'
 
 export default {
   data () {
@@ -52,9 +52,6 @@ export default {
   },
   mounted () {
     this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2'
-
-    // document.addEventListener('kuzzle-major-1', () => this.kuzzleMajor = '1')
-    // document.addEventListener('kuzzle-major-2', () => this.kuzzleMajor = '2')
   },
   methods: {
     getPath (path) {
