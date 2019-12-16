@@ -2,7 +2,11 @@
   <div class="md-search" data-md-component="search" role="dialog">
     <label class="md-search__overlay" for="search"></label>
     <div class="md-search__inner" role="search">
-      <form class="md-search__form" name="search" @submit.prevent="goToHighlightedResult">
+      <form
+        class="md-search__form"
+        name="search"
+        @submit.prevent="goToHighlightedResult"
+      >
         <input
           id="algolia-search-input"
           type="text"
@@ -18,10 +22,15 @@
           ref="searchInput"
           v-model="query"
           @focus="$emit('search::on')"
-          @keyup.down="highlightedResult = Math.min(highlightedResult + 1, results.length - 1)"
+          @keyup.down="
+            highlightedResult = Math.min(
+              highlightedResult + 1,
+              results.length - 1
+            )
+          "
           @keyup.up="highlightedResult = Math.max(highlightedResult - 1, 0)"
           @keyup.esc="reset"
-        >
+        />
         <label class="md-icon md-search__icon" for="search"></label>
         <button
           type="reset"
@@ -39,10 +48,11 @@
           <div class="md-search-result" data-md-component="result">
             <div class="md-search-result__meta">
               <img
+                v-if="results === null || results.length === 0"
                 src="https://www.algolia.com/assets/pricing_new/algolia-powered-by-ac7dba62d03d1e28b0838c5634eb42a9.svg"
                 alt="Search by Algolia"
                 class="algolia-logo"
-              >
+              />
             </div>
             <ol class="md-search-result__list">
               <li
@@ -52,18 +62,16 @@
               >
                 <a
                   class="md-search-result__link"
-                  :href="result.path"
+                  :href="`${result.basePath}${result.path}`"
                   :title="result.title"
                   :data-rt="idx === highlightedResult ? 'active' : ''"
                 >
                   <article class="md-search-result__article" @click="reset">
                     <h1 class="md-search-result__title">
                       {{ result.title }}
-                      <span
-                        v-for="tag in result.tags"
-                        :key="tag"
-                        class="tag"
-                      >{{ tag }}</span>
+                      <span v-for="tag in result.tags" :key="tag" class="tag">{{
+                        tag
+                      }}</span>
                     </h1>
                     <p
                       class="md-search-result__teaser"
@@ -81,7 +89,7 @@
 </template>
 
 <script>
-import algoliasearch from 'algoliasearch';
+import algoliasearch from "algoliasearch";
 
 let algolia;
 
@@ -102,7 +110,7 @@ export default {
   },
   data() {
     return {
-      query: '',
+      query: "",
       results: [],
       highlightedResult: 0
     };
@@ -111,14 +119,14 @@ export default {
     currentTags() {
       return this.$route.path
         .substring(1)
-        .split('/')
+        .split("/")
         .slice(0, 4)
         .map(tag => {
-          if (tag === 'sdk-reference') {
-            return 'sdk';
+          if (tag === "sdk-reference") {
+            return "sdk";
           }
           if (/^[0-9]+$/.test(tag)) {
-            return tag + '.x';
+            return tag + ".x";
           }
           return tag;
         });
@@ -131,8 +139,8 @@ export default {
     },
     initializeHotkey() {
       // TODO MacOS version
-      window.addEventListener('keyup', event => {
-        if (event.key === 's') {
+      window.addEventListener("keyup", event => {
+        if (event.key === "s") {
           this.$refs.searchInput.focus();
         }
       });
@@ -143,17 +151,30 @@ export default {
         return;
       }
 
-      algolia.search({query, attributesToRetrieve: [
-        'tags', 'title', 'path'
-      ]}, (err, content) => {
-        if (err) {
-          console.error(err);
-          this.results = [];
+      algolia.search(
+        { query, attributesToRetrieve: ["tags", "title", "path", "basePath"] },
+        (err, content) => {
+          if (err) {
+            console.error(err);
+            this.results = [
+              {
+                objectID: "v-error",
+                path: `https://github.com/kuzzleio/documentation/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5B${err.name}%5D`,
+                basePath: "",
+                title: "Search Error",
+                _highlightResult: {
+                  content: {
+                    value:
+                      "Something went wrong while performing the search. Select this result to report this problem.<br/>"
+                  }
+                }
+              }
+            ];
+            return;
+          }
+          this.results = content.hits.sort(this.sortByTags);
         }
-        this.results = content
-          .hits
-          .sort(this.sortByTags);
-      });
+      );
     },
     sortByTags(a, b) {
       const scoreA = this.getTagsScore(a.tags),
@@ -174,8 +195,8 @@ export default {
       return score;
     },
     reset() {
-      this.query = '';
-      this.$emit('search::off');
+      this.query = "";
+      this.$emit("search::off");
       this.$refs.searchInput.blur();
     },
     goToHighlightedResult(event) {
@@ -199,5 +220,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

@@ -2,22 +2,81 @@
 
 Our documentation is a statically generated website. The content is stored in a bunch of Markdown files built by [VuePress](https://vuepress.vuejs.org/).
 
-## Start a development server
+## Ok, but... Where is the actual content?
 
-```sh
-npm run dev
+Well, there is something you should be aware of... right away: this is a meta repository, which means content is not here. Actual documentation is stored in the repositories of the different pieces of the Kuzzle ecosystem, e.g. the [Kuzzle Core](https://github.com/kuzzleio/kuzzle/tree/master/doc/2), the [Javascript SDK](https://github.com/kuzzleio/sdk-javascript/tree/master/doc/7), the [GOLANG SDK](https://github.com/kuzzleio/sdk-go/tree/master/.doc/2) and so on. And this is a good thing because documentation should live along with the code that it documents. So, what is this repository for?
+
+This repository contains the following elements:
+
+- the VuePress logic and plugins that convert a bunch of `.md` files into a multi-rooted single-page-application with server-side-rendering an all those cool features we love;
+- the logic that gathers all the different documentations and organizes them in a set of different instances of VuePress;
+- the CI configuration that allows Travis to build and deploy all those different VuePress instances on our hosting.
+
+We want to stress that, each section of the documentation (Core, SDK JS, SDK GO, plugins, etc...) is built into a separate and independent instance of VuePress. All these pieces will be glued together by being hosted in the same S3 bucket but in different sibling directories.
+
+### If you want to edit the content, this is not the right place
+
+This repository is essentially used to version the framework files and deploy the whole docs when necessary. In order to edit the content of the docs, please refer to the repository that contains them.
+
+## How to build the docs locally
+
+You should _not_ use this repository.
+
+:warning: You are not meant to run a local copy of the _whole_ documentation. It is huge and it takes ages to build. The right way to work on the docs is to do it from within each repository that actually contains each portion of the documentation.
+
+Here is the list of the repositories that contain the docs:
+
+- [kuzzle-core v1](https://github.com/kuzzleio/kuzzle/tree/1-stable)
+- [kuzzle-core v2](https://github.com/kuzzleio/kuzzle/tree/master)
+- [JS SDK v5](https://github.com/kuzzleio/sdk-javascript/tree/5-stable)
+- [JS SDK v6](https://github.com/kuzzleio/sdk-javascript/tree/6-stable)
+- [JS SDK v7](https://github.com/kuzzleio/sdk-javascript/tree/master)
+- [GOLANG SDK v1](https://github.com/kuzzleio/sdk-go/tree/1-stable)
+- [GOLANG SDK v2](https://github.com/kuzzleio/sdk-go/tree/master)
+- [Android SDK](https://github.com/kuzzleio/sdk-android)
+- [PHP SDK](https://github.com/kuzzleio/sdk-php)
+- [C-sharp SDK](https://github.com/kuzzleio/sdk-csharp)
+- [C++ SDK](https://github.com/kuzzleio/sdk-cpp)
+- [Java SDK](https://github.com/kuzzleio/sdk-java)
+
+_Note_ This list might not be exhaustive
+
+That being said, first of all, clone the one of the above repositories and run
+
+```
+npm install
 ```
 
-## Generate a production build
+Then run
 
-```sh
-npm run build
+```
+npm run doc-prepare
 ```
 
-## Index documentation content to Algolia
+This will install the VuePress logic the `docs` directory.
+
+Then, either you choose to start a development server to work on the content, by typing
+
+```
+npm run doc-dev
+```
+
+or you choose to build a static distribution of the docs.
+
+```
+npm run doc-build
+```
+
+This step can take a long time.
+
+If you want to dive deeper into how the docs are deployed in production, take a look at the `.travis.yml` file.
+
+### Index content to Algolia
+
+The build step can be used to index the content to Algolia, by setting the `ALGOLIA_WRITE_KEY` environment variable.
 
 ```sh
-ALGOLIA_WRITE_KEY=<write_key_here> npm run build
+ALGOLIA_WRITE_KEY=<write_key_here> npm run doc-build
 ```
 
 Algolia can be configured via the following environment variables
@@ -27,7 +86,7 @@ Algolia can be configured via the following environment variables
 - `ALGOLIA_INDEX` - The Algolia index associated to the documentation.
 - `ALGOLIA_WRITE_KEY` - The write key associated to the Algolia index.
 
----
+Note that the indexation will only be performed if `ALGOLIA_WRITE_KEY` is set, while the other variables are used to configure the search engine.
 
 ## Content organization
 
@@ -130,13 +189,13 @@ You can also use special tags to import specific parts of your snippet file. For
 
 ```javascript
 // load the Kuzzle SDK module
-import { Kuzzle, WebSocket } from 'kuzzle-sdk';
+import { Kuzzle, WebSocket } from "kuzzle-sdk";
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
+const kuzzle = new Kuzzle(new WebSocket("kuzzle"));
 
 // add a listener to detect any connection problems
-kuzzle.on('networkError', error => {
+kuzzle.on("networkError", error => {
   console.error(`Network Error: ${error}`);
 });
 
@@ -146,11 +205,11 @@ const run = async () => {
     await kuzzle.connect();
 
     // Create an index
-    await kuzzle.index.create('nyc-open-data');
+    await kuzzle.index.create("nyc-open-data");
 
     // Create a collection
-    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
-    console.log('nyc-open-data/yellow-taxi ready!');
+    await kuzzle.collection.create("nyc-open-data", "yellow-taxi");
+    console.log("nyc-open-data/yellow-taxi ready!");
   } catch (error) {
     console.error(error.message);
   } finally {
@@ -165,13 +224,13 @@ But you only want to import the code of the `run` function. You can use the spec
 
 ```javascript
 // load the Kuzzle SDK module
-import { Kuzzle, WebSocket } from 'kuzzle-sdk';
+import { Kuzzle, WebSocket } from "kuzzle-sdk";
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
+const kuzzle = new Kuzzle(new WebSocket("kuzzle"));
 
 // add a listener to detect any connection problems
-kuzzle.on('networkError', error => {
+kuzzle.on("networkError", error => {
   console.error(`Network Error: ${error}`);
 });
 
@@ -182,11 +241,11 @@ const run = async () => {
     await kuzzle.connect();
 
     // Create an index
-    await kuzzle.index.create('nyc-open-data');
+    await kuzzle.index.create("nyc-open-data");
 
     // Create a collection
-    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
-    console.log('nyc-open-data/yellow-taxi ready!');
+    await kuzzle.collection.create("nyc-open-data", "yellow-taxi");
+    console.log("nyc-open-data/yellow-taxi ready!");
   } catch (error) {
     console.error(error.message);
   } finally {
@@ -204,15 +263,15 @@ Snippet tags can also bear an ID, so that you can have many of them inside your 
 
 ```javascript
 // load the Kuzzle SDK module
-import { Kuzzle, WebSocket } from 'kuzzle-sdk';
+import { Kuzzle, WebSocket } from "kuzzle-sdk";
 
 // instantiate a Kuzzle client
 /* snippet:start:1 */
-const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
+const kuzzle = new Kuzzle(new WebSocket("kuzzle"));
 /* snippet:end */
 
 // add a listener to detect any connection problems
-kuzzle.on('networkError', error => {
+kuzzle.on("networkError", error => {
   console.error(`Network Error: ${error}`);
 });
 
@@ -223,11 +282,11 @@ const run = async () => {
     await kuzzle.connect();
 
     // Create an index
-    await kuzzle.index.create('nyc-open-data');
+    await kuzzle.index.create("nyc-open-data");
 
     // Create a collection
-    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
-    console.log('nyc-open-data/yellow-taxi ready!');
+    await kuzzle.collection.create("nyc-open-data", "yellow-taxi");
+    console.log("nyc-open-data/yellow-taxi ready!");
   } catch (error) {
     console.error(error.message);
   } finally {
@@ -248,7 +307,7 @@ This way, you can select which snippet you want to include by using the followin
 The code above will include only
 
 ```javascript
-const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
+const kuzzle = new Kuzzle(new WebSocket("kuzzle"));
 ```
 
 ### Forcing snippet language
@@ -325,18 +384,18 @@ Example of a default template for the Javascript SDK:
 
 ```js
 // load the Kuzzle SDK module
-const { Kuzzle } = require('kuzzle-sdk');
+const { Kuzzle } = require("kuzzle-sdk");
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle('websocket', {
-  host: 'kuzzle',
+const kuzzle = new Kuzzle("websocket", {
+  host: "kuzzle",
   autoReconnect: false
 });
 
 kuzzle
   .connect()
   .then(() => {
-    return [snippet-code];
+    return [snippet - code];
   })
   .then(() => {
     kuzzle.disconnect();
