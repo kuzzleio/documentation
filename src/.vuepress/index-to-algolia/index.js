@@ -26,6 +26,8 @@ module.exports = (options, ctx) => ({
       return;
     }
 
+    const basePath = process.env.DOC_PATH || '';
+
     const rootNode = findRootNode($page, ctx.pages);
     const parentNode = getParentNode($page, ctx.pages);
     records.push({
@@ -33,6 +35,7 @@ module.exports = (options, ctx) => ({
       title: frontmatter.title,
       description: frontmatter.description ? frontmatter.description : '',
       path: pagePath,
+      basePath,
       tags: extractTags(pagePath),
       root: rootNode ? rootNode.title : '',
       parent: parentNode ? parentNode.title : '',
@@ -40,7 +43,7 @@ module.exports = (options, ctx) => ({
     });
   },
 
-  ready() {},
+  ready() { },
 
   async generated(pagePaths) {
     enrichRecordsWithContent(records, ctx.outDir, true);
