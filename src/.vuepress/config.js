@@ -283,12 +283,11 @@ module.exports = {
         {
           algoliaAppId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
           algoliaWriteKey: process.env.ALGOLIA_WRITE_KEY,
-          algoliaIndex: process.env.ALGOLIA_INDEX || algoliaDefaultIndex
+          algoliaIndex: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
+          clearIndex: process.env.ALGOLIA_CLEAR_INDEX
         }
       ]
-      : {
-        write: true
-      },
+      : {},
     [
       require('vuepress-frontmatter-lint'),
       {

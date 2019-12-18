@@ -50,12 +50,13 @@ module.exports = (options, ctx) => ({
     await pushRecords(records, {
       appId: options.algoliaAppId,
       writeKey: options.algoliaWriteKey,
-      index: options.algoliaIndex
+      index: options.algoliaIndex,
+      clear: options.clearIndex
     });
   }
 });
 
-function enrichRecordsWithContent(records, outDir, write = false) {
+function enrichRecordsWithContent(records, outDir, dump = false) {
   console.log(`${c.blue('Algolia')} Enriching ${records.length} records...`);
   records.forEach(record => {
     const generatedFilePath = resolve(
@@ -77,7 +78,7 @@ function enrichRecordsWithContent(records, outDir, write = false) {
     record.content = record.content.substring(0, ALGOLIA_MAX_CONTENT_LENGTH)
   });
 
-  if (write) {
+  if (dump) {
     writeFileSync('./algolia-records.json', JSON.stringify(records, null, 4));
   }
 }
@@ -92,7 +93,10 @@ async function pushRecords(records, algoliaOptions) {
   const client = algolia(algoliaOptions.appId, algoliaOptions.writeKey);
   const index = client.initIndex(algoliaOptions.index);
 
-  await index.clearIndex()
+  if (algoliaOptions.clear) {
+    console.log(`${c.blue('Algolia')} clearing the index...`);
+    await index.clearIndex()
+  }
 
   index.addObjects(records, (err, content) => {
     if (err) {
