@@ -6,6 +6,7 @@ const c = require('chalk');
 
 const { findRootNode, getParentNode } = require('./util.js');
 const records = [];
+const ALGOLIA_MAX_CONTENT_LENGTH = 8500;
 
 module.exports = (options, ctx) => ({
   name: 'index-to-algolia',
@@ -39,7 +40,6 @@ module.exports = (options, ctx) => ({
       tags: extractTags(pagePath),
       root: rootNode ? rootNode.title : '',
       parent: parentNode ? parentNode.title : '',
-      toc: _computed.$page.headers
     });
   },
 
@@ -73,6 +73,8 @@ function enrichRecordsWithContent(records, outDir, write = false) {
     $('h1, pre, .md-clipboard__message', content).remove();
 
     record.content = content.text();
+    // TODO - should rather chunk the page into headers and create a record per header
+    record.content = record.content.substring(0, ALGOLIA_MAX_CONTENT_LENGTH)
   });
 
   if (write) {
