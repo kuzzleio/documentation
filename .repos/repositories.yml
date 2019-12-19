@@ -1,4 +1,5 @@
 - url: https://github.com/kuzzleio/kuzzle-how-to.git
+  local_path: doc/1
   stable: master
   dev: master
   destination: kuzzle-how-to
@@ -6,6 +7,7 @@
   base_url: how-to/1
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
+  local_path: doc/5
   stable: 5-stable
   dev: 5-dev
   destination: sdk/sdk-javascript-5
@@ -13,6 +15,7 @@
   base_url: /sdk/js/5
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
+  local_path: doc/6
   stable: 6-stable
   dev: 6-dev
   destination: sdk/sdk-javascript-6
@@ -20,6 +23,7 @@
   base_url: /sdk/js/6
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
+  local_path: doc/6
   stable: master
   dev: 7-dev
   destination: sdk/sdk-javascript-7
@@ -27,6 +31,7 @@
   base_url: /sdk/js/7
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-s3.git
+  local_path: doc/1
   stable: 1-stable
   dev: 1-dev
   destination: plugin/kuzzle-plugin-s3-1
@@ -34,6 +39,7 @@
   base_url: /official-plugins/s3/1
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-s3.git
+  local_path: doc/2
   stable: master
   dev: 2-dev
   destination: plugin/kuzzle-plugin-s3-2
@@ -41,6 +47,7 @@
   base_url: /official-plugins/s3/2
 
 - url: https://github.com/kuzzleio/sdk-php.git
+  local_path: doc/3
   stable: master
   dev: 3-dev
   destination: sdk/sdk-php-3
@@ -48,6 +55,7 @@
   base_url: /sdk/php/3
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
+  local_path: doc/1
   stable: 1-stable
   dev: 1-dev
   destination: plugin/kuzzle-plugin-cloudinary-1
@@ -55,6 +63,7 @@
   base_url: /official-plugins/cloudinary/1
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
+  local_path: doc/2
   stable: master
   dev: 2-dev
   destination: plugin/kuzzle-plugin-cloudinary-2
@@ -62,6 +71,7 @@
   base_url: /official-plugins/cloudinary/2
 
 - url: https://github.com/kuzzleio/sdk-cpp.git
+  local_path: doc/1
   stable: master
   dev: 1-dev
   destination: sdk/sdk-cpp-1
@@ -69,6 +79,7 @@
   base_url: /sdk/cpp/1
 
 - url: https://github.com/kuzzleio/sdk-csharp.git
+  local_path: doc/1
   stable: 1-stable
   dev: 1-dev
   destination: sdk/sdk-csharp-1
@@ -76,6 +87,7 @@
   base_url: /sdk/csharp/1
 
 - url: https://github.com/kuzzleio/sdk-csharp.git
+  local_path: doc/2
   stable: master
   dev: 2-dev
   destination: sdk/sdk-csharp-2
@@ -83,6 +95,7 @@
   base_url: /sdk/csharp/2
 
 - url: https://github.com/kuzzleio/sdk-go.git
+  local_path: .doc/1
   stable: 1-stable
   dev: 1-dev
   destination: sdk/sdk-go-1
@@ -90,6 +103,7 @@
   base_url: /sdk/go/1
 
 - url: https://github.com/kuzzleio/sdk-go.git
+  local_path: .doc/2
   stable: master
   dev: 2-dev
   destination: sdk/sdk-go-2
@@ -97,6 +111,7 @@
   base_url: /sdk/go/2
 
 - url: https://github.com/kuzzleio/sdk-java.git
+  local_path: doc/1
   stable: 1-stable
   dev: 1-dev
   destination: sdk/sdk-java-1
@@ -104,6 +119,7 @@
   base_url: /sdk/java/1
 
 - url: https://github.com/kuzzleio/sdk-java.git
+  local_path: doc/2
   stable: master
   dev: 2-dev
   destination: sdk/sdk-java-2
@@ -111,6 +127,7 @@
   base_url: /sdk/java/2
 
 - url: https://github.com/kuzzleio/sdk-java.git
+  local_path: doc/3
   stable: 3-stable
   dev: 3-dev
   destination: sdk/sdk-java-3
@@ -118,6 +135,7 @@
   base_url: /sdk/java/3
 
 - url: https://github.com/kuzzleio/kuzzle.git
+  local_path: doc/1
   stable: 1-stable
   dev: 1-dev
   destination: kuzzle-1
@@ -125,13 +143,15 @@
   base_url: /core/1
 
 - url: https://github.com/kuzzleio/kuzzle.git
+  local_path: doc/2
+  name: kuzzle-2
   stable: master
   dev: 2-dev
   destination: kuzzle-2
-  name: kuzzle-2
   base_url: /core/2
 
 - url: https://github.com/kuzzleio/sdk-android.git
+  local_path: doc/3
   stable: master
   dev: 3-dev
   destination: sdk/sdk-android-3

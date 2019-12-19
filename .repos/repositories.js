@@ -1,6 +1,7 @@
 const
   cout = require('./colorOutput'),
   { exec } = require('child_process'),
+  execa = require('execa'),
   fs = require('fs'),
   YAML = require('js-yaml');
 
@@ -91,13 +92,35 @@ const cloneRepository = async (argv) => {
   await Promise.all(promises);
 };
 
+const prepareRepository = async (argv) => {
+  for (const repository of getRepositories(argv)) {
+    console.log(`Preparing repository ${repository.name}...`);
+    await execa('rm', ['-f', `${currentDir}/${repository.destination}/${repository.local_path}/.vuepress`]);
+    await execa('rm', ['-f', `${currentDir}/${repository.destination}/doc/package.json`]);
+    await execa('ln', ['-s', '../../../../src/.vuepress', `${currentDir}/${repository.destination}/${repository.local_path}/`])
+    await execa('ln', ['-s', `../../../package.json`, `${currentDir}/${repository.destination}/doc/`]);
+    console.log('done!')
+  }
+}
+
+const buildRepository = async (argv) => {
+  for (const repository of getRepositories(argv)) {
+    console.log(`Building repository ${repository.name}...`);
+    await execa('vuepress', ['build', `${currentDir}/${repository.destination}/${repository.local_path}`], {
+      env: {
+        REPO_NAME: repository.name
+      }
+    }).stdout.pipe(process.stdout);
+  }
+}
+
 const commandRepository = async (cmd, argv) => {
   const promises = [];
 
   for (const repository of getRepositories(argv)) {
     const
       message = `Executing command "${cmd}" for ${repository.name}`,
-      command = `cd ${currentDir}/${repository.destination} && ${cmd}`;
+      command = `cd ${currentDir}/${repository.destination} && REPO_NAME=${repository.name} ${cmd}`;
 
     const promise = execute(command, message);
 
@@ -169,11 +192,11 @@ switch (process.argv[2]) {
     break;
 
   case 'prepare':
-    commandRepository('npm run doc-prepare', argv);
+    prepareRepository(argv);
     break
 
   case 'build':
-    commandRepository('npm run doc-build', argv);
+    buildRepository(argv);
     break
 
   case 'dev':

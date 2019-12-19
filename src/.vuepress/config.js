@@ -284,7 +284,8 @@ module.exports = {
           algoliaAppId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
           algoliaWriteKey: process.env.ALGOLIA_WRITE_KEY,
           algoliaIndex: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
-          clearIndex: process.env.ALGOLIA_CLEAR_INDEX
+          clearIndex: process.env.ALGOLIA_CLEAR_INDEX,
+          repoName: process.env.REPO_NAME
         }
       ]
       : {},

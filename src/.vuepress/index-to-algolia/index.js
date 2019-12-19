@@ -37,7 +37,8 @@ module.exports = (options, ctx) => ({
       description: frontmatter.description ? frontmatter.description : '',
       path: pagePath,
       basePath,
-      tags: extractTags(pagePath),
+      breadcrumbs: computeBreadcrumbs(options.repoName, pagePath),
+      _tags: [options.repoName],
       root: rootNode ? rootNode.title : '',
       parent: parentNode ? parentNode.title : '',
     });
@@ -51,7 +52,8 @@ module.exports = (options, ctx) => ({
       appId: options.algoliaAppId,
       writeKey: options.algoliaWriteKey,
       index: options.algoliaIndex,
-      clear: options.clearIndex
+      clearIndex: options.clearIndex,
+      repoName: options.repoName
     });
   }
 });
@@ -93,9 +95,14 @@ async function pushRecords(records, algoliaOptions) {
   const client = algolia(algoliaOptions.appId, algoliaOptions.writeKey);
   const index = client.initIndex(algoliaOptions.index);
 
-  if (algoliaOptions.clear) {
+  if (algoliaOptions.clearIndex) {
     console.log(`${c.blue('Algolia')} clearing the index...`);
     await index.clearIndex()
+  }
+
+  if (algoliaOptions.repoName) {
+    console.log(`${c.blue('Algolia')} clearing records for ${algoliaOptions.repoName}`)
+    index.deleteBy({ filters: `_tags:${algoliaOptions.repoName}` })
   }
 
   index.addObjects(records, (err, content) => {
@@ -106,14 +113,11 @@ async function pushRecords(records, algoliaOptions) {
   });
 }
 
-function extractTags(path) {
-  const start = 0,
-    end = 4;
-
-  return path
+function computeBreadcrumbs(repoName, path) {
+  const pathTags = path
     .split('/')
     .filter(t => t !== '')
-    .slice(start, end)
+    .slice(0, 4)
     .map(tag => {
       if (tag === 'sdk-reference') {
         return 'sdk';
@@ -123,4 +127,13 @@ function extractTags(path) {
       }
       return tag;
     });
+
+  if (repoName) {
+    return [
+      repoName,
+      ...pathTags
+    ]
+  }
+
+  return pathTags
 }
