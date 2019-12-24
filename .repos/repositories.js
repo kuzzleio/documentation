@@ -128,7 +128,7 @@ const buildRepository = async (argv) => {
     await execa('vuepress', ['build', `${currentDir}/${repository.destination}/${repository.local_path}`], {
       env: {
         REPO_NAME: repository.name,
-        SITE_BASE: repository.base_url
+        SITE_BASE: `${repository.base_url}/`
       }
     }).stdout.pipe(process.stdout);
   }
