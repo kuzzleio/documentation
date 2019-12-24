@@ -115,9 +115,9 @@ const prepareRepository = async (argv) => {
      * hypothetic .repos/core-2/doc/package.json file that might have been 
      * put there before, so that the ln -s doesn't fail.
      */
-    await execa('rm', ['-f', `${currentDir}/${repository.destination}/doc/package.json`]);
+    await execa('rm', ['-f', `${currentDir}/${repository.destination}/${repository.local_path}/../package.json`]);
     await execa('ln', ['-s', '../../../../src/.vuepress', `${currentDir}/${repository.destination}/${repository.local_path}/`])
-    await execa('ln', ['-s', `../../../package.json`, `${currentDir}/${repository.destination}/doc/`]);
+    await execa('ln', ['-s', `../../../package.json`, `${currentDir}/${repository.destination}/${repository.local_path}/../`]);
     console.log('done!')
   }
 }

@@ -90,7 +90,7 @@ async function pushRecords(records, algoliaOptions) {
     throw new Error('Please provide a valid Algolia Write Key');
   }
 
-  console.log(`${c.blue('Algolia')} Pushing ${records.length} records...`);
+  console.log(`\n${c.blue('Algolia')} Pushing ${records.length} records...`);
 
   const client = algolia(algoliaOptions.appId, algoliaOptions.writeKey);
   const index = client.initIndex(algoliaOptions.index);
@@ -109,7 +109,7 @@ async function pushRecords(records, algoliaOptions) {
     if (err) {
       return console.error(err);
     }
-    console.log(`${c.blue('Algolia')} Successfully pushed records!`);
+    console.log(`${c.blue('Algolia')} Successfully pushed records for ${algoliaOptions.repoName}!`);
   });
 }
 

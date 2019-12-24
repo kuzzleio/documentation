@@ -23,7 +23,7 @@
   base_url: /sdk/js/6
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
-  local_path: doc/6
+  local_path: doc/7
   stable: master
   dev: 7-dev
   destination: sdk/sdk-javascript-7

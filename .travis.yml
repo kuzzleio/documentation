@@ -7,7 +7,6 @@ _doc-deploy-framework: &doc-deploy-framework
   install:
     - pip install awscli --upgrade --user
     - npm ci
-    - export ALGOLIA_CLEAR_INDEX=true
   script:
     - npm run doc-build
   after_success:
@@ -181,9 +180,9 @@ jobs:
     # ----------------------------
     # Plugin Multi Tenancy v1
     # ----------------------------
-    - <<: *doc-deploy-base
-      <<: *doc-deploy-content
-      name: kuzzle-how-to
+    # - <<: *doc-deploy-base
+    #   <<: *doc-deploy-content
+    #   name: kuzzle-how-to
 
 stages:
   - name: Deployments
