@@ -57,7 +57,7 @@
             <ol class="md-search-result__list">
               <li
                 v-for="(result, idx) in results"
-                :key="result.path"
+                :key="`${result.path}-${result.breadcrumbs.join('.')}`"
                 class="md-search-result__item"
               >
                 <a
