@@ -22,9 +22,9 @@ _doc-deploy-content: &doc-deploy-content
     - npm ci
   before_script:
     - npm run repositories -- clone
-    - npm run repositories -- run "npm run doc-prepare" --async
+    - npm run repositories -- prepare
   script:
-    - npm run repositories -- run "npm run doc-build" --async
+    - npm run repositories -- build
   after_success:
     - npm run repositories -- run "npm run doc-upload" --async
     - npm run doc-cloudfront
