@@ -62,7 +62,7 @@
               >
                 <a
                   class="md-search-result__link"
-                  :href="`${result.basePath}${result.path}`"
+                  :href="`${result.basePath}${result.path}`.replace('//', '/')"
                   :title="result.title"
                   :data-rt="idx === highlightedResult ? 'active' : ''"
                 >
