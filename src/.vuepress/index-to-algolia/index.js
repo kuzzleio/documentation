@@ -27,8 +27,6 @@ module.exports = (options, ctx) => ({
       return;
     }
 
-    const basePath = process.env.DOC_PATH || '';
-
     const rootNode = findRootNode($page, ctx.pages);
     const parentNode = getParentNode($page, ctx.pages);
     records.push({
@@ -36,7 +34,7 @@ module.exports = (options, ctx) => ({
       title: frontmatter.title,
       description: frontmatter.description ? frontmatter.description : '',
       path: pagePath,
-      basePath,
+      basePath: ctx.base,
       breadcrumbs: computeBreadcrumbs(options.repoName, pagePath),
       _tags: [options.repoName],
       root: rootNode ? rootNode.title : '',
