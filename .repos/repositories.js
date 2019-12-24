@@ -37,10 +37,10 @@ const execute = (command, message) => {
 
   return new Promise(resolve => {
     exec(cmd, { maxBuffer: 1024 * 500 }, (error, stdout, stderr) => {
+      console.error(stdout);
+      console.error(stderr);
+      console.error(error);
       if (error) {
-        console.error(stdout);
-        console.error(stderr);
-        console.error(error);
         cout.error(cmd);
 
         process.exitCode = 1;
@@ -141,8 +141,7 @@ const commandRepository = async (cmd, argv) => {
       message = `Executing command "${cmd}" for ${repository.name}`,
       command = `cd ${currentDir}/${repository.destination} && REPO_NAME=${repository.name} ${cmd}`;
 
-    console.log(message);
-    const promise = execa(command).stdout.pipe(process.stdout);
+    const promise = execute(command, message);
 
     if (argv.async) {
       promises.push(promise);
