@@ -141,7 +141,8 @@ const commandRepository = async (cmd, argv) => {
       message = `Executing command "${cmd}" for ${repository.name}`,
       command = `cd ${currentDir}/${repository.destination} && REPO_NAME=${repository.name} ${cmd}`;
 
-    const promise = execute(command, message);
+    console.log(message);
+    const promise = execa(command).stdout.pipe(process.stdout);
 
     if (argv.async) {
       promises.push(promise);

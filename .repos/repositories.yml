@@ -34,7 +34,7 @@
   local_path: doc/1
   stable: 1-stable
   dev: 1-dev
-  destination: plugin/kuzzle-plugin-s3-1
+  destination: kuzzle-plugin-s3-1
   name: plugin-s3-1
   base_url: /official-plugins/s3/1
 
@@ -42,7 +42,7 @@
   local_path: doc/2
   stable: master
   dev: 2-dev
-  destination: plugin/kuzzle-plugin-s3-2
+  destination: kuzzle-plugin-s3-2
   name: plugin-s3-2
   base_url: /official-plugins/s3/2
 
@@ -58,7 +58,7 @@
   local_path: doc/1
   stable: 1-stable
   dev: 1-dev
-  destination: plugin/kuzzle-plugin-cloudinary-1
+  destination: kuzzle-plugin-cloudinary-1
   name: plugin-cloudinary-1
   base_url: /official-plugins/cloudinary/1
 
@@ -66,7 +66,7 @@
   local_path: doc/2
   stable: master
   dev: 2-dev
-  destination: plugin/kuzzle-plugin-cloudinary-2
+  destination: kuzzle-plugin-cloudinary-2
   name: plugin-cloudinary-2
   base_url: /official-plugins/cloudinary/2
 
