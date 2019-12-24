@@ -107,6 +107,13 @@ jobs:
       name: sdk-csharp-1
 
     # ----------------------------
+    # SDK C# v2
+    # ----------------------------
+    - <<: *doc-deploy-base
+      <<: *doc-deploy-content
+      name: sdk-csharp-2
+
+    # ----------------------------
     # SDK C++ v1
     # ----------------------------
     - <<: *doc-deploy-base
@@ -161,6 +168,13 @@ jobs:
     - <<: *doc-deploy-base
       <<: *doc-deploy-content
       name: plugin-cloudinary-1
+
+    # ----------------------------
+    # Plugin Cloudinary v2
+    # ----------------------------
+    - <<: *doc-deploy-base
+      <<: *doc-deploy-content
+      name: plugin-cloudinary-2
 
     # ----------------------------
     # Plugin S3 v1
