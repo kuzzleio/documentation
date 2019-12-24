@@ -69,9 +69,12 @@
                   <article class="md-search-result__article" @click="reset">
                     <h1 class="md-search-result__title">
                       {{ result.title }}
-                      <span v-for="tag in result.tags" :key="tag" class="tag">{{
-                        tag
-                      }}</span>
+                      <span
+                        v-for="tag in result.breadcrumbs"
+                        :key="tag"
+                        class="tag"
+                        >{{ tag }}</span
+                      >
                     </h1>
                     <p
                       class="md-search-result__teaser"
@@ -152,7 +155,10 @@ export default {
       }
 
       algolia.search(
-        { query, attributesToRetrieve: ["tags", "title", "path", "basePath"] },
+        {
+          query,
+          attributesToRetrieve: ["breadcrumbs", "title", "path", "basePath"]
+        },
         (err, content) => {
           if (err) {
             console.error(err);
