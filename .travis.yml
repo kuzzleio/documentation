@@ -26,7 +26,7 @@ _doc-deploy-content: &doc-deploy-content
     - npm run repositories -- build
   after_success:
     - npm run repositories -- run "npm run doc-upload" --async
-    - npm run repositories -- run "cloudfront"
+    - npm run repositories -- run "npm run doc-cloudfront"
 
 # Documentation deployment
 _doc-deploy-base: &doc-deploy-base
