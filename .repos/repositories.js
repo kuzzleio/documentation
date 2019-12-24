@@ -96,6 +96,25 @@ const prepareRepository = async (argv) => {
   for (const repository of getRepositories(argv)) {
     console.log(`Preparing repository ${repository.name}...`);
     await execa('rm', ['-f', `${currentDir}/${repository.destination}/${repository.local_path}/.vuepress`]);
+    /**
+     * @aschen asks "Why do we delete package.json here?"
+     * 
+     * @xbilll82 answers.
+     * The aim here is to build a sub-repo (e.g. core-2) by linking the 
+     * .vuepress files inside it and passing it to the vuepress binary 
+     * installed in the main repo (i.e. this one), so that we don't have 
+     * to re-clone the main repo into the sub-repos that were cloned into 
+     * the main repo (let's avoit Git inception).
+     * So, we take the .vuepress files from src/.vuepress and link them to 
+     * .repos/core-2/doc/2/, and then call $(npm bin)/vuepress build 
+     * .repos/core-2/doc/2/, right? The weird thing is that vuepress 
+     * complains about not finding .repos/core-2/doc/package.json and I 
+     * frankly don't undertand why it does need it at that precise path.
+     * The workaround I found is to link package.json to .repos/core-2/doc/package.json 
+     * and it's working all right. For this reason, before linking it, I rm -f a 
+     * hypothetic .repos/core-2/doc/package.json file that might have been 
+     * put there before, so that the ln -s doesn't fail.
+     */
     await execa('rm', ['-f', `${currentDir}/${repository.destination}/doc/package.json`]);
     await execa('ln', ['-s', '../../../../src/.vuepress', `${currentDir}/${repository.destination}/${repository.local_path}/`])
     await execa('ln', ['-s', `../../../package.json`, `${currentDir}/${repository.destination}/doc/`]);
