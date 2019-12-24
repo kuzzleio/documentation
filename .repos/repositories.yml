@@ -10,7 +10,7 @@
   local_path: doc/5
   stable: 5-stable
   dev: 5-dev
-  destination: sdk/sdk-javascript-5
+  destination: sdk-javascript-5
   name: sdk-javascript-5
   base_url: /sdk/js/5
 
@@ -18,7 +18,7 @@
   local_path: doc/6
   stable: 6-stable
   dev: 6-dev
-  destination: sdk/sdk-javascript-6
+  destination: sdk-javascript-6
   name: sdk-javascript-6
   base_url: /sdk/js/6
 
@@ -26,7 +26,7 @@
   local_path: doc/7
   stable: master
   dev: 7-dev
-  destination: sdk/sdk-javascript-7
+  destination: sdk-javascript-7
   name: sdk-javascript-7
   base_url: /sdk/js/7
 
@@ -50,7 +50,7 @@
   local_path: doc/3
   stable: master
   dev: 3-dev
-  destination: sdk/sdk-php-3
+  destination: sdk-php-3
   name: sdk-php-3
   base_url: /sdk/php/3
 
@@ -74,7 +74,7 @@
   local_path: doc/1
   stable: master
   dev: 1-dev
-  destination: sdk/sdk-cpp-1
+  destination: sdk-cpp-1
   name: sdk-cpp-1
   base_url: /sdk/cpp/1
 
@@ -82,7 +82,7 @@
   local_path: doc/1
   stable: 1-stable
   dev: 1-dev
-  destination: sdk/sdk-csharp-1
+  destination: sdk-csharp-1
   name: sdk-csharp-1
   base_url: /sdk/csharp/1
 
@@ -90,7 +90,7 @@
   local_path: doc/2
   stable: master
   dev: 2-dev
-  destination: sdk/sdk-csharp-2
+  destination: sdk-csharp-2
   name: sdk-csharp-2
   base_url: /sdk/csharp/2
 
@@ -98,7 +98,7 @@
   local_path: .doc/1
   stable: 1-stable
   dev: 1-dev
-  destination: sdk/sdk-go-1
+  destination: sdk-go-1
   name: sdk-go-1
   base_url: /sdk/go/1
 
@@ -106,7 +106,7 @@
   local_path: .doc/2
   stable: master
   dev: 2-dev
-  destination: sdk/sdk-go-2
+  destination: sdk-go-2
   name: sdk-go-2
   base_url: /sdk/go/2
 
@@ -114,7 +114,7 @@
   local_path: doc/1
   stable: 1-stable
   dev: 1-dev
-  destination: sdk/sdk-java-1
+  destination: sdk-java-1
   name: sdk-java-1
   base_url: /sdk/java/1
 
@@ -122,7 +122,7 @@
   local_path: doc/2
   stable: master
   dev: 2-dev
-  destination: sdk/sdk-java-2
+  destination: sdk-java-2
   name: sdk-java-2
   base_url: /sdk/java/2
 
@@ -130,7 +130,7 @@
   local_path: doc/3
   stable: 3-stable
   dev: 3-dev
-  destination: sdk/sdk-java-3
+  destination: sdk-java-3
   name: sdk-java-3
   base_url: /sdk/java/3
 
@@ -154,6 +154,6 @@
   local_path: doc/3
   stable: master
   dev: 3-dev
-  destination: sdk/sdk-android-3
+  destination: sdk-android-3
   name: sdk-android-3
   base_url: /sdk/android/3
