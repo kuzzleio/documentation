@@ -230,7 +230,7 @@ function resolveItem(item, pages, base, isNested) {
     if (isNested) {
       console.error(
         '[vuepress] Nested sidebar groups are not supported. ' +
-          'Consider using navbar + categories instead.'
+        'Consider using navbar + categories instead.'
       );
     }
     const children = item.children || [];
@@ -244,7 +244,7 @@ function resolveItem(item, pages, base, isNested) {
 }
 
 export const getPageChildren = (page, pages) => {
-  const pathRE = new RegExp(`^${getPageDir(page)}[a-zA-z_0-9\-]+/?$`);
+  const pathRE = new RegExp(`^${getPageDir(page)}[a-zA-z_0-9\-]+/?`);
 
   return pages
     .filter(p => p.path.match(pathRE) && p.path !== page.path)
