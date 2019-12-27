@@ -243,8 +243,8 @@ function resolveItem(item, pages, base, isNested) {
   }
 }
 
-export const getPageChildren = (page, pages) => {
-  const pathRE = new RegExp(`^${getPageDir(page)}[a-zA-z_0-9\-]+/?`);
+export const getPageChildren = (page, pages, fullDetpth = false) => {
+  const pathRE = new RegExp(`^${getPageDir(page)}[a-zA-z_0-9\-]+/?${fullDetpth ? '' : '$'}`);
 
   return pages
     .filter(p => p.path.match(pathRE) && p.path !== page.path)
@@ -264,7 +264,7 @@ export const findRootNode = (node, nodes) => {
 };
 
 export const getFirstValidChild = (node, nodes) => {
-  const children = getPageChildren(node, nodes);
+  const children = getPageChildren(node, nodes, true);
 
   if (!children.length) {
     return node;
