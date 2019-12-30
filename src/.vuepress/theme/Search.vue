@@ -62,7 +62,7 @@
               >
                 <a
                   class="md-search-result__link"
-                  :href="`${result.basePath}${result.path}`.replace('//', '/')"
+                  :href="getResultUrl(result)"
                   :title="result.title"
                   :data-rt="idx === highlightedResult ? 'active' : ''"
                 >
@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import algoliasearch from "algoliasearch";
+import algoliasearch from 'algoliasearch';
 
 let algolia;
 
@@ -113,7 +113,7 @@ export default {
   },
   data() {
     return {
-      query: "",
+      query: '',
       results: [],
       highlightedResult: 0
     };
@@ -122,14 +122,14 @@ export default {
     currentTags() {
       return this.$route.path
         .substring(1)
-        .split("/")
+        .split('/')
         .slice(0, 4)
         .map(tag => {
-          if (tag === "sdk-reference") {
-            return "sdk";
+          if (tag === 'sdk-reference') {
+            return 'sdk';
           }
           if (/^[0-9]+$/.test(tag)) {
-            return tag + ".x";
+            return tag + '.x';
           }
           return tag;
         });
@@ -142,8 +142,8 @@ export default {
     },
     initializeHotkey() {
       // TODO MacOS version
-      window.addEventListener("keyup", event => {
-        if (event.key === "s") {
+      window.addEventListener('keyup', event => {
+        if (event.key === 's') {
           this.$refs.searchInput.focus();
         }
       });
@@ -157,21 +157,21 @@ export default {
       algolia.search(
         {
           query,
-          attributesToRetrieve: ["breadcrumbs", "title", "path", "basePath"]
+          attributesToRetrieve: ['breadcrumbs', 'title', 'path', 'basePath']
         },
         (err, content) => {
           if (err) {
             console.error(err);
             this.results = [
               {
-                objectID: "v-error",
+                objectID: 'v-error',
                 path: `https://github.com/kuzzleio/documentation/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5B${err.name}%5D`,
-                basePath: "",
-                title: "Search Error",
+                basePath: '',
+                title: 'Search Error',
                 _highlightResult: {
                   content: {
                     value:
-                      "Something went wrong while performing the search. Select this result to report this problem.<br/>"
+                      'Something went wrong while performing the search. Select this result to report this problem.<br/>'
                   }
                 }
               }
@@ -201,8 +201,8 @@ export default {
       return score;
     },
     reset() {
-      this.query = "";
-      this.$emit("search::off");
+      this.query = '';
+      this.$emit('search::off');
       this.$refs.searchInput.blur();
     },
     goToHighlightedResult(event) {
@@ -210,8 +210,13 @@ export default {
       if (!this.results || !this.results[this.highlightedResult]) {
         return;
       }
-      window.location.href = `${this.results[this.highlightedResult].path}`;
+      window.location.href = this.getResultUrl(
+        this.results[this.highlightedResult]
+      );
       this.reset();
+    },
+    getResultUrl(result) {
+      return `${result.basePath}${result.path}`.replace('//', '/');
     }
   },
   mounted() {
