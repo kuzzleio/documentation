@@ -125,12 +125,16 @@ const prepareRepository = async (argv) => {
 const buildRepository = async (argv) => {
   for (const repository of getRepositories(argv)) {
     console.log(`Building repository ${repository.name}...`);
-    await execa('vuepress', ['build', `${currentDir}/${repository.destination}/${repository.local_path}`], {
+    const childProcess = execa('vuepress', ['build', '--no-cache', `${currentDir}/${repository.destination}/${repository.local_path}`], {
       env: {
         REPO_NAME: repository.name,
-        SITE_BASE: `${repository.base_url}/`
+        SITE_BASE: `${repository.base_url}/`,
+        DOC_DIR: `.repos/${repository.name}/${repository.local_path}/`
       }
-    }).stdout.pipe(process.stdout);
+    });
+    childProcess.stderr.pipe(process.stderr);
+    childProcess.stdout.pipe(process.stdout);
+    await childProcess;
   }
 }
 

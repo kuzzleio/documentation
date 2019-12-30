@@ -1,20 +1,7 @@
-const
-  { execSync } = require('child_process'),
-  path = require('path');
+let version = 'local-build'
 
-const currentDir = __dirname;
-
-let repoDir = path.resolve(`${currentDir}/../..`);
-// This variable is set if we are inside a sub-site build
-if (process.env.DOC_DIR) {
-  repoDir = path.resolve(`${currentDir}/../../../..`);
+if (process.env.CI) {
+  version = `${process.env.TRAVIS_REPO_SLUG}:${process.env.TRAVIS_BRANCH}@${process.env.TRAVIS_COMMIT}--job:${process.env.TRAVIS_JOB_WEB_URL}`;
 }
 
-const package = require(`${repoDir}/package.json`);
-const repository = package.repository ? package.repository.url : package.name;
-const commit = execSync(`cd ${repoDir} && git rev-parse HEAD`, { encoding: 'utf8' }).replace('\n', '');
-const date = (new Date()).toISOString();
-
-const versionString = `${repository}@${commit}@${date}`;
-
-module.exports = versionString;
+module.exports = version;
