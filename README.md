@@ -53,7 +53,7 @@ Then run
 npm run clone-repos
 ```
 
-This will clone _all_ the repositories in the above list into the `.repos/` directory. If you don't want all of them to be cloned, you can set the `REPOSITORIES` environment variable to a comma-separated list of repository names, according to the file `./repos/repositories.yml`, e.g.
+This will clone _all_ the repositories in the above list into the `.repos/` directory, which will most likely bloat your memory. If you don't want all of them to be cloned, you can set the `REPOSITORIES` environment variable to a comma-separated list of repository names, according to the file `./repos/repositories.yml`, e.g.
 
 ```
 REPOSITORIES=sdk-javascript-6,kuzzle-2 npm run clone-repos
@@ -393,7 +393,7 @@ const kuzzle = new Kuzzle('websocket', {
 kuzzle
   .connect()
   .then(() => {
-    return [snippet-code];
+    return [snippet - code];
   })
   .then(() => {
     kuzzle.disconnect();
