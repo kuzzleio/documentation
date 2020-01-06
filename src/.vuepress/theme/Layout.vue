@@ -1,16 +1,8 @@
 <template>
   <div class="md-layout">
     <div class="overlayLoading" v-if="isLoading" />
-    <div
-      class="overlay"
-      :class="{ hidden: !sidebarOpen }"
-      @click="closeSidebar"
-    ></div>
-    <Header
-      ref="header"
-      @openSidebar="openSidebar"
-      @kuzzle-major-changed="changeKuzzleMajor"
-    />
+    <div class="overlay" :class="{ hidden: !sidebarOpen }" @click="closeSidebar"></div>
+    <Header ref="header" @openSidebar="openSidebar" @kuzzle-major-changed="changeKuzzleMajor" />
 
     <div ref="container" class="md-container">
       <!-- Main container -->
@@ -24,11 +16,7 @@
             :kuzzleMajor="kuzzleMajor"
           />
           <!-- Table of contents -->
-          <div
-            ref="toc"
-            class="md-sidebar md-sidebar--secondary"
-            data-md-component="toc"
-          >
+          <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
                 <div v-if="sdkOrApiPage" class="selector-container">
@@ -95,7 +83,7 @@ export default {
       // We can't use the Vue router to push the "/" route because depending on
       // the sub-application (kuzzle, sdj-js, etc), the root path will change
       // ("/core/2", "/sdk/js/7", etc)
-      document.location = `${document.location.protocol}//${document.location.hostname}`;
+      document.location = '/';
     },
     openSidebar() {
       this.sidebarOpen = true;

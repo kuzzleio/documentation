@@ -43,7 +43,7 @@ import { getOldSDK } from '../util.js';
 export default {
   props: {
     items: Array,
-    kuzzleMajor: String
+    kuzzleMajor: Number
   },
   data() {
     return {
