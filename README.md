@@ -20,8 +20,6 @@ This repository is essentially used to version the framework files and deploy th
 
 ## How to build the docs locally
 
-You should _not_ use this repository.
-
 :warning: You are not meant to run a local copy of the _whole_ documentation. It is huge and it takes ages to build. The right way to work on the docs is to do it from within each repository that actually contains each portion of the documentation.
 
 Here is the list of the repositories that contain the docs:
@@ -41,7 +39,9 @@ Here is the list of the repositories that contain the docs:
 
 _Note_ This list might not be exhaustive
 
-That being said, first of all, clone the one of the above repositories and run
+## Ok, I just want to start a development server to work on the framework
+
+This is OK, just follow these steps.
 
 ```
 npm install
@@ -50,26 +50,24 @@ npm install
 Then run
 
 ```
-npm run doc-prepare
+npm run clone-repos
 ```
 
-This will install the VuePress logic the `docs` directory.
+This will clone _all_ the repositories in the above list into the `.repos/` directory. If you don't want all of them to be cloned, you can set the `REPOSITORIES` environment variable to a comma-separated list of repository names, according to the file `./repos/repositories.yml`, e.g.
 
-Then, either you choose to start a development server to work on the content, by typing
+```
+REPOSITORIES=sdk-javascript-6,kuzzle-2 npm run clone-repos
+```
+
+This will only clone the `sdk-javascript-6` and `kuzzle-2` repos.
+
+Then you just need to run
 
 ```
 npm run doc-dev
 ```
 
-or you choose to build a static distribution of the docs.
-
-```
-npm run doc-build
-```
-
-This step can take a long time.
-
-If you want to dive deeper into how the docs are deployed in production, take a look at the `.travis.yml` file.
+And follow the on-screen instructions.
 
 ### Index content to Algolia
 
@@ -189,13 +187,13 @@ You can also use special tags to import specific parts of your snippet file. For
 
 ```javascript
 // load the Kuzzle SDK module
-import { Kuzzle, WebSocket } from "kuzzle-sdk";
+import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle(new WebSocket("kuzzle"));
+const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 
 // add a listener to detect any connection problems
-kuzzle.on("networkError", error => {
+kuzzle.on('networkError', error => {
   console.error(`Network Error: ${error}`);
 });
 
@@ -205,11 +203,11 @@ const run = async () => {
     await kuzzle.connect();
 
     // Create an index
-    await kuzzle.index.create("nyc-open-data");
+    await kuzzle.index.create('nyc-open-data');
 
     // Create a collection
-    await kuzzle.collection.create("nyc-open-data", "yellow-taxi");
-    console.log("nyc-open-data/yellow-taxi ready!");
+    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
+    console.log('nyc-open-data/yellow-taxi ready!');
   } catch (error) {
     console.error(error.message);
   } finally {
@@ -224,13 +222,13 @@ But you only want to import the code of the `run` function. You can use the spec
 
 ```javascript
 // load the Kuzzle SDK module
-import { Kuzzle, WebSocket } from "kuzzle-sdk";
+import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle(new WebSocket("kuzzle"));
+const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 
 // add a listener to detect any connection problems
-kuzzle.on("networkError", error => {
+kuzzle.on('networkError', error => {
   console.error(`Network Error: ${error}`);
 });
 
@@ -241,11 +239,11 @@ const run = async () => {
     await kuzzle.connect();
 
     // Create an index
-    await kuzzle.index.create("nyc-open-data");
+    await kuzzle.index.create('nyc-open-data');
 
     // Create a collection
-    await kuzzle.collection.create("nyc-open-data", "yellow-taxi");
-    console.log("nyc-open-data/yellow-taxi ready!");
+    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
+    console.log('nyc-open-data/yellow-taxi ready!');
   } catch (error) {
     console.error(error.message);
   } finally {
@@ -263,15 +261,15 @@ Snippet tags can also bear an ID, so that you can have many of them inside your 
 
 ```javascript
 // load the Kuzzle SDK module
-import { Kuzzle, WebSocket } from "kuzzle-sdk";
+import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 
 // instantiate a Kuzzle client
 /* snippet:start:1 */
-const kuzzle = new Kuzzle(new WebSocket("kuzzle"));
+const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 /* snippet:end */
 
 // add a listener to detect any connection problems
-kuzzle.on("networkError", error => {
+kuzzle.on('networkError', error => {
   console.error(`Network Error: ${error}`);
 });
 
@@ -282,11 +280,11 @@ const run = async () => {
     await kuzzle.connect();
 
     // Create an index
-    await kuzzle.index.create("nyc-open-data");
+    await kuzzle.index.create('nyc-open-data');
 
     // Create a collection
-    await kuzzle.collection.create("nyc-open-data", "yellow-taxi");
-    console.log("nyc-open-data/yellow-taxi ready!");
+    await kuzzle.collection.create('nyc-open-data', 'yellow-taxi');
+    console.log('nyc-open-data/yellow-taxi ready!');
   } catch (error) {
     console.error(error.message);
   } finally {
@@ -307,7 +305,7 @@ This way, you can select which snippet you want to include by using the followin
 The code above will include only
 
 ```javascript
-const kuzzle = new Kuzzle(new WebSocket("kuzzle"));
+const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 ```
 
 ### Forcing snippet language
@@ -384,18 +382,18 @@ Example of a default template for the Javascript SDK:
 
 ```js
 // load the Kuzzle SDK module
-const { Kuzzle } = require("kuzzle-sdk");
+const { Kuzzle } = require('kuzzle-sdk');
 
 // instantiate a Kuzzle client
-const kuzzle = new Kuzzle("websocket", {
-  host: "kuzzle",
+const kuzzle = new Kuzzle('websocket', {
+  host: 'kuzzle',
   autoReconnect: false
 });
 
 kuzzle
   .connect()
   .then(() => {
-    return [snippet - code];
+    return [snippet-code];
   })
   .then(() => {
     kuzzle.disconnect();
