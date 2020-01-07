@@ -6,6 +6,7 @@ const c = require('chalk');
 
 const { findRootNode, getParentNode } = require('./util.js');
 const records = [];
+const ALGOLIA_MAX_CONTENT_LENGTH = 8500;
 
 module.exports = (options, ctx) => ({
   name: 'index-to-algolia',
@@ -33,26 +34,29 @@ module.exports = (options, ctx) => ({
       title: frontmatter.title,
       description: frontmatter.description ? frontmatter.description : '',
       path: pagePath,
-      tags: extractTags(pagePath),
+      basePath: ctx.base,
+      breadcrumbs: computeBreadcrumbs(options.repoName, pagePath),
+      _tags: [options.repoName],
       root: rootNode ? rootNode.title : '',
       parent: parentNode ? parentNode.title : '',
-      toc: _computed.$page.headers
     });
   },
 
-  ready() {},
+  ready() { },
 
   async generated(pagePaths) {
     enrichRecordsWithContent(records, ctx.outDir, true);
     await pushRecords(records, {
       appId: options.algoliaAppId,
       writeKey: options.algoliaWriteKey,
-      index: options.algoliaIndex
+      index: options.algoliaIndex,
+      clearIndex: options.clearIndex,
+      repoName: options.repoName
     });
   }
 });
 
-function enrichRecordsWithContent(records, outDir, write = false) {
+function enrichRecordsWithContent(records, outDir, dump = false) {
   console.log(`${c.blue('Algolia')} Enriching ${records.length} records...`);
   records.forEach(record => {
     const generatedFilePath = resolve(
@@ -70,9 +74,11 @@ function enrichRecordsWithContent(records, outDir, write = false) {
     $('h1, pre, .md-clipboard__message', content).remove();
 
     record.content = content.text();
+    // TODO - should rather chunk the page into headers and create a record per header
+    record.content = record.content.substring(0, ALGOLIA_MAX_CONTENT_LENGTH)
   });
 
-  if (write) {
+  if (dump) {
     writeFileSync('./algolia-records.json', JSON.stringify(records, null, 4));
   }
 }
@@ -82,29 +88,34 @@ async function pushRecords(records, algoliaOptions) {
     throw new Error('Please provide a valid Algolia Write Key');
   }
 
-  console.log(`${c.blue('Algolia')} Pushing ${records.length} records...`);
+  console.log(`\n${c.blue('Algolia')} Pushing ${records.length} records...`);
 
   const client = algolia(algoliaOptions.appId, algoliaOptions.writeKey);
   const index = client.initIndex(algoliaOptions.index);
 
-  await index.clearIndex()
+  if (algoliaOptions.clearIndex) {
+    console.log(`${c.blue('Algolia')} clearing the index...`);
+    await index.clearIndex()
+  }
+
+  if (algoliaOptions.repoName) {
+    console.log(`${c.blue('Algolia')} clearing records for ${algoliaOptions.repoName}`)
+    index.deleteBy({ filters: `_tags:${algoliaOptions.repoName}` })
+  }
 
   index.addObjects(records, (err, content) => {
     if (err) {
       return console.error(err);
     }
-    console.log(`${c.blue('Algolia')} Successfully pushed records!`);
+    console.log(`${c.blue('Algolia')} Successfully pushed records for ${algoliaOptions.repoName}!`);
   });
 }
 
-function extractTags(path) {
-  const start = 0,
-    end = 4;
-
-  return path
+function computeBreadcrumbs(repoName, path) {
+  const pathTags = path
     .split('/')
     .filter(t => t !== '')
-    .slice(start, end)
+    .slice(0, 4)
     .map(tag => {
       if (tag === 'sdk-reference') {
         return 'sdk';
@@ -114,4 +125,13 @@ function extractTags(path) {
       }
       return tag;
     });
+
+  if (repoName) {
+    return [
+      repoName,
+      ...pathTags
+    ]
+  }
+
+  return pathTags
 }

@@ -1,6 +1,7 @@
 const
   cout = require('./colorOutput'),
   { exec } = require('child_process'),
+  execa = require('execa'),
   fs = require('fs'),
   YAML = require('js-yaml');
 
@@ -36,10 +37,10 @@ const execute = (command, message) => {
 
   return new Promise(resolve => {
     exec(cmd, { maxBuffer: 1024 * 500 }, (error, stdout, stderr) => {
+      console.error(stdout);
+      console.error(stderr);
+      console.error(error);
       if (error) {
-        console.error(stdout);
-        console.error(stderr);
-        console.error(error);
         cout.error(cmd);
 
         process.exitCode = 1;
@@ -91,13 +92,59 @@ const cloneRepository = async (argv) => {
   await Promise.all(promises);
 };
 
+const prepareRepository = async (argv) => {
+  for (const repository of getRepositories(argv)) {
+    console.log(`Preparing repository ${repository.name}...`);
+    await execa('rm', ['-f', `${currentDir}/${repository.destination}/${repository.local_path}/.vuepress`]);
+    /**
+     * @aschen asks "Why do we delete package.json here?"
+     * 
+     * @xbilll82 answers.
+     * The aim here is to build a sub-repo (e.g. core-2) by linking the 
+     * .vuepress files inside it and passing it to the vuepress binary 
+     * installed in the main repo (i.e. this one), so that we don't have 
+     * to re-clone the main repo into the sub-repos that were cloned into 
+     * the main repo (let's avoit Git inception).
+     * So, we take the .vuepress files from src/.vuepress and link them to 
+     * .repos/core-2/doc/2/, and then call $(npm bin)/vuepress build 
+     * .repos/core-2/doc/2/, right? The weird thing is that vuepress 
+     * complains about not finding .repos/core-2/doc/package.json and I 
+     * frankly don't undertand why it does need it at that precise path.
+     * The workaround I found is to link package.json to .repos/core-2/doc/package.json 
+     * and it's working all right. For this reason, before linking it, I rm -f a 
+     * hypothetic .repos/core-2/doc/package.json file that might have been 
+     * put there before, so that the ln -s doesn't fail.
+     */
+    await execa('rm', ['-f', `${currentDir}/${repository.destination}/${repository.local_path}/../package.json`]);
+    await execa('ln', ['-s', '../../../../src/.vuepress', `${currentDir}/${repository.destination}/${repository.local_path}/`])
+    await execa('ln', ['-s', `../../../package.json`, `${currentDir}/${repository.destination}/${repository.local_path}/../`]);
+    console.log('done!')
+  }
+}
+
+const buildRepository = async (argv) => {
+  for (const repository of getRepositories(argv)) {
+    console.log(`Building repository ${repository.name}...`);
+    const childProcess = execa('vuepress', ['build', '--no-cache', `${currentDir}/${repository.destination}/${repository.local_path}`], {
+      env: {
+        REPO_NAME: repository.name,
+        SITE_BASE: `${repository.base_url}/`,
+        DOC_DIR: `.repos/${repository.name}/${repository.local_path}/`
+      }
+    });
+    childProcess.stderr.pipe(process.stderr);
+    childProcess.stdout.pipe(process.stdout);
+    await childProcess;
+  }
+}
+
 const commandRepository = async (cmd, argv) => {
   const promises = [];
 
   for (const repository of getRepositories(argv)) {
     const
       message = `Executing command "${cmd}" for ${repository.name}`,
-      command = `cd ${currentDir}/${repository.destination} && ${cmd}`;
+      command = `cd ${currentDir}/${repository.destination} && REPO_NAME=${repository.name} ${cmd}`;
 
     const promise = execute(command, message);
 
@@ -169,11 +216,11 @@ switch (process.argv[2]) {
     break;
 
   case 'prepare':
-    commandRepository('npm run doc-prepare', argv);
+    prepareRepository(argv);
     break
 
   case 'build':
-    commandRepository('npm run doc-build', argv);
+    buildRepository(argv);
     break
 
   case 'dev':

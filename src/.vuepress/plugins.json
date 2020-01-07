@@ -22,18 +22,18 @@
       "iconAlt": "prometheus logo"
     },
     {
-      "name": "Auth passport local",
+      "name": "Passport local",
       "url": "https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local/tree/5-stable",
       "version": "5",
       "icon": "/logos/passport.svg",
-      "iconAlt": "auth passport local logo"
+      "iconAlt": "Passport local logo"
     },
     {
-      "name": "Auth passport OAuth",
+      "name": "Passport OAuth",
       "url": "https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth/tree/4-stable",
       "version": "4",
       "icon": "/logos/passport.svg",
-      "iconAlt": "auth passport oauth logo"
+      "iconAlt": "Passport oauth logo"
     },
     {
       "name": "Cluster",
@@ -94,32 +94,32 @@
       "iconAlt": "prometheus logo"
     },
     {
-      "name": "Auth passport local",
+      "name": "Passport local",
       "url": "https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local",
       "version": "6",
       "icon": "/logos/passport.svg",
-      "iconAlt": "auth passport local logo"
+      "iconAlt": "Passport local logo"
     },
     {
-      "name": "Auth passport OAuth",
+      "name": "Passport OAuth",
       "url": "https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth",
       "version": "6",
       "icon": "/logos/passport.svg",
-      "iconAlt": "auth passport oauth logo"
+      "iconAlt": "Passport oauth logo"
     },
     {
       "name": "Cluster",
       "url": "https://github.com/kuzzleio/kuzzle-plugin-cluster",
       "version": "4",
       "icon": "/logos/cluster.svg",
-      "iconAlt": "cluster logo"
+      "iconAlt": "Cluster logo"
     },
     {
       "name": "Logger",
       "url": "https://github.com/kuzzleio/kuzzle-plugin-logger",
       "version": "3",
       "icon": "/logos/logger.svg",
-      "iconAlt": "logger logo"
+      "iconAlt": "Logger logo"
     }
   ]
 }

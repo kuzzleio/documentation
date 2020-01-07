@@ -1,45 +1,72 @@
 <template>
   <div
     class="md-sidebar md-sidebar--primary"
-    :class="{'md-sidebar--open': sidebarOpen}"
+    :class="{ 'md-sidebar--open': sidebarOpen }"
     data-md-component="navigation"
   >
     <div class="md-sidebar__scrollwrap" ref="scrollwrap">
       <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--primary" data-md-level="0">
-          <label class="md-nav__title md-nav__title--site mobile-only" for="drawer">
+          <label
+            class="md-nav__title md-nav__title--site mobile-only"
+            for="drawer"
+          >
             <span class="md-nav__button md-logo">
               <img src="/logo-min.png" width="48" height="48" />
             </span>
             <span>Kuzzle Documentation</span>
           </label>
           <TabsMobile @closeSidebar="$emit('closeSidebar')" />
-          <SDKSelector class="md-sidebar--selector" v-if="sdkOrApiPage" :items="sdkList" :kuzzleMajor="kuzzleMajor"/>
+          <SDKSelector
+            class="md-sidebar--selector"
+            v-if="sdkOrApiPage"
+            :items="sdkList"
+            :kuzzleMajor="kuzzleMajor"
+          />
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
-            <div v-for="item__1 in getPageChildren(root)" class="md-nav__item-container">
-              <li class="md-nav__separator">{{item__1.frontmatter.title}}</li>
+            <div
+              v-for="item__1 in getPageChildren(root).filter(
+                p => p.frontmatter.type === 'branch'
+              )"
+              class="md-nav__item-container"
+            >
+              <li class="md-nav__separator">{{ item__1.frontmatter.title }}</li>
 
               <div v-for="item__2 in getPageChildren(item__1)">
                 <li class="md-nav__item md-nav-title">
                   <div
                     class="md-nav__link"
-                    :class="{'md-nav__link--active': $page.path === item__2.path, 'md-nav__item--code': item__2.frontmatter.code == true}"
+                    :class="{
+                      'md-nav__link--active': $page.path === item__2.path,
+                      'md-nav__item--code': item__2.frontmatter.code == true
+                    }"
                   >
                     <div
                       v-if="getPageChildren(item__2).length"
                       @click="handleSubmenuClick(item__1, item__2)"
                     >
                       <i
-                        v-if="openedSubmenu === getId([item__1.title, item__2.title])"
+                        v-if="
+                          openedSubmenu ===
+                            getId([item__1.title, item__2.title])
+                        "
                         class="fa fa-caret-down"
                         aria-hidden="true"
                       ></i>
-                      <i v-else class="fa fa-caret-right" aria-hidden="true"></i>
-                      <span>{{item__2.title}}</span>
+                      <i
+                        v-else
+                        class="fa fa-caret-right"
+                        aria-hidden="true"
+                      ></i>
+                      <span>{{ item__2.title }}</span>
                     </div>
-                    <router-link v-else :to="item__2.path" @click.native="closeSidebar">
-                      <a class="no_arrow">{{item__2.title}}</a>
+                    <router-link
+                      v-else
+                      :to="item__2.path"
+                      @click.native="closeSidebar"
+                    >
+                      <a class="no_arrow">{{ item__2.title }}</a>
                     </router-link>
                   </div>
                 </li>
@@ -56,23 +83,27 @@
                     <li v-if="$page.path === item__3.path">
                       <router-link
                         class="md-nav__link--active"
-                        :class="{'md-nav__item--code': item__3.frontmatter.code}"
-                        :to="{path: item__3.path}"
+                        :class="{
+                          'md-nav__item--code': item__3.frontmatter.code
+                        }"
+                        :to="{ path: item__3.path }"
                         :title="item__3.title"
                         @click.native="$emit('closeSidebar')"
                       >
-                        <a class="no_arrow">{{item__3.title}}</a>
+                        <a class="no_arrow">{{ item__3.title }}</a>
                       </router-link>
                     </li>
                     <li v-else>
                       <router-link
-                        :to="{path: item__3.path}"
+                        :to="{ path: item__3.path }"
                         :title="item__3.title"
                         class="md-nav__link"
                         @click.native="$emit('closeSidebar')"
-                        :class="{'md-nav__item--code': item__3.frontmatter.code}"
+                        :class="{
+                          'md-nav__item--code': item__3.frontmatter.code
+                        }"
                       >
-                        <a class="no_arrow">{{item__3.title}}</a>
+                        <a class="no_arrow">{{ item__3.title }}</a>
                       </router-link>
                     </li>
                   </div>
@@ -93,7 +124,7 @@ import {
   findRootNode,
   setItemLocalStorage,
   getItemLocalStorage,
-  getNodeByPath,
+  getNodeByPath
 } from '../util.js';
 import sdks from '../sdk.json';
 
@@ -120,8 +151,8 @@ export default {
     root() {
       return findRootNode(this.$page, this.$site.pages);
     },
-    sdkList () {
-      return sdks[this.kuzzleMajor] || []
+    sdkList() {
+      return sdks[this.kuzzleMajor] || [];
     }
   },
   methods: {
@@ -252,10 +283,9 @@ export default {
   mounted() {
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2'
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
   }
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

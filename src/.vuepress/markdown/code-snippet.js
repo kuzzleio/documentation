@@ -80,8 +80,8 @@ module.exports = function snippet(md, options = {}) {
       ? fs.readFileSync(filename).toString()
       : 'Not found: ' + filename;
 
-    if (state.env.relativePath && ! fileExists) {
-      console.error(`Cannot find snippet at ${filename}. Did you correctly set DOC_DIR ?`)
+    if (state.env.relativePath && !fileExists) {
+      console.error(`Cannot find snippet at ${filename}. Did you correctly set DOC_DIR ? (root=${root}, docDir=${docDir}, relativePath=${state.env.relativePath})`)
     }
 
     // Extract snippet from file content, if matches snippet:* tags
@@ -103,7 +103,7 @@ module.exports = function snippet(md, options = {}) {
     const fileExtension = filename.split('.').pop();
     const meta = `${language ? language : fileExtension}${
       highlights ? highlights : ''
-    }`;
+      }`;
 
     state.line = startLine + 1;
 

@@ -7,7 +7,7 @@
       type="checkbox"
       id="search"
       autocomplete="off"
-    >
+    />
     <header class="md-header" data-md-component="header">
       <!-- Top-level navigation -->
       <nav class="md-header-nav md-grid">
@@ -15,7 +15,7 @@
           <!-- Link to home -->
           <div class="md-flex__cell md-flex__cell--shrink">
             <a href="/" class="md-header-nav__button md-logo">
-              <img src="/logo-min.png" width="24" height="24">
+              <img src="/logo-min.png" width="24" height="24" />
             </a>
           </div>
           <!-- Button to toggle drawer -->
@@ -31,17 +31,11 @@
           <div class="md-flex__cell md-flex__cell--stretch">
             <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
               <span class="md-header-nav__topic">
-                <select
-                  v-model="kuzzleMajor"
-                  @change="onKuzzleMajorChanged">
-                  <option value="1">Kuzzle v1</option>
-                  <option value="2">Kuzzle v2</option>
-                </select>
+                <MajorVersionSelector @change="onKuzzleMajorChanged" />
               </span>
             </div>
-
           </div>
-           <div class="md-flex__cell md-flex__cell--stretch md-flex__cell--menu">
+          <div class="md-flex__cell md-flex__cell--stretch md-flex__cell--menu">
             <Tabs :kuzzleMajor="kuzzleMajor" />
           </div>
           <!-- Button to open search dialogue -->
@@ -75,13 +69,15 @@
 <script>
 import Search from './Search.vue';
 import Tabs from './Tabs.vue';
+import MajorVersionSelector from '../components/MajorVersionSelector.vue';
 
-import { setItemLocalStorage, getItemLocalStorage } from '../util'
+import { setItemLocalStorage, getItemLocalStorage } from '../util';
 
 export default {
   components: {
     Search,
-    Tabs
+    Tabs,
+    MajorVersionSelector
   },
   name: 'Header',
   props: ['changeKuzzleMajor'],
@@ -93,15 +89,16 @@ export default {
       kuzzleMajor: '2'
     };
   },
-  mounted () {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2'
+  mounted() {
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
   },
   methods: {
     toggleSearchTrigger(toggle) {
       this.$refs.searchTrigger.checked = toggle;
     },
-    onKuzzleMajorChanged () {
-      this.$emit('kuzzle-major-changed', this.kuzzleMajor)
+    onKuzzleMajorChanged(version) {
+      this.kuzzleMajor = version;
+      this.$emit('kuzzle-major-changed', version);
     }
   }
 };

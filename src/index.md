@@ -1,6 +1,6 @@
 ---
 code: false
-type: root
+type: page
 order: 0
 title: Kuzzle Documentation
 description: Kuzzle Documentation

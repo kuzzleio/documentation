@@ -2,10 +2,12 @@ const webpack = require('webpack');
 
 const siteTitle = 'Kuzzle Docs';
 const siteDescription = 'Kuzzle Documentation';
-
 const versionString = require('./getVersionString');
-
 const base = process.env.SITE_BASE || '/';
+const algoliaDefaultAppId = 'VF5HP4ZVDU';
+const algoliaDefaultIndex = 'documentation-dev';
+const algoliaDefaultSearchKey = 'de63216cd8d0116b2755916b9a38ae35';
+const googleAnalyticsID = 'UA-67035328-7';
 
 module.exports = {
   title: siteTitle,
@@ -253,20 +255,20 @@ module.exports = {
     plugins: [
       new webpack.DefinePlugin({
         GA_ID:
-          JSON.stringify(process.env.GA_ID) || JSON.stringify('UA-67035328-7'),
+          JSON.stringify(process.env.GA_ID) || JSON.stringify(googleAnalyticsID),
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
         'process.env.RESET_APP_DATA_TIMER': JSON.stringify(
           process.env.RESET_APP_DATA_TIMER
         ),
         ALGOLIA_APP_ID:
           JSON.stringify(process.env.ALGOLIA_APP_ID) ||
-          JSON.stringify('4RFBRWISJR'),
+          JSON.stringify(algoliaDefaultAppId),
         ALGOLIA_SEARCH_KEY:
           JSON.stringify(process.env.ALGOLIA_SEARCH_KEY) ||
-          JSON.stringify('34968884815f91ed23d6fd7058bc561a'),
+          JSON.stringify(algoliaDefaultSearchKey),
         ALGOLIA_INDEX:
           JSON.stringify(process.env.ALGOLIA_INDEX) ||
-          JSON.stringify('kuzzle-documentation'),
+          JSON.stringify(algoliaDefaultIndex),
         REPO_SLUG:
           JSON.stringify(process.env.TRAVIS_REPO_SLUG) ||
           JSON.stringify('kuzzleio/documentation')
@@ -277,19 +279,18 @@ module.exports = {
     require('./meta-tags-plugin/index.js'),
     process.env.ALGOLIA_WRITE_KEY
       ? [
-          require('./index-to-algolia/index.js'),
-          {
-            algoliaAppId: process.env.ALGOLIA_APP_ID || '4RFBRWISJR',
-            algoliaWriteKey: process.env.ALGOLIA_WRITE_KEY,
-            algoliaIndex: process.env.ALGOLIA_INDEX || 'kuzzle-documentation'
-          }
-        ]
-      : {
-          write: true
-        },
+        require('./index-to-algolia/index.js'),
+        {
+          algoliaAppId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
+          algoliaWriteKey: process.env.ALGOLIA_WRITE_KEY,
+          algoliaIndex: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
+          clearIndex: process.env.ALGOLIA_CLEAR_INDEX,
+          repoName: process.env.REPO_NAME
+        }
+      ]
+      : {},
     [
       require('vuepress-frontmatter-lint'),
-      // require('../../../vuepress-validate-frontmatter/index'),
       {
         dumpToFile: true,
         abortBuild: true,

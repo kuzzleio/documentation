@@ -80,3 +80,33 @@
     }
   }
 }
+
+.selector-majorVersion {
+
+  .selector-selectedItem {
+    border: none;
+    padding: 0;
+    font-size: 1.7rem;
+    
+    .selector-selectedItem-name {
+      width: 115px;
+    }
+
+    i {
+      top: 18px;
+      color: white;
+      font-size: 1.5rem
+    }
+  }
+
+  .selector-list {
+    position: fixed;
+    width: 110px;
+    top: 42px;
+    height: auto;
+
+    .selector-list-item-link {
+      color: $clr-indigo
+    }
+  }
+}
