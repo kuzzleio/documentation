@@ -49,7 +49,7 @@ export default {
     }
   },
   mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || 2;
     this.selectedItem = this.items.find(
       item => item.value === this.kuzzleMajor
     );
