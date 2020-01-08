@@ -7,10 +7,6 @@ frontmatter-fixes.json
 dead_links.json
 .vscode
 
-.repos/kuzzle-1
-.repos/kuzzle-2
-.repos/plugin
-.repos/sdk
-.repos/kuzzle-how-to
+.repos/*
 
 version.md
