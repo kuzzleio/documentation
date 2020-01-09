@@ -42,7 +42,7 @@ _doc-deploy-base: &doc-deploy-base
     - S3_BUCKET=$(if [ "${TRAVIS_BRANCH}" == "master" ]; then echo "docs.kuzzle.io"; else echo "docs-next.kuzzle.io"; fi)
     - CLOUDFRONT_DISTRIBUTION_ID=$(if [ "${TRAVIS_BRANCH}" == "master" ]; then echo "E3D6RP0POLCJMM"; else echo "E2ZCCEK9GRB49U"; fi)
     - REPOS_PATH=/tmp
-    addons:
+  addons:
     apt:
       packages:
         - python
