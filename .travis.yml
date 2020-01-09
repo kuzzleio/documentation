@@ -20,13 +20,12 @@ _doc-deploy-content: &doc-deploy-content
     - pip install awscli --upgrade --user
     - npm ci
   before_script:
-    - npm run repositories -- clone
-    - npm run repositories -- prepare
+    - $(npm bin)/kuzdoc iterate-repos:install --link_framework
   script:
-    - npm run repositories -- build
+    - $(npm bin)/kuzdoc iterate-repos:build
   after_success:
-    - npm run repositories -- run "npm run doc-upload" --async
-    - npm run repositories -- run "npm run doc-cloudfront"
+    - $(npm bin)/kuzdoc iterate-repos:deploy
+    - $(npm bin)/kuzdoc iterate-repos:cloudfront
 
 # Documentation deployment
 _doc-deploy-base: &doc-deploy-base
@@ -42,7 +41,8 @@ _doc-deploy-base: &doc-deploy-base
     - BRANCH=$(if [ "${TRAVIS_BRANCH}" == "master" ]; then echo "stable"; else echo "dev"; fi)
     - S3_BUCKET=$(if [ "${TRAVIS_BRANCH}" == "master" ]; then echo "docs.kuzzle.io"; else echo "docs-next.kuzzle.io"; fi)
     - CLOUDFRONT_DISTRIBUTION_ID=$(if [ "${TRAVIS_BRANCH}" == "master" ]; then echo "E3D6RP0POLCJMM"; else echo "E2ZCCEK9GRB49U"; fi)
-  addons:
+    - REPOS_PATH=/tmp
+    addons:
     apt:
       packages:
         - python
