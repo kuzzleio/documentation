@@ -3,91 +3,91 @@
   stable: master
   dev: master
   name: kuzzle-how-to
-  deploy_path: how-to/1
+  deploy_path: how-to/1/
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
   doc_version: 5
   stable: 5-stable
   dev: 5-dev
   name: sdk-javascript-5
-  deploy_path: /sdk/js/5
+  deploy_path: /sdk/js/5/
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
   doc_version: 6
   stable: 6-stable
   dev: 6-dev
   name: sdk-javascript-6
-  deploy_path: /sdk/js/6
+  deploy_path: /sdk/js/6/
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
   doc_version: 7
   stable: master
   dev: 7-dev
   name: sdk-javascript-7
-  deploy_path: /sdk/js/7
+  deploy_path: /sdk/js/7/
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-s3.git
   doc_version: 1
   stable: 1-stable
   dev: 1-dev
   name: plugin-s3-1
-  deploy_path: /official-plugins/s3/1
+  deploy_path: /official-plugins/s3/1/
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-s3.git
   doc_version: 2
   stable: master
   dev: 2-dev
   name: plugin-s3-2
-  deploy_path: /official-plugins/s3/2
+  deploy_path: /official-plugins/s3/2/
 
 - url: https://github.com/kuzzleio/sdk-php.git
   doc_version: 3
   stable: master
   dev: 3-dev
   name: sdk-php-3
-  deploy_path: /sdk/php/3
+  deploy_path: /sdk/php/3/
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
   doc_version: 1
   stable: 1-stable
   dev: 1-dev
   name: plugin-cloudinary-1
-  deploy_path: /official-plugins/cloudinary/1
+  deploy_path: /official-plugins/cloudinary/1/
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
   doc_version: 2
   stable: master
   dev: 2-dev
   name: plugin-cloudinary-2
-  deploy_path: /official-plugins/cloudinary/2
+  deploy_path: /official-plugins/cloudinary/2/
 
 - url: https://github.com/kuzzleio/sdk-cpp.git
   doc_version: 1
   stable: master
   dev: 1-dev
   name: sdk-cpp-1
-  deploy_path: /sdk/cpp/1
+  deploy_path: /sdk/cpp/1/
 
 - url: https://github.com/kuzzleio/sdk-csharp.git
   doc_version: 1
   stable: 1-stable
   dev: 1-dev
   name: sdk-csharp-1
-  deploy_path: /sdk/csharp/1
+  deploy_path: /sdk/csharp/1/
 
 - url: https://github.com/kuzzleio/sdk-csharp.git
   doc_version: 2
   stable: master
   dev: 2-dev
   name: sdk-csharp-2
-  deploy_path: /sdk/csharp/2
+  deploy_path: /sdk/csharp/2/
 
 - url: https://github.com/kuzzleio/sdk-go.git
   doc_version: 1
   stable: 1-stable
   dev: 1-dev
   name: sdk-go-1
-  deploy_path: /sdk/go/1
+  deploy_path: /sdk/go/1/
   doc_root: .doc
 
 - url: https://github.com/kuzzleio/sdk-go.git
@@ -95,7 +95,7 @@
   stable: master
   dev: 2-dev
   name: sdk-go-2
-  deploy_path: /sdk/go/2
+  deploy_path: /sdk/go/2/
   doc_root: .doc
 
 - url: https://github.com/kuzzleio/sdk-java.git
@@ -103,39 +103,39 @@
   stable: 1-stable
   dev: 1-dev
   name: sdk-java-1
-  deploy_path: /sdk/java/1
+  deploy_path: /sdk/java/1/
 
 - url: https://github.com/kuzzleio/sdk-java.git
   doc_version: 2
   stable: master
   dev: 2-dev
   name: sdk-java-2
-  deploy_path: /sdk/java/2
+  deploy_path: /sdk/java/2/
 
 - url: https://github.com/kuzzleio/sdk-java.git
   doc_version: 3
   stable: 3-stable
   dev: 3-dev
   name: sdk-java-3
-  deploy_path: /sdk/java/3
+  deploy_path: /sdk/java/3/
 
 - url: https://github.com/kuzzleio/kuzzle.git
   doc_version: 1
   stable: 1-stable
   dev: 1-dev
   name: kuzzle-1
-  deploy_path: /core/1
+  deploy_path: /core/1/
 
 - url: https://github.com/kuzzleio/kuzzle.git
   doc_version: 2
   name: kuzzle-2
   stable: master
   dev: 2-dev
-  deploy_path: /core/2
+  deploy_path: /core/2/
 
 - url: https://github.com/kuzzleio/sdk-android.git
   doc_version: 3
   stable: master
   dev: 3-dev
   name: sdk-android-3
-  deploy_path: /sdk/android/3
+  deploy_path: /sdk/android/3/
