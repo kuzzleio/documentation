@@ -5,8 +5,15 @@
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           <!-- Main navigation -->
-          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" ref="sidebar">
-            <div v-if="!$page.frontmatter.nosidebar" class="md-sidebar__scrollwrap">
+          <div
+            class="md-sidebar md-sidebar--primary"
+            data-md-component="navigation"
+            ref="sidebar"
+          >
+            <div
+              v-if="!$page.frontmatter.nosidebar"
+              class="md-sidebar__scrollwrap"
+            >
               <div class="md-sidebar__inner"></div>
             </div>
           </div>
@@ -16,7 +23,7 @@
             <article class="md-content__inner md-typeset">
               <h1>404 Page not found</h1>
               <blockquote>{{ getMsg() }}</blockquote>
-              <a :href="generateHomeLink('/')">Take me home.</a>
+              <a href="/">Take me home.</a>
             </article>
           </div>
         </div>
