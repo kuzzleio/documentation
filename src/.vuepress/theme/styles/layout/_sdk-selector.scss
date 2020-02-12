@@ -21,14 +21,12 @@
   font-size: 15px;
   margin-bottom: 16px;
   cursor: pointer;
+
   &-selectedItem {
     border-bottom: 1px solid rgba(233, 78, 119, 0.3);
     padding: 10px 10px 5px;
-    text-align: center;
     margin-bottom: 5px;
-    &-name-wrapper {
-      border-bottom: solid 1px #6c7a79;
-    }
+
     &-icon {
       position: relative;
       top: 4px;
@@ -52,7 +50,6 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   padding: 0;
   margin-top: 20px;
-  text-align: center;
   transform-origin: 50% 0;
   transition: transform 0.1s linear, opacity 0.1s linear;
   &-opened {
@@ -89,6 +86,11 @@
     border: none;
     padding: 0;
     font-size: 1.7rem;
+    text-align: center;
+
+    &-name-wrapper {
+      border-bottom: solid 1px #6c7a79;
+    }
 
     .selector-selectedItem-name {
       width: 135px;
@@ -109,6 +111,7 @@
     width: 135px;
     top: 42px;
     height: auto;
+    text-align: center;
 
     .selector-list-item-link {
       color: $clr-indigo;
