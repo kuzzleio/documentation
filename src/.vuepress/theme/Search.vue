@@ -12,7 +12,7 @@
           type="text"
           class="md-search__input"
           name="query"
-          placeholder="Search (es)"
+          placeholder="Search (s)"
           autocapitalize="off"
           autocorrect="off"
           autocomplete="off"
