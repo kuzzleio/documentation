@@ -20,7 +20,7 @@
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
                 <div v-if="sdkOrApiPage" class="selector-container">
-                  <SDKSelector :items="sdkList" :kuzzzleMajor="kuzzleMajor" />
+                  <SDKSelector :items="sdkList" :kuzzleMajor="kuzzleMajor" />
                 </div>
                 <TOC />
               </div>
