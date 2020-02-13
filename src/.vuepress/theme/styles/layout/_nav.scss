@@ -13,6 +13,14 @@
       background-color: white;
       top: 0px;
       z-index: 10;
+
+      @include break-to-device(tablet) {
+        padding: 2px 0 0 12px !important;
+        border-top: none !important;
+        border-bottom: .1rem solid rgba(0,0,0,.07);
+        margin-bottom: 5px
+      }
+    
     }
 
     .md-nav__item {
@@ -107,7 +115,7 @@
   }
 
   &__separator {
-    margin-top: 22px;
+    margin-top: 18px;
     margin-bottom: 12px;
     padding-bottom: 4px;
     width: 90%;
@@ -119,8 +127,12 @@
     }
 
     @include break-to-device(tablet) {
-      display: none;
+      font-weight: bold;
+      margin-top: 22px !important;
+      margin-bottom: 5px !important;
+      padding-left: 12px;
     }
+    
   }
 
   // List item
@@ -148,6 +160,7 @@
         padding-bottom: 0;
       }
     }
+
     &--code {
       font-family: 'Roboto Mono', 'Courier New', monospace, sans-serif;
     }

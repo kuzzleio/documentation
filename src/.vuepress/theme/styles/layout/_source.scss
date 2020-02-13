@@ -42,6 +42,10 @@
   font-size: 1.3rem;
   line-height: 1.2;
   white-space: nowrap;
+  @include break-to-device(tablet) {
+    width: auto;
+    display: inline-block;
+  }
 
   // Adjust for RTL languages
   [dir='rtl'] & {
