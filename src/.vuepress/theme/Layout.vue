@@ -1,8 +1,16 @@
 <template>
   <div class="md-layout">
     <div class="overlayLoading" v-if="isLoading" />
-    <div class="overlay" :class="{ hidden: !sidebarOpen }" @click="closeSidebar"></div>
-    <Header ref="header" @openSidebar="openSidebar" @kuzzle-major-changed="changeKuzzleMajor" />
+    <div
+      class="overlay"
+      :class="{ hidden: !sidebarOpen }"
+      @click="closeSidebar"
+    ></div>
+    <Header
+      ref="header"
+      @openSidebar="openSidebar"
+      @kuzzle-major-changed="changeKuzzleMajor"
+    />
 
     <div ref="container" class="md-container">
       <!-- Main container -->
@@ -16,11 +24,15 @@
             :kuzzleMajor="kuzzleMajor"
           />
           <!-- Table of contents -->
-          <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+          <div
+            ref="toc"
+            class="md-sidebar md-sidebar--secondary"
+            data-md-component="toc"
+          >
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
                 <div v-if="sdkOrApiPage" class="selector-container">
-                  <SDKSelector :items="sdkList" :kuzzzleMajor="kuzzleMajor" />
+                  <SDKSelector :items="sdkList" :kuzzleMajor="kuzzleMajor" />
                 </div>
                 <TOC />
               </div>
