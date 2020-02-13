@@ -41,7 +41,7 @@
 }
 .selector-list {
   @include break-to-device(tablet) {
-    height: 200px;
+    height: 250px;
     overflow-y: scroll;
   }
   position: absolute;
@@ -88,14 +88,26 @@
     font-size: 1.7rem;
     text-align: center;
 
-    &-name-wrapper {
-      border-bottom: solid 1px #6c7a79;
-    }
-
     .selector-selectedItem-name {
       width: 135px;
+      height:42px;
+      font-size: 22px;
+      position: relative;
+      border-radius: 0.2rem;
+      padding-top: 4px;
+      line-height: 3rem;
+
+      @include break-from-device(screen) {
+        top: 13px;
+        font-size: 22px;
+      }
+
       &:hover {
         background-color: $md-color-white--lightest;
+      }
+
+      &-wrapper {
+        border-bottom: 1px solid #6c7a79;
       }
     }
 
@@ -103,6 +115,7 @@
       top: 22px;
       color: white;
       font-size: 1.5rem;
+      margin-left: 6px
     }
   }
 
