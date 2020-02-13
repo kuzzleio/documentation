@@ -4,14 +4,12 @@
       <SDKSelector :items="sdkList" :kuzzleMajor="kuzzleMajor" />
     </div>
     <div v-for="([part, links]) of headerEntries">
-      <p class="md-nav__mobile-group-name">{{ part }}</p>
       <a
         v-for="link of links"
         :href="link.path"
         :title="link.label"
         class="md-source"
         data-md-state="done"
-        style="display:inline-block;"
         @click.native="$emit('closeSidebar')"
       >
         <div class="md-source__repository">{{ link.label }}</div>
@@ -23,22 +21,18 @@
 <script>
 import { getValidLinkByRootPath } from '../util.js';
 import sdks from '../sdk.json';
-import headerEntriesJson from "../header-entries.json";
+import headerEntriesJson from '../header-entries.json';
 
 const { getItemLocalStorage } = require('../util.js');
 
 export default {
-  data () {
-    return {
-      kuzzleMajor: '2'
-    }
-  },
+  props: ['kuzzleMajor'],
   computed: {
     sdkList() {
-      return sdks[this.kuzzleMajor] || []
+      return sdks[this.kuzzleMajor] || [];
     },
     headerEntries() {
-      return Object.entries(headerEntriesJson)
+      return Object.entries(headerEntriesJson[this.kuzzleMajor]);
     }
   },
   methods: {
@@ -46,8 +40,8 @@ export default {
       return getValidLinkByRootPath(path, this.$site.pages);
     }
   },
-  mounted () {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor')
+  mounted() {
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor');
   }
 };
 </script>
