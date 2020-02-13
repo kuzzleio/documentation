@@ -7,6 +7,6 @@ title: Official Plugins
 
 # Official Plugins
 
-Below you’ll find the ones we officialy released.
+Below you’ll find the ones we officially released.
 
 <PluginsIndex/>
