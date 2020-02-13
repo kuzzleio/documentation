@@ -41,7 +41,7 @@
     "kuzdoc": "^1.1.4",
     "lunr": "^2.3.6",
     "moment": "^2.24.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "prompt-confirm": "^2.0.4",
     "read-yaml": "^1.1.0",
     "sanitize-filename": "^1.6.1",
