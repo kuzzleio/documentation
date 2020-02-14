@@ -23,7 +23,11 @@
             <article class="md-content__inner md-typeset">
               <h1>404 Page not found</h1>
               <blockquote>{{ getMsg() }}</blockquote>
-              <a href="/">Take me home.</a>
+              <p>
+                Sorry! The page you are looking for is not available. <br />
+                You can use the search field above or return to the
+                <a href="/"> home page</a>.
+              </p>
             </article>
           </div>
         </div>
