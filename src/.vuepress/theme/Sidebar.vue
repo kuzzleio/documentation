@@ -272,7 +272,7 @@ export default {
   mounted() {
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || 2;
   }
 };
 </script>

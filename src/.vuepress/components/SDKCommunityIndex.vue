@@ -27,10 +27,7 @@ export default {
     }
   },
   mounted () {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2'
-    console.log(this.kuzzleMajor)
-  },
-  methods: {
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || 2
   },
   computed: {
     sdkList() {
