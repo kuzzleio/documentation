@@ -17,10 +17,9 @@
       @include break-to-device(tablet) {
         padding: 2px 0 0 12px !important;
         border-top: none !important;
-        border-bottom: .1rem solid rgba(0,0,0,.07);
-        margin-bottom: 5px
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.07);
+        margin-bottom: 5px;
       }
-    
     }
 
     .md-nav__item {
@@ -132,13 +131,11 @@
       margin-bottom: 5px !important;
       padding-left: 12px;
     }
-    
   }
 
   // List item
   &__item {
     padding: 5px 1.2rem;
-    height: 30px;
 
     // Add bottom spacing to last item
     &:last-child {
