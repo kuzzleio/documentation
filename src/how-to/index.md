@@ -6,7 +6,7 @@ title: How to
 ---
 
 # Kuzzle How to
-here you can find all the how-to's with Kuzzle divided into different categories
+Here you can find all the Kuzzle how-to divided into different categories
 
 <HowToIndex />
 
