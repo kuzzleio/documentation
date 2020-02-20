@@ -6,17 +6,7 @@ title: How to
 ---
 
 # Kuzzle How to
+here you can find all the how-to's with Kuzzle divided into different categories
 
-### **IOT**
+<HowToIndex />
 
-<br>
-
-<IotHowToIndex />
-
-<br>
-
-### **MANAGING DATA**
-
-<br>
-
-<OthersHowToIndex />
