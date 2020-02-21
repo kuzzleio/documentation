@@ -1,9 +1,16 @@
 - url: https://github.com/kuzzleio/kuzzle-how-to.git
   doc_version: 1
-  stable: master
-  dev: master
-  name: kuzzle-how-to
+  stable: kuzzle-1
+  dev: kuzzle-1-dev
+  name: kuzzle-how-to-1
   deploy_path: how-to/1/
+
+- url: https://github.com/kuzzleio/kuzzle-how-to.git
+  doc_version: 1
+  stable: master
+  dev: develop
+  name: kuzzle-how-to-2
+  deploy_path: how-to/2/
 
 - url: https://github.com/kuzzleio/sdk-javascript.git
   doc_version: 5
