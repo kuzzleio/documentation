@@ -1,5 +1,12 @@
 <template>
-  <Badge type="error" :text="`Deprecated since ${version}`"/>
+  <div>
+    <p>Beware, this SDK is deprecated.</p>
+    <Badge
+      type="error"
+      :text="`Deprecated since ${version}`"
+      id="deprecatedBadge"
+    />
+  </div>
 </template>
 
 <script>
@@ -19,4 +26,8 @@ export default {
 </script>
 
 <style>
+#deprecatedBadge {
+  font-size: 22px;
+  vertical-align: middle;
+}
 </style>
