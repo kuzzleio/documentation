@@ -29,20 +29,42 @@
                 Otherwise, here are some useful pages.
               </p>
               <ul>
-                <li><a :href="getPath('/guides/getting-started/running-kuzzle/')"> Running Kuzzle</a></li>
-                <li><a :href="getPath('/api/essentials/connecting-to-kuzzle/')"> Explore API </a></li>
-                <li><a href="/sdk/"> Find your SDK </a></li>
-                <li><a :href="getPath('/guides/essentials/admin-console/')"> Admin Console </a></li>
-                <li><a :href="getPath('/guides/essentials/configuration/')"> Configure Kuzzle </a></li>
-                <li><a href="/official-plugins/"> Plugins </a></li>
+                <li>
+                  <a :href="getPath('/guides/getting-started/running-kuzzle/')">
+                    Running Kuzzle
+                  </a>
+                </li>
+                <li>
+                  <a :href="getPath('/api/essentials/connecting-to-kuzzle/')">
+                    Explore API
+                  </a>
+                </li>
+                <li>
+                  <a href="/sdk/"> Find your SDK </a>
+                </li>
+                <li>
+                  <a :href="getPath('/guides/essentials/admin-console/')">
+                    Admin Console
+                  </a>
+                </li>
+                <li>
+                  <a :href="getPath('/guides/essentials/configuration/')">
+                    Configure Kuzzle
+                  </a>
+                </li>
+                <li>
+                  <a href="/official-plugins/"> Plugins </a>
+                </li>
               </ul>
               <p>
-                If you believe this is the result of an error, please <a href="https://github.com/kuzzleio/documentation/issues/new/choose"> let our
-                team know. </a></li>
+                If you believe this is the result of an error, please
+                <a
+                  href="https://github.com/kuzzleio/documentation/issues/new/choose"
+                >
+                  let our team know.
+                </a>
+                We will be very grateful.
               </p>
-              <p></p>
-              <p>Thank you!</p>
-              <p></p>
             </article>
           </div>
         </div>
@@ -57,21 +79,21 @@ import Header from './Header.vue';
 import Footer from './Footer.vue';
 
 import { getFirstValidChild, getNodeByPath } from '../util.js';
-import { getItemLocalStorage } from '../util'
+import { getItemLocalStorage } from '../util';
 
 export default {
-  data () {
+  data() {
     return {
       kuzzleMajor: '2'
-    }
+    };
   },
   components: {
     Header,
     Footer
   },
   methods: {
-    getPath (path) {
-      return `/core/${this.kuzzleMajor}${path}`
+    getPath(path) {
+      return `/core/${this.kuzzleMajor}${path}`;
     },
     generateHomeLink(path) {
       const rootPage = getNodeByPath(path, this.$site.pages);
