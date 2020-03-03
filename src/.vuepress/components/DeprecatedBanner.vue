@@ -1,17 +1,14 @@
 <template>
   <div class="alert alert-warning" id="deprecatedBanner">
-    <p>Beware, this SDK is deprecated.</p>
+    <p>
+      This SDK has been deprecated because of stability issues. It is not
+      advised to use it in a production environment.
+    </p>
   </div>
 </template>
 
 <script>
 import sdks from '../sdk.json';
-
-export default {
-  mounted() {
-    console.log('Le console.log fonctionne', sdks[1][3]);
-  }
-};
 </script>
 
 <style>
