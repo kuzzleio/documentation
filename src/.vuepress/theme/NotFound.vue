@@ -22,12 +22,27 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               <h1>404 Page not found</h1>
-              <blockquote>{{ getMsg() }}</blockquote>
               <p>
-                Sorry! The page you are looking for is not available. <br />
-                You can use the search field above or return to the
-                <a href="/"> home page</a>.
+                Sorry! The page you are looking for doesn't exist or has been
+                moved. We are working to correct this. <br />
+                Maybe you can use the search field on the right top.<br />
+                Otherwise, here are some useful pages.
               </p>
+              <ul>
+                <li><a :href="getPath('/guides/getting-started/running-kuzzle/')"> Running Kuzzle</a></li>
+                <li><a :href="getPath('/api/essentials/connecting-to-kuzzle/')"> Explore API </a></li>
+                <li><a href="/sdk/"> Find your SDK </a></li>
+                <li><a :href="getPath('/guides/essentials/admin-console/')"> Admin Console </a></li>
+                <li><a :href="getPath('/guides/essentials/configuration/')"> Configure Kuzzle </a></li>
+                <li><a href="/official-plugins/"> Plugins </a></li>
+              </ul>
+              <p>
+                If you believe this is the result of an error, please <a href="https://github.com/kuzzleio/documentation/issues/new/choose"> let our
+                team know. </a></li>
+              </p>
+              <p></p>
+              <p>Thank you!</p>
+              <p></p>
             </article>
           </div>
         </div>
@@ -42,22 +57,21 @@ import Header from './Header.vue';
 import Footer from './Footer.vue';
 
 import { getFirstValidChild, getNodeByPath } from '../util.js';
-
-const msgs = [
-  `There's nothing here.`,
-  `How did we get here?`,
-  `That's a Four-Oh-Four.`,
-  `Looks like we've got some broken links.`
-];
+import { getItemLocalStorage } from '../util'
 
 export default {
+  data () {
+    return {
+      kuzzleMajor: '2'
+    }
+  },
   components: {
     Header,
     Footer
   },
   methods: {
-    getMsg() {
-      return msgs[Math.floor(Math.random() * msgs.length)];
+    getPath (path) {
+      return `/core/${this.kuzzleMajor}${path}`
     },
     generateHomeLink(path) {
       const rootPage = getNodeByPath(path, this.$site.pages);
@@ -76,6 +90,7 @@ export default {
   },
   mounted() {
     this.setContainerPadding();
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
   }
 };
 </script>
