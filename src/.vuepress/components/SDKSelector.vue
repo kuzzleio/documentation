@@ -58,7 +58,7 @@ export default {
   name: 'SDKSelector',
   props: {
     items: Array,
-    kuzzleMajor: String
+    kuzzleMajor: Number
   },
   data() {
     return {
