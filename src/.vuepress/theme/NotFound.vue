@@ -61,11 +61,6 @@ export default {
     btnCta,
     Footer
   },
-  data() {
-    return {
-      foo: ['ytyty', 'jhffjdhf']
-    };
-  },
   methods: {
     setContainerPadding() {
       const padding = this.$refs.header.$el.querySelector('header')
