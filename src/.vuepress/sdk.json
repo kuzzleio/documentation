@@ -26,7 +26,8 @@
       "name": "C++ 1.x",
       "version": "1",
       "icon": "/logos/cpp.svg",
-      "newArchitecture": true
+      "newArchitecture": true,
+      "deprecated": true
     },
     {
       "language": "go",
@@ -46,7 +47,8 @@
       "name": "Java 1.x",
       "version": "1",
       "icon": "/logos/java.svg",
-      "newArchitecture": true
+      "newArchitecture": true,
+      "deprecated": true
     },
     {
       "language": "java",
