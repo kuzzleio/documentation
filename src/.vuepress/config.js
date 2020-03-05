@@ -277,7 +277,7 @@ module.exports = {
   },
   plugins: [
     require('./meta-tags-plugin/index.js'),
-    process.env.ALGOLIA_WRITE_KEY
+    process.env.ALGOLIA_WRITE_KEY && !process.env.DISABLE_ALGOLIA
       ? [
         require('./index-to-algolia/index.js'),
         {
