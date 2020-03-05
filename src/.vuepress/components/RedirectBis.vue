@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  name: 'RedirectBis',
   props: {
     to: {
       type: String,
@@ -11,7 +12,7 @@ export default {
     }
   },
   mounted() {
-    window.location.pathname = this.to
+    window.location.pathname = this.to;
   }
 };
 </script>

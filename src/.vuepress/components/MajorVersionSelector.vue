@@ -39,6 +39,7 @@
 import { getItemLocalStorage, log } from '../util';
 
 export default {
+  name: 'MajorVersionSelector',
   data() {
     return {
       items: [

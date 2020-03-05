@@ -7,11 +7,20 @@
         :src="currentLanguage.icon"
         :alt="currentLanguage.language"
       />
-      <img v-else class="selector-selectedItem-icon" src="/logo-57x57.png" alt="Kuzzle logo" />
+      <img
+        v-else
+        class="selector-selectedItem-icon"
+        src="/logo-57x57.png"
+        alt="Kuzzle logo"
+      />
       <span class="selector-selectedItem-name">{{ getCurrentSpan }}</span>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
-    <ul :class="`selector-list selector-list-${isListShowed? 'opened': 'closed'}` ">
+    <ul
+      :class="
+        `selector-list selector-list-${isListShowed ? 'opened' : 'closed'}`
+      "
+    >
       <li
         v-for="item in filteredItems"
         :key="item.language + item.version"
@@ -19,7 +28,9 @@
         @click="toggleList()"
       >
         <a
-          :class="`selector-list-item-link ${item.language === 'api'? 'api': ''}`"
+          :class="
+            `selector-list-item-link ${item.language === 'api' ? 'api' : ''}`
+          "
           :href="generateLink(item)"
         >
           <img
@@ -29,8 +40,11 @@
             :alt="item.language"
           />
           <span
-            :class="`selector-list-item-name${item.language === 'api'? '-api': ''}`"
-          >{{ getSpan(item) }}</span>
+            :class="
+              `selector-list-item-name${item.language === 'api' ? '-api' : ''}`
+            "
+            >{{ getSpan(item) }}</span
+          >
         </a>
       </li>
     </ul>
@@ -41,9 +55,10 @@
 import { getOldSDK } from '../util.js';
 
 export default {
+  name: 'SDKSelector',
   props: {
     items: Array,
-    kuzzleMajor: Number
+    kuzzleMajor: String
   },
   data() {
     return {

@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  name: 'redirect',
   props: {
     to: {
       type: String,
@@ -11,7 +12,7 @@ export default {
     }
   },
   mounted() {
-    this.$router.push(this.to)
+    this.$router.push(this.to);
   }
 };
 </script>

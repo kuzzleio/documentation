@@ -8,7 +8,9 @@
 </template>
 
 <script>
-import sdks from '../sdk.json';
+export default {
+  name: 'DeprecatedBanner'
+};
 </script>
 
 <style>

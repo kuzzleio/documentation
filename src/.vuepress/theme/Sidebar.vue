@@ -7,13 +7,19 @@
     <div class="md-sidebar__scrollwrap" ref="scrollwrap">
       <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--primary" data-md-level="0">
-          <label class="md-nav__title md-nav__title--site mobile-only" for="drawer">
+          <label
+            class="md-nav__title md-nav__title--site mobile-only"
+            for="drawer"
+          >
             <span class="md-nav__button md-logo">
               <img src="/logo-min.png" width="48" height="48" />
             </span>
             <span>Kuzzle Documentation</span>
           </label>
-          <TabsMobile :kuzzleMajor="kuzzleMajor" @closeSidebar="$emit('closeSidebar')" />
+          <TabsMobile
+            :kuzzleMajor="kuzzleMajor"
+            @closeSidebar="$emit('closeSidebar')"
+          />
           <SDKSelector
             class="md-sidebar--selector"
             v-if="sdkOrApiPage"
@@ -51,10 +57,18 @@
                         class="fa fa-caret-down"
                         aria-hidden="true"
                       ></i>
-                      <i v-else class="fa fa-caret-right" aria-hidden="true"></i>
+                      <i
+                        v-else
+                        class="fa fa-caret-right"
+                        aria-hidden="true"
+                      ></i>
                       <span>{{ item__2.title }}</span>
                     </div>
-                    <router-link v-else :to="item__2.path" @click.native="closeSidebar">
+                    <router-link
+                      v-else
+                      :to="item__2.path"
+                      @click.native="closeSidebar"
+                    >
                       <a class="no_arrow">{{ item__2.title }}</a>
                     </router-link>
                   </div>

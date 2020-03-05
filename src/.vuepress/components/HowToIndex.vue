@@ -10,27 +10,28 @@
 </template>
 
 <script>
-import { getItemLocalStorage } from '../util'
+import { getItemLocalStorage } from '../util';
 import howToList from '../howto.json';
 
 export default {
-  data () {
+  name: 'HowToIndex',
+  data() {
     return {
       kuzzleMajor: '2'
-    }
+    };
   },
-  mounted () {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2'
+  mounted() {
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
   },
   computed: {
     howToListByCategories() {
-      return (categorie) => howToList[this.kuzzleMajor][0][categorie] || []
+      return categorie => howToList[this.kuzzleMajor][0][categorie] || [];
     },
     categories() {
-      return Object.keys(howToList[this.kuzzleMajor][0])
+      return Object.keys(howToList[this.kuzzleMajor][0]);
     }
   }
-}
+};
 </script>
 
 <style>

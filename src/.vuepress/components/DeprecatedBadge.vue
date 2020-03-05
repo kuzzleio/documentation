@@ -5,6 +5,7 @@
 <script>
 import Badge from '@vuepress/theme-default/global-components/Badge.vue';
 export default {
+  name: 'DeprecatedBadge',
   components: {
     Badge
   },
