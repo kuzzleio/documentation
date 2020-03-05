@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'Cta',
   props: {
     btnTextInside: {
       type: String,
