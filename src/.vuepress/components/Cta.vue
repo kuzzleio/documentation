@@ -1,7 +1,5 @@
 <template>
-  <div class="btnCtaMain">
-    <a :href="btnUrl" class="btnCta">{{ btnTextInside }}</a>
-  </div>
+  <a :href="btnUrl" class="btnCta">{{ btnTextInside }}</a>
 </template>
 
 <script>
@@ -21,10 +19,6 @@ export default {
 </script>
 
 <style lang="scss">
-.btnCtaMain {
-  text-align: center;
-  padding: 10px 0;
-}
 .btnCta {
   color: white;
   min-height: 30px;

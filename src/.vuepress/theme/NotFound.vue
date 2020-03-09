@@ -27,7 +27,9 @@
                 Maybe you can try to do a search.<br />
                 Otherwise, you could go to the home page.
               </p>
-              <btnCta btnTextInside="Go to home" btnUrl="/" />
+              <div class="cta-wrapper">
+                <btnCta btnTextInside="Go to home" btnUrl="/" />
+              </div>
               <p>
                 If you believe this is the result of an error, please
                 <a
@@ -77,3 +79,9 @@ export default {
 </script>
 
 <style src="./styles/main.scss" lang="scss"></style>
+
+<style lang="scss">
+.cta-wrapper {
+  padding: 10px 0;
+}
+</style>
