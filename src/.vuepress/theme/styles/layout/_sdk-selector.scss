@@ -21,9 +21,12 @@
   font-size: 15px;
   margin-bottom: 16px;
   cursor: pointer;
+
   &-selectedItem {
-    border-bottom: 1px solid rgba(233,78,119,0.3);
+    border-bottom: 1px solid rgba(233, 78, 119, 0.3);
     padding: 10px 10px 5px;
+    margin-bottom: 5px;
+
     &-icon {
       position: relative;
       top: 4px;
@@ -32,24 +35,21 @@
       margin-right: 8px;
     }
     i {
-      float: right;
-      top: 10px;
-      position: relative;
       color: #55595c;
     }
   }
 }
 .selector-list {
-  @include break-to-device (tablet) {
-    height: 200px;
-    overflow-y: scroll; 
+  @include break-to-device(tablet) {
+    height: 250px;
+    overflow-y: scroll;
   }
   position: absolute;
   width: 80%;
   background-color: white;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   padding: 0;
-  margin-top: 4px;
+  margin-top: 0;
   transform-origin: 50% 0;
   transition: transform 0.1s linear, opacity 0.1s linear;
   &-opened {
@@ -82,31 +82,51 @@
 }
 
 .selector-majorVersion {
-
   .selector-selectedItem {
     border: none;
     padding: 0;
     font-size: 1.7rem;
-    
+    text-align: center;
+
     .selector-selectedItem-name {
-      width: 115px;
+      width: 135px;
+      height: 42px;
+      font-size: 22px;
+      position: relative;
+      border-radius: 0.2rem;
+      padding-top: 4px;
+      line-height: 3rem;
+
+      @include break-from-device(screen) {
+        top: 13px;
+        font-size: 22px;
+      }
+
+      &:hover {
+        background-color: $md-color-white--lightest;
+      }
+
+      &-wrapper {
+        border-bottom: 1px solid #6c7a79;
+      }
     }
 
     i {
-      top: 18px;
+      top: 22px;
       color: white;
-      font-size: 1.5rem
+      font-size: 1.5rem;
+      margin-left: 6px;
     }
   }
 
   .selector-list {
     position: fixed;
-    width: 110px;
-    top: 42px;
+    width: 135px;
     height: auto;
+    text-align: center;
 
     .selector-list-item-link {
-      color: $clr-indigo
+      color: $clr-indigo;
     }
   }
 }

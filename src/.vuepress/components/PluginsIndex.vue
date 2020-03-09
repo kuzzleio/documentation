@@ -6,34 +6,35 @@
       :href="plugin.url"
       class="Tiles-item"
     >
-      <img :src="plugin.icon" :alt="plugin.iconAlt" class="Tiles-item-logo">
-      <div class="Tiles-item-name">{{ `${plugin.name} v${plugin.version}.x` }}</div>
+      <img :src="plugin.icon" :alt="plugin.iconAlt" class="Tiles-item-logo" />
+      <div class="Tiles-item-name">
+        {{ `${plugin.name} v${plugin.version}` }}
+      </div>
     </a>
   </div>
 </template>
 
 <script>
-import { getItemLocalStorage } from '../util'
+import { getItemLocalStorage } from '../util';
 import plugins from '../plugins.json';
 
 export default {
-  data () {
+  name: 'PluginsIndex',
+  data() {
     return {
       kuzzleMajor: '2'
-    }
+    };
   },
-  mounted () {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2'
+  mounted() {
+    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
   },
-  methods: {
-  },
+  methods: {},
   computed: {
     pluginList() {
-      return plugins[this.kuzzleMajor] || []
+      return plugins[this.kuzzleMajor] || [];
     }
   }
-}
+};
 </script>
 
-<style>
-</style>
+<style></style>

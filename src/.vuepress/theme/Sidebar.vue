@@ -16,7 +16,10 @@
             </span>
             <span>Kuzzle Documentation</span>
           </label>
-          <TabsMobile @closeSidebar="$emit('closeSidebar')" />
+          <TabsMobile
+            :kuzzleMajor="kuzzleMajor"
+            @closeSidebar="$emit('closeSidebar')"
+          />
           <SDKSelector
             class="md-sidebar--selector"
             v-if="sdkOrApiPage"

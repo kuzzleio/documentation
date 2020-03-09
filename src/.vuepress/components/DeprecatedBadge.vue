@@ -1,11 +1,11 @@
 <template>
-  <Badge type="error" :text="`Deprecated since ${version}`"/>
+  <Badge type="error" :text="`Deprecated since ${version}`" />
 </template>
 
 <script>
 import Badge from '@vuepress/theme-default/global-components/Badge.vue';
-
 export default {
+  name: 'DeprecatedBadge',
   components: {
     Badge
   },
@@ -18,5 +18,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

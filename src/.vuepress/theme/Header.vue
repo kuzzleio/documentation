@@ -15,7 +15,7 @@
           <!-- Link to home -->
           <div class="md-flex__cell md-flex__cell--shrink">
             <a href="/" class="md-header-nav__button md-logo">
-              <img src="/logo-min.png" width="24" height="24" />
+              <img src="/logo-min.png" width="40" height="40" />
             </a>
           </div>
           <!-- Button to toggle drawer -->
@@ -29,7 +29,10 @@
 
           <!-- Header title -->
           <div class="md-flex__cell md-flex__cell--stretch">
-            <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+            <div
+              class="md-flex__ellipsis md-header-nav__title"
+              data-md-component="title"
+            >
               <span class="md-header-nav__topic">
                 <MajorVersionSelector @change="onKuzzleMajorChanged" />
               </span>
@@ -40,7 +43,10 @@
           </div>
           <!-- Button to open search dialogue -->
           <div class="md-flex__cell md-flex__cell--shrink">
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            <label
+              class="md-icon md-icon--search md-header-nav__button"
+              for="search"
+            ></label>
             <!-- Search interface -->
             <ClientOnly>
               <Search
@@ -104,5 +110,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

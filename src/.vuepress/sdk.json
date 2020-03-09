@@ -26,7 +26,8 @@
       "name": "C++ 1.x",
       "version": "1",
       "icon": "/logos/cpp.svg",
-      "newArchitecture": true
+      "newArchitecture": true,
+      "deprecated": true
     },
     {
       "language": "go",
@@ -46,7 +47,8 @@
       "name": "Java 1.x",
       "version": "1",
       "icon": "/logos/java.svg",
-      "newArchitecture": true
+      "newArchitecture": true,
+      "deprecated": true
     },
     {
       "language": "java",
@@ -97,6 +99,13 @@
       "name": "C# 2.x",
       "version": "2",
       "icon": "/logos/csharp.svg",
+      "newArchitecture": true
+    },
+    {
+      "language": "java",
+      "name": "Java 3.x",
+      "version": "3",
+      "icon": "/logos/java.svg",
       "newArchitecture": true
     }
   ]
