@@ -39,9 +39,6 @@ export default {
     generateLink(path) {
       return getValidLinkByRootPath(path, this.$site.pages);
     }
-  },
-  mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor');
   }
 };
 </script>

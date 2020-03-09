@@ -19,6 +19,7 @@ import { getItemLocalStorage } from '../util';
 import plugins from '../plugins.json';
 
 export default {
+  name: 'PluginsIndex',
   data() {
     return {
       kuzzleMajor: '2'

@@ -23,9 +23,8 @@
             <article class="md-content__inner md-typeset">
               <h1>404 Page not found</h1>
               <p>
-                Sorry! The page you are looking for doesn't exist or has been
-                moved. We are working to correct this. <br />
-                Maybe you can use the search field on the right top.<br />
+                The page you are looking for doesn't exist or has been moved.<br />
+                Maybe you can try to do a search.<br />
                 Otherwise, you could go to the home page.
               </p>
               <btnCta btnTextInside="Go to home" btnUrl="/" />
@@ -37,7 +36,6 @@
                   let our team know.
                 </a>
                 We will be very grateful.
-              </p>
             </article>
           </div>
         </div>

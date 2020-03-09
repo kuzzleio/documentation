@@ -15,7 +15,7 @@
           <!-- Link to home -->
           <div class="md-flex__cell md-flex__cell--shrink">
             <a href="/" class="md-header-nav__button md-logo">
-              <img src="/logo-min.png" width="30" height="30" />
+              <img src="/logo-min.png" width="24" height="24" />
             </a>
           </div>
           <!-- Button to toggle drawer -->
