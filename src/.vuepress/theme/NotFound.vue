@@ -22,11 +22,22 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               <h1>404 Page not found</h1>
-              <blockquote>{{ getMsg() }}</blockquote>
               <p>
-                Sorry! The page you are looking for is not available. <br />
-                You can use the search field above or return to the
-                <a href="/"> home page</a>.
+                The page you are looking for doesn't exist or has been moved.<br />
+                Maybe you can try to do a search.<br />
+                Otherwise, you could go to the home page.
+              </p>
+              <div class="cta-wrapper">
+                <btnCta btnTextInside="Go to home" btnUrl="/" />
+              </div>
+              <p>
+                If you believe this is the result of an error, please
+                <a
+                  href="https://github.com/kuzzleio/documentation/issues/new/choose"
+                >
+                  let our team know.
+                </a>
+                We will be very grateful.
               </p>
             </article>
           </div>
@@ -39,38 +50,25 @@
 
 <script>
 import Header from './Header.vue';
+import btnCta from '../components/Cta.vue';
 import Footer from './Footer.vue';
 
 import { getFirstValidChild, getNodeByPath } from '../util.js';
-
-const msgs = [
-  `There's nothing here.`,
-  `How did we get here?`,
-  `That's a Four-Oh-Four.`,
-  `Looks like we've got some broken links.`
-];
+import { getItemLocalStorage } from '../util';
 
 export default {
   components: {
     Header,
+    btnCta,
     Footer
   },
   methods: {
-    getMsg() {
-      return msgs[Math.floor(Math.random() * msgs.length)];
-    },
-    generateHomeLink(path) {
-      const rootPage = getNodeByPath(path, this.$site.pages);
-      return getFirstValidChild(rootPage, this.$site.pages).path;
-    },
     setContainerPadding() {
       const padding = this.$refs.header.$el.querySelector('header')
         .offsetHeight;
-
       if (padding === null || typeof padding === 'undefined') {
         return;
       }
-
       this.$refs.container.style = `padding-top: ${padding}px;`;
     }
   },
@@ -81,3 +79,9 @@ export default {
 </script>
 
 <style src="./styles/main.scss" lang="scss"></style>
+
+<style lang="scss">
+.cta-wrapper {
+  padding: 10px 0;
+}
+</style>
