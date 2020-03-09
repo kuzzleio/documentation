@@ -36,6 +36,7 @@
                   let our team know.
                 </a>
                 We will be very grateful.
+              </p>
             </article>
           </div>
         </div>
