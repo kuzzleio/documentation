@@ -80,9 +80,6 @@ redirections:
   - from: core/1/guides/essentials/persisted
     to: core/1/guides/essentials/store-access-data
 
-  - from: core/2/guides/essentials/cli/
-    to: https://github.com/kuzzleio/kourou/
-
   # Koncorde
   - from: koncorde/1/essentials
     to: core/1/guides/cookbooks/realtime-api
