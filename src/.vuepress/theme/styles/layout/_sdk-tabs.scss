@@ -1,11 +1,15 @@
+@mixin reset-margin {
+  margin: 0 0 0 0 !important;
+}
+
 .tabs-component {
   &-tabs {
-    margin: 0 0 0 0 !important;
+    @include reset-margin;
     border: 0;
   }
 
   &-tab {
-    margin: 0 0 0 0 !important;
+    @include reset-margin;
     background-color: #fff;
     transition: transform 0.3s ease;
     list-style: none;
