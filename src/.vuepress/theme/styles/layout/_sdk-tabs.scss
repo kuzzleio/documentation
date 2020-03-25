@@ -1,0 +1,38 @@
+.tabs-component {
+  &-tabs {
+    margin: 0 !important;
+    border: 0;
+  }
+
+  &-tab {
+    margin: 0 0 0 0 !important;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    list-style: none;
+    display: inline-block;
+    width: 5em;
+    text-align: center;
+    a {
+      color: rgba(233, 78, 119, 0.8);
+      &:hover {
+        color: rgba(233, 78, 119, 1);
+      }
+    }
+    &.is-active {
+      margin: 0 0 0 0 !important;
+      border-bottom: solid 5px rgba(233, 78, 119, 0.8);
+      a {
+        color: $md-color-primary;
+      }
+    }
+  }
+
+  &-panels {
+    border-top-left-radius: 0;
+    background-color: #fff;
+    border: solid 1px #ddd;
+    border-radius: 0 6px 6px 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    padding: 1em 1em;
+  }
+}
