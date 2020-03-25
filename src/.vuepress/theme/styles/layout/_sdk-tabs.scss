@@ -1,6 +1,6 @@
 .tabs-component {
   &-tabs {
-    margin: 0 !important;
+    margin: 0 0 0 0 !important;
     border: 0;
   }
 
@@ -12,6 +12,7 @@
     display: inline-block;
     width: 5em;
     text-align: center;
+    border-bottom: solid 4px white;
     a {
       color: rgba(233, 78, 119, 0.8);
       &:hover {
@@ -19,7 +20,7 @@
       }
     }
     &.is-active {
-      margin: 0 0 0 0 !important;
+      margin: 0 0 0 0;
       border-bottom: solid 5px rgba(233, 78, 119, 0.8);
       a {
         color: $md-color-primary;
