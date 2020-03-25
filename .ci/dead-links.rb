@@ -14,7 +14,7 @@ class LinkChecker
     'http://kuzzle:7512',
     'http://localhost',
     'https://console.kuzzle.io',
-    'http://console.kuzzle.io'
+    'http://console.kuzzle.io',
     'http://<',
     'http://elasticsearch',
     'http:head',
