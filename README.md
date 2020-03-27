@@ -145,6 +145,8 @@ You can learn more about the linter by looking at its [official repository](http
 
 ## Custom containers
 
+### alert/info boxes
+
 You can create alert/info boxes in your markdown with the following syntax:
 
 ```markdown
@@ -154,6 +156,21 @@ lorem ipsum
 ```
 
 Supported containers are : `info`, `success`, `warning`
+
+### Tabs
+
+It is possible to add tabs directly in the markdown with this syntax:
+
+```markdown
+:::: tabs
+::: tab yourTabName
+<<< ./snippets/check-token.java
+:::
+::: tab anotherTab
+<<< ./snippets/check-token.kt
+:::
+::::
+```
 
 ## Code snippet import
 

@@ -255,7 +255,8 @@ module.exports = {
     plugins: [
       new webpack.DefinePlugin({
         GA_ID:
-          JSON.stringify(process.env.GA_ID) || JSON.stringify(googleAnalyticsID),
+          JSON.stringify(process.env.GA_ID) ||
+          JSON.stringify(googleAnalyticsID),
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
         'process.env.RESET_APP_DATA_TIMER': JSON.stringify(
           process.env.RESET_APP_DATA_TIMER
@@ -276,18 +277,19 @@ module.exports = {
     ]
   },
   plugins: [
+    'tabs',
     require('./meta-tags-plugin/index.js'),
     process.env.ALGOLIA_WRITE_KEY && !process.env.DISABLE_ALGOLIA
       ? [
-        require('./index-to-algolia/index.js'),
-        {
-          algoliaAppId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
-          algoliaWriteKey: process.env.ALGOLIA_WRITE_KEY,
-          algoliaIndex: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
-          clearIndex: process.env.ALGOLIA_CLEAR_INDEX,
-          repoName: process.env.REPO_NAME
-        }
-      ]
+          require('./index-to-algolia/index.js'),
+          {
+            algoliaAppId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
+            algoliaWriteKey: process.env.ALGOLIA_WRITE_KEY,
+            algoliaIndex: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
+            clearIndex: process.env.ALGOLIA_CLEAR_INDEX,
+            repoName: process.env.REPO_NAME
+          }
+        ]
       : {},
     [
       require('vuepress-frontmatter-lint'),
