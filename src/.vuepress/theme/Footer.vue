@@ -19,9 +19,9 @@
         </a>
       </li>
       <li class="md-footer-external__link">
-        <a href="https://gitter.im/kuzzleio/kuzzle" target="_blank">
-          <img class="md-footer-external__link__img" src="/logos/logo-gitter.svg" />
-          <div class="md-footer-external__link__title">Gitter</div>
+        <a href="https://discord.gg/tAEtyDZ" target="_blank">
+          <img class="md-footer-external__link__img" src="/logos/logo-discord.svg" />
+          <div class="md-footer-external__link__title">Discord</div>
           <div
             class="md-footer-external__link__description"
           >Chat with the community and Kuzzle developers</div>

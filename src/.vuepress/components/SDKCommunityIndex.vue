@@ -18,8 +18,8 @@
     </div>
     <span
       >Do not hesitate to contact us or come on our
-      <a href="https://gitter.im/kuzzleio/kuzzle" target="_blank"
-        >gitter chat</a
+      <a href="https://discord.gg/tAEtyDZ" target="_blank"
+        >Discord chat</a
       >
       to add your contribution to this list.</span
     >
