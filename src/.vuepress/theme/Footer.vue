@@ -19,7 +19,7 @@
         </a>
       </li>
       <li class="md-footer-external__link">
-        <a href="https://discord.gg/tAEtyDZ" target="_blank">
+        <a href="https://join.discord.kuzzle.io" target="_blank">
           <img class="md-footer-external__link__img" src="/logos/logo-discord.svg" />
           <div class="md-footer-external__link__title">Discord</div>
           <div

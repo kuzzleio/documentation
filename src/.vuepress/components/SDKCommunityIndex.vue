@@ -18,7 +18,7 @@
     </div>
     <span
       >Do not hesitate to contact us or come on our
-      <a href="https://discord.gg/tAEtyDZ" target="_blank"
+      <a href="https://join.discord.kuzzle.io" target="_blank"
         >Discord chat</a
       >
       to add your contribution to this list.</span
