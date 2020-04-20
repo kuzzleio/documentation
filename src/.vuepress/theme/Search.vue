@@ -2,11 +2,7 @@
   <div class="md-search" data-md-component="search" role="dialog">
     <label class="md-search__overlay" for="search"></label>
     <div class="md-search__inner" role="search">
-      <form
-        class="md-search__form"
-        name="search"
-        @submit.prevent="goToHighlightedResult"
-      >
+      <form class="md-search__form" name="search" @submit.prevent="goToHighlightedResult">
         <input
           id="algolia-search-input"
           type="text"
@@ -57,7 +53,7 @@
             <ol class="md-search-result__list">
               <li
                 v-for="(result, idx) in results"
-                :key="`${result.path}-${result.breadcrumbs.join('.')}`"
+                :key="`${result.path}-${idx}-${result.breadcrumbs.join('.')}`"
                 class="md-search-result__item"
               >
                 <a
@@ -73,8 +69,7 @@
                         v-for="tag in result.breadcrumbs"
                         :key="tag"
                         class="tag"
-                        >{{ tag }}</span
-                      >
+                      >{{ tag }}</span>
                     </h1>
                     <p
                       class="md-search-result__teaser"
@@ -143,7 +138,7 @@ export default {
     initializeHotkey() {
       // TODO MacOS version
       window.addEventListener('keyup', event => {
-        if (event.key === 's') {
+        if (event.key === 's' && this.$refs.searchInput) {
           this.$refs.searchInput.focus();
         }
       });
