@@ -106,9 +106,8 @@ export default {
         console.log('language', splitedPath[1]);
         console.log('version', splitedPath[2]);
         console.log('finded sdk', sdk);
-        console.log('is deprecated', sdk.deprecated);
         if (sdk) {
-          return sdk.deprecated;
+          return sdk.deprecated || false;
         }
       }
 
