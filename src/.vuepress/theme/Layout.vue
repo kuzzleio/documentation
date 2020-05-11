@@ -103,6 +103,10 @@ export default {
         const sdk = this.sdkList.find(
           el => el.language === splitedPath[1] && el.version === splitedPath[2]
         );
+        console.log('language', splitedPath[1]);
+        console.log('version', splitedPath[2]);
+        console.log('finded sdk', sdk);
+        console.log('is deprecated', sdk.deprecated);
         if (sdk) {
           return sdk.deprecated;
         }
