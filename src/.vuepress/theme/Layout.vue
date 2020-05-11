@@ -99,15 +99,11 @@ export default {
     },
     isDeprecatedBannerShowed() {
       if (this.sdkOrApiPage) {
-        const splitedPath = this.$page.path.split('/');
+        const splitedPath = this.$site.base.split('/');
         const sdk = this.sdkList.find(
-          el => el.language === splitedPath[1] && el.version === splitedPath[2]
+          el => el.language === splitedPath[2] && el.version === splitedPath[3]
         );
-        console.log('page path', this.$page.path);
-        console.log('site base', this.$site.base);
-        console.log('language', splitedPath[1]);
-        console.log('version', splitedPath[2]);
-        console.log('finded sdk', sdk);
+
         if (sdk) {
           return sdk.deprecated || false;
         }
