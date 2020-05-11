@@ -99,12 +99,13 @@ export default {
     },
     isDeprecatedBannerShowed() {
       if (this.sdkOrApiPage) {
-        const splitedPath = this.$page.path.split('/');
+        const splitedPath = this.$site.base.split('/');
         const sdk = this.sdkList.find(
           el => el.language === splitedPath[2] && el.version === splitedPath[3]
         );
+
         if (sdk) {
-          return sdk.deprecated;
+          return sdk.deprecated || false;
         }
       }
 
