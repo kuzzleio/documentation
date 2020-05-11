@@ -15,7 +15,7 @@ export default {
 
 <style>
 #deprecatedBanner {
-  font-size: 22px;
+  font-size: 18px;
   vertical-align: middle;
 }
 </style>

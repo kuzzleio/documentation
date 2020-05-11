@@ -101,7 +101,7 @@ export default {
       if (this.sdkOrApiPage) {
         const splitedPath = this.$page.path.split('/');
         const sdk = this.sdkList.find(
-          el => el.language === splitedPath[2] && el.version === splitedPath[3]
+          el => el.language === splitedPath[1] && el.version === splitedPath[2]
         );
         if (sdk) {
           return sdk.deprecated;
