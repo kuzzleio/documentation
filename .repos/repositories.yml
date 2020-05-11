@@ -114,14 +114,14 @@
 
 - url: https://github.com/kuzzleio/sdk-java.git
   doc_version: 2
-  stable: master
+  stable: 2-stable
   dev: 2-dev
   name: sdk-java-2
   deploy_path: /sdk/java/2/
 
 - url: https://github.com/kuzzleio/sdk-java.git
   doc_version: 3
-  stable: 3-stable
+  stable: master
   dev: 3-dev
   name: sdk-java-3
   deploy_path: /sdk/java/3/
