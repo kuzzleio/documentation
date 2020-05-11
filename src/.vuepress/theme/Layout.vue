@@ -103,6 +103,8 @@ export default {
         const sdk = this.sdkList.find(
           el => el.language === splitedPath[1] && el.version === splitedPath[2]
         );
+        console.log('page path', this.$page.path);
+        console.log('site base', this.$site.base);
         console.log('language', splitedPath[1]);
         console.log('version', splitedPath[2]);
         console.log('finded sdk', sdk);
