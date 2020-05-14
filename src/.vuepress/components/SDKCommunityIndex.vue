@@ -18,9 +18,7 @@
     </div>
     <span
       >Do not hesitate to contact us or come on our
-      <a href="https://join.discord.kuzzle.io" target="_blank"
-        >Discord chat</a
-      >
+      <a href="http://join.discord.kuzzle.io" target="_blank">Discord chat</a>
       to add your contribution to this list.</span
     >
   </div>
@@ -38,16 +36,8 @@ export default {
   },
   mounted() {
     this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || 2;
-  },
-  computed: {
-    sdkList() {
-      const list = sdks[this.kuzzleMajor] || [];
-
-      return list.filter(item => item.language !== 'api');
-    }
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>
