@@ -107,6 +107,13 @@
       "version": "3",
       "icon": "/logos/java.svg",
       "newArchitecture": true
+    },
+    {
+      "language": "dart",
+      "name": "Dart 2.x",
+      "version": "2",
+      "icon": "/logos/dart.svg",
+      "newArchitecture": true
     }
   ]
 }
