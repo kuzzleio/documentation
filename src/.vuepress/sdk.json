@@ -114,6 +114,13 @@
       "version": "2",
       "icon": "/logos/dart.svg",
       "newArchitecture": true
+    },
+    {
+      "language": "jvm",
+      "name": "Jvm 1.x",
+      "version": "1",
+      "icon": "/logos/java.svg",
+      "newArchitecture": true
     }
   ]
 }
