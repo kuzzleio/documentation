@@ -61,6 +61,11 @@
             "name": "Sync to other DB",
             "icon": "/logos/logo-database.svg",
             "link": "/how-to/2/sync-data-to-another-database"
+          },
+          {
+            "name": "Replicate to Postgres",
+            "icon": "/logos/postgresql.svg",
+            "link": "/how-to/2/replicate-to-sql-with-generic-events"
           }
         ]
       }
