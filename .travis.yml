@@ -172,6 +172,13 @@ jobs:
       name: sdk-php-3
 
     # ----------------------------
+    # SDK Dart v2
+    # ----------------------------
+    - <<: *doc-deploy-base
+      <<: *doc-deploy-content
+      name: sdk-dart-2
+
+    # ----------------------------
     # Plugin Cloudinary v1
     # ----------------------------
     - <<: *doc-deploy-base
