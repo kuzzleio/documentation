@@ -1,5 +1,5 @@
 <template>
-  <!-- Tabs with outline -->
+  <!-- Tabs with outline if active -->
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
@@ -48,5 +48,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
