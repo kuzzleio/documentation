@@ -32,6 +32,10 @@ import headerEntries from '../header-entries.json';
 
 export default {
   props: ['kuzzleMajor'],
+  mounted() {
+    console.log('site.base', this.$site.base);
+    console.log('route.path', this.$route.path);
+  },
   computed: {
     headerEntries() {
       return Object.entries(headerEntries[this.kuzzleMajor]);
