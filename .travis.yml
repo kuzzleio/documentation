@@ -146,10 +146,9 @@ jobs:
     # ----------------------------
     # SDK Jvm v1
     # ----------------------------
-      - <<: *doc-deploy-base
+    - <<: *doc-deploy-base
       <<: *doc-deploy-content
       name: sdk-jvm-1
-
 
     # ----------------------------
     # SDK Android v3
