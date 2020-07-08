@@ -40,7 +40,7 @@ export default {
       return Object.entries(headerEntries[this.kuzzleMajor]);
     },
     fullPath() {
-      return `${this.$site.base}${this.$route.path}`.replace(/\/*/, '/');
+      return `${this.$site.base}${this.$route.path}`.replace(/\/\//, '/');
     }
   },
   methods: {
