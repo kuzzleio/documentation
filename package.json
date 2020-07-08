@@ -12,7 +12,9 @@
     "dead-links": "ruby .ci/dead-links.rb -p src/",
     "doc-upload": "aws s3 sync src/.vuepress/dist s3://$S3_BUCKET",
     "doc-cloudfront": "aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'",
-    "doc-deploy": "npm run upload && npm run cloudfront"
+    "doc-deploy": "npm run upload && npm run cloudfront",
+    "doc:new:install": "REPOSITORIES=kuzzle-2 kuzdoc iterate-repos:install && cd .repos/kuzzle-2/ && git checkout -b doc-new-architecture && git pull origin doc-new-architecture",
+    "doc:new:run": "cd .repos/kuzzle-2/ && git pull origin doc-new-architecture && cd - && npm run doc-dev"
   },
   "repository": {
     "type": "git",
