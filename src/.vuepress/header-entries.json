@@ -68,16 +68,21 @@
         "label": "How to"
       }
     ],
-    "Extend": [
+    "Create": [
+      {
+        "path": "/core/2/applications/",
+        "generateLink": true,
+        "label": "Applications"
+      },
       {
         "path": "/core/2/plugins/",
         "generateLink": true,
-        "label": "Write Plugins"
+        "label": "Plugins"
       },
       {
         "path": "/core/2/protocols/",
         "generateLink": true,
-        "label": "Write Protocols"
+        "label": "Protocols"
       }
     ]
   }
