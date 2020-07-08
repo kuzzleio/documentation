@@ -68,12 +68,7 @@
         "label": "How to"
       }
     ],
-    "Create": [
-      {
-        "path": "/core/2/applications/",
-        "generateLink": true,
-        "label": "Applications"
-      },
+    "Extend": [
       {
         "path": "/core/2/plugins/",
         "generateLink": true,
