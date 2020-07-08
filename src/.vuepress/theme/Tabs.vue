@@ -10,9 +10,7 @@
               <a
                 :href="link.path"
                 :class="{
-                  'md-tabs__link--active': `${$site.base}${$route.path}`.match(
-                    link.path
-                  )
+                  'md-tabs__link--active': fullPath.match(link.path)
                 }"
                 :title="link.label"
                 class="md-tabs__link"
@@ -35,10 +33,14 @@ export default {
   mounted() {
     console.log('site.base', this.$site.base);
     console.log('route.path', this.$route.path);
+    console.log('fullPath', this.fullPath);
   },
   computed: {
     headerEntries() {
       return Object.entries(headerEntries[this.kuzzleMajor]);
+    },
+    fullPath() {
+      return `${$site.base}${$route.path}`.replace(/\/*/, '/');
     }
   },
   methods: {
