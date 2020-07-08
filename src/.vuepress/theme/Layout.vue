@@ -42,7 +42,10 @@
 
           <div class="md-content">
             <div>
-              <deprecatedBanner v-if="isDeprecatedBannerShowed" />
+              <WarningBanner v-if="isDeprecatedBannerShowed">
+                This SDK has been deprecated because of stability issues. It is not
+                advised to use it in a production environment.
+              </WarningBanner>
             </div>
             <article class="md-content__inner md-typeset">
               <Content />
@@ -59,7 +62,7 @@
 <script>
 import Clipboard from 'clipboard';
 import Header from './Header.vue';
-import deprecatedBanner from '../components/DeprecatedBanner.vue';
+import WarningBanner from '../components/WarningBanner.vue';
 import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
 import Footer from './Footer.vue';
@@ -76,7 +79,7 @@ export default {
     Header,
     Sidebar,
     TOC,
-    deprecatedBanner,
+    WarningBanner,
     Footer
   },
   data() {
@@ -110,7 +113,7 @@ export default {
       }
 
       return false;
-    }
+    },
   },
   methods: {
     changeKuzzleMajor(kuzzleMajor) {
