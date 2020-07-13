@@ -31,6 +31,7 @@ import headerEntries from '../header-entries.json';
 export default {
   props: ['kuzzleMajor'],
   mounted() {
+    console.log('debug');
     console.log('site.base', this.$site.base);
     console.log('route.path', this.$route.path);
     console.log('fullPath', this.fullPath);
