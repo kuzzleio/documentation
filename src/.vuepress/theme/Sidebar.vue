@@ -146,13 +146,11 @@ export default {
     algoliaLvl1() {
       if (this.$route.path.match(/(^\/sdk\/\w+)/)) {
         const splitedPath = this.$route.path.split('/');
-        const language = splitedPath[2];
-        const version = splitedPath[3];
         return this.sdkList.find(
-          el => el.version === version && el.language === language
+          el => el.version === splitedPath[3] && el.language === splitedPath[2]
         ).name;
       }
-      return `Core-${this.kuzzleMajor}`;
+      return `Core ${this.kuzzleMajor}.x`;
     },
     sdkOrApiPage() {
       return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
@@ -293,7 +291,6 @@ export default {
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
     this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
-    console.log(this.$route.path);
   }
 };
 </script>
