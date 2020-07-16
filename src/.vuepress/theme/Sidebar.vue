@@ -4,22 +4,17 @@
     :class="{ 'md-sidebar--open': sidebarOpen }"
     data-md-component="navigation"
   >
+    <input type="hidden" :value="algoliaLvl1" class="algolia-lvl1" />
     <div class="md-sidebar__scrollwrap" ref="scrollwrap">
       <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--primary" data-md-level="0">
-          <label
-            class="md-nav__title md-nav__title--site mobile-only"
-            for="drawer"
-          >
+          <label class="md-nav__title md-nav__title--site mobile-only" for="drawer">
             <span class="md-nav__button md-logo">
               <img src="/logo-min.png" width="48" height="48" />
             </span>
             <span>Kuzzle Documentation</span>
           </label>
-          <TabsMobile
-            :kuzzleMajor="kuzzleMajor"
-            @closeSidebar="$emit('closeSidebar')"
-          />
+          <TabsMobile :kuzzleMajor="kuzzleMajor" @closeSidebar="$emit('closeSidebar')" />
           <SDKSelector
             class="md-sidebar--selector"
             v-if="sdkOrApiPage"
@@ -34,7 +29,10 @@
               )"
               class="md-nav__item-container"
             >
-              <li class="md-nav__separator">{{ item__1.frontmatter.title }}</li>
+              <li
+                class="md-nav__separator"
+                :class="{'algolia-lvl2' : $page.path.startsWith(item__1.path)}"
+              >{{ item__1.frontmatter.title }}</li>
 
               <div v-for="item__2 in getPageChildren(item__1)">
                 <li class="md-nav__item md-nav-title">
@@ -57,19 +55,16 @@
                         class="fa fa-caret-down"
                         aria-hidden="true"
                       ></i>
-                      <i
-                        v-else
-                        class="fa fa-caret-right"
-                        aria-hidden="true"
-                      ></i>
-                      <span>{{ item__2.title }}</span>
+                      <i v-else class="fa fa-caret-right" aria-hidden="true"></i>
+                      <span
+                        :class="{'algolia-lvl3' : $page.path.startsWith(item__2.path)}"
+                      >{{ item__2.title }}</span>
                     </div>
-                    <router-link
-                      v-else
-                      :to="item__2.path"
-                      @click.native="closeSidebar"
-                    >
-                      <a class="no_arrow">{{ item__2.title }}</a>
+                    <router-link v-else :to="item__2.path" @click.native="closeSidebar">
+                      <a
+                        class="no_arrow"
+                        :class="{'algolia-lvl3' : $page.path.startsWith(item__2.path)}"
+                      >{{ item__2.title }}</a>
                     </router-link>
                   </div>
                 </li>
@@ -93,7 +88,7 @@
                         :title="item__3.title"
                         @click.native="$emit('closeSidebar')"
                       >
-                        <a class="no_arrow">{{ item__3.title }}</a>
+                        <a class="no_arrow algolia-lvl4">{{ item__3.title }}</a>
                       </router-link>
                     </li>
                     <li v-else>
@@ -148,6 +143,17 @@ export default {
     };
   },
   computed: {
+    algoliaLvl1() {
+      if (this.$route.path.match(/(^\/sdk\/\w+)/)) {
+        const splitedPath = this.$route.path.split('/');
+        const language = splitedPath[2];
+        const version = splitedPath[3];
+        return this.sdkList.find(
+          el => el.version === version && el.language === language
+        ).name;
+      }
+      return `Core-${this.kuzzleMajor}`;
+    },
     sdkOrApiPage() {
       return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
     },
@@ -287,6 +293,7 @@ export default {
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
     this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
+    console.log(this.$route.path);
   }
 };
 </script>
