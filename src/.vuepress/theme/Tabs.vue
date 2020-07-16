@@ -10,12 +10,11 @@
               <a
                 :href="link.path"
                 :class="{
-                  'md-tabs__link--active': fullPath.match(link.path)
+                  'md-tabs__link--active algolia-lvl0': $page.path.startsWith(link.path)
                 }"
                 :title="link.label"
                 class="md-tabs__link"
-                >{{ link.label }}</a
-              >
+              >{{ link.label }}</a>
             </li>
           </ul>
         </li>
@@ -30,24 +29,12 @@ import headerEntries from '../header-entries.json';
 
 export default {
   props: ['kuzzleMajor'],
-  mounted() {
-    console.log('debug');
-    console.log('site.base', this.$site.base);
-    console.log('route.path', this.$route.path);
-    console.log('fullPath', this.fullPath);
-  },
   computed: {
     headerEntries() {
       return Object.entries(headerEntries[this.kuzzleMajor]);
-    },
-    fullPath() {
-      return `${this.$site.base}${this.$route.path}`.replace(/\/\//, '/');
     }
   },
   methods: {
-    startWith(str, start) {
-      return str.indexOf(start) === 0;
-    },
     generateLink(path) {
       return getValidLinkByRootPath(path, this.$site.pages);
     }
