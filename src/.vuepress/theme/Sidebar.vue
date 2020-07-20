@@ -4,7 +4,7 @@
     :class="{ 'md-sidebar--open': sidebarOpen }"
     data-md-component="navigation"
   >
-    <input type="hidden" :value="algoliaLvl1" class="algolia-lvl1" />
+    <div class="algolia-lvl1">{{ algoliaLvl1 }}</div>
     <div class="md-sidebar__scrollwrap" ref="scrollwrap">
       <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--primary" data-md-level="0">
@@ -295,4 +295,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.algolia-lvl1 {
+  display: none;
+}
+</style>
