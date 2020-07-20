@@ -10,8 +10,9 @@
               <a
                 :href="link.path"
                 :class="{
-                  'md-tabs__link--active algolia-lvl0': $page.path.startsWith(link.path)
+                  'md-tabs__link--active': $page.path.startsWith(link.path)
                 }"
+                :data-algolia-lvl="$page.path.startsWith(link.path) ? '0' : ''"
                 :title="link.label"
                 class="md-tabs__link"
               >{{ link.label }}</a>

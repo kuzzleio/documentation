@@ -4,7 +4,7 @@
     :class="{ 'md-sidebar--open': sidebarOpen }"
     data-md-component="navigation"
   >
-    <div class="algolia-lvl1">{{ algoliaLvl1 }}</div>
+    <div data-algolia-lvl="1" class="algolia-lvl1">{{ algoliaLvl1 }}</div>
     <div class="md-sidebar__scrollwrap" ref="scrollwrap">
       <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--primary" data-md-level="0">
@@ -31,7 +31,7 @@
             >
               <li
                 class="md-nav__separator"
-                :class="{'algolia-lvl2' : $page.path.startsWith(item__1.path)}"
+                :data-algolia-lvl="$page.path.startsWith(item__1.path) ? '2' : ''"
               >{{ item__1.frontmatter.title }}</li>
 
               <div v-for="item__2 in getPageChildren(item__1)">
@@ -57,13 +57,13 @@
                       ></i>
                       <i v-else class="fa fa-caret-right" aria-hidden="true"></i>
                       <span
-                        :class="{'algolia-lvl3' : $page.path.startsWith(item__2.path)}"
+                        :data-algolia-lvl="$page.path.startsWith(item__2.path) ? '3' : ''"
                       >{{ item__2.title }}</span>
                     </div>
                     <router-link v-else :to="item__2.path" @click.native="closeSidebar">
                       <a
                         class="no_arrow"
-                        :class="{'algolia-lvl3' : $page.path.startsWith(item__2.path)}"
+                        :data-algolia-lvl="$page.path.startsWith(item__2.path) ? '3' : ''"
                       >{{ item__2.title }}</a>
                     </router-link>
                   </div>
@@ -88,7 +88,7 @@
                         :title="item__3.title"
                         @click.native="$emit('closeSidebar')"
                       >
-                        <a class="no_arrow algolia-lvl4">{{ item__3.title }}</a>
+                        <a class="no_arrow" data-algolia-lvl="4">{{ item__3.title }}</a>
                       </router-link>
                     </li>
                     <li v-else>
