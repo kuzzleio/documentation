@@ -1,5 +1,5 @@
 const { fs, path } = require('@vuepress/shared-utils');
-const fixIndents = require('./fix-indents.js');
+const fixIndents = require('fix-indents');
 
 module.exports = function snippet(md, options = {}) {
   const root = options.root || process.cwd();
