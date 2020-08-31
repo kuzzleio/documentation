@@ -127,7 +127,7 @@ function generateSnippetRegex(snippetId) {
   }
 
   return new RegExp(
-    `^.*snippet:start${snippetId}.*$\\n((.|\\n)*?)^.*snippet:end.*$\\n`,
+    `^.*snippet:start${snippetId}.*$\\n((.|\\n)*?)^.*(snippet:end |snippet:end${snippetId}).*$\\n`,
     'gm'
   );
 }
