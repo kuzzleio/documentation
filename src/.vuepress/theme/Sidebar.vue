@@ -122,32 +122,33 @@ import {
   findRootNode,
   setItemLocalStorage,
   getItemLocalStorage,
-  getNodeByPath
+  getNodeByPath,
 } from '../util.js';
 import sdks from '../sdk.json';
 
 export default {
   components: {
-    TabsMobile
+    TabsMobile,
   },
   props: {
     sidebarOpen: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       openedSubmenu: '',
-      kuzzleMajor: '2'
+      kuzzleMajor: '2',
     };
   },
   computed: {
     algoliaLvl1() {
-      if (this.$route.path.match(/(^\/sdk\/\w+)/)) {
+      if (this.$route.path.match(/\/sdk\/\w+/)) {
         const splitedPath = this.$route.path.split('/');
         return this.sdkList.find(
-          el => el.version === splitedPath[3] && el.language === splitedPath[2]
+          (el) =>
+            el.version === splitedPath[3] && el.language === splitedPath[2]
         ).name;
       }
       return `Core ${this.kuzzleMajor}.x`;
@@ -160,7 +161,7 @@ export default {
     },
     sdkList() {
       return sdks[this.kuzzleMajor] || [];
-    }
+    },
   },
   methods: {
     setOpenedSubmenu(item__1, item__2) {
@@ -197,7 +198,7 @@ export default {
       const item3Id = this.getId([
         item__1.title,
         item__2.title,
-        childs[0].title
+        childs[0].title,
       ]);
       if (!document.getElementById(item3Id)) {
         return;
@@ -285,13 +286,13 @@ export default {
           }
         }
       };
-    }
+    },
   },
   mounted() {
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
     this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
-  }
+  },
 };
 </script>
 
