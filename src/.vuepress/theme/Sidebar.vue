@@ -144,7 +144,7 @@ export default {
   },
   computed: {
     algoliaLvl1() {
-      if (this.$route.path.match(/\/sdk\/\w+/)) {
+      if (this.$route.path.match(/\/sdk\/+/)) {
         const splitedPath = this.$route.path.split('/');
         return this.sdkList.find(
           (el) =>
