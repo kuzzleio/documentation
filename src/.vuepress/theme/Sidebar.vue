@@ -289,6 +289,9 @@ export default {
     },
   },
   mounted() {
+    console.log('regularPath', this.$page.regularPath);
+    console.log('path', this.$page.path);
+    console.log('site.base', this.$site.base);
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
     this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
