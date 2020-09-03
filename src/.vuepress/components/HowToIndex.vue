@@ -17,7 +17,7 @@ export default {
   name: 'HowToIndex',
   data() {
     return {
-      kuzzleMajor: '2'
+      kuzzleMajor: '2',
     };
   },
   mounted() {
@@ -25,12 +25,12 @@ export default {
   },
   computed: {
     howToListByCategories() {
-      return categorie => howToList[this.kuzzleMajor][0][categorie] || [];
+      return (categorie) => howToList[this.kuzzleMajor][categorie] || [];
     },
     categories() {
-      return Object.keys(howToList[this.kuzzleMajor][0]);
-    }
-  }
+      return Object.keys(howToList[this.kuzzleMajor]);
+    },
+  },
 };
 </script>
 

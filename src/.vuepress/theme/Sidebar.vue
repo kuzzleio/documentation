@@ -125,6 +125,8 @@ import {
   getNodeByPath,
 } from '../util.js';
 import sdks from '../sdk.json';
+import plugins from '../plugins.json';
+import howtos from '../howto.json';
 
 export default {
   components: {
@@ -160,11 +162,25 @@ export default {
       }
       // if it's a how-to page...
       if (this.$page.fullPath.match(/\/how-to\/\d+\//)) {
-        // Maybe we'll need this one day
+        const currentHowto = this.flattenedHowtoList.find((el) => {
+          return this.$page.fullPath.startsWith(el.link);
+        });
+        if (currentHowto) {
+          return currentHowto.name;
+        } else {
+          return 'Unknown How-to';
+        }
       }
       // if it's an official plugin page...
       if (this.$page.fullPath.match(/\/official-plugins\/[a-z\-]+\/\d+\//)) {
-        // Maybe we'll need this one day
+        const currentPlugin = this.pluginList.find((el) =>
+          this.$page.fullPath.startsWith(el.url)
+        );
+        if (currentPlugin) {
+          return currentPlugin.name;
+        } else {
+          return 'Unknown Plugin';
+        }
       }
       // Otherwise we're in the core documentation
       return `Core ${this.kuzzleMajor}.x`;
@@ -177,6 +193,21 @@ export default {
     },
     sdkList() {
       return sdks[this.kuzzleMajor] || [];
+    },
+    pluginList() {
+      return plugins[this.kuzzleMajor] || [];
+    },
+    howtoList() {
+      return howtos[this.kuzzleMajor] || [];
+    },
+    flattenedHowtoList() {
+      let flattenedHowtoList = [];
+      Object.keys(this.howtoList).forEach((category) => {
+        flattenedHowtoList = flattenedHowtoList.concat(
+          this.howtoList[category]
+        );
+      });
+      return flattenedHowtoList;
     },
   },
   methods: {

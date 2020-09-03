@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev src --no-clear-screen --no-cache",
+    "dev": "vuepress dev src --no-clear-screen",
     "doc-dev": "npm run dev",
     "build": "vuepress build src",
     "doc-build": "npm run build",
