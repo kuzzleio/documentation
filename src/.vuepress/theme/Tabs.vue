@@ -10,9 +10,9 @@
               <a
                 :href="link.path"
                 :class="{
-                  'md-tabs__link--active': $page.path.startsWith(link.path)
+                  'md-tabs__link--active': isLinkActive(link.path)
                 }"
-                :data-algolia-lvl="$page.path.startsWith(link.path) ? '0' : ''"
+                :data-algolia-lvl="isLinkActive(link.path) ? '0' : ''"
                 :title="link.label"
                 class="md-tabs__link"
               >{{ link.label }}</a>
@@ -33,13 +33,16 @@ export default {
   computed: {
     headerEntries() {
       return Object.entries(headerEntries[this.kuzzleMajor]);
-    }
+    },
   },
   methods: {
     generateLink(path) {
       return getValidLinkByRootPath(path, this.$site.pages);
-    }
-  }
+    },
+    isLinkActive(linkPath) {
+      return this.$page.fullPath.startsWith(linkPath);
+    },
+  },
 };
 </script>
 
