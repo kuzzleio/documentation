@@ -179,7 +179,7 @@ export default {
       return sdks[this.kuzzleMajor] || [];
     },
     fullPath() {
-      return `${this.$site.base} + ${this.$page.path}`.replace('//', '/');
+      return `${this.$site.base}${this.$page.path}`.replace('//', '/');
     },
   },
   methods: {
@@ -311,7 +311,9 @@ export default {
     console.log('regularPath', this.$page.regularPath);
     console.log('path', this.$page.path);
     console.log('site.base', this.$site.base);
-    console.log('fullPath', this.fullPath);
+    console.log('fullPath (local)', this.fullPath);
+    console.log('fullPath (global)', this.$page.fullPath);
+
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
     this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
