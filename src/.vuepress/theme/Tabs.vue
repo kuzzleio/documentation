@@ -40,6 +40,9 @@ export default {
       return getValidLinkByRootPath(path, this.$site.pages);
     },
     isLinkActive(linkPath) {
+      if (!this.$page.fullPath) {
+        return false;
+      }
       return this.$page.fullPath.startsWith(linkPath);
     },
   },
