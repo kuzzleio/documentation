@@ -145,8 +145,8 @@ export default {
   computed: {
     algoliaLvl1() {
       // if it's a SDK-reference page...
-      if (this.$route.path.match(/\/sdk\/[a-z\-]+\/\d+\//)) {
-        const splitPath = this.$route.path.split('/');
+      if (this.fullPath.match(/\/sdk\/[a-z\-]+\/\d+\//)) {
+        const splitPath = this.fullPath.split('/');
         // ... find out which one based on the URL path
         const currentSdk = this.sdkList.find(
           (el) => el.version === splitPath[3] && el.language === splitPath[2]
@@ -159,11 +159,11 @@ export default {
         }
       }
       // if it's a how-to page...
-      if (this.$route.path.match(/\/how-to\/\d+\//)) {
+      if (this.fullPath.match(/\/how-to\/\d+\//)) {
         // Maybe we'll need this one day
       }
       // if it's an official plugin page...
-      if (this.$route.path.match(/\/official-plugins\/[a-z\-]+\/\d+\//)) {
+      if (this.fullPath.match(/\/official-plugins\/[a-z\-]+\/\d+\//)) {
         // Maybe we'll need this one day
       }
       // Otherwise we're in the core documentation
@@ -177,6 +177,9 @@ export default {
     },
     sdkList() {
       return sdks[this.kuzzleMajor] || [];
+    },
+    fullPath() {
+      return `${this.$site.base} + ${this.$page.path}`.replace('//', '/');
     },
   },
   methods: {
