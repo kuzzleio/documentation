@@ -144,13 +144,29 @@ export default {
   },
   computed: {
     algoliaLvl1() {
-      if (this.$route.path.match(/\/sdk\/+/)) {
-        const splitedPath = this.$route.path.split('/');
-        return this.sdkList.find(
-          (el) =>
-            el.version === splitedPath[3] && el.language === splitedPath[2]
-        ).name;
+      // if it's a SDK-reference page...
+      if (this.$route.path.match(/\/sdk\/[a-z\-]+\/\d+\//)) {
+        const splitPath = this.$route.path.split('/');
+        // ... find out which one based on the URL path
+        const currentSdk = this.sdkList.find(
+          (el) => el.version === splitPath[3] && el.language === splitPath[2]
+        );
+        if (currentSdk) {
+          // ... and return its name from the list
+          return currentSdk.name;
+        } else {
+          return 'Unknown SDK';
+        }
       }
+      // if it's a how-to page...
+      if (this.$route.path.match(/\/how-to\/\d+\//)) {
+        // Maybe we'll need this one day
+      }
+      // if it's an official plugin page...
+      if (this.$route.path.match(/\/official-plugins\/[a-z\-]+\/\d+\//)) {
+        // Maybe we'll need this one day
+      }
+      // Otherwise we're in the core documentation
       return `Core ${this.kuzzleMajor}.x`;
     },
     sdkOrApiPage() {
