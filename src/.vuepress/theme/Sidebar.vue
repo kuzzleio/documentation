@@ -336,12 +336,6 @@ export default {
     },
   },
   mounted() {
-    console.log('regularPath', this.$page.regularPath);
-    console.log('path', this.$page.path);
-    console.log('site.base', this.$site.base);
-    console.log('fullPath (local)', this.fullPath);
-    console.log('fullPath (global)', this.$page.fullPath);
-
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
     this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
