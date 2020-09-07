@@ -202,14 +202,14 @@ jobs:
     # ----------------------------
     # Plugin S3 v1
     # ----------------------------
-      - <<: *doc-deploy-base
+    - <<: *doc-deploy-base
       <<: *doc-deploy-content
       name: plugin-s3-1
     
     # ----------------------------
     # Plugin S3 v2
     # ----------------------------
-      - <<: *doc-deploy-base
+    - <<: *doc-deploy-base
       <<: *doc-deploy-content
       name: plugin-s3-2
 
