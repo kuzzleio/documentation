@@ -6,7 +6,7 @@
   deploy_path: /how-to/1/
 
 - url: https://github.com/kuzzleio/kuzzle-how-to.git
-  doc_version: 1
+  doc_version: 2
   stable: master
   dev: develop
   name: kuzzle-how-to-2
