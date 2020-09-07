@@ -6,7 +6,7 @@
   deploy_path: /how-to/1/
 
 - url: https://github.com/kuzzleio/kuzzle-how-to.git
-  doc_version: 1
+  doc_version: 2
   stable: master
   dev: develop
   name: kuzzle-how-to-2
@@ -126,12 +126,12 @@
   name: sdk-java-3
   deploy_path: /sdk/java/3/
 
-- url: https://github.com/kuzzleio/sdk-jvm.git
-  doc_version: 1
-  stable: master
-  dev: 1-dev
-  name: sdk-jvm-1
-  deploy_path: /sdk/jvm/1
+# - url: https://github.com/kuzzleio/sdk-jvm.git
+#   doc_version: 1
+#   stable: master
+#   dev: 1-dev
+#   name: sdk-jvm-1
+#   deploy_path: /sdk/jvm/1
 
 - url: https://github.com/kuzzleio/kuzzle.git
   doc_version: 1
@@ -153,6 +153,7 @@
   dev: 3-dev
   name: sdk-android-3
   deploy_path: /sdk/android/3/
+
 - url: https://github.com/kuzzleio/sdk-dart.git
   doc_version: 2
   stable: master
