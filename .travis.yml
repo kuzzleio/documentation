@@ -213,11 +213,17 @@ jobs:
       <<: *doc-deploy-content
       name: plugin-s3-2
 
-    # Kuzzle How To
+    # Kuzzle How To v1
     # ----------------------------
     - <<: *doc-deploy-base
       <<: *doc-deploy-content
-      name: kuzzle-how-to
+      name: kuzzle-how-to-1
+
+    # Kuzzle How To v2
+    # ----------------------------
+    - <<: *doc-deploy-base
+      <<: *doc-deploy-content
+      name: kuzzle-how-to-2
 
     # ----------------------------
     # Plugin Multi Tenancy v1
