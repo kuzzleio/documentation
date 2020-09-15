@@ -137,77 +137,39 @@ export default {
       type: Boolean,
       default: false,
     },
+    kuzzleMajor: {
+      type: Number,
+      default: null,
+    },
+    sdkList: {
+      type: Array,
+      required: true,
+    },
   },
   data() {
     return {
       openedSubmenu: '',
-      kuzzleMajor: '2',
     };
   },
   computed: {
     algoliaLvl1() {
-      // if it's a SDK-reference page...
-      if (this.$page.fullPath.match(/\/sdk\/[a-z\-]+\/\d+\//)) {
-        const splitPath = this.$page.fullPath.split('/');
-        // ... find out which one based on the URL path
-        const currentSdk = this.sdkList.find(
-          (el) => el.version === splitPath[3] && el.language === splitPath[2]
-        );
-        if (currentSdk) {
-          // ... and return its name from the list
-          return currentSdk.name;
-        } else {
-          return 'Unknown SDK';
-        }
+      if (!this.$page.currentSection) {
+        return 'Unknown page';
       }
-      // if it's a how-to page...
-      if (this.$page.fullPath.match(/\/how-to\/\d+\//)) {
-        const currentHowto = this.flattenedHowtoList.find((el) => {
-          return this.$page.fullPath.startsWith(el.link);
-        });
-        if (currentHowto) {
-          return currentHowto.name;
-        } else {
-          return 'Unknown How-to';
-        }
-      }
-      // if it's an official plugin page...
-      if (this.$page.fullPath.match(/\/official-plugins\/[a-z\-]+\/\d+\//)) {
-        const currentPlugin = this.pluginList.find((el) =>
-          this.$page.fullPath.startsWith(el.url)
-        );
-        if (currentPlugin) {
-          return currentPlugin.name;
-        } else {
-          return 'Unknown Plugin';
-        }
-      }
-      // Otherwise we're in the core documentation
-      return `Core ${this.kuzzleMajor}.x`;
+      return `${this.$page.name} v${this.$page.version}.x`;
     },
     sdkOrApiPage() {
-      return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
+      if (!this.$page.currentSection) {
+        return false;
+      }
+
+      return (
+        this.$page.currentSection.section === 'sdk' ||
+        this.$page.currentSection.subsection === 'api'
+      );
     },
     root() {
       return findRootNode(this.$page, this.$site.pages);
-    },
-    sdkList() {
-      return sdks[this.kuzzleMajor] || [];
-    },
-    pluginList() {
-      return plugins[this.kuzzleMajor] || [];
-    },
-    howtoList() {
-      return howtos[this.kuzzleMajor] || [];
-    },
-    flattenedHowtoList() {
-      let flattenedHowtoList = [];
-      Object.keys(this.howtoList).forEach((category) => {
-        flattenedHowtoList = flattenedHowtoList.concat(
-          this.howtoList[category]
-        );
-      });
-      return flattenedHowtoList;
     },
   },
   methods: {
@@ -338,7 +300,6 @@ export default {
   mounted() {
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
   },
 };
 </script>

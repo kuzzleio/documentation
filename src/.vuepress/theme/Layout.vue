@@ -17,6 +17,7 @@
           <Sidebar
             ref="sidebar"
             :kuzzleMajor="kuzzleMajor"
+            :sdkList="sdkList"
             :sidebarOpen="sidebarOpen"
             @closeSidebar="closeSidebar"
           />
@@ -134,7 +135,7 @@ export default {
   },
   methods: {
     changeKuzzleMajor(newMajor) {
-      if (!this.currentSection) {
+      if (!this.$page.currentSection) {
         return this.$router.push(`/?kuzzleMajor=${newMajor}`);
       }
       // Find the possible candidates of the same (sub)section
@@ -232,6 +233,9 @@ export default {
       this.$refs.container.style = `padding-top: ${padding}px;`;
     },
     computeSidebarHeight() {
+      if (!this.$refs.sidebar) {
+        return;
+      }
       const sidebarTop = window
         .getComputedStyle(this.$refs.sidebar.$el)
         .top.replace('px', '');
