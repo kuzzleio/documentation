@@ -17,11 +17,7 @@
     <ul :class="
         `selector-list selector-list-${showList ? 'opened' : 'closed'}`
       ">
-      <li
-        v-for="item in filteredItems"
-        :key="`${item.section}.${item.subsection}.${item.version}`"
-        @click="toggleList()"
-      >
+      <li v-for="item in filteredItems" :key="`${item.name}.${item.version}`" @click="toggleList()">
         <a
           :class="
             `selector-list-item-link ${item.subsection === 'api' ? 'api' : ''}`
