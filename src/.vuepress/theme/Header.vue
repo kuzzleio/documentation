@@ -29,12 +29,9 @@
 
           <!-- Header title -->
           <div class="md-flex__cell md-flex__cell--stretch">
-            <div
-              class="md-flex__ellipsis md-header-nav__title"
-              data-md-component="title"
-            >
+            <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
               <span class="md-header-nav__topic">
-                <MajorVersionSelector @change="onKuzzleMajorChanged" />
+                <MajorVersionSelector :kuzzle-major="kuzzleMajor" @change="onKuzzleMajorChanged" />
               </span>
             </div>
           </div>
@@ -43,10 +40,7 @@
           </div>
           <!-- Button to open search dialogue -->
           <div class="md-flex__cell md-flex__cell--shrink">
-            <label
-              class="md-icon md-icon--search md-header-nav__button"
-              for="search"
-            ></label>
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
             <!-- Search interface -->
             <ClientOnly>
               <Search
@@ -83,30 +77,30 @@ export default {
   components: {
     Search,
     Tabs,
-    MajorVersionSelector
+    MajorVersionSelector,
   },
   name: 'Header',
-  props: ['changeKuzzleMajor'],
+  props: {
+    kuzzleMajor: {
+      type: Number,
+      default: null,
+    },
+  },
   data() {
     return {
       algoliaAppId: ALGOLIA_APP_ID,
       algoliaSearchKey: ALGOLIA_SEARCH_KEY,
       algoliaIndexName: ALGOLIA_INDEX,
-      kuzzleMajor: '2'
     };
-  },
-  mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
   },
   methods: {
     toggleSearchTrigger(toggle) {
       this.$refs.searchTrigger.checked = toggle;
     },
     onKuzzleMajorChanged(version) {
-      this.kuzzleMajor = version;
       this.$emit('kuzzle-major-changed', version);
-    }
-  }
+    },
+  },
 };
 </script>
 

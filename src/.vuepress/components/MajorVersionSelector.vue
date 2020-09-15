@@ -1,14 +1,6 @@
 <template>
-  <div
-    class="selector selector-majorVersion"
-    ref="selector"
-    v-if="items.length"
-  >
-    <div
-      class="selector-selectedItem"
-      @click="toggleList()"
-      v-if="selectedItem"
-    >
+  <div class="selector selector-majorVersion" ref="selector" v-if="items.length">
+    <div class="selector-selectedItem" @click="toggleList()" v-if="selectedItem">
       <div class="selector-selectedItem-name">
         <span class="selector-selectedItem-name-wrapper">
           {{ selectedItem.text }}
@@ -16,17 +8,10 @@
         </span>
       </div>
     </div>
-    <ul
-      :class="
-        `selector-list selector-list-${isListShowed ? 'opened' : 'closed'}`
-      "
-    >
-      <li
-        v-for="item in items"
-        :key="item.value"
-        class="selector-list-item"
-        @click="toggleList()"
-      >
+    <ul :class="
+        `selector-list selector-list-${showList ? 'opened' : 'closed'}`
+      ">
+      <li v-for="item in items" :key="item.value" class="selector-list-item" @click="toggleList()">
         <a class="selector-list-item-link" href="#" @click="onItemClick(item)">
           <span class="selector-list-item-name">{{ item.text }}</span>
         </a>
@@ -40,42 +25,44 @@ import { getItemLocalStorage, log } from '../util';
 
 export default {
   name: 'MajorVersionSelector',
+  props: {
+    kuzzleMajor: {
+      type: Number,
+    },
+  },
   data() {
     return {
       items: [
         { value: 1, text: 'Kuzzle v1' },
-        { value: 2, text: 'Kuzzle v2' }
+        { value: 2, text: 'Kuzzle v2' },
       ],
-      selectedItem: {},
-      isListShowed: false,
-      kuzzleMajor: 2
+      showList: false,
     };
+  },
+  computed: {
+    selectedItem() {
+      return this.items.find((item) => item.value === this.kuzzleMajor);
+    },
   },
   methods: {
     toggleList() {
-      this.isListShowed = !this.isListShowed;
+      this.showList = !this.showList;
     },
-    onDocumentClick(e) {
+    onClickOutside(e) {
       const el = this.$refs.selector,
         target = e.target;
 
       if (el && el !== target && !el.contains(target)) {
-        this.isListShowed = false;
+        this.showList = false;
       }
     },
     onItemClick(item) {
-      this.selectedItem = item;
       this.$emit('change', item.value);
-    }
+    },
   },
   mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || 2;
-    this.selectedItem = this.items.find(
-      item => item.value === this.kuzzleMajor
-    );
-
-    document.addEventListener('click', this.onDocumentClick);
-  }
+    document.addEventListener('click', this.onClickOutside);
+  },
 };
 </script>
 

@@ -1,7 +1,9 @@
+const values = require('lodash/values')
 module.exports = (opts, ctx) => ({
   name: 'PageAttributes',
 
   extendPageData($page) {
+    const { sections } = opts;
     const {
       _filePath, // file's absolute path
       _computed, // access the client global computed mixins at build time, e.g _computed.$localePath.
@@ -14,5 +16,7 @@ module.exports = (opts, ctx) => ({
     } = $page;
 
     $page.fullPath = `${_computed.$site.base}${pagePath}`.replace('//', '/')
+    const sectionPath = Object.keys(sections).find(path => $page.fullPath.startsWith(path))
+    $page.currentSection = sections[sectionPath]
   }
 })

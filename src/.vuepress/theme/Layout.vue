@@ -1,15 +1,12 @@
 <template>
   <div class="md-layout">
     <div class="overlayLoading" v-if="isLoading" />
-    <div
-      class="overlay"
-      :class="{ hidden: !sidebarOpen }"
-      @click="closeSidebar"
-    ></div>
+    <div class="overlay" :class="{ hidden: !sidebarOpen }" @click="closeSidebar"></div>
     <Header
       ref="header"
-      @openSidebar="openSidebar"
+      :kuzzle-major="kuzzleMajor"
       @kuzzle-major-changed="changeKuzzleMajor"
+      @openSidebar="openSidebar"
     />
 
     <div ref="container" class="md-container">
@@ -19,16 +16,12 @@
           <!-- Main navigation -->
           <Sidebar
             ref="sidebar"
+            :kuzzleMajor="kuzzleMajor"
             :sidebarOpen="sidebarOpen"
             @closeSidebar="closeSidebar"
-            :kuzzleMajor="kuzzleMajor"
           />
           <!-- Table of contents -->
-          <div
-            ref="toc"
-            class="md-sidebar md-sidebar--secondary"
-            data-md-component="toc"
-          >
+          <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
                 <div v-if="sdkOrApiPage" class="selector-container">
@@ -42,7 +35,7 @@
 
           <div class="md-content">
             <div>
-              <WarningBanner v-if="isDeprecatedBannerShowed">
+              <WarningBanner v-if="showDeprecatedBanner">
                 This SDK has been deprecated because of stability issues. It is not
                 advised to use it in a production environment.
               </WarningBanner>
@@ -66,12 +59,14 @@ import WarningBanner from '../components/WarningBanner.vue';
 import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
 import Footer from './Footer.vue';
-import sdks from '../sdk.json';
+
+import transform from 'lodash/transform';
+import sections from '../sections.json';
 
 const {
   getFirstValidChild,
   setItemLocalStorage,
-  getItemLocalStorage
+  getItemLocalStorage,
 } = require('../util.js');
 
 export default {
@@ -80,49 +75,115 @@ export default {
     Sidebar,
     TOC,
     WarningBanner,
-    Footer
+    Footer,
   },
   data() {
     return {
       sidebarOpen: false,
-      kuzzleMajor: '2',
-      isLoading: true
+      isLoading: true,
     };
   },
   computed: {
-    sdkOrApiPage() {
-      const sdkOrApiRegExp = new RegExp(/(^\/sdk\/|\/api\/)/);
-      return (
-        this.$route.path.match(sdkOrApiRegExp) ||
-        this.$site.base.match(sdkOrApiRegExp)
-      );
-    },
-    sdkList() {
-      return sdks[this.kuzzleMajor] || [];
-    },
-    isDeprecatedBannerShowed() {
-      if (this.sdkOrApiPage) {
-        const splitedPath = this.$site.base.split('/');
-        const sdk = this.sdkList.find(
-          el => el.language === splitedPath[2] && el.version === splitedPath[3]
-        );
-
-        if (sdk) {
-          return sdk.deprecated || false;
+    kuzzleMajor() {
+      if (!this.$page.currentSection) {
+        if (!this.$route.query.kuzzleMajor) {
+          return 2;
+        } else {
+          return parseInt(this.$route.query.kuzzleMajor);
         }
       }
 
-      return false;
+      return this.$page.currentSection.kuzzleMajor;
+    },
+    sdkOrApiPage() {
+      if (!this.$page.currentSection) {
+        return false;
+      }
+
+      return (
+        this.$page.currentSection.section === 'sdk' ||
+        this.$page.currentSection.subsection === 'api'
+      );
+    },
+    sdkList() {
+      return this.sectionList.filter(
+        (s) =>
+          s.kuzzleMajor === this.kuzzleMajor &&
+          (s.section === 'sdk' || s.subsection === 'api')
+      );
+    },
+    sections() {
+      return sections;
+    },
+    sectionList() {
+      return transform(
+        this.sections,
+        (result, value, key) => {
+          result.push({ ...value, path: key });
+        },
+        []
+      );
+    },
+    showDeprecatedBanner() {
+      if (!this.$page.currentSection || !this.$page.currentSection.deprecated) {
+        return false;
+      }
+
+      return this.$page.currentSection.deprecated;
     },
   },
   methods: {
-    changeKuzzleMajor(kuzzleMajor) {
-      this.kuzzleMajor = kuzzleMajor;
-      setItemLocalStorage('kuzzleMajor', this.kuzzleMajor);
-      // We can't use the Vue router to push the "/" route because depending on
-      // the sub-application (kuzzle, sdj-js, etc), the root path will change
-      // ("/core/2", "/sdk/js/7", etc)
-      document.location = '/';
+    changeKuzzleMajor(newMajor) {
+      if (!this.currentSection) {
+        return this.$router.push(`/?kuzzleMajor=${newMajor}`);
+      }
+      // Find the possible candidates of the same (sub)section
+      // that correspond to the new Kuzzle Major
+      const candidates = this.sectionList.filter((s) => {
+        if (s.kuzzleMajor !== newMajor) {
+          return false;
+        }
+
+        if (s.section !== this.$page.currentSection.section) {
+          return false;
+        }
+
+        if (
+          this.$page.currentSection.subsection &&
+          this.$page.currentSection.subsection !== s.subsection
+        ) {
+          return false;
+        }
+
+        if (this.$page.currentSection.name !== s.name) {
+          return false;
+        }
+
+        return true;
+      });
+
+      // If there's no candidate, just redirect to home
+      if (!candidates || candidates.length === 0) {
+        return this.$router.push(`/?kuzzleMajor=${newMajor}`);
+      }
+
+      // If there's one candidate, redirect to its index page
+      if (candidates.length === 1) {
+        return this.$router.push(candidates[0].path);
+      }
+
+      // if there's many candidate, choose the one with the
+      // highest version number
+      const hypestCandidate = candidates.reduce((acc, curr) => {
+        if (!curr.version || curr.version < acc.version) {
+          return acc;
+        }
+        if (curr.version >= acc.version) {
+          return curr;
+        }
+      }, candidates[0]);
+
+      return this.$router.push(hypestCandidate.path);
     },
     openSidebar() {
       this.sidebarOpen = true;
@@ -151,7 +212,7 @@ export default {
       }, 2000).toString();
 
       this.$ga('send', 'event', 'snippet', 'copied', 'label', 1, {
-        path: this.$route.path
+        path: this.$route.path,
       });
     },
     computeContentHeight() {
@@ -210,7 +271,7 @@ export default {
 
       this.$refs.sidebar.$el.style = `height: ${sidebarHeight}px`;
       this.$refs.toc.style = `height: ${sidebarHeight}px`;
-    }
+    },
   },
   mounted() {
     document.onreadystatechange = () => {
@@ -225,9 +286,9 @@ export default {
 
     // TODO condition isSupported()
     const copy = new Clipboard('.md-clipboard', {
-      target: trigger => {
+      target: (trigger) => {
         return trigger.parentElement.nextElementSibling;
-      }
+      },
     });
 
     copy.on('success', this.onCodeCopied);
@@ -238,8 +299,8 @@ export default {
 
     this.computeContentHeight();
 
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
-  }
+    // this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
+  },
 };
 </script>
 
