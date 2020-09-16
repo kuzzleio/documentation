@@ -264,13 +264,7 @@ export default {
 
     copy.on('success', this.onCodeCopied);
 
-    // if (this.$page.frontmatter.type !== 'page') {
-    //   this.$router.replace(getFirstValidChild(this.$page, this.$site.pages));
-    // }
-
     this.computeContentHeight();
-
-    // this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
   },
 };
 </script>

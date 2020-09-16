@@ -3,43 +3,89 @@
     <div v-if="$route.path.match('sdk-reference')" class="selector-container">
       <SDKSelector :items="sdkList" :kuzzleMajor="kuzzleMajor" />
     </div>
-    <div v-for="([part, links]) of headerEntries">
+    <div>
       <a
-        v-for="link of links"
-        :href="link.path"
-        :title="link.label"
+        :href="`/core/${kuzzleMajor}/guides/`"
+        title="Guides"
         class="md-source"
         data-md-state="done"
         @click="$emit('closeSidebar')"
       >
-        <div class="md-source__repository">{{ link.label }}</div>
+        <div class="md-source__repository">Guides</div>
+      </a>
+    </div>
+    <div>
+      <a
+        :href="`/core/${kuzzleMajor}/api/`"
+        title="API"
+        class="md-source"
+        data-md-state="done"
+        @click="$emit('closeSidebar')"
+      >
+        <div class="md-source__repository">API</div>
+      </a>
+    </div>
+    <div>
+      <a
+        :href="`/sdk/?kuzzleMajor=${kuzzleMajor}`"
+        title="SDK"
+        class="md-source"
+        data-md-state="done"
+        @click="$emit('closeSidebar')"
+      >
+        <div class="md-source__repository">SDK</div>
+      </a>
+    </div>
+    <div>
+      <a
+        :href="`/official-plugins/?kuzzleMajor=${kuzzleMajor}`"
+        title="Official Plugins"
+        class="md-source"
+        data-md-state="done"
+        @click="$emit('closeSidebar')"
+      >
+        <div class="md-source__repository">Official Plugins</div>
+      </a>
+    </div>
+    <div>
+      <a
+        :href="`/how-to/?kuzzleMajor=${kuzzleMajor}`"
+        title="How-to"
+        class="md-source"
+        data-md-state="done"
+        @click="$emit('closeSidebar')"
+      >
+        <div class="md-source__repository">How-to</div>
+      </a>
+    </div>
+    <div>
+      <a
+        :href="`/core/${kuzzleMajor}/plugins/`"
+        title="Write Plugins"
+        class="md-source"
+        data-md-state="done"
+        @click="$emit('closeSidebar')"
+      >
+        <div class="md-source__repository">Write Plugins</div>
+      </a>
+    </div>
+    <div>
+      <a
+        :href="`/core/${kuzzleMajor}/protocols/`"
+        title="Write Protocols"
+        class="md-source"
+        data-md-state="done"
+        @click="$emit('closeSidebar')"
+      >
+        <div class="md-source__repository">Write Protocols</div>
       </a>
     </div>
   </div>
 </template>
 
 <script>
-import { getValidLinkByRootPath } from '../util.js';
-import sdks from '../sdk.json';
-import headerEntriesJson from '../header-entries.json';
-
-const { getItemLocalStorage } = require('../util.js');
-
 export default {
   props: ['kuzzleMajor'],
-  computed: {
-    sdkList() {
-      return sdks[this.kuzzleMajor] || [];
-    },
-    headerEntries() {
-      return Object.entries(headerEntriesJson[this.kuzzleMajor]);
-    }
-  },
-  methods: {
-    generateLink(path) {
-      return getValidLinkByRootPath(path, this.$site.pages);
-    }
-  }
 };
 </script>
 
