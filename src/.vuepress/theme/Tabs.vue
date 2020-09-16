@@ -12,7 +12,6 @@
                 :class="{
                   'md-tabs__link--active': isLinkActive(`/core/${kuzzleMajor}/guides/`)
                 }"
-                :data-algolia-lvl="isLinkActive(`/core/${kuzzleMajor}/guides/`) ? '0' : ''"
                 title="Guides"
                 class="md-tabs__link"
               >Guides</a>
@@ -23,7 +22,6 @@
                 :class="{
                   'md-tabs__link--active': isLinkActive(`/core/${kuzzleMajor}/api/`)
                 }"
-                :data-algolia-lvl="isLinkActive(`/core/${kuzzleMajor}/api/`) ? '0' : ''"
                 title="API"
                 class="md-tabs__link"
               >API</a>
@@ -32,9 +30,8 @@
               <a
                 :href="`/sdk/?kuzzleMajor=${kuzzleMajor}`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/sdk/?kuzzleMajor=${kuzzleMajor}`)
+                  'md-tabs__link--active': isLinkActive(`/sdk/`)
                 }"
-                :data-algolia-lvl="isLinkActive(`/sdk/?kuzzleMajor=${kuzzleMajor}`) ? '0' : ''"
                 title="SDK"
                 class="md-tabs__link"
               >SDK</a>
@@ -43,9 +40,8 @@
               <a
                 :href="`/official-plugins/?kuzzleMajor=${kuzzleMajor}`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/official-plugins/?kuzzleMajor=${kuzzleMajor}`)
+                  'md-tabs__link--active': isLinkActive(`/official-plugins/`)
                 }"
-                :data-algolia-lvl="isLinkActive(`/official-plugins/?kuzzleMajor=${kuzzleMajor}`) ? '0' : ''"
                 title="Plugins"
                 class="md-tabs__link"
               >Plugins</a>
@@ -54,9 +50,8 @@
               <a
                 :href="`/how-to/?kuzzleMajor=${kuzzleMajor}`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/how-to/?kuzzleMajor=${kuzzleMajor}`)
+                  'md-tabs__link--active': isLinkActive(`/how-to/`)
                 }"
-                :data-algolia-lvl="isLinkActive(`/how-to/?kuzzleMajor=${kuzzleMajor}`) ? '0' : ''"
                 title="How To"
                 class="md-tabs__link"
               >How To</a>
@@ -72,7 +67,6 @@
                 :class="{
                   'md-tabs__link--active': isLinkActive(`/core/${kuzzleMajor}/plugins/`)
                 }"
-                :data-algolia-lvl="isLinkActive(`/core/${kuzzleMajor}/plugins/`) ? '0' : ''"
                 title="Write Plugins"
                 class="md-tabs__link"
               >Write Plugins</a>
@@ -83,7 +77,6 @@
                 :class="{
                   'md-tabs__link--active': isLinkActive(`/core/${kuzzleMajor}/protocols/`)
                 }"
-                :data-algolia-lvl="isLinkActive(`/core/${kuzzleMajor}/protocols/`) ? '0' : ''"
                 title="Write Protocols"
                 class="md-tabs__link"
               >Write Protocols</a>
@@ -97,7 +90,12 @@
 
 <script>
 export default {
-  props: ['kuzzleMajor'],
+  props: {
+    kuzzleMajor: {
+      type: Number,
+      default: 2,
+    },
+  },
   methods: {
     isLinkActive(linkPath) {
       if (!this.$page.fullPath) {

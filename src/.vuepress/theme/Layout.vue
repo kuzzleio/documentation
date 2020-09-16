@@ -2,12 +2,10 @@
   <div class="md-layout">
     <div class="overlayLoading" v-if="isLoading" />
     <div class="overlay" :class="{ hidden: !sidebarOpen }" @click="closeSidebar"></div>
-    <Header
-      ref="header"
-      :kuzzle-major="kuzzleMajor"
-      @kuzzle-major-changed="changeKuzzleMajor"
-      @openSidebar="openSidebar"
-    />
+    <Header ref="header" :kuzzle-major="kuzzleMajor" @openSidebar="openSidebar" />
+    <!-- Algolia Levels -->
+    <div data-algolia-lvl="0" style="display: none">{{ algoliaLevel[0] }}</div>
+    <div data-algolia-lvl="1" style="display: none">{{ algoliaLevel[1] }}</div>
 
     <div ref="container" class="md-container">
       <!-- Main container -->
@@ -61,9 +59,6 @@ import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
 import Footer from './Footer.vue';
 
-import transform from 'lodash/transform';
-import sections from '../sections.json';
-
 const {
   getFirstValidChild,
   setItemLocalStorage,
@@ -86,15 +81,16 @@ export default {
   },
   computed: {
     kuzzleMajor() {
-      if (!this.$page.currentSection) {
+      const currentSection = this.$page.currentSection;
+      if (!currentSection) {
         if (!this.$route.query.kuzzleMajor) {
-          return 2;
+          return 2; // TODO infer this from window.location.pathname when on 404 (no $page)
         } else {
           return parseInt(this.$route.query.kuzzleMajor);
         }
       }
 
-      return this.$page.currentSection.kuzzleMajor;
+      return currentSection.kuzzleMajor;
     },
     sdkOrApiPage() {
       if (!this.$page.currentSection) {
@@ -107,22 +103,10 @@ export default {
       );
     },
     sdkList() {
-      return this.sectionList.filter(
+      return this.$page.sectionList.filter(
         (s) =>
           s.kuzzleMajor === this.kuzzleMajor &&
           (s.section === 'sdk' || s.subsection === 'api')
-      );
-    },
-    sections() {
-      return sections;
-    },
-    sectionList() {
-      return transform(
-        this.sections,
-        (result, value, key) => {
-          result.push({ ...value, path: key });
-        },
-        []
       );
     },
     showDeprecatedBanner() {
@@ -132,60 +116,43 @@ export default {
 
       return this.$page.currentSection.deprecated;
     },
+    algoliaLevel() {
+      if (!this.$page.currentSection) {
+        return ['Kuzzle', 'Documentation'];
+      }
+
+      if (this.$page.currentSection.section === 'sdk') {
+        return [
+          'SDK',
+          `SDK ${this.$page.currentSection.name} v${this.$page.currentSection.version}.x`,
+        ];
+      }
+
+      if (this.$page.currentSection.section === 'how-to') {
+        return [
+          `How-To (Kuzzle v${this.$page.currentSection.kuzzleMajor}.x)`,
+          `${this.$page.currentSection.name}`,
+        ];
+      }
+
+      if (this.$page.currentSection.section === 'official-plugins') {
+        return [
+          `Official Plugins (Kuzzle v${this.$page.currentSection.kuzzleMajor}.x)`,
+          `${this.$page.currentSection.name} v${this.$page.currentSection.version}.x`,
+        ];
+      }
+
+      return [
+        'Core',
+        `${this.$page.currentSection.name} v${
+          this.$page.currentSection.version
+            ? this.$page.currentSection.version
+            : this.$page.currentSection.kuzzleMajor
+        }.x`,
+      ];
+    },
   },
   methods: {
-    changeKuzzleMajor(newMajor) {
-      if (!this.$page.currentSection) {
-        return this.$router.push(`/?kuzzleMajor=${newMajor}`);
-      }
-      // Find the possible candidates of the same (sub)section
-      // that correspond to the new Kuzzle Major
-      const candidates = this.sectionList.filter((s) => {
-        if (s.kuzzleMajor !== newMajor) {
-          return false;
-        }
-
-        if (s.section !== this.$page.currentSection.section) {
-          return false;
-        }
-
-        if (
-          this.$page.currentSection.subsection &&
-          this.$page.currentSection.subsection !== s.subsection
-        ) {
-          return false;
-        }
-
-        if (this.$page.currentSection.name !== s.name) {
-          return false;
-        }
-
-        return true;
-      });
-
-      // If there's no candidate, just redirect to home
-      if (!candidates || candidates.length === 0) {
-        return this.$router.push(`/?kuzzleMajor=${newMajor}`);
-      }
-
-      // If there's one candidate, redirect to its index page
-      if (candidates.length === 1) {
-        return this.$router.push(candidates[0].path);
-      }
-
-      // if there's many candidate, choose the one with the
-      // highest version number
-      const hypestCandidate = candidates.reduce((acc, curr) => {
-        if (!curr.version || curr.version < acc.version) {
-          return acc;
-        }
-        if (curr.version >= acc.version) {
-          return curr;
-        }
-      }, candidates[0]);
-
-      return this.$router.push(hypestCandidate.path);
-    },
     openSidebar() {
       this.sidebarOpen = true;
     },
@@ -297,9 +264,9 @@ export default {
 
     copy.on('success', this.onCodeCopied);
 
-    if (this.$page.frontmatter.type !== 'page') {
-      this.$router.replace(getFirstValidChild(this.$page, this.$site.pages));
-    }
+    // if (this.$page.frontmatter.type !== 'page') {
+    //   this.$router.replace(getFirstValidChild(this.$page, this.$site.pages));
+    // }
 
     this.computeContentHeight();
 

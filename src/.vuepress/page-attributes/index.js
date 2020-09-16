@@ -1,4 +1,5 @@
-const values = require('lodash/values')
+const transform = require('lodash/transform');
+
 module.exports = (opts, ctx) => ({
   name: 'PageAttributes',
 
@@ -16,7 +17,14 @@ module.exports = (opts, ctx) => ({
     } = $page;
 
     $page.fullPath = `${_computed.$site.base}${pagePath}`.replace('//', '/')
-    const sectionPath = Object.keys(sections).find(path => $page.fullPath.startsWith(path))
-    $page.currentSection = sections[sectionPath]
+    $page.sectionsByPath = sections
+    $page.sectionList = transform(
+      sections,
+      (result, value, key) => {
+        result.push({ ...value, path: key });
+      },
+      []
+    );
+    $page.currentSection = $page.sectionList.find(s => $page.fullPath.startsWith(s.path))
   }
 })

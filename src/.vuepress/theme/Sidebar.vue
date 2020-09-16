@@ -4,7 +4,6 @@
     :class="{ 'md-sidebar--open': sidebarOpen }"
     data-md-component="navigation"
   >
-    <div data-algolia-lvl="1" class="algolia-lvl1">{{ algoliaLvl1 }}</div>
     <div class="md-sidebar__scrollwrap" ref="scrollwrap">
       <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--primary" data-md-level="0">
@@ -152,12 +151,6 @@ export default {
     };
   },
   computed: {
-    algoliaLvl1() {
-      if (!this.$page.currentSection) {
-        return 'Unknown page';
-      }
-      return `${this.$page.name} v${this.$page.version}.x`;
-    },
     sdkOrApiPage() {
       if (!this.$page.currentSection) {
         return false;
@@ -304,8 +297,3 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.algolia-lvl1 {
-  display: none;
-}
-</style>

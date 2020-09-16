@@ -12,9 +12,14 @@
         `selector-list selector-list-${showList ? 'opened' : 'closed'}`
       ">
       <li v-for="item in items" :key="item.value" class="selector-list-item" @click="toggleList()">
-        <a class="selector-list-item-link" href="#" @click="onItemClick(item)">
-          <span class="selector-list-item-name">{{ item.text }}</span>
-        </a>
+        <template v-if="item.value !== selectedItem.value">
+          <a class="selector-list-item-link" :href="getHref(item.value)">
+            <span class="selector-list-item-name">{{ item.text }}</span>
+          </a>
+        </template>
+        <template v-else>
+          <span class="selector-list-item-link">{{ item.text }}</span>
+        </template>
       </li>
     </ul>
   </div>
@@ -58,6 +63,58 @@ export default {
     },
     onItemClick(item) {
       this.$emit('change', item.value);
+    },
+    getHref(major) {
+      if (!this.$page.currentSection) {
+        return `?kuzzleMajor=${major}`;
+      }
+      // Find the possible candidates of the same (sub)section
+      // that correspond to the new Kuzzle Major
+      const candidates = this.$page.sectionList.filter((s) => {
+        if (s.kuzzleMajor !== major) {
+          return false;
+        }
+
+        if (s.section !== this.$page.currentSection.section) {
+          return false;
+        }
+
+        if (
+          this.$page.currentSection.subsection &&
+          this.$page.currentSection.subsection !== s.subsection
+        ) {
+          return false;
+        }
+
+        if (this.$page.currentSection.name !== s.name) {
+          return false;
+        }
+
+        return true;
+      });
+
+      // If there's no candidate, just redirect to home
+      if (!candidates || candidates.length === 0) {
+        return `/?kuzzleMajor=${major}`;
+      }
+
+      // If there's one candidate, redirect to its index page
+      if (candidates.length === 1) {
+        return candidates[0].path;
+      }
+
+      // if there's many candidate, choose the one with the
+      // highest version number
+      const hypestCandidate = candidates.reduce((acc, curr) => {
+        if (!curr.version || curr.version < acc.version) {
+          return acc;
+        }
+        if (curr.version >= acc.version) {
+          return curr;
+        }
+      }, candidates[0]);
+
+      return hypestCandidate.path;
     },
   },
   mounted() {

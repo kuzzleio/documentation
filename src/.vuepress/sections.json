@@ -15,6 +15,42 @@
     "version": 2,
     "icon": "/logo-57x57.png"
   },
+  "/core/1/guides/": {
+    "kuzzleMajor": 1,
+    "section": "core",
+    "subsection": "guides",
+    "name": "Guides"
+  },
+  "/core/2/guides/": {
+    "kuzzleMajor": 2,
+    "section": "core",
+    "subsection": "guides",
+    "name": "Guides"
+  },
+  "/core/1/plugins/": {
+    "kuzzleMajor": 1,
+    "section": "core",
+    "subsection": "plugins",
+    "name": "Write Plugins"
+  },
+  "/core/2/plugins/": {
+    "kuzzleMajor": 2,
+    "section": "core",
+    "subsection": "plugins",
+    "name": "Write Plugins"
+  },
+  "/core/1/protocols/": {
+    "kuzzleMajor": 1,
+    "section": "core",
+    "subsection": "protocols",
+    "name": "Write Protocols"
+  },
+  "/core/2/protocols/": {
+    "kuzzleMajor": 2,
+    "section": "core",
+    "subsection": "protocols",
+    "name": "Write Protocols"
+  },
   "/sdk/js/5/": {
     "kuzzleMajor": 1,
     "section": "sdk",
