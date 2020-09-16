@@ -13,7 +13,9 @@
             </span>
             <span>Kuzzle Documentation</span>
           </label>
-          <TabsMobile :kuzzleMajor="kuzzleMajor" @closeSidebar="$emit('closeSidebar')" />
+          <div class="mobile-only">
+            <Tabs :kuzzleMajor="kuzzleMajor" />
+          </div>
           <SDKSelector
             class="md-sidebar--selector"
             v-if="sdkOrApiPage"
@@ -115,7 +117,8 @@
 </template>
 
 <script>
-import TabsMobile from './TabsMobile.vue';
+import Tabs from './Tabs.vue';
+
 import {
   getPageChildren,
   findRootNode,
@@ -126,7 +129,7 @@ import {
 
 export default {
   components: {
-    TabsMobile,
+    Tabs,
   },
   props: {
     sidebarOpen: {

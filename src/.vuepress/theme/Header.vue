@@ -35,7 +35,7 @@
               </span>
             </div>
           </div>
-          <div class="md-flex__cell md-flex__cell--stretch md-flex__cell--menu">
+          <div class="screen-only md-flex__cell md-flex__cell--stretch md-flex__cell--menu">
             <Tabs :kuzzleMajor="kuzzleMajor" />
           </div>
           <!-- Button to open search dialogue -->
