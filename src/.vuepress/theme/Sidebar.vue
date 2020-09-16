@@ -123,7 +123,6 @@ import {
   getItemLocalStorage,
   getNodeByPath,
 } from '../util.js';
-import howtos from '../howto.json';
 
 export default {
   components: {
