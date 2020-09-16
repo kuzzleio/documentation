@@ -1,10 +1,13 @@
 <template>
   <div class="selector selector-majorVersion" ref="selector" v-if="items.length">
-    <div class="selector-selectedItem" @click="toggleList()" v-if="selectedItem">
+    <div class="selector-selectedItem" @click="toggleList()">
       <div class="selector-selectedItem-name">
         <span class="selector-selectedItem-name-wrapper">
-          {{ selectedItem.text }}
-          <i class="fa fa-caret-down" aria-hidden="true"></i>
+          {{ selectedItem ? selectedItem.text : 'Kuzzle' }}
+          <i
+            class="fa fa-caret-down"
+            aria-hidden="true"
+          ></i>
         </span>
       </div>
     </div>
@@ -12,7 +15,7 @@
         `selector-list selector-list-${showList ? 'opened' : 'closed'}`
       ">
       <li v-for="item in items" :key="item.value" class="selector-list-item" @click="toggleList()">
-        <template v-if="item.value !== selectedItem.value">
+        <template v-if="!selectedItem || item.value !== selectedItem.value">
           <a class="selector-list-item-link" :href="getHref(item.value)">
             <span class="selector-list-item-name">{{ item.text }}</span>
           </a>
@@ -46,7 +49,15 @@ export default {
   },
   computed: {
     selectedItem() {
+      if (this.is404) {
+        return null;
+      }
       return this.items.find((item) => item.value === this.kuzzleMajor);
+    },
+    is404() {
+      return (
+        this.$route.matched.length === 1 && this.$route.matched[0].path === '*'
+      );
     },
   },
   methods: {
@@ -65,6 +76,9 @@ export default {
       this.$emit('change', item.value);
     },
     getHref(major) {
+      if (this.is404) {
+        return `/?kuzzleMajor=${major}`;
+      }
       if (!this.$page.currentSection) {
         return `?kuzzleMajor=${major}`;
       }

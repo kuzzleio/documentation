@@ -13,5 +13,3 @@ Below you’ll find a list of the officially supported SDK,
 <br>
 
 <SDKIndex />
-
-<SDKCommunityIndex />

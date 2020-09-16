@@ -123,8 +123,6 @@ import {
   getItemLocalStorage,
   getNodeByPath,
 } from '../util.js';
-import sdks from '../sdk.json';
-import plugins from '../plugins.json';
 import howtos from '../howto.json';
 
 export default {

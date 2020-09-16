@@ -83,7 +83,6 @@ export default {
   props: {
     kuzzleMajor: {
       type: Number,
-      default: 2,
     },
   },
   data() {
