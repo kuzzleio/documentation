@@ -55,7 +55,7 @@ export default {
     const head = document.head;
     const tag = document.createElement('meta');
     tag.setAttribute('property', 'docsearch:version');
-    tag.setAttribute('content', this.kuzzleMajor);
+    tag.setAttribute('content', `${this.kuzzleMajor}.0.0`);
     head.appendChild(tag);
   },
 };
