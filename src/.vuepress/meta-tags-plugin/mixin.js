@@ -1,10 +1,17 @@
 export default {
   mounted() {
     const head = document.head;
-    const tag = document.createElement('meta');
-    tag.setAttribute('property', 'article:tag');
-    tag.setAttribute('content', this.$page.title);
-    head.appendChild(tag);
-    // TODO add article:section tag
+
+    const metaTitle = document.createElement('meta');
+    metaTitle.setAttribute('property', 'article:tag');
+    metaTitle.setAttribute('content', this.$page.title);
+    head.appendChild(metaTitle);
+
+    if (this.$page.currentSection) {
+      const metaSection = document.createElement('meta');
+      metaSection.setAttribute('property', 'article:section');
+      metaSection.setAttribute('content', this.$page.currentSection.name);
+      head.appendChild(metaSection);
+    }
   }
 };

@@ -1,13 +1,18 @@
 <template>
-  <div>
-    <!-- Algolia Levels -->
-    <div data-algolia-lvl="0" style="display: none">{{ algoliaLevel[0] }}</div>
-    <div data-algolia-lvl="1" style="display: none">{{ algoliaLevel[1] }}</div>
+  <div style="display: none">
+    <div data-algolia-lvl="0">{{ algoliaLevel[0] }}</div>
+    <div data-algolia-lvl="1">{{ algoliaLevel[1] }}</div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    kuzzleMajor: {
+      type: Number,
+      required: true,
+    },
+  },
   computed: {
     algoliaLevel() {
       if (!this.$page.currentSection) {
@@ -44,6 +49,14 @@ export default {
         }.x`,
       ];
     },
+  },
+  mounted() {
+    // https://docsearch.algolia.com/docs/required-configuration/#introduce-global-information-as-meta-tags
+    const head = document.head;
+    const tag = document.createElement('meta');
+    tag.setAttribute('property', 'docsearch:version');
+    tag.setAttribute('content', this.kuzzleMajor);
+    head.appendChild(tag);
   },
 };
 </script>

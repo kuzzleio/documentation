@@ -1,6 +1,6 @@
 <template>
   <div class="md-layout">
-    <AlgoliaTags />
+    <AlgoliaTags :kuzzle-major="kuzzleMajor" />
     <div class="overlayLoading" v-if="isLoading" />
     <div class="overlay" :class="{ hidden: !sidebarOpen }" @click="closeSidebar"></div>
     <Header ref="header" :kuzzle-major="kuzzleMajor" @openSidebar="openSidebar" />
