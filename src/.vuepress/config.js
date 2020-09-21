@@ -243,8 +243,8 @@ module.exports = {
   markdown: {
     anchor: {
       permalink: true,
-      permalinkBefore: false,
-      permalinkSymbol: ''
+      permalinkBefore: true,
+      permalinkSymbol: '#'
     },
     extendMarkdown: md => {
       md.use(require('./markdown/code-snippet'));
