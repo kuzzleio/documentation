@@ -3,37 +3,44 @@
     <a
       v-for="plugin in pluginList"
       :key="plugin.name + plugin.version"
-      :href="plugin.url"
+      :href="plugin.path"
       class="Tiles-item"
     >
-      <img :src="plugin.icon" :alt="plugin.iconAlt" class="Tiles-item-logo" />
-      <div class="Tiles-item-name">
-        {{ `${plugin.name} v${plugin.version}` }}
-      </div>
+      <img :src="plugin.icon" :alt="plugin.name" class="Tiles-item-logo" />
+      <div class="Tiles-item-name">{{ `${plugin.name} v${plugin.version}` }}</div>
     </a>
   </div>
 </template>
 
 <script>
 import { getItemLocalStorage } from '../util';
-import plugins from '../plugins.json';
+import externalPlugins from '../external-plugins.json';
 
 export default {
   name: 'PluginsIndex',
-  data() {
-    return {
-      kuzzleMajor: '2'
-    };
-  },
-  mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
-  },
   methods: {},
   computed: {
+    kuzzleMajor() {
+      if (!this.$page.currentSection) {
+        if (!this.$route.query.kuzzleMajor) {
+          return 2;
+        } else {
+          return parseInt(this.$route.query.kuzzleMajor);
+        }
+      }
+
+      return this.$page.currentSection.kuzzleMajor;
+    },
     pluginList() {
-      return plugins[this.kuzzleMajor] || [];
-    }
-  }
+      return this.$page.sectionList
+        .filter(
+          (s) =>
+            s.kuzzleMajor === this.kuzzleMajor &&
+            s.section === 'official-plugins'
+        )
+        .concat(externalPlugins[this.kuzzleMajor]);
+    },
+  },
 };
 </script>
 

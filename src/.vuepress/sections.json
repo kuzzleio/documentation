@@ -1,0 +1,285 @@
+{
+  "/core/1/api/": {
+    "kuzzleMajor": 1,
+    "section": "core",
+    "subsection": "api",
+    "name": "API",
+    "version": 1,
+    "icon": "/logo-57x57.png"
+  },
+  "/core/2/api/": {
+    "kuzzleMajor": 2,
+    "section": "core",
+    "subsection": "api",
+    "name": "API",
+    "version": 2,
+    "icon": "/logo-57x57.png"
+  },
+  "/core/1/guides/": {
+    "kuzzleMajor": 1,
+    "section": "core",
+    "subsection": "guides",
+    "name": "Guides"
+  },
+  "/core/2/guides/": {
+    "kuzzleMajor": 2,
+    "section": "core",
+    "subsection": "guides",
+    "name": "Guides"
+  },
+  "/core/1/plugins/": {
+    "kuzzleMajor": 1,
+    "section": "core",
+    "subsection": "plugins",
+    "name": "Write Plugins"
+  },
+  "/core/2/plugins/": {
+    "kuzzleMajor": 2,
+    "section": "core",
+    "subsection": "plugins",
+    "name": "Write Plugins"
+  },
+  "/core/1/protocols/": {
+    "kuzzleMajor": 1,
+    "section": "core",
+    "subsection": "protocols",
+    "name": "Write Protocols"
+  },
+  "/core/2/protocols/": {
+    "kuzzleMajor": 2,
+    "section": "core",
+    "subsection": "protocols",
+    "name": "Write Protocols"
+  },
+  "/sdk/js/5/": {
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "subsection": "js",
+    "name": "Javascript",
+    "version": 5,
+    "icon": "/logos/js.svg"
+  },
+  "/sdk/js/6/": {
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "subsection": "js",
+    "name": "Javascript",
+    "version": 6,
+    "icon": "/logos/js.svg"
+  },
+  "/sdk/js/7/": {
+    "kuzzleMajor": 2,
+    "section": "sdk",
+    "subsection": "js",
+    "name": "Javascript",
+    "version": 7,
+    "icon": "/logos/js.svg"
+  },
+  "/sdk/cpp/1/": {
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "subsection": "cpp",
+    "name": "C++",
+    "version": 1,
+    "icon": "/logos/cpp.svg",
+    "deprecated": true
+  },
+  "/sdk/go/1/": {
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "subsection": "go",
+    "name": "Golang",
+    "version": 1,
+    "icon": "/logos/go.svg"
+  },
+  "/sdk/go/2/": {
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "subsection": "go",
+    "name": "Golang",
+    "version": 2,
+    "icon": "/logos/go.svg"
+  },
+  "/sdk/java/1/": {
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "subsection": "java",
+    "name": "Java",
+    "version": 1,
+    "icon": "/logos/java.svg",
+    "deprecated": true
+  },
+  "/sdk/java/2/": {
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "subsection": "java",
+    "name": "Java",
+    "version": 2,
+    "icon": "/logos/java.svg"
+  },
+  "/sdk/java/3/": {
+    "kuzzleMajor": 2,
+    "section": "sdk",
+    "subsection": "java",
+    "name": "Java",
+    "version": 3,
+    "icon": "/logos/java.svg"
+  },
+  "/sdk/android/3/": {
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "subsection": "android",
+    "name": "Android",
+    "version": 3,
+    "icon": "/logos/android.svg"
+  },
+  "/sdk/php/3/": {
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "subsection": "php",
+    "name": "PHP",
+    "version": 3,
+    "icon": "/logos/php.svg"
+  },
+  "/sdk/csharp/1/": {
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "subsection": "csharp",
+    "name": "C#",
+    "version": 1,
+    "icon": "/logos/csharp.svg"
+  },
+  "/sdk/csharp/2/": {
+    "kuzzleMajor": 2,
+    "section": "sdk",
+    "subsection": "csharp",
+    "name": "C#",
+    "version": 2,
+    "icon": "/logos/csharp.svg"
+  },
+  "/sdk/dart/2/": {
+    "kuzzleMajor": 2,
+    "section": "sdk",
+    "subsection": "dart",
+    "name": "Dart",
+    "version": 1,
+    "icon": "/logos/dart.svg"
+  },
+  "/sdk/jvm/1/": {
+    "kuzzleMajor": 2,
+    "section": "sdk",
+    "subsection": "jvm",
+    "name": "Jvm",
+    "version": 1,
+    "icon": "/logos/java.svg"
+  },
+  "/official-plugins/s3/1": {
+    "kuzzleMajor": 1,
+    "section": "official-plugins",
+    "subsection": "s3",
+    "name": "S3",
+    "version": 1,
+    "icon": "/logos/plugin-s3.svg"
+  },
+  "/official-plugins/s3/2": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "s3",
+    "name": "S3",
+    "version": 2,
+    "icon": "/logos/plugin-s3.svg"
+  },
+  "/official-plugins/cloudinary/1": {
+    "kuzzleMajor": 1,
+    "section": "official-plugins",
+    "subsection": "cloudinary",
+    "name": "Cloudinary",
+    "version": 1,
+    "icon": "/logos/plugin-cloudinary.svg"
+  },
+  "/official-plugins/cloudinary/2": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "cloudinary",
+    "name": "Cloudinary",
+    "version": 2,
+    "icon": "/logos/plugin-cloudinary.svg"
+  },
+  "/how-to/1/kuzzle-esp32": {
+    "kuzzleMajor": 1,
+    "section": "how-to",
+    "subsection": "IoT",
+    "name": "IoT backend ESP32",
+    "icon": "/logos/logo-espressif.svg"
+  },
+  "/how-to/2/kuzzle-esp32": {
+    "kuzzleMajor": 2,
+    "section": "how-to",
+    "subsection": "IoT",
+    "name": "IoT backend ESP32",
+    "icon": "/logos/logo-espressif.svg"
+  },
+  "/how-to/1/monitor-iot-data-with-freeboard": {
+    "kuzzleMajor": 1,
+    "section": "how-to",
+    "subsection": "IoT",
+    "name": "Monitor IoT data",
+    "icon": "/logos/logo-dashboard.svg"
+  },
+  "/how-to/2/monitor-iot-data-with-freeboard": {
+    "kuzzleMajor": 2,
+    "section": "how-to",
+    "subsection": "IoT",
+    "name": "Monitor IoT data",
+    "icon": "/logos/logo-dashboard.svg"
+  },
+  "/how-to/1/keep-only-warm-data": {
+    "kuzzleMajor": 1,
+    "section": "how-to",
+    "subsection": "Managing data",
+    "name": "Keep warm data",
+    "icon": "/logos/logo-warm-data.svg"
+  },
+  "/how-to/2/keep-only-warm-data": {
+    "kuzzleMajor": 2,
+    "section": "how-to",
+    "subsection": "Managing data",
+    "name": "Keep warm data",
+    "icon": "/logos/logo-warm-data.svg"
+  },
+  "/how-to/1/massive-data-import": {
+    "kuzzleMajor": 1,
+    "section": "how-to",
+    "subsection": "Managing data",
+    "name": "Massive data import",
+    "icon": "/logos/logo-data.svg"
+  },
+  "/how-to/2/massive-data-import": {
+    "kuzzleMajor": 2,
+    "section": "how-to",
+    "subsection": "Managing data",
+    "name": "Massive data import",
+    "icon": "/logos/logo-data.svg"
+  },
+  "/how-to/1/sync-data-to-another-database": {
+    "kuzzleMajor": 1,
+    "section": "how-to",
+    "subsection": "Managing data",
+    "name": "Sync to other DB",
+    "icon": "/logos/logo-database.svg"
+  },
+  "/how-to/2/sync-data-to-another-database": {
+    "kuzzleMajor": 2,
+    "section": "how-to",
+    "subsection": "Managing data",
+    "name": "Sync to other DB",
+    "icon": "/logos/logo-database.svg"
+  },
+  "/how-to/2/replicate-to-sql-with-generic-events": {
+    "kuzzleMajor": 2,
+    "section": "how-to",
+    "subsection": "Managing data",
+    "name": "Replicate to Postgres",
+    "icon": "/logos/postgresql.svg"
+  }
+}
