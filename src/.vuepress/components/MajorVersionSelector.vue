@@ -1,28 +1,29 @@
 <template>
-  <div class="selector selector-majorVersion" ref="selector" v-if="items.length">
+  <div
+    class="selector selector-majorVersion"
+    ref="selector"
+    v-if="items.length"
+  >
     <div class="selector-selectedItem" @click="toggleList()">
       <div class="selector-selectedItem-name">
         <span class="selector-selectedItem-name-wrapper">
           {{ selectedItem ? selectedItem.text : 'Kuzzle' }}
-          <i
-            class="fa fa-caret-down"
-            aria-hidden="true"
-          ></i>
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
         </span>
       </div>
     </div>
-    <ul :class="
-        `selector-list selector-list-${showList ? 'opened' : 'closed'}`
-      ">
-      <li v-for="item in items" :key="item.value" class="selector-list-item" @click="toggleList()">
-        <template v-if="!selectedItem || item.value !== selectedItem.value">
-          <a class="selector-list-item-link" :href="getHref(item.value)">
-            <span class="selector-list-item-name">{{ item.text }}</span>
-          </a>
-        </template>
-        <template v-else>
-          <span class="selector-list-item-link">{{ item.text }}</span>
-        </template>
+    <ul
+      :class="`selector-list selector-list-${showList ? 'opened' : 'closed'}`"
+    >
+      <li
+        v-for="item in items"
+        :key="item.value"
+        class="selector-list-item"
+        @click="toggleList()"
+      >
+        <a class="selector-list-item-link" :href="getHref(item.value)">
+          <span class="selector-list-item-name">{{ item.text }}</span>
+        </a>
       </li>
     </ul>
   </div>
