@@ -44,13 +44,13 @@ _Note_ This list might not be exhaustive
 This is OK, just follow these steps.
 
 ```sh
-npm install
+npm ci
 ```
 
 Then run
 
 ```sh
-npm install -g kuzzdoc
+npm install -g kuzdoc
 kuzdoc iterate-repos:install --repositories=sdk-javascript-6,kuzzle-2
 ```
 
