@@ -43,27 +43,22 @@ _Note_ This list might not be exhaustive
 
 This is OK, just follow these steps.
 
-```
-npm install
+```sh
+npm ci
 ```
 
 Then run
 
-```
-npm run clone-repos
-```
-
-This will clone _all_ the repositories in the above list into the `.repos/` directory, which will most likely bloat your memory. If you don't want all of them to be cloned, you can set the `REPOSITORIES` environment variable to a comma-separated list of repository names, according to the file `./repos/repositories.yml`, e.g.
-
-```
-REPOSITORIES=sdk-javascript-6,kuzzle-2 npm run clone-repos
+```sh
+npm install -g kuzdoc
+kuzdoc iterate-repos:install --repositories=sdk-javascript-6,kuzzle-2
 ```
 
 This will only clone the `sdk-javascript-6` and `kuzzle-2` repos.
 
 Then you just need to run
 
-```
+```sh
 npm run doc-dev
 ```
 
