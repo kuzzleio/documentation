@@ -45,7 +45,7 @@
             <div class="md-search-result__meta">
               <img
                 v-if="results === null || results.length === 0"
-                src="https://www.algolia.com/assets/pricing_new/algolia-powered-by-ac7dba62d03d1e28b0838c5634eb42a9.svg"
+                src="https://res.cloudinary.com/hilnmyskv/image/upload/search-by-algolia.svg"
                 alt="Search by Algolia"
                 class="algolia-logo"
               />

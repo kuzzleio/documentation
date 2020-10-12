@@ -436,6 +436,7 @@ $md-toggle__search--checked: '[data-md-toggle="search"]:checked ~ .md-header';
     .algolia-logo {
       position: relative;
       top: 5px;
+      max-width: 13rem;
     }
 
     // [tablet landscape +]: Increase left indent

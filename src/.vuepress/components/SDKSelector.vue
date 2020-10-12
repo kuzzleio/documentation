@@ -2,17 +2,12 @@
   <div class="selector" ref="selector" v-if="filteredItems.length">
     <div class="selector-selectedItem" @click="toggleList()">
       <img
-        v-if="currentLanguage"
+        v-if="currentItem"
         class="selector-selectedItem-icon"
-        :src="currentLanguage.icon"
-        :alt="currentLanguage.language"
+        :src="currentItem.icon"
+        :alt="currentItem.language"
       />
-      <img
-        v-else
-        class="selector-selectedItem-icon"
-        src="/logo-57x57.png"
-        alt="Kuzzle logo"
-      />
+      <img v-else class="selector-selectedItem-icon" src="/logo-57x57.png" alt="Kuzzle logo" />
       <span class="selector-selectedItem-name">{{ getCurrentSpan }}</span>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
@@ -43,8 +38,7 @@
             :class="
               `selector-list-item-name${item.language === 'api' ? '-api' : ''}`
             "
-            >{{ getSpan(item) }}</span
-          >
+          >{{ getSpan(item) }}</span>
         </a>
       </li>
     </ul>
@@ -58,11 +52,11 @@ export default {
   name: 'SDKSelector',
   props: {
     items: Array,
-    kuzzleMajor: Number
+    kuzzleMajor: Number,
   },
   data() {
     return {
-      isListShowed: false
+      isListShowed: false,
     };
   },
   computed: {
@@ -70,27 +64,26 @@ export default {
       return getOldSDK(this.items);
     },
     getCurrentSpan() {
-      return this.currentLanguage ? this.currentLanguage.name : 'Select an SDK';
+      return this.currentItem ? this.currentItem.name : 'Select an SDK';
     },
     filteredItems() {
       return this.items.filter(
-        item => !this.$route.path.includes(`${item.language}/${item.version}`)
+        (item) => !this.$route.path.includes(`${item.language}/${item.version}`)
       );
     },
-    currentLanguage() {
-      let language, version;
-      if (this.$route.path.match(/\/api\//)) {
-        language = 'api';
-        version = '1';
+    currentItem() {
+      let currentItem
+      if (this.$page.fullPath.match(/\/sdk\/[a-z\-]+\/\d+\//)) {
+        const splitPath = this.$page.fullPath.split('/');
+        // ... find out which one based on the URL path
+        currentItem = this.items.find(
+          (el) => el.version === splitPath[3] && el.language === splitPath[2]
+        );
       } else {
-        language = this.$site.base.split('/')[1];
-        version = this.$site.base.split('/')[2];
+        currentItem = this.items.find(el => el.language === 'api')
       }
-      const lang = this.items.find(el => {
-        return el.language === language && el.version === version;
-      });
-      return lang || null;
-    }
+      return currentItem;
+    },
   },
   methods: {
     getItemClass(item) {
@@ -127,21 +120,21 @@ export default {
       // }
       return path;
     },
-    toggleList: function() {
+    toggleList: function () {
       this.isListShowed = !this.isListShowed;
     },
-    onDocumentClick: function(e) {
+    onDocumentClick: function (e) {
       const el = this.$refs.selector,
         target = e.target;
 
       if (el && el !== target && !el.contains(target)) {
         this.isListShowed = false;
       }
-    }
+    },
   },
   mounted() {
     document.addEventListener('click', this.onDocumentClick);
-  }
+  },
 };
 </script>
 

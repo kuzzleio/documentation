@@ -1,69 +1,69 @@
 {
-    "1": [
+  "1": {
+    "IoT": [
       {
-        "IoT": [
-          {
-            "name": "IoT backend ESP32",
-            "icon": "/logos/logo-espressif.svg",
-            "link": "/how-to/1/kuzzle-esp32"
-          },
-          {
-            "name": "Monitor IoT data",
-            "icon": "/logos/logo-dashboard.svg",
-            "link": "/how-to/1/monitor-iot-data-with-freeboard"
-          }
-        ],
-        "Managing data": [
-          {
-            "name": "Keep warm data",
-            "icon": "/logos/logo-warm-data.svg",
-            "link": "/how-to/1/keep-only-warm-data"
-          },
-          {
-            "name": "Massive data import",
-            "icon": "/logos/logo-data.svg",
-            "link": "/how-to/1/massive-data-import"
-          },
-          {
-            "name": "Sync to other DB",
-            "icon": "/logos/logo-database.svg",
-            "link": "/how-to/1/sync-data-to-another-database"
-          }
-        ]
+        "name": "IoT backend ESP32",
+        "icon": "/logos/logo-espressif.svg",
+        "link": "/how-to/1/kuzzle-esp32"
+      },
+      {
+        "name": "Monitor IoT data",
+        "icon": "/logos/logo-dashboard.svg",
+        "link": "/how-to/1/monitor-iot-data-with-freeboard"
       }
     ],
-    "2": [
+    "Managing data": [
       {
-        "IoT": [
-          {
-            "name": "IoT backend ESP32",
-            "icon": "/logos/logo-espressif.svg",
-            "link": "/how-to/2/kuzzle-esp32"
-          },
-          {
-            "name": "Monitor IoT data",
-            "icon": "/logos/logo-dashboard.svg",
-            "link": "/how-to/2/monitor-iot-data-with-freeboard"
-          }
-        ],
-        "Managing data": [
-          {
-            "name": "Keep warm data",
-            "icon": "/logos/logo-warm-data.svg",
-            "link": "/how-to/2/keep-only-warm-data"
-          },
-          {
-            "name": "Massive data import",
-            "icon": "/logos/logo-data.svg",
-            "link": "/how-to/2/massive-data-import"
-          },
-          {
-            "name": "Sync to other DB",
-            "icon": "/logos/logo-database.svg",
-            "link": "/how-to/2/sync-data-to-another-database"
-          }
-        ]
+        "name": "Keep warm data",
+        "icon": "/logos/logo-warm-data.svg",
+        "link": "/how-to/1/keep-only-warm-data"
+      },
+      {
+        "name": "Massive data import",
+        "icon": "/logos/logo-data.svg",
+        "link": "/how-to/1/massive-data-import"
+      },
+      {
+        "name": "Sync to other DB",
+        "icon": "/logos/logo-database.svg",
+        "link": "/how-to/1/sync-data-to-another-database"
       }
     ]
-    
+  },
+  "2": {
+    "IoT": [
+      {
+        "name": "IoT backend ESP32",
+        "icon": "/logos/logo-espressif.svg",
+        "link": "/how-to/2/kuzzle-esp32"
+      },
+      {
+        "name": "Monitor IoT data",
+        "icon": "/logos/logo-dashboard.svg",
+        "link": "/how-to/2/monitor-iot-data-with-freeboard"
+      }
+    ],
+    "Managing data": [
+      {
+        "name": "Keep warm data",
+        "icon": "/logos/logo-warm-data.svg",
+        "link": "/how-to/2/keep-only-warm-data"
+      },
+      {
+        "name": "Massive data import",
+        "icon": "/logos/logo-data.svg",
+        "link": "/how-to/2/massive-data-import"
+      },
+      {
+        "name": "Sync to other DB",
+        "icon": "/logos/logo-database.svg",
+        "link": "/how-to/2/sync-data-to-another-database"
+      },
+      {
+        "name": "Replicate to Postgres",
+        "icon": "/logos/postgresql.svg",
+        "link": "/how-to/2/replicate-to-sql-with-generic-events"
+      }
+    ]
   }
+}

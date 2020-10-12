@@ -279,17 +279,18 @@ module.exports = {
   plugins: [
     'tabs',
     require('./meta-tags-plugin/index.js'),
+    require('./page-attributes/index.js'),
     process.env.ALGOLIA_WRITE_KEY && !process.env.DISABLE_ALGOLIA
       ? [
-          require('./index-to-algolia/index.js'),
-          {
-            algoliaAppId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
-            algoliaWriteKey: process.env.ALGOLIA_WRITE_KEY,
-            algoliaIndex: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
-            clearIndex: process.env.ALGOLIA_CLEAR_INDEX,
-            repoName: process.env.REPO_NAME
-          }
-        ]
+        require('./index-to-algolia/index.js'),
+        {
+          algoliaAppId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
+          algoliaWriteKey: process.env.ALGOLIA_WRITE_KEY,
+          algoliaIndex: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
+          clearIndex: process.env.ALGOLIA_CLEAR_INDEX,
+          repoName: process.env.REPO_NAME
+        }
+      ]
       : {},
     [
       require('vuepress-frontmatter-lint'),

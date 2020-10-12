@@ -4,22 +4,17 @@
     :class="{ 'md-sidebar--open': sidebarOpen }"
     data-md-component="navigation"
   >
+    <div data-algolia-lvl="1" class="algolia-lvl1">{{ algoliaLvl1 }}</div>
     <div class="md-sidebar__scrollwrap" ref="scrollwrap">
       <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--primary" data-md-level="0">
-          <label
-            class="md-nav__title md-nav__title--site mobile-only"
-            for="drawer"
-          >
+          <label class="md-nav__title md-nav__title--site mobile-only" for="drawer">
             <span class="md-nav__button md-logo">
               <img src="/logo-min.png" width="48" height="48" />
             </span>
             <span>Kuzzle Documentation</span>
           </label>
-          <TabsMobile
-            :kuzzleMajor="kuzzleMajor"
-            @closeSidebar="$emit('closeSidebar')"
-          />
+          <TabsMobile :kuzzleMajor="kuzzleMajor" @closeSidebar="$emit('closeSidebar')" />
           <SDKSelector
             class="md-sidebar--selector"
             v-if="sdkOrApiPage"
@@ -34,7 +29,10 @@
               )"
               class="md-nav__item-container"
             >
-              <li class="md-nav__separator">{{ item__1.frontmatter.title }}</li>
+              <li
+                class="md-nav__separator"
+                :data-algolia-lvl="$page.path.startsWith(item__1.path) ? '2' : ''"
+              >{{ item__1.frontmatter.title }}</li>
 
               <div v-for="item__2 in getPageChildren(item__1)">
                 <li class="md-nav__item md-nav-title">
@@ -57,19 +55,16 @@
                         class="fa fa-caret-down"
                         aria-hidden="true"
                       ></i>
-                      <i
-                        v-else
-                        class="fa fa-caret-right"
-                        aria-hidden="true"
-                      ></i>
-                      <span>{{ item__2.title }}</span>
+                      <i v-else class="fa fa-caret-right" aria-hidden="true"></i>
+                      <span
+                        :data-algolia-lvl="$page.path.startsWith(item__2.path) ? '3' : ''"
+                      >{{ item__2.title }}</span>
                     </div>
-                    <router-link
-                      v-else
-                      :to="item__2.path"
-                      @click.native="closeSidebar"
-                    >
-                      <a class="no_arrow">{{ item__2.title }}</a>
+                    <router-link v-else :to="item__2.path" @click.native="closeSidebar">
+                      <a
+                        class="no_arrow"
+                        :data-algolia-lvl="$page.path.startsWith(item__2.path) ? '3' : ''"
+                      >{{ item__2.title }}</a>
                     </router-link>
                   </div>
                 </li>
@@ -93,7 +88,7 @@
                         :title="item__3.title"
                         @click.native="$emit('closeSidebar')"
                       >
-                        <a class="no_arrow">{{ item__3.title }}</a>
+                        <a class="no_arrow" data-algolia-lvl="4">{{ item__3.title }}</a>
                       </router-link>
                     </li>
                     <li v-else>
@@ -127,27 +122,69 @@ import {
   findRootNode,
   setItemLocalStorage,
   getItemLocalStorage,
-  getNodeByPath
+  getNodeByPath,
 } from '../util.js';
 import sdks from '../sdk.json';
+import plugins from '../plugins.json';
+import howtos from '../howto.json';
 
 export default {
   components: {
-    TabsMobile
+    TabsMobile,
   },
   props: {
     sidebarOpen: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       openedSubmenu: '',
-      kuzzleMajor: '2'
+      kuzzleMajor: '2',
     };
   },
   computed: {
+    algoliaLvl1() {
+      // if it's a SDK-reference page...
+      if (this.$page.fullPath.match(/\/sdk\/[a-z\-]+\/\d+\//)) {
+        const splitPath = this.$page.fullPath.split('/');
+        // ... find out which one based on the URL path
+        const currentSdk = this.sdkList.find(
+          (el) => el.version === splitPath[3] && el.language === splitPath[2]
+        );
+        if (currentSdk) {
+          // ... and return its name from the list
+          return currentSdk.name;
+        } else {
+          return 'Unknown SDK';
+        }
+      }
+      // if it's a how-to page...
+      if (this.$page.fullPath.match(/\/how-to\/\d+\//)) {
+        const currentHowto = this.flattenedHowtoList.find((el) => {
+          return this.$page.fullPath.startsWith(el.link);
+        });
+        if (currentHowto) {
+          return currentHowto.name;
+        } else {
+          return 'Unknown How-to';
+        }
+      }
+      // if it's an official plugin page...
+      if (this.$page.fullPath.match(/\/official-plugins\/[a-z\-]+\/\d+\//)) {
+        const currentPlugin = this.pluginList.find((el) =>
+          this.$page.fullPath.startsWith(el.url)
+        );
+        if (currentPlugin) {
+          return currentPlugin.name;
+        } else {
+          return 'Unknown Plugin';
+        }
+      }
+      // Otherwise we're in the core documentation
+      return `Core ${this.kuzzleMajor}.x`;
+    },
     sdkOrApiPage() {
       return this.$route.path.match(/(^\/sdk\/|\/core\/1\/api\/)/);
     },
@@ -156,7 +193,22 @@ export default {
     },
     sdkList() {
       return sdks[this.kuzzleMajor] || [];
-    }
+    },
+    pluginList() {
+      return plugins[this.kuzzleMajor] || [];
+    },
+    howtoList() {
+      return howtos[this.kuzzleMajor] || [];
+    },
+    flattenedHowtoList() {
+      let flattenedHowtoList = [];
+      Object.keys(this.howtoList).forEach((category) => {
+        flattenedHowtoList = flattenedHowtoList.concat(
+          this.howtoList[category]
+        );
+      });
+      return flattenedHowtoList;
+    },
   },
   methods: {
     setOpenedSubmenu(item__1, item__2) {
@@ -193,7 +245,7 @@ export default {
       const item3Id = this.getId([
         item__1.title,
         item__2.title,
-        childs[0].title
+        childs[0].title,
       ]);
       if (!document.getElementById(item3Id)) {
         return;
@@ -281,14 +333,18 @@ export default {
           }
         }
       };
-    }
+    },
   },
   mounted() {
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
     this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
-  }
+  },
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.algolia-lvl1 {
+  display: none;
+}
+</style>

@@ -450,3 +450,15 @@ Example:
 # Copy information from SDK JS 6 to SDK CPP 1
 ./scaffolding/scaffold copy src/sdk/js/6/controllers/collection/list src/sdk/cpp/1/controllers/collection/list
 ```
+
+### Adding a new SDK
+
+To add a new SDK you will need to create a ew folder inside `src/sdk` and to create a simlink of it's version:
+
+```sh
+cd src/sdk
+mkdir my-sdk
+ln -s ../../../.repos/my-sdk-1/doc/1
+```
+
+Then add it to `.repos/repositories.yml`

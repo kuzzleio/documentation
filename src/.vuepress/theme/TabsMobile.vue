@@ -10,7 +10,7 @@
         :title="link.label"
         class="md-source"
         data-md-state="done"
-        @click.native="$emit('closeSidebar')"
+        @click="$emit('closeSidebar')"
       >
         <div class="md-source__repository">{{ link.label }}</div>
       </a>
