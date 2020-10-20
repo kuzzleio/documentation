@@ -62,7 +62,7 @@ export default {
     width: 60px;
     height: 60px;
 
-    .img {
+    img {
       width: 100%;
     }
   }
@@ -74,6 +74,19 @@ export default {
     overflow: hidden;
     width: calc(100% - 5em);
     height: calc(100% - 2em);
+  }
+}
+
+@media (max-width: 720px) {
+  .CustomTable-item {
+    background-color: white;
+    display: block;
+    width: 100%;
+    border-right: 1px solid #e1e4e5;
+
+    &:nth-child(odd) {
+      background-color: #eee;
+    }
   }
 }
 </style>
