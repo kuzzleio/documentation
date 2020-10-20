@@ -1,0 +1,79 @@
+<template>
+  <div class="CustomTable">
+    <div class="CustomTable-item" v-for="item in items">
+      <div class="CustomTable-item-icon">
+        <img :src="item.icon" alt="" v-if="item.icon" />
+      </div>
+      <div class="CustomTable-item-text">
+        <template v-if="item.href">
+          <a :href="item.href">{{ item.text }}</a>
+        </template>
+        <template v-else>
+          {{ item.text }}
+        </template>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'CustomTable',
+  props: {
+    items: {
+      type: Array,
+      required: true,
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+.CustomTable {
+  width: 100%;
+  padding: 1em;
+
+  &-item {
+    display: inline-block;
+    width: 50%;
+    height: 6em;
+    border-left: 1px solid #e1e4e5;
+    border-bottom: 1px solid #e1e4e5;
+    padding: 1em;
+    background-color: #eee;
+
+    &:nth-child(-n + 2) {
+      border-top: 1px solid #e1e4e5;
+    }
+
+    &:nth-child(even) {
+      border-right: 1px solid #e1e4e5;
+    }
+
+    &:nth-child(4n),
+    &:nth-child(4n-1) {
+      background-color: white;
+    }
+  }
+
+  &-item-icon {
+    display: table-cell;
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+
+    .img {
+      width: 100%;
+    }
+  }
+
+  &-item-text {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 1em;
+    overflow: hidden;
+    width: calc(100% - 5em);
+    height: calc(100% - 2em);
+  }
+}
+</style>
