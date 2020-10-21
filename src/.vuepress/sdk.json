@@ -102,6 +102,13 @@
       "newArchitecture": true
     },
     {
+      "language": "go",
+      "name": "Golang 3.x",
+      "version": "3",
+      "icon": "/logos/go.svg",
+      "newArchitecture": true
+    },
+    {
       "language": "java",
       "name": "Java 3.x",
       "version": "3",
