@@ -168,6 +168,30 @@ It is possible to add tabs directly in the markdown with this syntax:
 ::::
 ```
 
+### Custom table
+
+Use the custom table component directly in the markdown like this :
+
+```
+<CustomTable :items="...">
+```
+
+`items` props format :
+
+```
+[
+  {
+    icon: 'path/to/your/img',
+    text: 'the text you want',
+    href: 'url' (not required)
+  },
+  {
+    ...
+  }
+]
+```
+each object of the array corresponds to a cell of the custom table
+
 ## Code snippet import
 
 You can [import code snippets from file](https://v1.vuepress.vuejs.org/guide/markdown.html#import-code-snippets), as supported by VuePress, with the following syntax in your Markdown:
