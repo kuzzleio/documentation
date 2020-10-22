@@ -102,6 +102,13 @@
       "newArchitecture": true
     },
     {
+      "language": "go",
+      "name": "Golang 3.x",
+      "version": "3",
+      "icon": "/logos/go.svg",
+      "newArchitecture": true
+    },
+    {
       "language": "java",
       "name": "Java 3.x",
       "version": "3",
@@ -113,13 +120,6 @@
       "name": "Dart 2.x",
       "version": "2",
       "icon": "/logos/dart.svg",
-      "newArchitecture": true
-    },
-    {
-      "language": "jvm",
-      "name": "Jvm 1.x",
-      "version": "1",
-      "icon": "/logos/java.svg",
       "newArchitecture": true
     }
   ]

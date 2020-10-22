@@ -153,6 +153,7 @@
   dev: 3-dev
   name: sdk-android-3
   deploy_path: /sdk/android/3/
+
 - url: https://github.com/kuzzleio/sdk-dart.git
   doc_version: 2
   stable: master
