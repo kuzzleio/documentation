@@ -168,12 +168,12 @@ It is possible to add tabs directly in the markdown with this syntax:
 ::::
 ```
 
-### Custom table
+### ListIcon
 
-Use the custom table component directly in the markdown like this :
+Use the ListIcon table component directly in the markdown like this :
 
 ```
-<CustomTable :items="...">
+<ListIcon :items="...">
 ```
 
 `items` props format :
