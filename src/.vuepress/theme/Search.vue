@@ -2,7 +2,11 @@
   <div class="md-search" data-md-component="search" role="dialog">
     <label class="md-search__overlay" for="search"></label>
     <div class="md-search__inner" role="search">
-      <form class="md-search__form" name="search" @submit.prevent="goToHighlightedResult">
+      <form
+        class="md-search__form"
+        name="search"
+        @submit.prevent="goToHighlightedResult"
+      >
         <input
           id="algolia-search-input"
           class="search-query md-search__input"
@@ -56,31 +60,11 @@ export default {
         ),
       ]).then(([docsearch]) => {
         docsearch = docsearch.default;
-        docsearch(
-          {
-            inputSelector: '#algolia-search-input',
-            apiKey: 'c6452010dc26eb671d637214f1110c91',
-            indexName: 'kuzzle',
-          }
-          // Object.assign({}, userOptions, {
-
-          //   #697 Make docsearch work well at i18n mode.
-          //   algoliaOptions: Object.assign(
-          //     {
-          //       facetFilters: [`lang:${lang}`].concat(
-          //         algoliaOptions.facetFilters || []
-          //       ),
-          //     },
-          //     algoliaOptions
-          //   ),
-          //   handleSelected: (input, event, suggestion) => {
-          //     const { pathname, hash } = new URL(suggestion.url);
-          //     const routepath = pathname.replace(this.$site.base, '/');
-          //     const _hash = decodeURIComponent(hash);
-          //     this.$router.push(`${routepath}${_hash}`);
-          //   },
-          // })
-        );
+        docsearch({
+          inputSelector: '#algolia-search-input',
+          apiKey: 'c6452010dc26eb671d637214f1110c91',
+          indexName: 'kuzzle',
+        });
       });
     },
     update(options, lang) {
