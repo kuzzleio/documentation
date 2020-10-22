@@ -2,7 +2,11 @@
   <div class="CustomTable">
     <div class="CustomTable-item" v-for="item in items">
       <div class="CustomTable-item-icon">
-        <img :src="item.icon" alt="" v-if="item.icon" />
+        <img
+          :src="require(`@source/${item.icon}`)"
+          alt="icon"
+          v-if="item.icon"
+        />
       </div>
       <div class="CustomTable-item-text">
         <template v-if="item.href">
