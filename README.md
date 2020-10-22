@@ -190,7 +190,10 @@ Use the custom table component directly in the markdown like this :
   }
 ]
 ```
-each object of the array corresponds to a cell of the custom table
+
+Each object of the array corresponds to a cell of the custom table.
+
+/!\ Note that the icon path must be complete and not relative to the markdown file, for example: `/getting-started/1-quick-start/myIcon.png`.
 
 ## Code snippet import
 
