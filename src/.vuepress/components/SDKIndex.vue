@@ -60,7 +60,7 @@ export default {
           s.section === 'sdk' &&
           // If we are deploying to the master branch, exclude the
           // sections that are not released yet
-          (process.env.BRANCH === 'master' ? s.released === true : true)
+          (BRANCH === 'master' ? s.released === true : true)
       );
     },
   },
