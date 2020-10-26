@@ -1,10 +1,14 @@
 <template>
-  <div class="CustomTable">
-    <div class="CustomTable-item" v-for="item in items">
-      <div class="CustomTable-item-icon">
-        <img :src="item.icon" alt="" v-if="item.icon" />
+  <div class="IconTable">
+    <div class="IconTable-item" v-for="item in items">
+      <div class="IconTable-item-icon">
+        <img
+          :src="require(`@source/${item.icon}`)"
+          alt="icon"
+          v-if="item.icon"
+        />
       </div>
-      <div class="CustomTable-item-text">
+      <div class="IconTable-item-text">
         <template v-if="item.href">
           <a :href="item.href">{{ item.text }}</a>
         </template>
@@ -18,7 +22,7 @@
 
 <script>
 export default {
-  name: 'CustomTable',
+  name: 'IconTable',
   props: {
     items: {
       type: Array,
@@ -29,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss">
-.CustomTable {
+.IconTable {
   width: 100%;
   padding: 1em;
 
@@ -78,7 +82,7 @@ export default {
 }
 
 @media (max-width: 720px) {
-  .CustomTable-item {
+  .IconTable-item {
     background-color: white;
     display: block;
     width: 100%;

@@ -173,12 +173,12 @@ It is possible to add tabs directly in the markdown with this syntax:
 ::::
 ```
 
-### Custom table
+### IconTable
 
-Use the custom table component directly in the markdown like this :
+Use the IconTable table component directly in the markdown like this :
 
 ```
-<CustomTable :items="...">
+<IconTable :items="...">
 ```
 
 `items` props format :
@@ -195,7 +195,10 @@ Use the custom table component directly in the markdown like this :
   }
 ]
 ```
-each object of the array corresponds to a cell of the custom table
+
+Each object of the array corresponds to a cell of the custom table.
+
+/!\ Note that the icon path must be complete and not relative to the markdown file, for example: `/getting-started/1-quick-start/myIcon.png`.
 
 ## Code snippet import
 
