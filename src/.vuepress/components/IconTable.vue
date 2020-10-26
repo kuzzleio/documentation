@@ -1,14 +1,14 @@
 <template>
-  <div class="ListIcon">
-    <div class="ListIcon-item" v-for="item in items">
-      <div class="ListIcon-item-icon">
+  <div class="IconTable">
+    <div class="IconTable-item" v-for="item in items">
+      <div class="IconTable-item-icon">
         <img
           :src="require(`@source/${item.icon}`)"
           alt="icon"
           v-if="item.icon"
         />
       </div>
-      <div class="ListIcon-item-text">
+      <div class="IconTable-item-text">
         <template v-if="item.href">
           <a :href="item.href">{{ item.text }}</a>
         </template>
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'ListIcon',
+  name: 'IconTable',
   props: {
     items: {
       type: Array,
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss">
-.ListIcon {
+.IconTable {
   width: 100%;
   padding: 1em;
 
@@ -82,7 +82,7 @@ export default {
 }
 
 @media (max-width: 720px) {
-  .ListIcon-item {
+  .IconTable-item {
     background-color: white;
     display: block;
     width: 100%;
