@@ -273,7 +273,10 @@ module.exports = {
           JSON.stringify(algoliaDefaultIndex),
         REPO_SLUG:
           JSON.stringify(process.env.TRAVIS_REPO_SLUG) ||
-          JSON.stringify('kuzzleio/documentation')
+          JSON.stringify('kuzzleio/documentation'),
+        BRANCH:
+          JSON.stringify(process.env.BRANCH) ||
+          JSON.stringify(process.env.TRAVIS_BRANCH)
       })
     ]
   },
