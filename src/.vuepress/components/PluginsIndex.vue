@@ -7,7 +7,9 @@
       class="Tiles-item"
     >
       <img :src="plugin.icon" :alt="plugin.name" class="Tiles-item-logo" />
-      <div class="Tiles-item-name">{{ `${plugin.name} v${plugin.version}` }}</div>
+      <div class="Tiles-item-name">
+        {{ `${plugin.name} v${plugin.version}` }}
+      </div>
     </a>
   </div>
 </template>
@@ -36,7 +38,10 @@ export default {
         .filter(
           (s) =>
             s.kuzzleMajor === this.kuzzleMajor &&
-            s.section === 'official-plugins'
+            s.section === 'official-plugins' &&
+            // If we are deploying to the master branch, exclude the
+            // sections that are not released yet
+            (process.env.BRANCH === 'master' ? s.released === true : true)
         )
         .concat(externalPlugins[this.kuzzleMajor]);
     },

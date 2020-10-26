@@ -28,7 +28,12 @@ export default {
     },
     howToList() {
       return this.$page.sectionList.filter(
-        (s) => s.kuzzleMajor === this.kuzzleMajor && s.section === 'how-to'
+        (s) =>
+          s.kuzzleMajor === this.kuzzleMajor &&
+          s.section === 'how-to' &&
+          // If we are deploying to the master branch, exclude the
+          // sections that are not released yet
+          (process.env.BRANCH === 'master' ? s.released === true : true)
       );
     },
     howToListByCategories() {

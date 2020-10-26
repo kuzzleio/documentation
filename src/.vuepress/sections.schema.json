@@ -26,12 +26,16 @@
       },
       "deprecated": {
         "type": "boolean"
+      },
+      "released": {
+        "type": "boolean"
       }
     },
     "required": [
       "name",
       "kuzzleMajor",
-      "section"
+      "section",
+      "released"
     ]
   }
 }
