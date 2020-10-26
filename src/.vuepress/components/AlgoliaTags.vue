@@ -2,6 +2,7 @@
   <div style="display: none">
     <div data-algolia-lvl="0">{{ algoliaLevel[0] }}</div>
     <div data-algolia-lvl="1">{{ algoliaLevel[1] }}</div>
+    <div data-algolia="major-version">{{ kuzzleMajor }}</div>
   </div>
 </template>
 
