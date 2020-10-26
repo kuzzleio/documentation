@@ -193,7 +193,15 @@ Use the IconTable table component directly in the markdown like this :
 
 Each object of the array corresponds to a cell of the custom table.
 
-/!\ Note that the icon path must be complete and not relative to the markdown file, for example: `/getting-started/1-quick-start/myIcon.png`.
+/!\ Note that the icon path must be relative to the `framework` directory.
+
+### GuidesLinks
+
+The GuidesLinks component allows to display previous and next links:
+
+```
+<GuidesLinks :prev="{text: 'what is kuzzle', url: '/foo'}" :next="{text: 'Store and Access Data', url: '/bar'}"/>
+```
 
 ## Code snippet import
 
