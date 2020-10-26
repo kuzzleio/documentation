@@ -194,7 +194,7 @@ each object of the array corresponds to a cell of the custom table
 
 ### Prev and next links
 
-To add prev and next links, use the custom components at the end of the markdown file:
+To add prev and next links, use the custom component at the end of the markdown file:
 
 ```
 <PrevAndNextLinks :prev="{text: 'what is kuzzle', url: '/foo'}" :next="{text: 'Store and Access Data', url: '/bar'}"/>
