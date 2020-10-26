@@ -105,6 +105,14 @@
   deploy_path: /sdk/go/2/
   doc_root: .doc
 
+- url: https://github.com/kuzzleio/sdk-go.git
+  doc_version: 3
+  stable: master
+  dev: 3-dev
+  name: sdk-go-3
+  deploy_path: /sdk/go/3/
+  doc_root: .doc
+
 - url: https://github.com/kuzzleio/sdk-java.git
   doc_version: 1
   stable: 1-stable
@@ -126,12 +134,12 @@
   name: sdk-java-3
   deploy_path: /sdk/java/3/
 
-- url: https://github.com/kuzzleio/sdk-jvm.git
-  doc_version: 1
-  stable: master
-  dev: 1-dev
-  name: sdk-jvm-1
-  deploy_path: /sdk/jvm/1
+# - url: https://github.com/kuzzleio/sdk-jvm.git
+#   doc_version: 1
+#   stable: master
+#   dev: 1-dev
+#   name: sdk-jvm-1
+#   deploy_path: /sdk/jvm/1
 
 - url: https://github.com/kuzzleio/kuzzle.git
   doc_version: 1
