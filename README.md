@@ -20,7 +20,7 @@ This repository is essentially used to version the framework files and deploy th
 
 ## How to get a local preview of your work on the framework
 
-If you are working on the code of the documentation framework, this is the right place. And you want a preview of your work before pushing it to GitHub. For most operations of this kind, we use a CLI tool called [Kuzdoc](https://github.com/kuzzleio/kuzdoc).
+If you are working on the code of the documentation framework, this is the right place. And you want a preview of your work before pushing it to GitHub. For most operations of this kind, we use a CLI tool called [kuzdoc](https://github.com/kuzzleio/kuzdoc).
 
 If you haven't already done it, install Kuzdoc globally
 
@@ -70,7 +70,7 @@ This will clone the framework repository (i.e. this one) into the `/doc/framewor
 
 **Note** _If your documentation lives in a folder specific to the version of the code (e.g. `/doc/7/`, for the JS SDK) a symlink should link `/doc/framework/` to `/doc/7/.vuepress`. Be sure this symlink exists and is versioned._
 
-**Note** _You can use with the `framework:install --branch` option to select the branch of the framework you want to use for your preview. You might want to use `develop` if your content needs features that have not been released yet.
+**Note** _You can use with the `framework:install --branch` option to select the branch of the framework you want to use for your preview. You might want to use `develop` if your content needs features that have not been released yet._
 
 Then, in the case of the JS SDK v7,
 
