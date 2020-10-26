@@ -10,51 +10,60 @@
               <a
                 :href="`/core/${kuzzleMajor}/guides/`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/core/${kuzzleMajor}/guides/`)
+                  'md-tabs__link--active': isLinkActive(
+                    `/core/${kuzzleMajor}/guides/`
+                  ),
                 }"
                 title="Guides"
                 class="md-tabs__link"
-              >Guides</a>
+                >Guides</a
+              >
             </li>
             <li class="md-tabs__item">
               <a
                 :href="`/core/${kuzzleMajor}/api/`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/core/${kuzzleMajor}/api/`)
+                  'md-tabs__link--active': isLinkActive(
+                    `/core/${kuzzleMajor}/api/`
+                  ),
                 }"
                 title="API"
                 class="md-tabs__link"
-              >API</a>
+                >API</a
+              >
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/sdk/?kuzzleMajor=${kuzzleMajor}`"
+                :href="`/sdk/?${versionQueryKey}=${kuzzleMajor}`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/sdk/`)
+                  'md-tabs__link--active': isLinkActive(`/sdk/`),
                 }"
                 title="SDK"
                 class="md-tabs__link"
-              >SDK</a>
+                >SDK</a
+              >
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/official-plugins/?kuzzleMajor=${kuzzleMajor}`"
+                :href="`/official-plugins/?${versionQueryKey}=${kuzzleMajor}`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/official-plugins/`)
+                  'md-tabs__link--active': isLinkActive(`/official-plugins/`),
                 }"
                 title="Plugins"
                 class="md-tabs__link"
-              >Plugins</a>
+                >Plugins</a
+              >
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/how-to/?kuzzleMajor=${kuzzleMajor}`"
+                :href="`/how-to/?${versionQueryKey}=${kuzzleMajor}`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/how-to/`)
+                  'md-tabs__link--active': isLinkActive(`/how-to/`),
                 }"
                 title="How To"
                 class="md-tabs__link"
-              >How To</a>
+                >How To</a
+              >
             </li>
           </ul>
         </li>
@@ -65,21 +74,27 @@
               <a
                 :href="`/core/${kuzzleMajor}/plugins/`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/core/${kuzzleMajor}/plugins/`)
+                  'md-tabs__link--active': isLinkActive(
+                    `/core/${kuzzleMajor}/plugins/`
+                  ),
                 }"
                 title="Write Plugins"
                 class="md-tabs__link"
-              >Write Plugins</a>
+                >Write Plugins</a
+              >
             </li>
             <li class="md-tabs__item">
               <a
                 :href="`/core/${kuzzleMajor}/protocols/`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/core/${kuzzleMajor}/protocols/`)
+                  'md-tabs__link--active': isLinkActive(
+                    `/core/${kuzzleMajor}/protocols/`
+                  ),
                 }"
                 title="Write Protocols"
                 class="md-tabs__link"
-              >Write Protocols</a>
+                >Write Protocols</a
+              >
             </li>
           </ul>
         </li>
@@ -89,11 +104,17 @@
 </template>
 
 <script>
+import { VERSION_QUERY_KEY } from '../helpers';
 export default {
   props: {
     kuzzleMajor: {
       type: Number,
       default: 2,
+    },
+  },
+  computed: {
+    versionQueryKey() {
+      return VERSION_QUERY_KEY;
     },
   },
   methods: {

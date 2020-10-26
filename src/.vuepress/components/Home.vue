@@ -80,19 +80,12 @@
 </template>
 
 <script>
+import { getCurrentVersion } from '../helpers';
 export default {
   name: 'Home',
   computed: {
     kuzzleMajor() {
-      if (!this.$page.currentSection) {
-        if (!this.$route.query.kuzzleMajor) {
-          return 2;
-        } else {
-          return parseInt(this.$route.query.kuzzleMajor);
-        }
-      }
-
-      return this.$page.currentSection.kuzzleMajor;
+      return getCurrentVersion(this.$page, this.$route);
     },
   },
   methods: {

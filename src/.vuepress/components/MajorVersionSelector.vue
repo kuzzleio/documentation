@@ -31,6 +31,7 @@
 
 <script>
 import { getItemLocalStorage, log } from '../util';
+import { VERSION_QUERY_KEY } from '../helpers';
 
 export default {
   name: 'MajorVersionSelector',
@@ -49,6 +50,9 @@ export default {
     };
   },
   computed: {
+    versionQueryKey() {
+      return VERSION_QUERY_KEY;
+    },
     selectedItem() {
       if (this.is404) {
         return null;
@@ -78,10 +82,10 @@ export default {
     },
     getHref(major) {
       if (this.is404) {
-        return `/?kuzzleMajor=${major}`;
+        return `/?${this.versionQueryKey}=${major}`;
       }
       if (!this.$page.currentSection) {
-        return `?kuzzleMajor=${major}`;
+        return `?${this.versionQueryKey}=${major}`;
       }
       // Find the possible candidates of the same (sub)section
       // that correspond to the new Kuzzle Major
@@ -110,7 +114,7 @@ export default {
 
       // If there's no candidate, just redirect to home
       if (!candidates || candidates.length === 0) {
-        return `/?kuzzleMajor=${major}`;
+        return `/?${this.versionQueryKey}=${major}`;
       }
 
       // If there's one candidate, redirect to its index page
