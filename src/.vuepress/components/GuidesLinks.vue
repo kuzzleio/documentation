@@ -1,9 +1,9 @@
 <template>
-  <div class="SectionNavigator">
-    <span class="SectionNavigator-prev" v-if="prev">
+  <div class="GuidesLinks">
+    <span class="GuidesLinks-prev" v-if="prev">
       <a :href="prev.url">◄ {{ prev.text }}</a>
     </span>
-    <span class="SectionNavigator-next" v-if="next">
+    <span class="GuidesLinks-next" v-if="next">
       <a :href="next.url">{{ next.text }} ►</a>
     </span>
   </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'SectionNavigator',
+  name: 'GuidesLinks',
   props: {
     next: {
       type: Object,
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss">
-.SectionNavigator {
+.GuidesLinks {
   padding: 2em 0 2em 0;
   font-weight: 600;
 

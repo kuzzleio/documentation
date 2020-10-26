@@ -195,12 +195,12 @@ Each object of the array corresponds to a cell of the custom table.
 
 /!\ Note that the icon path must be relative to the `framework` directory.
 
-### SectionNavigator
+### GuidesLinks
 
-The SectionNavigator component allows to display previous and next links:
+The GuidesLinks component allows to display previous and next links:
 
 ```
-<SectionNavigator :prev="{text: 'what is kuzzle', url: '/foo'}" :next="{text: 'Store and Access Data', url: '/bar'}"/>
+<GuidesLinks :prev="{text: 'what is kuzzle', url: '/foo'}" :next="{text: 'Store and Access Data', url: '/bar'}"/>
 ```
 
 ## Code snippet import
