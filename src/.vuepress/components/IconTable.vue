@@ -1,11 +1,16 @@
 <template>
   <div class="IconTable">
     <div class="IconTable-item" v-for="item in items">
-      <div class="IconTable-item-icon">
+      <div class="IconTable-item-icon" v-if="item.icon">
+        <!-- Be extremely careful with this dynamic require.
+             The risk is that Webpack tries to include all the
+             files that satisfy the regex ^\.\/.*$ which will
+             result in a build fail.
+             https://webpack.js.org/guides/dependency-management/#require-with-expression
+        -->
         <img
-          :src="require(`@source/${item.icon}`)"
+          :src="item.icon ? require(`../../${item.icon}`) : null"
           alt="icon"
-          v-if="item.icon"
         />
       </div>
       <div class="IconTable-item-text">
