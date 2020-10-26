@@ -1,34 +1,50 @@
 <template>
   <div>
-    <HowToCategorie
+    <HowToCategory
       v-for="cat in categories"
       :key="cat"
       :categorie="cat"
-      :howToList="howToListByCategories(cat)"
+      :howToList="howToListByCategories[cat]"
     />
   </div>
 </template>
 
 <script>
-import { getItemLocalStorage } from '../util';
-import howToList from '../howto.json';
+import transform from 'lodash/transform';
 
 export default {
   name: 'HowToIndex',
-  data() {
-    return {
-      kuzzleMajor: '2',
-    };
-  },
-  mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
-  },
   computed: {
+    kuzzleMajor() {
+      if (!this.$page.currentSection) {
+        if (!this.$route.query.kuzzleMajor) {
+          return 2;
+        } else {
+          return parseInt(this.$route.query.kuzzleMajor);
+        }
+      }
+
+      return this.$page.currentSection.kuzzleMajor;
+    },
+    howToList() {
+      return this.$page.sectionList.filter(
+        (s) => s.kuzzleMajor === this.kuzzleMajor && s.section === 'how-to'
+      );
+    },
     howToListByCategories() {
-      return (categorie) => howToList[this.kuzzleMajor][categorie] || [];
+      return transform(
+        this.howToList,
+        (result, value, key) => {
+          if (!result[value.subsection]) {
+            result[value.subsection] = [];
+          }
+          result[value.subsection].push(value);
+        },
+        {}
+      );
     },
     categories() {
-      return Object.keys(howToList[this.kuzzleMajor]);
+      return Object.keys(this.howToListByCategories);
     },
   },
 };

@@ -14,7 +14,8 @@
     transition: transform 0.3s ease;
     list-style: none;
     display: inline-block;
-    width: 5em;
+    width: auto;
+    padding: 1em 1em 0 1em;
     text-align: center;
     border-bottom: solid 4px white;
     a {

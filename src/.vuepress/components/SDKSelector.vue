@@ -1,44 +1,40 @@
 <template>
-  <div class="selector" ref="selector" v-if="filteredItems.length">
+  <div class="selector" ref="selector" v-if="items.length">
     <div class="selector-selectedItem" @click="toggleList()">
       <img
         v-if="currentItem"
         class="selector-selectedItem-icon"
         :src="currentItem.icon"
-        :alt="currentItem.language"
+        :alt="currentItem.name"
       />
       <img v-else class="selector-selectedItem-icon" src="/logo-57x57.png" alt="Kuzzle logo" />
-      <span class="selector-selectedItem-name">{{ getCurrentSpan }}</span>
+      <span
+        v-if="currentItem"
+        class="selector-selectedItem-name"
+      >{{ currentItem.name }} v{{currentItem.version}}.x</span>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
-    <ul
-      :class="
-        `selector-list selector-list-${isListShowed ? 'opened' : 'closed'}`
-      "
-    >
-      <li
-        v-for="item in filteredItems"
-        :key="item.language + item.version"
-        :class="getItemClass(item)"
-        @click="toggleList()"
-      >
+    <ul :class="
+        `selector-list selector-list-${showList ? 'opened' : 'closed'}`
+      ">
+      <li v-for="item in filteredItems" :key="`${item.name}.${item.version}`" @click="toggleList()">
         <a
           :class="
-            `selector-list-item-link ${item.language === 'api' ? 'api' : ''}`
+            `selector-list-item-link ${item.subsection === 'api' ? 'api' : ''}`
           "
-          :href="generateLink(item)"
+          :href="item.path"
         >
           <img
-            v-if="item.language !== 'api'"
+            v-if="item.subsection !== 'api'"
             class="selector-list-item-icon"
             :src="item.icon"
-            :alt="item.language"
+            :alt="item.name"
           />
           <span
             :class="
-              `selector-list-item-name${item.language === 'api' ? '-api' : ''}`
+              `selector-list-item-name${item.subsection === 'api' ? '-api' : ''}`
             "
-          >{{ getSpan(item) }}</span>
+          >{{ item.name }} v{{item.version}}.x</span>
         </a>
       </li>
     </ul>
@@ -46,94 +42,43 @@
 </template>
 
 <script>
-import { getOldSDK } from '../util.js';
-
 export default {
   name: 'SDKSelector',
   props: {
-    items: Array,
-    kuzzleMajor: Number,
+    items: { type: Array, required: true },
+    kuzzleMajor: { type: Number, required: true },
   },
   data() {
     return {
-      isListShowed: false,
+      showList: false,
     };
   },
   computed: {
-    oldSDK() {
-      return getOldSDK(this.items);
-    },
-    getCurrentSpan() {
-      return this.currentItem ? this.currentItem.name : 'Select an SDK';
+    currentText() {
+      return this.currentItem ? this.currentItem.name : 'Select SDK or API';
     },
     filteredItems() {
-      return this.items.filter(
-        (item) => !this.$route.path.includes(`${item.language}/${item.version}`)
-      );
+      return this.items.filter((item) => item !== this.currentItem);
     },
     currentItem() {
-      let currentItem
-      if (this.$page.fullPath.match(/\/sdk\/[a-z\-]+\/\d+\//)) {
-        const splitPath = this.$page.fullPath.split('/');
-        // ... find out which one based on the URL path
-        currentItem = this.items.find(
-          (el) => el.version === splitPath[3] && el.language === splitPath[2]
-        );
-      } else {
-        currentItem = this.items.find(el => el.language === 'api')
-      }
-      return currentItem;
+      return this.items.find((i) => this.$route.path.startsWith(i.path));
     },
   },
   methods: {
-    getItemClass(item) {
-      let itemClass;
-      if (item.language === 'api') {
-        itemClass = '';
-      } else if (this.generateLink(item)) {
-        itemClass = 'selector-list-item';
-      } else {
-        itemClass = 'selector-list-item disabled';
-      }
-
-      return itemClass;
-    },
-    getSpan(item) {
-      if (this.$route.path.match(/\/sdk\//) && item.language === 'api') {
-        return 'See API doc';
-      }
-      return item.name;
-    },
-    generateLink(item) {
-      let method = '';
-      let path = '';
-      // if (this.$route.path.includes('controllers')) {
-      //   method = `controllers/${this.$route.path.split('controllers/')[1]}`;
-      // }
-      if (item.language === 'api') {
-        path = `/core/${this.kuzzleMajor}/api/`;
-      } else {
-        path = `/sdk/${item.language}/${item.version}/`;
-      }
-      // if (!this.oldSDK.includes(`${item.language}${item.version}`)) {
-      //   path += method;
-      // }
-      return path;
-    },
     toggleList: function () {
-      this.isListShowed = !this.isListShowed;
+      this.showList = !this.showList;
     },
-    onDocumentClick: function (e) {
+    onClickOutside: function (e) {
       const el = this.$refs.selector,
         target = e.target;
 
       if (el && el !== target && !el.contains(target)) {
-        this.isListShowed = false;
+        this.showList = false;
       }
     },
   },
   mounted() {
-    document.addEventListener('click', this.onDocumentClick);
+    document.addEventListener('click', this.onClickOutside);
   },
 };
 </script>

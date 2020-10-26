@@ -80,23 +80,26 @@
 </template>
 
 <script>
-import { getItemLocalStorage } from '../util';
-
 export default {
   name: 'Home',
-  data() {
-    return {
-      kuzzleMajor: '2'
-    };
-  },
-  mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
+  computed: {
+    kuzzleMajor() {
+      if (!this.$page.currentSection) {
+        if (!this.$route.query.kuzzleMajor) {
+          return 2;
+        } else {
+          return parseInt(this.$route.query.kuzzleMajor);
+        }
+      }
+
+      return this.$page.currentSection.kuzzleMajor;
+    },
   },
   methods: {
     getPath(path) {
       return `/core/${this.kuzzleMajor}${path}`;
-    }
-  }
+    },
+  },
 };
 </script>
 
