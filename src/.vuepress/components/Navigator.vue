@@ -1,9 +1,9 @@
 <template>
-  <div class="PrevAndNextLinks">
-    <span class="PrevAndNextLinks-prev" v-if="prev">
+  <div class="Navigator">
+    <span class="Navigator-prev" v-if="prev">
       <a :href="prev.url">◄ {{ prev.text }}</a>
     </span>
-    <span class="PrevAndNextLinks-next" v-if="next">
+    <span class="Navigator-next" v-if="next">
       <a :href="next.url">{{ next.text }} ►</a>
     </span>
   </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'PrevAndNextLinks',
+  name: 'Navigator',
   props: {
     next: {
       type: Object,
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss">
-.PrevAndNextLinks {
+.Navigator {
   padding: 2em 0 2em 0;
   font-weight: 600;
 

@@ -195,6 +195,14 @@ Each object of the array corresponds to a cell of the custom table.
 
 /!\ Note that the icon path must be relative to the `framework` directory.
 
+### Navigator
+
+The Navigator component allows to display previous and next links:
+
+```
+<Navigator :prev="{text: 'what is kuzzle', url: '/foo'}" :next="{text: 'Store and Access Data', url: '/bar'}"/>
+```
+
 ## Code snippet import
 
 You can [import code snippets from file](https://v1.vuepress.vuejs.org/guide/markdown.html#import-code-snippets), as supported by VuePress, with the following syntax in your Markdown:
