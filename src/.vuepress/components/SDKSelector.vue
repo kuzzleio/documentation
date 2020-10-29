@@ -7,21 +7,29 @@
         :src="currentItem.icon"
         :alt="currentItem.name"
       />
-      <img v-else class="selector-selectedItem-icon" src="/logo-57x57.png" alt="Kuzzle logo" />
-      <span
-        v-if="currentItem"
-        class="selector-selectedItem-name"
-      >{{ currentItem.name }} v{{currentItem.version}}.x</span>
+      <img
+        v-else
+        class="selector-selectedItem-icon"
+        src="/logo-57x57.png"
+        alt="Kuzzle logo"
+      />
+      <span v-if="currentItem" class="selector-selectedItem-name"
+        >{{ currentItem.name }} v{{ currentItem.version }}.x</span
+      >
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
-    <ul :class="
-        `selector-list selector-list-${showList ? 'opened' : 'closed'}`
-      ">
-      <li v-for="item in filteredItems" :key="`${item.name}.${item.version}`" @click="toggleList()">
+    <ul
+      :class="`selector-list selector-list-${showList ? 'opened' : 'closed'}`"
+    >
+      <li
+        v-for="item in filteredItems"
+        :key="`${item.name}.${item.version}`"
+        @click="toggleList()"
+      >
         <a
-          :class="
-            `selector-list-item-link ${item.subsection === 'api' ? 'api' : ''}`
-          "
+          :class="`selector-list-item-link ${
+            item.subsection === 'api' ? 'api' : ''
+          }`"
           :href="item.path"
         >
           <img
@@ -31,10 +39,11 @@
             :alt="item.name"
           />
           <span
-            :class="
-              `selector-list-item-name${item.subsection === 'api' ? '-api' : ''}`
-            "
-          >{{ item.name }} v{{item.version}}.x</span>
+            :class="`selector-list-item-name${
+              item.subsection === 'api' ? '-api' : ''
+            }`"
+            >{{ item.name }} v{{ item.version }}.x</span
+          >
         </a>
       </li>
     </ul>
@@ -61,7 +70,7 @@ export default {
       return this.items.filter((item) => item !== this.currentItem);
     },
     currentItem() {
-      return this.items.find((i) => this.$route.path.startsWith(i.path));
+      return this.items.find((i) => this.$page.fullPath.startsWith(i.path));
     },
   },
   methods: {

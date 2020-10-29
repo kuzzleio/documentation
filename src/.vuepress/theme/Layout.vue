@@ -2,8 +2,16 @@
   <div class="md-layout">
     <AlgoliaTags :kuzzle-major="kuzzleMajor" />
     <div class="overlayLoading" v-if="isLoading" />
-    <div class="overlay" :class="{ hidden: !sidebarOpen }" @click="closeSidebar"></div>
-    <Header ref="header" :kuzzle-major="kuzzleMajor" @openSidebar="openSidebar" />
+    <div
+      class="overlay"
+      :class="{ hidden: !sidebarOpen }"
+      @click="closeSidebar"
+    ></div>
+    <Header
+      ref="header"
+      :kuzzle-major="kuzzleMajor"
+      @openSidebar="openSidebar"
+    />
 
     <div ref="container" class="md-container">
       <!-- Main container -->
@@ -18,7 +26,11 @@
             @closeSidebar="closeSidebar"
           />
           <!-- Table of contents -->
-          <div ref="toc" class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+          <div
+            ref="toc"
+            class="md-sidebar md-sidebar--secondary"
+            data-md-component="toc"
+          >
             <div class="md-sidebar__scrollwrap">
               <div class="md-sidebar__inner">
                 <div v-if="sdkOrApiPage" class="selector-container">
@@ -33,8 +45,8 @@
           <div class="md-content">
             <div>
               <WarningBanner v-if="showDeprecatedBanner">
-                This SDK has been deprecated because of stability issues. It is not
-                advised to use it in a production environment.
+                This SDK has been deprecated because of stability issues. It is
+                not advised to use it in a production environment.
               </WarningBanner>
             </div>
             <article class="md-content__inner md-typeset">
@@ -56,6 +68,7 @@ import WarningBanner from '../components/WarningBanner.vue';
 import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
 import Footer from './Footer.vue';
+import { getCurrentVersion } from '../helpers';
 
 const {
   getFirstValidChild,
@@ -79,16 +92,7 @@ export default {
   },
   computed: {
     kuzzleMajor() {
-      const currentSection = this.$page.currentSection;
-      if (!currentSection) {
-        if (!this.$route.query.kuzzleMajor) {
-          return 2; // TODO infer this from window.location.pathname when on 404 (no $page)
-        } else {
-          return parseInt(this.$route.query.kuzzleMajor);
-        }
-      }
-
-      return currentSection.kuzzleMajor;
+      return getCurrentVersion(this.$page, this.$route);
     },
     sdkOrApiPage() {
       if (!this.$page.currentSection) {

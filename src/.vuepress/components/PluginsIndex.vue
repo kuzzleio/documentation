@@ -7,7 +7,9 @@
       class="Tiles-item"
     >
       <img :src="plugin.icon" :alt="plugin.name" class="Tiles-item-logo" />
-      <div class="Tiles-item-name">{{ `${plugin.name} v${plugin.version}` }}</div>
+      <div class="Tiles-item-name">
+        {{ `${plugin.name} v${plugin.version}` }}
+      </div>
     </a>
   </div>
 </template>
@@ -15,21 +17,13 @@
 <script>
 import { getItemLocalStorage } from '../util';
 import externalPlugins from '../external-plugins.json';
-
+import { getCurrentVersion } from '../helpers';
 export default {
   name: 'PluginsIndex',
   methods: {},
   computed: {
     kuzzleMajor() {
-      if (!this.$page.currentSection) {
-        if (!this.$route.query.kuzzleMajor) {
-          return 2;
-        } else {
-          return parseInt(this.$route.query.kuzzleMajor);
-        }
-      }
-
-      return this.$page.currentSection.kuzzleMajor;
+      return getCurrentVersion(this.$page, this.$route);
     },
     pluginList() {
       return this.$page.sectionList

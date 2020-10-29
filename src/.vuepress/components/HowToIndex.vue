@@ -11,20 +11,13 @@
 
 <script>
 import transform from 'lodash/transform';
+import { getCurrentVersion } from '../helpers';
 
 export default {
   name: 'HowToIndex',
   computed: {
     kuzzleMajor() {
-      if (!this.$page.currentSection) {
-        if (!this.$route.query.kuzzleMajor) {
-          return 2;
-        } else {
-          return parseInt(this.$route.query.kuzzleMajor);
-        }
-      }
-
-      return this.$page.currentSection.kuzzleMajor;
+      return getCurrentVersion(this.$page, this.$route);
     },
     howToList() {
       return this.$page.sectionList.filter(
