@@ -164,14 +164,20 @@ It is possible to add tabs directly in the markdown with this syntax:
 
 ```markdown
 :::: tabs
-::: tab yourTabName
+::: tab Java
+
 <<< ./snippets/check-token.java
+
 :::
-::: tab anotherTab
+::: tab Kotlin
+
 <<< ./snippets/check-token.kt
+
 :::
 ::::
 ```
+
+Library used: https://superbiger.github.io/vuepress-plugin-tabs/#documents
 
 ### IconTable
 
