@@ -48,6 +48,7 @@
 @import 'layout/versions';
 @import 'layout/sdk-selector';
 @import 'layout/sdk-tabs';
+@import 'layout/icontable';
 
 @import 'extensions/admonition';
 @import 'extensions/codehilite';
@@ -82,3 +83,4 @@ kbd,
 pre {
   font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
 }
+

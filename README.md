@@ -202,30 +202,36 @@ It is possible to add tabs directly in the markdown with this syntax:
 
 ### IconTable
 
-Use the IconTable table component directly in the markdown like this :
+You can create a list with icons inside a Markdown file with the `IconTable` CSS class, like in the following example.
 
+```html
+<div class="IconTable">
+  <div class="IconTable-item">
+    <div class="IconTable-item-icon">
+      <img src="./feature-data-storage.svg"/>
+    </div>
+    <div class="IconTable-item-text">
+      Data storage and access
+    </div>
+  </div><div class="IconTable-item">
+    <div class="IconTable-item-icon">
+      <img src="./feature-acl.svg"/>
+    </div>
+    <div class="IconTable-item-text">
+      Advanced permission system
+    </div>
+  </div>
+</div>
 ```
-<IconTable :items="...">
+
+The path of the icon file is relative to the current Markdown file.
+
+:warning: `div.IconTable-item` elements are `display: inline-block`, which means you cannot add any whitespace in the markdown between them: that's why the closing and opening tag are on the same line `</div><div class="IconTable-item">`. To add a newline for better readability, you can do
+
+```html
+</div><!--
+--><div class="IconTable-item">
 ```
-
-`items` props format :
-
-```
-[
-  {
-    icon: 'path/to/your/img',
-    text: 'the text you want',
-    href: 'url' (not required)
-  },
-  {
-    ...
-  }
-]
-```
-
-Each object of the array corresponds to a cell of the custom table.
-
-/!\ Note that the icon path must be relative to the `framework` directory.
 
 ### GuidesLinks
 
