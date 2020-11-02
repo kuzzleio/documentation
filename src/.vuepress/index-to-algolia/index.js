@@ -8,6 +8,10 @@ const { findRootNode, getParentNode } = require('./util.js');
 const records = [];
 const ALGOLIA_MAX_CONTENT_LENGTH = 8500;
 
+/**
+ * THIS PLUGIN IS OBSOLETE - We now use Algolia DOCSEARCH
+ * service for Open Source projects.
+ */
 module.exports = (options, ctx) => ({
   name: 'index-to-algolia',
 
