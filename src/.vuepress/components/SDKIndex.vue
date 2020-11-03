@@ -1,14 +1,16 @@
 <template>
-  <div class="Tiles">
-    <a
-      v-for="sdk in sdkList"
-      :key="sdk.name + sdk.version"
-      :href="sdk.path"
-      class="Tiles-item"
-    >
-      <img :src="sdk.icon" :alt="`${sdk.name} logo`" class="Tiles-item-logo" />
-      <div class="Tiles-item-name">{{ sdk.name }} v{{ sdk.version }}.x</div>
-    </a>
+  <div>
+    <div class="Tiles">
+      <a
+        v-for="sdk in sdkList"
+        :key="sdk.name + sdk.version"
+        :href="sdk.path"
+        class="Tiles-item"
+      >
+        <img :src="sdk.icon" :alt="`${sdk.name} logo`" class="Tiles-item-logo" />
+        <div class="Tiles-item-name">{{ sdk.name }} v{{ sdk.version }}.x</div>
+      </a>
+    </div>
     <div v-if="kuzzleMajor === 1">
       <h3>Community SDKs</h3>
       <span>the SDKs handcrafted by the community:</span>
@@ -35,6 +37,7 @@
         to add your contribution to this list.
       </span>
     </div>
+  </div>
   </div>
 </template>
 

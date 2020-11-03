@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev src --no-clear-screen",
+    "dev": "vuepress dev src --no-cache --no-clear-screen",
     "doc-dev": "npm run dev",
-    "build": "vuepress build src",
+    "build": "vuepress build src --no-cache",
     "doc-build": "npm run build",
     "debug": "node --nolazy --inspect-brk=9229 ./node_modules/.bin/vuepress dev src",
     "dead-links": "ruby .ci/dead-links.rb -p src/",
