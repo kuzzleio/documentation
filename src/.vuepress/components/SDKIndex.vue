@@ -48,7 +48,12 @@ export default {
     },
     sdkList() {
       return this.$page.sectionList.filter(
-        (s) => s.kuzzleMajor === this.kuzzleMajor && s.section === 'sdk'
+        (s) =>
+          s.kuzzleMajor === this.kuzzleMajor &&
+          s.section === 'sdk' &&
+          // If we are deploying to the master branch, exclude the
+          // sections that are not released yet
+          (BRANCH === 'master' ? s.released === true : true)
       );
     },
   },

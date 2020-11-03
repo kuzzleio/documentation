@@ -30,7 +30,10 @@ export default {
         .filter(
           (s) =>
             s.kuzzleMajor === this.kuzzleMajor &&
-            s.section === 'official-plugins'
+            s.section === 'official-plugins' &&
+            // If we are deploying to the master branch, exclude the
+            // sections that are not released yet
+            (process.env.BRANCH === 'master' ? s.released === true : true)
         )
         .concat(externalPlugins[this.kuzzleMajor]);
     },
