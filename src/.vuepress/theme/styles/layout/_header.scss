@@ -58,7 +58,7 @@
     position: relative;
     transition: opacity 0.25s;
     z-index: 1;
-    left: -13px;
+    margin-left: 0;
 
     // Hovered icon
     &:hover {

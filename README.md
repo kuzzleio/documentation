@@ -4,70 +4,97 @@ Our documentation is a statically generated website. The content is stored in a 
 
 ## Ok, but... Where is the actual content?
 
-Well, there is something you should be aware of... right away: this is a meta repository, which means content is not here. Actual documentation is stored in the repositories of the different pieces of the Kuzzle ecosystem, e.g. the [Kuzzle Core](https://github.com/kuzzleio/kuzzle/tree/master/doc/2), the [Javascript SDK](https://github.com/kuzzleio/sdk-javascript/tree/master/doc/7), the [GOLANG SDK](https://github.com/kuzzleio/sdk-go/tree/master/.doc/2) and so on. And this is a good thing because documentation should live along with the code that it documents. So, what is this repository for?
+This is a meta repository, which means content is not here. The actual documentation is stored in the repositories of the different pieces of the Kuzzle ecosystem, e.g. the [Kuzzle Core](https://github.com/kuzzleio/kuzzle/tree/master/doc/2), the [Javascript SDK](https://github.com/kuzzleio/sdk-javascript/tree/master/doc/7), the [GOLANG SDK](https://github.com/kuzzleio/sdk-go/tree/master/.doc/2) and so on. And this is a good thing because documentation should live along with the code that it documents. So, what is this repository for?
 
 This repository contains the following elements:
 
 - the VuePress logic and plugins that convert a bunch of `.md` files into a multi-rooted single-page-application with server-side-rendering an all those cool features we love;
 - the logic that gathers all the different documentations and organizes them in a set of different instances of VuePress;
-- the CI configuration that allows Travis to build and deploy all those different VuePress instances on our hosting.
+- the CI configuration that allows Travis to build and deploy all those different VuePress instances on our hosting space.
 
-We want to stress that, each section of the documentation (Core, SDK JS, SDK GO, plugins, etc...) is built into a separate and independent instance of VuePress. All these pieces will be glued together by being hosted in the same S3 bucket but in different sibling directories.
+We want to stress that each section of the documentation (Core, SDK JS, SDK GO, plugins, etc...) is built against a separate and independent instance of VuePress. All these pieces will be glued together by being hosted in the same S3 bucket but in different sibling directories.
 
 ### If you want to edit the content, this is not the right place
 
-This repository is essentially used to version the framework files and deploy the whole docs when necessary. In order to edit the content of the docs, please refer to the repository that contains them.
+This repository is essentially used to version the framework files and deploy the whole docs when necessary. In order to edit the content of the docs, please refer to the repositories that contain them.
 
-## How to build the docs locally
+## How to get a local preview of your work on the framework
 
-:warning: You are not meant to run a local copy of the _whole_ documentation. It is huge and it takes ages to build. The right way to work on the docs is to do it from within each repository that actually contains each portion of the documentation.
+If you are working on the code of the documentation framework, this is the right place. And you want a preview of your work before pushing it to GitHub. For most operations of this kind, we use a CLI tool called [kuzdoc](https://github.com/kuzzleio/kuzdoc).
 
-Here is the list of the repositories that contain the docs:
+If you haven't already done it, install Kuzdoc globally
 
-- [kuzzle-core v1](https://github.com/kuzzleio/kuzzle/tree/1-stable)
-- [kuzzle-core v2](https://github.com/kuzzleio/kuzzle/tree/master)
-- [JS SDK v5](https://github.com/kuzzleio/sdk-javascript/tree/5-stable)
-- [JS SDK v6](https://github.com/kuzzleio/sdk-javascript/tree/6-stable)
-- [JS SDK v7](https://github.com/kuzzleio/sdk-javascript/tree/master)
-- [GOLANG SDK v1](https://github.com/kuzzleio/sdk-go/tree/1-stable)
-- [GOLANG SDK v2](https://github.com/kuzzleio/sdk-go/tree/master)
-- [Android SDK](https://github.com/kuzzleio/sdk-android)
-- [PHP SDK](https://github.com/kuzzleio/sdk-php)
-- [C-sharp SDK](https://github.com/kuzzleio/sdk-csharp)
-- [C++ SDK](https://github.com/kuzzleio/sdk-cpp)
-- [Java SDK](https://github.com/kuzzleio/sdk-java)
-
-_Note_ This list might not be exhaustive
-
-## Ok, I just want to start a development server to work on the framework
-
-This is OK, just follow these steps.
-
+```sh
+npm install -g kuzdoc
 ```
-npm install
+
+:warning: You are not meant to run a local copy of the _whole_ documentation. It is huge and it will take ages to build.
+
+```sh
+npm ci
 ```
 
 Then run
 
-```
-npm run clone-repos
-```
-
-This will clone _all_ the repositories in the above list into the `.repos/` directory, which will most likely bloat your memory. If you don't want all of them to be cloned, you can set the `REPOSITORIES` environment variable to a comma-separated list of repository names, according to the file `./repos/repositories.yml`, e.g.
-
-```
-REPOSITORIES=sdk-javascript-6,kuzzle-2 npm run clone-repos
+```sh
+kuzdoc iterate-repos:install --repositories=sdk-javascript-6,kuzzle-2
 ```
 
-This will only clone the `sdk-javascript-6` and `kuzzle-2` repos.
+This will only clone the `sdk-javascript-6` and `kuzzle-2` repos, choose the ones that you want to work on locally, trying to avoid having too many.
 
 Then you just need to run
 
-```
+```sh
 npm run doc-dev
 ```
 
-And follow the on-screen instructions.
+And follow the on-screen instructions. This will start a development server with hot-reload.
+
+## How to get a local preview of your copywriting
+
+If you are writing a new piece of the documentation, or simply editing an existing one, you are likely willing to see how it looks. Here is how you do it with [kuzdoc](https://github.com/kuzzleio/kuzdoc).
+
+If you haven't already done it, install Kuzdoc globally
+
+```sh
+npm install -g kuzdoc
+```
+
+From the repository you're writing for (let's say, the Javascript SDK v7), install the framework
+
+```sh
+kuzdoc framework:install
+```
+
+This will clone the framework repository (i.e. this one) into the `/doc/framework/` folder of your repo. 
+
+**Note** _If your documentation lives in a folder specific to the version of the code (e.g. `/doc/7/`, for the JS SDK) a symlink should link `/doc/framework/` to `/doc/7/.vuepress`. Be sure this symlink exists and is versioned._
+
+**Note** _You can use with the `framework:install --branch` option to select the branch of the framework you want to use for your preview. You might want to use `develop` if your content needs features that have not been released yet._
+
+Then, in the case of the JS SDK v7,
+
+```sh
+kuzdoc repo:dev -d /sdk/js/7/ -v 7
+```
+
+The `-d` option allows you to specify a deployment path, which means that your content will be available at `http://localhost:8080/sdk/js/7/`. The `-v` option tells the CLI to look for the content in the `/doc/7/` folder. Adjust these options according to your repository.
+
+In the case of the Javascript SDK (and for most of them), this last command is shortcut by
+
+```sh
+npm run doc-dev
+```
+
+And follow the on-screen instructions. This will start a development server with hot-reload.
+
+If you want to build the repo, run
+
+```sh
+kuzdoc repo:build -d /sdk/js/7/ -v 7
+```
+
+which behaves exactly liks `repo:dev` and is shortcut by `npm run doc-build`.
 
 ### Index content to Algolia
 
@@ -175,30 +202,36 @@ It is possible to add tabs directly in the markdown with this syntax:
 
 ### IconTable
 
-Use the IconTable table component directly in the markdown like this :
+You can create a list with icons inside a Markdown file with the `IconTable` CSS class, like in the following example.
 
+```html
+<div class="IconTable">
+  <div class="IconTable-item">
+    <div class="IconTable-item-icon">
+      <img src="./feature-data-storage.svg"/>
+    </div>
+    <div class="IconTable-item-text">
+      Data storage and access
+    </div>
+  </div><div class="IconTable-item">
+    <div class="IconTable-item-icon">
+      <img src="./feature-acl.svg"/>
+    </div>
+    <div class="IconTable-item-text">
+      Advanced permission system
+    </div>
+  </div>
+</div>
 ```
-<IconTable :items="...">
+
+The path of the icon file is relative to the current Markdown file.
+
+:warning: `div.IconTable-item` elements are `display: inline-block`, which means you cannot add any whitespace in the markdown between them: that's why the closing and opening tag are on the same line `</div><div class="IconTable-item">`. To add a newline for better readability, you can do
+
+```html
+</div><!--
+--><div class="IconTable-item">
 ```
-
-`items` props format :
-
-```
-[
-  {
-    icon: 'path/to/your/img',
-    text: 'the text you want',
-    href: 'url' (not required)
-  },
-  {
-    ...
-  }
-]
-```
-
-Each object of the array corresponds to a cell of the custom table.
-
-/!\ Note that the icon path must be relative to the `framework` directory.
 
 ### GuidesLinks
 

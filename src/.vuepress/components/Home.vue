@@ -80,23 +80,19 @@
 </template>
 
 <script>
-import { getItemLocalStorage } from '../util';
-
+import { getCurrentVersion } from '../helpers';
 export default {
   name: 'Home',
-  data() {
-    return {
-      kuzzleMajor: '2'
-    };
-  },
-  mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
+  computed: {
+    kuzzleMajor() {
+      return getCurrentVersion(this.$page, this.$route);
+    },
   },
   methods: {
     getPath(path) {
       return `/core/${this.kuzzleMajor}${path}`;
-    }
-  }
+    },
+  },
 };
 </script>
 

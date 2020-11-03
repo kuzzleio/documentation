@@ -9,8 +9,10 @@ dead_links.json
 
 .repos/kuzzle-1
 .repos/kuzzle-2
-.repos/plugin
+.repos/plugin*
 .repos/sdk-*
-.repos/kuzzle-how-to
+.repos/kuzzle-how-to-1
+.repos/kuzzle-how-to-2
+.repos/plugin-cloudinary
 
 version.md

@@ -7,13 +7,9 @@ title: SDKs
 
 # SDKs Reference
 
-### **Select the language you want to use the Kuzzle SDK?**
-
-Below you’ll find the ones we currently support,
-but we’re working on extending the support to many more.
+Below you’ll find a list of the officially supported SDK,
+(we’re working on extending the support to many more).
 
 <br>
 
 <SDKIndex />
-
-<SDKCommunityIndex />
