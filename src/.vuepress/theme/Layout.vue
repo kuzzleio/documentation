@@ -100,7 +100,8 @@ export default {
       }
 
       return (
-        this.$page.currentSection.section === 'sdk' ||
+        (this.$page.currentSection.section === 'sdk' &&
+          this.$page.currentSection.subsection) ||
         this.$page.currentSection.subsection === 'api'
       );
     },
