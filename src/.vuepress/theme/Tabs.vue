@@ -1,6 +1,9 @@
 <template>
   <!-- Tabs with outline -->
   <nav class="md-tabs" data-md-component="tabs">
+    <div style="display: none">
+      {{ `/core/${kuzzleMajor}/guides/` }}
+    </div>
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
         <li class="md-tabs__group">
@@ -34,7 +37,7 @@
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/sdk/?${versionQueryKey}=${kuzzleMajor}`"
+                :href="`/sdk/v${kuzzleMajor}`"
                 :class="{
                   'md-tabs__link--active': isLinkActive(`/sdk/`),
                 }"
@@ -45,7 +48,7 @@
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/official-plugins/?${versionQueryKey}=${kuzzleMajor}`"
+                :href="`/official-plugins/v${kuzzleMajor}`"
                 :class="{
                   'md-tabs__link--active': isLinkActive(`/official-plugins/`),
                 }"
@@ -56,7 +59,7 @@
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/how-to/?${versionQueryKey}=${kuzzleMajor}`"
+                :href="`/how-to/v${kuzzleMajor}`"
                 :class="{
                   'md-tabs__link--active': isLinkActive(`/how-to/`),
                 }"
@@ -105,16 +108,24 @@
 
 <script>
 import { VERSION_QUERY_KEY } from '../helpers';
+import { getCurrentVersion } from '../helpers';
+
 export default {
-  props: {
-    kuzzleMajor: {
-      type: Number,
-      default: 2,
-    },
-  },
   computed: {
     versionQueryKey() {
       return VERSION_QUERY_KEY;
+    },
+    debugInfo() {
+      return JSON.stringify(
+        {
+          kuzzleMajor: this.kuzzleMajor,
+        },
+        null,
+        2
+      );
+    },
+    kuzzleMajor() {
+      return getCurrentVersion(this.$page);
     },
   },
   methods: {

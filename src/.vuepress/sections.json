@@ -1,4 +1,18 @@
 {
+  "/v1": {
+    "name": "Home",
+    "version": 1,
+    "kuzzleMajor": 1,
+    "section": "home",
+    "released": true
+  },
+  "/v2": {
+    "name": "Home",
+    "version": 2,
+    "kuzzleMajor": 2,
+    "section": "home",
+    "released": true
+  },
   "/core/1/api/": {
     "kuzzleMajor": 1,
     "section": "core",
@@ -57,6 +71,20 @@
     "section": "core",
     "subsection": "protocols",
     "name": "Write Protocols",
+    "released": true
+  },
+  "/sdk/v1": {
+    "name": "SDKs",
+    "version": 1,
+    "kuzzleMajor": 1,
+    "section": "sdk",
+    "released": true
+  },
+  "/sdk/v2": {
+    "name": "SDKs",
+    "version": 2,
+    "kuzzleMajor": 2,
+    "section": "sdk",
     "released": true
   },
   "/sdk/js/5/": {
@@ -205,6 +233,20 @@
     "icon": "/logos/java.svg",
     "released": false
   },
+  "/official-plugins/v1": {
+    "name": "Official Plugins",
+    "version": 1,
+    "kuzzleMajor": 1,
+    "section": "official-plugins",
+    "released": true
+  },
+  "/official-plugins/v2": {
+    "name": "Official Plugins",
+    "version": 2,
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "released": true
+  },
   "/official-plugins/s3/1": {
     "kuzzleMajor": 1,
     "section": "official-plugins",
@@ -239,6 +281,20 @@
     "name": "Cloudinary",
     "version": 2,
     "icon": "/logos/plugin-cloudinary.svg",
+    "released": true
+  },
+  "/how-to/v1": {
+    "name": "How-To",
+    "version": 1,
+    "kuzzleMajor": 1,
+    "section": "how-to",
+    "released": true
+  },
+  "/how-to/v2": {
+    "name": "How-To",
+    "version": 2,
+    "kuzzleMajor": 2,
+    "section": "how-to",
     "released": true
   },
   "/how-to/1/kuzzle-esp32": {

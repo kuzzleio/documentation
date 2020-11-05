@@ -11,22 +11,25 @@
 
 <script>
 import transform from 'lodash/transform';
-import { getCurrentVersion } from '../helpers';
 
 export default {
   name: 'HowToIndex',
-  computed: {
-    kuzzleMajor() {
-      return getCurrentVersion(this.$page, this.$route);
+  props: {
+    kuzzleMajor: {
+      type: Number,
+      required: true,
     },
+  },
+  computed: {
     howToList() {
       return this.$page.sectionList.filter(
         (s) =>
           s.kuzzleMajor === this.kuzzleMajor &&
           s.section === 'how-to' &&
+          s.subsection &&
           // If we are deploying to the master branch, exclude the
           // sections that are not released yet
-          (process.env.BRANCH === 'master' ? s.released === true : true)
+          (BRANCH === 'master' ? s.released === true : true)
       );
     },
     howToListByCategories() {

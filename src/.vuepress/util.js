@@ -133,7 +133,7 @@ function getPageDir(page) {
   if (endsWith(page.path, '/')) {
     return page.path;
   } else {
-    return path.parse(page.path).dir;
+    return path.dirname(page.path);
   }
 }
 

@@ -1,7 +1,6 @@
 <template>
   <div class="md-layout">
     <AlgoliaTags :kuzzle-major="kuzzleMajor" />
-    <div style="display: none">{{ debugInfo }}</div>
     <div class="overlayLoading" v-if="isLoading" />
     <div
       class="overlay"
@@ -92,17 +91,8 @@ export default {
     };
   },
   computed: {
-    debugInfo() {
-      return JSON.stringify(
-        {
-          currentBranch: BRANCH,
-        },
-        null,
-        2
-      );
-    },
     kuzzleMajor() {
-      return getCurrentVersion(this.$page, this.$route);
+      return getCurrentVersion(this.$page, null);
     },
     sdkOrApiPage() {
       if (!this.$page.currentSection) {

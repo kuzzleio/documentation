@@ -77,16 +77,15 @@ export default {
         this.showList = false;
       }
     },
-    onItemClick(item) {
-      this.$emit('change', item.value);
-    },
     getHref(major) {
       if (this.is404) {
-        return `/?${this.versionQueryKey}=${major}`;
+        return `/v${major}`;
       }
-      if (!this.$page.currentSection) {
-        return `?${this.versionQueryKey}=${major}`;
+
+      if (!this.$page || !this.$page.currentSection) {
+        return '/';
       }
+
       // Find the possible candidates of the same (sub)section
       // that correspond to the new Kuzzle Major
       const candidates = this.$page.sectionList.filter((s) => {
@@ -114,7 +113,7 @@ export default {
 
       // If there's no candidate, just redirect to home
       if (!candidates || candidates.length === 0) {
-        return `/?${this.versionQueryKey}=${major}`;
+        return `/v${major}`;
       }
 
       // If there's one candidate, redirect to its index page

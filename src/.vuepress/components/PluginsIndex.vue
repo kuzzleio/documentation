@@ -17,23 +17,26 @@
 <script>
 import { getItemLocalStorage } from '../util';
 import externalPlugins from '../external-plugins.json';
-import { getCurrentVersion } from '../helpers';
 export default {
   name: 'PluginsIndex',
   methods: {},
-  computed: {
-    kuzzleMajor() {
-      return getCurrentVersion(this.$page, this.$route);
+  props: {
+    kuzzleMajor: {
+      type: Number,
+      required: true,
     },
+  },
+  computed: {
     pluginList() {
       return this.$page.sectionList
         .filter(
           (s) =>
             s.kuzzleMajor === this.kuzzleMajor &&
             s.section === 'official-plugins' &&
+            s.subsection &&
             // If we are deploying to the master branch, exclude the
             // sections that are not released yet
-            (process.env.BRANCH === 'master' ? s.released === true : true)
+            (BRANCH === 'master' ? s.released === true : true)
         )
         .concat(externalPlugins[this.kuzzleMajor]);
     },

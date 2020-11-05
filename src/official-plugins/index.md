@@ -5,8 +5,4 @@ order: 3
 title: Official Plugins
 ---
 
-# Official Plugins
-
-Below you’ll find the ones we officially released.
-
-<PluginsIndex/>
+<Redirect to="v2" />

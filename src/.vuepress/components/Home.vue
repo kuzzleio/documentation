@@ -80,12 +80,11 @@
 </template>
 
 <script>
-import { getCurrentVersion } from '../helpers';
 export default {
   name: 'Home',
-  computed: {
-    kuzzleMajor() {
-      return getCurrentVersion(this.$page, this.$route);
+  props: {
+    kuzzleMajor: {
+      type: Number,
     },
   },
   methods: {
