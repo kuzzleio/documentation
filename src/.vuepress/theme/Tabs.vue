@@ -37,7 +37,7 @@
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/sdk/v${kuzzleMajor}`"
+                :href="`/sdk/v${kuzzleMajor}.html`"
                 :class="{
                   'md-tabs__link--active': isLinkActive(`/sdk/`),
                 }"
@@ -48,7 +48,7 @@
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/official-plugins/v${kuzzleMajor}`"
+                :href="`/official-plugins/v${kuzzleMajor}.html`"
                 :class="{
                   'md-tabs__link--active': isLinkActive(`/official-plugins/`),
                 }"
@@ -59,7 +59,7 @@
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/how-to/v${kuzzleMajor}`"
+                :href="`/how-to/v${kuzzleMajor}.html`"
                 :class="{
                   'md-tabs__link--active': isLinkActive(`/how-to/`),
                 }"
