@@ -99,7 +99,7 @@
 
 - url: https://github.com/kuzzleio/sdk-go.git
   doc_version: 2
-  stable: master
+  stable: 2-stable
   dev: 2-dev
   name: sdk-go-2
   deploy_path: /sdk/go/2/
