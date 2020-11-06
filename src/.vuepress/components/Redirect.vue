@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>Redirecting...</div>
 </template>
 
 <script>
@@ -8,11 +8,11 @@ export default {
   props: {
     to: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   mounted() {
     this.$router.push(this.to);
-  }
+  },
 };
 </script>

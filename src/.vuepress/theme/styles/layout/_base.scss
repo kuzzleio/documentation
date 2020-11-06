@@ -232,3 +232,10 @@ hr {
     display: block !important;
   }
 }
+
+.screen-only {
+  display: block !important;
+  @include break-to-device(tablet) {
+    display: none !important;
+  }
+}

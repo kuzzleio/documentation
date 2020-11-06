@@ -8,6 +8,7 @@ const algoliaDefaultAppId = 'VF5HP4ZVDU';
 const algoliaDefaultIndex = 'documentation-dev';
 const algoliaDefaultSearchKey = 'de63216cd8d0116b2755916b9a38ae35';
 const googleAnalyticsID = 'UA-67035328-7';
+const sections = require('./sections.json')
 
 module.exports = {
   title: siteTitle,
@@ -243,8 +244,8 @@ module.exports = {
   markdown: {
     anchor: {
       permalink: true,
-      permalinkBefore: false,
-      permalinkSymbol: ''
+      permalinkBefore: true,
+      permalinkSymbol: '#'
     },
     extendMarkdown: md => {
       md.use(require('./markdown/code-snippet'));
@@ -272,26 +273,16 @@ module.exports = {
           JSON.stringify(algoliaDefaultIndex),
         REPO_SLUG:
           JSON.stringify(process.env.TRAVIS_REPO_SLUG) ||
-          JSON.stringify('kuzzleio/documentation')
+          JSON.stringify('kuzzleio/documentation'),
+        BRANCH:
+          JSON.stringify(process.env.TRAVIS_BRANCH)
       })
     ]
   },
   plugins: [
     'vuepress-plugin-element-tabs',
     require('./meta-tags-plugin/index.js'),
-    require('./page-attributes/index.js'),
-    process.env.ALGOLIA_WRITE_KEY && !process.env.DISABLE_ALGOLIA
-      ? [
-        require('./index-to-algolia/index.js'),
-        {
-          algoliaAppId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
-          algoliaWriteKey: process.env.ALGOLIA_WRITE_KEY,
-          algoliaIndex: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
-          clearIndex: process.env.ALGOLIA_CLEAR_INDEX,
-          repoName: process.env.REPO_NAME
-        }
-      ]
-      : {},
+    [require('./page-attributes/index.js'), { sections }],
     [
       require('vuepress-frontmatter-lint'),
       {

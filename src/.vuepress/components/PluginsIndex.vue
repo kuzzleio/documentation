@@ -3,10 +3,10 @@
     <a
       v-for="plugin in pluginList"
       :key="plugin.name + plugin.version"
-      :href="plugin.url"
+      :href="plugin.path"
       class="Tiles-item"
     >
-      <img :src="plugin.icon" :alt="plugin.iconAlt" class="Tiles-item-logo" />
+      <img :src="plugin.icon" :alt="plugin.name" class="Tiles-item-logo" />
       <div class="Tiles-item-name">
         {{ `${plugin.name} v${plugin.version}` }}
       </div>
@@ -16,24 +16,31 @@
 
 <script>
 import { getItemLocalStorage } from '../util';
-import plugins from '../plugins.json';
-
+import externalPlugins from '../external-plugins.json';
 export default {
   name: 'PluginsIndex',
-  data() {
-    return {
-      kuzzleMajor: '2'
-    };
-  },
-  mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
-  },
   methods: {},
+  props: {
+    kuzzleMajor: {
+      type: Number,
+      required: true,
+    },
+  },
   computed: {
     pluginList() {
-      return plugins[this.kuzzleMajor] || [];
-    }
-  }
+      return this.$page.sectionList
+        .filter(
+          (s) =>
+            s.kuzzleMajor === this.kuzzleMajor &&
+            s.section === 'official-plugins' &&
+            s.subsection &&
+            // If we are deploying to the master branch, exclude the
+            // sections that are not released yet
+            (BRANCH === 'master' ? s.released === true : true)
+        )
+        .concat(externalPlugins[this.kuzzleMajor]);
+    },
+  },
 };
 </script>
 

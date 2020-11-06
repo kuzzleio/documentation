@@ -4,22 +4,16 @@
     ref="selector"
     v-if="items.length"
   >
-    <div
-      class="selector-selectedItem"
-      @click="toggleList()"
-      v-if="selectedItem"
-    >
+    <div class="selector-selectedItem" @click="toggleList()">
       <div class="selector-selectedItem-name">
         <span class="selector-selectedItem-name-wrapper">
-          {{ selectedItem.text }}
+          {{ selectedItem ? selectedItem.text : 'Kuzzle' }}
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </span>
       </div>
     </div>
     <ul
-      :class="
-        `selector-list selector-list-${isListShowed ? 'opened' : 'closed'}`
-      "
+      :class="`selector-list selector-list-${showList ? 'opened' : 'closed'}`"
     >
       <li
         v-for="item in items"
@@ -27,7 +21,7 @@
         class="selector-list-item"
         @click="toggleList()"
       >
-        <a class="selector-list-item-link" href="#" @click="onItemClick(item)">
+        <a class="selector-list-item-link" :href="getHref(item.value)">
           <span class="selector-list-item-name">{{ item.text }}</span>
         </a>
       </li>
@@ -37,45 +31,113 @@
 
 <script>
 import { getItemLocalStorage, log } from '../util';
+import { VERSION_QUERY_KEY } from '../helpers';
 
 export default {
   name: 'MajorVersionSelector',
+  props: {
+    kuzzleMajor: {
+      type: Number,
+    },
+  },
   data() {
     return {
       items: [
         { value: 1, text: 'Kuzzle v1' },
-        { value: 2, text: 'Kuzzle v2' }
+        { value: 2, text: 'Kuzzle v2' },
       ],
-      selectedItem: {},
-      isListShowed: false,
-      kuzzleMajor: 2
+      showList: false,
     };
+  },
+  computed: {
+    versionQueryKey() {
+      return VERSION_QUERY_KEY;
+    },
+    selectedItem() {
+      if (this.is404) {
+        return null;
+      }
+      return this.items.find((item) => item.value === this.kuzzleMajor);
+    },
+    is404() {
+      return (
+        this.$route.matched.length === 1 && this.$route.matched[0].path === '*'
+      );
+    },
   },
   methods: {
     toggleList() {
-      this.isListShowed = !this.isListShowed;
+      this.showList = !this.showList;
     },
-    onDocumentClick(e) {
+    onClickOutside(e) {
       const el = this.$refs.selector,
         target = e.target;
 
       if (el && el !== target && !el.contains(target)) {
-        this.isListShowed = false;
+        this.showList = false;
       }
     },
-    onItemClick(item) {
-      this.selectedItem = item;
-      this.$emit('change', item.value);
-    }
+    getHref(major) {
+      if (this.is404) {
+        return `/v${major}`;
+      }
+
+      if (!this.$page || !this.$page.currentSection) {
+        return '/';
+      }
+
+      // Find the possible candidates of the same (sub)section
+      // that correspond to the new Kuzzle Major
+      const candidates = this.$page.sectionList.filter((s) => {
+        if (s.kuzzleMajor !== major) {
+          return false;
+        }
+
+        if (s.section !== this.$page.currentSection.section) {
+          return false;
+        }
+
+        if (
+          this.$page.currentSection.subsection &&
+          this.$page.currentSection.subsection !== s.subsection
+        ) {
+          return false;
+        }
+
+        if (this.$page.currentSection.name !== s.name) {
+          return false;
+        }
+
+        return true;
+      });
+
+      // If there's no candidate, just redirect to home
+      if (!candidates || candidates.length === 0) {
+        return `/v${major}`;
+      }
+
+      // If there's one candidate, redirect to its index page
+      if (candidates.length === 1) {
+        return candidates[0].path;
+      }
+
+      // if there's many candidate, choose the one with the
+      // highest version number
+      const hypestCandidate = candidates.reduce((acc, curr) => {
+        if (!curr.version || curr.version < acc.version) {
+          return acc;
+        }
+        if (curr.version >= acc.version) {
+          return curr;
+        }
+      }, candidates[0]);
+
+      return hypestCandidate.path;
+    },
   },
   mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || 2;
-    this.selectedItem = this.items.find(
-      item => item.value === this.kuzzleMajor
-    );
-
-    document.addEventListener('click', this.onDocumentClick);
-  }
+    document.addEventListener('click', this.onClickOutside);
+  },
 };
 </script>
 

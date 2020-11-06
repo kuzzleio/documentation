@@ -1,0 +1,41 @@
+{
+  "title": "Sections Schema",
+  "description": "Defines the format of the sections.json file",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "kuzzleMajor": {
+        "type": "integer"
+      },
+      "section": {
+        "type": "string"
+      },
+      "subsection": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "version": {
+        "type": "integer"
+      },
+      "icon": {
+        "type": "string"
+      },
+      "deprecated": {
+        "type": "boolean"
+      },
+      "released": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "name",
+      "kuzzleMajor",
+      "section",
+      "released"
+    ]
+  }
+}

@@ -34,12 +34,15 @@
               data-md-component="title"
             >
               <span class="md-header-nav__topic">
-                <MajorVersionSelector @change="onKuzzleMajorChanged" />
+                <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
               </span>
             </div>
           </div>
-          <div class="md-flex__cell md-flex__cell--stretch md-flex__cell--menu">
-            <Tabs :kuzzleMajor="kuzzleMajor" />
+          <div
+            class="screen-only md-flex__cell md-flex__cell--stretch md-flex__cell--menu"
+          >
+            <div style="display: none">{{ debugInfo }}</div>
+            <Tabs :kuzzle-major="kuzzleMajor" />
           </div>
           <!-- Button to open search dialogue -->
           <div class="md-flex__cell md-flex__cell--shrink">
@@ -83,30 +86,37 @@ export default {
   components: {
     Search,
     Tabs,
-    MajorVersionSelector
+    MajorVersionSelector,
   },
   name: 'Header',
-  props: ['changeKuzzleMajor'],
+  props: {
+    kuzzleMajor: {
+      type: Number,
+    },
+  },
   data() {
     return {
       algoliaAppId: ALGOLIA_APP_ID,
       algoliaSearchKey: ALGOLIA_SEARCH_KEY,
       algoliaIndexName: ALGOLIA_INDEX,
-      kuzzleMajor: '2'
     };
   },
-  mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
+  computed: {
+    debugInfo() {
+      return JSON.stringify(
+        {
+          kuzzleMajor: this.kuzzleMajor,
+        },
+        null,
+        2
+      );
+    },
   },
   methods: {
     toggleSearchTrigger(toggle) {
       this.$refs.searchTrigger.checked = toggle;
     },
-    onKuzzleMajorChanged(version) {
-      this.kuzzleMajor = version;
-      this.$emit('kuzzle-major-changed', version);
-    }
-  }
+  },
 };
 </script>
 

@@ -10,11 +10,6 @@
   color: $md-color-white;
   overflow: auto;
 
-  // [tablet -]: Hide tabs for tablet and below, as they don't make any sense
-  @include break-to-device(tablet) {
-    display: none;
-  }
-
   // Hide for print
   @media print {
     display: none;
@@ -30,12 +25,20 @@
     position: relative;
     left: -13px;
     overflow-x: hidden;
+
+    @include break-to-device(tablet) {
+      position: unset;
+    }
   }
 
   // List group
   &__group {
     display: inline-block;
     margin-right: 4rem;
+
+    @include break-to-device(tablet) {
+      display: block;
+    }
   }
 
   // List name of group of items

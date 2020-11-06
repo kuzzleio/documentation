@@ -80,23 +80,18 @@
 </template>
 
 <script>
-import { getItemLocalStorage } from '../util';
-
 export default {
   name: 'Home',
-  data() {
-    return {
-      kuzzleMajor: '2'
-    };
-  },
-  mounted() {
-    this.kuzzleMajor = getItemLocalStorage('kuzzleMajor') || '2';
+  props: {
+    kuzzleMajor: {
+      type: Number,
+    },
   },
   methods: {
     getPath(path) {
       return `/core/${this.kuzzleMajor}${path}`;
-    }
-  }
+    },
+  },
 };
 </script>
 
