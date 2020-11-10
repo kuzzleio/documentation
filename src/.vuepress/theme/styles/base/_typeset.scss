@@ -220,8 +220,7 @@ kbd {
       background-color: transparent;
       display: block;
       margin: 0;
-      padding: 1.05rem 1.2rem;
-      padding-bottom: 5px;
+      padding: 1rem;
       font-size: inherit;
       box-shadow: none;
       box-decoration-break: none;
@@ -403,7 +402,6 @@ kbd {
   table:not([class]) {
     @include z-depth(2);
 
-    display: inline-block;
     max-width: 100%;
     width: 100%;
     border-radius: 0.2rem;

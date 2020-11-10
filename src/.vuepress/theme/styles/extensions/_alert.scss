@@ -41,6 +41,11 @@
   &.alert-warning {
     background-color: #f39e9e;
 
+    a {
+      color: #002835;
+      text-decoration: underline;
+    }
+
     &:before {
       content: '\f071';
     }
