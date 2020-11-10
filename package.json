@@ -47,11 +47,10 @@
     "read-yaml": "^1.1.0",
     "sanitize-filename": "^1.6.1",
     "sass-loader": "^7.1.0",
-    "vue-tabs-component": "^1.5.0",
     "vuepress": "^1.5.2",
     "vuepress-frontmatter-lint": "^2.1.2",
     "vuepress-plugin-container": "^2.0.1",
-    "vuepress-plugin-tabs": "^0.3.0",
+    "vuepress-plugin-element-tabs": "^0.2.8",
     "yargs": "^13.3.0"
   },
   "devDependencies": {

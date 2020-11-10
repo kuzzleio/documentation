@@ -280,7 +280,7 @@ module.exports = {
     ]
   },
   plugins: [
-    'tabs',
+    'vuepress-plugin-element-tabs',
     require('./meta-tags-plugin/index.js'),
     [require('./page-attributes/index.js'), { sections }],
     [
