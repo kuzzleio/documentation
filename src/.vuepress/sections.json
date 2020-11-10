@@ -231,7 +231,7 @@
     "name": "Jvm",
     "version": 1,
     "icon": "/logos/java.svg",
-    "released": false
+    "released": true
   },
   "/official-plugins/v1": {
     "name": "Official Plugins",
