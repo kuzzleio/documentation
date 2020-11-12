@@ -9,7 +9,9 @@
   background-color: $md-color-primary;
   color: $md-color-white;
   overflow: auto;
-
+  position: relative;
+  top: 1em;
+  margin-left: -1em;
   // Hide for print
   @media print {
     display: none;
@@ -18,7 +20,6 @@
   // List of items
   &__list {
     margin: 0;
-    margin-left: 0.4rem;
     padding: 0;
     list-style: none;
     white-space: nowrap;
@@ -99,6 +100,21 @@
     }
   }
 
+  @include break-to-device(tablet) {
+    background-color: white;
+    color: $md-color-primary;
+    margin: 0;
+
+    .md-tabs__item {
+      display: block;
+    }
+
+    .md-tabs__link--active {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+
   // [screen +]: Adjust main navigation styles
   @include break-from-device(screen) {
     // Hide 1st level nested items, as they are listed in the tabs by setting
@@ -171,7 +187,6 @@
     }
   }
 }
-
 
 // ----------------------------------------------------------------------------
 // Element-tabs styles override
