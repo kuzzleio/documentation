@@ -22,11 +22,11 @@
     "icon": "/logo-57x57.png",
     "released": true
   },
-  "/core/2/api/": {
+  "/core/2/references/": {
     "kuzzleMajor": 2,
     "section": "core",
-    "subsection": "api",
-    "name": "API",
+    "subsection": "references",
+    "name": "References",
     "version": 2,
     "icon": "/logo-57x57.png",
     "released": true
@@ -52,22 +52,8 @@
     "name": "Write Plugins",
     "released": true
   },
-  "/core/2/plugins/": {
-    "kuzzleMajor": 2,
-    "section": "core",
-    "subsection": "plugins",
-    "name": "Write Plugins",
-    "released": true
-  },
   "/core/1/protocols/": {
     "kuzzleMajor": 1,
-    "section": "core",
-    "subsection": "protocols",
-    "name": "Write Protocols",
-    "released": true
-  },
-  "/core/2/protocols/": {
-    "kuzzleMajor": 2,
     "section": "core",
     "subsection": "protocols",
     "name": "Write Protocols",
