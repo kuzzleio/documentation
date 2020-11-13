@@ -7,11 +7,14 @@
     <div class="md-sidebar__scrollwrap" ref="scrollwrap">
       <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--primary" data-md-level="0">
-          <label class="md-nav__title md-nav__title--site mobile-only" for="drawer">
+          <label
+            class="md-nav__title md-nav__title--site mobile-only"
+            for="drawer"
+          >
             <span class="md-nav__button md-logo">
               <img src="/logo-min.png" width="48" height="48" />
             </span>
-            <span>Kuzzle Documentation</span>
+            <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
           </label>
           <div class="mobile-only">
             <Tabs :kuzzleMajor="kuzzleMajor" />
@@ -32,8 +35,12 @@
             >
               <li
                 class="md-nav__separator"
-                :data-algolia-lvl="$page.path.startsWith(item__1.path) ? '2' : ''"
-              >{{ item__1.frontmatter.title }}</li>
+                :data-algolia-lvl="
+                  $page.path.startsWith(item__1.path) ? '2' : ''
+                "
+              >
+                {{ item__1.frontmatter.title }}
+              </li>
 
               <div v-for="item__2 in getPageChildren(item__1)">
                 <li class="md-nav__item md-nav-title">
@@ -56,16 +63,30 @@
                         class="fa fa-caret-down"
                         aria-hidden="true"
                       ></i>
-                      <i v-else class="fa fa-caret-right" aria-hidden="true"></i>
+                      <i
+                        v-else
+                        class="fa fa-caret-right"
+                        aria-hidden="true"
+                      ></i>
                       <span
-                        :data-algolia-lvl="$page.path.startsWith(item__2.path) ? '3' : ''"
-                      >{{ item__2.title }}</span>
+                        :data-algolia-lvl="
+                          $page.path.startsWith(item__2.path) ? '3' : ''
+                        "
+                        >{{ item__2.title }}</span
+                      >
                     </div>
-                    <router-link v-else :to="item__2.path" @click.native="closeSidebar">
+                    <router-link
+                      v-else
+                      :to="item__2.path"
+                      @click.native="closeSidebar"
+                    >
                       <a
                         class="no_arrow"
-                        :data-algolia-lvl="$page.path.startsWith(item__2.path) ? '3' : ''"
-                      >{{ item__2.title }}</a>
+                        :data-algolia-lvl="
+                          $page.path.startsWith(item__2.path) ? '3' : ''
+                        "
+                        >{{ item__2.title }}</a
+                      >
                     </router-link>
                   </div>
                 </li>
@@ -89,7 +110,9 @@
                         :title="item__3.title"
                         @click.native="$emit('closeSidebar')"
                       >
-                        <a class="no_arrow" data-algolia-lvl="4">{{ item__3.title }}</a>
+                        <a class="no_arrow" data-algolia-lvl="4">{{
+                          item__3.title
+                        }}</a>
                       </router-link>
                     </li>
                     <li v-else>
@@ -124,30 +147,32 @@ import {
   findRootNode,
   setItemLocalStorage,
   getItemLocalStorage,
-  getNodeByPath,
+  getNodeByPath
 } from '../util.js';
+
+import { getCurrentVersion } from '../helpers';
 
 export default {
   components: {
-    Tabs,
+    Tabs
   },
   props: {
     sidebarOpen: {
       type: Boolean,
-      default: false,
+      default: false
     },
     kuzzleMajor: {
       type: Number,
-      default: null,
+      default: null
     },
     sdkList: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
-      openedSubmenu: '',
+      openedSubmenu: ''
     };
   },
   computed: {
@@ -164,6 +189,9 @@ export default {
     root() {
       return findRootNode(this.$page, this.$site.pages);
     },
+    kuzzleMajor() {
+      return getCurrentVersion(this.$page);
+    }
   },
   methods: {
     setOpenedSubmenu(item__1, item__2) {
@@ -200,7 +228,7 @@ export default {
       const item3Id = this.getId([
         item__1.title,
         item__2.title,
-        childs[0].title,
+        childs[0].title
       ]);
       if (!document.getElementById(item3Id)) {
         return;
@@ -288,12 +316,11 @@ export default {
           }
         }
       };
-    },
+    }
   },
   mounted() {
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
-  },
+  }
 };
 </script>
-
