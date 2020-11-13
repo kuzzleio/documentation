@@ -23,10 +23,10 @@
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/core/${kuzzleMajor}/api/`"
+                :href="`/core/${kuzzleMajor}/references/`"
                 :class="{
                   'md-tabs__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/api/`
+                    `/core/${kuzzleMajor}/references/`
                   )
                 }"
                 title="References"
