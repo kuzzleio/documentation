@@ -1,10 +1,10 @@
 <template>
   <div class="GuidesLinks">
     <span class="GuidesLinks-prev" v-if="prev">
-      <a :href="prev.url">◄ {{ prev.text }}</a>
+      <router-link :to="prev.url">◄ {{ prev.text }}</router-link>
     </span>
     <span class="GuidesLinks-next" v-if="next">
-      <a :href="next.url">{{ next.text }} ►</a>
+      <router-link :to="next.url">{{ next.text }} ►</router-link>
     </span>
   </div>
 </template>
@@ -14,12 +14,12 @@ export default {
   name: 'GuidesLinks',
   props: {
     next: {
-      type: Object,
+      type: Object
     },
     prev: {
-      type: Object,
-    },
-  },
+      type: Object
+    }
+  }
 };
 </script>
 
