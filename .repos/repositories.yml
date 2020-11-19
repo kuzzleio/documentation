@@ -152,7 +152,7 @@
   doc_version: 2
   name: kuzzle-2
   stable: master
-  dev: new-documentation
+  dev: 2-dev
   deploy_path: /core/2/
 
 - url: https://github.com/kuzzleio/sdk-android.git
