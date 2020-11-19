@@ -244,7 +244,8 @@ module.exports = {
   markdown: {
     anchor: {
       permalink: true,
-      permalinkBefore: true,
+      permalinkBefore: false,
+      permalinkClass: 'heading-anchor-link',
       permalinkSymbol: '#'
     },
     extendMarkdown: md => {
