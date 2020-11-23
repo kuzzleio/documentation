@@ -1,9 +1,7 @@
 <template>
   <!-- Tabs with outline -->
   <nav class="md-tabs" data-md-component="tabs">
-    <div style="display: none">
-      {{ `/core/${kuzzleMajor}/guides/` }}
-    </div>
+    <div style="display: none">{{ `/core/${kuzzleMajor}/guides/` }}</div>
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
         <li class="md-tabs__group">
@@ -18,43 +16,63 @@
                 }"
                 title="Guides"
                 class="md-tabs__link"
-                >Guides</a
-              >
+              >Guides</a>
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/core/${kuzzleMajor}/references/`"
+                :href="`/core/${kuzzleMajor}/tutorials/`"
                 :class="{
                   'md-tabs__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/references/`
+                    `/core/${kuzzleMajor}/tutorials/`
                   )
                 }"
-                title="References"
+                title="Tutorials"
                 class="md-tabs__link"
-                >References</a
-              >
+              >Tutorials</a>
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/sdk/v${kuzzleMajor}.html`"
+                :href="`/core/${kuzzleMajor}/api/`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/sdk/`)
+                  'md-tabs__link--active': isLinkActive(
+                    `/core/${kuzzleMajor}/api/`
+                  )
                 }"
-                title="SDK"
+                title="API"
                 class="md-tabs__link"
-                >SDK</a
-              >
+              >API</a>
             </li>
             <li class="md-tabs__item">
               <a
-                :href="`/official-plugins/v${kuzzleMajor}.html`"
+                :href="`/core/${kuzzleMajor}/framework/`"
                 :class="{
-                  'md-tabs__link--active': isLinkActive(`/official-plugins/`)
+                  'md-tabs__link--active': isLinkActive(
+                    `/core/${kuzzleMajor}/framework/`
+                  )
+                }"
+                title="Framework"
+                class="md-tabs__link"
+              >Framework</a>
+            </li>
+            <li class="md-tabs__item">
+              <a
+                :href="`/sdks/v${kuzzleMajor}.html`"
+                :class="{
+                  'md-tabs__link--active': isLinkActive(`/sdks/`)
+                }"
+                title="SDKs"
+                class="md-tabs__link"
+              >SDKs</a>
+            </li>
+            <li class="md-tabs__item">
+              <a
+                :href="`/plugins/v${kuzzleMajor}.html`"
+                :class="{
+                  'md-tabs__link--active': isLinkActive(`/plugins/`)
                 }"
                 title="Plugins"
                 class="md-tabs__link"
-                >Official plugins</a
-              >
+              >Plugins</a>
             </li>
           </ul>
         </li>
