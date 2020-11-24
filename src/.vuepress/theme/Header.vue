@@ -42,7 +42,7 @@
             class="screen-only md-flex__cell md-flex__cell--stretch md-flex__cell--menu"
           >
             <div style="display: none">{{ debugInfo }}</div>
-            <Tabs :kuzzle-major="kuzzleMajor" />
+            <TopMenu :kuzzle-major="kuzzleMajor" />
           </div>
           <!-- Button to open search dialogue -->
           <div class="md-flex__cell md-flex__cell--shrink">
@@ -77,7 +77,7 @@
 
 <script>
 import Search from './Search.vue';
-import Tabs from './Tabs.vue';
+import TopMenu from './TopMenu.vue';
 import MajorVersionSelector from '../components/MajorVersionSelector.vue';
 
 import { setItemLocalStorage, getItemLocalStorage } from '../util';
@@ -85,7 +85,7 @@ import { setItemLocalStorage, getItemLocalStorage } from '../util';
 export default {
   components: {
     Search,
-    Tabs,
+    TopMenu,
     MajorVersionSelector,
   },
   name: 'Header',

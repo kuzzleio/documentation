@@ -17,7 +17,7 @@
             <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
           </label>
           <div class="mobile-only">
-            <Tabs :kuzzleMajor="kuzzleMajor" />
+            <TopMenu :kuzzleMajor="kuzzleMajor" />
           </div>
           <SDKSelector
             class="md-sidebar--selector"
@@ -140,7 +140,7 @@
 </template>
 
 <script>
-import Tabs from './Tabs.vue';
+import TopMenu from './TopMenu.vue';
 
 import {
   getPageChildren,
@@ -154,7 +154,7 @@ import { getCurrentVersion } from '../helpers';
 
 export default {
   components: {
-    Tabs
+    TopMenu
   },
   props: {
     sidebarOpen: {
