@@ -4,7 +4,6 @@
     :class="{ active: isActive }"
     @mouseenter="isListVisible = true"
     @mouseleave="isListVisible = false"
-    @click="toggleList"
   >
     <span class="MenuDropdown-title"
       >{{ title }} <i class="fa fa-caret-down"></i
@@ -66,9 +65,6 @@ export default {
     }
   },
   methods: {
-    toggleList() {
-      this.isListVisible = !this.isListVisible;
-    },
     isItemActive(itemUrl) {
       return this.$page.fullPath.startsWith(itemUrl);
     }
