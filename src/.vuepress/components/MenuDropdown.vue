@@ -1,0 +1,77 @@
+<template>
+  <a
+    class="MenuDropdown"
+    :class="{ active: isActive }"
+    @mouseenter="isListVisible = true"
+    @mouseleave="isListVisible = false"
+    @click="toggleList"
+  >
+    <span class="MenuDropdown-title"
+      >{{ title }} <i class="fa fa-caret-down"></i
+    ></span>
+    <ul class="MenuDropdown-list" :class="{ visible: isListVisible }">
+      <li v-for="item in items" class="MenuDropdown-list-item">
+        <i class="fa fa-caret-right"></i>
+        <router-link
+          class="MenuDropdown-list-item-link"
+          :to="item.url"
+          :class="{ active: isItemActive(item.url) }"
+          >{{ item.name }}</router-link
+        >
+      </li>
+    </ul>
+  </a>
+</template>
+
+<script>
+export default {
+  props: {
+    items: {
+      type: Array,
+      required: true,
+      validator(items) {
+        for (const item of items) {
+          if (
+            !Object.keys(item).includes('name') ||
+            !Object.keys(item).includes('url')
+          ) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+    },
+    title: {
+      type: String,
+      required: true
+    }
+  },
+  data() {
+    return {
+      isListVisible: false
+    };
+  },
+  computed: {
+    isActive() {
+      let isActive = false;
+
+      for (const item of this.items) {
+        if (this.isItemActive(item.url)) {
+          isActive = true;
+        }
+      }
+
+      return isActive;
+    }
+  },
+  methods: {
+    toggleList() {
+      this.isListVisible = !this.isListVisible;
+    },
+    isItemActive(itemUrl) {
+      return this.$page.fullPath.startsWith(itemUrl);
+    }
+  }
+};
+</script>

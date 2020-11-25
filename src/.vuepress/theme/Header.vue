@@ -42,7 +42,8 @@
             class="screen-only md-flex__cell md-flex__cell--stretch md-flex__cell--menu"
           >
             <div style="display: none">{{ debugInfo }}</div>
-            <TopMenu :kuzzle-major="kuzzleMajor" />
+            <TopMenu :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 2" />
+            <TopMenuV1 :kuzzle-major="kuzzleMajor" v-else />
           </div>
           <!-- Button to open search dialogue -->
           <div class="md-flex__cell md-flex__cell--shrink">
@@ -78,6 +79,7 @@
 <script>
 import Search from './Search.vue';
 import TopMenu from './TopMenu.vue';
+import TopMenuV1 from './TopMenuV1.vue';
 import MajorVersionSelector from '../components/MajorVersionSelector.vue';
 
 import { setItemLocalStorage, getItemLocalStorage } from '../util';
@@ -86,37 +88,38 @@ export default {
   components: {
     Search,
     TopMenu,
-    MajorVersionSelector,
+    TopMenuV1,
+    MajorVersionSelector
   },
   name: 'Header',
   props: {
     kuzzleMajor: {
-      type: Number,
-    },
+      type: Number
+    }
   },
   data() {
     return {
       algoliaAppId: ALGOLIA_APP_ID,
       algoliaSearchKey: ALGOLIA_SEARCH_KEY,
-      algoliaIndexName: ALGOLIA_INDEX,
+      algoliaIndexName: ALGOLIA_INDEX
     };
   },
   computed: {
     debugInfo() {
       return JSON.stringify(
         {
-          kuzzleMajor: this.kuzzleMajor,
+          kuzzleMajor: this.kuzzleMajor
         },
         null,
         2
       );
-    },
+    }
   },
   methods: {
     toggleSearchTrigger(toggle) {
       this.$refs.searchTrigger.checked = toggle;
-    },
-  },
+    }
+  }
 };
 </script>
 

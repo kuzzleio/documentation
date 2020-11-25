@@ -47,7 +47,6 @@
 @import 'layout/tabs';
 @import 'layout/topMenu';
 @import 'layout/versions';
-@import 'layout/sdk-selector';
 @import 'layout/icontable';
 
 @import 'extensions/admonition';
@@ -58,6 +57,8 @@
 @import 'extensions/alert';
 @import 'extensions/tiles';
 @import 'extensions/ribbon';
+@import 'extensions/sdk-selector';
+@import 'extensions/menuDropdown';
 
 @import 'extensions/pymdown/arithmatex';
 @import 'extensions/pymdown/critic';

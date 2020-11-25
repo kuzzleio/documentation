@@ -12,6 +12,10 @@
   position: relative;
   top: 1em;
   margin-left: -1em;
+
+  &.v1 {
+    top: 0em;
+  }
   // Hide for print
   @media print {
     display: none;
@@ -101,12 +105,15 @@
   }
 
   @include break-to-device(tablet) {
-    background-color: white;
-    color: $md-color-primary;
+    background-color: $md-color-primary;
+    color: white;
     margin: 0;
+    top: 0;
+    padding-bottom: 1em;
 
     .topMenu__item {
       display: block;
+      height: auto;
     }
 
     .topMenu__link--active {

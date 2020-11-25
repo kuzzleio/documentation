@@ -17,7 +17,8 @@
             <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
           </label>
           <div class="mobile-only">
-            <TopMenu :kuzzleMajor="kuzzleMajor" />
+            <TopMenu :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 2" />
+            <TopMenuV1 :kuzzle-major="kuzzleMajor" v-else />
           </div>
           <SDKSelector
             class="md-sidebar--selector"
@@ -141,6 +142,7 @@
 
 <script>
 import TopMenu from './TopMenu.vue';
+import TopMenuV1 from './TopMenuV1.vue';
 
 import {
   getPageChildren,
@@ -154,7 +156,8 @@ import { getCurrentVersion } from '../helpers';
 
 export default {
   components: {
-    TopMenu
+    TopMenu,
+    TopMenuV1
   },
   props: {
     sidebarOpen: {

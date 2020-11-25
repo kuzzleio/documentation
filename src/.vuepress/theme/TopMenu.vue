@@ -13,24 +13,18 @@
                     `/core/${kuzzleMajor}/guides/`
                   )
                 }"
-                title="Guides"
+                title="Guide"
                 class="topMenu__link"
-              >Guides</a>
+                >Guide</a
+              >
             </li>
             <li class="topMenu__item">
-              <!-- DROP-DOWN MENU ITEM HERE -->
-              <a
-                :href="`/core/${kuzzleMajor}/references/`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/api/`
-                  )
-                }"
-                title="References"
+              <MenuDropdown
                 class="topMenu__link"
-              >References</a>
+                title="References"
+                :items="referencesItems"
+              />
             </li>
-            
             <li class="topMenu__item">
               <a
                 :href="`/sdk/v${kuzzleMajor}.html`"
@@ -39,7 +33,8 @@
                 }"
                 title="SDKs"
                 class="topMenu__link"
-              >SDKs</a>
+                >SDKs</a
+              >
             </li>
             <li class="topMenu__item">
               <a
@@ -49,7 +44,8 @@
                 }"
                 title="Plugins"
                 class="topMenu__link"
-              >Plugins</a>
+                >Plugins</a
+              >
             </li>
           </ul>
         </li>
@@ -59,8 +55,7 @@
 </template>
 
 <script>
-import { VERSION_QUERY_KEY } from '../helpers';
-import { getCurrentVersion } from '../helpers';
+import { VERSION_QUERY_KEY, getCurrentVersion } from '../helpers';
 
 export default {
   computed: {
@@ -78,6 +73,16 @@ export default {
     },
     kuzzleMajor() {
       return getCurrentVersion(this.$page);
+    },
+    referencesItems() {
+      const pathStart = `/core/${this.kuzzleMajor}`;
+
+      return [
+        { name: 'API', url: `${pathStart}/api` },
+        { name: 'Framework', url: `${pathStart}/framework` },
+        { name: 'Write plugins', url: `${pathStart}/foo` },
+        { name: 'Write protocols', url: `${pathStart}/foo` }
+      ];
     }
   },
   methods: {
@@ -90,5 +95,3 @@ export default {
   }
 };
 </script>
-
-<style></style>
