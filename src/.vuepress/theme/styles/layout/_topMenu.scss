@@ -119,6 +119,10 @@
     .topMenu__link--active {
       text-decoration: underline;
       font-weight: bold;
+
+      &:after {
+        width: 0%;
+      }
     }
   }
 
