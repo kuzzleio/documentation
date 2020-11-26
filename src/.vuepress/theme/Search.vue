@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { getCurrentVersion } from '../helpers';
+
 export default {
   name: 'AlgoliaSearchBox',
   props: ['options'],
@@ -36,6 +38,11 @@ export default {
     return {
       placeholder: undefined,
     };
+  },
+  computed: {
+    kuzzleMajor() {
+      return getCurrentVersion(this.$page);
+    },
   },
   watch: {
     $lang(newValue) {
@@ -62,8 +69,19 @@ export default {
         docsearch = docsearch.default;
         docsearch({
           inputSelector: '#algolia-search-input',
-          apiKey: 'c6452010dc26eb671d637214f1110c91',
-          indexName: 'kuzzle',
+
+          // KUZZLEIO APP
+          apiKey: 'de63216cd8d0116b2755916b9a38ae35',
+          indexName: 'docs',
+          appId: 'VF5HP4ZVDU',
+
+          // DOCSEARCH APP
+          // apiKey: 'c6452010dc26eb671d637214f1110c91',
+          // indexName: 'kuzzle',
+
+          algoliaOptions: {
+            facetFilters: [`version:${this.kuzzleMajor}`],
+          },
         });
       });
     },
