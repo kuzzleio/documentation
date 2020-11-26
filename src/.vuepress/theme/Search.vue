@@ -44,14 +44,6 @@ export default {
       return getCurrentVersion(this.$page);
     },
   },
-  watch: {
-    $lang(newValue) {
-      this.update(this.options, newValue);
-    },
-    options(newValue) {
-      this.update(newValue, this.$lang);
-    },
-  },
   mounted() {
     this.initialize(this.options, this.$lang);
     this.placeholder = this.$site.themeConfig.searchPlaceholder || '';
