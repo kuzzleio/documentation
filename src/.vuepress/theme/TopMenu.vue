@@ -79,9 +79,7 @@ export default {
 
       return [
         { name: 'API', url: `${pathStart}/api` },
-        { name: 'Framework', url: `${pathStart}/framework` },
-        { name: 'Write plugins', url: `${pathStart}/foo` },
-        { name: 'Write protocols', url: `${pathStart}/foo` }
+        { name: 'Framework', url: `${pathStart}/framework` }
       ];
     }
   },
