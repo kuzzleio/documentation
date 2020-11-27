@@ -9,13 +9,13 @@
       >{{ title }} <i class="fa fa-caret-down"></i
     ></span>
     <ul class="MenuDropdown-list" :class="{ visible: isListVisible }">
-      <li v-for="item in items" class="MenuDropdown-list-item">
+      <li v-for="item in items" class="MenuDropdown-list-item" :key="item.name">
         <i class="fa fa-caret-right"></i>
-        <router-link
+        <a
           class="MenuDropdown-list-item-link"
-          :to="item.url"
+          :href="item.url"
           :class="{ active: isItemActive(item.url) }"
-          >{{ item.name }}</router-link
+          >{{ item.name }}</a
         >
       </li>
     </ul>
