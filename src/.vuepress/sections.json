@@ -22,13 +22,21 @@
     "icon": "/logo-57x57.png",
     "released": true
   },
-  "/core/2/references/": {
+  "/core/2/api/": {
     "kuzzleMajor": 2,
     "section": "core",
-    "subsection": "references",
-    "name": "References",
+    "subsection": "api",
+    "name": "API",
     "version": 2,
     "icon": "/logo-57x57.png",
+    "released": true
+  },
+  "/core/2/framework/": {
+    "kuzzleMajor": 2,
+    "section": "core",
+    "subsection": "framework",
+    "name": "Framework",
+    "version": 2,
     "released": true
   },
   "/core/1/guides/": {

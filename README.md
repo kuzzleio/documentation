@@ -42,7 +42,7 @@ kuzdoc iterate-repos:install --repositories=sdk-javascript-6,kuzzle-2
 
 This will only clone the `sdk-javascript-6` and `kuzzle-2` repos, choose the ones that you want to work on locally, trying to avoid having too many.
 
-Then you just need to run
+Then you just need to run:
 
 ```sh
 npm run doc-dev
