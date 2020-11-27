@@ -43,11 +43,12 @@
           <!-- Content -->
 
           <div class="md-content">
-            <div>
-              <WarningBanner v-if="showDeprecatedBanner">
-                This SDK has been deprecated because of stability issues. It is
-                not advised to use it in a production environment.
-              </WarningBanner>
+            <div v-if="showDeprecatedBanner">
+              <component
+                v-if="deprecatedBannerComponent"
+                :is="deprecatedBannerComponent"
+              />
+              <DeprecatedBanner v-else />
             </div>
             <article class="md-content__inner md-typeset">
               <Content />
@@ -64,7 +65,7 @@
 <script>
 import Clipboard from 'clipboard';
 import Header from './Header.vue';
-import WarningBanner from '../components/WarningBanner.vue';
+import DeprecatedBanner from '../components/DeprecatedBanner.vue';
 import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
 import Footer from './Footer.vue';
@@ -73,7 +74,7 @@ import { getCurrentVersion } from '../helpers';
 const {
   getFirstValidChild,
   setItemLocalStorage,
-  getItemLocalStorage,
+  getItemLocalStorage
 } = require('../util.js');
 
 export default {
@@ -81,13 +82,13 @@ export default {
     Header,
     Sidebar,
     TOC,
-    WarningBanner,
-    Footer,
+    DeprecatedBanner,
+    Footer
   },
   data() {
     return {
       sidebarOpen: false,
-      isLoading: true,
+      isLoading: true
     };
   },
   computed: {
@@ -107,7 +108,7 @@ export default {
     },
     sdkList() {
       return this.$page.sectionList.filter(
-        (s) =>
+        s =>
           s.kuzzleMajor === this.kuzzleMajor &&
           (s.section === 'sdk' || s.subsection === 'api')
       );
@@ -119,6 +120,9 @@ export default {
 
       return this.$page.currentSection.deprecated;
     },
+    deprecatedBannerComponent() {
+      return this.$page.currentSection.deprecatedBannerComponent || null;
+    }
   },
   methods: {
     openSidebar() {
@@ -148,7 +152,7 @@ export default {
       }, 2000).toString();
 
       this.$ga('send', 'event', 'snippet', 'copied', 'label', 1, {
-        path: this.$route.path,
+        path: this.$route.path
       });
     },
     computeContentHeight() {
@@ -210,7 +214,7 @@ export default {
 
       this.$refs.sidebar.$el.style = `height: ${sidebarHeight}px`;
       this.$refs.toc.style = `height: ${sidebarHeight}px`;
-    },
+    }
   },
   mounted() {
     document.onreadystatechange = () => {
@@ -225,15 +229,15 @@ export default {
 
     // TODO condition isSupported()
     const copy = new Clipboard('.md-clipboard', {
-      target: (trigger) => {
+      target: trigger => {
         return trigger.parentElement.nextElementSibling;
-      },
+      }
     });
 
     copy.on('success', this.onCodeCopied);
 
     this.computeContentHeight();
-  },
+  }
 };
 </script>
 

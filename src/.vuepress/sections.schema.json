@@ -27,15 +27,13 @@
       "deprecated": {
         "type": "boolean"
       },
+      "deprecatedBannerComponent": {
+        "type": "string"
+      },
       "released": {
         "type": "boolean"
       }
     },
-    "required": [
-      "name",
-      "kuzzleMajor",
-      "section",
-      "released"
-    ]
+    "required": ["name", "kuzzleMajor", "section", "released"]
   }
 }
