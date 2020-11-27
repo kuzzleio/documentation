@@ -79,7 +79,7 @@ export default {
 
       return [
         { name: 'API', url: `${pathStart}/api/` },
-        { name: 'Framework', url: `${pathStart}/framework` }
+        { name: 'Framework', url: `${pathStart}/framework/` }
       ];
     }
   },
