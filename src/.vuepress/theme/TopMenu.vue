@@ -79,13 +79,13 @@ export default {
 
       return [
         { name: 'API', url: `${pathStart}/api/` },
-        { name: 'Framework', url: `${pathStart}/framework/` }
+        { name: 'Framework', url: `${pathStart}/framework` }
       ];
     }
   },
   methods: {
     isLinkActive(linkPath) {
-      if (!this.$page || !this.$page.fullPath) {
+      if (!this.$page.fullPath) {
         return false;
       }
       return this.$page.fullPath.startsWith(linkPath);
