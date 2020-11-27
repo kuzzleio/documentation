@@ -94,7 +94,8 @@ export default {
   name: 'Header',
   props: {
     kuzzleMajor: {
-      type: Number
+      type: Number,
+      default: 2
     }
   },
   data() {

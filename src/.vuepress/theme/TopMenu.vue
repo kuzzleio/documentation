@@ -78,8 +78,8 @@ export default {
       const pathStart = `/core/${this.kuzzleMajor}`;
 
       return [
-        { name: 'API', url: `${pathStart}/api` },
-        { name: 'Framework', url: `${pathStart}/framework` }
+        { name: 'API', url: `${pathStart}/api/` },
+        { name: 'Framework', url: `${pathStart}/framework/` }
       ];
     }
   },
