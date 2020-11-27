@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     isItemActive(itemUrl) {
-      if (!this.$page) {
+      if (!this.$page || !this.$page.fullPath) {
         return false;
       }
       return this.$page.fullPath.startsWith(itemUrl);
