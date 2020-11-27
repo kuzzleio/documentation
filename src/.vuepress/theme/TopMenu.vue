@@ -85,7 +85,7 @@ export default {
   },
   methods: {
     isLinkActive(linkPath) {
-      if (!this.$page.fullPath) {
+      if (!this.$page || !this.$page.fullPath) {
         return false;
       }
       return this.$page.fullPath.startsWith(linkPath);
