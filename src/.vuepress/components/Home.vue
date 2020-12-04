@@ -9,7 +9,7 @@
     <h2>Learn more about Kuzzle now</h2>
     <div class="Tiles">
       <a
-        :href="getPath('/guides/getting-started/running-kuzzle/')"
+        :href="getPath('/guides/getting-started/run-kuzzle/')"
         class="Tiles-item medium"
       >
         <img
@@ -20,15 +20,15 @@
         <div class="Tiles-item-name">Running Kuzzle</div>
       </a>
       <a
-        :href="getPath('/api/essentials/connecting-to-kuzzle/')"
+        :href="getPath('/guides/main-concepts/api')"
         class="Tiles-item medium"
       >
         <img
           src="/logos/search.svg"
-          alt="Explore API logo"
+          alt="Learn API logo"
           class="Tiles-item-logo"
         />
-        <div class="Tiles-item-name">Explore API</div>
+        <div class="Tiles-item-name">Learn API</div>
       </a>
       <a href="/sdk/" class="Tiles-item medium">
         <img src="/logos/brackets.svg" alt="SDK logo" class="Tiles-item-logo" />
@@ -46,7 +46,7 @@
         <div class="Tiles-item-name">Admin console</div>
       </a>
       <a
-        :href="getPath('/guides/essentials/configuration/')"
+        :href="getPath('/guides/advanced/configuration/')"
         class="Tiles-item medium"
       >
         <img
@@ -65,7 +65,7 @@
         <div class="Tiles-item-name">Plugins</div>
       </a>
       <a
-        :href="getPath('/guides/essentials/introduction/')"
+        :href="getPath('/guides/')"
         class="Tiles-item medium"
       >
         <img
