@@ -26,7 +26,8 @@ class LinkChecker
     'http:patch',
     'http://...',
     'https://s3.eu-west-3.amazonaws.com',
-    'http://s3.amazonaws.com/doc/2006-03-01'
+    'http://s3.amazonaws.com/doc/2006-03-01',
+    'http:'
   ]
 
   attr_reader :internal, :external
