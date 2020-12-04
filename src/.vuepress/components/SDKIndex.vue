@@ -7,6 +7,7 @@
         :href="sdk.path"
         class="Tiles-item"
       >
+        <div class="ribbon" v-if="sdk.kuzzleMajor === 2 && sdk.deprecated"><span>Deprecated</span></div>
         <img :src="sdk.icon" :alt="`${sdk.name} logo`" class="Tiles-item-logo" />
         <div class="Tiles-item-name">{{ sdk.name }} v{{ sdk.version }}.x</div>
       </a>
@@ -60,7 +61,8 @@ export default {
           // If we are deploying to the master branch, exclude the
           // sections that are not released yet
           (BRANCH === 'master' ? s.released === true : true)
-      );
+      ).sort(s => s.deprecated ? 1 : -1);
+
     },
   },
 };
