@@ -6,6 +6,11 @@
   position: relative;
   margin-top: 2rem;
 
+  &.deprecatedBanner {
+    font-size: 18px;
+    vertical-align: middle;
+  }
+
   &:before {
     vertical-align: middle;
     padding-right: 0.5em;

@@ -33,10 +33,10 @@
       <a :href="getPath('/api/payloads/request/')" class="Tiles-item medium">
         <img
           src="/logos/search.svg"
-          alt="Explore API logo"
+          alt="Learn API logo"
           class="Tiles-item-logo"
         />
-        <div class="Tiles-item-name">Explore API</div>
+        <div class="Tiles-item-name">Learn API</div>
       </a>
       <a href="/sdk/" class="Tiles-item medium">
         <img src="/logos/brackets.svg" alt="SDK logo" class="Tiles-item-logo" />

@@ -8,11 +8,11 @@ export default {
   props: {
     to: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   mounted() {
-    this.$router.push(this.to);
-  },
+    this.$router.replace(this.to);
+  }
 };
 </script>

@@ -66,7 +66,7 @@ From the repository you're writing for (let's say, the Javascript SDK v7), insta
 kuzdoc framework:install
 ```
 
-This will clone the framework repository (i.e. this one) into the `/doc/framework/` folder of your repo. 
+This will clone the framework repository (i.e. this one) into the `/doc/framework/` folder of your repo.
 
 **Note** _If your documentation lives in a folder specific to the version of the code (e.g. `/doc/7/`, for the JS SDK) a symlink should link `/doc/framework/` to `/doc/7/.vuepress`. Be sure this symlink exists and is versioned._
 
@@ -186,7 +186,6 @@ Supported containers are : `info`, `success`, `warning`
 
 ### Tabs
 
-
 It is possible to add tabs directly in the markdown with this syntax:
 
 ```markdown
@@ -214,14 +213,15 @@ You can create a list with icons inside a Markdown file with the `IconTable` CSS
 <div class="IconTable">
   <div class="IconTable-item">
     <div class="IconTable-item-icon">
-      <img src="./feature-data-storage.svg"/>
+      <img src="./feature-data-storage.svg" />
     </div>
     <div class="IconTable-item-text">
       Data storage and access
     </div>
-  </div><div class="IconTable-item">
+  </div>
+  <div class="IconTable-item">
     <div class="IconTable-item-icon">
-      <img src="./feature-acl.svg"/>
+      <img src="./feature-acl.svg" />
     </div>
     <div class="IconTable-item-text">
       Advanced permission system
@@ -245,6 +245,12 @@ The GuidesLinks component allows to display previous and next links:
 
 ```
 <GuidesLinks :prev="{text: 'what is kuzzle', url: '/foo'}" :next="{text: 'Store and Access Data', url: '/bar'}"/>
+```
+
+### Custom badge
+
+```
+<CustomBadge type="tip | warning | error" text="your text here"/>
 ```
 
 ## Code snippet import

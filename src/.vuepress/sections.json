@@ -171,7 +171,9 @@
     "name": "Java",
     "version": 3,
     "icon": "/logos/java.svg",
-    "released": true
+    "released": true,
+    "deprecated": true,
+    "deprecatedBannerComponent": "JavaDeprecatedBanner"
   },
   "/sdk/android/3/": {
     "kuzzleMajor": 1,
