@@ -30,7 +30,7 @@
         />
         <div class="Tiles-item-name">Framework references</div>
       </a>
-      <a :href="getPath('/api/objects/request/')" class="Tiles-item medium">
+      <a :href="getPath('/api/payloads/request/')" class="Tiles-item medium">
         <img
           src="/logos/search.svg"
           alt="Explore API logo"
