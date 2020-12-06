@@ -51,7 +51,7 @@
         <div class="Tiles-item-name">Official plugins</div>
       </a>
       <a
-        :href="getPath('/guides/advanced/1-secrets-vault/')"
+        :href="getPath('/guides/main-concepts')"
         class="Tiles-item medium"
       >
         <img src="/logos/book.svg" alt="Plugins logo" class="Tiles-item-logo" />
