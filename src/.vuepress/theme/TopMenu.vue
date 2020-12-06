@@ -38,7 +38,7 @@
             </li>
             <li class="topMenu__item">
               <a
-                :href="`/plugins/v${kuzzleMajor}.html`"
+                :href="`/official-plugins/v${kuzzleMajor}.html`"
                 :class="{
                   'topMenu__link--active': isLinkActive(`/plugins/`)
                 }"
