@@ -9,7 +9,7 @@
     <h2>Learn more about Kuzzle now</h2>
     <div class="Tiles">
       <a
-        :href="getPath('/guides/getting-started/1-run-kuzzle/')"
+        :href="getPath('/guides/getting-started/run-kuzzle/')"
         class="Tiles-item medium"
       >
         <img
