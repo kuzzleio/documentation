@@ -62,11 +62,6 @@ export default {
         docsearch({
           inputSelector: '#algolia-search-input',
 
-          // KUZZLEIO APP
-          // apiKey: 'de63216cd8d0116b2755916b9a38ae35',
-          // indexName: 'docs',
-          // appId: 'VF5HP4ZVDU',
-
           // DOCSEARCH APP
           apiKey: 'c6452010dc26eb671d637214f1110c91',
           indexName: 'kuzzle',
