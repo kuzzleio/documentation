@@ -53,16 +53,18 @@ export default {
   },
   computed: {
     sdkList() {
-      return this.$page.sectionList.filter(
-        (s) =>
-          s.kuzzleMajor === this.kuzzleMajor &&
-          s.section === 'sdk' &&
-          s.subsection &&
-          // If we are deploying to the master branch, exclude the
-          // sections that are not released yet
-          (BRANCH === 'master' ? s.released === true : true)
-      ).sort(s => s.deprecated ? 1 : -1);
+      const sdks = this.$page.sectionList
+        .filter(s => s.kuzzleMajor === this.kuzzleMajor)
+        .filter(s => s.section === 'sdk')
+        .filter(s => s.subsection)
+        .filter(s => (BRANCH === 'master' ? s.released === true : true));
 
+      const deprecatedSdks = sdks
+        .filter(s => s.deprecated)
+
+      return sdks
+        .filter(s => !s.deprecated)
+        .concat(deprecatedSdks)
     },
   },
 };
