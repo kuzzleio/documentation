@@ -1,10 +1,22 @@
 <template>
   <div class="md-layout">
-    <Header ref="header" />
+    <div
+      class="overlay"
+      :class="{ hidden: !sidebarOpen }"
+      @click="closeSidebar"
+    ></div>
+    <Header ref="header" @openSidebar="openSidebar" />
     <div ref="container" class="md-container">
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           <!-- Main navigation -->
+          <Sidebar
+            ref="sidebar"
+            :kuzzleMajor="kuzzleMajor"
+            :sdkList="[]"
+            :sidebarOpen="sidebarOpen"
+            @closeSidebar="closeSidebar"
+          />
           <div
             class="md-sidebar md-sidebar--primary"
             data-md-component="navigation"
@@ -52,15 +64,28 @@
 import Header from './Header.vue';
 import btnCta from '../components/Cta.vue';
 import Footer from './Footer.vue';
+import Sidebar from './Sidebar.vue';
 
 import { getFirstValidChild, getNodeByPath } from '../util.js';
 import { getItemLocalStorage } from '../util';
+import { getCurrentVersion } from '../helpers';
 
 export default {
   components: {
     Header,
     btnCta,
-    Footer
+    Footer,
+    Sidebar
+  },
+  data() {
+    return {
+      sidebarOpen: false
+    };
+  },
+  computed: {
+    kuzzleMajor() {
+      return getCurrentVersion(this.$page, null);
+    }
   },
   methods: {
     setContainerPadding() {
@@ -70,6 +95,12 @@ export default {
         return;
       }
       this.$refs.container.style = `padding-top: ${padding}px;`;
+    },
+    openSidebar() {
+      this.sidebarOpen = true;
+    },
+    closeSidebar() {
+      this.sidebarOpen = false;
     }
   },
   mounted() {

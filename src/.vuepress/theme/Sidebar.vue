@@ -191,9 +191,6 @@ export default {
     },
     root() {
       return findRootNode(this.$page, this.$site.pages);
-    },
-    kuzzleMajor() {
-      return getCurrentVersion(this.$page);
     }
   },
   methods: {
