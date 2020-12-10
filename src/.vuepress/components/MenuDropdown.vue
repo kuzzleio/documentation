@@ -10,7 +10,6 @@
     ></span>
     <ul class="MenuDropdown-list" :class="{ visible: isListVisible }">
       <li v-for="item in items" class="MenuDropdown-list-item" :key="item.name">
-        <i class="fa fa-caret-right"></i>
         <a
           class="MenuDropdown-list-item-link"
           :href="item.url"
