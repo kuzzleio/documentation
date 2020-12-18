@@ -1,0 +1,14 @@
+name: Main branches push checks
+
+on: [pull_request]
+
+jobs:
+  dead-links:
+    name: Check dead links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check dead links
+        run: |
+          gem install typhoeus --user
+          ruby .ci/dead-links.rb -p src/
