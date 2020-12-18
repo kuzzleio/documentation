@@ -137,13 +137,13 @@
     "released": true
   },
   "/sdk/go/3/": {
-    "kuzzleMajor": 3,
+    "kuzzleMajor": 2,
     "section": "sdk",
     "subsection": "go",
     "name": "Golang",
     "version": 3,
     "icon": "/logos/go.svg",
-    "released": true
+    "released": false
   },
   "/sdk/java/1/": {
     "kuzzleMajor": 1,
