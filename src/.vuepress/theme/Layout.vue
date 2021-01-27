@@ -110,7 +110,8 @@ export default {
       return this.$page.sectionList.filter(
         s =>
           s.kuzzleMajor === this.kuzzleMajor &&
-          (s.section === 'sdk' || s.subsection === 'api')
+          (s.section === 'sdk' || s.subsection === 'api') &&
+          s.released
       );
     },
     showDeprecatedBanner() {
