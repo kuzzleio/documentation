@@ -216,7 +216,7 @@
     "section": "sdk",
     "subsection": "dart",
     "name": "Dart",
-    "version": 1,
+    "version": 2,
     "icon": "/logos/dart.svg",
     "released": true
   },
