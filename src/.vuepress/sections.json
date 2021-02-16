@@ -143,7 +143,7 @@
     "name": "Golang",
     "version": 3,
     "icon": "/logos/go.svg",
-    "released": false
+    "released": true
   },
   "/sdk/java/1/": {
     "kuzzleMajor": 1,
