@@ -92,6 +92,20 @@
       "version": "3",
       "icon": "/logos/logger.svg",
       "iconAlt": "Logger logo"
+    },
+    {
+      "name": "Device Manager",
+      "path": "https://docs.kuzzle.io/official-plugins/device-manager/1",
+      "version": "1",
+      "icon": "/logos/device-manager.svg",
+      "iconAlt": "Device Manager logo"
+    },
+    {
+      "name": "Workflows",
+      "path": "https://docs.kuzzle.io/official-plugins/device-manager/1",
+      "version": "1",
+      "icon": "/logos/workflows.svg",
+      "iconAlt": "Workflows logo"
     }
   ]
 }
