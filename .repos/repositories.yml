@@ -173,12 +173,12 @@
   doc_version: 1
   stable: master
   dev: master
-  name: device-manager-1
+  name: plugin-device-manager-1
   deploy_path: /official-plugins/device-manager/1/
 
 - url: https://github.com/kuzzleio/kuzzle-plugin-workflows.git
   doc_version: 1
   stable: master
   dev: master
-  name: workflows-1
+  name: plugin-workflows-1
   deploy_path: /official-plugins/workflows/1/
