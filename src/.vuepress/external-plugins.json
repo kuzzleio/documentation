@@ -102,7 +102,7 @@
     },
     {
       "name": "Workflows",
-      "path": "https://docs.kuzzle.io/official-plugins/device-manager/1",
+      "path": "https://docs.kuzzle.io/official-plugins/workflows/1",
       "version": "1",
       "icon": "/logos/workflows.svg",
       "iconAlt": "Workflows logo"
