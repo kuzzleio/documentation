@@ -43,6 +43,7 @@
           <!-- Content -->
 
           <div class="md-content">
+            <major-version-deprecation v-if="kuzzleMajor !== kuzzleLatestMajor" />
             <div v-if="showDeprecatedBanner">
               <component
                 v-if="deprecatedBannerComponent"
@@ -69,7 +70,8 @@ import DeprecatedBanner from '../components/DeprecatedBanner.vue';
 import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
 import Footer from './Footer.vue';
-import { getCurrentVersion } from '../helpers';
+import { getCurrentVersion, DEFAULT_VERSION } from '../helpers';
+import MajorVersionDeprecation from '../components/MajorVersionDeprecation.vue';
 
 const {
   getFirstValidChild,
@@ -83,7 +85,8 @@ export default {
     Sidebar,
     TOC,
     DeprecatedBanner,
-    Footer
+    Footer,
+    MajorVersionDeprecation
   },
   data() {
     return {
@@ -92,6 +95,9 @@ export default {
     };
   },
   computed: {
+    kuzzleLatestMajor() {
+      return DEFAULT_VERSION;
+    },
     kuzzleMajor() {
       return getCurrentVersion(this.$page, null);
     },
