@@ -22,8 +22,5 @@ export default {
         head.appendChild(metaNoIndex);
       }
     }
-
-    
-
   }
 };
