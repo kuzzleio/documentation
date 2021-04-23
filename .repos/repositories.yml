@@ -169,16 +169,16 @@
   name: sdk-dart-2
   deploy_path: /sdk/dart/2/
 
-- url: git@github.com:kuzzleio/kuzzle-plugin-device-manager.git
+- url: https://github.com/kuzzleio/kuzzle-plugin-device-manager.git
   doc_version: 1
   stable: master
-  dev: 1-dev
+  dev: master
   name: plugin-device-manager-1
   deploy_path: /official-plugins/device-manager/1/
 
-- url: git@github.com:kuzzleio/kuzzle-plugin-workflows.git
+- url: https://github.com/kuzzleio/kuzzle-plugin-workflows.git
   doc_version: 1
   stable: master
-  dev: 1-dev
+  dev: master
   name: plugin-workflows-1
   deploy_path: /official-plugins/workflows/1/
