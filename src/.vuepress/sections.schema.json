@@ -32,6 +32,9 @@
       },
       "released": {
         "type": "boolean"
+      },
+      "closedSources": {
+        "type": "boolean"
       }
     },
     "required": ["name", "kuzzleMajor", "section", "released"]
