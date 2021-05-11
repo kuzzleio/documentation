@@ -279,6 +279,26 @@
     "icon": "/logos/plugin-cloudinary.svg",
     "released": true
   },
+  "/official-plugins/workflows/1": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "workflows",
+    "name": "Workflows",
+    "version": 1,
+    "icon": "/logos/workflows.svg",
+    "released": true,
+    "closedSources": true
+  },
+  "/official-plugins/device-manager/1": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "device-manager",
+    "name": "Device Manager",
+    "version": 1,
+    "icon": "/logos/device-manager.svg",
+    "released": true,
+    "closedSources": true
+  },
   "/how-to/v1": {
     "name": "How-To",
     "version": 1,

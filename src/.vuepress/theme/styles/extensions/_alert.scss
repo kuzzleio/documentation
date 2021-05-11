@@ -5,9 +5,9 @@
   line-height: 1.6;
   position: relative;
   margin-top: 2rem;
+  font-size: 16px;
 
   &.deprecatedBanner {
-    font-size: 18px;
     vertical-align: middle;
   }
 
@@ -50,9 +50,19 @@
       color: #002835;
       text-decoration: underline;
     }
+  }
+
+  &.alert-message {
+    background-color: #cbe9f6;
+    padding: 20px 20px;
+
+    a {
+      color: #002835;
+      text-decoration: underline;
+    }
 
     &:before {
-      content: '\f071';
+      content: '';
     }
   }
 }

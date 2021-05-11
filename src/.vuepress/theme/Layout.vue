@@ -43,7 +43,9 @@
           <!-- Content -->
 
           <div class="md-content">
-            <major-version-deprecation v-if="kuzzleMajor !== kuzzleLatestMajor" />
+            <major-version-deprecation
+              v-if="kuzzleMajor !== kuzzleLatestMajor"
+            />
             <div v-if="showDeprecatedBanner">
               <component
                 v-if="deprecatedBannerComponent"
@@ -51,6 +53,7 @@
               />
               <DeprecatedBanner v-else />
             </div>
+            <closed-sources-banner v-if="isClosedSourcesSection" />
             <article class="md-content__inner md-typeset">
               <Content />
             </article>
@@ -72,6 +75,7 @@ import TOC from './TOC.vue';
 import Footer from './Footer.vue';
 import { getCurrentVersion, DEFAULT_VERSION } from '../helpers';
 import MajorVersionDeprecation from '../components/MajorVersionDeprecation.vue';
+import ClosedSourcesBanner from '../components/ClosedSourcesBanner.vue';
 
 const {
   getFirstValidChild,
@@ -86,7 +90,8 @@ export default {
     TOC,
     DeprecatedBanner,
     Footer,
-    MajorVersionDeprecation
+    MajorVersionDeprecation,
+    ClosedSourcesBanner
   },
   data() {
     return {
@@ -129,6 +134,9 @@ export default {
     },
     deprecatedBannerComponent() {
       return this.$page.currentSection.deprecatedBannerComponent || null;
+    },
+    isClosedSourcesSection() {
+      return this.$page.currentSection.closedSources || false;
     }
   },
   methods: {
