@@ -43,7 +43,9 @@
           <!-- Content -->
 
           <div class="md-content">
-            <major-version-deprecation v-if="kuzzleMajor !== kuzzleLatestMajor" />
+            <major-version-deprecation
+              v-if="kuzzleMajor !== kuzzleLatestMajor"
+            />
             <div v-if="showDeprecatedBanner">
               <component
                 v-if="deprecatedBannerComponent"
@@ -129,6 +131,16 @@ export default {
     },
     deprecatedBannerComponent() {
       return this.$page.currentSection.deprecatedBannerComponent || null;
+    },
+    isClosedSourcesSection() {
+      if (
+        !this.$page.currentSection ||
+        !this.$page.currentSection.closedSources
+      ) {
+        return false;
+      }
+
+      return this.$page.currentSection.closedSources;
     }
   },
   methods: {
