@@ -66,34 +66,6 @@
       "iconAlt": "prometheus logo"
     },
     {
-      "name": "Passport local",
-      "path": "https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local",
-      "version": "6",
-      "icon": "/logos/passport.svg",
-      "iconAlt": "Passport local logo"
-    },
-    {
-      "name": "Passport OAuth",
-      "path": "https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth",
-      "version": "6",
-      "icon": "/logos/passport.svg",
-      "iconAlt": "Passport oauth logo"
-    },
-    {
-      "name": "Cluster",
-      "path": "https://github.com/kuzzleio/kuzzle-plugin-cluster",
-      "version": "4",
-      "icon": "/logos/cluster.svg",
-      "iconAlt": "Cluster logo"
-    },
-    {
-      "name": "Logger",
-      "path": "https://github.com/kuzzleio/kuzzle-plugin-logger",
-      "version": "3",
-      "icon": "/logos/logger.svg",
-      "iconAlt": "Logger logo"
-    },
-    {
       "name": "Device Manager",
       "path": "https://docs.kuzzle.io/official-plugins/device-manager/1",
       "version": "1",
@@ -113,6 +85,27 @@
       "version": "1",
       "icon": "/logos/hermes.svg",
       "iconAlt": "Hermes Messenger Logo"
+    },
+    {
+      "name": "Passport local",
+      "path": "https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local",
+      "version": "6",
+      "icon": "/logos/passport.svg",
+      "iconAlt": "Passport local logo"
+    },
+    {
+      "name": "Passport OAuth",
+      "path": "https://github.com/kuzzleio/kuzzle-plugin-auth-passport-oauth",
+      "version": "6",
+      "icon": "/logos/passport.svg",
+      "iconAlt": "Passport oauth logo"
+    },
+    {
+      "name": "Logger",
+      "path": "https://github.com/kuzzleio/kuzzle-plugin-logger",
+      "version": "3",
+      "icon": "/logos/logger.svg",
+      "iconAlt": "Logger logo"
     }
   ]
 }
