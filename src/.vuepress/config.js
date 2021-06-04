@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 const siteDescription =
-  'Check out the complete Kuzzle documentation: Guides, framework, API, SDKs and officials plugins';
+  'Check out the complete Kuzzle Documentation: Guides, Framework, API, SDKs and officials plugins';
 const siteTitle = 'Kuzzle Documentation';
 const versionString = require('./getVersionString');
 const base = process.env.SITE_BASE || '/';
