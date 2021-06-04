@@ -1,18 +1,16 @@
 const webpack = require('webpack');
 
-const siteTitle = 'Kuzzle Docs';
-const siteDescription = 'Kuzzle Documentation';
+const siteTitle = 'Kuzzle Documentation';
 const versionString = require('./getVersionString');
 const base = process.env.SITE_BASE || '/';
 const algoliaDefaultAppId = 'VF5HP4ZVDU';
 const algoliaDefaultIndex = 'documentation-dev';
 const algoliaDefaultSearchKey = 'de63216cd8d0116b2755916b9a38ae35';
 const googleAnalyticsID = 'UA-67035328-7';
-const sections = require('./sections.json')
+const sections = require('./sections.json');
 
 module.exports = {
   title: siteTitle,
-  description: siteDescription,
   base,
   shouldPrefetch: () => false,
   head: [
@@ -56,19 +54,18 @@ module.exports = {
       'meta',
       {
         name: 'twitter:image',
-        content: '/favicon-196x196.png'
+        content: '/favicon/favicon-196x196.png'
       }
     ],
 
     // -- Open Graph data
-    ['meta', { property: 'og:title', content: siteTitle }],
     ['meta', { property: 'og:type', content: 'article' }],
     ['meta', { property: 'og:site_name', content: siteTitle }],
     [
       'meta',
       {
         property: 'og:image',
-        content: 'favicon/favicon-96x96.png'
+        content: '/favicon/favicon-96x96.png'
       }
     ],
     // The following two fields don't seem to be meaningful
@@ -275,8 +272,7 @@ module.exports = {
         REPO_SLUG:
           JSON.stringify(process.env.TRAVIS_REPO_SLUG) ||
           JSON.stringify('kuzzleio/documentation'),
-        BRANCH:
-          JSON.stringify(process.env.TRAVIS_BRANCH)
+        BRANCH: JSON.stringify(process.env.TRAVIS_BRANCH)
       })
     ]
   },
