@@ -6,12 +6,13 @@ export default {
 
     head.appendChild(createMetaTag('article:tag', this.$page.title));
     head.appendChild(createMetaTag('og:title', this.$page.title));
-
-    if (this.$page.frontmatter.description) {
-      head.appendChild(
-        createMetaTag('og:description', this.$page.frontmatter.description)
-      );
-    }
+    head.appendChild(createMetaTag('og:url', document.URL));
+    head.appendChild(
+      createMetaTag(
+        'og:description',
+        this.$page.frontmatter.description || this.$site.description
+      )
+    );
 
     if (this.$page.currentSection) {
       head.appendChild(

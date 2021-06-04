@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 
+const siteDescription =
+  'Check out the complete Kuzzle documentation: Guides, framework, API, SDKs and officials plugins';
 const siteTitle = 'Kuzzle Documentation';
 const versionString = require('./getVersionString');
 const base = process.env.SITE_BASE || '/';
@@ -11,6 +13,7 @@ const sections = require('./sections.json');
 
 module.exports = {
   title: siteTitle,
+  description: siteDescription,
   base,
   shouldPrefetch: () => false,
   head: [
@@ -54,18 +57,20 @@ module.exports = {
       'meta',
       {
         name: 'twitter:image',
-        content: '/favicon/favicon-196x196.png'
+        content: `${base}favicon/favicon-196x196.png`
       }
     ],
 
     // -- Open Graph data
     ['meta', { property: 'og:type', content: 'article' }],
     ['meta', { property: 'og:site_name', content: siteTitle }],
+    ['meta', { property: 'og:image:width', content: '96' }],
+    ['meta', { property: 'og:image:height', content: '96' }],
     [
       'meta',
       {
         property: 'og:image',
-        content: '/favicon/favicon-96x96.png'
+        content: `${base}favicon/favicon-96x96.png`
       }
     ],
     // The following two fields don't seem to be meaningful
