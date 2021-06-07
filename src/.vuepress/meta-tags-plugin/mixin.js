@@ -1,25 +1,26 @@
-import { DEFAULT_VERSION } from '../helpers'
+import { DEFAULT_VERSION, createMetaTag } from '../helpers';
 
 export default {
   mounted() {
     const head = document.head;
 
-    const metaTitle = document.createElement('meta');
-    metaTitle.setAttribute('property', 'article:tag');
-    metaTitle.setAttribute('content', this.$page.title);
-    head.appendChild(metaTitle);
+    head.appendChild(createMetaTag('article:tag', this.$page.title));
+    head.appendChild(createMetaTag('og:title', this.$page.title));
+    head.appendChild(createMetaTag('og:url', document.URL));
+    head.appendChild(
+      createMetaTag(
+        'og:description',
+        this.$page.frontmatter.description || this.$site.description
+      )
+    );
 
     if (this.$page.currentSection) {
-      const metaSection = document.createElement('meta');
-      metaSection.setAttribute('property', 'article:section');
-      metaSection.setAttribute('content', this.$page.currentSection.name);
-      head.appendChild(metaSection);
-      
+      head.appendChild(
+        createMetaTag('article:section', this.$page.currentSection.name)
+      );
+
       if (this.$page.currentSection.kuzzleMajor < DEFAULT_VERSION) {
-        const metaNoIndex = document.createElement('meta');
-        metaNoIndex.setAttribute('property', 'robot');
-        metaNoIndex.setAttribute('content', 'noindex');
-        head.appendChild(metaNoIndex);
+        head.appendChild(createMetaTag('robot', 'noindex'));
       }
     }
   }
