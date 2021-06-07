@@ -15,6 +15,12 @@ export default {
     );
     head.appendChild(
       createMetaTag(
+        'twitter:image',
+        `${window.location.origin}/favicon/favicon-196x196.png`
+      )
+    );
+    head.appendChild(
+      createMetaTag(
         'og:description',
         this.$page.frontmatter.description || this.$site.description
       )
