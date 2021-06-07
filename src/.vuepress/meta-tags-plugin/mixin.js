@@ -9,6 +9,12 @@ export default {
     head.appendChild(createMetaTag('og:url', document.URL));
     head.appendChild(
       createMetaTag(
+        'og:image',
+        `${window.location.origin}/favicon/favicon-196x196.png`
+      )
+    );
+    head.appendChild(
+      createMetaTag(
         'og:description',
         this.$page.frontmatter.description || this.$site.description
       )
