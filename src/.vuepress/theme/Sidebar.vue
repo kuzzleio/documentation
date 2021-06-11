@@ -32,6 +32,7 @@
               v-for="item__1 in getPageChildren(root).filter(
                 p => p.frontmatter.type === 'branch'
               )"
+              :key="item__1.path"
               class="md-nav__item-container"
             >
               <li
@@ -43,7 +44,10 @@
                 {{ item__1.frontmatter.title }}
               </li>
 
-              <div v-for="item__2 in getPageChildren(item__1)">
+              <div
+                v-for="item__2 in getPageChildren(item__1)"
+                :key="item__2.path"
+              >
                 <li class="md-nav__item md-nav-title">
                   <div
                     class="md-nav__link"
@@ -98,8 +102,9 @@
                 >
                   <div
                     v-for="item__3 of getPageChildren(item__2)"
-                    class="md-nav__item"
+                    :key="item__3.path"
                     :id="getId([item__1.title, item__2.title, item__3.title])"
+                    class="md-nav__item"
                   >
                     <li v-if="$page.path === item__3.path">
                       <router-link
@@ -224,18 +229,9 @@ export default {
       if (!childs) {
         return;
       }
+
       const item2Id = this.getId([item__1.title, item__2.title]);
-      const item3Id = this.getId([
-        item__1.title,
-        item__2.title,
-        childs[0].title
-      ]);
-      if (!document.getElementById(item3Id)) {
-        return;
-      }
-      const childSize = document.getElementById(item3Id).offsetHeight;
-      const menuHeight = `${childs.length * childSize}px`;
-      document.getElementById(item2Id).style.height = menuHeight;
+      document.getElementById(item2Id).style.height = 'auto';
     },
     closeSidebar(item) {
       this.$emit('closeSidebar');
