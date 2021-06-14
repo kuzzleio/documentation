@@ -46,7 +46,10 @@ module.exports = {
 
     // -- Schema.org markup for Google+
     ['meta', { itemprop: 'name', content: siteTitle }],
-    ['meta', { itemprop: 'image', content: '/favicon/favicon-196x196.png' }],
+    [
+      'meta',
+      { itemprop: 'image', content: 'https://docs.kuzzle.io/og-image.png' }
+    ],
 
     // -- Twitter Card data
     ['meta', { name: 'twitter:card', value: 'summary' }],
@@ -57,20 +60,18 @@ module.exports = {
       'meta',
       {
         property: 'twitter:image',
-        content: 'https://docs.kuzzle.io/favicon/favicon-196x196.png'
+        content: 'https://docs.kuzzle.io/og-image.png'
       }
     ],
 
     // -- Open Graph data
     ['meta', { property: 'og:type', content: 'article' }],
     ['meta', { property: 'og:site_name', content: siteTitle }],
-    ['meta', { property: 'og:image:width', content: '196' }],
-    ['meta', { property: 'og:image:height', content: '196' }],
     [
       'meta',
       {
         property: 'og:image',
-        content: 'https://docs.kuzzle.io/favicon/favicon-196x196.png'
+        content: 'https://docs.kuzzle.io/og-image.png'
       }
     ],
     // The following two fields don't seem to be meaningful
