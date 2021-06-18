@@ -1,0 +1,48 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy the whole documentation to production
+
+on:
+  push:
+    branches: [gha-ci]
+  workflow_dispatch:
+
+jobs:
+  prepare-matrix:
+    name: Prepare matrix by getting the repo names from repositories.yml
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Install yq
+        run: |
+          sudo apt-get update
+          sudo apt-get install python python-pip3
+          pip3 install yq
+        shell: bash
+      - name: Get role folders
+        id: set-matrix
+        run: |
+          echo "::set-output name=matrix::{\"repo\": $(cat .repos/repositories.yml | yq '[.[].repo_name]')}"
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+
+  deploy_framework:
+    name: Deploy framework
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say something
+        run: echo Deploying the framework...
+
+  deploy_child_repo:
+    name: Deploy child repo ${{ matrix.repo }}
+    needs: prepare-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
+    steps:
+      # - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo "Running in matrix ${{ matrix.repo }}"
