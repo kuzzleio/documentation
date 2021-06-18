@@ -23,7 +23,8 @@ jobs:
         shell: bash
       - name: Get repo names
         id: set-matrix
-        run: echo "::set-output name=repo::$(cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g' | sed 's/,/, /')"
+        # run: echo "::set-output name=repo::$(cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g' | sed 's/,/, /')"
+        run: cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g' | sed 's/,/, /'
     outputs:
       matrix: ${{ steps.set-matrix.outputs.repo }}
 
@@ -33,16 +34,14 @@ jobs:
     steps:
       - name: Say something
         run: echo Deploying the framework...
-
-  deploy_child_repo:
-    name: Deploy child repo ${{ matrix.repo }}
-    needs: prepare-matrix
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        repo: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
-    steps:
-      # - uses: actions/checkout@v2
-
-      - name: Run a one-line script
-        run: echo "Running in matrix ${{ matrix.repo }}"
+  # deploy_child_repo:
+  #   name: Deploy child repo ${{ matrix.repo }}
+  #   needs: prepare-matrix
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       repo: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
+  #   steps:
+  #     # - uses: actions/checkout@v2
+  #     - name: Run a one-line script
+  #       run: echo "Running in matrix ${{ matrix.repo }}"
