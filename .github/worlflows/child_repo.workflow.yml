@@ -1,0 +1,22 @@
+name: Child repository triggered doc build
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      repo_name:
+        description: "The name of the repository that triggered the workflow"
+        required: true
+      branch:
+        description: "The branch of the child repo to deploy"
+        required: false
+
+  jobs:
+    deploy:
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v2
+
+        - name: Output event inputs for debug
+          run: echo "Repo ${{ github.event.inputs.repo_name }} triggered this workflow from branch ${{ github.event.inputs.branch }}"
