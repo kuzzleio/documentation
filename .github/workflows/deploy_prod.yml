@@ -21,12 +21,11 @@ jobs:
           sudo apt-get install python python3-pip
           pip3 install yq
         shell: bash
-      - name: Get role folders
+      - name: Get repo names
         id: set-matrix
-        run: |
-          echo "::set-output name=matrix::{\"repo\": $(cat .repos/repositories.yml | yq '[.[].repo_name]')}"
+        run: echo "::set-output name=repo::$(cat .repos/repositories.yml | yq '[.[].repo_name]')"
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      matrix: ${{ steps.set-matrix.outputs.repo }}
 
   deploy_framework:
     name: Deploy framework
@@ -40,7 +39,8 @@ jobs:
     needs: prepare-matrix
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
+      matrix:
+        repo: ${{ fromJson(needs.prepare-matrix.outputs.repo) }}
     steps:
       # - uses: actions/checkout@v2
 
