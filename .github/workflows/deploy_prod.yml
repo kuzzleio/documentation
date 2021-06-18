@@ -23,7 +23,7 @@ jobs:
         shell: bash
       - name: Get repo names
         id: set-matrix
-        run: echo "::set-output name=repo::$(cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g')"
+        run: echo "::set-output name=repo::$(cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g' | sed 's/,/, /')"
     outputs:
       matrix: ${{ steps.set-matrix.outputs.repo }}
 
