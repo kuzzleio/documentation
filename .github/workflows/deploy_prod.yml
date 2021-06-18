@@ -23,7 +23,8 @@ jobs:
         shell: bash
       - name: Get repo names
         id: set-matrix
-        run: echo "::set-output name=repo::$(cat .repos/repositories.yml | yq '[.[].repo_name]')"
+        run: echo "::set-output name=repo::[\"luca\", \"luzie\"]"
+        # $(cat .repos/repositories.yml | yq '[.[].repo_name]')"
     outputs:
       matrix: ${{ steps.set-matrix.outputs.repo }}
 
@@ -40,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        repo: ${{ fromJson(needs.prepare-matrix.outputs.repo) }}
+        repo: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
     steps:
       # - uses: actions/checkout@v2
 
