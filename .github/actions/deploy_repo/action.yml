@@ -36,6 +36,7 @@ runs:
     - name: Install kuzdoc
       run: |
         npm ci
+      shell: bash
     - name: Builds and deploys the repo
       run: echo "$(npm bin)/kuzdoc build-and-deploy --repo ${{ inputs.repo_name }} --branch ${{ inputs.repo_branch }} --version ${{ inputs.repo_version }}"
       #   run: echo "kuzdoc repo:install --repo ${{ inputs.repo_name }} --branch ${{ inputs.repo_branch }} --version ${{ inputs.repo_version }}"
