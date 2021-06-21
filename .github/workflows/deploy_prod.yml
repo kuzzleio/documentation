@@ -23,7 +23,7 @@ jobs:
         shell: bash
       - name: Get repo names
         id: set-matrix
-        run: echo "::set-output name=repo::[\"kuzzle-how-to\", \"kuzzle-how-to\", \"sdk-javascript\", \"sdk-javascript\", \"sdk-javascript\", \"kuzzle-plugin-s3\", \"kuzzle-plugin-s3\", \"sdk-php\", \"kuzzle-plugin-cloudinary\", \"kuzzle-plugin-cloudinary\", \"sdk-cpp\", \"sdk-csharp\", \"sdk-csharp\", \"sdk-go\", \"sdk-go\", \"sdk-go\", \"sdk-java\", \"sdk-java\", \"sdk-java\", \"sdk-jvm\", \"kuzzle\", \"kuzzle\", \"sdk-android\", \"sdk-dart\", \"kuzzle-plugin-device-manager\", \"kuzzle-plugin-workflows\", \"kuzzle-plugin-hermes-messenger\"]"
+        run: echo "::set-output name=matrix::[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]"
         # run: echo "::set-output name=repo::$(cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g' | sed 's/,/, /g')"
         # run: cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g' | sed 's/,/, /g'
     outputs:
@@ -36,7 +36,7 @@ jobs:
   #     - name: Say something
   #       run: echo Deploying the framework...
   deploy_child_repo:
-    name: Deploy child repo ${{ matrix.repo }}
+    name: Deploy child repo ${{ matrix.repo.project }}
     needs: prepare-matrix
     runs-on: ubuntu-latest
     strategy:
@@ -45,4 +45,4 @@ jobs:
     steps:
       # - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: echo "Running in matrix ${{ matrix.repo }}"
+        run: echo "Running in matrix ${{ matrix.repo.project }} with config ${{ matrix.repo.config }}"
