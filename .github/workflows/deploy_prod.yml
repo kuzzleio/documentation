@@ -23,11 +23,11 @@ jobs:
         shell: bash
       - name: Get repo names
         id: set-matrix
-        run: echo "::set-output name=matrix::[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]"
-        # run: echo "::set-output name=repo::$(cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g' | sed 's/,/, /g')"
+        # run: echo "::set-output name=matrix::[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]"
+        run: echo "::set-output name=repo::$(cat .repos/repositories.yml | yq -c '[.[]]' | sed 's/"/\\"/g'"
         # run: cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g' | sed 's/,/, /g'
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      matrix: ${{ steps.set-matrix.outputs.repo }}
 
   # deploy_framework:
   #   name: Deploy framework
@@ -36,7 +36,7 @@ jobs:
   #     - name: Say something
   #       run: echo Deploying the framework...
   deploy_child_repo:
-    name: Deploy child repo ${{ matrix.repo }}
+    name: Deploy child repo ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}
     needs: prepare-matrix
     runs-on: ubuntu-latest
     strategy:
@@ -45,4 +45,4 @@ jobs:
     steps:
       # - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: echo "Running in matrix"
+        run: echo "Running in matrix ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}"
