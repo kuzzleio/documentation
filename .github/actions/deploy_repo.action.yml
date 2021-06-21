@@ -1,0 +1,57 @@
+name: Deploy docs for repo
+description: Deploys the docs of a given repository.
+
+inputs:
+  repo_name:
+    description: The name of the repository to deploy
+    required: true
+  repo_branch:
+    description: The branch of the repo to deploy
+    required: true
+  repo_version:
+    description: The version of the product in the repo
+    required: true
+  repo_deploy_path:
+    description: The path in the destination bucket to deploy the built documentation to
+    required: true
+  AWS_ACCESS_KEY_ID:
+    description: AWS Access key ID
+    required: true
+  AWS_SECRET_ACCESS_KEY:
+    description: AWS secret key
+    required: true
+  S3_BUCKET:
+    description: S3 bucket name
+    required: true
+  CLOUDFRONT_ID:
+    description: Cloudfront distribution ID
+    required: true
+  REGION:
+    description: AWS default region
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install kuzdoc
+      run: |
+        npm ci
+    - name: Builds and deploys the repo
+      run: echo "$(npm bin)/kuzdoc build-and-deploy --repo ${{ inputs.repo_name }} --branch ${{ inputs.repo_branch }} --version ${{ inputs.repo_version }}"
+      #   run: echo "kuzdoc repo:install --repo ${{ inputs.repo_name }} --branch ${{ inputs.repo_branch }} --version ${{ inputs.repo_version }}"
+      # - name: Builds the repo
+      #   run: |
+      #     echo "cd .repos/${{ inputs.repo_name }}-${{ inputs.repo_version }}"
+      #     echo "npm ci"
+      #     echo "npm run build"
+      # - name: Deploys the repo
+      #   run: |
+      #     echo "kuzdoc repo:deploy --repo ${{ inputs.repo_name }} --version ${{ inputs.repo_version }} --deployPath ${{ input.repo_deploy_path}}"
+      #     echo "kuzdoc repo:cloudfront -d ${{ input.repo_deploy_path}}/*"
+      env:
+        AWS_DEFAULT_REGION: ${{ inputs.REGION }}
+        AWS_ACCESS_KEY_ID: ${{ inputs.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ inputs.AWS_SECRET_ACCESS_KEY }}
+        S3_BUCKET: ${{ inputs.S3_BUCKET }}
+        CLOUDFRONT_DISTRIBUTION_ID: ${{ inputs.CLOUDFRONT_ID }}
+      shell: bash

@@ -10,6 +10,9 @@ on:
       branch:
         description: "The branch of the child repo to deploy"
         required: false
+      version:
+        description: "The version of the product in the child repo"
+        required: true
 
 jobs:
   deploy:

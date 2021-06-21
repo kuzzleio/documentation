@@ -1,5 +1,5 @@
-name: Dead Links
-description: Run Dead Links Tests
+name: Dead Link Check
+description: Tests the existence of dead links in the documentation of a repo.
 runs:
   using: "composite"
   steps:
