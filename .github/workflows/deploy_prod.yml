@@ -27,7 +27,7 @@ jobs:
         # run: echo "::set-output name=repo::$(cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g' | sed 's/,/, /g')"
         # run: cat .repos/repositories.yml | yq -c '[.[].repo_name]' | sed 's/"/\\"/g' | sed 's/,/, /g'
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.repo }}
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
 
   # deploy_framework:
   #   name: Deploy framework
