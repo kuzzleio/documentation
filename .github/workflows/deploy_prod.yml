@@ -61,7 +61,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12"
-      - uses: ./.github/actions/deploy_repo.action.yml
+      - uses: ./.github/actions/deploy_repo
         with:
           repo_name: ${{ matrix.repo.repo_name }}
           repo_version: ${{ matrix.repo.doc_version }}
