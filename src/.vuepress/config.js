@@ -10,6 +10,10 @@ const algoliaDefaultIndex = 'documentation-dev';
 const algoliaDefaultSearchKey = 'de63216cd8d0116b2755916b9a38ae35';
 const googleAnalyticsID = 'UA-67035328-7';
 const sections = require('./sections.json');
+/**
+ * vuepress [dev|build] <sourceDir> [options...]
+ */
+const sourceDir = process.argv[3];
 
 module.exports = {
   title: siteTitle,
@@ -251,8 +255,12 @@ module.exports = {
       permalinkClass: 'heading-anchor-link',
       permalinkSymbol: '#'
     },
-    extendMarkdown: md => {
-      md.use(require('./markdown/code-snippet'));
+    extendMarkdown: (md) => {
+      md.use(require('./markdown/code-snippet')
+      , {
+        sourceDir
+      }
+      );
       md.use(require('./markdown/copy-paste-snippet-btn'));
     }
   },

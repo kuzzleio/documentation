@@ -2,13 +2,20 @@ const { fs, path } = require('@vuepress/shared-utils');
 const fixIndents = require('fix-indents');
 
 module.exports = function snippet(md, options = {}) {
-  const root = options.root || process.cwd();
-  const docDir = process.env.DOC_DIR || 'src';
+  const cwd = process.cwd();
+  const sourceDir = options.sourceDir || 'src';
+
+  console.log(`SOURCE_DIR ${sourceDir}`)
 
   function parser(state, startLine, endLine, silent) {
     const CH = '<'.charCodeAt(0);
     const pos = state.bMarks[startLine] + state.tShift[startLine];
     const max = state.eMarks[startLine];
+    /**
+     * The path of the MD document that includes the snippet, relative
+     * to the sourceDir
+     */
+    const documentPath = state.env.relativePath;
 
     // if it's indented more than 3 spaces, it should be a code block
     if (state.sCount[startLine] - state.blkIndent >= 4) {
@@ -32,15 +39,24 @@ module.exports = function snippet(md, options = {}) {
 
     // Extract raw path (absolute)
     if (/^@/.exec(sourcePath)) {
-      rawPath = sourcePath.replace(/^@/, root);
+      rawPath = sourcePath.replace(/^@/, cwd);
     }
 
     // Extract raw path (relative)
     if (/^\./.exec(sourcePath)) {
-      rawPath = sourcePath.replace(
-        /^\./,
-        path.dirname(path.normalize(`${root}/${docDir}/${state.env.relativePath}`))
-      );
+      if (!documentPath) {
+        // console.warn(`Won't include snippet with relative path ${sourcePath}: documentPath is undefined.`)
+        return
+      }
+      // console.log(`Constructing raw path with ${cwd}, ${sourceDir}, ${documentPath}...`)
+      const snippetPathRelativeToRepo = path.normalize(path.join(path.dirname(documentPath), sourcePath))
+      // console.log(`snippetPathRelativeToRepo = ${snippetPathRelativeToRepo}`)
+      rawPath = path.normalize(path.join(cwd, sourceDir, snippetPathRelativeToRepo))
+      // console.log(`Looking for snippet at => ${rawPath}`)
+      // rawPath = sourcePath.replace(
+      //   /^\./,
+      //   path.dirname(path.normalize(path.join(cwd, sourceDir, documentPath || '')))
+      // );
     }
 
     // Extract snippet id (if present)
@@ -80,8 +96,10 @@ module.exports = function snippet(md, options = {}) {
       ? fs.readFileSync(filename).toString()
       : 'Not found: ' + filename;
 
-    if (state.env.relativePath && !fileExists) {
-      console.error(`Cannot find snippet at ${filename}. Did you correctly set DOC_DIR ? (root=${root}, docDir=${docDir}, relativePath=${state.env.relativePath})`)
+    console.log(`Inserting snippet ${filename}`)
+
+    if (documentPath && !fileExists) {
+      console.error(`Cannot find snippet at ${filename} (cwd=${cwd}, sourceDir=${sourceDir}, documentPath=${documentPath})`)
     }
 
     // Extract snippet from file content, if matches snippet:* tags
