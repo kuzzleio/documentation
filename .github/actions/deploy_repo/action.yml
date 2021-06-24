@@ -40,11 +40,9 @@ runs:
       shell: bash
       run: $(npm bin)/kuzdoc install --repo=${{ inputs.repo_name }} --repoBranch=${{ inputs.repo_branch }}
     - name: Builds and deploys the repo
-      run: $(npm bin)/kuzdoc build-and-deploy --repo=${{ inputs.repo_name }} --dryRun
+      run: $(npm bin)/kuzdoc build-and-deploy --repo=${{ inputs.repo_name }} --s3Bucket=${{ inputs.S3_BUCKET }} --cloudfrontId=${{ inputs.CLOUDFRONT_ID }} --dryRun
       env:
         AWS_DEFAULT_REGION: ${{ inputs.REGION }}
         AWS_ACCESS_KEY_ID: ${{ inputs.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ inputs.AWS_SECRET_ACCESS_KEY }}
-        S3_BUCKET: ${{ inputs.S3_BUCKET }}
-        CLOUDFRONT_DISTRIBUTION_ID: ${{ inputs.CLOUDFRONT_ID }}
       shell: bash
