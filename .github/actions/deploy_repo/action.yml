@@ -40,7 +40,7 @@ runs:
       shell: bash
       run: $(npm bin)/kuzdoc install --repo=${{ inputs.repo_name }} --repoBranch=${{ inputs.repo_branch }}
     - name: Builds and deploys the repo
-      run: echo "$(npm bin)/kuzdoc build-and-deploy --repo=${{ inputs.repo_name }} --dryRun"
+      run: $(npm bin)/kuzdoc build-and-deploy --repo=${{ inputs.repo_name }} --dryRun
       env:
         AWS_DEFAULT_REGION: ${{ inputs.REGION }}
         AWS_ACCESS_KEY_ID: ${{ inputs.AWS_ACCESS_KEY_ID }}
