@@ -1,7 +1,6 @@
 name: Child repository triggered doc build
 
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
       repo_name:
@@ -25,9 +24,8 @@ jobs:
       - uses: ./.github/actions/deploy_repo
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
-          repo_name: ${{ matrix.repo.repo_name }}
-          repo_version: ${{ matrix.repo.doc_version }}
-          repo_branch: ${{ matrix.repo.stable }}
+          repo_name: ${{ github.event.inputs.repo_name }}-${{ github.event.inputs.version }}
+          repo_branch: ${{ github.event.inputs.branch }}
           REGION: us-west-2
           S3_BUCKET: docs.kuzzle.io
           CLOUDFRONT_ID: E3D6RP0POLCJMM
@@ -36,9 +34,8 @@ jobs:
       - uses: ./.github/actions/deploy_repo
         if: ${{ github.ref != 'refs/heads/master' }}
         with:
-          repo_name: ${{ matrix.repo.repo_name }}
-          repo_version: ${{ matrix.repo.doc_version }}
-          repo_branch: ${{ matrix.repo.stable }}
+          rrepo_name: ${{ github.event.inputs.repo_name }}-${{ github.event.inputs.version }}
+          repo_branch: ${{ github.event.inputs.branch }}
           REGION: us-west-2
           S3_BUCKET: next-docs.kuzzle.io
           CLOUDFRONT_ID: E2ZCCEK9GRB49U

@@ -8,9 +8,6 @@ inputs:
   repo_branch:
     description: The branch of the repo to deploy
     required: true
-  repo_version:
-    description: The version of the product in the repo
-    required: true
   repo_deploy_path:
     description: The path in the destination bucket to deploy the built documentation to
     required: true
@@ -41,7 +38,7 @@ runs:
       shell: bash
     - name: Installs the repo
       shell: bash
-      run: $(npm bin)/kuzdoc install --repo=${{ inputs.repo_name }} --branch=${{ inputs.repo_branch }} --version=${{ inputs.repo_version }}
+      run: $(npm bin)/kuzdoc install --repo=${{ inputs.repo_name }} --repoBranch=${{ inputs.repo_branch }}
     - name: Builds and deploys the repo
       run: echo "$(npm bin)/kuzdoc build-and-deploy --repo=${{ inputs.repo_name }} --dryRun"
       env:

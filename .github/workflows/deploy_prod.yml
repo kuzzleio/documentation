@@ -63,8 +63,7 @@ jobs:
           node-version: "12"
       - uses: ./.github/actions/deploy_repo
         with:
-          repo_name: ${{ matrix.repo.repo_name }}
-          repo_version: ${{ matrix.repo.doc_version }}
+          repo_name: ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}
           repo_branch: ${{ matrix.repo.stable }}
           REGION: us-west-2
           S3_BUCKET: docs.kuzzle.io
