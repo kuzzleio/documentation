@@ -193,6 +193,14 @@
   name: sdk-dart-2
   deploy_path: /sdk/dart/2/
 
+- url: https://github.com/kuzzleio/sdk-dart.git
+  repo_name: sdk-dart
+  doc_version: 3
+  stable: master
+  dev: 3-dev
+  name: sdk-dart-3
+  deploy_path: /sdk/dart/3/
+
 - url: https://github.com/kuzzleio/kuzzle-plugin-device-manager.git
   repo_name: kuzzle-plugin-device-manager
   doc_version: 1

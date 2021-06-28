@@ -220,6 +220,15 @@
     "icon": "/logos/dart.svg",
     "released": true
   },
+  "/sdk/dart/3/": {
+    "kuzzleMajor": 2,
+    "section": "sdk",
+    "subsection": "dart",
+    "name": "Dart Null Safety",
+    "version": 3,
+    "icon": "/logos/dart.svg",
+    "released": true
+  },
   "/sdk/jvm/1/": {
     "kuzzleMajor": 2,
     "section": "sdk",
