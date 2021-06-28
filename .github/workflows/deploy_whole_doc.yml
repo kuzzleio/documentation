@@ -56,6 +56,8 @@ jobs:
       - name: Build framework
         run: npm run build
         shell: bash
+      - name: Configure AWS Region
+        run: echo "AWS_DEFAULT_REGION=us-west-1" >> $GITHUB_ENV
       - name: Upload framework to S3 (PROD)
         if: ${{ github.ref == 'refs/heads/master' }}
         run: aws s3 sync src/.vuepress/dist s3://docs.kuzzle.io --dryrun
