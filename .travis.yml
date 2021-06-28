@@ -187,6 +187,13 @@ jobs:
       name: sdk-dart-2
 
     # ----------------------------
+    # SDK Dart v3
+    # ----------------------------
+    - <<: *doc-deploy-base
+      <<: *doc-deploy-content
+      name: sdk-dart-3
+
+    # ----------------------------
     # Plugin Cloudinary v1
     # ----------------------------
     - <<: *doc-deploy-base
@@ -206,7 +213,7 @@ jobs:
     - <<: *doc-deploy-base
       <<: *doc-deploy-content
       name: plugin-s3-1
-    
+
     # ----------------------------
     # Plugin S3 v2
     # ----------------------------
