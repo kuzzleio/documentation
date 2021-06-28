@@ -32,8 +32,39 @@ jobs:
     name: Deploy framework
     runs-on: ubuntu-latest
     steps:
-      - name: Say something
-        run: echo Deploying the framework...
+      - name: Install dependencies
+        run: npm ci
+        shell: bash
+      - name: Checks kuzdoc version
+        run: $(npm bin)/kuzdoc --version
+        shell: bash
+      - name: Build framework
+        run: npm run build
+        shell: bash
+      - name: Upload framework to S3
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: aws s3 sync src/.vuepress/dist s3://$S3_BUCKET --dryrun
+        shell: bash
+        env:
+          S3_BUCKET: docs.kuzzle.io
+      - name: Upload framework to S3
+        if: ${{ github.ref != 'refs/heads/master' }}
+        run: aws s3 sync src/.vuepress/dist s3://$S3_BUCKET --dryrun
+        shell: bash
+        env:
+          S3_BUCKET: docs-next.kuzzle.io
+      - name: Invalidate Cloudfront cache
+        if: ${{ github.ref == 'refs/heads/master' }}
+        shell: bash
+        run: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
+        env:
+          CLOUDFRONT_DISTRIBUTION_ID: E3D6RP0POLCJMM
+      - name: Invalidate Cloudfront cache
+        if: ${{ github.ref != 'refs/heads/master' }}
+        shell: bash
+        run: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
+        env:
+          CLOUDFRONT_DISTRIBUTION_ID: E2ZCCEK9GRB49U
 
   deploy_child_repo:
     name: Deploy child repo ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}

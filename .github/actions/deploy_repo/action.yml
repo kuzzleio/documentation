@@ -33,7 +33,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Install kuzdoc
+    - name: Install dependencies
       run: npm ci
       shell: bash
     - name: Checks kuzdoc version
