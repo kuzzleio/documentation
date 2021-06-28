@@ -61,9 +61,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12"
-      - uses: webfactory/ssh-agent@v0.5.2
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
         with:
-          ssh-private-key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY }}
+          name: id_rsa
+          known_hosts: unnecessary
       - uses: ./.github/actions/deploy_repo
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
