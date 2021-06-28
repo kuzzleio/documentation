@@ -39,7 +39,7 @@ jobs:
           repo_version: ${{ github.event.inputs.version }}
           repo_branch: ${{ github.event.inputs.branch }}
           REGION: us-west-2
-          S3_BUCKET: next-docs.kuzzle.io
+          S3_BUCKET: docs-next.kuzzle.io
           CLOUDFRONT_ID: E2ZCCEK9GRB49U
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
