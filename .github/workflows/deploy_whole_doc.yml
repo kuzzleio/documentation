@@ -56,30 +56,22 @@ jobs:
       - name: Build framework
         run: npm run build
         shell: bash
-      - name: Upload framework to S3
+      - name: Upload framework to S3 (PROD)
         if: ${{ github.ref == 'refs/heads/master' }}
-        run: aws s3 sync src/.vuepress/dist s3://$S3_BUCKET --dryrun
+        run: aws s3 sync src/.vuepress/dist s3://docs.kuzzle.io --dryrun
         shell: bash
-        env:
-          S3_BUCKET: docs.kuzzle.io
-      - name: Upload framework to S3
+      - name: Upload framework to S3 (NEXT)
         if: ${{ github.ref != 'refs/heads/master' }}
-        run: aws s3 sync src/.vuepress/dist s3://$S3_BUCKET --dryrun
+        run: aws s3 sync src/.vuepress/dist s3://docs-next.kuzzle.io --dryrun
         shell: bash
-        env:
-          S3_BUCKET: docs-next.kuzzle.io
-      - name: Invalidate Cloudfront cache
+      - name: Invalidate Cloudfront cache (PROD)
         if: ${{ github.ref == 'refs/heads/master' }}
         shell: bash
-        run: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
-        env:
-          CLOUDFRONT_DISTRIBUTION_ID: E3D6RP0POLCJMM
-      - name: Invalidate Cloudfront cache
+        run: aws cloudfront create-invalidation --distribution-id E3D6RP0POLCJMM --paths '/*'
+      - name: Invalidate Cloudfront cache (NEXT)
         if: ${{ github.ref != 'refs/heads/master' }}
         shell: bash
-        run: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
-        env:
-          CLOUDFRONT_DISTRIBUTION_ID: E2ZCCEK9GRB49U
+        run: aws cloudfront create-invalidation --distribution-id E2ZCCEK9GRB49U --paths '/*'
 
   deploy_child_repo:
     name: Deploy child repo ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}
