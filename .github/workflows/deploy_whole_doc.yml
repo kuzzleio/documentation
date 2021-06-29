@@ -4,7 +4,7 @@ name: Deploy the whole documentation
 
 on:
   push:
-    branches: [gha-ci, master, develop]
+    branches: [master, develop]
 
 jobs:
   prepare-matrix:
