@@ -14,9 +14,21 @@ on:
         required: true
 
 jobs:
+  dead-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Output event inputs for debug
+        run: echo "Repo ${{ github.event.inputs.repo_name }} triggered this workflow from branch ${{ github.event.inputs.branch }}"
+      - uses: ./.github/actions/dead-links
+        with:
+          repo_name: ${{ github.event.inputs.repo_name }}
+          repo_version: ${{ github.event.inputs.version }}
+          repo_branch: ${{ github.event.inputs.branch }}
+
   deploy:
     runs-on: ubuntu-latest
-
+    needs: [dead-links]
     steps:
       - uses: actions/checkout@v2
       - name: Output event inputs for debug
@@ -35,7 +47,7 @@ jobs:
       - uses: ./.github/actions/deploy_repo
         if: ${{ github.ref != 'refs/heads/master' }}
         with:
-          rrepo_name: ${{ github.event.inputs.repo_name }}
+          repo_name: ${{ github.event.inputs.repo_name }}
           repo_version: ${{ github.event.inputs.version }}
           repo_branch: ${{ github.event.inputs.branch }}
           REGION: us-west-2
