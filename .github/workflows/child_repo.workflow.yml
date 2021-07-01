@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Output event inputs for debug
-        run: echo "Repo ${{ github.event.inputs.repo_name }} triggered this workflow from branch ${{ github.event.inputs.branch }}"
+        run: echo "Repo ${{ github.event.inputs.repo_name }} triggered this workflow from branch ${{ github.event.inputs.branch }} v${{ github.event.inputs.version }}"
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
