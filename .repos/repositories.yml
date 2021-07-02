@@ -188,7 +188,7 @@
 - url: https://github.com/kuzzleio/sdk-dart.git
   repo_name: sdk-dart
   doc_version: 2
-  stable: master
+  stable: 2-dev
   dev: 2-dev
   name: sdk-dart-2
   deploy_path: /sdk/dart/2/

@@ -1,0 +1,26 @@
+name: Deploy documentation artifacts
+description: Deploy documentation artifacts
+
+inputs:
+  S3_BUCKET:
+    description: S3 bucket name
+    required: true
+  CLOUDFRONT_ID:
+    description: Cloudfront distribution ID
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install dependencies
+      run: npm ci
+      shell: bash
+    - name: Build framework
+      run: npm run build
+      shell: bash
+    - name: Upload to S3
+      run: aws s3 sync src/.vuepress/dist ${{ inputs.S3_BUCKET }}
+      shell: bash
+    - name: Invalidate Cloudfront cache
+      shell: bash
+      run: aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_ID }} --paths '/*'
