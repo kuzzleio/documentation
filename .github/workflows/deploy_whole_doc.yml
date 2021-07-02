@@ -51,12 +51,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12"
-      - uses: actions/deploy_fw_artifacts
+      - uses: ./.github/actions/deploy_fw_artifacts
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           S3_BUCKET: s3://docs.kuzzle.io
           CLOUDFRONT_ID: E3D6RP0POLCJMM
-      - uses: actions/deploy_fw_artifacts
+      - uses: ./.github/actions/deploy_fw_artifacts
         if: ${{ github.ref != 'refs/heads/master' }}
         with:
           S3_BUCKET: s3://docs-next.kuzzle.io
