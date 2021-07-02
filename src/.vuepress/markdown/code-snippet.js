@@ -5,7 +5,6 @@ module.exports = function snippet(md, options = {}) {
   const cwd = process.cwd();
   const sourceDir = options.sourceDir || 'src';
 
-  console.log(`SOURCE_DIR ${sourceDir}`)
 
   function parser(state, startLine, endLine, silent) {
     const CH = '<'.charCodeAt(0);
@@ -45,18 +44,10 @@ module.exports = function snippet(md, options = {}) {
     // Extract raw path (relative)
     if (/^\./.exec(sourcePath)) {
       if (!documentPath) {
-        // console.warn(`Won't include snippet with relative path ${sourcePath}: documentPath is undefined.`)
         return
       }
-      // console.log(`Constructing raw path with ${cwd}, ${sourceDir}, ${documentPath}...`)
       const snippetPathRelativeToRepo = path.normalize(path.join(path.dirname(documentPath), sourcePath))
-      // console.log(`snippetPathRelativeToRepo = ${snippetPathRelativeToRepo}`)
       rawPath = path.normalize(path.join(cwd, sourceDir, snippetPathRelativeToRepo))
-      // console.log(`Looking for snippet at => ${rawPath}`)
-      // rawPath = sourcePath.replace(
-      //   /^\./,
-      //   path.dirname(path.normalize(path.join(cwd, sourceDir, documentPath || '')))
-      // );
     }
 
     // Extract snippet id (if present)
@@ -95,8 +86,6 @@ module.exports = function snippet(md, options = {}) {
     let content = fileExists
       ? fs.readFileSync(filename).toString()
       : 'Not found: ' + filename;
-
-    console.log(`Inserting snippet ${filename}`)
 
     if (documentPath && !fileExists) {
       console.error(`Cannot find snippet at ${filename} (cwd=${cwd}, sourceDir=${sourceDir}, documentPath=${documentPath})`)

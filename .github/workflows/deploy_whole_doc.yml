@@ -51,28 +51,16 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12"
-      - name: Install dependencies
-        run: npm ci
-        shell: bash
-      - name: Build framework
-        run: npm run build
-        shell: bash
-      - name: Upload framework to S3 (PROD)
+      - uses: actions/deploy_fw_artifacts
         if: ${{ github.ref == 'refs/heads/master' }}
-        run: aws s3 sync src/.vuepress/dist s3://docs.kuzzle.io
-        shell: bash
-      - name: Upload framework to S3 (NEXT)
+        with:
+          S3_BUCKET: s3://docs.kuzzle.io
+          CLOUDFRONT_ID: E3D6RP0POLCJMM
+      - uses: actions/deploy_fw_artifacts
         if: ${{ github.ref != 'refs/heads/master' }}
-        run: aws s3 sync src/.vuepress/dist s3://docs-next.kuzzle.io
-        shell: bash
-      - name: Invalidate Cloudfront cache (PROD)
-        if: ${{ github.ref == 'refs/heads/master' }}
-        shell: bash
-        run: aws cloudfront create-invalidation --distribution-id E3D6RP0POLCJMM --paths '/*'
-      - name: Invalidate Cloudfront cache (NEXT)
-        if: ${{ github.ref != 'refs/heads/master' }}
-        shell: bash
-        run: aws cloudfront create-invalidation --distribution-id E2ZCCEK9GRB49U --paths '/*'
+        with:
+          S3_BUCKET: s3://docs-next.kuzzle.io
+          CLOUDFRONT_ID: E2ZCCEK9GRB49U
 
   deploy_child_repo:
     name: Deploy child repo ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}
