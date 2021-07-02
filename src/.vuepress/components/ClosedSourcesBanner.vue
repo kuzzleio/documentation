@@ -1,8 +1,8 @@
 <template>
   <div class="alert alert-message">
     <p>
-      This plugin is now available with Kuzzle's enterprise products. If you are
-      interested in,
+      This plugin is part of the Kuzzle Enterprise Plan. If you are
+      interested,
       <a href="https://info.kuzzle.io/contact-us" target="_blank"
         >please contact us</a
       >.
