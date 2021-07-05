@@ -10,7 +10,7 @@ This repository contains the following elements:
 
 - the VuePress logic and plugins that convert a bunch of `.md` files into a multi-rooted single-page-application with server-side-rendering an all those cool features we love;
 - the logic that gathers all the different documentations and organizes them in a set of different instances of VuePress;
-- the CI configuration that allows Travis to build and deploy all those different VuePress instances on our hosting space.
+- the CI configuration that allows GitHub Actions to build and deploy all those different VuePress instances on our hosting space.
 
 We want to stress that each section of the documentation (Core, SDK JS, SDK GO, plugins, etc...) is built against a separate and independent instance of VuePress. All these pieces will be glued together by being hosted in the same S3 bucket but in different sibling directories.
 
@@ -18,7 +18,7 @@ We want to stress that each section of the documentation (Core, SDK JS, SDK GO, 
 
 This repository is essentially used to version the framework files and deploy the whole docs when necessary. In order to edit the content of the docs, please refer to the repositories that contain them.
 
-## How to get a local preview of your work on the framework
+## I am working on the framework code and I want to see a preview
 
 If you are working on the code of the documentation framework, this is the right place. And you want a preview of your work before pushing it to GitHub. For most operations of this kind, we use a CLI tool called [kuzdoc](https://github.com/kuzzleio/kuzdoc).
 
@@ -37,10 +37,12 @@ npm ci
 Then run
 
 ```sh
-kuzdoc iterate-repos:install --repositories=sdk-javascript-6,kuzzle-2
+kuzdoc install --repo=sdk-javascript-6,kuzzle-2
 ```
 
 This will only clone the `sdk-javascript-6` and `kuzzle-2` repos, choose the ones that you want to work on locally, trying to avoid having too many.
+
+> Note. If you don't remember exactly the name of the repo you want to install, you can omit the `--repo` option and just let kuzdoc show the list of the repo names.
 
 Then you just need to run:
 
@@ -50,9 +52,9 @@ npm run doc-dev
 
 And follow the on-screen instructions. This will start a development server with hot-reload.
 
-## How to get a local preview of your copywriting
+## I am writing the docs for a repo and I want to see a preview
 
-If you are writing a new piece of the documentation, or simply editing an existing one, you are likely willing to see how it looks. Here is how you do it with [kuzdoc](https://github.com/kuzzleio/kuzdoc).
+If you are writing a new piece of the documentation for let's say, the Javascript SDK v7, or simply editing it, you are likely willing to see how it looks. Here is how you do it with [kuzdoc](https://github.com/kuzzleio/kuzdoc).
 
 If you haven't already done it, install Kuzdoc globally
 
@@ -60,62 +62,83 @@ If you haven't already done it, install Kuzdoc globally
 npm install -g kuzdoc
 ```
 
-From the repository you're writing for (let's say, the Javascript SDK v7), install the framework
+If you haven't already done it, clone this repo somewhere
 
 ```sh
-kuzdoc framework:install
+git clone git@github.com:kuzzleio/documentation.git
 ```
 
-This will clone the framework repository (i.e. this one) into the `/doc/framework/` folder of your repo.
-
-**Note** _If your documentation lives in a folder specific to the version of the code (e.g. `/doc/7/`, for the JS SDK) a symlink should link `/doc/framework/` to `/doc/7/.vuepress`. Be sure this symlink exists and is versioned._
-
-**Note** _You can use with the `framework:install --branch` option to select the branch of the framework you want to use for your preview. You might want to use `develop` if your content needs features that have not been released yet._
-
-Then, in the case of the JS SDK v7,
+From your local copy of this repository, install the local repo you're working on (SDK JS v7)
 
 ```sh
-kuzdoc repo:dev -d /sdk/js/7/ -v 7
+cd documentation
+kuzdoc install --repo=sdk-javascript-7 --localPath=../sdk-javascript
 ```
 
-The `-d` option allows you to specify a deployment path, which means that your content will be available at `http://localhost:8080/sdk/js/7/`. The `-v` option tells the CLI to look for the content in the `/doc/7/` folder. Adjust these options according to your repository.
+Passing the `--localPath` option to the `kuzdoc install` command will symlink your local repo into the framework meta-repo instead of cloning it from GitHub.
 
-In the case of the Javascript SDK (and for most of them), this last command is shortcut by
+> Note. If you don't remember exactly the name of the repo you want to install, you can omit the `--repo` option and just let kuzdoc show the list of the repo names.
+
+Once your local repo installed in the framework meta-repo, simply launch
 
 ```sh
-npm run doc-dev
+kuzdoc dev --repo=sdk-javascript-7
 ```
 
-And follow the on-screen instructions. This will start a development server with hot-reload.
+## I want to see a local preview of a static build of the whole documentation site
 
-If you want to build the repo, run
+You might want to see how the whole docs look before merging stuff to `master`, so [kuzdoc](https://github.com/kuzzleio/kuzdoc) has the right command for you.
+
+If you haven't already done it, install Kuzdoc and `http-server` globally
 
 ```sh
-kuzdoc repo:build -d /sdk/js/7/ -v 7
+npm install -g kuzdoc http-server
 ```
 
-which behaves exactly liks `repo:dev` and is shortcut by `npm run doc-build`.
-
-### Index content to Algolia
-
-The build step can be used to index the content to Algolia, by setting the `ALGOLIA_WRITE_KEY` environment variable.
+If you haven't already done it, clone this repo somewhere
 
 ```sh
-ALGOLIA_WRITE_KEY=<write_key_here> npm run doc-build
+git clone git@github.com:kuzzleio/documentation.git
 ```
 
-Algolia can be configured via the following environment variables
+From your local copy of this repository, install all the repos.
 
-- `ALGOLIA_APP_ID` - The Algolia application ID.
-- `ALGOLIA_SEARCH_KEY` - The search key associated to the Algolia index.
-- `ALGOLIA_INDEX` - The Algolia index associated to the documentation.
-- `ALGOLIA_WRITE_KEY` - The write key associated to the Algolia index.
+```sh
+kuzdoc install --repo=__ALL__
+```
 
-Note that the indexation will only be performed if `ALGOLIA_WRITE_KEY` is set, while the other variables are used to configure the search engine.
+This wil clone all the repos inside the framework meta-repo.
+
+> Note. If you want to put local repositories inside your preview, you can install them before installing all the repos. `kuzdoc install` will not overwrite repositories that are already installed.
+
+Once all your repos are installed, just launch
+
+```sh
+kuzdoc local-deploy
+```
+
+The whole docs will be built (this may take a long time) and deployed to `/tmp/kuzzle-docs/`. You then may run 
+
+```sh
+http-server /tmp/kuzzle-docs/
+```
+
+## I want to add a new repo
+
+Repos that are built in the docs are listed in [`.repos/repositories.yml`](https://github.com/kuzzleio/documentation/blob/master/.repos/repositories.yml). You can either edit it manually or use the kuzdoc wizard
+
+```sh
+kuzdoc add-repo
+```
+
+... and just answer the questions.
 
 ## Content organization
 
-VuePress generates the documentation based on how the files are organized in the filesystem. For example, the URL of each page is direclty infered by its filesystem path relative to `src/`. Also, the left sidebar generation is based on the filesystem location of the files and their [frontmatter](https://v1.vuepress.vuejs.org/guide/frontmatter.html#front-matter) contents.
+VuePress generates the documentation based on how the files are organized in the filesystem. For example, the URL of each page is direclty infered by its filesystem path relative to `src/`. 
+
+### The frontmatter
+The left sidebar generation is based on the filesystem location of the files and their [frontmatter](https://v1.vuepress.vuejs.org/guide/frontmatter.html#front-matter) contents.
 
 A page is defined by a directory (e.g. `src/core/1/api/controllers/admin/dump/`) containing an `index.md` file. This file must have a frontmatter with the following form:
 
@@ -132,7 +155,7 @@ nosidebar: <Boolean> (optional)
 
 :warning: **No other fields are allowed in the frontmatter**
 
-### `type` (required)
+#### `type` (required)
 
 Defines how this page behaves in the generation of the sidebar. It is also used by other components (like Algolia indexation). Can be the following values:
 
@@ -160,7 +183,7 @@ An Integer field indicating how to sort this page in the sidebar. If absent, the
 
 A Boolean field indicating whether the left sidebar should be displayed for the page or not.
 
-### Frontmatter Linter
+#### Frontmatter Linter
 
 The build toolchain runs a linter on the frontmatters. If some frontmatters are invalid, the linter makes the build fail and shows the errors to standard output and dumps them to `frontmatter-errors.js`. Some errors can be automatically fixed: at the end of its report, the linter shows the command to execute to launch the auto-fixer:
 
@@ -169,6 +192,67 @@ $(npm bin)/frontmatter-fix -e frontmatter-errors.js
 ```
 
 You can learn more about the linter by looking at its [official repository](https://github.com/xbill82/vuepress-frontmatter-lint).
+
+### The sections
+Many other dynamic menus are generated from the [`src/.vuepress/sections.json`](https://github.com/kuzzleio/documentation/blob/master/src/.vuepress/sections.json) file, which consists in a hashmap of sections of this form
+
+```json
+{
+  "/sdk/go/3/": {
+    "kuzzleMajor": 2,
+    "section": "sdk",
+    "subsection": "go",
+    "name": "Golang",
+    "version": 3,
+    "icon": "/logos/go.svg",
+    "released": true
+  }
+}
+```
+
+The shape of each section is defined in a specific [JSON Schema file](https://github.com/kuzzleio/documentation/blob/master/src/.vuepress/sections.schema.json).
+
+#### Path
+The path to the section in the docs is the key of the element, which prevents from defining the same section twice.
+
+#### `name` (required)
+The name of the section, mainly use to build the widgets (like the SDK selector, for example).
+
+#### `kuzzleMajor` (required)
+Defines the major version of Kuzzle this section belongs to (relates to the major version selector).
+
+#### `section` (required)
+The ID of the section, used when building lists of sections. If the current section is the child of a parent section, this field indicates the name of the parent section. I am very sorry for this horrible naming, I promise I will rename this to `parent` and make it optional soon.
+
+#### `subsection` (optional)
+If the section is the child of another section, this field contains the name of the current section. OMG I'm so sorry I'll fix it I promise.
+
+#### `released` (required)
+Defines if the section is released or not (the section appears in the menus and indexes if `true`).
+
+#### `version` (optional)
+If the documented product in the current section has a version, here it goes (like the v7 of the JS SDK v7).
+
+#### `icon` (optional)
+If the documented product has an icon, this field contains the path.
+
+#### `closedSource` (optional)
+A boolean indicating whether the documented product is part of Kuzzle Enterprise or not.
+
+#### `deprecated` (optional)
+Defines if the section shows a header banner saying it is deprecated.
+
+#### `deprecatedBannerComponent` (optional)
+Contains the name of the name of the banner component indicating the section is deprecated.
+
+#### I want to add a new section
+You can manually edit `sections.json` or use the kuzdoc wizard
+
+```sh
+kuzdoc add-section
+```
+
+... and answer the questions.
 
 ## Custom containers
 
