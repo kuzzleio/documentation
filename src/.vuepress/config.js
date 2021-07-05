@@ -258,7 +258,7 @@ module.exports = {
     extendMarkdown: (md) => {
       md.use(require('./markdown/code-snippet')
       , {
-        sourceDir
+        docsDir: sourceDir
       }
       );
       md.use(require('./markdown/copy-paste-snippet-btn'));

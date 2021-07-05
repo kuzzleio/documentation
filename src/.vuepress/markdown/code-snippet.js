@@ -3,7 +3,7 @@ const fixIndents = require('fix-indents');
 
 module.exports = function snippet(md, options = {}) {
   const cwd = process.cwd();
-  const sourceDir = options.sourceDir || 'src';
+  const docsDir = options.docsDir || 'src';
 
 
   function parser(state, startLine, endLine, silent) {
@@ -12,7 +12,7 @@ module.exports = function snippet(md, options = {}) {
     const max = state.eMarks[startLine];
     /**
      * The path of the MD document that includes the snippet, relative
-     * to the sourceDir
+     * to the docsDir. Sometimes undefined \o/
      */
     const documentPath = state.env.relativePath;
 
@@ -33,21 +33,21 @@ module.exports = function snippet(md, options = {}) {
 
     const start = pos + 3;
     const end = state.skipSpacesBack(max, pos);
-    const sourcePath = state.src.slice(start, end).trim();
-    let rawPath = sourcePath;
+    const snippetPath = state.src.slice(start, end).trim();
+    let rawPath = snippetPath;
 
     // Extract raw path (absolute)
-    if (/^@/.exec(sourcePath)) {
-      rawPath = sourcePath.replace(/^@/, cwd);
+    if (/^@/.exec(snippetPath)) {
+      rawPath = snippetPath.replace(/^@/, cwd);
     }
 
+    
     // Extract raw path (relative)
-    if (/^\./.exec(sourcePath)) {
+    if (/^\./.exec(snippetPath)) {
       if (!documentPath) {
         return
       }
-      const snippetPathRelativeToRepo = path.normalize(path.join(path.dirname(documentPath), sourcePath))
-      rawPath = path.normalize(path.join(cwd, sourceDir, snippetPathRelativeToRepo))
+      rawPath = path.join(cwd, docsDir, path.dirname(documentPath), snippetPath)
     }
 
     // Extract snippet id (if present)
@@ -88,7 +88,7 @@ module.exports = function snippet(md, options = {}) {
       : 'Not found: ' + filename;
 
     if (documentPath && !fileExists) {
-      console.error(`Cannot find snippet at ${filename} (cwd=${cwd}, sourceDir=${sourceDir}, documentPath=${documentPath})`)
+      console.error(`Cannot find snippet at ${filename} (cwd=${cwd}, docsDir=${docsDir}, documentPath=${documentPath})`)
     }
 
     // Extract snippet from file content, if matches snippet:* tags
