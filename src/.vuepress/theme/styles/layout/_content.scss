@@ -3,25 +3,27 @@
 // ----------------------------------------------------------------------------
 
 // Content container
+$content-margin: 26rem;
+
 .md-content {
   // [tablet landscape +]: Add space for table of contents
   @include break-from-device(tablet landscape) {
-    margin-right: 24.2rem;
+    margin-right: $content-margin;
 
     // Adjust for RTL languages
     [dir='rtl'] & {
       margin-right: initial;
-      margin-left: 24.2rem;
+      margin-left: $content-margin;
     }
   }
 
   // [screen +]: Add space for table of contents
   @include break-from-device(screen) {
-    margin-left: 24.2rem;
+    margin-left: $content-margin;
 
     // Adjust for RTL languages
     [dir='rtl'] & {
-      margin-right: 24.2rem;
+      margin-right: $content-margin;
     }
   }
 

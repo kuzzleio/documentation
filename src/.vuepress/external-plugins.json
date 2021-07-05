@@ -66,27 +66,6 @@
       "iconAlt": "prometheus logo"
     },
     {
-      "name": "Device Manager",
-      "path": "https://docs.kuzzle.io/official-plugins/device-manager/1",
-      "version": "1",
-      "icon": "/logos/device-manager.svg",
-      "iconAlt": "Device Manager logo"
-    },
-    {
-      "name": "Workflows",
-      "path": "https://docs.kuzzle.io/official-plugins/workflows/1",
-      "version": "1",
-      "icon": "/logos/workflows.svg",
-      "iconAlt": "Workflows logo"
-    },
-    {
-      "name": "Hermes Messenger",
-      "path": "https://docs.kuzzle.io/official-plugins/hermes-messenger/1",
-      "version": "1",
-      "icon": "/logos/hermes.svg",
-      "iconAlt": "Hermes Messenger Logo"
-    },
-    {
       "name": "Passport local",
       "path": "https://github.com/kuzzleio/kuzzle-plugin-auth-passport-local",
       "version": "6",

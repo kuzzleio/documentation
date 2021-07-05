@@ -7,12 +7,7 @@ frontmatter-fixes.json
 dead_links.json
 .vscode
 
-.repos/kuzzle-1
-.repos/kuzzle-2
 .repos/plugin*
 .repos/sdk-*
-.repos/kuzzle-how-to-1
-.repos/kuzzle-how-to-2
-.repos/plugin-cloudinary
-
+.repos/kuzzle*
 version.md

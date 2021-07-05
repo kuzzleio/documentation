@@ -12,7 +12,7 @@ $md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container'
 // Sidebar container
 .md-sidebar {
   position: fixed;
-  width: 23.2rem;
+  width: 25rem;
   padding: 2.4rem 0;
   overflow: hidden;
 
@@ -94,12 +94,13 @@ $md-toggle__drawer--checked: '[data-md-toggle="drawer"]:checked ~ .md-container'
     }
 
     // [screen +]: Limit to grid
+    $nav-sidebar-margin: 125rem;
     @include break-from-device(screen) {
-      margin-left: 122rem;
+      margin-left: $nav-sidebar-margin;
 
       // Adjust for RTL languages
       [dir='rtl'] & {
-        margin-right: 122rem;
+        margin-right: $nav-sidebar-margin;
         margin-left: initial;
       }
     }

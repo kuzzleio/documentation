@@ -220,6 +220,15 @@
     "icon": "/logos/dart.svg",
     "released": true
   },
+  "/sdk/dart/3/": {
+    "kuzzleMajor": 2,
+    "section": "sdk",
+    "subsection": "dart",
+    "name": "Dart Null Safety",
+    "version": 3,
+    "icon": "/logos/dart.svg",
+    "released": true
+  },
   "/sdk/jvm/1/": {
     "kuzzleMajor": 2,
     "section": "sdk",
@@ -296,6 +305,16 @@
     "name": "Device Manager",
     "version": 1,
     "icon": "/logos/device-manager.svg",
+    "released": true,
+    "closedSources": true
+  },
+  "/official-plugins/hermes-messenger/1": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "hermes-messenger",
+    "name": "Hermes Messenger",
+    "version": 1,
+    "icon": "/logos/hermes.svg",
     "released": true,
     "closedSources": true
   },
