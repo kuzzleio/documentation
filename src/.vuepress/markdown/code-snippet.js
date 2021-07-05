@@ -3,8 +3,11 @@ const fixIndents = require('fix-indents');
 
 module.exports = function snippet(md, options = {}) {
   const cwd = process.cwd();
-  const docsDir = options.docsDir || 'src';
+  let docsDir = options.docsDir || 'src';
 
+  if (!path.isAbsolute(docsDir)) {
+    docsDir = path.join(process.cwd(), docsDir)
+  }
 
   function parser(state, startLine, endLine, silent) {
     const CH = '<'.charCodeAt(0);
@@ -47,7 +50,7 @@ module.exports = function snippet(md, options = {}) {
       if (!documentPath) {
         return
       }
-      rawPath = path.join(cwd, docsDir, path.dirname(documentPath), snippetPath)
+      rawPath = path.join(docsDir, path.dirname(documentPath), snippetPath)
     }
 
     // Extract snippet id (if present)
@@ -88,7 +91,7 @@ module.exports = function snippet(md, options = {}) {
       : 'Not found: ' + filename;
 
     if (documentPath && !fileExists) {
-      console.error(`Cannot find snippet at ${filename} (cwd=${cwd}, docsDir=${docsDir}, documentPath=${documentPath})`)
+      console.error(`Cannot find snippet at ${filename} (docsDir=${docsDir}, documentPath=${documentPath})`)
     }
 
     // Extract snippet from file content, if matches snippet:* tags
