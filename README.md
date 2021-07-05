@@ -133,7 +133,7 @@ kuzdoc add-repo
 
 ... and just answer the questions.
 
-## Content organization
+## Organize content
 
 VuePress generates the documentation based on how the files are organized in the filesystem. For example, the URL of each page is direclty infered by its filesystem path relative to `src/`. 
 
@@ -254,9 +254,10 @@ kuzdoc add-section
 
 ... and answer the questions.
 
-## Custom containers
+## Writing content
+The Kuzzle Docs framework ships with a toolkit allowing to enrich your Markdown content.
 
-### alert/info boxes
+### Alert and Info boxes
 
 You can create alert/info boxes in your markdown with the following syntax:
 
@@ -268,7 +269,7 @@ lorem ipsum
 
 Supported containers are : `info`, `success`, `warning`
 
-### Tabs
+### Tabbed boxes
 
 It is possible to add tabs directly in the markdown with this syntax:
 
@@ -289,7 +290,7 @@ It is possible to add tabs directly in the markdown with this syntax:
 
 Library used: https://superbiger.github.io/vuepress-plugin-tabs/#documents
 
-### IconTable
+### `IconTable`
 
 You can create a list with icons inside a Markdown file with the `IconTable` CSS class, like in the following example.
 
@@ -323,7 +324,7 @@ The path of the icon file is relative to the current Markdown file.
 --><div class="IconTable-item">
 ```
 
-### GuidesLinks
+### `GuidesLinks`
 
 The GuidesLinks component allows to display previous and next links:
 
@@ -331,7 +332,7 @@ The GuidesLinks component allows to display previous and next links:
 <GuidesLinks :prev="{text: 'what is kuzzle', url: '/foo'}" :next="{text: 'Store and Access Data', url: '/bar'}"/>
 ```
 
-### Custom badge
+### `CustomBadge`
 
 ```
 <CustomBadge type="tip | warning | error" text="your text here"/>
