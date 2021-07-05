@@ -39,7 +39,7 @@
     "indent-string": "^4.0.0",
     "js-cookie": "^2.2.0",
     "js-yaml": "^3.13.1",
-    "kuzdoc": "^2.2.0",
+    "kuzdoc": "^2.4.2",
     "lunr": "^2.3.6",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
