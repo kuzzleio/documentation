@@ -12,6 +12,9 @@ const googleAnalyticsID = 'UA-67035328-7';
 const sections = require('./sections.json');
 /**
  * vuepress [dev|build] <sourceDir> [options...]
+ * 
+ * WARNING! This is extremely brittle, since passing options
+ * as the second argument is also valid!
  */
 const sourceDir = process.argv[3];
 
@@ -258,7 +261,7 @@ module.exports = {
     extendMarkdown: (md) => {
       md.use(require('./markdown/code-snippet')
       , {
-        sourceDir
+        docsDir: sourceDir
       }
       );
       md.use(require('./markdown/copy-paste-snippet-btn'));
