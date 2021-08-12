@@ -56,11 +56,13 @@ class LinkChecker
 
       if @only != 'internal'
         gather_external_links(file_path, content)
-        check_external_links
       end
     end
-    puts "Checking #{@hydra.queued_requests.count} external links.."
-    @hydra.run
+    if @only != 'internal'
+      check_external_links
+      puts "Checking #{@hydra.queued_requests.count} external links.."
+      @hydra.run
+    end
   end
 
   def report_stdout
@@ -133,6 +135,7 @@ class LinkChecker
       # Remove markdown closing parenthesis and everything following it
       external_link = link.dup
       external_link.gsub!(/[\)].*/, '')
+
 
       check_external_link(external_link) do |dead_link, status|
         @external_dead_links << ["#{dead_link} -> #{status}", files]
