@@ -41,8 +41,9 @@ class LinkChecker
 
     @hydra = Typhoeus::Hydra.new(max_concurrency: ENV['HYDRA_MAX_CONCURRENCY'] || 200)
 
-    @internal = Set.new
-    @external = Set.new
+    @internal_dead_links = Set.new
+    @external_dead_links = Set.new
+    @external_links = Hash.new
   end
 
   def run
@@ -53,21 +54,24 @@ class LinkChecker
 
       scan_internal_links(file_path, content) unless @only == 'external'
 
-      scan_external_links(file_path, content) unless @only == 'internal'
+      if @only != 'internal'
+        gather_external_links(file_path, content)
+        check_external_links
+      end
     end
     puts "Checking #{@hydra.queued_requests.count} external links.."
     @hydra.run
   end
 
   def report_stdout
-    puts "Found #{@internal.count} uniq internal dead links:\n"
-    @internal.each do |(link, file)|
+    puts "Found #{@internal_dead_links.count} uniq internal dead links:\n"
+    @internal_dead_links.each do |(link, file)|
       puts "#{link} in #{file}"
     end
     puts
 
-    puts "Found #{@external.count} uniq external dead links:\n"
-    @external.each do |(link, file)|
+    puts "Found #{@external_dead_links.count} uniq external dead links:\n"
+    @external_dead_links.each do |(link, file)|
       puts "#{link} in #{file}"
     end
     puts
@@ -75,11 +79,11 @@ class LinkChecker
 
   def report_json
     puts "JSON report available at #{@json_file}"
-    File.write(@json_file, JSON.pretty_generate({ external: @external.to_a, internal: @internal.to_a }))
+    File.write(@json_file, JSON.pretty_generate({ external: @external_dead_links.to_a, internal: @internal_dead_links.to_a }))
   end
 
   def exit_code
-    return 1 if @internal.count > 0 || @external.count > 0
+    return 1 if @internal_dead_links.count > 0 || @external_dead_links.count > 0
     return 0
   end
 
@@ -103,24 +107,35 @@ class LinkChecker
 
         next if File.exists?(full_path)
 
-        @internal << [full_path, file_path]
+        @internal_dead_links << [full_path, file_path]
       end
     end
   end
 
-  def scan_external_links(file_path, content)
+  def gather_external_links(file_path, content)
     external_links = URI.extract(content, ['http', 'https'])
-
     external_links.delete_if do |external_link|
       external_link.start_with?(*IGNORED_EXTERNAL_LINKS) ||
       external_link == 'http://' ||
       external_link == 'https://'
-    end.each do |external_link|
+    end
+    external_links.each do |link|
+      if !@external_links.include?(link)
+        @external_links[link] = [file_path] 
+      else
+        @external_links[link] << file_path
+      end
+    end
+  end
+
+  def check_external_links
+    @external_links.each do |link, files|
       # Remove markdown closing parenthesis and everything following it
+      external_link = link.dup
       external_link.gsub!(/[\)].*/, '')
 
       check_external_link(external_link) do |dead_link, status|
-        @external << ["#{dead_link} -> #{status}", file_path]
+        @external_dead_links << ["#{dead_link} -> #{status}", files]
       end
     end
   end
@@ -131,7 +146,7 @@ class LinkChecker
     request.on_complete do |response|
       next if response.code == 200
 
-      # After 3 retry, the link is really dead
+      # After 3 retries, the link is really dead
       if try == 0
         yield link, response.code
       else
