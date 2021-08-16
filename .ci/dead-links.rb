@@ -153,6 +153,7 @@ class LinkChecker
       if try == 0
         yield link, response.code, response.response_body
       else
+        sleep(2)
         check_external_link(link, try - 1, &block)
       end
     end
