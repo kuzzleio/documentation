@@ -137,8 +137,8 @@ class LinkChecker
       external_link.gsub!(/[\)].*/, '')
 
 
-      check_external_link(external_link) do |dead_link, status|
-        @external_dead_links << ["#{dead_link} -> #{status}", files]
+      check_external_link(external_link) do |dead_link, status, body|
+        @external_dead_links << ["#{dead_link} -> #{status} (#{body})", files]
       end
     end
   end
@@ -151,7 +151,7 @@ class LinkChecker
 
       # After 3 retries, the link is really dead
       if try == 0
-        yield link, response.code
+        yield link, response.code, response.response_body
       else
         check_external_link(link, try - 1, &block)
       end
