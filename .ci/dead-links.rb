@@ -147,7 +147,10 @@ class LinkChecker
     request = Typhoeus::Request.new(link, followlocation: true)
 
     request.on_complete do |response|
-      next if response.code == 200
+      # We ignore HTTP status 429, because it means the CI worker
+      # reached the limit of allowed external requests. At this
+      # point, we can afford leaving the external links unchecked.
+      next if response.code == 200 || response.code == 429
 
       # After 3 retries, the link is really dead
       if try == 0
