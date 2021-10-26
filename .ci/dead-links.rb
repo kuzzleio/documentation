@@ -83,7 +83,7 @@ class LinkChecker
   end
 
   def exit_code
-    return 1 if @internal_dead_links.count > 0 || @external_dead_links.count > 0
+    return 1 if @internal_dead_links.count > 0
     return 0
   end
 
