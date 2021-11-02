@@ -6,7 +6,7 @@ Our documentation is a statically generated website. The content is stored in a 
 
 This is a meta repository, which means content is not here. The actual documentation is stored in the repositories of the different pieces of the Kuzzle ecosystem, e.g. the [Kuzzle Core](https://github.com/kuzzleio/kuzzle/tree/master/doc/2), the [Javascript SDK](https://github.com/kuzzleio/sdk-javascript/tree/master/doc/7), the [GOLANG SDK](https://github.com/kuzzleio/sdk-go/tree/master/.doc/2) and so on. And this is a good thing because documentation should live along with the code that it documents. So, what is this repository for?
 
-This repository contains the following elements:
+This repository contains the following elements :
 
 - the VuePress logic and plugins that convert a bunch of `.md` files into a multi-rooted single-page-application with server-side-rendering an all those cool features we love;
 - the logic that gathers all the different documentations and organizes them in a set of different instances of VuePress;
@@ -117,7 +117,7 @@ Once all your repos are installed, just launch
 kuzdoc local-deploy
 ```
 
-The whole docs will be built (this may take a long time) and deployed to `/tmp/kuzzle-docs/`. You then may run 
+The whole docs will be built (this may take a long time) and deployed to `/tmp/kuzzle-docs/`. You then may run
 
 ```sh
 http-server /tmp/kuzzle-docs/
@@ -135,7 +135,7 @@ kuzdoc add-repo
 
 ## Organize content
 
-VuePress generates the documentation based on how the files are organized in the filesystem. For example, the URL of each page is direclty infered by its filesystem path relative to `src/`. 
+VuePress generates the documentation based on how the files are organized in the filesystem. For example, the URL of each page is direclty infered by its filesystem path relative to `src/`.
 
 ### The frontmatter
 The left sidebar generation is based on the filesystem location of the files and their [frontmatter](https://v1.vuepress.vuejs.org/guide/frontmatter.html#front-matter) contents.
