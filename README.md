@@ -6,7 +6,7 @@ Our documentation is a statically generated website. The content is stored in a 
 
 This is a meta repository, which means content is not here. The actual documentation is stored in the repositories of the different pieces of the Kuzzle ecosystem, e.g. the [Kuzzle Core](https://github.com/kuzzleio/kuzzle/tree/master/doc/2), the [Javascript SDK](https://github.com/kuzzleio/sdk-javascript/tree/master/doc/7), the [GOLANG SDK](https://github.com/kuzzleio/sdk-go/tree/master/.doc/2) and so on. And this is a good thing because documentation should live along with the code that it documents. So, what is this repository for?
 
-This repository contains the following elements :
+This repository contains the following elements:
 
 - the VuePress logic and plugins that convert a bunch of `.md` files into a multi-rooted single-page-application with server-side-rendering an all those cool features we love;
 - the logic that gathers all the different documentations and organizes them in a set of different instances of VuePress;
