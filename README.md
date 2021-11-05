@@ -117,7 +117,7 @@ Once all your repos are installed, just launch
 kuzdoc local-deploy
 ```
 
-The whole docs will be built (this may take a long time) and deployed to `/tmp/kuzzle-docs/`. You then may run 
+The whole docs will be built (this may take a long time) and deployed to `/tmp/kuzzle-docs/`. You then may run
 
 ```sh
 http-server /tmp/kuzzle-docs/
@@ -135,7 +135,7 @@ kuzdoc add-repo
 
 ## Organize content
 
-VuePress generates the documentation based on how the files are organized in the filesystem. For example, the URL of each page is direclty infered by its filesystem path relative to `src/`. 
+VuePress generates the documentation based on how the files are organized in the filesystem. For example, the URL of each page is direclty infered by its filesystem path relative to `src/`.
 
 ### The frontmatter
 The left sidebar generation is based on the filesystem location of the files and their [frontmatter](https://v1.vuepress.vuejs.org/guide/frontmatter.html#front-matter) contents.

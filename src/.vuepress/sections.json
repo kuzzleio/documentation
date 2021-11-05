@@ -293,7 +293,7 @@
     "section": "official-plugins",
     "subsection": "workflows",
     "name": "Workflows",
-    "version": 1,
+    "version": 0,
     "icon": "/logos/workflows.svg",
     "released": true,
     "closedSources": true
@@ -303,20 +303,18 @@
     "section": "official-plugins",
     "subsection": "device-manager",
     "name": "Device Manager",
-    "version": 1,
+    "version": 0,
     "icon": "/logos/device-manager.svg",
-    "released": true,
-    "closedSources": true
+    "released": true
   },
   "/official-plugins/hermes-messenger/1": {
     "kuzzleMajor": 2,
     "section": "official-plugins",
     "subsection": "hermes-messenger",
     "name": "Hermes Messenger",
-    "version": 1,
+    "version": 0,
     "icon": "/logos/hermes.svg",
-    "released": true,
-    "closedSources": true
+    "released": true
   },
   "/how-to/v1": {
     "name": "How-To",
