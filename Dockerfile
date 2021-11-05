@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:alpine 
 
 LABEL io.kuzzle.vendor="Kuzzle <support@kuzzle.io>"
 LABEL description="Documentation website with running tests"
