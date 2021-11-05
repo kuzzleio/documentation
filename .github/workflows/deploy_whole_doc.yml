@@ -5,6 +5,7 @@ name: Deploy the whole documentation
 on:
   push:
     branches: [master, develop]
+  workflow_dispatch:
 
 jobs:
   prepare-matrix:
