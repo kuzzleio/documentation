@@ -47,7 +47,7 @@ export default {
     width: 60px;
 
     &:hover {
-      width: 64px;
+      width: 62px;
     }
 
     img {

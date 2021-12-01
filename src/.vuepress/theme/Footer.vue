@@ -102,11 +102,3 @@ export default {
   }
 };
 </script>
-
-<style>
-#Discord-widget {
-  position: absolute;
-  bottom: 1px;
-  right: 1px;
-}
-</style>
