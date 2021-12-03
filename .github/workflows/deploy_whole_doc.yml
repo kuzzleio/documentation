@@ -10,7 +10,7 @@ on:
 jobs:
   prepare-matrix:
     name: Prepare matrix by getting the repo names from repositories.yml
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
