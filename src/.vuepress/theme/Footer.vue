@@ -1,11 +1,17 @@
 <template>
   <footer class="md-footer">
+    <discord-widget />
     <ul class="md-footer-external md-typeset">
       <li class="md-footer-external__link">
         <a href="https://github.com/kuzzleio/" target="_blank">
-          <img class="md-footer-external__link__img" src="/logos/logo-github.svg" />
+          <img
+            class="md-footer-external__link__img"
+            src="/logos/logo-github.svg"
+          />
           <div class="md-footer-external__link__title">Github</div>
-          <div class="md-footer-external__link__description">Contribute to Kuzzle projects</div>
+          <div class="md-footer-external__link__description">
+            Contribute to Kuzzle projects
+          </div>
         </a>
       </li>
       <li class="md-footer-external__link">
@@ -13,39 +19,62 @@
           href="https://stackoverflow.com/questions/ask?guided=false&tags=Kuzzle&title=[Kuzzle]"
           target="_blank"
         >
-          <img class="md-footer-external__link__img" src="/logos/logo-stack-overflow.svg" />
+          <img
+            class="md-footer-external__link__img"
+            src="/logos/logo-stack-overflow.svg"
+          />
           <div class="md-footer-external__link__title">Stack Overflow</div>
-          <div class="md-footer-external__link__description">Ask a question</div>
+          <div class="md-footer-external__link__description">
+            Ask a question
+          </div>
         </a>
       </li>
       <li class="md-footer-external__link">
         <a href="http://join.discord.kuzzle.io" target="_blank">
-          <img class="md-footer-external__link__img" src="/logos/logo-discord.svg" />
+          <img
+            class="md-footer-external__link__img"
+            src="/logos/logo-discord.svg"
+          />
           <div class="md-footer-external__link__title">Discord</div>
-          <div
-            class="md-footer-external__link__description"
-          >Chat with the community and Kuzzle developers</div>
+          <div class="md-footer-external__link__description">
+            Chat with the community and Kuzzle developers
+          </div>
         </a>
       </li>
       <li class="md-footer-external__link">
-        <a href="https://www.youtube.com/channel/UCHcEzVQoH10YSyxc7jD3SMw" target="_blank">
-          <img class="md-footer-external__link__img" src="/logos/logo-youtube.svg" />
+        <a
+          href="https://www.youtube.com/channel/UCHcEzVQoH10YSyxc7jD3SMw"
+          target="_blank"
+        >
+          <img
+            class="md-footer-external__link__img"
+            src="/logos/logo-youtube.svg"
+          />
           <div class="md-footer-external__link__title">Youtube</div>
-          <div class="md-footer-external__link__description">Check out our tutorial videos</div>
+          <div class="md-footer-external__link__description">
+            Check out our tutorial videos
+          </div>
         </a>
       </li>
     </ul>
     <div class="md-footer-meta md-typeset">
       <div class="md-footer-meta__inner md-grid">
         <div class="md-footer-copyright">
-          <div class="md-footer-copyright__highlight">&copy;{{ currentYearCopyright }} - Kuzzle.io</div>
+          <div class="md-footer-copyright__highlight">
+            &copy;{{ currentYearCopyright }} - Kuzzle.io
+          </div>
           <a
             href="https://github.com/kuzzleio/documentation/blob/master/LICENSE.md"
-          >Apache 2.0 License</a>
+            >Apache 2.0 License</a
+          >
         </div>
 
         <div class="md-footer-social">
-          <a href="https://kuzzle.io" class="md-footer-social__link fa fa-globe" target="_blank"></a>
+          <a
+            href="https://kuzzle.io"
+            class="md-footer-social__link fa fa-globe"
+            target="_blank"
+          ></a>
           <a
             href="https://twitter.com/kuzzleio"
             class="md-footer-social__link fa fa-twitter"
@@ -59,14 +88,23 @@
         </div>
       </div>
     </div>
+
     <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3803374.js"></script>
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js.hs-scripts.com/3803374.js"
+    ></script>
     <!-- End of HubSpot Embed Code -->
   </footer>
 </template>
 
 <script>
+import DiscordWidget from '../components/DiscordWidget.vue';
 export default {
+  components: { DiscordWidget },
   computed: {
     currentYearCopyright() {
       return new Date().getFullYear();
@@ -75,5 +113,3 @@ export default {
 };
 </script>
 
-<style>
-</style>
