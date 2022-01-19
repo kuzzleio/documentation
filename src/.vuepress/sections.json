@@ -316,6 +316,15 @@
     "icon": "/logos/hermes.svg",
     "released": true
   },
+  "/official-plugins/scheduler/1": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "scheduler",
+    "name": "Scheduler",
+    "version": 1,
+    "icon": "/logos/scheduler.svg",
+    "released": true
+  },
   "/how-to/v1": {
     "name": "How-To",
     "version": 1,

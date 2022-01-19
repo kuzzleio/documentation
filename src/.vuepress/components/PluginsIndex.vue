@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import { getItemLocalStorage } from '../util';
 import externalPlugins from '../external-plugins.json';
 export default {
   name: 'PluginsIndex',
