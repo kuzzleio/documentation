@@ -234,3 +234,4 @@
   dev: 1-dev
   name: scheduler-1
   deploy_path: /official-plugins/scheduler/1/
+  private: true
