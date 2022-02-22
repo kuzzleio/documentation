@@ -68,6 +68,7 @@ jobs:
     needs: [prepare-matrix, deploy_framework]
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         repo: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
     steps:
