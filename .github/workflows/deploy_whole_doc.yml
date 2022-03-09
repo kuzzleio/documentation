@@ -70,6 +70,7 @@ jobs:
     strategy:
       matrix:
         repo: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
+      fail-fast: false
     steps:
       - name: Recap of the build
         run: echo "Build and deploy documentation for ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}"
