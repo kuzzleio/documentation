@@ -227,12 +227,11 @@
   name: plugin-hermes-messenger-1
   deploy_path: /official-plugins/hermes-messenger/1/
 
-# TODO: Enable it when document is ready to be push on its master branch
-# - url: https://github.com/kuzzleio/kuzzle-plugin-scheduler.git
-#   repo_name: kuzzle-plugin-scheduler
-#   doc_version: 1
-#   stable: master
-#   dev: 1-dev
-#   name: scheduler-1
-#   deploy_path: /official-plugins/scheduler/1/
-#   private: true
+- url: https://github.com/kuzzleio/kuzzle-plugin-scheduler.git
+  repo_name: kuzzle-plugin-scheduler
+  doc_version: 1
+  stable: master
+  dev: 1-dev
+  name: scheduler-1
+  deploy_path: /official-plugins/scheduler/1/
+  private: true
