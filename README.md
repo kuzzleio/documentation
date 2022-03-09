@@ -1,6 +1,6 @@
 # Kuzzle Documentation
 
-Our documentation is a statically generated website. The content is stored in a bunch of Markdown files built by [VuePress](https://vuepress.vuejs.org/)
+Our documentation is a statically generated website. The content is stored in a bunch of Markdown files built by [VuePress](https://vuepress.vuejs.org/).
 
 ## Ok, but... Where is the actual content? 
 
