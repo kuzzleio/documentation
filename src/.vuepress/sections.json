@@ -323,7 +323,8 @@
     "name": "Scheduler",
     "version": 1,
     "icon": "/logos/scheduler.svg",
-    "released": true
+    "released": true,
+    "closedSources": true
   },
   "/how-to/v1": {
     "name": "How-To",
