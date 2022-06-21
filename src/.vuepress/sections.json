@@ -427,5 +427,11 @@
     "name": "Replicate to Postgres",
     "icon": "/logos/postgresql.svg",
     "released": true
+  },
+  "/paas/1": {
+    "name": "PaaS",
+    "section": "paas",
+    "icon": "/logos/paas-logo.svg",
+    "released": true
   }
 }

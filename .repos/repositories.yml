@@ -5,7 +5,6 @@
   dev: kuzzle-1-dev
   name: kuzzle-how-to-1
   deploy_path: /how-to/1/
-
 - url: https://github.com/kuzzleio/kuzzle-how-to.git
   repo_name: kuzzle-how-to
   doc_version: 2
@@ -13,7 +12,6 @@
   dev: develop
   name: kuzzle-how-to-2
   deploy_path: /how-to/2/
-
 - url: https://github.com/kuzzleio/sdk-javascript.git
   repo_name: sdk-javascript
   doc_version: 5
@@ -21,7 +19,6 @@
   dev: 5-dev
   name: sdk-javascript-5
   deploy_path: /sdk/js/5/
-
 - url: https://github.com/kuzzleio/sdk-javascript.git
   repo_name: sdk-javascript
   doc_version: 6
@@ -29,7 +26,6 @@
   dev: 6-dev
   name: sdk-javascript-6
   deploy_path: /sdk/js/6/
-
 - url: https://github.com/kuzzleio/sdk-javascript.git
   repo_name: sdk-javascript
   doc_version: 7
@@ -37,7 +33,6 @@
   dev: 7-dev
   name: sdk-javascript-7
   deploy_path: /sdk/js/7/
-
 - url: https://github.com/kuzzleio/kuzzle-plugin-s3.git
   repo_name: kuzzle-plugin-s3
   doc_version: 1
@@ -45,7 +40,6 @@
   dev: 1-dev
   name: plugin-s3-1
   deploy_path: /official-plugins/s3/1/
-
 - url: https://github.com/kuzzleio/kuzzle-plugin-s3.git
   repo_name: kuzzle-plugin-s3
   doc_version: 2
@@ -53,7 +47,6 @@
   dev: 2-dev
   name: plugin-s3-2
   deploy_path: /official-plugins/s3/2/
-
 - url: https://github.com/kuzzleio/sdk-php.git
   repo_name: sdk-php
   doc_version: 3
@@ -61,7 +54,6 @@
   dev: 3-dev
   name: sdk-php-3
   deploy_path: /sdk/php/3/
-
 - url: https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
   repo_name: kuzzle-plugin-cloudinary
   doc_version: 1
@@ -69,7 +61,6 @@
   dev: 1-dev
   name: plugin-cloudinary-1
   deploy_path: /official-plugins/cloudinary/1/
-
 - url: https://github.com/kuzzleio/kuzzle-plugin-cloudinary.git
   repo_name: kuzzle-plugin-cloudinary
   doc_version: 2
@@ -77,7 +68,6 @@
   dev: 2-dev
   name: plugin-cloudinary-2
   deploy_path: /official-plugins/cloudinary/2/
-
 - url: https://github.com/kuzzleio/sdk-cpp.git
   repo_name: sdk-cpp
   doc_version: 1
@@ -85,7 +75,6 @@
   dev: 1-dev
   name: sdk-cpp-1
   deploy_path: /sdk/cpp/1/
-
 - url: https://github.com/kuzzleio/sdk-csharp.git
   repo_name: sdk-csharp
   doc_version: 1
@@ -93,7 +82,6 @@
   dev: 1-dev
   name: sdk-csharp-1
   deploy_path: /sdk/csharp/1/
-
 - url: https://github.com/kuzzleio/sdk-csharp.git
   repo_name: sdk-csharp
   doc_version: 2
@@ -101,7 +89,6 @@
   dev: 2-dev
   name: sdk-csharp-2
   deploy_path: /sdk/csharp/2/
-
 - url: https://github.com/kuzzleio/sdk-go.git
   repo_name: sdk-go
   doc_version: 1
@@ -110,7 +97,6 @@
   name: sdk-go-1
   deploy_path: /sdk/go/1/
   doc_root: .doc
-
 - url: https://github.com/kuzzleio/sdk-go.git
   repo_name: sdk-go
   doc_version: 2
@@ -119,7 +105,6 @@
   name: sdk-go-2
   deploy_path: /sdk/go/2/
   doc_root: .doc
-
 - url: https://github.com/kuzzleio/sdk-go.git
   repo_name: sdk-go
   doc_version: 3
@@ -128,7 +113,6 @@
   name: sdk-go-3
   deploy_path: /sdk/go/3/
   doc_root: .doc
-
 - url: https://github.com/kuzzleio/sdk-java.git
   repo_name: sdk-java
   doc_version: 1
@@ -136,7 +120,6 @@
   dev: 1-dev
   name: sdk-java-1
   deploy_path: /sdk/java/1/
-
 - url: https://github.com/kuzzleio/sdk-java.git
   repo_name: sdk-java
   doc_version: 2
@@ -144,7 +127,6 @@
   dev: 2-dev
   name: sdk-java-2
   deploy_path: /sdk/java/2/
-
 - url: https://github.com/kuzzleio/sdk-java.git
   repo_name: sdk-java
   doc_version: 3
@@ -152,7 +134,6 @@
   dev: 3-dev
   name: sdk-java-3
   deploy_path: /sdk/java/3/
-
 - url: https://github.com/kuzzleio/sdk-jvm.git
   repo_name: sdk-jvm
   doc_version: 1
@@ -160,7 +141,6 @@
   dev: 1-dev
   name: sdk-jvm-1
   deploy_path: /sdk/jvm/1
-
 - url: https://github.com/kuzzleio/kuzzle.git
   repo_name: kuzzle
   doc_version: 1
@@ -168,7 +148,6 @@
   dev: 1-dev
   name: kuzzle-1
   deploy_path: /core/1/
-
 - url: https://github.com/kuzzleio/kuzzle.git
   repo_name: kuzzle
   doc_version: 2
@@ -176,7 +155,6 @@
   stable: master
   dev: 2-dev
   deploy_path: /core/2/
-
 - url: https://github.com/kuzzleio/sdk-android.git
   repo_name: sdk-android
   doc_version: 3
@@ -184,7 +162,6 @@
   dev: 3-dev
   name: sdk-android-3
   deploy_path: /sdk/android/3/
-
 - url: https://github.com/kuzzleio/sdk-dart.git
   repo_name: sdk-dart
   doc_version: 2
@@ -192,7 +169,6 @@
   dev: 2-dev
   name: sdk-dart-2
   deploy_path: /sdk/dart/2/
-
 - url: https://github.com/kuzzleio/sdk-dart.git
   repo_name: sdk-dart
   doc_version: 3
@@ -200,7 +176,6 @@
   dev: 3-dev
   name: sdk-dart-3
   deploy_path: /sdk/dart/3/
-
 - url: https://github.com/kuzzleio/kuzzle-plugin-device-manager.git
   repo_name: kuzzle-plugin-device-manager
   doc_version: 1
@@ -209,7 +184,6 @@
   name: plugin-device-manager-1
   deploy_path: /official-plugins/device-manager/1/
   private: true
-
 - url: https://github.com/kuzzleio/kuzzle-plugin-workflows.git
   repo_name: kuzzle-plugin-workflows
   doc_version: 1
@@ -218,7 +192,6 @@
   name: plugin-workflows-1
   deploy_path: /official-plugins/workflows/1/
   private: true
-
 - url: https://github.com/kuzzleio/kuzzle-plugin-hermes-messenger.git
   repo_name: kuzzle-plugin-hermes-messenger
   doc_version: 1
@@ -226,7 +199,6 @@
   dev: 1-dev
   name: plugin-hermes-messenger-1
   deploy_path: /official-plugins/hermes-messenger/1/
-
 - url: https://github.com/kuzzleio/kuzzle-plugin-scheduler.git
   repo_name: kuzzle-plugin-scheduler
   doc_version: 1
@@ -234,4 +206,12 @@
   dev: 1-dev
   name: scheduler-1
   deploy_path: /official-plugins/scheduler/1/
+  private: true
+- url: https://github.com/kuzzleio/paas-console.git
+  repo_name: paas-console
+  doc_version: 1
+  stable: master
+  dev: 1-dev
+  deploy_path: /paas-console/1
+  name: paas-console-1
   private: true
