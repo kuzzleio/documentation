@@ -49,9 +49,9 @@
             </li>
             <li class="topMenu__item">
               <a
-                :href="`/paas/index.html`"
+                :href="`/paas-console/1`"
                 :class="{
-                  'topMenu__link--active': isLinkActive(`/paas/`),
+                  'topMenu__link--active': isLinkActive(`/paas-console/1`),
                 }"
                 title="PaaS"
                 class="topMenu__link"

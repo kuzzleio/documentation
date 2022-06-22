@@ -428,7 +428,8 @@
     "icon": "/logos/postgresql.svg",
     "released": true
   },
-  "/paas/1": {
+  "/paas-console/1": {
+    "kuzzleMajor": 2,
     "name": "PaaS",
     "section": "paas",
     "icon": "/logos/paas-logo.svg",

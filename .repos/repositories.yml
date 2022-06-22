@@ -212,6 +212,6 @@
   doc_version: 1
   stable: master
   dev: 1-dev
-  deploy_path: /paas-console/1
+  deploy_path: /paas-console/1/
   name: paas-console-1
   private: true
