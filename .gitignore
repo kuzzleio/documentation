@@ -10,4 +10,6 @@ dead_links.json
 .repos/plugin*
 .repos/sdk-*
 .repos/kuzzle*
+.repos/paas*
+
 version.md

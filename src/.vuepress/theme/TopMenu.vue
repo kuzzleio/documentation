@@ -11,7 +11,7 @@
                 :class="{
                   'topMenu__link--active': isLinkActive(
                     `/core/${kuzzleMajor}/guides/`
-                  )
+                  ),
                 }"
                 title="Guide"
                 class="topMenu__link"
@@ -29,7 +29,7 @@
               <a
                 :href="`/sdk/v${kuzzleMajor}.html`"
                 :class="{
-                  'topMenu__link--active': isLinkActive(`/sdk/`)
+                  'topMenu__link--active': isLinkActive(`/sdk/`),
                 }"
                 title="SDKs"
                 class="topMenu__link"
@@ -40,11 +40,22 @@
               <a
                 :href="`/official-plugins/v${kuzzleMajor}.html`"
                 :class="{
-                  'topMenu__link--active': isLinkActive(`/plugins/`)
+                  'topMenu__link--active': isLinkActive(`/plugins/`),
                 }"
                 title="Plugins"
                 class="topMenu__link"
                 >Plugins</a
+              >
+            </li>
+            <li class="topMenu__item">
+              <a
+                :href="`/paas-console/1`"
+                :class="{
+                  'topMenu__link--active': isLinkActive(`/paas-console/1`),
+                }"
+                title="PaaS"
+                class="topMenu__link"
+                >PaaS</a
               >
             </li>
           </ul>
@@ -65,7 +76,7 @@ export default {
     debugInfo() {
       return JSON.stringify(
         {
-          kuzzleMajor: this.kuzzleMajor
+          kuzzleMajor: this.kuzzleMajor,
         },
         null,
         2
@@ -79,9 +90,9 @@ export default {
 
       return [
         { name: 'API', url: `${pathStart}/api/` },
-        { name: 'Framework', url: `${pathStart}/framework/` }
+        { name: 'Framework', url: `${pathStart}/framework/` },
       ];
-    }
+    },
   },
   methods: {
     isLinkActive(linkPath) {
@@ -89,7 +100,7 @@ export default {
         return false;
       }
       return this.$page.fullPath.startsWith(linkPath);
-    }
-  }
+    },
+  },
 };
 </script>

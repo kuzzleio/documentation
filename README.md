@@ -31,6 +31,8 @@ npm install -g kuzdoc
 :warning: You are not meant to run a local copy of the _whole_ documentation. It is huge and it will take ages to build.
 
 ```sh
+# does not yet work with node v16.x
+nvm use v14.19.3
 npm ci
 ```
 

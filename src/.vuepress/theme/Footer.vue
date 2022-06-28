@@ -93,7 +93,6 @@
     <script
       type="text/javascript"
       id="hs-script-loader"
-      async
       defer
       src="//js.hs-scripts.com/3803374.js"
     ></script>
