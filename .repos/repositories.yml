@@ -211,7 +211,7 @@
   repo_name: paas-console
   doc_version: 1
   stable: master
-  dev: 1-dev
+  dev: staging
   deploy_path: /paas-console/1/
   name: paas-console-1
   private: true
