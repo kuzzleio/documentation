@@ -97,6 +97,8 @@
       src="//js.hs-scripts.com/3803374.js"
     ></script>
     <!-- End of HubSpot Embed Code -->
+
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/0ed105a5c5f45400f9c0ef9a/script.js"></script>
   </footer>
 </template>
 
