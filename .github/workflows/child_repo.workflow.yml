@@ -30,6 +30,9 @@ jobs:
       - uses: actions/setup-node@v1.4.4
         with:
           node-version: 12
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 2.7
       - uses: ./.github/actions/dead-links
         with:
           repo_name: ${{ github.event.inputs.repo_name }}
@@ -45,6 +48,9 @@ jobs:
       - uses: actions/setup-node@v1.4.4
         with:
           node-version: 12
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 2.7
       - name: Output event inputs for debug
         run: echo "Repo ${{ github.event.inputs.repo_name }} triggered this workflow from branch ${{ github.event.inputs.branch }}"
       - uses: ./.github/actions/deploy_repo
