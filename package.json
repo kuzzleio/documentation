@@ -43,7 +43,7 @@
     "kuzzle": "^2.16.8",
     "lunr": "^2.3.6",
     "moment": "^2.24.0",
-    "node-sass": "^7.0.3",
+    "node-sass": "^4.13.1",
     "prompt-confirm": "^2.0.4",
     "read-yaml": "^1.1.0",
     "sanitize-filename": "^1.6.1",
