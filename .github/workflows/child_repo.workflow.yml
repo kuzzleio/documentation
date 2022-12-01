@@ -16,7 +16,7 @@ on:
 jobs:
   dead-links:
     name: Check the dead-links on the repo
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - name: Output event inputs for debug
@@ -41,7 +41,7 @@ jobs:
 
   deploy:
     name: Deploy the repo
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     needs: [dead-links]
     steps:
       - uses: actions/checkout@v2
