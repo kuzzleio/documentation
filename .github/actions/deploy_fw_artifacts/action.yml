@@ -13,7 +13,7 @@ runs:
   using: "composite"
   steps:
     - name: Install dependencies
-      run: npm i
+      run: npm ci
       shell: bash
     - name: Build framework
       run: npm run build
