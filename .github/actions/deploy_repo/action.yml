@@ -34,7 +34,7 @@ runs:
   using: "composite"
   steps:
     - name: Install dependencies
-      run: npm ci
+      run: npm i
       shell: bash
     - name: Checks kuzdoc version
       run: $(npm bin)/kuzdoc --version
