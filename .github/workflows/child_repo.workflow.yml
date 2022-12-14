@@ -13,6 +13,9 @@ on:
         description: "The version of the product in the child repo"
         required: true
 
+env:
+  NODE_VERSION: 14
+
 jobs:
   dead-links:
     name: Check the dead-links on the repo
@@ -29,10 +32,10 @@ jobs:
           known_hosts: unnecessary
       - uses: actions/setup-node@v1.4.4
         with:
-          node-version: 12
+          node-version: ${{ env.NODE_VERSION }}
       - uses: actions/setup-python@v4
         with:
-          python-version: 2.7.18
+          python-version: 3
       - uses: ./.github/actions/dead-links
         with:
           repo_name: ${{ github.event.inputs.repo_name }}
@@ -47,10 +50,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1.4.4
         with:
-          node-version: 12
+          node-version: ${{ env.NODE_VERSION }}
       - uses: actions/setup-python@v4
         with:
-          python-version: 2.7.18
+          python-version: 3
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
