@@ -16,7 +16,7 @@ runs:
   using: "composite"
   steps:
     - name: Install deps
-      run: npm ci --production=false
+      run: npm i --production=false
       shell: bash
     - name: Install typhoeus
       run: sudo gem install typhoeus
