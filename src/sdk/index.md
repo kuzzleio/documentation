@@ -2,7 +2,7 @@
 code: false
 type: root
 order: 3
-title: Kuzzle official SDKs reference
+title: Kuzzle official SDKs references
 meta:
   - name: description
     content: You can find here a list of the officially supported SDK
