@@ -12,7 +12,7 @@
             for="drawer"
           >
             <span class="md-nav__button md-logo">
-              <img src="/logo-min.png" width="48" height="48" />
+              <img src="/logo-min.png" alt="kuzzle logo mini" width="48" height="48" />
             </span>
             <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
           </label>

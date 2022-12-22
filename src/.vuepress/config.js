@@ -2,8 +2,8 @@ const webpack = require('webpack');
 
 const siteDescription =
   'Complete Kuzzle Documentation: Guides, Framework, API, SDKs and officials plugins';
-const siteTitle = 'Kuzzle Documentation';
 const versionString = require('./getVersionString');
+const siteTitle = `| Kuzzle Documentation ${versionString}`;
 const base = process.env.SITE_BASE || '/';
 const algoliaDefaultAppId = 'VF5HP4ZVDU';
 const algoliaDefaultIndex = 'documentation-dev';
@@ -67,7 +67,8 @@ module.exports = {
       'meta',
       {
         property: 'twitter:image',
-        content: 'https://docs.kuzzle.io/og-image.png'
+        content: 'https://docs.kuzzle.io/og-image.png',
+        alt: "kuzzle logo"
       }
     ],
 
@@ -325,6 +326,10 @@ module.exports = {
           code: {
             type: Boolean,
             required: true
+          },
+          meta:{
+            type: Array,
+          
           }
         },
         exclude: [
