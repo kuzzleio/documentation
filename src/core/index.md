@@ -6,4 +6,4 @@ title: Core
 description: Kuzzle Core Documentation
 ---
 
-<RedirectBis to="/core/1" />
+<RedirectBis to="/core/2" />

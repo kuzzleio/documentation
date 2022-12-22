@@ -58,6 +58,7 @@ export default {
     tag.setAttribute('property', 'docsearch:version');
     tag.setAttribute('content', `${this.kuzzleMajor}.0.0`);
     head.appendChild(tag);
+    document.title = `${document.title}${this.kuzzleMajor}`
   },
 };
 </script>
