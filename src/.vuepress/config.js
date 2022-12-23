@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const siteDescription =
   'Complete Kuzzle Documentation: Guides, Framework, API, SDKs and officials plugins';
 const versionString = require('./getVersionString');
-const siteTitle = `Kuzzle Documentation v`;
+const siteTitle = `Kuzzle Documentation `;
 const base = process.env.SITE_BASE || '/';
 const algoliaDefaultAppId = 'VF5HP4ZVDU';
 const algoliaDefaultIndex = 'documentation-dev';
