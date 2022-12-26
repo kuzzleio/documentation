@@ -251,7 +251,11 @@ module.exports = {
         href: '/favicon/apple-touch-icon-152x152.png',
         sizes: '152x152'
       }
-    ]
+    ],
+    ['link', { rel: 'canonical', href: 'https://next-docs.kuzzle.io/core/2/' }],
+    ['link', { rel: 'canonical', href: 'https://next-docs.kuzzle.io/sdk/js/7/' }],
+    ['link', { rel: 'canonical', href: 'https://next-docs.kuzzle.io/sdk/jvm/1/' }],
+
   ],
   markdown: {
     anchor: {
