@@ -254,7 +254,7 @@ module.exports = {
 
   ],
   dir: {
-    "/.repo/kuzzle-2": {
+    "/.repos/kuzzle-2/doc/2": {
       head: [
         [
           'link',
@@ -265,7 +265,7 @@ module.exports = {
         ],
       ],
     },
-    "/.repo/sdk-javascript-7": {
+    "/.repos/sdk-javascript-7/doc/7": {
       head: [
         [
           'link',
@@ -276,7 +276,7 @@ module.exports = {
         ],
       ],
     },
-    "/.repo/sdk-jvm-1": {
+    "/.repos/sdk-jvm-1/doc/1": {
       head: [
         [
           'link',
