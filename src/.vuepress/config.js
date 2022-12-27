@@ -10,6 +10,9 @@ const algoliaDefaultIndex = 'documentation-dev';
 const algoliaDefaultSearchKey = 'de63216cd8d0116b2755916b9a38ae35';
 const googleAnalyticsID = 'UA-67035328-7';
 const sections = require('./sections.json');
+
+console.log('base', base);
+
 /**
  * vuepress [dev|build] <sourceDir> [options...]
  *
@@ -251,7 +254,7 @@ module.exports = {
         sizes: '152x152',
       },
     ],
-
+    ['link', { rel: 'canonical', href: 'https://next-docs.kuzzle.io/core/2/' }],
   ],
 
   markdown: {
@@ -330,7 +333,6 @@ module.exports = {
           meta: {
             type: Array,
           },
-          
         },
         exclude: [
           '/sdk/js/6/getting-started/vuejs/without-vuex/src/**/*',
