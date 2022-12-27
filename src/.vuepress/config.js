@@ -254,7 +254,7 @@ module.exports = {
         sizes: '152x152',
       },
     ],
-    ['link', { rel: 'canonical', href: 'https://next-docs.kuzzle.io/core/2/' }],
+    ['link', { rel: 'canonical', href: 'https://docs.kuzzle.io/core/2/' }],
   ],
 
   markdown: {
