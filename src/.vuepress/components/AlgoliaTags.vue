@@ -59,6 +59,7 @@ export default {
     tag.setAttribute('content', `${this.kuzzleMajor}.0.0`);
     head.appendChild(tag);
     document.title = `${document.title} v${this.kuzzleMajor}`
+
   },
 };
 </script>
