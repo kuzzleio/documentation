@@ -19,3 +19,11 @@ export const createMetaTag = (property, content) => {
   meta.setAttribute('content', content);
   return meta;
 };
+
+
+export const createCanonical = (url) => {
+  const link = document.createElement('link');
+  link.setAttribute('rel', 'canonical');
+  link.setAttribute('url', url);
+  return link;
+};

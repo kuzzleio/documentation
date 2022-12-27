@@ -253,41 +253,6 @@ module.exports = {
     ],
 
   ],
-  dir: {
-    "/.repos/kuzzle-2/doc/2": {
-      head: [
-        [
-          'link',
-          {
-            rel: 'canonical',
-            href: 'https://next-docs.kuzzle.io/core/2/',
-          },
-        ],
-      ],
-    },
-    "/.repos/sdk-javascript-7/doc/7": {
-      head: [
-        [
-          'link',
-          {
-            rel: 'canonical',
-            href: 'https://next-docs.kuzzle.io/sdk/js/7/',
-          },
-        ],
-      ],
-    },
-    "/.repos/sdk-jvm-1/doc/1": {
-      head: [
-        [
-          'link',
-          {
-            rel: 'canonical',
-            href: 'https://next-docs.kuzzle.io/sdk/jvm/1/',
-          },
-        ],
-      ],
-    },
-  },
 
   markdown: {
     anchor: {
@@ -365,6 +330,7 @@ module.exports = {
           meta: {
             type: Array,
           },
+          
         },
         exclude: [
           '/sdk/js/6/getting-started/vuejs/without-vuex/src/**/*',
