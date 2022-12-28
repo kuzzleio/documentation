@@ -11,7 +11,6 @@ const algoliaDefaultSearchKey = 'de63216cd8d0116b2755916b9a38ae35';
 const googleAnalyticsID = 'UA-67035328-7';
 const sections = require('./sections.json');
 
-console.log('base', base);
 
 /**
  * vuepress [dev|build] <sourceDir> [options...]
