@@ -7,6 +7,9 @@ on:
     branches: [master, develop]
   workflow_dispatch:
 
+env:
+  NODE_VERSION: 14
+
 jobs:
   prepare-matrix:
     name: Prepare matrix by getting the repo names from repositories.yml
@@ -51,7 +54,7 @@ jobs:
             ${{ runner.os }}-
       - uses: actions/setup-node@v1
         with:
-          node-version: "12"
+          node-version: ${{ env.NODE_VERSION }}
       - uses: ./.github/actions/deploy_fw_artifacts
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
@@ -88,7 +91,7 @@ jobs:
             ${{ runner.os }}-
       - uses: actions/setup-node@v1
         with:
-          node-version: "12"
+          node-version: ${{ env.NODE_VERSION }}
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -106,6 +109,7 @@ jobs:
           CLOUDFRONT_ID: E3D6RP0POLCJMM
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          NO_INVALIDATION: true
       - uses: ./.github/actions/deploy_repo
         if: ${{ github.ref != 'refs/heads/master' }}
         with:
@@ -117,3 +121,20 @@ jobs:
           CLOUDFRONT_ID: E2ZCCEK9GRB49U
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          NO_INVALIDATION: true
+
+  invalidate_cloudfront:
+    name: Invalidate CloudFront
+    needs: [deploy_child_repo]
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: us-west-1
+    steps:
+      - name: Invalidate CloudFront for next-docs.kuzzle.io
+        if: ${{ github.ref != 'refs/heads/master' }}
+        run: aws cloudfront create-invalidation --distribution-id E2ZCCEK9GRB49U --paths "/*"
+      - name: Invalidate CloudFront for docs.kuzzle.io
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: aws cloudfront create-invalidation --distribution-id E3D6RP0POLCJMM --paths "/*"

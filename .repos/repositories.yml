@@ -211,7 +211,15 @@
   repo_name: paas-console
   doc_version: 1
   stable: master
-  dev: 1-dev
+  dev: staging
   deploy_path: /paas-console/1/
   name: paas-console-1
+  private: true
+- url: https://github.com/kuzzleio/kuzzle-plugin-multi-tenancy.git
+  repo_name: kuzzle-plugin-multi-tenancy
+  doc_version: 1
+  stable: master
+  dev: 1-dev
+  deploy_path: /official-plugins/multi-tenancy/1/
+  name: kuzzle-plugin-multi-tenancy-1
   private: true

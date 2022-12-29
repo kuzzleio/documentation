@@ -434,5 +434,14 @@
     "section": "paas",
     "icon": "/logos/paas-logo.svg",
     "released": true
+  },
+  "/kuzzle-plugin-multi-tenancy/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "multi-tenancy",
+    "section": "official-plugins",
+    "subsection": "multi-tenancy",
+    "icon": "/logos/plugin-multi-tenancy.svg",
+    "released": true
   }
 }

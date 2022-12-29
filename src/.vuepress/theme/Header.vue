@@ -15,7 +15,7 @@
           <!-- Link to home -->
           <div class="md-flex__cell md-flex__cell--shrink">
             <a href="/" class="md-header-nav__button md-logo">
-              <img src="/logo-min.png" width="40" height="40" />
+              <img src="/logo-min.png" alt= "kuzzle logo mini" width="40" height="40" />
             </a>
           </div>
           <!-- Button to toggle drawer -->

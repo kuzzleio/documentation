@@ -12,7 +12,7 @@
             for="drawer"
           >
             <span class="md-nav__button md-logo">
-              <img src="/logo-min.png" width="48" height="48" />
+              <img src="/logo-min.png" alt="kuzzle logo mini" width="48" height="48" />
             </span>
             <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
           </label>
@@ -41,7 +41,7 @@
                   $page.path.startsWith(item__1.path) ? '2' : ''
                 "
               >
-                {{ item__1.frontmatter.title }}
+                {{ item__1.frontmatter.title.split("|")[0] }}
               </li>
 
               <div
@@ -77,7 +77,7 @@
                         :data-algolia-lvl="
                           $page.path.startsWith(item__2.path) ? '3' : ''
                         "
-                        >{{ item__2.title }}</span
+                        >{{ item__2.title.split("|")[0] }}</span
                       >
                     </div>
                     <router-link
@@ -90,7 +90,7 @@
                         :data-algolia-lvl="
                           $page.path.startsWith(item__2.path) ? '3' : ''
                         "
-                        >{{ item__2.title }}</a
+                        >{{ item__2.title.split("|")[0] }}</a
                       >
                     </router-link>
                   </div>
@@ -117,7 +117,7 @@
                         @click.native="$emit('closeSidebar')"
                       >
                         <a class="no_arrow" data-algolia-lvl="4">{{
-                          item__3.title
+                          item__3.title.split("|")[0]
                         }}</a>
                       </router-link>
                     </li>
@@ -131,7 +131,7 @@
                           'md-nav__item--code': item__3.frontmatter.code
                         }"
                       >
-                        <a class="no_arrow">{{ item__3.title }}</a>
+                        <a class="no_arrow">{{ item__3.title.split("|")[0] }}</a>
                       </router-link>
                     </li>
                   </div>

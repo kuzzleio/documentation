@@ -3,7 +3,7 @@
     <p>
       You are currently looking at the documentation of a previous version of
       Kuzzle. We strongly recommend that you use the
-      <a :href="`/v${kuzzleLatestMajor}`">latest version</a>.
+      <a :href="`/core/${kuzzleLatestMajor}/guides/introduction/what-is-kuzzle/`">latest version</a>.
       You can also use the version selector in the top menu.
     </p>
   </div>

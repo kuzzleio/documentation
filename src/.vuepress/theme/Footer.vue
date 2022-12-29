@@ -7,6 +7,7 @@
           <img
             class="md-footer-external__link__img"
             src="/logos/logo-github.svg"
+            alt="github logo"
           />
           <div class="md-footer-external__link__title">Github</div>
           <div class="md-footer-external__link__description">
@@ -22,6 +23,7 @@
           <img
             class="md-footer-external__link__img"
             src="/logos/logo-stack-overflow.svg"
+            alt="stack-overflow logo"
           />
           <div class="md-footer-external__link__title">Stack Overflow</div>
           <div class="md-footer-external__link__description">
@@ -34,6 +36,7 @@
           <img
             class="md-footer-external__link__img"
             src="/logos/logo-discord.svg"
+            alt="discord logo"
           />
           <div class="md-footer-external__link__title">Discord</div>
           <div class="md-footer-external__link__description">
@@ -45,6 +48,7 @@
         <a
           href="https://www.youtube.com/channel/UCHcEzVQoH10YSyxc7jD3SMw"
           target="_blank"
+          alt="youtube logo"
         >
           <img
             class="md-footer-external__link__img"

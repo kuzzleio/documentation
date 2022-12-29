@@ -13,7 +13,7 @@ runs:
   using: "composite"
   steps:
     - name: Install dependencies
-      run: npm ci
+      run: npm i
       shell: bash
     - name: Build framework
       run: npm run build
@@ -21,6 +21,3 @@ runs:
     - name: Upload to S3
       run: aws s3 sync src/.vuepress/dist ${{ inputs.S3_BUCKET }}
       shell: bash
-    - name: Invalidate Cloudfront cache
-      shell: bash
-      run: aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_ID }} --paths '/*'
