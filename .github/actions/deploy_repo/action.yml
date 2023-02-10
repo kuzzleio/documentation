@@ -17,6 +17,7 @@ inputs:
   NO_INVALIDATION:
     description: If set to true, the Cloudfront invalidation will not be triggered
     required: false
+    default: false
   AWS_ACCESS_KEY_ID:
     description: AWS Access key ID
     required: true
