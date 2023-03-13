@@ -179,11 +179,17 @@
 - url: https://github.com/kuzzleio/kuzzle-plugin-device-manager.git
   repo_name: kuzzle-plugin-device-manager
   doc_version: 1
-  stable: master
-  dev: master
+  stable: 1-stable
+  dev: 1-dev
   name: plugin-device-manager-1
   deploy_path: /official-plugins/device-manager/1/
-  private: true
+- url: https://github.com/kuzzleio/kuzzle-plugin-device-manager.git
+  repo_name: kuzzle-plugin-device-manager
+  doc_version: 2
+  stable: master
+  dev: 2-dev
+  name: plugin-device-manager-2
+  deploy_path: /official-plugins/device-manager/2/
 - url: https://github.com/kuzzleio/kuzzle-plugin-workflows.git
   repo_name: kuzzle-plugin-workflows
   doc_version: 1

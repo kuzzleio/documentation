@@ -307,6 +307,15 @@
     "icon": "/logos/device-manager.svg",
     "released": true
   },
+  "/official-plugins/device-manager/2": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "device-manager",
+    "name": "Device Manager",
+    "version": 2,
+    "icon": "/logos/device-manager.svg",
+    "released": true
+  },
   "/official-plugins/hermes-messenger/1": {
     "kuzzleMajor": 2,
     "section": "official-plugins",
