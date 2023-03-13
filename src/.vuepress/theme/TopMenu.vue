@@ -58,6 +58,17 @@
                 >PaaS</a
               >
             </li>
+            <li class="topMenu__item">
+              <a
+                :href="`/iot-backend/3`"
+                :class="{
+                  'topMenu__link--active': isLinkActive(`/iot-backend/3`),
+                }"
+                title="IoT Platform"
+                class="topMenu__link"
+                >IoT Platform</a
+              >
+            </li>
           </ul>
         </li>
       </ul>

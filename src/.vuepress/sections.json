@@ -444,6 +444,13 @@
     "icon": "/logos/paas-logo.svg",
     "released": true
   },
+  "/iot-backend/3": {
+    "kuzzleMajor": 2,
+    "name": "IoT Backend",
+    "section": "iot backend",
+    "icon": "/logos/paas-logo.svg",
+    "released": true
+  },
   "/official-plugins/multi-tenancy/1": {
     "kuzzleMajor": 2,
     "version": 1,
