@@ -225,7 +225,7 @@
   name: paas-console-1
   private: true
 - url: https://github.com/kuzzleio/kuzzle-iot-backend.git
-  repo_name: iot-backend
+  repo_name: kuzzle-iot-backend
   doc_version: 3
   stable: master
   dev: 3-dev
