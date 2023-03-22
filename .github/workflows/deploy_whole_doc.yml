@@ -12,7 +12,7 @@ env:
 
 jobs:
   prepare-matrix:
-    name: Prepare matrix by getting the repo names from repositories.yml
+    name: Prepare matrix by getting the repo names from repositories.json
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
       - name: Get repo names
         id: set-matrix
         run: |
-          export REPOS=$(cat .repos/repositories.yml | yq -c '[.[]]')
+          export REPOS=$(cat .repos/repositories.json | yq -c '[.[]]')
           echo "::set-output name=repo::$REPOS"
     outputs:
       matrix: ${{ steps.set-matrix.outputs.repo }}
