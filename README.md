@@ -2,7 +2,7 @@
 
 Our documentation is a statically generated website. The content is stored in a bunch of Markdown files built by [VuePress](https://vuepress.vuejs.org/).
 
-## Ok, but... Where is the actual content ? 
+## Ok, but... Where is the actual content ?
 
 This is a meta repository, which means content is not here. The actual documentation is stored in the repositories of the different pieces of the Kuzzle ecosystem, e.g. the [Kuzzle Core](https://github.com/kuzzleio/kuzzle/tree/master/doc/2), the [Javascript SDK](https://github.com/kuzzleio/sdk-javascript/tree/master/doc/7), the [GOLANG SDK](https://github.com/kuzzleio/sdk-go/tree/master/.doc/2) and so on. And this is a good thing because documentation should live along with the code that it documents. So, what is this repository for?
 
@@ -127,7 +127,7 @@ http-server /tmp/kuzzle-docs/
 
 ## I want to add a new repo
 
-Repos that are built in the docs are listed in [`.repos/repositories.yml`](https://github.com/kuzzleio/documentation/blob/master/.repos/repositories.yml). You can either edit it manually or use the kuzdoc wizard
+Repos that are built in the docs are listed in [`.repos/repositories.json`](https://github.com/kuzzleio/documentation/blob/master/.repos/repositories.json). You can either edit it manually or use the kuzdoc wizard
 
 ```sh
 kuzdoc add-repo
@@ -140,6 +140,7 @@ kuzdoc add-repo
 VuePress generates the documentation based on how the files are organized in the filesystem. For example, the URL of each page is direclty infered by its filesystem path relative to `src/`.
 
 ### The frontmatter
+
 The left sidebar generation is based on the filesystem location of the files and their [frontmatter](https://v1.vuepress.vuejs.org/guide/frontmatter.html#front-matter) contents.
 
 A page is defined by a directory (e.g. `src/core/1/api/controllers/admin/dump/`) containing an `index.md` file. This file must have a frontmatter with the following form:
@@ -196,6 +197,7 @@ $(npm bin)/frontmatter-fix -e frontmatter-errors.js
 You can learn more about the linter by looking at its [official repository](https://github.com/xbill82/vuepress-frontmatter-lint).
 
 ### The sections
+
 Many other dynamic menus are generated from the [`src/.vuepress/sections.json`](https://github.com/kuzzleio/documentation/blob/master/src/.vuepress/sections.json) file, which consists in a hashmap of sections of this form
 
 ```json
@@ -215,39 +217,51 @@ Many other dynamic menus are generated from the [`src/.vuepress/sections.json`](
 The shape of each section is defined in a specific [JSON Schema file](https://github.com/kuzzleio/documentation/blob/master/src/.vuepress/sections.schema.json).
 
 #### Path
+
 The path to the section in the docs is the key of the element, which prevents from defining the same section twice.
 
 #### `name` (required)
+
 The name of the section, mainly use to build the widgets (like the SDK selector, for example).
 
 #### `kuzzleMajor` (required)
+
 Defines the major version of Kuzzle this section belongs to (relates to the major version selector).
 
 #### `section` (required)
+
 The ID of the section, used when building lists of sections. If the current section is the child of a parent section, this field indicates the name of the parent section. I am very sorry for this horrible naming, I promise I will rename this to `parent` and make it optional soon.
 
 #### `subsection` (optional)
+
 If the section is the child of another section, this field contains the name of the current section. OMG I'm so sorry I'll fix it I promise.
 
 #### `released` (required)
+
 Defines if the section is released or not (the section appears in the menus and indexes if `true`).
 
 #### `version` (optional)
+
 If the documented product in the current section has a version, here it goes (like the v7 of the JS SDK v7).
 
 #### `icon` (optional)
+
 If the documented product has an icon, this field contains the path.
 
 #### `closedSource` (optional)
+
 A boolean indicating whether the documented product is part of Kuzzle Enterprise or not.
 
 #### `deprecated` (optional)
+
 Defines if the section shows a header banner saying it is deprecated.
 
 #### `deprecatedBannerComponent` (optional)
+
 Contains the name of the name of the banner component indicating the section is deprecated.
 
 #### I want to add a new section
+
 You can manually edit `sections.json` or use the kuzdoc wizard
 
 ```sh
@@ -257,6 +271,7 @@ kuzdoc add-section
 ... and answer the questions.
 
 ## Writing content
+
 The Kuzzle Docs framework ships with a toolkit allowing to enrich your Markdown content.
 
 ### Alert and Info boxes
@@ -302,17 +317,13 @@ You can create a list with icons inside a Markdown file with the `IconTable` CSS
     <div class="IconTable-item-icon">
       <img src="./feature-data-storage.svg" />
     </div>
-    <div class="IconTable-item-text">
-      Data storage and access
-    </div>
+    <div class="IconTable-item-text">Data storage and access</div>
   </div>
   <div class="IconTable-item">
     <div class="IconTable-item-icon">
       <img src="./feature-acl.svg" />
     </div>
-    <div class="IconTable-item-text">
-      Advanced permission system
-    </div>
+    <div class="IconTable-item-text">Advanced permission system</div>
   </div>
 </div>
 ```
@@ -378,7 +389,7 @@ import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 
 // add a listener to detect any connection problems
-kuzzle.on('networkError', error => {
+kuzzle.on('networkError', (error) => {
   console.error(`Network Error: ${error}`);
 });
 
@@ -413,7 +424,7 @@ import { Kuzzle, WebSocket } from 'kuzzle-sdk';
 const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 
 // add a listener to detect any connection problems
-kuzzle.on('networkError', error => {
+kuzzle.on('networkError', (error) => {
   console.error(`Network Error: ${error}`);
 });
 
@@ -454,7 +465,7 @@ const kuzzle = new Kuzzle(new WebSocket('kuzzle'));
 /* snippet:end */
 
 // add a listener to detect any connection problems
-kuzzle.on('networkError', error => {
+kuzzle.on('networkError', (error) => {
   console.error(`Network Error: ${error}`);
 });
 
@@ -572,7 +583,7 @@ const { Kuzzle } = require('kuzzle-sdk');
 // instantiate a Kuzzle client
 const kuzzle = new Kuzzle('websocket', {
   host: 'kuzzle',
-  autoReconnect: false
+  autoReconnect: false,
 });
 
 kuzzle
@@ -628,4 +639,4 @@ mkdir my-sdk
 ln -s ../../../.repos/my-sdk-1/doc/1
 ```
 
-Then add it to `.repos/repositories.yml`
+Then add it to `.repos/repositories.json`
