@@ -303,5 +303,25 @@
     "deploy_path": "/official-plugins/multi-tenancy/1/",
     "name": "kuzzle-plugin-multi-tenancy-1",
     "private": true
+  },
+  {
+    "url": "https://github.com/kuzzleio/kuzzle-plugin-keycloak",
+    "repo_name": "kuzzle-plugin-keycloak",
+    "doc_version": 1,
+    "stable": "master",
+    "dev": "master",
+    "deploy_path": "/official-plugins/keycloak/1/",
+    "name": "kuzzle-plugin-keycloak-1",
+    "private": true
+  },
+  {
+    "url": "https://github.com/kuzzleio/kuzzle-plugin-auth-openid",
+    "repo_name": "kuzzle-plugin-auth-openid",
+    "doc_version": 1,
+    "stable": "master",
+    "dev": "master",
+    "deploy_path": "/official-plugins/openid/1/",
+    "name": "kuzzle-plugin-auth-openid-1",
+    "private": true
   }
 ]
