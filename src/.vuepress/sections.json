@@ -307,6 +307,15 @@
     "icon": "/logos/device-manager.svg",
     "released": true
   },
+  "/official-plugins/device-manager/2": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "device-manager",
+    "name": "Device Manager",
+    "version": 2,
+    "icon": "/logos/device-manager.svg",
+    "released": true
+  },
   "/official-plugins/hermes-messenger/1": {
     "kuzzleMajor": 2,
     "section": "official-plugins",
@@ -435,6 +444,13 @@
     "icon": "/logos/paas-logo.svg",
     "released": true
   },
+  "/iot-backend/3": {
+    "kuzzleMajor": 2,
+    "name": "IoT Backend",
+    "section": "iot backend",
+    "icon": "/logos/paas-logo.svg",
+    "released": true
+  },
   "/official-plugins/multi-tenancy/1": {
     "kuzzleMajor": 2,
     "version": 1,
@@ -442,6 +458,24 @@
     "section": "official-plugins",
     "subsection": "multi-tenancy",
     "icon": "/logos/plugin-multi-tenancy.svg",
+    "released": true
+  },
+  "/official-plugins/keycloak/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "keycloak",
+    "section": "official-plugins",
+    "subsection": "keycloak",
+    "icon": "/logos/keycloak.svg",
+    "released": true
+  },
+  "/official-plugins/openid/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "openid",
+    "section": "official-plugins",
+    "subsection": "openid",
+    "icon": "/logos/open-id.svg",
     "released": true
   }
 }
