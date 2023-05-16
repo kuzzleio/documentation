@@ -48,18 +48,6 @@
     margin-top: 0.5rem;
   }
 
-  @include break-to-device(mobile) {
-    &-item {
-      width: 35%;
-      height: 35%;
-      margin: 0 16px 25px 0;
-      &.min {
-        width: 20%;
-        height: 20%;
-      }
-    }
-  }
-
   &-item:hover {
     top: -2px;
     left: -1px;
