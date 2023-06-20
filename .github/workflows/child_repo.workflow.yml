@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       repo_name:
-        description: "The name of the repository that triggered the workflow"
+        description: 'The name of the repository that triggered the workflow'
         required: true
       branch:
-        description: "The branch of the child repo to deploy"
+        description: 'The branch of the child repo to deploy'
         required: false
       version:
-        description: "The version of the product in the child repo"
+        description: 'The version of the product in the child repo'
         required: true
 
 env:
@@ -33,9 +33,6 @@ jobs:
       - uses: actions/setup-node@v1.4.4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 2.7.18
       - uses: ./.github/actions/dead-links
         with:
           repo_name: ${{ github.event.inputs.repo_name }}
@@ -51,9 +48,6 @@ jobs:
       - uses: actions/setup-node@v1.4.4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 2.7.18
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
