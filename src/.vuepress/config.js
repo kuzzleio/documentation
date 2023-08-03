@@ -11,7 +11,6 @@ const algoliaDefaultSearchKey = 'de63216cd8d0116b2755916b9a38ae35';
 const googleAnalyticsID = 'UA-67035328-7';
 const sections = require('./sections.json');
 
-
 /**
  * vuepress [dev|build] <sourceDir> [options...]
  *
@@ -255,7 +254,19 @@ module.exports = {
     ],
     ['link', { rel: 'canonical', href: 'https://docs.kuzzle.io/core/2/' }],
   ],
-
+  sass: {
+    module: {
+      rules: [
+        {
+          test: /\.s[ac]ss$/i,
+          use: [
+            // Compiles Sass to CSS
+            'sass-loader',
+          ],
+        },
+      ],
+    },
+  },
   markdown: {
     anchor: {
       permalink: true,
@@ -297,7 +308,6 @@ module.exports = {
     ],
   },
   plugins: [
-    'vuepress-plugin-element-tabs',
     require('./meta-tags-plugin/index.js'),
     [require('./page-attributes/index.js'), { sections }],
     [
