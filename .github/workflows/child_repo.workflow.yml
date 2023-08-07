@@ -21,19 +21,26 @@ jobs:
     name: Check the dead-links on the repo
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Output event inputs for debug
         run: echo "Repo ${{ github.event.inputs.repo_name }} triggered this workflow from branch ${{ github.event.inputs.branch }} v${{ github.event.inputs.version }}"
+
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_KEY }}
           name: id_rsa
           known_hosts: unnecessary
-      - uses: actions/setup-node@v1.4.4
+
+      - name: Setup Node JS
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - uses: ./.github/actions/dead-links
+
+      - name: Check dead links 
+        uses: ./.github/actions/dead-links
         with:
           repo_name: ${{ github.event.inputs.repo_name }}
           repo_version: ${{ github.event.inputs.version }}
@@ -44,19 +51,26 @@ jobs:
     runs-on: ubuntu-20.04
     needs: [dead-links]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1.4.4
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node JS
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_KEY }}
           name: id_rsa
           known_hosts: unnecessary
+
       - name: Output event inputs for debug
         run: echo "Repo ${{ github.event.inputs.repo_name }} triggered this workflow from branch ${{ github.event.inputs.branch }}"
-      - uses: ./.github/actions/deploy_repo
+
+      - name: Deploy repository for production
+        uses: ./.github/actions/deploy_repo
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           repo_name: ${{ github.event.inputs.repo_name }}
@@ -67,7 +81,9 @@ jobs:
           CLOUDFRONT_ID: E3D6RP0POLCJMM
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - uses: ./.github/actions/deploy_repo
+
+      - name: Deploy repository for staging
+        uses: ./.github/actions/deploy_repo
         if: ${{ github.ref != 'refs/heads/master' }}
         with:
           repo_name: ${{ github.event.inputs.repo_name }}

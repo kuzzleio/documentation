@@ -287,10 +287,6 @@ module.exports = {
         GA_ID:
           JSON.stringify(process.env.GA_ID) ||
           JSON.stringify(googleAnalyticsID),
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        'process.env.RESET_APP_DATA_TIMER': JSON.stringify(
-          process.env.RESET_APP_DATA_TIMER
-        ),
         ALGOLIA_APP_ID:
           JSON.stringify(process.env.ALGOLIA_APP_ID) ||
           JSON.stringify(algoliaDefaultAppId),

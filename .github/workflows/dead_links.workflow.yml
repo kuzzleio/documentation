@@ -21,19 +21,26 @@ jobs:
     name: Check the dead-links on the repo
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Output event inputs for debug
         run: echo "Repo ${{ github.event.inputs.repo_name }} triggered this workflow from branch ${{ github.event.inputs.branch }} v${{ github.event.inputs.version }}"
+
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_KEY }}
           name: id_rsa
           known_hosts: unnecessary
-      - uses: actions/setup-node@v1.4.4
+
+      - name: Setup Node JS
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - uses: ./.github/actions/dead-links
+
+      - name: Check dead links
+        uses: ./.github/actions/dead-links
         with:
           repo_name: ${{ github.event.inputs.repo_name }}
           repo_version: ${{ github.event.inputs.version }}
