@@ -42,7 +42,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: us-west-1
     steps:
-        name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Cache node modules
