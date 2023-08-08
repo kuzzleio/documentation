@@ -39,12 +39,14 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Check dead links 
-        uses: ./.github/actions/dead-links
-        with:
-          repo_name: ${{ github.event.inputs.repo_name }}
-          repo_version: ${{ github.event.inputs.version }}
-          repo_branch: ${{ github.event.inputs.branch }}
+      # Dead links does not work because of private template
+      # From iot platform
+      # - name: Check dead links 
+      #   uses: ./.github/actions/dead-links
+      #   with:
+      #     repo_name: ${{ github.event.inputs.repo_name }}
+      #     repo_version: ${{ github.event.inputs.version }}
+      #     repo_branch: ${{ github.event.inputs.branch }}
 
   deploy:
     name: Deploy the repo
