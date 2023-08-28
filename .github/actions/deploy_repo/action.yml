@@ -42,16 +42,16 @@ runs:
       shell: bash
 
     - name: Checks kuzdoc version
-      run: $(npm bin)/kuzdoc --version
+      run: npx kuzdoc --version
       shell: bash
 
     - name: Installs the repo
       shell: bash
-      run: $(npm bin)/kuzdoc install --repo=${{ inputs.repo_name }}-${{ inputs.repo_version }} --repoBranch=${{ inputs.repo_branch }}
+      run: npx kuzdoc install --repo=${{ inputs.repo_name }}-${{ inputs.repo_version }} --repoBranch=${{ inputs.repo_branch }}
 
     - name: Builds and deploys the repo
       if: ${{ inputs.NO_INVALIDATION == 'true' }}
-      run: $(npm bin)/kuzdoc build-and-deploy --repo=${{ inputs.repo_name }}-${{ inputs.repo_version }} --s3Bucket=${{ inputs.S3_BUCKET }} --cloudfrontId=${{ inputs.CLOUDFRONT_ID }} --noInvalidation
+      run: npx kuzdoc build-and-deploy --repo=${{ inputs.repo_name }}-${{ inputs.repo_version }} --s3Bucket=${{ inputs.S3_BUCKET }} --cloudfrontId=${{ inputs.CLOUDFRONT_ID }} --noInvalidation
       env:
         AWS_DEFAULT_REGION: ${{ inputs.REGION }}
         AWS_ACCESS_KEY_ID: ${{ inputs.AWS_ACCESS_KEY_ID }}
@@ -61,7 +61,7 @@ runs:
 
     - name: Builds and deploys the repo
       if: ${{ inputs.NO_INVALIDATION == 'false' }}
-      run: $(npm bin)/kuzdoc build-and-deploy --repo=${{ inputs.repo_name }}-${{ inputs.repo_version }} --s3Bucket=${{ inputs.S3_BUCKET }} --cloudfrontId=${{ inputs.CLOUDFRONT_ID }}
+      run: npx kuzdoc build-and-deploy --repo=${{ inputs.repo_name }}-${{ inputs.repo_version }} --s3Bucket=${{ inputs.S3_BUCKET }} --cloudfrontId=${{ inputs.CLOUDFRONT_ID }}
       env:
         AWS_DEFAULT_REGION: ${{ inputs.REGION }}
         AWS_ACCESS_KEY_ID: ${{ inputs.AWS_ACCESS_KEY_ID }}
