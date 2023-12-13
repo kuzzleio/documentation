@@ -11,12 +11,17 @@ export default {
       required: true,
     },
   },
-  async created() {
-    try {
-      await this.$router.push(this.to);
-    } catch (error) {
-      console.error("Error while redirecting: ", error);
-    }
+  mounted() {
+    this.$router
+      .push(this.to)
+      .then(() => {
+        console.log(`Redirected to ${this.to}`);
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+        }
+      });
   },
 };
 </script>
