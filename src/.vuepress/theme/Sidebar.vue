@@ -12,7 +12,12 @@
             for="drawer"
           >
             <span class="md-nav__button md-logo">
-              <img src="/logo-min.png" alt="kuzzle logo mini" width="48" height="48" />
+              <img
+                src="/logo-min.png"
+                alt="kuzzle logo mini"
+                width="48"
+                height="48"
+              />
             </span>
             <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
           </label>
@@ -30,7 +35,7 @@
           <ul class="md-nav__list" data-md-scrollfix>
             <div
               v-for="item__1 in getPageChildren(root).filter(
-                p => p.frontmatter.type === 'branch'
+                (p) => p.frontmatter.type === 'branch'
               )"
               :key="item__1.path"
               class="md-nav__item-container"
@@ -41,7 +46,7 @@
                   $page.path.startsWith(item__1.path) ? '2' : ''
                 "
               >
-                {{ item__1.frontmatter.title.split("|")[0] }}
+                {{ item__1.frontmatter.title.split('|')[0] }}
               </li>
 
               <div
@@ -53,7 +58,7 @@
                     class="md-nav__link"
                     :class="{
                       'md-nav__link--active': $page.path === item__2.path,
-                      'md-nav__item--code': item__2.frontmatter.code == true
+                      'md-nav__item--code': item__2.frontmatter.code == true,
                     }"
                   >
                     <div
@@ -63,7 +68,7 @@
                       <i
                         v-if="
                           openedSubmenu ===
-                            getId([item__1.title, item__2.title])
+                          getId([item__1.title, item__2.title])
                         "
                         class="fa fa-caret-down"
                         aria-hidden="true"
@@ -77,7 +82,7 @@
                         :data-algolia-lvl="
                           $page.path.startsWith(item__2.path) ? '3' : ''
                         "
-                        >{{ item__2.title.split("|")[0] }}</span
+                        >{{ item__2.title.split('|')[0] }}</span
                       >
                     </div>
                     <router-link
@@ -90,7 +95,7 @@
                         :data-algolia-lvl="
                           $page.path.startsWith(item__2.path) ? '3' : ''
                         "
-                        >{{ item__2.title.split("|")[0] }}</a
+                        >{{ item__2.title.split('|')[0] }}</a
                       >
                     </router-link>
                   </div>
@@ -110,14 +115,14 @@
                       <router-link
                         class="md-nav__link--active"
                         :class="{
-                          'md-nav__item--code': item__3.frontmatter.code
+                          'md-nav__item--code': item__3.frontmatter.code,
                         }"
                         :to="{ path: item__3.path }"
                         :title="item__3.title"
                         @click.native="$emit('closeSidebar')"
                       >
                         <a class="no_arrow" data-algolia-lvl="4">{{
-                          item__3.title.split("|")[0]
+                          item__3.title.split('|')[0]
                         }}</a>
                       </router-link>
                     </li>
@@ -128,10 +133,12 @@
                         class="md-nav__link"
                         @click.native="$emit('closeSidebar')"
                         :class="{
-                          'md-nav__item--code': item__3.frontmatter.code
+                          'md-nav__item--code': item__3.frontmatter.code,
                         }"
                       >
-                        <a class="no_arrow">{{ item__3.title.split("|")[0] }}</a>
+                        <a class="no_arrow">{{
+                          item__3.title.split('|')[0]
+                        }}</a>
                       </router-link>
                     </li>
                   </div>
@@ -154,7 +161,7 @@ import {
   findRootNode,
   setItemLocalStorage,
   getItemLocalStorage,
-  getNodeByPath
+  getNodeByPath,
 } from '../util.js';
 
 import { getCurrentVersion } from '../helpers';
@@ -162,25 +169,25 @@ import { getCurrentVersion } from '../helpers';
 export default {
   components: {
     TopMenu,
-    TopMenuV1
+    TopMenuV1,
   },
   props: {
     sidebarOpen: {
       type: Boolean,
-      default: false
+      default: false,
     },
     kuzzleMajor: {
       type: Number,
-      default: null
+      default: null,
     },
     sdkList: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      openedSubmenu: ''
+      openedSubmenu: '',
     };
   },
   computed: {
@@ -196,7 +203,7 @@ export default {
     },
     root() {
       return findRootNode(this.$page, this.$site.pages);
-    }
+    },
   },
   methods: {
     setOpenedSubmenu(item__1, item__2) {
@@ -231,7 +238,11 @@ export default {
       }
 
       const item2Id = this.getId([item__1.title, item__2.title]);
-      document.getElementById(item2Id).style.height = 'auto';
+      const item = document.getElementById(item2Id);
+
+      if (item) {
+        item.style.height = 'auto';
+      }
     },
     closeSidebar(item) {
       this.$emit('closeSidebar');
@@ -312,11 +323,11 @@ export default {
           }
         }
       };
-    }
+    },
   },
   mounted() {
     this.openCurrentSubmenu();
     this.scrollToActiveItem();
-  }
+  },
 };
 </script>

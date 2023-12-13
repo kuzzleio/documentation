@@ -8,11 +8,15 @@ export default {
   props: {
     to: {
       type: String,
-      required: true
+      required: true,
+    },
+  },
+  async created() {
+    try {
+      await this.$router.push(this.to);
+    } catch (error) {
+      console.error("Error while redirecting: ", error);
     }
   },
-  mounted() {
-    this.$router.replace(this.to);
-  }
 };
 </script>
