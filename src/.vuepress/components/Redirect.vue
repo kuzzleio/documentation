@@ -16,6 +16,7 @@ export default {
       .push(this.to)
       .then(() => {
         console.log(`Redirected to ${this.to}`);
+        window.location.reload();
       })
       .catch((err) => {
         if (err) {
