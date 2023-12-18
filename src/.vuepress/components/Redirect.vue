@@ -19,7 +19,7 @@ export default {
       })
       .catch((err) => {
         if (err) {
-          console.log(err);
+          // Nothing with the error
         }
       });
   },

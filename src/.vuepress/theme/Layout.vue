@@ -273,7 +273,6 @@ export default {
       }
     };
 
-    this.$router.afterEach(this.computeContentHeight);
     window.addEventListener('resize', this.computeContentHeight.bind(this));
     window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
 
