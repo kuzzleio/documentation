@@ -1,8 +1,8 @@
 ---
 name: New content request
 about: Report missing or incomplete content
-title: '[content-request]'
-labels: content request
+title: '[content-request] '
+labels: enhancement
 assignees: ''
 ---
 

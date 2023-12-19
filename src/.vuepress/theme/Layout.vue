@@ -204,14 +204,18 @@ export default {
       }, 200);
     },
     setContainerPadding() {
-      const padding = this.$refs.header.$el.querySelector('header')
-        .offsetHeight;
-
-      if (padding === null || typeof padding === 'undefined') {
+      try {
+        const padding = this.$refs.header.$el.querySelector('header')
+          .offsetHeight;
+  
+        if (padding === null || typeof padding === 'undefined') {
+          return;
+        }
+  
+        this.$refs.container.style = `padding-top: ${padding}px;`;
+      } catch (error) {
         return;
       }
-
-      this.$refs.container.style = `padding-top: ${padding}px;`;
     },
     computeSidebarHeight() {
       if (!this.$refs.sidebar) {
@@ -273,7 +277,6 @@ export default {
       }
     };
 
-    this.$router.afterEach(this.computeContentHeight);
     window.addEventListener('resize', this.computeContentHeight.bind(this));
     window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
 

@@ -4,7 +4,7 @@ Our documentation is a statically generated website. The content is stored in a 
 
 ## Ok, but... Where is the actual content?
 
-This is a meta repository, which means content is not here. The actual documentation is stored in the repositories of the different pieces of the Kuzzle ecosystem, e.g. the [Kuzzle Core](https://github.com/kuzzleio/kuzzle/tree/master/doc/2), the [Javascript SDK](https://github.com/kuzzleio/sdk-javascript/tree/master/doc/7), the [GOLANG SDK](https://github.com/kuzzleio/sdk-go/tree/master/.doc/2) and so on. And this is a good thing because documentation should live along with the code that it documents. So, what is this repository for?
+This is a meta repository, which means content is not here. The actual documentation is stored in the repositories of the different pieces of the Kuzzle ecosystem, e.g. the [Kuzzle Core](https://github.com/kuzzleio/kuzzle/tree/master/doc/2), the [Javascript SDK](https://github.com/kuzzleio/sdk-javascript/tree/master/doc/7), the [GOLANG SDK](https://github.com/kuzzleio/sdk-go/tree/master/.doc/3) and so on. And this is a good thing because documentation should live along with the code that it documents. So, what is this repository for?
 
 This repository contains the following elements:
 
@@ -30,61 +30,20 @@ npm install -g kuzdoc
 
 :warning: You are not meant to run a local copy of the _whole_ documentation. It is huge and it will take ages to build.
 
-```sh
-# does not yet work with node v16.x
-nvm use v14.19.3
-npm ci
-```
-
 Then run
 
 ```sh
-kuzdoc install --repo=sdk-javascript-6,kuzzle-2
+kuzdoc install --repo=sdk-javascript-7,kuzzle-2
 ```
 
-This will only clone the `sdk-javascript-6` and `kuzzle-2` repos, choose the ones that you want to work on locally, trying to avoid having too many.
+This will only clone the `sdk-javascript-7` and `kuzzle-2` repos, choose the ones that you want to work on locally, trying to avoid having too many.
 
 > Note. If you don't remember exactly the name of the repo you want to install, you can omit the `--repo` option and just let kuzdoc show the list of the repo names.
 
 Then you just need to run:
 
 ```sh
-npm run doc-dev
-```
-
-And follow the on-screen instructions. This will start a development server with hot-reload.
-
-## I am writing the docs for a repo and I want to see a preview
-
-If you are writing a new piece of the documentation for let's say, the Javascript SDK v7, or simply editing it, you are likely willing to see how it looks. Here is how you do it with [kuzdoc](https://github.com/kuzzleio/kuzdoc).
-
-If you haven't already done it, install Kuzdoc globally
-
-```sh
-npm install -g kuzdoc
-```
-
-If you haven't already done it, clone this repo somewhere
-
-```sh
-git clone git@github.com:kuzzleio/documentation.git
-```
-
-From your local copy of this repository, install the local repo you're working on (SDK JS v7)
-
-```sh
-cd documentation
-kuzdoc install --repo=sdk-javascript-7 --localPath=../sdk-javascript
-```
-
-Passing the `--localPath` option to the `kuzdoc install` command will symlink your local repo into the framework meta-repo instead of cloning it from GitHub.
-
-> Note. If you don't remember exactly the name of the repo you want to install, you can omit the `--repo` option and just let kuzdoc show the list of the repo names.
-
-Once your local repo installed in the framework meta-repo, simply launch
-
-```sh
-kuzdoc dev --repo=sdk-javascript-7
+kuzdoc dev
 ```
 
 ## I want to see a local preview of a static build of the whole documentation site

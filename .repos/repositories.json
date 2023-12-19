@@ -40,7 +40,7 @@
     "repo_name": "sdk-javascript",
     "doc_version": 7,
     "stable": "master",
-    "dev": "7-dev",
+    "dev": "beta",
     "name": "sdk-javascript-7",
     "deploy_path": "/sdk/js/7/"
   },
@@ -58,7 +58,7 @@
     "repo_name": "kuzzle-plugin-s3",
     "doc_version": 2,
     "stable": "master",
-    "dev": "2-dev",
+    "dev": "beta",
     "name": "plugin-s3-2",
     "deploy_path": "/official-plugins/s3/2/"
   },
@@ -241,7 +241,7 @@
     "repo_name": "kuzzle-device-manager",
     "doc_version": 2,
     "stable": "master",
-    "dev": "2-dev",
+    "dev": "beta",
     "name": "kuzzle-device-manager-2",
     "deploy_path": "/official-plugins/device-manager/2/"
   },
@@ -250,7 +250,7 @@
     "repo_name": "kuzzle-plugin-workflows",
     "doc_version": 1,
     "stable": "master",
-    "dev": "master",
+    "dev": "beta",
     "name": "plugin-workflows-1",
     "deploy_path": "/official-plugins/workflows/1/",
     "private": true
@@ -299,7 +299,7 @@
     "repo_name": "kuzzle-plugin-multi-tenancy",
     "doc_version": 1,
     "stable": "master",
-    "dev": "1-dev",
+    "dev": "beta",
     "deploy_path": "/official-plugins/multi-tenancy/1/",
     "name": "kuzzle-plugin-multi-tenancy-1",
     "private": true
@@ -309,7 +309,7 @@
     "repo_name": "kuzzle-plugin-keycloak",
     "doc_version": 1,
     "stable": "master",
-    "dev": "develop",
+    "dev": "beta",
     "deploy_path": "/official-plugins/keycloak/1/",
     "name": "kuzzle-plugin-keycloak-1",
     "private": true
@@ -319,7 +319,7 @@
     "repo_name": "kuzzle-plugin-auth-openid",
     "doc_version": 1,
     "stable": "master",
-    "dev": "develop",
+    "dev": "beta",
     "deploy_path": "/official-plugins/openid/1/",
     "name": "kuzzle-plugin-auth-openid-1",
     "private": true

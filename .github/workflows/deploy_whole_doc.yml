@@ -8,16 +8,18 @@ on:
   workflow_dispatch:
 
 env:
-  NODE_VERSION: 14
+  NODE_VERSION: 16
 
 jobs:
   prepare-matrix:
     name: Prepare matrix by getting the repo names from repositories.json
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - name: Install yq
         run: |
           sudo apt-get update
@@ -34,13 +36,15 @@ jobs:
 
   deploy_framework:
     name: Deploy framework
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: us-west-1
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -52,15 +56,21 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - uses: actions/setup-node@v1
+
+      - name: Install Node JS
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - uses: ./.github/actions/deploy_fw_artifacts
+      
+      - name: Deploy artefact for production
+        uses: ./.github/actions/deploy_fw_artifacts
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           S3_BUCKET: s3://docs.kuzzle.io
           CLOUDFRONT_ID: E3D6RP0POLCJMM
-      - uses: ./.github/actions/deploy_fw_artifacts
+
+      - name: Deploy artefact for staging
+        uses: ./.github/actions/deploy_fw_artifacts
         if: ${{ github.ref != 'refs/heads/master' }}
         with:
           S3_BUCKET: s3://docs-next.kuzzle.io
@@ -69,7 +79,7 @@ jobs:
   deploy_child_repo:
     name: Deploy child repo ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}
     needs: [prepare-matrix, deploy_framework]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         repo: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
@@ -77,7 +87,10 @@ jobs:
     steps:
       - name: Recap of the build
         run: echo "Build and deploy documentation for ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}"
-      - uses: actions/checkout@v2
+      
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -89,16 +102,21 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - uses: actions/setup-node@v1
+
+      - name: Checkout repository
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
+
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_KEY }}
           name: id_rsa
           known_hosts: unnecessary
-      - uses: ./.github/actions/deploy_repo
+
+      - name: Deploy production matrice
+        uses: ./.github/actions/deploy_repo
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           repo_name: ${{ matrix.repo.repo_name }}
@@ -110,7 +128,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           NO_INVALIDATION: true
-      - uses: ./.github/actions/deploy_repo
+
+      - name: Deploy staging matrice
+        uses: ./.github/actions/deploy_repo
         if: ${{ github.ref != 'refs/heads/master' }}
         with:
           repo_name: ${{ matrix.repo.repo_name }}
@@ -126,7 +146,7 @@ jobs:
   invalidate_cloudfront:
     name: Invalidate CloudFront
     needs: [deploy_child_repo]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

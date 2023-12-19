@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Report wrong content or buggy UI
-title: '[bug]'
+title: '[bug] '
 labels: bug
 assignees: ''
 ---
