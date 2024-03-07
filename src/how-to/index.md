@@ -10,4 +10,4 @@ meta:
     content: Kuzzle, how to, official, guides, tutorials, monitor iot data, iot backend, keep warm data, massive data import, sync to other db, replicate to postgres, iot
 ---
 
-<Redirect to="v2" />
+<Redirect to="/v2" />
