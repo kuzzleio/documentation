@@ -18,7 +18,11 @@ export default {
       typeof this.to === 'string' &&
       this.to !== null
     ) {
-      window.location.href = window.location.origin + this.to;
+      let path = this.to;
+      if (!path.startsWith('/')) {
+        path = '/' + path;
+      }
+      window.location.href = window.location.origin + path;
     } else {
       console.error('Redirect failed');
     }
