@@ -12,20 +12,17 @@ export default {
     },
   },
   mounted() {
-    if (
-      window &&
-      window.location &&
-      typeof this.to === 'string' &&
-      this.to !== null
-    ) {
-      let path = this.to;
-      if (!path.startsWith('/')) {
-        path = '/' + path;
-      }
-      window.location.href = window.location.origin + path;
-    } else {
-      console.error('Redirect failed');
-    }
+    this.$router
+      .push(this.to)
+      .then(() => {
+        console.log(`Redirected to ${this.to}`);
+        window.location.reload();
+      })
+      .catch((err) => {
+        if (err) {
+          // Nothing with the error
+        }
+      });
   },
 };
 </script>
