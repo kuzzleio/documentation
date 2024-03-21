@@ -10,4 +10,4 @@ meta:
     content: Kuzzle, sdk, official, JS, Javascript, Golang, C#, Dart, Dart Null Safety, Jvm, Java
 ---
 
-<Redirect to="v2" />
+<Redirect to="/v2" />

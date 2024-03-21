@@ -444,10 +444,10 @@
     "icon": "/logos/paas-logo.svg",
     "released": true
   },
-  "/iot-backend/3": {
+  "/iot-platform/3": {
     "kuzzleMajor": 2,
-    "name": "IoT Backend",
-    "section": "iot backend",
+    "name": "IoT Platform",
+    "section": "iot platform",
     "icon": "/logos/paas-logo.svg",
     "released": true
   },

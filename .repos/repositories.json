@@ -285,13 +285,13 @@
     "private": true
   },
   {
-    "url": "https://github.com/kuzzleio/kuzzle-iot-backend.git",
-    "repo_name": "kuzzle-iot-backend",
+    "url": "https://github.com/kuzzleio/iot-platform.git",
+    "repo_name": "iot-platform",
     "doc_version": 3,
     "stable": "master",
-    "dev": "3-dev",
-    "deploy_path": "/iot-backend/3/",
-    "name": "iot-backend-3",
+    "dev": "beta",
+    "deploy_path": "/iot-platform/3/",
+    "name": "iot-platform-3",
     "private": true
   },
   {
