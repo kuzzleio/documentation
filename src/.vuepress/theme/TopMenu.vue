@@ -60,9 +60,9 @@
             </li>
             <li class="topMenu__item">
               <a
-                :href="`/iot-backend/3`"
+                :href="`/iot-platform/3`"
                 :class="{
-                  'topMenu__link--active': isLinkActive(`/iot-backend/3`),
+                  'topMenu__link--active': isLinkActive(`/iot-platform/3`),
                 }"
                 title="IoT Platform"
                 class="topMenu__link"
