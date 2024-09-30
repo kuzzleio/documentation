@@ -1,0 +1,59 @@
+.vp-badge {
+    display: inline-block;
+    vertical-align: top;
+  
+    height: 18px;
+    padding: 0 6px;
+    border-radius: 3px;
+  
+    background: $md-color-accent;
+    color: $md-color-white;
+  
+    font-size: 14px;
+    line-height: 18px;
+  
+    transition:
+      background 0.25s,
+      color 0.25s;
+  
+    & + & {
+      margin-inline-start: 5px;
+    }
+  
+    &.tip {
+      background: $clr-green-50;
+      color: $clr-green-900;
+    }
+  
+    &.warning,
+    &.warn {
+      background: $clr-yellow-100;
+      color: $clr-deep-orange-900;
+    }
+  
+    &.danger,
+    &.error {
+      background: $clr-red-50;
+      color: $clr-red-900;
+    }
+  
+    &.important {
+      background: $clr-purple-50;
+      color: $clr-purple-900;
+    }
+  
+    &.info {
+      background: $clr-blue-50;
+      color: $clr-blue-900;
+    }
+  
+    &.note {
+      background: $clr-grey-100;
+      color: $clr-grey-900;
+    }
+  
+    // update the vertical align for the badge in toc
+    .table-of-contents & {
+      vertical-align: middle;
+    }
+  }

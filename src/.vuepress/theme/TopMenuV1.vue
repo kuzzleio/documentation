@@ -107,8 +107,9 @@
 </template>
 
 <script>
-import { VERSION_QUERY_KEY } from '../helpers';
-import { getCurrentVersion } from '../helpers';
+import { usePageData } from 'vuepress/client';
+
+import { VERSION_QUERY_KEY, getCurrentVersion } from '../helpers';
 
 export default {
   computed: {
@@ -125,15 +126,18 @@ export default {
       );
     },
     kuzzleMajor() {
-      return getCurrentVersion(this.$page);
+      return getCurrentVersion(this.page$);
     }
+  },
+  setup() {
+    return { page$: usePageData() };
   },
   methods: {
     isLinkActive(linkPath) {
-      if (!this.$page.fullPath) {
+      if (!this.page$.fullPath) {
         return false;
       }
-      return this.$page.fullPath.startsWith(linkPath);
+      return this.page$.fullPath.startsWith(linkPath);
     }
   }
 };

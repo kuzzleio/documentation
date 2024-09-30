@@ -2,7 +2,7 @@
 code: false
 type: page
 order: 0
-title: Kuzzle documentation 
+title: Kuzzle documentation
 meta:
   - name: description
     content: Kuzzle V2 official documentation
@@ -10,4 +10,4 @@ meta:
     content: Kuzzle, documentation, kuzzle documentation V2, kuzzle V2, what is kuzzle, kuzzle v2 guide, kuzzle v2 tutorial
 ---
 
-<Redirect to="/v2" />
+<Redirect to="/core/2/guides/introduction/what-is-kuzzle/" reload />

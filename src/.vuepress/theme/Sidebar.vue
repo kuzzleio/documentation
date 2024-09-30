@@ -13,7 +13,7 @@
           >
             <span class="md-nav__button md-logo">
               <img
-                src="/logo-min.png"
+                :src="$withBase('/logo-min.png')"
                 alt="kuzzle logo mini"
                 width="48"
                 height="48"
@@ -35,7 +35,7 @@
           <ul class="md-nav__list" data-md-scrollfix>
             <div
               v-for="item__1 in getPageChildren(root).filter(
-                (p) => p.frontmatter.type === 'branch'
+                (p) => p.meta.frontmatter.type === 'branch'
               )"
               :key="item__1.path"
               class="md-nav__item-container"
@@ -43,10 +43,10 @@
               <li
                 class="md-nav__separator"
                 :data-algolia-lvl="
-                  $page.path.startsWith(item__1.path) ? '2' : ''
+                  page$.path.startsWith(item__1.path) ? '2' : ''
                 "
               >
-                {{ item__1.frontmatter.title.split('|')[0] }}
+                {{ item__1.meta.frontmatter.title.split('|')[0] }}
               </li>
 
               <div
@@ -57,89 +57,69 @@
                   <div
                     class="md-nav__link"
                     :class="{
-                      'md-nav__link--active': $page.path === item__2.path,
-                      'md-nav__item--code': item__2.frontmatter.code == true,
+                      'md-nav__link--active': page$.path === item__2.path,
+                      'md-nav__item--code': item__2.meta.frontmatter.code == true,
                     }"
                   >
                     <div
                       v-if="getPageChildren(item__2).length"
                       @click="handleSubmenuClick(item__1, item__2)"
                     >
-                      <i
+                      <font-awesome-icon
                         v-if="
                           openedSubmenu ===
-                          getId([item__1.title, item__2.title])
+                          getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title])
                         "
-                        class="fa fa-caret-down"
+                        icon="fa-solid fa-caret-down"
+                        size="xs"
                         aria-hidden="true"
-                      ></i>
-                      <i
+                      />
+                      <font-awesome-icon
                         v-else
-                        class="fa fa-caret-right"
+                        icon="fa-solid fa-caret-right"
+                        size="xs"
                         aria-hidden="true"
-                      ></i>
+                      />
                       <span
                         :data-algolia-lvl="
-                          $page.path.startsWith(item__2.path) ? '3' : ''
+                          page$.path.startsWith(item__2.path) ? '3' : ''
                         "
-                        >{{ item__2.title.split('|')[0] }}</span
+                        >{{ item__2.meta.frontmatter.title.split('|')[0] }}</span
                       >
                     </div>
-                    <router-link
+                    <RouteLink
                       v-else
                       :to="item__2.path"
                       @click.native="closeSidebar"
                     >
-                      <a
-                        class="no_arrow"
-                        :data-algolia-lvl="
-                          $page.path.startsWith(item__2.path) ? '3' : ''
-                        "
-                        >{{ item__2.title.split('|')[0] }}</a
-                      >
-                    </router-link>
+                      {{ item__2.meta.frontmatter.title.split('|')[0] }}
+                    </RouteLink>
                   </div>
                 </li>
                 <ul
                   class="md-nav__list sub-menu"
                   :class="subMenuClass(item__1, item__2)"
-                  :id="getId([item__1.title, item__2.title])"
+                  :id="getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title])"
                 >
                   <div
                     v-for="item__3 of getPageChildren(item__2)"
                     :key="item__3.path"
-                    :id="getId([item__1.title, item__2.title, item__3.title])"
+                    :id="getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title, item__3.meta.frontmatter.title])"
                     class="md-nav__item"
                   >
-                    <li v-if="$page.path === item__3.path">
-                      <router-link
-                        class="md-nav__link--active"
-                        :class="{
-                          'md-nav__item--code': item__3.frontmatter.code,
-                        }"
-                        :to="{ path: item__3.path }"
-                        :title="item__3.title"
-                        @click.native="$emit('closeSidebar')"
-                      >
-                        <a class="no_arrow" data-algolia-lvl="4">{{
-                          item__3.title.split('|')[0]
-                        }}</a>
-                      </router-link>
-                    </li>
-                    <li v-else>
-                      <router-link
-                        :to="{ path: item__3.path }"
-                        :title="item__3.title"
-                        class="md-nav__link"
+                    <li>
+                      <RouteLink
+                        :to="item__3.path"
+                        :title="item__3.meta.frontmatter.title"
                         @click.native="$emit('closeSidebar')"
                         :class="{
-                          'md-nav__item--code': item__3.frontmatter.code,
+                          'md-nav__item--code': item__3.meta.frontmatter.code,
+                          'md-nav__link': page$.path !== item__3.path,
+                          'md-nav__link--active': page$.path === item__3.path,
                         }"
                       >
-                        <a class="no_arrow">{{
-                          item__3.title.split('|')[0]
-                        }}</a>
-                      </router-link>
+                        {{ item__3.meta.frontmatter.title.split('|')[0] }}
+                      </RouteLink>
                     </li>
                   </div>
                 </ul>
@@ -153,6 +133,15 @@
 </template>
 
 <script>
+import {
+  resolveRoute,
+  usePageData,
+  useRoute,
+  useRouter,
+  useRoutes,
+  useSiteData,
+} from 'vuepress/client';
+
 import TopMenu from './TopMenu.vue';
 import TopMenuV1 from './TopMenuV1.vue';
 
@@ -160,11 +149,8 @@ import {
   getPageChildren,
   findRootNode,
   setItemLocalStorage,
-  getItemLocalStorage,
   getNodeByPath,
-} from '../util.js';
-
-import { getCurrentVersion } from '../helpers';
+} from '../util';
 
 export default {
   components: {
@@ -185,6 +171,15 @@ export default {
       required: true,
     },
   },
+  setup() {
+    return {
+      page$: usePageData(),
+      route$: useRoute(),
+      router$: useRouter(),
+      routes$: useRoutes(),
+      site$: useSiteData(),
+    };
+  },
   data() {
     return {
       openedSubmenu: '',
@@ -192,24 +187,32 @@ export default {
   },
   computed: {
     sdkOrApiPage() {
-      if (!this.$page.currentSection) {
+      if (!this.page$.currentSection) {
         return false;
       }
 
       return (
-        this.$page.currentSection.section === 'sdk' ||
-        this.$page.currentSection.subsection === 'api'
+        this.page$.currentSection.section === 'sdk' ||
+        this.page$.currentSection.subsection === 'api'
       );
     },
     root() {
-      return findRootNode(this.$page, this.$site.pages);
+      const nodes = this.pages.map(page => ({
+        frontmatter: page.meta.frontmatter,
+        path: page.path,
+      }));
+
+      return findRootNode(this.page$, nodes);
+    },
+    pages() {
+      return Object.keys(this.routes$).map(resolveRoute);
     },
   },
   methods: {
     setOpenedSubmenu(item__1, item__2) {
       setItemLocalStorage('item__1', item__1);
       setItemLocalStorage('item__2', item__2);
-      this.openedSubmenu = this.getId([item__1.title, item__2.title]);
+      this.openedSubmenu = this.getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title]);
     },
     unsetOpenedSubmenu() {
       localStorage.setItem('item__1', null);
@@ -229,7 +232,7 @@ export default {
     redirect(item__2) {
       this.closeSidebar();
       this.unsetOpenedSubmenu();
-      this.$router.push(item__2.path);
+      this.router$.push(item__2.path);
     },
     openSubmenu(item__1, item__2) {
       const childs = this.getPageChildren(item__2);
@@ -237,7 +240,7 @@ export default {
         return;
       }
 
-      const item2Id = this.getId([item__1.title, item__2.title]);
+      const item2Id = this.getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title]);
       const item = document.getElementById(item2Id);
 
       if (item) {
@@ -248,7 +251,7 @@ export default {
       this.$emit('closeSidebar');
     },
     subMenuClass(item__1, item__2) {
-      return this.openedSubmenu === this.getId([item__1.title, item__2.title])
+      return this.openedSubmenu === this.getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title])
         ? 'displaySubmenu'
         : '';
     },
@@ -263,7 +266,7 @@ export default {
     },
     handleSubmenuClick(item__1, item__2) {
       const childs = this.getPageChildren(item__2);
-      const clickedSubmenuId = this.getId([item__1.title, item__2.title]);
+      const clickedSubmenuId = this.getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title]);
 
       if (!childs.length) {
         this.redirect(item__2);
@@ -278,7 +281,7 @@ export default {
     },
 
     getPageChildren(page) {
-      return getPageChildren(page, this.$site.pages);
+      return getPageChildren(page, this.pages);
     },
     /**
      * @param {Element} target
@@ -295,15 +298,15 @@ export default {
       );
     },
     openCurrentSubmenu() {
-      let path = this.$route.path;
+      let path = this.route$.path;
       const splitted = path.split('/');
       const item__2Path = path.replace(`${splitted[splitted.length - 2]}/`, '');
       const item__1Path = item__2Path.replace(
         `${splitted[splitted.length - 3]}/`,
         ''
       );
-      const item__1 = getNodeByPath(item__1Path, this.$site.pages);
-      const item__2 = getNodeByPath(item__2Path, this.$site.pages);
+      const item__1 = getNodeByPath(item__1Path, this.pages);
+      const item__2 = getNodeByPath(item__2Path, this.pages);
       if (!item__1 || !item__2) {
         return;
       }

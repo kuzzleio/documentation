@@ -23,7 +23,7 @@
             ref="sidebar"
           >
             <div
-              v-if="!$page.frontmatter.nosidebar"
+              v-if="!page$.frontmatter.nosidebar"
               class="md-sidebar__scrollwrap"
             >
               <div class="md-sidebar__inner"></div>
@@ -61,14 +61,13 @@
 </template>
 
 <script>
+import { usePageData } from 'vuepress/client';
+
+import { getCurrentVersion } from '../helpers';
 import Header from './Header.vue';
 import btnCta from '../components/Cta.vue';
 import Footer from './Footer.vue';
 import Sidebar from './Sidebar.vue';
-
-import { getFirstValidChild, getNodeByPath } from '../util.js';
-import { getItemLocalStorage } from '../util';
-import { getCurrentVersion } from '../helpers';
 
 export default {
   components: {
@@ -84,8 +83,11 @@ export default {
   },
   computed: {
     kuzzleMajor() {
-      return getCurrentVersion(this.$page, null);
+      return getCurrentVersion(this.page$);
     }
+  },
+  setup() {
+    return { page$: usePageData() };
   },
   methods: {
     setContainerPadding() {
@@ -108,8 +110,6 @@ export default {
   }
 };
 </script>
-
-<style src="./styles/main.scss" lang="scss"></style>
 
 <style lang="scss">
 .cta-wrapper {

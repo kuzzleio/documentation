@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // ----------------------------------------------------------------------------
 // Rules: font definitions
 // ----------------------------------------------------------------------------
@@ -113,6 +115,16 @@ kbd {
     text-transform: uppercase;
   }
 
+  // All headlines
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    outline: none;
+  }
+
   // Horizontal separators
   hr {
     margin: 1.5em 0;
@@ -144,20 +156,22 @@ kbd {
         content: ' [' attr(href) ']';
       }
     }
+
+    // Code links
+    code {
+      color: $md-color-pink;
+    }
   }
 
   // Code blocks
-  .code-block {
-    background-color: $md-code-background;
-    border-radius: 0.2rem;
+  div[class*='language-'] {
+    position: relative;
+    z-index: 1;
+    margin: 12px 0;
 
-    div[class*='language-'] {
-      position: relative;
-
-      .highlight-lines {
-        position: absolute;
-        padding: 1.05rem 0rem;
-      }
+    .highlight-lines {
+      position: absolute;
+      padding: 1.05rem 0rem;
     }
   }
 
@@ -185,12 +199,13 @@ kbd {
 
   // Inline code blocks, correct relative ems for smaller font size
   code {
-    $correct: 1 / 0.85;
-    padding: 3px;
-    border-radius: 0.2rem;
-    color: black;
+    $correct: calc(1 / 0.85);
+    padding: 3px 6px;
+    border-radius: 4px;
     font-weight: normal;
+    font-size: 0.875em;
     background-color: $md-code-background-inline;
+    color: $md-code-color-inline;
     // Remove box-shadows for print
     @media print {
       box-shadow: none;
@@ -205,7 +220,6 @@ kbd {
     padding: 0;
     border-radius: 0.2rem;
     line-height: 1.4;
-    background-color: white;
     -webkit-overflow-scrolling: touch;
     color: inherit;
 
@@ -253,16 +267,16 @@ kbd {
 
   // Keystrokes
   kbd {
-    $correct: 1 / 0.85;
+    $correct: calc(1 / 0.85);
 
     padding: 0 0.25em * $correct;
-    border: 0.1rem solid darken($md-keyboard-background, 20%);
+    border: 0.1rem solid color.scale($md-keyboard-background, $lightness: -20%);
     border-radius: 0.3rem;
-    border-bottom-color: darken($md-keyboard-background, 25%);
+    border-bottom-color: color.scale($md-keyboard-background, $lightness: -25%);
     background-color: $md-keyboard-background;
     color: $md-keyboard-color;
     font-size: 85%;
-    box-shadow: 0 0.1rem 0 darken($md-keyboard-background, 30%);
+    box-shadow: 0 0.1rem 0 color.scale($md-keyboard-background, $lightness: -30%);
     word-break: break-word;
   }
 
@@ -271,9 +285,9 @@ kbd {
     margin: 0 0.25em;
     padding: 0.0625em 0;
     border-radius: 0.2rem;
-    background-color: transparentize($clr-yellow-500, 0.5);
-    box-shadow: +0.25em 0 0 transparentize($clr-yellow-500, 0.5),
-      -0.25em 0 0 transparentize($clr-yellow-500, 0.5);
+    background-color: color.scale($clr-yellow-500, $alpha: -50%);
+    box-shadow: +0.25em 0 0 color.scale($clr-yellow-500, $alpha: -50%),
+      -0.25em 0 0 color.scale($clr-yellow-500, $alpha: -50%);
     word-break: break-word;
     box-decoration-break: clone;
   }
@@ -293,11 +307,11 @@ kbd {
   // Superscript and subscript
   sup,
   sub {
-    margin-left: 0.0625em * 1 / 0.8;
+    margin-left: calc(0.0625em * 1 / 0.8);
 
     // Adjust for RTL languages
     [dir='rtl'] & {
-      margin-right: 0.0625em * 1 / 0.8;
+      margin-right: calc(0.0625em * 1 / 0.8);
       margin-left: initial;
     }
   }
@@ -400,11 +414,10 @@ kbd {
 
   // Data tables
   table:not([class]) {
-    @include z-depth(2);
-
     max-width: 100%;
     width: 100%;
-    border-radius: 0.2rem;
+    border: 0.1rem solid $md-color-black--lightest;
+    border-radius: 4px;
     font-size: 1.54rem;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -436,9 +449,10 @@ kbd {
     th {
       min-width: 10rem;
       padding: 1.2rem 1.6rem;
-      background-color: $md-color-black--light;
-      color: $md-color-white;
+      background-color: $md-color-black--lightest;
+      color: $md-color-black;
       vertical-align: top;
+      font-weight: bold;
     }
 
     // Table cells

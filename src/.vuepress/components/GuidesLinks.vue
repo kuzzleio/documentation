@@ -1,15 +1,27 @@
 <template>
   <div class="GuidesLinks">
     <span class="GuidesLinks-prev" v-if="prev">
-      <router-link :to="prev.url">◄ {{ prev.text }}</router-link>
+      <RouteLink :to="prevUrl">◄ {{ prev.text }}</RouteLink>
     </span>
     <span class="GuidesLinks-next" v-if="next">
-      <router-link :to="next.url">{{ next.text }} ►</router-link>
+      <RouteLink :to="nextUrl">{{ next.text }} ►</RouteLink>
     </span>
   </div>
 </template>
 
 <script>
+function formatUrl(url) {
+  if (url === undefined) {
+    return undefined;
+  }
+
+  if (!url.endsWith('/')) {
+    url += '/';
+  }
+
+  return url;
+}
+
 export default {
   name: 'GuidesLinks',
   props: {
@@ -19,7 +31,15 @@ export default {
     prev: {
       type: Object
     }
-  }
+  },
+  computed: {
+    prevUrl() {
+      return formatUrl(this.prev?.url);
+    },
+    nextUrl() {
+      return formatUrl(this.next?.url);
+    },
+  },
 };
 </script>
 

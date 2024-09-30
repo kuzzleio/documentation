@@ -1,27 +1,31 @@
 <template>
-  <a
+  <span
     class="MenuDropdown"
     :class="{ active: isActive }"
     @mouseenter="isListVisible = true"
     @mouseleave="isListVisible = false"
   >
-    <span class="MenuDropdown-title"
-      >{{ title }} <i class="fa fa-caret-down"></i
-    ></span>
+    <span class="MenuDropdown-title">
+      {{ title }}
+      <font-awesome-icon icon="fa-solid fa-caret-down" size="xs" />
+    </span>
     <ul class="MenuDropdown-list" :class="{ visible: isListVisible }">
       <li v-for="item in items" class="MenuDropdown-list-item" :key="item.name">
         <a
           class="MenuDropdown-list-item-link"
           :href="item.url"
           :class="{ active: isItemActive(item.url) }"
-          >{{ item.name }}</a
         >
+          {{ item.name }}
+        </a>
       </li>
     </ul>
-  </a>
+  </span>
 </template>
 
 <script>
+import { usePageData } from 'vuepress/client';
+
 export default {
   props: {
     items: {
@@ -50,6 +54,9 @@ export default {
       isListVisible: false
     };
   },
+  setup() {
+    return { page$: usePageData() };
+  },
   computed: {
     isActive() {
       let isActive = false;
@@ -65,10 +72,10 @@ export default {
   },
   methods: {
     isItemActive(itemUrl) {
-      if (!this.$page || !this.$page.fullPath) {
+      if (!this.page$ || !this.page$.fullPath) {
         return false;
       }
-      return this.$page.fullPath.startsWith(itemUrl);
+      return this.page$.fullPath.startsWith(itemUrl);
     }
   }
 };

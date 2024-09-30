@@ -8,7 +8,7 @@
       <div class="selector-selectedItem-name">
         <span class="selector-selectedItem-name-wrapper">
           {{ selectedItem ? selectedItem.text : 'Kuzzle' }}
-          <i class="fa fa-caret-down" aria-hidden="true"></i>
+          <font-awesome-icon icon="fa-solid fa-caret-down" size="xs" aria-hidden="true"/>
         </span>
       </div>
     </div>
@@ -30,7 +30,11 @@
 </template>
 
 <script>
-import { getItemLocalStorage, log } from '../util';
+import {
+  usePageData,
+  useRoute,
+} from 'vuepress/client';
+
 import { VERSION_QUERY_KEY } from '../helpers';
 
 export default {
@@ -39,6 +43,12 @@ export default {
     kuzzleMajor: {
       type: Number,
     },
+  },
+  setup() {
+    return {
+      page$: usePageData(),
+      route$: useRoute(),
+    };
   },
   data() {
     return {
@@ -61,7 +71,7 @@ export default {
     },
     is404() {
       return (
-        this.$route.matched.length === 1 && this.$route.matched[0].path === '*'
+        this.route$.matched.length === 1 && this.route$.matched[0].path === '*'
       );
     },
   },
@@ -82,29 +92,29 @@ export default {
         return `/v${major}`;
       }
 
-      if (!this.$page || !this.$page.currentSection) {
+      if (!this.page$ || !this.page$.currentSection) {
         return '/';
       }
 
       // Find the possible candidates of the same (sub)section
       // that correspond to the new Kuzzle Major
-      const candidates = this.$page.sectionList.filter((s) => {
+      const candidates = this.page$.sectionList.filter((s) => {
         if (s.kuzzleMajor !== major) {
           return false;
         }
 
-        if (s.section !== this.$page.currentSection.section) {
+        if (s.section !== this.page$.currentSection.section) {
           return false;
         }
 
         if (
-          this.$page.currentSection.subsection &&
-          this.$page.currentSection.subsection !== s.subsection
+          this.page$.currentSection.subsection &&
+          this.page$.currentSection.subsection !== s.subsection
         ) {
           return false;
         }
 
-        if (this.$page.currentSection.name !== s.name) {
+        if (this.page$.currentSection.name !== s.name) {
           return false;
         }
 

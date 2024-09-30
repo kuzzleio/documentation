@@ -3,8 +3,15 @@
 </template>
 
 <script>
+import {
+  resolveRoute,
+  usePageData,
+  useRoutes,
+} from 'vuepress/client';
+
 import Redirect from './Redirect.vue';
-const { getFirstValidChild } = require('../util.js');
+import { getFirstValidChild } from '../util';
+
 export default {
   name: 'RedirectToFirstChild',
   components: {
@@ -12,8 +19,17 @@ export default {
   },
   computed: {
     firstChild() {
-      return getFirstValidChild(this.$page, this.$site.pages);
-    }
-  }
+      return getFirstValidChild(this.page$, this.pages);
+    },
+    pages() {
+      return Object.keys(this.routes$).map(resolveRoute);
+    },
+  },
+  setup() {
+    return {
+      page$: usePageData(),
+      routes$: useRoutes()
+    };
+  },
 };
 </script>

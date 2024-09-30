@@ -13,7 +13,7 @@
         class="Tiles-item medium"
       >
         <img
-          src="/logos/rocket.svg"
+          :src="$withBase('/logos/rocket.svg')"
           alt="Running Kuzzle logo"
           class="Tiles-item-logo"
         />
@@ -24,7 +24,7 @@
         class="Tiles-item medium"
       >
         <img
-          src="/logos/write-code.svg"
+          :src="$withBase('/logos/write-code.svg')"
           alt="Running Kuzzle logo"
           class="Tiles-item-logo"
         />
@@ -32,19 +32,19 @@
       </a>
       <a :href="getPath('/api/payloads/request/')" class="Tiles-item medium">
         <img
-          src="/logos/search.svg"
+          :src="$withBase('/logos/search.svg')"
           alt="Learn API logo"
           class="Tiles-item-logo"
         />
         <div class="Tiles-item-name">Learn API</div>
       </a>
       <a href="/sdk/" class="Tiles-item medium">
-        <img src="/logos/brackets.svg" alt="SDK logo" class="Tiles-item-logo" />
+        <img :src="$withBase('/logos/brackets.svg')" alt="SDK logo" class="Tiles-item-logo" />
         <div class="Tiles-item-name">Find your SDK</div>
       </a>
       <a href="/official-plugins/" class="Tiles-item medium">
         <img
-          src="/logos/plugin.svg"
+          :src="$withBase('/logos/plugin.svg')"
           alt="Plugins logo"
           class="Tiles-item-logo"
         />
@@ -54,7 +54,7 @@
         :href="getPath('/guides/main-concepts')"
         class="Tiles-item medium"
       >
-        <img src="/logos/book.svg" alt="Plugins logo" class="Tiles-item-logo" />
+        <img :src="$withBase('/logos/book.svg')" alt="Plugins logo" class="Tiles-item-logo" />
         <div class="Tiles-item-name">More guides</div>
       </a>
     </div>

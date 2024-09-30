@@ -41,6 +41,7 @@ $md-color-accent: $clr-indigo-a200 !default;
 $md-color-pink: #e94e77;
 $md-color-pink-light: rgba(233, 78, 119, 0.3);
 $md-color-blue: #002835;
+$md-color-blue-light: RGBA(0, 40, 53, 0.3);
 
 // Shades of black
 $md-color-black: hsla(0, 0%, 0%, 0.87) !default;
@@ -55,6 +56,29 @@ $md-color-white--light: hsla(0, 0%, 100%, 0.7) !default;
 $md-color-white--lighter: hsla(0, 0%, 100%, 0.3) !default;
 $md-color-white--lightest: hsla(0, 0%, 100%, 0.12) !default;
 $md-color-white--transparent: hsla(0, 0%, 100%, 0) !default;
+
+// Custom properties
+:root {
+  // Text
+  --vp-c-text: #{$md-color-black};
+  --vp-c-text-muted: #{$md-color-black--light};
+  --vp-c-text-subtle: #{$md-color-black--lighter};
+
+  // Background
+  --vp-c-bg: #{$md-color-white};
+  --vp-c-bg-alt: #{$md-color-blue};
+  --vp-c-bg-elv: #{$md-color-black--light};
+
+  // Shadow
+  --vp-c-shadow: #{$md-color-black--lighter};
+
+  // Accent
+  --vp-c-accent: #{$md-color-pink};
+  --vp-c-accent-hover: #{$md-color-pink};
+  --vp-c-accent-bg: #{$md-color-pink};
+  --vp-c-accent-text: #{$md-color-black};
+  --vp-c-accent-soft: #{$md-color-pink-light};
+}
 
 // ----------------------------------------------------------------------------
 // Variables: sizing and spacing
@@ -74,4 +98,5 @@ $md-code-color: #c2c6cf;
 $md-keyboard-background: #fcfcfc;
 $md-keyboard-color: #555555;
 
-$md-code-background-inline: rgba(27, 31, 35, 0.1);
+$md-code-background-inline: $md-color-black--lightest;
+$md-code-color-inline: $md-color-black--light;
