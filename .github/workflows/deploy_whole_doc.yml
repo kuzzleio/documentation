@@ -13,7 +13,7 @@ env:
 jobs:
   prepare-matrix:
     name: Prepare matrix by getting the repo names from repositories.json
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -35,7 +35,7 @@ jobs:
 
   deploy_framework:
     name: Deploy framework
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -67,7 +67,7 @@ jobs:
   deploy_child_repo:
     name: Deploy child repo ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}
     needs: [prepare-matrix, deploy_framework]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         repo: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
@@ -123,7 +123,7 @@ jobs:
   invalidate_cloudfront:
     name: Invalidate CloudFront
     needs: [deploy_child_repo]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

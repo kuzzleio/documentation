@@ -19,7 +19,7 @@ env:
 jobs:
   dead-links:
     name: Check the dead-links on the repo
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -51,7 +51,7 @@ jobs:
 
   deploy:
     name: Deploy the repo
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04
     needs: [dead-links]
     steps:
       - name: Checkout repository
