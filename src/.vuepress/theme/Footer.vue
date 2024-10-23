@@ -1,14 +1,9 @@
 <template>
   <footer class="md-footer">
-    <discord-widget />
     <ul class="md-footer-external md-typeset">
       <li class="md-footer-external__link">
         <a href="https://github.com/kuzzleio/" target="_blank">
-          <img
-            class="md-footer-external__link__img"
-            src="/logos/logo-github.svg"
-            alt="github logo"
-          />
+          <font-awesome-icon icon="fa-brands fa-github" class="md-footer-external__link__img"/>
           <div class="md-footer-external__link__title">Github</div>
           <div class="md-footer-external__link__description">
             Contribute to Kuzzle projects
@@ -20,11 +15,7 @@
           href="https://stackoverflow.com/questions/ask?guided=false&tags=Kuzzle&title=[Kuzzle]"
           target="_blank"
         >
-          <img
-            class="md-footer-external__link__img"
-            src="/logos/logo-stack-overflow.svg"
-            alt="stack-overflow logo"
-          />
+          <font-awesome-icon icon="fa-brands fa-stack-overflow" class="md-footer-external__link__img"/>
           <div class="md-footer-external__link__title">Stack Overflow</div>
           <div class="md-footer-external__link__description">
             Ask a question
@@ -33,11 +24,7 @@
       </li>
       <li class="md-footer-external__link">
         <a href="http://join.discord.kuzzle.io" target="_blank">
-          <img
-            class="md-footer-external__link__img"
-            src="/logos/logo-discord.svg"
-            alt="discord logo"
-          />
+          <font-awesome-icon icon="fa-brands fa-discord" class="md-footer-external__link__img"/>
           <div class="md-footer-external__link__title">Discord</div>
           <div class="md-footer-external__link__description">
             Chat with the community and Kuzzle developers
@@ -50,10 +37,7 @@
           target="_blank"
           alt="youtube logo"
         >
-          <img
-            class="md-footer-external__link__img"
-            src="/logos/logo-youtube.svg"
-          />
+          <font-awesome-icon icon="fa-brands fa-youtube" class="md-footer-external__link__img"/>
           <div class="md-footer-external__link__title">Youtube</div>
           <div class="md-footer-external__link__description">
             Check out our tutorial videos
@@ -76,40 +60,33 @@
         <div class="md-footer-social">
           <a
             href="https://kuzzle.io"
-            class="md-footer-social__link fa fa-globe"
+            class="md-footer-social__link"
             target="_blank"
-          ></a>
+          >
+            <font-awesome-icon icon="fa-solid fa-globe" size="xs" />
+          </a>
           <a
             href="https://twitter.com/kuzzleio"
-            class="md-footer-social__link fa fa-twitter"
+            class="md-footer-social__link"
             target="_blank"
-          ></a>
+          >
+            <font-awesome-icon icon="fa-brands fa-x-twitter" size="xs" />
+          </a>
           <a
             href="https://www.linkedin.com/company/kuzzle/"
-            class="md-footer-social__link fa fa-linkedin"
+            class="md-footer-social__link"
             target="_blank"
-          ></a>
+          >
+            <font-awesome-icon icon="fa-brands fa-linkedin-in" size="xs" />
+          </a>
         </div>
       </div>
     </div>
-
-    <!-- Start of HubSpot Embed Code -->
-    <script
-      type="text/javascript"
-      id="hs-script-loader"
-      defer
-      src="//js.hs-scripts.com/3803374.js"
-    ></script>
-    <!-- End of HubSpot Embed Code -->
-
-<!--    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/0ed105a5c5f45400f9c0ef9a/script.js"></script> -->
   </footer>
 </template>
 
 <script>
-import DiscordWidget from '../components/DiscordWidget.vue';
 export default {
-  components: { DiscordWidget },
   computed: {
     currentYearCopyright() {
       return new Date().getFullYear();

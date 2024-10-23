@@ -2,21 +2,21 @@
   <div class="selector" ref="selector" v-if="items.length">
     <div class="selector-selectedItem" @click="toggleList()">
       <img
-        v-if="currentItem"
+        v-if="currentItem?.icon"
         class="selector-selectedItem-icon"
-        :src="currentItem.icon"
+        :src="$withBase(currentItem.icon)"
         :alt="currentItem.name"
       />
       <img
         v-else
         class="selector-selectedItem-icon"
-        src="/logo-57x57.png"
+        :src="$withBase('/logo-57x57.png')"
         alt="Kuzzle logo"
       />
       <span v-if="currentItem" class="selector-selectedItem-name"
         >{{ currentItem.name }} v{{ currentItem.version }}.x</span
       >
-      <i class="fa fa-caret-down" aria-hidden="true"></i>
+      <font-awesome-icon icon="fa-solid fa-caret-down" size="xs" aria-hidden="true"/>
     </div>
     <ul
       :class="`selector-list selector-list-${showList ? 'opened' : 'closed'}`"
@@ -24,7 +24,6 @@
       <li
         v-for="item in filteredItems"
         :key="`${item.name}.${item.version}`"
-        v-if="item.icon"
         @click="toggleList()"
       >
         <a
@@ -36,7 +35,7 @@
           <img
             v-if="item.subsection !== 'api'"
             class="selector-list-item-icon"
-            :src="item.icon"
+            :src="$withBase(item.icon)"
             :alt="item.name"
           />
           <span
@@ -54,6 +53,8 @@
 </template>
 
 <script>
+import { usePageData } from 'vuepress/client';
+
 export default {
   name: 'SDKSelector',
   props: {
@@ -70,10 +71,10 @@ export default {
       return this.currentItem ? this.currentItem.name : 'Select SDK or API';
     },
     filteredItems() {
-      return this.items.filter(item => item !== this.currentItem);
+      return this.items.filter(item => item !== this.currentItem && item.icon !== undefined);
     },
     currentItem() {
-      return this.items.find(i => this.$page.fullPath.startsWith(i.path));
+      return this.items.find(i => this.page$.fullPath.startsWith(i.path));
     }
   },
   methods: {
@@ -88,6 +89,9 @@ export default {
         this.showList = false;
       }
     }
+  },
+  setup() {
+    return { page$: usePageData() };
   },
   mounted() {
     document.addEventListener('click', this.onClickOutside);

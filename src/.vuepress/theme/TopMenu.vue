@@ -40,7 +40,7 @@
               <a
                 :href="`/official-plugins/v${kuzzleMajor}.html`"
                 :class="{
-                  'topMenu__link--active': isLinkActive(`/plugins/`),
+                  'topMenu__link--active': isLinkActive(`/official-plugins/`),
                 }"
                 title="Plugins"
                 class="topMenu__link"
@@ -77,6 +77,8 @@
 </template>
 
 <script>
+import { usePageData } from 'vuepress/client';
+
 import { VERSION_QUERY_KEY, getCurrentVersion } from '../helpers';
 
 export default {
@@ -94,7 +96,7 @@ export default {
       );
     },
     kuzzleMajor() {
-      return getCurrentVersion(this.$page);
+      return getCurrentVersion(this.page$);
     },
     referencesItems() {
       const pathStart = `/core/${this.kuzzleMajor}`;
@@ -105,12 +107,15 @@ export default {
       ];
     },
   },
+  setup() {
+    return { page$: usePageData() };
+  },
   methods: {
     isLinkActive(linkPath) {
-      if (!this.$page.fullPath) {
+      if (!this.page$.fullPath) {
         return false;
       }
-      return this.$page.fullPath.startsWith(linkPath);
+      return this.page$.fullPath.startsWith(linkPath);
     },
   },
 };

@@ -6,7 +6,7 @@
       :href="plugin.path"
       class="Tiles-item"
     >
-      <img :src="plugin.icon" :alt="plugin.name" class="Tiles-item-logo" />
+      <img :src="$withBase(plugin.icon)" :alt="plugin.name" class="Tiles-item-logo" />
       <div class="Tiles-item-name">
         {{ `${plugin.name} v${plugin.version}` }}
       </div>
@@ -15,7 +15,10 @@
 </template>
 
 <script>
+import { usePageData } from 'vuepress/client';
+
 import externalPlugins from '../external-plugins.json';
+
 export default {
   name: 'PluginsIndex',
   methods: {},
@@ -27,7 +30,7 @@ export default {
   },
   computed: {
     pluginList() {
-      return this.$page.sectionList
+      return this.page$.sectionList
         .filter(
           (s) =>
             s.kuzzleMajor === this.kuzzleMajor &&
@@ -39,6 +42,9 @@ export default {
         )
         .concat(externalPlugins[this.kuzzleMajor]);
     },
+  },
+  setup() {
+    return { page$: usePageData() };
   },
 };
 </script>

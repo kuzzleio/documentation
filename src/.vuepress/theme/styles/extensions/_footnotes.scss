@@ -111,7 +111,7 @@
     &::before {
       display: inline-block;
       font-size: 1.6rem;
-      content: '\E31B'; // keyboard_return
+      content: '\F100'; // angles-left
 
       // Adjust for RTL languages
       [dir='rtl'] & {

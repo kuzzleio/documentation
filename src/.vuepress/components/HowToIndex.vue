@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import transform from 'lodash/transform';
+import { transform } from 'lodash-es';
+import { usePageData } from 'vuepress/client';
 
 export default {
   name: 'HowToIndex',
@@ -22,7 +23,7 @@ export default {
   },
   computed: {
     howToList() {
-      return this.$page.sectionList.filter(
+      return this.page$.sectionList.filter(
         (s) =>
           s.kuzzleMajor === this.kuzzleMajor &&
           s.section === 'how-to' &&
@@ -47,6 +48,9 @@ export default {
     categories() {
       return Object.keys(this.howToListByCategories);
     },
+  },
+  setup() {
+    return { page$: usePageData() };
   },
 };
 </script>

@@ -8,7 +8,7 @@
         class="Tiles-item"
       >
         <div class="ribbon" v-if="sdk.kuzzleMajor === 2 && sdk.deprecated"><span>Deprecated</span></div>
-        <img :src="sdk.icon" :alt="`${sdk.name} logo`" class="Tiles-item-logo" />
+        <img :src="$withBase(sdk.icon)" :alt="`${sdk.name} logo`" class="Tiles-item-logo" />
         <div class="Tiles-item-name">{{ sdk.name }} v{{ sdk.version }}.x</div>
       </a>
     </div>
@@ -21,14 +21,14 @@
           href="https://github.com/kuzzleio/kuzzle_dart"
           class="Tiles-item min"
         >
-          <img src="/logos/dart.svg" alt="dart logo" class="Tiles-item-logo" />
+          <img :src="$withBase('/logos/dart.svg')" alt="dart logo" class="Tiles-item-logo" />
           <div class="Tiles-item-name">Dart</div>
         </a>
         <a
           href="https://github.com/alexandrebouthinon/kuzzle-sdk-rust"
           class="Tiles-item min"
         >
-          <img src="/logos/rust.svg" alt="rust logo" class="Tiles-item-logo" />
+          <img :src="$withBase('/logos/rust.svg')" alt="rust logo" class="Tiles-item-logo" />
           <div class="Tiles-item-name">Rust</div>
         </a>
       </div>
@@ -39,10 +39,11 @@
       </span>
     </div>
   </div>
-  </div>
 </template>
 
 <script>
+import { usePageData } from 'vuepress/client';
+
 export default {
   name: 'SDKIndex',
   props: {
@@ -53,7 +54,7 @@ export default {
   },
   computed: {
     sdkList() {
-      const sdks = this.$page.sectionList
+      const sdks = this.page$.sectionList
         .filter(s => s.kuzzleMajor === this.kuzzleMajor)
         .filter(s => s.section === 'sdk')
         .filter(s => s.subsection)
@@ -66,6 +67,9 @@ export default {
         .filter(s => !s.deprecated)
         .concat(deprecatedSdks)
     },
+  },
+  setup() {
+    return { page$: usePageData() };
   },
 };
 </script>

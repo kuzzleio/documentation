@@ -70,11 +70,11 @@
       @extend %md-icon, %md-icon__button;
 
       display: none;
-      content: '\E5C4'; // arrow_back
+      content: '\F060'; // arrow-left
 
       // Adjust for RTL languages
       [dir='rtl'] & {
-        content: '\E5C8'; // arrow_forward
+        content: '\F061'; // arrow-right
       }
     }
 
@@ -194,7 +194,7 @@
 
       // Item contains a nested list
       .md-nav__item--nested > & {
-        content: '\E313'; // keyboard_arrow_down
+        content: '\F107'; // angle-down
       }
     }
 
@@ -396,11 +396,11 @@
 
           // Replace icon with right arrow
           &::after {
-            content: '\E315'; // keyboard_arrow_right
+            content: '\F105'; // angle-right
 
             // Adjust for RTL languages
             [dir='rtl'] & {
-              content: '\E314'; // keyboard_arrow_left
+              content: '\F104'; // angle-left
             }
           }
         }
@@ -532,7 +532,7 @@
       // Unrotate icon for table of contents
       &::after {
         color: inherit;
-        content: '\E8DE'; // toc
+        content: '\F03A'; // list
       }
 
       // Hide link to current item

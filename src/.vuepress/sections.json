@@ -454,7 +454,7 @@
   "/official-plugins/multi-tenancy/1": {
     "kuzzleMajor": 2,
     "version": 1,
-    "name": "multi-tenancy",
+    "name": "Multi Tenancy",
     "section": "official-plugins",
     "subsection": "multi-tenancy",
     "icon": "/logos/plugin-multi-tenancy.svg",
@@ -463,7 +463,7 @@
   "/official-plugins/keycloak/1": {
     "kuzzleMajor": 2,
     "version": 1,
-    "name": "keycloak",
+    "name": "Keycloak",
     "section": "official-plugins",
     "subsection": "keycloak",
     "icon": "/logos/keycloak.svg",
@@ -472,7 +472,7 @@
   "/official-plugins/openid/1": {
     "kuzzleMajor": 2,
     "version": 1,
-    "name": "openid",
+    "name": "OpenID",
     "section": "official-plugins",
     "subsection": "openid",
     "icon": "/logos/open-id.svg",

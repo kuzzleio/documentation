@@ -14,15 +14,15 @@ on:
         required: true
 
 env:
-  NODE_VERSION: 16
+  NODE_VERSION: 20
 
 jobs:
   dead-links:
     name: Check the dead-links on the repo
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Output event inputs for debug
         run: echo "Repo ${{ github.event.inputs.repo_name }} triggered this workflow from branch ${{ github.event.inputs.branch }} v${{ github.event.inputs.version }}"
@@ -34,14 +34,15 @@ jobs:
           name: id_rsa
           known_hosts: unnecessary
 
-      - name: Setup Node JS
-        uses: actions/setup-node@v3
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
 
       # Dead links does not work because of private template
       # From iot platform
-      # - name: Check dead links 
+      # - name: Check dead links
       #   uses: ./.github/actions/dead-links
       #   with:
       #     repo_name: ${{ github.event.inputs.repo_name }}
@@ -50,16 +51,17 @@ jobs:
 
   deploy:
     name: Deploy the repo
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     needs: [dead-links]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Node JS
-        uses: actions/setup-node@v3
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2

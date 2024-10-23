@@ -4,14 +4,13 @@
 
 // Icon placeholders
 %md-icon {
-  font-family: 'Material Icons';
+  font-family: 'Font Awesome 6 Free';
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
   line-height: 1;
   text-transform: none;
   white-space: nowrap;
-  speak: none;
   word-wrap: normal;
   direction: ltr;
 
@@ -33,16 +32,10 @@
   @each $ligature,
     $name
       in (
-        '\E5C4': 'arrow-back',
-        // arrow_back
-          '\E5C8':
-          'arrow-forward',
-        // arrow_forward
-          '\E5D2':
-          'menu',
-        // menu
-          '\E8B6':
-          'search'// search
+        '\F060': 'arrow-back',
+        '\F061': 'arrow-forward',
+        '\F0C9': 'menu',
+        '\F002': 'search'
       )
   {
     &--#{$name}::before {
@@ -56,10 +49,8 @@
     @each $ligature,
       $name
         in (
-          '\E5C8': 'arrow-back',
-          // arrow_forward
-            '\E5C4':
-            'arrow-forward'// arrow_back
+          '\F061': 'arrow-back',
+          '\F060': 'arrow-forward'
         )
     {
       &--#{$name}::before {

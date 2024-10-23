@@ -15,8 +15,7 @@
   z-index: 2;
   // Hack: putting the header on the GPU avoids unnecessary repaints
   backface-visibility: hidden;
-  
-  
+
   // Always show shadow, in case JavaScript is not available
   .no-js & {
     transition: none;
@@ -34,7 +33,7 @@
   @media print {
     display: none;
   }
-   
+
   .disclaimer {
     position: relative;
     top: 0;
@@ -49,7 +48,11 @@
 
 // Navigation within header
 .md-header-nav {
-  padding: 0 0.4rem;
+  padding: 0 1rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
   // Icon buttons
   &__button {
@@ -58,7 +61,6 @@
     position: relative;
     transition: opacity 0.25s;
     z-index: 1;
-    margin-left: 0;
 
     // Hovered icon
     &:hover {
@@ -71,14 +73,14 @@
     }
 
     // Hide search icon, if JavaScript is not available.
-    .no-js &.md-icon--search {
+    .no-js &.search-icon {
       display: none;
     }
 
     // [tablet landscape +]: Hide the search icon
     @include break-from-device(tablet landscape) {
       // Search icon
-      &.md-icon--search {
+      &.search-icon {
         display: none;
       }
     }
@@ -95,7 +97,7 @@
     // [screen +]: Hide the menu icon
     @include break-from-device(screen) {
       // Menu icon
-      &.md-icon--menu {
+      &.drawer-icon {
         display: none;
       }
     }
@@ -118,7 +120,6 @@
   // Header topics
   &__topic {
     display: block;
-    position: absolute;
     transition: transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.15s;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -178,6 +179,19 @@
         pointer-events: initial;
         text-transform: capitalize;
       }
+    }
+  }
+
+  // Top menu container
+  &__top-menu-container {
+    flex: 1;
+    margin-left: 3rem;
+  }
+
+  // Search box container
+  &__search-container {
+    @include break-from-device(tablet landscape) {
+      margin-right: 1rem;
     }
   }
 

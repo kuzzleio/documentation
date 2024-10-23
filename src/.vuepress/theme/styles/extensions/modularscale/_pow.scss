@@ -31,7 +31,7 @@
   }
   @if $e < 0 {
     @for $i from $e through 0 {
-      $ms-return: $ms-return / $b;
+      $ms-return: calc($ms-return / $b);
     }
   }
   @return $ms-return;
