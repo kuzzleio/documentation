@@ -103,23 +103,27 @@
   text-align: center;
   margin: 0px;
   list-style-type: disc outside;
-  
+
   &__link {
     display: inline-block;
     vertical-align: top;
     margin: 2rem;
     width: 192px;
+
     &__title {
       color: $clr-black;
       font-weight: bold;
       padding-top: 1rem;
     }
+
     &__img {
       display: block;
       height: 64px;
       width: 64px;
       margin: auto;
-    }
+      color: $md-color-blue;
+  }
+
     &__description {
       display: block;
       word-wrap: break-word;

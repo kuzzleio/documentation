@@ -69,11 +69,11 @@
       @extend %md-icon;
 
       position: absolute;
-      top: 0.8rem;
-      right: 1.2rem;
+      top: 1rem;
+      right: 1.5rem;
       color: $md-color-black--lighter;
-      font-size: 2rem;
-      content: '\E313'; // keyboard_arrow_down
+      font-size: 1.5rem;
+      content: '\F107'; // angle-down
 
       // Adjust for RTL languages
       [dir='rtl'] & {

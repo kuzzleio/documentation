@@ -16,16 +16,12 @@
   opacity: 0.3;
 }
 .selector {
-  width: 80%;
-  height: 40px;
   font-size: 15px;
-  margin-bottom: 16px;
   cursor: pointer;
 
   &-selectedItem {
     border-bottom: 1px solid rgba(233, 78, 119, 0.3);
     padding: 10px 10px 5px;
-    margin-bottom: 5px;
 
     &-icon {
       position: relative;
@@ -40,10 +36,6 @@
   }
 }
 .selector-list {
-  @include break-to-device(tablet) {
-    height: 250px;
-    overflow-y: scroll;
-  }
   position: absolute;
   width: 80%;
   background-color: white;
@@ -52,6 +44,12 @@
   margin-top: 0;
   transform-origin: 50% 0;
   transition: transform 0.1s linear, opacity 0.1s linear;
+
+  @include break-to-device(tablet) {
+    height: 250px;
+    overflow-y: scroll;
+  }
+
   &-opened {
     transform: scaleY(1);
     opacity: 1;
@@ -89,16 +87,12 @@
     text-align: center;
 
     .selector-selectedItem-name {
-      width: 135px;
-      height: 42px;
       font-size: 22px;
       position: relative;
       border-radius: 0.2rem;
-      padding-top: 4px;
       line-height: 3rem;
 
       @include break-from-device(screen) {
-        top: 13px;
         font-size: 22px;
       }
 
@@ -111,10 +105,8 @@
       }
     }
 
-    i {
-      top: 22px;
+    .fa-caret-down {
       color: white;
-      font-size: 1.5rem;
       margin-left: 6px;
     }
   }

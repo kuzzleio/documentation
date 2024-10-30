@@ -4,14 +4,11 @@
 
 // Tabs with outline
 .topMenu {
-  width: 100%;
   transition: background 0.25s;
   background-color: $md-color-primary;
   color: $md-color-white;
   overflow: auto;
   position: relative;
-  top: 1em;
-  margin-left: -1em;
 
   &.v1 {
     top: 0em;
@@ -28,7 +25,6 @@
     list-style: none;
     white-space: nowrap;
     position: relative;
-    left: -13px;
     overflow-x: hidden;
 
     @include break-to-device(tablet) {
@@ -39,7 +35,6 @@
   // List group
   &__group {
     display: inline-block;
-    margin-right: 4rem;
 
     @include break-to-device(tablet) {
       display: block;
@@ -49,7 +44,8 @@
   // List name of group of items
   &__group-name {
     font-size: 1.3rem;
-    padding-left: 14px;
+    padding-left: 12px;
+    padding-bottom: 6px;
     margin: 0 0 -5px 0;
     opacity: 0.5;
     text-transform: capitalize;
@@ -63,7 +59,6 @@
   // List item
   &__item {
     display: inline-block;
-    height: 4.2rem;
     padding-right: 1.2rem;
     padding-left: 1.2rem;
   }
@@ -72,7 +67,6 @@
   // line height, but this would imply more repaints when scrolling
   &__link {
     display: block;
-    margin-top: 1rem;
     transition: transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1), opacity 0.25s;
     font-size: 1.5rem;
     opacity: 1;
@@ -114,6 +108,10 @@
     .topMenu__item {
       display: block;
       height: auto;
+    }
+
+    .topMenu__link {
+      margin-top: 1rem;
     }
 
     .topMenu__link--active {

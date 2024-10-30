@@ -35,7 +35,7 @@
       left: -1.25em;
       color: $md-color-black--lighter;
       font-size: 1.25em;
-      content: '\E835'; // check_box_outline_blank
+      content: '\F0C8'; // square
       vertical-align: -0.25em;
 
       // Adjust for RTL languages
@@ -47,7 +47,7 @@
 
     // Checkbox icon in checked state
     [type='checkbox']:checked + .task-list-indicator::before {
-      content: '\E834'; // check_box
+      content: '\F14A'; // square-check
     }
 
     // Hide original checkbox behind icon

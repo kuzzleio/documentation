@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  NODE_VERSION: 16
+  NODE_VERSION: 20
 
 jobs:
   prepare-matrix:
@@ -16,9 +16,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v4
 
       - name: Install yq
         run: |
@@ -26,6 +24,7 @@ jobs:
           sudo apt-get install python python3-pip
           pip3 install yq
         shell: bash
+
       - name: Get repo names
         id: set-matrix
         run: |
@@ -43,25 +42,14 @@ jobs:
       AWS_DEFAULT_REGION: us-west-1
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: Install Node JS
-        uses: actions/setup-node@v3
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      
+          cache: 'npm'
+
       - name: Deploy artefact for production
         uses: ./.github/actions/deploy_fw_artifacts
         if: ${{ github.ref == 'refs/heads/master' }}
@@ -87,26 +75,15 @@ jobs:
     steps:
       - name: Recap of the build
         run: echo "Build and deploy documentation for ${{ matrix.repo.repo_name }}-${{ matrix.repo.doc_version }}"
-      
+
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: Checkout repository
-        uses: actions/setup-node@v3
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
@@ -155,6 +132,7 @@ jobs:
       - name: Invalidate CloudFront for next-docs.kuzzle.io
         if: ${{ github.ref != 'refs/heads/master' }}
         run: aws cloudfront create-invalidation --distribution-id E2ZCCEK9GRB49U --paths "/*"
+
       - name: Invalidate CloudFront for docs.kuzzle.io
         if: ${{ github.ref == 'refs/heads/master' }}
         run: aws cloudfront create-invalidation --distribution-id E3D6RP0POLCJMM --paths "/*"

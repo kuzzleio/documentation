@@ -1,4 +1,5 @@
 /.idea
+.DS_Store
 node_modules
 dist
 algolia-records.json
@@ -6,10 +7,14 @@ frontmatter-errors.json
 frontmatter-fixes.json
 dead_links.json
 .vscode
+.cache
+.temp
 
 .repos/plugin*
 .repos/sdk-*
 .repos/kuzzle*
 .repos/paas*
+.repos/iot-platform*
 
 version.md
+frontmatter-lint-errors.json

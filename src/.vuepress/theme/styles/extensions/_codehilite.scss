@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // ----------------------------------------------------------------------------
 // Variables
 // ----------------------------------------------------------------------------
@@ -297,7 +299,7 @@ $codehilite-whitespace: transparent;
     display: block;
     margin: 0 -1.2rem;
     padding: 0 1.2rem;
-    background-color: transparentize($clr-yellow-500, 0.5);
+    background-color: color.scale($clr-yellow-500, $alpha: -50%);
 
     // [mobile -]: Stretch to whole width
     @include break-to-device(mobile) {

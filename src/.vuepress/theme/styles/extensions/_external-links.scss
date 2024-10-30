@@ -1,0 +1,26 @@
+.md-main {
+  // External links in main content
+  a {
+    &[href*="://"],
+    &[target=_blank] {
+      &::after {
+        content: '';
+
+        display: inline-block;
+        flex-shrink: 0;
+
+        width: 11px;
+        height: 11px;
+        margin-top: -2px;
+        margin-left: 4px;
+        margin-right: 2px;
+
+        background: $clr-blue-grey-500;
+
+        $external-link-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21Font%20Awesome%20Free%206.6.0%20by%20%40fontawesome%20-%20https%3A%2F%2Ffontawesome.com%20License%20-%20https%3A%2F%2Ffontawesome.com%2Flicense%2Ffree%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M320%200c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032l82.7%200L201.4%20265.4c-12.5%2012.5-12.5%2032.8%200%2045.3s32.8%2012.5%2045.3%200L448%20109.3l0%2082.7c0%2017.7%2014.3%2032%2032%2032s32-14.3%2032-32l0-160c0-17.7-14.3-32-32-32L320%200zM80%2032C35.8%2032%200%2067.8%200%20112L0%20432c0%2044.2%2035.8%2080%2080%2080l320%200c44.2%200%2080-35.8%2080-80l0-112c0-17.7-14.3-32-32-32s-32%2014.3-32%2032l0%20112c0%208.8-7.2%2016-16%2016L80%20448c-8.8%200-16-7.2-16-16l0-320c0-8.8%207.2-16%2016-16l112%200c17.7%200%2032-14.3%2032-32s-14.3-32-32-32L80%2032z%22%2F%3E%3C%2Fsvg%3E");
+        -webkit-mask-image: $external-link-mask-image;
+        mask-image: $external-link-mask-image;
+      }
+    }
+  }
+}

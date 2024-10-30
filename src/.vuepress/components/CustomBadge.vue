@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Badge from '@vuepress/theme-default/global-components/Badge.vue';
+import Badge from './Badge.vue';
 
 export default {
   components: {

@@ -1,0 +1,34 @@
+@use "sass:color";
+
+.DocSearch {
+  // Common
+  --docsearch-primary-color: #{$md-color-pink};
+  --docsearch-text-color: #{$md-color-white};
+  --docsearch-highlight-color: var(--docsearch-primary-color);
+  --docsearch-icon-color: var(--docsearch-text-color);
+
+  // Modal
+  --docsearch-modal-background: #{$md-color-white};
+
+  // Searchbox
+  --docsearch-searchbox-background: #{color.scale($md-color-blue, $lightness: -30%)};
+  --docsearch-searchbox-focus-background: #{$md-color-blue};
+  --docsearch-searchbox-shadow: inset 0 0 0 2px #{color.scale($md-color-blue, $saturation: -50%, $lightness: 30%)};
+
+  // Key
+  --docsearch-key-gradient: linear-gradient(
+    -225deg,
+    #{md-color-black--light} 0%,
+    #{md-color-black} 100%
+  );
+  --docsearch-key-shadow: inset 0 -2px 0 0 #{$md-color-blue}, inset 0 0 1px 1px #{$md-color-blue}, 0 2px 2px 0 #{$md-color-black--lighter};
+  --docsearch-key-pressed-shadow: inset 0 0 1px 1px #{$md-color-blue}, 0 2px 2px 0 #{$md-color-black--lighter};
+}
+
+.DocSearch {
+  font-size: 1.5rem;
+
+  kbd {
+    font-size: 1.2rem;
+  }
+}

@@ -58,8 +58,8 @@
               <Content />
               <hr class="solid">
               <div class="edit-link" style="color: #4e6e8e;">
-                <a :href="getGithubLink()">Edit this page on Github</a>
-                <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span>
+                <a target="_blank" rel="noopener noreferrer" :href="getGithubLink()">Edit this page on Github</a>
+                <span class="sr-only">(opens new window)</span>
               </div>
             </article>
           </div>
@@ -72,7 +72,8 @@
 </template>
 
 <script>
-import Clipboard from 'clipboard';
+import { usePageData, useRouter } from 'vuepress/client';
+
 import Header from './Header.vue';
 import DeprecatedBanner from '../components/DeprecatedBanner.vue';
 import Sidebar from './Sidebar.vue';
@@ -81,13 +82,7 @@ import Footer from './Footer.vue';
 import { getCurrentVersion, DEFAULT_VERSION } from '../helpers';
 import MajorVersionDeprecation from '../components/MajorVersionDeprecation.vue';
 import ClosedSourcesBanner from '../components/ClosedSourcesBanner.vue';
-import repositories from '../../../.repos/repositories.json'
-
-const {
-  getFirstValidChild,
-  setItemLocalStorage,
-  getItemLocalStorage
-} = require('../util.js');
+import repositories from '../../../.repos/repositories.json';
 
 export default {
   components: {
@@ -99,10 +94,18 @@ export default {
     MajorVersionDeprecation,
     ClosedSourcesBanner
   },
+  setup() {
+    return {
+      page$: usePageData(),
+      router$: useRouter(),
+    };
+  },
   data() {
     return {
       sidebarOpen: false,
-      isLoading: true
+      isLoading: true,
+      headerResizeObserver: undefined,
+      removeRouterListener: undefined,
     };
   },
   computed: {
@@ -110,21 +113,21 @@ export default {
       return DEFAULT_VERSION;
     },
     kuzzleMajor() {
-      return getCurrentVersion(this.$page, null);
+      return getCurrentVersion(this.page$);
     },
     sdkOrApiPage() {
-      if (!this.$page.currentSection) {
+      if (!this.page$.currentSection) {
         return false;
       }
 
       return (
-        (this.$page.currentSection.section === 'sdk' &&
-          this.$page.currentSection.subsection) ||
-        this.$page.currentSection.subsection === 'api'
+        (this.page$.currentSection.section === 'sdk' &&
+          this.page$.currentSection.subsection) ||
+        this.page$.currentSection.subsection === 'api'
       );
     },
     sdkList() {
-      return this.$page.sectionList.filter(
+      return this.page$.sectionList.filter(
         s =>
           s.kuzzleMajor === this.kuzzleMajor &&
           (s.section === 'sdk' || s.subsection === 'api') &&
@@ -132,30 +135,30 @@ export default {
       );
     },
     showDeprecatedBanner() {
-      if (!this.$page.currentSection || !this.$page.currentSection.deprecated) {
+      if (!this.page$.currentSection || !this.page$.currentSection.deprecated) {
         return false;
       }
 
-      return this.$page.currentSection.deprecated;
+      return this.page$.currentSection.deprecated;
     },
     deprecatedBannerComponent() {
-      return this.$page.currentSection.deprecatedBannerComponent || null;
+      return this.page$.currentSection.deprecatedBannerComponent || null;
     },
     isClosedSourcesSection() {
       if (
-        !this.$page.currentSection ||
-        !this.$page.currentSection.closedSources
+        !this.page$.currentSection ||
+        !this.page$.currentSection.closedSources
       ) {
         return false;
       }
 
-      return this.$page.currentSection.closedSources;
-    }
+      return this.page$.currentSection.closedSources;
+    },
   },
   methods: {
     getGithubLink () {
-      const fullPath = this.$page.fullPath;
-      const base = fullPath.replace(this.$page.regularPath, '');
+      const fullPath = this.page$.fullPath;
+      const base = fullPath.replace(this.page$.regularPath, '');
       const relativePath = fullPath.replace(base, '');
       const repository = repositories.find(repo => repo.deploy_path.startsWith(base));
 
@@ -173,45 +176,19 @@ export default {
     closeSidebar() {
       this.sidebarOpen = false;
     },
-    onCodeCopied(action) {
-      const message = action.trigger.parentElement.querySelector(
-        '.md-clipboard__message'
-      );
-      if (!(message instanceof HTMLElement)) throw new ReferenceError();
-
-      /* Clear selection and reset debounce logic */
-      action.clearSelection();
-      if (message.dataset.mdTimer)
-        clearTimeout(parseInt(message.dataset.mdTimer, 10));
-
-      /* Set message indicating success and show it */
-      message.classList.add('md-clipboard__message--active');
-
-      /* Hide message after two seconds */
-      message.dataset.mdTimer = setTimeout(() => {
-        message.classList.remove('md-clipboard__message--active');
-        message.dataset.mdTimer = '';
-      }, 2000).toString();
-
-      this.$ga('send', 'event', 'snippet', 'copied', 'label', 1, {
-        path: this.$route.path
-      });
-    },
     computeContentHeight() {
       this.setContainerPadding();
-      setTimeout(() => {
-        this.computeSidebarHeight();
-      }, 200);
+      this.computeSidebarHeight();
     },
     setContainerPadding() {
       try {
         const padding = this.$refs.header.$el.querySelector('header')
           .offsetHeight;
-  
+
         if (padding === null || typeof padding === 'undefined') {
           return;
         }
-  
+
         this.$refs.container.style = `padding-top: ${padding}px;`;
       } catch (error) {
         return;
@@ -271,6 +248,7 @@ export default {
         window.scrollTo(0, anchorElement.offsetTop);
     }
 
+    this.isLoading = document.readyState !== 'complete';
     document.onreadystatechange = () => {
       if (document.readyState === 'complete') {
         this.isLoading = false;
@@ -280,25 +258,25 @@ export default {
     window.addEventListener('resize', this.computeContentHeight.bind(this));
     window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
 
-    // TODO condition isSupported()
-    const copy = new Clipboard('.md-clipboard', {
-      target: trigger => {
-        return trigger.parentElement.nextElementSibling;
-      }
+    this.headerResizeObserver = new ResizeObserver(
+      this.computeContentHeight.bind(this)
+    );
+    this.headerResizeObserver.observe(this.$refs.header.$el.querySelector('header'));
+
+    this.removeRouterListener = this.router$.afterEach(() => {
+      this.$nextTick(() => {
+        this.computeContentHeight();
+      });
     });
 
-    copy.on('success', this.onCodeCopied);
-
     this.computeContentHeight();
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.computeContentHeight.bind(this));
+    window.removeEventListener('scroll', this.computeSidebarHeight.bind(this));
+
+    this.headerResizeObserver.disconnect();
+    this.removeRouterListener?.();
   }
 };
 </script>
-
-<style src="prismjs/themes/prism-tomorrow.css"></style>
-<style src="./styles/main.scss" lang="scss"></style>
-
-<style lang="scss">
-.md-layout {
-  height: 100%;
-}
-</style>
