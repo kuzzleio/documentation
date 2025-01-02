@@ -297,7 +297,7 @@
     "url": "https://github.com/kuzzleio/iot-platform.git",
     "repo_name": "iot-platform",
     "doc_version": 3,
-    "stable": "master",
+    "stable": "stable",
     "dev": "beta",
     "deploy_path": "/iot-platform/3/",
     "name": "iot-platform-3",
