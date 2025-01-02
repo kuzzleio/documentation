@@ -57,10 +57,19 @@
     "url": "https://github.com/kuzzleio/kuzzle-plugin-s3.git",
     "repo_name": "kuzzle-plugin-s3",
     "doc_version": 2,
-    "stable": "master",
-    "dev": "beta",
+    "stable": "2-stable",
+    "dev": "2-dev",
     "name": "plugin-s3-2",
     "deploy_path": "/official-plugins/s3/2/"
+  },
+  {
+    "url": "https://github.com/kuzzleio/kuzzle-plugin-s3.git",
+    "repo_name": "kuzzle-plugin-s3",
+    "doc_version": 3,
+    "stable": "master",
+    "dev": "beta",
+    "name": "plugin-s3-3",
+    "deploy_path": "/official-plugins/s3/3/"
   },
   {
     "url": "https://github.com/kuzzleio/sdk-php.git",
