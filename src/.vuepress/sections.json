@@ -270,6 +270,15 @@
     "icon": "/logos/plugin-s3.svg",
     "released": true
   },
+  "/official-plugins/s3/3": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "s3",
+    "name": "S3",
+    "version": 3,
+    "icon": "/logos/plugin-s3.svg",
+    "released": true
+  },
   "/official-plugins/cloudinary/1": {
     "kuzzleMajor": 1,
     "section": "official-plugins",
