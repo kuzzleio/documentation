@@ -298,7 +298,7 @@
     "repo_name": "iot-platform",
     "doc_version": 3,
     "stable": "stable",
-    "dev": "beta",
+    "dev": "3-beta",
     "deploy_path": "/iot-platform/3/",
     "name": "iot-platform-3",
     "private": true
