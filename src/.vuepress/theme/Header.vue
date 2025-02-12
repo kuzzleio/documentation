@@ -6,7 +6,12 @@
         <!-- Link to home -->
         <div>
           <a href="/" class="md-header-nav__button md-logo">
-            <img :src="$withBase('/logo-min.png')" alt= "kuzzle logo mini" width="40" height="40" />
+            <img
+              :src="$withBase('/logo-min.png')"
+              alt="kuzzle logo mini"
+              width="40"
+              height="40"
+            />
           </a>
         </div>
 
@@ -41,6 +46,9 @@
           <SearchBox :options="searchboxOptions" />
         </div>
 
+        <div class="divider"></div>
+        <button class="btnCta"><a href="https://kuzzle.io" target="_blank">Discover Kuzzle</a></button>
+
         <!-- Repository containing source -->
         <!-- <div class="md-flex__cell md-flex__cell--shrink">
               <div class="md-header-nav__source">
@@ -61,20 +69,20 @@ export default {
   components: {
     TopMenu,
     TopMenuV1,
-    MajorVersionSelector
+    MajorVersionSelector,
   },
   name: 'Header',
   props: {
     kuzzleMajor: {
       type: Number,
-      default: 2
-    }
+      default: 2,
+    },
   },
   computed: {
     debugInfo() {
       return JSON.stringify(
         {
-          kuzzleMajor: this.kuzzleMajor
+          kuzzleMajor: this.kuzzleMajor,
         },
         null,
         2
@@ -83,10 +91,19 @@ export default {
     searchboxOptions() {
       return {
         searchParameters: {
-          facetFilters: [`version:${this.kuzzleMajor}`]
-        }
+          facetFilters: [`version:${this.kuzzleMajor}`],
+        },
       };
-    }
-  }
+    },
+  },
 };
 </script>
+
+<style lang="scss">
+.divider {
+  height: 30px;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 0.5rem;
+}
+</style>
