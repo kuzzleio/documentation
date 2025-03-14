@@ -486,5 +486,13 @@
     "subsection": "openid",
     "icon": "/logos/open-id.svg",
     "released": true
+  },
+  "/logger/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "Logger",
+    "section": "logger",
+    "icon": "/logos/paas-logo.svg",
+    "released": true
   }
 }

@@ -332,5 +332,14 @@
     "deploy_path": "/official-plugins/openid/1/",
     "name": "kuzzle-plugin-auth-openid-1",
     "private": true
+  },
+  {
+    "url": "https://github.com/kuzzleio/kuzzle-logger",
+    "repo_name": "kuzzle-logger",
+    "doc_version": 1,
+    "stable": "main",
+    "dev": "1-dev",
+    "deploy_path": "/logger/1/",
+    "name": "kuzzle-logger-1"
   }
 ]

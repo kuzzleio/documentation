@@ -69,6 +69,17 @@
                 >IoT Platform</a
               >
             </li>
+            <li class="topMenu__item">
+              <a
+                :href="`/logger/1`"
+                :class="{
+                  'topMenu__link--active': isLinkActive(`/logger/1`),
+                }"
+                title="Logger"
+                class="topMenu__link"
+                >Logger</a
+              >
+            </li>
           </ul>
         </li>
       </ul>
