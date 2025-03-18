@@ -492,6 +492,7 @@
     "version": 1,
     "name": "Logger",
     "section": "modules",
+    "subsection": "logger",
     "icon": "/logos/module-logger.svg",
     "released": true
   }
