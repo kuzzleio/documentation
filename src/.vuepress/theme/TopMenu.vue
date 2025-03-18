@@ -49,6 +49,17 @@
             </li>
             <li class="topMenu__item">
               <a
+                :href="`/modules`"
+                :class="{
+                  'topMenu__link--active': isLinkActive(`/modules`),
+                }"
+                title="Modules"
+                class="topMenu__link"
+                >Modules</a
+              >
+            </li>
+            <li class="topMenu__item">
+              <a
                 :href="`/paas-console/1`"
                 :class="{
                   'topMenu__link--active': isLinkActive(`/paas-console/1`),
@@ -67,17 +78,6 @@
                 title="IoT Platform"
                 class="topMenu__link"
                 >IoT Platform</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/logger/1`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/logger/1`),
-                }"
-                title="Logger"
-                class="topMenu__link"
-                >Logger</a
               >
             </li>
           </ul>

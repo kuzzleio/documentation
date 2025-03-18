@@ -1,0 +1,11 @@
+{
+  "2": [
+    {
+      "name": "Logger",
+      "path": "https://github.com/kuzzleio/kuzzle-logger",
+      "version": "1",
+      "icon": "/logos/module-logger.svg",
+      "iconAlt": "logger logo"
+    }
+  ]
+}
