@@ -2,7 +2,7 @@
 code: false
 type: root
 order: 3
-title: Kuzzle Official Modules
+title: Official Kuzzle Modules
 meta:
   - name: description
     content: You can find here a list of officially released kuzzle modules
@@ -10,8 +10,4 @@ meta:
     content: Kuzzle, modules, official
 ---
 
-# Official Modules
-
-Below you’ll find the ones we officially released.
-
-<ModulesIndex :kuzzle-major="2" />
+<Redirect to="/v2" />

@@ -49,9 +49,9 @@
             </li>
             <li class="topMenu__item">
               <a
-                :href="`/modules`"
+                :href="`/modules/v${kuzzleMajor}.html`"
                 :class="{
-                  'topMenu__link--active': isLinkActive(`/modules`),
+                  'topMenu__link--active': isLinkActive(`/modules/`),
                 }"
                 title="Modules"
                 class="topMenu__link"
