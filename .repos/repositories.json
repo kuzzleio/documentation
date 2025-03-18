@@ -339,7 +339,7 @@
     "doc_version": 1,
     "stable": "main",
     "dev": "1-dev",
-    "deploy_path": "/logger/1/",
+    "deploy_path": "/modules/logger/1/",
     "name": "kuzzle-logger-1"
   }
 ]

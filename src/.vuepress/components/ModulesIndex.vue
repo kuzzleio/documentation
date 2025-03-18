@@ -17,8 +17,6 @@
 <script>
 import { usePageData } from 'vuepress/client';
 
-import externalModules from '../external-modules.json';
-
 export default {
   name: 'ModulesIndex',
   methods: {},
@@ -40,7 +38,6 @@ export default {
             // sections that are not released yet
             (BRANCH === 'master' ? s.released === true : true)
         )
-        .concat(externalModules[this.kuzzleMajor]);
     },
   },
   setup() {
