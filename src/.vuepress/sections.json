@@ -491,7 +491,7 @@
     "kuzzleMajor": 2,
     "version": 1,
     "name": "Logger",
-    "section": "logger",
+    "section": "modules",
     "icon": "/logos/module-logger.svg",
     "released": true
   }
