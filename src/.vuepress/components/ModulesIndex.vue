@@ -28,7 +28,7 @@ export default {
     },
   },
   computed: {
-    pluginList() {
+    modList() {
       return this.page$.sectionList
         .filter(
           (s) =>
