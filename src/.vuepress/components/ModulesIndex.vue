@@ -17,6 +17,7 @@
 <script>
 import { usePageData } from 'vuepress/client';
 
+import externalModules from '../external-modules.json';
 
 export default {
   name: 'ModulesIndex',
