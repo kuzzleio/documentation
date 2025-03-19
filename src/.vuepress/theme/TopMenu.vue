@@ -49,6 +49,17 @@
             </li>
             <li class="topMenu__item">
               <a
+                :href="`/modules/v${kuzzleMajor}.html`"
+                :class="{
+                  'topMenu__link--active': isLinkActive(`/modules/`),
+                }"
+                title="Modules"
+                class="topMenu__link"
+                >Modules</a
+              >
+            </li>
+            <li class="topMenu__item">
+              <a
                 :href="`/paas-console/1`"
                 :class="{
                   'topMenu__link--active': isLinkActive(`/paas-console/1`),
