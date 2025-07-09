@@ -3,43 +3,27 @@
 </template>
 
 <script>
-import { useRouter } from 'vuepress/client';
+import { onMounted, nextTick } from 'vue';
 
 export default {
   name: 'redirect',
   props: {
-    reload: {
-      type: Boolean,
-      default: false,
-    },
     to: {
       type: String,
       required: true,
     },
   },
-  setup() {
-    return { router$: useRouter() };
-  },
-  mounted() {
-    let target = this.to;
-    if (!target.endsWith('/')) {
-      target += '/';
-    }
-
-    if (!this.reload) {
-      this.router$
-        .push(target)
-        .then(() => {
-          console.log(`Redirected to ${target}`);
-        })
-        .catch((err) => {
-          if (err) {
-            // Nothing with the error
-          }
-        });
-    } else {
-      window.location.href = target;
-    }
+  setup(props) {
+    onMounted(async () => {
+      await nextTick();
+      
+      if (typeof window !== 'undefined') {
+        const targetUrl = props.to.endsWith('/') ? props.to : `${props.to}/`;
+        window.location.replace(targetUrl);
+      }
+    });
+    
+    return {};
   },
 };
 </script>

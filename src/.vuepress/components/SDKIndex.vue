@@ -7,8 +7,14 @@
         :href="sdk.path"
         class="Tiles-item"
       >
-        <div class="ribbon" v-if="sdk.kuzzleMajor === 2 && sdk.deprecated"><span>Deprecated</span></div>
-        <img :src="$withBase(sdk.icon)" :alt="`${sdk.name} logo`" class="Tiles-item-logo" />
+        <div class="ribbon" v-if="sdk.kuzzleMajor === 2 && sdk.deprecated">
+          <span>Deprecated</span>
+        </div>
+        <img
+          :src="$withBase(sdk.icon)"
+          :alt="`${sdk.name} logo`"
+          class="Tiles-item-logo"
+        />
         <div class="Tiles-item-name">{{ sdk.name }} v{{ sdk.version }}.x</div>
       </a>
     </div>
@@ -21,15 +27,12 @@
           href="https://github.com/kuzzleio/kuzzle_dart"
           class="Tiles-item min"
         >
-          <img :src="$withBase('/logos/dart.svg')" alt="dart logo" class="Tiles-item-logo" />
+          <img
+            :src="$withBase('/logos/dart.svg')"
+            alt="dart logo"
+            class="Tiles-item-logo"
+          />
           <div class="Tiles-item-name">Dart</div>
-        </a>
-        <a
-          href="https://github.com/alexandrebouthinon/kuzzle-sdk-rust"
-          class="Tiles-item min"
-        >
-          <img :src="$withBase('/logos/rust.svg')" alt="rust logo" class="Tiles-item-logo" />
-          <div class="Tiles-item-name">Rust</div>
         </a>
       </div>
       <span>
@@ -55,17 +58,14 @@ export default {
   computed: {
     sdkList() {
       const sdks = this.page$.sectionList
-        .filter(s => s.kuzzleMajor === this.kuzzleMajor)
-        .filter(s => s.section === 'sdk')
-        .filter(s => s.subsection)
-        .filter(s => (BRANCH === 'master' ? s.released === true : true));
+        .filter((s) => s.kuzzleMajor === this.kuzzleMajor)
+        .filter((s) => s.section === 'sdk')
+        .filter((s) => s.subsection)
+        .filter((s) => (BRANCH === 'master' ? s.released === true : true));
 
-      const deprecatedSdks = sdks
-        .filter(s => s.deprecated)
+      const deprecatedSdks = sdks.filter((s) => s.deprecated);
 
-      return sdks
-        .filter(s => !s.deprecated)
-        .concat(deprecatedSdks)
+      return sdks.filter((s) => !s.deprecated).concat(deprecatedSdks);
     },
   },
   setup() {
@@ -74,5 +74,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
