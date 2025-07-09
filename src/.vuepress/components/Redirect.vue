@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import { useRouter } from '@vuepress/client';
 import { onMounted, nextTick } from 'vue';
 
 export default {
@@ -18,7 +17,7 @@ export default {
     onMounted(async () => {
       await nextTick();
       
-      if (typeof window !== 'undefined') {
+      if (typeof window !== 'undefined' && this.to) {
         const targetUrl = this.to.endsWith('/') ? this.to : `${this.to}/`;
         window.location.replace(targetUrl);
       }
