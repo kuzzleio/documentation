@@ -17,8 +17,8 @@ export default {
     onMounted(async () => {
       await nextTick();
       
-      if (typeof window !== 'undefined' && this.to) {
-        const targetUrl = this.to.endsWith('/') ? this.to : `${this.to}/`;
+      if (typeof window !== 'undefined') {
+        const targetUrl = props.to.endsWith('/') ? props.to : `${props.to}/`;
         window.location.replace(targetUrl);
       }
     });
