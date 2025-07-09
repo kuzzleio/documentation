@@ -1,7 +1,6 @@
 <template>
   <div class="md-layout">
     <AlgoliaTags :kuzzle-major="kuzzleMajor" />
-    <div class="overlayLoading" v-if="isLoading" />
     <div
       class="overlay"
       :class="{ hidden: !sidebarOpen }"
@@ -103,7 +102,6 @@ export default {
   data() {
     return {
       sidebarOpen: false,
-      isLoading: true,
       headerResizeObserver: undefined,
       removeRouterListener: undefined,
     };
@@ -247,13 +245,6 @@ export default {
       if (anchorElement && anchorElement.offsetTop)
         window.scrollTo(0, anchorElement.offsetTop);
     }
-
-    this.isLoading = document.readyState !== 'complete';
-    document.onreadystatechange = () => {
-      if (document.readyState === 'complete') {
-        this.isLoading = false;
-      }
-    };
 
     window.addEventListener('resize', this.computeContentHeight.bind(this));
     window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
