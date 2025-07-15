@@ -35,7 +35,6 @@
 
         <div class="md-header-nav__top-menu-container">
           <div class="screen-only">
-            <div style="display: none">{{ debugInfo }}</div>
             <TopMenu :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 2" />
             <TopMenuV1 :kuzzle-major="kuzzleMajor" v-else />
           </div>
@@ -79,15 +78,6 @@ export default {
     },
   },
   computed: {
-    debugInfo() {
-      return JSON.stringify(
-        {
-          kuzzleMajor: this.kuzzleMajor,
-        },
-        null,
-        2
-      );
-    },
     searchboxOptions() {
       return {
         searchParameters: {

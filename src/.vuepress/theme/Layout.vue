@@ -1,7 +1,6 @@
 <template>
   <div class="md-layout">
     <AlgoliaTags :kuzzle-major="kuzzleMajor" />
-    <div class="overlayLoading" v-if="isLoading" />
     <div
       class="overlay"
       :class="{ hidden: !sidebarOpen }"
@@ -56,22 +55,10 @@
             <closed-sources-banner v-if="isClosedSourcesSection" />
             <article class="md-content__inner md-typeset">
               <Content />
-              <hr class="solid" />
-              <div class="edit-link" style="color: #4e6e8e">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  :href="getGithubLink()"
-                  >Edit this page on Github</a
-                >
-                <span class="sr-only">(opens new window)</span>
-              </div>
             </article>
           </div>
         </div>
       </main>
-
-      <Footer ref="footer" />
     </div>
   </div>
 </template>
@@ -83,11 +70,9 @@ import Header from './Header.vue';
 import DeprecatedBanner from '../components/DeprecatedBanner.vue';
 import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
-import Footer from './Footer.vue';
 import { getCurrentVersion, DEFAULT_VERSION } from '../helpers';
 import MajorVersionDeprecation from '../components/MajorVersionDeprecation.vue';
 import ClosedSourcesBanner from '../components/ClosedSourcesBanner.vue';
-import repositories from '../../../.repos/repositories.json';
 
 export default {
   components: {
@@ -95,7 +80,6 @@ export default {
     Sidebar,
     TOC,
     DeprecatedBanner,
-    Footer,
     MajorVersionDeprecation,
     ClosedSourcesBanner,
   },
@@ -107,7 +91,6 @@ export default {
   },
   data() {
     return {
-      isLoading: true,
       sidebarOpen: false,
       headerResizeObserver: undefined,
       removeRouterListener: undefined,
@@ -161,24 +144,6 @@ export default {
     },
   },
   methods: {
-    getGithubLink() {
-      const fullPath = this.page$.fullPath;
-      const base = fullPath.replace(this.page$.regularPath, '');
-      const relativePath = fullPath.replace(base, '');
-      const repository = repositories.find((repo) =>
-        repo.deploy_path.startsWith(base)
-      );
-
-      if (!repository) {
-        return;
-      }
-
-      const link = `${repository.url.replace('.git', '')}/blob/${
-        repository.dev
-      }/doc/${repository.doc_version}/${relativePath}index.md`;
-
-      return link;
-    },
     openSidebar() {
       this.sidebarOpen = true;
     },
@@ -232,13 +197,13 @@ export default {
       }
 
       const visible = window.innerHeight - topBoundary;
-      let sidebarHeight = visible - this.$refs.footer.$el.offsetHeight;
+      let sidebarHeight = visible - 0;
 
       if (this.$refs.container.offsetHeight > visible) {
         sidebarHeight = Math.min(
           visible,
           this.$refs.container.offsetHeight -
-            this.$refs.footer.$el.offsetHeight -
+            0 -
             window.pageYOffset -
             topBoundary
         );
@@ -269,8 +234,6 @@ export default {
       this.computeContentHeight();
     } catch (error) {
       console.error('Error setting up layout:', error);
-    } finally {
-      this.isLoading = false;
     }
   },
   beforeUnmount() {
