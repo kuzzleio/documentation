@@ -249,13 +249,13 @@ export default {
     },
   },
   mounted() {
-    // fix scroll to anchor on chrome https://github.com/vuejs/vuepress/issues/2558
-    if (location.hash && location.hash !== '#') {
-      const anchorLocation = decodeURIComponent(location.hash);
-      const anchorElement = document.querySelector(anchorLocation);
-      if (anchorElement && anchorElement.offsetTop)
-        window.scrollTo(0, anchorElement.offsetTop);
-    }
+    // // fix scroll to anchor on chrome https://github.com/vuejs/vuepress/issues/2558
+    // if (location.hash && location.hash !== '#') {
+    //   const anchorLocation = decodeURIComponent(location.hash);
+    //   const anchorElement = document.querySelector(anchorLocation);
+    //   if (anchorElement && anchorElement.offsetTop)
+    //     window.scrollTo(0, anchorElement.offsetTop);
+    // }
 
     window.addEventListener('resize', this.computeContentHeight.bind(this));
     window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
