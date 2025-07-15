@@ -249,32 +249,29 @@ export default {
     },
   },
   mounted() {
-    // // fix scroll to anchor on chrome https://github.com/vuejs/vuepress/issues/2558
-    // if (location.hash && location.hash !== '#') {
-    //   const anchorLocation = decodeURIComponent(location.hash);
-    //   const anchorElement = document.querySelector(anchorLocation);
-    //   if (anchorElement && anchorElement.offsetTop)
-    //     window.scrollTo(0, anchorElement.offsetTop);
-    // }
+    try {
+      window.addEventListener('resize', this.computeContentHeight.bind(this));
+      window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
 
-    window.addEventListener('resize', this.computeContentHeight.bind(this));
-    window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
+      this.headerResizeObserver = new ResizeObserver(
+        this.computeContentHeight.bind(this)
+      );
+      this.headerResizeObserver.observe(
+        this.$refs.header.$el.querySelector('header')
+      );
 
-    this.headerResizeObserver = new ResizeObserver(
-      this.computeContentHeight.bind(this)
-    );
-    this.headerResizeObserver.observe(
-      this.$refs.header.$el.querySelector('header')
-    );
-
-    this.removeRouterListener = this.router$.afterEach(() => {
-      this.$nextTick(() => {
-        this.computeContentHeight();
+      this.removeRouterListener = this.router$.afterEach(() => {
+        this.$nextTick(() => {
+          this.computeContentHeight();
+        });
       });
-    });
 
-    this.computeContentHeight();
-    this.isLoading = false;
+      this.computeContentHeight();
+    } catch (error) {
+      console.error('Error setting up layout:', error);
+    } finally {
+      this.isLoading = false;
+    }
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.computeContentHeight.bind(this));
