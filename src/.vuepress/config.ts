@@ -397,27 +397,24 @@ export default defineUserConfig({
       id: JSON.stringify(process.env.GA_ID) || JSON.stringify(googleAnalyticsID),
     }),
     backToTopPlugin(),
-    shikiPlugin({
-      langs: ['js', 'ts', 'json', 'vue', 'md', 'sh', 'java', 'xml', 'groovy', 'kotlin', 'yaml', 'dart', 'csharp', 'dockerfile', 'http'],
-      theme: 'catppuccin-macchiato',
-    }),
-    copyCodePlugin({
-      selector: '.md-content div[class*="language-"] pre',
-    }),
-    markdownContainerPlugin({
-      type: 'info',
-      before: () => '<div class="alert alert-info"><font-awesome-icon icon="fa-solid fa-circle-info" /><div class="content">',
-      after: () => '</div></div>',
-    }),
-    markdownContainerPlugin({
-      type: 'success',
-      before: () => '<div class="alert alert-success"><font-awesome-icon icon="fa-solid fa-circle-check" /><div class="content">',
-      after: () => '</div></div>',
-    }),
-    markdownContainerPlugin({
-      type: 'warning',
-      before: () => '<div class="alert alert-warning"><font-awesome-icon icon="fa-solid fa-triangle-exclamation" /><div class="content">',
-      after: () => '</div></div>',
-    }),
+    copyCodePlugin(),
+    // shikiPlugin({
+    //   langs: ['js', 'ts', 'json', 'vue', 'md', 'sh', 'java', 'xml', 'groovy', 'kotlin', 'yaml', 'dart', 'csharp', 'dockerfile', 'http'],
+    // }),
+    // markdownContainerPlugin({
+    //   type: 'info',
+    //   before: () => '<div class="alert alert-info"><font-awesome-icon icon="fa-solid fa-circle-info" /><div class="content">',
+    //   after: () => '</div></div>',
+    // }),
+    // markdownContainerPlugin({
+    //   type: 'success',
+    //   before: () => '<div class="alert alert-success"><font-awesome-icon icon="fa-solid fa-circle-check" /><div class="content">',
+    //   after: () => '</div></div>',
+    // }),
+    // markdownContainerPlugin({
+    //   type: 'warning',
+    //   before: () => '<div class="alert alert-warning"><font-awesome-icon icon="fa-solid fa-triangle-exclamation" /><div class="content">',
+    //   after: () => '</div></div>',
+    // }),
   ],
 });
