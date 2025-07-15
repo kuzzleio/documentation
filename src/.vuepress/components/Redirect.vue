@@ -18,9 +18,6 @@ export default {
       await nextTick();
 
       if (typeof window !== 'undefined') {
-        console.log(props.to);
-        console.log('window.location', window.location);
-
         // Remove leading/trailing slashes and ensure proper joining
         const joinUrl = (base, path) => {
           const cleanBase = base.replace(/\/$/, '');

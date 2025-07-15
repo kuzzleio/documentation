@@ -1,6 +1,7 @@
 <template>
   <div class="md-layout">
     <AlgoliaTags :kuzzle-major="kuzzleMajor" />
+    <div class="overlayLoading" v-if="isLoading" />
     <div
       class="overlay"
       :class="{ hidden: !sidebarOpen }"
@@ -55,9 +56,14 @@
             <closed-sources-banner v-if="isClosedSourcesSection" />
             <article class="md-content__inner md-typeset">
               <Content />
-              <hr class="solid">
-              <div class="edit-link" style="color: #4e6e8e;">
-                <a target="_blank" rel="noopener noreferrer" :href="getGithubLink()">Edit this page on Github</a>
+              <hr class="solid" />
+              <div class="edit-link" style="color: #4e6e8e">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  :href="getGithubLink()"
+                  >Edit this page on Github</a
+                >
                 <span class="sr-only">(opens new window)</span>
               </div>
             </article>
@@ -91,7 +97,7 @@ export default {
     DeprecatedBanner,
     Footer,
     MajorVersionDeprecation,
-    ClosedSourcesBanner
+    ClosedSourcesBanner,
   },
   setup() {
     return {
@@ -101,6 +107,7 @@ export default {
   },
   data() {
     return {
+      isLoading: true,
       sidebarOpen: false,
       headerResizeObserver: undefined,
       removeRouterListener: undefined,
@@ -126,7 +133,7 @@ export default {
     },
     sdkList() {
       return this.page$.sectionList.filter(
-        s =>
+        (s) =>
           s.kuzzleMajor === this.kuzzleMajor &&
           (s.section === 'sdk' || s.subsection === 'api') &&
           s.released
@@ -154,17 +161,21 @@ export default {
     },
   },
   methods: {
-    getGithubLink () {
+    getGithubLink() {
       const fullPath = this.page$.fullPath;
       const base = fullPath.replace(this.page$.regularPath, '');
       const relativePath = fullPath.replace(base, '');
-      const repository = repositories.find(repo => repo.deploy_path.startsWith(base));
+      const repository = repositories.find((repo) =>
+        repo.deploy_path.startsWith(base)
+      );
 
-      if (! repository) {
+      if (!repository) {
         return;
       }
 
-      const link = `${repository.url.replace('.git', '')}/blob/${repository.dev}/doc/${repository.doc_version}/${relativePath}index.md`;
+      const link = `${repository.url.replace('.git', '')}/blob/${
+        repository.dev
+      }/doc/${repository.doc_version}/${relativePath}index.md`;
 
       return link;
     },
@@ -180,8 +191,8 @@ export default {
     },
     setContainerPadding() {
       try {
-        const padding = this.$refs.header.$el.querySelector('header')
-          .offsetHeight;
+        const padding =
+          this.$refs.header.$el.querySelector('header').offsetHeight;
 
         if (padding === null || typeof padding === 'undefined') {
           return;
@@ -213,8 +224,8 @@ export default {
         return;
       }
 
-      const topBoundary = this.$refs.header.$el.querySelector('header')
-        .offsetHeight;
+      const topBoundary =
+        this.$refs.header.$el.querySelector('header').offsetHeight;
 
       if (topBoundary === null || typeof topBoundary === 'undefined') {
         return;
@@ -235,7 +246,7 @@ export default {
 
       this.$refs.sidebar.$el.style = `height: ${sidebarHeight}px`;
       this.$refs.toc.style = `height: ${sidebarHeight}px`;
-    }
+    },
   },
   mounted() {
     // fix scroll to anchor on chrome https://github.com/vuejs/vuepress/issues/2558
@@ -252,7 +263,9 @@ export default {
     this.headerResizeObserver = new ResizeObserver(
       this.computeContentHeight.bind(this)
     );
-    this.headerResizeObserver.observe(this.$refs.header.$el.querySelector('header'));
+    this.headerResizeObserver.observe(
+      this.$refs.header.$el.querySelector('header')
+    );
 
     this.removeRouterListener = this.router$.afterEach(() => {
       this.$nextTick(() => {
@@ -261,6 +274,7 @@ export default {
     });
 
     this.computeContentHeight();
+    this.isLoading = false;
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.computeContentHeight.bind(this));
@@ -268,6 +282,6 @@ export default {
 
     this.headerResizeObserver.disconnect();
     this.removeRouterListener?.();
-  }
+  },
 };
 </script>
