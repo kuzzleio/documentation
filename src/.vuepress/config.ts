@@ -397,12 +397,9 @@ export default defineUserConfig({
       id: JSON.stringify(process.env.GA_ID) || JSON.stringify(googleAnalyticsID),
     }),
     backToTopPlugin(),
+    copyCodePlugin(),
     shikiPlugin({
       langs: ['js', 'ts', 'json', 'vue', 'md', 'sh', 'java', 'xml', 'groovy', 'kotlin', 'yaml', 'dart', 'csharp', 'dockerfile', 'http'],
-      theme: 'catppuccin-macchiato',
-    }),
-    copyCodePlugin({
-      selector: '.md-content div[class*="language-"] pre',
     }),
     markdownContainerPlugin({
       type: 'info',

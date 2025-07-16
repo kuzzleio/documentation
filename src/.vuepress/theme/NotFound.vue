@@ -10,25 +10,6 @@
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           <!-- Main navigation -->
-          <Sidebar
-            ref="sidebar"
-            :kuzzleMajor="kuzzleMajor"
-            :sdkList="[]"
-            :sidebarOpen="sidebarOpen"
-            @closeSidebar="closeSidebar"
-          />
-          <div
-            class="md-sidebar md-sidebar--primary"
-            data-md-component="navigation"
-            ref="sidebar"
-          >
-            <div
-              v-if="!page$.frontmatter.nosidebar"
-              class="md-sidebar__scrollwrap"
-            >
-              <div class="md-sidebar__inner"></div>
-            </div>
-          </div>
 
           <!-- Main container -->
           <div class="md-content">
@@ -55,7 +36,6 @@
           </div>
         </div>
       </main>
-      <Footer ref="footer" />
     </div>
   </div>
 </template>
@@ -66,15 +46,11 @@ import { usePageData } from 'vuepress/client';
 import { getCurrentVersion } from '../helpers';
 import Header from './Header.vue';
 import btnCta from '../components/Cta.vue';
-import Footer from './Footer.vue';
-import Sidebar from './Sidebar.vue';
 
 export default {
   components: {
     Header,
     btnCta,
-    Footer,
-    Sidebar
   },
   data() {
     return {

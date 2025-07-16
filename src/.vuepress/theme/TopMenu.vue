@@ -19,11 +19,30 @@
               >
             </li>
             <li class="topMenu__item">
-              <MenuDropdown
+              <a
+                :href="`/core/${kuzzleMajor}/api/`"
+                :class="{
+                  'topMenu__link--active': isLinkActive(
+                    `/core/${kuzzleMajor}/api/`
+                  ),
+                }"
+                title="API"
                 class="topMenu__link"
-                title="References"
-                :items="referencesItems"
-              />
+                >API</a
+              >
+            </li>
+            <li class="topMenu__item">
+              <a
+                :href="`/core/${kuzzleMajor}/framework/`"
+                :class="{
+                  'topMenu__link--active': isLinkActive(
+                    `/core/${kuzzleMajor}/framework/`
+                  ),
+                }"
+                title="Framework"
+                class="topMenu__link"
+                >Framework</a
+              >
             </li>
             <li class="topMenu__item">
               <a
@@ -108,14 +127,6 @@ export default {
     },
     kuzzleMajor() {
       return getCurrentVersion(this.page$);
-    },
-    referencesItems() {
-      const pathStart = `/core/${this.kuzzleMajor}`;
-
-      return [
-        { name: 'API', url: `${pathStart}/api/` },
-        { name: 'Framework', url: `${pathStart}/framework/` },
-      ];
     },
   },
   setup() {

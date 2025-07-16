@@ -55,17 +55,10 @@
             <closed-sources-banner v-if="isClosedSourcesSection" />
             <article class="md-content__inner md-typeset">
               <Content />
-              <hr class="solid">
-              <div class="edit-link" style="color: #4e6e8e;">
-                <a target="_blank" rel="noopener noreferrer" :href="getGithubLink()">Edit this page on Github</a>
-                <span class="sr-only">(opens new window)</span>
-              </div>
             </article>
           </div>
         </div>
       </main>
-
-      <Footer ref="footer" />
     </div>
   </div>
 </template>
@@ -77,11 +70,9 @@ import Header from './Header.vue';
 import DeprecatedBanner from '../components/DeprecatedBanner.vue';
 import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
-import Footer from './Footer.vue';
 import { getCurrentVersion, DEFAULT_VERSION } from '../helpers';
 import MajorVersionDeprecation from '../components/MajorVersionDeprecation.vue';
 import ClosedSourcesBanner from '../components/ClosedSourcesBanner.vue';
-import repositories from '../../../.repos/repositories.json';
 
 export default {
   components: {
@@ -89,9 +80,8 @@ export default {
     Sidebar,
     TOC,
     DeprecatedBanner,
-    Footer,
     MajorVersionDeprecation,
-    ClosedSourcesBanner
+    ClosedSourcesBanner,
   },
   setup() {
     return {
@@ -126,7 +116,7 @@ export default {
     },
     sdkList() {
       return this.page$.sectionList.filter(
-        s =>
+        (s) =>
           s.kuzzleMajor === this.kuzzleMajor &&
           (s.section === 'sdk' || s.subsection === 'api') &&
           s.released
@@ -154,20 +144,6 @@ export default {
     },
   },
   methods: {
-    getGithubLink () {
-      const fullPath = this.page$.fullPath;
-      const base = fullPath.replace(this.page$.regularPath, '');
-      const relativePath = fullPath.replace(base, '');
-      const repository = repositories.find(repo => repo.deploy_path.startsWith(base));
-
-      if (! repository) {
-        return;
-      }
-
-      const link = `${repository.url.replace('.git', '')}/blob/${repository.dev}/doc/${repository.doc_version}/${relativePath}index.md`;
-
-      return link;
-    },
     openSidebar() {
       this.sidebarOpen = true;
     },
@@ -180,8 +156,8 @@ export default {
     },
     setContainerPadding() {
       try {
-        const padding = this.$refs.header.$el.querySelector('header')
-          .offsetHeight;
+        const padding =
+          this.$refs.header.$el.querySelector('header').offsetHeight;
 
         if (padding === null || typeof padding === 'undefined') {
           return;
@@ -213,21 +189,21 @@ export default {
         return;
       }
 
-      const topBoundary = this.$refs.header.$el.querySelector('header')
-        .offsetHeight;
+      const topBoundary =
+        this.$refs.header.$el.querySelector('header').offsetHeight;
 
       if (topBoundary === null || typeof topBoundary === 'undefined') {
         return;
       }
 
       const visible = window.innerHeight - topBoundary;
-      let sidebarHeight = visible - this.$refs.footer.$el.offsetHeight;
+      let sidebarHeight = visible - 0;
 
       if (this.$refs.container.offsetHeight > visible) {
         sidebarHeight = Math.min(
           visible,
           this.$refs.container.offsetHeight -
-            this.$refs.footer.$el.offsetHeight -
+            0 -
             window.pageYOffset -
             topBoundary
         );
@@ -235,32 +211,30 @@ export default {
 
       this.$refs.sidebar.$el.style = `height: ${sidebarHeight}px`;
       this.$refs.toc.style = `height: ${sidebarHeight}px`;
-    }
+    },
   },
   mounted() {
-    // fix scroll to anchor on chrome https://github.com/vuejs/vuepress/issues/2558
-    if (location.hash && location.hash !== '#') {
-      const anchorLocation = decodeURIComponent(location.hash);
-      const anchorElement = document.querySelector(anchorLocation);
-      if (anchorElement && anchorElement.offsetTop)
-        window.scrollTo(0, anchorElement.offsetTop);
-    }
+    try {
+      window.addEventListener('resize', this.computeContentHeight.bind(this));
+      window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
 
-    window.addEventListener('resize', this.computeContentHeight.bind(this));
-    window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
+      this.headerResizeObserver = new ResizeObserver(
+        this.computeContentHeight.bind(this)
+      );
+      this.headerResizeObserver.observe(
+        this.$refs.header.$el.querySelector('header')
+      );
 
-    this.headerResizeObserver = new ResizeObserver(
-      this.computeContentHeight.bind(this)
-    );
-    this.headerResizeObserver.observe(this.$refs.header.$el.querySelector('header'));
-
-    this.removeRouterListener = this.router$.afterEach(() => {
-      this.$nextTick(() => {
-        this.computeContentHeight();
+      this.removeRouterListener = this.router$.afterEach(() => {
+        this.$nextTick(() => {
+          this.computeContentHeight();
+        });
       });
-    });
 
-    this.computeContentHeight();
+      this.computeContentHeight();
+    } catch (error) {
+      console.error('Error setting up layout:', error);
+    }
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.computeContentHeight.bind(this));
@@ -268,6 +242,6 @@ export default {
 
     this.headerResizeObserver.disconnect();
     this.removeRouterListener?.();
-  }
+  },
 };
 </script>

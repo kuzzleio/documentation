@@ -28,14 +28,11 @@
 
         <!-- Header title -->
         <div data-md-component="title">
-          <span>
-            <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
-          </span>
+          <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
         </div>
 
         <div class="md-header-nav__top-menu-container">
           <div class="screen-only">
-            <div style="display: none">{{ debugInfo }}</div>
             <TopMenu :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 2" />
             <TopMenuV1 :kuzzle-major="kuzzleMajor" v-else />
           </div>
@@ -47,7 +44,9 @@
         </div>
 
         <div class="divider"></div>
-        <button class="btnCta"><a href="https://kuzzle.io" target="_blank">Discover Kuzzle</a></button>
+        <button class="btnCta">
+          <a href="https://kuzzle.io" target="_blank">Discover Kuzzle</a>
+        </button>
 
         <!-- Repository containing source -->
         <!-- <div class="md-flex__cell md-flex__cell--shrink">
@@ -79,15 +78,6 @@ export default {
     },
   },
   computed: {
-    debugInfo() {
-      return JSON.stringify(
-        {
-          kuzzleMajor: this.kuzzleMajor,
-        },
-        null,
-        2
-      );
-    },
     searchboxOptions() {
       return {
         searchParameters: {
