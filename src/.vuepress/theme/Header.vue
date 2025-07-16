@@ -28,9 +28,7 @@
 
         <!-- Header title -->
         <div data-md-component="title">
-          <span>
-            <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
-          </span>
+          <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
         </div>
 
         <div class="md-header-nav__top-menu-container">
@@ -46,7 +44,9 @@
         </div>
 
         <div class="divider"></div>
-        <button class="btnCta"><a href="https://kuzzle.io" target="_blank">Discover Kuzzle</a></button>
+        <button class="btnCta">
+          <a href="https://kuzzle.io" target="_blank">Discover Kuzzle</a>
+        </button>
 
         <!-- Repository containing source -->
         <!-- <div class="md-flex__cell md-flex__cell--shrink">

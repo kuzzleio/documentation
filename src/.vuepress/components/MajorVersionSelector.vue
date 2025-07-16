@@ -8,7 +8,6 @@
       <div class="selector-selectedItem-name">
         <span class="selector-selectedItem-name-wrapper">
           {{ selectedItem ? selectedItem.text : 'Kuzzle' }}
-          <font-awesome-icon icon="fa-solid fa-caret-down" size="xs" aria-hidden="true"/>
         </span>
       </div>
     </div>
