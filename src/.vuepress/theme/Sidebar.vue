@@ -58,33 +58,33 @@
                     class="md-nav__link"
                     :class="{
                       'md-nav__link--active': page$.path === item__2.path,
-                      'md-nav__item--code': item__2.meta.frontmatter.code == true,
+                      'md-nav__item--code':
+                        item__2.meta.frontmatter.code == true,
                     }"
                   >
                     <div
                       v-if="getPageChildren(item__2).length"
                       @click="handleSubmenuClick(item__1, item__2)"
                     >
-                      <font-awesome-icon
+                      <span
                         v-if="
                           openedSubmenu ===
-                          getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title])
+                          getId([
+                            item__1.meta.frontmatter.title,
+                            item__2.meta.frontmatter.title,
+                          ])
                         "
-                        icon="fa-solid fa-caret-down"
-                        size="xs"
-                        aria-hidden="true"
-                      />
-                      <font-awesome-icon
-                        v-else
-                        icon="fa-solid fa-caret-right"
-                        size="xs"
-                        aria-hidden="true"
-                      />
+                      >
+                        v
+                      </span>
+                      <span v-else> > </span>
                       <span
                         :data-algolia-lvl="
                           page$.path.startsWith(item__2.path) ? '3' : ''
                         "
-                        >{{ item__2.meta.frontmatter.title.split('|')[0] }}</span
+                        >{{
+                          item__2.meta.frontmatter.title.split('|')[0]
+                        }}</span
                       >
                     </div>
                     <RouteLink
@@ -99,12 +99,23 @@
                 <ul
                   class="md-nav__list sub-menu"
                   :class="subMenuClass(item__1, item__2)"
-                  :id="getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title])"
+                  :id="
+                    getId([
+                      item__1.meta.frontmatter.title,
+                      item__2.meta.frontmatter.title,
+                    ])
+                  "
                 >
                   <div
                     v-for="item__3 of getPageChildren(item__2)"
                     :key="item__3.path"
-                    :id="getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title, item__3.meta.frontmatter.title])"
+                    :id="
+                      getId([
+                        item__1.meta.frontmatter.title,
+                        item__2.meta.frontmatter.title,
+                        item__3.meta.frontmatter.title,
+                      ])
+                    "
                     class="md-nav__item"
                   >
                     <li>
@@ -197,7 +208,7 @@ export default {
       );
     },
     root() {
-      const nodes = this.pages.map(page => ({
+      const nodes = this.pages.map((page) => ({
         frontmatter: page.meta.frontmatter,
         path: page.path,
       }));
@@ -212,7 +223,10 @@ export default {
     setOpenedSubmenu(item__1, item__2) {
       setItemLocalStorage('item__1', item__1);
       setItemLocalStorage('item__2', item__2);
-      this.openedSubmenu = this.getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title]);
+      this.openedSubmenu = this.getId([
+        item__1.meta.frontmatter.title,
+        item__2.meta.frontmatter.title,
+      ]);
     },
     unsetOpenedSubmenu() {
       localStorage.setItem('item__1', null);
@@ -240,7 +254,10 @@ export default {
         return;
       }
 
-      const item2Id = this.getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title]);
+      const item2Id = this.getId([
+        item__1.meta.frontmatter.title,
+        item__2.meta.frontmatter.title,
+      ]);
       const item = document.getElementById(item2Id);
 
       if (item) {
@@ -251,7 +268,11 @@ export default {
       this.$emit('closeSidebar');
     },
     subMenuClass(item__1, item__2) {
-      return this.openedSubmenu === this.getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title])
+      return this.openedSubmenu ===
+        this.getId([
+          item__1.meta.frontmatter.title,
+          item__2.meta.frontmatter.title,
+        ])
         ? 'displaySubmenu'
         : '';
     },
@@ -266,7 +287,10 @@ export default {
     },
     handleSubmenuClick(item__1, item__2) {
       const childs = this.getPageChildren(item__2);
-      const clickedSubmenuId = this.getId([item__1.meta.frontmatter.title, item__2.meta.frontmatter.title]);
+      const clickedSubmenuId = this.getId([
+        item__1.meta.frontmatter.title,
+        item__2.meta.frontmatter.title,
+      ]);
 
       if (!childs.length) {
         this.redirect(item__2);
