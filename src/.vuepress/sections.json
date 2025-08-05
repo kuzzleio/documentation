@@ -312,7 +312,7 @@
     "section": "official-plugins",
     "subsection": "device-manager",
     "name": "Device Manager",
-    "version": 0,
+    "version": 1,
     "icon": "/logos/device-manager.svg",
     "released": true
   },
@@ -322,6 +322,15 @@
     "subsection": "device-manager",
     "name": "Device Manager",
     "version": 2,
+    "icon": "/logos/device-manager.svg",
+    "released": true
+  },
+  "/official-plugins/device-manager/3": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "device-manager",
+    "name": "Device Manager",
+    "version": 3,
     "icon": "/logos/device-manager.svg",
     "released": true
   },
