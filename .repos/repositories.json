@@ -255,6 +255,15 @@
     "deploy_path": "/official-plugins/device-manager/2/"
   },
   {
+    "url": "https://github.com/kuzzleio/kuzzle-plugin-device-manager.git",
+    "repo_name": "kuzzle-device-manager",
+    "doc_version": 3,
+    "stable": "next",
+    "dev": "next-dev",
+    "name": "kuzzle-device-manager-3",
+    "deploy_path": "/official-plugins/device-manager/3/"
+  },
+  {
     "url": "https://github.com/kuzzleio/kuzzle-plugin-workflows.git",
     "repo_name": "kuzzle-plugin-workflows",
     "doc_version": 1,
