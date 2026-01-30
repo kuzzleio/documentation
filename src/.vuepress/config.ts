@@ -392,6 +392,7 @@ export default defineUserConfig({
       apiKey: JSON.stringify(process.env.ALGOLIA_SEARCH_KEY) || algoliaDefaultSearchKey,
       indexName: JSON.stringify(process.env.ALGOLIA_INDEX) || algoliaDefaultIndex,
       appId: JSON.stringify(process.env.ALGOLIA_APP_ID) || algoliaDefaultAppId,
+      indexBase:'/'
     }),
     googleAnalyticsPlugin({
       id: JSON.stringify(process.env.GA_ID) || JSON.stringify(googleAnalyticsID),
