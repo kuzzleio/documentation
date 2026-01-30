@@ -1,31 +1,47 @@
-@use "sass:color";
+@use 'sass:color';
 
 .DocSearch {
   // Common
   --docsearch-primary-color: #{$md-color-pink};
-  --docsearch-text-color: #{$md-color-white};
-  --docsearch-highlight-color: var(--docsearch-primary-color);
-  --docsearch-icon-color: var(--docsearch-text-color);
+  --docsearch-secondary-text-color: #{color.scale(
+      $md-color-blue,
+      $lightness: -30%
+    )};
+  --docsearch-text-color: #{$md-color-black};
+  --docsearch-search-button-text-color: #{$md-color-pink};
+  --docsearch-highlight-color: #{$md-color-pink};
+  --docsearch-icon-color: #{$md-color-pink};
+  --docsearch-logo-color: #{$md-color-pink};
+  --docsearch-key-color: #{$md-color-black};
 
   // Modal
-  --docsearch-modal-background: #{$md-color-white};
+  --docsearch-modal-background: #f5f6f7;
+  --docsearch-footer-background: #ffffffa6;
 
   // Searchbox
-  --docsearch-searchbox-background: #{color.scale($md-color-blue, $lightness: -30%)};
-  --docsearch-searchbox-focus-background: #{$md-color-blue};
-  --docsearch-searchbox-shadow: inset 0 0 0 2px #{color.scale($md-color-blue, $saturation: -50%, $lightness: 30%)};
-
+  --docsearch-background-color: #{color.scale(
+      $md-color-blue,
+      $saturation: -90%,
+      $lightness: 95%
+    )};
+  --docsearch-searchbox-focus-background: #ffffffa6;
+  --docsearch-hit-highlight-color: #{color.scale(
+      $md-color-pink,
+      $lightness: 85%
+    )};
+    
   // Key
   --docsearch-key-gradient: linear-gradient(
     -225deg,
     #{md-color-black--light} 0%,
     #{md-color-black} 100%
   );
-  --docsearch-key-shadow: inset 0 -2px 0 0 #{$md-color-blue}, inset 0 0 1px 1px #{$md-color-blue}, 0 2px 2px 0 #{$md-color-black--lighter};
-  --docsearch-key-pressed-shadow: inset 0 0 1px 1px #{$md-color-blue}, 0 2px 2px 0 #{$md-color-black--lighter};
-}
+  --docsearch-key-shadow:
+    inset 0 -2px 0 0 #{$md-color-blue}, inset 0 0 1px 1px #{$md-color-blue},
+    0 2px 2px 0 #{$md-color-black--lighter};
+  --docsearch-key-pressed-shadow:
+    inset 0 0 1px 1px #{$md-color-blue}, 0 2px 2px 0 #{$md-color-black--lighter};
 
-.DocSearch {
   font-size: 1.5rem;
 
   kbd {
