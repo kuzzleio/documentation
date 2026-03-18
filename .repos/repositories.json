@@ -258,8 +258,8 @@
     "url": "https://github.com/kuzzleio/kuzzle-plugin-device-manager.git",
     "repo_name": "kuzzle-device-manager",
     "doc_version": 3,
-    "stable": "next",
-    "dev": "next-dev",
+    "stable": "3-dev",
+    "dev": "3-dev",
     "name": "kuzzle-device-manager-3",
     "deploy_path": "/official-plugins/device-manager/3/"
   },
