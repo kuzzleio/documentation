@@ -462,6 +462,13 @@
     "icon": "/logos/paas-logo.svg",
     "released": true
   },
+  "/agent-ia/1": {
+    "kuzzleMajor": 2,
+    "name": "Agent IA",
+    "section": "agent-ia",
+    "icon": "/logos/agent-ia.svg",
+    "released": true
+  },
   "/iot-platform/3": {
     "kuzzleMajor": 2,
     "name": "IoT Platform",

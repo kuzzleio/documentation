@@ -6,98 +6,55 @@
         <li class="topMenu__group">
           <ul class="topMenu__group-items">
             <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/guides/`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/guides/`
-                  ),
-                }"
-                title="Guide"
-                class="topMenu__link"
-                >Guide</a
-              >
+              <a :href="`/core/${kuzzleMajor}/guides/`" :class="{
+                'topMenu__link--active': isLinkActive(
+                  `/core/${kuzzleMajor}/guides/`
+                ),
+              }" title="Guide" class="topMenu__link">Guide</a>
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/api/`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/api/`
-                  ),
-                }"
-                title="API"
-                class="topMenu__link"
-                >API</a
-              >
+              <a :href="`/core/${kuzzleMajor}/api/`" :class="{
+                'topMenu__link--active': isLinkActive(
+                  `/core/${kuzzleMajor}/api/`
+                ),
+              }" title="API" class="topMenu__link">API</a>
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/framework/`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/framework/`
-                  ),
-                }"
-                title="Framework"
-                class="topMenu__link"
-                >Framework</a
-              >
+              <a :href="`/core/${kuzzleMajor}/framework/`" :class="{
+                'topMenu__link--active': isLinkActive(
+                  `/core/${kuzzleMajor}/framework/`
+                ),
+              }" title="Framework" class="topMenu__link">Framework</a>
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/sdk/v${kuzzleMajor}.html`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/sdk/`),
-                }"
-                title="SDKs"
-                class="topMenu__link"
-                >SDKs</a
-              >
+              <a :href="`/sdk/v${kuzzleMajor}.html`" :class="{
+                'topMenu__link--active': isLinkActive(`/sdk/`),
+              }" title="SDKs" class="topMenu__link">SDKs</a>
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/official-plugins/v${kuzzleMajor}.html`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/official-plugins/`),
-                }"
-                title="Plugins"
-                class="topMenu__link"
-                >Plugins</a
-              >
+              <a :href="`/official-plugins/v${kuzzleMajor}.html`" :class="{
+                'topMenu__link--active': isLinkActive(`/official-plugins/`),
+              }" title="Plugins" class="topMenu__link">Plugins</a>
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/modules/v${kuzzleMajor}.html`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/modules/`),
-                }"
-                title="Modules"
-                class="topMenu__link"
-                >Modules</a
-              >
+              <a :href="`/modules/v${kuzzleMajor}.html`" :class="{
+                'topMenu__link--active': isLinkActive(`/modules/`),
+              }" title="Modules" class="topMenu__link">Modules</a>
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/paas-console/1`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/paas-console/1`),
-                }"
-                title="PaaS"
-                class="topMenu__link"
-                >PaaS</a
-              >
+              <a :href="`/iot-platform/3`" :class="{
+                'topMenu__link--active': isLinkActive(`/iot-platform/3`),
+              }" title="IoT Platform" class="topMenu__link">IoT Platform</a>
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/iot-platform/3`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/iot-platform/3`),
-                }"
-                title="IoT Platform"
-                class="topMenu__link"
-                >IoT Platform</a
-              >
+              <a :href="`/paas-console/1`" :class="{
+                'topMenu__link--active': isLinkActive(`/paas-console/1`),
+              }" title="PaaS" class="topMenu__link">PaaS</a>
+            </li>
+            <li class="topMenu__item">
+              <a :href="`/agent-ia/1`" :class="{
+                'topMenu__link--active': isLinkActive(`/agent-ia/1`),
+              }" title="Agent IA" class="topMenu__link">Agent IA</a>
             </li>
           </ul>
         </li>

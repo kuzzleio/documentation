@@ -370,5 +370,14 @@
     "dev": "1-dev",
     "deploy_path": "/modules/logger/1/",
     "name": "kuzzle-logger-1"
+  },
+  {
+    "url": "https://github.com/kuzzleio/kuzzle-agent-ia",
+    "repo_name": "kuzzle-agent-ia",
+    "doc_version": 1,
+    "stable": "1-stable",
+    "dev": "1-dev",
+    "deploy_path": "/modules/agent-ia/1/",
+    "name": "kuzzle-agent-ia-1"
   }
 ]
