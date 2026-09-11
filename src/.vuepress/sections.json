@@ -471,6 +471,15 @@
   "/iot-platform/3": {
     "kuzzleMajor": 2,
     "name": "IoT Platform",
+    "version": 3,
+    "section": "iot platform",
+    "icon": "/logos/paas-logo.svg",
+    "released": true
+  },
+  "/iot-platform/4": {
+    "kuzzleMajor": 2,
+    "name": "IoT Platform",
+    "version": 4,
     "section": "iot platform",
     "icon": "/logos/paas-logo.svg",
     "released": true

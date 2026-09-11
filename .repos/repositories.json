@@ -312,6 +312,16 @@
     "private": true
   },
   {
+    "url": "https://github.com/kuzzleio/iot-platform.git",
+    "repo_name": "iot-platform",
+    "doc_version": 4,
+    "stable": "stable",
+    "dev": "4-dev",
+    "deploy_path": "/iot-platform/4/",
+    "name": "iot-platform-4",
+    "private": true
+  },
+  {
     "url": "https://github.com/kuzzleio/kuzzle-plugin-multi-tenancy.git",
     "repo_name": "kuzzle-plugin-multi-tenancy",
     "doc_version": 1,
