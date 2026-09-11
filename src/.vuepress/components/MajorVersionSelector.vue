@@ -132,14 +132,12 @@ export default {
 
       // if there's many candidate, choose the one with the
       // highest version number
-      const hypestCandidate = candidates.reduce((acc, curr) => {
-        if (!curr.version || curr.version < acc.version) {
-          return acc;
-        }
-        if (curr.version >= acc.version) {
-          return curr;
-        }
-      }, candidates[0]);
+      // A section may carry no version at all, in which case it sorts last.
+      // Never return undefined here: the whole build fails to render if we do.
+      const hypestCandidate = candidates.reduce(
+        (acc, curr) => ((curr.version ?? 0) >= (acc.version ?? 0) ? curr : acc),
+        candidates[0]
+      );
 
       return hypestCandidate.path;
     },
