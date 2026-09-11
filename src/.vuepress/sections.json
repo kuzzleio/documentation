@@ -343,6 +343,15 @@
     "icon": "/logos/hermes.svg",
     "released": true
   },
+  "/official-plugins/hermes-messenger/2": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "hermes-messenger",
+    "name": "Hermes Messenger",
+    "version": 2,
+    "icon": "/logos/hermes.svg",
+    "released": true
+  },
   "/how-to/v1": {
     "name": "How-To",
     "version": 1,
