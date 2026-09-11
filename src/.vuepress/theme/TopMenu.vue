@@ -42,23 +42,23 @@
               }" title="Modules" class="topMenu__link">Modules</a>
             </li>
             <li class="topMenu__item">
-              <a :href="`/iot-platform/3`" :class="{
-                'topMenu__link--active': isLinkActive(`/iot-platform/3`),
+              <a :href="`/iot-platform/3/`" :class="{
+                'topMenu__link--active': isLinkActive(`/iot-platform/3/`),
               }" title="IoT Platform" class="topMenu__link">IoT Platform</a>
             </li>
             <li class="topMenu__item">
-              <a :href="`/iot-platform/4`" :class="{
-                'topMenu__link--active': isLinkActive(`/iot-platform/4`),
+              <a :href="`/iot-platform/4/`" :class="{
+                'topMenu__link--active': isLinkActive(`/iot-platform/4/`),
               }" title="IoT Platform 4" class="topMenu__link">IoT Platform 4</a>
             </li>
             <li class="topMenu__item">
-              <a :href="`/paas-console/1`" :class="{
-                'topMenu__link--active': isLinkActive(`/paas-console/1`),
+              <a :href="`/paas-console/1/`" :class="{
+                'topMenu__link--active': isLinkActive(`/paas-console/1/`),
               }" title="PaaS" class="topMenu__link">PaaS</a>
             </li>
             <li class="topMenu__item">
-              <a :href="`/agent-ia/1`" :class="{
-                'topMenu__link--active': isLinkActive(`/agent-ia/1`),
+              <a :href="`/agent-ia/1/`" :class="{
+                'topMenu__link--active': isLinkActive(`/agent-ia/1/`),
               }" title="Agent IA" class="topMenu__link">Agent IA</a>
             </li>
           </ul>
