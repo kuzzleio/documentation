@@ -283,6 +283,15 @@
     "deploy_path": "/official-plugins/hermes-messenger/1/"
   },
   {
+    "url": "https://github.com/kuzzleio/kuzzle-plugin-hermes-messenger.git",
+    "repo_name": "kuzzle-plugin-hermes-messenger",
+    "doc_version": 2,
+    "stable": "master",
+    "dev": "2-dev",
+    "name": "plugin-hermes-messenger-2",
+    "deploy_path": "/official-plugins/hermes-messenger/2/"
+  },
+  {
     "url": "https://github.com/kuzzleio/paas-console.git",
     "repo_name": "paas-console",
     "doc_version": 1,
