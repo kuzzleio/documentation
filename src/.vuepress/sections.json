@@ -529,6 +529,15 @@
     "icon": "/logos/open-id.svg",
     "released": true
   },
+  "/official-plugins/eslint/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "ESLint Configuration",
+    "section": "official-plugins",
+    "subsection": "eslint",
+    "icon": "/logos/eslint.svg",
+    "released": true
+  },
   "/modules/logger/1": {
     "kuzzleMajor": 2,
     "version": 1,
