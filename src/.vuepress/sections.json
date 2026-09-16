@@ -538,6 +538,15 @@
     "icon": "/logos/eslint.svg",
     "released": true
   },
+  "/official-plugins/eslint/2": {
+    "kuzzleMajor": 2,
+    "version": 2,
+    "name": "ESLint Configuration",
+    "section": "official-plugins",
+    "subsection": "eslint",
+    "icon": "/logos/eslint.svg",
+    "released": true
+  },
   "/modules/logger/1": {
     "kuzzleMajor": 2,
     "version": 1,

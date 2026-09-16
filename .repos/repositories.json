@@ -381,6 +381,15 @@
     "deploy_path": "/official-plugins/eslint/1/"
   },
   {
+    "url": "https://github.com/kuzzleio/eslint-plugin-kuzzle.git",
+    "repo_name": "eslint-plugin-kuzzle",
+    "doc_version": 2,
+    "stable": "master",
+    "dev": "1-dev",
+    "name": "eslint-plugin-kuzzle-2",
+    "deploy_path": "/official-plugins/eslint/2/"
+  },
+  {
     "url": "https://github.com/kuzzleio/kuzzle-logger",
     "repo_name": "kuzzle-logger",
     "doc_version": 1,
