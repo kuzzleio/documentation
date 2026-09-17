@@ -25,18 +25,18 @@
         class="nav-selector__item"
         role="none"
       >
-        <a
+        <NavLink
           class="nav-selector__link"
           :class="{
             'nav-selector__link--active':
               selectedItem && selectedItem.id === item.id,
           }"
           role="menuitem"
-          :href="item.path"
+          :path="item.path"
           @click="closeList()"
         >
           {{ item.text }}
-        </a>
+        </NavLink>
       </li>
     </ul>
   </div>

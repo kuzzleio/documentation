@@ -29,18 +29,18 @@
   }
 
   &.alert-success {
-    background: $clr-blue-100;
+    background: $clr-green-100;
 
     .fa-circle-check {
-      color: $clr-blue-900;
+      color: $clr-green-900;
     }
   }
 
   &.alert-info {
-    background: $clr-green-100;
+    background: $clr-blue-100;
 
     .fa-circle-info {
-      color: $clr-green-900;
+      color: $clr-blue-900;
     }
   }
 

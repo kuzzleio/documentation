@@ -9,15 +9,15 @@
               v-for="section in sections"
               :key="section.id"
             >
-              <a
-                :href="section.path"
+              <NavLink
+                :path="section.path"
                 :title="section.text"
                 class="topMenu__link"
                 :class="{
                   'topMenu__link--active':
                     currentSection && currentSection.id === section.id,
                 }"
-                >{{ section.text }}</a
+                >{{ section.text }}</NavLink
               >
             </li>
           </ul>

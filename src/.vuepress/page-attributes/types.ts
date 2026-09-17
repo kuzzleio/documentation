@@ -1,3 +1,5 @@
+import { PageHeader } from 'vuepress';
+
 export type PageAttributesSection = {
   name: string;
   version?: number;
@@ -18,6 +20,7 @@ export type PageAttributesPluginOptions = {
 };
 
 export type ExtraPageData = {
+  headers: PageHeader[];
   fullPath: string;
   sectionsByPath: Record<string, PageAttributesSection>;
   sectionList: PageAttributesSectionWithPath[];

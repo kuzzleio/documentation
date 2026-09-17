@@ -94,6 +94,14 @@ export default {
       sidebarOpen: false,
       headerResizeObserver: undefined,
       removeRouterListener: undefined,
+      /**
+       * Kept as instance fields so the very same references can be removed on
+       * unmount: `fn.bind(this)` builds a new function every call, so binding
+       * again in `removeEventListener` never matches the registered listener.
+       */
+      onResize: undefined,
+      onScroll: undefined,
+      scrollFrame: null,
     };
   },
   computed: {
@@ -153,6 +161,22 @@ export default {
     computeContentHeight() {
       this.setContainerPadding();
       this.computeSidebarHeight();
+    },
+    /**
+     * `computeSidebarHeight` reads `getComputedStyle` and `offsetHeight`, both
+     * of which force a synchronous layout. Running it straight from the scroll
+     * event does that on every frame the browser emits; coalescing into a
+     * single rAF keeps scrolling smooth.
+     */
+    scheduleSidebarHeight() {
+      if (this.scrollFrame !== null) {
+        return;
+      }
+
+      this.scrollFrame = window.requestAnimationFrame(() => {
+        this.scrollFrame = null;
+        this.computeSidebarHeight();
+      });
     },
     setContainerPadding() {
       try {
@@ -215,8 +239,11 @@ export default {
   },
   mounted() {
     try {
-      window.addEventListener('resize', this.computeContentHeight.bind(this));
-      window.addEventListener('scroll', this.computeSidebarHeight.bind(this));
+      this.onResize = () => this.computeContentHeight();
+      this.onScroll = () => this.scheduleSidebarHeight();
+
+      window.addEventListener('resize', this.onResize, { passive: true });
+      window.addEventListener('scroll', this.onScroll, { passive: true });
 
       this.headerResizeObserver = new ResizeObserver(
         this.computeContentHeight.bind(this)
@@ -237,10 +264,14 @@ export default {
     }
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.computeContentHeight.bind(this));
-    window.removeEventListener('scroll', this.computeSidebarHeight.bind(this));
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
 
-    this.headerResizeObserver.disconnect();
+    if (this.scrollFrame !== null) {
+      window.cancelAnimationFrame(this.scrollFrame);
+    }
+
+    this.headerResizeObserver?.disconnect();
     this.removeRouterListener?.();
   },
 };

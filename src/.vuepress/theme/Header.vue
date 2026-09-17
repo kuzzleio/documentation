@@ -5,14 +5,14 @@
       <nav class="md-header-nav">
         <!-- Link to home -->
         <div>
-          <a href="/" class="md-header-nav__button md-logo">
+          <NavLink path="/" class="md-header-nav__button md-logo">
             <img
               :src="$withBase('/logo-min.png')"
               alt="kuzzle logo mini"
               width="40"
               height="40"
             />
-          </a>
+          </NavLink>
         </div>
 
         <!-- Button to toggle drawer -->

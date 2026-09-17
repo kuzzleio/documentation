@@ -40,6 +40,12 @@ export default defineUserConfig({
   title: siteTitle,
   description: siteDescription,
   base: base as UserConfig['base'],
+  /**
+   * Keep this off: VuePress prefetches *every* async chunk of the instance,
+   * not the ones reachable from the current page. It emits ~2.4 <link
+   * rel="prefetch"> per page, which is ~1500 requests on the `core/2`
+   * instance (636 pages). Client-side navigation already renders in ~100ms.
+   */
   shouldPrefetch: false,
   clientConfigFile: path.resolve(__dirname, './client.ts'),
 
@@ -319,7 +325,6 @@ export default defineUserConfig({
         sizes: '152x152',
       },
     ],
-    ['script', { id: 'hs-script-loader', defer: true, src: '//js.hs-scripts.com/3803374.js' }],
   ],
 
   markdown: {
@@ -389,12 +394,12 @@ export default defineUserConfig({
       offset: 110,
     }),
     docsearchPlugin({
-      apiKey: JSON.stringify(process.env.ALGOLIA_SEARCH_KEY) || algoliaDefaultSearchKey,
-      indexName: JSON.stringify(process.env.ALGOLIA_INDEX) || algoliaDefaultIndex,
-      appId: JSON.stringify(process.env.ALGOLIA_APP_ID) || algoliaDefaultAppId,
+      apiKey: process.env.ALGOLIA_SEARCH_KEY || algoliaDefaultSearchKey,
+      indexName: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
+      appId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
     }),
     googleAnalyticsPlugin({
-      id: JSON.stringify(process.env.GA_ID) || JSON.stringify(googleAnalyticsID),
+      id: process.env.GA_ID || googleAnalyticsID,
     }),
     backToTopPlugin(),
     copyCodePlugin(),
