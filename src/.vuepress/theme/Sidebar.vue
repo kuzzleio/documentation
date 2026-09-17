@@ -33,27 +33,28 @@
           />
           <!-- Render item list -->
           <ul class="md-nav__list" data-md-scrollfix>
-            <div
+            <li
               v-for="item__1 in getPageChildren(root).filter(
                 (p) => p.meta.frontmatter.type === 'branch'
               )"
               :key="item__1.path"
               class="md-nav__item-container"
             >
-              <li
-                class="md-nav__separator"
-                :data-algolia-lvl="
-                  page$.path.startsWith(item__1.path) ? '2' : ''
-                "
-              >
-                {{ item__1.meta.frontmatter.title.split('|')[0] }}
-              </li>
+              <ul class="md-nav__group">
+                <li
+                  class="md-nav__separator"
+                  :data-algolia-lvl="
+                    page$.path.startsWith(item__1.path) ? '2' : ''
+                  "
+                >
+                  {{ shortTitle(item__1.meta.frontmatter.title) }}
+                </li>
 
-              <div
-                v-for="item__2 in getPageChildren(item__1)"
-                :key="item__2.path"
-              >
-                <li class="md-nav__item md-nav-title">
+                <li
+                  v-for="item__2 in getPageChildren(item__1)"
+                  :key="item__2.path"
+                  class="md-nav__item md-nav-title"
+                >
                   <div
                     class="md-nav__link"
                     :class="{
@@ -62,66 +63,61 @@
                         item__2.meta.frontmatter.code == true,
                     }"
                   >
-                    <div
+                    <button
                       v-if="getPageChildren(item__2).length"
+                      type="button"
+                      class="md-nav__toggle"
+                      :aria-expanded="isSubmenuOpen(item__1, item__2) ? 'true' : 'false'"
                       @click="handleSubmenuClick(item__1, item__2)"
                     >
-                      <span
-                        v-if="
-                          openedSubmenu ===
-                          getId([
-                            item__1.meta.frontmatter.title,
-                            item__2.meta.frontmatter.title,
-                          ])
+                      <font-awesome-icon
+                        class="md-nav__caret"
+                        :icon="
+                          isSubmenuOpen(item__1, item__2)
+                            ? 'fa-solid fa-caret-down'
+                            : 'fa-solid fa-caret-right'
                         "
-                      >
-                        v
-                      </span>
-                      <span v-else> > </span>
+                      />
                       <span
                         :data-algolia-lvl="
                           page$.path.startsWith(item__2.path) ? '3' : ''
                         "
-                        >{{
-                          item__2.meta.frontmatter.title.split('|')[0]
-                        }}</span
+                        >{{ shortTitle(item__2.meta.frontmatter.title) }}</span
                       >
-                    </div>
+                    </button>
                     <RouteLink
                       v-else
                       :to="item__2.path"
                       @click.native="closeSidebar"
                     >
-                      {{ item__2.meta.frontmatter.title.split('|')[0] }}
+                      {{ shortTitle(item__2.meta.frontmatter.title) }}
                     </RouteLink>
                   </div>
-                </li>
-                <ul
-                  class="md-nav__list sub-menu"
-                  :class="subMenuClass(item__1, item__2)"
-                  :id="
-                    getId([
-                      item__1.meta.frontmatter.title,
-                      item__2.meta.frontmatter.title,
-                    ])
-                  "
-                >
-                  <div
-                    v-for="item__3 of getPageChildren(item__2)"
-                    :key="item__3.path"
+                  <ul
+                    class="md-nav__list sub-menu"
+                    :class="subMenuClass(item__1, item__2)"
                     :id="
                       getId([
                         item__1.meta.frontmatter.title,
                         item__2.meta.frontmatter.title,
-                        item__3.meta.frontmatter.title,
                       ])
                     "
-                    class="md-nav__item"
                   >
-                    <li>
+                    <li
+                      v-for="item__3 of getPageChildren(item__2)"
+                      :key="item__3.path"
+                      :id="
+                        getId([
+                          item__1.meta.frontmatter.title,
+                          item__2.meta.frontmatter.title,
+                          item__3.meta.frontmatter.title,
+                        ])
+                      "
+                      class="md-nav__item"
+                    >
                       <RouteLink
                         :to="item__3.path"
-                        :title="item__3.meta.frontmatter.title"
+                        :title="shortTitle(item__3.meta.frontmatter.title)"
                         @click.native="$emit('closeSidebar')"
                         :class="{
                           'md-nav__item--code': item__3.meta.frontmatter.code,
@@ -129,13 +125,13 @@
                           'md-nav__link--active': page$.path === item__3.path,
                         }"
                       >
-                        {{ item__3.meta.frontmatter.title.split('|')[0] }}
+                        {{ shortTitle(item__3.meta.frontmatter.title) }}
                       </RouteLink>
                     </li>
-                  </div>
-                </ul>
-              </div>
-            </div>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
       </div>
@@ -158,6 +154,7 @@ import TopMenuV1 from './TopMenuV1.vue';
 import NavSelector from '../components/NavSelector.vue';
 import { BACKEND_ID, PRODUCTS, absolutePath, findEntry } from '../products';
 
+import { shortTitle } from '../helpers';
 import {
   getPageChildren,
   findRootNode,
@@ -234,6 +231,16 @@ export default {
     },
   },
   methods: {
+    shortTitle,
+    isSubmenuOpen(item__1, item__2) {
+      return (
+        this.openedSubmenu ===
+        this.getId([
+          item__1.meta.frontmatter.title,
+          item__2.meta.frontmatter.title,
+        ])
+      );
+    },
     setOpenedSubmenu(item__1, item__2) {
       setItemLocalStorage('item__1', item__1);
       setItemLocalStorage('item__2', item__2);

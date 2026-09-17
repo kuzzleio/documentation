@@ -57,29 +57,6 @@ $md-color-white--lighter: hsla(0, 0%, 100%, 0.3) !default;
 $md-color-white--lightest: hsla(0, 0%, 100%, 0.12) !default;
 $md-color-white--transparent: hsla(0, 0%, 100%, 0) !default;
 
-// Custom properties
-:root {
-  // Text
-  --vp-c-text: #{$md-color-black};
-  --vp-c-text-muted: #{$md-color-black--light};
-  --vp-c-text-subtle: #{$md-color-black--lighter};
-
-  // Background
-  --vp-c-bg: #{$md-color-white};
-  --vp-c-bg-alt: #{$md-color-blue};
-  --vp-c-bg-elv: #{$md-color-black--light};
-
-  // Shadow
-  --vp-c-shadow: #{$md-color-black--lighter};
-
-  // Accent
-  --vp-c-accent: #{$md-color-pink};
-  --vp-c-accent-hover: #{$md-color-pink};
-  --vp-c-accent-bg: #{$md-color-pink};
-  --vp-c-accent-text: #{$md-color-black};
-  --vp-c-accent-soft: #{$md-color-pink-light};
-}
-
 // ----------------------------------------------------------------------------
 // Variables: sizing and spacing
 // ----------------------------------------------------------------------------
@@ -100,3 +77,112 @@ $md-keyboard-color: #555555;
 
 $md-code-background-inline: $md-color-black--lightest;
 $md-code-color-inline: $md-color-black--light;
+
+// ----------------------------------------------------------------------------
+// Design tokens
+// ----------------------------------------------------------------------------
+
+// Everything that changes between the light and the dark theme goes through
+// these custom properties. SCSS colour variables are resolved at build time,
+// so they cannot be swapped at runtime: use a token whenever a colour depends
+// on the theme, and a SCSS variable only for colours that never change.
+//
+// The dark palette is derived from the brand teal ($md-color-blue, #002835):
+// the page sits below it so the header and the code blocks read as elevated.
+
+:root {
+  color-scheme: light;
+
+  // Surfaces
+  --c-bg: #{$md-color-white};
+  --c-bg-soft: #f2f4f5;
+  --c-bg-elevated: #{$md-color-white};
+  --c-bg-header: #{$md-color-blue};
+  --c-bg-overlay: #{$md-color-black--light};
+
+  // Text
+  --c-text: #{$md-color-black};
+  --c-text-muted: #{$md-color-black--light};
+  --c-text-subtle: #{$md-color-black--lighter};
+  --c-text-on-header: #{$md-color-white};
+  --c-heading: #{$md-color-primary};
+
+  // Lines
+  --c-border: #{$md-color-black--lightest};
+  --c-border-strong: #{$md-color-black--lighter};
+
+  // Accent
+  --c-accent: #{$md-color-pink};
+  --c-accent-hover: #{$md-color-accent};
+  --c-accent-soft: #{$md-color-pink-light};
+
+  // Code
+  --c-code-bg: #{$md-color-blue};
+  --c-code-bg-highlighted: #02171f;
+  --c-code-text: #{$md-code-color};
+  --c-code-inline-bg: #{$md-color-black--lightest};
+  // 0.54 alpha over the 0.07 grey lands at 4.43:1, just under AA
+  --c-code-inline-text: hsla(0, 0%, 0%, 0.72);
+
+  // Keystrokes
+  --c-kbd-bg: #{$md-keyboard-background};
+  --c-kbd-text: #{$md-keyboard-color};
+
+  // Alerts
+  --c-alert-info-bg: #{$clr-blue-100};
+  --c-alert-info-icon: #{$clr-blue-900};
+  --c-alert-success-bg: #{$clr-green-100};
+  --c-alert-success-icon: #{$clr-green-900};
+  --c-alert-warning-bg: #{$clr-orange-100};
+  --c-alert-warning-icon: #{$clr-brown-700};
+  --c-alert-message-bg: #{$clr-blue-50};
+  --c-alert-text: #{$md-color-blue};
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  // Surfaces
+  --c-bg: #00141a;
+  --c-bg-soft: #002029;
+  --c-bg-elevated: #001b23;
+  --c-bg-header: #{$md-color-blue};
+  --c-bg-overlay: hsla(0, 0%, 0%, 0.6);
+
+  // Text
+  --c-text: hsla(0, 0%, 100%, 0.88);
+  --c-text-muted: hsla(0, 0%, 100%, 0.6);
+  --c-text-subtle: hsla(0, 0%, 100%, 0.36);
+  --c-text-on-header: #{$md-color-white};
+  --c-heading: #9adaee;
+
+  // Lines
+  --c-border: hsla(0, 0%, 100%, 0.1);
+  --c-border-strong: hsla(0, 0%, 100%, 0.28);
+
+  // Accent
+  --c-accent: #ff85a6;
+  --c-accent-hover: #a7b6ff;
+  --c-accent-soft: hsla(346, 100%, 76%, 0.28);
+
+  // Code
+  --c-code-bg: #001f29;
+  --c-code-bg-highlighted: #00303f;
+  --c-code-text: #{$md-code-color};
+  --c-code-inline-bg: hsla(0, 0%, 100%, 0.1);
+  --c-code-inline-text: hsla(0, 0%, 100%, 0.78);
+
+  // Keystrokes
+  --c-kbd-bg: #01303d;
+  --c-kbd-text: hsla(0, 0%, 100%, 0.82);
+
+  // Alerts: tinted surfaces rather than the light pastels, which would glare
+  --c-alert-info-bg: hsla(207, 90%, 54%, 0.16);
+  --c-alert-info-icon: #7ec1f5;
+  --c-alert-success-bg: hsla(122, 39%, 49%, 0.16);
+  --c-alert-success-icon: #86d492;
+  --c-alert-warning-bg: hsla(36, 100%, 50%, 0.16);
+  --c-alert-warning-icon: #ffc266;
+  --c-alert-message-bg: hsla(207, 90%, 54%, 0.1);
+  --c-alert-text: hsla(0, 0%, 100%, 0.88);
+}

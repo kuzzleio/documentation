@@ -99,3 +99,21 @@ export const findEntry = (entries: NavEntry[], path: string) =>
  */
 export const absolutePath = (base: string, path: string) =>
   `${(base || '/').replace(/\/$/, '')}${path}`;
+
+/**
+ * Path the client-side router knows for a site-wide path, or null when that
+ * path belongs to another VuePress instance.
+ *
+ * Router paths are relative to the instance base, so `/core/2/api/` is known
+ * to the backend instance as `/api/`. A path outside the current base can only
+ * be followed with a full page load.
+ */
+export const routerPath = (base: string, path: string) => {
+  const prefix = (base || '/').replace(/\/$/, '');
+
+  if (!prefix) {
+    return path;
+  }
+
+  return path.startsWith(`${prefix}/`) ? path.slice(prefix.length) : null;
+};

@@ -50,12 +50,12 @@
 @import 'extensions/nav-selector';
 @import 'extensions/admonition';
 @import 'extensions/badge';
+@import 'extensions/breadcrumb';
 @import 'extensions/codehilite';
 @import 'extensions/docsearch';
 @import 'extensions/external-links';
 @import 'extensions/footnotes';
 @import 'extensions/permalinks';
-@import 'extensions/select2';
 @import 'extensions/alert';
 @import 'extensions/tiles';
 @import 'extensions/ribbon';
@@ -70,10 +70,8 @@
 @import 'extensions/pymdown/tasklist';
 
 @import 'libs/copy-code';
-@import 'libs/fontawesome';
 @import 'libs/google-fonts';
 @import 'libs/monokai';
-@import 'libs/select2';
 
 body,
 input {
