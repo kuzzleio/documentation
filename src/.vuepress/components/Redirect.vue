@@ -18,7 +18,11 @@ const resolveTarget = (from, to) => {
     ? to
     : new URL(to, `http://redirect${from}`).pathname;
 
-  return path.endsWith('/') ? path : `${path}/`;
+  // Directory routes end with a slash, but file routes (`/sdk/v2.html`) must
+  // keep their exact spelling or they match nothing.
+  const isFile = /\.[^/]+$/.test(path);
+
+  return isFile || path.endsWith('/') ? path : `${path}/`;
 };
 
 export default {

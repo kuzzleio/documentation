@@ -10,4 +10,4 @@ meta:
     content: Kuzzle, modules, official
 ---
 
-<Redirect to="/v2" />
+<Redirect to="/modules/v2.html" />
