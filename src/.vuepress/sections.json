@@ -286,7 +286,9 @@
     "name": "Cloudinary",
     "version": 1,
     "icon": "/logos/plugin-cloudinary.svg",
-    "released": true
+    "released": true,
+    "deprecated": true,
+    "deprecatedBannerComponent": "ArchivedBanner"
   },
   "/official-plugins/cloudinary/2": {
     "kuzzleMajor": 2,
@@ -295,14 +297,16 @@
     "name": "Cloudinary",
     "version": 2,
     "icon": "/logos/plugin-cloudinary.svg",
-    "released": true
+    "released": true,
+    "deprecated": true,
+    "deprecatedBannerComponent": "ArchivedBanner"
   },
   "/official-plugins/workflows/1": {
     "kuzzleMajor": 2,
     "section": "official-plugins",
     "subsection": "workflows",
     "name": "Workflows",
-    "version": 0,
+    "version": 1,
     "icon": "/logos/workflows.svg",
     "released": true,
     "closedSources": true
@@ -314,7 +318,9 @@
     "name": "Device Manager",
     "version": 1,
     "icon": "/logos/device-manager.svg",
-    "released": true
+    "released": true,
+    "deprecated": true,
+    "deprecatedBannerComponent": "ArchivedBanner"
   },
   "/official-plugins/device-manager/2": {
     "kuzzleMajor": 2,
@@ -339,7 +345,7 @@
     "section": "official-plugins",
     "subsection": "hermes-messenger",
     "name": "Hermes Messenger",
-    "version": 0,
+    "version": 1,
     "icon": "/logos/hermes.svg",
     "released": true
   },
