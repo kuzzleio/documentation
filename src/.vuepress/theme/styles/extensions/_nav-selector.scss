@@ -29,7 +29,7 @@
     }
 
     &:focus-visible {
-      outline: 2px solid $md-color-pink;
+      outline: 2px solid var(--c-accent);
       outline-offset: 2px;
     }
   }
@@ -63,7 +63,7 @@
     margin: 0;
     padding: 0.4rem 0;
     border-radius: 0.3rem;
-    background-color: $md-color-white;
+    background-color: var(--c-bg-elevated);
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.16),
       0 0.2rem 1rem rgba(0, 0, 0, 0.12);
     list-style: none;
@@ -76,7 +76,7 @@
   &__link {
     display: block;
     padding: 0.9rem 1.6rem;
-    color: $md-color-primary;
+    color: var(--c-heading);
     font-size: 1.5rem;
     line-height: 2rem;
     white-space: nowrap;
@@ -87,8 +87,8 @@
 
     // Current section: pink marker on the left, like the sidebar
     &--active {
-      box-shadow: inset 0.3rem 0 0 $md-color-pink;
-      color: $md-color-pink;
+      box-shadow: inset 0.3rem 0 0 var(--c-accent);
+      color: var(--c-accent);
       font-weight: 600;
     }
   }

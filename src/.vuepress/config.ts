@@ -114,7 +114,7 @@ export default defineUserConfig({
       'meta',
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1, maximum-scale=1',
+        content: 'width=device-width, initial-scale=1',
       },
     ],
     [
@@ -123,6 +123,23 @@ export default defineUserConfig({
         name: 'google-site-verification',
         content: 'luspUdq52gkUU0FFChQ2xmeXSs5HDafpARQ7fVXVBp4',
       },
+    ],
+    // Applies the theme before the first paint, otherwise a dark-theme visitor
+    // gets a white flash on every page load. Kept inline and dependency-free
+    // on purpose: it has to run before the stylesheet does.
+    [
+      'script',
+      {},
+      `(function () {
+  try {
+    var stored = localStorage.getItem('kuzdoc-theme');
+    var dark = stored === 'dark' || (stored !== 'light' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  } catch (e) {
+    document.documentElement.dataset.theme = 'light';
+  }
+})();`,
     ],
 
     // -- Schema.org markup for Google+

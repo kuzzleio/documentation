@@ -45,6 +45,8 @@
         </div>
 
         <div class="divider"></div>
+        <ThemeToggle />
+        <div class="divider"></div>
         <button class="btnCta">
           <a href="https://kuzzle.io" target="_blank">Discover Kuzzle</a>
         </button>

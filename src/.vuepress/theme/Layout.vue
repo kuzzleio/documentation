@@ -42,6 +42,7 @@
           <!-- Content -->
 
           <div class="md-content">
+            <Breadcrumb />
             <major-version-deprecation
               v-if="kuzzleMajor !== kuzzleLatestMajor"
             />
@@ -60,6 +61,8 @@
         </div>
       </main>
     </div>
+
+    <Footer />
   </div>
 </template>
 
@@ -67,6 +70,7 @@
 import { usePageData, useRouter } from 'vuepress/client';
 
 import Header from './Header.vue';
+import Footer from './Footer.vue';
 import DeprecatedBanner from '../components/DeprecatedBanner.vue';
 import Sidebar from './Sidebar.vue';
 import TOC from './TOC.vue';
@@ -77,6 +81,7 @@ import ClosedSourcesBanner from '../components/ClosedSourcesBanner.vue';
 export default {
   components: {
     Header,
+    Footer,
     Sidebar,
     TOC,
     DeprecatedBanner,

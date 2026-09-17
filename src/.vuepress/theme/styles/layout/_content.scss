@@ -63,7 +63,7 @@ $content-margin: 26rem;
 
     // Override default link color for icons
     .md-typeset & {
-      color: $md-color-black--lighter;
+      color: var(--c-text-subtle);
     }
 
     // Hide for print

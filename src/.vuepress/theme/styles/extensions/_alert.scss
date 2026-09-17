@@ -1,7 +1,7 @@
 .alert {
   border-radius: 4px;
   padding: 12px 16px;
-  color: #002835;
+  color: var(--c-alert-text);
   line-height: 1.6;
   position: relative;
   margin-top: 2rem;
@@ -29,40 +29,40 @@
   }
 
   &.alert-success {
-    background: $clr-green-100;
+    background: var(--c-alert-success-bg);
 
     .fa-circle-check {
-      color: $clr-green-900;
+      color: var(--c-alert-success-icon);
     }
   }
 
   &.alert-info {
-    background: $clr-blue-100;
+    background: var(--c-alert-info-bg);
 
     .fa-circle-info {
-      color: $clr-blue-900;
+      color: var(--c-alert-info-icon);
     }
   }
 
   &.alert-warning {
-    background: $clr-orange-100;
+    background: var(--c-alert-warning-bg);
 
     a {
-      color: #002835;
+      color: var(--c-alert-text);
       text-decoration: underline;
     }
 
     .fa-triangle-exclamation {
-      color: $clr-brown-700;
+      color: var(--c-alert-warning-icon);
     }
   }
 
   &.alert-message {
-    background: $clr-blue-50;
+    background: var(--c-alert-message-bg);
     padding: 20px 20px;
 
     a {
-      color: #002835;
+      color: var(--c-alert-text);
       text-decoration: underline;
     }
   }

@@ -12,6 +12,8 @@ import {
   faCircleInfo,
   faGlobe,
   faMagnifyingGlass,
+  faMoon,
+  faSun,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -37,7 +39,9 @@ library.add(
   faGlobe,
   faLinkedinIn,
   faMagnifyingGlass,
+  faMoon,
   faStackOverflow,
+  faSun,
   faTriangleExclamation,
   faXTwitter,
   faYoutube,
