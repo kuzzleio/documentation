@@ -1,0 +1,95 @@
+// ----------------------------------------------------------------------------
+// Header dropdowns: product line, then section within that product
+// ----------------------------------------------------------------------------
+
+.nav-selector {
+  position: relative;
+  display: inline-block;
+
+  // Trigger
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 24rem;
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    background: transparent;
+    color: $md-color-white;
+    font-family: inherit;
+    font-size: 1.7rem;
+    line-height: 2.8rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+    &:hover,
+    &--open {
+      background-color: $md-color-white--lightest;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $md-color-pink;
+      outline-offset: 2px;
+    }
+  }
+
+  &__label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__caret {
+    flex: none;
+    font-size: 1.4rem;
+    opacity: 0.75;
+    transition: transform 0.15s ease;
+
+    .nav-selector__button--open & {
+      transform: rotate(180deg);
+    }
+  }
+
+  // Dropdown, anchored under the trigger
+  &__list {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    left: 0;
+    z-index: 10;
+    min-width: 100%;
+    width: max-content;
+    max-width: 28rem;
+    margin: 0;
+    padding: 0.4rem 0;
+    border-radius: 0.3rem;
+    background-color: $md-color-white;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.16),
+      0 0.2rem 1rem rgba(0, 0, 0, 0.12);
+    list-style: none;
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__link {
+    display: block;
+    padding: 0.9rem 1.6rem;
+    color: $md-color-primary;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+
+    // Current section: pink marker on the left, like the sidebar
+    &--active {
+      box-shadow: inset 0.3rem 0 0 $md-color-pink;
+      color: $md-color-pink;
+      font-weight: 600;
+    }
+  }
+}

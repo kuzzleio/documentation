@@ -19,11 +19,11 @@
                 height="48"
               />
             </span>
-            <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
+            <NavSelector :items="products" label="Change product" />
           </label>
           <div class="mobile-only">
-            <TopMenu :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 2" />
-            <TopMenuV1 :kuzzle-major="kuzzleMajor" v-else />
+            <TopMenu v-if="isBackend" />
+            <TopMenuV1 :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 1" />
           </div>
           <SDKSelector
             class="md-sidebar--selector"
@@ -155,6 +155,8 @@ import {
 
 import TopMenu from './TopMenu.vue';
 import TopMenuV1 from './TopMenuV1.vue';
+import NavSelector from '../components/NavSelector.vue';
+import { BACKEND_ID, PRODUCTS, absolutePath, findEntry } from '../products';
 
 import {
   getPageChildren,
@@ -167,6 +169,7 @@ export default {
   components: {
     TopMenu,
     TopMenuV1,
+    NavSelector,
   },
   props: {
     sidebarOpen: {
@@ -197,6 +200,17 @@ export default {
     };
   },
   computed: {
+    products() {
+      return PRODUCTS;
+    },
+    isBackend() {
+      const product = findEntry(
+        PRODUCTS,
+        absolutePath(this.site$.base, this.route$.path)
+      );
+
+      return Boolean(product) && product.id === BACKEND_ID;
+    },
     sdkOrApiPage() {
       if (!this.page$.currentSection) {
         return false;

@@ -28,13 +28,14 @@
 
         <!-- Header title -->
         <div data-md-component="title">
-          <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
+          <NavSelector :items="products" label="Change product" />
         </div>
 
         <div class="md-header-nav__top-menu-container">
           <div class="screen-only">
-            <TopMenu :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 2" />
-            <TopMenuV1 :kuzzle-major="kuzzleMajor" v-else />
+            <!-- Sub-sections of the open source backend -->
+            <TopMenu v-if="isBackend" />
+            <TopMenuV1 :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 1" />
           </div>
         </div>
 
@@ -60,15 +61,18 @@
 </template>
 
 <script>
+import { useRoute, useSiteData } from 'vuepress/client';
+
 import TopMenu from './TopMenu.vue';
 import TopMenuV1 from './TopMenuV1.vue';
-import MajorVersionSelector from '../components/MajorVersionSelector.vue';
+import NavSelector from '../components/NavSelector.vue';
+import { BACKEND_ID, PRODUCTS, absolutePath, findEntry } from '../products';
 
 export default {
   components: {
     TopMenu,
     TopMenuV1,
-    MajorVersionSelector,
+    NavSelector,
   },
   name: 'Header',
   props: {
@@ -77,7 +81,21 @@ export default {
       default: 2,
     },
   },
+  setup() {
+    return { route$: useRoute(), site$: useSiteData() };
+  },
   computed: {
+    products() {
+      return PRODUCTS;
+    },
+    isBackend() {
+      const product = findEntry(
+        PRODUCTS,
+        absolutePath(this.site$.base, this.route$.path)
+      );
+
+      return Boolean(product) && product.id === BACKEND_ID;
+    },
     searchboxOptions() {
       return {
         searchParameters: {
@@ -90,6 +108,16 @@ export default {
 </script>
 
 <style lang="scss">
+.md-header-nav {
+  min-height: 5.6rem;
+}
+
+[data-md-component='title'] {
+  display: flex;
+  align-items: center;
+  padding: 0 0.6rem;
+}
+
 .divider {
   height: 30px;
   width: 2px;
