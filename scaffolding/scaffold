@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const
-  program = require('commander');
+  { program } = require('commander');
 
 program
   .command('generate <path>')

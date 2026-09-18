@@ -10,7 +10,7 @@
   &--primary {
     .md-nav-title {
       position: sticky;
-      background-color: white;
+      background-color: var(--c-bg-elevated);
       top: 0px;
       z-index: 10;
 
@@ -104,6 +104,38 @@
       transform: scaleY(1) !important;
     }
 
+    // Inner grouping list: the separator and its items need a real <ul>
+    // parent, but none of the .md-nav__list spacing
+    .md-nav__group {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    // Expand/collapse control of a sub-menu
+    .md-nav__toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      width: 100%;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .md-nav__caret {
+      flex: 0 0 auto;
+      width: 1.2rem;
+      color: var(--c-text-subtle);
+      transition: color 0.125s;
+    }
+
+    .md-nav__toggle:hover .md-nav__caret,
+    .md-nav__toggle[aria-expanded='true'] .md-nav__caret {
+      color: var(--c-accent);
+    }
+
     & > .md-nav__item-container {
       margin-bottom: 24px;
 
@@ -184,7 +216,7 @@
     overflow: hidden;
 
     code {
-      background-color: $md-code-background-inline;
+      background-color: var(--c-code-inline-bg);
       padding: 2px;
     }
 
@@ -217,7 +249,7 @@
     // Active link
     &:active,
     &--active {
-      color: $md-color-pink;
+      color: var(--c-accent);
     }
 
     // Reset active color for nested list titles
@@ -228,7 +260,7 @@
     // Focused or hovered link
     &:focus,
     &:hover {
-      color: $md-color-pink;
+      color: var(--c-accent);
     }
   }
 
@@ -253,7 +285,7 @@
 
   // [tablet -]: Layered navigation
   @include break-to-device(tablet) {
-    background-color: $md-color-white;
+    background-color: var(--c-bg-elevated);
 
     // Stretch primary navigation to drawer
     &--primary,
@@ -284,8 +316,8 @@
         height: 6rem;
         padding: 0.8rem 4.6rem 0.4rem;
         padding-right: 0;
-        background-color: $md-color-black--lightest;
-        color: $md-color-black--light;
+        background-color: var(--c-border);
+        color: var(--c-text-muted);
         font-weight: 400;
         line-height: 4.8rem;
         white-space: nowrap;
@@ -299,13 +331,13 @@
           left: 0.4rem;
           width: 4rem;
           height: 4rem;
-          color: $md-color-black--light;
+          color: var(--c-text-muted);
         }
 
         // Main lists
         ~ .md-nav__list {
-          background-color: $md-color-white;
-          box-shadow: 0 0.1rem 0 $md-color-black--lightest inset;
+          background-color: var(--c-bg-elevated);
+          box-shadow: 0 0.1rem 0 var(--c-border) inset;
           z-index: -2;
           // Remove border for first list item
           & > .md-nav__item:first-child {
@@ -326,7 +358,7 @@
         // Site title in main navigation
         &--site {
           position: relative;
-          background-color: $md-color-primary;
+          background-color: var(--c-bg-header);
           color: $md-color-white;
 
           // Site logo
@@ -377,7 +409,7 @@
       // List item
       .md-nav__item {
         padding: 12px;
-        border-top: 0.1rem solid $md-color-black--lightest;
+        border-top: 0.1rem solid var(--c-border);
 
         // Adjust for RTL languages
         [dir='rtl'] & {
