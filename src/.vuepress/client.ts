@@ -12,6 +12,8 @@ import {
   faCircleInfo,
   faGlobe,
   faMagnifyingGlass,
+  faMoon,
+  faSun,
   faTriangleExclamation,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -37,16 +39,65 @@ library.add(
   faGlobe,
   faLinkedinIn,
   faMagnifyingGlass,
+  faMoon,
   faStackOverflow,
+  faSun,
   faTriangleExclamation,
   faXTwitter,
   faYoutube,
 );
 
+const HUBSPOT_SRC = 'https://js.hs-scripts.com/3803374.js';
+
+/**
+ * Load the HubSpot tracker once the page is idle.
+ *
+ * It costs ~2.3s of main thread on a mid-range device, and `defer` only pushes
+ * that cost to the end of parsing: it still lands before the page is
+ * interactive. Waiting for `load` keeps it out of the critical path.
+ */
+const loadHubspot = () => {
+  if (
+    typeof document === 'undefined' ||
+    document.getElementById('hs-script-loader')
+  ) {
+    return;
+  }
+
+  const script = document.createElement('script');
+
+  script.id = 'hs-script-loader';
+  script.async = true;
+  script.src = HUBSPOT_SRC;
+  document.head.appendChild(script);
+};
+
+const whenIdle = (cb: () => void) => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(cb, { timeout: 5000 });
+  } else {
+    window.setTimeout(cb, 2000);
+  }
+};
+
 export default defineClientConfig({
   enhance({ app, router }) {
     // Register the FontAwesomeIcon component
     app.component('font-awesome-icon', FontAwesomeIcon);
+
+    if (typeof window !== 'undefined') {
+      if (document.readyState === 'complete') {
+        whenIdle(loadHubspot);
+      } else {
+        window.addEventListener('load', () => whenIdle(loadHubspot), {
+          once: true,
+        });
+      }
+    }
 
     // Override the VuePress scroll behavior to set a custom top offset
     router.options.scrollBehavior = async (to, from, savedPosition) => {

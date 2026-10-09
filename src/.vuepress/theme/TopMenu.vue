@@ -1,102 +1,23 @@
 <template>
   <nav class="topMenu" data-md-component="tabs">
-    <div style="display: none">{{ `/core/${kuzzleMajor}/guides/` }}</div>
     <div class="topMenu__inner md-grid">
       <ul class="topMenu__list">
         <li class="topMenu__group">
           <ul class="topMenu__group-items">
-            <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/guides/`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/guides/`
-                  ),
-                }"
-                title="Guide"
+            <li
+              class="topMenu__item"
+              v-for="section in sections"
+              :key="section.id"
+            >
+              <NavLink
+                :path="section.path"
+                :title="section.text"
                 class="topMenu__link"
-                >Guide</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/api/`"
                 :class="{
-                  'topMenu__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/api/`
-                  ),
+                  'topMenu__link--active':
+                    currentSection && currentSection.id === section.id,
                 }"
-                title="API"
-                class="topMenu__link"
-                >API</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/framework/`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/framework/`
-                  ),
-                }"
-                title="Framework"
-                class="topMenu__link"
-                >Framework</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/sdk/v${kuzzleMajor}.html`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/sdk/`),
-                }"
-                title="SDKs"
-                class="topMenu__link"
-                >SDKs</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/official-plugins/v${kuzzleMajor}.html`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/official-plugins/`),
-                }"
-                title="Plugins"
-                class="topMenu__link"
-                >Plugins</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/modules/v${kuzzleMajor}.html`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/modules/`),
-                }"
-                title="Modules"
-                class="topMenu__link"
-                >Modules</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/paas-console/1`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/paas-console/1`),
-                }"
-                title="PaaS"
-                class="topMenu__link"
-                >PaaS</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/iot-platform/3`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/iot-platform/3`),
-                }"
-                title="IoT Platform"
-                class="topMenu__link"
-                >IoT Platform</a
+                >{{ section.text }}</NavLink
               >
             </li>
           </ul>
@@ -107,37 +28,24 @@
 </template>
 
 <script>
-import { usePageData } from 'vuepress/client';
+import { useRoute, useSiteData } from 'vuepress/client';
 
-import { VERSION_QUERY_KEY, getCurrentVersion } from '../helpers';
+import { BACKEND_SECTIONS, absolutePath, findEntry } from '../products';
 
 export default {
-  computed: {
-    versionQueryKey() {
-      return VERSION_QUERY_KEY;
-    },
-    debugInfo() {
-      return JSON.stringify(
-        {
-          kuzzleMajor: this.kuzzleMajor,
-        },
-        null,
-        2
-      );
-    },
-    kuzzleMajor() {
-      return getCurrentVersion(this.page$);
-    },
-  },
+  name: 'TopMenu',
   setup() {
-    return { page$: usePageData() };
+    return { route$: useRoute(), site$: useSiteData() };
   },
-  methods: {
-    isLinkActive(linkPath) {
-      if (!this.page$.fullPath) {
-        return false;
-      }
-      return this.page$.fullPath.startsWith(linkPath);
+  computed: {
+    sections() {
+      return BACKEND_SECTIONS;
+    },
+    currentSection() {
+      return findEntry(
+        BACKEND_SECTIONS,
+        absolutePath(this.site$.base, this.route$.path)
+      );
     },
   },
 };

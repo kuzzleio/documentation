@@ -249,10 +249,19 @@
     "url": "https://github.com/kuzzleio/kuzzle-plugin-device-manager.git",
     "repo_name": "kuzzle-device-manager",
     "doc_version": 2,
-    "stable": "master",
-    "dev": "beta",
+    "stable": "2-stable",
+    "dev": "2-beta",
     "name": "kuzzle-device-manager-2",
     "deploy_path": "/official-plugins/device-manager/2/"
+  },
+  {
+    "url": "https://github.com/kuzzleio/kuzzle-plugin-device-manager.git",
+    "repo_name": "kuzzle-device-manager",
+    "doc_version": 3,
+    "stable": "3-dev",
+    "dev": "3-dev",
+    "name": "kuzzle-device-manager-3",
+    "deploy_path": "/official-plugins/device-manager/3/"
   },
   {
     "url": "https://github.com/kuzzleio/kuzzle-plugin-workflows.git",
@@ -274,14 +283,13 @@
     "deploy_path": "/official-plugins/hermes-messenger/1/"
   },
   {
-    "url": "https://github.com/kuzzleio/kuzzle-plugin-scheduler.git",
-    "repo_name": "kuzzle-plugin-scheduler",
-    "doc_version": 1,
+    "url": "https://github.com/kuzzleio/kuzzle-plugin-hermes-messenger.git",
+    "repo_name": "kuzzle-plugin-hermes-messenger",
+    "doc_version": 2,
     "stable": "master",
-    "dev": "1-dev",
-    "name": "scheduler-1",
-    "deploy_path": "/official-plugins/scheduler/1/",
-    "private": true
+    "dev": "2-dev",
+    "name": "plugin-hermes-messenger-2",
+    "deploy_path": "/official-plugins/hermes-messenger/2/"
   },
   {
     "url": "https://github.com/kuzzleio/paas-console.git",
@@ -301,6 +309,16 @@
     "dev": "3-beta",
     "deploy_path": "/iot-platform/3/",
     "name": "iot-platform-3",
+    "private": true
+  },
+  {
+    "url": "https://github.com/kuzzleio/iot-platform.git",
+    "repo_name": "iot-platform",
+    "doc_version": 4,
+    "stable": "stable",
+    "dev": "4-dev",
+    "deploy_path": "/iot-platform/4/",
+    "name": "iot-platform-4",
     "private": true
   },
   {
@@ -354,6 +372,24 @@
     "private": true
   },
   {
+    "url": "https://github.com/kuzzleio/eslint-plugin-kuzzle.git",
+    "repo_name": "eslint-plugin-kuzzle",
+    "doc_version": 1,
+    "stable": "1-stable",
+    "dev": "1-dev",
+    "name": "eslint-plugin-kuzzle-1",
+    "deploy_path": "/official-plugins/eslint/1/"
+  },
+  {
+    "url": "https://github.com/kuzzleio/eslint-plugin-kuzzle.git",
+    "repo_name": "eslint-plugin-kuzzle",
+    "doc_version": 2,
+    "stable": "2-stable",
+    "dev": "2-dev",
+    "name": "eslint-plugin-kuzzle-2",
+    "deploy_path": "/official-plugins/eslint/2/"
+  },
+  {
     "url": "https://github.com/kuzzleio/kuzzle-logger",
     "repo_name": "kuzzle-logger",
     "doc_version": 1,
@@ -361,5 +397,15 @@
     "dev": "1-dev",
     "deploy_path": "/modules/logger/1/",
     "name": "kuzzle-logger-1"
+  },
+  {
+    "url": "https://github.com/kuzzleio/kuzzle-agent-ia",
+    "repo_name": "kuzzle-agent-ia",
+    "doc_version": 1,
+    "stable": "1-stable",
+    "dev": "1-dev",
+    "deploy_path": "/agent-ia/1/",
+    "name": "kuzzle-agent-ia-1",
+    "private": true
   }
 ]

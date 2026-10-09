@@ -36,6 +36,8 @@ export default {
             s.kuzzleMajor === this.kuzzleMajor &&
             s.section === 'official-plugins' &&
             s.subsection &&
+            // Archived plugins stay reachable by URL, but are not listed here
+            !s.deprecated &&
             // If we are deploying to the master branch, exclude the
             // sections that are not released yet
             (BRANCH === 'master' ? s.released === true : true)

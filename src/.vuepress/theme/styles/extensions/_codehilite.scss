@@ -322,8 +322,8 @@ $codehilite-whitespace: transparent;
     margin: 1em 0;
     padding: 0;
     border-radius: 0.2rem;
-    background-color: $md-code-background;
-    color: $md-code-color;
+    background-color: var(--c-code-bg);
+    color: var(--c-code-text);
     line-height: 1.4;
     -webkit-overflow-scrolling: touch;
 
@@ -337,19 +337,27 @@ $codehilite-whitespace: transparent;
       overflow: auto;
       vertical-align: top;
 
-      // Override native scrollbar styles
+      // Code blocks sit on a dark surface in both themes, so the scrollbar
+      // needs a light thumb: the default one is invisible against it, and a
+      // wide code block then just looks truncated.
+      scrollbar-width: thin;
+      scrollbar-color: hsla(0, 0%, 100%, 0.32) transparent;
+
       &::-webkit-scrollbar {
-        width: 0.4rem;
-        height: 0.4rem;
+        width: 0.8rem;
+        height: 0.8rem;
       }
 
-      // Style scrollbar thumb
-      &::-webkit-scrollbar-thumb {
-        background-color: $md-color-black--lighter;
+      &::-webkit-scrollbar-track {
+        background-color: hsla(0, 0%, 100%, 0.06);
+      }
 
-        // Hovered scrollbar thumb
+      &::-webkit-scrollbar-thumb {
+        border-radius: 0.4rem;
+        background-color: hsla(0, 0%, 100%, 0.32);
+
         &:hover {
-          background-color: $md-color-accent;
+          background-color: var(--c-accent);
         }
       }
     }

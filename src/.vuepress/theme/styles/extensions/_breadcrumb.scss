@@ -1,0 +1,46 @@
+.breadcrumb {
+  margin-bottom: 1.6rem;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    color: var(--c-text-muted);
+
+    // Separator between the crumbs
+    &:not(:first-child)::before {
+      margin: 0 0.6rem;
+      color: var(--c-text-subtle);
+      content: '/';
+    }
+  }
+
+  &__link {
+    color: var(--c-text-muted);
+    transition: color 0.125s;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--c-accent);
+    }
+  }
+
+  &__current {
+    color: var(--c-text);
+    font-weight: 500;
+  }
+
+  @media print {
+    display: none;
+  }
+}

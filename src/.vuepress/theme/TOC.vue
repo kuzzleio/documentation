@@ -4,7 +4,7 @@
       <label class="md-nav__title" for="toc">Table of contents</label>
       <ul class="md-nav__list" data-md-scrollfix>
         <li class="md-nav__item">
-          <RouteLink to="" class="md-nav__link">{{ page$.title }}</RouteLink>
+          <RouteLink to="" class="md-nav__link">{{ shortTitle(page$.title) }}</RouteLink>
         </li>
         <li v-for="header of headers" class="md-nav__item">
           <RouteLink :to="getPath(header)" :class="headerLinkClass(header)">{{ header.title }}</RouteLink>
@@ -21,6 +21,7 @@ import {
 } from 'vuepress/client';
 
 import { resolveHeaders } from '../util';
+import { shortTitle } from '../helpers';
 
 export default {
   computed: {
@@ -48,6 +49,7 @@ export default {
     };
   },
   methods: {
+    shortTitle,
     getPath(header) {
       return `${header.path}`;
     }

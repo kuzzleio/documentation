@@ -5,7 +5,7 @@
 // Tabs with outline
 .topMenu {
   transition: background 0.25s;
-  background-color: $md-color-primary;
+  background-color: var(--c-bg-header);
   color: $md-color-white;
   overflow: auto;
   position: relative;
@@ -77,7 +77,7 @@
       transition: width 0.3s;
       height: 1px;
       display: block;
-      background-color: white;
+      background-color: var(--c-bg-elevated);
     }
     // Active or hovered link
     &--active,
@@ -99,7 +99,7 @@
   }
 
   @include break-to-device(tablet) {
-    background-color: $md-color-primary;
+    background-color: var(--c-bg-header);
     color: white;
     margin: 0;
     top: 0;
