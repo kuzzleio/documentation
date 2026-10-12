@@ -47,6 +47,12 @@ export default defineUserConfig({
    * instance (636 pages). Client-side navigation already renders in ~100ms.
    */
   shouldPrefetch: false,
+  /**
+   * Content repos mounted under `src/` may carry a `.vuepress` symlink back
+   * to this framework (left by `kuzdoc dev`), which would otherwise pull the
+   * framework's own build output into the page tree.
+   */
+  pagePatterns: ['**/*.md', '!**/.vuepress/**', '!**/node_modules/**'],
   clientConfigFile: path.resolve(__dirname, './client.ts'),
 
   theme: kuzdocTheme(),
