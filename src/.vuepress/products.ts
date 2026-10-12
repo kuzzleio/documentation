@@ -66,12 +66,28 @@ export const SHARED_SECTIONS: NavEntry[] = [
   },
 ];
 
+export const IOT_4_SECTIONS: NavEntry[] = [
+  {
+    id: 'guide',
+    text: 'Guide',
+    path: '/iot-platform/4/guides/',
+    match: ['/iot-platform/4/guides'],
+  },
+  {
+    id: 'api',
+    text: 'API',
+    path: '/iot-platform/4/api/',
+    match: ['/iot-platform/4/api'],
+  },
+];
+
 export const PRODUCTS: Product[] = [
   {
     id: 'iot-platform-4',
     text: 'Kuzzle IoT v4',
     path: '/iot-platform/4/',
     match: ['/iot-platform/4'],
+    sections: IOT_4_SECTIONS,
     sharedSections: true,
   },
   {
