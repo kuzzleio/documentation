@@ -19,10 +19,14 @@
                 height="48"
               />
             </span>
-            <NavSelector :items="products" label="Change product" />
+            <NavSelector
+              :items="products"
+              :selected="product$"
+              label="Change product"
+            />
           </label>
           <div class="mobile-only">
-            <TopMenu v-if="isBackend" />
+            <TopMenu />
             <TopMenuV1 :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 1" />
           </div>
           <SDKSelector
@@ -152,7 +156,8 @@ import {
 import TopMenu from './TopMenu.vue';
 import TopMenuV1 from './TopMenuV1.vue';
 import NavSelector from '../components/NavSelector.vue';
-import { BACKEND_ID, PRODUCTS, absolutePath, findEntry } from '../products';
+import { useCurrentProduct } from '../current-product';
+import { PRODUCTS } from '../products';
 
 import { shortTitle } from '../helpers';
 import {
@@ -189,6 +194,7 @@ export default {
       router$: useRouter(),
       routes$: useRoutes(),
       site$: useSiteData(),
+      product$: useCurrentProduct(),
     };
   },
   data() {
@@ -199,14 +205,6 @@ export default {
   computed: {
     products() {
       return PRODUCTS;
-    },
-    isBackend() {
-      const product = findEntry(
-        PRODUCTS,
-        absolutePath(this.site$.base, this.route$.path)
-      );
-
-      return Boolean(product) && product.id === BACKEND_ID;
     },
     sdkOrApiPage() {
       if (!this.page$.currentSection) {

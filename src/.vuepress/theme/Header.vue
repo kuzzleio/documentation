@@ -28,13 +28,17 @@
 
         <!-- Header title -->
         <div data-md-component="title">
-          <NavSelector :items="products" label="Change product" />
+          <NavSelector
+            :items="products"
+            :selected="product$"
+            label="Change product"
+          />
         </div>
 
         <div class="md-header-nav__top-menu-container">
           <div class="screen-only">
             <!-- Sub-sections of the open source backend -->
-            <TopMenu v-if="isBackend" />
+            <TopMenu />
             <TopMenuV1 :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 1" />
           </div>
         </div>
@@ -68,7 +72,8 @@ import { useRoute, useSiteData } from 'vuepress/client';
 import TopMenu from './TopMenu.vue';
 import TopMenuV1 from './TopMenuV1.vue';
 import NavSelector from '../components/NavSelector.vue';
-import { BACKEND_ID, PRODUCTS, absolutePath, findEntry } from '../products';
+import { useCurrentProduct } from '../current-product';
+import { PRODUCTS } from '../products';
 
 export default {
   components: {
@@ -84,19 +89,15 @@ export default {
     },
   },
   setup() {
-    return { route$: useRoute(), site$: useSiteData() };
+    return {
+      route$: useRoute(),
+      site$: useSiteData(),
+      product$: useCurrentProduct(),
+    };
   },
   computed: {
     products() {
       return PRODUCTS;
-    },
-    isBackend() {
-      const product = findEntry(
-        PRODUCTS,
-        absolutePath(this.site$.base, this.route$.path)
-      );
-
-      return Boolean(product) && product.id === BACKEND_ID;
     },
     searchboxOptions() {
       return {

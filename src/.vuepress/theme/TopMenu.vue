@@ -1,27 +1,30 @@
 <template>
-  <nav class="topMenu" data-md-component="tabs">
+  <nav class="topMenu" data-md-component="tabs" v-if="groups.length">
     <div class="topMenu__inner md-grid">
       <ul class="topMenu__list">
-        <li class="topMenu__group">
-          <ul class="topMenu__group-items">
-            <li
-              class="topMenu__item"
-              v-for="section in sections"
-              :key="section.id"
-            >
-              <NavLink
-                :path="section.path"
-                :title="section.text"
-                class="topMenu__link"
-                :class="{
-                  'topMenu__link--active':
-                    currentSection && currentSection.id === section.id,
-                }"
-                >{{ section.text }}</NavLink
+        <template v-for="(group, index) in groups" :key="index">
+          <li class="topMenu__separator" v-if="index > 0" aria-hidden="true" />
+          <li class="topMenu__group">
+            <ul class="topMenu__group-items">
+              <li
+                class="topMenu__item"
+                v-for="section in group"
+                :key="section.id"
               >
-            </li>
-          </ul>
-        </li>
+                <NavLink
+                  :path="section.path"
+                  :title="section.text"
+                  class="topMenu__link"
+                  :class="{
+                    'topMenu__link--active':
+                      currentSection && currentSection.id === section.id,
+                  }"
+                  >{{ section.text }}</NavLink
+                >
+              </li>
+            </ul>
+          </li>
+        </template>
       </ul>
     </div>
   </nav>
@@ -30,22 +33,32 @@
 <script>
 import { useRoute, useSiteData } from 'vuepress/client';
 
-import { BACKEND_SECTIONS, absolutePath, findEntry } from '../products';
+import { useCurrentProduct } from '../current-product';
+import { absolutePath, findEntry, topMenuGroups } from '../products';
 
+/**
+ * Sections of the current product, in groups separated by a divider: the
+ * product's own sections first, then the ones shared across products.
+ * Renders nothing for a product without any.
+ */
 export default {
   name: 'TopMenu',
   setup() {
-    return { route$: useRoute(), site$: useSiteData() };
+    return {
+      route$: useRoute(),
+      site$: useSiteData(),
+      product$: useCurrentProduct(),
+    };
   },
   computed: {
-    sections() {
-      return BACKEND_SECTIONS;
+    path() {
+      return absolutePath(this.site$.base, this.route$.path);
+    },
+    groups() {
+      return topMenuGroups(this.product$);
     },
     currentSection() {
-      return findEntry(
-        BACKEND_SECTIONS,
-        absolutePath(this.site$.base, this.route$.path)
-      );
+      return findEntry(this.groups.flat(), this.path);
     },
   },
 };
