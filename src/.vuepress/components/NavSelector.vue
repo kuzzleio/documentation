@@ -65,6 +65,11 @@ export default {
       type: String,
       default: 'Change section',
     },
+    // Item to show as selected, overriding the one matched from the path
+    selected: {
+      type: Object,
+      default: null,
+    },
   },
   setup() {
     return { route$: useRoute(), site$: useSiteData() };
@@ -76,9 +81,9 @@ export default {
   },
   computed: {
     selectedItem() {
-      return findEntry(
-        this.items,
-        absolutePath(this.site$.base, this.route$.path)
+      return (
+        this.selected ||
+        findEntry(this.items, absolutePath(this.site$.base, this.route$.path))
       );
     },
   },

@@ -1,10 +1,19 @@
 /**
  * Top-level navigation model.
  *
- * The header exposes two selectors:
+ * The header exposes:
  *  - PRODUCTS: the company's product lines (what a visitor is looking for)
- *  - BACKEND_SECTIONS: the sub-sections of the open source backend, which used
- *    to live in the top navbar
+ *  - a top menu made of two groups, separated visually:
+ *      - the product's own sections (`Product.sections`, e.g. Guide / API /
+ *        Framework for the open source backend)
+ *      - SHARED_SECTIONS, the ecosystem sections that apply to every product
+ *        built on the backend (SDKs / Plugins / Modules). They stay in the
+ *        menu whatever the product, as long as it opts in with
+ *        `sharedSections`.
+ *
+ * Shared sections belong to no product: when browsing them, the product
+ * shown is the one the visitor comes from (see `useCurrentProduct`), and the
+ * open source backend when there is none.
  *
  * `match` holds the path prefixes that belong to the entry, used to highlight
  * the current one.
@@ -16,48 +25,14 @@ export interface NavEntry {
   match: string[];
 }
 
-export const BACKEND_ID = 'backend';
+export interface Product extends NavEntry {
+  /** Sections specific to this product, first group of the top menu. */
+  sections?: NavEntry[];
+  /** Whether SHARED_SECTIONS are shown for this product. */
+  sharedSections?: boolean;
+}
 
-export const PRODUCTS: NavEntry[] = [
-  {
-    id: 'iot-platform-4',
-    text: 'Kuzzle IoT v4',
-    path: '/iot-platform/4/',
-    match: ['/iot-platform/4'],
-  },
-  {
-    id: 'iot-platform',
-    text: 'Kuzzle IoT v3',
-    path: '/iot-platform/3/',
-    match: ['/iot-platform/3'],
-  },
-  {
-    id: BACKEND_ID,
-    text: 'Kuzzle Backend v2',
-    path: '/core/2/guides/',
-    match: [
-      '/core/',
-      '/sdk/',
-      '/official-plugins/',
-      '/modules/',
-      '/how-to/',
-      '/v1',
-      '/v2',
-    ],
-  },
-  {
-    id: 'paas',
-    text: 'Kuzzle PaaS',
-    path: '/paas-console/1/',
-    match: ['/paas-console'],
-  },
-  {
-    id: 'agent-ia',
-    text: 'Kuzzle AI Agent',
-    path: '/agent-ia/1/',
-    match: ['/agent-ia'],
-  },
-];
+export const BACKEND_ID = 'backend';
 
 export const BACKEND_SECTIONS: NavEntry[] = [
   {
@@ -73,6 +48,9 @@ export const BACKEND_SECTIONS: NavEntry[] = [
     path: '/core/2/framework/',
     match: ['/core/2/framework'],
   },
+];
+
+export const SHARED_SECTIONS: NavEntry[] = [
   { id: 'sdk', text: 'SDKs', path: '/sdk/v2.html', match: ['/sdk/'] },
   {
     id: 'official-plugins',
@@ -88,8 +66,111 @@ export const BACKEND_SECTIONS: NavEntry[] = [
   },
 ];
 
-export const findEntry = (entries: NavEntry[], path: string) =>
+export const IOT_4_SECTIONS: NavEntry[] = [
+  {
+    id: 'guide',
+    text: 'Guide',
+    path: '/iot-platform/4/guides/',
+    match: ['/iot-platform/4/guides'],
+  },
+  {
+    id: 'api',
+    text: 'API',
+    path: '/iot-platform/4/api/',
+    match: ['/iot-platform/4/api'],
+  },
+];
+
+export const PRODUCTS: Product[] = [
+  {
+    id: 'iot-platform-4',
+    text: 'Kuzzle IoT v4',
+    path: '/iot-platform/4/',
+    match: ['/iot-platform/4'],
+    sections: IOT_4_SECTIONS,
+    sharedSections: true,
+  },
+  {
+    id: 'iot-platform',
+    text: 'Kuzzle IoT v3',
+    path: '/iot-platform/3/',
+    match: ['/iot-platform/3'],
+    sharedSections: true,
+  },
+  {
+    id: BACKEND_ID,
+    text: 'Kuzzle Backend v2',
+    path: '/core/2/guides/',
+    match: ['/core/', '/how-to/', '/v1', '/v2'],
+    sections: BACKEND_SECTIONS,
+    sharedSections: true,
+  },
+  {
+    id: 'paas',
+    text: 'Kuzzle PaaS',
+    path: '/paas-console/1/',
+    match: ['/paas-console'],
+  },
+  {
+    id: 'agent-ia',
+    text: 'Kuzzle AI Agent',
+    path: '/agent-ia/1/',
+    match: ['/agent-ia'],
+  },
+];
+
+export const findEntry = <T extends NavEntry>(entries: T[], path: string) =>
   entries.find((entry) => entry.match.some((p) => path.startsWith(p)));
+
+export const BACKEND = PRODUCTS.find((p) => p.id === BACKEND_ID) as Product;
+
+/** Whether a site-wide path belongs to a shared section rather than a product. */
+export const isSharedPath = (path: string) =>
+  Boolean(findEntry(SHARED_SECTIONS, path));
+
+/** localStorage key remembering the last product the visitor browsed. */
+export const PRODUCT_STORAGE_KEY = 'kuzzle-doc-product';
+
+/**
+ * Product to display for a site-wide path.
+ *
+ * `rememberedId` is the id of the last product browsed, used on shared
+ * sections so that a visitor coming from IoT keeps IoT in the header while
+ * reading the SDK pages. Falls back to the backend, which is the product the
+ * shared sections historically belong to.
+ */
+export const resolveProduct = (
+  path: string,
+  rememberedId: string | null
+): Product | undefined => {
+  const own = findEntry(PRODUCTS, path);
+
+  if (own || !isSharedPath(path)) {
+    return own;
+  }
+
+  const remembered = PRODUCTS.find(
+    (p) => p.id === rememberedId && p.sharedSections
+  );
+
+  return remembered || BACKEND;
+};
+
+/**
+ * Groups of sections the top menu shows for a product: its own sections,
+ * then the shared ones. Empty groups are dropped, so a product with neither
+ * gets no top menu at all.
+ */
+export const topMenuGroups = (product?: Product): NavEntry[][] => {
+  if (!product) {
+    return [];
+  }
+
+  return [
+    product.sections || [],
+    product.sharedSections ? SHARED_SECTIONS : [],
+  ].filter((group) => group.length > 0);
+};
 
 /**
  * Each section is served by its own VuePress instance, mounted on a base
