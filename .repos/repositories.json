@@ -399,6 +399,15 @@
     "name": "kuzzle-logger-1"
   },
   {
+    "url": "https://github.com/kuzzleio/kuzzle-prometheus",
+    "repo_name": "kuzzle-prometheus",
+    "doc_version": 1,
+    "stable": "master",
+    "dev": "1-dev",
+    "deploy_path": "/modules/prometheus/1/",
+    "name": "kuzzle-prometheus-1"
+  },
+  {
     "url": "https://github.com/kuzzleio/kuzzle-agent-ia",
     "repo_name": "kuzzle-agent-ia",
     "doc_version": 1,
