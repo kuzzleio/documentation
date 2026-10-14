@@ -5,9 +5,9 @@ order: 0
 title: Kuzzle documentation
 meta:
   - name: description
-    content: Kuzzle V2 official documentation
+    content: Kuzzle official documentation, Kuzzle IoT Platform, Kuzzle Backend, PaaS and AI Agent
   - name: keywords
-    content: Kuzzle, documentation, kuzzle documentation V2, kuzzle V2, what is kuzzle, kuzzle v2 guide, kuzzle v2 tutorial
+    content: Kuzzle, documentation, Kuzzle IoT Platform, IoT, kuzzle backend, kuzzle v2 guide, what is kuzzle
 ---
 
-<Redirect to="/core/2/guides/introduction/what-is-kuzzle/" />
+<Redirect to="/iot-platform/4/" />

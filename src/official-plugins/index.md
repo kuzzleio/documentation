@@ -10,4 +10,4 @@ meta:
     content: Kuzzle, plugins, official
 ---
 
-<Redirect to="/v2" />
+<Redirect to="/official-plugins/v2.html" />

@@ -12,7 +12,7 @@
 
 // Navigation within footer
 .md-footer-nav {
-  background-color: $md-color-black;
+  background-color: var(--c-text);
   color: $md-color-white;
 
   // Set spacing
@@ -97,7 +97,7 @@
   }
 }
 .md-footer-external {
-  background-color: $clr-grey-200;
+  background-color: var(--c-bg-soft);
   width: 100%;
   padding: 0.4rem;
   text-align: center;
@@ -111,7 +111,7 @@
     width: 192px;
 
     &__title {
-      color: $clr-black;
+      color: var(--c-text);
       font-weight: bold;
       padding-top: 1rem;
     }
@@ -121,20 +121,20 @@
       height: 64px;
       width: 64px;
       margin: auto;
-      color: $md-color-blue;
+      color: var(--c-text);
   }
 
     &__description {
       display: block;
       word-wrap: break-word;
-      color: $clr-grey-600;
+      color: var(--c-text-muted);
     }
   }
 }
 
 // Non-navigational information
 .md-footer-meta {
-  background-color: $clr-indigo;
+  background-color: var(--c-bg-header);
 
   // Set spacing
   &__inner {

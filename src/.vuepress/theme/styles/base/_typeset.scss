@@ -13,7 +13,7 @@ body {
 // Default fonts
 body,
 input {
-  color: $md-color-black;
+  color: var(--c-text);
   font-feature-settings: 'kern', 'liga';
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -22,7 +22,7 @@ input {
 pre,
 code,
 kbd {
-  color: $md-color-black;
+  color: var(--c-text);
   font-feature-settings: 'kern';
   font-family: 'Courier New', Courier, monospace;
 }
@@ -53,7 +53,7 @@ kbd {
   // 1st level headline
   h1 {
     margin: 0 0 4rem;
-    color: $md-color-black--light;
+    color: var(--c-text-muted);
     font-size: ms(3);
     font-weight: 300;
     letter-spacing: -0.01em;
@@ -67,7 +67,7 @@ kbd {
   // 2nd level headline
   h2 {
     margin: 4rem 0 1.6rem;
-    color: $md-color-primary;
+    color: var(--c-heading);
     font-size: ms(2);
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -104,7 +104,7 @@ kbd {
   h5,
   h6 {
     margin: 1.6rem 0;
-    color: $md-color-black--light;
+    color: var(--c-text-muted);
     font-size: ms(-1);
     font-weight: 700;
     letter-spacing: -0.01em;
@@ -128,12 +128,12 @@ kbd {
   // Horizontal separators
   hr {
     margin: 1.5em 0;
-    border-bottom: 0.1rem dotted $md-color-black--lighter;
+    border-bottom: 0.1rem dotted var(--c-text-subtle);
   }
 
   // Links
   a {
-    color: $md-color-pink;
+    color: var(--c-accent);
     word-break: break-word;
 
     // Also enable color transition on pseudo elements
@@ -145,21 +145,21 @@ kbd {
     // Hovered and active links
     &:hover,
     &:active {
-      color: $md-color-accent;
+      color: var(--c-accent-hover);
     }
 
     // Add URLs for print
     @media print {
       // Show link URL
       &::after {
-        color: $md-color-black--light;
+        color: var(--c-text-muted);
         content: ' [' attr(href) ']';
       }
     }
 
     // Code links
     code {
-      color: $md-color-pink;
+      color: var(--c-accent);
     }
   }
 
@@ -168,6 +168,33 @@ kbd {
     position: relative;
     z-index: 1;
     margin: 12px 0;
+
+    // <pre> is the element that actually scrolls. Its scrollbar sits on the
+    // dark code surface, where the default one is invisible: a wide block then
+    // just looks truncated, with nothing saying it can be scrolled.
+    pre {
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: hsla(0, 0%, 100%, 0.32) hsla(0, 0%, 100%, 0.06);
+
+      &::-webkit-scrollbar {
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: hsla(0, 0%, 100%, 0.06);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 0.4rem;
+        background-color: hsla(0, 0%, 100%, 0.32);
+
+        &:hover {
+          background-color: var(--c-accent);
+        }
+      }
+    }
 
     .highlight-lines {
       position: absolute;
@@ -182,7 +209,7 @@ kbd {
     line-height: 23px;
 
     .highlighted {
-      background-color: $md-code-background-highlighted;
+      background-color: var(--c-code-bg-highlighted);
     }
   }
 
@@ -190,7 +217,7 @@ kbd {
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
     font-size: 1.4rem;
     direction: ltr;
-    color: white;
+    color: var(--c-code-text);
     // Wrap text and hide scollbars
     @media print {
       white-space: pre-wrap;
@@ -204,8 +231,8 @@ kbd {
     border-radius: 4px;
     font-weight: normal;
     font-size: 0.875em;
-    background-color: $md-code-background-inline;
-    color: $md-code-color-inline;
+    background-color: var(--c-code-inline-bg);
+    color: var(--c-code-inline-text);
     // Remove box-shadows for print
     @media print {
       box-shadow: none;
@@ -247,19 +274,27 @@ kbd {
         padding: 1.05rem 1.6rem;
       }
 
-      // Override native scrollbar styles
+      // Code blocks sit on a dark surface in both themes, so the scrollbar
+      // needs a light thumb: the default one is invisible against it, and a
+      // wide code block then just looks truncated.
+      scrollbar-width: thin;
+      scrollbar-color: hsla(0, 0%, 100%, 0.32) transparent;
+
       &::-webkit-scrollbar {
-        width: 0.4rem;
-        height: 0.4rem;
+        width: 0.8rem;
+        height: 0.8rem;
       }
 
-      // Style scrollbar thumb
-      &::-webkit-scrollbar-thumb {
-        background-color: $md-color-black--lighter;
+      &::-webkit-scrollbar-track {
+        background-color: hsla(0, 0%, 100%, 0.06);
+      }
 
-        // Hovered scrollbar thumb
+      &::-webkit-scrollbar-thumb {
+        border-radius: 0.4rem;
+        background-color: hsla(0, 0%, 100%, 0.32);
+
         &:hover {
-          background-color: $md-color-accent;
+          background-color: var(--c-accent);
         }
       }
     }
@@ -273,8 +308,8 @@ kbd {
     border: 0.1rem solid color.scale($md-keyboard-background, $lightness: -20%);
     border-radius: 0.3rem;
     border-bottom-color: color.scale($md-keyboard-background, $lightness: -25%);
-    background-color: $md-keyboard-background;
-    color: $md-keyboard-color;
+    background-color: var(--c-kbd-bg);
+    color: var(--c-kbd-text);
     font-size: 85%;
     box-shadow: 0 0.1rem 0 color.scale($md-keyboard-background, $lightness: -30%);
     word-break: break-word;
@@ -294,7 +329,7 @@ kbd {
 
   // Abbreviations
   abbr {
-    border-bottom: 0.1rem dotted $md-color-black--light;
+    border-bottom: 0.1rem dotted var(--c-text-muted);
     text-decoration: none;
     cursor: help;
   }
@@ -319,14 +354,14 @@ kbd {
   // Blockquotes, possibly nested
   blockquote {
     padding-left: 1.2rem;
-    border-left: 0.4rem solid $md-color-black--lighter;
-    color: $md-color-black--light;
+    border-left: 0.4rem solid var(--c-text-subtle);
+    color: var(--c-text-muted);
 
     // Adjust for RTL languages
     [dir='rtl'] & {
       padding-right: 1.2rem;
       padding-left: initial;
-      border-right: 0.4rem solid $md-color-black--lighter;
+      border-right: 0.4rem solid var(--c-text-subtle);
       border-left: initial;
     }
   }
@@ -416,7 +451,7 @@ kbd {
   table:not([class]) {
     max-width: 100%;
     width: 100%;
-    border: 0.1rem solid $md-color-black--lightest;
+    border: 0.1rem solid var(--c-border);
     border-radius: 4px;
     font-size: 1.54rem;
     overflow: auto;
@@ -449,8 +484,8 @@ kbd {
     th {
       min-width: 10rem;
       padding: 1.2rem 1.6rem;
-      background-color: $md-color-black--lightest;
-      color: $md-color-black;
+      background-color: var(--c-border);
+      color: var(--c-text);
       vertical-align: top;
       font-weight: bold;
     }
@@ -458,7 +493,7 @@ kbd {
     // Table cells
     td {
       padding: 1.2rem 1.6rem;
-      border-top: 0.1rem solid $md-color-black--lightest;
+      border-top: 0.1rem solid var(--c-border);
       vertical-align: top;
     }
 

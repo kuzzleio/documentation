@@ -9,7 +9,7 @@
   right: 0;
   left: 0;
   transition: background-color 0.25s, color 0.25s;
-  background-color: $md-color-primary;
+  background-color: var(--c-bg-header);
   color: $md-color-white;
   box-shadow: none;
   z-index: 2;
@@ -104,14 +104,14 @@
   }
 
   &__beta {
-    background-color: $md-color-pink;
+    background-color: var(--c-accent);
     font-size: 0.8em;
     padding: 2px 6px;
     border-radius: 3px;
 
     @include break-to-device(mobile) {
       background-color: transparent;
-      color: $md-color-pink;
+      color: var(--c-accent);
       font-size: 0.6em;
       padding: 0;
     }

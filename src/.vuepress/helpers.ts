@@ -20,3 +20,12 @@ export const createMetaTag = (property: string, content: string) => {
 
   return meta;
 };
+
+/**
+ * Title without its SEO suffix.
+ *
+ * Frontmatter titles carry their breadcrumb for search engines
+ * ("create | API | Core"); only the first segment is meant to be displayed.
+ */
+export const shortTitle = (title: string) =>
+  (title || '').split('|')[0].trim();
