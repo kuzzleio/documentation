@@ -561,5 +561,14 @@
     "subsection": "logger",
     "icon": "/logos/module-logger.svg",
     "released": true
+  },
+  "/modules/prometheus/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "Prometheus",
+    "section": "modules",
+    "subsection": "prometheus",
+    "icon": "/logos/plugin-prometheus.svg",
+    "released": true
   }
 }
