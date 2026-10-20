@@ -16,8 +16,9 @@ Le staging existe : la branche `develop` du framework déploie dans le bucket
 
 Constats relevés le 2026-10-16 :
 - le domaine du staging est **`next-docs.kuzzle.io`**, qui répond 200 ;
-- `docs-next.kuzzle.io` ne résout plus vers CloudFront : son CNAME pointe vers un
-  enregistrement de validation ACM ;
+- `docs-next.kuzzle.io` est le nom du bucket, pas un domaine : il ne résout que
+  par l'enregistrement joker `*.kuzzle.io`, qui pointe vers une validation ACM
+  (corrigé le 2026-10-21) ;
 - le bucket du staging est **listable et lisible publiquement**.
 
 ## Décision
@@ -46,8 +47,8 @@ Constats relevés le 2026-10-16 :
   n'est pas décrite en code.
 
 ### Points à éclaircir
-- Le nom du domaine : documenter `next-docs.kuzzle.io` partout et supprimer ou
-  réparer l'enregistrement `docs-next.kuzzle.io`.
+- Le nom du domaine : documenter `next-docs.kuzzle.io` partout. Il n'y a pas
+  d'enregistrement `docs-next.kuzzle.io` à réparer.
 - Le commit `42deca1d` (racine du site → `/iot-platform/4/`) est déjà sur
   `develop`, donc sur le staging : voir
   [ADR-0004](0004-page-d-accueil-catalogue.md).

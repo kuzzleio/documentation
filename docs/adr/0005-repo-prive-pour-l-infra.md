@@ -13,7 +13,7 @@ Relevé le 2026-10-20 :
 | Constat | Conséquence |
 |---|---|
 | L'Admin Console décrit son hébergement en Terraform dans `infra/` (branche `5-dev`) : trois modules S3 + CloudFront + Route 53, état dans `s3://kuzzle.terraform.states`. `console` et `next-console` ont été importés le 2026-09-23, avec un `plan` vide | La méthode d'import est éprouvée, mais l'infra vit dans un repo **public**. |
-| La documentation n'a pas d'infra en code : buckets, distributions (`E3D6RP0POLCJMM`, `E2ZCCEK9GRB49U`) et enregistrements DNS ont été créés à la main, avant l'arrivée de l'équipe actuelle | Personne ne sait relire ni reproduire leur configuration, et le chantier va l'alourdir (key group, comportements, CloudFront Functions, Lambda). |
+| La documentation n'a pas d'infra en code : buckets, distributions (`E3D6RP0POLCJMM`, `E2ZCCEK9GRB49U`), Lambda@Edge de redirection et enregistrements DNS ont été créés en 2019 par un Terraform dont le code est perdu (seuls ses états subsistent, relevé du 2026-10-21) | Personne ne sait relire ni reproduire leur configuration, et le chantier va l'alourdir (key group, comportements, CloudFront Functions, Lambda). |
 | Les deux applications sont des sites statiques sur le même compte AWS, avec le même bucket d'état, le même certificat `kuzzle.io` et la même zone | Un module commun peut, à terme, servir aux cinq environnements. |
 | La Lambda `/_auth/*` manipulera la clé privée CloudFront et le secret du client OIDC | Ces secrets restent dans Secrets Manager, mais le code qui les utilise et la topologie n'ont pas à être publics. |
 
@@ -44,9 +44,10 @@ Relevé le 2026-10-20 :
    et on corrige la configuration jusqu'à un `plan` vide. Aucun `apply` ne doit
    « réparer » un environnement servi. Périmètre par environnement : bucket et
    sa politique, configuration website, distribution, enregistrements Route 53.
-   Les écarts trouvés (bucket du staging lisible publiquement, CNAME
-   `docs-next.kuzzle.io` cassé…) sont **décrits** dans la configuration et
-   documentés, pas corrigés à l'import.
+   La Lambda@Edge de redirection et son rôle IAM en font partie. Les écarts
+   trouvés (bucket du staging lisible et listable publiquement…) sont
+   **décrits** dans la configuration et documentés, pas corrigés à l'import.
+   Les états de 2019 ne sont pas réutilisés : on importe dans un état neuf.
 4. **Pas de module commun au départ.** On mutualise après les imports, avec des
    blocs `moved`, et toujours avec un `plan` vide comme critère. Mutualiser
    pendant l'import mélangerait deux sources de différences.
