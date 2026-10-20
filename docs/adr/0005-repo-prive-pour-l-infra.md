@@ -76,16 +76,12 @@ Relevé le 2026-10-20 :
 
 ## Identité de déploiement de la CI
 
-Relevé le 2026-10-21 sur le compte `481140374947` :
+La clé AWS utilisée par les workflows de déploiement a des droits plus larges
+que ce qu'exige la publication d'un site. Le constat détaillé est dans le repo
+privé (`static-sites-infra`, ADR-0001) : ce dépôt est public, et ces détails
+aident à cibler le compte. C'est la règle déjà appliquée par l'Admin Console.
 
-| Constat | Conséquence |
-|---|---|
-| Les déploiements utilisent très probablement l'utilisateur IAM `travis`, créé le 2018-03-20 : c'est le seul dont la clé active sert à S3 (dernier usage le 2026-10-20). À confirmer en comparant l'identifiant de clé avec les secrets des deux repos | Un utilisateur hérité de Travis CI, jamais renommé. |
-| Sa politique en ligne `travis-build-policy` autorise `s3:PutObject`, `s3:DeleteObject`, `s3:GetObject`, `s3:List*`, `s3:CreateBucket` et l'invalidation CloudFront sur `Resource: "*"` | La clé utilisée par les workflows des repos publics peut écrire et supprimer dans **tous les buckets du compte**, y compris `kuzzle.terraform.states`, et invalider toutes les distributions. |
-
-Décision :
-
-1. **Pendant la P1**, l'utilisateur `travis` et sa politique entrent dans le
+1. **Pendant la P1**, l'identité de déploiement et sa politique entrent dans le
    périmètre de l'import, avec la même règle : on décrit l'existant, `plan`
    vide, sans le corriger.
 2. **Plus tard, par une ADR séparée** : remplacer cette clé permanente par la
