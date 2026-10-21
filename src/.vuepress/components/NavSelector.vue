@@ -30,12 +30,17 @@
           :class="{
             'nav-selector__link--active':
               selectedItem && selectedItem.id === item.id,
+            'nav-selector__link--private': item.private,
           }"
           role="menuitem"
           :path="item.path"
           @click="closeList()"
         >
           {{ item.text }}
+          <span v-if="item.private" class="nav-selector__lock">
+            <font-awesome-icon icon="fa-solid fa-lock" />
+            Customer access
+          </span>
         </NavLink>
       </li>
     </ul>

@@ -10,4 +10,9 @@ meta:
     content: Kuzzle, documentation, Kuzzle IoT Platform, IoT, kuzzle backend, kuzzle v2 guide, what is kuzzle
 ---
 
-<Redirect to="/iot-platform/4/" />
+# Kuzzle documentation
+
+Find the documentation of every Kuzzle product. Sections marked
+**Customer access** are reserved for Kuzzle customers.
+
+<ProductCatalog />

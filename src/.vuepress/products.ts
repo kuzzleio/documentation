@@ -30,6 +30,19 @@ export interface Product extends NavEntry {
   sections?: NavEntry[];
   /** Whether SHARED_SECTIONS are shown for this product. */
   sharedSections?: boolean;
+  /**
+   * Whether the product's documentation is reserved for customers. Display
+   * only: access is enforced by CloudFront, whose `private_paths` list in
+   * static-sites-infra must hold this product's path (ADR-0002, ADR-0004).
+   */
+  private?: boolean;
+}
+
+/** Entry of the home page catalog (ADR-0004). */
+export interface CatalogEntry extends NavEntry {
+  icon: string;
+  description: string;
+  private?: boolean;
 }
 
 export const BACKEND_ID = 'backend';
@@ -89,6 +102,7 @@ export const PRODUCTS: Product[] = [
     match: ['/iot-platform/4'],
     sections: IOT_4_SECTIONS,
     sharedSections: true,
+    private: true,
   },
   {
     id: 'iot-platform',
@@ -96,6 +110,7 @@ export const PRODUCTS: Product[] = [
     path: '/iot-platform/3/',
     match: ['/iot-platform/3'],
     sharedSections: true,
+    private: true,
   },
   {
     id: BACKEND_ID,
@@ -116,6 +131,73 @@ export const PRODUCTS: Product[] = [
     text: 'Kuzzle AI Agent',
     path: '/agent-ia/1/',
     match: ['/agent-ia'],
+  },
+];
+
+/**
+ * Tiles of the home page, IoT first: it is the product the site puts forward
+ * (it used to be the landing page, see ADR-0004).
+ */
+export const CATALOG: CatalogEntry[] = [
+  {
+    id: 'iot-platform-4',
+    text: 'Kuzzle IoT Platform',
+    path: '/iot-platform/4/',
+    match: ['/iot-platform/4'],
+    icon: '/logos/device-manager.svg',
+    description:
+      'Digital twins, measure ingestion, alerts and permissions: build your IoT applications.',
+    private: true,
+  },
+  {
+    id: BACKEND_ID,
+    text: 'Kuzzle Backend',
+    path: '/core/2/guides/',
+    match: ['/core/'],
+    icon: '/logos/rocket.svg',
+    description:
+      'The open source backend: guides, API reference and framework.',
+  },
+  {
+    id: 'paas',
+    text: 'Kuzzle PaaS',
+    path: '/paas-console/1/',
+    match: ['/paas-console'],
+    icon: '/logos/paas-logo.svg',
+    description: 'Deploy your Kuzzle applications in a dedicated environment.',
+  },
+  {
+    id: 'agent-ia',
+    text: 'Kuzzle AI Agent',
+    path: '/agent-ia/1/',
+    match: ['/agent-ia'],
+    icon: '/logos/agent-ia.svg',
+    description:
+      'A conversational agent for the IoT Platform: work with your data in natural language.',
+  },
+  {
+    id: 'sdk',
+    text: 'SDKs',
+    path: '/sdk/v2.html',
+    match: ['/sdk/'],
+    icon: '/logos/brackets.svg',
+    description: 'Client libraries for JavaScript, Dart, Java, C#, Go and more.',
+  },
+  {
+    id: 'official-plugins',
+    text: 'Plugins',
+    path: '/official-plugins/v2.html',
+    match: ['/official-plugins/'],
+    icon: '/logos/plugin.svg',
+    description: 'Official plugins that extend the backend.',
+  },
+  {
+    id: 'modules',
+    text: 'Modules',
+    path: '/modules/v2.html',
+    match: ['/modules/'],
+    icon: '/logos/settings.svg',
+    description: 'Ready-made modules for your Kuzzle applications.',
   },
 ];
 

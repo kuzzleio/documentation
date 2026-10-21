@@ -1,6 +1,6 @@
 # ADR-0004 : Une page d'accueil publique qui présente les produits, publics et privés
 
-- **Statut** : Proposée
+- **Statut** : Acceptée
 - **Date** : 2026-10-16, révisée le 2026-10-21
 - **Décideurs** : Ricky
 - **Précise** : [ADR-0002](0002-sections-privees-cadrage.md)
@@ -79,3 +79,16 @@ Tranchés dans [ADR-0002](0002-sections-privees-cadrage.md), « Points tranchés
   cookies et termine la session Keycloak : se déconnecter de la doc déconnecte
   aussi de la PaaS console.
 - **« Demander un accès » mène au formulaire de contact de kuzzle.io** (point 5).
+
+## Mise en œuvre (2026-10-21)
+
+- Catalogue : `ProductCatalog.vue`, alimenté par `CATALOG` dans `products.ts`.
+  Pas de tuile Hypervision tant que la section n'existe pas.
+- Une section est marquée privée par `private: true` dans `products.ts`. C'est
+  de l'affichage seulement : la liste qui fait foi est `private_paths` dans
+  static-sites-infra, et les deux doivent rester alignées.
+- Le cookie `docs_session` (point 5) est posé et effacé par la Lambda
+  `/_auth/*` ; le front le lit dans `auth.ts` pour afficher « Sign in » ou
+  « Open » sur les tuiles, et le bouton « Sign out » dans le header.
+- Pas de sélecteur de version séparé (point 6) : les versions d'IoT sont des
+  entrées du sélecteur de produit, qui porte le badge.

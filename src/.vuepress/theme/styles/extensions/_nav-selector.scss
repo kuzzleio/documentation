@@ -85,11 +85,28 @@
       background-color: rgba(0, 0, 0, 0.06);
     }
 
+    // Private product (ADR-0004): same badge as on the home page tiles
+    &--private {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.6rem;
+    }
+
     // Current section: pink marker on the left, like the sidebar
     &--active {
       box-shadow: inset 0.3rem 0 0 var(--c-accent);
       color: var(--c-accent);
       font-weight: 600;
     }
+  }
+
+  &__lock {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--c-text-muted);
+    font-size: 1.1rem;
+    font-weight: 400;
   }
 }

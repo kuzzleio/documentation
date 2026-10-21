@@ -50,6 +50,11 @@
 
         <div class="divider"></div>
         <ThemeToggle />
+        <!-- Ends both the doc session and the Keycloak one (ADR-0002) -->
+        <a v-if="signedIn$" :href="logoutPath" class="sign-out">
+          <font-awesome-icon icon="fa-solid fa-arrow-right-from-bracket" />
+          <span class="sign-out__label">Sign out</span>
+        </a>
         <div class="divider"></div>
         <button class="btnCta">
           <a href="https://kuzzle.io" target="_blank">Discover Kuzzle</a>
@@ -72,6 +77,7 @@ import { useRoute, useSiteData } from 'vuepress/client';
 import TopMenu from './TopMenu.vue';
 import TopMenuV1 from './TopMenuV1.vue';
 import NavSelector from '../components/NavSelector.vue';
+import { LOGOUT_PATH, useSignedIn } from '../auth';
 import { useCurrentProduct } from '../current-product';
 import { PRODUCTS } from '../products';
 
@@ -93,6 +99,8 @@ export default {
       route$: useRoute(),
       site$: useSiteData(),
       product$: useCurrentProduct(),
+      signedIn$: useSignedIn(),
+      logoutPath: LOGOUT_PATH,
     };
   },
   computed: {
@@ -119,6 +127,36 @@ export default {
   display: flex;
   align-items: center;
   padding: 0 0.6rem;
+}
+
+.sign-out {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 4rem;
+  padding: 0 1rem;
+  border-radius: 2rem;
+  color: var(--c-text-on-header);
+  font-size: 1.4rem;
+  white-space: nowrap;
+  transition: background-color 0.125s;
+
+  &:hover,
+  &:focus-visible {
+    background-color: hsla(0, 0%, 100%, 0.12);
+    color: var(--c-text-on-header);
+  }
+}
+
+@media (max-width: 960px) {
+  .sign-out__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
 }
 
 .divider {

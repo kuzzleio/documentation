@@ -4,6 +4,7 @@ import { defineClientConfig } from 'vuepress/client';
 
 import {
   faAngleLeft,
+  faArrowRightFromBracket,
   faArrowUpRightFromSquare,
   faBars,
   faCaretDown,
@@ -11,6 +12,7 @@ import {
   faCircleCheck,
   faCircleInfo,
   faGlobe,
+  faLock,
   faMagnifyingGlass,
   faMoon,
   faSun,
@@ -28,6 +30,7 @@ import {
 
 library.add(
   faAngleLeft,
+  faArrowRightFromBracket,
   faArrowUpRightFromSquare,
   faBars,
   faCaretDown,
@@ -38,6 +41,7 @@ library.add(
   faGithub,
   faGlobe,
   faLinkedinIn,
+  faLock,
   faMagnifyingGlass,
   faMoon,
   faStackOverflow,
