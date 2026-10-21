@@ -27,16 +27,17 @@ Le framework a déjà des grilles de tuiles : `Home.vue` (classes `Tiles-*`),
    d'explication. Le clic mène à la section.
 3. **Le vrai point de contrôle est le serveur, pas le clic.** Les liens profonds
    (Google, URL partagée, recherche, menu du haut, liens entre sections)
-   contournent la page d'accueil. La CloudFront Function d'ADR-0002 renvoie donc
-   vers `/login?redirect=…`.
-4. **La page `/login` joue le rôle de la boîte de dialogue envisagée** : elle dit
+   contournent la page d'accueil. CloudFront refuse donc tout accès sans
+   cookies signés valides (ADR-0002), et sert alors la page « connexion
+   requise » à l'URL demandée, en 403.
+4. **La page « connexion requise » joue le rôle de la boîte de dialogue envisagée** : elle dit
    que la section est réservée aux clients, qu'on va être redirigé vers la
    connexion du PaaS (realm Keycloak `paas`, le même compte que la PaaS console),
    et propose un bouton « Continuer » et un lien « Demander un accès ».
    Un utilisateur connecté mais sans le rôle d'accès à la doc
    arrive sur une page « accès refusé » avec le même lien.
 5. **Pas de dialogue modale au clic sur la tuile.** Elle ferait doublon avec la
-   page `/login`, et ajouterait un clic à chaque visite d'un utilisateur déjà
+   page « connexion requise », et ajouterait un clic à chaque visite d'un utilisateur déjà
    connecté. Le front ne peut pas savoir s'il est connecté : les cookies signés
    sont `HttpOnly`. Si on veut adapter les tuiles (« Ouvrir » au lieu de « Se
    connecter »), la Lambda pose en plus un cookie non sensible lisible en JS

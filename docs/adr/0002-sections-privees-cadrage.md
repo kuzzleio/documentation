@@ -1,7 +1,7 @@
 # ADR-0002 : Sections privées — cadrage et protection au niveau de CloudFront
 
 - **Statut** : Proposée (phase de réflexion, rien n'est implémenté)
-- **Date** : 2026-10-16, révisée le 2026-10-20
+- **Date** : 2026-10-16, révisée le 2026-10-21
 - **Décideurs** : Ricky
 
 ## Contexte
@@ -53,8 +53,9 @@ corriger l'existant avant.
 - Comme il n'y a qu'un seul droit, **un seul jeu de cookies** suffit, sans
   découpage par `Path`. CloudFront ne les vérifie que sur les comportements
   privés (`/iot-platform/*`, `/hypervision/*`), protégés par un key group.
-- Une CloudFront Function en viewer-request sur ces chemins renvoie un 302 vers
-  `/login?redirect=…` si les cookies sont absents (voir
+- Sans cookies valides, CloudFront répond 403 avant toute Function (relevé le
+  2026-10-21) : ce 403 sert la page « connexion requise » à l'URL demandée,
+  qui renvoie vers `/_auth/login` (ADR-0003 du repo d'infra, voir
   [ADR-0004](0004-page-d-accueil-catalogue.md)).
 - Révocation : elle n'agit qu'à l'expiration du cookie. Un retrait du rôle prend
   donc effet au plus tard après la durée du cookie.
