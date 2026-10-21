@@ -1,7 +1,7 @@
 # ADR-0004 : Une page d'accueil publique qui présente les produits, publics et privés
 
 - **Statut** : Proposée
-- **Date** : 2026-10-16, révisée le 2026-10-20
+- **Date** : 2026-10-16, révisée le 2026-10-21
 - **Décideurs** : Ricky
 - **Précise** : [ADR-0002](0002-sections-privees-cadrage.md)
 
@@ -69,9 +69,12 @@ Le framework a déjà des grilles de tuiles : `Home.vue` (classes `Tiles-*`),
   section est privé. La tuile du catalogue est donc la seule présentation
   publique du produit, et doit se suffire à elle-même.
 
-## Questions ouvertes
+## Points tranchés (2026-10-21)
 
-- Faut-il un bouton « Se déconnecter » dans le header, ou la session expire-t-elle
-  simplement ?
-- Où mène « Demander un accès » : un formulaire HubSpot, le support, la PaaS
-  console ?
+Tranchés dans [ADR-0002](0002-sections-privees-cadrage.md), « Points tranchés
+(2026-10-21) » :
+
+- **Un bouton « Se déconnecter » dans le header** (point 4). Il efface les
+  cookies et termine la session Keycloak : se déconnecter de la doc déconnecte
+  aussi de la PaaS console.
+- **« Demander un accès » mène au formulaire de contact de kuzzle.io** (point 5).
