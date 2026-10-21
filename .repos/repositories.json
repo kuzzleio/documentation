@@ -194,15 +194,6 @@
   {
     "url": "https://github.com/kuzzleio/kuzzle.git",
     "repo_name": "kuzzle",
-    "doc_version": 1,
-    "stable": "1-stable",
-    "dev": "1-dev",
-    "name": "kuzzle-1",
-    "deploy_path": "/core/1/"
-  },
-  {
-    "url": "https://github.com/kuzzleio/kuzzle.git",
-    "repo_name": "kuzzle",
     "doc_version": 2,
     "name": "kuzzle-2",
     "stable": "master",

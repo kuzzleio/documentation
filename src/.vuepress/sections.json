@@ -13,15 +13,6 @@
     "section": "home",
     "released": true
   },
-  "/core/1/api/": {
-    "kuzzleMajor": 1,
-    "section": "core",
-    "subsection": "api",
-    "name": "API",
-    "version": 1,
-    "icon": "/logo-57x57.png",
-    "released": true
-  },
   "/core/2/api/": {
     "kuzzleMajor": 2,
     "section": "core",
@@ -39,32 +30,11 @@
     "version": 2,
     "released": true
   },
-  "/core/1/guides/": {
-    "kuzzleMajor": 1,
-    "section": "core",
-    "subsection": "guides",
-    "name": "Guides",
-    "released": true
-  },
   "/core/2/guides/": {
     "kuzzleMajor": 2,
     "section": "core",
     "subsection": "guides",
     "name": "Guides",
-    "released": true
-  },
-  "/core/1/plugins/": {
-    "kuzzleMajor": 1,
-    "section": "core",
-    "subsection": "plugins",
-    "name": "Write Plugins",
-    "released": true
-  },
-  "/core/1/protocols/": {
-    "kuzzleMajor": 1,
-    "section": "core",
-    "subsection": "protocols",
-    "name": "Write Protocols",
     "released": true
   },
   "/sdk/v1": {
