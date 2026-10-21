@@ -1,143 +1,64 @@
 <template>
-  <nav class="topMenu" data-md-component="tabs">
-    <div style="display: none">{{ `/core/${kuzzleMajor}/guides/` }}</div>
+  <nav class="topMenu" data-md-component="tabs" v-if="groups.length">
     <div class="topMenu__inner md-grid">
       <ul class="topMenu__list">
-        <li class="topMenu__group">
-          <ul class="topMenu__group-items">
-            <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/guides/`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/guides/`
-                  ),
-                }"
-                title="Guide"
-                class="topMenu__link"
-                >Guide</a
+        <template v-for="(group, index) in groups" :key="index">
+          <li class="topMenu__separator" v-if="index > 0" aria-hidden="true" />
+          <li class="topMenu__group">
+            <ul class="topMenu__group-items">
+              <li
+                class="topMenu__item"
+                v-for="section in group"
+                :key="section.id"
               >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/api/`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/api/`
-                  ),
-                }"
-                title="API"
-                class="topMenu__link"
-                >API</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/framework/`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(
-                    `/core/${kuzzleMajor}/framework/`
-                  ),
-                }"
-                title="Framework"
-                class="topMenu__link"
-                >Framework</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/sdk/v${kuzzleMajor}.html`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/sdk/`),
-                }"
-                title="SDKs"
-                class="topMenu__link"
-                >SDKs</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/official-plugins/v${kuzzleMajor}.html`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/official-plugins/`),
-                }"
-                title="Plugins"
-                class="topMenu__link"
-                >Plugins</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/modules/v${kuzzleMajor}.html`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/modules/`),
-                }"
-                title="Modules"
-                class="topMenu__link"
-                >Modules</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/paas-console/1`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/paas-console/1`),
-                }"
-                title="PaaS"
-                class="topMenu__link"
-                >PaaS</a
-              >
-            </li>
-            <li class="topMenu__item">
-              <a
-                :href="`/iot-platform/3`"
-                :class="{
-                  'topMenu__link--active': isLinkActive(`/iot-platform/3`),
-                }"
-                title="IoT Platform"
-                class="topMenu__link"
-                >IoT Platform</a
-              >
-            </li>
-          </ul>
-        </li>
+                <NavLink
+                  :path="section.path"
+                  :title="section.text"
+                  class="topMenu__link"
+                  :class="{
+                    'topMenu__link--active':
+                      currentSection && currentSection.id === section.id,
+                  }"
+                  >{{ section.text }}</NavLink
+                >
+              </li>
+            </ul>
+          </li>
+        </template>
       </ul>
     </div>
   </nav>
 </template>
 
 <script>
-import { usePageData } from 'vuepress/client';
+import { useRoute, useSiteData } from 'vuepress/client';
 
-import { VERSION_QUERY_KEY, getCurrentVersion } from '../helpers';
+import { useCurrentProduct } from '../current-product';
+import { absolutePath, findEntry, topMenuGroups } from '../products';
 
+/**
+ * Sections of the current product, in groups separated by a divider: the
+ * product's own sections first, then the ones shared across products.
+ * Renders nothing for a product without any.
+ */
 export default {
-  computed: {
-    versionQueryKey() {
-      return VERSION_QUERY_KEY;
-    },
-    debugInfo() {
-      return JSON.stringify(
-        {
-          kuzzleMajor: this.kuzzleMajor,
-        },
-        null,
-        2
-      );
-    },
-    kuzzleMajor() {
-      return getCurrentVersion(this.page$);
-    },
-  },
+  name: 'TopMenu',
   setup() {
-    return { page$: usePageData() };
+    return {
+      route$: useRoute(),
+      site$: useSiteData(),
+      product$: useCurrentProduct(),
+    };
   },
-  methods: {
-    isLinkActive(linkPath) {
-      if (!this.page$.fullPath) {
-        return false;
-      }
-      return this.page$.fullPath.startsWith(linkPath);
+  computed: {
+    path() {
+      return absolutePath(this.site$.base, this.route$.path);
+    },
+    groups() {
+      return topMenuGroups(this.product$);
+    },
+    currentSection() {
+      return findEntry(this.groups.flat(), this.path);
     },
   },
 };

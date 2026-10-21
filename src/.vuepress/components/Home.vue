@@ -8,8 +8,8 @@
 
     <h2>Learn more about Kuzzle now</h2>
     <div class="Tiles">
-      <a
-        :href="getPath('/guides/getting-started/run-kuzzle/')"
+      <NavLink
+        :path="getPath('/guides/getting-started/run-kuzzle/')"
         class="Tiles-item medium"
       >
         <img
@@ -18,9 +18,9 @@
           class="Tiles-item-logo"
         />
         <div class="Tiles-item-name">Running Kuzzle</div>
-      </a>
-      <a
-        :href="getPath('/framework/classes/backend/properties/')"
+      </NavLink>
+      <NavLink
+        :path="getPath('/framework/classes/backend/properties/')"
         class="Tiles-item medium"
       >
         <img
@@ -29,34 +29,34 @@
           class="Tiles-item-logo"
         />
         <div class="Tiles-item-name">Framework references</div>
-      </a>
-      <a :href="getPath('/api/payloads/request/')" class="Tiles-item medium">
+      </NavLink>
+      <NavLink :path="getPath('/api/payloads/request/')" class="Tiles-item medium">
         <img
           :src="$withBase('/logos/search.svg')"
           alt="Learn API logo"
           class="Tiles-item-logo"
         />
         <div class="Tiles-item-name">Learn API</div>
-      </a>
-      <a href="/sdk/" class="Tiles-item medium">
+      </NavLink>
+      <NavLink path="/sdk/" class="Tiles-item medium">
         <img :src="$withBase('/logos/brackets.svg')" alt="SDK logo" class="Tiles-item-logo" />
         <div class="Tiles-item-name">Find your SDK</div>
-      </a>
-      <a href="/official-plugins/" class="Tiles-item medium">
+      </NavLink>
+      <NavLink path="/official-plugins/" class="Tiles-item medium">
         <img
           :src="$withBase('/logos/plugin.svg')"
           alt="Plugins logo"
           class="Tiles-item-logo"
         />
         <div class="Tiles-item-name">Official plugins</div>
-      </a>
-      <a
-        :href="getPath('/guides/main-concepts')"
+      </NavLink>
+      <NavLink
+        :path="getPath('/guides/main-concepts')"
         class="Tiles-item medium"
       >
         <img :src="$withBase('/logos/book.svg')" alt="Plugins logo" class="Tiles-item-logo" />
         <div class="Tiles-item-name">More guides</div>
-      </a>
+      </NavLink>
     </div>
   </div>
 </template>

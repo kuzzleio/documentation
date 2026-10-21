@@ -21,7 +21,7 @@
 
     &:nth-child(4n),
     &:nth-child(4n-1) {
-      background-color: white;
+      background-color: var(--c-bg-elevated);
     }
   }
 
@@ -48,7 +48,7 @@
 
 @media (max-width: 720px) {
   .IconTable-item {
-    background-color: white;
+    background-color: var(--c-bg-elevated);
     display: block;
     width: 100%;
     border-right: 1px solid #e1e4e5;
