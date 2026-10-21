@@ -1,6 +1,6 @@
 # ADR-0004 : Une page d'accueil publique qui présente les produits, publics et privés
 
-- **Statut** : Acceptée
+- **Statut** : En attente (retour de la QA, depuis le 2026-10-21)
 - **Date** : 2026-10-16, révisée le 2026-10-21
 - **Décideurs** : Ricky
 - **Précise** : [ADR-0002](0002-sections-privees-cadrage.md)

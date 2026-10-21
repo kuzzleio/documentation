@@ -24,6 +24,9 @@ Système repris de `kuzzle-admin-console` (`docs/adr/`), voir
 
 `Proposée` → `Acceptée` → (`Remplacée par ADR-XXX` | `Abandonnée`)
 
+`En attente` : décision prise et mise en œuvre, en attente d'une validation
+externe (QA) avant de dérouler la suite.
+
 ## Index
 
 | # | Titre | Statut |
@@ -31,5 +34,5 @@ Système repris de `kuzzle-admin-console` (`docs/adr/`), voir
 | [0001](0001-systeme-de-suivi.md) | Système de suivi des décisions du framework de documentation | Acceptée |
 | [0002](0002-sections-privees-cadrage.md) | Sections privées : cadrage et protection au niveau de CloudFront | Proposée |
 | [0003](0003-valider-sur-next-docs.md) | Tout le chantier se valide d'abord sur next-docs.kuzzle.io | Acceptée |
-| [0004](0004-page-d-accueil-catalogue.md) | Une page d'accueil publique qui présente les produits, publics et privés | Proposée |
+| [0004](0004-page-d-accueil-catalogue.md) | Une page d'accueil publique qui présente les produits, publics et privés | En attente |
 | [0005](0005-repo-prive-pour-l-infra.md) | Un repo privé pour l'infra de la documentation et de l'Admin Console | Acceptée |
