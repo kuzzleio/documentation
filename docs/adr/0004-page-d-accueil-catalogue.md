@@ -1,7 +1,7 @@
 # ADR-0004 : Une page d'accueil publique qui présente les produits, publics et privés
 
 - **Statut** : Proposée
-- **Date** : 2026-10-16, révisée le 2026-10-20
+- **Date** : 2026-10-16, révisée le 2026-10-21
 - **Décideurs** : Ricky
 - **Précise** : [ADR-0002](0002-sections-privees-cadrage.md)
 
@@ -27,16 +27,17 @@ Le framework a déjà des grilles de tuiles : `Home.vue` (classes `Tiles-*`),
    d'explication. Le clic mène à la section.
 3. **Le vrai point de contrôle est le serveur, pas le clic.** Les liens profonds
    (Google, URL partagée, recherche, menu du haut, liens entre sections)
-   contournent la page d'accueil. La CloudFront Function d'ADR-0002 renvoie donc
-   vers `/login?redirect=…`.
-4. **La page `/login` joue le rôle de la boîte de dialogue envisagée** : elle dit
+   contournent la page d'accueil. CloudFront refuse donc tout accès sans
+   cookies signés valides (ADR-0002), et sert alors la page « connexion
+   requise » à l'URL demandée, en 403.
+4. **La page « connexion requise » joue le rôle de la boîte de dialogue envisagée** : elle dit
    que la section est réservée aux clients, qu'on va être redirigé vers la
    connexion du PaaS (realm Keycloak `paas`, le même compte que la PaaS console),
    et propose un bouton « Continuer » et un lien « Demander un accès ».
    Un utilisateur connecté mais sans le rôle d'accès à la doc
    arrive sur une page « accès refusé » avec le même lien.
 5. **Pas de dialogue modale au clic sur la tuile.** Elle ferait doublon avec la
-   page `/login`, et ajouterait un clic à chaque visite d'un utilisateur déjà
+   page « connexion requise », et ajouterait un clic à chaque visite d'un utilisateur déjà
    connecté. Le front ne peut pas savoir s'il est connecté : les cookies signés
    sont `HttpOnly`. Si on veut adapter les tuiles (« Ouvrir » au lieu de « Se
    connecter »), la Lambda pose en plus un cookie non sensible lisible en JS
@@ -69,9 +70,12 @@ Le framework a déjà des grilles de tuiles : `Home.vue` (classes `Tiles-*`),
   section est privé. La tuile du catalogue est donc la seule présentation
   publique du produit, et doit se suffire à elle-même.
 
-## Questions ouvertes
+## Points tranchés (2026-10-21)
 
-- Faut-il un bouton « Se déconnecter » dans le header, ou la session expire-t-elle
-  simplement ?
-- Où mène « Demander un accès » : un formulaire HubSpot, le support, la PaaS
-  console ?
+Tranchés dans [ADR-0002](0002-sections-privees-cadrage.md), « Points tranchés
+(2026-10-21) » :
+
+- **Un bouton « Se déconnecter » dans le header** (point 4). Il efface les
+  cookies et termine la session Keycloak : se déconnecter de la doc déconnecte
+  aussi de la PaaS console.
+- **« Demander un accès » mène au formulaire de contact de kuzzle.io** (point 5).
