@@ -88,6 +88,26 @@ const whenIdle = (cb: () => void) => {
   }
 };
 
+const STALE_RELOAD_KEY = 'kuzzle-docs:stale-build-reload';
+const STALE_RELOAD_COOLDOWN_MS = 10_000;
+
+/**
+ * Tell whether we already reloaded for a stale build a moment ago.
+ *
+ * A reload that does not fix the failed import means the chunk is really
+ * missing: reloading again would loop forever.
+ */
+const reloadedRecently = () => {
+  try {
+    const last = Number(window.sessionStorage.getItem(STALE_RELOAD_KEY));
+    window.sessionStorage.setItem(STALE_RELOAD_KEY, String(Date.now()));
+
+    return Date.now() - last < STALE_RELOAD_COOLDOWN_MS;
+  } catch {
+    return false;
+  }
+};
+
 export default defineClientConfig({
   enhance({ app, router }) {
     // Register the FontAwesomeIcon component
@@ -101,6 +121,29 @@ export default defineClientConfig({
           once: true,
         });
       }
+    }
+
+    /**
+     * Each deploy renames every page chunk and deletes the previous ones, so
+     * a tab opened before a deploy fails to load the next page it navigates
+     * to ("Importing a module script failed"). Vite reports these failures
+     * with `vite:preloadError`; the navigation then fails, and we load the
+     * target page from the server instead, which serves the current build.
+     */
+    if (typeof window !== 'undefined') {
+      let staleBuild = false;
+
+      window.addEventListener('vite:preloadError', () => {
+        staleBuild = true;
+      });
+
+      router.onError((_error, to) => {
+        if (!staleBuild || reloadedRecently()) {
+          return;
+        }
+
+        window.location.assign(router.resolve(to).href);
+      });
     }
 
     // Override the VuePress scroll behavior to set a custom top offset
