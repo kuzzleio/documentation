@@ -1,6 +1,7 @@
 import { Logger } from '@vuepress/helper';
 import { PluginFunction } from 'vuepress';
 
+import apiTable from './api-table';
 import codeSnippet from './code-snippet';
 
 export const PLUGIN_NAME = '@kuzzleio/vuepress-plugin-markdown';
@@ -16,6 +17,7 @@ export const markdownPlugin =
           docsDir: app.dir.source(),
           logger,
         });
+        md.use(apiTable);
       },
     };
   }
