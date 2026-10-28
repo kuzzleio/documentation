@@ -98,6 +98,18 @@ export const IOT_4_SECTIONS: NavEntry[] = [
     path: '/iot-platform/4/api/',
     match: ['/iot-platform/4/api'],
   },
+  {
+    id: 'backend-framework',
+    text: 'Backend Framework',
+    path: '/iot-platform/4/backend-framework/',
+    match: ['/iot-platform/4/backend-framework'],
+  },
+  {
+    id: 'frontend-framework',
+    text: 'Frontend Framework',
+    path: '/iot-platform/4/frontend-framework/',
+    match: ['/iot-platform/4/frontend-framework'],
+  },
 ];
 
 export const PRODUCTS: Product[] = [
