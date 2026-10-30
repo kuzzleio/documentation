@@ -7,7 +7,7 @@
  *      - the product's own sections (`Product.sections`, e.g. Guide / API /
  *        Framework for the open source backend)
  *      - SHARED_SECTIONS, the ecosystem sections that apply to every product
- *        built on the backend (SDKs / Plugins / Modules). They stay in the
+ *        built on the backend (SDKs / Plugins / Modules / Drivers). They stay in the
  *        menu whatever the product, as long as it opts in with
  *        `sharedSections`.
  *
@@ -76,6 +76,12 @@ export const SHARED_SECTIONS: NavEntry[] = [
     text: 'Modules',
     path: '/modules/v2.html',
     match: ['/modules/'],
+  },
+  {
+    id: 'drivers',
+    text: 'Drivers',
+    path: '/drivers/v2.html',
+    match: ['/drivers/'],
   },
 ];
 
@@ -198,6 +204,14 @@ export const CATALOG: CatalogEntry[] = [
     match: ['/modules/'],
     icon: '/logos/settings.svg',
     description: 'Ready-made modules for your Kuzzle applications.',
+  },
+  {
+    id: 'drivers',
+    text: 'Drivers',
+    path: '/drivers/v2.html',
+    match: ['/drivers/'],
+    icon: '/logos/logo-database.svg',
+    description: 'The storage drivers Kuzzle runs on, one per database engine.',
   },
 ];
 
