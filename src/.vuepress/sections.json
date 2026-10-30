@@ -13,15 +13,6 @@
     "section": "home",
     "released": true
   },
-  "/core/1/api/": {
-    "kuzzleMajor": 1,
-    "section": "core",
-    "subsection": "api",
-    "name": "API",
-    "version": 1,
-    "icon": "/logo-57x57.png",
-    "released": true
-  },
   "/core/2/api/": {
     "kuzzleMajor": 2,
     "section": "core",
@@ -39,32 +30,11 @@
     "version": 2,
     "released": true
   },
-  "/core/1/guides/": {
-    "kuzzleMajor": 1,
-    "section": "core",
-    "subsection": "guides",
-    "name": "Guides",
-    "released": true
-  },
   "/core/2/guides/": {
     "kuzzleMajor": 2,
     "section": "core",
     "subsection": "guides",
     "name": "Guides",
-    "released": true
-  },
-  "/core/1/plugins/": {
-    "kuzzleMajor": 1,
-    "section": "core",
-    "subsection": "plugins",
-    "name": "Write Plugins",
-    "released": true
-  },
-  "/core/1/protocols/": {
-    "kuzzleMajor": 1,
-    "section": "core",
-    "subsection": "protocols",
-    "name": "Write Protocols",
     "released": true
   },
   "/sdk/v1": {
@@ -286,7 +256,9 @@
     "name": "Cloudinary",
     "version": 1,
     "icon": "/logos/plugin-cloudinary.svg",
-    "released": true
+    "released": true,
+    "deprecated": true,
+    "deprecatedBannerComponent": "ArchivedBanner"
   },
   "/official-plugins/cloudinary/2": {
     "kuzzleMajor": 2,
@@ -295,14 +267,16 @@
     "name": "Cloudinary",
     "version": 2,
     "icon": "/logos/plugin-cloudinary.svg",
-    "released": true
+    "released": true,
+    "deprecated": true,
+    "deprecatedBannerComponent": "ArchivedBanner"
   },
   "/official-plugins/workflows/1": {
     "kuzzleMajor": 2,
     "section": "official-plugins",
     "subsection": "workflows",
     "name": "Workflows",
-    "version": 0,
+    "version": 1,
     "icon": "/logos/workflows.svg",
     "released": true,
     "closedSources": true
@@ -312,9 +286,11 @@
     "section": "official-plugins",
     "subsection": "device-manager",
     "name": "Device Manager",
-    "version": 0,
+    "version": 1,
     "icon": "/logos/device-manager.svg",
-    "released": true
+    "released": true,
+    "deprecated": true,
+    "deprecatedBannerComponent": "ArchivedBanner"
   },
   "/official-plugins/device-manager/2": {
     "kuzzleMajor": 2,
@@ -325,24 +301,32 @@
     "icon": "/logos/device-manager.svg",
     "released": true
   },
+  "/official-plugins/device-manager/3": {
+    "kuzzleMajor": 2,
+    "section": "official-plugins",
+    "subsection": "device-manager",
+    "name": "Device Manager",
+    "version": 3,
+    "icon": "/logos/device-manager.svg",
+    "released": true
+  },
   "/official-plugins/hermes-messenger/1": {
     "kuzzleMajor": 2,
     "section": "official-plugins",
     "subsection": "hermes-messenger",
     "name": "Hermes Messenger",
-    "version": 0,
+    "version": 1,
     "icon": "/logos/hermes.svg",
     "released": true
   },
-  "/official-plugins/scheduler/1": {
+  "/official-plugins/hermes-messenger/2": {
     "kuzzleMajor": 2,
     "section": "official-plugins",
-    "subsection": "scheduler",
-    "name": "Scheduler",
-    "version": 1,
-    "icon": "/logos/scheduler.svg",
-    "released": true,
-    "closedSources": true
+    "subsection": "hermes-messenger",
+    "name": "Hermes Messenger",
+    "version": 2,
+    "icon": "/logos/hermes.svg",
+    "released": true
   },
   "/how-to/v1": {
     "name": "How-To",
@@ -453,9 +437,25 @@
     "icon": "/logos/paas-logo.svg",
     "released": true
   },
+  "/agent-ia/1": {
+    "kuzzleMajor": 2,
+    "name": "Agent IA",
+    "section": "agent-ia",
+    "icon": "/logos/agent-ia.svg",
+    "released": true
+  },
   "/iot-platform/3": {
     "kuzzleMajor": 2,
     "name": "IoT Platform",
+    "version": 3,
+    "section": "iot platform",
+    "icon": "/logos/paas-logo.svg",
+    "released": true
+  },
+  "/iot-platform/4": {
+    "kuzzleMajor": 2,
+    "name": "IoT Platform",
+    "version": 4,
     "section": "iot platform",
     "icon": "/logos/paas-logo.svg",
     "released": true
@@ -505,6 +505,24 @@
     "icon": "/logos/open-id.svg",
     "released": true
   },
+  "/official-plugins/eslint/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "ESLint Configuration",
+    "section": "official-plugins",
+    "subsection": "eslint",
+    "icon": "/logos/eslint.svg",
+    "released": true
+  },
+  "/official-plugins/eslint/2": {
+    "kuzzleMajor": 2,
+    "version": 2,
+    "name": "ESLint Configuration",
+    "section": "official-plugins",
+    "subsection": "eslint",
+    "icon": "/logos/eslint.svg",
+    "released": true
+  },
   "/modules/logger/1": {
     "kuzzleMajor": 2,
     "version": 1,
@@ -512,6 +530,42 @@
     "section": "modules",
     "subsection": "logger",
     "icon": "/logos/module-logger.svg",
+    "released": true
+  },
+  "/modules/prometheus/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "Prometheus",
+    "section": "modules",
+    "subsection": "prometheus",
+    "icon": "/logos/plugin-prometheus.svg",
+    "released": true
+  },
+  "/drivers/storage-es-7/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "Elasticsearch 7",
+    "section": "drivers",
+    "subsection": "storage-es-7",
+    "icon": "/logos/logo-database.svg",
+    "released": true
+  },
+  "/drivers/storage-es-8/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "Elasticsearch 8",
+    "section": "drivers",
+    "subsection": "storage-es-8",
+    "icon": "/logos/logo-database.svg",
+    "released": true
+  },
+  "/drivers/storage-es-9/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "Elasticsearch 9",
+    "section": "drivers",
+    "subsection": "storage-es-9",
+    "icon": "/logos/logo-database.svg",
     "released": true
   }
 }

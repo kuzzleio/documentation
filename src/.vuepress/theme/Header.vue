@@ -5,14 +5,14 @@
       <nav class="md-header-nav">
         <!-- Link to home -->
         <div>
-          <a href="/" class="md-header-nav__button md-logo">
+          <NavLink path="/" class="md-header-nav__button md-logo">
             <img
               :src="$withBase('/logo-min.png')"
               alt="kuzzle logo mini"
               width="40"
               height="40"
             />
-          </a>
+          </NavLink>
         </div>
 
         <!-- Button to toggle drawer -->
@@ -28,13 +28,18 @@
 
         <!-- Header title -->
         <div data-md-component="title">
-          <MajorVersionSelector :kuzzle-major="kuzzleMajor" />
+          <NavSelector
+            :items="products"
+            :selected="product$"
+            label="Change product"
+          />
         </div>
 
         <div class="md-header-nav__top-menu-container">
           <div class="screen-only">
-            <TopMenu :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 2" />
-            <TopMenuV1 :kuzzle-major="kuzzleMajor" v-else />
+            <!-- Sub-sections of the open source backend -->
+            <TopMenu />
+            <TopMenuV1 :kuzzle-major="kuzzleMajor" v-if="kuzzleMajor === 1" />
           </div>
         </div>
 
@@ -43,6 +48,13 @@
           <SearchBox :options="searchboxOptions" />
         </div>
 
+        <div class="divider"></div>
+        <ThemeToggle />
+        <!-- Ends both the doc session and the Keycloak one (ADR-0002) -->
+        <a v-if="signedIn$" :href="logoutPath" class="sign-out">
+          <font-awesome-icon icon="fa-solid fa-arrow-right-from-bracket" />
+          <span class="sign-out__label">Sign out</span>
+        </a>
         <div class="divider"></div>
         <button class="btnCta">
           <a href="https://kuzzle.io" target="_blank">Discover Kuzzle</a>
@@ -60,15 +72,20 @@
 </template>
 
 <script>
+import { useRoute, useSiteData } from 'vuepress/client';
+
 import TopMenu from './TopMenu.vue';
 import TopMenuV1 from './TopMenuV1.vue';
-import MajorVersionSelector from '../components/MajorVersionSelector.vue';
+import NavSelector from '../components/NavSelector.vue';
+import { LOGOUT_PATH, useSignedIn } from '../auth';
+import { useCurrentProduct } from '../current-product';
+import { PRODUCTS } from '../products';
 
 export default {
   components: {
     TopMenu,
     TopMenuV1,
-    MajorVersionSelector,
+    NavSelector,
   },
   name: 'Header',
   props: {
@@ -77,7 +94,19 @@ export default {
       default: 2,
     },
   },
+  setup() {
+    return {
+      route$: useRoute(),
+      site$: useSiteData(),
+      product$: useCurrentProduct(),
+      signedIn$: useSignedIn(),
+      logoutPath: LOGOUT_PATH,
+    };
+  },
   computed: {
+    products() {
+      return PRODUCTS;
+    },
     searchboxOptions() {
       return {
         searchParameters: {
@@ -90,6 +119,46 @@ export default {
 </script>
 
 <style lang="scss">
+.md-header-nav {
+  min-height: 5.6rem;
+}
+
+[data-md-component='title'] {
+  display: flex;
+  align-items: center;
+  padding: 0 0.6rem;
+}
+
+.sign-out {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 4rem;
+  padding: 0 1rem;
+  border-radius: 2rem;
+  color: var(--c-text-on-header);
+  font-size: 1.4rem;
+  white-space: nowrap;
+  transition: background-color 0.125s;
+
+  &:hover,
+  &:focus-visible {
+    background-color: hsla(0, 0%, 100%, 0.12);
+    color: var(--c-text-on-header);
+  }
+}
+
+@media (max-width: 960px) {
+  .sign-out__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
 .divider {
   height: 30px;
   width: 2px;

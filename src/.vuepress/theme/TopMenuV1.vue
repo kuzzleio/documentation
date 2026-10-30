@@ -10,8 +10,8 @@
           <p class="topMenu__group-name">Use</p>
           <ul class="topMenu__group-items">
             <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/guides/`"
+              <NavLink
+                :path="`/core/${kuzzleMajor}/guides/`"
                 :class="{
                   'topMenu__link--active': isLinkActive(
                     `/core/${kuzzleMajor}/guides/`
@@ -19,12 +19,12 @@
                 }"
                 title="Guides"
                 class="topMenu__link"
-                >Guides</a
+                >Guides</NavLink
               >
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/api/`"
+              <NavLink
+                :path="`/core/${kuzzleMajor}/api/`"
                 :class="{
                   'topMenu__link--active': isLinkActive(
                     `/core/${kuzzleMajor}/api/`
@@ -32,40 +32,40 @@
                 }"
                 title="API"
                 class="topMenu__link"
-                >API</a
+                >API</NavLink
               >
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/sdk/v${kuzzleMajor}.html`"
+              <NavLink
+                :path="`/sdk/v${kuzzleMajor}.html`"
                 :class="{
                   'topMenu__link--active': isLinkActive(`/sdk/`)
                 }"
                 title="SDK"
                 class="topMenu__link"
-                >SDK</a
+                >SDK</NavLink
               >
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/official-plugins/v${kuzzleMajor}.html`"
+              <NavLink
+                :path="`/official-plugins/v${kuzzleMajor}.html`"
                 :class="{
                   'topMenu__link--active': isLinkActive(`/official-plugins/`)
                 }"
                 title="Plugins"
                 class="topMenu__link"
-                >Plugins</a
+                >Plugins</NavLink
               >
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/how-to/v${kuzzleMajor}.html`"
+              <NavLink
+                :path="`/how-to/v${kuzzleMajor}.html`"
                 :class="{
                   'topMenu__link--active': isLinkActive(`/how-to/`)
                 }"
                 title="How To"
                 class="topMenu__link"
-                >How To</a
+                >How To</NavLink
               >
             </li>
           </ul>
@@ -74,8 +74,8 @@
           <p class="topMenu__group-name">Extend</p>
           <ul class="topMenu__group-items">
             <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/plugins/`"
+              <NavLink
+                :path="`/core/${kuzzleMajor}/plugins/`"
                 :class="{
                   'topMenu__link--active': isLinkActive(
                     `/core/${kuzzleMajor}/plugins/`
@@ -83,12 +83,12 @@
                 }"
                 title="Write Plugins"
                 class="topMenu__link"
-                >Write Plugins</a
+                >Write Plugins</NavLink
               >
             </li>
             <li class="topMenu__item">
-              <a
-                :href="`/core/${kuzzleMajor}/protocols/`"
+              <NavLink
+                :path="`/core/${kuzzleMajor}/protocols/`"
                 :class="{
                   'topMenu__link--active': isLinkActive(
                     `/core/${kuzzleMajor}/protocols/`
@@ -96,7 +96,7 @@
                 }"
                 title="Write Protocols"
                 class="topMenu__link"
-                >Write Protocols</a
+                >Write Protocols</NavLink
               >
             </li>
           </ul>

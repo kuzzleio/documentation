@@ -29,7 +29,12 @@ class LinkChecker
     'http://...',
     'https://s3.eu-west-3.amazonaws.com',
     'http://s3.amazonaws.com/doc/2006-03-01',
-    'http:'
+    'http:',
+    # Private sections (ADR-0002): CloudFront answers 403 without a session.
+    'https://docs.kuzzle.io/iot-platform/',
+    'https://docs.kuzzle.io/hypervision/',
+    'https://next-docs.kuzzle.io/iot-platform/',
+    'https://next-docs.kuzzle.io/hypervision/'
   ]
 
   attr_reader :internal, :external
