@@ -540,5 +540,32 @@
     "subsection": "prometheus",
     "icon": "/logos/plugin-prometheus.svg",
     "released": true
+  },
+  "/drivers/storage-es-7/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "Elasticsearch 7",
+    "section": "drivers",
+    "subsection": "storage-es-7",
+    "icon": "/logos/logo-database.svg",
+    "released": true
+  },
+  "/drivers/storage-es-8/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "Elasticsearch 8",
+    "section": "drivers",
+    "subsection": "storage-es-8",
+    "icon": "/logos/logo-database.svg",
+    "released": true
+  },
+  "/drivers/storage-es-9/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "Elasticsearch 9",
+    "section": "drivers",
+    "subsection": "storage-es-9",
+    "icon": "/logos/logo-database.svg",
+    "released": true
   }
 }

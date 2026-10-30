@@ -399,6 +399,33 @@
     "name": "kuzzle-prometheus-1"
   },
   {
+    "url": "https://github.com/kuzzleio/storage-es-7",
+    "repo_name": "storage-es-7",
+    "doc_version": 1,
+    "stable": "master",
+    "dev": "beta",
+    "deploy_path": "/drivers/storage-es-7/1/",
+    "name": "storage-es-7-1"
+  },
+  {
+    "url": "https://github.com/kuzzleio/storage-es-8",
+    "repo_name": "storage-es-8",
+    "doc_version": 1,
+    "stable": "master",
+    "dev": "beta",
+    "deploy_path": "/drivers/storage-es-8/1/",
+    "name": "storage-es-8-1"
+  },
+  {
+    "url": "https://github.com/kuzzleio/storage-es-9",
+    "repo_name": "storage-es-9",
+    "doc_version": 1,
+    "stable": "master",
+    "dev": "beta",
+    "deploy_path": "/drivers/storage-es-9/1/",
+    "name": "storage-es-9-1"
+  },
+  {
     "url": "https://github.com/kuzzleio/kuzzle-agent-ia",
     "repo_name": "kuzzle-agent-ia",
     "doc_version": 1,
