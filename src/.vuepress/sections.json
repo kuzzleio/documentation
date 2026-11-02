@@ -567,5 +567,23 @@
     "subsection": "storage-es-9",
     "icon": "/logos/logo-database.svg",
     "released": true
+  },
+  "/drivers/storage-opensearch-2/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "OpenSearch 2",
+    "section": "drivers",
+    "subsection": "storage-opensearch-2",
+    "icon": "/logos/logo-database.svg",
+    "released": true
+  },
+  "/drivers/storage-opensearch-3/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "OpenSearch 3",
+    "section": "drivers",
+    "subsection": "storage-opensearch-3",
+    "icon": "/logos/logo-database.svg",
+    "released": true
   }
 }
