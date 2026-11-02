@@ -426,6 +426,24 @@
     "name": "storage-es-9-1"
   },
   {
+    "url": "https://github.com/kuzzleio/storage-opensearch-2",
+    "repo_name": "storage-opensearch-2",
+    "doc_version": 1,
+    "stable": "master",
+    "dev": "beta",
+    "deploy_path": "/drivers/storage-opensearch-2/1/",
+    "name": "storage-opensearch-2-1"
+  },
+  {
+    "url": "https://github.com/kuzzleio/storage-opensearch-3",
+    "repo_name": "storage-opensearch-3",
+    "doc_version": 1,
+    "stable": "master",
+    "dev": "beta",
+    "deploy_path": "/drivers/storage-opensearch-3/1/",
+    "name": "storage-opensearch-3-1"
+  },
+  {
     "url": "https://github.com/kuzzleio/kuzzle-agent-ia",
     "repo_name": "kuzzle-agent-ia",
     "doc_version": 1,
