@@ -326,7 +326,7 @@
     "name": "Hermes Messenger",
     "version": 2,
     "icon": "/logos/hermes.svg",
-    "released": true
+    "released": false
   },
   "/how-to/v1": {
     "name": "How-To",
