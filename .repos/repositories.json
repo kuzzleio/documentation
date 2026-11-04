@@ -280,7 +280,8 @@
     "stable": "master",
     "dev": "2-dev",
     "name": "plugin-hermes-messenger-2",
-    "deploy_path": "/official-plugins/hermes-messenger/2/"
+    "deploy_path": "/official-plugins/hermes-messenger/2/",
+    "production": false
   },
   {
     "url": "https://github.com/kuzzleio/paas-console.git",

@@ -89,7 +89,12 @@ export default defineUserConfig({
         REPO_SLUG:
           JSON.stringify(process.env.TRAVIS_REPO_SLUG) ||
           JSON.stringify('kuzzleio/documentation'),
-        BRANCH: JSON.stringify(process.env.TRAVIS_BRANCH),
+        // The indexes (SDKs, Plugins, Modules, How-to) hide the sections whose
+        // `released` is false when this is `master`. TRAVIS_BRANCH is gone
+        // since the move to GitHub Actions, which sets GITHUB_REF_NAME.
+        BRANCH: JSON.stringify(
+          process.env.TRAVIS_BRANCH || process.env.GITHUB_REF_NAME
+        ),
         SHOW_STAGING_ONLY: JSON.stringify(showStagingOnly),
       },
       plugins: [
