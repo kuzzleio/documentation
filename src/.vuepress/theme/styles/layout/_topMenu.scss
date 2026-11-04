@@ -5,7 +5,7 @@
 // Tabs with outline
 .topMenu {
   transition: background 0.25s;
-  background-color: $md-color-primary;
+  background-color: var(--c-bg-header);
   color: $md-color-white;
   overflow: auto;
   position: relative;
@@ -56,6 +56,16 @@
     padding: 0px;
   }
 
+  // Divider between the product's own sections and the shared ones
+  &__separator {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1px;
+    height: 1.8rem;
+    margin: 0 0.6rem;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
   // List item
   &__item {
     display: inline-block;
@@ -77,7 +87,7 @@
       transition: width 0.3s;
       height: 1px;
       display: block;
-      background-color: white;
+      background-color: var(--c-bg-elevated);
     }
     // Active or hovered link
     &--active,
@@ -99,7 +109,7 @@
   }
 
   @include break-to-device(tablet) {
-    background-color: $md-color-primary;
+    background-color: var(--c-bg-header);
     color: white;
     margin: 0;
     top: 0;
@@ -112,6 +122,14 @@
 
     .topMenu__link {
       margin-top: 1rem;
+    }
+
+    // Stacked list: the divider becomes a rule between the two groups
+    .topMenu__separator {
+      display: block;
+      width: auto;
+      height: 1px;
+      margin: 1.2rem 1.2rem 0;
     }
 
     .topMenu__link--active {

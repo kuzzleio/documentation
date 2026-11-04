@@ -25,6 +25,11 @@ export default {
       type: Number,
       required: true,
     },
+    // The family listed: "modules", or "drivers" for the storage drivers
+    section: {
+      type: String,
+      default: 'modules',
+    },
   },
   computed: {
     modList() {
@@ -32,7 +37,7 @@ export default {
         .filter(
           (s) =>
             s.kuzzleMajor === this.kuzzleMajor &&
-            s.section === 'modules' &&
+            s.section === this.section &&
             s.subsection &&
             // If we are deploying to the master branch, exclude the
             // sections that are not released yet

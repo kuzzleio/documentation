@@ -38,7 +38,7 @@
 .selector-list {
   position: absolute;
   width: 80%;
-  background-color: white;
+  background-color: var(--c-bg-elevated);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   padding: 0;
   margin-top: 0;
@@ -75,51 +75,6 @@
     }
     &:hover {
       background-color: #ddd;
-    }
-  }
-}
-
-.selector-majorVersion {
-  .selector-selectedItem {
-    border: none;
-    padding: 0;
-    font-size: 1.7rem;
-    text-align: center;
-
-    .selector-selectedItem-name {
-      font-size: 22px;
-      position: relative;
-      border-radius: 0.2rem;
-      line-height: 3rem;
-
-      @include break-from-device(screen) {
-        font-size: 22px;
-      }
-
-      &:hover {
-        background-color: $md-color-white--lightest;
-      }
-
-      &-wrapper {
-        border-bottom: 1px solid #6c7a79;
-      }
-    }
-
-    .fa-caret-down {
-      color: white;
-      margin-left: 6px;
-    }
-  }
-
-  .selector-list {
-    position: fixed;
-    width: 135px;
-    height: auto;
-    text-align: center;
-    z-index: 10;
-
-    .selector-list-item-link {
-      color: $clr-indigo;
     }
   }
 }

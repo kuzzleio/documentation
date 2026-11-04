@@ -60,8 +60,8 @@
   "2": [
     {
       "name": "Prometheus",
-      "path": "https://github.com/kuzzleio/kuzzle-plugin-prometheus",
-      "version": "2",
+      "path": "https://github.com/kuzzleio/kuzzle-prometheus",
+      "version": "1",
       "icon": "/logos/plugin-prometheus.svg",
       "iconAlt": "prometheus logo"
     },

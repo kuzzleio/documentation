@@ -34,13 +34,36 @@ const algoliaDefaultSearchKey = '0510e62bc2d4f4407392852228117ba0';
 const googleAnalyticsID = 'G-RTVRMCCF00';
 const hostname = process.env.HOSTNAME || 'https://docs.kuzzle.io';
 
+/**
+ * Whether the entries marked `stagingOnly` in products.ts are shown. The CI
+ * sets DOC_ENV to `staging` for next-docs and `production` for docs.kuzzle.io.
+ * A CI build without DOC_ENV hides them: a section that is not released yet
+ * must never reach production because a variable went missing. Local builds
+ * show them.
+ */
+const showStagingOnly =
+  process.env.DOC_ENV === 'staging' ||
+  (!process.env.CI && process.env.DOC_ENV !== 'production');
+
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   title: siteTitle,
   description: siteDescription,
   base: base as UserConfig['base'],
+  /**
+   * Keep this off: VuePress prefetches *every* async chunk of the instance,
+   * not the ones reachable from the current page. It emits ~2.4 <link
+   * rel="prefetch"> per page, which is ~1500 requests on the `core/2`
+   * instance (636 pages). Client-side navigation already renders in ~100ms.
+   */
   shouldPrefetch: false,
+  /**
+   * Content repos mounted under `src/` may carry a `.vuepress` symlink back
+   * to this framework (left by `kuzdoc dev`), which would otherwise pull the
+   * framework's own build output into the page tree.
+   */
+  pagePatterns: ['**/*.md', '!**/.vuepress/**', '!**/node_modules/**'],
   clientConfigFile: path.resolve(__dirname, './client.ts'),
 
   theme: kuzdocTheme(),
@@ -67,6 +90,7 @@ export default defineUserConfig({
           JSON.stringify(process.env.TRAVIS_REPO_SLUG) ||
           JSON.stringify('kuzzleio/documentation'),
         BRANCH: JSON.stringify(process.env.TRAVIS_BRANCH),
+        SHOW_STAGING_ONLY: JSON.stringify(showStagingOnly),
       },
       plugins: [
         nodePolyfills({
@@ -108,7 +132,7 @@ export default defineUserConfig({
       'meta',
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1, maximum-scale=1',
+        content: 'width=device-width, initial-scale=1',
       },
     ],
     [
@@ -117,6 +141,23 @@ export default defineUserConfig({
         name: 'google-site-verification',
         content: 'luspUdq52gkUU0FFChQ2xmeXSs5HDafpARQ7fVXVBp4',
       },
+    ],
+    // Applies the theme before the first paint, otherwise a dark-theme visitor
+    // gets a white flash on every page load. Kept inline and dependency-free
+    // on purpose: it has to run before the stylesheet does.
+    [
+      'script',
+      {},
+      `(function () {
+  try {
+    var stored = localStorage.getItem('kuzdoc-theme');
+    var dark = stored === 'dark' || (stored !== 'light' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  } catch (e) {
+    document.documentElement.dataset.theme = 'light';
+  }
+})();`,
     ],
 
     // -- Schema.org markup for Google+
@@ -319,7 +360,6 @@ export default defineUserConfig({
         sizes: '152x152',
       },
     ],
-    ['script', { id: 'hs-script-loader', defer: true, src: '//js.hs-scripts.com/3803374.js' }],
   ],
 
   markdown: {
@@ -389,12 +429,12 @@ export default defineUserConfig({
       offset: 110,
     }),
     docsearchPlugin({
-      apiKey: JSON.stringify(process.env.ALGOLIA_SEARCH_KEY) || algoliaDefaultSearchKey,
-      indexName: JSON.stringify(process.env.ALGOLIA_INDEX) || algoliaDefaultIndex,
-      appId: JSON.stringify(process.env.ALGOLIA_APP_ID) || algoliaDefaultAppId,
+      apiKey: process.env.ALGOLIA_SEARCH_KEY || algoliaDefaultSearchKey,
+      indexName: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
+      appId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
     }),
     googleAnalyticsPlugin({
-      id: JSON.stringify(process.env.GA_ID) || JSON.stringify(googleAnalyticsID),
+      id: process.env.GA_ID || googleAnalyticsID,
     }),
     backToTopPlugin(),
     copyCodePlugin(),

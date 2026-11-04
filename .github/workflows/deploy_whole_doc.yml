@@ -8,7 +8,10 @@ on:
   workflow_dispatch:
 
 env:
-  NODE_VERSION: 20
+  NODE_VERSION: 24
+  # Read by src/.vuepress/config.ts: sections marked `stagingOnly` in
+  # products.ts are left out of the production menu and home page.
+  DOC_ENV: ${{ github.ref == 'refs/heads/master' && 'production' || 'staging' }}
 
 jobs:
   prepare-matrix:
@@ -92,9 +95,11 @@ jobs:
           name: id_rsa
           known_hosts: unnecessary
 
+      # `"production": false` in repositories.json: staging only, for a
+      # section whose `stable` branch does not hold its doc yet.
       - name: Deploy production matrice
         uses: ./.github/actions/deploy_repo
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref == 'refs/heads/master' && matrix.repo.production != false }}
         with:
           repo_name: ${{ matrix.repo.repo_name }}
           repo_version: ${{ matrix.repo.doc_version }}
