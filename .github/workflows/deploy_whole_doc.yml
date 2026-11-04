@@ -96,10 +96,12 @@ jobs:
           known_hosts: unnecessary
 
       # `"production": false` in repositories.json: staging only, for a
-      # section whose `stable` branch does not hold its doc yet.
+      # section whose `stable` branch does not hold its doc yet. Compared as
+      # JSON: Actions coerces both null and false to 0, so a plain
+      # `production != false` is false for every entry without the field.
       - name: Deploy production matrice
         uses: ./.github/actions/deploy_repo
-        if: ${{ github.ref == 'refs/heads/master' && matrix.repo.production != false }}
+        if: ${{ github.ref == 'refs/heads/master' && toJSON(matrix.repo.production) != 'false' }}
         with:
           repo_name: ${{ matrix.repo.repo_name }}
           repo_version: ${{ matrix.repo.doc_version }}
