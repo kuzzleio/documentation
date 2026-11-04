@@ -50,7 +50,7 @@
 
 ## Validation sur next-docs (2026-11-04)
 
-1. Pertinence : validée par Ricky, meilleure qu'Algolia.
+1. Résultats validés par Ricky.
 2. Première recherche : 1,3 à 1,8 s pour charger les 40 index (environ
    120 requêtes, 560 Ko), instantanée ensuite.
 3. Anonyme : l'index d'une section privée répond 403 et ses résultats
