@@ -1,6 +1,6 @@
 # ADR-0006 : Remplacer Algolia par Pagefind, un index par section
 
-- **Statut** : Proposée (prototype sur next-docs, [ADR-0003](0003-valider-sur-next-docs.md))
+- **Statut** : Acceptée (validée sur next-docs le 2026-11-04, [ADR-0003](0003-valider-sur-next-docs.md))
 - **Date** : 2026-11-04
 - **Décideurs** : Ricky
 - **Remplace** : le point 2 de « À faire » et la question ouverte 1 de [ADR-0002](0002-sections-privees-cadrage.md)
@@ -48,9 +48,10 @@
 - Une section non reconstruite depuis ce changement n'a pas d'index : elle est
   simplement absente des résultats jusqu'à son prochain build.
 
-## À valider sur next-docs
+## Validation sur next-docs (2026-11-04)
 
-1. Pertinence des résultats sur les sections publiques, comparée à Algolia.
-2. Temps de la première recherche avec tous les index.
-3. Connecté : les résultats des sections privées apparaissent ; déconnecté,
-   ils disparaissent sans erreur.
+1. Résultats validés par Ricky.
+2. Première recherche : 1,3 à 1,8 s pour charger les 40 index (environ
+   120 requêtes, 560 Ko), instantanée ensuite.
+3. Anonyme : l'index d'une section privée répond 403 et ses résultats
+   n'apparaissent pas, sans erreur.
