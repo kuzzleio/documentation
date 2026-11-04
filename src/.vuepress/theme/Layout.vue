@@ -1,6 +1,5 @@
 <template>
   <div class="md-layout">
-    <AlgoliaTags :kuzzle-major="kuzzleMajor" />
     <div
       class="overlay"
       :class="{ hidden: !sidebarOpen }"
@@ -54,7 +53,7 @@
               <DeprecatedBanner v-else />
             </div>
             <closed-sources-banner v-if="isClosedSourcesSection" />
-            <article class="md-content__inner md-typeset">
+            <article class="md-content__inner md-typeset" data-pagefind-body>
               <Content />
             </article>
           </div>

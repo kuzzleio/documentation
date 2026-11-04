@@ -2,7 +2,6 @@ import viteBundler from '@vuepress/bundler-vite';
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links';
 import { backToTopPlugin } from '@vuepress/plugin-back-to-top';
 import { copyCodePlugin } from '@vuepress/plugin-copy-code';
-import { docsearchPlugin } from '@vuepress/plugin-docsearch';
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 import { markdownContainerPlugin } from '@vuepress/plugin-markdown-container';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
@@ -19,6 +18,8 @@ import { DEFAULT_EXCLUDE, frontmatterLintPlugin } from './frontmatter-lint';
 import { markdownPlugin } from './markdown';
 import { metaTagsPlugin } from './meta-tags-plugin';
 import { pageAttributesPlugin } from './page-attributes';
+import { pagefindPlugin } from './pagefind-plugin';
+import { listSearchIndexes } from './search-indexes';
 import { kuzdocTheme } from './theme';
 
 import versionString from './getVersionString';
@@ -28,9 +29,6 @@ const siteDescription =
   'Complete Kuzzle Documentation: Guides, Framework, API, SDKs and officials plugins';
 const siteTitle = `Kuzzle Documentation `;
 const base = process.env.SITE_BASE || '/';
-const algoliaDefaultAppId = 'P66D1BU6XZ';
-const algoliaDefaultIndex = 'kuzzle';
-const algoliaDefaultSearchKey = '0510e62bc2d4f4407392852228117ba0';
 const googleAnalyticsID = 'G-RTVRMCCF00';
 const hostname = process.env.HOSTNAME || 'https://docs.kuzzle.io';
 
@@ -44,6 +42,8 @@ const hostname = process.env.HOSTNAME || 'https://docs.kuzzle.io';
 const showStagingOnly =
   process.env.DOC_ENV === 'staging' ||
   (!process.env.CI && process.env.DOC_ENV !== 'production');
+
+const searchIndexes = listSearchIndexes(showStagingOnly);
 
 const __dirname = getDirname(import.meta.url);
 
@@ -77,15 +77,7 @@ export default defineUserConfig({
         },
       },
       define: {
-        ALGOLIA_APP_ID:
-          JSON.stringify(process.env.ALGOLIA_APP_ID) ||
-          JSON.stringify(algoliaDefaultAppId),
-        ALGOLIA_SEARCH_KEY:
-          JSON.stringify(process.env.ALGOLIA_SEARCH_KEY) ||
-          JSON.stringify(algoliaDefaultSearchKey),
-        ALGOLIA_INDEX:
-          JSON.stringify(process.env.ALGOLIA_INDEX) ||
-          JSON.stringify(algoliaDefaultIndex),
+        SEARCH_INDEXES: JSON.stringify(searchIndexes),
         REPO_SLUG:
           JSON.stringify(process.env.TRAVIS_REPO_SLUG) ||
           JSON.stringify('kuzzleio/documentation'),
@@ -372,6 +364,8 @@ export default defineUserConfig({
       permalink: anchorPlugin.permalink.linkInsideHeader({
         class: 'heading-anchor-link',
         symbol: '#',
+        // Keeps the "#" out of the search titles and excerpts
+        renderAttrs: () => ({ 'data-pagefind-ignore': '' }),
       }),
     },
   },
@@ -433,11 +427,7 @@ export default defineUserConfig({
       headerAnchorSelector: '.heading-anchor-link',
       offset: 110,
     }),
-    docsearchPlugin({
-      apiKey: process.env.ALGOLIA_SEARCH_KEY || algoliaDefaultSearchKey,
-      indexName: process.env.ALGOLIA_INDEX || algoliaDefaultIndex,
-      appId: process.env.ALGOLIA_APP_ID || algoliaDefaultAppId,
-    }),
+    pagefindPlugin(),
     googleAnalyticsPlugin({
       id: process.env.GA_ID || googleAnalyticsID,
     }),

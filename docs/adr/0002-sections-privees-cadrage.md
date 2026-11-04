@@ -80,8 +80,9 @@ doc reste accessible même si le Kuzzle du PaaS est indisponible.
    REST, plus une CloudFront Function qui réécrit en `index.html` et gère le
    slash final. Accorder `s3:ListBucket` à CloudFront pour qu'un fichier absent
    réponde 404 et non 403.
-2. Purger les pages des sections privées de l'index Algolia, et les exclure du
-   crawler.
+2. ~~Purger les pages des sections privées de l'index Algolia, et les exclure du
+   crawler.~~ Remplacé par [ADR-0006](0006-recherche-pagefind.md) : Algolia est
+   retiré au profit de Pagefind, l'index Algolia est à supprimer.
 3. `Cache-Control: private` et `noindex` sur les sections privées.
 4. Exclure les sections privées de `dead_links.workflow.yml`, ou lui donner un
    accès.
@@ -124,5 +125,7 @@ doc reste accessible même si le Kuzzle du PaaS est indisponible.
 
 ## Questions ouvertes
 
-1. Recherche pour les utilisateurs connectés (clé Algolia sécurisée générée par
-   `/_auth/*`) : plus tard, a priori.
+1. ~~Recherche pour les utilisateurs connectés (clé Algolia sécurisée générée par
+   `/_auth/*`) : plus tard, a priori.~~ Tranché par
+   [ADR-0006](0006-recherche-pagefind.md) : l'index Pagefind d'une section
+   privée est protégé par CloudFront comme ses pages.

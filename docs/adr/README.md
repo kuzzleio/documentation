@@ -36,3 +36,4 @@ externe (QA) avant de dérouler la suite.
 | [0003](0003-valider-sur-next-docs.md) | Tout le chantier se valide d'abord sur next-docs.kuzzle.io | Acceptée |
 | [0004](0004-page-d-accueil-catalogue.md) | Une page d'accueil publique qui présente les produits, publics et privés | En attente |
 | [0005](0005-repo-prive-pour-l-infra.md) | Un repo privé pour l'infra de la documentation et de l'Admin Console | Acceptée |
+| [0006](0006-recherche-pagefind.md) | Remplacer Algolia par Pagefind, un index par section | Proposée |

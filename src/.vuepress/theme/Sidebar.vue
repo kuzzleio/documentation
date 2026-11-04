@@ -45,12 +45,7 @@
               class="md-nav__item-container"
             >
               <ul class="md-nav__group">
-                <li
-                  class="md-nav__separator"
-                  :data-algolia-lvl="
-                    page$.path.startsWith(item__1.path) ? '2' : ''
-                  "
-                >
+                <li class="md-nav__separator">
                   {{ shortTitle(item__1.meta.frontmatter.title) }}
                 </li>
 
@@ -82,12 +77,7 @@
                             : 'fa-solid fa-caret-right'
                         "
                       />
-                      <span
-                        :data-algolia-lvl="
-                          page$.path.startsWith(item__2.path) ? '3' : ''
-                        "
-                        >{{ shortTitle(item__2.meta.frontmatter.title) }}</span
-                      >
+                      <span>{{ shortTitle(item__2.meta.frontmatter.title) }}</span>
                     </button>
                     <RouteLink
                       v-else
