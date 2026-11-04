@@ -159,12 +159,12 @@ export const PRODUCTS: Product[] = [
 export const CATALOG: CatalogEntry[] = [
   {
     id: 'iot-platform-4',
-    text: 'Kuzzle IoT Platform',
+    text: 'Kuzzle IoT',
     path: '/iot-platform/4/',
     match: ['/iot-platform/4'],
     icon: '/logos/device-manager.svg',
     description:
-      'Digital twins, measure ingestion, alerts and permissions: build your IoT applications.',
+      'Asset management, data ingestion, business rules, alerts and security: build your IoT applications.',
     private: true,
   },
   {
@@ -191,7 +191,7 @@ export const CATALOG: CatalogEntry[] = [
     match: ['/agent-ia'],
     icon: '/logos/agent-ia.svg',
     description:
-      'A conversational agent for the IoT Platform: work with your data in natural language.',
+      'A conversational agent for Kuzzle IoT: work with your data in natural language.',
   },
   {
     id: 'sdk',
