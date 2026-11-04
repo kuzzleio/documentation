@@ -34,6 +34,17 @@ const algoliaDefaultSearchKey = '0510e62bc2d4f4407392852228117ba0';
 const googleAnalyticsID = 'G-RTVRMCCF00';
 const hostname = process.env.HOSTNAME || 'https://docs.kuzzle.io';
 
+/**
+ * Whether the entries marked `stagingOnly` in products.ts are shown. The CI
+ * sets DOC_ENV to `staging` for next-docs and `production` for docs.kuzzle.io.
+ * A CI build without DOC_ENV hides them: a section that is not released yet
+ * must never reach production because a variable went missing. Local builds
+ * show them.
+ */
+const showStagingOnly =
+  process.env.DOC_ENV === 'staging' ||
+  (!process.env.CI && process.env.DOC_ENV !== 'production');
+
 const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
@@ -79,6 +90,7 @@ export default defineUserConfig({
           JSON.stringify(process.env.TRAVIS_REPO_SLUG) ||
           JSON.stringify('kuzzleio/documentation'),
         BRANCH: JSON.stringify(process.env.TRAVIS_BRANCH),
+        SHOW_STAGING_ONLY: JSON.stringify(showStagingOnly),
       },
       plugins: [
         nodePolyfills({

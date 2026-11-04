@@ -23,7 +23,19 @@ export interface NavEntry {
   text: string;
   path: string;
   match: string[];
+  /**
+   * Shown on next-docs only, for a section whose production branch does not
+   * hold its documentation yet (the build would publish another version's
+   * content). Pair it with `"production": false` in .repos/repositories.json.
+   */
+  stagingOnly?: boolean;
 }
+
+/** Replaced at build time, see `showStagingOnly` in config.ts. */
+declare const SHOW_STAGING_ONLY: boolean;
+
+const released = <T extends NavEntry>(entries: T[]): T[] =>
+  entries.filter((entry) => !entry.stagingOnly || SHOW_STAGING_ONLY);
 
 export interface Product extends NavEntry {
   /** Sections specific to this product, first group of the top menu. */
@@ -100,7 +112,7 @@ export const IOT_4_SECTIONS: NavEntry[] = [
   },
 ];
 
-export const PRODUCTS: Product[] = [
+export const PRODUCTS: Product[] = released<Product>([
   {
     id: 'iot-platform-4',
     text: 'Kuzzle IoT v4',
@@ -109,6 +121,8 @@ export const PRODUCTS: Product[] = [
     sections: IOT_4_SECTIONS,
     sharedSections: true,
     private: true,
+    // Until IoT Platform 4 is released on iot-platform's `stable` branch.
+    stagingOnly: true,
   },
   {
     id: 'iot-platform',
@@ -138,13 +152,13 @@ export const PRODUCTS: Product[] = [
     path: '/agent-ia/1/',
     match: ['/agent-ia'],
   },
-];
+]);
 
 /**
  * Tiles of the home page, IoT first: it is the product the site puts forward
  * (it used to be the landing page, see ADR-0004).
  */
-export const CATALOG: CatalogEntry[] = [
+export const CATALOG: CatalogEntry[] = released<CatalogEntry>([
   {
     id: 'iot-platform-4',
     text: 'Kuzzle IoT Platform',
@@ -154,6 +168,8 @@ export const CATALOG: CatalogEntry[] = [
     description:
       'Digital twins, measure ingestion, alerts and permissions: build your IoT applications.',
     private: true,
+    // Until IoT Platform 4 is released on iot-platform's `stable` branch.
+    stagingOnly: true,
   },
   {
     id: BACKEND_ID,
@@ -213,7 +229,7 @@ export const CATALOG: CatalogEntry[] = [
     icon: '/logos/logo-database.svg',
     description: 'The storage drivers Kuzzle runs on, one per database engine.',
   },
-];
+]);
 
 export const findEntry = <T extends NavEntry>(entries: T[], path: string) =>
   entries.find((entry) => entry.match.some((p) => path.startsWith(p)));
