@@ -45,7 +45,7 @@
 
         <!-- Search interface -->
         <div class="md-header-nav__search-container">
-          <SearchBox :options="searchboxOptions" />
+          <SiteSearch :kuzzle-major="kuzzleMajor" />
         </div>
 
         <div class="divider"></div>
@@ -77,6 +77,7 @@ import { useRoute, useSiteData } from 'vuepress/client';
 import TopMenu from './TopMenu.vue';
 import TopMenuV1 from './TopMenuV1.vue';
 import NavSelector from '../components/NavSelector.vue';
+import SiteSearch from '../components/SiteSearch.vue';
 import { LOGOUT_PATH, useSignedIn } from '../auth';
 import { useCurrentProduct } from '../current-product';
 import { PRODUCTS } from '../products';
@@ -86,6 +87,7 @@ export default {
     TopMenu,
     TopMenuV1,
     NavSelector,
+    SiteSearch,
   },
   name: 'Header',
   props: {
@@ -106,13 +108,6 @@ export default {
   computed: {
     products() {
       return PRODUCTS;
-    },
-    searchboxOptions() {
-      return {
-        searchParameters: {
-          facetFilters: [`version:${this.kuzzleMajor}`],
-        },
-      };
     },
   },
 };

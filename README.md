@@ -119,11 +119,11 @@ nosidebar: <Boolean> (optional)
 
 #### `type` (required)
 
-Defines how this page behaves in the generation of the sidebar. It is also used by other components (like Algolia indexation). Can be the following values:
+Defines how this page behaves in the generation of the sidebar. Can be the following values:
 
 - `root` - The page is the root of the generation of an entire sidebar (e.g. `src/code/1/api/`);
 - `branch` - The page is a branch of the sidebar and generally has no content but has children (e.g. `src/code/1/api/api-reference`, `src/code/1/api/controllers/admin/`);
-- `page` - The page is a "leaf" in the sidebar tree: it has no children and has content. It is indexed to Algolia.
+- `page` - The page is a "leaf" in the sidebar tree: it has no children and has content.
 
 #### `code` (required)
 

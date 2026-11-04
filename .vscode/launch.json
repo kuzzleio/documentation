@@ -20,9 +20,6 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run-script", "debug"],
       // "localRoot": "${workspaceFolder}/src/.vuepress/",
-      "env": {
-        "ALGOLIA_WRITE_KEY": "1"
-      },
       // "remoteRoot": "/",
       "port": 9229
     }
