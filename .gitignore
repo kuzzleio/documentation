@@ -2,7 +2,6 @@
 .DS_Store
 node_modules
 dist
-algolia-records.json
 frontmatter-errors.json
 frontmatter-fixes.json
 dead_links.json
