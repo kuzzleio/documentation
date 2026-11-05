@@ -329,7 +329,7 @@
     "repo_name": "kuzzle-plugin-keycloak",
     "doc_version": 1,
     "stable": "1-stable",
-    "dev": "1-beta",
+    "dev": "1-stable",
     "deploy_path": "/official-plugins/keycloak/1/",
     "name": "kuzzle-plugin-keycloak-1",
     "private": true
@@ -338,8 +338,8 @@
     "url": "https://github.com/kuzzleio/kuzzle-plugin-keycloak",
     "repo_name": "kuzzle-plugin-keycloak",
     "doc_version": 2,
-    "stable": "master",
-    "dev": "beta",
+    "stable": "2-stable",
+    "dev": "2-dev",
     "deploy_path": "/official-plugins/keycloak/2/",
     "name": "kuzzle-plugin-keycloak-2",
     "private": true
@@ -349,7 +349,7 @@
     "repo_name": "kuzzle-plugin-auth-openid",
     "doc_version": 1,
     "stable": "1-stable",
-    "dev": "1-beta",
+    "dev": "1-stable",
     "deploy_path": "/official-plugins/openid/1/",
     "name": "kuzzle-plugin-auth-openid-1",
     "private": true
@@ -358,8 +358,8 @@
     "url": "https://github.com/kuzzleio/kuzzle-plugin-auth-openid",
     "repo_name": "kuzzle-plugin-auth-openid",
     "doc_version": 2,
-    "stable": "master",
-    "dev": "beta",
+    "stable": "2-stable",
+    "dev": "2-dev",
     "deploy_path": "/official-plugins/openid/2/",
     "name": "kuzzle-plugin-auth-openid-2",
     "private": true
