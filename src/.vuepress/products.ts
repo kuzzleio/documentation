@@ -110,6 +110,18 @@ export const IOT_4_SECTIONS: NavEntry[] = [
     path: '/iot-platform/4/api/',
     match: ['/iot-platform/4/api'],
   },
+  {
+    id: 'backend-framework',
+    text: 'Backend Framework',
+    path: '/iot-platform/4/backend-framework/',
+    match: ['/iot-platform/4/backend-framework'],
+  },
+  {
+    id: 'frontend-framework',
+    text: 'Frontend Framework',
+    path: '/iot-platform/4/frontend-framework/',
+    match: ['/iot-platform/4/frontend-framework'],
+  },
 ];
 
 export const PRODUCTS: Product[] = released<Product>([
@@ -161,12 +173,12 @@ export const PRODUCTS: Product[] = released<Product>([
 export const CATALOG: CatalogEntry[] = released<CatalogEntry>([
   {
     id: 'iot-platform-4',
-    text: 'Kuzzle IoT Platform',
+    text: 'Kuzzle IoT',
     path: '/iot-platform/4/',
     match: ['/iot-platform/4'],
     icon: '/logos/device-manager.svg',
     description:
-      'Digital twins, measure ingestion, alerts and permissions: build your IoT applications.',
+      'Asset management, data ingestion, business rules, alerts and security: build your IoT applications.',
     private: true,
     // Until IoT Platform 4 is released on iot-platform's `stable` branch.
     stagingOnly: true,
@@ -195,7 +207,7 @@ export const CATALOG: CatalogEntry[] = released<CatalogEntry>([
     match: ['/agent-ia'],
     icon: '/logos/agent-ia.svg',
     description:
-      'A conversational agent for the IoT Platform: work with your data in natural language.',
+      'A conversational agent for Kuzzle IoT: work with your data in natural language.',
   },
   {
     id: 'sdk',
