@@ -454,5 +454,15 @@
     "deploy_path": "/agent-ia/1/",
     "name": "kuzzle-agent-ia-1",
     "private": true
+  },
+  {
+    "url": "https://github.com/kuzzleio/kuzzle-plugin-mapping-migration",
+    "repo_name": "kuzzle-plugin-mapping-migration",
+    "doc_version": 1,
+    "stable": "master",
+    "dev": "beta",
+    "deploy_path": "/official-plugins/mapping-migration/1/",
+    "name": "kuzzle-plugin-mapping-migration-1",
+    "private": true
   }
 ]
