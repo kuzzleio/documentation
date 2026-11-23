@@ -523,6 +523,16 @@
     "icon": "/logos/eslint.svg",
     "released": true
   },
+  "/official-plugins/mapping-migration/1": {
+    "kuzzleMajor": 2,
+    "version": 1,
+    "name": "Mapping Migration",
+    "section": "official-plugins",
+    "subsection": "mapping-migration",
+    "icon": "/logos/plugin.svg",
+    "released": true,
+    "closedSources": true
+  },
   "/modules/logger/1": {
     "kuzzleMajor": 2,
     "version": 1,
