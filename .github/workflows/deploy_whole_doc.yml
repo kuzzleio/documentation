@@ -130,6 +130,10 @@ jobs:
   invalidate_cloudfront:
     name: Invalidate CloudFront
     needs: [deploy_child_repo]
+    # Child repos deploy with `s3 sync --delete` and no invalidation of their
+    # own: skipping this job because one repo failed leaves every section
+    # serving cached HTML that points at deleted chunks (blank pages).
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-24.04
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
